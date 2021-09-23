@@ -33,7 +33,6 @@ namespace Example
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblVersion = new VitNX.Controls.DarkLabel();
-            this.darkLabel3 = new VitNX.Controls.DarkLabel();
             this.darkLabel2 = new VitNX.Controls.DarkLabel();
             this.darkLabel1 = new VitNX.Controls.DarkLabel();
             this.lblHeader = new VitNX.Controls.DarkLabel();
@@ -43,7 +42,6 @@ namespace Example
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.lblVersion);
-            this.pnlMain.Controls.Add(this.darkLabel3);
             this.pnlMain.Controls.Add(this.darkLabel2);
             this.pnlMain.Controls.Add(this.darkLabel1);
             this.pnlMain.Controls.Add(this.lblHeader);
@@ -59,35 +57,21 @@ namespace Example
             this.lblVersion.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblVersion.Location = new System.Drawing.Point(15, 192);
+            this.lblVersion.Location = new System.Drawing.Point(15, 168);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(313, 36);
+            this.lblVersion.Size = new System.Drawing.Size(313, 47);
             this.lblVersion.TabIndex = 7;
             this.lblVersion.Text = "Version: [version]";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // darkLabel3
-            // 
-            this.darkLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkLabel3.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(15, 152);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(313, 40);
-            this.darkLabel3.TabIndex = 6;
-            this.darkLabel3.Text = "(Also with a hardcoded dark theme because I totally could not figure out a clean " +
-    "way to have application-wide theme settings... so, you know, if you\'ve got an id" +
-    "ea, pull request me.)\r\n";
-            this.darkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // darkLabel2
             // 
             this.darkLabel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.darkLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(15, 101);
+            this.darkLabel2.Location = new System.Drawing.Point(15, 89);
             this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(313, 51);
+            this.darkLabel2.Size = new System.Drawing.Size(313, 79);
             this.darkLabel2.TabIndex = 5;
             this.darkLabel2.Text = "Created because of all the little annoyances and issues with the default .NET con" +
     "trol library.";
@@ -95,14 +79,15 @@ namespace Example
             // 
             // darkLabel1
             // 
+            this.darkLabel1.AutoSize = true;
             this.darkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.darkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(15, 47);
+            this.darkLabel1.Location = new System.Drawing.Point(15, 68);
             this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(313, 54);
+            this.darkLabel1.Size = new System.Drawing.Size(322, 21);
             this.darkLabel1.TabIndex = 4;
-            this.darkLabel1.Text = "Controls for WinForms";
+            this.darkLabel1.Text = "Controls for WinForms (.NET Framework 4.5)";
             this.darkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHeader
@@ -112,7 +97,7 @@ namespace Example
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lblHeader.Location = new System.Drawing.Point(15, 15);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(313, 32);
+            this.lblHeader.Size = new System.Drawing.Size(313, 53);
             this.lblHeader.TabIndex = 3;
             this.lblHeader.Text = "VitNX";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,6 +117,7 @@ namespace Example
             this.Text = "About VitNX";
             this.Controls.SetChildIndex(this.pnlMain, 0);
             this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -141,7 +127,6 @@ namespace Example
         private System.Windows.Forms.Panel pnlMain;
         private DarkLabel lblHeader;
         private DarkLabel darkLabel1;
-        private DarkLabel darkLabel3;
         private DarkLabel darkLabel2;
         private DarkLabel lblVersion;
     }
