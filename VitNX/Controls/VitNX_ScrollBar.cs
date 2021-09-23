@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXScrollBar : Control
+    public class VitNXScrollBar : Control
     {
         #region Event Region
 
@@ -17,7 +17,7 @@ namespace VitNX.Controls
 
         #region Field Region
 
-        private VNXScrollOrientation _scrollOrientation;
+        private VitNXScrollOrientation _scrollOrientation;
 
         private int _value;
         private int _minimum = 0;
@@ -52,8 +52,8 @@ namespace VitNX.Controls
 
         [Category("Behavior")]
         [Description("The orientation type of the scrollbar.")]
-        [DefaultValue(VNXScrollOrientation.Vertical)]
-        public VNXScrollOrientation ScrollOrientation
+        [DefaultValue(VitNXScrollOrientation.Vertical)]
+        public VitNXScrollOrientation ScrollOrientation
         {
             get { return _scrollOrientation; }
             set
@@ -145,7 +145,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VNXScrollBar()
+        public VitNXScrollBar()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
@@ -178,7 +178,7 @@ namespace VitNX.Controls
                 _isScrolling = true;
                 _initialContact = e.Location;
 
-                if (_scrollOrientation == VNXScrollOrientation.Vertical)
+                if (_scrollOrientation == VitNXScrollOrientation.Vertical)
                     _initialValue = _thumbArea.Top;
                 else
                     _initialValue = _thumbArea.Left;
@@ -208,13 +208,13 @@ namespace VitNX.Controls
             if (_trackArea.Contains(e.Location) && e.Button == MouseButtons.Left)
             {
                 // Step 1. Check if our input is at least aligned with the thumb
-                if (_scrollOrientation == VNXScrollOrientation.Vertical)
+                if (_scrollOrientation == VitNXScrollOrientation.Vertical)
                 {
                     var modRect = new Rectangle(_thumbArea.Left, _trackArea.Top, _thumbArea.Width, _trackArea.Height);
                     if (!modRect.Contains(e.Location))
                         return;
                 }
-                else if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+                else if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
                 {
                     var modRect = new Rectangle(_trackArea.Left, _thumbArea.Top, _trackArea.Width, _thumbArea.Height);
                     if (!modRect.Contains(e.Location))
@@ -222,7 +222,7 @@ namespace VitNX.Controls
                 }
 
                 // Step 2. Scroll to the area initially clicked.
-                if (_scrollOrientation == VNXScrollOrientation.Vertical)
+                if (_scrollOrientation == VitNXScrollOrientation.Vertical)
                 {
                     var loc = e.Location.Y;
                     loc -= _upArrowArea.Bottom - 1;
@@ -242,7 +242,7 @@ namespace VitNX.Controls
                 _initialContact = e.Location;
                 _thumbHot = true;
 
-                if (_scrollOrientation == VNXScrollOrientation.Vertical)
+                if (_scrollOrientation == VitNXScrollOrientation.Vertical)
                     _initialValue = _thumbArea.Top;
                 else
                     _initialValue = _thumbArea.Left;
@@ -303,14 +303,14 @@ namespace VitNX.Controls
 
                 var difference = new Point(e.Location.X - _initialContact.X, e.Location.Y - _initialContact.Y);
 
-                if (_scrollOrientation == VNXScrollOrientation.Vertical)
+                if (_scrollOrientation == VitNXScrollOrientation.Vertical)
                 {
                     var thumbPos = (_initialValue - _trackArea.Top);
                     var newPosition = thumbPos + difference.Y;
 
                     ScrollToPhysical(newPosition);
                 }
-                else if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+                else if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
                 {
                     var thumbPos = (_initialValue - _trackArea.Left);
                     var newPosition = thumbPos + difference.X;
@@ -358,7 +358,7 @@ namespace VitNX.Controls
 
         public void ScrollToPhysical(int positionInPixels)
         {
-            var isVert = _scrollOrientation == VNXScrollOrientation.Vertical;
+            var isVert = _scrollOrientation == VitNXScrollOrientation.Vertical;
 
             var trackAreaSize = isVert ? _trackArea.Height - _thumbArea.Height : _trackArea.Width - _thumbArea.Width;
 
@@ -377,7 +377,7 @@ namespace VitNX.Controls
 
         public void ScrollByPhysical(int offsetInPixels)
         {
-            var isVert = _scrollOrientation == VNXScrollOrientation.Vertical;
+            var isVert = _scrollOrientation == VitNXScrollOrientation.Vertical;
 
             var thumbPos = isVert ? (_thumbArea.Top - _trackArea.Top) : (_thumbArea.Left - _trackArea.Left);
 
@@ -391,23 +391,23 @@ namespace VitNX.Controls
             var area = ClientRectangle;
 
             // Arrow buttons
-            if (_scrollOrientation == VNXScrollOrientation.Vertical)
+            if (_scrollOrientation == VitNXScrollOrientation.Vertical)
             {
                 _upArrowArea = new Rectangle(area.Left, area.Top, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
                 _downArrowArea = new Rectangle(area.Left, area.Bottom - Consts.ArrowButtonSize, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
             }
-            else if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+            else if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
             {
                 _upArrowArea = new Rectangle(area.Left, area.Top, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
                 _downArrowArea = new Rectangle(area.Right - Consts.ArrowButtonSize, area.Top, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
             }
 
             // Track
-            if (_scrollOrientation == VNXScrollOrientation.Vertical)
+            if (_scrollOrientation == VitNXScrollOrientation.Vertical)
             {
                 _trackArea = new Rectangle(area.Left, area.Top + Consts.ArrowButtonSize, area.Width, area.Height - (Consts.ArrowButtonSize * 2));
             }
-            else if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+            else if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
             {
                 _trackArea = new Rectangle(area.Left + Consts.ArrowButtonSize, area.Top, area.Width - (Consts.ArrowButtonSize * 2), area.Height);
             }
@@ -434,7 +434,7 @@ namespace VitNX.Controls
             var positionRatio = (float)Value / (float)viewAreaSize;
 
             // Update area
-            if (_scrollOrientation == VNXScrollOrientation.Vertical)
+            if (_scrollOrientation == VitNXScrollOrientation.Vertical)
             {
                 var thumbSize = (int)(_trackArea.Height * _viewContentRatio);
 
@@ -446,7 +446,7 @@ namespace VitNX.Controls
 
                 _thumbArea = new Rectangle(_trackArea.Left + 3, _trackArea.Top + thumbPosition, Consts.ScrollBarSize - 6, thumbSize);
             }
-            else if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+            else if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
             {
                 var thumbSize = (int)(_trackArea.Width * _viewContentRatio);
 
@@ -496,9 +496,9 @@ namespace VitNX.Controls
             if (!Enabled)
                 upIcon = ScrollIcons.scrollbar_arrow_disabled;
 
-            if (_scrollOrientation == VNXScrollOrientation.Vertical)
+            if (_scrollOrientation == VitNXScrollOrientation.Vertical)
                 upIcon.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            else if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+            else if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
                 upIcon.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
             g.DrawImageUnscaled(upIcon,
@@ -514,7 +514,7 @@ namespace VitNX.Controls
             if (!Enabled)
                 downIcon = ScrollIcons.scrollbar_arrow_disabled;
 
-            if (_scrollOrientation == VNXScrollOrientation.Horizontal)
+            if (_scrollOrientation == VitNXScrollOrientation.Horizontal)
                 downIcon.RotateFlip(RotateFlipType.Rotate270FlipNone);
 
             g.DrawImageUnscaled(downIcon,

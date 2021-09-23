@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Renderers
 {
-    public class VNXToolStripRenderer : VNXMenuRenderer
+    public class VitNXToolStripRenderer : VitNXMenuRenderer
     {
         #region Initialisation Region
 
@@ -132,7 +132,7 @@ namespace VitNX.Renderers
 
             var rect = new Rectangle(3, 3, 2, e.Item.Height - 4);
 
-            using (var p = new Pen(Colors.VNXBorder))
+            using (var p = new Pen(Colors.VitNXBorder))
             {
                 g.DrawLine(p, rect.Left, rect.Top, rect.Left, rect.Height);
             }

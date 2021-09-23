@@ -3,7 +3,7 @@ using VitNX.Forms;
 
 namespace Example
 {
-    public partial class DialogControls : VNXDialog
+    public partial class DialogControls : VitNXDialog
     {
         public DialogControls()
         {
@@ -12,7 +12,7 @@ namespace Example
             // Build dummy list data
             for (var i = 0; i < 100; i++)
             {
-                var item = new VNXListItem($"List item #{i}");
+                var item = new VitNXListItem($"List item #{i}");
                 lstTest.Items.Add(item);
             }
 
@@ -20,13 +20,13 @@ namespace Example
             var childCount = 0;
             for (var i = 0; i < 20; i++)
             {
-                var node = new VNXTreeNode($"Root node #{i}");
+                var node = new VitNXTreeNode($"Root node #{i}");
                 node.ExpandedIcon = Icons.folder_open;
                 node.Icon = Icons.folder_closed;
 
                 for (var x = 0; x < 10; x++)
                 {
-                    var childNode = new VNXTreeNode($"Child node #{childCount}");
+                    var childNode = new VitNXTreeNode($"Child node #{childCount}");
                     childNode.Icon = Icons.files;
                     childCount++;
                     node.Nodes.Add(childNode);
@@ -38,12 +38,12 @@ namespace Example
             // Hook dialog button events
             btnDialog.Click += delegate
             {
-                VNXMessageBox.ShowError("This is an error", "VNX UI - Example");
+                VitNXMessageBox.ShowError("This is an error", "VitNX UI - Example");
             };
 
             btnMessageBox.Click += delegate
             {
-                VNXMessageBox.ShowInformation("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VNX UI - Example");
+                VitNXMessageBox.ShowInformation("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VitNX UI - Example");
             };
         }
     }

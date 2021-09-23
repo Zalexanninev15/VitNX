@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXCheckBox : CheckBox
+    public class VitNXCheckBox : CheckBox
     {
         #region Field Region
 
-        private VNXControlState _controlState = VNXControlState.Normal;
+        private VitNXControlState _controlState = VitNXControlState.Normal;
 
         private bool _spacePressed;
 
@@ -134,7 +134,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VNXCheckBox()
+        public VitNXCheckBox()
         {
             SetStyle(ControlStyles.SupportsTransparentBackColor |
                      ControlStyles.OptimizedDoubleBuffer |
@@ -146,7 +146,7 @@ namespace VitNX.Controls
 
         #region Method Region
 
-        private void SetControlState(VNXControlState controlState)
+        private void SetControlState(VitNXControlState controlState)
         {
             if (_controlState != controlState)
             {
@@ -169,13 +169,13 @@ namespace VitNX.Controls
             if (e.Button == MouseButtons.Left)
             {
                 if (ClientRectangle.Contains(e.Location))
-                    SetControlState(VNXControlState.Pressed);
+                    SetControlState(VitNXControlState.Pressed);
                 else
-                    SetControlState(VNXControlState.Hover);
+                    SetControlState(VitNXControlState.Hover);
             }
             else
             {
-                SetControlState(VNXControlState.Hover);
+                SetControlState(VitNXControlState.Hover);
             }
         }
 
@@ -186,7 +186,7 @@ namespace VitNX.Controls
             if (!ClientRectangle.Contains(e.Location))
                 return;
 
-            SetControlState(VNXControlState.Pressed);
+            SetControlState(VitNXControlState.Pressed);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
@@ -196,7 +196,7 @@ namespace VitNX.Controls
             if (_spacePressed)
                 return;
 
-            SetControlState(VNXControlState.Normal);
+            SetControlState(VitNXControlState.Normal);
         }
 
         protected override void OnMouseLeave(EventArgs e)
@@ -206,7 +206,7 @@ namespace VitNX.Controls
             if (_spacePressed)
                 return;
 
-            SetControlState(VNXControlState.Normal);
+            SetControlState(VitNXControlState.Normal);
         }
 
         protected override void OnMouseCaptureChanged(EventArgs e)
@@ -219,7 +219,7 @@ namespace VitNX.Controls
             var location = Cursor.Position;
 
             if (!ClientRectangle.Contains(location))
-                SetControlState(VNXControlState.Normal);
+                SetControlState(VitNXControlState.Normal);
         }
 
         protected override void OnGotFocus(EventArgs e)
@@ -238,9 +238,9 @@ namespace VitNX.Controls
             var location = Cursor.Position;
 
             if (!ClientRectangle.Contains(location))
-                SetControlState(VNXControlState.Normal);
+                SetControlState(VitNXControlState.Normal);
             else
-                SetControlState(VNXControlState.Hover);
+                SetControlState(VitNXControlState.Hover);
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -250,7 +250,7 @@ namespace VitNX.Controls
             if (e.KeyCode == Keys.Space)
             {
                 _spacePressed = true;
-                SetControlState(VNXControlState.Pressed);
+                SetControlState(VitNXControlState.Pressed);
             }
         }
 
@@ -265,9 +265,9 @@ namespace VitNX.Controls
                 var location = Cursor.Position;
 
                 if (!ClientRectangle.Contains(location))
-                    SetControlState(VNXControlState.Normal);
+                    SetControlState(VitNXControlState.Normal);
                 else
-                    SetControlState(VNXControlState.Hover);
+                    SetControlState(VitNXControlState.Hover);
             }
         }
 
@@ -294,12 +294,12 @@ namespace VitNX.Controls
                     fillColor = Colors.BlueSelection;
                 }
 
-                if (_controlState == VNXControlState.Hover)
+                if (_controlState == VitNXControlState.Hover)
                 {
                     borderColor = Colors.BlueHighlight;
                     fillColor = Colors.BlueSelection;
                 }
-                else if (_controlState == VNXControlState.Pressed)
+                else if (_controlState == VitNXControlState.Pressed)
                 {
                     borderColor = Colors.GreyHighlight;
                     fillColor = Colors.GreySelection;

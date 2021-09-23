@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXDropdownItem
+    public class VitNXDropdownItem
     {
         #region Property Region
 
@@ -15,15 +15,15 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VNXDropdownItem()
+        public VitNXDropdownItem()
         { }
 
-        public VNXDropdownItem(string text)
+        public VitNXDropdownItem(string text)
         {
             Text = text;
         }
 
-        public VNXDropdownItem(string text, Bitmap icon)
+        public VitNXDropdownItem(string text, Bitmap icon)
             : this(text)
         {
             Icon = icon;

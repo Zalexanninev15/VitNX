@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Forms
 {
-    public class VNXForm : Form
+    public class VitNXForm : Form
     {
         #region Field Region
 
@@ -32,7 +32,7 @@ namespace VitNX.Forms
 
         #region Constructor Region
 
-        public VNXForm()
+        public VitNXForm()
         {
             BackColor = Colors.GreyBackground;
         }
@@ -50,7 +50,7 @@ namespace VitNX.Forms
 
             var g = e.Graphics;
 
-            using (var p = new Pen(Colors.VNXBorder))
+            using (var p = new Pen(Colors.VitNXBorder))
             {
                 var modRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width - 1, ClientRectangle.Height - 1));
                 g.DrawRectangle(p, modRect);

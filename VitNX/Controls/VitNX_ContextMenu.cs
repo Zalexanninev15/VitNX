@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXContextMenu : ContextMenuStrip
+    public class VitNXContextMenu : ContextMenuStrip
     {
         #region Constructor Region
 
-        public VNXContextMenu()
+        public VitNXContextMenu()
         {
-            Renderer = new VNXMenuRenderer();
+            Renderer = new VitNXMenuRenderer();
         }
 
         #endregion

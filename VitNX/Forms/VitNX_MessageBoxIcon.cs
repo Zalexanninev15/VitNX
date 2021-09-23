@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Forms
 {
-    public enum VNXMessageBoxIcon
+    public enum VitNXMessageBoxIcon
     {
         None,
         Information,

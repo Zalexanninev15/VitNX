@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Example
 {
-    public partial class DockDocument : VNXDocument
+    public partial class DockDocument : VitNXDocument
     {
         #region Constructor Region
 
@@ -19,12 +19,12 @@ namespace Example
             txtDocument.SelectionStart = txtDocument.Text.Length;
 
             // Build dummy dropdown data
-            cmbOptions.Items.Add(new VNXDropdownItem("25%"));
-            cmbOptions.Items.Add(new VNXDropdownItem("50%"));
-            cmbOptions.Items.Add(new VNXDropdownItem("100%"));
-            cmbOptions.Items.Add(new VNXDropdownItem("200%"));
-            cmbOptions.Items.Add(new VNXDropdownItem("300%"));
-            cmbOptions.Items.Add(new VNXDropdownItem("400%"));
+            cmbOptions.Items.Add(new VitNXDropdownItem("25%"));
+            cmbOptions.Items.Add(new VitNXDropdownItem("50%"));
+            cmbOptions.Items.Add(new VitNXDropdownItem("100%"));
+            cmbOptions.Items.Add(new VitNXDropdownItem("200%"));
+            cmbOptions.Items.Add(new VitNXDropdownItem("300%"));
+            cmbOptions.Items.Add(new VitNXDropdownItem("400%"));
         }
 
         public DockDocument(string text, Image icon)
@@ -40,7 +40,7 @@ namespace Example
 
         public override void Close()
         {
-            var result = VNXMessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?", @"Close document", VNXDialogButton.YesNo);
+            var result = VitNXMessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?", @"Close document", VitNXDialogButton.YesNo);
             if (result == DialogResult.No)
                 return;
 

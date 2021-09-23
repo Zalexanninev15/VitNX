@@ -6,15 +6,15 @@ namespace VitNX.Docking
     {
         #region Property Region
 
-        internal VNXDockPanel DockPanel { get; private set; }
+        internal VitNXDockPanel DockPanel { get; private set; }
 
         internal Rectangle DropArea { get; private set; }
 
         internal Rectangle HighlightArea { get; private set; }
 
-        internal VNXDockRegion DockRegion { get; private set; }
+        internal VitNXDockRegion DockRegion { get; private set; }
 
-        internal VNXDockGroup DockGroup { get; private set; }
+        internal VitNXDockGroup DockGroup { get; private set; }
 
         internal DockInsertType InsertType { get; private set; }
 
@@ -22,7 +22,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        internal DockDropArea(VNXDockPanel dockPanel, VNXDockRegion region)
+        internal DockDropArea(VitNXDockPanel dockPanel, VitNXDockRegion region)
         {
             DockPanel = dockPanel;
             DockRegion = region;
@@ -31,7 +31,7 @@ namespace VitNX.Docking
             BuildAreas();
         }
 
-        internal DockDropArea(VNXDockPanel dockPanel, VNXDockGroup group, DockInsertType insertType)
+        internal DockDropArea(VitNXDockPanel dockPanel, VitNXDockGroup group, DockInsertType insertType)
         {
             DockPanel = dockPanel;
             DockGroup = group;
@@ -56,7 +56,7 @@ namespace VitNX.Docking
         {
             switch (DockRegion.DockArea)
             {
-                case VNXDockArea.Left:
+                case VitNXDockArea.Left:
 
                     var leftRect = new Rectangle
                     {
@@ -71,7 +71,7 @@ namespace VitNX.Docking
 
                     break;
 
-                case VNXDockArea.Right:
+                case VitNXDockArea.Right:
 
                     var rightRect = new Rectangle
                     {
@@ -86,20 +86,20 @@ namespace VitNX.Docking
 
                     break;
 
-                case VNXDockArea.Bottom:
+                case VitNXDockArea.Bottom:
 
                     var x = DockPanel.PointToScreen(Point.Empty).X;
                     var width = DockPanel.Width;
 
-                    if (DockPanel.Regions[VNXDockArea.Left].Visible)
+                    if (DockPanel.Regions[VitNXDockArea.Left].Visible)
                     {
-                        x += DockPanel.Regions[VNXDockArea.Left].Width;
-                        width -= DockPanel.Regions[VNXDockArea.Left].Width;
+                        x += DockPanel.Regions[VitNXDockArea.Left].Width;
+                        width -= DockPanel.Regions[VitNXDockArea.Left].Width;
                     }
 
-                    if (DockPanel.Regions[VNXDockArea.Right].Visible)
+                    if (DockPanel.Regions[VitNXDockArea.Right].Visible)
                     {
-                        width -= DockPanel.Regions[VNXDockArea.Right].Width;
+                        width -= DockPanel.Regions[VitNXDockArea.Right].Width;
                     }
 
                     var bottomRect = new Rectangle
@@ -141,12 +141,12 @@ namespace VitNX.Docking
 
                     switch (DockGroup.DockArea)
                     {
-                        case VNXDockArea.Left:
-                        case VNXDockArea.Right:
+                        case VitNXDockArea.Left:
+                        case VitNXDockArea.Right:
                             beforeDropHeight = DockGroup.Height / 4;
                             break;
 
-                        case VNXDockArea.Bottom:
+                        case VitNXDockArea.Bottom:
                             beforeDropWidth = DockGroup.Width / 4;
                             break;
                     }
@@ -172,13 +172,13 @@ namespace VitNX.Docking
 
                     switch (DockGroup.DockArea)
                     {
-                        case VNXDockArea.Left:
-                        case VNXDockArea.Right:
+                        case VitNXDockArea.Left:
+                        case VitNXDockArea.Right:
                             afterDropHeight = DockGroup.Height / 4;
                             afterDropY = DockGroup.PointToScreen(Point.Empty).Y + DockGroup.Height - afterDropHeight;
                             break;
 
-                        case VNXDockArea.Bottom:
+                        case VitNXDockArea.Bottom:
                             afterDropWidth = DockGroup.Width / 4;
                             afterDropX = DockGroup.PointToScreen(Point.Empty).X + DockGroup.Width - afterDropWidth;
                             break;

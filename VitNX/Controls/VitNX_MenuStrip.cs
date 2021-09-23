@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXMenuStrip : MenuStrip
+    public class VitNXMenuStrip : MenuStrip
     {
         #region Constructor Region
 
-        public VNXMenuStrip()
+        public VitNXMenuStrip()
         {
-            Renderer = new VNXMenuRenderer();
+            Renderer = new VitNXMenuRenderer();
             Padding = new Padding(3, 2, 0, 2);
         }
 

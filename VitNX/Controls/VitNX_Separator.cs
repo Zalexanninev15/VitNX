@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXSeparator : Control
+    public class VitNXSeparator : Control
     {
         #region Constructor Region
 
-        public VNXSeparator()
+        public VitNXSeparator()
         {
             SetStyle(ControlStyles.Selectable, false);
 
@@ -24,7 +24,7 @@ namespace VitNX.Controls
         {
             var g = e.Graphics;
 
-            using (var p = new Pen(Colors.VNXBorder))
+            using (var p = new Pen(Colors.VitNXBorder))
             {
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
             }

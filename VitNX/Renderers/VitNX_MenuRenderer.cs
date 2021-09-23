@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Renderers
 {
-    public class VNXMenuRenderer : ToolStripRenderer
+    public class VitNXMenuRenderer : ToolStripRenderer
     {
         #region Initialisation Region
 

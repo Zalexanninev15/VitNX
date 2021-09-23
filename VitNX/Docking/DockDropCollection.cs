@@ -14,7 +14,7 @@
 
         #region Constructor Region
 
-        internal DockDropCollection(VNXDockPanel dockPanel, VNXDockGroup group)
+        internal DockDropCollection(VitNXDockPanel dockPanel, VitNXDockGroup group)
         {
             DropArea = new DockDropArea(dockPanel, group, DockInsertType.None);
             InsertBeforeArea = new DockDropArea(dockPanel, group, DockInsertType.Before);

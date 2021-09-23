@@ -32,18 +32,18 @@ namespace Example
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblVersion = new VitNX.Controls.VNXLabel();
-            this.VNXLabel2 = new VitNX.Controls.VNXLabel();
-            this.VNXLabel1 = new VitNX.Controls.VNXLabel();
-            this.lblHeader = new VitNX.Controls.VNXLabel();
+            this.lblVersion = new VitNX.Controls.VitNXLabel();
+            this.VitNXLabel2 = new VitNX.Controls.VitNXLabel();
+            this.VitNXLabel1 = new VitNX.Controls.VitNXLabel();
+            this.lblHeader = new VitNX.Controls.VitNXLabel();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.lblVersion);
-            this.pnlMain.Controls.Add(this.VNXLabel2);
-            this.pnlMain.Controls.Add(this.VNXLabel1);
+            this.pnlMain.Controls.Add(this.VitNXLabel2);
+            this.pnlMain.Controls.Add(this.VitNXLabel1);
             this.pnlMain.Controls.Add(this.lblHeader);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
@@ -64,31 +64,31 @@ namespace Example
             this.lblVersion.Text = "Version: [version]";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // VNXLabel2
+            // VitNXLabel2
             // 
-            this.VNXLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VNXLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.VNXLabel2.Location = new System.Drawing.Point(15, 89);
-            this.VNXLabel2.Name = "VNXLabel2";
-            this.VNXLabel2.Size = new System.Drawing.Size(313, 79);
-            this.VNXLabel2.TabIndex = 5;
-            this.VNXLabel2.Text = "Created because of all the little annoyances and issues with the default .NET con" +
+            this.VitNXLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VitNXLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.VitNXLabel2.Location = new System.Drawing.Point(15, 89);
+            this.VitNXLabel2.Name = "VitNXLabel2";
+            this.VitNXLabel2.Size = new System.Drawing.Size(313, 79);
+            this.VitNXLabel2.TabIndex = 5;
+            this.VitNXLabel2.Text = "Created because of all the little annoyances and issues with the default .NET con" +
     "trol library.";
-            this.VNXLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VitNXLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // VNXLabel1
+            // VitNXLabel1
             // 
-            this.VNXLabel1.AutoSize = true;
-            this.VNXLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VNXLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.VNXLabel1.Location = new System.Drawing.Point(15, 68);
-            this.VNXLabel1.Name = "VNXLabel1";
-            this.VNXLabel1.Size = new System.Drawing.Size(322, 21);
-            this.VNXLabel1.TabIndex = 4;
-            this.VNXLabel1.Text = "Controls for WinForms (.NET Framework 4.5)";
-            this.VNXLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VitNXLabel1.AutoSize = true;
+            this.VitNXLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VitNXLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.VitNXLabel1.Location = new System.Drawing.Point(15, 68);
+            this.VitNXLabel1.Name = "VitNXLabel1";
+            this.VitNXLabel1.Size = new System.Drawing.Size(322, 21);
+            this.VitNXLabel1.TabIndex = 4;
+            this.VitNXLabel1.Text = "Controls for WinForms (.NET Framework 4.5)";
+            this.VitNXLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHeader
             // 
@@ -125,9 +125,9 @@ namespace Example
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private VNXLabel lblHeader;
-        private VNXLabel VNXLabel1;
-        private VNXLabel VNXLabel2;
-        private VNXLabel lblVersion;
+        private VitNXLabel lblHeader;
+        private VitNXLabel VitNXLabel1;
+        private VitNXLabel VitNXLabel2;
+        private VitNXLabel lblVersion;
     }
 }

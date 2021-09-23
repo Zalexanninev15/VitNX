@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXComboBox : ComboBox
+    public class VitNXComboBox : ComboBox
     {
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -27,7 +27,7 @@ namespace VitNX.Controls
 
         private Bitmap _buffer;
 
-        public VNXComboBox() : base()
+        public VitNXComboBox() : base()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |

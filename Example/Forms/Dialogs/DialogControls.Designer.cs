@@ -33,35 +33,35 @@ namespace Example
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogControls));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlTreeView = new VitNX.Controls.VNXSectionPanel();
-            this.treeTest = new VitNX.Controls.VNXTreeView();
-            this.pnlListView = new VitNX.Controls.VNXSectionPanel();
-            this.lstTest = new VitNX.Controls.VNXListView();
-            this.pnlMessageBox = new VitNX.Controls.VNXSectionPanel();
+            this.pnlTreeView = new VitNX.Controls.VitNXSectionPanel();
+            this.treeTest = new VitNX.Controls.VitNXTreeView();
+            this.pnlListView = new VitNX.Controls.VitNXSectionPanel();
+            this.lstTest = new VitNX.Controls.VitNXListView();
+            this.pnlMessageBox = new VitNX.Controls.VitNXSectionPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.VNXComboBox1 = new VitNX.Controls.VNXComboBox();
-            this.VNXTitle4 = new VitNX.Controls.VNXTitle();
+            this.VitNXComboBox1 = new VitNX.Controls.VitNXComboBox();
+            this.VitNXTitle4 = new VitNX.Controls.VitNXTitle();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.VNXNumericUpDown1 = new VitNX.Controls.VNXNumericUpDown();
-            this.VNXTitle5 = new VitNX.Controls.VNXTitle();
+            this.VitNXNumericUpDown1 = new VitNX.Controls.VitNXNumericUpDown();
+            this.VitNXTitle5 = new VitNX.Controls.VitNXTitle();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.VNXRadioButton3 = new VitNX.Controls.VNXRadioButton();
-            this.VNXRadioButton2 = new VitNX.Controls.VNXRadioButton();
-            this.VNXRadioButton1 = new VitNX.Controls.VNXRadioButton();
-            this.VNXTitle3 = new VitNX.Controls.VNXTitle();
+            this.VitNXRadioButton3 = new VitNX.Controls.VitNXRadioButton();
+            this.VitNXRadioButton2 = new VitNX.Controls.VitNXRadioButton();
+            this.VitNXRadioButton1 = new VitNX.Controls.VitNXRadioButton();
+            this.VitNXTitle3 = new VitNX.Controls.VitNXTitle();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.VNXCheckBox2 = new VitNX.Controls.VNXCheckBox();
-            this.VNXCheckBox1 = new VitNX.Controls.VNXCheckBox();
-            this.VNXTitle2 = new VitNX.Controls.VNXTitle();
+            this.VitNXCheckBox2 = new VitNX.Controls.VitNXCheckBox();
+            this.VitNXCheckBox1 = new VitNX.Controls.VitNXCheckBox();
+            this.VitNXTitle2 = new VitNX.Controls.VitNXTitle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnMessageBox = new VitNX.Controls.VNXButton();
+            this.btnMessageBox = new VitNX.Controls.VitNXButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDialog = new VitNX.Controls.VNXButton();
-            this.VNXTitle1 = new VitNX.Controls.VNXTitle();
-            this.VNXGroupBox1 = new VitNX.Controls.VNXGroupBox();
-            this.VNXCheckBox3 = new VitNX.Controls.VNXCheckBox();
-            this.VNXRadioButton4 = new VitNX.Controls.VNXRadioButton();
+            this.btnDialog = new VitNX.Controls.VitNXButton();
+            this.VitNXTitle1 = new VitNX.Controls.VitNXTitle();
+            this.VitNXGroupBox1 = new VitNX.Controls.VitNXGroupBox();
+            this.VitNXCheckBox3 = new VitNX.Controls.VitNXCheckBox();
+            this.VitNXRadioButton4 = new VitNX.Controls.VitNXRadioButton();
             this.pnlMain.SuspendLayout();
             this.tblMain.SuspendLayout();
             this.pnlTreeView.SuspendLayout();
@@ -70,12 +70,12 @@ namespace Example
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VNXNumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VitNXNumericUpDown1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.VNXGroupBox1.SuspendLayout();
+            this.VitNXGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -127,7 +127,7 @@ namespace Example
             this.treeTest.ShowIcons = true;
             this.treeTest.Size = new System.Drawing.Size(222, 492);
             this.treeTest.TabIndex = 0;
-            this.treeTest.Text = "VNXTreeView1";
+            this.treeTest.Text = "VitNXTreeView1";
             // 
             // pnlListView
             // 
@@ -148,7 +148,7 @@ namespace Example
             this.lstTest.Name = "lstTest";
             this.lstTest.Size = new System.Drawing.Size(220, 492);
             this.lstTest.TabIndex = 7;
-            this.lstTest.Text = "VNXListView1";
+            this.lstTest.Text = "VitNXListView1";
             // 
             // pnlMessageBox
             // 
@@ -163,7 +163,7 @@ namespace Example
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.VNXGroupBox1);
+            this.panel1.Controls.Add(this.VitNXGroupBox1);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
@@ -179,42 +179,42 @@ namespace Example
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.VNXComboBox1);
-            this.panel7.Controls.Add(this.VNXTitle4);
+            this.panel7.Controls.Add(this.VitNXComboBox1);
+            this.panel7.Controls.Add(this.VitNXTitle4);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(10, 349);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 63);
             this.panel7.TabIndex = 23;
             // 
-            // VNXComboBox1
+            // VitNXComboBox1
             // 
-            this.VNXComboBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.VNXComboBox1.FormattingEnabled = true;
-            this.VNXComboBox1.Items.AddRange(new object[] {
+            this.VitNXComboBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.VitNXComboBox1.FormattingEnabled = true;
+            this.VitNXComboBox1.Items.AddRange(new object[] {
             "Item 1",
             "Item 2",
             "This is a really long item in the collection to check out how text is clipped",
             "Item 4"});
-            this.VNXComboBox1.Location = new System.Drawing.Point(0, 26);
-            this.VNXComboBox1.Name = "VNXComboBox1";
-            this.VNXComboBox1.Size = new System.Drawing.Size(200, 24);
-            this.VNXComboBox1.TabIndex = 20;
+            this.VitNXComboBox1.Location = new System.Drawing.Point(0, 26);
+            this.VitNXComboBox1.Name = "VitNXComboBox1";
+            this.VitNXComboBox1.Size = new System.Drawing.Size(200, 24);
+            this.VitNXComboBox1.TabIndex = 20;
             // 
-            // VNXTitle4
+            // VitNXTitle4
             // 
-            this.VNXTitle4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXTitle4.Location = new System.Drawing.Point(0, 0);
-            this.VNXTitle4.Name = "VNXTitle4";
-            this.VNXTitle4.Size = new System.Drawing.Size(200, 26);
-            this.VNXTitle4.TabIndex = 21;
-            this.VNXTitle4.Text = "ComboBox";
+            this.VitNXTitle4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXTitle4.Location = new System.Drawing.Point(0, 0);
+            this.VitNXTitle4.Name = "VitNXTitle4";
+            this.VitNXTitle4.Size = new System.Drawing.Size(200, 26);
+            this.VitNXTitle4.TabIndex = 21;
+            this.VitNXTitle4.Text = "ComboBox";
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.VNXNumericUpDown1);
-            this.panel6.Controls.Add(this.VNXTitle5);
+            this.panel6.Controls.Add(this.VitNXNumericUpDown1);
+            this.panel6.Controls.Add(this.VitNXTitle5);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(10, 285);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
@@ -222,84 +222,84 @@ namespace Example
             this.panel6.Size = new System.Drawing.Size(200, 64);
             this.panel6.TabIndex = 22;
             // 
-            // VNXNumericUpDown1
+            // VitNXNumericUpDown1
             // 
-            this.VNXNumericUpDown1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXNumericUpDown1.Location = new System.Drawing.Point(0, 26);
-            this.VNXNumericUpDown1.Name = "VNXNumericUpDown1";
-            this.VNXNumericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.VNXNumericUpDown1.Size = new System.Drawing.Size(200, 23);
-            this.VNXNumericUpDown1.TabIndex = 24;
+            this.VitNXNumericUpDown1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXNumericUpDown1.Location = new System.Drawing.Point(0, 26);
+            this.VitNXNumericUpDown1.Name = "VitNXNumericUpDown1";
+            this.VitNXNumericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.VitNXNumericUpDown1.Size = new System.Drawing.Size(200, 23);
+            this.VitNXNumericUpDown1.TabIndex = 24;
             // 
-            // VNXTitle5
+            // VitNXTitle5
             // 
-            this.VNXTitle5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXTitle5.Location = new System.Drawing.Point(0, 0);
-            this.VNXTitle5.Name = "VNXTitle5";
-            this.VNXTitle5.Size = new System.Drawing.Size(200, 26);
-            this.VNXTitle5.TabIndex = 23;
-            this.VNXTitle5.Text = "Numeric Up/Down";
+            this.VitNXTitle5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXTitle5.Location = new System.Drawing.Point(0, 0);
+            this.VitNXTitle5.Name = "VitNXTitle5";
+            this.VitNXTitle5.Size = new System.Drawing.Size(200, 26);
+            this.VitNXTitle5.TabIndex = 23;
+            this.VitNXTitle5.Text = "Numeric Up/Down";
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.VNXRadioButton3);
-            this.panel5.Controls.Add(this.VNXRadioButton2);
-            this.panel5.Controls.Add(this.VNXRadioButton1);
-            this.panel5.Controls.Add(this.VNXTitle3);
+            this.panel5.Controls.Add(this.VitNXRadioButton3);
+            this.panel5.Controls.Add(this.VitNXRadioButton2);
+            this.panel5.Controls.Add(this.VitNXRadioButton1);
+            this.panel5.Controls.Add(this.VitNXTitle3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(10, 185);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 12;
             // 
-            // VNXRadioButton3
+            // VitNXRadioButton3
             // 
-            this.VNXRadioButton3.AutoSize = true;
-            this.VNXRadioButton3.Checked = true;
-            this.VNXRadioButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXRadioButton3.Enabled = false;
-            this.VNXRadioButton3.Location = new System.Drawing.Point(0, 64);
-            this.VNXRadioButton3.Name = "VNXRadioButton3";
-            this.VNXRadioButton3.Size = new System.Drawing.Size(200, 19);
-            this.VNXRadioButton3.TabIndex = 4;
-            this.VNXRadioButton3.TabStop = true;
-            this.VNXRadioButton3.Text = "Disabled radio button";
+            this.VitNXRadioButton3.AutoSize = true;
+            this.VitNXRadioButton3.Checked = true;
+            this.VitNXRadioButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXRadioButton3.Enabled = false;
+            this.VitNXRadioButton3.Location = new System.Drawing.Point(0, 64);
+            this.VitNXRadioButton3.Name = "VitNXRadioButton3";
+            this.VitNXRadioButton3.Size = new System.Drawing.Size(200, 19);
+            this.VitNXRadioButton3.TabIndex = 4;
+            this.VitNXRadioButton3.TabStop = true;
+            this.VitNXRadioButton3.Text = "Disabled radio button";
             // 
-            // VNXRadioButton2
+            // VitNXRadioButton2
             // 
-            this.VNXRadioButton2.AutoSize = true;
-            this.VNXRadioButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXRadioButton2.Location = new System.Drawing.Point(0, 45);
-            this.VNXRadioButton2.Name = "VNXRadioButton2";
-            this.VNXRadioButton2.Size = new System.Drawing.Size(200, 19);
-            this.VNXRadioButton2.TabIndex = 3;
-            this.VNXRadioButton2.Text = "Radio button";
+            this.VitNXRadioButton2.AutoSize = true;
+            this.VitNXRadioButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXRadioButton2.Location = new System.Drawing.Point(0, 45);
+            this.VitNXRadioButton2.Name = "VitNXRadioButton2";
+            this.VitNXRadioButton2.Size = new System.Drawing.Size(200, 19);
+            this.VitNXRadioButton2.TabIndex = 3;
+            this.VitNXRadioButton2.Text = "Radio button";
             // 
-            // VNXRadioButton1
+            // VitNXRadioButton1
             // 
-            this.VNXRadioButton1.AutoSize = true;
-            this.VNXRadioButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXRadioButton1.Location = new System.Drawing.Point(0, 26);
-            this.VNXRadioButton1.Name = "VNXRadioButton1";
-            this.VNXRadioButton1.Size = new System.Drawing.Size(200, 19);
-            this.VNXRadioButton1.TabIndex = 2;
-            this.VNXRadioButton1.Text = "Radio button";
+            this.VitNXRadioButton1.AutoSize = true;
+            this.VitNXRadioButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXRadioButton1.Location = new System.Drawing.Point(0, 26);
+            this.VitNXRadioButton1.Name = "VitNXRadioButton1";
+            this.VitNXRadioButton1.Size = new System.Drawing.Size(200, 19);
+            this.VitNXRadioButton1.TabIndex = 2;
+            this.VitNXRadioButton1.Text = "Radio button";
             // 
-            // VNXTitle3
+            // VitNXTitle3
             // 
-            this.VNXTitle3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXTitle3.Location = new System.Drawing.Point(0, 0);
-            this.VNXTitle3.Name = "VNXTitle3";
-            this.VNXTitle3.Size = new System.Drawing.Size(200, 26);
-            this.VNXTitle3.TabIndex = 16;
-            this.VNXTitle3.Text = "Radio buttons";
+            this.VitNXTitle3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXTitle3.Location = new System.Drawing.Point(0, 0);
+            this.VitNXTitle3.Name = "VitNXTitle3";
+            this.VitNXTitle3.Size = new System.Drawing.Size(200, 26);
+            this.VitNXTitle3.TabIndex = 16;
+            this.VitNXTitle3.Text = "Radio buttons";
             // 
             // panel4
             // 
             this.panel4.AutoSize = true;
-            this.panel4.Controls.Add(this.VNXCheckBox2);
-            this.panel4.Controls.Add(this.VNXCheckBox1);
-            this.panel4.Controls.Add(this.VNXTitle2);
+            this.panel4.Controls.Add(this.VitNXCheckBox2);
+            this.panel4.Controls.Add(this.VitNXCheckBox1);
+            this.panel4.Controls.Add(this.VitNXTitle2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(10, 111);
             this.panel4.Name = "panel4";
@@ -307,37 +307,37 @@ namespace Example
             this.panel4.Size = new System.Drawing.Size(200, 74);
             this.panel4.TabIndex = 11;
             // 
-            // VNXCheckBox2
+            // VitNXCheckBox2
             // 
-            this.VNXCheckBox2.AutoSize = true;
-            this.VNXCheckBox2.Checked = true;
-            this.VNXCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.VNXCheckBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXCheckBox2.Enabled = false;
-            this.VNXCheckBox2.Location = new System.Drawing.Point(0, 45);
-            this.VNXCheckBox2.Name = "VNXCheckBox2";
-            this.VNXCheckBox2.Size = new System.Drawing.Size(200, 19);
-            this.VNXCheckBox2.TabIndex = 13;
-            this.VNXCheckBox2.Text = "Disabled checkbox";
+            this.VitNXCheckBox2.AutoSize = true;
+            this.VitNXCheckBox2.Checked = true;
+            this.VitNXCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.VitNXCheckBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXCheckBox2.Enabled = false;
+            this.VitNXCheckBox2.Location = new System.Drawing.Point(0, 45);
+            this.VitNXCheckBox2.Name = "VitNXCheckBox2";
+            this.VitNXCheckBox2.Size = new System.Drawing.Size(200, 19);
+            this.VitNXCheckBox2.TabIndex = 13;
+            this.VitNXCheckBox2.Text = "Disabled checkbox";
             // 
-            // VNXCheckBox1
+            // VitNXCheckBox1
             // 
-            this.VNXCheckBox1.AutoSize = true;
-            this.VNXCheckBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXCheckBox1.Location = new System.Drawing.Point(0, 26);
-            this.VNXCheckBox1.Name = "VNXCheckBox1";
-            this.VNXCheckBox1.Size = new System.Drawing.Size(200, 19);
-            this.VNXCheckBox1.TabIndex = 12;
-            this.VNXCheckBox1.Text = "Enabled checkbox";
+            this.VitNXCheckBox1.AutoSize = true;
+            this.VitNXCheckBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXCheckBox1.Location = new System.Drawing.Point(0, 26);
+            this.VitNXCheckBox1.Name = "VitNXCheckBox1";
+            this.VitNXCheckBox1.Size = new System.Drawing.Size(200, 19);
+            this.VitNXCheckBox1.TabIndex = 12;
+            this.VitNXCheckBox1.Text = "Enabled checkbox";
             // 
-            // VNXTitle2
+            // VitNXTitle2
             // 
-            this.VNXTitle2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXTitle2.Location = new System.Drawing.Point(0, 0);
-            this.VNXTitle2.Name = "VNXTitle2";
-            this.VNXTitle2.Size = new System.Drawing.Size(200, 26);
-            this.VNXTitle2.TabIndex = 15;
-            this.VNXTitle2.Text = "Check boxes";
+            this.VitNXTitle2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXTitle2.Location = new System.Drawing.Point(0, 0);
+            this.VitNXTitle2.Name = "VitNXTitle2";
+            this.VitNXTitle2.Size = new System.Drawing.Size(200, 26);
+            this.VitNXTitle2.TabIndex = 15;
+            this.VitNXTitle2.Text = "Check boxes";
             // 
             // panel3
             // 
@@ -364,7 +364,7 @@ namespace Example
             // 
             this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.btnDialog);
-            this.panel2.Controls.Add(this.VNXTitle1);
+            this.panel2.Controls.Add(this.VitNXTitle1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
@@ -382,50 +382,50 @@ namespace Example
             this.btnDialog.TabIndex = 4;
             this.btnDialog.Text = "Dialog";
             // 
-            // VNXTitle1
+            // VitNXTitle1
             // 
-            this.VNXTitle1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXTitle1.Location = new System.Drawing.Point(0, 0);
-            this.VNXTitle1.Name = "VNXTitle1";
-            this.VNXTitle1.Size = new System.Drawing.Size(200, 26);
-            this.VNXTitle1.TabIndex = 14;
-            this.VNXTitle1.Text = "Dialogs";
+            this.VitNXTitle1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXTitle1.Location = new System.Drawing.Point(0, 0);
+            this.VitNXTitle1.Name = "VitNXTitle1";
+            this.VitNXTitle1.Size = new System.Drawing.Size(200, 26);
+            this.VitNXTitle1.TabIndex = 14;
+            this.VitNXTitle1.Text = "Dialogs";
             // 
-            // VNXGroupBox1
+            // VitNXGroupBox1
             // 
-            this.VNXGroupBox1.AutoSize = true;
-            this.VNXGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.VNXGroupBox1.Controls.Add(this.VNXRadioButton4);
-            this.VNXGroupBox1.Controls.Add(this.VNXCheckBox3);
-            this.VNXGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXGroupBox1.Location = new System.Drawing.Point(10, 412);
-            this.VNXGroupBox1.Name = "VNXGroupBox1";
-            this.VNXGroupBox1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.VNXGroupBox1.Size = new System.Drawing.Size(200, 69);
-            this.VNXGroupBox1.TabIndex = 24;
-            this.VNXGroupBox1.TabStop = false;
-            this.VNXGroupBox1.Text = "GroupBox";
+            this.VitNXGroupBox1.AutoSize = true;
+            this.VitNXGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.VitNXGroupBox1.Controls.Add(this.VitNXRadioButton4);
+            this.VitNXGroupBox1.Controls.Add(this.VitNXCheckBox3);
+            this.VitNXGroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXGroupBox1.Location = new System.Drawing.Point(10, 412);
+            this.VitNXGroupBox1.Name = "VitNXGroupBox1";
+            this.VitNXGroupBox1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
+            this.VitNXGroupBox1.Size = new System.Drawing.Size(200, 69);
+            this.VitNXGroupBox1.TabIndex = 24;
+            this.VitNXGroupBox1.TabStop = false;
+            this.VitNXGroupBox1.Text = "GroupBox";
             // 
-            // VNXCheckBox3
+            // VitNXCheckBox3
             // 
-            this.VNXCheckBox3.AutoSize = true;
-            this.VNXCheckBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXCheckBox3.Location = new System.Drawing.Point(10, 21);
-            this.VNXCheckBox3.Name = "VNXCheckBox3";
-            this.VNXCheckBox3.Size = new System.Drawing.Size(180, 19);
-            this.VNXCheckBox3.TabIndex = 0;
-            this.VNXCheckBox3.Text = "Checkbox";
+            this.VitNXCheckBox3.AutoSize = true;
+            this.VitNXCheckBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXCheckBox3.Location = new System.Drawing.Point(10, 21);
+            this.VitNXCheckBox3.Name = "VitNXCheckBox3";
+            this.VitNXCheckBox3.Size = new System.Drawing.Size(180, 19);
+            this.VitNXCheckBox3.TabIndex = 0;
+            this.VitNXCheckBox3.Text = "Checkbox";
             // 
-            // VNXRadioButton4
+            // VitNXRadioButton4
             // 
-            this.VNXRadioButton4.AutoSize = true;
-            this.VNXRadioButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VNXRadioButton4.Location = new System.Drawing.Point(10, 40);
-            this.VNXRadioButton4.Name = "VNXRadioButton4";
-            this.VNXRadioButton4.Size = new System.Drawing.Size(180, 19);
-            this.VNXRadioButton4.TabIndex = 1;
-            this.VNXRadioButton4.TabStop = true;
-            this.VNXRadioButton4.Text = "Radio button";
+            this.VitNXRadioButton4.AutoSize = true;
+            this.VitNXRadioButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNXRadioButton4.Location = new System.Drawing.Point(10, 40);
+            this.VitNXRadioButton4.Name = "VitNXRadioButton4";
+            this.VitNXRadioButton4.Size = new System.Drawing.Size(180, 19);
+            this.VitNXRadioButton4.TabIndex = 1;
+            this.VitNXRadioButton4.TabStop = true;
+            this.VitNXRadioButton4.Text = "Radio button";
             // 
             // DialogControls
             // 
@@ -448,15 +448,15 @@ namespace Example
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.VNXNumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VitNXNumericUpDown1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.VNXGroupBox1.ResumeLayout(false);
-            this.VNXGroupBox1.PerformLayout();
+            this.VitNXGroupBox1.ResumeLayout(false);
+            this.VitNXGroupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -465,34 +465,34 @@ namespace Example
 
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TableLayoutPanel tblMain;
-        private VNXSectionPanel pnlTreeView;
-        private VNXTreeView treeTest;
-        private VNXSectionPanel pnlListView;
-        private VNXListView lstTest;
-        private VNXSectionPanel pnlMessageBox;
+        private VitNXSectionPanel pnlTreeView;
+        private VitNXTreeView treeTest;
+        private VitNXSectionPanel pnlListView;
+        private VitNXListView lstTest;
+        private VitNXSectionPanel pnlMessageBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private VNXButton btnDialog;
+        private VitNXButton btnDialog;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private VNXButton btnMessageBox;
-        private VNXCheckBox VNXCheckBox2;
-        private VNXCheckBox VNXCheckBox1;
+        private VitNXButton btnMessageBox;
+        private VitNXCheckBox VitNXCheckBox2;
+        private VitNXCheckBox VitNXCheckBox1;
         private System.Windows.Forms.Panel panel5;
-        private VNXRadioButton VNXRadioButton2;
-        private VNXRadioButton VNXRadioButton1;
-        private VNXRadioButton VNXRadioButton3;
-        private VNXTitle VNXTitle1;
-        private VNXTitle VNXTitle2;
-        private VNXTitle VNXTitle3;
+        private VitNXRadioButton VitNXRadioButton2;
+        private VitNXRadioButton VitNXRadioButton1;
+        private VitNXRadioButton VitNXRadioButton3;
+        private VitNXTitle VitNXTitle1;
+        private VitNXTitle VitNXTitle2;
+        private VitNXTitle VitNXTitle3;
         private System.Windows.Forms.Panel panel7;
-        private VNXComboBox VNXComboBox1;
-        private VNXTitle VNXTitle4;
+        private VitNXComboBox VitNXComboBox1;
+        private VitNXTitle VitNXTitle4;
         private System.Windows.Forms.Panel panel6;
-        private VNXNumericUpDown VNXNumericUpDown1;
-        private VNXTitle VNXTitle5;
-        private VNXGroupBox VNXGroupBox1;
-        private VNXRadioButton VNXRadioButton4;
-        private VNXCheckBox VNXCheckBox3;
+        private VitNXNumericUpDown VitNXNumericUpDown1;
+        private VitNXTitle VitNXTitle5;
+        private VitNXGroupBox VitNXGroupBox1;
+        private VitNXRadioButton VitNXRadioButton4;
+        private VitNXCheckBox VitNXCheckBox3;
     }
 }
