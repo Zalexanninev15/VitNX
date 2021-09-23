@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("VitNX")]
-[assembly: AssemblyDescription("Controls for WinForms")]
+[assembly: AssemblyDescription("Controls for WinForms (.NET Framework 4.5)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zalexanninev15")]
 [assembly: AssemblyProduct("VitNX")]
