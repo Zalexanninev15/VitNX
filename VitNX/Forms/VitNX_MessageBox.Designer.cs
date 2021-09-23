@@ -2,7 +2,7 @@
 
 namespace VitNX.Forms
 {
-    partial class VNXMessageBox
+    partial class VitNXMessageBox
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace VitNX.Forms
         private void InitializeComponent()
         {
             this.picIcon = new System.Windows.Forms.PictureBox();
-            this.lblText = new VNXLabel();
+            this.lblText = new VitNXLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@ namespace VitNX.Forms
             this.lblText.TabIndex = 4;
             this.lblText.Text = "Something something something";
             // 
-            // VNXMessageBox
+            // VitNXMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,7 +63,7 @@ namespace VitNX.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "VNXMessageBox";
+            this.Name = "VitNXMessageBox";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -78,6 +78,6 @@ namespace VitNX.Forms
         #endregion
 
         private System.Windows.Forms.PictureBox picIcon;
-        private VNXLabel lblText;
+        private VitNXLabel lblText;
     }
 }

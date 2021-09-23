@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace Example
 {
-    public partial class MainForm : VNXForm
+    public partial class MainForm : VitNXForm
     {
         #region Field Region
 
-        private List<VNXDockContent> _toolWindows = new List<VNXDockContent>();
+        private List<VitNXDockContent> _toolWindows = new List<VitNXDockContent>();
 
         private DockProject _dockProject;
         private DockProperties _dockProperties;
@@ -107,7 +107,7 @@ namespace Example
             mnuAbout.Click += About_Click;
         }
 
-        private void ToggleToolWindow(VNXToolWindow toolWindow)
+        private void ToggleToolWindow(VitNXToolWindow toolWindow)
         {
             if (toolWindow.DockPanel == null)
                 DockPanel.AddContent(toolWindow);
@@ -209,7 +209,7 @@ namespace Example
             DockPanel.RestoreDockPanelState(state, GetContentBySerializationKey);
         }
          
-        private VNXDockContent GetContentBySerializationKey(string key)
+        private VitNXDockContent GetContentBySerializationKey(string key)
         {
             foreach (var window in _toolWindows)
             {

@@ -7,7 +7,7 @@ using System;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VNXToolWindow : VNXDockContent
+    public class VitNXToolWindow : VitNXDockContent
     {
         #region Field Region
 
@@ -33,7 +33,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXToolWindow()
+        public VitNXToolWindow()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
@@ -167,7 +167,7 @@ namespace VitNX.Docking
 
             // Draw header
             var bgColor = isActive ? Colors.BlueBackground : Colors.HeaderBackground;
-            var VNXColor = isActive ? Colors.VNXBlueBorder : Colors.VNXBorder;
+            var VitNXColor = isActive ? Colors.VitNXBlueBorder : Colors.VitNXBorder;
             var lightColor = isActive ? Colors.LightBlueBorder : Colors.LightBorder;
 
             using (var b = new SolidBrush(bgColor))
@@ -176,7 +176,7 @@ namespace VitNX.Docking
                 g.FillRectangle(b, bgRect);
             }
 
-            using (var p = new Pen(VNXColor))
+            using (var p = new Pen(VitNXColor))
             {
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
                 g.DrawLine(p, ClientRectangle.Left, Consts.ToolWindowHeaderSize - 1, ClientRectangle.Right, Consts.ToolWindowHeaderSize - 1);

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXStatusStrip : StatusStrip
+    public class VitNXStatusStrip : StatusStrip
     {
         #region Constructor Region
 
-        public VNXStatusStrip()
+        public VitNXStatusStrip()
         {
             AutoSize = false;
             BackColor = Colors.GreyBackground;
@@ -31,7 +31,7 @@ namespace VitNX.Controls
                 g.FillRectangle(b, ClientRectangle);
             }
 
-            using (var p = new Pen(Colors.VNXBorder))
+            using (var p = new Pen(Colors.VitNXBorder))
             {
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
             }

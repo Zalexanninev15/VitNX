@@ -5,33 +5,33 @@ using System.Windows.Forms;
 
 namespace VitNX.Forms
 {
-    public partial class VNXDialog : VNXForm
+    public partial class VitNXDialog : VitNXForm
     {
         #region Field Region
 
-        private VNXDialogButton _dialogButtons = VNXDialogButton.Ok;
-        private List<VNXButton> _buttons;
+        private VitNXDialogButton _dialogButtons = VitNXDialogButton.Ok;
+        private List<VitNXButton> _buttons;
 
         #endregion
 
         #region Button Region
 
-        protected VNXButton btnOk;
-        protected VNXButton btnCancel;
-        protected VNXButton btnClose;
-        protected VNXButton btnYes;
-        protected VNXButton btnNo;
-        protected VNXButton btnAbort;
-        protected VNXButton btnRetry;
-        protected VNXButton btnIgnore;
+        protected VitNXButton btnOk;
+        protected VitNXButton btnCancel;
+        protected VitNXButton btnClose;
+        protected VitNXButton btnYes;
+        protected VitNXButton btnNo;
+        protected VitNXButton btnAbort;
+        protected VitNXButton btnRetry;
+        protected VitNXButton btnIgnore;
 
         #endregion
 
         #region Property Region
 
         [Description("Determines the type of the dialog window.")]
-        [DefaultValue(VNXDialogButton.Ok)]
-        public VNXDialogButton DialogButtons
+        [DefaultValue(VitNXDialogButton.Ok)]
+        public VitNXDialogButton DialogButtons
         {
             get { return _dialogButtons; }
             set
@@ -68,11 +68,11 @@ namespace VitNX.Forms
 
         #region Constructor Region
 
-        public VNXDialog()
+        public VitNXDialog()
         {
             InitializeComponent();
 
-            _buttons = new List<VNXButton>
+            _buttons = new List<VitNXButton>
                 {
                     btnAbort, btnRetry, btnIgnore, btnOk,
                     btnCancel, btnClose, btnYes, btnNo
@@ -101,41 +101,41 @@ namespace VitNX.Forms
 
             switch (_dialogButtons)
             {
-                case VNXDialogButton.Ok:
+                case VitNXDialogButton.Ok:
                     ShowButton(btnOk, true);
                     AcceptButton = btnOk;
                     break;
-                case VNXDialogButton.Close:
+                case VitNXDialogButton.Close:
                     ShowButton(btnClose, true);
                     AcceptButton = btnClose;
                     CancelButton = btnClose;
                     break;
-                case VNXDialogButton.OkCancel:
+                case VitNXDialogButton.OkCancel:
                     ShowButton(btnOk);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnOk;
                     CancelButton = btnCancel;
                     break;
-                case VNXDialogButton.AbortRetryIgnore:
+                case VitNXDialogButton.AbortRetryIgnore:
                     ShowButton(btnAbort);
                     ShowButton(btnRetry);
                     ShowButton(btnIgnore, true);
                     AcceptButton = btnAbort;
                     CancelButton = btnIgnore;
                     break;
-                case VNXDialogButton.RetryCancel:
+                case VitNXDialogButton.RetryCancel:
                     ShowButton(btnRetry);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnRetry;
                     CancelButton = btnCancel;
                     break;
-                case VNXDialogButton.YesNo:
+                case VitNXDialogButton.YesNo:
                     ShowButton(btnYes);
                     ShowButton(btnNo, true);
                     AcceptButton = btnYes;
                     CancelButton = btnNo;
                     break;
-                case VNXDialogButton.YesNoCancel:
+                case VitNXDialogButton.YesNoCancel:
                     ShowButton(btnYes);
                     ShowButton(btnNo);
                     ShowButton(btnCancel, true);
@@ -147,7 +147,7 @@ namespace VitNX.Forms
             SetFlowSize();
         }
 
-        private void ShowButton(VNXButton button, bool isLast = false)
+        private void ShowButton(VitNXButton button, bool isLast = false)
         {
             button.SendToBack();
 

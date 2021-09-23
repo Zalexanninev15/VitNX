@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Forms
 {
-    public enum VNXDialogButton
+    public enum VitNXDialogButton
     {
         Ok,
         Close,

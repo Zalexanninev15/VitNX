@@ -9,35 +9,35 @@ using System.Windows.Forms;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VNXDockRegion : Panel
+    public class VitNXDockRegion : Panel
     {
         #region Field Region
 
-        private List<VNXDockGroup> _groups;
+        private List<VitNXDockGroup> _groups;
 
         private Form _parentForm;
-        private VNXDockSplitter _splitter;
+        private VitNXDockSplitter _splitter;
 
         #endregion
 
         #region Property Region
 
-        public VNXDockPanel DockPanel { get; private set; }
+        public VitNXDockPanel DockPanel { get; private set; }
 
-        public VNXDockArea DockArea { get; private set; }
+        public VitNXDockArea DockArea { get; private set; }
 
-        public VNXDockContent ActiveDocument
+        public VitNXDockContent ActiveDocument
         {
             get
             {
-                if (DockArea != VNXDockArea.Document || _groups.Count == 0)
+                if (DockArea != VitNXDockArea.Document || _groups.Count == 0)
                     return null;
 
                 return _groups[0].VisibleContent;
             }
         }
 
-        public List<VNXDockGroup> Groups
+        public List<VitNXDockGroup> Groups
         {
             get
             {
@@ -49,9 +49,9 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXDockRegion(VNXDockPanel dockPanel, VNXDockArea dockArea)
+        public VitNXDockRegion(VitNXDockPanel dockPanel, VitNXDockArea dockArea)
         {
-            _groups = new List<VNXDockGroup>();
+            _groups = new List<VitNXDockGroup>();
 
             DockPanel = dockPanel;
             DockArea = dockArea;
@@ -63,18 +63,18 @@ namespace VitNX.Docking
 
         #region Method Region
 
-        internal void AddContent(VNXDockContent dockContent)
+        internal void AddContent(VitNXDockContent dockContent)
         {
             AddContent(dockContent, null);
         }
 
-        internal void AddContent(VNXDockContent dockContent, VNXDockGroup dockGroup)
+        internal void AddContent(VitNXDockContent dockContent, VitNXDockGroup dockGroup)
         {
             // If no existing group is specified then create a new one
             if (dockGroup == null)
             {
                 // If this is the document region, then default to first group if it exists
-                if (DockArea == VNXDockArea.Document && _groups.Count > 0)
+                if (DockArea == VitNXDockArea.Document && _groups.Count > 0)
                     dockGroup = _groups[0];
                 else
                     dockGroup = CreateGroup();
@@ -92,7 +92,7 @@ namespace VitNX.Docking
             PositionGroups();
         }
 
-        internal void InsertContent(VNXDockContent dockContent, VNXDockGroup dockGroup, DockInsertType insertType)
+        internal void InsertContent(VitNXDockContent dockContent, VitNXDockGroup dockGroup, DockInsertType insertType)
         {
             var order = dockGroup.Order;
 
@@ -113,21 +113,21 @@ namespace VitNX.Docking
             PositionGroups();
         }
 
-        internal void RemoveContent(VNXDockContent dockContent)
+        internal void RemoveContent(VitNXDockContent dockContent)
         {
             dockContent.DockRegion = null;
 
             var group = dockContent.DockGroup;
             group.RemoveContent(dockContent);
 
-            dockContent.DockArea = VNXDockArea.None;
+            dockContent.DockArea = VitNXDockArea.None;
 
             // If that was the final content in the group then remove the group
             if (group.ContentCount == 0)
                 RemoveGroup(group);
 
             // If we just removed the final group, and this isn't the document region, then hide
-            if (_groups.Count == 0 && DockArea != VNXDockArea.Document)
+            if (_groups.Count == 0 && DockArea != VitNXDockArea.Document)
             {
                 Visible = false;
                 RemoveSplitter();
@@ -136,9 +136,9 @@ namespace VitNX.Docking
             PositionGroups();
         }
 
-        public List<VNXDockContent> GetContents()
+        public List<VitNXDockContent> GetContents()
         {
-            var result = new List<VNXDockContent>();
+            var result = new List<VitNXDockContent>();
             
             foreach (var group in _groups)
                 result.AddRange(group.GetContents());
@@ -146,7 +146,7 @@ namespace VitNX.Docking
             return result;
         }
 
-        private VNXDockGroup CreateGroup()
+        private VitNXDockGroup CreateGroup()
         {
             var order = 0;
 
@@ -160,14 +160,14 @@ namespace VitNX.Docking
                 }
             }
 
-            var newGroup = new VNXDockGroup(DockPanel, this, order);
+            var newGroup = new VitNXDockGroup(DockPanel, this, order);
             _groups.Add(newGroup);
             Controls.Add(newGroup);
 
             return newGroup;
         }
 
-        private VNXDockGroup InsertGroup(int order)
+        private VitNXDockGroup InsertGroup(int order)
         {
             foreach (var group in _groups)
             {
@@ -175,14 +175,14 @@ namespace VitNX.Docking
                     group.Order++;
             }
 
-            var newGroup = new VNXDockGroup(DockPanel, this, order);
+            var newGroup = new VitNXDockGroup(DockPanel, this, order);
             _groups.Add(newGroup);
             Controls.Add(newGroup);
 
             return newGroup;
         }
 
-        private void RemoveGroup(VNXDockGroup group)
+        private void RemoveGroup(VitNXDockGroup group)
         {
             var lastOrder = group.Order;
 
@@ -203,14 +203,14 @@ namespace VitNX.Docking
             switch (DockArea)
             {
                 default:
-                case VNXDockArea.Document:
+                case VitNXDockArea.Document:
                     dockStyle = DockStyle.Fill;
                     break;
-                case VNXDockArea.Left:
-                case VNXDockArea.Right:
+                case VitNXDockArea.Left:
+                case VitNXDockArea.Right:
                     dockStyle = DockStyle.Top;
                     break;
-                case VNXDockArea.Bottom:
+                case VitNXDockArea.Bottom:
                     dockStyle = DockStyle.Left;
                     break;
             }
@@ -249,13 +249,13 @@ namespace VitNX.Docking
             switch (DockArea)
             {
                 default:
-                case VNXDockArea.Document:
+                case VitNXDockArea.Document:
                     return;
-                case VNXDockArea.Left:
-                case VNXDockArea.Right:
+                case VitNXDockArea.Left:
+                case VitNXDockArea.Right:
                     size = new Size(ClientRectangle.Width, ClientRectangle.Height / _groups.Count);
                     break;
-                case VNXDockArea.Bottom:
+                case VitNXDockArea.Bottom:
                     size = new Size(ClientRectangle.Width / _groups.Count, ClientRectangle.Height);
                     break;
             }
@@ -271,21 +271,21 @@ namespace VitNX.Docking
             switch (DockArea)
             {
                 default:
-                case VNXDockArea.Document:
+                case VitNXDockArea.Document:
                     Dock = DockStyle.Fill;
                     Padding = new Padding(0, 1, 0, 0);
                     break;
-                case VNXDockArea.Left:
+                case VitNXDockArea.Left:
                     Dock = DockStyle.Left;
                     Padding = new Padding(0, 0, 1, 0);
                     Visible = false;
                     break;
-                case VNXDockArea.Right:
+                case VitNXDockArea.Right:
                     Dock = DockStyle.Right;
                     Padding = new Padding(1, 0, 0, 0);
                     Visible = false;
                     break;
-                case VNXDockArea.Bottom:
+                case VitNXDockArea.Bottom:
                     Dock = DockStyle.Bottom;
                     Padding = new Padding(0, 0, 0, 0);
                     Visible = false;
@@ -300,14 +300,14 @@ namespace VitNX.Docking
 
             switch (DockArea)
             {
-                case VNXDockArea.Left:
-                    _splitter = new VNXDockSplitter(DockPanel, this, VNXSplitterType.Right);
+                case VitNXDockArea.Left:
+                    _splitter = new VitNXDockSplitter(DockPanel, this, VitNXSplitterType.Right);
                     break;
-                case VNXDockArea.Right:
-                    _splitter = new VNXDockSplitter(DockPanel, this, VNXSplitterType.Left);
+                case VitNXDockArea.Right:
+                    _splitter = new VitNXDockSplitter(DockPanel, this, VitNXSplitterType.Left);
                     break;
-                case VNXDockArea.Bottom:
-                    _splitter = new VNXDockSplitter(DockPanel, this, VNXSplitterType.Top);
+                case VitNXDockArea.Bottom:
+                    _splitter = new VitNXDockSplitter(DockPanel, this, VitNXSplitterType.Top);
                     break;
                 default:
                     return;
@@ -381,18 +381,18 @@ namespace VitNX.Docking
             }
 
             // Draw border
-            using (var p = new Pen(Colors.VNXBorder))
+            using (var p = new Pen(Colors.VitNXBorder))
             {
                 // Top border
-                if (DockArea == VNXDockArea.Document)
+                if (DockArea == VitNXDockArea.Document)
                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
 
                 // Left border
-                if (DockArea == VNXDockArea.Right)
+                if (DockArea == VitNXDockArea.Right)
                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Left, ClientRectangle.Height);
 
                 // Right border
-                if (DockArea == VNXDockArea.Left)
+                if (DockArea == VitNXDockArea.Left)
                     g.DrawLine(p, ClientRectangle.Right - 1, 0, ClientRectangle.Right - 1, ClientRectangle.Height);
             }
         }

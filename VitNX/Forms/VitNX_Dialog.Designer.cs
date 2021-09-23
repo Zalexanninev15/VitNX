@@ -2,7 +2,7 @@
 
 namespace VitNX.Forms
 {
-    partial class VNXDialog
+    partial class VitNXDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,14 @@ namespace VitNX.Forms
         {
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.flowInner = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOk = new VNXButton();
-            this.btnCancel = new VNXButton();
-            this.btnClose = new VNXButton();
-            this.btnYes = new VNXButton();
-            this.btnNo = new VNXButton();
-            this.btnAbort = new VNXButton();
-            this.btnRetry = new VNXButton();
-            this.btnIgnore = new VNXButton();
+            this.btnOk = new VitNXButton();
+            this.btnCancel = new VitNXButton();
+            this.btnClose = new VitNXButton();
+            this.btnYes = new VitNXButton();
+            this.btnNo = new VitNXButton();
+            this.btnAbort = new VitNXButton();
+            this.btnRetry = new VitNXButton();
+            this.btnIgnore = new VitNXButton();
             this.pnlFooter.SuspendLayout();
             this.flowInner.SuspendLayout();
             this.SuspendLayout();
@@ -158,14 +158,14 @@ namespace VitNX.Forms
             this.btnIgnore.TabIndex = 10;
             this.btnIgnore.Text = "Ignore";
             // 
-            // VNXDialog
+            // VitNXDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 402);
             this.Controls.Add(this.pnlFooter);
-            this.Name = "VNXDialog";
-            this.Text = "VNXDialog";
+            this.Name = "VitNXDialog";
+            this.Text = "VitNXDialog";
             this.pnlFooter.ResumeLayout(false);
             this.flowInner.ResumeLayout(false);
             this.ResumeLayout(false);

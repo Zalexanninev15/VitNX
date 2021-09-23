@@ -3,7 +3,7 @@ using VitNX.Docking;
 
 namespace Example
 {
-    public partial class DockProject : VNXToolWindow
+    public partial class DockProject : VitNXToolWindow
     {
         #region Constructor Region
 
@@ -15,13 +15,13 @@ namespace Example
             var childCount = 0;
             for (var i = 0; i < 20; i++)
             {
-                var node = new VNXTreeNode($"Root node #{i}");
+                var node = new VitNXTreeNode($"Root node #{i}");
                 node.ExpandedIcon = Icons.folder_open;
                 node.Icon = Icons.folder_closed;
 
                 for (var x = 0; x < 10; x++)
                 {
-                    var childNode = new VNXTreeNode($"Child node #{childCount}");
+                    var childNode = new VitNXTreeNode($"Child node #{childCount}");
                     childNode.Icon = Icons.files;
                     childCount++;
                     node.Nodes.Add(childNode);

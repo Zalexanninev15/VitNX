@@ -19,12 +19,12 @@ namespace VitNX.Config
             get { return Color.FromArgb(66, 77, 95); }
         }
 
-        public static Color VNXBlueBackground
+        public static Color VitNXBlueBackground
         {
             get { return Color.FromArgb(52, 57, 66); }
         }
 
-        public static Color VNXBackground
+        public static Color VitNXBackground
         {
             get { return Color.FromArgb(43, 43, 43); }
         }
@@ -54,7 +54,7 @@ namespace VitNX.Config
             get { return Color.FromArgb(81, 81, 81); }
         }
 
-        public static Color VNXBorder
+        public static Color VitNXBorder
         {
             get { return Color.FromArgb(51, 51, 51); }
         }
@@ -89,12 +89,12 @@ namespace VitNX.Config
             get { return Color.FromArgb(92, 92, 92); }
         }
 
-        public static Color VNXGreySelection
+        public static Color VitNXGreySelection
         {
             get { return Color.FromArgb(82, 82, 82); }
         }
 
-        public static Color VNXBlueBorder
+        public static Color VitNXBlueBorder
         {
             get { return Color.FromArgb(51, 61, 78); }
         }

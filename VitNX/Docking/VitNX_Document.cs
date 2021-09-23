@@ -4,13 +4,13 @@ using System.ComponentModel;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VNXDocument : VNXDockContent
+    public class VitNXDocument : VitNXDockContent
     {
         #region Property Region
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new VNXDockArea DefaultDockArea
+        public new VitNXDockArea DefaultDockArea
         {
             get { return base.DefaultDockArea; }
         }
@@ -19,10 +19,10 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXDocument()
+        public VitNXDocument()
         {
             BackColor = Colors.GreyBackground;
-            base.DefaultDockArea = VNXDockArea.Document;
+            base.DefaultDockArea = VitNXDockArea.Document;
         }
 
         #endregion

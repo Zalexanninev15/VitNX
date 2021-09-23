@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXSectionPanel : Panel
+    public class VitNXSectionPanel : Panel
     {
         #region Field Region
 
@@ -38,7 +38,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VNXSectionPanel()
+        public VitNXSectionPanel()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
@@ -90,7 +90,7 @@ namespace VitNX.Controls
 
             // Draw header
             var bgColor = ContainsFocus ? Colors.BlueBackground : Colors.HeaderBackground;
-            var VNXColor = ContainsFocus ? Colors.VNXBlueBorder : Colors.VNXBorder;
+            var VitNXColor = ContainsFocus ? Colors.VitNXBlueBorder : Colors.VitNXBorder;
             var lightColor = ContainsFocus ? Colors.LightBlueBorder : Colors.LightBorder;
 
             using (var b = new SolidBrush(bgColor))
@@ -99,7 +99,7 @@ namespace VitNX.Controls
                 g.FillRectangle(b, bgRect);
             }
 
-            using (var p = new Pen(VNXColor))
+            using (var p = new Pen(VitNXColor))
             {
                 g.DrawLine(p, rect.Left, 0, rect.Right, 0);
                 g.DrawLine(p, rect.Left, 25 - 1, rect.Right, 25 - 1);
@@ -128,7 +128,7 @@ namespace VitNX.Controls
             }
 
             // Draw border
-            using (var p = new Pen(Colors.VNXBorder, 1))
+            using (var p = new Pen(Colors.VitNXBorder, 1))
             {
                 var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
 

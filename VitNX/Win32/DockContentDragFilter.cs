@@ -11,29 +11,29 @@ namespace VitNX.Win32
     {
         #region Field Region
 
-        private VNXDockPanel _dockPanel;
+        private VitNXDockPanel _dockPanel;
 
-        private VNXDockContent _dragContent;
+        private VitNXDockContent _dragContent;
 
-        private VNXTranslucentForm _highlightForm;
+        private VitNXTranslucentForm _highlightForm;
 
         private bool _isDragging = false;
-        private VNXDockRegion _targetRegion;
-        private VNXDockGroup _targetGroup;
+        private VitNXDockRegion _targetRegion;
+        private VitNXDockGroup _targetGroup;
         private DockInsertType _insertType = DockInsertType.None;
 
-        private Dictionary<VNXDockRegion, DockDropArea> _regionDropAreas = new Dictionary<VNXDockRegion, DockDropArea>();
-        private Dictionary<VNXDockGroup, DockDropCollection> _groupDropAreas = new Dictionary<VNXDockGroup, DockDropCollection>();
+        private Dictionary<VitNXDockRegion, DockDropArea> _regionDropAreas = new Dictionary<VitNXDockRegion, DockDropArea>();
+        private Dictionary<VitNXDockGroup, DockDropCollection> _groupDropAreas = new Dictionary<VitNXDockGroup, DockDropCollection>();
 
         #endregion
 
         #region Constructor Region
 
-        public DockContentDragFilter(VNXDockPanel dockPanel)
+        public DockContentDragFilter(VitNXDockPanel dockPanel)
         {
             _dockPanel = dockPanel;
 
-            _highlightForm = new VNXTranslucentForm(Colors.BlueSelection);
+            _highlightForm = new VitNXTranslucentForm(Colors.BlueSelection);
         }
 
         #endregion
@@ -96,15 +96,15 @@ namespace VitNX.Win32
 
         #region Method Region
 
-        public void StartDrag(VNXDockContent content)
+        public void StartDrag(VitNXDockContent content)
         {
-            _regionDropAreas = new Dictionary<VNXDockRegion, DockDropArea>();
-            _groupDropAreas = new Dictionary<VNXDockGroup, DockDropCollection>();
+            _regionDropAreas = new Dictionary<VitNXDockRegion, DockDropArea>();
+            _groupDropAreas = new Dictionary<VitNXDockGroup, DockDropCollection>();
 
             // Add all regions and groups to the drop collections
             foreach (var region in _dockPanel.Regions.Values)
             {
-                if (region.DockArea == VNXDockArea.Document)
+                if (region.DockArea == VitNXDockArea.Document)
                     continue;
 
                 // If the region is visible then build drop areas for the groups.

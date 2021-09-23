@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VNXTreeView : VNXScrollView
+    public class VitNXTreeView : VitNXScrollView
     {
         #region Event Region
 
@@ -34,11 +34,11 @@ namespace VitNX.Controls
         private int _itemHeight = 20;
         private int _indent = 20;
 
-        private ObservableList<VNXTreeNode> _nodes;
-        private ObservableCollection<VNXTreeNode> _selectedNodes;
+        private ObservableList<VitNXTreeNode> _nodes;
+        private ObservableCollection<VitNXTreeNode> _selectedNodes;
 
-        private VNXTreeNode _anchoredNodeStart;
-        private VNXTreeNode _anchoredNodeEnd;
+        private VitNXTreeNode _anchoredNodeStart;
+        private VitNXTreeNode _anchoredNodeEnd;
 
         private Bitmap _nodeClosed;
         private Bitmap _nodeClosedHover;
@@ -47,10 +47,10 @@ namespace VitNX.Controls
         private Bitmap _nodeOpenHover;
         private Bitmap _nodeOpenHoverSelected;
 
-        private VNXTreeNode _provisionalNode;
-        private VNXTreeNode _dropNode;
+        private VitNXTreeNode _provisionalNode;
+        private VitNXTreeNode _dropNode;
         private bool _provisionalDragging;
-        private List<VNXTreeNode> _dragNodes;
+        private List<VitNXTreeNode> _dragNodes;
         private Point _dragPos;
 
         #endregion
@@ -59,7 +59,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObservableList<VNXTreeNode> Nodes
+        public ObservableList<VitNXTreeNode> Nodes
         {
             get { return _nodes; }
             set
@@ -87,7 +87,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObservableCollection<VNXTreeNode> SelectedNodes
+        public ObservableCollection<VitNXTreeNode> SelectedNodes
         {
             get { return _selectedNodes; }
         }
@@ -140,16 +140,16 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public IComparer<VNXTreeNode> TreeViewNodeSorter { get; set; }
+        public IComparer<VitNXTreeNode> TreeViewNodeSorter { get; set; }
 
         #endregion
 
         #region Constructor Region
 
-        public VNXTreeView()
+        public VitNXTreeView()
         {
-            Nodes = new ObservableList<VNXTreeNode>();
-            _selectedNodes = new ObservableCollection<VNXTreeNode>();
+            Nodes = new ObservableList<VitNXTreeNode>();
+            _selectedNodes = new ObservableCollection<VitNXTreeNode>();
             _selectedNodes.CollectionChanged += SelectedNodes_CollectionChanged;
 
             MaxDragChange = _itemHeight;
@@ -192,7 +192,7 @@ namespace VitNX.Controls
 
         #region Event Handler Region
 
-        private void Nodes_ItemsAdded(object sender, ObservableListModified<VNXTreeNode> e)
+        private void Nodes_ItemsAdded(object sender, ObservableListModified<VitNXTreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -208,7 +208,7 @@ namespace VitNX.Controls
             UpdateNodes();
         }
 
-        private void Nodes_ItemsRemoved(object sender, ObservableListModified<VNXTreeNode> e)
+        private void Nodes_ItemsRemoved(object sender, ObservableListModified<VitNXTreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -221,7 +221,7 @@ namespace VitNX.Controls
             UpdateNodes();
         }
 
-        private void ChildNodes_ItemsAdded(object sender, ObservableListModified<VNXTreeNode> e)
+        private void ChildNodes_ItemsAdded(object sender, ObservableListModified<VitNXTreeNode> e)
         {
             foreach (var node in e.Items)
                 HookNodeEvents(node);
@@ -229,7 +229,7 @@ namespace VitNX.Controls
             UpdateNodes();
         }
 
-        private void ChildNodes_ItemsRemoved(object sender, ObservableListModified<VNXTreeNode> e)
+        private void ChildNodes_ItemsRemoved(object sender, ObservableListModified<VitNXTreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -535,7 +535,7 @@ namespace VitNX.Controls
 
         #region Method Region
 
-        private void HookNodeEvents(VNXTreeNode node)
+        private void HookNodeEvents(VitNXTreeNode node)
         {
             node.Nodes.ItemsAdded += ChildNodes_ItemsAdded;
             node.Nodes.ItemsRemoved += ChildNodes_ItemsRemoved;
@@ -548,7 +548,7 @@ namespace VitNX.Controls
                 HookNodeEvents(childNode);
         }
 
-        private void UnhookNodeEvents(VNXTreeNode node)
+        private void UnhookNodeEvents(VitNXTreeNode node)
         {
             node.Nodes.ItemsAdded -= ChildNodes_ItemsAdded;
             node.Nodes.ItemsRemoved -= ChildNodes_ItemsRemoved;
@@ -574,7 +574,7 @@ namespace VitNX.Controls
             var yOffset = 0;
             var isOdd = false;
             var index = 0;
-            VNXTreeNode prevNode = null;
+            VitNXTreeNode prevNode = null;
             
             for (var i = 0; i <= Nodes.Count - 1; i++)
             {
@@ -589,7 +589,7 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        private void UpdateNode(VNXTreeNode node, ref VNXTreeNode prevNode, int indent, ref int yOffset,
+        private void UpdateNode(VitNXTreeNode node, ref VitNXTreeNode prevNode, int indent, ref int yOffset,
                                 ref bool isOdd, ref int index)
         {
             UpdateNodeBounds(node, yOffset, indent);
@@ -616,7 +616,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void UpdateNodeBounds(VNXTreeNode node, int yOffset, int indent)
+        private void UpdateNodeBounds(VitNXTreeNode node, int yOffset, int indent)
         {
             var expandTop = yOffset + (ItemHeight / 2) - (_expandAreaSize / 2);
             node.ExpandArea = new Rectangle(indent + 3, expandTop, _expandAreaSize, _expandAreaSize);
@@ -693,7 +693,7 @@ namespace VitNX.Controls
                 CheckNodeHover(node, OffsetMousePosition);
         }
 
-        private void NodeMouseLeave(VNXTreeNode node)
+        private void NodeMouseLeave(VitNXTreeNode node)
         {
             node.ExpandAreaHot = false;
 
@@ -703,7 +703,7 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        private void CheckNodeHover(VNXTreeNode node, Point location)
+        private void CheckNodeHover(VitNXTreeNode node, Point location)
         {
             if (IsDragging)
             {
@@ -733,7 +733,7 @@ namespace VitNX.Controls
                 CheckNodeHover(childNode, location);
         }
 
-        private void CheckNodeClick(VNXTreeNode node, Point location, MouseButtons button)
+        private void CheckNodeClick(VitNXTreeNode node, Point location, MouseButtons button)
         {
             var rect = GetNodeFullRowArea(node);
             if (rect.Contains(location))
@@ -790,7 +790,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void CheckNodeDoubleClick(VNXTreeNode node, Point location)
+        private void CheckNodeDoubleClick(VitNXTreeNode node, Point location)
         {
             var rect = GetNodeFullRowArea(node);
             if (rect.Contains(location))
@@ -808,7 +808,7 @@ namespace VitNX.Controls
             }
         }
 
-        public void SelectNode(VNXTreeNode node)
+        public void SelectNode(VitNXTreeNode node)
         {
             _selectedNodes.Clear();
             _selectedNodes.Add(node);
@@ -819,9 +819,9 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        public void SelectNodes(VNXTreeNode startNode, VNXTreeNode endNode)
+        public void SelectNodes(VitNXTreeNode startNode, VitNXTreeNode endNode)
         {
-            var nodes = new List<VNXTreeNode>();
+            var nodes = new List<VitNXTreeNode>();
 
             if (startNode == endNode)
                 nodes.Add(startNode);
@@ -850,7 +850,7 @@ namespace VitNX.Controls
             SelectNodes(nodes, false);
         }
 
-        public void SelectNodes(List<VNXTreeNode> nodes, bool updateAnchors = true)
+        public void SelectNodes(List<VitNXTreeNode> nodes, bool updateAnchors = true)
         {
             _selectedNodes.Clear();
 
@@ -866,13 +866,13 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        private void SelectAnchoredRange(VNXTreeNode node)
+        private void SelectAnchoredRange(VitNXTreeNode node)
         {
             _anchoredNodeEnd = node;
             SelectNodes(_anchoredNodeStart, _anchoredNodeEnd);
         }
 
-        public void ToggleNode(VNXTreeNode node)
+        public void ToggleNode(VitNXTreeNode node)
         {
             if (_selectedNodes.Contains(node))
             {
@@ -926,7 +926,7 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        public Rectangle GetNodeFullRowArea(VNXTreeNode node)
+        public Rectangle GetNodeFullRowArea(VitNXTreeNode node)
         {
             if (node.ParentNode != null && !node.ParentNode.Expanded)
                 return new Rectangle(-1, -1, -1, -1);
@@ -971,7 +971,7 @@ namespace VitNX.Controls
                 SortChildNodes(node);
         }
 
-        private void SortChildNodes(VNXTreeNode node)
+        private void SortChildNodes(VitNXTreeNode node)
         {
             node.Nodes.Sort(TreeViewNodeSorter);
 
@@ -979,7 +979,7 @@ namespace VitNX.Controls
                 SortChildNodes(childNode);
         }
 
-        public VNXTreeNode FindNode(string path)
+        public VitNXTreeNode FindNode(string path)
         {
             foreach (var node in Nodes)
             {
@@ -991,7 +991,7 @@ namespace VitNX.Controls
             return null;
         }
 
-        private VNXTreeNode FindNode(VNXTreeNode parentNode, string path, bool recursive = true)
+        private VitNXTreeNode FindNode(VitNXTreeNode parentNode, string path, bool recursive = true)
         {
             if (parentNode.FullPath == path)
                 return parentNode;
@@ -1025,7 +1025,7 @@ namespace VitNX.Controls
             }
 
             // Create initial list of nodes to drag
-            _dragNodes = new List<VNXTreeNode>();
+            _dragNodes = new List<VitNXTreeNode>();
             foreach (var node in SelectedNodes)
                 _dragNodes.Add(node);
 
@@ -1135,12 +1135,12 @@ namespace VitNX.Controls
             base.StopDrag();
         }
 
-        protected virtual bool ForceDropToParent(VNXTreeNode node)
+        protected virtual bool ForceDropToParent(VitNXTreeNode node)
         {
             return false;
         }
 
-        protected virtual bool CanMoveNodes(List<VNXTreeNode> dragNodes, VNXTreeNode dropNode, bool isMoving = false)
+        protected virtual bool CanMoveNodes(List<VitNXTreeNode> dragNodes, VitNXTreeNode dropNode, bool isMoving = false)
         {
             if (dropNode == null)
                 return false;
@@ -1150,7 +1150,7 @@ namespace VitNX.Controls
                 if (node == dropNode)
                 {
                     if (isMoving)
-                        VNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
+                        VitNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
 
                     return false;
                 }
@@ -1158,7 +1158,7 @@ namespace VitNX.Controls
                 if (node.ParentNode != null && node.ParentNode == dropNode)
                 {
                     if (isMoving)
-                        VNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
+                        VitNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
 
                     return false;
                 }
@@ -1169,7 +1169,7 @@ namespace VitNX.Controls
                     if (node == parentNode)
                     {
                         if (isMoving)
-                            VNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is a subfolder of the source folder.", Application.ProductName);
+                            VitNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is a subfolder of the source folder.", Application.ProductName);
 
                         return false;
                     }
@@ -1181,10 +1181,10 @@ namespace VitNX.Controls
             return true;
         }
 
-        protected virtual void MoveNodes(List<VNXTreeNode> dragNodes, VNXTreeNode dropNode)
+        protected virtual void MoveNodes(List<VitNXTreeNode> dragNodes, VitNXTreeNode dropNode)
         { }
 
-        protected virtual void NodesMoved(List<VNXTreeNode> nodesMoved)
+        protected virtual void NodesMoved(List<VitNXTreeNode> nodesMoved)
         { }
 
         #endregion
@@ -1199,7 +1199,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void DrawNode(VNXTreeNode node, Graphics g)
+        private void DrawNode(VitNXTreeNode node, Graphics g)
         {
             var rect = GetNodeFullRowArea(node);
 

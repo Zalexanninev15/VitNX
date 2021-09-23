@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Forms
 {
-    internal class VNXTranslucentForm : Form
+    internal class VitNXTranslucentForm : Form
     {
         #region Property Region
 
@@ -16,7 +16,7 @@ namespace VitNX.Forms
 
         #region Constructor Region
 
-        public VNXTranslucentForm(Color backColor, double opacity = 0.6)
+        public VitNXTranslucentForm(Color backColor, double opacity = 0.6)
         {
             StartPosition = FormStartPosition.Manual;
             FormBorderStyle = FormBorderStyle.None;

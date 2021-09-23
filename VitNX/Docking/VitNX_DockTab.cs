@@ -2,11 +2,11 @@
 
 namespace VitNX.Docking
 {
-    internal class VNXDockTab
+    internal class VitNXDockTab
     {
         #region Property Region
 
-        public VNXDockContent DockContent { get; set; }
+        public VitNXDockContent DockContent { get; set; }
 
         public Rectangle ClientRectangle { get; set; }
 
@@ -22,7 +22,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXDockTab(VNXDockContent content)
+        public VitNXDockTab(VitNXDockContent content)
         {
             DockContent = content;
         }

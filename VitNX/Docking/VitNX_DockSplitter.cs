@@ -5,18 +5,18 @@ using System.Windows.Forms;
 
 namespace VitNX.Docking
 {
-    public class VNXDockSplitter
+    public class VitNXDockSplitter
     {
         #region Field Region
 
         private Control _parentControl;
         private Control _control;
 
-        private VNXSplitterType _splitterType;
+        private VitNXSplitterType _splitterType;
 
         private int _minimum;
         private int _maximum;
-        private VNXTranslucentForm _overlayForm;
+        private VitNXTranslucentForm _overlayForm;
 
         #endregion
 
@@ -30,7 +30,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXDockSplitter(Control parentControl, Control control, VNXSplitterType splitterType)
+        public VitNXDockSplitter(Control parentControl, Control control, VitNXSplitterType splitterType)
         {
             _parentControl = parentControl;
             _control = control;
@@ -38,12 +38,12 @@ namespace VitNX.Docking
 
             switch (_splitterType)
             {
-                case VNXSplitterType.Left:
-                case VNXSplitterType.Right:
+                case VitNXSplitterType.Left:
+                case VitNXSplitterType.Right:
                     ResizeCursor = Cursors.SizeWE;
                     break;
-                case VNXSplitterType.Top:
-                case VNXSplitterType.Bottom:
+                case VitNXSplitterType.Top:
+                case VitNXSplitterType.Bottom:
                     ResizeCursor = Cursors.SizeNS;
                     break;
             }
@@ -55,7 +55,7 @@ namespace VitNX.Docking
 
         public void ShowOverlay()
         {
-            _overlayForm = new VNXTranslucentForm(Color.Black);
+            _overlayForm = new VitNXTranslucentForm(Color.Black);
             _overlayForm.Visible = true;
 
             UpdateOverlay(new Point(0, 0));
@@ -72,7 +72,7 @@ namespace VitNX.Docking
 
             switch (_splitterType)
             {
-                case VNXSplitterType.Left:
+                case VitNXSplitterType.Left:
                     var leftX = Math.Max(bounds.Location.X - difference.X, _minimum);
 
                     if (_maximum != 0 && leftX > _maximum)
@@ -80,7 +80,7 @@ namespace VitNX.Docking
 
                     bounds.Location = new Point(leftX, bounds.Location.Y);
                     break;
-                case VNXSplitterType.Right:
+                case VitNXSplitterType.Right:
                     var rightX = Math.Max(bounds.Location.X - difference.X, _minimum);
 
                     if (_maximum != 0 && rightX > _maximum)
@@ -88,7 +88,7 @@ namespace VitNX.Docking
 
                     bounds.Location = new Point(rightX, bounds.Location.Y);
                     break;
-                case VNXSplitterType.Top:
+                case VitNXSplitterType.Top:
                     var topY = Math.Max(bounds.Location.Y - difference.Y, _minimum);
 
                     if (_maximum != 0 && topY > _maximum)
@@ -96,7 +96,7 @@ namespace VitNX.Docking
 
                     bounds.Location = new Point(bounds.Location.X, topY);
                     break;
-                case VNXSplitterType.Bottom:
+                case VitNXSplitterType.Bottom:
                     var bottomY = Math.Max(bounds.Location.Y - difference.Y, _minimum);
 
                     if (_maximum != 0 && bottomY > _maximum)
@@ -113,16 +113,16 @@ namespace VitNX.Docking
         {
             switch (_splitterType)
             {
-                case VNXSplitterType.Left:
+                case VitNXSplitterType.Left:
                     _control.Width += difference.X;
                     break;
-                case VNXSplitterType.Right:
+                case VitNXSplitterType.Right:
                     _control.Width -= difference.X;
                     break;
-                case VNXSplitterType.Top:
+                case VitNXSplitterType.Top:
                     _control.Height += difference.Y;
                     break;
-                case VNXSplitterType.Bottom:
+                case VitNXSplitterType.Bottom:
                     _control.Height -= difference.Y;
                     break;
             }
@@ -136,19 +136,19 @@ namespace VitNX.Docking
 
             switch (_splitterType)
             {
-                case VNXSplitterType.Left:
+                case VitNXSplitterType.Left:
                     Bounds = new Rectangle(bounds.Left - 2, bounds.Top, 5, bounds.Height);
                     _maximum = bounds.Right - 2 - _control.MinimumSize.Width;
                     break;
-                case VNXSplitterType.Right:
+                case VitNXSplitterType.Right:
                     Bounds = new Rectangle(bounds.Right - 2, bounds.Top, 5, bounds.Height);
                     _minimum = bounds.Left - 2 + _control.MinimumSize.Width;
                     break;
-                case VNXSplitterType.Top:
+                case VitNXSplitterType.Top:
                     Bounds = new Rectangle(bounds.Left, bounds.Top - 2, bounds.Width, 5);
                     _maximum = bounds.Bottom - 2 - _control.MinimumSize.Height;
                     break;
-                case VNXSplitterType.Bottom:
+                case VitNXSplitterType.Bottom:
                     Bounds = new Rectangle(bounds.Left, bounds.Bottom - 2, bounds.Width, 5);
                     _minimum = bounds.Top - 2 + _control.MinimumSize.Height;
                     break;

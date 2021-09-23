@@ -8,12 +8,12 @@ namespace VitNX.Controls
 {
     [ToolboxBitmap(typeof(Button))]
     [DefaultEvent("Click")]
-    public class VNXButton : Button
+    public class VitNXButton : Button
     {
         #region Field Region
 
-        private VNXButtonStyle _style = VNXButtonStyle.Normal;
-        private VNXControlState _buttonState = VNXControlState.Normal;
+        private VitNXButtonStyle _style = VitNXButtonStyle.Normal;
+        private VitNXControlState _buttonState = VitNXControlState.Normal;
 
         private bool _isDefault;
         private bool _spacePressed;
@@ -47,8 +47,8 @@ namespace VitNX.Controls
 
         [Category("Appearance")]
         [Description("Determines the style of the button.")]
-        [DefaultValue(VNXButtonStyle.Normal)]
-        public VNXButtonStyle ButtonStyle
+        [DefaultValue(VitNXButtonStyle.Normal)]
+        public VitNXButtonStyle ButtonStyle
         {
             get { return _style; }
             set
@@ -84,7 +84,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXControlState ButtonState
+        public VitNXControlState ButtonState
         {
             get { return _buttonState; }
         }
@@ -135,7 +135,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VNXButton()
+        public VitNXButton()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
@@ -144,7 +144,7 @@ namespace VitNX.Controls
             base.UseVisualStyleBackColor = false;
             base.UseCompatibleTextRendering = false;
 
-            SetButtonState(VNXControlState.Normal);
+            SetButtonState(VitNXControlState.Normal);
             Padding = new Padding(_padding);
         }
 
@@ -152,7 +152,7 @@ namespace VitNX.Controls
 
         #region Method Region
 
-        private void SetButtonState(VNXControlState buttonState)
+        private void SetButtonState(VitNXControlState buttonState)
         {
             if (_buttonState != buttonState)
             {
@@ -187,13 +187,13 @@ namespace VitNX.Controls
             if (e.Button == MouseButtons.Left)
             {
                 if (ClientRectangle.Contains(e.Location))
-                    SetButtonState(VNXControlState.Pressed);
+                    SetButtonState(VitNXControlState.Pressed);
                 else
-                    SetButtonState(VNXControlState.Hover);
+                    SetButtonState(VitNXControlState.Hover);
             }
             else
             {
-                SetButtonState(VNXControlState.Hover);
+                SetButtonState(VitNXControlState.Hover);
             }
         }
 
@@ -204,7 +204,7 @@ namespace VitNX.Controls
             if (!ClientRectangle.Contains(e.Location))
                 return;
 
-            SetButtonState(VNXControlState.Pressed);
+            SetButtonState(VitNXControlState.Pressed);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
@@ -214,7 +214,7 @@ namespace VitNX.Controls
             if (_spacePressed)
                 return;
 
-            SetButtonState(VNXControlState.Normal);
+            SetButtonState(VitNXControlState.Normal);
         }
 
         protected override void OnMouseLeave(EventArgs e)
@@ -224,7 +224,7 @@ namespace VitNX.Controls
             if (_spacePressed)
                 return;
 
-            SetButtonState(VNXControlState.Normal);
+            SetButtonState(VitNXControlState.Normal);
         }
 
         protected override void OnMouseCaptureChanged(EventArgs e)
@@ -237,7 +237,7 @@ namespace VitNX.Controls
             var location = Cursor.Position;
 
             if (!ClientRectangle.Contains(location))
-                SetButtonState(VNXControlState.Normal);
+                SetButtonState(VitNXControlState.Normal);
         }
 
         protected override void OnGotFocus(EventArgs e)
@@ -256,9 +256,9 @@ namespace VitNX.Controls
             var location = Cursor.Position;
 
             if (!ClientRectangle.Contains(location))
-                SetButtonState(VNXControlState.Normal);
+                SetButtonState(VitNXControlState.Normal);
             else
-                SetButtonState(VNXControlState.Hover);
+                SetButtonState(VitNXControlState.Hover);
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -268,7 +268,7 @@ namespace VitNX.Controls
             if (e.KeyCode == Keys.Space)
             {
                 _spacePressed = true;
-                SetButtonState(VNXControlState.Pressed);
+                SetButtonState(VitNXControlState.Pressed);
             }
         }
 
@@ -283,9 +283,9 @@ namespace VitNX.Controls
                 var location = Cursor.Position;
 
                 if (!ClientRectangle.Contains(location))
-                    SetButtonState(VNXControlState.Normal);
+                    SetButtonState(VitNXControlState.Normal);
                 else
-                    SetButtonState(VNXControlState.Hover);
+                    SetButtonState(VitNXControlState.Hover);
             }
         }
 
@@ -311,37 +311,37 @@ namespace VitNX.Controls
 
             var textColor = Colors.LightText;
             var borderColor = Colors.GreySelection;
-            var fillColor = _isDefault ? Colors.VNXBlueBackground : Colors.LightBackground;
+            var fillColor = _isDefault ? Colors.VitNXBlueBackground : Colors.LightBackground;
 
             if (Enabled)
             {
-                if (ButtonStyle == VNXButtonStyle.Normal)
+                if (ButtonStyle == VitNXButtonStyle.Normal)
                 {
                     if (Focused && TabStop)
                         borderColor = Colors.BlueHighlight;
 
                     switch (ButtonState)
                     {
-                        case VNXControlState.Hover:
+                        case VitNXControlState.Hover:
                             fillColor = _isDefault ? Colors.BlueBackground : Colors.LighterBackground;
                             break;
-                        case VNXControlState.Pressed:
-                            fillColor = _isDefault ? Colors.VNXBackground : Colors.VNXBackground;
+                        case VitNXControlState.Pressed:
+                            fillColor = _isDefault ? Colors.VitNXBackground : Colors.VitNXBackground;
                             break;
                     }
                 }
-                else if (ButtonStyle == VNXButtonStyle.Flat)
+                else if (ButtonStyle == VitNXButtonStyle.Flat)
                 {
                     switch (ButtonState)
                     {
-                        case VNXControlState.Normal:
+                        case VitNXControlState.Normal:
                             fillColor = Colors.GreyBackground;
                             break;
-                        case VNXControlState.Hover:
+                        case VitNXControlState.Hover:
                             fillColor = Colors.MediumBackground;
                             break;
-                        case VNXControlState.Pressed:
-                            fillColor = Colors.VNXBackground;
+                        case VitNXControlState.Pressed:
+                            fillColor = Colors.VitNXBackground;
                             break;
                     }
                 }
@@ -349,7 +349,7 @@ namespace VitNX.Controls
             else
             {
                 textColor = Colors.DisabledText;
-                fillColor = Colors.VNXGreySelection;
+                fillColor = Colors.VitNXGreySelection;
             }
 
             using (var b = new SolidBrush(fillColor))
@@ -357,7 +357,7 @@ namespace VitNX.Controls
                 g.FillRectangle(b, rect);
             }
 
-            if (ButtonStyle == VNXButtonStyle.Normal)
+            if (ButtonStyle == VitNXButtonStyle.Normal)
             {
                 using (var p = new Pen(borderColor, 1))
                 {

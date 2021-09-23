@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Docking
 {
-    public enum VNXDockArea
+    public enum VitNXDockArea
     {
         None,
         Document,

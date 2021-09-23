@@ -4,9 +4,9 @@ namespace VitNX.Docking
 {
     public class DockContentEventArgs : EventArgs
     {
-        public VNXDockContent Content { get; private set; }
+        public VitNXDockContent Content { get; private set; }
 
-        public DockContentEventArgs(VNXDockContent content)
+        public DockContentEventArgs(VitNXDockContent content)
         {
             Content = content;
         }

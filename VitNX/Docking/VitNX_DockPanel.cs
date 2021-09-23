@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Docking
 {
-    public class VNXDockPanel : UserControl
+    public class VitNXDockPanel : UserControl
     {
         #region Event Region
 
@@ -20,10 +20,10 @@ namespace VitNX.Docking
 
         #region Field Region
 
-        private List<VNXDockContent> _contents;
-        private Dictionary<VNXDockArea, VNXDockRegion> _regions;
+        private List<VitNXDockContent> _contents;
+        private Dictionary<VitNXDockArea, VitNXDockRegion> _regions;
 
-        private VNXDockContent _activeContent;
+        private VitNXDockContent _activeContent;
         private bool _switchingContent = false;
 
         #endregion
@@ -32,7 +32,7 @@ namespace VitNX.Docking
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockContent ActiveContent
+        public VitNXDockContent ActiveContent
         {
             get { return _activeContent; }
             set
@@ -60,19 +60,19 @@ namespace VitNX.Docking
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockRegion ActiveRegion { get; internal set; }
+        public VitNXDockRegion ActiveRegion { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockGroup ActiveGroup { get; internal set; }
+        public VitNXDockGroup ActiveGroup { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockContent ActiveDocument
+        public VitNXDockContent ActiveDocument
         {
             get
             {
-                return _regions[VNXDockArea.Document].ActiveDocument;
+                return _regions[VitNXDockArea.Document].ActiveDocument;
             }
         }
 
@@ -86,7 +86,7 @@ namespace VitNX.Docking
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<VNXDockSplitter> Splitters { get; private set; }
+        public List<VitNXDockSplitter> Splitters { get; private set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -101,7 +101,7 @@ namespace VitNX.Docking
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public Dictionary<VNXDockArea, VNXDockRegion> Regions
+        public Dictionary<VitNXDockArea, VitNXDockRegion> Regions
         {
             get
             {
@@ -113,14 +113,14 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXDockPanel()
+        public VitNXDockPanel()
         {
-            Splitters = new List<VNXDockSplitter>();
+            Splitters = new List<VitNXDockSplitter>();
             DockContentDragFilter = new DockContentDragFilter(this);
             DockResizeFilter = new DockResizeFilter(this);
 
-            _regions = new Dictionary<VNXDockArea, VNXDockRegion>();
-            _contents = new List<VNXDockContent>();
+            _regions = new Dictionary<VitNXDockArea, VitNXDockRegion>();
+            _contents = new List<VitNXDockContent>();
 
             BackColor = Colors.GreyBackground;
 
@@ -131,12 +131,12 @@ namespace VitNX.Docking
 
         #region Method Region
 
-        public void AddContent(VNXDockContent dockContent)
+        public void AddContent(VitNXDockContent dockContent)
         {
             AddContent(dockContent, null);
         }
 
-        public void AddContent(VNXDockContent dockContent, VNXDockGroup dockGroup)
+        public void AddContent(VitNXDockContent dockContent, VitNXDockGroup dockGroup)
         {
             if (_contents.Contains(dockContent))
                 RemoveContent(dockContent);
@@ -147,7 +147,7 @@ namespace VitNX.Docking
             if (dockGroup != null)
                 dockContent.DockArea = dockGroup.DockArea;
 
-            if (dockContent.DockArea == VNXDockArea.None)
+            if (dockContent.DockArea == VitNXDockArea.None)
                 dockContent.DockArea = dockContent.DefaultDockArea;
 
             var region = _regions[dockContent.DockArea];
@@ -159,7 +159,7 @@ namespace VitNX.Docking
             dockContent.Select();
         }
 
-        public void InsertContent(VNXDockContent dockContent, VNXDockGroup dockGroup, DockInsertType insertType)
+        public void InsertContent(VitNXDockContent dockContent, VitNXDockGroup dockGroup, DockInsertType insertType)
         {
             if (_contents.Contains(dockContent))
                 RemoveContent(dockContent);
@@ -178,7 +178,7 @@ namespace VitNX.Docking
             dockContent.Select();
         }
 
-        public void RemoveContent(VNXDockContent dockContent)
+        public void RemoveContent(VitNXDockContent dockContent)
         {
             if (!_contents.Contains(dockContent))
                 return;
@@ -193,29 +193,29 @@ namespace VitNX.Docking
                 ContentRemoved(this, new DockContentEventArgs(dockContent));
         }
 
-        public bool ContainsContent(VNXDockContent dockContent)
+        public bool ContainsContent(VitNXDockContent dockContent)
         {
             return _contents.Contains(dockContent);
         }
 
-        public List<VNXDockContent> GetDocuments()
+        public List<VitNXDockContent> GetDocuments()
         {
-            return _regions[VNXDockArea.Document].GetContents();
+            return _regions[VitNXDockArea.Document].GetContents();
         }
 
         private void CreateRegions()
         {
-            var documentRegion = new VNXDockRegion(this, VNXDockArea.Document);
-            _regions.Add(VNXDockArea.Document, documentRegion);
+            var documentRegion = new VitNXDockRegion(this, VitNXDockArea.Document);
+            _regions.Add(VitNXDockArea.Document, documentRegion);
 
-            var leftRegion = new VNXDockRegion(this, VNXDockArea.Left);
-            _regions.Add(VNXDockArea.Left, leftRegion);
+            var leftRegion = new VitNXDockRegion(this, VitNXDockArea.Left);
+            _regions.Add(VitNXDockArea.Left, leftRegion);
 
-            var rightRegion = new VNXDockRegion(this, VNXDockArea.Right);
-            _regions.Add(VNXDockArea.Right, rightRegion);
+            var rightRegion = new VitNXDockRegion(this, VitNXDockArea.Right);
+            _regions.Add(VitNXDockArea.Right, rightRegion);
 
-            var bottomRegion = new VNXDockRegion(this, VNXDockArea.Bottom);
-            _regions.Add(VNXDockArea.Bottom, bottomRegion);
+            var bottomRegion = new VitNXDockRegion(this, VitNXDockArea.Bottom);
+            _regions.Add(VitNXDockArea.Bottom, bottomRegion);
 
             // Add the regions in this order to force the bottom region to be positioned
             // between the left and right regions properly.
@@ -231,7 +231,7 @@ namespace VitNX.Docking
             leftRegion.TabIndex = 3;
         }
 
-        public void DragContent(VNXDockContent content)
+        public void DragContent(VitNXDockContent content)
         {
             DockContentDragFilter.StartDrag(content);
         }
@@ -244,12 +244,12 @@ namespace VitNX.Docking
         {
             var state = new DockPanelState();
 
-            state.Regions.Add(new DockRegionState(VNXDockArea.Document));
-            state.Regions.Add(new DockRegionState(VNXDockArea.Left, _regions[VNXDockArea.Left].Size));
-            state.Regions.Add(new DockRegionState(VNXDockArea.Right, _regions[VNXDockArea.Right].Size));
-            state.Regions.Add(new DockRegionState(VNXDockArea.Bottom, _regions[VNXDockArea.Bottom].Size));
+            state.Regions.Add(new DockRegionState(VitNXDockArea.Document));
+            state.Regions.Add(new DockRegionState(VitNXDockArea.Left, _regions[VitNXDockArea.Left].Size));
+            state.Regions.Add(new DockRegionState(VitNXDockArea.Right, _regions[VitNXDockArea.Right].Size));
+            state.Regions.Add(new DockRegionState(VitNXDockArea.Bottom, _regions[VitNXDockArea.Bottom].Size));
 
-            var _groupStates = new Dictionary<VNXDockGroup, DockGroupState>();
+            var _groupStates = new Dictionary<VitNXDockGroup, DockGroupState>();
 
             var orderedContent = _contents.OrderBy(c => c.Order);
             foreach (var content in orderedContent)
@@ -281,27 +281,27 @@ namespace VitNX.Docking
             return state;
         }
 
-        public void RestoreDockPanelState(DockPanelState state, Func<string, VNXDockContent> getContentBySerializationKey)
+        public void RestoreDockPanelState(DockPanelState state, Func<string, VitNXDockContent> getContentBySerializationKey)
         {
             foreach (var region in state.Regions)
             {
                 switch (region.Area)
                 {
-                    case VNXDockArea.Left:
-                        _regions[VNXDockArea.Left].Size = region.Size;
+                    case VitNXDockArea.Left:
+                        _regions[VitNXDockArea.Left].Size = region.Size;
                         break;
-                    case VNXDockArea.Right:
-                        _regions[VNXDockArea.Right].Size = region.Size;
+                    case VitNXDockArea.Right:
+                        _regions[VitNXDockArea.Right].Size = region.Size;
                         break;
-                    case VNXDockArea.Bottom:
-                        _regions[VNXDockArea.Bottom].Size = region.Size;
+                    case VitNXDockArea.Bottom:
+                        _regions[VitNXDockArea.Bottom].Size = region.Size;
                         break;
                 }
 
                 foreach (var group in region.Groups)
                 {
-                    VNXDockContent previousContent = null;
-                    VNXDockContent visibleContent = null;
+                    VitNXDockContent previousContent = null;
+                    VitNXDockContent visibleContent = null;
 
                     foreach (var contentKey in group.Contents)
                     {

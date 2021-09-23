@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VNXDockContent : UserControl
+    public class VitNXDockContent : UserControl
     {
         #region Event Handler Region
 
@@ -55,8 +55,8 @@ namespace VitNX.Docking
 
         [Category("Layout")]
         [Description("Determines the default area of the dock panel this content will be added to.")]
-        [DefaultValue(VNXDockArea.Document)]
-        public VNXDockArea DefaultDockArea { get; set; }
+        [DefaultValue(VitNXDockArea.Document)]
+        public VitNXDockArea DefaultDockArea { get; set; }
 
         [Category("Behavior")]
         [Description("Determines the key used by this content in the dock serialization.")]
@@ -64,19 +64,19 @@ namespace VitNX.Docking
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockPanel DockPanel { get; internal set; }
+        public VitNXDockPanel DockPanel { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockRegion DockRegion { get; internal set; }
+        public VitNXDockRegion DockRegion { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockGroup DockGroup { get; internal set; }
+        public VitNXDockGroup DockGroup { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VNXDockArea DockArea { get; set; }
+        public VitNXDockArea DockArea { get; set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -86,7 +86,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VNXDockContent()
+        public VitNXDockContent()
         { }
 
         #endregion
