@@ -3,7 +3,7 @@ using VitNX.Forms;
 
 namespace Example
 {
-    public partial class DialogControls : DarkDialog
+    public partial class DialogControls : VNXDialog
     {
         public DialogControls()
         {
@@ -12,7 +12,7 @@ namespace Example
             // Build dummy list data
             for (var i = 0; i < 100; i++)
             {
-                var item = new DarkListItem($"List item #{i}");
+                var item = new VNXListItem($"List item #{i}");
                 lstTest.Items.Add(item);
             }
 
@@ -20,13 +20,13 @@ namespace Example
             var childCount = 0;
             for (var i = 0; i < 20; i++)
             {
-                var node = new DarkTreeNode($"Root node #{i}");
+                var node = new VNXTreeNode($"Root node #{i}");
                 node.ExpandedIcon = Icons.folder_open;
                 node.Icon = Icons.folder_closed;
 
                 for (var x = 0; x < 10; x++)
                 {
-                    var childNode = new DarkTreeNode($"Child node #{childCount}");
+                    var childNode = new VNXTreeNode($"Child node #{childCount}");
                     childNode.Icon = Icons.files;
                     childCount++;
                     node.Nodes.Add(childNode);
@@ -38,12 +38,12 @@ namespace Example
             // Hook dialog button events
             btnDialog.Click += delegate
             {
-                DarkMessageBox.ShowError("This is an error", "Dark UI - Example");
+                VNXMessageBox.ShowError("This is an error", "VNX UI - Example");
             };
 
             btnMessageBox.Click += delegate
             {
-                DarkMessageBox.ShowInformation("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "Dark UI - Example");
+                VNXMessageBox.ShowInformation("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VNX UI - Example");
             };
         }
     }

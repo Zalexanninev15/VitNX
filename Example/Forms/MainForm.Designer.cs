@@ -32,7 +32,7 @@ namespace Example
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.mnuMain = new VitNX.Controls.DarkMenuStrip();
+            this.mnuMain = new VitNX.Controls.VNXMenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNewFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -53,14 +53,14 @@ namespace Example
             this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolMain = new VitNX.Controls.DarkToolStrip();
+            this.toolMain = new VitNX.Controls.VNXToolStrip();
             this.btnNewFile = new System.Windows.Forms.ToolStripButton();
-            this.stripMain = new VitNX.Controls.DarkStatusStrip();
+            this.stripMain = new VitNX.Controls.VNXStatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DockPanel = new VitNX.Docking.DarkDockPanel();
-            this.darkSeparator1 = new VitNX.Controls.DarkSeparator();
+            this.DockPanel = new VitNX.Docking.VNXDockPanel();
+            this.VNXSeparator1 = new VitNX.Controls.VNXSeparator();
             this.mnuMain.SuspendLayout();
             this.toolMain.SuspendLayout();
             this.stripMain.SuspendLayout();
@@ -81,7 +81,7 @@ namespace Example
             this.mnuMain.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
             this.mnuMain.Size = new System.Drawing.Size(944, 24);
             this.mnuMain.TabIndex = 0;
-            this.mnuMain.Text = "darkMenuStrip1";
+            this.mnuMain.Text = "VNXMenuStrip1";
             // 
             // mnuFile
             // 
@@ -280,7 +280,7 @@ namespace Example
             this.toolMain.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
             this.toolMain.Size = new System.Drawing.Size(944, 28);
             this.toolMain.TabIndex = 1;
-            this.toolMain.Text = "darkToolStrip1";
+            this.toolMain.Text = "VNXToolStrip1";
             // 
             // btnNewFile
             // 
@@ -309,7 +309,7 @@ namespace Example
             this.stripMain.Size = new System.Drawing.Size(944, 24);
             this.stripMain.SizingGrip = false;
             this.stripMain.TabIndex = 2;
-            this.stripMain.Text = "darkStatusStrip1";
+            this.stripMain.Text = "VNXStatusStrip1";
             // 
             // toolStripStatusLabel1
             // 
@@ -345,14 +345,14 @@ namespace Example
             this.DockPanel.Size = new System.Drawing.Size(944, 564);
             this.DockPanel.TabIndex = 3;
             // 
-            // darkSeparator1
+            // VNXSeparator1
             // 
-            this.darkSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkSeparator1.Location = new System.Drawing.Point(0, 24);
-            this.darkSeparator1.Name = "darkSeparator1";
-            this.darkSeparator1.Size = new System.Drawing.Size(944, 2);
-            this.darkSeparator1.TabIndex = 4;
-            this.darkSeparator1.Text = "darkSeparator1";
+            this.VNXSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXSeparator1.Location = new System.Drawing.Point(0, 24);
+            this.VNXSeparator1.Name = "VNXSeparator1";
+            this.VNXSeparator1.Size = new System.Drawing.Size(944, 2);
+            this.VNXSeparator1.TabIndex = 4;
+            this.VNXSeparator1.Text = "VNXSeparator1";
             // 
             // MainForm
             // 
@@ -362,7 +362,7 @@ namespace Example
             this.Controls.Add(this.DockPanel);
             this.Controls.Add(this.stripMain);
             this.Controls.Add(this.toolMain);
-            this.Controls.Add(this.darkSeparator1);
+            this.Controls.Add(this.VNXSeparator1);
             this.Controls.Add(this.mnuMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -384,9 +384,9 @@ namespace Example
 
         #endregion
 
-        private DarkMenuStrip mnuMain;
-        private DarkToolStrip toolMain;
-        private DarkStatusStrip stripMain;
+        private VNXMenuStrip mnuMain;
+        private VNXToolStrip toolMain;
+        private VNXStatusStrip stripMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
@@ -401,13 +401,13 @@ namespace Example
         private System.Windows.Forms.ToolStripButton btnNewFile;
         private System.Windows.Forms.ToolStripMenuItem mnuNewFile;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private DarkDockPanel DockPanel;
+        private VNXDockPanel DockPanel;
         private System.Windows.Forms.ToolStripMenuItem mnuProject;
         private System.Windows.Forms.ToolStripMenuItem mnuProperties;
         private System.Windows.Forms.ToolStripMenuItem mnuConsole;
         private System.Windows.Forms.ToolStripMenuItem mnuLayers;
         private System.Windows.Forms.ToolStripMenuItem mnuHistory;
-        private DarkSeparator darkSeparator1;
+        private VNXSeparator VNXSeparator1;
         private System.Windows.Forms.ToolStripMenuItem checkableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkableWithIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

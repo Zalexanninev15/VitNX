@@ -32,18 +32,18 @@ namespace Example
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblVersion = new VitNX.Controls.DarkLabel();
-            this.darkLabel2 = new VitNX.Controls.DarkLabel();
-            this.darkLabel1 = new VitNX.Controls.DarkLabel();
-            this.lblHeader = new VitNX.Controls.DarkLabel();
+            this.lblVersion = new VitNX.Controls.VNXLabel();
+            this.VNXLabel2 = new VitNX.Controls.VNXLabel();
+            this.VNXLabel1 = new VitNX.Controls.VNXLabel();
+            this.lblHeader = new VitNX.Controls.VNXLabel();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.lblVersion);
-            this.pnlMain.Controls.Add(this.darkLabel2);
-            this.pnlMain.Controls.Add(this.darkLabel1);
+            this.pnlMain.Controls.Add(this.VNXLabel2);
+            this.pnlMain.Controls.Add(this.VNXLabel1);
             this.pnlMain.Controls.Add(this.lblHeader);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
@@ -64,31 +64,31 @@ namespace Example
             this.lblVersion.Text = "Version: [version]";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // darkLabel2
+            // VNXLabel2
             // 
-            this.darkLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(15, 89);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(313, 79);
-            this.darkLabel2.TabIndex = 5;
-            this.darkLabel2.Text = "Created because of all the little annoyances and issues with the default .NET con" +
+            this.VNXLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VNXLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.VNXLabel2.Location = new System.Drawing.Point(15, 89);
+            this.VNXLabel2.Name = "VNXLabel2";
+            this.VNXLabel2.Size = new System.Drawing.Size(313, 79);
+            this.VNXLabel2.TabIndex = 5;
+            this.VNXLabel2.Text = "Created because of all the little annoyances and issues with the default .NET con" +
     "trol library.";
-            this.darkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VNXLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // darkLabel1
+            // VNXLabel1
             // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(15, 68);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(322, 21);
-            this.darkLabel1.TabIndex = 4;
-            this.darkLabel1.Text = "Controls for WinForms (.NET Framework 4.5)";
-            this.darkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VNXLabel1.AutoSize = true;
+            this.VNXLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VNXLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.VNXLabel1.Location = new System.Drawing.Point(15, 68);
+            this.VNXLabel1.Name = "VNXLabel1";
+            this.VNXLabel1.Size = new System.Drawing.Size(322, 21);
+            this.VNXLabel1.TabIndex = 4;
+            this.VNXLabel1.Text = "Controls for WinForms (.NET Framework 4.5)";
+            this.VNXLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHeader
             // 
@@ -125,9 +125,9 @@ namespace Example
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private DarkLabel lblHeader;
-        private DarkLabel darkLabel1;
-        private DarkLabel darkLabel2;
-        private DarkLabel lblVersion;
+        private VNXLabel lblHeader;
+        private VNXLabel VNXLabel1;
+        private VNXLabel VNXLabel2;
+        private VNXLabel lblVersion;
     }
 }

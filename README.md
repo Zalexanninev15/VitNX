@@ -2,7 +2,7 @@
 
 ![alt](https://github.com/Zalexanninev15/VitNX/raw/main/logo.png)
 
-[![](https://img.shields.io/badge/release-v1.0_Beta-orange.svg)](https://github.com/Zalexanninev15/VitNX)
+[![](https://img.shields.io/badge/release-v1.0.0.1_Beta-orange.svg)](https://github.com/Zalexanninev15/VitNX)
 [![](https://img.shields.io/github/last-commit/Zalexanninev15/VitNX/main.svg)](https://github.com/Zalexanninev15/VitNX/commits/main)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 

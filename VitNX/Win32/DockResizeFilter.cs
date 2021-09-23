@@ -9,18 +9,18 @@ namespace VitNX.Win32
     {
         #region Field Region
 
-        private DarkDockPanel _dockPanel;
+        private VNXDockPanel _dockPanel;
 
         private Timer _dragTimer;
         private bool _isDragging;
         private Point _initialContact;
-        private DarkDockSplitter _activeSplitter;
+        private VNXDockSplitter _activeSplitter;
 
         #endregion
 
         #region Constructor Region
 
-        public DockResizeFilter(DarkDockPanel dockPanel)
+        public DockResizeFilter(VNXDockPanel dockPanel)
         {
             _dockPanel = dockPanel;
 
@@ -119,7 +119,7 @@ namespace VitNX.Win32
 
         #region Method Region
 
-        private void StartDrag(DarkDockSplitter splitter)
+        private void StartDrag(VNXDockSplitter splitter)
         {
             _activeSplitter = splitter;
             Cursor.Current = _activeSplitter.ResizeCursor;
@@ -142,7 +142,7 @@ namespace VitNX.Win32
             _isDragging = false;
         }
 
-        private DarkDockSplitter HotSplitter()
+        private VNXDockSplitter HotSplitter()
         {
             foreach (var splitter in _dockPanel.Splitters)
             {

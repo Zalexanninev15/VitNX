@@ -32,7 +32,7 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeProject = new VitNX.Controls.DarkTreeView();
+            this.treeProject = new VitNX.Controls.VNXTreeView();
             this.SuspendLayout();
             // 
             // treeProject
@@ -46,14 +46,14 @@ namespace Example
             this.treeProject.ShowIcons = true;
             this.treeProject.Size = new System.Drawing.Size(280, 425);
             this.treeProject.TabIndex = 0;
-            this.treeProject.Text = "darkTreeView1";
+            this.treeProject.Text = "VNXTreeView1";
             // 
             // DockProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.treeProject);
-            this.DefaultDockArea = VitNX.Docking.DarkDockArea.Left;
+            this.DefaultDockArea = VitNX.Docking.VNXDockArea.Left;
             this.DockText = "Project Explorer";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.application_16x;
@@ -66,6 +66,6 @@ namespace Example
 
         #endregion
 
-        private DarkTreeView treeProject;
+        private VNXTreeView treeProject;
     }
 }
