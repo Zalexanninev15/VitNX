@@ -31,7 +31,7 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstConsole = new VitNX.Controls.DarkListView();
+            this.lstConsole = new VitNX.Controls.VNXListView();
             this.SuspendLayout();
             // 
             // lstConsole
@@ -42,14 +42,14 @@ namespace Example
             this.lstConsole.Name = "lstConsole";
             this.lstConsole.Size = new System.Drawing.Size(500, 175);
             this.lstConsole.TabIndex = 0;
-            this.lstConsole.Text = "darkListView1";
+            this.lstConsole.Text = "VNXListView1";
             // 
             // DockConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstConsole);
-            this.DefaultDockArea = VitNX.Docking.DarkDockArea.Bottom;
+            this.DefaultDockArea = VitNX.Docking.VNXDockArea.Bottom;
             this.DockText = "Console";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.Console;
@@ -62,6 +62,6 @@ namespace Example
 
         #endregion
 
-        private DarkListView lstConsole;
+        private VNXListView lstConsole;
     }
 }

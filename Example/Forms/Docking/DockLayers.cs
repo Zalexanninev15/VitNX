@@ -4,7 +4,7 @@ using VitNX.Docking;
 
 namespace Example
 {
-    public partial class DockLayers : DarkToolWindow
+    public partial class DockLayers : VNXToolWindow
     {
         #region Constructor Region
 
@@ -15,7 +15,7 @@ namespace Example
             // Build dummy list data
             for (var i = 0; i < 100; i++)
             {
-                var item = new DarkListItem($"List item #{i}");
+                var item = new VNXListItem($"List item #{i}");
                 item.Icon = Icons.application_16x;
                 lstLayers.Items.Add(item);
             }
@@ -23,7 +23,7 @@ namespace Example
             // Build dropdown list data
             for (var i = 0; i < 5; i++)
             {
-                cmbList.Items.Add(new DarkDropdownItem($"Dropdown item #{i}"));
+                cmbList.Items.Add(new VNXDropdownItem($"Dropdown item #{i}"));
             }
         }
 

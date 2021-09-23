@@ -33,19 +33,19 @@ namespace Example
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.darkRadioButton3 = new VitNX.Controls.DarkRadioButton();
-            this.darkRadioButton2 = new VitNX.Controls.DarkRadioButton();
-            this.darkRadioButton1 = new VitNX.Controls.DarkRadioButton();
-            this.darkTitle1 = new VitNX.Controls.DarkTitle();
+            this.VNXRadioButton3 = new VitNX.Controls.VNXRadioButton();
+            this.VNXRadioButton2 = new VitNX.Controls.VNXRadioButton();
+            this.VNXRadioButton1 = new VitNX.Controls.VNXRadioButton();
+            this.VNXTitle1 = new VitNX.Controls.VNXTitle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.darkCheckBox3 = new VitNX.Controls.DarkCheckBox();
-            this.darkCheckBox2 = new VitNX.Controls.DarkCheckBox();
-            this.darkCheckBox1 = new VitNX.Controls.DarkCheckBox();
-            this.darkTitle2 = new VitNX.Controls.DarkTitle();
-            this.darkScrollBar1 = new VitNX.Controls.DarkScrollBar();
+            this.VNXCheckBox3 = new VitNX.Controls.VNXCheckBox();
+            this.VNXCheckBox2 = new VitNX.Controls.VNXCheckBox();
+            this.VNXCheckBox1 = new VitNX.Controls.VNXCheckBox();
+            this.VNXTitle2 = new VitNX.Controls.VNXTitle();
+            this.VNXScrollBar1 = new VitNX.Controls.VNXScrollBar();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.darkTitle3 = new VitNX.Controls.DarkTitle();
-            this.cmbList = new VitNX.Controls.DarkDropdownList();
+            this.VNXTitle3 = new VitNX.Controls.VNXTitle();
+            this.cmbList = new VitNX.Controls.VNXDropdownList();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,10 +67,10 @@ namespace Example
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.darkRadioButton3);
-            this.panel1.Controls.Add(this.darkRadioButton2);
-            this.panel1.Controls.Add(this.darkRadioButton1);
-            this.panel1.Controls.Add(this.darkTitle1);
+            this.panel1.Controls.Add(this.VNXRadioButton3);
+            this.panel1.Controls.Add(this.VNXRadioButton2);
+            this.panel1.Controls.Add(this.VNXRadioButton1);
+            this.panel1.Controls.Add(this.VNXTitle1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 103);
             this.panel1.Name = "panel1";
@@ -78,56 +78,56 @@ namespace Example
             this.panel1.Size = new System.Drawing.Size(250, 93);
             this.panel1.TabIndex = 2;
             // 
-            // darkRadioButton3
+            // VNXRadioButton3
             // 
-            this.darkRadioButton3.AutoSize = true;
-            this.darkRadioButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkRadioButton3.Enabled = false;
-            this.darkRadioButton3.Location = new System.Drawing.Point(0, 64);
-            this.darkRadioButton3.Name = "darkRadioButton3";
-            this.darkRadioButton3.Size = new System.Drawing.Size(250, 19);
-            this.darkRadioButton3.TabIndex = 6;
-            this.darkRadioButton3.TabStop = true;
-            this.darkRadioButton3.Text = "Disabled radiobutton";
+            this.VNXRadioButton3.AutoSize = true;
+            this.VNXRadioButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXRadioButton3.Enabled = false;
+            this.VNXRadioButton3.Location = new System.Drawing.Point(0, 64);
+            this.VNXRadioButton3.Name = "VNXRadioButton3";
+            this.VNXRadioButton3.Size = new System.Drawing.Size(250, 19);
+            this.VNXRadioButton3.TabIndex = 6;
+            this.VNXRadioButton3.TabStop = true;
+            this.VNXRadioButton3.Text = "Disabled radiobutton";
             // 
-            // darkRadioButton2
+            // VNXRadioButton2
             // 
-            this.darkRadioButton2.AutoSize = true;
-            this.darkRadioButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkRadioButton2.Location = new System.Drawing.Point(0, 45);
-            this.darkRadioButton2.Name = "darkRadioButton2";
-            this.darkRadioButton2.Size = new System.Drawing.Size(250, 19);
-            this.darkRadioButton2.TabIndex = 5;
-            this.darkRadioButton2.TabStop = true;
-            this.darkRadioButton2.Text = "Radiobutton";
+            this.VNXRadioButton2.AutoSize = true;
+            this.VNXRadioButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXRadioButton2.Location = new System.Drawing.Point(0, 45);
+            this.VNXRadioButton2.Name = "VNXRadioButton2";
+            this.VNXRadioButton2.Size = new System.Drawing.Size(250, 19);
+            this.VNXRadioButton2.TabIndex = 5;
+            this.VNXRadioButton2.TabStop = true;
+            this.VNXRadioButton2.Text = "Radiobutton";
             // 
-            // darkRadioButton1
+            // VNXRadioButton1
             // 
-            this.darkRadioButton1.AutoSize = true;
-            this.darkRadioButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkRadioButton1.Location = new System.Drawing.Point(0, 26);
-            this.darkRadioButton1.Name = "darkRadioButton1";
-            this.darkRadioButton1.Size = new System.Drawing.Size(250, 19);
-            this.darkRadioButton1.TabIndex = 4;
-            this.darkRadioButton1.TabStop = true;
-            this.darkRadioButton1.Text = "Radiobutton";
+            this.VNXRadioButton1.AutoSize = true;
+            this.VNXRadioButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXRadioButton1.Location = new System.Drawing.Point(0, 26);
+            this.VNXRadioButton1.Name = "VNXRadioButton1";
+            this.VNXRadioButton1.Size = new System.Drawing.Size(250, 19);
+            this.VNXRadioButton1.TabIndex = 4;
+            this.VNXRadioButton1.TabStop = true;
+            this.VNXRadioButton1.Text = "Radiobutton";
             // 
-            // darkTitle1
+            // VNXTitle1
             // 
-            this.darkTitle1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkTitle1.Location = new System.Drawing.Point(0, 0);
-            this.darkTitle1.Name = "darkTitle1";
-            this.darkTitle1.Size = new System.Drawing.Size(250, 26);
-            this.darkTitle1.TabIndex = 7;
-            this.darkTitle1.Text = "Radio buttons";
+            this.VNXTitle1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXTitle1.Location = new System.Drawing.Point(0, 0);
+            this.VNXTitle1.Name = "VNXTitle1";
+            this.VNXTitle1.Size = new System.Drawing.Size(250, 26);
+            this.VNXTitle1.TabIndex = 7;
+            this.VNXTitle1.Text = "Radio buttons";
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.darkCheckBox3);
-            this.panel2.Controls.Add(this.darkCheckBox2);
-            this.panel2.Controls.Add(this.darkCheckBox1);
-            this.panel2.Controls.Add(this.darkTitle2);
+            this.panel2.Controls.Add(this.VNXCheckBox3);
+            this.panel2.Controls.Add(this.VNXCheckBox2);
+            this.panel2.Controls.Add(this.VNXCheckBox1);
+            this.panel2.Controls.Add(this.VNXTitle2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
@@ -135,66 +135,66 @@ namespace Example
             this.panel2.Size = new System.Drawing.Size(250, 93);
             this.panel2.TabIndex = 1;
             // 
-            // darkCheckBox3
+            // VNXCheckBox3
             // 
-            this.darkCheckBox3.AutoSize = true;
-            this.darkCheckBox3.Checked = true;
-            this.darkCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.darkCheckBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkCheckBox3.Enabled = false;
-            this.darkCheckBox3.Location = new System.Drawing.Point(0, 64);
-            this.darkCheckBox3.Name = "darkCheckBox3";
-            this.darkCheckBox3.Size = new System.Drawing.Size(250, 19);
-            this.darkCheckBox3.TabIndex = 6;
-            this.darkCheckBox3.Text = "Disabled checked checkbox";
+            this.VNXCheckBox3.AutoSize = true;
+            this.VNXCheckBox3.Checked = true;
+            this.VNXCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.VNXCheckBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXCheckBox3.Enabled = false;
+            this.VNXCheckBox3.Location = new System.Drawing.Point(0, 64);
+            this.VNXCheckBox3.Name = "VNXCheckBox3";
+            this.VNXCheckBox3.Size = new System.Drawing.Size(250, 19);
+            this.VNXCheckBox3.TabIndex = 6;
+            this.VNXCheckBox3.Text = "Disabled checked checkbox";
             // 
-            // darkCheckBox2
+            // VNXCheckBox2
             // 
-            this.darkCheckBox2.AutoSize = true;
-            this.darkCheckBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkCheckBox2.Enabled = false;
-            this.darkCheckBox2.Location = new System.Drawing.Point(0, 45);
-            this.darkCheckBox2.Name = "darkCheckBox2";
-            this.darkCheckBox2.Size = new System.Drawing.Size(250, 19);
-            this.darkCheckBox2.TabIndex = 5;
-            this.darkCheckBox2.Text = "Disabled checkbox";
+            this.VNXCheckBox2.AutoSize = true;
+            this.VNXCheckBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXCheckBox2.Enabled = false;
+            this.VNXCheckBox2.Location = new System.Drawing.Point(0, 45);
+            this.VNXCheckBox2.Name = "VNXCheckBox2";
+            this.VNXCheckBox2.Size = new System.Drawing.Size(250, 19);
+            this.VNXCheckBox2.TabIndex = 5;
+            this.VNXCheckBox2.Text = "Disabled checkbox";
             // 
-            // darkCheckBox1
+            // VNXCheckBox1
             // 
-            this.darkCheckBox1.AutoSize = true;
-            this.darkCheckBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkCheckBox1.Location = new System.Drawing.Point(0, 26);
-            this.darkCheckBox1.Name = "darkCheckBox1";
-            this.darkCheckBox1.Size = new System.Drawing.Size(250, 19);
-            this.darkCheckBox1.TabIndex = 4;
-            this.darkCheckBox1.Text = "Checkbox";
+            this.VNXCheckBox1.AutoSize = true;
+            this.VNXCheckBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXCheckBox1.Location = new System.Drawing.Point(0, 26);
+            this.VNXCheckBox1.Name = "VNXCheckBox1";
+            this.VNXCheckBox1.Size = new System.Drawing.Size(250, 19);
+            this.VNXCheckBox1.TabIndex = 4;
+            this.VNXCheckBox1.Text = "Checkbox";
             // 
-            // darkTitle2
+            // VNXTitle2
             // 
-            this.darkTitle2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkTitle2.Location = new System.Drawing.Point(0, 0);
-            this.darkTitle2.Name = "darkTitle2";
-            this.darkTitle2.Size = new System.Drawing.Size(250, 26);
-            this.darkTitle2.TabIndex = 8;
-            this.darkTitle2.Text = "Check boxes";
+            this.VNXTitle2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXTitle2.Location = new System.Drawing.Point(0, 0);
+            this.VNXTitle2.Name = "VNXTitle2";
+            this.VNXTitle2.Size = new System.Drawing.Size(250, 26);
+            this.VNXTitle2.TabIndex = 8;
+            this.VNXTitle2.Text = "Check boxes";
             // 
-            // darkScrollBar1
+            // VNXScrollBar1
             // 
-            this.darkScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.darkScrollBar1.Enabled = false;
-            this.darkScrollBar1.Location = new System.Drawing.Point(265, 25);
-            this.darkScrollBar1.Maximum = 5;
-            this.darkScrollBar1.Minimum = 1;
-            this.darkScrollBar1.Name = "darkScrollBar1";
-            this.darkScrollBar1.Size = new System.Drawing.Size(15, 425);
-            this.darkScrollBar1.TabIndex = 1;
-            this.darkScrollBar1.Text = "darkScrollBar1";
+            this.VNXScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.VNXScrollBar1.Enabled = false;
+            this.VNXScrollBar1.Location = new System.Drawing.Point(265, 25);
+            this.VNXScrollBar1.Maximum = 5;
+            this.VNXScrollBar1.Minimum = 1;
+            this.VNXScrollBar1.Name = "VNXScrollBar1";
+            this.VNXScrollBar1.Size = new System.Drawing.Size(15, 425);
+            this.VNXScrollBar1.TabIndex = 1;
+            this.VNXScrollBar1.Text = "VNXScrollBar1";
             // 
             // panel3
             // 
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.cmbList);
-            this.panel3.Controls.Add(this.darkTitle3);
+            this.panel3.Controls.Add(this.VNXTitle3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(10, 196);
             this.panel3.Name = "panel3";
@@ -202,14 +202,14 @@ namespace Example
             this.panel3.Size = new System.Drawing.Size(250, 62);
             this.panel3.TabIndex = 3;
             // 
-            // darkTitle3
+            // VNXTitle3
             // 
-            this.darkTitle3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkTitle3.Location = new System.Drawing.Point(0, 0);
-            this.darkTitle3.Name = "darkTitle3";
-            this.darkTitle3.Size = new System.Drawing.Size(250, 26);
-            this.darkTitle3.TabIndex = 7;
-            this.darkTitle3.Text = "Lists";
+            this.VNXTitle3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VNXTitle3.Location = new System.Drawing.Point(0, 0);
+            this.VNXTitle3.Name = "VNXTitle3";
+            this.VNXTitle3.Size = new System.Drawing.Size(250, 26);
+            this.VNXTitle3.TabIndex = 7;
+            this.VNXTitle3.Text = "Lists";
             // 
             // cmbList
             // 
@@ -218,15 +218,15 @@ namespace Example
             this.cmbList.Name = "cmbList";
             this.cmbList.Size = new System.Drawing.Size(250, 26);
             this.cmbList.TabIndex = 8;
-            this.cmbList.Text = "darkDropdownList1";
+            this.cmbList.Text = "VNXDropdownList1";
             // 
             // DockProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.darkScrollBar1);
-            this.DefaultDockArea = VitNX.Docking.DarkDockArea.Right;
+            this.Controls.Add(this.VNXScrollBar1);
+            this.DefaultDockArea = VitNX.Docking.VNXDockArea.Right;
             this.DockText = "Properties";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.properties_16xLG;
@@ -248,18 +248,18 @@ namespace Example
 
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panel1;
-        private VitNX.Controls.DarkRadioButton darkRadioButton3;
-        private VitNX.Controls.DarkRadioButton darkRadioButton2;
-        private VitNX.Controls.DarkRadioButton darkRadioButton1;
-        private VitNX.Controls.DarkTitle darkTitle1;
+        private VitNX.Controls.VNXRadioButton VNXRadioButton3;
+        private VitNX.Controls.VNXRadioButton VNXRadioButton2;
+        private VitNX.Controls.VNXRadioButton VNXRadioButton1;
+        private VitNX.Controls.VNXTitle VNXTitle1;
         private System.Windows.Forms.Panel panel2;
-        private VitNX.Controls.DarkCheckBox darkCheckBox3;
-        private VitNX.Controls.DarkCheckBox darkCheckBox2;
-        private VitNX.Controls.DarkCheckBox darkCheckBox1;
-        private VitNX.Controls.DarkTitle darkTitle2;
-        private VitNX.Controls.DarkScrollBar darkScrollBar1;
+        private VitNX.Controls.VNXCheckBox VNXCheckBox3;
+        private VitNX.Controls.VNXCheckBox VNXCheckBox2;
+        private VitNX.Controls.VNXCheckBox VNXCheckBox1;
+        private VitNX.Controls.VNXTitle VNXTitle2;
+        private VitNX.Controls.VNXScrollBar VNXScrollBar1;
         private System.Windows.Forms.Panel panel3;
-        private VitNX.Controls.DarkTitle darkTitle3;
-        private VitNX.Controls.DarkDropdownList cmbList;
+        private VitNX.Controls.VNXTitle VNXTitle3;
+        private VitNX.Controls.VNXDropdownList cmbList;
     }
 }

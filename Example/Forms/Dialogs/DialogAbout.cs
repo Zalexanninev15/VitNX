@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Example
 {
-    public partial class DialogAbout : DarkDialog
+    public partial class DialogAbout : VNXDialog
     {
         #region Constructor Region
 

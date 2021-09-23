@@ -11,29 +11,29 @@ namespace VitNX.Win32
     {
         #region Field Region
 
-        private DarkDockPanel _dockPanel;
+        private VNXDockPanel _dockPanel;
 
-        private DarkDockContent _dragContent;
+        private VNXDockContent _dragContent;
 
-        private DarkTranslucentForm _highlightForm;
+        private VNXTranslucentForm _highlightForm;
 
         private bool _isDragging = false;
-        private DarkDockRegion _targetRegion;
-        private DarkDockGroup _targetGroup;
+        private VNXDockRegion _targetRegion;
+        private VNXDockGroup _targetGroup;
         private DockInsertType _insertType = DockInsertType.None;
 
-        private Dictionary<DarkDockRegion, DockDropArea> _regionDropAreas = new Dictionary<DarkDockRegion, DockDropArea>();
-        private Dictionary<DarkDockGroup, DockDropCollection> _groupDropAreas = new Dictionary<DarkDockGroup, DockDropCollection>();
+        private Dictionary<VNXDockRegion, DockDropArea> _regionDropAreas = new Dictionary<VNXDockRegion, DockDropArea>();
+        private Dictionary<VNXDockGroup, DockDropCollection> _groupDropAreas = new Dictionary<VNXDockGroup, DockDropCollection>();
 
         #endregion
 
         #region Constructor Region
 
-        public DockContentDragFilter(DarkDockPanel dockPanel)
+        public DockContentDragFilter(VNXDockPanel dockPanel)
         {
             _dockPanel = dockPanel;
 
-            _highlightForm = new DarkTranslucentForm(Colors.BlueSelection);
+            _highlightForm = new VNXTranslucentForm(Colors.BlueSelection);
         }
 
         #endregion
@@ -96,15 +96,15 @@ namespace VitNX.Win32
 
         #region Method Region
 
-        public void StartDrag(DarkDockContent content)
+        public void StartDrag(VNXDockContent content)
         {
-            _regionDropAreas = new Dictionary<DarkDockRegion, DockDropArea>();
-            _groupDropAreas = new Dictionary<DarkDockGroup, DockDropCollection>();
+            _regionDropAreas = new Dictionary<VNXDockRegion, DockDropArea>();
+            _groupDropAreas = new Dictionary<VNXDockGroup, DockDropCollection>();
 
             // Add all regions and groups to the drop collections
             foreach (var region in _dockPanel.Regions.Values)
             {
-                if (region.DockArea == DarkDockArea.Document)
+                if (region.DockArea == VNXDockArea.Document)
                     continue;
 
                 // If the region is visible then build drop areas for the groups.

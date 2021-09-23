@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtDocument = new System.Windows.Forms.TextBox();
-            this.cmbOptions = new VitNX.Controls.DarkDropdownList();
+            this.cmbOptions = new VitNX.Controls.VNXDropdownList();
             this.SuspendLayout();
             // 
             // txtDocument
@@ -56,7 +56,7 @@
             this.cmbOptions.ShowBorder = false;
             this.cmbOptions.Size = new System.Drawing.Size(65, 15);
             this.cmbOptions.TabIndex = 2;
-            this.cmbOptions.Text = "darkComboBox1";
+            this.cmbOptions.Text = "VNXComboBox1";
             // 
             // DockDocument
             // 
@@ -75,6 +75,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtDocument;
-        private VitNX.Controls.DarkDropdownList cmbOptions;
+        private VitNX.Controls.VNXDropdownList cmbOptions;
     }
 }
