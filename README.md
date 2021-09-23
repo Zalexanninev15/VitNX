@@ -2,7 +2,7 @@
 
 ![alt](https://github.com/Zalexanninev15/VitNX/raw/main/logo.png)
 
-[![](https://img.shields.io/badge/.NET-Framework_4.5-4E2ACD.svg)](https://github.com/Zalexanninev15/VitNX)
+[![](https://img.shields.io/badge/.NET-Framework_4.5-4E2ACD.svg)](https://www.microsoft.com/en-US/download/details.aspx?id=30653)
 [![](https://img.shields.io/badge/release-v1.0.0.3_Beta-orange.svg)](https://github.com/Zalexanninev15/VitNX)
 [![](https://img.shields.io/github/last-commit/Zalexanninev15/VitNX/main.svg)](https://github.com/Zalexanninev15/VitNX/commits/main)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
