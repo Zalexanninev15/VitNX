@@ -2,7 +2,6 @@
 using VitNX.Config;
 using VitNX.Extensions;
 using VitNX.Forms;
-using VitNX.Icons;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

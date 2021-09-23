@@ -1,5 +1,4 @@
 ﻿using VitNX.Config;
-using VitNX.Icons;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -29,12 +28,8 @@ namespace VitNX.Controls
 
         public VitNXComboBox() : base()
         {
-            SetStyle(ControlStyles.OptimizedDoubleBuffer |
-                     ControlStyles.ResizeRedraw |
-                     ControlStyles.UserPaint, true);
-
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
             DrawMode = DrawMode.OwnerDrawVariable;
-
             base.FlatStyle = FlatStyle.Flat;
             base.DropDownStyle = ComboBoxStyle.DropDownList;
         }
@@ -104,47 +99,23 @@ namespace VitNX.Controls
 
         private void PaintCombobox()
         {
-            if (_buffer == null)
-                _buffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
-
+            if (_buffer == null) { _buffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height); }
             using (var g = Graphics.FromImage(_buffer))
             {
                 var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
-
                 var textColor = Colors.LightText;
                 var borderColor = Colors.GreySelection;
                 var fillColor = Colors.LightBackground;
-
-                if (Focused && TabStop)
-                    borderColor = Colors.BlueHighlight;
-
-                using (var b = new SolidBrush(fillColor))
-                {
-                    g.FillRectangle(b, rect);
-                }
-
-                using (var p = new Pen(borderColor, 1))
-                {
-                    var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
-                    g.DrawRectangle(p, modRect);
-                }
-
+                if (Focused && TabStop) { borderColor = Colors.BlueHighlight; }
+                using (var b = new SolidBrush(fillColor)) { g.FillRectangle(b, rect); }
+                using (var p = new Pen(borderColor, 1)) { var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1); g.DrawRectangle(p, modRect); }
                 var icon = ScrollIcons.scrollbar_arrow_hot;
-                g.DrawImageUnscaled(icon,
-                                    rect.Right - icon.Width - (Consts.Padding / 2),
-                                    (rect.Height / 2) - (icon.Height / 2));
-
+                g.DrawImageUnscaled(icon, rect.Right - icon.Width - (Consts.Padding / 2), (rect.Height / 2) - (icon.Height / 2));
                 var text = SelectedItem != null ? SelectedItem.ToString() : Text;
-
                 using (var b = new SolidBrush(textColor))
                 {
                     var padding = 2;
-
-                    var modRect = new Rectangle(rect.Left + padding,
-                                                rect.Top + padding,
-                                                rect.Width - icon.Width - (Consts.Padding / 2) - (padding * 2),
-                                                rect.Height - (padding * 2));
-
+                    var modRect = new Rectangle(rect.Left + padding, rect.Top + padding, rect.Width - icon.Width - (Consts.Padding / 2) - (padding * 2), rect.Height - (padding * 2));
                     var stringFormat = new StringFormat
                     {
                         LineAlignment = StringAlignment.Center,
@@ -152,7 +123,6 @@ namespace VitNX.Controls
                         FormatFlags = StringFormatFlags.NoWrap,
                         Trimming = StringTrimming.EllipsisCharacter
                     };
-
                     g.DrawString(text, Font, b, modRect, stringFormat);
                 }
             }
@@ -160,9 +130,7 @@ namespace VitNX.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (_buffer == null)
-                PaintCombobox();
-
+            if (_buffer == null) { PaintCombobox(); }
             var g = e.Graphics;
             g.DrawImageUnscaled(_buffer, Point.Empty);
         }
@@ -171,33 +139,17 @@ namespace VitNX.Controls
         {
             var g = e.Graphics;
             var rect = e.Bounds;
-
             var textColor = Colors.LightText;
             var fillColor = Colors.LightBackground;
-
-            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected ||
-                (e.State & DrawItemState.Focus) == DrawItemState.Focus ||
-                (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect)
-                fillColor = Colors.BlueSelection;
-
-            using (var b = new SolidBrush(fillColor))
-            {
-                g.FillRectangle(b, rect);
-            }
-
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected || (e.State & DrawItemState.Focus) == DrawItemState.Focus || (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect) { fillColor = Colors.BlueSelection; }
+            using (var b = new SolidBrush(fillColor)) { g.FillRectangle(b, rect); }
             if (e.Index >= 0 && e.Index < Items.Count)
             {
                 var text = Items[e.Index].ToString();
-
                 using (var b = new SolidBrush(textColor))
                 {
                     var padding = 2;
-
-                    var modRect = new Rectangle(rect.Left + padding,
-                        rect.Top + padding,
-                        rect.Width - (padding * 2),
-                        rect.Height - (padding * 2));
-
+                    var modRect = new Rectangle(rect.Left + padding, rect.Top + padding, rect.Width - (padding * 2), rect.Height - (padding * 2));
                     var stringFormat = new StringFormat
                     {
                         LineAlignment = StringAlignment.Center,
@@ -205,7 +157,6 @@ namespace VitNX.Controls
                         FormatFlags = StringFormatFlags.NoWrap,
                         Trimming = StringTrimming.EllipsisCharacter
                     };
-
                     g.DrawString(text, Font, b, modRect, stringFormat);
                 }
             }

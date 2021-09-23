@@ -13,7 +13,6 @@ namespace Example
                 var serializer = new JsonSerializer();
                 serializer.Converters.Add(new StringEnumConverter());
                 serializer.Formatting = Formatting.Indented;
-
                 serializer.Serialize(fs, obj);
             }
         }
@@ -24,7 +23,6 @@ namespace Example
             {
                 var serializer = new JsonSerializer();
                 serializer.Converters.Add(new StringEnumConverter());
-
                 var result = serializer.Deserialize(fs, typeof(T));
                 return result as T;
             }
