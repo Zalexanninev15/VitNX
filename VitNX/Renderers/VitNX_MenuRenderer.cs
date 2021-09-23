@@ -1,5 +1,4 @@
 ﻿using VitNX.Config;
-using VitNX.Controls;
 using VitNX.Icons;
 using System;
 using System.Drawing;

@@ -5,12 +5,9 @@ namespace Example
 {
     public partial class DockHistory : VitNXToolWindow
     {
-        #region Constructor Region
-
         public DockHistory()
         {
             InitializeComponent();
-
             // Build dummy list data
             for (var i = 0; i < 100; i++)
             {
@@ -18,7 +15,5 @@ namespace Example
                 lstHistory.Items.Add(item);
             }
         }
-
-        #endregion
     }
 }

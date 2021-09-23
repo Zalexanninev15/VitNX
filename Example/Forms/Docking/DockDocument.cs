@@ -9,8 +9,6 @@ namespace Example
 {
     public partial class DockDocument : VitNXDocument
     {
-        #region Constructor Region
-
         public DockDocument()
         {
             InitializeComponent();
@@ -27,26 +25,13 @@ namespace Example
             cmbOptions.Items.Add(new VitNXDropdownItem("400%"));
         }
 
-        public DockDocument(string text, Image icon)
-            : this()
-        {
-            DockText = text;
-            Icon = icon;
-        }
-
-        #endregion
-
-        #region Event Handler Region
+        public DockDocument(string text, Image icon) : this() { DockText = text; Icon = icon; }
 
         public override void Close()
         {
             var result = VitNXMessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?", @"Close document", VitNXDialogButton.YesNo);
-            if (result == DialogResult.No)
-                return;
-
+            if (result == DialogResult.No) { return; }
             base.Close();
         }
-
-        #endregion
     }
 }

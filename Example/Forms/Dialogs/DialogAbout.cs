@@ -5,16 +5,11 @@ namespace Example
 {
     public partial class DialogAbout : VitNXDialog
     {
-        #region Constructor Region
-
         public DialogAbout()
         {
             InitializeComponent();
-
-            lblVersion.Text = $"Version: {Application.ProductVersion.ToString()}";
+            lblVersion.Text = $"Version: {Application.ProductVersion}";
             btnOk.Text = "Close";
         }
-
-        #endregion
     }
 }
