@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using VitNX.Functions;
 
 namespace Example
 {
@@ -203,12 +204,40 @@ namespace Example
             DialogResult a = VitNXMessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
             if (a == DialogResult.Yes)
             {
-                VitNXMessageBox.ShowInformation("Your choice is Yes", "VitNX UI - Example");
+                VitNXMessageBox.ShowInfo("Your choice is Yes", "VitNX UI - Example");
             }
             if (a == DialogResult.No)
             {
-                VitNXMessageBox.ShowInformation("Your choice is No", "VitNX UI - Example");
+                VitNXMessageBox.ShowInfo("Your choice is No", "VitNX UI - Example");
             }
+        }
+
+        private void SetTaskBarProgressBar_Click(object sender, EventArgs e)
+        {
+            // Call only on Forms, it will not work on the Dock!
+            if (toolStripTextBox1.Text == "") { toolStripTextBox1.Text = "50"; }
+            if (toolStripComboBox1.SelectedItem == "Type") { toolStripComboBox1.SelectedItem = "Normal"; }
+            if (Convert.ToInt32(toolStripTextBox1.Text) <= 100)
+            {
+                if (toolStripComboBox1.SelectedItem == "Normal")
+                {
+                    TaskBarProgressBar.SetState(Handle, TaskBarProgressBar.TaskbarStates.Normal);
+                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                }
+                if (toolStripComboBox1.SelectedItem == "Indeterminate") { TaskBarProgressBar.SetState(Handle, TaskBarProgressBar.TaskbarStates.Indeterminate); }
+                if (toolStripComboBox1.SelectedItem == "NoProgress") { TaskBarProgressBar.SetState(Handle, TaskBarProgressBar.TaskbarStates.NoProgress); }
+                if (toolStripComboBox1.SelectedItem == "Error")
+                {
+                    TaskBarProgressBar.SetState(Handle, TaskBarProgressBar.TaskbarStates.Error);
+                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                }
+                if (toolStripComboBox1.SelectedItem == "Paused")
+                {
+                    TaskBarProgressBar.SetState(Handle, TaskBarProgressBar.TaskbarStates.Paused);
+                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                }
+            }
+            else { VitNXMessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example"); }
         }
 
         #endregion
@@ -226,7 +255,7 @@ namespace Example
             var state = SerializerHelper.Deserialize<DockPanelState>(path);
             DockPanel.RestoreDockPanelState(state, GetContentBySerializationKey);
         }
-         
+
         private VitNXDockContent GetContentBySerializationKey(string key)
         {
             foreach (var window in _toolWindows)
@@ -240,6 +269,5 @@ namespace Example
 
 
         #endregion
-
     }
 }

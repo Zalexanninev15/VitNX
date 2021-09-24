@@ -38,6 +38,7 @@ namespace Example
             this.vitNXButton1 = new VitNX.Controls.VitNXButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.vitNXProgressBar1 = new VitNX.Controls.VitNXProgressBar();
+            this.vitNXButton2 = new VitNX.Controls.VitNXButton();
             this.SuspendLayout();
             // 
             // treeProject
@@ -56,7 +57,7 @@ namespace Example
             // vitNXProgressBarStyle21
             // 
             this.vitNXProgressBarStyle21.CustomText = "";
-            this.vitNXProgressBarStyle21.Location = new System.Drawing.Point(19, 395);
+            this.vitNXProgressBarStyle21.Location = new System.Drawing.Point(19, 398);
             this.vitNXProgressBarStyle21.Name = "vitNXProgressBarStyle21";
             this.vitNXProgressBarStyle21.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(179)))), ((int)(((byte)(243)))));
             this.vitNXProgressBarStyle21.Size = new System.Drawing.Size(165, 25);
@@ -67,7 +68,7 @@ namespace Example
             // 
             // vitNXButton1
             // 
-            this.vitNXButton1.Location = new System.Drawing.Point(19, 329);
+            this.vitNXButton1.Location = new System.Drawing.Point(19, 325);
             this.vitNXButton1.Name = "vitNXButton1";
             this.vitNXButton1.Padding = new System.Windows.Forms.Padding(5);
             this.vitNXButton1.Size = new System.Drawing.Size(165, 29);
@@ -77,6 +78,7 @@ namespace Example
             // 
             // timer1
             // 
+            this.timer1.Interval = 60;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // vitNXProgressBar1
@@ -91,10 +93,21 @@ namespace Example
             this.vitNXProgressBar1.TextFont = new System.Drawing.Font("Arial", 12F);
             this.vitNXProgressBar1.VisualMode = VitNX.Controls.VitNX_ProgressBarDisplayMode.Percentage;
             // 
+            // vitNXButton2
+            // 
+            this.vitNXButton2.Location = new System.Drawing.Point(19, 249);
+            this.vitNXButton2.Name = "vitNXButton2";
+            this.vitNXButton2.Padding = new System.Windows.Forms.Padding(5);
+            this.vitNXButton2.Size = new System.Drawing.Size(165, 54);
+            this.vitNXButton2.TabIndex = 4;
+            this.vitNXButton2.Text = "Folder Select Dialog Tester\r\n(Not a standart C# Dialog)";
+            this.vitNXButton2.Click += new System.EventHandler(this.vitNXButton2_Click);
+            // 
             // DockProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.vitNXButton2);
             this.Controls.Add(this.vitNXProgressBar1);
             this.Controls.Add(this.vitNXButton1);
             this.Controls.Add(this.vitNXProgressBarStyle21);
@@ -117,5 +130,6 @@ namespace Example
         private VitNXButton vitNXButton1;
         private System.Windows.Forms.Timer timer1;
         private VitNXProgressBar vitNXProgressBar1;
+        private VitNXButton vitNXButton2;
     }
 }
