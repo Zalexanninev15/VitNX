@@ -15,7 +15,7 @@ namespace VitNX.Win32
 
         private VitNX_DockContent _dragContent;
 
-        private VitNXTranslucentForm _highlightForm;
+        private VitNX_TranslucentForm _highlightForm;
 
         private bool _isDragging = false;
         private VitNX_DockRegion _targetRegion;
@@ -33,7 +33,7 @@ namespace VitNX.Win32
         {
             _dockPanel = dockPanel;
 
-            _highlightForm = new VitNXTranslucentForm(Colors.BlueSelection);
+            _highlightForm = new VitNX_TranslucentForm(Colors.BlueSelection);
         }
 
         #endregion

@@ -2,7 +2,7 @@
 
 namespace VitNX.Forms
 {
-    partial class VitNXDialog
+    partial class VitNX_Dialog
     {
         /// <summary>
         /// Required designer variable.
@@ -158,14 +158,14 @@ namespace VitNX.Forms
             this.btnIgnore.TabIndex = 10;
             this.btnIgnore.Text = "Ignore";
             // 
-            // VitNXDialog
+            // VitNX_Dialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 402);
             this.Controls.Add(this.pnlFooter);
-            this.Name = "VitNXDialog";
-            this.Text = "VitNXDialog";
+            this.Name = "VitNX_Dialog";
+            this.Text = "VitNX_Dialog";
             this.pnlFooter.ResumeLayout(false);
             this.flowInner.ResumeLayout(false);
             this.ResumeLayout(false);

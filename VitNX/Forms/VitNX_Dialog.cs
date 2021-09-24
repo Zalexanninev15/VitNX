@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Forms
 {
-    public partial class VitNXDialog : VitNXForm
+    public partial class VitNX_Dialog : VitNX_Form
     {
         #region Field Region
 
-        private VitNXDialogButton _dialogButtons = VitNXDialogButton.Ok;
+        private VitNX_DialogButton _dialogButtons = VitNX_DialogButton.Ok;
         private List<VitNX_Button> _buttons;
 
         #endregion
@@ -30,8 +30,8 @@ namespace VitNX.Forms
         #region Property Region
 
         [Description("Determines the type of the dialog window.")]
-        [DefaultValue(VitNXDialogButton.Ok)]
-        public VitNXDialogButton DialogButtons
+        [DefaultValue(VitNX_DialogButton.Ok)]
+        public VitNX_DialogButton DialogButtons
         {
             get { return _dialogButtons; }
             set
@@ -68,7 +68,7 @@ namespace VitNX.Forms
 
         #region Constructor Region
 
-        public VitNXDialog()
+        public VitNX_Dialog()
         {
             InitializeComponent();
 
@@ -101,41 +101,41 @@ namespace VitNX.Forms
 
             switch (_dialogButtons)
             {
-                case VitNXDialogButton.Ok:
+                case VitNX_DialogButton.Ok:
                     ShowButton(btnOk, true);
                     AcceptButton = btnOk;
                     break;
-                case VitNXDialogButton.Close:
+                case VitNX_DialogButton.Close:
                     ShowButton(btnClose, true);
                     AcceptButton = btnClose;
                     CancelButton = btnClose;
                     break;
-                case VitNXDialogButton.OkCancel:
+                case VitNX_DialogButton.OkCancel:
                     ShowButton(btnOk);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnOk;
                     CancelButton = btnCancel;
                     break;
-                case VitNXDialogButton.AbortRetryIgnore:
+                case VitNX_DialogButton.AbortRetryIgnore:
                     ShowButton(btnAbort);
                     ShowButton(btnRetry);
                     ShowButton(btnIgnore, true);
                     AcceptButton = btnAbort;
                     CancelButton = btnIgnore;
                     break;
-                case VitNXDialogButton.RetryCancel:
+                case VitNX_DialogButton.RetryCancel:
                     ShowButton(btnRetry);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnRetry;
                     CancelButton = btnCancel;
                     break;
-                case VitNXDialogButton.YesNo:
+                case VitNX_DialogButton.YesNo:
                     ShowButton(btnYes);
                     ShowButton(btnNo, true);
                     AcceptButton = btnYes;
                     CancelButton = btnNo;
                     break;
-                case VitNXDialogButton.YesNoCancel:
+                case VitNX_DialogButton.YesNoCancel:
                     ShowButton(btnYes);
                     ShowButton(btnNo);
                     ShowButton(btnCancel, true);

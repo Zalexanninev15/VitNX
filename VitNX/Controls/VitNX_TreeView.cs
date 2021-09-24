@@ -1149,7 +1149,7 @@ namespace VitNX.Controls
                 if (node == dropNode)
                 {
                     if (isMoving)
-                        VitNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
+                        VitNX_MessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
 
                     return false;
                 }
@@ -1157,7 +1157,7 @@ namespace VitNX.Controls
                 if (node.ParentNode != null && node.ParentNode == dropNode)
                 {
                     if (isMoving)
-                        VitNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
+                        VitNX_MessageBox.ShowError($"Cannot move {node.Text}. The destination folder is the same as the source folder.", Application.ProductName);
 
                     return false;
                 }
@@ -1168,7 +1168,7 @@ namespace VitNX.Controls
                     if (node == parentNode)
                     {
                         if (isMoving)
-                            VitNXMessageBox.ShowError($"Cannot move {node.Text}. The destination folder is a subfolder of the source folder.", Application.ProductName);
+                            VitNX_MessageBox.ShowError($"Cannot move {node.Text}. The destination folder is a subfolder of the source folder.", Application.ProductName);
 
                         return false;
                     }

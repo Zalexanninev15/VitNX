@@ -3,7 +3,7 @@ using VitNX.Forms;
 
 namespace Example
 {
-    public partial class DialogControls : VitNXDialog
+    public partial class DialogControls : VitNX_Dialog
     {
         public DialogControls()
         {
@@ -31,8 +31,8 @@ namespace Example
                 treeTest.Nodes.Add(node);
             }
             // Hook dialog button events
-            btnDialog.Click += delegate { VitNXMessageBox.ShowError("This is a Error", "VitNX UI - Example"); };
-            btnMessageBox.Click += delegate { VitNXMessageBox.ShowInfo("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VitNX UI - Example"); };
+            btnDialog.Click += delegate { VitNX_MessageBox.ShowError("This is a Error", "VitNX UI - Example"); };
+            btnMessageBox.Click += delegate { VitNX_MessageBox.ShowInfo("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VitNX UI - Example"); };
         }
     }
 }

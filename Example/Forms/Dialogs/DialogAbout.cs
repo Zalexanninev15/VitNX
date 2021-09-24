@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Example
 {
-    public partial class DialogAbout : VitNXDialog
+    public partial class DialogAbout : VitNX_Dialog
     {
         public DialogAbout()
         {

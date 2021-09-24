@@ -2,7 +2,7 @@
 
 namespace VitNX.Forms
 {
-    partial class VitNXMessageBox
+    partial class VitNX_MessageBox
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@ namespace VitNX.Forms
             this.lblText.TabIndex = 4;
             this.lblText.Text = "Something something something";
             // 
-            // VitNXMessageBox
+            // VitNX_MessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,7 +63,7 @@ namespace VitNX.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "VitNXMessageBox";
+            this.Name = "VitNX_MessageBox";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
