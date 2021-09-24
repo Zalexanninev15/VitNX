@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXRadioButton : RadioButton
+    public class VitNX_RadioButton : RadioButton
     {
         #region Field Region
 
@@ -128,7 +128,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXRadioButton()
+        public VitNX_RadioButton()
         {
             SetStyle(ControlStyles.SupportsTransparentBackColor |
                      ControlStyles.OptimizedDoubleBuffer |
