@@ -71,7 +71,7 @@ namespace VitNX.Forms
 
         #region Static Method Region
 
-        public static DialogResult ShowInformation(string message, string caption, VitNXDialogButton buttons = VitNXDialogButton.Ok)
+        public static DialogResult ShowInfo(string message, string caption, VitNXDialogButton buttons = VitNXDialogButton.Ok)
         {
             return ShowDialog(message, caption, VitNXMessageBoxIcon.Information, buttons);
         }

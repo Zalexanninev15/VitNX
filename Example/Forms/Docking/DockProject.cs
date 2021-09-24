@@ -1,6 +1,7 @@
-﻿using VitNX.Controls;
+﻿using System;
+using VitNX.Controls;
 using VitNX.Docking;
-using System.Threading;
+using VitNX.Functions;
 
 namespace Example
 {
@@ -27,7 +28,13 @@ namespace Example
             }
         }
 
-        private void vitNXButton1_Click(object sender, System.EventArgs e) { vitNXProgressBarStyle21.Value = 0; vitNXProgressBar1.Value = 0; timer1.Start(); }
-        private void timer1_Tick(object sender, System.EventArgs e) { vitNXProgressBar1.Increment(1); vitNXProgressBarStyle21.Increment(1); }
+        private void vitNXButton1_Click(object sender, EventArgs e) { vitNXProgressBarStyle21.Value = 0; vitNXProgressBar1.Value = 0; timer1.Start(); }
+        private void timer1_Tick(object sender, EventArgs e) { vitNXProgressBar1.Increment(1); vitNXProgressBarStyle21.Increment(1); }
+
+        private void vitNXButton2_Click(object sender, EventArgs e)
+        {
+            var dialog = new FolderSelectDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), Title = "Select Folder" };
+            if (dialog.Show()) { VitNX.Forms.VitNXMessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example"); } else { }
+        }
     }
 }

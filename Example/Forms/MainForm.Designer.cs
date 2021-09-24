@@ -47,6 +47,12 @@ namespace Example
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.checkedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkedWithIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.SetTaskBarProgressBar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.FolderSelectDialogItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProject = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProperties = new System.Windows.Forms.ToolStripMenuItem();
@@ -140,7 +146,7 @@ namespace Example
             this.mnuDialog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuDialog.Image = global::Example.Icons.properties_16xLG;
             this.mnuDialog.Name = "mnuDialog";
-            this.mnuDialog.Size = new System.Drawing.Size(145, 22);
+            this.mnuDialog.Size = new System.Drawing.Size(191, 22);
             this.mnuDialog.Text = "Dialog test";
             // 
             // WarningMessageBox
@@ -149,8 +155,8 @@ namespace Example
             this.WarningMessageBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.WarningMessageBox.Image = global::Example.Icons.properties_16xLG;
             this.WarningMessageBox.Name = "WarningMessageBox";
-            this.WarningMessageBox.Size = new System.Drawing.Size(145, 22);
-            this.WarningMessageBox.Text = "Warning Test";
+            this.WarningMessageBox.Size = new System.Drawing.Size(191, 22);
+            this.WarningMessageBox.Text = "Warning MessageBox";
             this.WarningMessageBox.Click += new System.EventHandler(this.WarningMessageBox_Click);
             // 
             // QuestionMessageBox
@@ -159,8 +165,8 @@ namespace Example
             this.QuestionMessageBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.QuestionMessageBox.Image = global::Example.Icons.properties_16xLG;
             this.QuestionMessageBox.Name = "QuestionMessageBox";
-            this.QuestionMessageBox.Size = new System.Drawing.Size(145, 22);
-            this.QuestionMessageBox.Text = "Question Test";
+            this.QuestionMessageBox.Size = new System.Drawing.Size(191, 22);
+            this.QuestionMessageBox.Text = "Question MessageBox";
             this.QuestionMessageBox.Click += new System.EventHandler(this.QuestionMessageBox_Click);
             // 
             // mnuTools
@@ -171,7 +177,13 @@ namespace Example
             this.checkableWithIconToolStripMenuItem,
             this.toolStripSeparator2,
             this.checkedToolStripMenuItem,
-            this.checkedWithIconToolStripMenuItem});
+            this.checkedWithIconToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.SetTaskBarProgressBar,
+            this.toolStripTextBox1,
+            this.toolStripComboBox1,
+            this.toolStripSeparator4,
+            this.FolderSelectDialogItem});
             this.mnuTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuTools.Name = "mnuTools";
             this.mnuTools.Size = new System.Drawing.Size(46, 20);
@@ -179,46 +191,104 @@ namespace Example
             // 
             // checkableToolStripMenuItem
             // 
+            this.checkableToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.checkableToolStripMenuItem.CheckOnClick = true;
             this.checkableToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.checkableToolStripMenuItem.Name = "checkableToolStripMenuItem";
-            this.checkableToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.checkableToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.checkableToolStripMenuItem.Text = "Checkable";
             // 
             // checkableWithIconToolStripMenuItem
             // 
+            this.checkableWithIconToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.checkableWithIconToolStripMenuItem.CheckOnClick = true;
             this.checkableWithIconToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.checkableWithIconToolStripMenuItem.Image = global::Example.Icons.properties_16xLG;
             this.checkableWithIconToolStripMenuItem.Name = "checkableWithIconToolStripMenuItem";
-            this.checkableWithIconToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.checkableWithIconToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.checkableWithIconToolStripMenuItem.Text = "Checkable with icon";
             // 
             // toolStripSeparator2
             // 
+            this.toolStripSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.toolStripSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(246, 6);
             // 
             // checkedToolStripMenuItem
             // 
+            this.checkedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.checkedToolStripMenuItem.Checked = true;
             this.checkedToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkedToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.checkedToolStripMenuItem.Name = "checkedToolStripMenuItem";
-            this.checkedToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.checkedToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.checkedToolStripMenuItem.Text = "Checked";
             // 
             // checkedWithIconToolStripMenuItem
             // 
+            this.checkedWithIconToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.checkedWithIconToolStripMenuItem.Checked = true;
             this.checkedWithIconToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkedWithIconToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.checkedWithIconToolStripMenuItem.Image = global::Example.Icons.properties_16xLG;
             this.checkedWithIconToolStripMenuItem.Name = "checkedWithIconToolStripMenuItem";
-            this.checkedWithIconToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.checkedWithIconToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.checkedWithIconToolStripMenuItem.Text = "Checked with icon";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.toolStripSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(246, 6);
+            // 
+            // SetTaskBarProgressBar
+            // 
+            this.SetTaskBarProgressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.SetTaskBarProgressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.SetTaskBarProgressBar.Image = global::Example.Icons.properties_16xLG;
+            this.SetTaskBarProgressBar.Name = "SetTaskBarProgressBar";
+            this.SetTaskBarProgressBar.Size = new System.Drawing.Size(249, 22);
+            this.SetTaskBarProgressBar.Text = "Set TaskBar ProgressBar (0 to 100)";
+            this.SetTaskBarProgressBar.Click += new System.EventHandler(this.SetTaskBarProgressBar_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.toolStripComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "NoProgress",
+            "Indeterminate",
+            "Normal",
+            "Error",
+            "Paused"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.toolStripComboBox1.Text = "Type";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.toolStripSeparator4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(246, 6);
+            // 
+            // FolderSelectDialogItem
+            // 
+            this.FolderSelectDialogItem.Name = "FolderSelectDialogItem";
+            this.FolderSelectDialogItem.Size = new System.Drawing.Size(249, 22);
             // 
             // mnuWindow
             // 
@@ -440,6 +510,12 @@ namespace Example
         private System.Windows.Forms.ToolStripMenuItem checkedWithIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WarningMessageBox;
         private System.Windows.Forms.ToolStripMenuItem QuestionMessageBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem SetTaskBarProgressBar;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem FolderSelectDialogItem;
     }
 }
 

@@ -394,7 +394,7 @@ namespace Example
             this.btnMessageBox.Padding = new System.Windows.Forms.Padding(5);
             this.btnMessageBox.Size = new System.Drawing.Size(200, 30);
             this.btnMessageBox.TabIndex = 12;
-            this.btnMessageBox.Text = "Message Box";
+            this.btnMessageBox.Text = "Information MessageBox";
             // 
             // panel2
             // 
@@ -416,7 +416,7 @@ namespace Example
             this.btnDialog.Padding = new System.Windows.Forms.Padding(5);
             this.btnDialog.Size = new System.Drawing.Size(200, 29);
             this.btnDialog.TabIndex = 4;
-            this.btnDialog.Text = "Dialog";
+            this.btnDialog.Text = "Error MessageBox";
             // 
             // VitNXTitle1
             // 

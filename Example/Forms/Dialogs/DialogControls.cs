@@ -32,7 +32,7 @@ namespace Example
             }
             // Hook dialog button events
             btnDialog.Click += delegate { VitNXMessageBox.ShowError("This is a Error", "VitNX UI - Example"); };
-            btnMessageBox.Click += delegate { VitNXMessageBox.ShowInformation("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VitNX UI - Example"); };
+            btnMessageBox.Click += delegate { VitNXMessageBox.ShowInfo("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.", "VitNX UI - Example"); };
         }
     }
 }
