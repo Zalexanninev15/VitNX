@@ -140,7 +140,7 @@ namespace Example
             this.mnuDialog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuDialog.Image = global::Example.Icons.properties_16xLG;
             this.mnuDialog.Name = "mnuDialog";
-            this.mnuDialog.Size = new System.Drawing.Size(180, 22);
+            this.mnuDialog.Size = new System.Drawing.Size(145, 22);
             this.mnuDialog.Text = "Dialog test";
             // 
             // WarningMessageBox
@@ -149,7 +149,7 @@ namespace Example
             this.WarningMessageBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.WarningMessageBox.Image = global::Example.Icons.properties_16xLG;
             this.WarningMessageBox.Name = "WarningMessageBox";
-            this.WarningMessageBox.Size = new System.Drawing.Size(180, 22);
+            this.WarningMessageBox.Size = new System.Drawing.Size(145, 22);
             this.WarningMessageBox.Text = "Warning Test";
             this.WarningMessageBox.Click += new System.EventHandler(this.WarningMessageBox_Click);
             // 
@@ -159,7 +159,7 @@ namespace Example
             this.QuestionMessageBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.QuestionMessageBox.Image = global::Example.Icons.properties_16xLG;
             this.QuestionMessageBox.Name = "QuestionMessageBox";
-            this.QuestionMessageBox.Size = new System.Drawing.Size(180, 22);
+            this.QuestionMessageBox.Size = new System.Drawing.Size(145, 22);
             this.QuestionMessageBox.Text = "Question Test";
             this.QuestionMessageBox.Click += new System.EventHandler(this.QuestionMessageBox_Click);
             // 
