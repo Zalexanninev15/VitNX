@@ -16,7 +16,7 @@ namespace VitNX.Docking
 
         private int _minimum;
         private int _maximum;
-        private VitNXTranslucentForm _overlayForm;
+        private VitNX_TranslucentForm _overlayForm;
 
         #endregion
 
@@ -55,7 +55,7 @@ namespace VitNX.Docking
 
         public void ShowOverlay()
         {
-            _overlayForm = new VitNXTranslucentForm(Color.Black);
+            _overlayForm = new VitNX_TranslucentForm(Color.Black);
             _overlayForm.Visible = true;
 
             UpdateOverlay(new Point(0, 0));

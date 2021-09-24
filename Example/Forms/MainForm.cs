@@ -9,7 +9,7 @@ using VitNX.Functions;
 
 namespace Example
 {
-    public partial class MainForm : VitNXForm
+    public partial class MainForm : VitNX_Form
     {
         #region Field Region
 
@@ -196,19 +196,19 @@ namespace Example
 
         private void WarningMessageBox_Click(object sender, EventArgs e)
         {
-            VitNXMessageBox.ShowWarning("This is a warning", "VitNX UI - Example");
+            VitNX_MessageBox.ShowWarning("This is a warning", "VitNX UI - Example");
         }
 
         private void QuestionMessageBox_Click(object sender, EventArgs e)
         {
-            DialogResult a = VitNXMessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
+            DialogResult a = VitNX_MessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
             if (a == DialogResult.Yes)
             {
-                VitNXMessageBox.ShowInfo("Your choice is Yes", "VitNX UI - Example");
+                VitNX_MessageBox.ShowInfo("Your choice is Yes", "VitNX UI - Example");
             }
             if (a == DialogResult.No)
             {
-                VitNXMessageBox.ShowInfo("Your choice is No", "VitNX UI - Example");
+                VitNX_MessageBox.ShowInfo("Your choice is No", "VitNX UI - Example");
             }
         }
 
@@ -237,7 +237,7 @@ namespace Example
                     TbProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                 }
             }
-            else { VitNXMessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example"); }
+            else { VitNX_MessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example"); }
         }
 
         #endregion

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Forms
 {
-    public class VitNXForm : Form
+    public class VitNX_Form : Form
     {
         #region Field Region
 
@@ -32,7 +32,7 @@ namespace VitNX.Forms
 
         #region Constructor Region
 
-        public VitNXForm()
+        public VitNX_Form()
         {
             BackColor = Colors.GreyBackground;
         }
