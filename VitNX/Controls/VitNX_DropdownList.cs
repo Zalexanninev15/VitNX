@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXDropdownList : Control
+    public class VitNX_DropdownList : Control
     {
         #region Event Region
 
@@ -18,12 +18,12 @@ namespace VitNX.Controls
 
         #region Field Region
 
-        private VitNXControlState _controlState = VitNXControlState.Normal;
+        private VitNX_ControlState _controlState = VitNX_ControlState.Normal;
 
-        private ObservableCollection<VitNXDropdownItem> _items = new ObservableCollection<VitNXDropdownItem>();
-        private VitNXDropdownItem _selectedItem;
+        private ObservableCollection<VitNX_DropdownItem> _items = new ObservableCollection<VitNX_DropdownItem>();
+        private VitNX_DropdownItem _selectedItem;
 
-        private VitNXContextMenu _menu = new VitNXContextMenu();
+        private VitNX_ContextMenu _menu = new VitNX_ContextMenu();
         private bool _menuOpen = false;
 
         private bool _showBorder = true;
@@ -41,14 +41,14 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObservableCollection<VitNXDropdownItem> Items
+        public ObservableCollection<VitNX_DropdownItem> Items
         {
             get { return _items; }
         }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VitNXDropdownItem SelectedItem
+        public VitNX_DropdownItem SelectedItem
         {
             get { return _selectedItem; }
             set
@@ -78,7 +78,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VitNXControlState ControlState
+        public VitNX_ControlState ControlState
         {
             get { return _controlState; }
         }
@@ -122,7 +122,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXDropdownList()
+        public VitNX_DropdownList()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
@@ -134,27 +134,27 @@ namespace VitNX.Controls
             _menu.Closed += Menu_Closed;
 
             Items.CollectionChanged += Items_CollectionChanged;
-            SelectedItemChanged += VitNXDropdownList_SelectedItemChanged;
+            SelectedItemChanged += VitNX_DropdownList_SelectedItemChanged;
 
-            SetControlState(VitNXControlState.Normal);
+            SetControlState(VitNX_ControlState.Normal);
         }
 
         #endregion
 
         #region Method Region
 
-        private ToolStripMenuItem GetMenuItem(VitNXDropdownItem item)
+        private ToolStripMenuItem GetMenuItem(VitNX_DropdownItem item)
         {
             foreach (ToolStripMenuItem menuItem in _menu.Items)
             {
-                if ((VitNXDropdownItem)menuItem.Tag == item)
+                if ((VitNX_DropdownItem)menuItem.Tag == item)
                     return menuItem;
             }
 
             return null;
         }
 
-        private void SetControlState(VitNXControlState controlState)
+        private void SetControlState(VitNX_ControlState controlState)
         {
             if (_menuOpen)
                 return;
@@ -171,7 +171,7 @@ namespace VitNX.Controls
             if (_menu.Visible)
                 return;
 
-            SetControlState(VitNXControlState.Pressed);
+            SetControlState(VitNX_ControlState.Pressed);
 
             _menuOpen = true;
 
@@ -223,7 +223,7 @@ namespace VitNX.Controls
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (VitNXDropdownItem item in e.NewItems)
+                foreach (VitNX_DropdownItem item in e.NewItems)
                 {
                     var menuItem = new ToolStripMenuItem(item.Text)
                     {
@@ -245,11 +245,11 @@ namespace VitNX.Controls
 
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (VitNXDropdownItem item in e.OldItems)
+                foreach (VitNX_DropdownItem item in e.OldItems)
                 {
                     foreach (ToolStripMenuItem menuItem in _menu.Items)
                     {
-                        if ((VitNXDropdownItem)menuItem.Tag == item)
+                        if ((VitNX_DropdownItem)menuItem.Tag == item)
                             _menu.Items.Remove(menuItem);
                     }
                 }
@@ -270,16 +270,16 @@ namespace VitNX.Controls
             if (menuItem == null)
                 return;
 
-            var dropdownItem = (VitNXDropdownItem)menuItem.Tag;
+            var dropdownItem = (VitNX_DropdownItem)menuItem.Tag;
             if (_selectedItem != dropdownItem)
                 SelectedItem = dropdownItem;
         }
 
-        private void VitNXDropdownList_SelectedItemChanged(object sender, EventArgs e)
+        private void VitNX_DropdownList_SelectedItemChanged(object sender, EventArgs e)
         {
             foreach (ToolStripMenuItem item in _menu.Items)
             {
-                if ((VitNXDropdownItem)item.Tag == SelectedItem)
+                if ((VitNX_DropdownItem)item.Tag == SelectedItem)
                 {
                     item.BackColor = Colors.VitNXBlueBackground;
                     item.Font = new Font(Font, FontStyle.Bold);
@@ -308,13 +308,13 @@ namespace VitNX.Controls
             if (e.Button == MouseButtons.Left)
             {
                 if (ClientRectangle.Contains(e.Location))
-                    SetControlState(VitNXControlState.Pressed);
+                    SetControlState(VitNX_ControlState.Pressed);
                 else
-                    SetControlState(VitNXControlState.Hover);
+                    SetControlState(VitNX_ControlState.Hover);
             }
             else
             {
-                SetControlState(VitNXControlState.Hover);
+                SetControlState(VitNX_ControlState.Hover);
             }
         }
 
@@ -329,14 +329,14 @@ namespace VitNX.Controls
         {
             base.OnMouseUp(e);
 
-            SetControlState(VitNXControlState.Normal);
+            SetControlState(VitNX_ControlState.Normal);
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
 
-            SetControlState(VitNXControlState.Normal);
+            SetControlState(VitNX_ControlState.Normal);
         }
 
         protected override void OnMouseCaptureChanged(EventArgs e)
@@ -346,7 +346,7 @@ namespace VitNX.Controls
             var location = Cursor.Position;
 
             if (!ClientRectangle.Contains(location))
-                SetControlState(VitNXControlState.Normal);
+                SetControlState(VitNX_ControlState.Normal);
         }
 
         protected override void OnGotFocus(EventArgs e)
@@ -363,9 +363,9 @@ namespace VitNX.Controls
             var location = Cursor.Position;
 
             if (!ClientRectangle.Contains(location))
-                SetControlState(VitNXControlState.Normal);
+                SetControlState(VitNX_ControlState.Normal);
             else
-                SetControlState(VitNXControlState.Hover);
+                SetControlState(VitNX_ControlState.Hover);
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -381,9 +381,9 @@ namespace VitNX.Controls
             _menuOpen = false;
 
             if (!ClientRectangle.Contains(MousePosition))
-                SetControlState(VitNXControlState.Normal);
+                SetControlState(VitNX_ControlState.Normal);
             else
-                SetControlState(VitNXControlState.Hover);
+                SetControlState(VitNX_ControlState.Hover);
         }
 
         #endregion
@@ -401,7 +401,7 @@ namespace VitNX.Controls
             }
 
             // Draw normal state
-            if (ControlState == VitNXControlState.Normal)
+            if (ControlState == VitNX_ControlState.Normal)
             {
                 if (ShowBorder)
                 {
@@ -414,7 +414,7 @@ namespace VitNX.Controls
             }
 
             // Draw hover state
-            if (ControlState == VitNXControlState.Hover)
+            if (ControlState == VitNX_ControlState.Hover)
             {
                 using (var b = new SolidBrush(Colors.VitNXBorder))
                 {
@@ -435,7 +435,7 @@ namespace VitNX.Controls
             }
 
             // Draw pressed state
-            if (ControlState == VitNXControlState.Pressed)
+            if (ControlState == VitNX_ControlState.Pressed)
             {
                 using (var b = new SolidBrush(Colors.VitNXBorder))
                 {

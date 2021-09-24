@@ -1,6 +1,4 @@
-﻿using VitNX.Config;
-using VitNX.Controls;
-using VitNX.Docking;
+﻿using VitNX.Controls;
 
 namespace Example
 {
@@ -33,12 +31,12 @@ namespace Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.treeProject = new VitNX.Controls.VitNXTreeView();
-            this.vitNXProgressBarStyle21 = new VitNX.Controls.VitNXProgressBarRounded();
-            this.vitNXButton1 = new VitNX.Controls.VitNXButton();
+            this.treeProject = new VitNX.Controls.VitNX_TreeView();
+            this.vitNXProgressBarStyle21 = new VitNX.Controls.VitNX_ProgressBarRounded();
+            this.vitNXButton1 = new VitNX.Controls.VitNX_Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.vitNXProgressBar1 = new VitNX.Controls.VitNXProgressBar();
-            this.vitNXButton2 = new VitNX.Controls.VitNXButton();
+            this.vitNXProgressBar1 = new VitNX.Controls.VitNX_ProgressBar();
+            this.vitNXButton2 = new VitNX.Controls.VitNX_Button();
             this.SuspendLayout();
             // 
             // treeProject
@@ -52,7 +50,7 @@ namespace Example
             this.treeProject.ShowIcons = true;
             this.treeProject.Size = new System.Drawing.Size(280, 425);
             this.treeProject.TabIndex = 0;
-            this.treeProject.Text = "VitNXTreeView1";
+            this.treeProject.Text = "VitNX_TreeView1";
             // 
             // vitNXProgressBarStyle21
             // 
@@ -112,7 +110,7 @@ namespace Example
             this.Controls.Add(this.vitNXButton1);
             this.Controls.Add(this.vitNXProgressBarStyle21);
             this.Controls.Add(this.treeProject);
-            this.DefaultDockArea = VitNX.Docking.VitNXDockArea.Left;
+            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Left;
             this.DockText = "Project Explorer";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.application_16x;
@@ -125,11 +123,11 @@ namespace Example
 
         #endregion
 
-        private VitNXTreeView treeProject;
-        private VitNXProgressBarRounded vitNXProgressBarStyle21;
-        private VitNXButton vitNXButton1;
+        private VitNX_TreeView treeProject;
+        private VitNX_ProgressBarRounded vitNXProgressBarStyle21;
+        private VitNX_Button vitNXButton1;
         private System.Windows.Forms.Timer timer1;
-        private VitNXProgressBar vitNXProgressBar1;
-        private VitNXButton vitNXButton2;
+        private VitNX_ProgressBar vitNXProgressBar1;
+        private VitNX_Button vitNXButton2;
     }
 }

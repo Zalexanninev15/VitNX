@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Docking
 {
-    public enum VitNXSplitterType
+    public enum VitNX_SplitterType
     {
         Left,
         Right,

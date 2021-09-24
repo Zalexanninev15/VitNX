@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXProgressBarRounded : ProgressBar
+    public class VitNX_ProgressBarRounded : ProgressBar
     {
         [DllImport("Gdi32.dll")]
         private static extern IntPtr CreateRoundRectRgn(int int_0, int int_1, int int_2, int int_3, int int_4, int int_5);
@@ -54,7 +54,7 @@ namespace VitNX.Controls
             set { }
         }
 
-        public VitNXProgressBarRounded() { Value = Minimum; FixComponentBlinking(); }
+        public VitNX_ProgressBarRounded() { Value = Minimum; FixComponentBlinking(); }
         string _currProgressStr { get { return $"{Value}/{Maximum}"; } }
         void FixComponentBlinking() { SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true); }
         string _percentageStr { get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; } }

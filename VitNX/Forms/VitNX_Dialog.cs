@@ -10,20 +10,20 @@ namespace VitNX.Forms
         #region Field Region
 
         private VitNXDialogButton _dialogButtons = VitNXDialogButton.Ok;
-        private List<VitNXButton> _buttons;
+        private List<VitNX_Button> _buttons;
 
         #endregion
 
         #region Button Region
 
-        protected VitNXButton btnOk;
-        protected VitNXButton btnCancel;
-        protected VitNXButton btnClose;
-        protected VitNXButton btnYes;
-        protected VitNXButton btnNo;
-        protected VitNXButton btnAbort;
-        protected VitNXButton btnRetry;
-        protected VitNXButton btnIgnore;
+        protected VitNX_Button btnOk;
+        protected VitNX_Button btnCancel;
+        protected VitNX_Button btnClose;
+        protected VitNX_Button btnYes;
+        protected VitNX_Button btnNo;
+        protected VitNX_Button btnAbort;
+        protected VitNX_Button btnRetry;
+        protected VitNX_Button btnIgnore;
 
         #endregion
 
@@ -72,7 +72,7 @@ namespace VitNX.Forms
         {
             InitializeComponent();
 
-            _buttons = new List<VitNXButton>
+            _buttons = new List<VitNX_Button>
                 {
                     btnAbort, btnRetry, btnIgnore, btnOk,
                     btnCancel, btnClose, btnYes, btnNo
@@ -147,7 +147,7 @@ namespace VitNX.Forms
             SetFlowSize();
         }
 
-        private void ShowButton(VitNXButton button, bool isLast = false)
+        private void ShowButton(VitNX_Button button, bool isLast = false)
         {
             button.SendToBack();
 

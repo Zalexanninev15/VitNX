@@ -2,7 +2,7 @@
 
 namespace VitNX.Controls
 {
-    public class VitNXDropdownItem
+    public class VitNX_DropdownItem
     {
         #region Property Region
 
@@ -14,15 +14,15 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXDropdownItem()
+        public VitNX_DropdownItem()
         { }
 
-        public VitNXDropdownItem(string text)
+        public VitNX_DropdownItem(string text)
         {
             Text = text;
         }
 
-        public VitNXDropdownItem(string text, Bitmap icon)
+        public VitNX_DropdownItem(string text, Bitmap icon)
             : this(text)
         {
             Icon = icon;

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXTitle : Label
+    public class VitNX_Title : Label
     {
         #region Constructor Region
 
-        public VitNXTitle()
+        public VitNX_Title()
         { }
 
         #endregion

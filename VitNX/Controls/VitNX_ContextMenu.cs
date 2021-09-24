@@ -1,17 +1,10 @@
-﻿using VitNX.Renderers;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using VitNX.Renderers;
 
 namespace VitNX.Controls
 {
-    public class VitNXContextMenu : ContextMenuStrip
+    public class VitNX_ContextMenu : ContextMenuStrip
     {
-        #region Constructor Region
-
-        public VitNXContextMenu()
-        {
-            Renderer = new VitNXMenuRenderer();
-        }
-
-        #endregion
+        public VitNX_ContextMenu() { Renderer = new VitNX_MenuRenderer(); }
     }
 }

@@ -32,7 +32,7 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstHistory = new VitNX.Controls.VitNXListView();
+            this.lstHistory = new VitNX.Controls.VitNX_ListView();
             this.SuspendLayout();
             // 
             // lstHistory
@@ -42,14 +42,14 @@ namespace Example
             this.lstHistory.Name = "lstHistory";
             this.lstHistory.Size = new System.Drawing.Size(280, 425);
             this.lstHistory.TabIndex = 0;
-            this.lstHistory.Text = "VitNXListView1";
+            this.lstHistory.Text = "VitNX_ListView1";
             // 
             // DockHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstHistory);
-            this.DefaultDockArea = VitNX.Docking.VitNXDockArea.Right;
+            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Right;
             this.DockText = "History";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.RefactoringLog_12810;
@@ -62,6 +62,6 @@ namespace Example
 
         #endregion
 
-        private VitNXListView lstHistory;
+        private VitNX_ListView lstHistory;
     }
 }

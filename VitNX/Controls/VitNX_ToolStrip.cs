@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXToolStrip : ToolStrip
+    public class VitNX_ToolStrip : ToolStrip
     {
         #region Constructor Region
 
-        public VitNXToolStrip()
+        public VitNX_ToolStrip()
         {
-            Renderer = new VitNXToolStripRenderer();
+            Renderer = new VitNX_ToolStripRenderer();
             Padding = new Padding(5, 0, 1, 0);
             AutoSize = false;
             Size = new Size(1, 28);

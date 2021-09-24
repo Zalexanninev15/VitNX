@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Functions
 {
-    public class FolderSelectDialog
+    public class FolderDialog
     {
         string _initialDirectory;
         string _title;

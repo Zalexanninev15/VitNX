@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace VitNX.Controls
 {
-    public class VitNXListItem
+    public class VitNX_ListItem
     {
         #region Event Region
 
@@ -46,13 +46,13 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXListItem()
+        public VitNX_ListItem()
         {
             TextColor = Colors.LightText;
             FontStyle = FontStyle.Regular;
         }
 
-        public VitNXListItem(string text)
+        public VitNX_ListItem(string text)
             : this()
         {
             Text = text;

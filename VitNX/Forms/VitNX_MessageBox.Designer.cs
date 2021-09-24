@@ -31,7 +31,7 @@ namespace VitNX.Forms
         private void InitializeComponent()
         {
             this.picIcon = new System.Windows.Forms.PictureBox();
-            this.lblText = new VitNXLabel();
+            this.lblText = new VitNX_Label();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +78,6 @@ namespace VitNX.Forms
         #endregion
 
         private System.Windows.Forms.PictureBox picIcon;
-        private VitNXLabel lblText;
+        private VitNX_Label lblText;
     }
 }

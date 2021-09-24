@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Controls
 {
-    public enum VitNXButtonStyle
+    public enum VitNX_ButtonStyle
     {
         Normal,
         Flat

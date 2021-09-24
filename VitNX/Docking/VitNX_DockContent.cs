@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VitNXDockContent : UserControl
+    public class VitNX_DockContent : UserControl
     {
         #region Event Handler Region
 
@@ -55,8 +55,8 @@ namespace VitNX.Docking
 
         [Category("Layout")]
         [Description("Determines the default area of the dock panel this content will be added to.")]
-        [DefaultValue(VitNXDockArea.Document)]
-        public VitNXDockArea DefaultDockArea { get; set; }
+        [DefaultValue(VitNX_DockArea.Document)]
+        public VitNX_DockArea DefaultDockArea { get; set; }
 
         [Category("Behavior")]
         [Description("Determines the key used by this content in the dock serialization.")]
@@ -64,19 +64,19 @@ namespace VitNX.Docking
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VitNXDockPanel DockPanel { get; internal set; }
+        public VitNX_DockPanel DockPanel { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VitNXDockRegion DockRegion { get; internal set; }
+        public VitNX_DockRegion DockRegion { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VitNXDockGroup DockGroup { get; internal set; }
+        public VitNX_DockGroup DockGroup { get; internal set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public VitNXDockArea DockArea { get; set; }
+        public VitNX_DockArea DockArea { get; set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -86,7 +86,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VitNXDockContent()
+        public VitNX_DockContent()
         { }
 
         #endregion

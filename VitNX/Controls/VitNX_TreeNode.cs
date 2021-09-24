@@ -4,12 +4,12 @@ using System.Drawing;
 
 namespace VitNX.Controls
 {
-    public class VitNXTreeNode
+    public class VitNX_TreeNode
     {
         #region Event Region
 
-        public event EventHandler<ObservableListModified<VitNXTreeNode>> ItemsAdded;
-        public event EventHandler<ObservableListModified<VitNXTreeNode>> ItemsRemoved;
+        public event EventHandler<ObservableListModified<VitNX_TreeNode>> ItemsAdded;
+        public event EventHandler<ObservableListModified<VitNX_TreeNode>> ItemsRemoved;
 
         public event EventHandler TextChanged;
         public event EventHandler NodeExpanded;
@@ -21,10 +21,10 @@ namespace VitNX.Controls
 
         private string _text;
         private bool _isRoot;
-        private VitNXTreeView _parentTree;
-        private VitNXTreeNode _parentNode;
+        private VitNX_TreeView _parentTree;
+        private VitNX_TreeNode _parentNode;
 
-        private ObservableList<VitNXTreeNode> _nodes;
+        private ObservableList<VitNX_TreeNode> _nodes;
 
         private bool _expanded;
 
@@ -86,7 +86,7 @@ namespace VitNX.Controls
             }
         }
 
-        public ObservableList<VitNXTreeNode> Nodes
+        public ObservableList<VitNX_TreeNode> Nodes
         {
             get { return _nodes; }
             set
@@ -110,7 +110,7 @@ namespace VitNX.Controls
             set { _isRoot = value; }
         }
 
-        public VitNXTreeView ParentTree
+        public VitNX_TreeView ParentTree
         {
             get { return _parentTree; }
             set
@@ -125,7 +125,7 @@ namespace VitNX.Controls
             }
         }
 
-        public VitNXTreeNode ParentNode
+        public VitNX_TreeNode ParentNode
         {
             get { return _parentNode; }
             set { _parentNode = value; }
@@ -154,13 +154,13 @@ namespace VitNX.Controls
             }
         }
 
-        public VitNXTreeNode PrevVisibleNode { get; set; }
+        public VitNX_TreeNode PrevVisibleNode { get; set; }
 
-        public VitNXTreeNode NextVisibleNode { get; set; }
+        public VitNX_TreeNode NextVisibleNode { get; set; }
 
         public int VisibleIndex { get; set; }
 
-        public bool IsNodeAncestor(VitNXTreeNode node)
+        public bool IsNodeAncestor(VitNX_TreeNode node)
         {
             var parent = ParentNode;
             while (parent != null)
@@ -178,12 +178,12 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXTreeNode()
+        public VitNX_TreeNode()
         {
-            Nodes = new ObservableList<VitNXTreeNode>();
+            Nodes = new ObservableList<VitNX_TreeNode>();
         }
 
-        public VitNXTreeNode(string text)
+        public VitNX_TreeNode(string text)
             : this()
         {
             Text = text;
@@ -230,7 +230,7 @@ namespace VitNX.Controls
                 TextChanged(this, null);
         }
 
-        private void Nodes_ItemsAdded(object sender, ObservableListModified<VitNXTreeNode> e)
+        private void Nodes_ItemsAdded(object sender, ObservableListModified<VitNX_TreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -245,7 +245,7 @@ namespace VitNX.Controls
                 ItemsAdded(this, e);
         }
 
-        private void Nodes_ItemsRemoved(object sender, ObservableListModified<VitNXTreeNode> e)
+        private void Nodes_ItemsRemoved(object sender, ObservableListModified<VitNX_TreeNode> e)
         {
             if (Nodes.Count == 0)
                 Expanded = false;

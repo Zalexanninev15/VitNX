@@ -32,16 +32,16 @@ namespace Example
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblVersion = new VitNX.Controls.VitNXLabel();
-            this.VitNXLabel1 = new VitNX.Controls.VitNXLabel();
-            this.lblHeader = new VitNX.Controls.VitNXLabel();
+            this.lblVersion = new VitNX.Controls.VitNX_Label();
+            this.VitNX_Label1 = new VitNX.Controls.VitNX_Label();
+            this.lblHeader = new VitNX.Controls.VitNX_Label();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.lblVersion);
-            this.pnlMain.Controls.Add(this.VitNXLabel1);
+            this.pnlMain.Controls.Add(this.VitNX_Label1);
             this.pnlMain.Controls.Add(this.lblHeader);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
@@ -62,18 +62,18 @@ namespace Example
             this.lblVersion.Text = "Version: [version]";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // VitNXLabel1
+            // VitNX_Label1
             // 
-            this.VitNXLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.VitNXLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.VitNXLabel1.Location = new System.Drawing.Point(15, 112);
-            this.VitNXLabel1.Name = "VitNXLabel1";
-            this.VitNXLabel1.Size = new System.Drawing.Size(313, 54);
-            this.VitNXLabel1.TabIndex = 4;
-            this.VitNXLabel1.Text = "Controls for WinForms and necessary functions for interaction (.NET Framework 4.5" +
+            this.VitNX_Label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_Label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.VitNX_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.VitNX_Label1.Location = new System.Drawing.Point(15, 112);
+            this.VitNX_Label1.Name = "VitNX_Label1";
+            this.VitNX_Label1.Size = new System.Drawing.Size(313, 54);
+            this.VitNX_Label1.TabIndex = 4;
+            this.VitNX_Label1.Text = "Controls for WinForms and necessary functions for interaction (.NET Framework 4.5" +
     ")";
-            this.VitNXLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VitNX_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHeader
             // 
@@ -112,8 +112,8 @@ namespace Example
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private VitNXLabel lblHeader;
-        private VitNXLabel VitNXLabel1;
-        private VitNXLabel lblVersion;
+        private VitNX_Label lblHeader;
+        private VitNX_Label VitNX_Label1;
+        private VitNX_Label lblVersion;
     }
 }

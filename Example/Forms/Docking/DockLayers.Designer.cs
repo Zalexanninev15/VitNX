@@ -1,5 +1,4 @@
 ﻿using VitNX.Controls;
-using VitNX.Docking;
 
 namespace Example
 {
@@ -31,8 +30,8 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstLayers = new VitNX.Controls.VitNXListView();
-            this.cmbList = new VitNX.Controls.VitNXDropdownList();
+            this.lstLayers = new VitNX.Controls.VitNX_ListView();
+            this.cmbList = new VitNX.Controls.VitNX_DropdownList();
             this.SuspendLayout();
             // 
             // lstLayers
@@ -44,7 +43,7 @@ namespace Example
             this.lstLayers.ShowIcons = true;
             this.lstLayers.Size = new System.Drawing.Size(280, 399);
             this.lstLayers.TabIndex = 0;
-            this.lstLayers.Text = "VitNXListView1";
+            this.lstLayers.Text = "VitNX_ListView1";
             // 
             // cmbList
             // 
@@ -54,7 +53,7 @@ namespace Example
             this.cmbList.ShowBorder = false;
             this.cmbList.Size = new System.Drawing.Size(280, 26);
             this.cmbList.TabIndex = 1;
-            this.cmbList.Text = "VitNXDropdownList1";
+            this.cmbList.Text = "VitNX_DropdownList1";
             // 
             // DockLayers
             // 
@@ -62,7 +61,7 @@ namespace Example
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstLayers);
             this.Controls.Add(this.cmbList);
-            this.DefaultDockArea = VitNX.Docking.VitNXDockArea.Right;
+            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Right;
             this.DockText = "Layers";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.Collection_16xLG;
@@ -75,7 +74,7 @@ namespace Example
 
         #endregion
 
-        private VitNXListView lstLayers;
-        private VitNXDropdownList cmbList;
+        private VitNX_ListView lstLayers;
+        private VitNX_DropdownList cmbList;
     }
 }

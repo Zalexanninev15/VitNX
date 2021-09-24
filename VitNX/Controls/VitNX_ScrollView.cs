@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public abstract class VitNXScrollView : VitNXScrollBase
+    public abstract class VitNX_ScrollView : VitNX_ScrollBase
     {
         #region Constructor Region
 
-        protected VitNXScrollView()
+        protected VitNX_ScrollView()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |

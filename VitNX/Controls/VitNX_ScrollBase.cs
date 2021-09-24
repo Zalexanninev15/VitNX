@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public abstract class VitNXScrollBase : Control
+    public abstract class VitNX_ScrollBase : Control
     {
         #region Event Region
 
@@ -17,8 +17,8 @@ namespace VitNX.Controls
 
         #region Field Region
 
-        protected readonly VitNXScrollBar _vScrollBar;
-        protected readonly VitNXScrollBar _hScrollBar;
+        protected readonly VitNX_ScrollBar _vScrollBar;
+        protected readonly VitNX_ScrollBar _hScrollBar;
 
         private Size _visibleSize;
         private Size _contentSize;
@@ -107,13 +107,13 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        protected VitNXScrollBase()
+        protected VitNX_ScrollBase()
         {
             SetStyle(ControlStyles.Selectable |
                      ControlStyles.UserMouse, true);
 
-            _vScrollBar = new VitNXScrollBar { ScrollOrientation = VitNXScrollOrientation.Vertical };
-            _hScrollBar = new VitNXScrollBar { ScrollOrientation = VitNXScrollOrientation.Horizontal };
+            _vScrollBar = new VitNX_ScrollBar { ScrollOrientation = VitNX_ScrollOrientation.Vertical };
+            _hScrollBar = new VitNX_ScrollBar { ScrollOrientation = VitNX_ScrollOrientation.Horizontal };
 
             Controls.Add(_vScrollBar);
             Controls.Add(_hScrollBar);

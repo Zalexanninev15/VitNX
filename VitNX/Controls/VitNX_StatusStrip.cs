@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXStatusStrip : StatusStrip
+    public class VitNX_StatusStrip : StatusStrip
     {
         #region Constructor Region
 
-        public VitNXStatusStrip()
+        public VitNX_StatusStrip()
         {
             AutoSize = false;
             BackColor = Colors.GreyBackground;

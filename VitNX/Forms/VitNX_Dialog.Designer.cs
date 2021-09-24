@@ -32,14 +32,14 @@ namespace VitNX.Forms
         {
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.flowInner = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOk = new VitNXButton();
-            this.btnCancel = new VitNXButton();
-            this.btnClose = new VitNXButton();
-            this.btnYes = new VitNXButton();
-            this.btnNo = new VitNXButton();
-            this.btnAbort = new VitNXButton();
-            this.btnRetry = new VitNXButton();
-            this.btnIgnore = new VitNXButton();
+            this.btnOk = new VitNX_Button();
+            this.btnCancel = new VitNX_Button();
+            this.btnClose = new VitNX_Button();
+            this.btnYes = new VitNX_Button();
+            this.btnNo = new VitNX_Button();
+            this.btnAbort = new VitNX_Button();
+            this.btnRetry = new VitNX_Button();
+            this.btnIgnore = new VitNX_Button();
             this.pnlFooter.SuspendLayout();
             this.flowInner.SuspendLayout();
             this.SuspendLayout();

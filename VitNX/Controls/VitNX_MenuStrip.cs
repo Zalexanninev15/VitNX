@@ -3,8 +3,8 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXMenuStrip : MenuStrip
+    public class VitNX_MenuStrip : MenuStrip
     {
-        public VitNXMenuStrip() { Renderer = new VitNXMenuRenderer(); Padding = new Padding(3, 2, 0, 2); }
+        public VitNX_MenuStrip() { Renderer = new VitNX_MenuRenderer(); Padding = new Padding(3, 2, 0, 2); }
     }
 }

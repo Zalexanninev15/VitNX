@@ -32,7 +32,7 @@ namespace Example
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.mnuMain = new VitNX.Controls.VitNXMenuStrip();
+            this.mnuMain = new VitNX.Controls.VitNX_MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNewFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -61,14 +61,14 @@ namespace Example
             this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolMain = new VitNX.Controls.VitNXToolStrip();
+            this.toolMain = new VitNX.Controls.VitNX_ToolStrip();
             this.btnNewFile = new System.Windows.Forms.ToolStripButton();
-            this.stripMain = new VitNX.Controls.VitNXStatusStrip();
+            this.stripMain = new VitNX.Controls.VitNX_StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DockPanel = new VitNX.Docking.VitNXDockPanel();
-            this.VitNXSeparator1 = new VitNX.Controls.VitNXSeparator();
+            this.DockPanel = new VitNX.Docking.VitNX_DockPanel();
+            this.VitNX_Separator1 = new VitNX.Controls.VitNX_Separator();
             this.mnuMain.SuspendLayout();
             this.toolMain.SuspendLayout();
             this.stripMain.SuspendLayout();
@@ -89,7 +89,7 @@ namespace Example
             this.mnuMain.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
             this.mnuMain.Size = new System.Drawing.Size(944, 24);
             this.mnuMain.TabIndex = 0;
-            this.mnuMain.Text = "VitNXMenuStrip1";
+            this.mnuMain.Text = "VitNX_MenuStrip1";
             // 
             // mnuFile
             // 
@@ -375,7 +375,7 @@ namespace Example
             this.toolMain.Padding = new System.Windows.Forms.Padding(5, 0, 1, 0);
             this.toolMain.Size = new System.Drawing.Size(944, 28);
             this.toolMain.TabIndex = 1;
-            this.toolMain.Text = "VitNXToolStrip1";
+            this.toolMain.Text = "VitNX_ToolStrip1";
             // 
             // btnNewFile
             // 
@@ -404,7 +404,7 @@ namespace Example
             this.stripMain.Size = new System.Drawing.Size(944, 24);
             this.stripMain.SizingGrip = false;
             this.stripMain.TabIndex = 2;
-            this.stripMain.Text = "VitNXStatusStrip1";
+            this.stripMain.Text = "VitNX_StatusStrip1";
             // 
             // toolStripStatusLabel1
             // 
@@ -440,14 +440,14 @@ namespace Example
             this.DockPanel.Size = new System.Drawing.Size(944, 564);
             this.DockPanel.TabIndex = 3;
             // 
-            // VitNXSeparator1
+            // VitNX_Separator1
             // 
-            this.VitNXSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXSeparator1.Location = new System.Drawing.Point(0, 24);
-            this.VitNXSeparator1.Name = "VitNXSeparator1";
-            this.VitNXSeparator1.Size = new System.Drawing.Size(944, 2);
-            this.VitNXSeparator1.TabIndex = 4;
-            this.VitNXSeparator1.Text = "VitNXSeparator1";
+            this.VitNX_Separator1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_Separator1.Location = new System.Drawing.Point(0, 24);
+            this.VitNX_Separator1.Name = "VitNX_Separator1";
+            this.VitNX_Separator1.Size = new System.Drawing.Size(944, 2);
+            this.VitNX_Separator1.TabIndex = 4;
+            this.VitNX_Separator1.Text = "VitNX_Separator1";
             // 
             // MainForm
             // 
@@ -457,7 +457,7 @@ namespace Example
             this.Controls.Add(this.DockPanel);
             this.Controls.Add(this.stripMain);
             this.Controls.Add(this.toolMain);
-            this.Controls.Add(this.VitNXSeparator1);
+            this.Controls.Add(this.VitNX_Separator1);
             this.Controls.Add(this.mnuMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -479,9 +479,9 @@ namespace Example
 
         #endregion
 
-        private VitNXMenuStrip mnuMain;
-        private VitNXToolStrip toolMain;
-        private VitNXStatusStrip stripMain;
+        private VitNX_MenuStrip mnuMain;
+        private VitNX_ToolStrip toolMain;
+        private VitNX_StatusStrip stripMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
@@ -496,13 +496,13 @@ namespace Example
         private System.Windows.Forms.ToolStripButton btnNewFile;
         private System.Windows.Forms.ToolStripMenuItem mnuNewFile;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private VitNXDockPanel DockPanel;
+        private VitNX_DockPanel DockPanel;
         private System.Windows.Forms.ToolStripMenuItem mnuProject;
         private System.Windows.Forms.ToolStripMenuItem mnuProperties;
         private System.Windows.Forms.ToolStripMenuItem mnuConsole;
         private System.Windows.Forms.ToolStripMenuItem mnuLayers;
         private System.Windows.Forms.ToolStripMenuItem mnuHistory;
-        private VitNXSeparator VitNXSeparator1;
+        private VitNX_Separator VitNX_Separator1;
         private System.Windows.Forms.ToolStripMenuItem checkableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkableWithIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
