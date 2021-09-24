@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace VitNX.Functions
 {
-    public static class TaskBarProgressBar
+    public static class TbProgressBar
     {
         public enum TaskbarStates
         {

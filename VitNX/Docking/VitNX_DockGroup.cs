@@ -9,29 +9,29 @@ using System.Windows.Forms;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VitNXDockGroup : Panel
+    public class VitNX_DockGroup : Panel
     {
         #region Field Region
 
-        private List<VitNXDockContent> _contents = new List<VitNXDockContent>();
+        private List<VitNX_DockContent> _contents = new List<VitNX_DockContent>();
 
-        private Dictionary<VitNXDockContent, VitNXDockTab> _tabs = new Dictionary<VitNXDockContent, VitNXDockTab>();
+        private Dictionary<VitNX_DockContent, VitNX_DockTab> _tabs = new Dictionary<VitNX_DockContent, VitNX_DockTab>();
 
-        private VitNXDockTabArea _tabArea;
+        private VitNX_DockTabArea _tabArea;
 
-        private VitNXDockTab _dragTab = null;
+        private VitNX_DockTab _dragTab = null;
 
         #endregion
 
         #region Property Region
 
-        public VitNXDockPanel DockPanel { get; private set; }
+        public VitNX_DockPanel DockPanel { get; private set; }
 
-        public VitNXDockRegion DockRegion { get; private set; }
+        public VitNX_DockRegion DockRegion { get; private set; }
 
-        public VitNXDockArea DockArea { get; private set; }
+        public VitNX_DockArea DockArea { get; private set; }
 
-        public VitNXDockContent VisibleContent { get; private set; }
+        public VitNX_DockContent VisibleContent { get; private set; }
 
         public int Order { get; set; }
 
@@ -41,7 +41,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VitNXDockGroup(VitNXDockPanel dockPanel, VitNXDockRegion dockRegion, int order)
+        public VitNX_DockGroup(VitNX_DockPanel dockPanel, VitNX_DockRegion dockRegion, int order)
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
@@ -53,7 +53,7 @@ namespace VitNX.Docking
 
             Order = order;
 
-            _tabArea = new VitNXDockTabArea(DockArea);
+            _tabArea = new VitNX_DockTabArea(DockArea);
 
             DockPanel.ActiveContentChanged += DockPanel_ActiveContentChanged;
         }
@@ -62,7 +62,7 @@ namespace VitNX.Docking
 
         #region Method Region
 
-        public void AddContent(VitNXDockContent dockContent)
+        public void AddContent(VitNX_DockContent dockContent)
         {
             dockContent.DockGroup = this;
             dockContent.Dock = DockStyle.Fill;
@@ -86,7 +86,7 @@ namespace VitNX.Docking
 
             dockContent.DockTextChanged += DockContent_DockTextChanged;
 
-            _tabs.Add(dockContent, new VitNXDockTab(dockContent));
+            _tabs.Add(dockContent, new VitNX_DockTab(dockContent));
 
             if (VisibleContent == null)
             {
@@ -107,7 +107,7 @@ namespace VitNX.Docking
             UpdateTabArea();
         }
 
-        public void RemoveContent(VitNXDockContent dockContent)
+        public void RemoveContent(VitNX_DockContent dockContent)
         {
             dockContent.DockGroup = null;
 
@@ -147,14 +147,14 @@ namespace VitNX.Docking
             UpdateTabArea();
         }
 
-        public List<VitNXDockContent> GetContents()
+        public List<VitNX_DockContent> GetContents()
         {
             return _contents.OrderBy(c => c.Order).ToList();
         }
 
         private void UpdateTabArea()
         {
-            if (DockArea == VitNXDockArea.Document)
+            if (DockArea == VitNX_DockArea.Document)
                 _tabArea.Visible = (_contents.Count > 0);
             else
                 _tabArea.Visible = (_contents.Count > 1);
@@ -163,25 +163,25 @@ namespace VitNX.Docking
 
             switch (DockArea)
             {
-                case VitNXDockArea.Document:
+                case VitNX_DockArea.Document:
                     size = _tabArea.Visible ? Consts.DocumentTabAreaSize : 0;
                     Padding = new Padding(0, size, 0, 0);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, 0, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
-                case VitNXDockArea.Left:
-                case VitNXDockArea.Right:
+                case VitNX_DockArea.Left:
+                case VitNX_DockArea.Right:
                     size = _tabArea.Visible ? Consts.ToolWindowTabAreaSize : 0;
                     Padding = new Padding(0, 0, 0, size);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, ClientRectangle.Bottom - size, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
-                case VitNXDockArea.Bottom:
+                case VitNX_DockArea.Bottom:
                     size = _tabArea.Visible ? Consts.ToolWindowTabAreaSize : 0;
                     Padding = new Padding(1, 0, 0, size);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, ClientRectangle.Bottom - size, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
             }
 
-            if (DockArea == VitNXDockArea.Document)
+            if (DockArea == VitNX_DockArea.Document)
             {
                 var dropdownSize = Consts.DocumentTabAreaSize;
                 _tabArea.DropdownRectangle = new Rectangle(_tabArea.ClientRectangle.Right - dropdownSize, 0, dropdownSize, dropdownSize);
@@ -218,7 +218,7 @@ namespace VitNX.Docking
                 }
 
                 // Add additional width for document tab items
-                if (DockArea == VitNXDockArea.Document)
+                if (DockArea == VitNX_DockArea.Document)
                 {
                     width += 5;
                     width += closeButtonSize;
@@ -231,8 +231,8 @@ namespace VitNX.Docking
                 tab.ShowSeparator = true;
                 width += 1;
 
-                var y = DockArea == VitNXDockArea.Document ? 0 : ClientRectangle.Height - Consts.ToolWindowTabAreaSize;
-                var height = DockArea == VitNXDockArea.Document ? Consts.DocumentTabAreaSize : Consts.ToolWindowTabAreaSize;
+                var y = DockArea == VitNX_DockArea.Document ? 0 : ClientRectangle.Height - Consts.ToolWindowTabAreaSize;
+                var height = DockArea == VitNX_DockArea.Document ? Consts.DocumentTabAreaSize : Consts.ToolWindowTabAreaSize;
 
                 var tabRect = new Rectangle(_tabArea.ClientRectangle.Left + totalSize, y, width, height);
                 tab.ClientRectangle = tabRect;
@@ -241,7 +241,7 @@ namespace VitNX.Docking
             }
 
             // Cap the size if too large for the tab area
-            if (DockArea != VitNXDockArea.Document)
+            if (DockArea != VitNX_DockArea.Document)
             {
                 if (totalSize > _tabArea.ClientRectangle.Width)
                 {
@@ -294,7 +294,7 @@ namespace VitNX.Docking
             }
 
             // Build close button rectangles
-            if (DockArea == VitNXDockArea.Document)
+            if (DockArea == VitNX_DockArea.Document)
             {
                 foreach (var content in orderedContent)
                 {
@@ -323,7 +323,7 @@ namespace VitNX.Docking
 
         public void EnsureVisible()
         {
-            if (DockArea != VitNXDockArea.Document)
+            if (DockArea != VitNX_DockArea.Document)
                 return;
 
             if (VisibleContent == null)
@@ -359,7 +359,7 @@ namespace VitNX.Docking
             Invalidate();
         }
 
-        public void SetVisibleContent(VitNXDockContent content)
+        public void SetVisibleContent(VitNX_DockContent content)
         {
             if (!_contents.Contains(content))
                 return;
@@ -579,7 +579,7 @@ namespace VitNX.Docking
             if (menuItem == null)
                 return;
 
-            var content = menuItem.Tag as VitNXDockContent;
+            var content = menuItem.Tag as VitNX_DockContent;
             if (content == null)
                 return;
 
@@ -644,13 +644,13 @@ namespace VitNX.Docking
 
             foreach (var tab in _tabs.Values)
             {
-                if (DockArea == VitNXDockArea.Document)
+                if (DockArea == VitNX_DockArea.Document)
                     PaintDocumentTab(g, tab);
                 else
                     PaintToolWindowTab(g, tab);
             }
 
-            if (DockArea == VitNXDockArea.Document)
+            if (DockArea == VitNX_DockArea.Document)
             {
                 // Color divider
                 var isActiveGroup = DockPanel.ActiveGroup == this;
@@ -676,7 +676,7 @@ namespace VitNX.Docking
             }
         }
 
-        private void PaintDocumentTab(Graphics g, VitNXDockTab tab)
+        private void PaintDocumentTab(Graphics g, VitNX_DockTab tab)
         {
             var tabRect = RectangleToTabArea(tab.ClientRectangle);
 
@@ -745,7 +745,7 @@ namespace VitNX.Docking
             g.DrawImageUnscaled(img, closeRect.Left, closeRect.Top);
         }
 
-        private void PaintToolWindowTab(Graphics g, VitNXDockTab tab)
+        private void PaintToolWindowTab(Graphics g, VitNX_DockTab tab)
         {
             var tabRect = tab.ClientRectangle;
 

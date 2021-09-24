@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXSeparator : Control
+    public class VitNX_Separator : Control
     {
         #region Constructor Region
 
-        public VitNXSeparator()
+        public VitNX_Separator()
         {
             SetStyle(ControlStyles.Selectable, false);
 

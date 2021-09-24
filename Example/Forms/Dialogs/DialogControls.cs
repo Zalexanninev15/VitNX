@@ -11,19 +11,19 @@ namespace Example
             // Build dummy list data
             for (var i = 0; i < 100; i++)
             {
-                var item = new VitNXListItem($"List item #{i}");
+                var item = new VitNX_ListItem($"List item #{i}");
                 lstTest.Items.Add(item);
             }
             // Build dummy nodes
             var childCount = 0;
             for (var i = 0; i < 20; i++)
             {
-                var node = new VitNXTreeNode($"Root node #{i}");
+                var node = new VitNX_TreeNode($"Root node #{i}");
                 node.ExpandedIcon = Icons.folder_open;
                 node.Icon = Icons.folder_closed;
                 for (var x = 0; x < 10; x++)
                 {
-                    var childNode = new VitNXTreeNode($"Child node #{childCount}");
+                    var childNode = new VitNX_TreeNode($"Child node #{childCount}");
                     childNode.Icon = Icons.files;
                     childCount++;
                     node.Nodes.Add(childNode);

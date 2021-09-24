@@ -1,13 +1,12 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
 
-    public class VitNXProgressBar : ProgressBar
+    public class VitNX_ProgressBar : ProgressBar
     {
         [Description("Font of the text on ProgressBar"), Category("Additional Options")]
         public Font TextFont { get; set; } = new Font(FontFamily.GenericSerif, 11, FontStyle.Bold);
@@ -53,7 +52,7 @@ namespace VitNX.Controls
             set { }
         }
 
-        public VitNXProgressBar() { Value = Minimum; FixComponentBlinking(); }
+        public VitNX_ProgressBar() { Value = Minimum; FixComponentBlinking(); }
         string _currProgressStr { get { return $"{Value}/{Maximum}"; } }
         void FixComponentBlinking() { SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true); }
         string _percentageStr { get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; } }

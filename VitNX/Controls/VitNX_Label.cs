@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXLabel : Label
+    public class VitNX_Label : Label
     {
         #region Field Region
 
@@ -51,7 +51,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXLabel()
+        public VitNX_Label()
         {
             ForeColor = Colors.LightText;
         }

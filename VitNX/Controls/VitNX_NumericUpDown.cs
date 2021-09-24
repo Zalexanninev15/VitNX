@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXNumericUpDown : NumericUpDown
+    public class VitNX_NumericUpDown : NumericUpDown
     {
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -20,12 +20,12 @@ namespace VitNX.Controls
 
         private bool _mouseDown;
 
-        public VitNXNumericUpDown()
+        public VitNX_NumericUpDown()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
             base.ForeColor = Color.Gainsboro;
             base.BackColor = Colors.LightBackground;
-            Controls[0].Paint += VitNXNumericUpDown_Paint;
+            Controls[0].Paint += VitNX_NumericUpDown_Paint;
             try
             {
                 Type type = Controls[0].GetType();
@@ -49,7 +49,7 @@ namespace VitNX.Controls
         protected override void OnLostFocus(EventArgs e) { base.OnLostFocus(e); Invalidate(); }
         protected override void OnTextBoxLostFocus(object source, EventArgs e) { base.OnTextBoxLostFocus(source, e); Invalidate(); }
 
-        private void VitNXNumericUpDown_Paint(object sender, PaintEventArgs e)
+        private void VitNX_NumericUpDown_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
             var rect = e.ClipRectangle;

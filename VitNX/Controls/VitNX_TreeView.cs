@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXTreeView : VitNXScrollView
+    public class VitNX_TreeView : VitNX_ScrollView
     {
         #region Event Region
 
@@ -33,11 +33,11 @@ namespace VitNX.Controls
         private int _itemHeight = 20;
         private int _indent = 20;
 
-        private ObservableList<VitNXTreeNode> _nodes;
-        private ObservableCollection<VitNXTreeNode> _selectedNodes;
+        private ObservableList<VitNX_TreeNode> _nodes;
+        private ObservableCollection<VitNX_TreeNode> _selectedNodes;
 
-        private VitNXTreeNode _anchoredNodeStart;
-        private VitNXTreeNode _anchoredNodeEnd;
+        private VitNX_TreeNode _anchoredNodeStart;
+        private VitNX_TreeNode _anchoredNodeEnd;
 
         private Bitmap _nodeClosed;
         private Bitmap _nodeClosedHover;
@@ -46,10 +46,10 @@ namespace VitNX.Controls
         private Bitmap _nodeOpenHover;
         private Bitmap _nodeOpenHoverSelected;
 
-        private VitNXTreeNode _provisionalNode;
-        private VitNXTreeNode _dropNode;
+        private VitNX_TreeNode _provisionalNode;
+        private VitNX_TreeNode _dropNode;
         private bool _provisionalDragging;
-        private List<VitNXTreeNode> _dragNodes;
+        private List<VitNX_TreeNode> _dragNodes;
         private Point _dragPos;
 
         #endregion
@@ -58,7 +58,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObservableList<VitNXTreeNode> Nodes
+        public ObservableList<VitNX_TreeNode> Nodes
         {
             get { return _nodes; }
             set
@@ -86,7 +86,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObservableCollection<VitNXTreeNode> SelectedNodes
+        public ObservableCollection<VitNX_TreeNode> SelectedNodes
         {
             get { return _selectedNodes; }
         }
@@ -139,16 +139,16 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public IComparer<VitNXTreeNode> TreeViewNodeSorter { get; set; }
+        public IComparer<VitNX_TreeNode> TreeViewNodeSorter { get; set; }
 
         #endregion
 
         #region Constructor Region
 
-        public VitNXTreeView()
+        public VitNX_TreeView()
         {
-            Nodes = new ObservableList<VitNXTreeNode>();
-            _selectedNodes = new ObservableCollection<VitNXTreeNode>();
+            Nodes = new ObservableList<VitNX_TreeNode>();
+            _selectedNodes = new ObservableCollection<VitNX_TreeNode>();
             _selectedNodes.CollectionChanged += SelectedNodes_CollectionChanged;
 
             MaxDragChange = _itemHeight;
@@ -191,7 +191,7 @@ namespace VitNX.Controls
 
         #region Event Handler Region
 
-        private void Nodes_ItemsAdded(object sender, ObservableListModified<VitNXTreeNode> e)
+        private void Nodes_ItemsAdded(object sender, ObservableListModified<VitNX_TreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -207,7 +207,7 @@ namespace VitNX.Controls
             UpdateNodes();
         }
 
-        private void Nodes_ItemsRemoved(object sender, ObservableListModified<VitNXTreeNode> e)
+        private void Nodes_ItemsRemoved(object sender, ObservableListModified<VitNX_TreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -220,7 +220,7 @@ namespace VitNX.Controls
             UpdateNodes();
         }
 
-        private void ChildNodes_ItemsAdded(object sender, ObservableListModified<VitNXTreeNode> e)
+        private void ChildNodes_ItemsAdded(object sender, ObservableListModified<VitNX_TreeNode> e)
         {
             foreach (var node in e.Items)
                 HookNodeEvents(node);
@@ -228,7 +228,7 @@ namespace VitNX.Controls
             UpdateNodes();
         }
 
-        private void ChildNodes_ItemsRemoved(object sender, ObservableListModified<VitNXTreeNode> e)
+        private void ChildNodes_ItemsRemoved(object sender, ObservableListModified<VitNX_TreeNode> e)
         {
             foreach (var node in e.Items)
             {
@@ -534,7 +534,7 @@ namespace VitNX.Controls
 
         #region Method Region
 
-        private void HookNodeEvents(VitNXTreeNode node)
+        private void HookNodeEvents(VitNX_TreeNode node)
         {
             node.Nodes.ItemsAdded += ChildNodes_ItemsAdded;
             node.Nodes.ItemsRemoved += ChildNodes_ItemsRemoved;
@@ -547,7 +547,7 @@ namespace VitNX.Controls
                 HookNodeEvents(childNode);
         }
 
-        private void UnhookNodeEvents(VitNXTreeNode node)
+        private void UnhookNodeEvents(VitNX_TreeNode node)
         {
             node.Nodes.ItemsAdded -= ChildNodes_ItemsAdded;
             node.Nodes.ItemsRemoved -= ChildNodes_ItemsRemoved;
@@ -573,7 +573,7 @@ namespace VitNX.Controls
             var yOffset = 0;
             var isOdd = false;
             var index = 0;
-            VitNXTreeNode prevNode = null;
+            VitNX_TreeNode prevNode = null;
             
             for (var i = 0; i <= Nodes.Count - 1; i++)
             {
@@ -588,7 +588,7 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        private void UpdateNode(VitNXTreeNode node, ref VitNXTreeNode prevNode, int indent, ref int yOffset,
+        private void UpdateNode(VitNX_TreeNode node, ref VitNX_TreeNode prevNode, int indent, ref int yOffset,
                                 ref bool isOdd, ref int index)
         {
             UpdateNodeBounds(node, yOffset, indent);
@@ -615,7 +615,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void UpdateNodeBounds(VitNXTreeNode node, int yOffset, int indent)
+        private void UpdateNodeBounds(VitNX_TreeNode node, int yOffset, int indent)
         {
             var expandTop = yOffset + (ItemHeight / 2) - (_expandAreaSize / 2);
             node.ExpandArea = new Rectangle(indent + 3, expandTop, _expandAreaSize, _expandAreaSize);
@@ -692,7 +692,7 @@ namespace VitNX.Controls
                 CheckNodeHover(node, OffsetMousePosition);
         }
 
-        private void NodeMouseLeave(VitNXTreeNode node)
+        private void NodeMouseLeave(VitNX_TreeNode node)
         {
             node.ExpandAreaHot = false;
 
@@ -702,7 +702,7 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        private void CheckNodeHover(VitNXTreeNode node, Point location)
+        private void CheckNodeHover(VitNX_TreeNode node, Point location)
         {
             if (IsDragging)
             {
@@ -732,7 +732,7 @@ namespace VitNX.Controls
                 CheckNodeHover(childNode, location);
         }
 
-        private void CheckNodeClick(VitNXTreeNode node, Point location, MouseButtons button)
+        private void CheckNodeClick(VitNX_TreeNode node, Point location, MouseButtons button)
         {
             var rect = GetNodeFullRowArea(node);
             if (rect.Contains(location))
@@ -789,7 +789,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void CheckNodeDoubleClick(VitNXTreeNode node, Point location)
+        private void CheckNodeDoubleClick(VitNX_TreeNode node, Point location)
         {
             var rect = GetNodeFullRowArea(node);
             if (rect.Contains(location))
@@ -807,7 +807,7 @@ namespace VitNX.Controls
             }
         }
 
-        public void SelectNode(VitNXTreeNode node)
+        public void SelectNode(VitNX_TreeNode node)
         {
             _selectedNodes.Clear();
             _selectedNodes.Add(node);
@@ -818,9 +818,9 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        public void SelectNodes(VitNXTreeNode startNode, VitNXTreeNode endNode)
+        public void SelectNodes(VitNX_TreeNode startNode, VitNX_TreeNode endNode)
         {
-            var nodes = new List<VitNXTreeNode>();
+            var nodes = new List<VitNX_TreeNode>();
 
             if (startNode == endNode)
                 nodes.Add(startNode);
@@ -849,7 +849,7 @@ namespace VitNX.Controls
             SelectNodes(nodes, false);
         }
 
-        public void SelectNodes(List<VitNXTreeNode> nodes, bool updateAnchors = true)
+        public void SelectNodes(List<VitNX_TreeNode> nodes, bool updateAnchors = true)
         {
             _selectedNodes.Clear();
 
@@ -865,13 +865,13 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        private void SelectAnchoredRange(VitNXTreeNode node)
+        private void SelectAnchoredRange(VitNX_TreeNode node)
         {
             _anchoredNodeEnd = node;
             SelectNodes(_anchoredNodeStart, _anchoredNodeEnd);
         }
 
-        public void ToggleNode(VitNXTreeNode node)
+        public void ToggleNode(VitNX_TreeNode node)
         {
             if (_selectedNodes.Contains(node))
             {
@@ -925,7 +925,7 @@ namespace VitNX.Controls
             Invalidate();
         }
 
-        public Rectangle GetNodeFullRowArea(VitNXTreeNode node)
+        public Rectangle GetNodeFullRowArea(VitNX_TreeNode node)
         {
             if (node.ParentNode != null && !node.ParentNode.Expanded)
                 return new Rectangle(-1, -1, -1, -1);
@@ -970,7 +970,7 @@ namespace VitNX.Controls
                 SortChildNodes(node);
         }
 
-        private void SortChildNodes(VitNXTreeNode node)
+        private void SortChildNodes(VitNX_TreeNode node)
         {
             node.Nodes.Sort(TreeViewNodeSorter);
 
@@ -978,7 +978,7 @@ namespace VitNX.Controls
                 SortChildNodes(childNode);
         }
 
-        public VitNXTreeNode FindNode(string path)
+        public VitNX_TreeNode FindNode(string path)
         {
             foreach (var node in Nodes)
             {
@@ -990,7 +990,7 @@ namespace VitNX.Controls
             return null;
         }
 
-        private VitNXTreeNode FindNode(VitNXTreeNode parentNode, string path, bool recursive = true)
+        private VitNX_TreeNode FindNode(VitNX_TreeNode parentNode, string path, bool recursive = true)
         {
             if (parentNode.FullPath == path)
                 return parentNode;
@@ -1024,7 +1024,7 @@ namespace VitNX.Controls
             }
 
             // Create initial list of nodes to drag
-            _dragNodes = new List<VitNXTreeNode>();
+            _dragNodes = new List<VitNX_TreeNode>();
             foreach (var node in SelectedNodes)
                 _dragNodes.Add(node);
 
@@ -1134,12 +1134,12 @@ namespace VitNX.Controls
             base.StopDrag();
         }
 
-        protected virtual bool ForceDropToParent(VitNXTreeNode node)
+        protected virtual bool ForceDropToParent(VitNX_TreeNode node)
         {
             return false;
         }
 
-        protected virtual bool CanMoveNodes(List<VitNXTreeNode> dragNodes, VitNXTreeNode dropNode, bool isMoving = false)
+        protected virtual bool CanMoveNodes(List<VitNX_TreeNode> dragNodes, VitNX_TreeNode dropNode, bool isMoving = false)
         {
             if (dropNode == null)
                 return false;
@@ -1180,10 +1180,10 @@ namespace VitNX.Controls
             return true;
         }
 
-        protected virtual void MoveNodes(List<VitNXTreeNode> dragNodes, VitNXTreeNode dropNode)
+        protected virtual void MoveNodes(List<VitNX_TreeNode> dragNodes, VitNX_TreeNode dropNode)
         { }
 
-        protected virtual void NodesMoved(List<VitNXTreeNode> nodesMoved)
+        protected virtual void NodesMoved(List<VitNX_TreeNode> nodesMoved)
         { }
 
         #endregion
@@ -1198,7 +1198,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void DrawNode(VitNXTreeNode node, Graphics g)
+        private void DrawNode(VitNX_TreeNode node, Graphics g)
         {
             var rect = GetNodeFullRowArea(node);
 

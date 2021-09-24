@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Controls
 {
-    public enum VitNXControlState
+    public enum VitNX_ControlState
     {
         Normal,
         Hover,

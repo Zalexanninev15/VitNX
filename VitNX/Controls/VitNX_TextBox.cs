@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXTextBox : TextBox
+    public class VitNX_TextBox : TextBox
     {
         #region Constructor Region
 
-        public VitNXTextBox()
+        public VitNX_TextBox()
         {
             BackColor = Colors.LightBackground;
             ForeColor = Colors.LightText;

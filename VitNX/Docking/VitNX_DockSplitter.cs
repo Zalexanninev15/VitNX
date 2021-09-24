@@ -5,14 +5,14 @@ using System.Windows.Forms;
 
 namespace VitNX.Docking
 {
-    public class VitNXDockSplitter
+    public class VitNX_DockSplitter
     {
         #region Field Region
 
         private Control _parentControl;
         private Control _control;
 
-        private VitNXSplitterType _splitterType;
+        private VitNX_SplitterType _splitterType;
 
         private int _minimum;
         private int _maximum;
@@ -30,7 +30,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VitNXDockSplitter(Control parentControl, Control control, VitNXSplitterType splitterType)
+        public VitNX_DockSplitter(Control parentControl, Control control, VitNX_SplitterType splitterType)
         {
             _parentControl = parentControl;
             _control = control;
@@ -38,12 +38,12 @@ namespace VitNX.Docking
 
             switch (_splitterType)
             {
-                case VitNXSplitterType.Left:
-                case VitNXSplitterType.Right:
+                case VitNX_SplitterType.Left:
+                case VitNX_SplitterType.Right:
                     ResizeCursor = Cursors.SizeWE;
                     break;
-                case VitNXSplitterType.Top:
-                case VitNXSplitterType.Bottom:
+                case VitNX_SplitterType.Top:
+                case VitNX_SplitterType.Bottom:
                     ResizeCursor = Cursors.SizeNS;
                     break;
             }
@@ -72,7 +72,7 @@ namespace VitNX.Docking
 
             switch (_splitterType)
             {
-                case VitNXSplitterType.Left:
+                case VitNX_SplitterType.Left:
                     var leftX = Math.Max(bounds.Location.X - difference.X, _minimum);
 
                     if (_maximum != 0 && leftX > _maximum)
@@ -80,7 +80,7 @@ namespace VitNX.Docking
 
                     bounds.Location = new Point(leftX, bounds.Location.Y);
                     break;
-                case VitNXSplitterType.Right:
+                case VitNX_SplitterType.Right:
                     var rightX = Math.Max(bounds.Location.X - difference.X, _minimum);
 
                     if (_maximum != 0 && rightX > _maximum)
@@ -88,7 +88,7 @@ namespace VitNX.Docking
 
                     bounds.Location = new Point(rightX, bounds.Location.Y);
                     break;
-                case VitNXSplitterType.Top:
+                case VitNX_SplitterType.Top:
                     var topY = Math.Max(bounds.Location.Y - difference.Y, _minimum);
 
                     if (_maximum != 0 && topY > _maximum)
@@ -96,7 +96,7 @@ namespace VitNX.Docking
 
                     bounds.Location = new Point(bounds.Location.X, topY);
                     break;
-                case VitNXSplitterType.Bottom:
+                case VitNX_SplitterType.Bottom:
                     var bottomY = Math.Max(bounds.Location.Y - difference.Y, _minimum);
 
                     if (_maximum != 0 && bottomY > _maximum)
@@ -113,16 +113,16 @@ namespace VitNX.Docking
         {
             switch (_splitterType)
             {
-                case VitNXSplitterType.Left:
+                case VitNX_SplitterType.Left:
                     _control.Width += difference.X;
                     break;
-                case VitNXSplitterType.Right:
+                case VitNX_SplitterType.Right:
                     _control.Width -= difference.X;
                     break;
-                case VitNXSplitterType.Top:
+                case VitNX_SplitterType.Top:
                     _control.Height += difference.Y;
                     break;
-                case VitNXSplitterType.Bottom:
+                case VitNX_SplitterType.Bottom:
                     _control.Height -= difference.Y;
                     break;
             }
@@ -136,19 +136,19 @@ namespace VitNX.Docking
 
             switch (_splitterType)
             {
-                case VitNXSplitterType.Left:
+                case VitNX_SplitterType.Left:
                     Bounds = new Rectangle(bounds.Left - 2, bounds.Top, 5, bounds.Height);
                     _maximum = bounds.Right - 2 - _control.MinimumSize.Width;
                     break;
-                case VitNXSplitterType.Right:
+                case VitNX_SplitterType.Right:
                     Bounds = new Rectangle(bounds.Right - 2, bounds.Top, 5, bounds.Height);
                     _minimum = bounds.Left - 2 + _control.MinimumSize.Width;
                     break;
-                case VitNXSplitterType.Top:
+                case VitNX_SplitterType.Top:
                     Bounds = new Rectangle(bounds.Left, bounds.Top - 2, bounds.Width, 5);
                     _maximum = bounds.Bottom - 2 - _control.MinimumSize.Height;
                     break;
-                case VitNXSplitterType.Bottom:
+                case VitNX_SplitterType.Bottom:
                     Bounds = new Rectangle(bounds.Left, bounds.Bottom - 2, bounds.Width, 5);
                     _minimum = bounds.Top - 2 + _control.MinimumSize.Height;
                     break;

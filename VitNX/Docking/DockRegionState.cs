@@ -7,7 +7,7 @@ namespace VitNX.Docking
     {
         #region Property Region
 
-        public VitNXDockArea Area { get; set; }
+        public VitNX_DockArea Area { get; set; }
 
         public Size Size { get; set; }
 
@@ -22,13 +22,13 @@ namespace VitNX.Docking
             Groups = new List<DockGroupState>();
         }
 
-        public DockRegionState(VitNXDockArea area)
+        public DockRegionState(VitNX_DockArea area)
             : this()
         {
             Area = area;
         }
 
-        public DockRegionState(VitNXDockArea area, Size size)
+        public DockRegionState(VitNX_DockArea area, Size size)
             : this(area)
         {
             Size = size;

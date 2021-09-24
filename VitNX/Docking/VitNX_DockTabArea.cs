@@ -5,20 +5,20 @@ using System.Windows.Forms;
 
 namespace VitNX.Docking
 {
-    internal class VitNXDockTabArea
+    internal class VitNX_DockTabArea
     {
         #region Field Region
 
-        private Dictionary<VitNXDockContent, VitNXDockTab> _tabs = new Dictionary<VitNXDockContent, VitNXDockTab>();
+        private Dictionary<VitNX_DockContent, VitNX_DockTab> _tabs = new Dictionary<VitNX_DockContent, VitNX_DockTab>();
 
         private List<ToolStripMenuItem> _menuItems = new List<ToolStripMenuItem>();
-        private VitNXContextMenu _tabMenu = new VitNXContextMenu();
+        private VitNX_ContextMenu _tabMenu = new VitNX_ContextMenu();
 
         #endregion
 
         #region Property Region
 
-        public VitNXDockArea DockArea { get; private set; }
+        public VitNX_DockArea DockArea { get; private set; }
 
         public Rectangle ClientRectangle { get; set; }
 
@@ -32,13 +32,13 @@ namespace VitNX.Docking
 
         public bool Visible { get; set; }
 
-        public VitNXDockTab ClickedCloseButton { get; set; }
+        public VitNX_DockTab ClickedCloseButton { get; set; }
 
         #endregion
         
         #region Constructor Region
 
-        public VitNXDockTabArea(VitNXDockArea dockArea)
+        public VitNX_DockTabArea(VitNX_DockArea dockArea)
         {
             DockArea = dockArea;
         }
@@ -64,12 +64,12 @@ namespace VitNX.Docking
             RebuildMenu();
         }
 
-        public ToolStripMenuItem GetMenuItem(VitNXDockContent content)
+        public ToolStripMenuItem GetMenuItem(VitNX_DockContent content)
         {
             ToolStripMenuItem menuItem = null;
             foreach (ToolStripMenuItem item in _menuItems)
             {
-                var menuContent = item.Tag as VitNXDockContent;
+                var menuContent = item.Tag as VitNX_DockContent;
                 if (menuContent == null)
                     continue;
 
@@ -91,7 +91,7 @@ namespace VitNX.Docking
             {
                 foreach (var item in _menuItems)
                 {
-                    var content = (VitNXDockContent)item.Tag;
+                    var content = (VitNX_DockContent)item.Tag;
                     if (content.Order == index)
                         orderedItems.Add(item);
                 }

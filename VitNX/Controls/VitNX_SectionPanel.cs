@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXSectionPanel : Panel
+    public class VitNX_SectionPanel : Panel
     {
         #region Field Region
 
@@ -38,7 +38,7 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXSectionPanel()
+        public VitNX_SectionPanel()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |

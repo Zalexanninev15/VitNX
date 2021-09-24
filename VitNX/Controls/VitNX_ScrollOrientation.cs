@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Controls
 {
-    public enum VitNXScrollOrientation
+    public enum VitNX_ScrollOrientation
     {
         Vertical,
         Horizontal

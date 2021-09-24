@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXGroupBox : GroupBox
+    public class VitNX_GroupBox : GroupBox
     {
         private Color _borderColor = Colors.VitNXBorder;
 
@@ -22,7 +22,7 @@ namespace VitNX.Controls
             }
         }
 
-        public VitNXGroupBox()
+        public VitNX_GroupBox()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
             ResizeRedraw = true;

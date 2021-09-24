@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace VitNX.Controls
 {
-    public class VitNXListView : VitNXScrollView
+    public class VitNX_ListView : VitNX_ScrollView
     {
         #region Event Region
 
@@ -25,7 +25,7 @@ namespace VitNX.Controls
 
         private readonly int _iconSize = 16;
 
-        private ObservableCollection<VitNXListItem> _items;
+        private ObservableCollection<VitNX_ListItem> _items;
         private List<int> _selectedIndices;
         private int _anchoredItemStart = -1;
         private int _anchoredItemEnd = -1;
@@ -36,7 +36,7 @@ namespace VitNX.Controls
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObservableCollection<VitNXListItem> Items
+        public ObservableCollection<VitNX_ListItem> Items
         {
             get { return _items; }
             set
@@ -90,9 +90,9 @@ namespace VitNX.Controls
 
         #region Constructor Region
 
-        public VitNXListView()
+        public VitNX_ListView()
         {
-            Items = new ObservableCollection<VitNXListItem>();
+            Items = new ObservableCollection<VitNX_ListItem>();
             _selectedIndices = new List<int>();
         }
 
@@ -107,7 +107,7 @@ namespace VitNX.Controls
                 using (var g = CreateGraphics())
                 {
                     // Set the area size of all new items
-                    foreach (VitNXListItem item in e.NewItems)
+                    foreach (VitNX_ListItem item in e.NewItems)
                     {
                         item.TextChanged += Item_TextChanged;
                         UpdateItemSize(item, g);
@@ -126,7 +126,7 @@ namespace VitNX.Controls
 
             if (e.OldItems != null)
             {
-                foreach (VitNXListItem item in e.OldItems)
+                foreach (VitNX_ListItem item in e.OldItems)
                     item.TextChanged -= Item_TextChanged;
 
                 // Find the starting index of the old item list and update anything past that
@@ -155,7 +155,7 @@ namespace VitNX.Controls
 
         private void Item_TextChanged(object sender, EventArgs e)
         {
-            var item = (VitNXListItem)sender;
+            var item = (VitNX_ListItem)sender;
 
             UpdateItemSize(item);
             UpdateContentSize(item);
@@ -245,7 +245,7 @@ namespace VitNX.Controls
 
         #region Method Region
 
-        public int GetItemIndex(VitNXListItem item)
+        public int GetItemIndex(VitNX_ListItem item)
         {
             return Items.IndexOf(item);
         }
@@ -391,7 +391,7 @@ namespace VitNX.Controls
             UpdateContentSize();
         }
 
-        private void UpdateItemSize(VitNXListItem item)
+        private void UpdateItemSize(VitNX_ListItem item)
         {
             using (var g = CreateGraphics())
             {
@@ -399,7 +399,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void UpdateItemSize(VitNXListItem item, Graphics g)
+        private void UpdateItemSize(VitNX_ListItem item, Graphics g)
         {
             var size = g.MeasureString(item.Text, Font);
             size.Width++;
@@ -410,7 +410,7 @@ namespace VitNX.Controls
             item.Area = new Rectangle(item.Area.Left, item.Area.Top, (int)size.Width, item.Area.Height);
         }
 
-        private void UpdateItemPosition(VitNXListItem item, int index)
+        private void UpdateItemPosition(VitNX_ListItem item, int index)
         {
             item.Area = new Rectangle(2, (index * ItemHeight), item.Area.Width, ItemHeight);
         }
@@ -435,7 +435,7 @@ namespace VitNX.Controls
             }
         }
 
-        private void UpdateContentSize(VitNXListItem item)
+        private void UpdateContentSize(VitNX_ListItem item)
         {
             var itemWidth = item.Area.Right + 1;
 
@@ -489,7 +489,7 @@ namespace VitNX.Controls
             return result;
         }
 
-        private IEnumerable<VitNXListItem> ItemsInView()
+        private IEnumerable<VitNX_ListItem> ItemsInView()
         {
             var indexes = ItemIndexesInView();
             var result = indexes.Select(index => Items[index]).ToList();

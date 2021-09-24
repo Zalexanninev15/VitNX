@@ -36,16 +36,16 @@ namespace Example
             this.VitNXRadioButton3 = new VitNX.Controls.VitNXRadioButton();
             this.VitNXRadioButton2 = new VitNX.Controls.VitNXRadioButton();
             this.VitNXRadioButton1 = new VitNX.Controls.VitNXRadioButton();
-            this.VitNXTitle1 = new VitNX.Controls.VitNXTitle();
+            this.VitNX_Title1 = new VitNX.Controls.VitNX_Title();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.VitNXCheckBox3 = new VitNX.Controls.VitNXCheckBox();
-            this.VitNXCheckBox2 = new VitNX.Controls.VitNXCheckBox();
-            this.VitNXCheckBox1 = new VitNX.Controls.VitNXCheckBox();
-            this.VitNXTitle2 = new VitNX.Controls.VitNXTitle();
-            this.VitNXScrollBar1 = new VitNX.Controls.VitNXScrollBar();
+            this.VitNX_CheckBox3 = new VitNX.Controls.VitNX_CheckBox();
+            this.VitNX_CheckBox2 = new VitNX.Controls.VitNX_CheckBox();
+            this.VitNX_CheckBox1 = new VitNX.Controls.VitNX_CheckBox();
+            this.VitNX_Title2 = new VitNX.Controls.VitNX_Title();
+            this.VitNX_ScrollBar1 = new VitNX.Controls.VitNX_ScrollBar();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.VitNXTitle3 = new VitNX.Controls.VitNXTitle();
-            this.cmbList = new VitNX.Controls.VitNXDropdownList();
+            this.VitNX_Title3 = new VitNX.Controls.VitNX_Title();
+            this.cmbList = new VitNX.Controls.VitNX_DropdownList();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,7 +70,7 @@ namespace Example
             this.panel1.Controls.Add(this.VitNXRadioButton3);
             this.panel1.Controls.Add(this.VitNXRadioButton2);
             this.panel1.Controls.Add(this.VitNXRadioButton1);
-            this.panel1.Controls.Add(this.VitNXTitle1);
+            this.panel1.Controls.Add(this.VitNX_Title1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 103);
             this.panel1.Name = "panel1";
@@ -112,22 +112,22 @@ namespace Example
             this.VitNXRadioButton1.TabStop = true;
             this.VitNXRadioButton1.Text = "Radiobutton";
             // 
-            // VitNXTitle1
+            // VitNX_Title1
             // 
-            this.VitNXTitle1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXTitle1.Location = new System.Drawing.Point(0, 0);
-            this.VitNXTitle1.Name = "VitNXTitle1";
-            this.VitNXTitle1.Size = new System.Drawing.Size(250, 26);
-            this.VitNXTitle1.TabIndex = 7;
-            this.VitNXTitle1.Text = "Radio buttons";
+            this.VitNX_Title1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_Title1.Location = new System.Drawing.Point(0, 0);
+            this.VitNX_Title1.Name = "VitNX_Title1";
+            this.VitNX_Title1.Size = new System.Drawing.Size(250, 26);
+            this.VitNX_Title1.TabIndex = 7;
+            this.VitNX_Title1.Text = "Radio buttons";
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.VitNXCheckBox3);
-            this.panel2.Controls.Add(this.VitNXCheckBox2);
-            this.panel2.Controls.Add(this.VitNXCheckBox1);
-            this.panel2.Controls.Add(this.VitNXTitle2);
+            this.panel2.Controls.Add(this.VitNX_CheckBox3);
+            this.panel2.Controls.Add(this.VitNX_CheckBox2);
+            this.panel2.Controls.Add(this.VitNX_CheckBox1);
+            this.panel2.Controls.Add(this.VitNX_Title2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
@@ -135,66 +135,66 @@ namespace Example
             this.panel2.Size = new System.Drawing.Size(250, 93);
             this.panel2.TabIndex = 1;
             // 
-            // VitNXCheckBox3
+            // VitNX_CheckBox3
             // 
-            this.VitNXCheckBox3.AutoSize = true;
-            this.VitNXCheckBox3.Checked = true;
-            this.VitNXCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.VitNXCheckBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXCheckBox3.Enabled = false;
-            this.VitNXCheckBox3.Location = new System.Drawing.Point(0, 64);
-            this.VitNXCheckBox3.Name = "VitNXCheckBox3";
-            this.VitNXCheckBox3.Size = new System.Drawing.Size(250, 19);
-            this.VitNXCheckBox3.TabIndex = 6;
-            this.VitNXCheckBox3.Text = "Disabled checked checkbox";
+            this.VitNX_CheckBox3.AutoSize = true;
+            this.VitNX_CheckBox3.Checked = true;
+            this.VitNX_CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.VitNX_CheckBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_CheckBox3.Enabled = false;
+            this.VitNX_CheckBox3.Location = new System.Drawing.Point(0, 64);
+            this.VitNX_CheckBox3.Name = "VitNX_CheckBox3";
+            this.VitNX_CheckBox3.Size = new System.Drawing.Size(250, 19);
+            this.VitNX_CheckBox3.TabIndex = 6;
+            this.VitNX_CheckBox3.Text = "Disabled checked checkbox";
             // 
-            // VitNXCheckBox2
+            // VitNX_CheckBox2
             // 
-            this.VitNXCheckBox2.AutoSize = true;
-            this.VitNXCheckBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXCheckBox2.Enabled = false;
-            this.VitNXCheckBox2.Location = new System.Drawing.Point(0, 45);
-            this.VitNXCheckBox2.Name = "VitNXCheckBox2";
-            this.VitNXCheckBox2.Size = new System.Drawing.Size(250, 19);
-            this.VitNXCheckBox2.TabIndex = 5;
-            this.VitNXCheckBox2.Text = "Disabled checkbox";
+            this.VitNX_CheckBox2.AutoSize = true;
+            this.VitNX_CheckBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_CheckBox2.Enabled = false;
+            this.VitNX_CheckBox2.Location = new System.Drawing.Point(0, 45);
+            this.VitNX_CheckBox2.Name = "VitNX_CheckBox2";
+            this.VitNX_CheckBox2.Size = new System.Drawing.Size(250, 19);
+            this.VitNX_CheckBox2.TabIndex = 5;
+            this.VitNX_CheckBox2.Text = "Disabled checkbox";
             // 
-            // VitNXCheckBox1
+            // VitNX_CheckBox1
             // 
-            this.VitNXCheckBox1.AutoSize = true;
-            this.VitNXCheckBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXCheckBox1.Location = new System.Drawing.Point(0, 26);
-            this.VitNXCheckBox1.Name = "VitNXCheckBox1";
-            this.VitNXCheckBox1.Size = new System.Drawing.Size(250, 19);
-            this.VitNXCheckBox1.TabIndex = 4;
-            this.VitNXCheckBox1.Text = "Checkbox";
+            this.VitNX_CheckBox1.AutoSize = true;
+            this.VitNX_CheckBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_CheckBox1.Location = new System.Drawing.Point(0, 26);
+            this.VitNX_CheckBox1.Name = "VitNX_CheckBox1";
+            this.VitNX_CheckBox1.Size = new System.Drawing.Size(250, 19);
+            this.VitNX_CheckBox1.TabIndex = 4;
+            this.VitNX_CheckBox1.Text = "Checkbox";
             // 
-            // VitNXTitle2
+            // VitNX_Title2
             // 
-            this.VitNXTitle2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXTitle2.Location = new System.Drawing.Point(0, 0);
-            this.VitNXTitle2.Name = "VitNXTitle2";
-            this.VitNXTitle2.Size = new System.Drawing.Size(250, 26);
-            this.VitNXTitle2.TabIndex = 8;
-            this.VitNXTitle2.Text = "Check boxes";
+            this.VitNX_Title2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_Title2.Location = new System.Drawing.Point(0, 0);
+            this.VitNX_Title2.Name = "VitNX_Title2";
+            this.VitNX_Title2.Size = new System.Drawing.Size(250, 26);
+            this.VitNX_Title2.TabIndex = 8;
+            this.VitNX_Title2.Text = "Check boxes";
             // 
-            // VitNXScrollBar1
+            // VitNX_ScrollBar1
             // 
-            this.VitNXScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.VitNXScrollBar1.Enabled = false;
-            this.VitNXScrollBar1.Location = new System.Drawing.Point(265, 25);
-            this.VitNXScrollBar1.Maximum = 5;
-            this.VitNXScrollBar1.Minimum = 1;
-            this.VitNXScrollBar1.Name = "VitNXScrollBar1";
-            this.VitNXScrollBar1.Size = new System.Drawing.Size(15, 425);
-            this.VitNXScrollBar1.TabIndex = 1;
-            this.VitNXScrollBar1.Text = "VitNXScrollBar1";
+            this.VitNX_ScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.VitNX_ScrollBar1.Enabled = false;
+            this.VitNX_ScrollBar1.Location = new System.Drawing.Point(265, 25);
+            this.VitNX_ScrollBar1.Maximum = 5;
+            this.VitNX_ScrollBar1.Minimum = 1;
+            this.VitNX_ScrollBar1.Name = "VitNX_ScrollBar1";
+            this.VitNX_ScrollBar1.Size = new System.Drawing.Size(15, 425);
+            this.VitNX_ScrollBar1.TabIndex = 1;
+            this.VitNX_ScrollBar1.Text = "VitNX_ScrollBar1";
             // 
             // panel3
             // 
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.cmbList);
-            this.panel3.Controls.Add(this.VitNXTitle3);
+            this.panel3.Controls.Add(this.VitNX_Title3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(10, 196);
             this.panel3.Name = "panel3";
@@ -202,14 +202,14 @@ namespace Example
             this.panel3.Size = new System.Drawing.Size(250, 62);
             this.panel3.TabIndex = 3;
             // 
-            // VitNXTitle3
+            // VitNX_Title3
             // 
-            this.VitNXTitle3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXTitle3.Location = new System.Drawing.Point(0, 0);
-            this.VitNXTitle3.Name = "VitNXTitle3";
-            this.VitNXTitle3.Size = new System.Drawing.Size(250, 26);
-            this.VitNXTitle3.TabIndex = 7;
-            this.VitNXTitle3.Text = "Lists";
+            this.VitNX_Title3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_Title3.Location = new System.Drawing.Point(0, 0);
+            this.VitNX_Title3.Name = "VitNX_Title3";
+            this.VitNX_Title3.Size = new System.Drawing.Size(250, 26);
+            this.VitNX_Title3.TabIndex = 7;
+            this.VitNX_Title3.Text = "Lists";
             // 
             // cmbList
             // 
@@ -218,15 +218,15 @@ namespace Example
             this.cmbList.Name = "cmbList";
             this.cmbList.Size = new System.Drawing.Size(250, 26);
             this.cmbList.TabIndex = 8;
-            this.cmbList.Text = "VitNXDropdownList1";
+            this.cmbList.Text = "VitNX_DropdownList1";
             // 
             // DockProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.VitNXScrollBar1);
-            this.DefaultDockArea = VitNX.Docking.VitNXDockArea.Right;
+            this.Controls.Add(this.VitNX_ScrollBar1);
+            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Right;
             this.DockText = "Properties";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.properties_16xLG;
@@ -251,15 +251,15 @@ namespace Example
         private VitNX.Controls.VitNXRadioButton VitNXRadioButton3;
         private VitNX.Controls.VitNXRadioButton VitNXRadioButton2;
         private VitNX.Controls.VitNXRadioButton VitNXRadioButton1;
-        private VitNX.Controls.VitNXTitle VitNXTitle1;
+        private VitNX.Controls.VitNX_Title VitNX_Title1;
         private System.Windows.Forms.Panel panel2;
-        private VitNX.Controls.VitNXCheckBox VitNXCheckBox3;
-        private VitNX.Controls.VitNXCheckBox VitNXCheckBox2;
-        private VitNX.Controls.VitNXCheckBox VitNXCheckBox1;
-        private VitNX.Controls.VitNXTitle VitNXTitle2;
-        private VitNX.Controls.VitNXScrollBar VitNXScrollBar1;
+        private VitNX.Controls.VitNX_CheckBox VitNX_CheckBox3;
+        private VitNX.Controls.VitNX_CheckBox VitNX_CheckBox2;
+        private VitNX.Controls.VitNX_CheckBox VitNX_CheckBox1;
+        private VitNX.Controls.VitNX_Title VitNX_Title2;
+        private VitNX.Controls.VitNX_ScrollBar VitNX_ScrollBar1;
         private System.Windows.Forms.Panel panel3;
-        private VitNX.Controls.VitNXTitle VitNXTitle3;
-        private VitNX.Controls.VitNXDropdownList cmbList;
+        private VitNX.Controls.VitNX_Title VitNX_Title3;
+        private VitNX.Controls.VitNX_DropdownList cmbList;
     }
 }

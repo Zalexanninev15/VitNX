@@ -31,7 +31,7 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstConsole = new VitNX.Controls.VitNXListView();
+            this.lstConsole = new VitNX.Controls.VitNX_ListView();
             this.SuspendLayout();
             // 
             // lstConsole
@@ -42,14 +42,14 @@ namespace Example
             this.lstConsole.Name = "lstConsole";
             this.lstConsole.Size = new System.Drawing.Size(500, 175);
             this.lstConsole.TabIndex = 0;
-            this.lstConsole.Text = "VitNXListView1";
+            this.lstConsole.Text = "VitNX_ListView1";
             // 
             // DockConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstConsole);
-            this.DefaultDockArea = VitNX.Docking.VitNXDockArea.Bottom;
+            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Bottom;
             this.DockText = "Console";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.Console;
@@ -62,6 +62,6 @@ namespace Example
 
         #endregion
 
-        private VitNXListView lstConsole;
+        private VitNX_ListView lstConsole;
     }
 }

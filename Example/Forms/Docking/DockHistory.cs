@@ -3,7 +3,7 @@ using VitNX.Docking;
 
 namespace Example
 {
-    public partial class DockHistory : VitNXToolWindow
+    public partial class DockHistory : VitNX_ToolWindow
     {
         public DockHistory()
         {
@@ -11,7 +11,7 @@ namespace Example
             // Build dummy list data
             for (var i = 0; i < 100; i++)
             {
-                var item = new VitNXListItem($"List item #{i}");
+                var item = new VitNX_ListItem($"List item #{i}");
                 lstHistory.Items.Add(item);
             }
         }

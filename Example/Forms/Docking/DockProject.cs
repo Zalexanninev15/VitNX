@@ -5,7 +5,7 @@ using VitNX.Functions;
 
 namespace Example
 {
-    public partial class DockProject : VitNXToolWindow
+    public partial class DockProject : VitNX_ToolWindow
     {
         public DockProject()
         {
@@ -14,12 +14,12 @@ namespace Example
             var childCount = 0;
             for (var i = 0; i < 10; i++)
             {
-                var node = new VitNXTreeNode($"Root node #{i}");
+                var node = new VitNX_TreeNode($"Root node #{i}");
                 node.ExpandedIcon = Icons.folder_open;
                 node.Icon = Icons.folder_closed;
                 for (var x = 0; x < 10; x++)
                 {
-                    var childNode = new VitNXTreeNode($"Child node #{childCount}");
+                    var childNode = new VitNX_TreeNode($"Child node #{childCount}");
                     childNode.Icon = Icons.files;
                     childCount++;
                     node.Nodes.Add(childNode);
@@ -33,7 +33,7 @@ namespace Example
 
         private void vitNXButton2_Click(object sender, EventArgs e)
         {
-            var dialog = new FolderSelectDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), Title = "Select Folder" };
+            var dialog = new FolderDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), Title = "Select Folder" };
             if (dialog.Show()) { VitNX.Forms.VitNXMessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example"); } else { }
         }
     }

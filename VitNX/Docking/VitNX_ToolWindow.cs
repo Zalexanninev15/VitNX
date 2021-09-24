@@ -7,7 +7,7 @@ using System;
 namespace VitNX.Docking
 {
     [ToolboxItem(false)]
-    public class VitNXToolWindow : VitNXDockContent
+    public class VitNX_ToolWindow : VitNX_DockContent
     {
         #region Field Region
 
@@ -33,7 +33,7 @@ namespace VitNX.Docking
 
         #region Constructor Region
 
-        public VitNXToolWindow()
+        public VitNX_ToolWindow()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |

@@ -1,6 +1,6 @@
 ﻿namespace VitNX.Controls
 {
-    public enum VitNXContentAlignment
+    public enum VitNX_ContentAlignment
     {
         Center,
         Left,

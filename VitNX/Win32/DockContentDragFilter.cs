@@ -11,25 +11,25 @@ namespace VitNX.Win32
     {
         #region Field Region
 
-        private VitNXDockPanel _dockPanel;
+        private VitNX_DockPanel _dockPanel;
 
-        private VitNXDockContent _dragContent;
+        private VitNX_DockContent _dragContent;
 
         private VitNXTranslucentForm _highlightForm;
 
         private bool _isDragging = false;
-        private VitNXDockRegion _targetRegion;
-        private VitNXDockGroup _targetGroup;
+        private VitNX_DockRegion _targetRegion;
+        private VitNX_DockGroup _targetGroup;
         private DockInsertType _insertType = DockInsertType.None;
 
-        private Dictionary<VitNXDockRegion, DockDropArea> _regionDropAreas = new Dictionary<VitNXDockRegion, DockDropArea>();
-        private Dictionary<VitNXDockGroup, DockDropCollection> _groupDropAreas = new Dictionary<VitNXDockGroup, DockDropCollection>();
+        private Dictionary<VitNX_DockRegion, DockDropArea> _regionDropAreas = new Dictionary<VitNX_DockRegion, DockDropArea>();
+        private Dictionary<VitNX_DockGroup, DockDropCollection> _groupDropAreas = new Dictionary<VitNX_DockGroup, DockDropCollection>();
 
         #endregion
 
         #region Constructor Region
 
-        public DockContentDragFilter(VitNXDockPanel dockPanel)
+        public DockContentDragFilter(VitNX_DockPanel dockPanel)
         {
             _dockPanel = dockPanel;
 
@@ -96,15 +96,15 @@ namespace VitNX.Win32
 
         #region Method Region
 
-        public void StartDrag(VitNXDockContent content)
+        public void StartDrag(VitNX_DockContent content)
         {
-            _regionDropAreas = new Dictionary<VitNXDockRegion, DockDropArea>();
-            _groupDropAreas = new Dictionary<VitNXDockGroup, DockDropCollection>();
+            _regionDropAreas = new Dictionary<VitNX_DockRegion, DockDropArea>();
+            _groupDropAreas = new Dictionary<VitNX_DockGroup, DockDropCollection>();
 
             // Add all regions and groups to the drop collections
             foreach (var region in _dockPanel.Regions.Values)
             {
-                if (region.DockArea == VitNXDockArea.Document)
+                if (region.DockArea == VitNX_DockArea.Document)
                     continue;
 
                 // If the region is visible then build drop areas for the groups.

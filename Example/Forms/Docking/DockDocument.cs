@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Example
 {
-    public partial class DockDocument : VitNXDocument
+    public partial class DockDocument : VitNX_Document
     {
         public DockDocument()
         {
@@ -16,12 +16,12 @@ namespace Example
             txtDocument.SelectionStart = txtDocument.Text.Length;
 
             // Build dummy dropdown data
-            cmbOptions.Items.Add(new VitNXDropdownItem("25%"));
-            cmbOptions.Items.Add(new VitNXDropdownItem("50%"));
-            cmbOptions.Items.Add(new VitNXDropdownItem("100%"));
-            cmbOptions.Items.Add(new VitNXDropdownItem("200%"));
-            cmbOptions.Items.Add(new VitNXDropdownItem("300%"));
-            cmbOptions.Items.Add(new VitNXDropdownItem("400%"));
+            cmbOptions.Items.Add(new VitNX_DropdownItem("25%"));
+            cmbOptions.Items.Add(new VitNX_DropdownItem("50%"));
+            cmbOptions.Items.Add(new VitNX_DropdownItem("100%"));
+            cmbOptions.Items.Add(new VitNX_DropdownItem("200%"));
+            cmbOptions.Items.Add(new VitNX_DropdownItem("300%"));
+            cmbOptions.Items.Add(new VitNX_DropdownItem("400%"));
         }
 
         public DockDocument(string text, Image icon) : this() { DockText = text; Icon = icon; }
