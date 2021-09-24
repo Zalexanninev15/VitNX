@@ -7,7 +7,7 @@
         OkCancel,
         YesNo,
         YesNoCancel,
-        AbortRetryIgnore,
-        RetryCancel
+        RetryCancel,
+        AbortRetryIgnore
     }
 }

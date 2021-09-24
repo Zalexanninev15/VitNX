@@ -1,5 +1,4 @@
-﻿using VitNX.Config;
-using VitNX.Controls;
+﻿using VitNX.Controls;
 using VitNX.Docking;
 using VitNX.Forms;
 using System.Drawing;

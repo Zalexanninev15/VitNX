@@ -39,6 +39,8 @@ namespace Example
             this.mnuClose = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDialog = new System.Windows.Forms.ToolStripMenuItem();
+            this.WarningMessageBox = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuestionMessageBox = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTools = new System.Windows.Forms.ToolStripMenuItem();
             this.checkableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkableWithIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,7 +126,9 @@ namespace Example
             // 
             this.mnuView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.mnuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDialog});
+            this.mnuDialog,
+            this.WarningMessageBox,
+            this.QuestionMessageBox});
             this.mnuView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuView.Name = "mnuView";
             this.mnuView.Size = new System.Drawing.Size(44, 20);
@@ -132,11 +136,32 @@ namespace Example
             // 
             // mnuDialog
             // 
+            this.mnuDialog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.mnuDialog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuDialog.Image = global::Example.Icons.properties_16xLG;
             this.mnuDialog.Name = "mnuDialog";
-            this.mnuDialog.Size = new System.Drawing.Size(130, 22);
-            this.mnuDialog.Text = "&Dialog test";
+            this.mnuDialog.Size = new System.Drawing.Size(180, 22);
+            this.mnuDialog.Text = "Dialog test";
+            // 
+            // WarningMessageBox
+            // 
+            this.WarningMessageBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.WarningMessageBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.WarningMessageBox.Image = global::Example.Icons.properties_16xLG;
+            this.WarningMessageBox.Name = "WarningMessageBox";
+            this.WarningMessageBox.Size = new System.Drawing.Size(180, 22);
+            this.WarningMessageBox.Text = "Warning Test";
+            this.WarningMessageBox.Click += new System.EventHandler(this.WarningMessageBox_Click);
+            // 
+            // QuestionMessageBox
+            // 
+            this.QuestionMessageBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.QuestionMessageBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.QuestionMessageBox.Image = global::Example.Icons.properties_16xLG;
+            this.QuestionMessageBox.Name = "QuestionMessageBox";
+            this.QuestionMessageBox.Size = new System.Drawing.Size(180, 22);
+            this.QuestionMessageBox.Text = "Question Test";
+            this.QuestionMessageBox.Click += new System.EventHandler(this.QuestionMessageBox_Click);
             // 
             // mnuTools
             // 
@@ -413,6 +438,8 @@ namespace Example
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem checkedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkedWithIconToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem WarningMessageBox;
+        private System.Windows.Forms.ToolStripMenuItem QuestionMessageBox;
     }
 }
 

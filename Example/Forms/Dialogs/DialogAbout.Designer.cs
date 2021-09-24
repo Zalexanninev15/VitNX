@@ -33,7 +33,6 @@ namespace Example
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblVersion = new VitNX.Controls.VitNXLabel();
-            this.VitNXLabel2 = new VitNX.Controls.VitNXLabel();
             this.VitNXLabel1 = new VitNX.Controls.VitNXLabel();
             this.lblHeader = new VitNX.Controls.VitNXLabel();
             this.pnlMain.SuspendLayout();
@@ -42,7 +41,6 @@ namespace Example
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.lblVersion);
-            this.pnlMain.Controls.Add(this.VitNXLabel2);
             this.pnlMain.Controls.Add(this.VitNXLabel1);
             this.pnlMain.Controls.Add(this.lblHeader);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -57,25 +55,12 @@ namespace Example
             this.lblVersion.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblVersion.Location = new System.Drawing.Point(15, 168);
+            this.lblVersion.Location = new System.Drawing.Point(15, 143);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(313, 47);
             this.lblVersion.TabIndex = 7;
             this.lblVersion.Text = "Version: [version]";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // VitNXLabel2
-            // 
-            this.VitNXLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VitNXLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.VitNXLabel2.Location = new System.Drawing.Point(15, 89);
-            this.VitNXLabel2.Name = "VitNXLabel2";
-            this.VitNXLabel2.Size = new System.Drawing.Size(313, 79);
-            this.VitNXLabel2.TabIndex = 5;
-            this.VitNXLabel2.Text = "Created because of all the little annoyances and issues with the default .NET con" +
-    "trol library.";
-            this.VitNXLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VitNXLabel1
             // 
@@ -83,7 +68,7 @@ namespace Example
             this.VitNXLabel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.VitNXLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VitNXLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.VitNXLabel1.Location = new System.Drawing.Point(15, 68);
+            this.VitNXLabel1.Location = new System.Drawing.Point(15, 122);
             this.VitNXLabel1.Name = "VitNXLabel1";
             this.VitNXLabel1.Size = new System.Drawing.Size(322, 21);
             this.VitNXLabel1.TabIndex = 4;
@@ -97,7 +82,7 @@ namespace Example
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lblHeader.Location = new System.Drawing.Point(15, 15);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(313, 53);
+            this.lblHeader.Size = new System.Drawing.Size(313, 107);
             this.lblHeader.TabIndex = 3;
             this.lblHeader.Text = "VitNX";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,7 +112,6 @@ namespace Example
         private System.Windows.Forms.Panel pnlMain;
         private VitNXLabel lblHeader;
         private VitNXLabel VitNXLabel1;
-        private VitNXLabel VitNXLabel2;
         private VitNXLabel lblVersion;
     }
 }

@@ -1,5 +1,4 @@
-﻿using VitNX.Icons;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -87,6 +86,11 @@ namespace VitNX.Forms
             return ShowDialog(message, caption, VitNXMessageBoxIcon.Error, buttons);
         }
 
+        public static DialogResult ShowQuestion(string message, string caption, VitNXDialogButton buttons = VitNXDialogButton.YesNo)
+        {
+            return ShowDialog(message, caption, VitNXMessageBoxIcon.Question, buttons);
+        }
+
         private static DialogResult ShowDialog(string message, string caption, VitNXMessageBoxIcon icon, VitNXDialogButton buttons)
         {
             using (var dlg = new VitNXMessageBox(message, caption, icon, buttons))
@@ -116,6 +120,9 @@ namespace VitNX.Forms
                     break;
                 case VitNXMessageBoxIcon.Error:
                     picIcon.Image = MessageBoxIcons.error;
+                    break;
+                case VitNXMessageBoxIcon.Question:
+                    picIcon.Image = MessageBoxIcons.question;
                     break;
             }
         }
