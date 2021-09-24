@@ -193,6 +193,24 @@ namespace Example
             about.ShowDialog();
         }
 
+        private void WarningMessageBox_Click(object sender, EventArgs e)
+        {
+            VitNXMessageBox.ShowWarning("This is a warning", "VitNX UI - Example");
+        }
+
+        private void QuestionMessageBox_Click(object sender, EventArgs e)
+        {
+            DialogResult a = VitNXMessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
+            if (a == DialogResult.Yes)
+            {
+                VitNXMessageBox.ShowInformation("Your choice is Yes", "VitNX UI - Example");
+            }
+            if (a == DialogResult.No)
+            {
+                VitNXMessageBox.ShowInformation("Your choice is No", "VitNX UI - Example");
+            }
+        }
+
         #endregion
 
         #region Serialization Region
@@ -220,6 +238,8 @@ namespace Example
             return null;
         }
 
+
         #endregion
+
     }
 }
