@@ -1,5 +1,6 @@
 ﻿using VitNX.Controls;
 using VitNX.Docking;
+using System.Threading;
 
 namespace Example
 {
@@ -10,7 +11,7 @@ namespace Example
             InitializeComponent();
             // Build dummy nodes
             var childCount = 0;
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 10; i++)
             {
                 var node = new VitNXTreeNode($"Root node #{i}");
                 node.ExpandedIcon = Icons.folder_open;
@@ -25,5 +26,8 @@ namespace Example
                 treeProject.Nodes.Add(node);
             }
         }
+
+        private void vitNXButton1_Click(object sender, System.EventArgs e) { vitNXProgressBarStyle21.Value = 0; vitNXProgressBar1.Value = 0; timer1.Start(); }
+        private void timer1_Tick(object sender, System.EventArgs e) { vitNXProgressBar1.Increment(1); vitNXProgressBarStyle21.Increment(1); }
     }
 }

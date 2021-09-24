@@ -49,6 +49,13 @@
     <Compile Include="Collections\ObservableListModified.cs" />
     <Compile Include="Config\Colors.cs" />
     <Compile Include="Config\Consts.cs" />
+    <Compile Include="Controls\VitNX_ProgressBarDisplayMode.cs" />
+    <Compile Include="Controls\VitNX_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VitNX_ProgressBar_Rounded.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ScrollValueEventArgs.cs" />
     <Compile Include="Controls\VitNX_Button.cs">
       <SubType>Component</SubType>
@@ -208,6 +215,12 @@
     <Compile Include="Win32\WindowsMessages.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\VitNX_ProgressBar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VitNX_ProgressBar_Rounded.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\VitNX_Dialog.resx" />
     <EmbeddedResource Include="Forms\VitNX_MessageBox.resx" />
     <EmbeddedResource Include="Icons\DockIcons.resx">
