@@ -40,7 +40,7 @@ namespace Example
             this.pnlMessageBox = new VitNX.Controls.VitNX_SectionPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.VitNX_GroupBox1 = new VitNX.Controls.VitNX_GroupBox();
-            this.VitNXRadioButton4 = new VitNX.Controls.VitNXRadioButton();
+            this.VitNX_RadioButton4 = new VitNX.Controls.VitNX_RadioButton();
             this.VitNX_CheckBox3 = new VitNX.Controls.VitNX_CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.VitNX_ComboBox1 = new VitNX.Controls.VitNX_ComboBox();
@@ -49,9 +49,9 @@ namespace Example
             this.VitNX_NumericUpDown1 = new VitNX.Controls.VitNX_NumericUpDown();
             this.VitNX_Title5 = new VitNX.Controls.VitNX_Title();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.VitNXRadioButton3 = new VitNX.Controls.VitNXRadioButton();
-            this.VitNXRadioButton2 = new VitNX.Controls.VitNXRadioButton();
-            this.VitNXRadioButton1 = new VitNX.Controls.VitNXRadioButton();
+            this.VitNX_RadioButton3 = new VitNX.Controls.VitNX_RadioButton();
+            this.VitNX_RadioButton2 = new VitNX.Controls.VitNX_RadioButton();
+            this.VitNX_RadioButton1 = new VitNX.Controls.VitNX_RadioButton();
             this.VitNX_Title3 = new VitNX.Controls.VitNX_Title();
             this.panel4 = new System.Windows.Forms.Panel();
             this.VitNX_CheckBox2 = new VitNX.Controls.VitNX_CheckBox();
@@ -181,7 +181,7 @@ namespace Example
             // 
             this.VitNX_GroupBox1.AutoSize = true;
             this.VitNX_GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.VitNX_GroupBox1.Controls.Add(this.VitNXRadioButton4);
+            this.VitNX_GroupBox1.Controls.Add(this.VitNX_RadioButton4);
             this.VitNX_GroupBox1.Controls.Add(this.VitNX_CheckBox3);
             this.VitNX_GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.VitNX_GroupBox1.Location = new System.Drawing.Point(10, 411);
@@ -192,16 +192,16 @@ namespace Example
             this.VitNX_GroupBox1.TabStop = false;
             this.VitNX_GroupBox1.Text = "GroupBox";
             // 
-            // VitNXRadioButton4
+            // VitNX_RadioButton4
             // 
-            this.VitNXRadioButton4.AutoSize = true;
-            this.VitNXRadioButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXRadioButton4.Location = new System.Drawing.Point(10, 40);
-            this.VitNXRadioButton4.Name = "VitNXRadioButton4";
-            this.VitNXRadioButton4.Size = new System.Drawing.Size(180, 19);
-            this.VitNXRadioButton4.TabIndex = 1;
-            this.VitNXRadioButton4.TabStop = true;
-            this.VitNXRadioButton4.Text = "Radio button";
+            this.VitNX_RadioButton4.AutoSize = true;
+            this.VitNX_RadioButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_RadioButton4.Location = new System.Drawing.Point(10, 40);
+            this.VitNX_RadioButton4.Name = "VitNX_RadioButton4";
+            this.VitNX_RadioButton4.Size = new System.Drawing.Size(180, 19);
+            this.VitNX_RadioButton4.TabIndex = 1;
+            this.VitNX_RadioButton4.TabStop = true;
+            this.VitNX_RadioButton4.Text = "Radio button";
             // 
             // VitNX_CheckBox3
             // 
@@ -278,9 +278,9 @@ namespace Example
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.VitNXRadioButton3);
-            this.panel5.Controls.Add(this.VitNXRadioButton2);
-            this.panel5.Controls.Add(this.VitNXRadioButton1);
+            this.panel5.Controls.Add(this.VitNX_RadioButton3);
+            this.panel5.Controls.Add(this.VitNX_RadioButton2);
+            this.panel5.Controls.Add(this.VitNX_RadioButton1);
             this.panel5.Controls.Add(this.VitNX_Title3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(10, 184);
@@ -288,38 +288,38 @@ namespace Example
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 12;
             // 
-            // VitNXRadioButton3
+            // VitNX_RadioButton3
             // 
-            this.VitNXRadioButton3.AutoSize = true;
-            this.VitNXRadioButton3.Checked = true;
-            this.VitNXRadioButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXRadioButton3.Enabled = false;
-            this.VitNXRadioButton3.Location = new System.Drawing.Point(0, 64);
-            this.VitNXRadioButton3.Name = "VitNXRadioButton3";
-            this.VitNXRadioButton3.Size = new System.Drawing.Size(200, 19);
-            this.VitNXRadioButton3.TabIndex = 4;
-            this.VitNXRadioButton3.TabStop = true;
-            this.VitNXRadioButton3.Text = "Disabled radio button";
+            this.VitNX_RadioButton3.AutoSize = true;
+            this.VitNX_RadioButton3.Checked = true;
+            this.VitNX_RadioButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_RadioButton3.Enabled = false;
+            this.VitNX_RadioButton3.Location = new System.Drawing.Point(0, 64);
+            this.VitNX_RadioButton3.Name = "VitNX_RadioButton3";
+            this.VitNX_RadioButton3.Size = new System.Drawing.Size(200, 19);
+            this.VitNX_RadioButton3.TabIndex = 4;
+            this.VitNX_RadioButton3.TabStop = true;
+            this.VitNX_RadioButton3.Text = "Disabled radio button";
             // 
-            // VitNXRadioButton2
+            // VitNX_RadioButton2
             // 
-            this.VitNXRadioButton2.AutoSize = true;
-            this.VitNXRadioButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXRadioButton2.Location = new System.Drawing.Point(0, 45);
-            this.VitNXRadioButton2.Name = "VitNXRadioButton2";
-            this.VitNXRadioButton2.Size = new System.Drawing.Size(200, 19);
-            this.VitNXRadioButton2.TabIndex = 3;
-            this.VitNXRadioButton2.Text = "Radio button";
+            this.VitNX_RadioButton2.AutoSize = true;
+            this.VitNX_RadioButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_RadioButton2.Location = new System.Drawing.Point(0, 45);
+            this.VitNX_RadioButton2.Name = "VitNX_RadioButton2";
+            this.VitNX_RadioButton2.Size = new System.Drawing.Size(200, 19);
+            this.VitNX_RadioButton2.TabIndex = 3;
+            this.VitNX_RadioButton2.Text = "Radio button";
             // 
-            // VitNXRadioButton1
+            // VitNX_RadioButton1
             // 
-            this.VitNXRadioButton1.AutoSize = true;
-            this.VitNXRadioButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VitNXRadioButton1.Location = new System.Drawing.Point(0, 26);
-            this.VitNXRadioButton1.Name = "VitNXRadioButton1";
-            this.VitNXRadioButton1.Size = new System.Drawing.Size(200, 19);
-            this.VitNXRadioButton1.TabIndex = 2;
-            this.VitNXRadioButton1.Text = "Radio button";
+            this.VitNX_RadioButton1.AutoSize = true;
+            this.VitNX_RadioButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VitNX_RadioButton1.Location = new System.Drawing.Point(0, 26);
+            this.VitNX_RadioButton1.Name = "VitNX_RadioButton1";
+            this.VitNX_RadioButton1.Size = new System.Drawing.Size(200, 19);
+            this.VitNX_RadioButton1.TabIndex = 2;
+            this.VitNX_RadioButton1.Text = "Radio button";
             // 
             // VitNX_Title3
             // 
@@ -479,9 +479,9 @@ namespace Example
         private VitNX_CheckBox VitNX_CheckBox2;
         private VitNX_CheckBox VitNX_CheckBox1;
         private System.Windows.Forms.Panel panel5;
-        private VitNXRadioButton VitNXRadioButton2;
-        private VitNXRadioButton VitNXRadioButton1;
-        private VitNXRadioButton VitNXRadioButton3;
+        private VitNX_RadioButton VitNX_RadioButton2;
+        private VitNX_RadioButton VitNX_RadioButton1;
+        private VitNX_RadioButton VitNX_RadioButton3;
         private VitNX_Title VitNX_Title1;
         private VitNX_Title VitNX_Title2;
         private VitNX_Title VitNX_Title3;
@@ -492,7 +492,7 @@ namespace Example
         private VitNX_NumericUpDown VitNX_NumericUpDown1;
         private VitNX_Title VitNX_Title5;
         private VitNX_GroupBox VitNX_GroupBox1;
-        private VitNXRadioButton VitNXRadioButton4;
+        private VitNX_RadioButton VitNX_RadioButton4;
         private VitNX_CheckBox VitNX_CheckBox3;
     }
 }
