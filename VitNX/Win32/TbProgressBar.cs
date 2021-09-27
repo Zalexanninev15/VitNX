@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace VitNX.Functions
+namespace VitNX.Win32
 {
     public static class TbProgressBar
     {

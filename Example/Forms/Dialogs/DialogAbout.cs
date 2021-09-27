@@ -1,5 +1,5 @@
-﻿using VitNX.Forms;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using VitNX.Forms;
 
 namespace Example
 {

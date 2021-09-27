@@ -11,9 +11,9 @@ namespace VitNX.Win32
             {
                 case (int)WM.MOUSEWHEEL:
                 case (int)WM.MOUSEHWHEEL:
-                    var hControlUnderMouse = Native.WindowFromPoint(new Point((int)m.LParam));
+                    var hControlUnderMouse = NativeFunctions.WindowFromPoint(new Point((int)m.LParam));
                     if (hControlUnderMouse == m.HWnd) { return false; }
-                    Native.SendMessage(hControlUnderMouse, (uint)m.Msg, m.WParam, m.LParam);
+                    NativeFunctions.SendMessage(hControlUnderMouse, (uint)m.Msg, m.WParam, m.LParam);
                     return true;
             }
             return false;

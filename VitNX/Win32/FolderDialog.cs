@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace VitNX.Functions
+namespace VitNX.Win32
 {
     public class FolderDialog
     {

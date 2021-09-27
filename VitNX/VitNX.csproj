@@ -29,7 +29,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -38,9 +38,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -158,6 +161,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Extensions\BitmapExtensions.cs" />
+    <Compile Include="Extensions\FolderSize.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Forms\VitNX_Dialog.cs">
       <SubType>Form</SubType>
@@ -175,8 +179,11 @@
     <Compile Include="Forms\VitNX_TranslucentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Functions\FolderDialog.cs" />
-    <Compile Include="Functions\TbProgressBar.cs" />
+    <Compile Include="Functions\Computer.cs" />
+    <Compile Include="Win32\FolderDialog.cs" />
+    <Compile Include="Functions\ConsoleProgressBar.cs" />
+    <Compile Include="Win32\TbProgressBar.cs" />
+    <Compile Include="Functions\Functions.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,7 +220,8 @@
     <Compile Include="Win32\ControlScrollFilter.cs" />
     <Compile Include="Win32\DockResizeFilter.cs" />
     <Compile Include="Win32\DockContentDragFilter.cs" />
-    <Compile Include="Win32\Native.cs" />
+    <Compile Include="Win32\NativeFunctions.cs" />
+    <Compile Include="Win32\RecycleFlags.cs" />
     <Compile Include="Win32\WindowsMessages.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -340,9 +348,19 @@
   <ItemGroup>
     <None Include="Resources\warning.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

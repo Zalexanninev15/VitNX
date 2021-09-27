@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using VitNX.Functions;
 
 namespace Example
 {
@@ -14,7 +13,6 @@ namespace Example
         #region Field Region
 
         private List<VitNX_DockContent> _toolWindows = new List<VitNX_DockContent>();
-
         private DockProject _dockProject;
         private DockProperties _dockProperties;
         private DockConsole _dockConsole;

@@ -1,7 +1,7 @@
 ﻿using System;
 using VitNX.Controls;
 using VitNX.Docking;
-using VitNX.Functions;
+using VitNX.Win32;
 
 namespace Example
 {

@@ -2,12 +2,16 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using VitNX.Win32;
+using System;
 
 namespace VitNX.Forms
 {
     public class VitNX_Form : Form
     {
         #region Field Region
+
+        protected override void OnHandleCreated(EventArgs e) { if (NativeFunctions.DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0) { NativeFunctions.DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); } }
 
         private bool _flatBorder;
 
