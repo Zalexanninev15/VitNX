@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Dialogs\DialogAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Dialogs\DialogAbout.Designer.cs">
-      <DependentUpon>DialogAbout.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Dialogs\DialogControls.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Dialogs\DialogControls.Designer.cs">
       <DependentUpon>DialogControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DialogAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DialogAbout.Designer.cs">
+      <DependentUpon>DialogAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Docking\DockDocument.cs">
       <SubType>UserControl</SubType>
@@ -109,11 +109,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Dialogs\DialogAbout.resx">
-      <DependentUpon>DialogAbout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\DialogControls.resx">
       <DependentUpon>DialogControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\DialogAbout.resx">
+      <DependentUpon>DialogAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docking\DockDocument.resx">
       <DependentUpon>DockDocument.cs</DependentUpon>

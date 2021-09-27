@@ -2,16 +2,16 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using VitNX.Win32;
 
 namespace VitNX.Forms
 {
     public partial class VitNX_MessageBox : VitNX_Dialog
     {
-        [System.Runtime.InteropServices.DllImport("DwmApi")]
-        static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
-        protected override void OnHandleCreated(EventArgs e) { if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0) { DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); } }
 
         #region Field Region
+
+        protected override void OnHandleCreated(EventArgs e) { if (NativeFunctions.DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0) { NativeFunctions.DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); } }
 
         private string _message;
         private int _maximumWidth = 350;

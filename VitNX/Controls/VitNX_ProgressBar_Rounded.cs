@@ -1,15 +1,13 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using VitNX.Win32;
 
 namespace VitNX.Controls
 {
     public class VitNX_ProgressBarRounded : ProgressBar
     {
-        [DllImport("Gdi32.dll")]
-        private static extern IntPtr CreateRoundRectRgn(int int_0, int int_1, int int_2, int int_3, int int_4, int int_5);
         [Description("Font of the text on ProgressBar"), Category("Additional Options")]
         public Font TextFont { get; set; } = new Font(FontFamily.GenericSerif, 11, FontStyle.Bold);
         
@@ -61,7 +59,7 @@ namespace VitNX.Controls
         
         protected override void OnPaint(PaintEventArgs e) 
         { 
-            IntPtr hrgn = CreateRoundRectRgn(0, 0, Width, Height, 7, 7); // 0, 0, Width, Height, [x], [x] ; x - degree of roundness of the control (set depending on the size of the control on the form), recommended = 4 
+            IntPtr hrgn = NativeFunctions.CreateRoundRectRgn(0, 0, Width, Height, 7, 7); // 0, 0, Width, Height, [x], [x] ; x - degree of roundness of the control (set depending on the size of the control on the form), recommended = 4 
             Region = Region.FromHrgn(hrgn); 
             Graphics g = e.Graphics; DrawProgressBar(g); DrawStringIfNeeded(g); 
         }

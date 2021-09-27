@@ -1,13 +1,17 @@
 ﻿using VitNX.Controls;
+using VitNX.Win32;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System;
 
 namespace VitNX.Forms
 {
     public partial class VitNX_Dialog : VitNX_Form
     {
         #region Field Region
+
+        protected override void OnHandleCreated(EventArgs e) { if (NativeFunctions.DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0) { NativeFunctions.DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); } }
 
         private VitNX_DialogButton _dialogButtons = VitNX_DialogButton.Ok;
         private List<VitNX_Button> _buttons;
