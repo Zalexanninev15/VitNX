@@ -28,6 +28,14 @@ namespace VitNX.Functions
             }
         }
 
+        public static void CreateFileBackup(string file, string new_file_extension, bool save_old_file)
+        {
+            string bak_file = file + "." + new_file_extension.Replace(".", "");
+            if (File.Exists(bak_file)) { try { File.Delete(bak_file); } catch { } }
+            if (save_old_file == false) { try { File.Move(file, bak_file); } catch { } }
+            else { File.Copy(file, bak_file); try { File.Delete(file); } catch { } }
+        }
+
         public static void CreateShortcut(string shortcut, string file, string exe_name)
         {
             IWshRuntimeLibrary.WshShell wshShell = new IWshRuntimeLibrary.WshShell();
@@ -49,9 +57,9 @@ namespace VitNX.Functions
 
     public class Windows
     {
-        public static bool Is64x { get; } = Environment.Is64BitOperatingSystem;
+        public static bool Is64x() { return Environment.Is64BitOperatingSystem; }
         public static string GetVersion() { return Convert.ToString(Environment.OSVersion.Version); }
-        public static string GetCurrentVersionFromREG() { return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", ""); }
+        public static double GetCurrentVersionFromREG() { return double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", ""), System.Globalization.CultureInfo.InvariantCulture); }
         public static string GetEditionIDFromREG() { return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", ""); }
         public static string GetCurrentBuildNumberFromREG() { return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuildNumber", ""); }
         public static string GetProductNameFromREG() { return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", ""); }
@@ -67,7 +75,7 @@ namespace VitNX.Functions
         {
             string errors = ""; string output = "";
             Process start_info = new Process();
-            start_info.StartInfo.FileName = @Path.GetDirectoryName(file);
+            start_info.StartInfo.FileName = file;
             start_info.StartInfo.Arguments = arguments;
             start_info.StartInfo.WindowStyle = style;
             start_info.StartInfo.CreateNoWindow = !create_window;
