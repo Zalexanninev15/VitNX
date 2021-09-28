@@ -16,6 +16,10 @@ Soon!
 
 Controls for WinForms and necessary functions for interaction (.NET Framework 4.5). Based on [DarkUI](https://github.com/RobinPerris/DarkUI), but does not completely match the code base. It develops in different directions, depending on my needs
 
+## Documentation
+
+Soon!
+
 ## Build
 
 Compile using [SharpDevelop](https://sourceforge.net/projects/sharpdevelop) or [Visual Studio](https://visualstudio.microsoft.com/vs)
