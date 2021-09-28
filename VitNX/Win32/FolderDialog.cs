@@ -22,7 +22,7 @@ namespace VitNX.Win32
 
         public bool Show(IntPtr hWndOwner)
         {
-            var result = Environment.OSVersion.Version.Major >= 6 ? VistaDialog.Show(hWndOwner, InitialDirectory, Title) : ShowXpDialog(hWndOwner, InitialDirectory, Title); _fileName = result.FileName;
+            var result = Environment.OSVersion.Version.Major >= 6 ? ModernDialog.Show(hWndOwner, InitialDirectory, Title) : ShowXpDialog(hWndOwner, InitialDirectory, Title); _fileName = result.FileName;
             return result.Result;
         }
 
@@ -40,18 +40,18 @@ namespace VitNX.Win32
             return dialogResult;
         }
 
-        static class VistaDialog
+        static class ModernDialog
         {
             const string c_foldersFilter = "Folders|\n";
             const BindingFlags c_flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
             readonly static Assembly s_windowsFormsAssembly = typeof(FileDialog).Assembly;
             readonly static Type s_iFileDialogType = s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialogNative+IFileDialog");
-            readonly static MethodInfo s_createVistaDialogMethodInfo = typeof(OpenFileDialog).GetMethod("CreateVistaDialog", c_flags);
-            readonly static MethodInfo s_onBeforeVistaDialogMethodInfo = typeof(OpenFileDialog).GetMethod("OnBeforeVistaDialog", c_flags);
+            readonly static MethodInfo s_createModernDialogMethodInfo = typeof(OpenFileDialog).GetMethod("CreateModernDialog", c_flags);
+            readonly static MethodInfo s_onBeforeModernDialogMethodInfo = typeof(OpenFileDialog).GetMethod("OnBeforeModernDialog", c_flags);
             readonly static MethodInfo s_getOptionsMethodInfo = typeof(FileDialog).GetMethod("GetOptions", c_flags);
             readonly static MethodInfo s_setOptionsMethodInfo = s_iFileDialogType.GetMethod("SetOptions", c_flags);
             readonly static uint s_fosPickFoldersBitFlag = (uint)s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialogNative+FOS").GetField("FOS_PICKFOLDERS").GetValue(null);
-            readonly static ConstructorInfo s_vistaDialogEventsConstructorInfo = s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialog+VistaDialogEvents").GetConstructor(c_flags, null, new[] { typeof(FileDialog) }, null);
+            readonly static ConstructorInfo s_ModernDialogEventsConstructorInfo = s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialog+ModernDialogEvents").GetConstructor(c_flags, null, new[] { typeof(FileDialog) }, null);
             readonly static MethodInfo s_adviseMethodInfo = s_iFileDialogType.GetMethod("Advise");
             readonly static MethodInfo s_unAdviseMethodInfo = s_iFileDialogType.GetMethod("Unadvise");
             readonly static MethodInfo s_showMethodInfo = s_iFileDialogType.GetMethod("Show");
@@ -68,10 +68,10 @@ namespace VitNX.Win32
                     Multiselect = false,
                     Title = title
                 };
-                var iFileDialog = s_createVistaDialogMethodInfo.Invoke(openFileDialog, new object[] { });
-                s_onBeforeVistaDialogMethodInfo.Invoke(openFileDialog, new[] { iFileDialog });
+                var iFileDialog = s_createModernDialogMethodInfo.Invoke(openFileDialog, new object[] { });
+                s_onBeforeModernDialogMethodInfo.Invoke(openFileDialog, new[] { iFileDialog });
                 s_setOptionsMethodInfo.Invoke(iFileDialog, new object[] { (uint)s_getOptionsMethodInfo.Invoke(openFileDialog, new object[] { }) | s_fosPickFoldersBitFlag });
-                var adviseParametersWithOutputConnectionToken = new[] { s_vistaDialogEventsConstructorInfo.Invoke(new object[] { openFileDialog }), 0U };
+                var adviseParametersWithOutputConnectionToken = new[] { s_ModernDialogEventsConstructorInfo.Invoke(new object[] { openFileDialog }), 0U };
                 s_adviseMethodInfo.Invoke(iFileDialog, adviseParametersWithOutputConnectionToken);
                 try
                 {
