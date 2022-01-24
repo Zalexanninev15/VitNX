@@ -8,8 +8,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VitNX</RootNamespace>
-    <AssemblyName>VitNX</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AssemblyName>VitNX2</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -49,142 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\ObservableList.cs" />
-    <Compile Include="Collections\ObservableListModified.cs" />
-    <Compile Include="Config\Colors.cs" />
-    <Compile Include="Config\Consts.cs" />
-    <Compile Include="Controls\VitNX_ProgressBarDisplayMode.cs" />
-    <Compile Include="Controls\VitNX_ProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ProgressBar_Rounded.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\ScrollValueEventArgs.cs" />
-    <Compile Include="Controls\VitNX_Button.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ButtonStyle.cs" />
-    <Compile Include="Controls\VitNX_CheckBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ContentAlignment.cs" />
-    <Compile Include="Controls\VitNX_ContextMenu.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ControlState.cs" />
-    <Compile Include="Controls\VitNX_DropdownItem.cs" />
-    <Compile Include="Controls\VitNX_DropdownList.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_GroupBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_Label.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ListItem.cs" />
-    <Compile Include="Controls\VitNX_ListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_MenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_NumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_RadioButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ScrollBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ScrollBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ScrollOrientation.cs" />
-    <Compile Include="Controls\VitNX_ScrollView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_SectionPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_Separator.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_StatusStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_TextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_Title.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_ToolStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VitNX_TreeNode.cs" />
-    <Compile Include="Controls\VitNX_TreeView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\DockContentEventArgs.cs" />
-    <Compile Include="Docking\DockDropArea.cs" />
-    <Compile Include="Docking\DockDropCollection.cs" />
-    <Compile Include="Docking\DockGroupState.cs" />
-    <Compile Include="Docking\DockPanelState.cs" />
-    <Compile Include="Docking\DockRegionState.cs" />
-    <Compile Include="Docking\DockInsertType.cs" />
-    <Compile Include="Docking\VitNX_DockArea.cs" />
-    <Compile Include="Docking\VitNX_DockContent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Docking\VitNX_DockGroup.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\VitNX_DockPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Docking\VitNX_DockRegion.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Docking\VitNX_DockSplitter.cs" />
-    <Compile Include="Docking\VitNX_DockTab.cs" />
-    <Compile Include="Docking\VitNX_DockTabArea.cs" />
-    <Compile Include="Docking\VitNX_Document.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Docking\VitNX_SplitterType.cs" />
-    <Compile Include="Docking\VitNX_ToolWindow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Extensions\BitmapExtensions.cs" />
-    <Compile Include="Extensions\FolderSize.cs" />
-    <Compile Include="Extensions\IEnumerableExtensions.cs" />
-    <Compile Include="Forms\VitNX_Dialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VitNX_Dialog.Designer.cs" />
-    <Compile Include="Forms\VitNX_DialogButton.cs" />
-    <Compile Include="Forms\VitNX_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VitNX_MessageBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VitNX_MessageBox.Designer.cs" />
-    <Compile Include="Forms\VitNX_MessageBoxIcon.cs" />
-    <Compile Include="Forms\VitNX_TranslucentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Functions\Computer.cs" />
-    <Compile Include="Win32\FolderDialog.cs" />
-    <Compile Include="Functions\ConsoleProgressBar.cs" />
-    <Compile Include="Win32\TbProgressBar.cs" />
-    <Compile Include="Functions\Functions.cs" />
+    <Compile Include="Functions\Common\PowerControl.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,55 +80,217 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TreeViewIcons.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Collections\ObservableList.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Collections\ObservableListModified.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Config\Colors.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Config\Consts.cs" />
+    <Compile Include="UI\ControlsV2\Helper.cs" />
+    <Compile Include="UI\ControlsV2\MyButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\MyMessageBox\MyMessageBox.cs" />
+    <Compile Include="UI\ControlsV2\MyMessageBox\MyMessageBox_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\MyMessageBox\MyMessageBox_Form.Designer.cs" />
+    <Compile Include="UI\ControlsV2\MyPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\MyTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\MyToogleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBarDisplayMode.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar_Rounded.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\ScrollValueEventArgs.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ButtonStyle.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ContentAlignment.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ControlState.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_DropdownItem.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_DropdownList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ListItem.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ScrollBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ScrollOrientation.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ScrollView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_SectionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_StatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_Title.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_TreeNode.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockContentEventArgs.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockDropArea.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockDropCollection.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockGroupState.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockPanelState.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockRegionState.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\DockInsertType.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockArea.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockRegion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockSplitter.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockTab.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_DockTabArea.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_Document.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_SplitterType.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Docking\VitNX_ToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Extensions\BitmapExtensions.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_Dialog.Designer.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_DialogButton.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_MessageBox.Designer.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_MessageBoxIcon.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Forms\VitNX_TranslucentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\Computer.cs" />
+    <Compile Include="Functions\Common\FileSystem.cs" />
+    <Compile Include="Functions\Windows\Apps.cs" />
+    <Compile Include="Functions\Web.cs" />
+    <Compile Include="Functions\Windows\Win32.cs" />
+    <Compile Include="Functions\ConsoleProgressBar.cs" />
+    <Compile Include="Functions\Windows\NativeControls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderers\VitNX_MenuRenderer.cs" />
-    <Compile Include="Renderers\VitNX_ToolStripRenderer.cs" />
-    <Compile Include="Win32\ControlScrollFilter.cs" />
-    <Compile Include="Win32\DockResizeFilter.cs" />
-    <Compile Include="Win32\DockContentDragFilter.cs" />
-    <Compile Include="Win32\NativeFunctions.cs" />
-    <Compile Include="Win32\RecycleFlags.cs" />
-    <Compile Include="Win32\WindowPosFlags.cs" />
-    <Compile Include="Win32\WindowsMessages.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Renderers\VitNX_MenuRenderer.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Renderers\VitNX_ToolStripRenderer.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Win32\ControlScrollFilter.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Win32\DockResizeFilter.cs" />
+    <Compile Include="UI\BasedOnDarkUI\Win32\DockContentDragFilter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\VitNX_ProgressBar.resx">
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV2\MyMessageBox\MyMessageBox_Form.resx" />
+    <EmbeddedResource Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\VitNX_ProgressBar_Rounded.resx">
+    <EmbeddedResource Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar_Rounded.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VitNX_Dialog.resx" />
-    <EmbeddedResource Include="Forms\VitNX_MessageBox.resx" />
+    <EmbeddedResource Include="UI\BasedOnDarkUI\Forms\VitNX_Dialog.resx" />
+    <EmbeddedResource Include="UI\BasedOnDarkUI\Forms\VitNX_MessageBox.resx" />
     <EmbeddedResource Include="Icons\DockIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>DockIcons.Designer.cs</LastGenOutput>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DockIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons\DropdownIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>DropdownIcons.Designer.cs</LastGenOutput>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>DropdownIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons\MenuIcons.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>MenuIcons.Designer.cs</LastGenOutput>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>MenuIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons\MessageBoxIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MessageBoxIcons.Designer.cs</LastGenOutput>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>MessageBoxIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons\ScrollIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ScrollIcons.Designer.cs</LastGenOutput>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>ScrollIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons\TreeViewIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +390,27 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\News.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
