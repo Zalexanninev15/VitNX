@@ -18,4 +18,4 @@ Controls for WinForms and necessary functions for interaction (.NET Framework 4.
 
 ## Build
 
-Compile using [Visual Studio 2019](https://visualstudio.microsoft.com/vs)
+Compile using [Visual Studio](https://visualstudio.microsoft.com/vs)
