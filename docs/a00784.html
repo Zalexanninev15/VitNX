@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: Member List</title>
+<title>VitNX: ControlScrollFilter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,25 +56,71 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('a00787.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00784.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">Helper Member List</div></div>
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00781.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ControlScrollFilter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for ControlScrollFilter:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00784.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0f9a8e7f2dc7d59b708257bafcb6dfe7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html#a0f9a8e7f2dc7d59b708257bafcb6dfe7">PreFilterMessage</a> (ref Message m)</td></tr>
+<tr class="separator:a0f9a8e7f2dc7d59b708257bafcb6dfe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="a00254_source.html#l00006">6</a> of file <a class="el" href="a00254_source.html">ControlScrollFilter.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0f9a8e7f2dc7d59b708257bafcb6dfe7" name="a0f9a8e7f2dc7d59b708257bafcb6dfe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9a8e7f2dc7d59b708257bafcb6dfe7">&#9670;&nbsp;</a></span>PreFilterMessage()</h2>
 
-<p>This is the complete list of members for <a class="el" href="a00787.html">Helper</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00787.html#a45f962097bd56f366fe1a193024c3272">VitNX2_Button_MouseEnter</a>(object sender, EventArgs e)</td><td class="entry"><a class="el" href="a00787.html">Helper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a00787.html#a3d5e897786048a5ffa00aa536704c762">VitNX2_Button_MouseLeave</a>(object sender, EventArgs e)</td><td class="entry"><a class="el" href="a00787.html">Helper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00787.html#a26de0a0f54e31eecd331279d55c7761d">VitNX2_TextBoxesFocus</a>(bool enter)</td><td class="entry"><a class="el" href="a00787.html">Helper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-</table></div><!-- contents -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PreFilterMessage </td>
+          <td>(</td>
+          <td class="paramtype">ref Message&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00254_source.html#l00008">8</a> of file <a class="el" href="a00254_source.html">ControlScrollFilter.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>        {</div>
+<div class="line"><span class="lineno">   10</span>            <span class="keywordflow">switch</span> (m.Msg)</div>
+<div class="line"><span class="lineno">   11</span>            {</div>
+<div class="line"><span class="lineno">   12</span>                <span class="keywordflow">case</span> (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEWHEEL:</div>
+<div class="line"><span class="lineno">   13</span>                <span class="keywordflow">case</span> (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEHWHEEL:</div>
+<div class="line"><span class="lineno">   14</span>                    var hControlUnderMouse = Functions.Windows.Win32.Import.WindowFromPoint(<span class="keyword">new</span> Point((<span class="keywordtype">int</span>)m.LParam));</div>
+<div class="line"><span class="lineno">   15</span>                    <span class="keywordflow">if</span> (hControlUnderMouse == m.HWnd) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><span class="lineno">   16</span>                    Functions.Windows.Win32.Import.SendMessage(hControlUnderMouse, (uint)m.Msg, m.WParam, m.LParam);</div>
+<div class="line"><span class="lineno">   17</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   18</span>            }</div>
+<div class="line"><span class="lineno">   19</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   20</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00296.html">UI</a></li><li class="navelem"><a class="el" href="a00297.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="a00305.html">Win32</a></li><li class="navelem"><a class="el" href="a00784.html">ControlScrollFilter</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

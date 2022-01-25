@@ -1,5 +1,5 @@
 var a00292 =
 [
-    [ "Installed", "a00387.html", "a00387" ],
-    [ "Processes", "a00383.html", "a00383" ]
+    [ "Installed", "a00396.html", "a00396" ],
+    [ "Processes", "a00392.html", "a00392" ]
 ];

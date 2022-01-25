@@ -1,5 +1,5 @@
 var a00302 =
 [
-    [ "BitmapExtensions", "a00743.html", "a00743" ],
-    [ "IEnumerableExtensions", "a00747.html", "a00747" ]
+    [ "BitmapExtensions", "a00752.html", "a00752" ],
+    [ "IEnumerableExtensions", "a00756.html", "a00756" ]
 ];

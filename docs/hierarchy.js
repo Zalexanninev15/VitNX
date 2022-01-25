@@ -1,176 +1,178 @@
 var hierarchy =
 [
-    [ "BitmapExtensions", "a00743.html", null ],
+    [ "BitmapExtensions", "a00752.html", null ],
     [ "Button", null, [
-      [ "VitNX_Button", "a00579.html", null ],
-      [ "VitNX2_Button", "a00791.html", null ]
+      [ "VitNX_Button", "a00588.html", null ],
+      [ "VitNX2_Button", "a00800.html", null ]
     ] ],
     [ "CheckBox", null, [
-      [ "VitNX_CheckBox", "a00583.html", null ],
-      [ "VitNX2_ToogleButton", "a00811.html", null ]
+      [ "VitNX_CheckBox", "a00592.html", null ],
+      [ "VitNX2_ToogleButton", "a00820.html", null ]
     ] ],
-    [ "Colors", "a00567.html", null ],
+    [ "Colors", "a00576.html", null ],
     [ "ComboBox", null, [
-      [ "VitNX_ComboBox", "a00587.html", null ]
+      [ "VitNX_ComboBox", "a00596.html", null ]
     ] ],
-    [ "Constants", "a00459.html", null ],
-    [ "Constsants", "a00571.html", null ],
+    [ "Config", "a00384.html", null ],
+    [ "Constants", "a00468.html", null ],
+    [ "Constsants", "a00580.html", null ],
     [ "ContextMenuStrip", null, [
-      [ "VitNX_ContextMenu", "a00591.html", null ]
+      [ "VitNX_ContextMenu", "a00600.html", null ]
     ] ],
     [ "Control", null, [
-      [ "VitNX_DropdownList", "a00599.html", null ],
-      [ "VitNX_ScrollBar", "a00639.html", null ],
-      [ "VitNX_ScrollBase", "a00643.html", [
-        [ "VitNX_ScrollView", "a00647.html", [
-          [ "VitNX_ListView", "a00615.html", null ],
-          [ "VitNX_TreeView", "a00679.html", null ]
+      [ "VitNX_DropdownList", "a00608.html", null ],
+      [ "VitNX_ScrollBar", "a00648.html", null ],
+      [ "VitNX_ScrollBase", "a00652.html", [
+        [ "VitNX_ScrollView", "a00656.html", [
+          [ "VitNX_ListView", "a00624.html", null ],
+          [ "VitNX_TreeView", "a00688.html", null ]
         ] ]
       ] ],
-      [ "VitNX_Separator", "a00655.html", null ]
+      [ "VitNX_Separator", "a00664.html", null ]
     ] ],
-    [ "Cpu", "a00343.html", null ],
-    [ "Disk", "a00351.html", null ],
-    [ "Helper.DISPLAYCONFIG_2DREGION", "a00491.html", null ],
-    [ "Helper.DISPLAYCONFIG_DEVICE_INFO_HEADER", "a00523.html", null ],
-    [ "Helper.DISPLAYCONFIG_MODE_INFO", "a00515.html", null ],
-    [ "Helper.DISPLAYCONFIG_MODE_INFO_UNION", "a00511.html", null ],
-    [ "Helper.DISPLAYCONFIG_PATH_INFO", "a00487.html", null ],
-    [ "Helper.DISPLAYCONFIG_PATH_SOURCE_INFO", "a00475.html", null ],
-    [ "Helper.DISPLAYCONFIG_PATH_TARGET_INFO", "a00479.html", null ],
-    [ "Helper.DISPLAYCONFIG_RATIONAL", "a00483.html", null ],
-    [ "Helper.DISPLAYCONFIG_SOURCE_MODE", "a00507.html", null ],
-    [ "Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME", "a00527.html", null ],
-    [ "Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS", "a00519.html", null ],
-    [ "Helper.DISPLAYCONFIG_TARGET_MODE", "a00499.html", null ],
-    [ "Helper.DISPLAYCONFIG_VIDEO_SIGNAL_INFO", "a00495.html", null ],
-    [ "DockDropArea", "a00687.html", null ],
-    [ "DockDropCollection", "a00691.html", null ],
-    [ "DockGroupState", "a00695.html", null ],
-    [ "DockIcons", "a00531.html", null ],
-    [ "DockPanelState", "a00699.html", null ],
-    [ "DockRegionState", "a00703.html", null ],
-    [ "DropdownIcons", "a00535.html", null ],
-    [ "Enums", "a00463.html", null ],
+    [ "Cpu", "a00344.html", null ],
+    [ "Disk", "a00352.html", null ],
+    [ "Helper.DISPLAYCONFIG_2DREGION", "a00500.html", null ],
+    [ "Helper.DISPLAYCONFIG_DEVICE_INFO_HEADER", "a00532.html", null ],
+    [ "Helper.DISPLAYCONFIG_MODE_INFO", "a00524.html", null ],
+    [ "Helper.DISPLAYCONFIG_MODE_INFO_UNION", "a00520.html", null ],
+    [ "Helper.DISPLAYCONFIG_PATH_INFO", "a00496.html", null ],
+    [ "Helper.DISPLAYCONFIG_PATH_SOURCE_INFO", "a00484.html", null ],
+    [ "Helper.DISPLAYCONFIG_PATH_TARGET_INFO", "a00488.html", null ],
+    [ "Helper.DISPLAYCONFIG_RATIONAL", "a00492.html", null ],
+    [ "Helper.DISPLAYCONFIG_SOURCE_MODE", "a00516.html", null ],
+    [ "Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME", "a00536.html", null ],
+    [ "Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS", "a00528.html", null ],
+    [ "Helper.DISPLAYCONFIG_TARGET_MODE", "a00508.html", null ],
+    [ "Helper.DISPLAYCONFIG_VIDEO_SIGNAL_INFO", "a00504.html", null ],
+    [ "DockDropArea", "a00696.html", null ],
+    [ "DockDropCollection", "a00700.html", null ],
+    [ "DockGroupState", "a00704.html", null ],
+    [ "DockIcons", "a00540.html", null ],
+    [ "DockPanelState", "a00708.html", null ],
+    [ "DockRegionState", "a00712.html", null ],
+    [ "DropdownIcons", "a00544.html", null ],
+    [ "Enums", "a00472.html", null ],
     [ "EventArgs", null, [
-      [ "ObservableListModified< T >", "a00563.html", null ],
-      [ "ScrollValueEventArgs", "a00575.html", null ],
-      [ "DockContentEventArgs", "a00683.html", null ]
+      [ "ObservableListModified< T >", "a00572.html", null ],
+      [ "ScrollValueEventArgs", "a00584.html", null ],
+      [ "DockContentEventArgs", "a00692.html", null ]
     ] ],
-    [ "FileSystem", "a00331.html", null ],
+    [ "FileSystem", "a00332.html", null ],
     [ "Form", null, [
-      [ "VitNX_Form", "a00755.html", [
-        [ "VitNX_Dialog", "a00751.html", [
-          [ "VitNX_MessageBox", "a00759.html", null ]
+      [ "VitNX_Form", "a00764.html", [
+        [ "VitNX_Dialog", "a00760.html", [
+          [ "VitNX_MessageBox", "a00768.html", null ]
         ] ]
       ] ],
-      [ "VitNX_TranslucentForm", "a00763.html", null ],
-      [ "VitNX2_MessageBox_Form", "a00799.html", null ]
+      [ "VitNX_TranslucentForm", "a00772.html", null ],
+      [ "VitNX2_MessageBox_Form", "a00808.html", null ]
     ] ],
-    [ "GetClipboardText", "a00443.html", null ],
-    [ "Gpu", "a00347.html", null ],
+    [ "GetClipboardText", "a00452.html", null ],
+    [ "Gpu", "a00348.html", null ],
     [ "GroupBox", null, [
-      [ "VitNX_GroupBox", "a00603.html", null ]
+      [ "VitNX_GroupBox", "a00612.html", null ]
     ] ],
-    [ "Helper", "a00335.html", null ],
-    [ "Helper", "a00467.html", null ],
-    [ "Helper", "a00787.html", null ],
-    [ "VolumeControl.IAudioEndpointVolume", "a00439.html", null ],
-    [ "VolumeControl.IAudioEndpointVolumeCallback", "a00435.html", null ],
+    [ "Helper", "a00336.html", null ],
+    [ "Helper", "a00476.html", null ],
+    [ "Helper", "a00796.html", null ],
+    [ "VolumeControl.IAudioEndpointVolume", "a00448.html", null ],
+    [ "VolumeControl.IAudioEndpointVolumeCallback", "a00444.html", null ],
     [ "IDisposable", null, [
-      [ "ConsoleProgressBar", "a00379.html", null ],
-      [ "ObservableList< T >", "a00559.html", null ]
+      [ "ConsoleProgressBar", "a00388.html", null ],
+      [ "ObservableList< T >", "a00568.html", null ]
     ] ],
-    [ "IEnumerableExtensions", "a00747.html", null ],
+    [ "IEnumerableExtensions", "a00756.html", null ],
     [ "IMessageFilter", null, [
-      [ "ControlScrollFilter", "a00775.html", null ],
-      [ "DockContentDragFilter", "a00779.html", null ],
-      [ "DockResizeFilter", "a00783.html", null ]
+      [ "ControlScrollFilter", "a00784.html", null ],
+      [ "DockContentDragFilter", "a00788.html", null ],
+      [ "DockResizeFilter", "a00792.html", null ]
     ] ],
-    [ "VolumeControl.IMMDevice", "a00431.html", null ],
-    [ "VolumeControl.IMMDeviceEnumerator", "a00427.html", null ],
-    [ "Import", "a00455.html", null ],
-    [ "Installed", "a00387.html", null ],
+    [ "VolumeControl.IMMDevice", "a00440.html", null ],
+    [ "VolumeControl.IMMDeviceEnumerator", "a00436.html", null ],
+    [ "Import", "a00464.html", null ],
+    [ "Installed", "a00396.html", null ],
+    [ "Ip", "a00380.html", null ],
     [ "IProgress", null, [
-      [ "ConsoleProgressBar", "a00379.html", null ]
+      [ "ConsoleProgressBar", "a00388.html", null ]
     ] ],
-    [ "Keyboard", "a00451.html", null ],
+    [ "Keyboard", "a00460.html", null ],
     [ "Label", null, [
-      [ "VitNX_Label", "a00607.html", null ],
-      [ "VitNX_Title", "a00667.html", null ]
+      [ "VitNX_Label", "a00616.html", null ],
+      [ "VitNX_Title", "a00676.html", null ]
     ] ],
     [ "List", null, [
-      [ "ObservableList< T >", "a00559.html", null ]
+      [ "ObservableList< T >", "a00568.html", null ]
     ] ],
-    [ "Helper.LUID", "a00471.html", null ],
-    [ "MenuIcons", "a00539.html", null ],
+    [ "Helper.LUID", "a00480.html", null ],
+    [ "MenuIcons", "a00548.html", null ],
     [ "MenuStrip", null, [
-      [ "VitNX_MenuStrip", "a00619.html", null ]
+      [ "VitNX_MenuStrip", "a00628.html", null ]
     ] ],
-    [ "MessageBoxIcons", "a00543.html", null ],
-    [ "VolumeControl.MMDeviceEnumerator", "a00423.html", null ],
-    [ "Monitor", "a00355.html", null ],
-    [ "Motherboard", "a00359.html", null ],
-    [ "NewFolderDialog", "a00403.html", null ],
+    [ "MessageBoxIcons", "a00552.html", null ],
+    [ "VolumeControl.MMDeviceEnumerator", "a00432.html", null ],
+    [ "Monitor", "a00356.html", null ],
+    [ "Motherboard", "a00360.html", null ],
+    [ "NewFolderDialog", "a00412.html", null ],
     [ "NumericUpDown", null, [
-      [ "VitNX_NumericUpDown", "a00623.html", null ]
+      [ "VitNX_NumericUpDown", "a00632.html", null ]
     ] ],
-    [ "ObservableList< VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode >", "a00559.html", null ],
+    [ "ObservableList< VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode >", "a00568.html", null ],
     [ "Panel", null, [
-      [ "VitNX_SectionPanel", "a00651.html", null ],
-      [ "VitNX_DockGroup", "a00711.html", null ],
-      [ "VitNX_DockRegion", "a00719.html", null ],
-      [ "VitNX2_Panel", "a00803.html", null ]
+      [ "VitNX_SectionPanel", "a00660.html", null ],
+      [ "VitNX_DockGroup", "a00720.html", null ],
+      [ "VitNX_DockRegion", "a00728.html", null ],
+      [ "VitNX2_Panel", "a00812.html", null ]
     ] ],
-    [ "Helper.POINTL", "a00503.html", null ],
-    [ "Power", "a00367.html", null ],
-    [ "Processes", "a00383.html", null ],
+    [ "Helper.POINTL", "a00512.html", null ],
+    [ "Power", "a00368.html", null ],
+    [ "Processes", "a00392.html", null ],
     [ "ProgressBar", null, [
-      [ "VitNX_ProgressBar", "a00627.html", null ],
-      [ "VitNX_ProgressBarRounded", "a00631.html", null ]
+      [ "VitNX_ProgressBar", "a00636.html", null ],
+      [ "VitNX_ProgressBarRounded", "a00640.html", null ]
     ] ],
     [ "RadioButton", null, [
-      [ "VitNX_RadioButton", "a00635.html", null ]
+      [ "VitNX_RadioButton", "a00644.html", null ]
     ] ],
-    [ "Ram", "a00363.html", null ],
-    [ "Resources", "a00555.html", null ],
-    [ "ScrollIcons", "a00547.html", null ],
-    [ "STATask", "a00447.html", null ],
+    [ "Ram", "a00364.html", null ],
+    [ "Resources", "a00564.html", null ],
+    [ "ScrollIcons", "a00556.html", null ],
+    [ "STATask", "a00456.html", null ],
     [ "StatusStrip", null, [
-      [ "VitNX_StatusStrip", "a00659.html", null ]
+      [ "VitNX_StatusStrip", "a00668.html", null ]
     ] ],
     [ "TabControl", null, [
-      [ "VitNX2_Tab", "a00807.html", null ]
+      [ "VitNX2_Tab", "a00816.html", null ]
     ] ],
-    [ "TaskBarProgressBar", "a00391.html", null ],
-    [ "Text", "a00371.html", null ],
+    [ "TaskBarProgressBar", "a00400.html", null ],
+    [ "Text", "a00372.html", null ],
     [ "TextBox", null, [
-      [ "VitNX_TextBox", "a00663.html", null ]
+      [ "VitNX_TextBox", "a00672.html", null ]
     ] ],
     [ "ToolStrip", null, [
-      [ "VitNX_ToolStrip", "a00671.html", null ]
+      [ "VitNX_ToolStrip", "a00680.html", null ]
     ] ],
     [ "ToolStripRenderer", null, [
-      [ "VitNX_MenuRenderer", "a00767.html", [
-        [ "VitNX_ToolStripRenderer", "a00771.html", null ]
+      [ "VitNX_MenuRenderer", "a00776.html", [
+        [ "VitNX_ToolStripRenderer", "a00780.html", null ]
       ] ]
     ] ],
-    [ "TreeViewIcons", "a00551.html", null ],
+    [ "TreeViewIcons", "a00560.html", null ],
     [ "UserControl", null, [
-      [ "VitNX_DockContent", "a00707.html", [
-        [ "VitNX_Document", "a00735.html", null ],
-        [ "VitNX_ToolWindow", "a00739.html", null ]
+      [ "VitNX_DockContent", "a00716.html", [
+        [ "VitNX_Document", "a00744.html", null ],
+        [ "VitNX_ToolWindow", "a00748.html", null ]
       ] ],
-      [ "VitNX_DockPanel", "a00715.html", null ]
+      [ "VitNX_DockPanel", "a00724.html", null ]
     ] ],
-    [ "VitNX2_MessageBox", "a00795.html", null ],
-    [ "VitNX_DockSplitter", "a00723.html", null ],
-    [ "VitNX_DockTab", "a00727.html", null ],
-    [ "VitNX_DockTabArea", "a00731.html", null ],
-    [ "VitNX_DropdownItem", "a00595.html", null ],
-    [ "VitNX_ListItem", "a00611.html", null ],
-    [ "VitNX_TreeNode", "a00675.html", null ],
-    [ "VolumeControl", "a00419.html", null ],
-    [ "Web", "a00375.html", null ],
-    [ "Windows", "a00339.html", null ]
+    [ "VitNX2_MessageBox", "a00804.html", null ],
+    [ "VitNX_DockSplitter", "a00732.html", null ],
+    [ "VitNX_DockTab", "a00736.html", null ],
+    [ "VitNX_DockTabArea", "a00740.html", null ],
+    [ "VitNX_DropdownItem", "a00604.html", null ],
+    [ "VitNX_ListItem", "a00620.html", null ],
+    [ "VitNX_TreeNode", "a00684.html", null ],
+    [ "VolumeControl", "a00428.html", null ],
+    [ "Web", "a00376.html", null ],
+    [ "Windows", "a00340.html", null ]
 ];

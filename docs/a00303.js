@@ -1,9 +1,9 @@
 var a00303 =
 [
-    [ "VitNX_Dialog", "a00751.html", "a00751" ],
-    [ "VitNX_Form", "a00755.html", "a00755" ],
-    [ "VitNX_MessageBox", "a00759.html", "a00759" ],
-    [ "VitNX_TranslucentForm", "a00763.html", "a00763" ],
+    [ "VitNX_Dialog", "a00760.html", "a00760" ],
+    [ "VitNX_Form", "a00764.html", "a00764" ],
+    [ "VitNX_MessageBox", "a00768.html", "a00768" ],
+    [ "VitNX_TranslucentForm", "a00772.html", "a00772" ],
     [ "VitNX_DialogButton", "a00303.html#a010904af204758783ad686b09d4153b6", [
       [ "Ok", "a00303.html#a010904af204758783ad686b09d4153b6aa60852f204ed8028c1c58808b746d115", null ],
       [ "Close", "a00303.html#a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418", null ],

@@ -1,17 +1,19 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Management;
 using System.Reflection;
 using System.Security.Principal;
+using System.Threading;
 
 namespace VitNX.Functions.Windows.Apps
 {
     public class Processes
     {
-        public static string GetList()
+        public static string GetListWithInformation()
         {
-            string procList = "Все процессы:";
+            string procList = "All processes:";
             foreach (Process process in Process.GetProcesses())
             {
                 var procSize = "0x0";
@@ -22,12 +24,20 @@ namespace VitNX.Functions.Windows.Apps
                 }
                 catch { }
                 if (procSize != "0x0" && procSize != "0")
-                    procList += $"\n\nИмя поцесса: {process.ProcessName}.exe" +
+                    procList += $"\n\nName: {process.ProcessName}.exe" +
                         $"\nID: {process.Id}" +
-                        $"\nПамять: {procSize} МБ" +
+                        $"\nUsed memory: {procSize} МБ" +
                         $"\nTitle & Handle: \"{process.MainWindowTitle}\" & {process.MainWindowHandle}";
             }
             return procList;
+        }
+
+        public static List<string> GetList()
+        {
+            List<string> output = new List<string>();
+            foreach (Process proc in Process.GetProcesses())
+                output.Add(proc.ProcessName.ToUpper());
+            return output;
         }
 
         public static void Run(string targetFile,
@@ -115,9 +125,19 @@ namespace VitNX.Functions.Windows.Apps
             start.Start();
         }
 
-        public static bool IsAdministrator_YourApp()
+        public static bool IsAdministratorYourApp()
         {
             return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        public static bool IsOneYourApp(string appTitle)
+        {
+            bool createdNew = false;
+            Mutex currentApp = new Mutex(false, appTitle, out createdNew);
+            if (!createdNew)
+                return false;
+            else
+                return true;
         }
     }
 

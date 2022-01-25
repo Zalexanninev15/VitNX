@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: Member List</title>
+<title>VitNX: Config Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,25 +56,108 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('a00387.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00384.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">Installed Member List</div></div>
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="a00381.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Config Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a37a756a63945f5290b3bd33fbd439c84"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00384.html#a37a756a63945f5290b3bd33fbd439c84">IHaveInternet</a> ()</td></tr>
+<tr class="separator:a37a756a63945f5290b3bd33fbd439c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:afe2fd5ea6a30ceac85a3b7d9a096af04"><td class="memItemLeft" align="right" valign="top">static SecurityProtocolType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00384.html#afe2fd5ea6a30ceac85a3b7d9a096af04">_useProtocols</a></td></tr>
+<tr class="separator:afe2fd5ea6a30ceac85a3b7d9a096af04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00051">51</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a37a756a63945f5290b3bd33fbd439c84" name="a37a756a63945f5290b3bd33fbd439c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a756a63945f5290b3bd33fbd439c84">&#9670;&nbsp;</a></span>IHaveInternet()</h2>
 
-<p>This is the complete list of members for <a class="el" href="a00387.html">Installed</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00387.html#a7bb282243664b0995a909f1b77d37140">FindAppPath</a>(string keyPath, string applicationName)</td><td class="entry"><a class="el" href="a00387.html">Installed</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a00387.html#a07c6c2ccfe855ad26d1693624a81466a">GetList</a>()</td><td class="entry"><a class="el" href="a00387.html">Installed</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00387.html#a396ce67a029836cc8a2dffba290366e5">GetPath</a>(string applicationName)</td><td class="entry"><a class="el" href="a00387.html">Installed</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-</table></div><!-- contents -->
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int IHaveInternet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00058">58</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   61</span>            {</div>
+<div class="line"><span class="lineno">   62</span>                Ping ping = <span class="keyword">new</span> Ping();</div>
+<div class="line"><span class="lineno">   63</span>                PingReply pingReply = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   64</span>                pingReply = ping.Send(<span class="stringliteral">&quot;google.com&quot;</span>);</div>
+<div class="line"><span class="lineno">   65</span>                <span class="keywordflow">if</span> (pingReply.Status == IPStatus.Success)</div>
+<div class="line"><span class="lineno">   66</span>                    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   68</span>                    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   69</span>            }</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">catch</span> { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><span class="lineno">   71</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="afe2fd5ea6a30ceac85a3b7d9a096af04" name="afe2fd5ea6a30ceac85a3b7d9a096af04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2fd5ea6a30ceac85a3b7d9a096af04">&#9670;&nbsp;</a></span>_useProtocols</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SecurityProtocolType _useProtocols</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= SecurityProtocolType.Tls13 |</div>
+<div class="line">        SecurityProtocolType.Tls12 |</div>
+<div class="line">        SecurityProtocolType.Tls11 |</div>
+<div class="line">        SecurityProtocolType.Tls</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00053">53</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00288.html">Functions</a></li><li class="navelem"><a class="el" href="a00289.html">Common</a></li><li class="navelem"><a class="el" href="a00384.html">Config</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

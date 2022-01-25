@@ -3,10 +3,10 @@ var a00287 =
     [ "Functions", "a00288.html", "a00288" ],
     [ "Properties", "a00295.html", "a00295" ],
     [ "UI", "a00296.html", "a00296" ],
-    [ "DockIcons", "a00531.html", "a00531" ],
-    [ "DropdownIcons", "a00535.html", "a00535" ],
-    [ "MenuIcons", "a00539.html", "a00539" ],
-    [ "MessageBoxIcons", "a00543.html", "a00543" ],
-    [ "ScrollIcons", "a00547.html", "a00547" ],
-    [ "TreeViewIcons", "a00551.html", "a00551" ]
+    [ "DockIcons", "a00540.html", "a00540" ],
+    [ "DropdownIcons", "a00544.html", "a00544" ],
+    [ "MenuIcons", "a00548.html", "a00548" ],
+    [ "MessageBoxIcons", "a00552.html", "a00552" ],
+    [ "ScrollIcons", "a00556.html", "a00556" ],
+    [ "TreeViewIcons", "a00560.html", "a00560" ]
 ];
