@@ -1,0 +1,31 @@
+\doxysection{IEnumerable\+Extensions.\+cs}
+\label{a00221_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Extensions/IEnumerableExtensions.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Extensions/IEnumerableExtensions.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Extensions}
+\DoxyCodeLine{00005 \{}
+\DoxyCodeLine{00006     \textcolor{keyword}{internal} \textcolor{keyword}{static} \textcolor{keyword}{class }IEnumerableExtensions}
+\DoxyCodeLine{00007     \{}
+\DoxyCodeLine{00008         \textcolor{keyword}{internal} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsLast<T>(\textcolor{keyword}{this} IEnumerable<T> items, T item)}
+\DoxyCodeLine{00009         \{}
+\DoxyCodeLine{00010             var last = items.LastOrDefault();}
+\DoxyCodeLine{00011             \textcolor{keywordflow}{if} (last == \textcolor{keyword}{null}) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00012             \textcolor{keywordflow}{return} item.Equals(last);}
+\DoxyCodeLine{00013         \}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         \textcolor{keyword}{internal} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsFirst<T>(\textcolor{keyword}{this} IEnumerable<T> items, T item)}
+\DoxyCodeLine{00016         \{}
+\DoxyCodeLine{00017             var first = items.FirstOrDefault();}
+\DoxyCodeLine{00018             \textcolor{keywordflow}{if} (first == \textcolor{keyword}{null}) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00019             \textcolor{keywordflow}{return} item.Equals(first);}
+\DoxyCodeLine{00020         \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022         \textcolor{keyword}{internal} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsFirstOrLast<T>(\textcolor{keyword}{this} IEnumerable<T> items, T item)}
+\DoxyCodeLine{00023         \{ \textcolor{keywordflow}{return} items.IsFirst(item) || items.IsLast(item); \}}
+\DoxyCodeLine{00024     \}}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}

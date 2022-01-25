@@ -1,0 +1,100 @@
+\doxysection{Keyboard Class Reference}
+\label{a00451}\index{Keyboard@{Keyboard}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Key\+Down} (Keys v\+Key)
+\item 
+static void \textbf{ Key\+Up} (Keys v\+Key)
+\item 
+static void \textbf{ Windows\+Keyboard\+Events\+API} (int status, string keys=\char`\"{}none\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 370} of file \textbf{ Native\+Controls.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00451_aede251f5cc04e8e5cbfff5bd0695b29f}} 
+\index{Keyboard@{Keyboard}!KeyDown@{KeyDown}}
+\index{KeyDown@{KeyDown}!Keyboard@{Keyboard}}
+\doxysubsubsection{KeyDown()}
+{\footnotesize\ttfamily static void Key\+Down (\begin{DoxyParamCaption}\item[{Keys}]{v\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 372} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00373         \{}
+\DoxyCodeLine{00374             Import.keybd\_event((\textcolor{keywordtype}{byte})vKey, 0, (\textcolor{keywordtype}{int})Enums.KEYEVENTF.KEYEVENTF\_EXTENDEDKEY, 0);}
+\DoxyCodeLine{00375         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00451_ae2c6b4b7eb0d99a7e3a8508a75b63e25}} 
+\index{Keyboard@{Keyboard}!KeyUp@{KeyUp}}
+\index{KeyUp@{KeyUp}!Keyboard@{Keyboard}}
+\doxysubsubsection{KeyUp()}
+{\footnotesize\ttfamily static void Key\+Up (\begin{DoxyParamCaption}\item[{Keys}]{v\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 377} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00378         \{}
+\DoxyCodeLine{00379             Import.keybd\_event((\textcolor{keywordtype}{byte})vKey, 0, (\textcolor{keywordtype}{int})Enums.KEYEVENTF.KEYEVENTF\_EXTENDEDKEY | (\textcolor{keywordtype}{int})Enums.KEYEVENTF.KEYEVENTF\_KEYUP, 0);}
+\DoxyCodeLine{00380         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00451_a9d4501aaa5726519f4b6e5229f799394}} 
+\index{Keyboard@{Keyboard}!WindowsKeyboardEventsAPI@{WindowsKeyboardEventsAPI}}
+\index{WindowsKeyboardEventsAPI@{WindowsKeyboardEventsAPI}!Keyboard@{Keyboard}}
+\doxysubsubsection{WindowsKeyboardEventsAPI()}
+{\footnotesize\ttfamily static void Windows\+Keyboard\+Events\+API (\begin{DoxyParamCaption}\item[{int}]{status,  }\item[{string}]{keys = {\ttfamily \char`\"{}none\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 382} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00383         \{}
+\DoxyCodeLine{00384             \textcolor{keywordflow}{switch} (status)}
+\DoxyCodeLine{00385             \{}
+\DoxyCodeLine{00386                 \textcolor{keywordflow}{case} -\/1:}
+\DoxyCodeLine{00387                     \{}
+\DoxyCodeLine{00388                         KeyDown(Keys.LWin);}
+\DoxyCodeLine{00389                         KeyDown(Keys.D);}
+\DoxyCodeLine{00390                         KeyUp(Keys.LWin);}
+\DoxyCodeLine{00391                         KeyUp(Keys.D);}
+\DoxyCodeLine{00392                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00393                     \}}
+\DoxyCodeLine{00394                 \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{00395                     \{}
+\DoxyCodeLine{00396                         KeyDown(Keys.LWin);}
+\DoxyCodeLine{00397                         KeyDown(Keys.M);}
+\DoxyCodeLine{00398                         KeyUp(Keys.LWin);}
+\DoxyCodeLine{00399                         KeyUp(Keys.M);}
+\DoxyCodeLine{00400                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00401                     \}}
+\DoxyCodeLine{00402                 \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{00403                     \{}
+\DoxyCodeLine{00404                         KeyDown(Keys.LWin);}
+\DoxyCodeLine{00405                         KeyDown(Keys.LShiftKey);}
+\DoxyCodeLine{00406                         KeyDown(Keys.M);}
+\DoxyCodeLine{00407                         KeyUp(Keys.LWin);}
+\DoxyCodeLine{00408                         KeyUp(Keys.LShiftKey);}
+\DoxyCodeLine{00409                         KeyUp(Keys.M);}
+\DoxyCodeLine{00410                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00411                     \}}
+\DoxyCodeLine{00412             \}}
+\DoxyCodeLine{00413         \}}
+
+\end{DoxyCode}

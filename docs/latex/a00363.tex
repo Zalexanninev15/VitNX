@@ -1,0 +1,238 @@
+\doxysection{Ram Class Reference}
+\label{a00363}\index{Ram@{Ram}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Set} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ name\+ID} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ capacity} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ configured\+Voltage} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ max\+Voltage} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ memory\+Type} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ min\+Voltage} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ serial\+Number} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ SMBIOSMemory\+Type} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ speed} = \char`\"{}\char`\"{}
+\item 
+static int \textbf{ max\+MB} = 0
+\item 
+static int \textbf{ used\+MB} = 0
+\item 
+static int \textbf{ int\+Ram\+Virtual} = 0
+\item 
+static ulong \textbf{ max} = 0
+\item 
+static ulong \textbf{ used} = 0
+\item 
+static ulong \textbf{ ram\+Virtual} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 327} of file \textbf{ Information.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00363_aad3b33b4c65e3cc3202d3331078a5666}} 
+\index{Ram@{Ram}!Set@{Set}}
+\index{Set@{Set}!Ram@{Ram}}
+\doxysubsubsection{Set()}
+{\footnotesize\ttfamily static void Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 345} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00346         \{}
+\DoxyCodeLine{00347             ManagementObjectSearcher myRamObject = \textcolor{keyword}{new} ManagementObjectSearcher(\textcolor{stringliteral}{"{}select * from Win32\_PhysicalMemory"{}});}
+\DoxyCodeLine{00348             \textcolor{keywordflow}{foreach} (ManagementObject obj \textcolor{keywordflow}{in} myRamObject.Get())}
+\DoxyCodeLine{00349             \{}
+\DoxyCodeLine{00350                 nameID = obj[\textcolor{stringliteral}{"{}Name"{}}].ToString();}
+\DoxyCodeLine{00351                 capacity = obj[\textcolor{stringliteral}{"{}Capacity"{}}].ToString();}
+\DoxyCodeLine{00352                 configuredVoltage = obj[\textcolor{stringliteral}{"{}ConfiguredVoltage"{}}].ToString();}
+\DoxyCodeLine{00353                 maxVoltage = obj[\textcolor{stringliteral}{"{}MaxVoltage"{}}].ToString();}
+\DoxyCodeLine{00354                 memoryType = obj[\textcolor{stringliteral}{"{}MemoryType"{}}].ToString();}
+\DoxyCodeLine{00355                 minVoltage = obj[\textcolor{stringliteral}{"{}MinVoltage"{}}].ToString();}
+\DoxyCodeLine{00356                 serialNumber = obj[\textcolor{stringliteral}{"{}SerialNumber"{}}].ToString();}
+\DoxyCodeLine{00357                 SMBIOSMemoryType = obj[\textcolor{stringliteral}{"{}SMBIOSMemoryType"{}}].ToString();}
+\DoxyCodeLine{00358                 speed = obj[\textcolor{stringliteral}{"{}Speed"{}}].ToString();}
+\DoxyCodeLine{00359             \}}
+\DoxyCodeLine{00360             max = \textcolor{keyword}{new} Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1000000;}
+\DoxyCodeLine{00361             used = \textcolor{keyword}{new} Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1000000;}
+\DoxyCodeLine{00362             ramVirtual = \textcolor{keyword}{new} Microsoft.VisualBasic.Devices.ComputerInfo().AvailableVirtualMemory / 1000000;}
+\DoxyCodeLine{00363             maxMB = (int)max;}
+\DoxyCodeLine{00364             usedMB = (int)max -\/ (\textcolor{keywordtype}{int})used;}
+\DoxyCodeLine{00365             intRamVirtual = (int)ramVirtual;}
+\DoxyCodeLine{00366         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{a00363_afbb1edd1caafb4b686e35c985c7fd180}} 
+\index{Ram@{Ram}!capacity@{capacity}}
+\index{capacity@{capacity}!Ram@{Ram}}
+\doxysubsubsection{capacity}
+{\footnotesize\ttfamily string capacity = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 330} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_ad170c14e39261ebd2f4012b8efd5e8d0}} 
+\index{Ram@{Ram}!configuredVoltage@{configuredVoltage}}
+\index{configuredVoltage@{configuredVoltage}!Ram@{Ram}}
+\doxysubsubsection{configuredVoltage}
+{\footnotesize\ttfamily string configured\+Voltage = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 331} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a8719251cc3b108db24c4a56a22d371c5}} 
+\index{Ram@{Ram}!intRamVirtual@{intRamVirtual}}
+\index{intRamVirtual@{intRamVirtual}!Ram@{Ram}}
+\doxysubsubsection{intRamVirtual}
+{\footnotesize\ttfamily int int\+Ram\+Virtual = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 340} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a778e9f93cf9d844a5f7a6ee8a549f411}} 
+\index{Ram@{Ram}!max@{max}}
+\index{max@{max}!Ram@{Ram}}
+\doxysubsubsection{max}
+{\footnotesize\ttfamily ulong max = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 341} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a67e64019e421e74d6ad559c1a5bf37ad}} 
+\index{Ram@{Ram}!maxMB@{maxMB}}
+\index{maxMB@{maxMB}!Ram@{Ram}}
+\doxysubsubsection{maxMB}
+{\footnotesize\ttfamily int max\+MB = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 338} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a0bbb39bb0740c5c8e8c198871e6dbe46}} 
+\index{Ram@{Ram}!maxVoltage@{maxVoltage}}
+\index{maxVoltage@{maxVoltage}!Ram@{Ram}}
+\doxysubsubsection{maxVoltage}
+{\footnotesize\ttfamily string max\+Voltage = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 332} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a6ecec143d7b97cc521b572930cc849a6}} 
+\index{Ram@{Ram}!memoryType@{memoryType}}
+\index{memoryType@{memoryType}!Ram@{Ram}}
+\doxysubsubsection{memoryType}
+{\footnotesize\ttfamily string memory\+Type = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 333} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a287afd0bb9b6ec593c7be29f101d7ade}} 
+\index{Ram@{Ram}!minVoltage@{minVoltage}}
+\index{minVoltage@{minVoltage}!Ram@{Ram}}
+\doxysubsubsection{minVoltage}
+{\footnotesize\ttfamily string min\+Voltage = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 334} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a9beeaee0d9231072abb77ec0eb0f04f8}} 
+\index{Ram@{Ram}!nameID@{nameID}}
+\index{nameID@{nameID}!Ram@{Ram}}
+\doxysubsubsection{nameID}
+{\footnotesize\ttfamily string name\+ID = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 329} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a4c886bf0df3c61ac5be0a8cbfae2104f}} 
+\index{Ram@{Ram}!ramVirtual@{ramVirtual}}
+\index{ramVirtual@{ramVirtual}!Ram@{Ram}}
+\doxysubsubsection{ramVirtual}
+{\footnotesize\ttfamily ulong ram\+Virtual = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 343} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a22248d5005f91728b723f7deb2eb17b2}} 
+\index{Ram@{Ram}!serialNumber@{serialNumber}}
+\index{serialNumber@{serialNumber}!Ram@{Ram}}
+\doxysubsubsection{serialNumber}
+{\footnotesize\ttfamily string serial\+Number = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 335} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a1b68bb37e2c97bbed196a3883879fc6f}} 
+\index{Ram@{Ram}!SMBIOSMemoryType@{SMBIOSMemoryType}}
+\index{SMBIOSMemoryType@{SMBIOSMemoryType}!Ram@{Ram}}
+\doxysubsubsection{SMBIOSMemoryType}
+{\footnotesize\ttfamily string SMBIOSMemory\+Type = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 336} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_ad9162ab95195cf3479da6d470ad25c73}} 
+\index{Ram@{Ram}!speed@{speed}}
+\index{speed@{speed}!Ram@{Ram}}
+\doxysubsubsection{speed}
+{\footnotesize\ttfamily string speed = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 337} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a894f11041acad3bac21a9fe88256c6ee}} 
+\index{Ram@{Ram}!used@{used}}
+\index{used@{used}!Ram@{Ram}}
+\doxysubsubsection{used}
+{\footnotesize\ttfamily ulong used = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 342} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00363_a428ed827c43ab809e3336ab43cd9ec91}} 
+\index{Ram@{Ram}!usedMB@{usedMB}}
+\index{usedMB@{usedMB}!Ram@{Ram}}
+\doxysubsubsection{usedMB}
+{\footnotesize\ttfamily int used\+MB = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 339} of file \textbf{ Information.\+cs}.
+

@@ -1,0 +1,113 @@
+\doxysection{Vit\+NX\+\_\+\+Dock\+Tab\+Area.\+cs}
+\label{a00206_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX\_DockTabArea.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX\_DockTabArea.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Controls;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Docking}
+\DoxyCodeLine{00007 \{}
+\DoxyCodeLine{00008     \textcolor{keyword}{internal} \textcolor{keyword}{class }VitNX\_DockTabArea}
+\DoxyCodeLine{00009     \{}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012         \textcolor{keyword}{private} Dictionary<VitNX\_DockContent, VitNX\_DockTab> \_tabs = \textcolor{keyword}{new} Dictionary<VitNX\_DockContent, VitNX\_DockTab>();}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014         \textcolor{keyword}{private} List<ToolStripMenuItem> \_menuItems = \textcolor{keyword}{new} List<ToolStripMenuItem>();}
+\DoxyCodeLine{00015         \textcolor{keyword}{private} VitNX\_ContextMenu \_tabMenu = \textcolor{keyword}{new} VitNX\_ContextMenu();}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{public} VitNX\_DockArea DockArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{public} Rectangle ClientRectangle \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{public} Rectangle DropdownRectangle \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} DropdownHot \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Offset \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         \textcolor{keyword}{public} \textcolor{keywordtype}{int} TotalTabSize \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} Visible \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{keyword}{public} VitNX\_DockTab ClickedCloseButton \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keyword}{public} VitNX\_DockTabArea(VitNX\_DockArea dockArea)}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043             DockArea = dockArea;}
+\DoxyCodeLine{00044         \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ShowMenu(Control control, Point location)}
+\DoxyCodeLine{00051         \{}
+\DoxyCodeLine{00052             \_tabMenu.Show(control, location);}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keyword}{public} \textcolor{keywordtype}{void} AddMenuItem(ToolStripMenuItem menuItem)}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \_menuItems.Add(menuItem);}
+\DoxyCodeLine{00058             RebuildMenu();}
+\DoxyCodeLine{00059         \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061         \textcolor{keyword}{public} \textcolor{keywordtype}{void} RemoveMenuItem(ToolStripMenuItem menuItem)}
+\DoxyCodeLine{00062         \{}
+\DoxyCodeLine{00063             \_menuItems.Remove(menuItem);}
+\DoxyCodeLine{00064             RebuildMenu();}
+\DoxyCodeLine{00065         \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067         \textcolor{keyword}{public} ToolStripMenuItem GetMenuItem(VitNX\_DockContent content)}
+\DoxyCodeLine{00068         \{}
+\DoxyCodeLine{00069             ToolStripMenuItem menuItem = \textcolor{keyword}{null};}
+\DoxyCodeLine{00070             \textcolor{keywordflow}{foreach} (ToolStripMenuItem item \textcolor{keywordflow}{in} \_menuItems)}
+\DoxyCodeLine{00071             \{}
+\DoxyCodeLine{00072                 var menuContent = item.Tag as VitNX\_DockContent;}
+\DoxyCodeLine{00073                 \textcolor{keywordflow}{if} (menuContent == \textcolor{keyword}{null})}
+\DoxyCodeLine{00074                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076                 \textcolor{keywordflow}{if} (menuContent == content)}
+\DoxyCodeLine{00077                     menuItem = item;}
+\DoxyCodeLine{00078             \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080             \textcolor{keywordflow}{return} menuItem;}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         \textcolor{keyword}{public} \textcolor{keywordtype}{void} RebuildMenu()}
+\DoxyCodeLine{00084         \{}
+\DoxyCodeLine{00085             \_tabMenu.Items.Clear();}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087             var orderedItems = \textcolor{keyword}{new} List<ToolStripMenuItem>();}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089             var index = 0;}
+\DoxyCodeLine{00090             \textcolor{keywordflow}{for} (var i = 0; i < \_menuItems.Count; i++)}
+\DoxyCodeLine{00091             \{}
+\DoxyCodeLine{00092                 \textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} \_menuItems)}
+\DoxyCodeLine{00093                 \{}
+\DoxyCodeLine{00094                     var content = (VitNX\_DockContent)item.Tag;}
+\DoxyCodeLine{00095                     if (content.Order == index)}
+\DoxyCodeLine{00096                         orderedItems.Add(item);}
+\DoxyCodeLine{00097                 \}}
+\DoxyCodeLine{00098                 index++;}
+\DoxyCodeLine{00099             \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101             \textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} orderedItems)}
+\DoxyCodeLine{00102                 \_tabMenu.Items.Add(item);}
+\DoxyCodeLine{00103         \}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00106     \}}
+\DoxyCodeLine{00107 \}}
+
+\end{DoxyCode}

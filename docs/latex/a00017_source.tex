@@ -1,0 +1,89 @@
+\doxysection{Console\+Progress\+Bar.\+cs}
+\label{a00017_source}\index{E:/Github/VitNX/VitNX/Functions/ConsoleProgressBar.cs@{E:/Github/VitNX/VitNX/Functions/ConsoleProgressBar.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Threading;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{namespace }VitNX.Functions}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keyword}{public} \textcolor{keyword}{class }ConsoleProgressBar : IDisposable, IProgress<double>}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{int} blockCount = 10;}
+\DoxyCodeLine{00010         \textcolor{keyword}{private} readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);}
+\DoxyCodeLine{00011         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} animation = \textcolor{stringliteral}{@"{}|/-\/\(\backslash\)"{}};}
+\DoxyCodeLine{00012         \textcolor{keyword}{private} readonly Timer timer;}
+\DoxyCodeLine{00013         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} workdo = \textcolor{keyword}{true};}
+\DoxyCodeLine{00014         \textcolor{keyword}{private} \textcolor{keywordtype}{string} work;}
+\DoxyCodeLine{00015         \textcolor{keyword}{private} \textcolor{keywordtype}{double} currentProgress = 0;}
+\DoxyCodeLine{00016         \textcolor{keyword}{private} \textcolor{keywordtype}{string} currentText = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00017         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} disposed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00018         \textcolor{keyword}{private} \textcolor{keywordtype}{int} animationIndex = 0;}
+\DoxyCodeLine{00019         \textcolor{keyword}{private} ConsoleColor pb = \textcolor{keyword}{new} ConsoleColor();}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{public} ConsoleProgressBar()}
+\DoxyCodeLine{00022         \{ timer = \textcolor{keyword}{new} Timer(TimerHandler); \textcolor{keywordflow}{if} (!Console.IsOutputRedirected) \{ ResetTimer(); \} \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024         \textcolor{keyword}{public} \textcolor{keywordtype}{void} Report(\textcolor{keywordtype}{double} value)}
+\DoxyCodeLine{00025         \{ value = Math.Max(0, Math.Min(1, value)); Interlocked.Exchange(ref currentProgress, value); \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{public} \textcolor{keywordtype}{void} SetColor(ConsoleColor my\_pb)}
+\DoxyCodeLine{00028         \{ pb = my\_pb; \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         \textcolor{keyword}{public} \textcolor{keywordtype}{void} SetText(\textcolor{keywordtype}{string} work1)}
+\DoxyCodeLine{00031         \{ work = work1; \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keyword}{public} \textcolor{keywordtype}{void} NotUsed(\textcolor{keywordtype}{bool} pbd)}
+\DoxyCodeLine{00034         \{ workdo = pbd; \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keyword}{private} \textcolor{keywordtype}{void} ResetTimer()}
+\DoxyCodeLine{00037         \{ timer.Change(animationInterval, TimeSpan.FromMilliseconds(-\/1)); \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{keyword}{private} \textcolor{keywordtype}{void} TimerHandler(\textcolor{keywordtype}{object} state)}
+\DoxyCodeLine{00040         \{}
+\DoxyCodeLine{00041             lock (timer)}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 \textcolor{keywordflow}{if} (workdo == \textcolor{keyword}{true})}
+\DoxyCodeLine{00044                 \{}
+\DoxyCodeLine{00045                     \textcolor{keywordflow}{if} (disposed) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00046                     \textcolor{keywordtype}{int} progressBlockCount = (int)(currentProgress * blockCount);}
+\DoxyCodeLine{00047                     \textcolor{keywordtype}{int} percent = (int)(currentProgress * 100);}
+\DoxyCodeLine{00048                     \textcolor{keywordtype}{string} text = \textcolor{keywordtype}{string}.Format(work + \textcolor{stringliteral}{"{}: [\{0\}\{1\}] \{2,3\}\% \{3\}"{}}, \textcolor{keyword}{new} \textcolor{keywordtype}{string}(\textcolor{stringliteral}{'▰'}, progressBlockCount), \textcolor{keyword}{new} string(\textcolor{charliteral}{'-\/'}, blockCount -\/ progressBlockCount), percent, animation[animationIndex++ \% animation.Length]);}
+\DoxyCodeLine{00049                     UpdateText(text);}
+\DoxyCodeLine{00050                     ResetTimer();}
+\DoxyCodeLine{00051                 \}}
+\DoxyCodeLine{00052             \}}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keyword}{private} \textcolor{keywordtype}{void} UpdateText(\textcolor{keywordtype}{string} text)}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keywordtype}{int} commonPrefixLength = 0;}
+\DoxyCodeLine{00058             \textcolor{keywordtype}{int} commonLength = Math.Min(currentText.Length, text.Length);}
+\DoxyCodeLine{00059             \textcolor{keywordflow}{while} (commonPrefixLength < commonLength \&\& text[commonPrefixLength] == currentText[commonPrefixLength]) \{ commonPrefixLength++; \}}
+\DoxyCodeLine{00060             StringBuilder outputBuilder = \textcolor{keyword}{new} StringBuilder();}
+\DoxyCodeLine{00061             outputBuilder.Append(\textcolor{charliteral}{'\(\backslash\)b'}, currentText.Length -\/ commonPrefixLength);}
+\DoxyCodeLine{00062             outputBuilder.Append(text.Substring(commonPrefixLength));}
+\DoxyCodeLine{00063             \textcolor{keywordtype}{int} overlapCount = currentText.Length -\/ text.Length;}
+\DoxyCodeLine{00064             \textcolor{keywordflow}{if} (overlapCount > 0)}
+\DoxyCodeLine{00065             \{}
+\DoxyCodeLine{00066                 outputBuilder.Append(\textcolor{charliteral}{' '}, overlapCount);}
+\DoxyCodeLine{00067                 outputBuilder.Append(\textcolor{charliteral}{'\(\backslash\)b'}, overlapCount);}
+\DoxyCodeLine{00068             \}}
+\DoxyCodeLine{00069             Console.ForegroundColor = pb;}
+\DoxyCodeLine{00070             Console.Write(outputBuilder);}
+\DoxyCodeLine{00071             currentText = text;}
+\DoxyCodeLine{00072         \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074         \textcolor{keyword}{public} \textcolor{keywordtype}{void} Dispose()}
+\DoxyCodeLine{00075         \{}
+\DoxyCodeLine{00076             lock (timer)}
+\DoxyCodeLine{00077             \{}
+\DoxyCodeLine{00078                 disposed = \textcolor{keyword}{true};}
+\DoxyCodeLine{00079                 UpdateText(\textcolor{keywordtype}{string}.Empty);}
+\DoxyCodeLine{00080             \}}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082     \}}
+\DoxyCodeLine{00083 \}}
+
+\end{DoxyCode}

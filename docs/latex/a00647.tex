@@ -1,0 +1,110 @@
+\doxysection{Vit\+NX\+\_\+\+Scroll\+View Class Reference}
+\label{a00647}\index{VitNX\_ScrollView@{VitNX\_ScrollView}}
+Inheritance diagram for Vit\+NX\+\_\+\+Scroll\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{a00647}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{a00647_a6c7a2a8d6c5ed7099f1f712cc8fd626c}} 
+abstract void {\bfseries Paint\+Content} (Graphics g)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint\+Background} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 6} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+View.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00647_a0fc0eb11fadd347fe326ff803942c01d}} 
+\index{VitNX\_ScrollView@{VitNX\_ScrollView}!VitNX\_ScrollView@{VitNX\_ScrollView}}
+\index{VitNX\_ScrollView@{VitNX\_ScrollView}!VitNX\_ScrollView@{VitNX\_ScrollView}}
+\doxysubsubsection{VitNX\_ScrollView()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Scroll\+View} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 10} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+View.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00013                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00014                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00015         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00647_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_ScrollView@{VitNX\_ScrollView}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_ScrollView@{VitNX\_ScrollView}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+View.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             var g = e.Graphics;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \textcolor{comment}{// Draw background}}
+\DoxyCodeLine{00028             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(BackColor))}
+\DoxyCodeLine{00029             \{}
+\DoxyCodeLine{00030                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00031             \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033             \textcolor{comment}{// Offset the graphics based on the viewport, render the control contents, then reset it.}}
+\DoxyCodeLine{00034             g.TranslateTransform(Viewport.Left * -\/1, Viewport.Top * -\/1);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             PaintContent(g);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038             g.TranslateTransform(Viewport.Left, Viewport.Top);}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040             \textcolor{comment}{// Draw the bit where the scrollbars meet}}
+\DoxyCodeLine{00041             \textcolor{keywordflow}{if} (\_vScrollBar.Visible \&\& \_hScrollBar.Visible)}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(BackColor))}
+\DoxyCodeLine{00044                 \{}
+\DoxyCodeLine{00045                     var rect = \textcolor{keyword}{new} Rectangle(\_hScrollBar.Right, \_vScrollBar.Bottom, \_vScrollBar.Width,}
+\DoxyCodeLine{00046                                              \_hScrollBar.Height);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048                     g.FillRectangle(b, rect);}
+\DoxyCodeLine{00049                 \}}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00647_a2fed73cd0a8cd763a6a18be00a05d4ed}} 
+\index{VitNX\_ScrollView@{VitNX\_ScrollView}!OnPaintBackground@{OnPaintBackground}}
+\index{OnPaintBackground@{OnPaintBackground}!VitNX\_ScrollView@{VitNX\_ScrollView}}
+\doxysubsubsection{OnPaintBackground()}
+{\footnotesize\ttfamily override void On\+Paint\+Background (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 53} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+View.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054         \{}
+\DoxyCodeLine{00055             \textcolor{comment}{// Absorb event}}
+\DoxyCodeLine{00056         \}}
+
+\end{DoxyCode}

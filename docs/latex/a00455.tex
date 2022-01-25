@@ -1,0 +1,78 @@
+\doxysection{Import Class Reference}
+\label{a00455}\index{Import@{Import}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{a00455_a25c45c2a76b59049a505e5a47689b03f}} 
+static int {\bfseries Dwm\+Set\+Window\+Attribute} (Int\+Ptr hwnd, int attribute, int[$\,$] pv\+Attribute, uint cb\+Attribute)
+\item 
+\mbox{\label{a00455_a9e24a4eb2232e0829406cbc38f8886ec}} 
+static Int\+Ptr {\bfseries Window\+From\+Point} (Point point)
+\item 
+\mbox{\label{a00455_ac9b67fea8dd72343204ab96b28a4cd80}} 
+static int {\bfseries Get\+Device\+Caps} (Int\+Ptr hdc, int n\+Index)
+\item 
+\mbox{\label{a00455_a9e38dd75ee4a2075239e39f824fa2e08}} 
+static int {\bfseries Get\+Display\+Config\+Buffer\+Sizes} (Enums.\+QUERY\+\_\+\+DEVICE\+\_\+\+CONFIG\+\_\+\+FLAGS flags, out uint num\+Path\+Array\+Elements, out uint num\+Mode\+Info\+Array\+Elements)
+\item 
+\mbox{\label{a00455_a564392b5d80699487929525b19a32b09}} 
+static int {\bfseries Query\+Display\+Config} (Enums.\+QUERY\+\_\+\+DEVICE\+\_\+\+CONFIG\+\_\+\+FLAGS flags, ref uint num\+Path\+Array\+Elements, [Out] \textbf{ Helper.\+DISPLAYCONFIG\+\_\+\+PATH\+\_\+\+INFO}[$\,$] Path\+Info\+Array, ref uint num\+Mode\+Info\+Array\+Elements, [Out] \textbf{ Helper.\+DISPLAYCONFIG\+\_\+\+MODE\+\_\+\+INFO}[$\,$] Mode\+Info\+Array, Int\+Ptr current\+Topology\+Id)
+\item 
+\mbox{\label{a00455_a6125c6f63216a87cbfc5879bb9715f7b}} 
+static int {\bfseries Display\+Config\+Get\+Device\+Info} (ref \textbf{ Helper.\+DISPLAYCONFIG\+\_\+\+TARGET\+\_\+\+DEVICE\+\_\+\+NAME} device\+Name)
+\item 
+\mbox{\label{a00455_a209129dbaa57b394c435d249abed16dd}} 
+static Int\+Ptr {\bfseries Set\+Focus} (Int\+Ptr h\+Wnd)
+\item 
+\mbox{\label{a00455_a21758c3ac6f64d66c27df3169d32b015}} 
+static bool {\bfseries Set\+Window\+Pos} (Int\+Ptr h\+Wnd, Int\+Ptr h\+Wnd\+Insert\+After, int x, int y, int cx, int cy, int u\+Flags)
+\item 
+\mbox{\label{a00455_a7cd6f2cd42f7f96e6e7200f63c16ab4c}} 
+static Int\+Ptr {\bfseries Create\+Round\+Rect\+Rgn} (int n\+Left\+Rect, int n\+Top\+Rect, int n\+Right\+Rect, int n\+Bottom\+Rect, int n\+Width\+Ellipse, int n\+Height\+Ellipse)
+\item 
+\mbox{\label{a00455_a7a7210adc4665be83f63c9ac1ee0ed0b}} 
+static Int\+Ptr {\bfseries Find\+Window} (string lp\+Class\+Name, string lp\+Window\+Name)
+\item 
+\mbox{\label{a00455_a9f3f350a126504deefac746a4f111ae1}} 
+static void {\bfseries keybd\+\_\+event} (byte b\+Vk, byte b\+Scan, int dw\+Flags, int dw\+Extra\+Info)
+\item 
+\mbox{\label{a00455_a14df8cafd9adcdf76b29806fd473e7d4}} 
+static int {\bfseries Set\+Process\+Dpi\+Awareness} (Enums.\+PROCESS\+\_\+\+DPI\+\_\+\+AWARENESS PROCESS\+\_\+\+DPI\+\_\+\+UNAWARE)
+\item 
+\mbox{\label{a00455_a19897cdfc2cc27a73d9e1dc865d0dab4}} 
+static Enums.\+EXECUTION\+\_\+\+STATE {\bfseries Set\+Thread\+Execution\+State} (Enums.\+EXECUTION\+\_\+\+STATE es\+Flags)
+\item 
+\mbox{\label{a00455_a3ee250611d064c7aa47b200ec22284c2}} 
+static int {\bfseries Set\+Window\+Theme} (Int\+Ptr h\+Wnd, string psz\+Sub\+App\+Name, string psz\+Sub\+Id\+List)
+\item 
+\mbox{\label{a00455_a92a8ab40d455916eac282740bb74aa96}} 
+static int {\bfseries SHEmpty\+Recycle\+Bin} (Int\+Ptr hwnd, string psz\+Root\+Path, Enums.\+SHERB\+\_\+\+RECYCLE dw\+Flags)
+\item 
+\mbox{\label{a00455_ae28f86ba54fbd0452c26688775e8ed6a}} 
+static bool {\bfseries Post\+Message} (Int\+Ptr h\+Wnd, uint Msg, uint WParam, uint LParam)
+\item 
+\mbox{\label{a00455_a3b003b34b31aec8e35d935565c08b61b}} 
+static bool {\bfseries Release\+Capture} ()
+\item 
+\mbox{\label{a00455_a5730dcec67a5327ebbb6866233008004}} 
+static bool {\bfseries Exit\+Windows\+Ex} (uint u\+Flags, uint dw\+Reason)
+\item 
+\mbox{\label{a00455_a0dc1877fbfffbfbeeb8a3d55d1ff5029}} 
+static void {\bfseries Lock\+Work\+Station} ()
+\item 
+\mbox{\label{a00455_ace1a907d0c061ef7fcb04d3348f464d0}} 
+static void {\bfseries mouse\+\_\+event} (int dw\+Flags, int dx, int dy, int dw\+Data, UInt\+Ptr dw\+Extra\+Info)
+\item 
+\mbox{\label{a00455_afe3edb1586df66a3e7c9542266dedbd1}} 
+static Int\+Ptr {\bfseries Send\+Message} (Int\+Ptr h\+Wnd, uint Msg, Int\+Ptr w\+Param, Int\+Ptr l\+Param)
+\item 
+\mbox{\label{a00455_aaf778166e93c6ade4025a1be47de6912}} 
+static bool {\bfseries Message\+Beep} (uint type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 11} of file \textbf{ Win32.\+cs}.
+

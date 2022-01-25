@@ -1,0 +1,430 @@
+\doxysection{Vit\+NX\+\_\+\+Scroll\+Base.\+cs}
+\label{a00131_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollBase.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollBase.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00008 \{}
+\DoxyCodeLine{00009     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class }VitNX\_ScrollBase : Control}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{        \#region Event Region}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler ViewportChanged;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler ContentSizeChanged;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#endregion Event Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{protected} readonly VitNX\_ScrollBar \_vScrollBar;}
+\DoxyCodeLine{00022         \textcolor{keyword}{protected} readonly VitNX\_ScrollBar \_hScrollBar;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024         \textcolor{keyword}{private} Size \_visibleSize;}
+\DoxyCodeLine{00025         \textcolor{keyword}{private} Size \_contentSize;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{private} Rectangle \_viewport;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keyword}{private} Point \_offsetMousePosition;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_maxDragChange = 0;}
+\DoxyCodeLine{00032         \textcolor{keyword}{private} Timer \_dragTimer;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_hideScrollBars = \textcolor{keyword}{true};}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00041         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00042         \textcolor{keyword}{public} Rectangle Viewport}
+\DoxyCodeLine{00043         \{}
+\DoxyCodeLine{00044             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_viewport; \}}
+\DoxyCodeLine{00045             \textcolor{keyword}{private} \textcolor{keyword}{set}}
+\DoxyCodeLine{00046             \{}
+\DoxyCodeLine{00047                 \_viewport = value;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049                 \textcolor{keywordflow}{if} (ViewportChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00050                     ViewportChanged(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00051             \}}
+\DoxyCodeLine{00052         \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00055         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00056         \textcolor{keyword}{public} Size ContentSize}
+\DoxyCodeLine{00057         \{}
+\DoxyCodeLine{00058             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_contentSize; \}}
+\DoxyCodeLine{00059             \textcolor{keyword}{set}}
+\DoxyCodeLine{00060             \{}
+\DoxyCodeLine{00061                 \_contentSize = value;}
+\DoxyCodeLine{00062                 UpdateScrollBars();}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064                 \textcolor{keywordflow}{if} (ContentSizeChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00065                     ContentSizeChanged(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00066             \}}
+\DoxyCodeLine{00067         \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00070         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00071         \textcolor{keyword}{public} Point OffsetMousePosition}
+\DoxyCodeLine{00072         \{}
+\DoxyCodeLine{00073             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_offsetMousePosition; \}}
+\DoxyCodeLine{00074         \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00077         [Description(\textcolor{stringliteral}{"{}Determines the maximum scroll change when dragging."{}})]}
+\DoxyCodeLine{00078         [DefaultValue(0)]}
+\DoxyCodeLine{00079         \textcolor{keyword}{public} \textcolor{keywordtype}{int} MaxDragChange}
+\DoxyCodeLine{00080         \{}
+\DoxyCodeLine{00081             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_maxDragChange; \}}
+\DoxyCodeLine{00082             \textcolor{keyword}{set}}
+\DoxyCodeLine{00083             \{}
+\DoxyCodeLine{00084                 \_maxDragChange = value;}
+\DoxyCodeLine{00085                 Invalidate();}
+\DoxyCodeLine{00086             \}}
+\DoxyCodeLine{00087         \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00090         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00091         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} IsDragging \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00094         [Description(\textcolor{stringliteral}{"{}Determines whether scrollbars will remain visible when disabled."{}})]}
+\DoxyCodeLine{00095         [DefaultValue(\textcolor{keyword}{true})]}
+\DoxyCodeLine{00096         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} HideScrollBars}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_hideScrollBars; \}}
+\DoxyCodeLine{00099             \textcolor{keyword}{set}}
+\DoxyCodeLine{00100             \{}
+\DoxyCodeLine{00101                 \_hideScrollBars = value;}
+\DoxyCodeLine{00102                 UpdateScrollBars();}
+\DoxyCodeLine{00103             \}}
+\DoxyCodeLine{00104         \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110         \textcolor{keyword}{protected} VitNX\_ScrollBase()}
+\DoxyCodeLine{00111         \{}
+\DoxyCodeLine{00112             SetStyle(ControlStyles.Selectable |}
+\DoxyCodeLine{00113                      ControlStyles.UserMouse, \textcolor{keyword}{true});}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115             \_vScrollBar = \textcolor{keyword}{new} VitNX\_ScrollBar \{ ScrollOrientation = VitNX\_ScrollOrientation.Vertical \};}
+\DoxyCodeLine{00116             \_hScrollBar = \textcolor{keyword}{new} VitNX\_ScrollBar \{ ScrollOrientation = VitNX\_ScrollOrientation.Horizontal \};}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118             Controls.Add(\_vScrollBar);}
+\DoxyCodeLine{00119             Controls.Add(\_hScrollBar);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121             \_vScrollBar.ValueChanged += delegate \{ UpdateViewport(); \};}
+\DoxyCodeLine{00122             \_hScrollBar.ValueChanged += delegate \{ UpdateViewport(); \};}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124             \_vScrollBar.MouseDown += delegate \{ Select(); \};}
+\DoxyCodeLine{00125             \_hScrollBar.MouseDown += delegate \{ Select(); \};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127             \_dragTimer = \textcolor{keyword}{new} Timer();}
+\DoxyCodeLine{00128             \_dragTimer.Interval = 1;}
+\DoxyCodeLine{00129             \_dragTimer.Tick += DragTimer\_Tick;}
+\DoxyCodeLine{00130         \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136         \textcolor{keyword}{private} \textcolor{keywordtype}{void} UpdateScrollBars()}
+\DoxyCodeLine{00137         \{}
+\DoxyCodeLine{00138             \textcolor{keywordflow}{if} (\_vScrollBar.Maximum != ContentSize.Height)}
+\DoxyCodeLine{00139                 \_vScrollBar.Maximum = ContentSize.Height;}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141             \textcolor{keywordflow}{if} (\_hScrollBar.Maximum != ContentSize.Width)}
+\DoxyCodeLine{00142                 \_hScrollBar.Maximum = ContentSize.Width;}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144             var scrollSize = Constsants.ScrollBarSize;}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146             \_vScrollBar.Location = \textcolor{keyword}{new} Point(ClientSize.Width -\/ scrollSize, 0);}
+\DoxyCodeLine{00147             \_vScrollBar.Size = \textcolor{keyword}{new} Size(scrollSize, ClientSize.Height);}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149             \_hScrollBar.Location = \textcolor{keyword}{new} Point(0, ClientSize.Height -\/ scrollSize);}
+\DoxyCodeLine{00150             \_hScrollBar.Size = \textcolor{keyword}{new} Size(ClientSize.Width, scrollSize);}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152             \textcolor{keywordflow}{if} (DesignMode)}
+\DoxyCodeLine{00153                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155             \textcolor{comment}{// Do this twice in case changing the visibility of the scrollbars}}
+\DoxyCodeLine{00156             \textcolor{comment}{// causes the VisibleSize to change in such a way as to require a second scrollbar.}}
+\DoxyCodeLine{00157             \textcolor{comment}{// Probably a better way to detect that scenario...}}
+\DoxyCodeLine{00158             SetVisibleSize();}
+\DoxyCodeLine{00159             SetScrollBarVisibility();}
+\DoxyCodeLine{00160             SetVisibleSize();}
+\DoxyCodeLine{00161             SetScrollBarVisibility();}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00164                 \_hScrollBar.Width -\/= scrollSize;}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00167                 \_vScrollBar.Height -\/= scrollSize;}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169             \_vScrollBar.ViewSize = \_visibleSize.Height;}
+\DoxyCodeLine{00170             \_hScrollBar.ViewSize = \_visibleSize.Width;}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172             UpdateViewport();}
+\DoxyCodeLine{00173         \}}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetScrollBarVisibility()}
+\DoxyCodeLine{00176         \{}
+\DoxyCodeLine{00177             \_vScrollBar.Enabled = \_visibleSize.Height < ContentSize.Height;}
+\DoxyCodeLine{00178             \_hScrollBar.Enabled = \_visibleSize.Width < ContentSize.Width;}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180             \textcolor{keywordflow}{if} (\_hideScrollBars)}
+\DoxyCodeLine{00181             \{}
+\DoxyCodeLine{00182                 \_vScrollBar.Visible = \_vScrollBar.Enabled;}
+\DoxyCodeLine{00183                 \_hScrollBar.Visible = \_hScrollBar.Enabled;}
+\DoxyCodeLine{00184             \}}
+\DoxyCodeLine{00185         \}}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetVisibleSize()}
+\DoxyCodeLine{00188         \{}
+\DoxyCodeLine{00189             var scrollSize = Constsants.ScrollBarSize;}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191             \_visibleSize = \textcolor{keyword}{new} Size(ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00194                 \_visibleSize.Width -\/= scrollSize;}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00197                 \_visibleSize.Height -\/= scrollSize;}
+\DoxyCodeLine{00198         \}}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200         \textcolor{keyword}{private} \textcolor{keywordtype}{void} UpdateViewport()}
+\DoxyCodeLine{00201         \{}
+\DoxyCodeLine{00202             var left = 0;}
+\DoxyCodeLine{00203             var top = 0;}
+\DoxyCodeLine{00204             var width = ClientSize.Width;}
+\DoxyCodeLine{00205             var height = ClientSize.Height;}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00208             \{}
+\DoxyCodeLine{00209                 left = \_hScrollBar.Value;}
+\DoxyCodeLine{00210                 height -\/= \_hScrollBar.Height;}
+\DoxyCodeLine{00211             \}}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00214             \{}
+\DoxyCodeLine{00215                 top = \_vScrollBar.Value;}
+\DoxyCodeLine{00216                 width -\/= \_vScrollBar.Width;}
+\DoxyCodeLine{00217             \}}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219             Viewport = \textcolor{keyword}{new} Rectangle(left, top, width, height);}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221             var pos = PointToClient(MousePosition);}
+\DoxyCodeLine{00222             \_offsetMousePosition = \textcolor{keyword}{new} Point(pos.X + Viewport.Left, pos.Y + Viewport.Top);}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224             Invalidate();}
+\DoxyCodeLine{00225         \}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ScrollTo(Point point)}
+\DoxyCodeLine{00228         \{}
+\DoxyCodeLine{00229             HScrollTo(point.X);}
+\DoxyCodeLine{00230             VScrollTo(point.Y);}
+\DoxyCodeLine{00231         \}}
+\DoxyCodeLine{00232 }
+\DoxyCodeLine{00233         \textcolor{keyword}{public} \textcolor{keywordtype}{void} VScrollTo(\textcolor{keywordtype}{int} value)}
+\DoxyCodeLine{00234         \{}
+\DoxyCodeLine{00235             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00236                 \_vScrollBar.Value = value;}
+\DoxyCodeLine{00237         \}}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239         \textcolor{keyword}{public} \textcolor{keywordtype}{void} HScrollTo(\textcolor{keywordtype}{int} value)}
+\DoxyCodeLine{00240         \{}
+\DoxyCodeLine{00241             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00242                 \_hScrollBar.Value = value;}
+\DoxyCodeLine{00243         \}}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245         \textcolor{keyword}{protected} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} StartDrag()}
+\DoxyCodeLine{00246         \{}
+\DoxyCodeLine{00247             IsDragging = \textcolor{keyword}{true};}
+\DoxyCodeLine{00248             \_dragTimer.Start();}
+\DoxyCodeLine{00249         \}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251         \textcolor{keyword}{protected} \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} StopDrag()}
+\DoxyCodeLine{00252         \{}
+\DoxyCodeLine{00253             IsDragging = \textcolor{keyword}{false};}
+\DoxyCodeLine{00254             \_dragTimer.Stop();}
+\DoxyCodeLine{00255         \}}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257         \textcolor{keyword}{public} Point PointToView(Point point)}
+\DoxyCodeLine{00258         \{}
+\DoxyCodeLine{00259             \textcolor{keywordflow}{return} \textcolor{keyword}{new} Point(point.X -\/ Viewport.Left, point.Y -\/ Viewport.Top);}
+\DoxyCodeLine{00260         \}}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262         \textcolor{keyword}{public} Rectangle RectangleToView(Rectangle rect)}
+\DoxyCodeLine{00263         \{}
+\DoxyCodeLine{00264             \textcolor{keywordflow}{return} \textcolor{keyword}{new} Rectangle(\textcolor{keyword}{new} Point(rect.Left -\/ Viewport.Left, rect.Top -\/ Viewport.Top), rect.Size);}
+\DoxyCodeLine{00265         \}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269 \textcolor{preprocessor}{        \#region Event Handler Region}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnCreateControl()}
+\DoxyCodeLine{00272         \{}
+\DoxyCodeLine{00273             base.OnCreateControl();}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275             UpdateScrollBars();}
+\DoxyCodeLine{00276         \}}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnGotFocus(EventArgs e)}
+\DoxyCodeLine{00279         \{}
+\DoxyCodeLine{00280             base.OnGotFocus(e);}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282             Invalidate();}
+\DoxyCodeLine{00283         \}}
+\DoxyCodeLine{00284 }
+\DoxyCodeLine{00285         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLostFocus(EventArgs e)}
+\DoxyCodeLine{00286         \{}
+\DoxyCodeLine{00287             base.OnLostFocus(e);}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289             Invalidate();}
+\DoxyCodeLine{00290         \}}
+\DoxyCodeLine{00291 }
+\DoxyCodeLine{00292         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnResize(EventArgs e)}
+\DoxyCodeLine{00293         \{}
+\DoxyCodeLine{00294             base.OnResize(e);}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296             UpdateScrollBars();}
+\DoxyCodeLine{00297         \}}
+\DoxyCodeLine{00298 }
+\DoxyCodeLine{00299         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseMove(MouseEventArgs e)}
+\DoxyCodeLine{00300         \{}
+\DoxyCodeLine{00301             base.OnMouseMove(e);}
+\DoxyCodeLine{00302 }
+\DoxyCodeLine{00303             \_offsetMousePosition = \textcolor{keyword}{new} Point(e.X + Viewport.Left, e.Y + Viewport.Top);}
+\DoxyCodeLine{00304         \}}
+\DoxyCodeLine{00305 }
+\DoxyCodeLine{00306         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseDown(MouseEventArgs e)}
+\DoxyCodeLine{00307         \{}
+\DoxyCodeLine{00308             base.OnMouseDown(e);}
+\DoxyCodeLine{00309 }
+\DoxyCodeLine{00310             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Right)}
+\DoxyCodeLine{00311                 Select();}
+\DoxyCodeLine{00312         \}}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseWheel(MouseEventArgs e)}
+\DoxyCodeLine{00315         \{}
+\DoxyCodeLine{00316             base.OnMouseWheel(e);}
+\DoxyCodeLine{00317 }
+\DoxyCodeLine{00318             var horizontal = \textcolor{keyword}{false};}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320             \textcolor{keywordflow}{if} (\_hScrollBar.Visible \&\& ModifierKeys == Keys.Control)}
+\DoxyCodeLine{00321                 horizontal = \textcolor{keyword}{true};}
+\DoxyCodeLine{00322 }
+\DoxyCodeLine{00323             \textcolor{keywordflow}{if} (\_hScrollBar.Visible \&\& !\_vScrollBar.Visible)}
+\DoxyCodeLine{00324                 horizontal = \textcolor{keyword}{true};}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326             \textcolor{keywordflow}{if} (!horizontal)}
+\DoxyCodeLine{00327             \{}
+\DoxyCodeLine{00328                 \textcolor{keywordflow}{if} (e.Delta > 0)}
+\DoxyCodeLine{00329                     \_vScrollBar.ScrollByPhysical(3);}
+\DoxyCodeLine{00330                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (e.Delta < 0)}
+\DoxyCodeLine{00331                     \_vScrollBar.ScrollByPhysical(-\/3);}
+\DoxyCodeLine{00332             \}}
+\DoxyCodeLine{00333             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00334             \{}
+\DoxyCodeLine{00335                 \textcolor{keywordflow}{if} (e.Delta > 0)}
+\DoxyCodeLine{00336                     \_hScrollBar.ScrollByPhysical(3);}
+\DoxyCodeLine{00337                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (e.Delta < 0)}
+\DoxyCodeLine{00338                     \_hScrollBar.ScrollByPhysical(-\/3);}
+\DoxyCodeLine{00339             \}}
+\DoxyCodeLine{00340         \}}
+\DoxyCodeLine{00341 }
+\DoxyCodeLine{00342         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPreviewKeyDown(PreviewKeyDownEventArgs e)}
+\DoxyCodeLine{00343         \{}
+\DoxyCodeLine{00344             base.OnPreviewKeyDown(e);}
+\DoxyCodeLine{00345 }
+\DoxyCodeLine{00346             \textcolor{comment}{// Allows arrow keys to trigger OnKeyPress}}
+\DoxyCodeLine{00347             \textcolor{keywordflow}{switch} (e.KeyCode)}
+\DoxyCodeLine{00348             \{}
+\DoxyCodeLine{00349                 \textcolor{keywordflow}{case} Keys.Up:}
+\DoxyCodeLine{00350                 \textcolor{keywordflow}{case} Keys.Down:}
+\DoxyCodeLine{00351                 \textcolor{keywordflow}{case} Keys.Left:}
+\DoxyCodeLine{00352                 \textcolor{keywordflow}{case} Keys.Right:}
+\DoxyCodeLine{00353                     e.IsInputKey = \textcolor{keyword}{true};}
+\DoxyCodeLine{00354                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00355             \}}
+\DoxyCodeLine{00356         \}}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358         \textcolor{keyword}{private} \textcolor{keywordtype}{void} DragTimer\_Tick(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00359         \{}
+\DoxyCodeLine{00360             var pos = PointToClient(MousePosition);}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362             var right = ClientRectangle.Right;}
+\DoxyCodeLine{00363             var bottom = ClientRectangle.Bottom;}
+\DoxyCodeLine{00364 }
+\DoxyCodeLine{00365             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00366                 right = \_vScrollBar.Left;}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00369                 bottom = \_hScrollBar.Top;}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00372             \{}
+\DoxyCodeLine{00373                 \textcolor{comment}{// Scroll up}}
+\DoxyCodeLine{00374                 \textcolor{keywordflow}{if} (pos.Y < ClientRectangle.Top)}
+\DoxyCodeLine{00375                 \{}
+\DoxyCodeLine{00376                     var difference = (pos.Y -\/ ClientRectangle.Top) * -\/1;}
+\DoxyCodeLine{00377 }
+\DoxyCodeLine{00378                     \textcolor{keywordflow}{if} (MaxDragChange > 0 \&\& difference > MaxDragChange)}
+\DoxyCodeLine{00379                         difference = MaxDragChange;}
+\DoxyCodeLine{00380 }
+\DoxyCodeLine{00381                     \_vScrollBar.Value = \_vScrollBar.Value -\/ difference;}
+\DoxyCodeLine{00382                 \}}
+\DoxyCodeLine{00383 }
+\DoxyCodeLine{00384                 \textcolor{comment}{// Scroll down}}
+\DoxyCodeLine{00385                 \textcolor{keywordflow}{if} (pos.Y > bottom)}
+\DoxyCodeLine{00386                 \{}
+\DoxyCodeLine{00387                     var difference = pos.Y -\/ bottom;}
+\DoxyCodeLine{00388 }
+\DoxyCodeLine{00389                     \textcolor{keywordflow}{if} (MaxDragChange > 0 \&\& difference > MaxDragChange)}
+\DoxyCodeLine{00390                         difference = MaxDragChange;}
+\DoxyCodeLine{00391 }
+\DoxyCodeLine{00392                     \_vScrollBar.Value = \_vScrollBar.Value + difference;}
+\DoxyCodeLine{00393                 \}}
+\DoxyCodeLine{00394             \}}
+\DoxyCodeLine{00395 }
+\DoxyCodeLine{00396             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00397             \{}
+\DoxyCodeLine{00398                 \textcolor{comment}{// Scroll left}}
+\DoxyCodeLine{00399                 \textcolor{keywordflow}{if} (pos.X < ClientRectangle.Left)}
+\DoxyCodeLine{00400                 \{}
+\DoxyCodeLine{00401                     var difference = (pos.X -\/ ClientRectangle.Left) * -\/1;}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403                     \textcolor{keywordflow}{if} (MaxDragChange > 0 \&\& difference > MaxDragChange)}
+\DoxyCodeLine{00404                         difference = MaxDragChange;}
+\DoxyCodeLine{00405 }
+\DoxyCodeLine{00406                     \_hScrollBar.Value = \_hScrollBar.Value -\/ difference;}
+\DoxyCodeLine{00407                 \}}
+\DoxyCodeLine{00408 }
+\DoxyCodeLine{00409                 \textcolor{comment}{// Scroll right}}
+\DoxyCodeLine{00410                 \textcolor{keywordflow}{if} (pos.X > right)}
+\DoxyCodeLine{00411                 \{}
+\DoxyCodeLine{00412                     var difference = pos.X -\/ right;}
+\DoxyCodeLine{00413 }
+\DoxyCodeLine{00414                     \textcolor{keywordflow}{if} (MaxDragChange > 0 \&\& difference > MaxDragChange)}
+\DoxyCodeLine{00415                         difference = MaxDragChange;}
+\DoxyCodeLine{00416 }
+\DoxyCodeLine{00417                     \_hScrollBar.Value = \_hScrollBar.Value + difference;}
+\DoxyCodeLine{00418                 \}}
+\DoxyCodeLine{00419             \}}
+\DoxyCodeLine{00420         \}}
+\DoxyCodeLine{00421 }
+\DoxyCodeLine{00422 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
+\DoxyCodeLine{00423     \}}
+\DoxyCodeLine{00424 \}}
+
+\end{DoxyCode}

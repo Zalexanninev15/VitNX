@@ -1,0 +1,251 @@
+\doxysection{Vit\+NX\+\_\+\+Menu\+Renderer Class Reference}
+\label{a00767}\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+Inheritance diagram for Vit\+NX\+\_\+\+Menu\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{a00767}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ Initialize} (Tool\+Strip tool\+Strip)
+\item 
+override void \textbf{ Initialize\+Item} (Tool\+Strip\+Item item)
+\item 
+override void \textbf{ On\+Render\+Tool\+Strip\+Background} (Tool\+Strip\+Render\+Event\+Args e)
+\item 
+override void \textbf{ On\+Render\+Image\+Margin} (Tool\+Strip\+Render\+Event\+Args e)
+\item 
+override void \textbf{ On\+Render\+Item\+Check} (Tool\+Strip\+Item\+Image\+Render\+Event\+Args e)
+\item 
+override void \textbf{ On\+Render\+Separator} (Tool\+Strip\+Separator\+Render\+Event\+Args e)
+\item 
+override void \textbf{ On\+Render\+Arrow} (Tool\+Strip\+Arrow\+Render\+Event\+Args e)
+\item 
+override void \textbf{ On\+Render\+Menu\+Item\+Background} (Tool\+Strip\+Item\+Render\+Event\+Args e)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00767_aeda128f2591b20850e09e76ed292583f}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily override void Initialize (\begin{DoxyParamCaption}\item[{Tool\+Strip}]{tool\+Strip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 12} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013         \{}
+\DoxyCodeLine{00014             base.Initialize(toolStrip);}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016             toolStrip.BackColor = Colors.GreyBackground;}
+\DoxyCodeLine{00017             toolStrip.ForeColor = Colors.LightText;}
+\DoxyCodeLine{00018         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_a823017123fe3d397ed3f679456a852dc}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!InitializeItem@{InitializeItem}}
+\index{InitializeItem@{InitializeItem}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{InitializeItem()}
+{\footnotesize\ttfamily override void Initialize\+Item (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Item}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 20} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021         \{}
+\DoxyCodeLine{00022             base.InitializeItem(item);}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024             item.BackColor = Colors.GreyBackground;}
+\DoxyCodeLine{00025             item.ForeColor = Colors.LightText;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \textcolor{keywordflow}{if} (item.GetType() == typeof(ToolStripSeparator))}
+\DoxyCodeLine{00028             \{}
+\DoxyCodeLine{00029                 item.Margin = \textcolor{keyword}{new} Padding(0, 0, 0, 1);}
+\DoxyCodeLine{00030             \}}
+\DoxyCodeLine{00031         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_a1bbf6f1c084af62099942331d545a5f1}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!OnRenderArrow@{OnRenderArrow}}
+\index{OnRenderArrow@{OnRenderArrow}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{OnRenderArrow()}
+{\footnotesize\ttfamily override void On\+Render\+Arrow (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Arrow\+Render\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 94} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095         \{}
+\DoxyCodeLine{00096             e.ArrowColor = Colors.LightText;}
+\DoxyCodeLine{00097             e.ArrowRectangle = \textcolor{keyword}{new} Rectangle(\textcolor{keyword}{new} Point(e.ArrowRectangle.Left, e.ArrowRectangle.Top -\/ 1), e.ArrowRectangle.Size);}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099             base.OnRenderArrow(e);}
+\DoxyCodeLine{00100         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_a5683d07e430987f32c9b8aa27f17c500}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!OnRenderImageMargin@{OnRenderImageMargin}}
+\index{OnRenderImageMargin@{OnRenderImageMargin}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{OnRenderImageMargin()}
+{\footnotesize\ttfamily override void On\+Render\+Image\+Margin (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Render\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 46} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047         \{}
+\DoxyCodeLine{00048             var g = e.Graphics;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050             var rect = \textcolor{keyword}{new} Rectangle(0, 0, e.ToolStrip.Width -\/ 1, e.ToolStrip.Height -\/ 1);}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.LightBorder))}
+\DoxyCodeLine{00053             \{}
+\DoxyCodeLine{00054                 g.DrawRectangle(p, rect);}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_a110bf95f8b34d13710077a0d664ad947}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!OnRenderItemCheck@{OnRenderItemCheck}}
+\index{OnRenderItemCheck@{OnRenderItemCheck}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{OnRenderItemCheck()}
+{\footnotesize\ttfamily override void On\+Render\+Item\+Check (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Item\+Image\+Render\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 58} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059         \{}
+\DoxyCodeLine{00060             var g = e.Graphics;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             var rect = \textcolor{keyword}{new} Rectangle(e.ImageRectangle.Left -\/ 2, e.ImageRectangle.Top -\/ 2,}
+\DoxyCodeLine{00063                                          e.ImageRectangle.Width + 4, e.ImageRectangle.Height + 4);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightBorder))}
+\DoxyCodeLine{00066             \{}
+\DoxyCodeLine{00067                 g.FillRectangle(b, rect);}
+\DoxyCodeLine{00068             \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.BlueHighlight))}
+\DoxyCodeLine{00071             \{}
+\DoxyCodeLine{00072                 var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1);}
+\DoxyCodeLine{00073                 g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00074             \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076             \textcolor{keywordflow}{if} (e.Item.ImageIndex == -\/1 \&\& String.IsNullOrEmpty(e.Item.ImageKey) \&\& e.Item.Image == \textcolor{keyword}{null})}
+\DoxyCodeLine{00077             \{}
+\DoxyCodeLine{00078                 g.DrawImageUnscaled(MenuIcons.tick, \textcolor{keyword}{new} Point(e.ImageRectangle.Left, e.ImageRectangle.Top));}
+\DoxyCodeLine{00079             \}}
+\DoxyCodeLine{00080         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_a28f40f7bec0254833c532dec0ac1be1a}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!OnRenderMenuItemBackground@{OnRenderMenuItemBackground}}
+\index{OnRenderMenuItemBackground@{OnRenderMenuItemBackground}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{OnRenderMenuItemBackground()}
+{\footnotesize\ttfamily override void On\+Render\+Menu\+Item\+Background (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Item\+Render\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 102} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             var g = e.Graphics;}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106             e.Item.ForeColor = e.Item.Enabled ? Colors.LightText : Colors.DisabledText;}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108             \textcolor{keywordflow}{if} (e.Item.Enabled)}
+\DoxyCodeLine{00109             \{}
+\DoxyCodeLine{00110                 var bgColor = e.Item.Selected ? Colors.GreyHighlight : e.Item.BackColor;}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112                 \textcolor{comment}{// Normal item}}
+\DoxyCodeLine{00113                 var rect = \textcolor{keyword}{new} Rectangle(2, 0, e.Item.Width -\/ 3, e.Item.Height);}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(bgColor))}
+\DoxyCodeLine{00116                 \{}
+\DoxyCodeLine{00117                     g.FillRectangle(b, rect);}
+\DoxyCodeLine{00118                 \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120                 \textcolor{comment}{// Header item on open menu}}
+\DoxyCodeLine{00121                 \textcolor{keywordflow}{if} (e.Item.GetType() == typeof(ToolStripMenuItem))}
+\DoxyCodeLine{00122                 \{}
+\DoxyCodeLine{00123                     \textcolor{keywordflow}{if} (((ToolStripMenuItem)e.Item).DropDown.Visible \&\& e.Item.IsOnDropDown == \textcolor{keyword}{false})}
+\DoxyCodeLine{00124                     \{}
+\DoxyCodeLine{00125                         \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreySelection))}
+\DoxyCodeLine{00126                         \{}
+\DoxyCodeLine{00127                             g.FillRectangle(b, rect);}
+\DoxyCodeLine{00128                         \}}
+\DoxyCodeLine{00129                     \}}
+\DoxyCodeLine{00130                 \}}
+\DoxyCodeLine{00131             \}}
+\DoxyCodeLine{00132         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_ab2cd206b1c8d378136e8addd1a1c0456}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!OnRenderSeparator@{OnRenderSeparator}}
+\index{OnRenderSeparator@{OnRenderSeparator}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{OnRenderSeparator()}
+{\footnotesize\ttfamily override void On\+Render\+Separator (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Separator\+Render\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 82} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083         \{}
+\DoxyCodeLine{00084             var g = e.Graphics;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086             var rect = \textcolor{keyword}{new} Rectangle(1, 3, e.Item.Width, 1);}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightBorder))}
+\DoxyCodeLine{00089             \{}
+\DoxyCodeLine{00090                 g.FillRectangle(b, rect);}
+\DoxyCodeLine{00091             \}}
+\DoxyCodeLine{00092         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00767_ab77e18678841ca4b76523be8653233a8}} 
+\index{VitNX\_MenuRenderer@{VitNX\_MenuRenderer}!OnRenderToolStripBackground@{OnRenderToolStripBackground}}
+\index{OnRenderToolStripBackground@{OnRenderToolStripBackground}!VitNX\_MenuRenderer@{VitNX\_MenuRenderer}}
+\doxysubsubsection{OnRenderToolStripBackground()}
+{\footnotesize\ttfamily override void On\+Render\+Tool\+Strip\+Background (\begin{DoxyParamCaption}\item[{Tool\+Strip\+Render\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 37} of file \textbf{ Vit\+NX\+\_\+\+Menu\+Renderer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             var g = e.Graphics;}
+\DoxyCodeLine{00040             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00041             \{}
+\DoxyCodeLine{00042                 g.FillRectangle(b, e.AffectedBounds);}
+\DoxyCodeLine{00043             \}}
+\DoxyCodeLine{00044         \}}
+
+\end{DoxyCode}
