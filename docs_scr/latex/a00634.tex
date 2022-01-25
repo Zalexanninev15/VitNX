@@ -1,0 +1,298 @@
+\doxysection{Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel Class Reference}
+\label{a00634}\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+Inheritance diagram for Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00634}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content)
+\item 
+void \textbf{ Add\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content, \textbf{ Vit\+NX\+\_\+\+Dock\+Group} dock\+Group)
+\item 
+void \textbf{ Insert\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content, \textbf{ Vit\+NX\+\_\+\+Dock\+Group} dock\+Group, Dock\+Insert\+Type insert\+Type)
+\item 
+void \textbf{ Remove\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content)
+\item 
+bool \textbf{ Contains\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content)
+\item 
+List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ \textbf{ Get\+Documents} ()
+\item 
+void \textbf{ Drag\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} content)
+\item 
+\textbf{ Dock\+Panel\+State} \textbf{ Get\+Dock\+Panel\+State} ()
+\item 
+void \textbf{ Restore\+Dock\+Panel\+State} (\textbf{ Dock\+Panel\+State} state, Func$<$ string, \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ get\+Content\+By\+Serialization\+Key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Content} \textbf{ Active\+Content}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Region} \textbf{ Active\+Region}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Group} \textbf{ Active\+Group}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Content} \textbf{ Active\+Document}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Dock\+Content\+Drag\+Filter} \textbf{ Dock\+Content\+Drag\+Filter}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Dock\+Resize\+Filter} \textbf{ Dock\+Resize\+Filter}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Splitter} $>$ \textbf{ Splitters}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Mouse\+Buttons \textbf{ Mouse\+Button\+State}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Dictionary$<$ Vit\+NX\+\_\+\+Dock\+Area, \textbf{ Vit\+NX\+\_\+\+Dock\+Region} $>$ \textbf{ Regions}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler$<$ \textbf{ Dock\+Content\+Event\+Args} $>$ \textbf{ Active\+Content\+Changed}
+\item 
+Event\+Handler$<$ \textbf{ Dock\+Content\+Event\+Args} $>$ \textbf{ Content\+Added}
+\item 
+Event\+Handler$<$ \textbf{ Dock\+Content\+Event\+Args} $>$ \textbf{ Content\+Removed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00634_a69eca9fff9ec31d67ca1f74b463bc8e2}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{VitNX\_DockPanel()}
+{\footnotesize\ttfamily Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Vit\+NX\+\_\+\+Dock\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 118} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00634_a448f3dad19fa53144213bb718afd6182}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!AddContent@{AddContent}}
+\index{AddContent@{AddContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{AddContent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Add\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 136} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_ae0f2d65891a586c5c974ebb642b386c4}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!AddContent@{AddContent}}
+\index{AddContent@{AddContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{AddContent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Add\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content,  }\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Group}}]{dock\+Group }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 141} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a7bcab61ee2b8733dd52f5b4a8c62a75b}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ContainsContent@{ContainsContent}}
+\index{ContainsContent@{ContainsContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ContainsContent()}
+{\footnotesize\ttfamily bool Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Contains\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 198} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_aeff47887b96e28c1c9bda0641d9fb5be}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!DragContent@{DragContent}}
+\index{DragContent@{DragContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{DragContent()}
+{\footnotesize\ttfamily void Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Drag\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 236} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a785492bed4cbd5fdcb54030c2aa182c0}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!GetDockPanelState@{GetDockPanelState}}
+\index{GetDockPanelState@{GetDockPanelState}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{GetDockPanelState()}
+{\footnotesize\ttfamily \textbf{ Dock\+Panel\+State} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Get\+Dock\+Panel\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 245} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_aac49c599e28d230a7c30f6aa8a83a99d}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!GetDocuments@{GetDocuments}}
+\index{GetDocuments@{GetDocuments}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{GetDocuments()}
+{\footnotesize\ttfamily List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Get\+Documents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 203} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_aa28a40eceb55c699f36d5d80e6181ee4}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!InsertContent@{InsertContent}}
+\index{InsertContent@{InsertContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{InsertContent()}
+{\footnotesize\ttfamily void Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Insert\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content,  }\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Group}}]{dock\+Group,  }\item[{Dock\+Insert\+Type}]{insert\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 164} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_ac17237b17fde850138f986ddf42f1e29}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!RemoveContent@{RemoveContent}}
+\index{RemoveContent@{RemoveContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{RemoveContent()}
+{\footnotesize\ttfamily void Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Remove\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 183} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a170458552d4db50194033dcb8b97c2f4}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!RestoreDockPanelState@{RestoreDockPanelState}}
+\index{RestoreDockPanelState@{RestoreDockPanelState}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{RestoreDockPanelState()}
+{\footnotesize\ttfamily void Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Restore\+Dock\+Panel\+State (\begin{DoxyParamCaption}\item[{\textbf{ Dock\+Panel\+State}}]{state,  }\item[{Func$<$ string, \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$}]{get\+Content\+By\+Serialization\+Key }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 286} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00634_a81c0a3c7d5fdff60e1706027e6085176}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ActiveContent@{ActiveContent}}
+\index{ActiveContent@{ActiveContent}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ActiveContent}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Content} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Active\+Content\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 37} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a7136edad6af5fd7ba71e7544d8c790bb}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ActiveDocument@{ActiveDocument}}
+\index{ActiveDocument@{ActiveDocument}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ActiveDocument}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Content} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Active\+Document\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 73} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a0ca03490867baa893765094e6c690e5d}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ActiveGroup@{ActiveGroup}}
+\index{ActiveGroup@{ActiveGroup}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ActiveGroup}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Group} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Active\+Group\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 69} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_ae191e897212fe70ae5175b507fb58466}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ActiveRegion@{ActiveRegion}}
+\index{ActiveRegion@{ActiveRegion}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ActiveRegion}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Region} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Active\+Region\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 65} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_add3189f4c582c4619dd2cfd95180a862}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!DockContentDragFilter@{DockContentDragFilter}}
+\index{DockContentDragFilter@{DockContentDragFilter}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{DockContentDragFilter}
+{\footnotesize\ttfamily \textbf{ Dock\+Content\+Drag\+Filter} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Dock\+Content\+Drag\+Filter\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 83} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_ab51dbd69723a8258cc3657c9e971f897}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!DockResizeFilter@{DockResizeFilter}}
+\index{DockResizeFilter@{DockResizeFilter}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{DockResizeFilter}
+{\footnotesize\ttfamily \textbf{ Dock\+Resize\+Filter} Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Dock\+Resize\+Filter\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a748d24d4428ebde82a3d982c6c5661ca}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!MouseButtonState@{MouseButtonState}}
+\index{MouseButtonState@{MouseButtonState}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{MouseButtonState}
+{\footnotesize\ttfamily Mouse\+Buttons Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Mouse\+Button\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 95} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_afc4b354209304dc8bb0aaa3cfd7b941d}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!Regions@{Regions}}
+\index{Regions@{Regions}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{Regions}
+{\footnotesize\ttfamily Dictionary$<$Vit\+NX\+\_\+\+Dock\+Area, \textbf{ Vit\+NX\+\_\+\+Dock\+Region}$>$ Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Regions\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 106} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a9410246066581e86b8d67a2bcb47e21e}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!Splitters@{Splitters}}
+\index{Splitters@{Splitters}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{Splitters}
+{\footnotesize\ttfamily List$<$\textbf{ Vit\+NX\+\_\+\+Dock\+Splitter}$>$ Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Splitters\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00634_a6470c6e8713b8ad781f51844f7760605}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ActiveContentChanged@{ActiveContentChanged}}
+\index{ActiveContentChanged@{ActiveContentChanged}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ActiveContentChanged}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Dock\+Content\+Event\+Args}$>$ Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Active\+Content\+Changed}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_abae967f02e51d0a458e1c340e3b323b0}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ContentAdded@{ContentAdded}}
+\index{ContentAdded@{ContentAdded}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ContentAdded}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Dock\+Content\+Event\+Args}$>$ Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Content\+Added}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00634_a9e508fad6067fd2cd1272d8605331074}} 
+\index{VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}!ContentRemoved@{ContentRemoved}}
+\index{ContentRemoved@{ContentRemoved}!VitNX.Docking.VitNX\_DockPanel@{VitNX.Docking.VitNX\_DockPanel}}
+\doxysubsubsection{ContentRemoved}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Dock\+Content\+Event\+Args}$>$ Vit\+NX.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Panel.\+Content\+Removed}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+

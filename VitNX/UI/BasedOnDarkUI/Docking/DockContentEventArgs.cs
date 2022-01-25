@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     public class DockContentEventArgs : EventArgs
     {

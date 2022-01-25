@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
-using VitNX.Docking;
-using VitNX.Forms;
+using VitNX.UI.BasedOnDarkUI.Config;
+using VitNX.UI.BasedOnDarkUI.Docking;
+using VitNX.UI.BasedOnDarkUI.Forms;
 
-namespace VitNX.Win32
+namespace VitNX.UI.BasedOnDarkUI.Win32
 {
     public class DockContentDragFilter : IMessageFilter
     {

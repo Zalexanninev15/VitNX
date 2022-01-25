@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public abstract class VitNX_ScrollBase : Control
     {
@@ -141,7 +141,7 @@ namespace VitNX.Controls
             if (_hScrollBar.Maximum != ContentSize.Width)
                 _hScrollBar.Maximum = ContentSize.Width;
 
-            var scrollSize = Consts.ScrollBarSize;
+            var scrollSize = Constsants.ScrollBarSize;
 
             _vScrollBar.Location = new Point(ClientSize.Width - scrollSize, 0);
             _vScrollBar.Size = new Size(scrollSize, ClientSize.Height);
@@ -186,7 +186,7 @@ namespace VitNX.Controls
 
         private void SetVisibleSize()
         {
-            var scrollSize = Consts.ScrollBarSize;
+            var scrollSize = Constsants.ScrollBarSize;
 
             _visibleSize = new Size(ClientSize.Width, ClientSize.Height);
 

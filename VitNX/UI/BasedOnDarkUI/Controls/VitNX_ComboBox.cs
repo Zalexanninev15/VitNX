@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_ComboBox : ComboBox
     {
@@ -110,12 +110,12 @@ namespace VitNX.Controls
                 using (var b = new SolidBrush(fillColor)) { g.FillRectangle(b, rect); }
                 using (var p = new Pen(borderColor, 1)) { var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1); g.DrawRectangle(p, modRect); }
                 var icon = ScrollIcons.scrollbar_arrow_hot;
-                g.DrawImageUnscaled(icon, rect.Right - icon.Width - (Consts.Padding / 2), (rect.Height / 2) - (icon.Height / 2));
+                g.DrawImageUnscaled(icon, rect.Right - icon.Width - (Constsants.Padding / 2), (rect.Height / 2) - (icon.Height / 2));
                 var text = SelectedItem != null ? SelectedItem.ToString() : Text;
                 using (var b = new SolidBrush(textColor))
                 {
                     var padding = 2;
-                    var modRect = new Rectangle(rect.Left + padding, rect.Top + padding, rect.Width - icon.Width - (Consts.Padding / 2) - (padding * 2), rect.Height - (padding * 2));
+                    var modRect = new Rectangle(rect.Left + padding, rect.Top + padding, rect.Width - icon.Width - (Constsants.Padding / 2) - (padding * 2), rect.Height - (padding * 2));
                     var stringFormat = new StringFormat
                     {
                         LineAlignment = StringAlignment.Center,

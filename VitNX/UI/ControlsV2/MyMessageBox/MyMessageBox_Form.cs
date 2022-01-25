@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using VitNX.Functions.Windows.Win32;
 
-namespace VitNX.ControlsV2
+namespace VitNX.UI.ControlsV2
 {
     public partial class MyMessageBox_Form : Form
     {

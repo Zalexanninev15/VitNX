@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Forms
+namespace VitNX.UI.BasedOnDarkUI.Forms
 {
     public class VitNX_Form : Form
     {

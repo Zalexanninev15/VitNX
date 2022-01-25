@@ -1,0 +1,127 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Resize\+Filter Class Reference}
+\label{a00704}\index{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Resize\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00704}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dock\+Resize\+Filter} (\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} dock\+Panel)
+\item 
+bool \textbf{ Pre\+Filter\+Message} (ref Message m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Dock\+Resize\+Filter.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00704_af816b9f0639135c15f413ed137250ec7}} 
+\index{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter}!DockResizeFilter@{DockResizeFilter}}
+\index{DockResizeFilter@{DockResizeFilter}!VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter}}
+\doxysubsubsection{DockResizeFilter()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Resize\+Filter.\+Dock\+Resize\+Filter (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Panel}}]{dock\+Panel }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Dock\+Resize\+Filter.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \_dockPanel = dockPanel;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \_dragTimer = \textcolor{keyword}{new} Timer();}
+\DoxyCodeLine{00028             \_dragTimer.Interval = 1;}
+\DoxyCodeLine{00029             \_dragTimer.Tick += DragTimer\_Tick;}
+\DoxyCodeLine{00030         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00704_a442985e5a33bdef0d00ce6d6be0794e3}} 
+\index{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter}!PreFilterMessage@{PreFilterMessage}}
+\index{PreFilterMessage@{PreFilterMessage}!VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter}}
+\doxysubsubsection{PreFilterMessage()}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Resize\+Filter.\+Pre\+Filter\+Message (\begin{DoxyParamCaption}\item[{ref Message}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 36} of file \textbf{ Dock\+Resize\+Filter.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038             \textcolor{comment}{// We only care about mouse events}}
+\DoxyCodeLine{00039             \textcolor{keywordflow}{if} (!(m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE ||}
+\DoxyCodeLine{00040                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDBLCLK ||}
+\DoxyCodeLine{00041                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDBLCLK))}
+\DoxyCodeLine{00042                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{comment}{// Stop drag.}}
+\DoxyCodeLine{00045             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP)}
+\DoxyCodeLine{00046             \{}
+\DoxyCodeLine{00047                 \textcolor{keywordflow}{if} (\_isDragging)}
+\DoxyCodeLine{00048                 \{}
+\DoxyCodeLine{00049                     StopDrag();}
+\DoxyCodeLine{00050                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00051                 \}}
+\DoxyCodeLine{00052             \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054             \textcolor{comment}{// Exit out early if we're simply releasing a non-\/splitter drag over the area}}
+\DoxyCodeLine{00055             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP \&\& !\_isDragging)}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058             \textcolor{comment}{// Force cursor if already dragging.}}
+\DoxyCodeLine{00059             \textcolor{keywordflow}{if} (\_isDragging)}
+\DoxyCodeLine{00060                 Cursor.Current = \_activeSplitter.ResizeCursor;}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             \textcolor{comment}{// Return out early if we're dragging something that's not a splitter.}}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE \&\& !\_isDragging \&\& \_dockPanel.MouseButtonState != MouseButtons.None)}
+\DoxyCodeLine{00064                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066             \textcolor{comment}{// Try and create a control from the message handle.}}
+\DoxyCodeLine{00067             var control = Control.FromHandle(m.HWnd);}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069             \textcolor{comment}{// Exit out if we didn't manage to create a control.}}
+\DoxyCodeLine{00070             \textcolor{keywordflow}{if} (control == \textcolor{keyword}{null})}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073             \textcolor{comment}{// Exit out if the control is not the dock panel or a child control.}}
+\DoxyCodeLine{00074             \textcolor{keywordflow}{if} (!(control == \_dockPanel || \_dockPanel.Contains(control)))}
+\DoxyCodeLine{00075                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077             \textcolor{comment}{// Update the mouse cursor}}
+\DoxyCodeLine{00078             CheckCursor();}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080             \textcolor{comment}{// Start drag.}}
+\DoxyCodeLine{00081             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDOWN)}
+\DoxyCodeLine{00082             \{}
+\DoxyCodeLine{00083                 var hotSplitter = HotSplitter();}
+\DoxyCodeLine{00084                 \textcolor{keywordflow}{if} (hotSplitter != \textcolor{keyword}{null})}
+\DoxyCodeLine{00085                 \{}
+\DoxyCodeLine{00086                     StartDrag(hotSplitter);}
+\DoxyCodeLine{00087                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00088                 \}}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091             \textcolor{comment}{// Stop events passing through if we're hovering over a splitter}}
+\DoxyCodeLine{00092             \textcolor{keywordflow}{if} (HotSplitter() != \textcolor{keyword}{null})}
+\DoxyCodeLine{00093                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095             \textcolor{comment}{// Stop all events from going through if we're dragging a splitter.}}
+\DoxyCodeLine{00096             \textcolor{keywordflow}{if} (\_isDragging)}
+\DoxyCodeLine{00097                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00100         \}}
+
+\end{DoxyCode}

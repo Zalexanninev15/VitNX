@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Forms;
+using VitNX.UI.BasedOnDarkUI.Forms;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     public class VitNX_DockSplitter
     {

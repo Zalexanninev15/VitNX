@@ -1,0 +1,139 @@
+\doxysection{File\+System.\+cs}
+\label{a00002_source}\index{E:/Github/VitNX/VitNX/Functions/Common/FileSystem.cs@{E:/Github/VitNX/VitNX/Functions/Common/FileSystem.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{namespace }VitNX.Functions.Common}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keyword}{public} \textcolor{keyword}{class }FileSystem}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009         \textcolor{keyword}{public} \textcolor{keyword}{static} List<string> ReturnRecursFList(\textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00010         \{}
+\DoxyCodeLine{00011             List<string> ls = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00012             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00013             \{}
+\DoxyCodeLine{00014                 \textcolor{keywordtype}{string}[] folders = Directory.GetDirectories(path);}
+\DoxyCodeLine{00015                 \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} folder \textcolor{keywordflow}{in} folders) ls.Add(\textcolor{stringliteral}{"{}Папка: "{}} + folder);}
+\DoxyCodeLine{00016                 \textcolor{keywordtype}{string}[] files = Directory.GetFiles(path);}
+\DoxyCodeLine{00017                 \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} filename \textcolor{keywordflow}{in} files) ls.Add(\textcolor{stringliteral}{"{}Файл: "{}} + filename);}
+\DoxyCodeLine{00018             \}}
+\DoxyCodeLine{00019             \textcolor{keywordflow}{catch} (Exception e) \{ ls.Add(e.Message.Trim(\textcolor{charliteral}{'\(\backslash\)n'})); \}}
+\DoxyCodeLine{00020             \textcolor{keywordflow}{return} ls;}
+\DoxyCodeLine{00021         \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{long} GetDirectorySize(DirectoryInfo path)}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \textcolor{keywordtype}{long} size = 0;}
+\DoxyCodeLine{00026             FileInfo[] fis = path.GetFiles();}
+\DoxyCodeLine{00027             \textcolor{keywordflow}{foreach} (FileInfo fi \textcolor{keywordflow}{in} fis)}
+\DoxyCodeLine{00028                 size += fi.Length;}
+\DoxyCodeLine{00029             DirectoryInfo[] dis = path.GetDirectories();}
+\DoxyCodeLine{00030             \textcolor{keywordflow}{foreach} (DirectoryInfo di \textcolor{keywordflow}{in} dis)}
+\DoxyCodeLine{00031                 size += GetDirectorySize(di);}
+\DoxyCodeLine{00032             \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{00033         \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeleteFile(\textcolor{keywordtype}{string} file)}
+\DoxyCodeLine{00036         \{}
+\DoxyCodeLine{00037             \textcolor{keywordflow}{try} \{ File.Delete(file); \}}
+\DoxyCodeLine{00038             \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00039         \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeleteFileInTrash(\textcolor{keywordtype}{string} file)}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{try} \{ File.SetAttributes(file, FileAttributes.Normal); \} \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00044             Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(file,}
+\DoxyCodeLine{00045                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,}
+\DoxyCodeLine{00046                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);}
+\DoxyCodeLine{00047         \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeleteDirectoryToTrash(\textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(path,}
+\DoxyCodeLine{00052                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,}
+\DoxyCodeLine{00053                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);}
+\DoxyCodeLine{00054         \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string}[] WriteTextToFileUTF8(\textcolor{keywordtype}{string} text, \textcolor{keywordtype}{string} file)}
+\DoxyCodeLine{00057         \{}
+\DoxyCodeLine{00058             \textcolor{keywordtype}{string} fileName = FileNameGenerator(file, \textcolor{stringliteral}{"{}txt"{}});}
+\DoxyCodeLine{00059             \textcolor{keywordtype}{string} filePath = \$\textcolor{stringliteral}{@"{}\{Path.GetTempPath()\}\(\backslash\)\{fileName\}"{}};}
+\DoxyCodeLine{00060             \textcolor{keyword}{using} (FileStream fs = File.OpenWrite(filePath))}
+\DoxyCodeLine{00061             \{}
+\DoxyCodeLine{00062                 var data = text;}
+\DoxyCodeLine{00063                 \textcolor{keywordtype}{byte}[] bytes = System.Text.Encoding.UTF8.GetBytes(data);}
+\DoxyCodeLine{00064                 fs.Write(bytes, 0, bytes.Length);}
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \textcolor{keywordtype}{string}[] \{ fileName, filePath \};}
+\DoxyCodeLine{00067         \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetText(\textcolor{keywordtype}{string} file)}
+\DoxyCodeLine{00070         \{}
+\DoxyCodeLine{00071             \textcolor{keywordtype}{string} text = \textcolor{stringliteral}{"{}Text file not found"{}};}
+\DoxyCodeLine{00072             \textcolor{keyword}{using} (StreamReader sr = File.OpenText(file))}
+\DoxyCodeLine{00073                 text = sr.ReadToEnd();}
+\DoxyCodeLine{00074             \textcolor{keywordflow}{return} text;}
+\DoxyCodeLine{00075         \}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetMD5(\textcolor{keywordtype}{string} file)}
+\DoxyCodeLine{00078         \{}
+\DoxyCodeLine{00079             \textcolor{keyword}{using} (var md5 = System.Security.Cryptography.MD5.Create())}
+\DoxyCodeLine{00080             \{}
+\DoxyCodeLine{00081                 \textcolor{keyword}{using} (var Stream = File.OpenRead(@file))}
+\DoxyCodeLine{00082                 \{}
+\DoxyCodeLine{00083                     var hashBytes = md5.ComputeHash(Stream);}
+\DoxyCodeLine{00084                     var sb = \textcolor{keyword}{new} System.Text.StringBuilder();}
+\DoxyCodeLine{00085                     \textcolor{keywordflow}{foreach} (var t \textcolor{keywordflow}{in} hashBytes)}
+\DoxyCodeLine{00086                         sb.Append(t.ToString(\textcolor{stringliteral}{"{}X2"{}}));}
+\DoxyCodeLine{00087                     \textcolor{keywordflow}{return} Convert.ToString(sb);}
+\DoxyCodeLine{00088                 \}}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090         \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} FileNameGenerator(\textcolor{keywordtype}{string} tag, \textcolor{keywordtype}{string} extension)}
+\DoxyCodeLine{00093         \{}
+\DoxyCodeLine{00094             \textcolor{keywordtype}{string} fileName = \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}\{0\}\_\{1\}\_\{2\}.\{3\}"{}},}
+\DoxyCodeLine{00095                 tag,}
+\DoxyCodeLine{00096                 DateTime.Now.ToString(\textcolor{stringliteral}{"{}yyyyMMddHHmmssfff"{}}),}
+\DoxyCodeLine{00097                 Guid.NewGuid(),}
+\DoxyCodeLine{00098                 extension);}
+\DoxyCodeLine{00099             \textcolor{keywordflow}{return} fileName;}
+\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} CleanRecycleBin()}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             Windows.Win32.Import.SHEmptyRecycleBin(IntPtr.Zero, \textcolor{keyword}{null},}
+\DoxyCodeLine{00105 Windows.Win32.Enums.SHERB\_RECYCLE.SHERB\_NOSOUND |}
+\DoxyCodeLine{00106 Windows.Win32.Enums.SHERB\_RECYCLE.SHERB\_NOCONFIRMATION);}
+\DoxyCodeLine{00107         \}}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} CreateFileBackup(\textcolor{keywordtype}{string} file, \textcolor{keywordtype}{string} new\_file\_extension, \textcolor{keywordtype}{bool} save\_old\_file)}
+\DoxyCodeLine{00110         \{}
+\DoxyCodeLine{00111             \textcolor{keywordtype}{string} bak\_file = file + \textcolor{stringliteral}{"{}."{}} + new\_file\_extension.Replace(\textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00112             \textcolor{keywordflow}{if} (File.Exists(bak\_file)) \{ \textcolor{keywordflow}{try} \{ File.Delete(bak\_file); \} \textcolor{keywordflow}{catch} \{ \} \}}
+\DoxyCodeLine{00113             \textcolor{keywordflow}{if} (save\_old\_file == \textcolor{keyword}{false}) \{ \textcolor{keywordflow}{try} \{ File.Move(file, bak\_file); \} \textcolor{keywordflow}{catch} \{ \} \}}
+\DoxyCodeLine{00114             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115             \{}
+\DoxyCodeLine{00116                 File.Copy(file, bak\_file);}
+\DoxyCodeLine{00117                 \textcolor{keywordflow}{try} \{ File.Delete(file); \} \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119         \}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} CreateShortcut(\textcolor{keywordtype}{string} shortcut, \textcolor{keywordtype}{string} file, \textcolor{keywordtype}{string} exe\_name)}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             IWshRuntimeLibrary.WshShell wshShell = \textcolor{keyword}{new} IWshRuntimeLibrary.WshShell();}
+\DoxyCodeLine{00124             IWshRuntimeLibrary.IWshShortcut Shortcut = (IWshRuntimeLibrary.IWshShortcut)wshShell.CreateShortcut(shortcut);}
+\DoxyCodeLine{00125             Shortcut.TargetPath = file;}
+\DoxyCodeLine{00126             Shortcut.WorkingDirectory = file.Replace(\textcolor{stringliteral}{@"{}\(\backslash\)"{}} + exe\_name, \textcolor{stringliteral}{"{}"{}}).Replace(\textcolor{stringliteral}{"{}.exe"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00127             Shortcut.Save();}
+\DoxyCodeLine{00128         \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} CopyFolder(\textcolor{keywordtype}{string} from, \textcolor{keywordtype}{string} where)}
+\DoxyCodeLine{00131         \{ Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(from, where); \}}
+\DoxyCodeLine{00132     \}}
+\DoxyCodeLine{00133 \}}
+
+\end{DoxyCode}

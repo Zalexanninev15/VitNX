@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_ScrollBar : Control
     {
@@ -392,23 +392,23 @@ namespace VitNX.Controls
             // Arrow buttons
             if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
             {
-                _upArrowArea = new Rectangle(area.Left, area.Top, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
-                _downArrowArea = new Rectangle(area.Left, area.Bottom - Consts.ArrowButtonSize, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
+                _upArrowArea = new Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
+                _downArrowArea = new Rectangle(area.Left, area.Bottom - Constsants.ArrowButtonSize, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
             }
             else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
             {
-                _upArrowArea = new Rectangle(area.Left, area.Top, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
-                _downArrowArea = new Rectangle(area.Right - Consts.ArrowButtonSize, area.Top, Consts.ArrowButtonSize, Consts.ArrowButtonSize);
+                _upArrowArea = new Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
+                _downArrowArea = new Rectangle(area.Right - Constsants.ArrowButtonSize, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
             }
 
             // Track
             if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
             {
-                _trackArea = new Rectangle(area.Left, area.Top + Consts.ArrowButtonSize, area.Width, area.Height - (Consts.ArrowButtonSize * 2));
+                _trackArea = new Rectangle(area.Left, area.Top + Constsants.ArrowButtonSize, area.Width, area.Height - (Constsants.ArrowButtonSize * 2));
             }
             else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
             {
-                _trackArea = new Rectangle(area.Left + Consts.ArrowButtonSize, area.Top, area.Width - (Consts.ArrowButtonSize * 2), area.Height);
+                _trackArea = new Rectangle(area.Left + Constsants.ArrowButtonSize, area.Top, area.Width - (Constsants.ArrowButtonSize * 2), area.Height);
             }
 
             // Thumb
@@ -437,25 +437,25 @@ namespace VitNX.Controls
             {
                 var thumbSize = (int)(_trackArea.Height * _viewContentRatio);
 
-                if (thumbSize < Consts.MinimumThumbSize)
-                    thumbSize = Consts.MinimumThumbSize;
+                if (thumbSize < Constsants.MinimumThumbSize)
+                    thumbSize = Constsants.MinimumThumbSize;
 
                 var trackAreaSize = _trackArea.Height - thumbSize;
                 var thumbPosition = (int)(trackAreaSize * positionRatio);
 
-                _thumbArea = new Rectangle(_trackArea.Left + 3, _trackArea.Top + thumbPosition, Consts.ScrollBarSize - 6, thumbSize);
+                _thumbArea = new Rectangle(_trackArea.Left + 3, _trackArea.Top + thumbPosition, Constsants.ScrollBarSize - 6, thumbSize);
             }
             else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
             {
                 var thumbSize = (int)(_trackArea.Width * _viewContentRatio);
 
-                if (thumbSize < Consts.MinimumThumbSize)
-                    thumbSize = Consts.MinimumThumbSize;
+                if (thumbSize < Constsants.MinimumThumbSize)
+                    thumbSize = Constsants.MinimumThumbSize;
 
                 var trackAreaSize = _trackArea.Width - thumbSize;
                 var thumbPosition = (int)(trackAreaSize * positionRatio);
 
-                _thumbArea = new Rectangle(_trackArea.Left + thumbPosition, _trackArea.Top + 3, thumbSize, Consts.ScrollBarSize - 6);
+                _thumbArea = new Rectangle(_trackArea.Left + thumbPosition, _trackArea.Top + 3, thumbSize, Constsants.ScrollBarSize - 6);
             }
 
             if (forceRefresh)

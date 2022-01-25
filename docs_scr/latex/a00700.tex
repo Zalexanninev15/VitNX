@@ -1,0 +1,157 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Content\+Drag\+Filter Class Reference}
+\label{a00700}\index{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Content\+Drag\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00700}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dock\+Content\+Drag\+Filter} (\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} dock\+Panel)
+\item 
+bool \textbf{ Pre\+Filter\+Message} (ref Message m)
+\item 
+void \textbf{ Start\+Drag} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} content)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 10} of file \textbf{ Dock\+Content\+Drag\+Filter.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00700_a710adf2566c73cb7b2e3d2f37b2c750b}} 
+\index{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}!DockContentDragFilter@{DockContentDragFilter}}
+\index{DockContentDragFilter@{DockContentDragFilter}!VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}}
+\doxysubsubsection{DockContentDragFilter()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Content\+Drag\+Filter.\+Dock\+Content\+Drag\+Filter (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Panel}}]{dock\+Panel }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 32} of file \textbf{ Dock\+Content\+Drag\+Filter.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033         \{}
+\DoxyCodeLine{00034             \_dockPanel = dockPanel;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             \_highlightForm = \textcolor{keyword}{new} VitNX\_TranslucentForm(Colors.BlueSelection);}
+\DoxyCodeLine{00037         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00700_a141699b38131e957d7752451c13320b7}} 
+\index{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}!PreFilterMessage@{PreFilterMessage}}
+\index{PreFilterMessage@{PreFilterMessage}!VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}}
+\doxysubsubsection{PreFilterMessage()}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Content\+Drag\+Filter.\+Pre\+Filter\+Message (\begin{DoxyParamCaption}\item[{ref Message}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 43} of file \textbf{ Dock\+Content\+Drag\+Filter.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044         \{}
+\DoxyCodeLine{00045             \textcolor{comment}{// Exit out early if we're not dragging any content}}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{if} (!\_isDragging)}
+\DoxyCodeLine{00047                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049             \textcolor{comment}{// We only care about mouse events}}
+\DoxyCodeLine{00050             \textcolor{keywordflow}{if} (!(m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE ||}
+\DoxyCodeLine{00051                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDBLCLK ||}
+\DoxyCodeLine{00052                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDBLCLK))}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055             \textcolor{comment}{// Move content}}
+\DoxyCodeLine{00056             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE)}
+\DoxyCodeLine{00057             \{}
+\DoxyCodeLine{00058                 HandleDrag();}
+\DoxyCodeLine{00059                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             \textcolor{comment}{// Drop content}}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP)}
+\DoxyCodeLine{00064             \{}
+\DoxyCodeLine{00065                 \textcolor{keywordflow}{if} (\_targetRegion != \textcolor{keyword}{null})}
+\DoxyCodeLine{00066                 \{}
+\DoxyCodeLine{00067                     \_dockPanel.RemoveContent(\_dragContent);}
+\DoxyCodeLine{00068                     \_dragContent.DockArea = \_targetRegion.DockArea;}
+\DoxyCodeLine{00069                     \_dockPanel.AddContent(\_dragContent);}
+\DoxyCodeLine{00070                 \}}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_targetGroup != \textcolor{keyword}{null})}
+\DoxyCodeLine{00072                 \{}
+\DoxyCodeLine{00073                     \_dockPanel.RemoveContent(\_dragContent);}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075                     \textcolor{keywordflow}{switch} (\_insertType)}
+\DoxyCodeLine{00076                     \{}
+\DoxyCodeLine{00077                         \textcolor{keywordflow}{case} DockInsertType.None:}
+\DoxyCodeLine{00078                             \_dockPanel.AddContent(\_dragContent, \_targetGroup);}
+\DoxyCodeLine{00079                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081                         \textcolor{keywordflow}{case} DockInsertType.Before:}
+\DoxyCodeLine{00082                         \textcolor{keywordflow}{case} DockInsertType.After:}
+\DoxyCodeLine{00083                             \_dockPanel.InsertContent(\_dragContent, \_targetGroup, \_insertType);}
+\DoxyCodeLine{00084                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00085                     \}}
+\DoxyCodeLine{00086                 \}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088                 StopDrag();}
+\DoxyCodeLine{00089                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00090             \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00093         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00700_a4a7dbc2cf389df7ab74156f0fbfc7ede}} 
+\index{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}!StartDrag@{StartDrag}}
+\index{StartDrag@{StartDrag}!VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter@{VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter}}
+\doxysubsubsection{StartDrag()}
+{\footnotesize\ttfamily void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Win32.\+Dock\+Content\+Drag\+Filter.\+Start\+Drag (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 99} of file \textbf{ Dock\+Content\+Drag\+Filter.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100         \{}
+\DoxyCodeLine{00101             \_regionDropAreas = \textcolor{keyword}{new} Dictionary<VitNX\_DockRegion, DockDropArea>();}
+\DoxyCodeLine{00102             \_groupDropAreas = \textcolor{keyword}{new} Dictionary<VitNX\_DockGroup, DockDropCollection>();}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104             \textcolor{comment}{// Add all regions and groups to the drop collections}}
+\DoxyCodeLine{00105             \textcolor{keywordflow}{foreach} (var region \textcolor{keywordflow}{in} \_dockPanel.Regions.Values)}
+\DoxyCodeLine{00106             \{}
+\DoxyCodeLine{00107                 \textcolor{keywordflow}{if} (region.DockArea == VitNX\_DockArea.Document)}
+\DoxyCodeLine{00108                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110                 \textcolor{comment}{// If the region is visible then build drop areas for the groups.}}
+\DoxyCodeLine{00111                 \textcolor{keywordflow}{if} (region.Visible)}
+\DoxyCodeLine{00112                 \{}
+\DoxyCodeLine{00113                     \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} region.Groups)}
+\DoxyCodeLine{00114                     \{}
+\DoxyCodeLine{00115                         var collection = \textcolor{keyword}{new} DockDropCollection(\_dockPanel, group);}
+\DoxyCodeLine{00116                         \_groupDropAreas.Add(group, collection);}
+\DoxyCodeLine{00117                     \}}
+\DoxyCodeLine{00118                 \}}
+\DoxyCodeLine{00119                 \textcolor{comment}{// If the region is NOT visible then build the drop area for the region itself.}}
+\DoxyCodeLine{00120                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00121                 \{}
+\DoxyCodeLine{00122                     var area = \textcolor{keyword}{new} DockDropArea(\_dockPanel, region);}
+\DoxyCodeLine{00123                     \_regionDropAreas.Add(region, area);}
+\DoxyCodeLine{00124                 \}}
+\DoxyCodeLine{00125             \}}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127             \_dragContent = content;}
+\DoxyCodeLine{00128             \_isDragging = \textcolor{keyword}{true};}
+\DoxyCodeLine{00129         \}}
+
+\end{DoxyCode}

@@ -6,12 +6,12 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using VitNX.Collections;
-using VitNX.Config;
-using VitNX.Extensions;
-using VitNX.Forms;
+using VitNX.UI.BasedOnDarkUI.Collections;
+using VitNX.UI.BasedOnDarkUI.Config;
+using VitNX.UI.BasedOnDarkUI.Extensions;
+using VitNX.UI.BasedOnDarkUI.Forms;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_TreeView : VitNX_ScrollView
     {

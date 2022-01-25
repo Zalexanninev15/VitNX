@@ -1,0 +1,130 @@
+\doxysection{Vit\+NX.\+Functions.\+Console\+Progress\+Bar Class Reference}
+\label{a00356}\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+Inheritance diagram for Vit\+NX.\+Functions.\+Console\+Progress\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00356}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Report} (double value)
+\item 
+void \textbf{ Set\+Color} (Console\+Color my\+\_\+pb)
+\item 
+void \textbf{ Set\+Text} (string work1)
+\item 
+void \textbf{ Not\+Used} (bool pbd)
+\item 
+void \textbf{ Dispose} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 7} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00356_a1bada4f4e0218b371d1bf7b770a0941d}} 
+\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}!ConsoleProgressBar@{ConsoleProgressBar}}
+\index{ConsoleProgressBar@{ConsoleProgressBar}!VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+\doxysubsubsection{ConsoleProgressBar()}
+{\footnotesize\ttfamily Vit\+NX.\+Functions.\+Console\+Progress\+Bar.\+Console\+Progress\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022         \{ timer = \textcolor{keyword}{new} Timer(TimerHandler); \textcolor{keywordflow}{if} (!Console.IsOutputRedirected) \{ ResetTimer(); \} \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00356_a97eb748d94aeb9b515b91421222fcf09}} 
+\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+\doxysubsubsection{Dispose()}
+{\footnotesize\ttfamily void Vit\+NX.\+Functions.\+Console\+Progress\+Bar.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 74} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075         \{}
+\DoxyCodeLine{00076             lock (timer)}
+\DoxyCodeLine{00077             \{}
+\DoxyCodeLine{00078                 disposed = \textcolor{keyword}{true};}
+\DoxyCodeLine{00079                 UpdateText(\textcolor{keywordtype}{string}.Empty);}
+\DoxyCodeLine{00080             \}}
+\DoxyCodeLine{00081         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00356_acbe3f9a4efa8eecae735bf92dc9e0935}} 
+\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}!NotUsed@{NotUsed}}
+\index{NotUsed@{NotUsed}!VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+\doxysubsubsection{NotUsed()}
+{\footnotesize\ttfamily void Vit\+NX.\+Functions.\+Console\+Progress\+Bar.\+Not\+Used (\begin{DoxyParamCaption}\item[{bool}]{pbd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 33} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034         \{ workdo = pbd; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00356_a226666bdb9062fb5989c28310c2f4838}} 
+\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}!Report@{Report}}
+\index{Report@{Report}!VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+\doxysubsubsection{Report()}
+{\footnotesize\ttfamily void Vit\+NX.\+Functions.\+Console\+Progress\+Bar.\+Report (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 24} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025         \{ value = Math.Max(0, Math.Min(1, value)); Interlocked.Exchange(ref currentProgress, value); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00356_a8af8aefcc8c5659462ead1a050bb72be}} 
+\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+\doxysubsubsection{SetColor()}
+{\footnotesize\ttfamily void Vit\+NX.\+Functions.\+Console\+Progress\+Bar.\+Set\+Color (\begin{DoxyParamCaption}\item[{Console\+Color}]{my\+\_\+pb }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028         \{ pb = my\_pb; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00356_a84f74f0d7471fe916b9c09ea4968e8ba}} 
+\index{VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}!SetText@{SetText}}
+\index{SetText@{SetText}!VitNX.Functions.ConsoleProgressBar@{VitNX.Functions.ConsoleProgressBar}}
+\doxysubsubsection{SetText()}
+{\footnotesize\ttfamily void Vit\+NX.\+Functions.\+Console\+Progress\+Bar.\+Set\+Text (\begin{DoxyParamCaption}\item[{string}]{work1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 30} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{ work = work1; \}}
+
+\end{DoxyCode}

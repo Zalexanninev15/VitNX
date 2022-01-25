@@ -1,0 +1,39 @@
+\doxysection{Vit\+NX.\+Functions.\+Windows.\+Native\+Controls.\+Get\+Clipboard\+Text Class Reference}
+\label{a00424}\index{VitNX.Functions.Windows.NativeControls.GetClipboardText@{VitNX.Functions.Windows.NativeControls.GetClipboardText}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Get\+Text} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 311} of file \textbf{ Native\+Controls.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00424_a7a031e3d7490bd244458ed9ffd0bdb6a}} 
+\index{VitNX.Functions.Windows.NativeControls.GetClipboardText@{VitNX.Functions.Windows.NativeControls.GetClipboardText}!GetText@{GetText}}
+\index{GetText@{GetText}!VitNX.Functions.Windows.NativeControls.GetClipboardText@{VitNX.Functions.Windows.NativeControls.GetClipboardText}}
+\doxysubsubsection{GetText()}
+{\footnotesize\ttfamily static string Vit\+NX.\+Functions.\+Windows.\+Native\+Controls.\+Get\+Clipboard\+Text.\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 325} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00326         \{}
+\DoxyCodeLine{00327             GetClipboardText instance = \textcolor{keyword}{new} GetClipboardText();}
+\DoxyCodeLine{00328             Thread staThread = \textcolor{keyword}{new} Thread(instance.\_thGetText);}
+\DoxyCodeLine{00329             staThread.SetApartmentState(ApartmentState.STA);}
+\DoxyCodeLine{00330             staThread.Start();}
+\DoxyCodeLine{00331             staThread.Join();}
+\DoxyCodeLine{00332             \textcolor{keywordflow}{return} instance.\_GetText;}
+\DoxyCodeLine{00333         \}}
+
+\end{DoxyCode}

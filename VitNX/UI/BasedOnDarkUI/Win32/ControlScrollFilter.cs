@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace VitNX.Win32
+namespace VitNX.UI.BasedOnDarkUI.Win32
 {
     public class ControlScrollFilter : IMessageFilter
     {

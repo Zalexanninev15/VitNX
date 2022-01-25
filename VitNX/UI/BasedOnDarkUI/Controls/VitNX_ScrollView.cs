@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public abstract class VitNX_ScrollView : VitNX_ScrollBase
     {

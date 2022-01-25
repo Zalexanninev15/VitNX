@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Controls;
+using VitNX.UI.BasedOnDarkUI.Controls;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     internal class VitNX_DockTabArea
     {

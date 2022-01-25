@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_DropdownItem
     {

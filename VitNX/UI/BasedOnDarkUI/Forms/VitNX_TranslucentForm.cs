@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace VitNX.Forms
+namespace VitNX.UI.BasedOnDarkUI.Forms
 {
     internal class VitNX_TranslucentForm : Form
     {

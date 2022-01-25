@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     [ToolboxItem(false)]
     public class VitNX_DockContent : UserControl

@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace VitNX.Config
+namespace VitNX.UI.BasedOnDarkUI.Config
 {
     public sealed class Colors
     {

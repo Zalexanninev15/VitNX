@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Renderers
+namespace VitNX.UI.BasedOnDarkUI.Renderers
 {
     public class VitNX_MenuRenderer : ToolStripRenderer
     {

@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     [ToolboxItem(false)]
     public class VitNX_ToolWindow : VitNX_DockContent
@@ -40,7 +40,7 @@ namespace VitNX.Docking
                      ControlStyles.UserPaint, true);
 
             BackColor = Colors.GreyBackground;
-            base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
+            base.Padding = new Padding(0, Constsants.ToolWindowHeaderSize, 0, 0);
 
             UpdateCloseButton();
         }
@@ -64,13 +64,13 @@ namespace VitNX.Docking
                 X = ClientRectangle.Left,
                 Y = ClientRectangle.Top,
                 Width = ClientRectangle.Width,
-                Height = Consts.ToolWindowHeaderSize
+                Height = Constsants.ToolWindowHeaderSize
             };
 
             _closeButtonRect = new Rectangle
             {
                 X = ClientRectangle.Right - DockIcons.tw_close.Width - 5 - 3,
-                Y = ClientRectangle.Top + (Consts.ToolWindowHeaderSize / 2) - (DockIcons.tw_close.Height / 2),
+                Y = ClientRectangle.Top + (Constsants.ToolWindowHeaderSize / 2) - (DockIcons.tw_close.Height / 2),
                 Width = DockIcons.tw_close.Width,
                 Height = DockIcons.tw_close.Height
             };
@@ -172,14 +172,14 @@ namespace VitNX.Docking
 
             using (var b = new SolidBrush(bgColor))
             {
-                var bgRect = new Rectangle(0, 0, ClientRectangle.Width, Consts.ToolWindowHeaderSize);
+                var bgRect = new Rectangle(0, 0, ClientRectangle.Width, Constsants.ToolWindowHeaderSize);
                 g.FillRectangle(b, bgRect);
             }
 
             using (var p = new Pen(VitNXColor))
             {
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
-                g.DrawLine(p, ClientRectangle.Left, Consts.ToolWindowHeaderSize - 1, ClientRectangle.Right, Consts.ToolWindowHeaderSize - 1);
+                g.DrawLine(p, ClientRectangle.Left, Constsants.ToolWindowHeaderSize - 1, ClientRectangle.Right, Constsants.ToolWindowHeaderSize - 1);
             }
 
             using (var p = new Pen(lightColor))
@@ -192,14 +192,14 @@ namespace VitNX.Docking
             // Draw icon
             if (Icon != null)
             {
-                g.DrawImageUnscaled(Icon, ClientRectangle.Left + 5, ClientRectangle.Top + (Consts.ToolWindowHeaderSize / 2) - (Icon.Height / 2) + 1);
+                g.DrawImageUnscaled(Icon, ClientRectangle.Left + 5, ClientRectangle.Top + (Constsants.ToolWindowHeaderSize / 2) - (Icon.Height / 2) + 1);
                 xOffset = Icon.Width + 8;
             }
 
             // Draw text
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - 4 - xOffset, Consts.ToolWindowHeaderSize);
+                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - 4 - xOffset, Constsants.ToolWindowHeaderSize);
 
                 var format = new StringFormat
                 {

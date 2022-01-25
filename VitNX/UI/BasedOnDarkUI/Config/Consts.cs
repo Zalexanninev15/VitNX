@@ -1,6 +1,6 @@
-﻿namespace VitNX.Config
+﻿namespace VitNX.UI.BasedOnDarkUI.Config
 {
-    public sealed class Consts
+    public sealed class Constsants
     {
         public static int Padding = 10;
         public static int ScrollBarSize = 15;

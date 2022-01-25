@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VitNX.Collections
+namespace VitNX.UI.BasedOnDarkUI.Collections
 {
     public class ObservableListModified<T> : EventArgs
     {

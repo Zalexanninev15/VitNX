@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class ScrollValueEventArgs : EventArgs
     {

@@ -1,0 +1,293 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region Class Reference}
+\label{a00640}\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00640}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Region} (\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} dock\+Panel, Vit\+NX\+\_\+\+Dock\+Area dock\+Area)
+\item 
+List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ \textbf{ Get\+Contents} ()
+\item 
+void \textbf{ Redraw} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Create\+Control} ()
+\item 
+override void \textbf{ On\+Resize} (Event\+Args eventargs)
+\item 
+override void \textbf{ On\+Layout} (Layout\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} \textbf{ Dock\+Panel}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Vit\+NX\+\_\+\+Dock\+Area \textbf{ Dock\+Area}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Content} \textbf{ Active\+Document}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Group} $>$ \textbf{ Groups}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 12} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00640_a26367e454de8b76639cd9273c59a7e63}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!VitNX\_DockRegion@{VitNX\_DockRegion}}
+\index{VitNX\_DockRegion@{VitNX\_DockRegion}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{VitNX\_DockRegion()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Vit\+NX\+\_\+\+Dock\+Region (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Panel}}]{dock\+Panel,  }\item[{Vit\+NX\+\_\+\+Dock\+Area}]{dock\+Area }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 52} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053         \{}
+\DoxyCodeLine{00054             \_groups = \textcolor{keyword}{new} List<VitNX\_DockGroup>();}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056             DockPanel = dockPanel;}
+\DoxyCodeLine{00057             DockArea = dockArea;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059             BuildProperties();}
+\DoxyCodeLine{00060         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00640_a672de3e7ab067e2eafe5d7aadd378656}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!GetContents@{GetContents}}
+\index{GetContents@{GetContents}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{GetContents()}
+{\footnotesize\ttfamily List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Get\+Contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 139} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             var result = \textcolor{keyword}{new} List<VitNX\_DockContent>();}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143             \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00144                 result.AddRange(group.GetContents());}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00147         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_ae4165f09947b7f3d1b1026fb957ae4e8}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!OnCreateControl@{OnCreateControl}}
+\index{OnCreateControl@{OnCreateControl}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{OnCreateControl()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+On\+Create\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 339} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00340         \{}
+\DoxyCodeLine{00341             base.OnCreateControl();}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343             \_parentForm = FindForm();}
+\DoxyCodeLine{00344             \_parentForm.ResizeEnd += ParentForm\_ResizeEnd;}
+\DoxyCodeLine{00345         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_aae6cd2e06b4121d2cd1df77218a3ad3d}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!OnLayout@{OnLayout}}
+\index{OnLayout@{OnLayout}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{OnLayout()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+On\+Layout (\begin{DoxyParamCaption}\item[{Layout\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 360} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00361         \{}
+\DoxyCodeLine{00362             base.OnLayout(e);}
+\DoxyCodeLine{00363 }
+\DoxyCodeLine{00364             \textcolor{keywordflow}{if} (\_splitter != \textcolor{keyword}{null})}
+\DoxyCodeLine{00365                 \_splitter.UpdateBounds();}
+\DoxyCodeLine{00366         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_aa0e30203d09ad6b46c926a253e63501b}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 380} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00381         \{}
+\DoxyCodeLine{00382             var g = e.Graphics;}
+\DoxyCodeLine{00383 }
+\DoxyCodeLine{00384             \textcolor{keywordflow}{if} (!Visible)}
+\DoxyCodeLine{00385                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00386 }
+\DoxyCodeLine{00387             \textcolor{comment}{// Fill body}}
+\DoxyCodeLine{00388             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00389             \{}
+\DoxyCodeLine{00390                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00391             \}}
+\DoxyCodeLine{00392 }
+\DoxyCodeLine{00393             \textcolor{comment}{// Draw border}}
+\DoxyCodeLine{00394             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.VitNXBorder))}
+\DoxyCodeLine{00395             \{}
+\DoxyCodeLine{00396                 \textcolor{comment}{// Top border}}
+\DoxyCodeLine{00397                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Document)}
+\DoxyCodeLine{00398                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);}
+\DoxyCodeLine{00399 }
+\DoxyCodeLine{00400                 \textcolor{comment}{// Left border}}
+\DoxyCodeLine{00401                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Right)}
+\DoxyCodeLine{00402                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Left, ClientRectangle.Height);}
+\DoxyCodeLine{00403 }
+\DoxyCodeLine{00404                 \textcolor{comment}{// Right border}}
+\DoxyCodeLine{00405                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Left)}
+\DoxyCodeLine{00406                     g.DrawLine(p, ClientRectangle.Right -\/ 1, 0, ClientRectangle.Right -\/ 1, ClientRectangle.Height);}
+\DoxyCodeLine{00407             \}}
+\DoxyCodeLine{00408         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_a6cb940553043c237b1b5986cec518fe6}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{OnResize()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+On\+Resize (\begin{DoxyParamCaption}\item[{Event\+Args}]{eventargs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 347} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00348         \{}
+\DoxyCodeLine{00349             base.OnResize(eventargs);}
+\DoxyCodeLine{00350 }
+\DoxyCodeLine{00351             SizeGroups();}
+\DoxyCodeLine{00352         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_a36c2b41881be9ce866d2f022ff7264bf}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!Redraw@{Redraw}}
+\index{Redraw@{Redraw}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{Redraw()}
+{\footnotesize\ttfamily void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Redraw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 372} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00373         \{}
+\DoxyCodeLine{00374             Invalidate();}
+\DoxyCodeLine{00375 }
+\DoxyCodeLine{00376             \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00377                 group.Redraw();}
+\DoxyCodeLine{00378         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00640_afd87f33f01fa3671448e47ff6a410a7a}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!ActiveDocument@{ActiveDocument}}
+\index{ActiveDocument@{ActiveDocument}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{ActiveDocument}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Content} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Active\+Document\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             \textcolor{keyword}{get}}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 \textcolor{keywordflow}{if} (DockArea != VitNX\_DockArea.Document || \_groups.Count == 0)}
+\DoxyCodeLine{00034                     \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036                 \textcolor{keywordflow}{return} \_groups[0].VisibleContent;}
+\DoxyCodeLine{00037             \}}
+\DoxyCodeLine{00038         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_a518546bdcd00eac3864681e36ac00688}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!DockArea@{DockArea}}
+\index{DockArea@{DockArea}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{DockArea}
+{\footnotesize\ttfamily Vit\+NX\+\_\+\+Dock\+Area Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Dock\+Area\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_a8ba0cdb82dc9530ac7f1a3d5156794b1}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!DockPanel@{DockPanel}}
+\index{DockPanel@{DockPanel}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{DockPanel}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Panel} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Dock\+Panel\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00640_a90c6a051ad7c6ba0e93f2f062a0bcd07}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}!Groups@{Groups}}
+\index{Groups@{Groups}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockRegion}}
+\doxysubsubsection{Groups}
+{\footnotesize\ttfamily List$<$\textbf{ Vit\+NX\+\_\+\+Dock\+Group}$>$ Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Region.\+Groups\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 40} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Region.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041         \{}
+\DoxyCodeLine{00042             \textcolor{keyword}{get}}
+\DoxyCodeLine{00043             \{}
+\DoxyCodeLine{00044                 \textcolor{keywordflow}{return} \_groups.ToList();}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046         \}}
+
+\end{DoxyCode}

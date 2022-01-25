@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using VitNX.Renderers;
+using VitNX.UI.BasedOnDarkUI.Renderers;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_MenuStrip : MenuStrip
     {

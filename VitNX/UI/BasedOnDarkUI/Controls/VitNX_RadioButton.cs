@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_RadioButton : RadioButton
     {
@@ -246,7 +246,7 @@ namespace VitNX.Controls
             var g = e.Graphics;
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
-            var size = Consts.RadioButtonSize;
+            var size = Constsants.RadioButtonSize;
 
             var textColor = Colors.LightText;
             var borderColor = Colors.LightText;

@@ -1,0 +1,160 @@
+\doxysection{My\+Panel.\+cs}
+\label{a00275_source}\index{E:/Github/VitNX/VitNX/UI/ControlsV2/MyPanel.cs@{E:/Github/VitNX/VitNX/UI/ControlsV2/MyPanel.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Drawing.Drawing2D;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }VitNX.UI.ControlsV2}
+\DoxyCodeLine{00008 \{}
+\DoxyCodeLine{00009     \textcolor{keyword}{public} \textcolor{keyword}{class }MyPanel : Panel}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011         \textcolor{keyword}{private} \textcolor{keywordtype}{int} borderSize = 0;}
+\DoxyCodeLine{00012         \textcolor{keyword}{private} \textcolor{keywordtype}{int} borderRadius = 0;}
+\DoxyCodeLine{00013         \textcolor{keyword}{private} Color borderColor = Color.PaleVioletRed;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         [Category(\textcolor{stringliteral}{"{}Внешний вид"{}})]}
+\DoxyCodeLine{00016         \textcolor{keyword}{public} \textcolor{keywordtype}{int} BorderSize}
+\DoxyCodeLine{00017         \{}
+\DoxyCodeLine{00018             \textcolor{keyword}{get}}
+\DoxyCodeLine{00019             \{}
+\DoxyCodeLine{00020                 \textcolor{keywordflow}{return} borderSize;}
+\DoxyCodeLine{00021             \}}
+\DoxyCodeLine{00022             \textcolor{keyword}{set}}
+\DoxyCodeLine{00023             \{}
+\DoxyCodeLine{00024                 borderSize = value;}
+\DoxyCodeLine{00025                 Invalidate();}
+\DoxyCodeLine{00026             \}}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         [Category(\textcolor{stringliteral}{"{}Внешний вид"{}})]}
+\DoxyCodeLine{00030         \textcolor{keyword}{public} \textcolor{keywordtype}{int} BorderRadius}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             \textcolor{keyword}{get}}
+\DoxyCodeLine{00033             \{}
+\DoxyCodeLine{00034                 \textcolor{keywordflow}{return} borderRadius;}
+\DoxyCodeLine{00035             \}}
+\DoxyCodeLine{00036             \textcolor{keyword}{set}}
+\DoxyCodeLine{00037             \{}
+\DoxyCodeLine{00038                 borderRadius = value;}
+\DoxyCodeLine{00039                 Invalidate();}
+\DoxyCodeLine{00040             \}}
+\DoxyCodeLine{00041         \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         [Category(\textcolor{stringliteral}{"{}Внешний вид"{}})]}
+\DoxyCodeLine{00044         \textcolor{keyword}{public} Color BorderColor}
+\DoxyCodeLine{00045         \{}
+\DoxyCodeLine{00046             \textcolor{keyword}{get}}
+\DoxyCodeLine{00047             \{}
+\DoxyCodeLine{00048                 \textcolor{keywordflow}{return} borderColor;}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050             \textcolor{keyword}{set}}
+\DoxyCodeLine{00051             \{}
+\DoxyCodeLine{00052                 borderColor = value;}
+\DoxyCodeLine{00053                 Invalidate();}
+\DoxyCodeLine{00054             \}}
+\DoxyCodeLine{00055         \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         [Category(\textcolor{stringliteral}{"{}Внешний вид"{}})]}
+\DoxyCodeLine{00058         \textcolor{keyword}{public} Color BackgroundColor}
+\DoxyCodeLine{00059         \{}
+\DoxyCodeLine{00060             \textcolor{keyword}{get}}
+\DoxyCodeLine{00061             \{}
+\DoxyCodeLine{00062                 \textcolor{keywordflow}{return} BackColor;}
+\DoxyCodeLine{00063             \}}
+\DoxyCodeLine{00064             \textcolor{keyword}{set}}
+\DoxyCodeLine{00065             \{}
+\DoxyCodeLine{00066                 BackColor = value;}
+\DoxyCodeLine{00067             \}}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         [Category(\textcolor{stringliteral}{"{}Внешний вид"{}})]}
+\DoxyCodeLine{00071         \textcolor{keyword}{public} Color TextColor}
+\DoxyCodeLine{00072         \{}
+\DoxyCodeLine{00073             \textcolor{keyword}{get}}
+\DoxyCodeLine{00074             \{}
+\DoxyCodeLine{00075                 \textcolor{keywordflow}{return} ForeColor;}
+\DoxyCodeLine{00076             \}}
+\DoxyCodeLine{00077             \textcolor{keyword}{set}}
+\DoxyCodeLine{00078             \{}
+\DoxyCodeLine{00079                 ForeColor = value;}
+\DoxyCodeLine{00080             \}}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         \textcolor{keyword}{public} MyPanel()}
+\DoxyCodeLine{00084         \{}
+\DoxyCodeLine{00085             Size = \textcolor{keyword}{new} Size(150, 40);}
+\DoxyCodeLine{00086             BackColor = Color.MediumSlateBlue;}
+\DoxyCodeLine{00087             ForeColor = Color.White;}
+\DoxyCodeLine{00088             Resize += \textcolor{keyword}{new} EventHandler(Button\_Resize);}
+\DoxyCodeLine{00089         \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         \textcolor{keyword}{private} GraphicsPath GetFigurePath(Rectangle rect, \textcolor{keywordtype}{int} radius)}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             GraphicsPath path = \textcolor{keyword}{new} GraphicsPath();}
+\DoxyCodeLine{00094             \textcolor{keywordtype}{float} curveSize = radius * 2F; path.StartFigure();}
+\DoxyCodeLine{00095             path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);}
+\DoxyCodeLine{00096             path.AddArc(rect.Right -\/ curveSize, rect.Y, curveSize, curveSize, 270, 90);}
+\DoxyCodeLine{00097             path.AddArc(rect.Right -\/ curveSize, rect.Bottom -\/ curveSize, curveSize, curveSize, 0, 90);}
+\DoxyCodeLine{00098             path.AddArc(rect.X, rect.Bottom -\/ curveSize, curveSize, curveSize, 90, 90);}
+\DoxyCodeLine{00099             path.CloseFigure();}
+\DoxyCodeLine{00100             \textcolor{keywordflow}{return} path;}
+\DoxyCodeLine{00101         \}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs pevent)}
+\DoxyCodeLine{00104         \{}
+\DoxyCodeLine{00105             base.OnPaint(pevent);}
+\DoxyCodeLine{00106             Rectangle rectSurface = ClientRectangle;}
+\DoxyCodeLine{00107             Rectangle rectBorder = Rectangle.Inflate(rectSurface, -\/borderSize, -\/borderSize);}
+\DoxyCodeLine{00108             \textcolor{keywordtype}{int} smoothSize = 2;}
+\DoxyCodeLine{00109             \textcolor{keywordflow}{if} (borderSize > 0) smoothSize = borderSize;}
+\DoxyCodeLine{00110             \textcolor{keywordflow}{if} (borderRadius > 2)}
+\DoxyCodeLine{00111             \{}
+\DoxyCodeLine{00112                 \textcolor{keyword}{using} (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))}
+\DoxyCodeLine{00113                 \textcolor{keyword}{using} (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius -\/ borderSize))}
+\DoxyCodeLine{00114                 \textcolor{keyword}{using} (Pen penSurface = \textcolor{keyword}{new} Pen(Parent.BackColor, smoothSize))}
+\DoxyCodeLine{00115                 \textcolor{keyword}{using} (Pen penBorder = \textcolor{keyword}{new} Pen(borderColor, borderSize))}
+\DoxyCodeLine{00116                 \{}
+\DoxyCodeLine{00117                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;}
+\DoxyCodeLine{00118                     Region = \textcolor{keyword}{new} Region(pathSurface);}
+\DoxyCodeLine{00119                     pevent.Graphics.DrawPath(penSurface, pathSurface);}
+\DoxyCodeLine{00120                     \textcolor{keywordflow}{if} (borderSize >= 1) pevent.Graphics.DrawPath(penBorder, pathBorder);}
+\DoxyCodeLine{00121                 \}}
+\DoxyCodeLine{00122             \}}
+\DoxyCodeLine{00123             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00124             \{}
+\DoxyCodeLine{00125                 pevent.Graphics.SmoothingMode = SmoothingMode.None;}
+\DoxyCodeLine{00126                 Region = \textcolor{keyword}{new} Region(rectSurface);}
+\DoxyCodeLine{00127                 \textcolor{keywordflow}{if} (borderSize >= 1)}
+\DoxyCodeLine{00128                 \{}
+\DoxyCodeLine{00129                     \textcolor{keyword}{using} (Pen penBorder = \textcolor{keyword}{new} Pen(borderColor, borderSize))}
+\DoxyCodeLine{00130                     \{}
+\DoxyCodeLine{00131                         penBorder.Alignment = PenAlignment.Inset;}
+\DoxyCodeLine{00132                         pevent.Graphics.DrawRectangle(penBorder, 0, 0, Width -\/ 1, Height -\/ 1);}
+\DoxyCodeLine{00133                     \}}
+\DoxyCodeLine{00134                 \}}
+\DoxyCodeLine{00135             \}}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnHandleCreated(EventArgs e)}
+\DoxyCodeLine{00139         \{}
+\DoxyCodeLine{00140             base.OnHandleCreated(e);}
+\DoxyCodeLine{00141             Parent.BackColorChanged += \textcolor{keyword}{new} EventHandler(Container\_BackColorChanged);}
+\DoxyCodeLine{00142         \}}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Container\_BackColorChanged(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00145         \{}
+\DoxyCodeLine{00146             Invalidate();}
+\DoxyCodeLine{00147         \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Button\_Resize(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00150         \{}
+\DoxyCodeLine{00151             \textcolor{keywordflow}{if} (borderRadius > Height) borderRadius = Height;}
+\DoxyCodeLine{00152         \}}
+\DoxyCodeLine{00153     \}}
+\DoxyCodeLine{00154 \}}
+
+\end{DoxyCode}

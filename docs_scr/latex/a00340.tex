@@ -1,0 +1,74 @@
+\doxysection{Vit\+NX.\+Functions.\+Windows.\+Information.\+CPU Class Reference}
+\label{a00340}\index{VitNX.Functions.Windows.Information.CPU@{VitNX.Functions.Windows.Information.CPU}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Get\+Architecture} ()
+\item 
+static string \textbf{ Get\+Clock\+Speed} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 93} of file \textbf{ Computer.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00340_a901b5f0345f8b187679404f4df12c5b0}} 
+\index{VitNX.Functions.Windows.Information.CPU@{VitNX.Functions.Windows.Information.CPU}!GetArchitecture@{GetArchitecture}}
+\index{GetArchitecture@{GetArchitecture}!VitNX.Functions.Windows.Information.CPU@{VitNX.Functions.Windows.Information.CPU}}
+\doxysubsubsection{GetArchitecture()}
+{\footnotesize\ttfamily static string Vit\+NX.\+Functions.\+Windows.\+Information.\+CPU.\+Get\+Architecture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 95} of file \textbf{ Computer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096         \{}
+\DoxyCodeLine{00097             \textcolor{keywordtype}{string} result = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00098             \textcolor{keywordflow}{switch} (typeof(\textcolor{keywordtype}{string}).Assembly.GetName().ProcessorArchitecture)}
+\DoxyCodeLine{00099             \{}
+\DoxyCodeLine{00100                 \textcolor{keywordflow}{case} ProcessorArchitecture.X86:}
+\DoxyCodeLine{00101                     result = \textcolor{stringliteral}{"{}x86"{}};}
+\DoxyCodeLine{00102                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104                 \textcolor{keywordflow}{case} ProcessorArchitecture.Amd64:}
+\DoxyCodeLine{00105                     result = \textcolor{stringliteral}{"{}x64"{}};}
+\DoxyCodeLine{00106                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108                 \textcolor{keywordflow}{case} ProcessorArchitecture.Arm:}
+\DoxyCodeLine{00109                     result = \textcolor{stringliteral}{"{}ARM"{}};}
+\DoxyCodeLine{00110                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00111             \}}
+\DoxyCodeLine{00112             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00113         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00340_a644217a292740e64d65fc039d4a21bb7}} 
+\index{VitNX.Functions.Windows.Information.CPU@{VitNX.Functions.Windows.Information.CPU}!GetClockSpeed@{GetClockSpeed}}
+\index{GetClockSpeed@{GetClockSpeed}!VitNX.Functions.Windows.Information.CPU@{VitNX.Functions.Windows.Information.CPU}}
+\doxysubsubsection{GetClockSpeed()}
+{\footnotesize\ttfamily static string Vit\+NX.\+Functions.\+Windows.\+Information.\+CPU.\+Get\+Clock\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Computer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116         \{}
+\DoxyCodeLine{00117             \textcolor{keywordtype}{string} clockSpeed = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00118             \textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} \textcolor{keyword}{new} System.Management.ManagementObjectSearcher(\textcolor{stringliteral}{"{}select MaxClockSpeed from Win32\_Processor"{}}).Get())}
+\DoxyCodeLine{00119             \{}
+\DoxyCodeLine{00120                 var clockSpeedx = (uint)item[\textcolor{stringliteral}{"{}MaxClockSpeed"{}}];}
+\DoxyCodeLine{00121                 clockSpeed = clockSpeedx.ToString();}
+\DoxyCodeLine{00122             \}}
+\DoxyCodeLine{00123             \textcolor{keywordflow}{return} clockSpeed;}
+\DoxyCodeLine{00124         \}}
+
+\end{DoxyCode}
