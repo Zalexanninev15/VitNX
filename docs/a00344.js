@@ -1,7 +1,7 @@
 var a00344 =
 [
-    [ "GetAllUsers", "a00344.html#acfa3b25cf077cb14cf3d18c3a0376149", null ],
     [ "GetScreen", "a00344.html#af639d5b2963f93e55ab0bc9e41f386f6", null ],
+    [ "WriteAllUsersToTempFile", "a00344.html#aea84f5b2079fbab026b6ba621113e2bf", null ],
     [ "_computerName", "a00344.html#a6c5244c5eb651493e28bc6499bd52d05", null ],
     [ "_currentUsername", "a00344.html#a75f0c9f212fcff664c73c80a433bb30a", null ],
     [ "_is64bit", "a00344.html#a053129a3ef1a36a1bebad475abda1c29", null ],

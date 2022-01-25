@@ -121,7 +121,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00089">89</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00082">82</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad17ace5fe58792562f6ff4085e49326a" name="ad17ace5fe58792562f6ff4085e49326a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad17ace5fe58792562f6ff4085e49326a">&#9670;&nbsp;</a></span>GetArchitecture()</h2>
@@ -146,25 +146,25 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00138">138</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>        {</div>
-<div class="line"><span class="lineno">  140</span>            <span class="keywordtype">string</span> result = <span class="keywordtype">string</span>.Empty;</div>
-<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">switch</span> (typeof(<span class="keywordtype">string</span>).Assembly.GetName().ProcessorArchitecture)</div>
-<div class="line"><span class="lineno">  142</span>            {</div>
-<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">case</span> ProcessorArchitecture.X86:</div>
-<div class="line"><span class="lineno">  144</span>                    result = <span class="stringliteral">&quot;x86&quot;</span>;</div>
-<div class="line"><span class="lineno">  145</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>                <span class="keywordflow">case</span> ProcessorArchitecture.Amd64:</div>
-<div class="line"><span class="lineno">  148</span>                    result = <span class="stringliteral">&quot;x64&quot;</span>;</div>
-<div class="line"><span class="lineno">  149</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">case</span> ProcessorArchitecture.Arm:</div>
-<div class="line"><span class="lineno">  152</span>                    result = <span class="stringliteral">&quot;ARM&quot;</span>;</div>
-<div class="line"><span class="lineno">  153</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  154</span>            }</div>
-<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00131">131</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>        {</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordtype">string</span> result = <span class="keywordtype">string</span>.Empty;</div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">switch</span> (typeof(<span class="keywordtype">string</span>).Assembly.GetName().ProcessorArchitecture)</div>
+<div class="line"><span class="lineno">  135</span>            {</div>
+<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">case</span> ProcessorArchitecture.X86:</div>
+<div class="line"><span class="lineno">  137</span>                    result = <span class="stringliteral">&quot;x86&quot;</span>;</div>
+<div class="line"><span class="lineno">  138</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>                <span class="keywordflow">case</span> ProcessorArchitecture.Amd64:</div>
+<div class="line"><span class="lineno">  141</span>                    result = <span class="stringliteral">&quot;x64&quot;</span>;</div>
+<div class="line"><span class="lineno">  142</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>                <span class="keywordflow">case</span> ProcessorArchitecture.Arm:</div>
+<div class="line"><span class="lineno">  145</span>                    result = <span class="stringliteral">&quot;ARM&quot;</span>;</div>
+<div class="line"><span class="lineno">  146</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  147</span>            }</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  149</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,16 +191,16 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00158">158</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>        {</div>
-<div class="line"><span class="lineno">  160</span>            <span class="keywordtype">string</span> clockSpeed = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  161</span>            <span class="keywordflow">foreach</span> (var item <span class="keywordflow">in</span> <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;select MaxClockSpeed from Win32_Processor&quot;</span>).Get())</div>
-<div class="line"><span class="lineno">  162</span>            {</div>
-<div class="line"><span class="lineno">  163</span>                var clockSpeedx = (uint)item[<span class="stringliteral">&quot;MaxClockSpeed&quot;</span>];</div>
-<div class="line"><span class="lineno">  164</span>                clockSpeed = clockSpeedx.ToString();</div>
-<div class="line"><span class="lineno">  165</span>            }</div>
-<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">return</span> clockSpeed;</div>
-<div class="line"><span class="lineno">  167</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00151">151</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>        {</div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordtype">string</span> clockSpeed = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">foreach</span> (var item <span class="keywordflow">in</span> <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;select MaxClockSpeed from Win32_Processor&quot;</span>).Get())</div>
+<div class="line"><span class="lineno">  155</span>            {</div>
+<div class="line"><span class="lineno">  156</span>                var clockSpeedx = (uint)item[<span class="stringliteral">&quot;MaxClockSpeed&quot;</span>];</div>
+<div class="line"><span class="lineno">  157</span>                clockSpeed = clockSpeedx.ToString();</div>
+<div class="line"><span class="lineno">  158</span>            }</div>
+<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">return</span> clockSpeed;</div>
+<div class="line"><span class="lineno">  160</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,51 +227,51 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00111">111</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>        {</div>
-<div class="line"><span class="lineno">  113</span>            ManagementObjectSearcher myProcessorObject = <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;select * from Win32_Processor&quot;</span>);</div>
-<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">foreach</span> (ManagementObject obj <span class="keywordflow">in</span> myProcessorObject.Get())</div>
-<div class="line"><span class="lineno">  115</span>            {</div>
-<div class="line"><span class="lineno">  116</span>                <a class="code hl_variable" href="a00348.html#a8ccf841cb59e451791bcb2e1ac4f1edc">name</a> = obj[<span class="stringliteral">&quot;Name&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  117</span>                <a class="code hl_variable" href="a00348.html#a7aa2ecb49da3b30dbfc5245230dbbac3">deviceID</a> = obj[<span class="stringliteral">&quot;DeviceID&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  118</span>                <a class="code hl_variable" href="a00348.html#aedcdc6adde44e6000bbe06947da5be82">manufacturer</a> = obj[<span class="stringliteral">&quot;Manufacturer&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  119</span>                <a class="code hl_variable" href="a00348.html#a975cf45661a14039dc7a65b6a9587c55">currentClockSpeed</a> = obj[<span class="stringliteral">&quot;CurrentClockSpeed&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  120</span>                <a class="code hl_variable" href="a00348.html#a967ba02736084ae0747f1644c581b29a">maxClockSpeed</a> = obj[<span class="stringliteral">&quot;MaxClockSpeed&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  121</span>                <a class="code hl_variable" href="a00348.html#adc61d6f197c29d1ca146756a0962fafe">caption</a> = obj[<span class="stringliteral">&quot;Caption&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  122</span>                <a class="code hl_variable" href="a00348.html#abce71720a219547378b6c5b1fc73fd3f">numberOfCores</a> = obj[<span class="stringliteral">&quot;NumberOfCores&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  123</span>                <a class="code hl_variable" href="a00348.html#ad0f6671e9ee7b94cba4c70c5424f4680">numberOfEnabledCore</a> = obj[<span class="stringliteral">&quot;NumberOfEnabledCore&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  124</span>                <a class="code hl_variable" href="a00348.html#a304002f4dfe4ef9be973708a9452a22d">numberOfLogicalProcessors</a> = obj[<span class="stringliteral">&quot;NumberOfLogicalProcessors&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  125</span>                <a class="code hl_variable" href="a00348.html#a34dac952df5564afa4c837b9859bf6c2">architecture</a> = obj[<span class="stringliteral">&quot;Architecture&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  126</span>                <a class="code hl_variable" href="a00348.html#a960fb303976b8d01bbe825563adcdd15">family</a> = obj[<span class="stringliteral">&quot;Family&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  127</span>                <a class="code hl_variable" href="a00348.html#ac7eefa51206f17cdcf775fce06022d52">processorType</a> = obj[<span class="stringliteral">&quot;ProcessorType&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  128</span>                <a class="code hl_variable" href="a00348.html#a4fbecc3fa293dd5188b9429c575129a0">characteristics</a> = obj[<span class="stringliteral">&quot;Characteristics&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  129</span>                <a class="code hl_variable" href="a00348.html#a191853f84b9851f54d85e075b9acd961">addressWidth</a> = obj[<span class="stringliteral">&quot;AddressWidth&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  130</span>                <a class="code hl_variable" href="a00348.html#a22248d5005f91728b723f7deb2eb17b2">serialNumber</a> = obj[<span class="stringliteral">&quot;SerialNumber&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  131</span>                <a class="code hl_variable" href="a00348.html#a488acd3b9a9b84b5d59a98eb3f5be184">threadCount</a> = obj[<span class="stringliteral">&quot;ThreadCount&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  132</span>                <a class="code hl_variable" href="a00348.html#a1ea9b6029f96a9109ec924e7677fd78e">loadPercentage</a> = obj[<span class="stringliteral">&quot;LoadPercentage&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  133</span>                <a class="code hl_variable" href="a00348.html#ab1c2c44968e4fcd609ea3a91a1cd37d5">currentVoltage</a> = obj[<span class="stringliteral">&quot;CurrentVoltage&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  134</span>            }</div>
-<div class="line"><span class="lineno">  135</span>            <a class="code hl_variable" href="a00348.html#a5e4e81be48538f0296c9f00bfd928e7e">usagePercent</a> = Convert.ToInt32(<span class="keyword">new</span> PerformanceCounter(<span class="stringliteral">&quot;Processor&quot;</span>, <span class="stringliteral">&quot;% Processor Time&quot;</span>, <span class="stringliteral">&quot;_Total&quot;</span>).NextValue());</div>
-<div class="line"><span class="lineno">  136</span>        }</div>
-<div class="ttc" id="aa00348_html_a191853f84b9851f54d85e075b9acd961"><div class="ttname"><a href="a00348.html#a191853f84b9851f54d85e075b9acd961">VitNX.Functions.Common.Information.Cpu.addressWidth</a></div><div class="ttdeci">static string addressWidth</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00104">Information.cs:104</a></div></div>
-<div class="ttc" id="aa00348_html_a1ea9b6029f96a9109ec924e7677fd78e"><div class="ttname"><a href="a00348.html#a1ea9b6029f96a9109ec924e7677fd78e">VitNX.Functions.Common.Information.Cpu.loadPercentage</a></div><div class="ttdeci">static string loadPercentage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00107">Information.cs:107</a></div></div>
-<div class="ttc" id="aa00348_html_a22248d5005f91728b723f7deb2eb17b2"><div class="ttname"><a href="a00348.html#a22248d5005f91728b723f7deb2eb17b2">VitNX.Functions.Common.Information.Cpu.serialNumber</a></div><div class="ttdeci">static string serialNumber</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00105">Information.cs:105</a></div></div>
-<div class="ttc" id="aa00348_html_a304002f4dfe4ef9be973708a9452a22d"><div class="ttname"><a href="a00348.html#a304002f4dfe4ef9be973708a9452a22d">VitNX.Functions.Common.Information.Cpu.numberOfLogicalProcessors</a></div><div class="ttdeci">static string numberOfLogicalProcessors</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00099">Information.cs:99</a></div></div>
-<div class="ttc" id="aa00348_html_a34dac952df5564afa4c837b9859bf6c2"><div class="ttname"><a href="a00348.html#a34dac952df5564afa4c837b9859bf6c2">VitNX.Functions.Common.Information.Cpu.architecture</a></div><div class="ttdeci">static string architecture</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00100">Information.cs:100</a></div></div>
-<div class="ttc" id="aa00348_html_a488acd3b9a9b84b5d59a98eb3f5be184"><div class="ttname"><a href="a00348.html#a488acd3b9a9b84b5d59a98eb3f5be184">VitNX.Functions.Common.Information.Cpu.threadCount</a></div><div class="ttdeci">static string threadCount</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00106">Information.cs:106</a></div></div>
-<div class="ttc" id="aa00348_html_a4fbecc3fa293dd5188b9429c575129a0"><div class="ttname"><a href="a00348.html#a4fbecc3fa293dd5188b9429c575129a0">VitNX.Functions.Common.Information.Cpu.characteristics</a></div><div class="ttdeci">static string characteristics</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00103">Information.cs:103</a></div></div>
-<div class="ttc" id="aa00348_html_a5e4e81be48538f0296c9f00bfd928e7e"><div class="ttname"><a href="a00348.html#a5e4e81be48538f0296c9f00bfd928e7e">VitNX.Functions.Common.Information.Cpu.usagePercent</a></div><div class="ttdeci">static int usagePercent</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00109">Information.cs:109</a></div></div>
-<div class="ttc" id="aa00348_html_a7aa2ecb49da3b30dbfc5245230dbbac3"><div class="ttname"><a href="a00348.html#a7aa2ecb49da3b30dbfc5245230dbbac3">VitNX.Functions.Common.Information.Cpu.deviceID</a></div><div class="ttdeci">static string deviceID</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00092">Information.cs:92</a></div></div>
-<div class="ttc" id="aa00348_html_a8ccf841cb59e451791bcb2e1ac4f1edc"><div class="ttname"><a href="a00348.html#a8ccf841cb59e451791bcb2e1ac4f1edc">VitNX.Functions.Common.Information.Cpu.name</a></div><div class="ttdeci">static string name</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00091">Information.cs:91</a></div></div>
-<div class="ttc" id="aa00348_html_a960fb303976b8d01bbe825563adcdd15"><div class="ttname"><a href="a00348.html#a960fb303976b8d01bbe825563adcdd15">VitNX.Functions.Common.Information.Cpu.family</a></div><div class="ttdeci">static string family</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00101">Information.cs:101</a></div></div>
-<div class="ttc" id="aa00348_html_a967ba02736084ae0747f1644c581b29a"><div class="ttname"><a href="a00348.html#a967ba02736084ae0747f1644c581b29a">VitNX.Functions.Common.Information.Cpu.maxClockSpeed</a></div><div class="ttdeci">static string maxClockSpeed</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00095">Information.cs:95</a></div></div>
-<div class="ttc" id="aa00348_html_a975cf45661a14039dc7a65b6a9587c55"><div class="ttname"><a href="a00348.html#a975cf45661a14039dc7a65b6a9587c55">VitNX.Functions.Common.Information.Cpu.currentClockSpeed</a></div><div class="ttdeci">static string currentClockSpeed</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00094">Information.cs:94</a></div></div>
-<div class="ttc" id="aa00348_html_ab1c2c44968e4fcd609ea3a91a1cd37d5"><div class="ttname"><a href="a00348.html#ab1c2c44968e4fcd609ea3a91a1cd37d5">VitNX.Functions.Common.Information.Cpu.currentVoltage</a></div><div class="ttdeci">static string currentVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00108">Information.cs:108</a></div></div>
-<div class="ttc" id="aa00348_html_abce71720a219547378b6c5b1fc73fd3f"><div class="ttname"><a href="a00348.html#abce71720a219547378b6c5b1fc73fd3f">VitNX.Functions.Common.Information.Cpu.numberOfCores</a></div><div class="ttdeci">static string numberOfCores</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00097">Information.cs:97</a></div></div>
-<div class="ttc" id="aa00348_html_ac7eefa51206f17cdcf775fce06022d52"><div class="ttname"><a href="a00348.html#ac7eefa51206f17cdcf775fce06022d52">VitNX.Functions.Common.Information.Cpu.processorType</a></div><div class="ttdeci">static string processorType</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00102">Information.cs:102</a></div></div>
-<div class="ttc" id="aa00348_html_ad0f6671e9ee7b94cba4c70c5424f4680"><div class="ttname"><a href="a00348.html#ad0f6671e9ee7b94cba4c70c5424f4680">VitNX.Functions.Common.Information.Cpu.numberOfEnabledCore</a></div><div class="ttdeci">static string numberOfEnabledCore</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00098">Information.cs:98</a></div></div>
-<div class="ttc" id="aa00348_html_adc61d6f197c29d1ca146756a0962fafe"><div class="ttname"><a href="a00348.html#adc61d6f197c29d1ca146756a0962fafe">VitNX.Functions.Common.Information.Cpu.caption</a></div><div class="ttdeci">static string caption</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00096">Information.cs:96</a></div></div>
-<div class="ttc" id="aa00348_html_aedcdc6adde44e6000bbe06947da5be82"><div class="ttname"><a href="a00348.html#aedcdc6adde44e6000bbe06947da5be82">VitNX.Functions.Common.Information.Cpu.manufacturer</a></div><div class="ttdeci">static string manufacturer</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00093">Information.cs:93</a></div></div>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00104">104</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>        {</div>
+<div class="line"><span class="lineno">  106</span>            ManagementObjectSearcher myProcessorObject = <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;select * from Win32_Processor&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">foreach</span> (ManagementObject obj <span class="keywordflow">in</span> myProcessorObject.Get())</div>
+<div class="line"><span class="lineno">  108</span>            {</div>
+<div class="line"><span class="lineno">  109</span>                <a class="code hl_variable" href="a00348.html#a8ccf841cb59e451791bcb2e1ac4f1edc">name</a> = obj[<span class="stringliteral">&quot;Name&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  110</span>                <a class="code hl_variable" href="a00348.html#a7aa2ecb49da3b30dbfc5245230dbbac3">deviceID</a> = obj[<span class="stringliteral">&quot;DeviceID&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  111</span>                <a class="code hl_variable" href="a00348.html#aedcdc6adde44e6000bbe06947da5be82">manufacturer</a> = obj[<span class="stringliteral">&quot;Manufacturer&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  112</span>                <a class="code hl_variable" href="a00348.html#a975cf45661a14039dc7a65b6a9587c55">currentClockSpeed</a> = obj[<span class="stringliteral">&quot;CurrentClockSpeed&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  113</span>                <a class="code hl_variable" href="a00348.html#a967ba02736084ae0747f1644c581b29a">maxClockSpeed</a> = obj[<span class="stringliteral">&quot;MaxClockSpeed&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  114</span>                <a class="code hl_variable" href="a00348.html#adc61d6f197c29d1ca146756a0962fafe">caption</a> = obj[<span class="stringliteral">&quot;Caption&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  115</span>                <a class="code hl_variable" href="a00348.html#abce71720a219547378b6c5b1fc73fd3f">numberOfCores</a> = obj[<span class="stringliteral">&quot;NumberOfCores&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  116</span>                <a class="code hl_variable" href="a00348.html#ad0f6671e9ee7b94cba4c70c5424f4680">numberOfEnabledCore</a> = obj[<span class="stringliteral">&quot;NumberOfEnabledCore&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  117</span>                <a class="code hl_variable" href="a00348.html#a304002f4dfe4ef9be973708a9452a22d">numberOfLogicalProcessors</a> = obj[<span class="stringliteral">&quot;NumberOfLogicalProcessors&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  118</span>                <a class="code hl_variable" href="a00348.html#a34dac952df5564afa4c837b9859bf6c2">architecture</a> = obj[<span class="stringliteral">&quot;Architecture&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  119</span>                <a class="code hl_variable" href="a00348.html#a960fb303976b8d01bbe825563adcdd15">family</a> = obj[<span class="stringliteral">&quot;Family&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  120</span>                <a class="code hl_variable" href="a00348.html#ac7eefa51206f17cdcf775fce06022d52">processorType</a> = obj[<span class="stringliteral">&quot;ProcessorType&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  121</span>                <a class="code hl_variable" href="a00348.html#a4fbecc3fa293dd5188b9429c575129a0">characteristics</a> = obj[<span class="stringliteral">&quot;Characteristics&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  122</span>                <a class="code hl_variable" href="a00348.html#a191853f84b9851f54d85e075b9acd961">addressWidth</a> = obj[<span class="stringliteral">&quot;AddressWidth&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  123</span>                <a class="code hl_variable" href="a00348.html#a22248d5005f91728b723f7deb2eb17b2">serialNumber</a> = obj[<span class="stringliteral">&quot;SerialNumber&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  124</span>                <a class="code hl_variable" href="a00348.html#a488acd3b9a9b84b5d59a98eb3f5be184">threadCount</a> = obj[<span class="stringliteral">&quot;ThreadCount&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  125</span>                <a class="code hl_variable" href="a00348.html#a1ea9b6029f96a9109ec924e7677fd78e">loadPercentage</a> = obj[<span class="stringliteral">&quot;LoadPercentage&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  126</span>                <a class="code hl_variable" href="a00348.html#ab1c2c44968e4fcd609ea3a91a1cd37d5">currentVoltage</a> = obj[<span class="stringliteral">&quot;CurrentVoltage&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  127</span>            }</div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_variable" href="a00348.html#a5e4e81be48538f0296c9f00bfd928e7e">usagePercent</a> = Convert.ToInt32(<span class="keyword">new</span> PerformanceCounter(<span class="stringliteral">&quot;Processor&quot;</span>, <span class="stringliteral">&quot;% Processor Time&quot;</span>, <span class="stringliteral">&quot;_Total&quot;</span>).NextValue());</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="ttc" id="aa00348_html_a191853f84b9851f54d85e075b9acd961"><div class="ttname"><a href="a00348.html#a191853f84b9851f54d85e075b9acd961">VitNX.Functions.Common.Information.Cpu.addressWidth</a></div><div class="ttdeci">static string addressWidth</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00097">Information.cs:97</a></div></div>
+<div class="ttc" id="aa00348_html_a1ea9b6029f96a9109ec924e7677fd78e"><div class="ttname"><a href="a00348.html#a1ea9b6029f96a9109ec924e7677fd78e">VitNX.Functions.Common.Information.Cpu.loadPercentage</a></div><div class="ttdeci">static string loadPercentage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00100">Information.cs:100</a></div></div>
+<div class="ttc" id="aa00348_html_a22248d5005f91728b723f7deb2eb17b2"><div class="ttname"><a href="a00348.html#a22248d5005f91728b723f7deb2eb17b2">VitNX.Functions.Common.Information.Cpu.serialNumber</a></div><div class="ttdeci">static string serialNumber</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00098">Information.cs:98</a></div></div>
+<div class="ttc" id="aa00348_html_a304002f4dfe4ef9be973708a9452a22d"><div class="ttname"><a href="a00348.html#a304002f4dfe4ef9be973708a9452a22d">VitNX.Functions.Common.Information.Cpu.numberOfLogicalProcessors</a></div><div class="ttdeci">static string numberOfLogicalProcessors</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00092">Information.cs:92</a></div></div>
+<div class="ttc" id="aa00348_html_a34dac952df5564afa4c837b9859bf6c2"><div class="ttname"><a href="a00348.html#a34dac952df5564afa4c837b9859bf6c2">VitNX.Functions.Common.Information.Cpu.architecture</a></div><div class="ttdeci">static string architecture</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00093">Information.cs:93</a></div></div>
+<div class="ttc" id="aa00348_html_a488acd3b9a9b84b5d59a98eb3f5be184"><div class="ttname"><a href="a00348.html#a488acd3b9a9b84b5d59a98eb3f5be184">VitNX.Functions.Common.Information.Cpu.threadCount</a></div><div class="ttdeci">static string threadCount</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00099">Information.cs:99</a></div></div>
+<div class="ttc" id="aa00348_html_a4fbecc3fa293dd5188b9429c575129a0"><div class="ttname"><a href="a00348.html#a4fbecc3fa293dd5188b9429c575129a0">VitNX.Functions.Common.Information.Cpu.characteristics</a></div><div class="ttdeci">static string characteristics</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00096">Information.cs:96</a></div></div>
+<div class="ttc" id="aa00348_html_a5e4e81be48538f0296c9f00bfd928e7e"><div class="ttname"><a href="a00348.html#a5e4e81be48538f0296c9f00bfd928e7e">VitNX.Functions.Common.Information.Cpu.usagePercent</a></div><div class="ttdeci">static int usagePercent</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00102">Information.cs:102</a></div></div>
+<div class="ttc" id="aa00348_html_a7aa2ecb49da3b30dbfc5245230dbbac3"><div class="ttname"><a href="a00348.html#a7aa2ecb49da3b30dbfc5245230dbbac3">VitNX.Functions.Common.Information.Cpu.deviceID</a></div><div class="ttdeci">static string deviceID</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00085">Information.cs:85</a></div></div>
+<div class="ttc" id="aa00348_html_a8ccf841cb59e451791bcb2e1ac4f1edc"><div class="ttname"><a href="a00348.html#a8ccf841cb59e451791bcb2e1ac4f1edc">VitNX.Functions.Common.Information.Cpu.name</a></div><div class="ttdeci">static string name</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00084">Information.cs:84</a></div></div>
+<div class="ttc" id="aa00348_html_a960fb303976b8d01bbe825563adcdd15"><div class="ttname"><a href="a00348.html#a960fb303976b8d01bbe825563adcdd15">VitNX.Functions.Common.Information.Cpu.family</a></div><div class="ttdeci">static string family</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00094">Information.cs:94</a></div></div>
+<div class="ttc" id="aa00348_html_a967ba02736084ae0747f1644c581b29a"><div class="ttname"><a href="a00348.html#a967ba02736084ae0747f1644c581b29a">VitNX.Functions.Common.Information.Cpu.maxClockSpeed</a></div><div class="ttdeci">static string maxClockSpeed</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00088">Information.cs:88</a></div></div>
+<div class="ttc" id="aa00348_html_a975cf45661a14039dc7a65b6a9587c55"><div class="ttname"><a href="a00348.html#a975cf45661a14039dc7a65b6a9587c55">VitNX.Functions.Common.Information.Cpu.currentClockSpeed</a></div><div class="ttdeci">static string currentClockSpeed</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00087">Information.cs:87</a></div></div>
+<div class="ttc" id="aa00348_html_ab1c2c44968e4fcd609ea3a91a1cd37d5"><div class="ttname"><a href="a00348.html#ab1c2c44968e4fcd609ea3a91a1cd37d5">VitNX.Functions.Common.Information.Cpu.currentVoltage</a></div><div class="ttdeci">static string currentVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00101">Information.cs:101</a></div></div>
+<div class="ttc" id="aa00348_html_abce71720a219547378b6c5b1fc73fd3f"><div class="ttname"><a href="a00348.html#abce71720a219547378b6c5b1fc73fd3f">VitNX.Functions.Common.Information.Cpu.numberOfCores</a></div><div class="ttdeci">static string numberOfCores</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00090">Information.cs:90</a></div></div>
+<div class="ttc" id="aa00348_html_ac7eefa51206f17cdcf775fce06022d52"><div class="ttname"><a href="a00348.html#ac7eefa51206f17cdcf775fce06022d52">VitNX.Functions.Common.Information.Cpu.processorType</a></div><div class="ttdeci">static string processorType</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00095">Information.cs:95</a></div></div>
+<div class="ttc" id="aa00348_html_ad0f6671e9ee7b94cba4c70c5424f4680"><div class="ttname"><a href="a00348.html#ad0f6671e9ee7b94cba4c70c5424f4680">VitNX.Functions.Common.Information.Cpu.numberOfEnabledCore</a></div><div class="ttdeci">static string numberOfEnabledCore</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00091">Information.cs:91</a></div></div>
+<div class="ttc" id="aa00348_html_adc61d6f197c29d1ca146756a0962fafe"><div class="ttname"><a href="a00348.html#adc61d6f197c29d1ca146756a0962fafe">VitNX.Functions.Common.Information.Cpu.caption</a></div><div class="ttdeci">static string caption</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00089">Information.cs:89</a></div></div>
+<div class="ttc" id="aa00348_html_aedcdc6adde44e6000bbe06947da5be82"><div class="ttname"><a href="a00348.html#aedcdc6adde44e6000bbe06947da5be82">VitNX.Functions.Common.Information.Cpu.manufacturer</a></div><div class="ttdeci">static string manufacturer</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00086">Information.cs:86</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,7 +296,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00104">104</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00097">97</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -320,7 +320,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00100">100</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00093">93</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00096">96</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00089">89</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -368,7 +368,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00103">103</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00096">96</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -392,7 +392,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00094">94</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00087">87</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -416,7 +416,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00108">108</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00101">101</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -440,7 +440,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00092">92</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00085">85</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -464,7 +464,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00101">101</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00094">94</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -488,7 +488,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00107">107</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00100">100</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -512,7 +512,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00093">93</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00086">86</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -536,7 +536,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00095">95</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00088">88</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -560,7 +560,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00091">91</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00084">84</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -584,7 +584,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00097">97</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00090">90</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -608,7 +608,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00098">98</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00091">91</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -632,7 +632,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00099">99</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00092">92</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -656,7 +656,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00102">102</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00095">95</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -680,7 +680,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00105">105</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00098">98</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -704,7 +704,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00106">106</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00099">99</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -728,7 +728,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00109">109</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00102">102</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
