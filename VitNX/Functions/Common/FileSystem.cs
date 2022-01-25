@@ -33,12 +33,12 @@ namespace VitNX.Functions.Common
             return size;
         }
 
-        public static void DeleteFile(string targetFile)
+        public static void DeleteFileForever(string targetFile)
         {
             try { File.Delete(targetFile); } catch { }
         }
 
-        public static void DeleteFileInTrash(string targetFile)
+        public static void DeleteFileToTrash(string targetFile)
         {
             try { File.SetAttributes(targetFile, FileAttributes.Normal); } catch { }
             Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,
