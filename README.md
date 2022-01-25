@@ -5,7 +5,7 @@
 [![](https://img.shields.io/badge/OS-Windows-informational?logo=windows)](https://github.com/Zalexanninev15/VitNX)
 [![](https://img.shields.io/badge/written_on-.NET_Framework_4.8-512BD4.svg?logo=dotnet)](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 [![](https://img.shields.io/badge/written_on-CSharp-239120.svg?logo=csharp)](https://github.com/Zalexanninev15/xdpl)
-[![](https://img.shields.io/github/release/Zalexanninev15/VitNX)](https://github.com/Zalexanninev15/VitNX/releases/latest)
+[![](https://img.shields.io/github/v/release/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/releases/latest)
 [![](https://img.shields.io/github/last-commit/Zalexanninev15/VitNX/main.svg)](https://github.com/Zalexanninev15/VitNX/commits/main)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![](https://img.shields.io/badge/donate-Buy_Me_a_Coffee-F94400.svg)](https://zalexanninev15.jimdofree.com/buy-me-a-coffee)
