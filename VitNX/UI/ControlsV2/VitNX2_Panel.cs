@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.UI.ControlsV2
 {
-    public class MyPanel : Panel
+    public class VitNX2_Panel : Panel
     {
         private int borderSize = 0;
         private int borderRadius = 0;
@@ -80,7 +80,7 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        public MyPanel()
+        public VitNX2_Panel()
         {
             Size = new Size(150, 40);
             BackColor = Color.MediumSlateBlue;
