@@ -1,179 +1,56 @@
-\doxysection{Computer.\+cs}
-\label{a00008_source}\index{E:/Github/VitNX/VitNX/Functions/Computer.cs@{E:/Github/VitNX/VitNX/Functions/Computer.cs}}
+\doxysection{Power\+Control.\+cs}
+\label{a00008_source}\index{E:/Github/VitNX/VitNX/Functions/Common/PowerControl.cs@{E:/Github/VitNX/VitNX/Functions/Common/PowerControl.cs}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 \textcolor{keyword}{using} Microsoft.Win32;}
-\DoxyCodeLine{00002 \textcolor{keyword}{using} System;}
-\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
-\DoxyCodeLine{00004 \textcolor{keyword}{using} System.IO;}
-\DoxyCodeLine{00005 \textcolor{keyword}{using} System.Reflection;}
-\DoxyCodeLine{00006 \textcolor{keyword}{using} System.Windows.Forms;}
-\DoxyCodeLine{00007 \textcolor{keyword}{using} VitNX.Functions.Common;}
-\DoxyCodeLine{00008 \textcolor{keyword}{using} VitNX.Functions.Windows.Apps;}
-\DoxyCodeLine{00009 }
-\DoxyCodeLine{00010 \textcolor{keyword}{namespace }VitNX.Functions.Windows.Information}
-\DoxyCodeLine{00011 \{}
-\DoxyCodeLine{00012     \textcolor{keyword}{public} \textcolor{keyword}{class }Windows}
-\DoxyCodeLine{00013     \{}
-\DoxyCodeLine{00014         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} Is64x()}
-\DoxyCodeLine{00015         \{ \textcolor{keywordflow}{return} Environment.Is64BitOperatingSystem; \}}
-\DoxyCodeLine{00016 }
-\DoxyCodeLine{00017         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetVersion()}
-\DoxyCodeLine{00018         \{ \textcolor{keywordflow}{return} Convert.ToString(Environment.OSVersion.Version); \}}
-\DoxyCodeLine{00019 }
-\DoxyCodeLine{00020         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} GetCurrentVersionFromREG()}
-\DoxyCodeLine{00021         \{ \textcolor{keywordflow}{return} \textcolor{keywordtype}{double}.Parse((\textcolor{keywordtype}{string})Registry.GetValue(\textcolor{stringliteral}{@"{}HKEY\_LOCAL\_MACHINE\(\backslash\)SOFTWARE\(\backslash\)Microsoft\(\backslash\)Windows NT\(\backslash\)CurrentVersion"{}}, \textcolor{stringliteral}{"{}CurrentVersion"{}}, \textcolor{stringliteral}{"{}"{}}), System.Globalization.CultureInfo.InvariantCulture); \}}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetEditionIDFromREG()}
-\DoxyCodeLine{00024         \{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{string})Registry.GetValue(\textcolor{stringliteral}{@"{}HKEY\_LOCAL\_MACHINE\(\backslash\)SOFTWARE\(\backslash\)Microsoft\(\backslash\)Windows NT\(\backslash\)CurrentVersion"{}}, \textcolor{stringliteral}{"{}EditionID"{}}, \textcolor{stringliteral}{"{}"{}}); \}}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00026         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetCurrentBuildNumberFromREG()}
-\DoxyCodeLine{00027         \{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{string})Registry.GetValue(\textcolor{stringliteral}{@"{}HKEY\_LOCAL\_MACHINE\(\backslash\)SOFTWARE\(\backslash\)Microsoft\(\backslash\)Windows NT\(\backslash\)CurrentVersion"{}}, \textcolor{stringliteral}{"{}CurrentBuildNumber"{}}, \textcolor{stringliteral}{"{}"{}}); \}}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetProductNameFromREG()}
-\DoxyCodeLine{00030         \{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{string})Registry.GetValue(\textcolor{stringliteral}{@"{}HKEY\_LOCAL\_MACHINE\(\backslash\)SOFTWARE\(\backslash\)Microsoft\(\backslash\)Windows NT\(\backslash\)CurrentVersion"{}}, \textcolor{stringliteral}{"{}ProductName"{}}, \textcolor{stringliteral}{"{}"{}}); \}}
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00032         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetDisplayVersionFromREG()}
-\DoxyCodeLine{00033         \{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{string})Registry.GetValue(\textcolor{stringliteral}{@"{}HKEY\_LOCAL\_MACHINE\(\backslash\)SOFTWARE\(\backslash\)Microsoft\(\backslash\)Windows NT\(\backslash\)CurrentVersion"{}}, \textcolor{stringliteral}{"{}DisplayVersion"{}}, \textcolor{stringliteral}{"{}"{}}); \}}
-\DoxyCodeLine{00034 }
-\DoxyCodeLine{00035         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetReleaseIdFromREG()}
-\DoxyCodeLine{00036         \{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{string})Registry.GetValue(\textcolor{stringliteral}{@"{}HKEY\_LOCAL\_MACHINE\(\backslash\)SOFTWARE\(\backslash\)Microsoft\(\backslash\)Windows NT\(\backslash\)CurrentVersion"{}}, \textcolor{stringliteral}{"{}ReleaseId"{}}, \textcolor{stringliteral}{"{}"{}}); \}}
-\DoxyCodeLine{00037 }
-\DoxyCodeLine{00038         \textcolor{keyword}{public} \textcolor{keyword}{static} MemoryStream GetScreen()}
-\DoxyCodeLine{00039         \{}
-\DoxyCodeLine{00040             Bitmap BM = \textcolor{keyword}{new} Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);}
-\DoxyCodeLine{00041             Graphics GH = Graphics.FromImage(BM);}
-\DoxyCodeLine{00042             GH.CopyFromScreen(0, 0, 0, 0, BM.Size);}
-\DoxyCodeLine{00043             MemoryStream memoryStream = \textcolor{keyword}{new} MemoryStream();}
-\DoxyCodeLine{00044             BM.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);}
-\DoxyCodeLine{00045             memoryStream.Position = 0;}
-\DoxyCodeLine{00046             \textcolor{keywordflow}{return} memoryStream;}
-\DoxyCodeLine{00047         \}}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00049         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} GetAllUsers()}
-\DoxyCodeLine{00050         \{}
-\DoxyCodeLine{00051             \textcolor{keywordtype}{string} users = Processes.Execute(\textcolor{stringliteral}{"{}wmic"{}}, \textcolor{stringliteral}{"{}useraccount list full"{}});}
-\DoxyCodeLine{00052             \textcolor{keywordtype}{string} temp\_file = \$\textcolor{stringliteral}{@"{}\{Path.GetTempPath()\}\(\backslash\)Пользователи.txt"{}};}
-\DoxyCodeLine{00053             FileSystem.WriteTextToFileUTF8(users, temp\_file);}
-\DoxyCodeLine{00054             \textcolor{keywordtype}{string}[] lines = File.ReadAllLines(temp\_file);}
-\DoxyCodeLine{00055             \textcolor{keyword}{using} (StreamWriter writer = \textcolor{keyword}{new} StreamWriter(temp\_file))}
-\DoxyCodeLine{00056             \{}
-\DoxyCodeLine{00057                 \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} line \textcolor{keywordflow}{in} lines)}
-\DoxyCodeLine{00058                 \{}
-\DoxyCodeLine{00059                     \textcolor{keywordflow}{if} (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(line))}
-\DoxyCodeLine{00060                         writer.WriteLine(line);}
-\DoxyCodeLine{00061                 \}}
-\DoxyCodeLine{00062             \}}
-\DoxyCodeLine{00063             \textcolor{keywordtype}{string}[] rep = File.ReadAllLines(temp\_file);}
-\DoxyCodeLine{00064             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rep.Length; i++)}
-\DoxyCodeLine{00065             \{}
-\DoxyCodeLine{00066                 \textcolor{keywordflow}{if} (i == 0)}
-\DoxyCodeLine{00067                 \{}
-\DoxyCodeLine{00068                     rep[0] = \textcolor{stringliteral}{"{}Пользователи:\(\backslash\)n\(\backslash\)n"{}} + rep[0];}
-\DoxyCodeLine{00069                 \}}
-\DoxyCodeLine{00070                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}TRUE"{}}, \textcolor{stringliteral}{"{}Да"{}});}
-\DoxyCodeLine{00071                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}FALSE"{}}, \textcolor{stringliteral}{"{}Нет"{}});}
-\DoxyCodeLine{00072                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Description"{}}, \textcolor{stringliteral}{"{}Описание"{}});}
-\DoxyCodeLine{00073                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Domain"{}}, \textcolor{stringliteral}{"{}Домен"{}});}
-\DoxyCodeLine{00074                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}FullName"{}}, \textcolor{stringliteral}{"{}Полное имя"{}});}
-\DoxyCodeLine{00075                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Name"{}}, \textcolor{stringliteral}{"{}Имя"{}});}
-\DoxyCodeLine{00076                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}LocalAccount"{}}, \textcolor{stringliteral}{"{}Локальная запись"{}});}
-\DoxyCodeLine{00077                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Disabled"{}}, \textcolor{stringliteral}{"{}Отключена"{}});}
-\DoxyCodeLine{00078                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Status"{}}, \textcolor{stringliteral}{"{}Статус"{}});}
-\DoxyCodeLine{00079                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Lockout"{}}, \textcolor{stringliteral}{"{}Блокировка"{}});}
-\DoxyCodeLine{00080                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}Degraded"{}}, \textcolor{stringliteral}{"{}Отключён\(\backslash\)n"{}});}
-\DoxyCodeLine{00081                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}InstallDate"{}}, \textcolor{stringliteral}{"{}Дата создания"{}});}
-\DoxyCodeLine{00082                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}AccountType"{}}, \textcolor{stringliteral}{"{}Тип учётной записи"{}});}
-\DoxyCodeLine{00083                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}PasswordChangeable"{}}, \textcolor{stringliteral}{"{}Пароль можно изменить"{}});}
-\DoxyCodeLine{00084                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}PasswordExpires"{}}, \textcolor{stringliteral}{"{}Срок действия пароля истекает"{}});}
-\DoxyCodeLine{00085                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}PasswordRequired"{}}, \textcolor{stringliteral}{"{}Требуется пароль"{}});}
-\DoxyCodeLine{00086                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}512"{}}, \textcolor{stringliteral}{"{}Обычный [512]"{}}).Replace(\textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}Отключённый [2]"{}}).Replace(\textcolor{stringliteral}{"{}256"{}}, \textcolor{stringliteral}{"{}Временная дублирующая учётная запись [256]"{}}).Replace(\textcolor{stringliteral}{"{}128"{}}, \textcolor{stringliteral}{"{}Разрешён зашифрованный пароль [128]"{}});}
-\DoxyCodeLine{00087                 rep[i] = rep[i].Replace(\textcolor{stringliteral}{"{}OK"{}}, \textcolor{stringliteral}{"{}Включён\(\backslash\)n"{}});}
-\DoxyCodeLine{00088             \}}
-\DoxyCodeLine{00089             File.WriteAllLines(temp\_file, rep);}
-\DoxyCodeLine{00090         \}}
-\DoxyCodeLine{00091     \}}
-\DoxyCodeLine{00092 }
-\DoxyCodeLine{00093     \textcolor{keyword}{public} \textcolor{keyword}{class }CPU}
-\DoxyCodeLine{00094     \{}
-\DoxyCodeLine{00095         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetArchitecture()}
-\DoxyCodeLine{00096         \{}
-\DoxyCodeLine{00097             \textcolor{keywordtype}{string} result = \textcolor{keywordtype}{string}.Empty;}
-\DoxyCodeLine{00098             \textcolor{keywordflow}{switch} (typeof(\textcolor{keywordtype}{string}).Assembly.GetName().ProcessorArchitecture)}
-\DoxyCodeLine{00099             \{}
-\DoxyCodeLine{00100                 \textcolor{keywordflow}{case} ProcessorArchitecture.X86:}
-\DoxyCodeLine{00101                     result = \textcolor{stringliteral}{"{}x86"{}};}
-\DoxyCodeLine{00102                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00103 }
-\DoxyCodeLine{00104                 \textcolor{keywordflow}{case} ProcessorArchitecture.Amd64:}
-\DoxyCodeLine{00105                     result = \textcolor{stringliteral}{"{}x64"{}};}
-\DoxyCodeLine{00106                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00107 }
-\DoxyCodeLine{00108                 \textcolor{keywordflow}{case} ProcessorArchitecture.Arm:}
-\DoxyCodeLine{00109                     result = \textcolor{stringliteral}{"{}ARM"{}};}
-\DoxyCodeLine{00110                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00111             \}}
-\DoxyCodeLine{00112             \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{00113         \}}
-\DoxyCodeLine{00114 }
-\DoxyCodeLine{00115         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetClockSpeed()}
-\DoxyCodeLine{00116         \{}
-\DoxyCodeLine{00117             \textcolor{keywordtype}{string} clockSpeed = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00118             \textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} \textcolor{keyword}{new} System.Management.ManagementObjectSearcher(\textcolor{stringliteral}{"{}select MaxClockSpeed from Win32\_Processor"{}}).Get())}
-\DoxyCodeLine{00119             \{}
-\DoxyCodeLine{00120                 var clockSpeedx = (uint)item[\textcolor{stringliteral}{"{}MaxClockSpeed"{}}];}
-\DoxyCodeLine{00121                 clockSpeed = clockSpeedx.ToString();}
-\DoxyCodeLine{00122             \}}
-\DoxyCodeLine{00123             \textcolor{keywordflow}{return} clockSpeed;}
-\DoxyCodeLine{00124         \}}
-\DoxyCodeLine{00125     \}}
-\DoxyCodeLine{00126 }
-\DoxyCodeLine{00127     \textcolor{comment}{//public class GPU}}
-\DoxyCodeLine{00128     \textcolor{comment}{//\{}}
-\DoxyCodeLine{00129     \textcolor{comment}{//\}}}
-\DoxyCodeLine{00130 }
-\DoxyCodeLine{00131     \textcolor{keyword}{public} \textcolor{keyword}{class }Disk}
-\DoxyCodeLine{00132     \{}
-\DoxyCodeLine{00133         \textcolor{keyword}{public} \textcolor{keywordtype}{long} GetTotalFreeSpace(\textcolor{keywordtype}{string} driveName)}
-\DoxyCodeLine{00134         \{}
-\DoxyCodeLine{00135             \textcolor{keywordflow}{foreach} (DriveInfo drive \textcolor{keywordflow}{in} DriveInfo.GetDrives())}
-\DoxyCodeLine{00136             \{}
-\DoxyCodeLine{00137                 \textcolor{keywordflow}{if} (drive.IsReady \&\& drive.Name == driveName)}
-\DoxyCodeLine{00138                     \textcolor{keywordflow}{return} drive.AvailableFreeSpace;}
-\DoxyCodeLine{00139             \}}
-\DoxyCodeLine{00140             \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{00141         \}}
-\DoxyCodeLine{00142 }
-\DoxyCodeLine{00143         \textcolor{keyword}{public} \textcolor{keywordtype}{long} GetTotalSpace(\textcolor{keywordtype}{string} driveName)}
-\DoxyCodeLine{00144         \{}
-\DoxyCodeLine{00145             \textcolor{keywordflow}{foreach} (DriveInfo drive \textcolor{keywordflow}{in} DriveInfo.GetDrives())}
-\DoxyCodeLine{00146             \{}
-\DoxyCodeLine{00147                 \textcolor{keywordflow}{if} (drive.IsReady \&\& drive.Name == driveName)}
-\DoxyCodeLine{00148                     \textcolor{keywordflow}{return} drive.TotalSize;}
-\DoxyCodeLine{00149             \}}
-\DoxyCodeLine{00150             \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{00151         \}}
-\DoxyCodeLine{00152     \}}
-\DoxyCodeLine{00153 }
-\DoxyCodeLine{00154     \textcolor{keyword}{public} \textcolor{keyword}{class }Monitor}
-\DoxyCodeLine{00155     \{}
-\DoxyCodeLine{00156         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetSize()}
-\DoxyCodeLine{00157         \{}
-\DoxyCodeLine{00158             \textcolor{keywordtype}{string} size = \textcolor{keywordtype}{string}.Empty;}
-\DoxyCodeLine{00159             Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);}
-\DoxyCodeLine{00160             IntPtr desktop = graphics.GetHdc();}
-\DoxyCodeLine{00161             \textcolor{keywordtype}{int} monitorHeight = Win32.Import.GetDeviceCaps(desktop, 6);}
-\DoxyCodeLine{00162             \textcolor{keywordtype}{int} monitorWidth = Win32.Import.GetDeviceCaps(desktop, 4);}
-\DoxyCodeLine{00163             size = \$\textcolor{stringliteral}{"{}\{Math.Sqrt(Math.Pow(monitorHeight, 2) + Math.Pow(monitorWidth, 2)) / 25,4:\#,\#\#0.00\}"{}};}
-\DoxyCodeLine{00164             \textcolor{keywordflow}{return} size;}
-\DoxyCodeLine{00165         \}}
-\DoxyCodeLine{00166     \}}
-\DoxyCodeLine{00167 }
-\DoxyCodeLine{00168     \textcolor{keyword}{public} \textcolor{keyword}{class }Motherboard}
-\DoxyCodeLine{00169     \{}
-\DoxyCodeLine{00170         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetFirmwareType()}
-\DoxyCodeLine{00171         \{ \textcolor{keywordflow}{return} Apps.Processes.Execute(\textcolor{stringliteral}{"{}cmd"{}}, \textcolor{stringliteral}{"{}/C echo \%firmware\_type\%"{}}); \}}
-\DoxyCodeLine{00172     \}}
-\DoxyCodeLine{00173 \}}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Diagnostics;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{namespace }VitNX.Functions.Common}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keyword}{public} \textcolor{keyword}{class }Power}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} ComputerPowerControl(Windows.Win32.Enums.SYSTEM\_POWER\_CONTROL method)}
+\DoxyCodeLine{00010         \{}
+\DoxyCodeLine{00011             \textcolor{keywordflow}{switch} (method)}
+\DoxyCodeLine{00012             \{}
+\DoxyCodeLine{00013                 \textcolor{keywordflow}{case} Windows.Win32.Enums.SYSTEM\_POWER\_CONTROL.SYSTEM\_LOGOFF:}
+\DoxyCodeLine{00014                     \{}
+\DoxyCodeLine{00015                         Windows.Win32.Import.ExitWindowsEx(0, 0);}
+\DoxyCodeLine{00016                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00017                     \}}
+\DoxyCodeLine{00018                 \textcolor{keywordflow}{case} Windows.Win32.Enums.SYSTEM\_POWER\_CONTROL.SYSTEM\_SHUTDOWN:}
+\DoxyCodeLine{00019                     \{}
+\DoxyCodeLine{00020                         Process.Start(\textcolor{stringliteral}{"{}shutdown"{}}, \textcolor{stringliteral}{"{}/s /t 0"{}});}
+\DoxyCodeLine{00021                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00022                     \}}
+\DoxyCodeLine{00023                 \textcolor{keywordflow}{case} Windows.Win32.Enums.SYSTEM\_POWER\_CONTROL.SYSTEM\_REBOOT:}
+\DoxyCodeLine{00024                     \{}
+\DoxyCodeLine{00025                         Process.Start(\textcolor{stringliteral}{"{}shutdown"{}}, \textcolor{stringliteral}{"{}/r /t 0"{}});}
+\DoxyCodeLine{00026                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00027                     \}}
+\DoxyCodeLine{00028                 \textcolor{keywordflow}{case} Windows.Win32.Enums.SYSTEM\_POWER\_CONTROL.SYSTEM\_LOCK:}
+\DoxyCodeLine{00029                     \{}
+\DoxyCodeLine{00030                         Windows.Win32.Import.LockWorkStation();}
+\DoxyCodeLine{00031                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00032                     \}}
+\DoxyCodeLine{00033             \}}
+\DoxyCodeLine{00034         \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} MonitorPowerControl(\textcolor{keywordtype}{bool} worked)}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038             Form frm = \textcolor{keyword}{new} Form();}
+\DoxyCodeLine{00039             \textcolor{keywordflow}{if} (worked)}
+\DoxyCodeLine{00040             \{}
+\DoxyCodeLine{00041                 Windows.Win32.Import.mouse\_event(Windows.Win32.Constants.MOUSEEVENTF\_MOVE, 0, 1, 0, UIntPtr.Zero);}
+\DoxyCodeLine{00042                 frm.Close();}
+\DoxyCodeLine{00043             \}}
+\DoxyCodeLine{00044             \textcolor{keywordflow}{else} Windows.Win32.Import.SendMessage(frm.Handle,}
+\DoxyCodeLine{00045                 Windows.Win32.Constants.WM\_SYSCOMMAND,}
+\DoxyCodeLine{00046                 (IntPtr)Windows.Win32.Constants.SC\_MONITORPOWER,}
+\DoxyCodeLine{00047                 (IntPtr)2);}
+\DoxyCodeLine{00048         \}}
+\DoxyCodeLine{00049     \}}
+\DoxyCodeLine{00050 \}}
 
 \end{DoxyCode}

@@ -1,32 +1,210 @@
-\doxysection{Dock\+Drop\+Collection.\+cs}
-\label{a00167_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/DockDropCollection.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/DockDropCollection.cs}}
+\doxysection{Dock\+Drop\+Area.\+cs}
+\label{a00167_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/DockDropArea.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/DockDropArea.cs}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Docking}
-\DoxyCodeLine{00002 \{}
-\DoxyCodeLine{00003     \textcolor{keyword}{internal} \textcolor{keyword}{class }DockDropCollection}
-\DoxyCodeLine{00004     \{}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{        \#region Property Region}}
-\DoxyCodeLine{00006 }
-\DoxyCodeLine{00007         \textcolor{keyword}{internal} DockDropArea DropArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Docking}
+\DoxyCodeLine{00004 \{}
+\DoxyCodeLine{00005     \textcolor{keyword}{internal} \textcolor{keyword}{class }DockDropArea}
+\DoxyCodeLine{00006     \{}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{        \#region Property Region}}
 \DoxyCodeLine{00008 }
-\DoxyCodeLine{00009         \textcolor{keyword}{internal} DockDropArea InsertBeforeArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00009         \textcolor{keyword}{internal} VitNX\_DockPanel DockPanel \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
 \DoxyCodeLine{00010 }
-\DoxyCodeLine{00011         \textcolor{keyword}{internal} DockDropArea InsertAfterArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00011         \textcolor{keyword}{internal} Rectangle DropArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00013         \textcolor{keyword}{internal} Rectangle HighlightArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
 \DoxyCodeLine{00014 }
-\DoxyCodeLine{00015 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00015         \textcolor{keyword}{internal} VitNX\_DockRegion DockRegion \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
 \DoxyCodeLine{00016 }
-\DoxyCodeLine{00017         \textcolor{keyword}{internal} DockDropCollection(VitNX\_DockPanel dockPanel, VitNX\_DockGroup group)}
-\DoxyCodeLine{00018         \{}
-\DoxyCodeLine{00019             DropArea = \textcolor{keyword}{new} DockDropArea(dockPanel, group, DockInsertType.None);}
-\DoxyCodeLine{00020             InsertBeforeArea = \textcolor{keyword}{new} DockDropArea(dockPanel, group, DockInsertType.Before);}
-\DoxyCodeLine{00021             InsertAfterArea = \textcolor{keyword}{new} DockDropArea(dockPanel, group, DockInsertType.After);}
-\DoxyCodeLine{00022         \}}
-\DoxyCodeLine{00023 }
-\DoxyCodeLine{00024 \textcolor{preprocessor}{        \#endregion Constructor Region}}
-\DoxyCodeLine{00025     \}}
-\DoxyCodeLine{00026 \}}
+\DoxyCodeLine{00017         \textcolor{keyword}{internal} VitNX\_DockGroup DockGroup \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019         \textcolor{keyword}{internal} DockInsertType InsertType \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{internal} DockDropArea(VitNX\_DockPanel dockPanel, VitNX\_DockRegion region)}
+\DoxyCodeLine{00026         \{}
+\DoxyCodeLine{00027             DockPanel = dockPanel;}
+\DoxyCodeLine{00028             DockRegion = region;}
+\DoxyCodeLine{00029             InsertType = DockInsertType.None;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031             BuildAreas();}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keyword}{internal} DockDropArea(VitNX\_DockPanel dockPanel, VitNX\_DockGroup group, DockInsertType insertType)}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036             DockPanel = dockPanel;}
+\DoxyCodeLine{00037             DockGroup = group;}
+\DoxyCodeLine{00038             InsertType = insertType;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040             BuildAreas();}
+\DoxyCodeLine{00041         \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \textcolor{keyword}{internal} \textcolor{keywordtype}{void} BuildAreas()}
+\DoxyCodeLine{00048         \{}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (DockRegion != \textcolor{keyword}{null})}
+\DoxyCodeLine{00050                 BuildRegionAreas();}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (DockGroup != \textcolor{keyword}{null})}
+\DoxyCodeLine{00052                 BuildGroupAreas();}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keyword}{private} \textcolor{keywordtype}{void} BuildRegionAreas()}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{switch} (DockRegion.DockArea)}
+\DoxyCodeLine{00058             \{}
+\DoxyCodeLine{00059                 \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061                     var leftRect = \textcolor{keyword}{new} Rectangle}
+\DoxyCodeLine{00062                     \{}
+\DoxyCodeLine{00063                         X = DockPanel.PointToScreen(Point.Empty).X,}
+\DoxyCodeLine{00064                         Y = DockPanel.PointToScreen(Point.Empty).Y,}
+\DoxyCodeLine{00065                         Width = 50,}
+\DoxyCodeLine{00066                         Height = DockPanel.Height}
+\DoxyCodeLine{00067                     \};}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069                     DropArea = leftRect;}
+\DoxyCodeLine{00070                     HighlightArea = leftRect;}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074                 \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076                     var rightRect = \textcolor{keyword}{new} Rectangle}
+\DoxyCodeLine{00077                     \{}
+\DoxyCodeLine{00078                         X = DockPanel.PointToScreen(Point.Empty).X + DockPanel.Width -\/ 50,}
+\DoxyCodeLine{00079                         Y = DockPanel.PointToScreen(Point.Empty).Y,}
+\DoxyCodeLine{00080                         Width = 50,}
+\DoxyCodeLine{00081                         Height = DockPanel.Height}
+\DoxyCodeLine{00082                     \};}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084                     DropArea = rightRect;}
+\DoxyCodeLine{00085                     HighlightArea = rightRect;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089                 \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091                     var x = DockPanel.PointToScreen(Point.Empty).X;}
+\DoxyCodeLine{00092                     var width = DockPanel.Width;}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094                     \textcolor{keywordflow}{if} (DockPanel.Regions[VitNX\_DockArea.Left].Visible)}
+\DoxyCodeLine{00095                     \{}
+\DoxyCodeLine{00096                         x += DockPanel.Regions[VitNX\_DockArea.Left].Width;}
+\DoxyCodeLine{00097                         width -\/= DockPanel.Regions[VitNX\_DockArea.Left].Width;}
+\DoxyCodeLine{00098                     \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100                     \textcolor{keywordflow}{if} (DockPanel.Regions[VitNX\_DockArea.Right].Visible)}
+\DoxyCodeLine{00101                     \{}
+\DoxyCodeLine{00102                         width -\/= DockPanel.Regions[VitNX\_DockArea.Right].Width;}
+\DoxyCodeLine{00103                     \}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105                     var bottomRect = \textcolor{keyword}{new} Rectangle}
+\DoxyCodeLine{00106                     \{}
+\DoxyCodeLine{00107                         X = x,}
+\DoxyCodeLine{00108                         Y = DockPanel.PointToScreen(Point.Empty).Y + DockPanel.Height -\/ 50,}
+\DoxyCodeLine{00109                         Width = width,}
+\DoxyCodeLine{00110                         Height = 50}
+\DoxyCodeLine{00111                     \};}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113                     DropArea = bottomRect;}
+\DoxyCodeLine{00114                     HighlightArea = bottomRect;}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117             \}}
+\DoxyCodeLine{00118         \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         \textcolor{keyword}{private} \textcolor{keywordtype}{void} BuildGroupAreas()}
+\DoxyCodeLine{00121         \{}
+\DoxyCodeLine{00122             \textcolor{keywordflow}{switch} (InsertType)}
+\DoxyCodeLine{00123             \{}
+\DoxyCodeLine{00124                 \textcolor{keywordflow}{case} DockInsertType.None:}
+\DoxyCodeLine{00125                     var dropRect = \textcolor{keyword}{new} Rectangle}
+\DoxyCodeLine{00126                     \{}
+\DoxyCodeLine{00127                         X = DockGroup.PointToScreen(Point.Empty).X,}
+\DoxyCodeLine{00128                         Y = DockGroup.PointToScreen(Point.Empty).Y,}
+\DoxyCodeLine{00129                         Width = DockGroup.Width,}
+\DoxyCodeLine{00130                         Height = DockGroup.Height}
+\DoxyCodeLine{00131                     \};}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133                     DropArea = dropRect;}
+\DoxyCodeLine{00134                     HighlightArea = dropRect;}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138                 \textcolor{keywordflow}{case} DockInsertType.Before:}
+\DoxyCodeLine{00139                     var beforeDropWidth = DockGroup.Width;}
+\DoxyCodeLine{00140                     var beforeDropHeight = DockGroup.Height;}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142                     \textcolor{keywordflow}{switch} (DockGroup.DockArea)}
+\DoxyCodeLine{00143                     \{}
+\DoxyCodeLine{00144                         \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00145                         \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00146                             beforeDropHeight = DockGroup.Height / 4;}
+\DoxyCodeLine{00147                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149                         \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00150                             beforeDropWidth = DockGroup.Width / 4;}
+\DoxyCodeLine{00151                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00152                     \}}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154                     var beforeDropRect = \textcolor{keyword}{new} Rectangle}
+\DoxyCodeLine{00155                     \{}
+\DoxyCodeLine{00156                         X = DockGroup.PointToScreen(Point.Empty).X,}
+\DoxyCodeLine{00157                         Y = DockGroup.PointToScreen(Point.Empty).Y,}
+\DoxyCodeLine{00158                         Width = beforeDropWidth,}
+\DoxyCodeLine{00159                         Height = beforeDropHeight}
+\DoxyCodeLine{00160                     \};}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162                     DropArea = beforeDropRect;}
+\DoxyCodeLine{00163                     HighlightArea = beforeDropRect;}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167                 \textcolor{keywordflow}{case} DockInsertType.After:}
+\DoxyCodeLine{00168                     var afterDropX = DockGroup.PointToScreen(Point.Empty).X;}
+\DoxyCodeLine{00169                     var afterDropY = DockGroup.PointToScreen(Point.Empty).Y;}
+\DoxyCodeLine{00170                     var afterDropWidth = DockGroup.Width;}
+\DoxyCodeLine{00171                     var afterDropHeight = DockGroup.Height;}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173                     \textcolor{keywordflow}{switch} (DockGroup.DockArea)}
+\DoxyCodeLine{00174                     \{}
+\DoxyCodeLine{00175                         \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00176                         \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00177                             afterDropHeight = DockGroup.Height / 4;}
+\DoxyCodeLine{00178                             afterDropY = DockGroup.PointToScreen(Point.Empty).Y + DockGroup.Height -\/ afterDropHeight;}
+\DoxyCodeLine{00179                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181                         \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00182                             afterDropWidth = DockGroup.Width / 4;}
+\DoxyCodeLine{00183                             afterDropX = DockGroup.PointToScreen(Point.Empty).X + DockGroup.Width -\/ afterDropWidth;}
+\DoxyCodeLine{00184                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00185                     \}}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187                     var afterDropRect = \textcolor{keyword}{new} Rectangle}
+\DoxyCodeLine{00188                     \{}
+\DoxyCodeLine{00189                         X = afterDropX,}
+\DoxyCodeLine{00190                         Y = afterDropY,}
+\DoxyCodeLine{00191                         Width = afterDropWidth,}
+\DoxyCodeLine{00192                         Height = afterDropHeight}
+\DoxyCodeLine{00193                     \};}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195                     DropArea = afterDropRect;}
+\DoxyCodeLine{00196                     HighlightArea = afterDropRect;}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00199             \}}
+\DoxyCodeLine{00200         \}}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00203     \}}
+\DoxyCodeLine{00204 \}}
 
 \end{DoxyCode}

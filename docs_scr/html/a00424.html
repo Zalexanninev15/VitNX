@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: VitNX.Functions.Windows.NativeControls.GetClipboardText Class Reference</title>
+<title>VitNX: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,68 +56,24 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('a00424.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00427.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a00421.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">VitNX.Functions.Windows.NativeControls.GetClipboardText Class Reference</div></div>
+  <div class="headertitle"><div class="title">VolumeControl.IMMDeviceEnumerator Member List</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7a031e3d7490bd244458ed9ffd0bdb6a"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00424.html#a7a031e3d7490bd244458ed9ffd0bdb6a">GetText</a> ()</td></tr>
-<tr class="separator:a7a031e3d7490bd244458ed9ffd0bdb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00020_source.html#l00311">311</a> of file <a class="el" href="a00020_source.html">NativeControls.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7a031e3d7490bd244458ed9ffd0bdb6a" name="a7a031e3d7490bd244458ed9ffd0bdb6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a031e3d7490bd244458ed9ffd0bdb6a">&#9670;&nbsp;</a></span>GetText()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static string VitNX.Functions.Windows.NativeControls.GetClipboardText.GetText </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00020_source.html#l00325">325</a> of file <a class="el" href="a00020_source.html">NativeControls.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  326</span>        {</div>
-<div class="line"><span class="lineno">  327</span>            GetClipboardText instance = <span class="keyword">new</span> GetClipboardText();</div>
-<div class="line"><span class="lineno">  328</span>            Thread staThread = <span class="keyword">new</span> Thread(instance._thGetText);</div>
-<div class="line"><span class="lineno">  329</span>            staThread.SetApartmentState(ApartmentState.STA);</div>
-<div class="line"><span class="lineno">  330</span>            staThread.Start();</div>
-<div class="line"><span class="lineno">  331</span>            staThread.Join();</div>
-<div class="line"><span class="lineno">  332</span>            <span class="keywordflow">return</span> instance._GetText;</div>
-<div class="line"><span class="lineno">  333</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00427.html">VolumeControl.IMMDeviceEnumerator</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00427.html#aa7349b65584867795a64b5712e1d51ca">GetDefaultAudioEndpoint</a>(Enums.E_DATA_FLOW dataFlow, Enums.E_ROLE role, out IMMDevice ppDevice)</td><td class="entry"><a class="el" href="a00427.html">VolumeControl.IMMDeviceEnumerator</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00427.html#ad6929f7d667a2d0cffe07d4db3f959f4">NotImpl1</a>()</td><td class="entry"><a class="el" href="a00427.html">VolumeControl.IMMDeviceEnumerator</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00284.html">VitNX</a></li><li class="navelem"><a class="el" href="a00285.html">Functions</a></li><li class="navelem"><a class="el" href="a00287.html">Windows</a></li><li class="navelem"><a class="el" href="a00290.html">NativeControls</a></li><li class="navelem"><a class="el" href="a00424.html">GetClipboardText</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

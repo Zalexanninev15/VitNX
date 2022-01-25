@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter Class Reference</title>
+<title>VitNX: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,153 +56,35 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('a00704.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00707.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00701.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter Class Reference</div></div>
+  <div class="headertitle"><div class="title">VitNX_DockContent Member List</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00704.png" alt=""/>
- </div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:af816b9f0639135c15f413ed137250ec7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00704.html#af816b9f0639135c15f413ed137250ec7">DockResizeFilter</a> (<a class="el" href="a00636.html">VitNX_DockPanel</a> dockPanel)</td></tr>
-<tr class="separator:af816b9f0639135c15f413ed137250ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a442985e5a33bdef0d00ce6d6be0794e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00704.html#a442985e5a33bdef0d00ce6d6be0794e3">PreFilterMessage</a> (ref Message m)</td></tr>
-<tr class="separator:a442985e5a33bdef0d00ce6d6be0794e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00257_source.html#l00008">8</a> of file <a class="el" href="a00257_source.html">DockResizeFilter.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af816b9f0639135c15f413ed137250ec7" name="af816b9f0639135c15f413ed137250ec7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af816b9f0639135c15f413ed137250ec7">&#9670;&nbsp;</a></span>DockResizeFilter()</h2>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter.DockResizeFilter </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00636.html">VitNX_DockPanel</a>&#160;</td>
-          <td class="paramname"><em>dockPanel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00257_source.html#l00023">23</a> of file <a class="el" href="a00257_source.html">DockResizeFilter.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>        {</div>
-<div class="line"><span class="lineno">   25</span>            _dockPanel = dockPanel;</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>            _dragTimer = <span class="keyword">new</span> Timer();</div>
-<div class="line"><span class="lineno">   28</span>            _dragTimer.Interval = 1;</div>
-<div class="line"><span class="lineno">   29</span>            _dragTimer.Tick += DragTimer_Tick;</div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a442985e5a33bdef0d00ce6d6be0794e3" name="a442985e5a33bdef0d00ce6d6be0794e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a442985e5a33bdef0d00ce6d6be0794e3">&#9670;&nbsp;</a></span>PreFilterMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter.PreFilterMessage </td>
-          <td>(</td>
-          <td class="paramtype">ref Message&#160;</td>
-          <td class="paramname"><em>m</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00257_source.html#l00036">36</a> of file <a class="el" href="a00257_source.html">DockResizeFilter.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
-<div class="line"><span class="lineno">   38</span>            <span class="comment">// We only care about mouse events</span></div>
-<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">if</span> (!(m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE ||</div>
-<div class="line"><span class="lineno">   40</span>                  m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP || m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||</div>
-<div class="line"><span class="lineno">   41</span>                  m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))</div>
-<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>            <span class="comment">// Stop drag.</span></div>
-<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">if</span> (m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP)</div>
-<div class="line"><span class="lineno">   46</span>            {</div>
-<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">if</span> (_isDragging)</div>
-<div class="line"><span class="lineno">   48</span>                {</div>
-<div class="line"><span class="lineno">   49</span>                    StopDrag();</div>
-<div class="line"><span class="lineno">   50</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   51</span>                }</div>
-<div class="line"><span class="lineno">   52</span>            }</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>            <span class="comment">// Exit out early if we&#39;re simply releasing a non-splitter drag over the area</span></div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span> (m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP &amp;&amp; !_isDragging)</div>
-<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="comment">// Force cursor if already dragging.</span></div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (_isDragging)</div>
-<div class="line"><span class="lineno">   60</span>                Cursor.Current = _activeSplitter.ResizeCursor;</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>            <span class="comment">// Return out early if we&#39;re dragging something that&#39;s not a splitter.</span></div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE &amp;&amp; !_isDragging &amp;&amp; _dockPanel.MouseButtonState != MouseButtons.None)</div>
-<div class="line"><span class="lineno">   64</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>            <span class="comment">// Try and create a control from the message handle.</span></div>
-<div class="line"><span class="lineno">   67</span>            var control = Control.FromHandle(m.HWnd);</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>            <span class="comment">// Exit out if we didn&#39;t manage to create a control.</span></div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> (control == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   71</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>            <span class="comment">// Exit out if the control is not the dock panel or a child control.</span></div>
-<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">if</span> (!(control == _dockPanel || _dockPanel.Contains(control)))</div>
-<div class="line"><span class="lineno">   75</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>            <span class="comment">// Update the mouse cursor</span></div>
-<div class="line"><span class="lineno">   78</span>            CheckCursor();</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>            <span class="comment">// Start drag.</span></div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">if</span> (m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN)</div>
-<div class="line"><span class="lineno">   82</span>            {</div>
-<div class="line"><span class="lineno">   83</span>                var hotSplitter = HotSplitter();</div>
-<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">if</span> (hotSplitter != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   85</span>                {</div>
-<div class="line"><span class="lineno">   86</span>                    StartDrag(hotSplitter);</div>
-<div class="line"><span class="lineno">   87</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   88</span>                }</div>
-<div class="line"><span class="lineno">   89</span>            }</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>            <span class="comment">// Stop events passing through if we&#39;re hovering over a splitter</span></div>
-<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">if</span> (HotSplitter() != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>            <span class="comment">// Stop all events from going through if we&#39;re dragging a splitter.</span></div>
-<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> (_isDragging)</div>
-<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  100</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00707.html">VitNX_DockContent</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#ace36743954f0a3a2e5d8cba379d5313f">Close</a>()</td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00707.html#a5f7d2c20928190a3c82a2e1472ca3b14">DefaultDockArea</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#af941ee900f7fa46e65e655857bc88057">DockArea</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00707.html#a4a97df4da4747a010ebce1a6f3425c3c">DockGroup</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#a7e5069afa4bf46cb927ce1ff28bcd549">DockPanel</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00707.html#ac52eeda800be822b04f7f4326cd0686a">DockRegion</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#af4a79a39ce7090e7884cd0ffa9506a97">DockText</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00707.html#a90c9b230308f2a09f79d0514371bf30d">DockTextChanged</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#a789566d4e5e9b6e3052833de2ea3a40e">Icon</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00707.html#afc0f271ffc764de34794f02227907035">OnEnter</a>(EventArgs e)</td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#a50c390aab6a4df930a876c163e793ce1">Order</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a00707.html#a7cc2ff5773ef93112aae486a3abc4884">SerializationKey</a></td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00707.html#a753c58cce985b71b76b6cc2bbfc19da8">VitNX_DockContent</a>()</td><td class="entry"><a class="el" href="a00707.html">VitNX_DockContent</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00284.html">VitNX</a></li><li class="navelem"><a class="el" href="a00293.html">UI</a></li><li class="navelem"><a class="el" href="a00294.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="a00302.html">Win32</a></li><li class="navelem"><a class="el" href="a00704.html">DockResizeFilter</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

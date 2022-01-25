@@ -1,7 +1,6 @@
 var a00291 =
 [
-    [ "Constants", "a00440.html", null ],
-    [ "Enums", "a00444.html", null ],
-    [ "Helper", "a00448.html", null ],
-    [ "Import", "a00436.html", null ]
+    [ "Apps", "a00292.html", "a00292" ],
+    [ "NativeControls", "a00293.html", "a00293" ],
+    [ "Win32", "a00294.html", "a00294" ]
 ];
