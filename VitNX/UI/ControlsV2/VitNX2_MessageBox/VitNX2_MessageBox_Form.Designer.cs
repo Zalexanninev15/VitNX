@@ -1,6 +1,6 @@
 ﻿namespace VitNX.UI.ControlsV2
 {
-    partial class MyMessageBox_Form
+    partial class VitNX2_MessageBox_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,9 @@
             this.labelCaption = new System.Windows.Forms.Label();
             this.titleExit = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.button3 = new VitNX.UI.ControlsV2.MyButton();
-            this.button2 = new VitNX.UI.ControlsV2.MyButton();
-            this.button1 = new VitNX.UI.ControlsV2.MyButton();
+            this.button3 = new VitNX.UI.ControlsV2.VitNX2_Button();
+            this.button2 = new VitNX.UI.ControlsV2.VitNX2_Button();
+            this.button1 = new VitNX.UI.ControlsV2.VitNX2_Button();
             this.panelBody = new System.Windows.Forms.Panel();
             this.labelMessage = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
@@ -213,7 +213,7 @@
             this.pictureBoxIcon.TabIndex = 0;
             this.pictureBoxIcon.TabStop = false;
             // 
-            // MyMessageBox_Form
+            // VitNX2_MessageBox_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +224,7 @@
             this.Controls.Add(this.windowTitle);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(406, 167);
-            this.Name = "MyMessageBox_Form";
+            this.Name = "VitNX2_MessageBox_Form";
             this.Opacity = 0.96D;
             this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -243,9 +243,9 @@
 
         private System.Windows.Forms.Panel windowTitle;
         private System.Windows.Forms.Panel panelButtons;
-        private VitNX.UI.ControlsV2.MyButton button3;
-        private VitNX.UI.ControlsV2.MyButton button2;
-        private VitNX.UI.ControlsV2.MyButton button1;
+        private VitNX.UI.ControlsV2.VitNX2_Button button3;
+        private VitNX.UI.ControlsV2.VitNX2_Button button2;
+        private VitNX.UI.ControlsV2.VitNX2_Button button1;
         private System.Windows.Forms.Label titleExit;
         private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.Label labelMessage;

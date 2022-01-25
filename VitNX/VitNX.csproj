@@ -90,21 +90,21 @@
     <Compile Include="UI\BasedOnDarkUI\Config\Colors.cs" />
     <Compile Include="UI\BasedOnDarkUI\Config\Consts.cs" />
     <Compile Include="UI\ControlsV2\Helper.cs" />
-    <Compile Include="UI\ControlsV2\MyButton.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_Button.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\MyMessageBox\MyMessageBox.cs" />
-    <Compile Include="UI\ControlsV2\MyMessageBox\MyMessageBox_Form.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\MyMessageBox\MyMessageBox_Form.Designer.cs" />
-    <Compile Include="UI\ControlsV2\MyPanel.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.Designer.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_Panel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\MyTab.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_Tab.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\MyToogleButton.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_ToogleButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBarDisplayMode.cs" />
@@ -252,7 +252,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\MyMessageBox\MyMessageBox_Form.resx" />
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.resx" />
     <EmbeddedResource Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

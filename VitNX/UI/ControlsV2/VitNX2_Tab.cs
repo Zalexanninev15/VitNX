@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace VitNX.UI.ControlsV2
 {
-    public class MyTab : TabControl
+    public class VitNX2_Tab : TabControl
     {
         protected override void WndProc(ref Message m)
         {

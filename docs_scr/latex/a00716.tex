@@ -1,5 +1,5 @@
-\doxysection{Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box Class Reference}
-\label{a00716}\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\doxysection{Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box Class Reference}
+\label{a00716}\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,206 +28,206 @@ static Dialog\+Result \textbf{ Show} (IWin32\+Window owner, string text, string 
 \doxysubsection{Detailed Description}
 
 
-Definition at line \textbf{ 5} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 5} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\label{a00716_ab54ff89e53e5d6e0fc26946279fe5462}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_afe3edc3fb13a1e0e98dc22a2612a6bd5}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 47} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 47} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00048         \{}
 \DoxyCodeLine{00049             DialogResult result;}
-\DoxyCodeLine{00050             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text))}
+\DoxyCodeLine{00050             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text))}
 \DoxyCodeLine{00051                 result = msgForm.ShowDialog(owner);}
 \DoxyCodeLine{00052             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00053         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_ac9c22faba99530499838d25d994326ce}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_acbece3aebb7d727a48784bbb9ab1c2b1}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 55} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 55} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00056         \{}
 \DoxyCodeLine{00057             DialogResult result;}
-\DoxyCodeLine{00058             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption))}
+\DoxyCodeLine{00058             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption))}
 \DoxyCodeLine{00059                 result = msgForm.ShowDialog(owner);}
 \DoxyCodeLine{00060             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00061         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_afe79b5120bf0b66ae46f46df569ab1cd}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_a34c69d2dbe0794ef6c336e03e93292e5}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 63} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 63} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00064         \{}
 \DoxyCodeLine{00065             DialogResult result;}
-\DoxyCodeLine{00066             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption, buttons))}
+\DoxyCodeLine{00066             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption, buttons))}
 \DoxyCodeLine{00067                 result = msgForm.ShowDialog(owner);}
 \DoxyCodeLine{00068             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00069         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_a0fb887d3db979bbe50c7784fa33b246a}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_a961564e699f0cd08b290e50117391a86}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 71} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 71} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00072         \{}
 \DoxyCodeLine{00073             DialogResult result;}
-\DoxyCodeLine{00074             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption, buttons, icon))}
+\DoxyCodeLine{00074             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption, buttons, icon))}
 \DoxyCodeLine{00075                 result = msgForm.ShowDialog(owner);}
 \DoxyCodeLine{00076             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00077         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_ac8b9a9198c7e32f5d2c7f25d809b5079}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_a5ff02d6c8a77229078545957d64b011a}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon,  }\item[{Message\+Box\+Default\+Button}]{default\+Button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{IWin32\+Window}]{owner,  }\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon,  }\item[{Message\+Box\+Default\+Button}]{default\+Button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 79} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 79} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00080         \{}
 \DoxyCodeLine{00081             DialogResult result;}
-\DoxyCodeLine{00082             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption, buttons, icon, defaultButton))}
+\DoxyCodeLine{00082             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption, buttons, icon, defaultButton))}
 \DoxyCodeLine{00083                 result = msgForm.ShowDialog(owner);}
 \DoxyCodeLine{00084             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00085         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_a8733d2a78d2718c60a9cabb818794afe}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_ac5b6976c13f6c985125162c6eb931e0e}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 7} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 7} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00008         \{}
 \DoxyCodeLine{00009             DialogResult result;}
-\DoxyCodeLine{00010             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text))}
+\DoxyCodeLine{00010             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text))}
 \DoxyCodeLine{00011                 result = msgForm.ShowDialog();}
 \DoxyCodeLine{00012             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00013         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_a6b84996bf421dd00da097dd2839ccc73}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_a50aa624fa410cff7d0d2ad0dbf428771}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 15} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00016         \{}
 \DoxyCodeLine{00017             DialogResult result;}
-\DoxyCodeLine{00018             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption))}
+\DoxyCodeLine{00018             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption))}
 \DoxyCodeLine{00019                 result = msgForm.ShowDialog();}
 \DoxyCodeLine{00020             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00021         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_a2fa0ff7026c0935ac40bfd8bf9e85651}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_ad14466b1f4de3efb069d88bd1b738b6d}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 23} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 23} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00024         \{}
 \DoxyCodeLine{00025             DialogResult result;}
-\DoxyCodeLine{00026             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption, buttons))}
+\DoxyCodeLine{00026             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption, buttons))}
 \DoxyCodeLine{00027                 result = msgForm.ShowDialog();}
 \DoxyCodeLine{00028             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00029         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_aab3f6359da17b7a5fa83ac6723c7ea42}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_a19c7f29f1c1b392e7d9a5c30f0931931}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 31} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 31} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00032         \{}
 \DoxyCodeLine{00033             DialogResult result;}
-\DoxyCodeLine{00034             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption, buttons, icon))}
+\DoxyCodeLine{00034             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption, buttons, icon))}
 \DoxyCodeLine{00035                 result = msgForm.ShowDialog();}
 \DoxyCodeLine{00036             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00037         \}}
 
 \end{DoxyCode}
-\mbox{\label{a00716_ac865ac12dfc4b58c9514ffc3127bc678}} 
-\index{VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}!Show@{Show}}
-\index{Show@{Show}!VitNX.UI.ControlsV2.MyMessageBox@{VitNX.UI.ControlsV2.MyMessageBox}}
+\mbox{\label{a00716_a5ec755f6523b130267956adbb7c53265}} 
+\index{VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}!Show@{Show}}
+\index{Show@{Show}!VitNX.UI.ControlsV2.VitNX2\_MessageBox@{VitNX.UI.ControlsV2.VitNX2\_MessageBox}}
 \doxysubsubsection{Show()\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
-{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+My\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon,  }\item[{Message\+Box\+Default\+Button}]{default\+Button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static Dialog\+Result Vit\+NX.\+UI.\+Controls\+V2.\+Vit\+NX2\+\_\+\+Message\+Box.\+Show (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{caption,  }\item[{Message\+Box\+Buttons}]{buttons,  }\item[{Message\+Box\+Icon}]{icon,  }\item[{Message\+Box\+Default\+Button}]{default\+Button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Definition at line \textbf{ 39} of file \textbf{ My\+Message\+Box.\+cs}.
+Definition at line \textbf{ 39} of file \textbf{ Vit\+NX2\+\_\+\+Message\+Box.\+cs}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00040         \{}
 \DoxyCodeLine{00041             DialogResult result;}
-\DoxyCodeLine{00042             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} MyMessageBox\_Form(text, caption, buttons, icon, defaultButton))}
+\DoxyCodeLine{00042             \textcolor{keyword}{using} (var msgForm = \textcolor{keyword}{new} VitNX2\_MessageBox\_Form(text, caption, buttons, icon, defaultButton))}
 \DoxyCodeLine{00043                 result = msgForm.ShowDialog();}
 \DoxyCodeLine{00044             \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{00045         \}}

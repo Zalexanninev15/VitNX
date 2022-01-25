@@ -5,7 +5,7 @@ using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.UI.ControlsV2
 {
-    public partial class MyMessageBox_Form : Form
+    public partial class VitNX2_MessageBox_Form : Form
     {
         public bool SquaredOnWin11 = false;
         private Color primaryColor = Color.FromArgb(21, 29, 38);
@@ -34,7 +34,7 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        public MyMessageBox_Form(string text)
+        public VitNX2_MessageBox_Form(string text)
         {
             InitializeComponent();
             InitializeItems();
@@ -44,7 +44,7 @@ namespace VitNX.UI.ControlsV2
             SetFormSize();
         }
 
-        public MyMessageBox_Form(string text, string caption)
+        public VitNX2_MessageBox_Form(string text, string caption)
         {
             InitializeComponent();
             InitializeItems();
@@ -55,7 +55,7 @@ namespace VitNX.UI.ControlsV2
             SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);
         }
 
-        public MyMessageBox_Form(string text, string caption, MessageBoxButtons buttons)
+        public VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons)
         {
             InitializeComponent();
             InitializeItems();
@@ -66,7 +66,7 @@ namespace VitNX.UI.ControlsV2
             SetButtons(buttons, MessageBoxDefaultButton.Button1);
         }
 
-        public MyMessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             InitializeComponent();
             InitializeItems();
@@ -78,7 +78,7 @@ namespace VitNX.UI.ControlsV2
             SetIcon(icon);
         }
 
-        public MyMessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        public VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
         {
             InitializeComponent();
             InitializeItems();

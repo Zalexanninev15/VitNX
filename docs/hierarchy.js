@@ -2,11 +2,11 @@ var hierarchy =
 [
     [ "Button", null, [
       [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button", "a00500.html", null ],
-      [ "VitNX.UI.ControlsV2.MyButton", "a00712.html", null ]
+      [ "VitNX.UI.ControlsV2.VitNX2_Button", "a00712.html", null ]
     ] ],
     [ "CheckBox", null, [
       [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox", "a00504.html", null ],
-      [ "VitNX.UI.ControlsV2.MyToogleButton", "a00732.html", null ]
+      [ "VitNX.UI.ControlsV2.VitNX2_ToogleButton", "a00732.html", null ]
     ] ],
     [ "VitNX.UI.BasedOnDarkUI.Config.Colors", "a00488.html", null ],
     [ "ComboBox", null, [
@@ -46,7 +46,7 @@ var hierarchy =
           [ "VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBox", "a00680.html", null ]
         ] ]
       ] ],
-      [ "VitNX.UI.ControlsV2.MyMessageBox_Form", "a00720.html", null ]
+      [ "VitNX.UI.ControlsV2.VitNX2_MessageBox_Form", "a00720.html", null ]
     ] ],
     [ "VitNX.Functions.Windows.NativeControls.GetClipboardText", "a00424.html", null ],
     [ "GroupBox", null, [
@@ -82,7 +82,6 @@ var hierarchy =
     ] ],
     [ "VitNX.Functions.Windows.Information.Monitor", "a00348.html", null ],
     [ "VitNX.Functions.Windows.Information.Motherboard", "a00352.html", null ],
-    [ "VitNX.UI.ControlsV2.MyMessageBox", "a00716.html", null ],
     [ "VitNX.Functions.Windows.NativeControls.NewFolderDialog", "a00384.html", null ],
     [ "NumericUpDown", null, [
       [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown", "a00544.html", null ]
@@ -92,7 +91,7 @@ var hierarchy =
       [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel", "a00572.html", null ],
       [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup", "a00632.html", null ],
       [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion", "a00640.html", null ],
-      [ "VitNX.UI.ControlsV2.MyPanel", "a00724.html", null ]
+      [ "VitNX.UI.ControlsV2.VitNX2_Panel", "a00724.html", null ]
     ] ],
     [ "VitNX.Functions.Common.Power", "a00332.html", null ],
     [ "VitNX.Functions.Windows.Apps.Processes", "a00364.html", null ],
@@ -107,7 +106,7 @@ var hierarchy =
       [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_StatusStrip", "a00580.html", null ]
     ] ],
     [ "TabControl", null, [
-      [ "VitNX.UI.ControlsV2.MyTab", "a00728.html", null ]
+      [ "VitNX.UI.ControlsV2.VitNX2_Tab", "a00728.html", null ]
     ] ],
     [ "TextBox", null, [
       [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_TextBox", "a00584.html", null ]
@@ -127,6 +126,7 @@ var hierarchy =
       ] ],
       [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel", "a00636.html", null ]
     ] ],
+    [ "VitNX.UI.ControlsV2.VitNX2_MessageBox", "a00716.html", null ],
     [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter", "a00644.html", null ],
     [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownItem", "a00516.html", null ],
     [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem", "a00532.html", null ],

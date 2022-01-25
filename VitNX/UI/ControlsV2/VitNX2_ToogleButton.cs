@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace VitNX.UI.ControlsV2
 {
-    public class MyToogleButton : CheckBox
+    public class VitNX2_ToogleButton : CheckBox
     {
         private Color onBackColor = Color.MediumSlateBlue;
         private Color onToggleColor = Color.WhiteSmoke;
@@ -94,7 +94,7 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        public MyToogleButton()
+        public VitNX2_ToogleButton()
         {
             MinimumSize = new Size(46, 23);
         }

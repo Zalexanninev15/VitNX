@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace VitNX.UI.ControlsV2
 {
-    public class MyButton : Button
+    public class VitNX2_Button : Button
     {
         private int borderSize = 0;
         private int borderRadius = 0;
@@ -77,7 +77,7 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        public MyButton()
+        public VitNX2_Button()
         {
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
