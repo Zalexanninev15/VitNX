@@ -1,4 +1,4 @@
 var a00680 =
 [
-    [ "Dispose", "a00680.html#aeef40a281b1e4a497ffa6472eff3dc12", null ]
+    [ "VitNX_ToolStrip", "a00680.html#a958c291b8a38eab93ae1d06253522503", null ]
 ];

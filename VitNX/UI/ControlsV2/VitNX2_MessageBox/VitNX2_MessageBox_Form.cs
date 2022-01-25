@@ -7,7 +7,7 @@ namespace VitNX.UI.ControlsV2
 {
     public partial class VitNX2_MessageBox_Form : Form
     {
-        public bool SquaredOnWin11 = false;
+        public static bool squaredWindowOnWin11 = false;
         private Color primaryColor = Color.FromArgb(21, 29, 38);
         private int borderSize = 0;
 
@@ -24,7 +24,7 @@ namespace VitNX.UI.ControlsV2
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (SquaredOnWin11)
+            if (squaredWindowOnWin11)
             {
                 base.OnPaint(e);
                 Graphics g = e.Graphics;

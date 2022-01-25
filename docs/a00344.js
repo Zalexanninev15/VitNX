@@ -1,0 +1,25 @@
+var a00344 =
+[
+    [ "GetArchitecture", "a00344.html#ad17ace5fe58792562f6ff4085e49326a", null ],
+    [ "GetClockSpeed", "a00344.html#a998749b79b539d79947ca247d450dd6d", null ],
+    [ "Set", "a00344.html#aad3b33b4c65e3cc3202d3331078a5666", null ],
+    [ "addressWidth", "a00344.html#a191853f84b9851f54d85e075b9acd961", null ],
+    [ "architecture", "a00344.html#a34dac952df5564afa4c837b9859bf6c2", null ],
+    [ "caption", "a00344.html#adc61d6f197c29d1ca146756a0962fafe", null ],
+    [ "characteristics", "a00344.html#a4fbecc3fa293dd5188b9429c575129a0", null ],
+    [ "currentClockSpeed", "a00344.html#a975cf45661a14039dc7a65b6a9587c55", null ],
+    [ "currentVoltage", "a00344.html#ab1c2c44968e4fcd609ea3a91a1cd37d5", null ],
+    [ "deviceID", "a00344.html#a7aa2ecb49da3b30dbfc5245230dbbac3", null ],
+    [ "family", "a00344.html#a960fb303976b8d01bbe825563adcdd15", null ],
+    [ "loadPercentage", "a00344.html#a1ea9b6029f96a9109ec924e7677fd78e", null ],
+    [ "manufacturer", "a00344.html#aedcdc6adde44e6000bbe06947da5be82", null ],
+    [ "maxClockSpeed", "a00344.html#a967ba02736084ae0747f1644c581b29a", null ],
+    [ "name", "a00344.html#a8ccf841cb59e451791bcb2e1ac4f1edc", null ],
+    [ "numberOfCores", "a00344.html#abce71720a219547378b6c5b1fc73fd3f", null ],
+    [ "numberOfEnabledCore", "a00344.html#ad0f6671e9ee7b94cba4c70c5424f4680", null ],
+    [ "numberOfLogicalProcessors", "a00344.html#a304002f4dfe4ef9be973708a9452a22d", null ],
+    [ "processorType", "a00344.html#ac7eefa51206f17cdcf775fce06022d52", null ],
+    [ "serialNumber", "a00344.html#a22248d5005f91728b723f7deb2eb17b2", null ],
+    [ "threadCount", "a00344.html#a488acd3b9a9b84b5d59a98eb3f5be184", null ],
+    [ "usagePercent", "a00344.html#a5e4e81be48538f0296c9f00bfd928e7e", null ]
+];

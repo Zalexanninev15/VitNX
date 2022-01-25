@@ -1,6 +1,6 @@
 var a00305 =
 [
-    [ "ControlScrollFilter", "a00775.html", "a00775" ],
-    [ "DockContentDragFilter", "a00779.html", "a00779" ],
-    [ "DockResizeFilter", "a00783.html", "a00783" ]
+    [ "ControlScrollFilter", "a00784.html", "a00784" ],
+    [ "DockContentDragFilter", "a00788.html", "a00788" ],
+    [ "DockResizeFilter", "a00792.html", "a00792" ]
 ];

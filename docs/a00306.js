@@ -1,10 +1,10 @@
 var a00306 =
 [
-    [ "Helper", "a00787.html", "a00787" ],
-    [ "VitNX2_Button", "a00791.html", "a00791" ],
-    [ "VitNX2_MessageBox", "a00795.html", "a00795" ],
-    [ "VitNX2_MessageBox_Form", "a00799.html", "a00799" ],
-    [ "VitNX2_Panel", "a00803.html", "a00803" ],
-    [ "VitNX2_Tab", "a00807.html", "a00807" ],
-    [ "VitNX2_ToogleButton", "a00811.html", "a00811" ]
+    [ "Helper", "a00796.html", "a00796" ],
+    [ "VitNX2_Button", "a00800.html", "a00800" ],
+    [ "VitNX2_MessageBox", "a00804.html", "a00804" ],
+    [ "VitNX2_MessageBox_Form", "a00808.html", "a00808" ],
+    [ "VitNX2_Panel", "a00812.html", "a00812" ],
+    [ "VitNX2_Tab", "a00816.html", "a00816" ],
+    [ "VitNX2_ToogleButton", "a00820.html", "a00820" ]
 ];

@@ -541,6 +541,18 @@ namespace VitNX.Functions.Windows.Win32
     {
         public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
 
+        public static void MinimizeAllWindows()
+        {
+            IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
+            Import.SendMessage(lHwnd, 0x111, (IntPtr)419, IntPtr.Zero);
+        }
+
+        public static void MaximizeAllWindows()
+        {
+            IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
+            Import.SendMessage(lHwnd, 0x111, (IntPtr)416, IntPtr.Zero);
+        }
+
         public const int ERROR_SUCCESS = 0;
 
         [StructLayout(LayoutKind.Sequential)]

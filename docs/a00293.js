@@ -1,9 +1,9 @@
 var a00293 =
 [
-    [ "GetClipboardText", "a00443.html", "a00443" ],
-    [ "Keyboard", "a00451.html", "a00451" ],
-    [ "NewFolderDialog", "a00403.html", "a00403" ],
-    [ "STATask", "a00447.html", "a00447" ],
-    [ "TaskBarProgressBar", "a00391.html", "a00391" ],
-    [ "VolumeControl", "a00419.html", "a00419" ]
+    [ "GetClipboardText", "a00452.html", "a00452" ],
+    [ "Keyboard", "a00460.html", "a00460" ],
+    [ "NewFolderDialog", "a00412.html", "a00412" ],
+    [ "STATask", "a00456.html", "a00456" ],
+    [ "TaskBarProgressBar", "a00400.html", "a00400" ],
+    [ "VolumeControl", "a00428.html", "a00428" ]
 ];

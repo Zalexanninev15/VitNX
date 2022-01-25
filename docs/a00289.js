@@ -1,8 +1,10 @@
 var a00289 =
 [
     [ "Information", "a00290.html", "a00290" ],
-    [ "FileSystem", "a00331.html", "a00331" ],
-    [ "Power", "a00367.html", "a00367" ],
-    [ "Text", "a00371.html", "a00371" ],
-    [ "Web", "a00375.html", "a00375" ]
+    [ "Config", "a00384.html", "a00384" ],
+    [ "FileSystem", "a00332.html", "a00332" ],
+    [ "Ip", "a00380.html", "a00380" ],
+    [ "Power", "a00368.html", "a00368" ],
+    [ "Text", "a00372.html", "a00372" ],
+    [ "Web", "a00376.html", "a00376" ]
 ];

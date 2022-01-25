@@ -1,5 +1,5 @@
 var a00304 =
 [
-    [ "VitNX_MenuRenderer", "a00767.html", "a00767" ],
-    [ "VitNX_ToolStripRenderer", "a00771.html", "a00771" ]
+    [ "VitNX_MenuRenderer", "a00776.html", "a00776" ],
+    [ "VitNX_ToolStripRenderer", "a00780.html", "a00780" ]
 ];
