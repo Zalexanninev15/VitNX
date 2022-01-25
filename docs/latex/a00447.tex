@@ -1,0 +1,74 @@
+\doxysection{STATask Class Reference}
+\label{a00447}\index{STATask@{STATask}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Task$<$ TResult $>$ \textbf{ Run$<$ TResult $>$} (Func$<$ TResult $>$ function)
+\item 
+static Task \textbf{ Run} (Action action)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 336} of file \textbf{ Native\+Controls.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00447_a23c5615ca5c062f0ecca9135febefda6}} 
+\index{STATask@{STATask}!Run@{Run}}
+\index{Run@{Run}!STATask@{STATask}}
+\doxysubsubsection{Run()}
+{\footnotesize\ttfamily static Task Run (\begin{DoxyParamCaption}\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 352} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00353         \{}
+\DoxyCodeLine{00354             var tcs = \textcolor{keyword}{new} TaskCompletionSource<object>();}
+\DoxyCodeLine{00355             var thread = \textcolor{keyword}{new} Thread(() =>}
+\DoxyCodeLine{00356             \{}
+\DoxyCodeLine{00357                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00358                 \{}
+\DoxyCodeLine{00359                     action();}
+\DoxyCodeLine{00360                     tcs.SetResult(\textcolor{keyword}{null});}
+\DoxyCodeLine{00361                 \}}
+\DoxyCodeLine{00362                 \textcolor{keywordflow}{catch} (Exception e) \{ tcs.SetException(e); \}}
+\DoxyCodeLine{00363             \});}
+\DoxyCodeLine{00364             thread.SetApartmentState(ApartmentState.STA);}
+\DoxyCodeLine{00365             thread.Start();}
+\DoxyCodeLine{00366             \textcolor{keywordflow}{return} tcs.Task;}
+\DoxyCodeLine{00367         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00447_a9a8733b2a3abc261c79b3dad60bbe1b1}} 
+\index{STATask@{STATask}!Run$<$ TResult $>$@{Run$<$ TResult $>$}}
+\index{Run$<$ TResult $>$@{Run$<$ TResult $>$}!STATask@{STATask}}
+\doxysubsubsection{Run$<$ TResult $>$()}
+{\footnotesize\ttfamily static Task$<$ TResult $>$ \textbf{ Run}$<$ TResult $>$ (\begin{DoxyParamCaption}\item[{Func$<$ TResult $>$}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 338} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00339         \{}
+\DoxyCodeLine{00340             var tcs = \textcolor{keyword}{new} TaskCompletionSource<TResult>();}
+\DoxyCodeLine{00341 }
+\DoxyCodeLine{00342             var thread = \textcolor{keyword}{new} Thread(() =>}
+\DoxyCodeLine{00343             \{}
+\DoxyCodeLine{00344                 \textcolor{keywordflow}{try} \{ tcs.SetResult(\textcolor{keyword}{function}()); \}}
+\DoxyCodeLine{00345                 \textcolor{keywordflow}{catch} (Exception e) \{ tcs.SetException(e); \}}
+\DoxyCodeLine{00346             \});}
+\DoxyCodeLine{00347             thread.SetApartmentState(ApartmentState.STA);}
+\DoxyCodeLine{00348             thread.Start();}
+\DoxyCodeLine{00349             \textcolor{keywordflow}{return} tcs.Task;}
+\DoxyCodeLine{00350         \}}
+
+\end{DoxyCode}

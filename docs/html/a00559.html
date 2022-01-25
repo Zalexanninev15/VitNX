@@ -125,9 +125,10 @@ Events</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   59</span>        {</div>
 <div class="line"><span class="lineno">   60</span>            base.Add(item);</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">if</span> (ItemsAdded != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   63</span>                ItemsAdded(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   63</span>                <a class="code hl_event" href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
 <div class="line"><span class="lineno">   64</span>        }</div>
+<div class="ttc" id="aa00559_html_a7da3e21a29e293d111aedd757fe0fef3"><div class="ttname"><a href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.ItemsAdded</a></div><div class="ttdeci">EventHandler&lt; ObservableListModified&lt; T &gt; &gt; ItemsAdded</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00017">ObservableList.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -153,8 +154,8 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">   69</span> </div>
 <div class="line"><span class="lineno">   70</span>            base.AddRange(list);</div>
 <div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (ItemsAdded != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   73</span>                ItemsAdded(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(list));</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   73</span>                <a class="code hl_event" href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(list));</div>
 <div class="line"><span class="lineno">   74</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -179,9 +180,10 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">   86</span>            ObservableListModified&lt;T&gt; removed = <span class="keyword">new</span> ObservableListModified&lt;T&gt;(this.ToList&lt;T&gt;());</div>
 <div class="line"><span class="lineno">   87</span>            base.Clear();</div>
 <div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> (removed.Items.Count() &gt; 0 &amp;&amp; ItemsRemoved != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   90</span>                ItemsRemoved(<span class="keyword">this</span>, removed);</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> (removed.Items.Count() &gt; 0 &amp;&amp; <a class="code hl_event" href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   90</span>                <a class="code hl_event" href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>(<span class="keyword">this</span>, removed);</div>
 <div class="line"><span class="lineno">   91</span>        }</div>
+<div class="ttc" id="aa00559_html_aa9856a105cbf4527cb8dc444f5982369"><div class="ttname"><a href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.ItemsRemoved</a></div><div class="ttdeci">EventHandler&lt; ObservableListModified&lt; T &gt; &gt; ItemsRemoved</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00019">ObservableList.cs:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -202,9 +204,10 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00056_source.html#l00034">34</a> of file <a class="el" href="a00056_source.html">ObservableList.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   35</span>        {</div>
-<div class="line"><span class="lineno">   36</span>            Dispose(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   36</span>            <a class="code hl_function" href="a00559.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a>(<span class="keyword">true</span>);</div>
 <div class="line"><span class="lineno">   37</span>            GC.SuppressFinalize(<span class="keyword">this</span>);</div>
 <div class="line"><span class="lineno">   38</span>        }</div>
+<div class="ttc" id="aa00559_html_a6e2d745cdb7a7b983f861ed6a9a541a7"><div class="ttname"><a href="a00559.html#a6e2d745cdb7a7b983f861ed6a9a541a7">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Dispose</a></div><div class="ttdeci">void Dispose()</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00034">ObservableList.cs:34</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -236,11 +239,11 @@ Events</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>        {</div>
 <div class="line"><span class="lineno">   42</span>            <span class="keywordflow">if</span> (!_disposed)</div>
 <div class="line"><span class="lineno">   43</span>            {</div>
-<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">if</span> (ItemsAdded != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   45</span>                    ItemsAdded = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   45</span>                    <a class="code hl_event" href="a00559.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> = <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">if</span> (ItemsRemoved != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   48</span>                    ItemsRemoved = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   48</span>                    <a class="code hl_event" href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> = <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">   49</span> </div>
 <div class="line"><span class="lineno">   50</span>                _disposed = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   51</span>            }</div>
@@ -268,8 +271,8 @@ Events</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   77</span>        {</div>
 <div class="line"><span class="lineno">   78</span>            base.Remove(item);</div>
 <div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (ItemsRemoved != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   81</span>                ItemsRemoved(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   81</span>                <a class="code hl_event" href="a00559.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
 <div class="line"><span class="lineno">   82</span>        }</div>
 </div><!-- fragment -->
 </div>

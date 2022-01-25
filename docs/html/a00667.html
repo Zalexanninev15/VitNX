@@ -62,6 +62,7 @@ $(document).ready(function(){initNavTree('a00667.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="a00664.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">VitNX_Title Class Reference</div></div>
@@ -74,6 +75,11 @@ Inheritance diagram for VitNX_Title:</div>
   <img src="a00667.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab5e1f15e7ba6cec812b460a6f78210f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00667.html#ab5e1f15e7ba6cec812b460a6f78210f7">VitNX_Title</a> ()</td></tr>
+<tr class="separator:ab5e1f15e7ba6cec812b460a6f78210f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7b49a512aef9068aebdc17097736f6b9"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00667.html#a7b49a512aef9068aebdc17097736f6b9">OnPaint</a> (PaintEventArgs e)</td></tr>
@@ -135,12 +141,12 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>            var textSize = g.MeasureString(Text, Font);</div>
 <div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.LightText))</div>
+<div class="line"><span class="lineno">   25</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>))</div>
 <div class="line"><span class="lineno">   26</span>            {</div>
 <div class="line"><span class="lineno">   27</span>                g.DrawString(Text, Font, b, <span class="keyword">new</span> PointF(-2, 0));</div>
 <div class="line"><span class="lineno">   28</span>            }</div>
 <div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00567.html">Colors</a>.GreyHighlight))</div>
+<div class="line"><span class="lineno">   30</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">GreyHighlight</a>))</div>
 <div class="line"><span class="lineno">   31</span>            {</div>
 <div class="line"><span class="lineno">   32</span>                var p1 = <span class="keyword">new</span> PointF(textSize.Width + 5, textSize.Height / 2);</div>
 <div class="line"><span class="lineno">   33</span>                var p2 = <span class="keyword">new</span> PointF(rect.Width, textSize.Height / 2);</div>
@@ -148,6 +154,8 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   35</span>            }</div>
 <div class="line"><span class="lineno">   36</span>        }</div>
 <div class="ttc" id="aa00567_html"><div class="ttname"><a href="a00567.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00567_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00567.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00062">Colors.cs:63</a></div></div>
+<div class="ttc" id="aa00567_html_a3e84957ccd8663503dc957f0c6a2688e"><div class="ttname"><a href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyHighlight</a></div><div class="ttdeci">static Color GreyHighlight</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00082">Colors.cs:83</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

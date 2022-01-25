@@ -461,9 +461,10 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>                size += fi.Length;</div>
 <div class="line"><span class="lineno">   30</span>            DirectoryInfo[] dis = sourceFolder.GetDirectories();</div>
 <div class="line"><span class="lineno">   31</span>            <span class="keywordflow">foreach</span> (DirectoryInfo di <span class="keywordflow">in</span> dis)</div>
-<div class="line"><span class="lineno">   32</span>                size += GetDirectorySize(di);</div>
+<div class="line"><span class="lineno">   32</span>                size += <a class="code hl_function" href="a00331.html#ac02ad540e3de526f1a3aa8857fb2de16">GetDirectorySize</a>(di);</div>
 <div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span> size;</div>
 <div class="line"><span class="lineno">   34</span>        }</div>
+<div class="ttc" id="aa00331_html_ac02ad540e3de526f1a3aa8857fb2de16"><div class="ttname"><a href="a00331.html#ac02ad540e3de526f1a3aa8857fb2de16">VitNX.Functions.Common.FileSystem.GetDirectorySize</a></div><div class="ttdeci">static long GetDirectorySize(DirectoryInfo sourceFolder)</div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00024">FileSystem.cs:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -698,7 +699,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00002_source.html#l00056">56</a> of file <a class="el" href="a00002_source.html">FileSystem.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   57</span>        {</div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordtype">string</span> fileName = FileNameGenerator(targetFile, <span class="stringliteral">&quot;txt&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordtype">string</span> fileName = <a class="code hl_function" href="a00331.html#a001250d45f585210ea1a3778892e3a33">FileNameGenerator</a>(targetFile, <span class="stringliteral">&quot;txt&quot;</span>);</div>
 <div class="line"><span class="lineno">   59</span>            <span class="keywordtype">string</span> filePath = $<span class="stringliteral">@&quot;{Path.GetTempPath()}\{fileName}&quot;</span>;</div>
 <div class="line"><span class="lineno">   60</span>            <span class="keyword">using</span> (FileStream fs = File.OpenWrite(filePath))</div>
 <div class="line"><span class="lineno">   61</span>            {</div>
@@ -708,6 +709,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   65</span>            }</div>
 <div class="line"><span class="lineno">   66</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { fileName, filePath };</div>
 <div class="line"><span class="lineno">   67</span>        }</div>
+<div class="ttc" id="aa00331_html_a001250d45f585210ea1a3778892e3a33"><div class="ttname"><a href="a00331.html#a001250d45f585210ea1a3778892e3a33">VitNX.Functions.Common.FileSystem.FileNameGenerator</a></div><div class="ttdeci">static string FileNameGenerator(string tag, string fileExtension)</div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00092">FileSystem.cs:92</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

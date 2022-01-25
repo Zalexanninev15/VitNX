@@ -113,8 +113,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  293</span>            IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)<span class="keyword">new</span> MMDeviceEnumerator();</div>
 <div class="line"><span class="lineno">  294</span>            IMMDevice speakers = <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">  295</span>            IAudioEndpointVolume vol = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  296</span>            deviceEnumerator.GetDefaultAudioEndpoint(<a class="code hl_class" href="a00463.html">Enums</a>.E_DATA_FLOW.eRender,</div>
-<div class="line"><span class="lineno">  297</span>                <a class="code hl_class" href="a00463.html">Enums</a>.E_ROLE.eMultimedia,</div>
+<div class="line"><span class="lineno">  296</span>            deviceEnumerator.GetDefaultAudioEndpoint(<a class="code hl_class" href="a00463.html">Enums</a>.<a class="code hl_enumeration" href="a00463.html#abb36316b4770bcd6b024ac2803e55ece">E_DATA_FLOW</a>.eRender,</div>
+<div class="line"><span class="lineno">  297</span>                <a class="code hl_class" href="a00463.html">Enums</a>.<a class="code hl_enumeration" href="a00463.html#aa77d001461659251f053780dcd7dfd40">E_ROLE</a>.eMultimedia,</div>
 <div class="line"><span class="lineno">  298</span>                out speakers);</div>
 <div class="line"><span class="lineno">  299</span>            Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;</div>
 <div class="line"><span class="lineno">  300</span>            speakers.Activate(ref IID_IAudioEndpointVolume, 0, IntPtr.Zero, out <span class="keywordtype">object</span> o);</div>
@@ -127,6 +127,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  307</span>            <span class="keywordflow">return</span> currentVolume;</div>
 <div class="line"><span class="lineno">  308</span>        }</div>
 <div class="ttc" id="aa00463_html"><div class="ttname"><a href="a00463.html">VitNX.Functions.Windows.Win32.Enums</a></div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00128">Win32.cs:129</a></div></div>
+<div class="ttc" id="aa00463_html_aa77d001461659251f053780dcd7dfd40"><div class="ttname"><a href="a00463.html#aa77d001461659251f053780dcd7dfd40">VitNX.Functions.Windows.Win32.Enums.E_ROLE</a></div><div class="ttdeci">E_ROLE</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00522">Win32.cs:523</a></div></div>
+<div class="ttc" id="aa00463_html_abb36316b4770bcd6b024ac2803e55ece"><div class="ttname"><a href="a00463.html#abb36316b4770bcd6b024ac2803e55ece">VitNX.Functions.Windows.Win32.Enums.E_DATA_FLOW</a></div><div class="ttdeci">E_DATA_FLOW</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00514">Win32.cs:515</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -151,8 +153,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  273</span>            IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)<span class="keyword">new</span> MMDeviceEnumerator();</div>
 <div class="line"><span class="lineno">  274</span>            IMMDevice speakers = <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">  275</span>            IAudioEndpointVolume vol = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  276</span>            deviceEnumerator.GetDefaultAudioEndpoint(<a class="code hl_class" href="a00463.html">Enums</a>.E_DATA_FLOW.eRender,</div>
-<div class="line"><span class="lineno">  277</span>                <a class="code hl_class" href="a00463.html">Enums</a>.E_ROLE.eMultimedia,</div>
+<div class="line"><span class="lineno">  276</span>            deviceEnumerator.GetDefaultAudioEndpoint(<a class="code hl_class" href="a00463.html">Enums</a>.<a class="code hl_enumeration" href="a00463.html#abb36316b4770bcd6b024ac2803e55ece">E_DATA_FLOW</a>.eRender,</div>
+<div class="line"><span class="lineno">  277</span>                <a class="code hl_class" href="a00463.html">Enums</a>.<a class="code hl_enumeration" href="a00463.html#aa77d001461659251f053780dcd7dfd40">E_ROLE</a>.eMultimedia,</div>
 <div class="line"><span class="lineno">  278</span>                out speakers);</div>
 <div class="line"><span class="lineno">  279</span>            Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;</div>
 <div class="line"><span class="lineno">  280</span>            speakers.Activate(ref IID_IAudioEndpointVolume,</div>

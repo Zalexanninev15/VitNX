@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _isDragging = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span> <a class="code hl_class" href="a00719.html">VitNX_DockRegion</a> _targetRegion;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">private</span> <a class="code hl_class" href="a00711.html">VitNX_DockGroup</a> _targetGroup;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">private</span> DockInsertType _insertType = DockInsertType.None;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">private</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a> _insertType = <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">private</span> Dictionary&lt;VitNX_DockRegion, DockDropArea&gt; _regionDropAreas = <span class="keyword">new</span> Dictionary&lt;VitNX_DockRegion, DockDropArea&gt;();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">private</span> Dictionary&lt;VitNX_DockGroup, DockDropCollection&gt; _groupDropAreas = <span class="keyword">new</span> Dictionary&lt;VitNX_DockGroup, DockDropCollection&gt;();</div>
@@ -95,18 +95,18 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">        #region Constructor Region</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">public</span> <a class="code hl_class" href="a00779.html">DockContentDragFilter</a>(<a class="code hl_class" href="a00715.html">VitNX_DockPanel</a> dockPanel)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a00779.html#aa2cc69588ff5ebb05668ddf630d4a5e1">   32</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00779.html#aa2cc69588ff5ebb05668ddf630d4a5e1">DockContentDragFilter</a>(<a class="code hl_class" href="a00715.html">VitNX_DockPanel</a> dockPanel)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            _dockPanel = dockPanel;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            _highlightForm = <span class="keyword">new</span> <a class="code hl_class" href="a00763.html">VitNX_TranslucentForm</a>(<a class="code hl_class" href="a00567.html">Colors</a>.BlueSelection);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            _highlightForm = <span class="keyword">new</span> <a class="code hl_class" href="a00763.html">VitNX_TranslucentForm</a>(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">BlueSelection</a>);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">        #endregion Constructor Region</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">        #region IMessageFilter Region</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> PreFilterMessage(ref Message m)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="a00779.html#a0f9a8e7f2dc7d59b708257bafcb6dfe7">   43</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00779.html#a0f9a8e7f2dc7d59b708257bafcb6dfe7">PreFilterMessage</a>(ref Message m)</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="comment">// Exit out early if we&#39;re not dragging any content</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span> (!_isDragging)</div>
@@ -130,23 +130,23 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">if</span> (_targetRegion != <span class="keyword">null</span>)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    _dockPanel.RemoveContent(_dragContent);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    _dragContent.DockArea = _targetRegion.DockArea;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    _dockPanel.AddContent(_dragContent);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    _dockPanel.<a class="code hl_function" href="a00715.html#a4cdc2cf4cdc8cdf509431d29968dd1dd">RemoveContent</a>(_dragContent);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    _dragContent.<a class="code hl_property" href="a00707.html#af941ee900f7fa46e65e655857bc88057">DockArea</a> = _targetRegion.<a class="code hl_property" href="a00719.html#af941ee900f7fa46e65e655857bc88057">DockArea</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    _dockPanel.<a class="code hl_function" href="a00715.html#a851dd7bf4d148af9c13820d03588b89a">AddContent</a>(_dragContent);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_targetGroup != <span class="keyword">null</span>)</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    _dockPanel.RemoveContent(_dragContent);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    _dockPanel.<a class="code hl_function" href="a00715.html#a4cdc2cf4cdc8cdf509431d29968dd1dd">RemoveContent</a>(_dragContent);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    <span class="keywordflow">switch</span> (_insertType)</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                        <span class="keywordflow">case</span> DockInsertType.None:</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                            _dockPanel.AddContent(_dragContent, _targetGroup);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                            _dockPanel.<a class="code hl_function" href="a00715.html#a851dd7bf4d148af9c13820d03588b89a">AddContent</a>(_dragContent, _targetGroup);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                        <span class="keywordflow">case</span> DockInsertType.Before:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                        <span class="keywordflow">case</span> DockInsertType.After:</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                            _dockPanel.InsertContent(_dragContent, _targetGroup, _insertType);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.Before:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.After:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                            _dockPanel.<a class="code hl_function" href="a00715.html#a2bf33cc7e1b5c7b47c62202d7301023e">InsertContent</a>(_dragContent, _targetGroup, _insertType);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                }</div>
@@ -162,15 +162,15 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">        #region Method Region</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keyword">public</span> <span class="keywordtype">void</span> StartDrag(<a class="code hl_class" href="a00707.html">VitNX_DockContent</a> content)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="a00779.html#aa26f1c20ed3acc8bc391fb39d086beb2">   99</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00779.html#aa26f1c20ed3acc8bc391fb39d086beb2">StartDrag</a>(<a class="code hl_class" href="a00707.html">VitNX_DockContent</a> content)</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            _regionDropAreas = <span class="keyword">new</span> Dictionary&lt;VitNX_DockRegion, DockDropArea&gt;();</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            _groupDropAreas = <span class="keyword">new</span> Dictionary&lt;VitNX_DockGroup, DockDropCollection&gt;();</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="comment">// Add all regions and groups to the drop collections</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">foreach</span> (var region <span class="keywordflow">in</span> _dockPanel.Regions.Values)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">foreach</span> (var region <span class="keywordflow">in</span> _dockPanel.<a class="code hl_property" href="a00715.html#a9b2421ae3c60aacc8f54964fa73f69a4">Regions</a>.Values)</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <span class="keywordflow">if</span> (region.DockArea == VitNX_DockArea.Document)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <span class="keywordflow">if</span> (region.DockArea == <a class="code hl_enumeration" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a>.Document)</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="comment">// If the region is visible then build drop areas for the groups.</span></div>
@@ -225,7 +225,7 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        {</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            var location = Cursor.Position;</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            _insertType = DockInsertType.None;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            _insertType = <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None;</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            _targetRegion = <span class="keyword">null</span>;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            _targetGroup = <span class="keyword">null</span>;</div>
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                <span class="keywordflow">if</span> (area.DropArea.Contains(location))</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    _insertType = DockInsertType.None;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    _insertType = <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None;</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    _targetRegion = area.DockRegion;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    UpdateHighlightForm(area.HighlightArea);</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    <span class="keywordflow">return</span>;</div>
@@ -249,13 +249,13 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                var sameGroup = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                var groupHasOtherContent = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <span class="keywordflow">if</span> (collection.DropArea.DockGroup == _dragContent.DockGroup)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <span class="keywordflow">if</span> (collection.DropArea.DockGroup == _dragContent.<a class="code hl_property" href="a00707.html#a4a97df4da4747a010ebce1a6f3425c3c">DockGroup</a>)</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                    sameGroup = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <span class="keywordflow">if</span> (collection.DropArea.DockGroup.DockRegion == _dragContent.DockRegion)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <span class="keywordflow">if</span> (collection.DropArea.DockGroup.DockRegion == _dragContent.<a class="code hl_property" href="a00707.html#ac52eeda800be822b04f7f4326cd0686a">DockRegion</a>)</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                    sameRegion = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="keywordflow">if</span> (_dragContent.DockGroup.ContentCount &gt; 1)</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="keywordflow">if</span> (_dragContent.<a class="code hl_property" href="a00707.html#a4a97df4da4747a010ebce1a6f3425c3c">DockGroup</a>.<a class="code hl_property" href="a00711.html#aa7a2d811db4e0ce35217af8c6808f41c">ContentCount</a> &gt; 1)</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                    groupHasOtherContent = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                <span class="comment">// If we&#39;re hovering over the group itself, only allow inserting before/after if multiple content is tabbed.</span></div>
@@ -268,10 +268,10 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                    <span class="comment">// Check if the group above/below the hovered group contains our drag content.</span></div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                    <span class="keywordflow">if</span> (sameRegion &amp;&amp; !groupHasOtherContent)</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                    {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                        <span class="keywordflow">if</span> (collection.InsertBeforeArea.DockGroup.Order == _dragContent.DockGroup.Order + 1)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                        <span class="keywordflow">if</span> (collection.InsertBeforeArea.DockGroup.Order == _dragContent.<a class="code hl_property" href="a00707.html#a4a97df4da4747a010ebce1a6f3425c3c">DockGroup</a>.<a class="code hl_property" href="a00711.html#a50c390aab6a4df930a876c163e793ce1">Order</a> + 1)</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                            skipBefore = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                        <span class="keywordflow">if</span> (collection.InsertAfterArea.DockGroup.Order == _dragContent.DockGroup.Order - 1)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                        <span class="keywordflow">if</span> (collection.InsertAfterArea.DockGroup.Order == _dragContent.<a class="code hl_property" href="a00707.html#a4a97df4da4747a010ebce1a6f3425c3c">DockGroup</a>.<a class="code hl_property" href="a00711.html#a50c390aab6a4df930a876c163e793ce1">Order</a> - 1)</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                            skipAfter = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    }</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
@@ -279,7 +279,7 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                    {</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                        <span class="keywordflow">if</span> (collection.InsertBeforeArea.DropArea.Contains(location))</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                        {</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                            _insertType = DockInsertType.Before;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                            _insertType = <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.Before;</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                            _targetGroup = collection.InsertBeforeArea.DockGroup;</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                            UpdateHighlightForm(collection.InsertBeforeArea.HighlightArea);</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                            <span class="keywordflow">return</span>;</div>
@@ -290,7 +290,7 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    {</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                        <span class="keywordflow">if</span> (collection.InsertAfterArea.DropArea.Contains(location))</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                        {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                            _insertType = DockInsertType.After;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                            _insertType = <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.After;</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                            _targetGroup = collection.InsertAfterArea.DockGroup;</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                            UpdateHighlightForm(collection.InsertAfterArea.HighlightArea);</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                            <span class="keywordflow">return</span>;</div>
@@ -303,7 +303,7 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                {</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                    <span class="keywordflow">if</span> (collection.DropArea.DropArea.Contains(location))</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                    {</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                        _insertType = DockInsertType.None;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                        _insertType = <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                        _targetGroup = collection.DropArea.DockGroup;</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                        UpdateHighlightForm(collection.DropArea.HighlightArea);</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                        <span class="keywordflow">return</span>;</div>
@@ -327,17 +327,33 @@ $(document).ready(function(){initNavTree('a00257_source.html',''); initResizable
 <div class="ttc" id="aa00297_html"><div class="ttname"><a href="a00297.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
 <div class="ttc" id="aa00299_html"><div class="ttname"><a href="a00299.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00003">Colors.cs:4</a></div></div>
 <div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea</a></div><div class="ttdeci">VitNX_DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00003">VitNX_DockArea.cs:4</a></div></div>
+<div class="ttc" id="aa00301_html_a29dc304d5ff759b6c6f865ebf9833e9c"><div class="ttname"><a href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType</a></div><div class="ttdeci">DockInsertType</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00003">DockInsertType.cs:4</a></div></div>
 <div class="ttc" id="aa00303_html"><div class="ttname"><a href="a00303.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00224_source.html#l00007">VitNX_Dialog.cs:8</a></div></div>
 <div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Win32</a></div><div class="ttdef"><b>Definition:</b> <a href="a00254_source.html#l00004">ControlScrollFilter.cs:5</a></div></div>
 <div class="ttc" id="aa00567_html"><div class="ttname"><a href="a00567.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00567_html_af4d2c6571dcc805fcd8241006beeff0a"><div class="ttname"><a href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">VitNX.UI.BasedOnDarkUI.Config.Colors.BlueSelection</a></div><div class="ttdeci">static Color BlueSelection</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00077">Colors.cs:78</a></div></div>
 <div class="ttc" id="aa00687_html"><div class="ttname"><a href="a00687.html">VitNX.UI.BasedOnDarkUI.Docking.DockDropArea</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00005">DockDropArea.cs:6</a></div></div>
 <div class="ttc" id="aa00691_html"><div class="ttname"><a href="a00691.html">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection</a></div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00003">DockDropCollection.cs:4</a></div></div>
 <div class="ttc" id="aa00707_html"><div class="ttname"><a href="a00707.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent</a></div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00009">VitNX_DockContent.cs:10</a></div></div>
+<div class="ttc" id="aa00707_html_a4a97df4da4747a010ebce1a6f3425c3c"><div class="ttname"><a href="a00707.html#a4a97df4da4747a010ebce1a6f3425c3c">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockGroup</a></div><div class="ttdeci">VitNX_DockGroup DockGroup</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00075">VitNX_DockContent.cs:75</a></div></div>
+<div class="ttc" id="aa00707_html_ac52eeda800be822b04f7f4326cd0686a"><div class="ttname"><a href="a00707.html#ac52eeda800be822b04f7f4326cd0686a">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockRegion</a></div><div class="ttdeci">VitNX_DockRegion DockRegion</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00071">VitNX_DockContent.cs:71</a></div></div>
+<div class="ttc" id="aa00707_html_af941ee900f7fa46e65e655857bc88057"><div class="ttname"><a href="a00707.html#af941ee900f7fa46e65e655857bc88057">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockArea</a></div><div class="ttdeci">VitNX_DockArea DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00079">VitNX_DockContent.cs:79</a></div></div>
 <div class="ttc" id="aa00711_html"><div class="ttname"><a href="a00711.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup</a></div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00012">VitNX_DockGroup.cs:13</a></div></div>
+<div class="ttc" id="aa00711_html_a50c390aab6a4df930a876c163e793ce1"><div class="ttname"><a href="a00711.html#a50c390aab6a4df930a876c163e793ce1">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.Order</a></div><div class="ttdeci">int Order</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00036">VitNX_DockGroup.cs:36</a></div></div>
+<div class="ttc" id="aa00711_html_aa7a2d811db4e0ce35217af8c6808f41c"><div class="ttname"><a href="a00711.html#aa7a2d811db4e0ce35217af8c6808f41c">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.ContentCount</a></div><div class="ttdeci">int ContentCount</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00038">VitNX_DockGroup.cs:39</a></div></div>
 <div class="ttc" id="aa00715_html"><div class="ttname"><a href="a00715.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00011">VitNX_DockPanel.cs:12</a></div></div>
+<div class="ttc" id="aa00715_html_a2bf33cc7e1b5c7b47c62202d7301023e"><div class="ttname"><a href="a00715.html#a2bf33cc7e1b5c7b47c62202d7301023e">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.InsertContent</a></div><div class="ttdeci">void InsertContent(VitNX_DockContent dockContent, VitNX_DockGroup dockGroup, DockInsertType insertType)</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00164">VitNX_DockPanel.cs:164</a></div></div>
+<div class="ttc" id="aa00715_html_a4cdc2cf4cdc8cdf509431d29968dd1dd"><div class="ttname"><a href="a00715.html#a4cdc2cf4cdc8cdf509431d29968dd1dd">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.RemoveContent</a></div><div class="ttdeci">void RemoveContent(VitNX_DockContent dockContent)</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00183">VitNX_DockPanel.cs:183</a></div></div>
+<div class="ttc" id="aa00715_html_a851dd7bf4d148af9c13820d03588b89a"><div class="ttname"><a href="a00715.html#a851dd7bf4d148af9c13820d03588b89a">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.AddContent</a></div><div class="ttdeci">void AddContent(VitNX_DockContent dockContent)</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00136">VitNX_DockPanel.cs:136</a></div></div>
+<div class="ttc" id="aa00715_html_a9b2421ae3c60aacc8f54964fa73f69a4"><div class="ttname"><a href="a00715.html#a9b2421ae3c60aacc8f54964fa73f69a4">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.Regions</a></div><div class="ttdeci">Dictionary&lt; VitNX_DockArea, VitNX_DockRegion &gt; Regions</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00106">VitNX_DockPanel.cs:107</a></div></div>
 <div class="ttc" id="aa00719_html"><div class="ttname"><a href="a00719.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion</a></div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00012">VitNX_DockRegion.cs:13</a></div></div>
+<div class="ttc" id="aa00719_html_af941ee900f7fa46e65e655857bc88057"><div class="ttname"><a href="a00719.html#af941ee900f7fa46e65e655857bc88057">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.DockArea</a></div><div class="ttdeci">VitNX_DockArea DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00027">VitNX_DockRegion.cs:27</a></div></div>
 <div class="ttc" id="aa00763_html"><div class="ttname"><a href="a00763.html">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm</a></div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00007">VitNX_TranslucentForm.cs:8</a></div></div>
 <div class="ttc" id="aa00779_html"><div class="ttname"><a href="a00779.html">VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter</a></div><div class="ttdef"><b>Definition:</b> <a href="a00257_source.html#l00010">DockContentDragFilter.cs:11</a></div></div>
+<div class="ttc" id="aa00779_html_a0f9a8e7f2dc7d59b708257bafcb6dfe7"><div class="ttname"><a href="a00779.html#a0f9a8e7f2dc7d59b708257bafcb6dfe7">VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter.PreFilterMessage</a></div><div class="ttdeci">bool PreFilterMessage(ref Message m)</div><div class="ttdef"><b>Definition:</b> <a href="a00257_source.html#l00043">DockContentDragFilter.cs:43</a></div></div>
+<div class="ttc" id="aa00779_html_aa26f1c20ed3acc8bc391fb39d086beb2"><div class="ttname"><a href="a00779.html#aa26f1c20ed3acc8bc391fb39d086beb2">VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter.StartDrag</a></div><div class="ttdeci">void StartDrag(VitNX_DockContent content)</div><div class="ttdef"><b>Definition:</b> <a href="a00257_source.html#l00099">DockContentDragFilter.cs:99</a></div></div>
+<div class="ttc" id="aa00779_html_aa2cc69588ff5ebb05668ddf630d4a5e1"><div class="ttname"><a href="a00779.html#aa2cc69588ff5ebb05668ddf630d4a5e1">VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter.DockContentDragFilter</a></div><div class="ttdeci">DockContentDragFilter(VitNX_DockPanel dockPanel)</div><div class="ttdef"><b>Definition:</b> <a href="a00257_source.html#l00032">DockContentDragFilter.cs:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "BitmapExtensions", "a00743.html", null ],
     [ "Button", null, [
       [ "VitNX_Button", "a00579.html", null ],
       [ "VitNX2_Button", "a00791.html", null ]
@@ -72,6 +73,7 @@ var hierarchy =
       [ "VitNX_GroupBox", "a00603.html", null ]
     ] ],
     [ "Helper", "a00335.html", null ],
+    [ "Helper", "a00467.html", null ],
     [ "Helper", "a00787.html", null ],
     [ "VolumeControl.IAudioEndpointVolume", "a00439.html", null ],
     [ "VolumeControl.IAudioEndpointVolumeCallback", "a00435.html", null ],
@@ -79,6 +81,7 @@ var hierarchy =
       [ "ConsoleProgressBar", "a00379.html", null ],
       [ "ObservableList< T >", "a00559.html", null ]
     ] ],
+    [ "IEnumerableExtensions", "a00747.html", null ],
     [ "IMessageFilter", null, [
       [ "ControlScrollFilter", "a00775.html", null ],
       [ "DockContentDragFilter", "a00779.html", null ],
@@ -132,12 +135,14 @@ var hierarchy =
     [ "Ram", "a00363.html", null ],
     [ "Resources", "a00555.html", null ],
     [ "ScrollIcons", "a00547.html", null ],
+    [ "STATask", "a00447.html", null ],
     [ "StatusStrip", null, [
       [ "VitNX_StatusStrip", "a00659.html", null ]
     ] ],
     [ "TabControl", null, [
       [ "VitNX2_Tab", "a00807.html", null ]
     ] ],
+    [ "TaskBarProgressBar", "a00391.html", null ],
     [ "Text", "a00371.html", null ],
     [ "TextBox", null, [
       [ "VitNX_TextBox", "a00663.html", null ]

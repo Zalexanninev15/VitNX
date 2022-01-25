@@ -107,9 +107,10 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   33</span>        {</div>
 <div class="line"><span class="lineno">   34</span>            _dockPanel = dockPanel;</div>
 <div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>            _highlightForm = <span class="keyword">new</span> <a class="code hl_class" href="a00763.html">VitNX_TranslucentForm</a>(<a class="code hl_class" href="a00567.html">Colors</a>.BlueSelection);</div>
+<div class="line"><span class="lineno">   36</span>            _highlightForm = <span class="keyword">new</span> <a class="code hl_class" href="a00763.html">VitNX_TranslucentForm</a>(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">BlueSelection</a>);</div>
 <div class="line"><span class="lineno">   37</span>        }</div>
 <div class="ttc" id="aa00567_html"><div class="ttname"><a href="a00567.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00567_html_af4d2c6571dcc805fcd8241006beeff0a"><div class="ttname"><a href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">VitNX.UI.BasedOnDarkUI.Config.Colors.BlueSelection</a></div><div class="ttdeci">static Color BlueSelection</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00077">Colors.cs:78</a></div></div>
 <div class="ttc" id="aa00763_html"><div class="ttname"><a href="a00763.html">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm</a></div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00007">VitNX_TranslucentForm.cs:8</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -155,23 +156,23 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   64</span>            {</div>
 <div class="line"><span class="lineno">   65</span>                <span class="keywordflow">if</span> (_targetRegion != <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">   66</span>                {</div>
-<div class="line"><span class="lineno">   67</span>                    _dockPanel.RemoveContent(_dragContent);</div>
-<div class="line"><span class="lineno">   68</span>                    _dragContent.DockArea = _targetRegion.DockArea;</div>
-<div class="line"><span class="lineno">   69</span>                    _dockPanel.AddContent(_dragContent);</div>
+<div class="line"><span class="lineno">   67</span>                    _dockPanel.<a class="code hl_function" href="a00715.html#a4cdc2cf4cdc8cdf509431d29968dd1dd">RemoveContent</a>(_dragContent);</div>
+<div class="line"><span class="lineno">   68</span>                    _dragContent.<a class="code hl_property" href="a00707.html#af941ee900f7fa46e65e655857bc88057">DockArea</a> = _targetRegion.<a class="code hl_property" href="a00719.html#af941ee900f7fa46e65e655857bc88057">DockArea</a>;</div>
+<div class="line"><span class="lineno">   69</span>                    _dockPanel.<a class="code hl_function" href="a00715.html#a851dd7bf4d148af9c13820d03588b89a">AddContent</a>(_dragContent);</div>
 <div class="line"><span class="lineno">   70</span>                }</div>
 <div class="line"><span class="lineno">   71</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_targetGroup != <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">   72</span>                {</div>
-<div class="line"><span class="lineno">   73</span>                    _dockPanel.RemoveContent(_dragContent);</div>
+<div class="line"><span class="lineno">   73</span>                    _dockPanel.<a class="code hl_function" href="a00715.html#a4cdc2cf4cdc8cdf509431d29968dd1dd">RemoveContent</a>(_dragContent);</div>
 <div class="line"><span class="lineno">   74</span> </div>
 <div class="line"><span class="lineno">   75</span>                    <span class="keywordflow">switch</span> (_insertType)</div>
 <div class="line"><span class="lineno">   76</span>                    {</div>
-<div class="line"><span class="lineno">   77</span>                        <span class="keywordflow">case</span> DockInsertType.None:</div>
-<div class="line"><span class="lineno">   78</span>                            _dockPanel.AddContent(_dragContent, _targetGroup);</div>
+<div class="line"><span class="lineno">   77</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None:</div>
+<div class="line"><span class="lineno">   78</span>                            _dockPanel.<a class="code hl_function" href="a00715.html#a851dd7bf4d148af9c13820d03588b89a">AddContent</a>(_dragContent, _targetGroup);</div>
 <div class="line"><span class="lineno">   79</span>                            <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>                        <span class="keywordflow">case</span> DockInsertType.Before:</div>
-<div class="line"><span class="lineno">   82</span>                        <span class="keywordflow">case</span> DockInsertType.After:</div>
-<div class="line"><span class="lineno">   83</span>                            _dockPanel.InsertContent(_dragContent, _targetGroup, _insertType);</div>
+<div class="line"><span class="lineno">   81</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.Before:</div>
+<div class="line"><span class="lineno">   82</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.After:</div>
+<div class="line"><span class="lineno">   83</span>                            _dockPanel.<a class="code hl_function" href="a00715.html#a2bf33cc7e1b5c7b47c62202d7301023e">InsertContent</a>(_dragContent, _targetGroup, _insertType);</div>
 <div class="line"><span class="lineno">   84</span>                            <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   85</span>                    }</div>
 <div class="line"><span class="lineno">   86</span>                }</div>
@@ -182,6 +183,12 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   91</span> </div>
 <div class="line"><span class="lineno">   92</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   93</span>        }</div>
+<div class="ttc" id="aa00301_html_a29dc304d5ff759b6c6f865ebf9833e9c"><div class="ttname"><a href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType</a></div><div class="ttdeci">DockInsertType</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00003">DockInsertType.cs:4</a></div></div>
+<div class="ttc" id="aa00707_html_af941ee900f7fa46e65e655857bc88057"><div class="ttname"><a href="a00707.html#af941ee900f7fa46e65e655857bc88057">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockArea</a></div><div class="ttdeci">VitNX_DockArea DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00079">VitNX_DockContent.cs:79</a></div></div>
+<div class="ttc" id="aa00715_html_a2bf33cc7e1b5c7b47c62202d7301023e"><div class="ttname"><a href="a00715.html#a2bf33cc7e1b5c7b47c62202d7301023e">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.InsertContent</a></div><div class="ttdeci">void InsertContent(VitNX_DockContent dockContent, VitNX_DockGroup dockGroup, DockInsertType insertType)</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00164">VitNX_DockPanel.cs:164</a></div></div>
+<div class="ttc" id="aa00715_html_a4cdc2cf4cdc8cdf509431d29968dd1dd"><div class="ttname"><a href="a00715.html#a4cdc2cf4cdc8cdf509431d29968dd1dd">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.RemoveContent</a></div><div class="ttdeci">void RemoveContent(VitNX_DockContent dockContent)</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00183">VitNX_DockPanel.cs:183</a></div></div>
+<div class="ttc" id="aa00715_html_a851dd7bf4d148af9c13820d03588b89a"><div class="ttname"><a href="a00715.html#a851dd7bf4d148af9c13820d03588b89a">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.AddContent</a></div><div class="ttdeci">void AddContent(VitNX_DockContent dockContent)</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00136">VitNX_DockPanel.cs:136</a></div></div>
+<div class="ttc" id="aa00719_html_af941ee900f7fa46e65e655857bc88057"><div class="ttname"><a href="a00719.html#af941ee900f7fa46e65e655857bc88057">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.DockArea</a></div><div class="ttdeci">VitNX_DockArea DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00027">VitNX_DockRegion.cs:27</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -207,9 +214,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  102</span>            _groupDropAreas = <span class="keyword">new</span> Dictionary&lt;VitNX_DockGroup, DockDropCollection&gt;();</div>
 <div class="line"><span class="lineno">  103</span> </div>
 <div class="line"><span class="lineno">  104</span>            <span class="comment">// Add all regions and groups to the drop collections</span></div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">foreach</span> (var region <span class="keywordflow">in</span> _dockPanel.Regions.Values)</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">foreach</span> (var region <span class="keywordflow">in</span> _dockPanel.<a class="code hl_property" href="a00715.html#a9b2421ae3c60aacc8f54964fa73f69a4">Regions</a>.Values)</div>
 <div class="line"><span class="lineno">  106</span>            {</div>
-<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">if</span> (region.DockArea == VitNX_DockArea.Document)</div>
+<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">if</span> (region.DockArea == <a class="code hl_enumeration" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a>.Document)</div>
 <div class="line"><span class="lineno">  108</span>                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  109</span> </div>
 <div class="line"><span class="lineno">  110</span>                <span class="comment">// If the region is visible then build drop areas for the groups.</span></div>
@@ -232,8 +239,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  127</span>            _dragContent = content;</div>
 <div class="line"><span class="lineno">  128</span>            _isDragging = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  129</span>        }</div>
+<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea</a></div><div class="ttdeci">VitNX_DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00003">VitNX_DockArea.cs:4</a></div></div>
 <div class="ttc" id="aa00687_html"><div class="ttname"><a href="a00687.html">VitNX.UI.BasedOnDarkUI.Docking.DockDropArea</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00005">DockDropArea.cs:6</a></div></div>
 <div class="ttc" id="aa00691_html"><div class="ttname"><a href="a00691.html">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection</a></div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00003">DockDropCollection.cs:4</a></div></div>
+<div class="ttc" id="aa00715_html_a9b2421ae3c60aacc8f54964fa73f69a4"><div class="ttname"><a href="a00715.html#a9b2421ae3c60aacc8f54964fa73f69a4">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.Regions</a></div><div class="ttdeci">Dictionary&lt; VitNX_DockArea, VitNX_DockRegion &gt; Regions</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00106">VitNX_DockPanel.cs:107</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

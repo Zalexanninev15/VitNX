@@ -128,10 +128,12 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   13</span>        {</div>
 <div class="line"><span class="lineno">   14</span>            base.Initialize(toolStrip);</div>
 <div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>            toolStrip.BackColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreyBackground;</div>
-<div class="line"><span class="lineno">   17</span>            toolStrip.ForeColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightText;</div>
+<div class="line"><span class="lineno">   16</span>            toolStrip.BackColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
+<div class="line"><span class="lineno">   17</span>            toolStrip.ForeColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
 <div class="line"><span class="lineno">   18</span>        }</div>
 <div class="ttc" id="aa00567_html"><div class="ttname"><a href="a00567.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00567_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00567.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00062">Colors.cs:63</a></div></div>
+<div class="ttc" id="aa00567_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00007">Colors.cs:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -163,8 +165,8 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   21</span>        {</div>
 <div class="line"><span class="lineno">   22</span>            base.InitializeItem(item);</div>
 <div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>            item.BackColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreyBackground;</div>
-<div class="line"><span class="lineno">   25</span>            item.ForeColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightText;</div>
+<div class="line"><span class="lineno">   24</span>            item.BackColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
+<div class="line"><span class="lineno">   25</span>            item.ForeColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
 <div class="line"><span class="lineno">   26</span> </div>
 <div class="line"><span class="lineno">   27</span>            <span class="keywordflow">if</span> (item.GetType() == typeof(ToolStripSeparator))</div>
 <div class="line"><span class="lineno">   28</span>            {</div>
@@ -200,7 +202,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00248_source.html#l00094">94</a> of file <a class="el" href="a00248_source.html">VitNX_MenuRenderer.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   95</span>        {</div>
-<div class="line"><span class="lineno">   96</span>            e.ArrowColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightText;</div>
+<div class="line"><span class="lineno">   96</span>            e.ArrowColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
 <div class="line"><span class="lineno">   97</span>            e.ArrowRectangle = <span class="keyword">new</span> Rectangle(<span class="keyword">new</span> Point(e.ArrowRectangle.Left, e.ArrowRectangle.Top - 1), e.ArrowRectangle.Size);</div>
 <div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>            base.OnRenderArrow(e);</div>
@@ -238,11 +240,12 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   49</span> </div>
 <div class="line"><span class="lineno">   50</span>            var rect = <span class="keyword">new</span> Rectangle(0, 0, e.ToolStrip.Width - 1, e.ToolStrip.Height - 1);</div>
 <div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00567.html">Colors</a>.LightBorder))</div>
+<div class="line"><span class="lineno">   52</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#ad79455704a15ceeca28c20c74c740a56">LightBorder</a>))</div>
 <div class="line"><span class="lineno">   53</span>            {</div>
 <div class="line"><span class="lineno">   54</span>                g.DrawRectangle(p, rect);</div>
 <div class="line"><span class="lineno">   55</span>            }</div>
 <div class="line"><span class="lineno">   56</span>        }</div>
+<div class="ttc" id="aa00567_html_ad79455704a15ceeca28c20c74c740a56"><div class="ttname"><a href="a00567.html#ad79455704a15ceeca28c20c74c740a56">VitNX.UI.BasedOnDarkUI.Config.Colors.LightBorder</a></div><div class="ttdeci">static Color LightBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00052">Colors.cs:53</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -277,12 +280,12 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   62</span>            var rect = <span class="keyword">new</span> Rectangle(e.ImageRectangle.Left - 2, e.ImageRectangle.Top - 2,</div>
 <div class="line"><span class="lineno">   63</span>                                         e.ImageRectangle.Width + 4, e.ImageRectangle.Height + 4);</div>
 <div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.LightBorder))</div>
+<div class="line"><span class="lineno">   65</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#ad79455704a15ceeca28c20c74c740a56">LightBorder</a>))</div>
 <div class="line"><span class="lineno">   66</span>            {</div>
 <div class="line"><span class="lineno">   67</span>                g.FillRectangle(b, rect);</div>
 <div class="line"><span class="lineno">   68</span>            }</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00567.html">Colors</a>.BlueHighlight))</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a9a985c86c3ea1a8f9541d362b153e0cf">BlueHighlight</a>))</div>
 <div class="line"><span class="lineno">   71</span>            {</div>
 <div class="line"><span class="lineno">   72</span>                var modRect = <span class="keyword">new</span> Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);</div>
 <div class="line"><span class="lineno">   73</span>                g.DrawRectangle(p, modRect);</div>
@@ -293,6 +296,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   78</span>                g.DrawImageUnscaled(MenuIcons.tick, <span class="keyword">new</span> Point(e.ImageRectangle.Left, e.ImageRectangle.Top));</div>
 <div class="line"><span class="lineno">   79</span>            }</div>
 <div class="line"><span class="lineno">   80</span>        }</div>
+<div class="ttc" id="aa00567_html_a9a985c86c3ea1a8f9541d362b153e0cf"><div class="ttname"><a href="a00567.html#a9a985c86c3ea1a8f9541d362b153e0cf">VitNX.UI.BasedOnDarkUI.Config.Colors.BlueHighlight</a></div><div class="ttdeci">static Color BlueHighlight</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00072">Colors.cs:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -324,11 +328,11 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  103</span>        {</div>
 <div class="line"><span class="lineno">  104</span>            var g = e.Graphics;</div>
 <div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>            e.Item.ForeColor = e.Item.Enabled ? <a class="code hl_class" href="a00567.html">Colors</a>.LightText : <a class="code hl_class" href="a00567.html">Colors</a>.DisabledText;</div>
+<div class="line"><span class="lineno">  106</span>            e.Item.ForeColor = e.Item.Enabled ? <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a> : <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#af19493f42acfeeadd16bae88041b9623">DisabledText</a>;</div>
 <div class="line"><span class="lineno">  107</span> </div>
 <div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> (e.Item.Enabled)</div>
 <div class="line"><span class="lineno">  109</span>            {</div>
-<div class="line"><span class="lineno">  110</span>                var bgColor = e.Item.Selected ? <a class="code hl_class" href="a00567.html">Colors</a>.GreyHighlight : e.Item.BackColor;</div>
+<div class="line"><span class="lineno">  110</span>                var bgColor = e.Item.Selected ? <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">GreyHighlight</a> : e.Item.BackColor;</div>
 <div class="line"><span class="lineno">  111</span> </div>
 <div class="line"><span class="lineno">  112</span>                <span class="comment">// Normal item</span></div>
 <div class="line"><span class="lineno">  113</span>                var rect = <span class="keyword">new</span> Rectangle(2, 0, e.Item.Width - 3, e.Item.Height);</div>
@@ -343,7 +347,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  122</span>                {</div>
 <div class="line"><span class="lineno">  123</span>                    <span class="keywordflow">if</span> (((ToolStripMenuItem)e.Item).DropDown.Visible &amp;&amp; e.Item.IsOnDropDown == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">  124</span>                    {</div>
-<div class="line"><span class="lineno">  125</span>                        <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.GreySelection))</div>
+<div class="line"><span class="lineno">  125</span>                        <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a51a100ff74f3dddc6997dd784dbf565d">GreySelection</a>))</div>
 <div class="line"><span class="lineno">  126</span>                        {</div>
 <div class="line"><span class="lineno">  127</span>                            g.FillRectangle(b, rect);</div>
 <div class="line"><span class="lineno">  128</span>                        }</div>
@@ -351,6 +355,9 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  130</span>                }</div>
 <div class="line"><span class="lineno">  131</span>            }</div>
 <div class="line"><span class="lineno">  132</span>        }</div>
+<div class="ttc" id="aa00567_html_a3e84957ccd8663503dc957f0c6a2688e"><div class="ttname"><a href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyHighlight</a></div><div class="ttdeci">static Color GreyHighlight</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00082">Colors.cs:83</a></div></div>
+<div class="ttc" id="aa00567_html_a51a100ff74f3dddc6997dd784dbf565d"><div class="ttname"><a href="a00567.html#a51a100ff74f3dddc6997dd784dbf565d">VitNX.UI.BasedOnDarkUI.Config.Colors.GreySelection</a></div><div class="ttdeci">static Color GreySelection</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00087">Colors.cs:88</a></div></div>
+<div class="ttc" id="aa00567_html_af19493f42acfeeadd16bae88041b9623"><div class="ttname"><a href="a00567.html#af19493f42acfeeadd16bae88041b9623">VitNX.UI.BasedOnDarkUI.Config.Colors.DisabledText</a></div><div class="ttdeci">static Color DisabledText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00067">Colors.cs:68</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,7 +391,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   85</span> </div>
 <div class="line"><span class="lineno">   86</span>            var rect = <span class="keyword">new</span> Rectangle(1, 3, e.Item.Width, 1);</div>
 <div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.LightBorder))</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#ad79455704a15ceeca28c20c74c740a56">LightBorder</a>))</div>
 <div class="line"><span class="lineno">   89</span>            {</div>
 <div class="line"><span class="lineno">   90</span>                g.FillRectangle(b, rect);</div>
 <div class="line"><span class="lineno">   91</span>            }</div>
@@ -419,7 +426,7 @@ Protected Member Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="a00248_source.html#l00037">37</a> of file <a class="el" href="a00248_source.html">VitNX_MenuRenderer.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>        {</div>
 <div class="line"><span class="lineno">   39</span>            var g = e.Graphics;</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.GreyBackground))</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>))</div>
 <div class="line"><span class="lineno">   41</span>            {</div>
 <div class="line"><span class="lineno">   42</span>                g.FillRectangle(b, e.AffectedBounds);</div>
 <div class="line"><span class="lineno">   43</span>            }</div>

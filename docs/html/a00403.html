@@ -106,7 +106,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="a00023_source.html#l00107">107</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>        { <span class="keywordflow">return</span> Show(IntPtr.Zero); }</div>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>        { <span class="keywordflow">return</span> <a class="code hl_function" href="a00403.html#aa262f72ef31f1d6ca005f2668e326c41">Show</a>(IntPtr.Zero); }</div>
+<div class="ttc" id="aa00403_html_aa262f72ef31f1d6ca005f2668e326c41"><div class="ttname"><a href="a00403.html#aa262f72ef31f1d6ca005f2668e326c41">VitNX.Functions.Windows.NativeControls.NewFolderDialog.Show</a></div><div class="ttdeci">bool Show()</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00107">NativeControls.cs:107</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -128,10 +129,12 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00023_source.html#l00110">110</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  111</span>        {</div>
-<div class="line"><span class="lineno">  112</span>            var result = Environment.OSVersion.Version.Major &gt;= 6 ? ModernDialog.Show(hWndOwner, InitialDirectory, Title) : ShowXpDialog(hWndOwner, InitialDirectory, Title);</div>
+<div class="line"><span class="lineno">  112</span>            var result = Environment.OSVersion.Version.Major &gt;= 6 ? ModernDialog.Show(hWndOwner, <a class="code hl_property" href="a00403.html#a42ad68a9c17633e84ce4c651270c4585">InitialDirectory</a>, <a class="code hl_property" href="a00403.html#aa7b633091e7820b835d04d0d5fc197c7">Title</a>) : ShowXpDialog(hWndOwner, <a class="code hl_property" href="a00403.html#a42ad68a9c17633e84ce4c651270c4585">InitialDirectory</a>, <a class="code hl_property" href="a00403.html#aa7b633091e7820b835d04d0d5fc197c7">Title</a>);</div>
 <div class="line"><span class="lineno">  113</span>            _fileName = result.FileName;</div>
 <div class="line"><span class="lineno">  114</span>            <span class="keywordflow">return</span> result.Result;</div>
 <div class="line"><span class="lineno">  115</span>        }</div>
+<div class="ttc" id="aa00403_html_a42ad68a9c17633e84ce4c651270c4585"><div class="ttname"><a href="a00403.html#a42ad68a9c17633e84ce4c651270c4585">VitNX.Functions.Windows.NativeControls.NewFolderDialog.InitialDirectory</a></div><div class="ttdeci">string InitialDirectory</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00075">NativeControls.cs:76</a></div></div>
+<div class="ttc" id="aa00403_html_aa7b633091e7820b835d04d0d5fc197c7"><div class="ttname"><a href="a00403.html#aa7b633091e7820b835d04d0d5fc197c7">VitNX.Functions.Windows.NativeControls.NewFolderDialog.Title</a></div><div class="ttdeci">string Title</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00087">NativeControls.cs:88</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

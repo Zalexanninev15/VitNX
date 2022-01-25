@@ -74,6 +74,8 @@ $(document).ready(function(){initNavTree('a00675.html',''); initResizable(); });
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4232a54b6177e04de943a3c842829ad5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00675.html#a4232a54b6177e04de943a3c842829ad5">IsNodeAncestor</a> (<a class="el" href="a00675.html">VitNX_TreeNode</a> node)</td></tr>
 <tr class="separator:a4232a54b6177e04de943a3c842829ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e7e4d1a4df5ae37bd8e13316639108"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00675.html#ae7e7e4d1a4df5ae37bd8e13316639108">VitNX_TreeNode</a> ()</td></tr>
+<tr class="separator:ae7e7e4d1a4df5ae37bd8e13316639108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e13f23ab187fd674ca97d6c3683c41d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00675.html#a2e13f23ab187fd674ca97d6c3683c41d">VitNX_TreeNode</a> (string text)</td></tr>
 <tr class="separator:a2e13f23ab187fd674ca97d6c3683c41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a10f4aa9600a4852dd6f5245e6c3def"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00675.html#a0a10f4aa9600a4852dd6f5245e6c3def">Remove</a> ()</td></tr>
@@ -158,9 +160,10 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00158_source.html#l00184">184</a> of file <a class="el" href="a00158_source.html">VitNX_TreeNode.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  185</span>        {</div>
-<div class="line"><span class="lineno">  186</span>            Nodes = <span class="keyword">new</span> <a class="code hl_class" href="a00559.html">ObservableList&lt;VitNX_TreeNode&gt;</a>();</div>
+<div class="line"><span class="lineno">  186</span>            <a class="code hl_property" href="a00675.html#aa87a27a6fd0761692fe7e3c388663158">Nodes</a> = <span class="keyword">new</span> <a class="code hl_class" href="a00559.html">ObservableList&lt;VitNX_TreeNode&gt;</a>();</div>
 <div class="line"><span class="lineno">  187</span>        }</div>
 <div class="ttc" id="aa00559_html"><div class="ttname"><a href="a00559.html">VitNX.UI.BasedOnDarkUI.Collections.ObservableList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00007">ObservableList.cs:8</a></div></div>
+<div class="ttc" id="aa00675_html_aa87a27a6fd0761692fe7e3c388663158"><div class="ttname"><a href="a00675.html#aa87a27a6fd0761692fe7e3c388663158">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.Nodes</a></div><div class="ttdeci">ObservableList&lt; VitNX_TreeNode &gt; Nodes</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00092">VitNX_TreeNode.cs:93</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -183,8 +186,9 @@ Events</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="a00158_source.html#l00189">189</a> of file <a class="el" href="a00158_source.html">VitNX_TreeNode.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  190</span>            : <span class="keyword">this</span>()</div>
 <div class="line"><span class="lineno">  191</span>        {</div>
-<div class="line"><span class="lineno">  192</span>            Text = text;</div>
+<div class="line"><span class="lineno">  192</span>            <a class="code hl_property" href="a00675.html#ab4726c7c06ae41233e679361293b4173">Text</a> = text;</div>
 <div class="line"><span class="lineno">  193</span>        }</div>
+<div class="ttc" id="aa00675_html_ab4726c7c06ae41233e679361293b4173"><div class="ttname"><a href="a00675.html#ab4726c7c06ae41233e679361293b4173">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.Text</a></div><div class="ttdeci">string Text</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00038">VitNX_TreeNode.cs:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -206,14 +210,16 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00158_source.html#l00207">207</a> of file <a class="el" href="a00158_source.html">VitNX_TreeNode.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  208</span>        {</div>
-<div class="line"><span class="lineno">  209</span>            var parent = ParentNode;</div>
+<div class="line"><span class="lineno">  209</span>            var parent = <a class="code hl_property" href="a00675.html#a09b54069deff50915d667aea0312864b">ParentNode</a>;</div>
 <div class="line"><span class="lineno">  210</span> </div>
 <div class="line"><span class="lineno">  211</span>            <span class="keywordflow">while</span> (parent != <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">  212</span>            {</div>
-<div class="line"><span class="lineno">  213</span>                parent.Expanded = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  213</span>                parent.<a class="code hl_property" href="a00675.html#aef859548d3cd9aa95f0316ae031469d5">Expanded</a> = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  214</span>                parent = parent.ParentNode;</div>
 <div class="line"><span class="lineno">  215</span>            }</div>
 <div class="line"><span class="lineno">  216</span>        }</div>
+<div class="ttc" id="aa00675_html_a09b54069deff50915d667aea0312864b"><div class="ttname"><a href="a00675.html#a09b54069deff50915d667aea0312864b">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.ParentNode</a></div><div class="ttdeci">VitNX_TreeNode ParentNode</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00131">VitNX_TreeNode.cs:132</a></div></div>
+<div class="ttc" id="aa00675_html_aef859548d3cd9aa95f0316ae031469d5"><div class="ttname"><a href="a00675.html#aef859548d3cd9aa95f0316ae031469d5">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.Expanded</a></div><div class="ttdeci">bool Expanded</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00066">VitNX_TreeNode.cs:67</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -235,13 +241,13 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00158_source.html#l00166">166</a> of file <a class="el" href="a00158_source.html">VitNX_TreeNode.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  167</span>        {</div>
-<div class="line"><span class="lineno">  168</span>            var parent = ParentNode;</div>
+<div class="line"><span class="lineno">  168</span>            var parent = <a class="code hl_property" href="a00675.html#a09b54069deff50915d667aea0312864b">ParentNode</a>;</div>
 <div class="line"><span class="lineno">  169</span>            <span class="keywordflow">while</span> (parent != <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">  170</span>            {</div>
 <div class="line"><span class="lineno">  171</span>                <span class="keywordflow">if</span> (parent == node)</div>
 <div class="line"><span class="lineno">  172</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>                parent = parent.ParentNode;</div>
+<div class="line"><span class="lineno">  174</span>                parent = parent.<a class="code hl_property" href="a00675.html#a09b54069deff50915d667aea0312864b">ParentNode</a>;</div>
 <div class="line"><span class="lineno">  175</span>            }</div>
 <div class="line"><span class="lineno">  176</span> </div>
 <div class="line"><span class="lineno">  177</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -266,11 +272,13 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00158_source.html#l00199">199</a> of file <a class="el" href="a00158_source.html">VitNX_TreeNode.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  200</span>        {</div>
-<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">if</span> (ParentNode != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  202</span>                ParentNode.Nodes.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="a00675.html#a09b54069deff50915d667aea0312864b">ParentNode</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  202</span>                <a class="code hl_property" href="a00675.html#a09b54069deff50915d667aea0312864b">ParentNode</a>.<a class="code hl_property" href="a00675.html#aa87a27a6fd0761692fe7e3c388663158">Nodes</a>.Remove(<span class="keyword">this</span>);</div>
 <div class="line"><span class="lineno">  203</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  204</span>                ParentTree.Nodes.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  204</span>                <a class="code hl_property" href="a00675.html#acf3b07530ed92f5ffa1fd15d05099b99">ParentTree</a>.<a class="code hl_property" href="a00679.html#aa87a27a6fd0761692fe7e3c388663158">Nodes</a>.Remove(<span class="keyword">this</span>);</div>
 <div class="line"><span class="lineno">  205</span>        }</div>
+<div class="ttc" id="aa00675_html_acf3b07530ed92f5ffa1fd15d05099b99"><div class="ttname"><a href="a00675.html#acf3b07530ed92f5ffa1fd15d05099b99">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.ParentTree</a></div><div class="ttdeci">VitNX_TreeView ParentTree</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00116">VitNX_TreeNode.cs:117</a></div></div>
+<div class="ttc" id="aa00679_html_aa87a27a6fd0761692fe7e3c388663158"><div class="ttname"><a href="a00679.html#aa87a27a6fd0761692fe7e3c388663158">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.Nodes</a></div><div class="ttdeci">ObservableList&lt; VitNX_TreeNode &gt; Nodes</div><div class="ttdef"><b>Definition:</b> <a href="a00161_source.html#l00063">VitNX_TreeView.cs:64</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -353,23 +361,25 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">   71</span>                <span class="keywordflow">if</span> (_expanded == value)</div>
 <div class="line"><span class="lineno">   72</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (value == <span class="keyword">true</span> &amp;&amp; Nodes.Count == 0)</div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (value == <span class="keyword">true</span> &amp;&amp; <a class="code hl_property" href="a00675.html#aa87a27a6fd0761692fe7e3c388663158">Nodes</a>.Count == 0)</div>
 <div class="line"><span class="lineno">   75</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   76</span> </div>
 <div class="line"><span class="lineno">   77</span>                _expanded = value;</div>
 <div class="line"><span class="lineno">   78</span> </div>
 <div class="line"><span class="lineno">   79</span>                <span class="keywordflow">if</span> (_expanded)</div>
 <div class="line"><span class="lineno">   80</span>                {</div>
-<div class="line"><span class="lineno">   81</span>                    <span class="keywordflow">if</span> (NodeExpanded != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   82</span>                        NodeExpanded(<span class="keyword">this</span>, <span class="keyword">null</span>);</div>
+<div class="line"><span class="lineno">   81</span>                    <span class="keywordflow">if</span> (<a class="code hl_event" href="a00675.html#abb507510a3b2e24241e731edd0afd24c">NodeExpanded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   82</span>                        <a class="code hl_event" href="a00675.html#abb507510a3b2e24241e731edd0afd24c">NodeExpanded</a>(<span class="keyword">this</span>, <span class="keyword">null</span>);</div>
 <div class="line"><span class="lineno">   83</span>                }</div>
 <div class="line"><span class="lineno">   84</span>                <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   85</span>                {</div>
-<div class="line"><span class="lineno">   86</span>                    <span class="keywordflow">if</span> (NodeCollapsed != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   87</span>                        NodeCollapsed(<span class="keyword">this</span>, <span class="keyword">null</span>);</div>
+<div class="line"><span class="lineno">   86</span>                    <span class="keywordflow">if</span> (<a class="code hl_event" href="a00675.html#ae203f7ac87c30293ffa3a58f54d11338">NodeCollapsed</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   87</span>                        <a class="code hl_event" href="a00675.html#ae203f7ac87c30293ffa3a58f54d11338">NodeCollapsed</a>(<span class="keyword">this</span>, <span class="keyword">null</span>);</div>
 <div class="line"><span class="lineno">   88</span>                }</div>
 <div class="line"><span class="lineno">   89</span>            }</div>
 <div class="line"><span class="lineno">   90</span>        }</div>
+<div class="ttc" id="aa00675_html_abb507510a3b2e24241e731edd0afd24c"><div class="ttname"><a href="a00675.html#abb507510a3b2e24241e731edd0afd24c">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.NodeExpanded</a></div><div class="ttdeci">EventHandler NodeExpanded</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00017">VitNX_TreeNode.cs:17</a></div></div>
+<div class="ttc" id="aa00675_html_ae203f7ac87c30293ffa3a58f54d11338"><div class="ttname"><a href="a00675.html#ae203f7ac87c30293ffa3a58f54d11338">VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.NodeCollapsed</a></div><div class="ttdeci">EventHandler NodeCollapsed</div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00019">VitNX_TreeNode.cs:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -447,8 +457,8 @@ Events</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  144</span>        {</div>
 <div class="line"><span class="lineno">  145</span>            <span class="keyword">get</span></div>
 <div class="line"><span class="lineno">  146</span>            {</div>
-<div class="line"><span class="lineno">  147</span>                var parent = ParentNode;</div>
-<div class="line"><span class="lineno">  148</span>                var path = Text;</div>
+<div class="line"><span class="lineno">  147</span>                var parent = <a class="code hl_property" href="a00675.html#a09b54069deff50915d667aea0312864b">ParentNode</a>;</div>
+<div class="line"><span class="lineno">  148</span>                var path = <a class="code hl_property" href="a00675.html#ab4726c7c06ae41233e679361293b4173">Text</a>;</div>
 <div class="line"><span class="lineno">  149</span> </div>
 <div class="line"><span class="lineno">  150</span>                <span class="keywordflow">while</span> (parent != <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">  151</span>                {</div>
@@ -713,7 +723,7 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">  123</span> </div>
 <div class="line"><span class="lineno">  124</span>                _parentTree = value;</div>
 <div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>                <span class="keywordflow">foreach</span> (var node <span class="keywordflow">in</span> Nodes)</div>
+<div class="line"><span class="lineno">  126</span>                <span class="keywordflow">foreach</span> (var node <span class="keywordflow">in</span> <a class="code hl_property" href="a00675.html#aa87a27a6fd0761692fe7e3c388663158">Nodes</a>)</div>
 <div class="line"><span class="lineno">  127</span>                    node.ParentTree = _parentTree;</div>
 <div class="line"><span class="lineno">  128</span>            }</div>
 <div class="line"><span class="lineno">  129</span>        }</div>
