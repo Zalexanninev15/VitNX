@@ -1,11 +1,10 @@
 var a00297 =
 [
-    [ "Collections", "a00298.html", "a00298" ],
-    [ "Config", "a00299.html", "a00299" ],
-    [ "Controls", "a00300.html", "a00300" ],
-    [ "Docking", "a00301.html", "a00301" ],
-    [ "Extensions", "a00302.html", "a00302" ],
-    [ "Forms", "a00303.html", "a00303" ],
-    [ "Renderers", "a00304.html", "a00304" ],
-    [ "Win32", "a00305.html", "a00305" ]
+    [ "GetClipboardText", "a00456.html", "a00456" ],
+    [ "Keyboard", "a00464.html", "a00464" ],
+    [ "Monitor", "a00468.html", "a00468" ],
+    [ "NewFolderDialog", "a00416.html", "a00416" ],
+    [ "STATask", "a00460.html", "a00460" ],
+    [ "TaskBarProgressBar", "a00404.html", "a00404" ],
+    [ "VolumeControl", "a00432.html", "a00432" ]
 ];

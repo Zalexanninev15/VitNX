@@ -49,7 +49,7 @@ namespace VitNX.Functions.Windows.Apps
                 {
                     FileName = targetFile,
                     Arguments = arguments,
-                    Verb = "open"
+                    //Verb = "open"
                 }
             };
             start.Start();
@@ -68,7 +68,7 @@ namespace VitNX.Functions.Windows.Apps
                     Arguments = arguments,
                     CreateNoWindow = true,
                     UseShellExecute = false,
-                    Verb = "open",
+                    //Verb = "open",
                     WindowStyle = ProcessWindowStyle.Hidden,
                     RedirectStandardOutput = true,
                     StandardOutputEncoding = desiredEncoding

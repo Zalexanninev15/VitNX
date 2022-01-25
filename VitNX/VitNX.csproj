@@ -37,6 +37,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Functions\Common\PowerControl.cs" />
     <Compile Include="Functions\Common\Text.cs" />
+    <Compile Include="Functions\Windows\WindowsControl.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,7 +241,7 @@
     <Compile Include="Functions\Windows\Apps.cs" />
     <Compile Include="Functions\Common\Web.cs" />
     <Compile Include="Functions\Windows\Win32.cs" />
-    <Compile Include="Functions\ConsoleProgressBar.cs" />
+    <Compile Include="Functions\NotGUI\ConsoleProgressBar.cs" />
     <Compile Include="Functions\Windows\NativeControls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\BasedOnDarkUI\Renderers\VitNX_MenuRenderer.cs" />
@@ -252,6 +254,12 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BasedOnDarkUI\Forms\VitNX_Form.resx">
+      <DependentUpon>VitNX_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BasedOnDarkUI\Forms\VitNX_TranslucentForm.resx">
+      <DependentUpon>VitNX_TranslucentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.resx" />
     <EmbeddedResource Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar.resx">

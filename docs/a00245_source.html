@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Forms/VitNX_TranslucentForm.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Forms/VitNX_MessageBoxIcon.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,59 +61,32 @@ $(document).ready(function(){initNavTree('a00245_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_TranslucentForm.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_MessageBoxIcon.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Drawing;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Windows.Forms;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00303.html">VitNX.UI.BasedOnDarkUI.Forms</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00772.html">    7</a></span>    <span class="keyword">internal</span> <span class="keyword">class </span><a class="code hl_class" href="a00772.html">VitNX_TranslucentForm</a> : Form</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00772.html#a7b19995fa6f1ffa45c00cfeef387d73e">    9</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00772.html#a7b19995fa6f1ffa45c00cfeef387d73e">OnHandleCreated</a>(EventArgs e)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keywordflow">if</span> (Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 19, <span class="keyword">new</span>[] { 1 }, 4) != 0)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 20, <span class="keyword">new</span>[] { 1 }, 4);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">        #region Property Region</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="a00772.html#a75531e013369d33c764cb2517795c912">   17</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00772.html#a75531e013369d33c764cb2517795c912">ShowWithoutActivation</a></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">        #endregion Property Region</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">        #region Constructor Region</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="a00772.html#a2fb91354737d2e38d647051099f949a1">   26</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00772.html#a2fb91354737d2e38d647051099f949a1">VitNX_TranslucentForm</a>(Color backColor, <span class="keywordtype">double</span> opacity = 0.6)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            StartPosition = FormStartPosition.Manual;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            FormBorderStyle = FormBorderStyle.None;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            Size = <span class="keyword">new</span> Size(1, 1);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            ShowInTaskbar = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            AllowTransparency = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            Opacity = opacity;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            BackColor = backColor;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">        #endregion Constructor Region</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aa00303_html"><div class="ttname"><a href="a00303.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00224_source.html#l00007">VitNX_Dialog.cs:8</a></div></div>
-<div class="ttc" id="aa00772_html"><div class="ttname"><a href="a00772.html">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm</a></div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00007">VitNX_TranslucentForm.cs:8</a></div></div>
-<div class="ttc" id="aa00772_html_a2fb91354737d2e38d647051099f949a1"><div class="ttname"><a href="a00772.html#a2fb91354737d2e38d647051099f949a1">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm.VitNX_TranslucentForm</a></div><div class="ttdeci">VitNX_TranslucentForm(Color backColor, double opacity=0.6)</div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00026">VitNX_TranslucentForm.cs:26</a></div></div>
-<div class="ttc" id="aa00772_html_a75531e013369d33c764cb2517795c912"><div class="ttname"><a href="a00772.html#a75531e013369d33c764cb2517795c912">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm.ShowWithoutActivation</a></div><div class="ttdeci">override bool ShowWithoutActivation</div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00017">VitNX_TranslucentForm.cs:18</a></div></div>
-<div class="ttc" id="aa00772_html_a7b19995fa6f1ffa45c00cfeef387d73e"><div class="ttname"><a href="a00772.html#a7b19995fa6f1ffa45c00cfeef387d73e">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm.OnHandleCreated</a></div><div class="ttdeci">override void OnHandleCreated(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00009">VitNX_TranslucentForm.cs:9</a></div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00307.html">VitNX.UI.BasedOnDarkUI.Forms</a></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0f">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0f">VitNX_MessageBoxIcon</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        None,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <a class="code hl_enumvalue" href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0faa82be0f551b8708bc08eb33cd9ded0cf">Information</a>,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <a class="code hl_enumvalue" href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0fa0eaadb4fcb48a0a0ed7bc9868be9fbaa">Warning</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <a class="code hl_enumvalue" href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_enumvalue" href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0faa97ea56b0e00b2379736ae60869ff66a">Question</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="ttc" id="aa00307_html"><div class="ttname"><a href="a00307.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00227_source.html#l00007">VitNX_Dialog.cs:8</a></div></div>
+<div class="ttc" id="aa00307_html_a15e99a2ca985df52925dc28ccd8e0f0f"><div class="ttname"><a href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0f">VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon</a></div><div class="ttdeci">VitNX_MessageBoxIcon</div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00003">VitNX_MessageBoxIcon.cs:4</a></div></div>
+<div class="ttc" id="aa00307_html_a15e99a2ca985df52925dc28ccd8e0f0fa0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0fa0eaadb4fcb48a0a0ed7bc9868be9fbaa">VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Warning</a></div><div class="ttdeci">@ Warning</div></div>
+<div class="ttc" id="aa00307_html_a15e99a2ca985df52925dc28ccd8e0f0fa902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0fa902b0d55fddef6f8d651fe1035b7d4bd">VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Error</a></div><div class="ttdeci">@ Error</div></div>
+<div class="ttc" id="aa00307_html_a15e99a2ca985df52925dc28ccd8e0f0faa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0faa82be0f551b8708bc08eb33cd9ded0cf">VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Information</a></div><div class="ttdeci">@ Information</div></div>
+<div class="ttc" id="aa00307_html_a15e99a2ca985df52925dc28ccd8e0f0faa97ea56b0e00b2379736ae60869ff66a"><div class="ttname"><a href="a00307.html#a15e99a2ca985df52925dc28ccd8e0f0faa97ea56b0e00b2379736ae60869ff66a">VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Question</a></div><div class="ttdeci">@ Question</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_bf891227bbea9a5714ef4945bdaa53ce.html">Forms</a></li><li class="navelem"><b>VitNX_TranslucentForm.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_bf891227bbea9a5714ef4945bdaa53ce.html">Forms</a></li><li class="navelem"><b>VitNX_MessageBoxIcon.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

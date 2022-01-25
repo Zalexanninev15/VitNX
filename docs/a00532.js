@@ -1,7 +1,27 @@
 var a00532 =
 [
-    [ "adapterId", "a00532.html#a22bf811db6ac29015c61e8cffe1b3e84", null ],
-    [ "id", "a00532.html#a37e2ea357c25dfa93b154d03c233cd23", null ],
-    [ "size", "a00532.html#a22d26304a3b3aca97e6311f6939dd1bf", null ],
-    [ "type", "a00532.html#a836af2f621a20bb4e77b45a29c270514", null ]
+    [ "CreateRoundRectRgn", "a00532.html#a7cd6f2cd42f7f96e6e7200f63c16ab4c", null ],
+    [ "DisplayConfigGetDeviceInfo", "a00532.html#aa961631d07a806af774df167df0475cf", null ],
+    [ "DwmSetWindowAttribute", "a00532.html#a0d9085a7ff9fa5880393b2719d69647e", null ],
+    [ "ExitWindowsEx", "a00532.html#a5730dcec67a5327ebbb6866233008004", null ],
+    [ "FindWindow", "a00532.html#a7a7210adc4665be83f63c9ac1ee0ed0b", null ],
+    [ "GetConsoleWindow", "a00532.html#aa3d22cbdcf4536ed05452bfacebfc562", null ],
+    [ "GetDeviceCaps", "a00532.html#ac9b67fea8dd72343204ab96b28a4cd80", null ],
+    [ "GetDisplayConfigBufferSizes", "a00532.html#a9e38dd75ee4a2075239e39f824fa2e08", null ],
+    [ "keybd_event", "a00532.html#a9f3f350a126504deefac746a4f111ae1", null ],
+    [ "LockWorkStation", "a00532.html#a0dc1877fbfffbfbeeb8a3d55d1ff5029", null ],
+    [ "MessageBeep", "a00532.html#aaf778166e93c6ade4025a1be47de6912", null ],
+    [ "mouse_event", "a00532.html#ace1a907d0c061ef7fcb04d3348f464d0", null ],
+    [ "PostMessage", "a00532.html#ae28f86ba54fbd0452c26688775e8ed6a", null ],
+    [ "QueryDisplayConfig", "a00532.html#a0c502dfe21ce4b7b6d3b5c1bbd953e20", null ],
+    [ "ReleaseCapture", "a00532.html#a3b003b34b31aec8e35d935565c08b61b", null ],
+    [ "SendMessage", "a00532.html#afe3edb1586df66a3e7c9542266dedbd1", null ],
+    [ "SetFocus", "a00532.html#a209129dbaa57b394c435d249abed16dd", null ],
+    [ "SetProcessDpiAwareness", "a00532.html#a14df8cafd9adcdf76b29806fd473e7d4", null ],
+    [ "SetThreadExecutionState", "a00532.html#a19897cdfc2cc27a73d9e1dc865d0dab4", null ],
+    [ "SetWindowPos", "a00532.html#a21758c3ac6f64d66c27df3169d32b015", null ],
+    [ "SetWindowTheme", "a00532.html#a3ee250611d064c7aa47b200ec22284c2", null ],
+    [ "SHEmptyRecycleBin", "a00532.html#ad61ba28e5fe5ad6190715f77ef17da29", null ],
+    [ "ShowWindow", "a00532.html#a89dc00fc9ce233a454676295acb95e1c", null ],
+    [ "WindowFromPoint", "a00532.html#a9e24a4eb2232e0829406cbc38f8886ec", null ]
 ];

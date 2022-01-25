@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Extensions/BitmapExtensions.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Docking/VitNX_ToolWindow.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,56 +61,283 @@ $(document).ready(function(){initNavTree('a00218_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">BitmapExtensions.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_ToolWindow.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System.Drawing;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00302.html">    3</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00302.html">VitNX.UI.BasedOnDarkUI.Extensions</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="a00752.html">    5</a></span>    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code hl_class" href="a00752.html">BitmapExtensions</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00752.html#a3d498754faadfa0ae6d590fbbdcac2fe">    7</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> Bitmap <a class="code hl_function" href="a00752.html#a3d498754faadfa0ae6d590fbbdcac2fe">SetColor</a>(<span class="keyword">this</span> Bitmap bitmap, Color color)</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>            var newBitmap = <span class="keyword">new</span> Bitmap(bitmap.Width, bitmap.Height);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bitmap.Width; i++)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; bitmap.Height; j++)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                    var pixel = bitmap.GetPixel(i, j);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                    <span class="keywordflow">if</span> (pixel.A &gt; 0)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                        newBitmap.SetPixel(i, j, color);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keywordflow">return</span> newBitmap;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="a00752.html#a8f357f9cc045eabc8414ef77a1b61cca">   22</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> Bitmap <a class="code hl_function" href="a00752.html#a8f357f9cc045eabc8414ef77a1b61cca">ChangeColor</a>(<span class="keyword">this</span> Bitmap bitmap, Color oldColor, Color newColor)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            var newBitmap = <span class="keyword">new</span> Bitmap(bitmap.Width, bitmap.Height);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bitmap.Width; i++)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; bitmap.Height; j++)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                    var pixel = bitmap.GetPixel(i, j);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                    <span class="keywordflow">if</span> (pixel == oldColor)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                        newBitmap.SetPixel(i, j, newColor);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">return</span> newBitmap;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
-<div class="ttc" id="aa00302_html"><div class="ttname"><a href="a00302.html">VitNX.UI.BasedOnDarkUI.Extensions</a></div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00003">BitmapExtensions.cs:4</a></div></div>
-<div class="ttc" id="aa00752_html"><div class="ttname"><a href="a00752.html">VitNX.UI.BasedOnDarkUI.Extensions.BitmapExtensions</a></div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00005">BitmapExtensions.cs:6</a></div></div>
-<div class="ttc" id="aa00752_html_a3d498754faadfa0ae6d590fbbdcac2fe"><div class="ttname"><a href="a00752.html#a3d498754faadfa0ae6d590fbbdcac2fe">VitNX.UI.BasedOnDarkUI.Extensions.BitmapExtensions.SetColor</a></div><div class="ttdeci">static Bitmap SetColor(this Bitmap bitmap, Color color)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00007">BitmapExtensions.cs:7</a></div></div>
-<div class="ttc" id="aa00752_html_a8f357f9cc045eabc8414ef77a1b61cca"><div class="ttname"><a href="a00752.html#a8f357f9cc045eabc8414ef77a1b61cca">VitNX.UI.BasedOnDarkUI.Extensions.BitmapExtensions.ChangeColor</a></div><div class="ttdeci">static Bitmap ChangeColor(this Bitmap bitmap, Color oldColor, Color newColor)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00022">BitmapExtensions.cs:22</a></div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.ComponentModel;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Drawing;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Windows.Forms;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00290.html">VitNX</a>.<a class="code hl_namespace" href="a00300.html">UI</a>.<a class="code hl_namespace" href="a00301.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00303.html">Config</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    [ToolboxItem(<span class="keyword">false</span>)]</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00760.html">   10</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00760.html">VitNX_ToolWindow</a> : <a class="code hl_class" href="a00728.html">VitNX_DockContent</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">        #region Field Region</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">private</span> Rectangle _closeButtonRect;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _closeButtonHot = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _closeButtonPressed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">private</span> Rectangle _headerRect;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _shouldDrag;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        #endregion Field Region</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        [Browsable(<span class="keyword">false</span>)]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="a00760.html#a05e74e33b0f3811419c1b6052e1df5fc">   27</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <a class="code hl_property" href="a00760.html#a05e74e33b0f3811419c1b6052e1df5fc">Padding</a> <a class="code hl_property" href="a00760.html#a05e74e33b0f3811419c1b6052e1df5fc">Padding</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> base.Padding; }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">        #endregion Property Region</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">        #region Constructor Region</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="a00760.html#a27afb7c97e47dc530ce2f3ac65ffb0e6">   36</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00760.html#a27afb7c97e47dc530ce2f3ac65ffb0e6">VitNX_ToolWindow</a>()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            SetStyle(ControlStyles.OptimizedDoubleBuffer |</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                     ControlStyles.ResizeRedraw |</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                     ControlStyles.UserPaint, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            BackColor = <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            base.Padding = <span class="keyword">new</span> <a class="code hl_property" href="a00760.html#a05e74e33b0f3811419c1b6052e1df5fc">Padding</a>(0, <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a>, 0, 0);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            UpdateCloseButton();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">        #endregion Constructor Region</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">        #region Method Region</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> IsActive()</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="a00728.html#a7e5069afa4bf46cb927ce1ff28bcd549">DockPanel</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span> <a class="code hl_property" href="a00728.html#a7e5069afa4bf46cb927ce1ff28bcd549">DockPanel</a>.<a class="code hl_property" href="a00736.html#a920c14cfcb5e6e5b7e44facbeaad3a72">ActiveContent</a> == <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> UpdateCloseButton()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            _headerRect = <span class="keyword">new</span> Rectangle</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                X = ClientRectangle.Left,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                Y = ClientRectangle.Top,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                Width = ClientRectangle.Width,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                Height = <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            };</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            _closeButtonRect = <span class="keyword">new</span> Rectangle</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                X = ClientRectangle.Right - <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1">tw_close</a>.Width - 5 - 3,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                Y = ClientRectangle.Top + (<a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a> / 2) - (<a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1">tw_close</a>.Height / 2),</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                Width = <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1">tw_close</a>.Width,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                Height = <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1">tw_close</a>.Height</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">        #endregion Method Region</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">        #region Event Handler Region</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="a00760.html#aa643318db0b6d4130246fd4792d95e90">   83</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00760.html#aa643318db0b6d4130246fd4792d95e90">OnResize</a>(EventArgs e)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            base.OnResize(e);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            UpdateCloseButton();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="a00760.html#a57b5b248770a2c1e2514b619b8bb59b2">   90</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00760.html#a57b5b248770a2c1e2514b619b8bb59b2">OnMouseMove</a>(MouseEventArgs e)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            base.OnMouseMove(e);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">if</span> (_closeButtonRect.Contains(e.Location) || _closeButtonPressed)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordflow">if</span> (!_closeButtonHot)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    _closeButtonHot = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    Invalidate();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keywordflow">if</span> (_closeButtonHot)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    _closeButtonHot = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                    Invalidate();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordflow">if</span> (_shouldDrag)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    <a class="code hl_property" href="a00728.html#a7e5069afa4bf46cb927ce1ff28bcd549">DockPanel</a>.<a class="code hl_function" href="a00736.html#abdddaf4e1ee22391be8803f4b3e51ead">DragContent</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="a00760.html#a99a67e51ce554f65bcccc19aad37f46b">  118</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00760.html#a99a67e51ce554f65bcccc19aad37f46b">OnMouseDown</a>(MouseEventArgs e)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            base.OnMouseDown(e);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <span class="keywordflow">if</span> (_closeButtonRect.Contains(e.Location))</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                _closeButtonPressed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                _closeButtonHot = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                Invalidate();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">if</span> (_headerRect.Contains(e.Location))</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                _shouldDrag = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="a00760.html#a2a183abcbee81d20477e5e9f00da9363">  137</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00760.html#a2a183abcbee81d20477e5e9f00da9363">OnMouseUp</a>(MouseEventArgs e)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            base.OnMouseUp(e);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">if</span> (_closeButtonRect.Contains(e.Location) &amp;&amp; _closeButtonPressed)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                <a class="code hl_function" href="a00728.html#ace36743954f0a3a2e5d8cba379d5313f">Close</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            _closeButtonPressed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            _closeButtonHot = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            _shouldDrag = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            Invalidate();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">        #endregion Event Handler Region</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">        #region Paint Region</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="a00760.html#a7b49a512aef9068aebdc17097736f6b9">  156</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00760.html#a7b49a512aef9068aebdc17097736f6b9">OnPaint</a>(PaintEventArgs e)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            var g = e.Graphics;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="comment">// Fill body</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>))</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                g.FillRectangle(b, ClientRectangle);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            var isActive = IsActive();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="comment">// Draw header</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            var bgColor = isActive ? <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a83763c807a68e37fc822982e0f9f2507">BlueBackground</a> : <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#ad3fc9c485331ccf2ec94eef9adfb39f2">HeaderBackground</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            var VitNXColor = isActive ? <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a6fca827ffd6900987de61931e2b09db1">VitNXBlueBorder</a> : <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNXBorder</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            var lightColor = isActive ? <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a1cd444d6a422042c66219b91d2602f26">LightBlueBorder</a> : <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#ad79455704a15ceeca28c20c74c740a56">LightBorder</a>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(bgColor))</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                var bgRect = <span class="keyword">new</span> Rectangle(0, 0, ClientRectangle.Width, <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                g.FillRectangle(b, bgRect);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(VitNXColor))</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                g.DrawLine(p, ClientRectangle.Left, <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a> - 1, ClientRectangle.Right, <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a> - 1);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(lightColor))</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            var xOffset = 2;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="comment">// Draw icon</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="a00728.html#a789566d4e5e9b6e3052833de2ea3a40e">Icon</a> != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                g.DrawImageUnscaled(<a class="code hl_property" href="a00728.html#a789566d4e5e9b6e3052833de2ea3a40e">Icon</a>, ClientRectangle.Left + 5, ClientRectangle.Top + (<a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a> / 2) - (<a class="code hl_property" href="a00728.html#a789566d4e5e9b6e3052833de2ea3a40e">Icon</a>.Height / 2) + 1);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                xOffset = <a class="code hl_property" href="a00728.html#a789566d4e5e9b6e3052833de2ea3a40e">Icon</a>.Width + 8;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <span class="comment">// Draw text</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>))</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                var textRect = <span class="keyword">new</span> Rectangle(xOffset, 0, ClientRectangle.Width - 4 - xOffset, <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a>);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                var format = <span class="keyword">new</span> StringFormat</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    Alignment = StringAlignment.Near,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    LineAlignment = StringAlignment.Center,</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                    FormatFlags = StringFormatFlags.NoWrap,</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                    Trimming = StringTrimming.EllipsisCharacter</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                };</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                g.DrawString(<a class="code hl_property" href="a00728.html#af4a79a39ce7090e7884cd0ffa9506a97">DockText</a>, Font, b, textRect, format);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="comment">// Close button</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            var img = _closeButtonHot ? <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#a05ad65a4d2a6cd56f7a96ea209551db1">tw_close_selected</a> : <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1">tw_close</a>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">if</span> (isActive)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                img = _closeButtonHot ? <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#a67b4bff1216e65629e3a7eb293a8107e">tw_active_close_selected</a> : <a class="code hl_class" href="a00552.html">DockIcons</a>.<a class="code hl_property" href="a00552.html#ab0dcda08001821f09e2851a1bcfdff6a">tw_active_close</a>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            g.DrawImageUnscaled(img, _closeButtonRect.Left, _closeButtonRect.Top);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="a00760.html#a2fed73cd0a8cd763a6a18be00a05d4ed">  224</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00760.html#a2fed73cd0a8cd763a6a18be00a05d4ed">OnPaintBackground</a>(PaintEventArgs e)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="comment">// Absorb event</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">        #endregion Paint Region</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
+<div class="ttc" id="aa00290_html"><div class="ttname"><a href="a00290.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
+<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00303_html"><div class="ttname"><a href="a00303.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00003">Colors.cs:4</a></div></div>
+<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00552_html"><div class="ttname"><a href="a00552.html">VitNX.DockIcons</a></div><div class="ttdoc">Класс ресурса со строгой типизацией для поиска локализованных строк и т.</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00025">DockIcons.Designer.cs:25</a></div></div>
+<div class="ttc" id="aa00552_html_a05ad65a4d2a6cd56f7a96ea209551db1"><div class="ttname"><a href="a00552.html#a05ad65a4d2a6cd56f7a96ea209551db1">VitNX.DockIcons.tw_close_selected</a></div><div class="ttdeci">static System.Drawing.Bitmap tw_close_selected</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00156">DockIcons.Designer.cs:156</a></div></div>
+<div class="ttc" id="aa00552_html_a67b4bff1216e65629e3a7eb293a8107e"><div class="ttname"><a href="a00552.html#a67b4bff1216e65629e3a7eb293a8107e">VitNX.DockIcons.tw_active_close_selected</a></div><div class="ttdeci">static System.Drawing.Bitmap tw_active_close_selected</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00136">DockIcons.Designer.cs:136</a></div></div>
+<div class="ttc" id="aa00552_html_ab0dcda08001821f09e2851a1bcfdff6a"><div class="ttname"><a href="a00552.html#ab0dcda08001821f09e2851a1bcfdff6a">VitNX.DockIcons.tw_active_close</a></div><div class="ttdeci">static System.Drawing.Bitmap tw_active_close</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00126">DockIcons.Designer.cs:126</a></div></div>
+<div class="ttc" id="aa00552_html_ac3fc916fa2f5aa003b13d979e4e675e1"><div class="ttname"><a href="a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1">VitNX.DockIcons.tw_close</a></div><div class="ttdeci">static System.Drawing.Bitmap tw_close</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00146">DockIcons.Designer.cs:146</a></div></div>
+<div class="ttc" id="aa00588_html"><div class="ttname"><a href="a00588.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00588_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00588.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00062">Colors.cs:63</a></div></div>
+<div class="ttc" id="aa00588_html_a177c5e90efbbd2ad1b059426fbc70a98"><div class="ttname"><a href="a00588.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNX.UI.BasedOnDarkUI.Config.Colors.VitNXBorder</a></div><div class="ttdeci">static Color VitNXBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00057">Colors.cs:58</a></div></div>
+<div class="ttc" id="aa00588_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00007">Colors.cs:8</a></div></div>
+<div class="ttc" id="aa00588_html_a1cd444d6a422042c66219b91d2602f26"><div class="ttname"><a href="a00588.html#a1cd444d6a422042c66219b91d2602f26">VitNX.UI.BasedOnDarkUI.Config.Colors.LightBlueBorder</a></div><div class="ttdeci">static Color LightBlueBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00102">Colors.cs:103</a></div></div>
+<div class="ttc" id="aa00588_html_a6fca827ffd6900987de61931e2b09db1"><div class="ttname"><a href="a00588.html#a6fca827ffd6900987de61931e2b09db1">VitNX.UI.BasedOnDarkUI.Config.Colors.VitNXBlueBorder</a></div><div class="ttdeci">static Color VitNXBlueBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00097">Colors.cs:98</a></div></div>
+<div class="ttc" id="aa00588_html_a83763c807a68e37fc822982e0f9f2507"><div class="ttname"><a href="a00588.html#a83763c807a68e37fc822982e0f9f2507">VitNX.UI.BasedOnDarkUI.Config.Colors.BlueBackground</a></div><div class="ttdeci">static Color BlueBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00017">Colors.cs:18</a></div></div>
+<div class="ttc" id="aa00588_html_ad3fc9c485331ccf2ec94eef9adfb39f2"><div class="ttname"><a href="a00588.html#ad3fc9c485331ccf2ec94eef9adfb39f2">VitNX.UI.BasedOnDarkUI.Config.Colors.HeaderBackground</a></div><div class="ttdeci">static Color HeaderBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00012">Colors.cs:13</a></div></div>
+<div class="ttc" id="aa00588_html_ad79455704a15ceeca28c20c74c740a56"><div class="ttname"><a href="a00588.html#ad79455704a15ceeca28c20c74c740a56">VitNX.UI.BasedOnDarkUI.Config.Colors.LightBorder</a></div><div class="ttdeci">static Color LightBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00052">Colors.cs:53</a></div></div>
+<div class="ttc" id="aa00592_html"><div class="ttname"><a href="a00592.html">VitNX.UI.BasedOnDarkUI.Config.Constsants</a></div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00003">Consts.cs:4</a></div></div>
+<div class="ttc" id="aa00592_html_aad7abd061e1748fb890bd5fff310150a"><div class="ttname"><a href="a00592.html#aad7abd061e1748fb890bd5fff310150a">VitNX.UI.BasedOnDarkUI.Config.Constsants.ToolWindowHeaderSize</a></div><div class="ttdeci">const int ToolWindowHeaderSize</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00011">Consts.cs:11</a></div></div>
+<div class="ttc" id="aa00728_html"><div class="ttname"><a href="a00728.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent</a></div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00009">VitNX_DockContent.cs:10</a></div></div>
+<div class="ttc" id="aa00728_html_a789566d4e5e9b6e3052833de2ea3a40e"><div class="ttname"><a href="a00728.html#a789566d4e5e9b6e3052833de2ea3a40e">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.Icon</a></div><div class="ttdeci">Image Icon</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00046">VitNX_DockContent.cs:47</a></div></div>
+<div class="ttc" id="aa00728_html_a7e5069afa4bf46cb927ce1ff28bcd549"><div class="ttname"><a href="a00728.html#a7e5069afa4bf46cb927ce1ff28bcd549">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockPanel</a></div><div class="ttdeci">VitNX_DockPanel DockPanel</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00067">VitNX_DockContent.cs:67</a></div></div>
+<div class="ttc" id="aa00728_html_ace36743954f0a3a2e5d8cba379d5313f"><div class="ttname"><a href="a00728.html#ace36743954f0a3a2e5d8cba379d5313f">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.Close</a></div><div class="ttdeci">virtual void Close()</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00096">VitNX_DockContent.cs:96</a></div></div>
+<div class="ttc" id="aa00728_html_af4a79a39ce7090e7884cd0ffa9506a97"><div class="ttname"><a href="a00728.html#af4a79a39ce7090e7884cd0ffa9506a97">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockText</a></div><div class="ttdeci">string DockText</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00028">VitNX_DockContent.cs:29</a></div></div>
+<div class="ttc" id="aa00736_html_a920c14cfcb5e6e5b7e44facbeaad3a72"><div class="ttname"><a href="a00736.html#a920c14cfcb5e6e5b7e44facbeaad3a72">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.ActiveContent</a></div><div class="ttdeci">VitNX_DockContent ActiveContent</div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00037">VitNX_DockPanel.cs:38</a></div></div>
+<div class="ttc" id="aa00736_html_abdddaf4e1ee22391be8803f4b3e51ead"><div class="ttname"><a href="a00736.html#abdddaf4e1ee22391be8803f4b3e51ead">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.DragContent</a></div><div class="ttdeci">void DragContent(VitNX_DockContent content)</div><div class="ttdef"><b>Definition:</b> <a href="a00197_source.html#l00236">VitNX_DockPanel.cs:236</a></div></div>
+<div class="ttc" id="aa00760_html"><div class="ttname"><a href="a00760.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00010">VitNX_ToolWindow.cs:11</a></div></div>
+<div class="ttc" id="aa00760_html_a05e74e33b0f3811419c1b6052e1df5fc"><div class="ttname"><a href="a00760.html#a05e74e33b0f3811419c1b6052e1df5fc">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.Padding</a></div><div class="ttdeci">new Padding Padding</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00027">VitNX_ToolWindow.cs:28</a></div></div>
+<div class="ttc" id="aa00760_html_a27afb7c97e47dc530ce2f3ac65ffb0e6"><div class="ttname"><a href="a00760.html#a27afb7c97e47dc530ce2f3ac65ffb0e6">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.VitNX_ToolWindow</a></div><div class="ttdeci">VitNX_ToolWindow()</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00036">VitNX_ToolWindow.cs:36</a></div></div>
+<div class="ttc" id="aa00760_html_a2a183abcbee81d20477e5e9f00da9363"><div class="ttname"><a href="a00760.html#a2a183abcbee81d20477e5e9f00da9363">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseUp</a></div><div class="ttdeci">override void OnMouseUp(MouseEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00137">VitNX_ToolWindow.cs:137</a></div></div>
+<div class="ttc" id="aa00760_html_a2fed73cd0a8cd763a6a18be00a05d4ed"><div class="ttname"><a href="a00760.html#a2fed73cd0a8cd763a6a18be00a05d4ed">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnPaintBackground</a></div><div class="ttdeci">override void OnPaintBackground(PaintEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00224">VitNX_ToolWindow.cs:224</a></div></div>
+<div class="ttc" id="aa00760_html_a57b5b248770a2c1e2514b619b8bb59b2"><div class="ttname"><a href="a00760.html#a57b5b248770a2c1e2514b619b8bb59b2">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseMove</a></div><div class="ttdeci">override void OnMouseMove(MouseEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00090">VitNX_ToolWindow.cs:90</a></div></div>
+<div class="ttc" id="aa00760_html_a7b49a512aef9068aebdc17097736f6b9"><div class="ttname"><a href="a00760.html#a7b49a512aef9068aebdc17097736f6b9">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnPaint</a></div><div class="ttdeci">override void OnPaint(PaintEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00156">VitNX_ToolWindow.cs:156</a></div></div>
+<div class="ttc" id="aa00760_html_a99a67e51ce554f65bcccc19aad37f46b"><div class="ttname"><a href="a00760.html#a99a67e51ce554f65bcccc19aad37f46b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseDown</a></div><div class="ttdeci">override void OnMouseDown(MouseEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00118">VitNX_ToolWindow.cs:118</a></div></div>
+<div class="ttc" id="aa00760_html_aa643318db0b6d4130246fd4792d95e90"><div class="ttname"><a href="a00760.html#aa643318db0b6d4130246fd4792d95e90">VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnResize</a></div><div class="ttdeci">override void OnResize(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00083">VitNX_ToolWindow.cs:83</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_d596301419efca3a22eed430cddf606e.html">Extensions</a></li><li class="navelem"><b>BitmapExtensions.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_ToolWindow.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

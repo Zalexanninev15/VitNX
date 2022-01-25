@@ -30,6 +30,7 @@ namespace VitNX.UI.BasedOnDarkUI.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.TopMost = true;
             this.picIcon = new System.Windows.Forms.PictureBox();
             this.lblText = new VitNX_Label();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();

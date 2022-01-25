@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: ControlScrollFilter Class Reference</title>
+<title>VitNX: VitNX_TranslucentForm Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,12 +63,14 @@ $(document).ready(function(){initNavTree('a00784.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="a00781.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ControlScrollFilter Class Reference</div></div>
+  <div class="headertitle"><div class="title">VitNX_TranslucentForm Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ControlScrollFilter:</div>
+Inheritance diagram for VitNX_TranslucentForm:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="a00784.png" alt=""/>
@@ -76,41 +78,119 @@ Inheritance diagram for ControlScrollFilter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f9a8e7f2dc7d59b708257bafcb6dfe7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html#a0f9a8e7f2dc7d59b708257bafcb6dfe7">PreFilterMessage</a> (ref Message m)</td></tr>
-<tr class="separator:a0f9a8e7f2dc7d59b708257bafcb6dfe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fb91354737d2e38d647051099f949a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html#a2fb91354737d2e38d647051099f949a1">VitNX_TranslucentForm</a> (Color backColor, double opacity=0.6)</td></tr>
+<tr class="separator:a2fb91354737d2e38d647051099f949a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7b19995fa6f1ffa45c00cfeef387d73e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html#a7b19995fa6f1ffa45c00cfeef387d73e">OnHandleCreated</a> (EventArgs e)</td></tr>
+<tr class="separator:a7b19995fa6f1ffa45c00cfeef387d73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a75531e013369d33c764cb2517795c912"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00784.html#a75531e013369d33c764cb2517795c912">ShowWithoutActivation</a><code> [get]</code></td></tr>
+<tr class="separator:a75531e013369d33c764cb2517795c912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00254_source.html#l00006">6</a> of file <a class="el" href="a00254_source.html">ControlScrollFilter.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0f9a8e7f2dc7d59b708257bafcb6dfe7" name="a0f9a8e7f2dc7d59b708257bafcb6dfe7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f9a8e7f2dc7d59b708257bafcb6dfe7">&#9670;&nbsp;</a></span>PreFilterMessage()</h2>
+<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00007">7</a> of file <a class="el" href="a00248_source.html">VitNX_TranslucentForm.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2fb91354737d2e38d647051099f949a1" name="a2fb91354737d2e38d647051099f949a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fb91354737d2e38d647051099f949a1">&#9670;&nbsp;</a></span>VitNX_TranslucentForm()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool PreFilterMessage </td>
+          <td class="memname"><a class="el" href="a00784.html">VitNX_TranslucentForm</a> </td>
           <td>(</td>
-          <td class="paramtype">ref Message&#160;</td>
-          <td class="paramname"><em>m</em></td><td>)</td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>backColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>opacity</em> = <code>0.6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00254_source.html#l00008">8</a> of file <a class="el" href="a00254_source.html">ControlScrollFilter.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>        {</div>
-<div class="line"><span class="lineno">   10</span>            <span class="keywordflow">switch</span> (m.Msg)</div>
-<div class="line"><span class="lineno">   11</span>            {</div>
-<div class="line"><span class="lineno">   12</span>                <span class="keywordflow">case</span> (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEWHEEL:</div>
-<div class="line"><span class="lineno">   13</span>                <span class="keywordflow">case</span> (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEHWHEEL:</div>
-<div class="line"><span class="lineno">   14</span>                    var hControlUnderMouse = Functions.Windows.Win32.Import.WindowFromPoint(<span class="keyword">new</span> Point((<span class="keywordtype">int</span>)m.LParam));</div>
-<div class="line"><span class="lineno">   15</span>                    <span class="keywordflow">if</span> (hControlUnderMouse == m.HWnd) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><span class="lineno">   16</span>                    Functions.Windows.Win32.Import.SendMessage(hControlUnderMouse, (uint)m.Msg, m.WParam, m.LParam);</div>
-<div class="line"><span class="lineno">   17</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   18</span>            }</div>
-<div class="line"><span class="lineno">   19</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00026">26</a> of file <a class="el" href="a00248_source.html">VitNX_TranslucentForm.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            StartPosition = FormStartPosition.Manual;</div>
+<div class="line"><span class="lineno">   29</span>            FormBorderStyle = FormBorderStyle.None;</div>
+<div class="line"><span class="lineno">   30</span>            Size = <span class="keyword">new</span> Size(1, 1);</div>
+<div class="line"><span class="lineno">   31</span>            ShowInTaskbar = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   32</span>            AllowTransparency = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   33</span>            Opacity = opacity;</div>
+<div class="line"><span class="lineno">   34</span>            BackColor = backColor;</div>
+<div class="line"><span class="lineno">   35</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b19995fa6f1ffa45c00cfeef387d73e" name="a7b19995fa6f1ffa45c00cfeef387d73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b19995fa6f1ffa45c00cfeef387d73e">&#9670;&nbsp;</a></span>OnHandleCreated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnHandleCreated </td>
+          <td>(</td>
+          <td class="paramtype">EventArgs&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00009">9</a> of file <a class="el" href="a00248_source.html">VitNX_TranslucentForm.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>        {</div>
+<div class="line"><span class="lineno">   11</span>            <span class="keywordflow">if</span> (Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 19, <span class="keyword">new</span>[] { 1 }, 4) != 0)</div>
+<div class="line"><span class="lineno">   12</span>                Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 20, <span class="keyword">new</span>[] { 1 }, 4);</div>
+<div class="line"><span class="lineno">   13</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a75531e013369d33c764cb2517795c912" name="a75531e013369d33c764cb2517795c912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75531e013369d33c764cb2517795c912">&#9670;&nbsp;</a></span>ShowWithoutActivation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool ShowWithoutActivation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00248_source.html#l00017">17</a> of file <a class="el" href="a00248_source.html">VitNX_TranslucentForm.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
+<div class="line"><span class="lineno">   19</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
 <div class="line"><span class="lineno">   20</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -120,7 +200,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00296.html">UI</a></li><li class="navelem"><a class="el" href="a00297.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="a00305.html">Win32</a></li><li class="navelem"><a class="el" href="a00784.html">ControlScrollFilter</a></li>
+    <li class="navelem"><a class="el" href="a00290.html">VitNX</a></li><li class="navelem"><a class="el" href="a00300.html">UI</a></li><li class="navelem"><a class="el" href="a00301.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="a00307.html">Forms</a></li><li class="navelem"><a class="el" href="a00784.html">VitNX_TranslucentForm</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

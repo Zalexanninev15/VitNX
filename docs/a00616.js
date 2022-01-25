@@ -1,9 +1,8 @@
 var a00616 =
 [
-    [ "VitNX_Label", "a00616.html#ad36db9d68a2ec33ecd78fb3d7b0b611d", null ],
-    [ "OnFontChanged", "a00616.html#a8fd8f7c011758f190b0085001e46b8e5", null ],
-    [ "OnSizeChanged", "a00616.html#a176ea4b330212089872d54c0be3ce12a", null ],
-    [ "OnTextChanged", "a00616.html#a61d244fc3301ae30de624fea31fe176e", null ],
-    [ "AutoSize", "a00616.html#aeda78af14798ecd59170047c215bb8e9", null ],
-    [ "AutoUpdateHeight", "a00616.html#ac031631ec5f073e82b9de20f17a84514", null ]
+    [ "VitNX_DropdownItem", "a00616.html#a6cb6d61e752828cb55c31d9da72d7e09", null ],
+    [ "VitNX_DropdownItem", "a00616.html#a4b13cc27d3d8a2a1b5e44d8efec04bd9", null ],
+    [ "VitNX_DropdownItem", "a00616.html#a922c0712aef4bdabfb2cfbae3df1e3f4", null ],
+    [ "Icon", "a00616.html#a90f2f9a30cd3c3854d51e52e4e3632a3", null ],
+    [ "Text", "a00616.html#ab4726c7c06ae41233e679361293b4173", null ]
 ];

@@ -1,5 +1,5 @@
 var a00296 =
 [
-    [ "BasedOnDarkUI", "a00297.html", "a00297" ],
-    [ "ControlsV2", "a00306.html", "a00306" ]
+    [ "Installed", "a00400.html", "a00400" ],
+    [ "Processes", "a00396.html", "a00396" ]
 ];

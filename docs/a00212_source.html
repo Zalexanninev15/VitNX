@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX_SplitterType.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Docking/VitNX_Document.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,29 +61,57 @@ $(document).ready(function(){initNavTree('a00212_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_SplitterType.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_Document.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        Left,</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        Right,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <a class="code hl_enumvalue" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00">Top</a>,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <a class="code hl_enumvalue" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
-<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Bottom</a></div><div class="ttdeci">@ Bottom</div></div>
-<div class="ttc" id="aa00301_html_ae48effe2de0c7ef774d834b7d4602b2b"><div class="ttname"><a href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType</a></div><div class="ttdeci">VitNX_SplitterType</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00003">VitNX_SplitterType.cs:4</a></div></div>
-<div class="ttc" id="aa00301_html_ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00"><div class="ttname"><a href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00">VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType.Top</a></div><div class="ttdeci">@ Top</div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System.ComponentModel;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00290.html">VitNX</a>.<a class="code hl_namespace" href="a00300.html">UI</a>.<a class="code hl_namespace" href="a00301.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00303.html">Config</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    [ToolboxItem(<span class="keyword">false</span>)]</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00756.html">    7</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00756.html">VitNX_Document</a> : <a class="code hl_class" href="a00728.html">VitNX_DockContent</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        [Browsable(<span class="keyword">false</span>)]</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00756.html#a058b44109b84664828001334e4910a29">   13</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <a class="code hl_enumeration" href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a> <a class="code hl_property" href="a00756.html#a058b44109b84664828001334e4910a29">DefaultDockArea</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> base.DefaultDockArea; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">        #endregion Property Region</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">        #region Constructor Region</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="a00756.html#aca2dd35a9bc6c3781eb1394e107e4c10">   22</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00756.html#aca2dd35a9bc6c3781eb1394e107e4c10">VitNX_Document</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            BackColor = <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            base.DefaultDockArea = <a class="code hl_enumeration" href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a>.Document;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">        #endregion Constructor Region</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="ttc" id="aa00290_html"><div class="ttname"><a href="a00290.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
+<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00303_html"><div class="ttname"><a href="a00303.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00003">Colors.cs:4</a></div></div>
+<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00305_html_a07913461bb014f52dd5bfafabe7d3587"><div class="ttname"><a href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea</a></div><div class="ttdeci">VitNX_DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00003">VitNX_DockArea.cs:4</a></div></div>
+<div class="ttc" id="aa00588_html"><div class="ttname"><a href="a00588.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00588_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00007">Colors.cs:8</a></div></div>
+<div class="ttc" id="aa00728_html"><div class="ttname"><a href="a00728.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent</a></div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00009">VitNX_DockContent.cs:10</a></div></div>
+<div class="ttc" id="aa00756_html"><div class="ttname"><a href="a00756.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_Document</a></div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00007">VitNX_Document.cs:8</a></div></div>
+<div class="ttc" id="aa00756_html_a058b44109b84664828001334e4910a29"><div class="ttname"><a href="a00756.html#a058b44109b84664828001334e4910a29">VitNX.UI.BasedOnDarkUI.Docking.VitNX_Document.DefaultDockArea</a></div><div class="ttdeci">new VitNX_DockArea DefaultDockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00013">VitNX_Document.cs:14</a></div></div>
+<div class="ttc" id="aa00756_html_aca2dd35a9bc6c3781eb1394e107e4c10"><div class="ttname"><a href="a00756.html#aca2dd35a9bc6c3781eb1394e107e4c10">VitNX.UI.BasedOnDarkUI.Docking.VitNX_Document.VitNX_Document</a></div><div class="ttdeci">VitNX_Document()</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00022">VitNX_Document.cs:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_SplitterType.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_Document.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

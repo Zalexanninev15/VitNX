@@ -1,5 +1,4 @@
 var a00500 =
 [
-    [ "cx", "a00500.html#ae4f45384bd02b56aac4e85383980a862", null ],
-    [ "cy", "a00500.html#a9bcb0e989b69a156161d4347d82f698a", null ]
+    [ "targetVideoSignalInfo", "a00500.html#af752118c09ca1838c9b59cbf3308522c", null ]
 ];

@@ -165,8 +165,6 @@ namespace VitNX.Functions.Common.Information
             }
             return clockSpeed;
         }
-
-
     }
 
     public class Gpu
@@ -307,7 +305,7 @@ namespace VitNX.Functions.Common.Information
                 screenString =
                     screen.DeviceName.Replace("\\", "").Replace(".", "") + ";" +
                     screen.Bounds.Width + "|" + screen.Bounds.Height + ";" +
-                    Functions.Windows.Win32.Helper.DeviceFriendlyName(screen) + ";" +
+                    Functions.Windows.NativeControls.Monitor.DeviceFriendlyName(screen) + ";" +
                     screen.Primary.ToString();
                 screensall.Add(screenString);
                 screenString = string.Empty;

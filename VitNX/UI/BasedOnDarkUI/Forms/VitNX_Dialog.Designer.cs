@@ -30,6 +30,7 @@ namespace VitNX.UI.BasedOnDarkUI.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.TopMost = true;
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.flowInner = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOk = new VitNX_Button();

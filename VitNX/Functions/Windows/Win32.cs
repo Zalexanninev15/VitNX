@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace VitNX.Functions.Windows.Win32
 {
     public class Import
     {
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr GetConsoleWindow();
+
         [DllImport("dwmapi.dll", SetLastError = true)]
-        public static extern int DwmSetWindowAttribute(IntPtr hwnd,
+        public static extern int DwmSetWindowAttribute(IntPtr hWnd,
             int attribute,
             int[] pvAttribute,
             uint cbAttribute);
@@ -28,13 +27,13 @@ namespace VitNX.Functions.Windows.Win32
 
         [DllImport("user32.dll")]
         public static extern int QueryDisplayConfig(Enums.QUERY_DEVICE_CONFIG_FLAGS flags,
-            ref uint numPathArrayElements, [Out] Helper.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
-            ref uint numModeInfoArrayElements, [Out] Helper.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
+            ref uint numPathArrayElements, [Out] NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
+            ref uint numModeInfoArrayElements, [Out] NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
             IntPtr currentTopologyId
             );
 
         [DllImport("user32.dll")]
-        public static extern int DisplayConfigGetDeviceInfo(ref Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
+        public static extern int DisplayConfigGetDeviceInfo(ref NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
 
         [DllImport("user32.dll")]
         public static extern IntPtr SetFocus(IntPtr hWnd);
@@ -55,6 +54,9 @@ namespace VitNX.Functions.Windows.Win32
             int nBottomRect,
             int nWidthEllipse,
             int nHeightEllipse);
+
+        [DllImport("user32.dll")]
+        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr FindWindow(string lpClassName,
@@ -78,7 +80,7 @@ namespace VitNX.Functions.Windows.Win32
             string pszSubIdList);
 
         [DllImport("shell32.dll")]
-        public static extern int SHEmptyRecycleBin(IntPtr hwnd,
+        public static extern int SHEmptyRecycleBin(IntPtr hWnd,
             string pszRootPath,
             Enums.SHERB_RECYCLE dwFlags);
 
@@ -537,204 +539,8 @@ namespace VitNX.Functions.Windows.Win32
         }
     }
 
-    public static class Helper
+    public static class StandaloneImportFunctions
     {
         public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
-
-        public static void MinimizeAllWindows()
-        {
-            IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
-            Import.SendMessage(lHwnd, 0x111, (IntPtr)419, IntPtr.Zero);
-        }
-
-        public static void MaximizeAllWindows()
-        {
-            IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
-            Import.SendMessage(lHwnd, 0x111, (IntPtr)416, IntPtr.Zero);
-        }
-
-        public const int ERROR_SUCCESS = 0;
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct LUID
-        {
-            public uint LowPart;
-            public int HighPart;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_PATH_SOURCE_INFO
-        {
-            public LUID adapterId;
-            public uint id;
-            public uint modeInfoIdx;
-            public uint statusFlags;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_PATH_TARGET_INFO
-        {
-            public LUID adapterId;
-            public uint id;
-            public uint modeInfoIdx;
-            private Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
-            private Enums.DISPLAYCONFIG_ROTATION rotation;
-            private Enums.DISPLAYCONFIG_SCALING scaling;
-            private DISPLAYCONFIG_RATIONAL refreshRate;
-            private Enums.DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
-            public bool targetAvailable;
-            public uint statusFlags;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_RATIONAL
-        {
-            public uint Numerator;
-            public uint Denominator;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_PATH_INFO
-        {
-            public DISPLAYCONFIG_PATH_SOURCE_INFO sourceInfo;
-            public DISPLAYCONFIG_PATH_TARGET_INFO targetInfo;
-            public uint flags;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_2DREGION
-        {
-            public uint cx;
-            public uint cy;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
-        {
-            public ulong pixelRate;
-            public DISPLAYCONFIG_RATIONAL hSyncFreq;
-            public DISPLAYCONFIG_RATIONAL vSyncFreq;
-            public DISPLAYCONFIG_2DREGION activeSize;
-            public DISPLAYCONFIG_2DREGION totalSize;
-            public uint videoStandard;
-            public Enums.DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_TARGET_MODE
-        {
-            public DISPLAYCONFIG_VIDEO_SIGNAL_INFO targetVideoSignalInfo;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct POINTL
-        {
-            private int x;
-            private int y;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_SOURCE_MODE
-        {
-            public uint width;
-            public uint height;
-            public Enums.DISPLAYCONFIG_PIXELFORMAT pixelFormat;
-            public POINTL position;
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public struct DISPLAYCONFIG_MODE_INFO_UNION
-        {
-            [FieldOffset(0)]
-            public DISPLAYCONFIG_TARGET_MODE targetMode;
-
-            [FieldOffset(0)]
-            public DISPLAYCONFIG_SOURCE_MODE sourceMode;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_MODE_INFO
-        {
-            public Enums.DISPLAYCONFIG_MODE_INFO_TYPE infoType;
-            public uint id;
-            public LUID adapterId;
-            public DISPLAYCONFIG_MODE_INFO_UNION modeInfo;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
-        {
-            public uint value;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct DISPLAYCONFIG_DEVICE_INFO_HEADER
-        {
-            public Enums.DISPLAYCONFIG_DEVICE_INFO_TYPE type;
-            public uint size;
-            public LUID adapterId;
-            public uint id;
-        }
-
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-        public struct DISPLAYCONFIG_TARGET_DEVICE_NAME
-        {
-            public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-            public DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS flags;
-            public Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
-            public ushort edidManufactureId;
-            public ushort edidProductCodeId;
-            public uint connectorInstance;
-
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
-            public string monitorFriendlyDeviceName;
-
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string monitorDevicePath;
-        }
-
-        private static string MonitorFriendlyName(LUID adapterId, uint targetId)
-        {
-            var deviceName = new DISPLAYCONFIG_TARGET_DEVICE_NAME
-            {
-                header =
-                {
-                    size = (uint)Marshal.SizeOf(typeof (DISPLAYCONFIG_TARGET_DEVICE_NAME)),
-                    adapterId = adapterId,
-                    id = targetId,
-                    type = Enums.DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_NAME
-                }
-            };
-            var error = Import.DisplayConfigGetDeviceInfo(ref deviceName);
-            if (error != ERROR_SUCCESS)
-                throw new Win32Exception(error);
-            return deviceName.monitorFriendlyDeviceName;
-        }
-
-        private static IEnumerable<string> GetAllMonitorsFriendlyNames()
-        {
-            uint pathCount, modeCount;
-            var error = Import.GetDisplayConfigBufferSizes(Enums.QUERY_DEVICE_CONFIG_FLAGS.QDC_ONLY_ACTIVE_PATHS, out pathCount, out modeCount);
-            if (error != ERROR_SUCCESS)
-                throw new Win32Exception(error);
-            var displayPaths = new DISPLAYCONFIG_PATH_INFO[pathCount];
-            var displayModes = new DISPLAYCONFIG_MODE_INFO[modeCount];
-            error = Import.QueryDisplayConfig(Enums.QUERY_DEVICE_CONFIG_FLAGS.QDC_ONLY_ACTIVE_PATHS,
-                ref pathCount, displayPaths, ref modeCount, displayModes, IntPtr.Zero);
-            if (error != ERROR_SUCCESS)
-                throw new Win32Exception(error);
-            for (var i = 0; i < modeCount; i++)
-                if (displayModes[i].infoType == Enums.DISPLAYCONFIG_MODE_INFO_TYPE.DISPLAYCONFIG_MODE_INFO_TYPE_TARGET)
-                    yield return MonitorFriendlyName(displayModes[i].adapterId, displayModes[i].id);
-        }
-
-        public static string DeviceFriendlyName(this Screen screen)
-        {
-            var allFriendlyNames = GetAllMonitorsFriendlyNames();
-            for (var index = 0; index < Screen.AllScreens.Length; index++)
-                if (Equals(screen, Screen.AllScreens[index]))
-                    return allFriendlyNames.ToArray()[index];
-            return null;
-        }
     }
 }

@@ -1,5 +1,5 @@
 var a00584 =
 [
-    [ "ScrollValueEventArgs", "a00584.html#ae66453eeea27ed6617f9aca32c18b7bd", null ],
-    [ "Value", "a00584.html#aca5c8bf6cfb5ea8d150d4b2f394fd552", null ]
+    [ "ObservableListModified", "a00584.html#aaa2989c4f35e4032ec3ee4c072b95876", null ],
+    [ "Items", "a00584.html#a76356ffd263f5ab949f4d852e7b4f489", null ]
 ];

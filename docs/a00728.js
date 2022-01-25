@@ -1,18 +1,16 @@
 var a00728 =
 [
-    [ "VitNX_DockRegion", "a00728.html#a8449c60bf878c1267b6e5b4bdc8145ea", null ],
-    [ "AddContent", "a00728.html#a851dd7bf4d148af9c13820d03588b89a", null ],
-    [ "AddContent", "a00728.html#a37ba961625d290a378ecd2904f7d1cbb", null ],
-    [ "GetContents", "a00728.html#a55ffe1730ef362a3e66cc1d1268619d2", null ],
-    [ "InsertContent", "a00728.html#a2bf33cc7e1b5c7b47c62202d7301023e", null ],
-    [ "OnCreateControl", "a00728.html#ad53e3abd3a95679a61df7bf633885341", null ],
-    [ "OnLayout", "a00728.html#ab91b13b6ffa52627647d9d37c4955b36", null ],
-    [ "OnPaint", "a00728.html#a7b49a512aef9068aebdc17097736f6b9", null ],
-    [ "OnResize", "a00728.html#adfff87b03ef3d0b1c7235b6a2575de4e", null ],
-    [ "Redraw", "a00728.html#abb6b3ccab84333a2dfaa3e87cfc3c3ab", null ],
-    [ "RemoveContent", "a00728.html#a4cdc2cf4cdc8cdf509431d29968dd1dd", null ],
-    [ "ActiveDocument", "a00728.html#aa6fd0f34ce00e8c68b964966f126ce77", null ],
+    [ "VitNX_DockContent", "a00728.html#a753c58cce985b71b76b6cc2bbfc19da8", null ],
+    [ "Close", "a00728.html#ace36743954f0a3a2e5d8cba379d5313f", null ],
+    [ "OnEnter", "a00728.html#afc0f271ffc764de34794f02227907035", null ],
+    [ "DefaultDockArea", "a00728.html#a5f7d2c20928190a3c82a2e1472ca3b14", null ],
     [ "DockArea", "a00728.html#af941ee900f7fa46e65e655857bc88057", null ],
+    [ "DockGroup", "a00728.html#a4a97df4da4747a010ebce1a6f3425c3c", null ],
     [ "DockPanel", "a00728.html#a7e5069afa4bf46cb927ce1ff28bcd549", null ],
-    [ "Groups", "a00728.html#af8a371384d4a98b8db87713a7b4f2bd8", null ]
+    [ "DockRegion", "a00728.html#ac52eeda800be822b04f7f4326cd0686a", null ],
+    [ "DockText", "a00728.html#af4a79a39ce7090e7884cd0ffa9506a97", null ],
+    [ "Icon", "a00728.html#a789566d4e5e9b6e3052833de2ea3a40e", null ],
+    [ "Order", "a00728.html#a50c390aab6a4df930a876c163e793ce1", null ],
+    [ "SerializationKey", "a00728.html#a7cc2ff5773ef93112aae486a3abc4884", null ],
+    [ "DockTextChanged", "a00728.html#a90c9b230308f2a09f79d0514371bf30d", null ]
 ];

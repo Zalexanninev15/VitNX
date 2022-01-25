@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: STATask Class Reference</title>
+<title>VitNX: GetClipboardText Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,23 +64,21 @@ $(document).ready(function(){initNavTree('a00456.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="a00453.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">STATask Class Reference</div></div>
+  <div class="headertitle"><div class="title">GetClipboardText Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9a8733b2a3abc261c79b3dad60bbe1b1"><td class="memItemLeft" align="right" valign="top">static Task&lt; TResult &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00456.html#a9a8733b2a3abc261c79b3dad60bbe1b1">Run&lt; TResult &gt;</a> (Func&lt; TResult &gt; function)</td></tr>
-<tr class="separator:a9a8733b2a3abc261c79b3dad60bbe1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23c5615ca5c062f0ecca9135febefda6"><td class="memItemLeft" align="right" valign="top">static Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00456.html#a23c5615ca5c062f0ecca9135febefda6">Run</a> (Action action)</td></tr>
-<tr class="separator:a23c5615ca5c062f0ecca9135febefda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60363eba87665c20edd6708101a8a649"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00456.html#a60363eba87665c20edd6708101a8a649">GetText</a> ()</td></tr>
+<tr class="separator:a60363eba87665c20edd6708101a8a649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00336">336</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00314">314</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a23c5615ca5c062f0ecca9135febefda6" name="a23c5615ca5c062f0ecca9135febefda6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23c5615ca5c062f0ecca9135febefda6">&#9670;&nbsp;</a></span>Run()</h2>
+<a id="a60363eba87665c20edd6708101a8a649" name="a60363eba87665c20edd6708101a8a649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60363eba87665c20edd6708101a8a649">&#9670;&nbsp;</a></span>GetText()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -89,10 +87,9 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Task Run </td>
+          <td class="memname">static string GetText </td>
           <td>(</td>
-          <td class="paramtype">Action&#160;</td>
-          <td class="paramname"><em>action</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -103,62 +100,15 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00352">352</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  353</span>        {</div>
-<div class="line"><span class="lineno">  354</span>            var tcs = <span class="keyword">new</span> TaskCompletionSource&lt;object&gt;();</div>
-<div class="line"><span class="lineno">  355</span>            var thread = <span class="keyword">new</span> Thread(() =&gt;</div>
-<div class="line"><span class="lineno">  356</span>            {</div>
-<div class="line"><span class="lineno">  357</span>                <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  358</span>                {</div>
-<div class="line"><span class="lineno">  359</span>                    action();</div>
-<div class="line"><span class="lineno">  360</span>                    tcs.SetResult(<span class="keyword">null</span>);</div>
-<div class="line"><span class="lineno">  361</span>                }</div>
-<div class="line"><span class="lineno">  362</span>                <span class="keywordflow">catch</span> (Exception e) { tcs.SetException(e); }</div>
-<div class="line"><span class="lineno">  363</span>            });</div>
-<div class="line"><span class="lineno">  364</span>            thread.SetApartmentState(ApartmentState.STA);</div>
-<div class="line"><span class="lineno">  365</span>            thread.Start();</div>
-<div class="line"><span class="lineno">  366</span>            <span class="keywordflow">return</span> tcs.Task;</div>
-<div class="line"><span class="lineno">  367</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a9a8733b2a3abc261c79b3dad60bbe1b1" name="a9a8733b2a3abc261c79b3dad60bbe1b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a8733b2a3abc261c79b3dad60bbe1b1">&#9670;&nbsp;</a></span>Run&lt; TResult &gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Task&lt; TResult &gt; <a class="el" href="a00456.html#a23c5615ca5c062f0ecca9135febefda6">Run</a>&lt; TResult &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Func&lt; TResult &gt;&#160;</td>
-          <td class="paramname"><em>function</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00338">338</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  339</span>        {</div>
-<div class="line"><span class="lineno">  340</span>            var tcs = <span class="keyword">new</span> TaskCompletionSource&lt;TResult&gt;();</div>
-<div class="line"><span class="lineno">  341</span> </div>
-<div class="line"><span class="lineno">  342</span>            var thread = <span class="keyword">new</span> Thread(() =&gt;</div>
-<div class="line"><span class="lineno">  343</span>            {</div>
-<div class="line"><span class="lineno">  344</span>                <span class="keywordflow">try</span> { tcs.SetResult(<span class="keyword">function</span>()); }</div>
-<div class="line"><span class="lineno">  345</span>                <span class="keywordflow">catch</span> (Exception e) { tcs.SetException(e); }</div>
-<div class="line"><span class="lineno">  346</span>            });</div>
-<div class="line"><span class="lineno">  347</span>            thread.SetApartmentState(ApartmentState.STA);</div>
-<div class="line"><span class="lineno">  348</span>            thread.Start();</div>
-<div class="line"><span class="lineno">  349</span>            <span class="keywordflow">return</span> tcs.Task;</div>
-<div class="line"><span class="lineno">  350</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00328">328</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>        {</div>
+<div class="line"><span class="lineno">  330</span>            GetClipboardText instance = <span class="keyword">new</span> GetClipboardText();</div>
+<div class="line"><span class="lineno">  331</span>            Thread staThread = <span class="keyword">new</span> Thread(instance._thGetText);</div>
+<div class="line"><span class="lineno">  332</span>            staThread.SetApartmentState(ApartmentState.STA);</div>
+<div class="line"><span class="lineno">  333</span>            staThread.Start();</div>
+<div class="line"><span class="lineno">  334</span>            staThread.Join();</div>
+<div class="line"><span class="lineno">  335</span>            <span class="keywordflow">return</span> instance._GetText;</div>
+<div class="line"><span class="lineno">  336</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -167,7 +117,7 @@ Static Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00288.html">Functions</a></li><li class="navelem"><a class="el" href="a00291.html">Windows</a></li><li class="navelem"><a class="el" href="a00293.html">NativeControls</a></li><li class="navelem"><a class="el" href="a00456.html">STATask</a></li>
+    <li class="navelem"><a class="el" href="a00290.html">VitNX</a></li><li class="navelem"><a class="el" href="a00291.html">Functions</a></li><li class="navelem"><a class="el" href="a00295.html">Windows</a></li><li class="navelem"><a class="el" href="a00297.html">NativeControls</a></li><li class="navelem"><a class="el" href="a00456.html">GetClipboardText</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

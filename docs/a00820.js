@@ -1,11 +1,12 @@
 var a00820 =
 [
-    [ "VitNX2_ToogleButton", "a00820.html#af00adddbfc36fe72c27df9732830b22e", null ],
-    [ "OnPaint", "a00820.html#a4948a2d75172f121522711a8f5c9cbcd", null ],
-    [ "OffBackColor", "a00820.html#a898d3546ffb693677d598422206b0942", null ],
-    [ "OffToggleColor", "a00820.html#a14132160d30e37568e01851fcf7c5480", null ],
-    [ "OnBackColor", "a00820.html#a4dc9380fa0bbec07bb20ce412aacfdfa", null ],
-    [ "OnToggleColor", "a00820.html#a3b48b93200b6bc22df3c5637f0bc8875", null ],
-    [ "SolidStyle", "a00820.html#ac8262063a8bfbfd5e242cf837d51f2d9", null ],
-    [ "Text", "a00820.html#a9edbda6bee91454681dcefdbf05d5439", null ]
+    [ "VitNX2_MessageBox_Form", "a00820.html#aac99ffe24418f1b32a4b6a60f35ff399", null ],
+    [ "VitNX2_MessageBox_Form", "a00820.html#a3b9fed254a24ef0bd679943a48c55c11", null ],
+    [ "VitNX2_MessageBox_Form", "a00820.html#a334bf2d789626ec5639290cbdf2bde5e", null ],
+    [ "VitNX2_MessageBox_Form", "a00820.html#aa9c4f04c1991cc73bb827d4f240bc240", null ],
+    [ "VitNX2_MessageBox_Form", "a00820.html#a96ebfa5bc68e5e5f66395fe7d9986c2a", null ],
+    [ "Dispose", "a00820.html#a849c3c7f8d08104f0cdb46bee9fe6389", null ],
+    [ "OnPaint", "a00820.html#a7b49a512aef9068aebdc17097736f6b9", null ],
+    [ "squaredWindowOnWin11", "a00820.html#a63524cce91d1281dfeec8e43a797afdb", null ],
+    [ "PrimaryColor", "a00820.html#a90ffae67e0f0164c7ef70add92f7c59d", null ]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX_DockTabArea.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Docking/VitNX_DockTab.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,146 +61,71 @@ $(document).ready(function(){initNavTree('a00206_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_DockTabArea.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_DockTab.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System.Collections.Generic;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Drawing;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Windows.Forms;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00287.html">VitNX</a>.<a class="code hl_namespace" href="a00296.html">UI</a>.<a class="code hl_namespace" href="a00297.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00300.html">Controls</a>;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00740.html">    8</a></span>    <span class="keyword">internal</span> <span class="keyword">class </span><a class="code hl_class" href="a00740.html">VitNX_DockTabArea</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">        #region Field Region</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">private</span> Dictionary&lt;VitNX_DockContent, VitNX_DockTab&gt; _tabs = <span class="keyword">new</span> Dictionary&lt;VitNX_DockContent, VitNX_DockTab&gt;();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">private</span> List&lt;ToolStripMenuItem&gt; _menuItems = <span class="keyword">new</span> List&lt;ToolStripMenuItem&gt;();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">private</span> <a class="code hl_class" href="a00600.html">VitNX_ContextMenu</a> _tabMenu = <span class="keyword">new</span> <a class="code hl_class" href="a00600.html">VitNX_ContextMenu</a>();</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System.Drawing;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="a00748.html">    5</a></span>    <span class="keyword">internal</span> <span class="keyword">class </span><a class="code hl_class" href="a00748.html">VitNX_DockTab</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">    9</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="a00728.html">VitNX_DockContent</a> <a class="code hl_property" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">DockContent</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="a00748.html#adce05c41aca696cec6694e3a743c252b">   11</a></span>        <span class="keyword">public</span> Rectangle <a class="code hl_property" href="a00748.html#adce05c41aca696cec6694e3a743c252b">ClientRectangle</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00748.html#a4799ecdc568d7bf7101531246ad24227">   13</a></span>        <span class="keyword">public</span> Rectangle <a class="code hl_property" href="a00748.html#a4799ecdc568d7bf7101531246ad24227">CloseButtonRectangle</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="a00748.html#aeb691638a772b5fbf5e1e51bdd19a158">   15</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00748.html#aeb691638a772b5fbf5e1e51bdd19a158">Hot</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">        #endregion Field Region</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="a00748.html#a60a39ed2d3561dac8f69fab3b2a53440">   17</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00748.html#a60a39ed2d3561dac8f69fab3b2a53440">CloseButtonHot</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="a00748.html#a4d708fd4da59b9fc82b7b163c1e33535">   19</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00748.html#a4d708fd4da59b9fc82b7b163c1e33535">ShowSeparator</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="a00740.html#af941ee900f7fa46e65e655857bc88057">   21</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a> <a class="code hl_property" href="a00740.html#af941ee900f7fa46e65e655857bc88057">DockArea</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        #endregion Property Region</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="a00740.html#adce05c41aca696cec6694e3a743c252b">   23</a></span>        <span class="keyword">public</span> Rectangle <a class="code hl_property" href="a00740.html#adce05c41aca696cec6694e3a743c252b">ClientRectangle</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">        #region Constructor Region</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00740.html#a79318c68bae21f4c47199a12d8aec3ca">   25</a></span>        <span class="keyword">public</span> Rectangle <a class="code hl_property" href="a00740.html#a79318c68bae21f4c47199a12d8aec3ca">DropdownRectangle</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="a00740.html#ae407afc9eab7ca911795fbfade8a21d3">   27</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00740.html#ae407afc9eab7ca911795fbfade8a21d3">DropdownHot</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="a00740.html#a03e24f0a881e07cbe69ecd4db34a2323">   29</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="a00740.html#a03e24f0a881e07cbe69ecd4db34a2323">Offset</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="a00740.html#ab2e2a53bb5c6118f4dff1f4a2416bb40">   31</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="a00740.html#ab2e2a53bb5c6118f4dff1f4a2416bb40">TotalTabSize</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="a00740.html#ac1db489164cf76d8bb4b1a4a4f1604f5">   33</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00740.html#ac1db489164cf76d8bb4b1a4a4f1604f5">Visible</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a00740.html#ae66a0105c5cf959e97924f938e23fd13">   35</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="a00736.html">VitNX_DockTab</a> <a class="code hl_property" href="a00740.html#ae66a0105c5cf959e97924f938e23fd13">ClickedCloseButton</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">        #endregion Property Region</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00748.html#a8e7cb3557dc6115306b52c200a537256">   25</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00748.html#a8e7cb3557dc6115306b52c200a537256">VitNX_DockTab</a>(<a class="code hl_class" href="a00728.html">VitNX_DockContent</a> content)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_property" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">DockContent</a> = content;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">        #endregion Constructor Region</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">        #region Method Region</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3">CalculateWidth</a>(Graphics g, Font font)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            var width = (int)g.MeasureString(<a class="code hl_property" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">DockContent</a>.<a class="code hl_property" href="a00728.html#af4a79a39ce7090e7884cd0ffa9506a97">DockText</a>, font).Width;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            width += 10;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">        #region Constructor Region</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a00740.html#ac20074c4b9ca88f680d0eb9948dd431e">   41</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00740.html#ac20074c4b9ca88f680d0eb9948dd431e">VitNX_DockTabArea</a>(<a class="code hl_enumeration" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a> dockArea)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_property" href="a00740.html#af941ee900f7fa46e65e655857bc88057">DockArea</a> = dockArea;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">        #endregion Constructor Region</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">        #region Method Region</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="a00740.html#ab22f52046667c1722a2481518d61cbc1">   50</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00740.html#ab22f52046667c1722a2481518d61cbc1">ShowMenu</a>(Control control, Point location)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            _tabMenu.Show(control, location);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a00740.html#a0f93a0783e6ff1957793bc2e6a3bf231">   55</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00740.html#a0f93a0783e6ff1957793bc2e6a3bf231">AddMenuItem</a>(ToolStripMenuItem menuItem)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            _menuItems.Add(menuItem);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="a00740.html#a66b0ad492d1965728aebb5a80dc33962">RebuildMenu</a>();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="a00740.html#aa7c6a24d253a5938e111a0f29c488d82">   61</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00740.html#aa7c6a24d253a5938e111a0f29c488d82">RemoveMenuItem</a>(ToolStripMenuItem menuItem)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            _menuItems.Remove(menuItem);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <a class="code hl_function" href="a00740.html#a66b0ad492d1965728aebb5a80dc33962">RebuildMenu</a>();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a00740.html#a37ed7197da76bccdd27afcda3a99ec5e">   67</a></span>        <span class="keyword">public</span> ToolStripMenuItem <a class="code hl_function" href="a00740.html#a37ed7197da76bccdd27afcda3a99ec5e">GetMenuItem</a>(<a class="code hl_class" href="a00716.html">VitNX_DockContent</a> content)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            ToolStripMenuItem menuItem = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">foreach</span> (ToolStripMenuItem item <span class="keywordflow">in</span> _menuItems)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                var menuContent = item.Tag as <a class="code hl_class" href="a00716.html">VitNX_DockContent</a>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">if</span> (menuContent == <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">if</span> (menuContent == content)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    menuItem = item;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">return</span> menuItem;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="a00740.html#a66b0ad492d1965728aebb5a80dc33962">   83</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00740.html#a66b0ad492d1965728aebb5a80dc33962">RebuildMenu</a>()</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            _tabMenu.Items.Clear();</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            var orderedItems = <span class="keyword">new</span> List&lt;ToolStripMenuItem&gt;();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            var index = 0;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">for</span> (var i = 0; i &lt; _menuItems.Count; i++)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">foreach</span> (var item <span class="keywordflow">in</span> _menuItems)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                    var content = (<a class="code hl_class" href="a00716.html">VitNX_DockContent</a>)item.Tag;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    if (content.Order == index)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                        orderedItems.Add(item);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                index++;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">foreach</span> (var item <span class="keywordflow">in</span> orderedItems)</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                _tabMenu.Items.Add(item);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">        #endregion Method Region</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
-<div class="ttc" id="aa00287_html"><div class="ttname"><a href="a00287.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
-<div class="ttc" id="aa00296_html"><div class="ttname"><a href="a00296.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00297_html"><div class="ttname"><a href="a00297.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">VitNX.UI.BasedOnDarkUI.Controls</a></div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00003">ScrollValueEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea</a></div><div class="ttdeci">VitNX_DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00003">VitNX_DockArea.cs:4</a></div></div>
-<div class="ttc" id="aa00600_html"><div class="ttname"><a href="a00600.html">VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContextMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00006">VitNX_ContextMenu.cs:7</a></div></div>
-<div class="ttc" id="aa00716_html"><div class="ttname"><a href="a00716.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent</a></div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00009">VitNX_DockContent.cs:10</a></div></div>
-<div class="ttc" id="aa00736_html"><div class="ttname"><a href="a00736.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab</a></div><div class="ttdef"><b>Definition:</b> <a href="a00203_source.html#l00005">VitNX_DockTab.cs:6</a></div></div>
-<div class="ttc" id="aa00740_html"><div class="ttname"><a href="a00740.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea</a></div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00008">VitNX_DockTabArea.cs:9</a></div></div>
-<div class="ttc" id="aa00740_html_a03e24f0a881e07cbe69ecd4db34a2323"><div class="ttname"><a href="a00740.html#a03e24f0a881e07cbe69ecd4db34a2323">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.Offset</a></div><div class="ttdeci">int Offset</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00029">VitNX_DockTabArea.cs:29</a></div></div>
-<div class="ttc" id="aa00740_html_a0f93a0783e6ff1957793bc2e6a3bf231"><div class="ttname"><a href="a00740.html#a0f93a0783e6ff1957793bc2e6a3bf231">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.AddMenuItem</a></div><div class="ttdeci">void AddMenuItem(ToolStripMenuItem menuItem)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00055">VitNX_DockTabArea.cs:55</a></div></div>
-<div class="ttc" id="aa00740_html_a37ed7197da76bccdd27afcda3a99ec5e"><div class="ttname"><a href="a00740.html#a37ed7197da76bccdd27afcda3a99ec5e">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.GetMenuItem</a></div><div class="ttdeci">ToolStripMenuItem GetMenuItem(VitNX_DockContent content)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00067">VitNX_DockTabArea.cs:67</a></div></div>
-<div class="ttc" id="aa00740_html_a66b0ad492d1965728aebb5a80dc33962"><div class="ttname"><a href="a00740.html#a66b0ad492d1965728aebb5a80dc33962">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.RebuildMenu</a></div><div class="ttdeci">void RebuildMenu()</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00083">VitNX_DockTabArea.cs:83</a></div></div>
-<div class="ttc" id="aa00740_html_a79318c68bae21f4c47199a12d8aec3ca"><div class="ttname"><a href="a00740.html#a79318c68bae21f4c47199a12d8aec3ca">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.DropdownRectangle</a></div><div class="ttdeci">Rectangle DropdownRectangle</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00025">VitNX_DockTabArea.cs:25</a></div></div>
-<div class="ttc" id="aa00740_html_aa7c6a24d253a5938e111a0f29c488d82"><div class="ttname"><a href="a00740.html#aa7c6a24d253a5938e111a0f29c488d82">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.RemoveMenuItem</a></div><div class="ttdeci">void RemoveMenuItem(ToolStripMenuItem menuItem)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00061">VitNX_DockTabArea.cs:61</a></div></div>
-<div class="ttc" id="aa00740_html_ab22f52046667c1722a2481518d61cbc1"><div class="ttname"><a href="a00740.html#ab22f52046667c1722a2481518d61cbc1">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.ShowMenu</a></div><div class="ttdeci">void ShowMenu(Control control, Point location)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00050">VitNX_DockTabArea.cs:50</a></div></div>
-<div class="ttc" id="aa00740_html_ab2e2a53bb5c6118f4dff1f4a2416bb40"><div class="ttname"><a href="a00740.html#ab2e2a53bb5c6118f4dff1f4a2416bb40">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.TotalTabSize</a></div><div class="ttdeci">int TotalTabSize</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00031">VitNX_DockTabArea.cs:31</a></div></div>
-<div class="ttc" id="aa00740_html_ac1db489164cf76d8bb4b1a4a4f1604f5"><div class="ttname"><a href="a00740.html#ac1db489164cf76d8bb4b1a4a4f1604f5">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00033">VitNX_DockTabArea.cs:33</a></div></div>
-<div class="ttc" id="aa00740_html_ac20074c4b9ca88f680d0eb9948dd431e"><div class="ttname"><a href="a00740.html#ac20074c4b9ca88f680d0eb9948dd431e">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.VitNX_DockTabArea</a></div><div class="ttdeci">VitNX_DockTabArea(VitNX_DockArea dockArea)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00041">VitNX_DockTabArea.cs:41</a></div></div>
-<div class="ttc" id="aa00740_html_adce05c41aca696cec6694e3a743c252b"><div class="ttname"><a href="a00740.html#adce05c41aca696cec6694e3a743c252b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.ClientRectangle</a></div><div class="ttdeci">Rectangle ClientRectangle</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00023">VitNX_DockTabArea.cs:23</a></div></div>
-<div class="ttc" id="aa00740_html_ae407afc9eab7ca911795fbfade8a21d3"><div class="ttname"><a href="a00740.html#ae407afc9eab7ca911795fbfade8a21d3">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.DropdownHot</a></div><div class="ttdeci">bool DropdownHot</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00027">VitNX_DockTabArea.cs:27</a></div></div>
-<div class="ttc" id="aa00740_html_ae66a0105c5cf959e97924f938e23fd13"><div class="ttname"><a href="a00740.html#ae66a0105c5cf959e97924f938e23fd13">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.ClickedCloseButton</a></div><div class="ttdeci">VitNX_DockTab ClickedCloseButton</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00035">VitNX_DockTabArea.cs:35</a></div></div>
-<div class="ttc" id="aa00740_html_af941ee900f7fa46e65e655857bc88057"><div class="ttname"><a href="a00740.html#af941ee900f7fa46e65e655857bc88057">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTabArea.DockArea</a></div><div class="ttdeci">VitNX_DockArea DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00021">VitNX_DockTabArea.cs:21</a></div></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">return</span> width;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">        #endregion Method Region</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00728_html"><div class="ttname"><a href="a00728.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent</a></div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00009">VitNX_DockContent.cs:10</a></div></div>
+<div class="ttc" id="aa00728_html_af4a79a39ce7090e7884cd0ffa9506a97"><div class="ttname"><a href="a00728.html#af4a79a39ce7090e7884cd0ffa9506a97">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockText</a></div><div class="ttdeci">string DockText</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00028">VitNX_DockContent.cs:29</a></div></div>
+<div class="ttc" id="aa00748_html"><div class="ttname"><a href="a00748.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab</a></div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00005">VitNX_DockTab.cs:6</a></div></div>
+<div class="ttc" id="aa00748_html_a1d8dbe97d212b2b4aac3367e8a6b881b"><div class="ttname"><a href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.DockContent</a></div><div class="ttdeci">VitNX_DockContent DockContent</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00009">VitNX_DockTab.cs:9</a></div></div>
+<div class="ttc" id="aa00748_html_a4799ecdc568d7bf7101531246ad24227"><div class="ttname"><a href="a00748.html#a4799ecdc568d7bf7101531246ad24227">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.CloseButtonRectangle</a></div><div class="ttdeci">Rectangle CloseButtonRectangle</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00013">VitNX_DockTab.cs:13</a></div></div>
+<div class="ttc" id="aa00748_html_a4d708fd4da59b9fc82b7b163c1e33535"><div class="ttname"><a href="a00748.html#a4d708fd4da59b9fc82b7b163c1e33535">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.ShowSeparator</a></div><div class="ttdeci">bool ShowSeparator</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00019">VitNX_DockTab.cs:19</a></div></div>
+<div class="ttc" id="aa00748_html_a60a39ed2d3561dac8f69fab3b2a53440"><div class="ttname"><a href="a00748.html#a60a39ed2d3561dac8f69fab3b2a53440">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.CloseButtonHot</a></div><div class="ttdeci">bool CloseButtonHot</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00017">VitNX_DockTab.cs:17</a></div></div>
+<div class="ttc" id="aa00748_html_a8e7cb3557dc6115306b52c200a537256"><div class="ttname"><a href="a00748.html#a8e7cb3557dc6115306b52c200a537256">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.VitNX_DockTab</a></div><div class="ttdeci">VitNX_DockTab(VitNX_DockContent content)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00025">VitNX_DockTab.cs:25</a></div></div>
+<div class="ttc" id="aa00748_html_a97f1c62db7af4d3201e76ed1fdc098c3"><div class="ttname"><a href="a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.CalculateWidth</a></div><div class="ttdeci">int CalculateWidth(Graphics g, Font font)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00034">VitNX_DockTab.cs:34</a></div></div>
+<div class="ttc" id="aa00748_html_adce05c41aca696cec6694e3a743c252b"><div class="ttname"><a href="a00748.html#adce05c41aca696cec6694e3a743c252b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.ClientRectangle</a></div><div class="ttdeci">Rectangle ClientRectangle</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00011">VitNX_DockTab.cs:11</a></div></div>
+<div class="ttc" id="aa00748_html_aeb691638a772b5fbf5e1e51bdd19a158"><div class="ttname"><a href="a00748.html#aeb691638a772b5fbf5e1e51bdd19a158">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.Hot</a></div><div class="ttdeci">bool Hot</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00015">VitNX_DockTab.cs:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_DockTabArea.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_DockTab.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

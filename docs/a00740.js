@@ -1,17 +1,18 @@
 var a00740 =
 [
-    [ "VitNX_DockTabArea", "a00740.html#ac20074c4b9ca88f680d0eb9948dd431e", null ],
-    [ "AddMenuItem", "a00740.html#a0f93a0783e6ff1957793bc2e6a3bf231", null ],
-    [ "GetMenuItem", "a00740.html#a37ed7197da76bccdd27afcda3a99ec5e", null ],
-    [ "RebuildMenu", "a00740.html#a66b0ad492d1965728aebb5a80dc33962", null ],
-    [ "RemoveMenuItem", "a00740.html#aa7c6a24d253a5938e111a0f29c488d82", null ],
-    [ "ShowMenu", "a00740.html#ab22f52046667c1722a2481518d61cbc1", null ],
-    [ "ClickedCloseButton", "a00740.html#ae66a0105c5cf959e97924f938e23fd13", null ],
-    [ "ClientRectangle", "a00740.html#adce05c41aca696cec6694e3a743c252b", null ],
+    [ "VitNX_DockRegion", "a00740.html#a8449c60bf878c1267b6e5b4bdc8145ea", null ],
+    [ "AddContent", "a00740.html#a851dd7bf4d148af9c13820d03588b89a", null ],
+    [ "AddContent", "a00740.html#a37ba961625d290a378ecd2904f7d1cbb", null ],
+    [ "GetContents", "a00740.html#a55ffe1730ef362a3e66cc1d1268619d2", null ],
+    [ "InsertContent", "a00740.html#a2bf33cc7e1b5c7b47c62202d7301023e", null ],
+    [ "OnCreateControl", "a00740.html#ad53e3abd3a95679a61df7bf633885341", null ],
+    [ "OnLayout", "a00740.html#ab91b13b6ffa52627647d9d37c4955b36", null ],
+    [ "OnPaint", "a00740.html#a7b49a512aef9068aebdc17097736f6b9", null ],
+    [ "OnResize", "a00740.html#adfff87b03ef3d0b1c7235b6a2575de4e", null ],
+    [ "Redraw", "a00740.html#abb6b3ccab84333a2dfaa3e87cfc3c3ab", null ],
+    [ "RemoveContent", "a00740.html#a4cdc2cf4cdc8cdf509431d29968dd1dd", null ],
+    [ "ActiveDocument", "a00740.html#aa6fd0f34ce00e8c68b964966f126ce77", null ],
     [ "DockArea", "a00740.html#af941ee900f7fa46e65e655857bc88057", null ],
-    [ "DropdownHot", "a00740.html#ae407afc9eab7ca911795fbfade8a21d3", null ],
-    [ "DropdownRectangle", "a00740.html#a79318c68bae21f4c47199a12d8aec3ca", null ],
-    [ "Offset", "a00740.html#a03e24f0a881e07cbe69ecd4db34a2323", null ],
-    [ "TotalTabSize", "a00740.html#ab2e2a53bb5c6118f4dff1f4a2416bb40", null ],
-    [ "Visible", "a00740.html#ac1db489164cf76d8bb4b1a4a4f1604f5", null ]
+    [ "DockPanel", "a00740.html#a7e5069afa4bf46cb927ce1ff28bcd549", null ],
+    [ "Groups", "a00740.html#af8a371384d4a98b8db87713a7b4f2bd8", null ]
 ];

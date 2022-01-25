@@ -1,9 +1,17 @@
 var a00352 =
 [
-    [ "GetAll", "a00352.html#ad1a8f502eaefdff28867bf6f44a214e6", null ],
-    [ "GetTotalFreeSpace", "a00352.html#a2631efcd590a1d9c7118e1c4ff1fc386", null ],
-    [ "GetTotalSpace", "a00352.html#aecd6e71674a6b527328fbae6a7da5582", null ],
-    [ "SetCWindowsSize", "a00352.html#ae8f239f671e0a0ae66a971c13cf738c2", null ],
-    [ "windowsDiskAvailableFreeSpace", "a00352.html#a8567b42d600c0b9ecbad7c069a15ca6b", null ],
-    [ "windowsDiskTotalSize", "a00352.html#a02998c771a2eb269c837ec2bc5b3fdbb", null ]
+    [ "Set", "a00352.html#aad3b33b4c65e3cc3202d3331078a5666", null ],
+    [ "adapterDACType", "a00352.html#a33dc4e3ffda6f27d6f10d8692bbdce6f", null ],
+    [ "adapterRAM", "a00352.html#a9c6a27a44940545519bf7dcb6b00bf3c", null ],
+    [ "deviceID", "a00352.html#a7aa2ecb49da3b30dbfc5245230dbbac3", null ],
+    [ "driverVersion", "a00352.html#ad8033af0106e7a6e5616f33d3e33ece2", null ],
+    [ "installedDisplayDrivers", "a00352.html#a8508c0510e29383eda16ee8a068c5f4b", null ],
+    [ "maxRefreshRate", "a00352.html#a4e43e462b34ea2b63e98e11ab30227ae", null ],
+    [ "minRefreshRate", "a00352.html#a028cf444711e386a3d67742bc2484dcb", null ],
+    [ "monochrome", "a00352.html#ac37221e3c03560773a0a0289cc961f2e", null ],
+    [ "name", "a00352.html#a8ccf841cb59e451791bcb2e1ac4f1edc", null ],
+    [ "status", "a00352.html#ab4d38e7365d935f2a5f1403eec29127e", null ],
+    [ "videoArchitecture", "a00352.html#afb1d38a08494046f6b16ac271773653b", null ],
+    [ "videoMemoryType", "a00352.html#a0d51cd8f6d669d78128e6fb2283b05c9", null ],
+    [ "videoModeDescription", "a00352.html#a702638ecf0b69bf5afee3195da9391da", null ]
 ];
