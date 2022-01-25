@@ -109,7 +109,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00325">325</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00318">318</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aad3b33b4c65e3cc3202d3331078a5666" name="aad3b33b4c65e3cc3202d3331078a5666"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aad3b33b4c65e3cc3202d3331078a5666">&#9670;&nbsp;</a></span>Set()</h2>
@@ -134,43 +134,43 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00343">343</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  344</span>        {</div>
-<div class="line"><span class="lineno">  345</span>            ManagementObjectSearcher myRamObject = <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;select * from Win32_PhysicalMemory&quot;</span>);</div>
-<div class="line"><span class="lineno">  346</span>            <span class="keywordflow">foreach</span> (ManagementObject obj <span class="keywordflow">in</span> myRamObject.Get())</div>
-<div class="line"><span class="lineno">  347</span>            {</div>
-<div class="line"><span class="lineno">  348</span>                <a class="code hl_variable" href="a00368.html#a9beeaee0d9231072abb77ec0eb0f04f8">nameID</a> = obj[<span class="stringliteral">&quot;Name&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  349</span>                <a class="code hl_variable" href="a00368.html#afbb1edd1caafb4b686e35c985c7fd180">capacity</a> = obj[<span class="stringliteral">&quot;Capacity&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  350</span>                <a class="code hl_variable" href="a00368.html#ad170c14e39261ebd2f4012b8efd5e8d0">configuredVoltage</a> = obj[<span class="stringliteral">&quot;ConfiguredVoltage&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  351</span>                <a class="code hl_variable" href="a00368.html#a0bbb39bb0740c5c8e8c198871e6dbe46">maxVoltage</a> = obj[<span class="stringliteral">&quot;MaxVoltage&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  352</span>                <a class="code hl_variable" href="a00368.html#a6ecec143d7b97cc521b572930cc849a6">memoryType</a> = obj[<span class="stringliteral">&quot;MemoryType&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  353</span>                <a class="code hl_variable" href="a00368.html#a287afd0bb9b6ec593c7be29f101d7ade">minVoltage</a> = obj[<span class="stringliteral">&quot;MinVoltage&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  354</span>                <a class="code hl_variable" href="a00368.html#a22248d5005f91728b723f7deb2eb17b2">serialNumber</a> = obj[<span class="stringliteral">&quot;SerialNumber&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  355</span>                <a class="code hl_variable" href="a00368.html#a1b68bb37e2c97bbed196a3883879fc6f">SMBIOSMemoryType</a> = obj[<span class="stringliteral">&quot;SMBIOSMemoryType&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  356</span>                <a class="code hl_variable" href="a00368.html#ad9162ab95195cf3479da6d470ad25c73">speed</a> = obj[<span class="stringliteral">&quot;Speed&quot;</span>].ToString();</div>
-<div class="line"><span class="lineno">  357</span>            }</div>
-<div class="line"><span class="lineno">  358</span>            <a class="code hl_variable" href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">max</a> = <span class="keyword">new</span> Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1000000;</div>
-<div class="line"><span class="lineno">  359</span>            <a class="code hl_variable" href="a00368.html#a894f11041acad3bac21a9fe88256c6ee">used</a> = <span class="keyword">new</span> Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1000000;</div>
-<div class="line"><span class="lineno">  360</span>            <a class="code hl_variable" href="a00368.html#a4c886bf0df3c61ac5be0a8cbfae2104f">ramVirtual</a> = <span class="keyword">new</span> Microsoft.VisualBasic.Devices.ComputerInfo().AvailableVirtualMemory / 1000000;</div>
-<div class="line"><span class="lineno">  361</span>            <a class="code hl_variable" href="a00368.html#a67e64019e421e74d6ad559c1a5bf37ad">maxMB</a> = (int)<a class="code hl_variable" href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">max</a>;</div>
-<div class="line"><span class="lineno">  362</span>            <a class="code hl_variable" href="a00368.html#a428ed827c43ab809e3336ab43cd9ec91">usedMB</a> = (int)<a class="code hl_variable" href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">max</a> - (<span class="keywordtype">int</span>)<a class="code hl_variable" href="a00368.html#a894f11041acad3bac21a9fe88256c6ee">used</a>;</div>
-<div class="line"><span class="lineno">  363</span>            <a class="code hl_variable" href="a00368.html#a8719251cc3b108db24c4a56a22d371c5">intRamVirtual</a> = (int)<a class="code hl_variable" href="a00368.html#a4c886bf0df3c61ac5be0a8cbfae2104f">ramVirtual</a>;</div>
-<div class="line"><span class="lineno">  364</span>        }</div>
-<div class="ttc" id="aa00368_html_a0bbb39bb0740c5c8e8c198871e6dbe46"><div class="ttname"><a href="a00368.html#a0bbb39bb0740c5c8e8c198871e6dbe46">VitNX.Functions.Common.Information.Ram.maxVoltage</a></div><div class="ttdeci">static string maxVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00330">Information.cs:330</a></div></div>
-<div class="ttc" id="aa00368_html_a1b68bb37e2c97bbed196a3883879fc6f"><div class="ttname"><a href="a00368.html#a1b68bb37e2c97bbed196a3883879fc6f">VitNX.Functions.Common.Information.Ram.SMBIOSMemoryType</a></div><div class="ttdeci">static string SMBIOSMemoryType</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00334">Information.cs:334</a></div></div>
-<div class="ttc" id="aa00368_html_a22248d5005f91728b723f7deb2eb17b2"><div class="ttname"><a href="a00368.html#a22248d5005f91728b723f7deb2eb17b2">VitNX.Functions.Common.Information.Ram.serialNumber</a></div><div class="ttdeci">static string serialNumber</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00333">Information.cs:333</a></div></div>
-<div class="ttc" id="aa00368_html_a287afd0bb9b6ec593c7be29f101d7ade"><div class="ttname"><a href="a00368.html#a287afd0bb9b6ec593c7be29f101d7ade">VitNX.Functions.Common.Information.Ram.minVoltage</a></div><div class="ttdeci">static string minVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00332">Information.cs:332</a></div></div>
-<div class="ttc" id="aa00368_html_a428ed827c43ab809e3336ab43cd9ec91"><div class="ttname"><a href="a00368.html#a428ed827c43ab809e3336ab43cd9ec91">VitNX.Functions.Common.Information.Ram.usedMB</a></div><div class="ttdeci">static int usedMB</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00337">Information.cs:337</a></div></div>
-<div class="ttc" id="aa00368_html_a4c886bf0df3c61ac5be0a8cbfae2104f"><div class="ttname"><a href="a00368.html#a4c886bf0df3c61ac5be0a8cbfae2104f">VitNX.Functions.Common.Information.Ram.ramVirtual</a></div><div class="ttdeci">static ulong ramVirtual</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00341">Information.cs:341</a></div></div>
-<div class="ttc" id="aa00368_html_a67e64019e421e74d6ad559c1a5bf37ad"><div class="ttname"><a href="a00368.html#a67e64019e421e74d6ad559c1a5bf37ad">VitNX.Functions.Common.Information.Ram.maxMB</a></div><div class="ttdeci">static int maxMB</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00336">Information.cs:336</a></div></div>
-<div class="ttc" id="aa00368_html_a6ecec143d7b97cc521b572930cc849a6"><div class="ttname"><a href="a00368.html#a6ecec143d7b97cc521b572930cc849a6">VitNX.Functions.Common.Information.Ram.memoryType</a></div><div class="ttdeci">static string memoryType</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00331">Information.cs:331</a></div></div>
-<div class="ttc" id="aa00368_html_a778e9f93cf9d844a5f7a6ee8a549f411"><div class="ttname"><a href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">VitNX.Functions.Common.Information.Ram.max</a></div><div class="ttdeci">static ulong max</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00339">Information.cs:339</a></div></div>
-<div class="ttc" id="aa00368_html_a8719251cc3b108db24c4a56a22d371c5"><div class="ttname"><a href="a00368.html#a8719251cc3b108db24c4a56a22d371c5">VitNX.Functions.Common.Information.Ram.intRamVirtual</a></div><div class="ttdeci">static int intRamVirtual</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00338">Information.cs:338</a></div></div>
-<div class="ttc" id="aa00368_html_a894f11041acad3bac21a9fe88256c6ee"><div class="ttname"><a href="a00368.html#a894f11041acad3bac21a9fe88256c6ee">VitNX.Functions.Common.Information.Ram.used</a></div><div class="ttdeci">static ulong used</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00340">Information.cs:340</a></div></div>
-<div class="ttc" id="aa00368_html_a9beeaee0d9231072abb77ec0eb0f04f8"><div class="ttname"><a href="a00368.html#a9beeaee0d9231072abb77ec0eb0f04f8">VitNX.Functions.Common.Information.Ram.nameID</a></div><div class="ttdeci">static string nameID</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00327">Information.cs:327</a></div></div>
-<div class="ttc" id="aa00368_html_ad170c14e39261ebd2f4012b8efd5e8d0"><div class="ttname"><a href="a00368.html#ad170c14e39261ebd2f4012b8efd5e8d0">VitNX.Functions.Common.Information.Ram.configuredVoltage</a></div><div class="ttdeci">static string configuredVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00329">Information.cs:329</a></div></div>
-<div class="ttc" id="aa00368_html_ad9162ab95195cf3479da6d470ad25c73"><div class="ttname"><a href="a00368.html#ad9162ab95195cf3479da6d470ad25c73">VitNX.Functions.Common.Information.Ram.speed</a></div><div class="ttdeci">static string speed</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00335">Information.cs:335</a></div></div>
-<div class="ttc" id="aa00368_html_afbb1edd1caafb4b686e35c985c7fd180"><div class="ttname"><a href="a00368.html#afbb1edd1caafb4b686e35c985c7fd180">VitNX.Functions.Common.Information.Ram.capacity</a></div><div class="ttdeci">static string capacity</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00328">Information.cs:328</a></div></div>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00336">336</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  337</span>        {</div>
+<div class="line"><span class="lineno">  338</span>            ManagementObjectSearcher myRamObject = <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;select * from Win32_PhysicalMemory&quot;</span>);</div>
+<div class="line"><span class="lineno">  339</span>            <span class="keywordflow">foreach</span> (ManagementObject obj <span class="keywordflow">in</span> myRamObject.Get())</div>
+<div class="line"><span class="lineno">  340</span>            {</div>
+<div class="line"><span class="lineno">  341</span>                <a class="code hl_variable" href="a00368.html#a9beeaee0d9231072abb77ec0eb0f04f8">nameID</a> = obj[<span class="stringliteral">&quot;Name&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  342</span>                <a class="code hl_variable" href="a00368.html#afbb1edd1caafb4b686e35c985c7fd180">capacity</a> = obj[<span class="stringliteral">&quot;Capacity&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  343</span>                <a class="code hl_variable" href="a00368.html#ad170c14e39261ebd2f4012b8efd5e8d0">configuredVoltage</a> = obj[<span class="stringliteral">&quot;ConfiguredVoltage&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  344</span>                <a class="code hl_variable" href="a00368.html#a0bbb39bb0740c5c8e8c198871e6dbe46">maxVoltage</a> = obj[<span class="stringliteral">&quot;MaxVoltage&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  345</span>                <a class="code hl_variable" href="a00368.html#a6ecec143d7b97cc521b572930cc849a6">memoryType</a> = obj[<span class="stringliteral">&quot;MemoryType&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  346</span>                <a class="code hl_variable" href="a00368.html#a287afd0bb9b6ec593c7be29f101d7ade">minVoltage</a> = obj[<span class="stringliteral">&quot;MinVoltage&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  347</span>                <a class="code hl_variable" href="a00368.html#a22248d5005f91728b723f7deb2eb17b2">serialNumber</a> = obj[<span class="stringliteral">&quot;SerialNumber&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  348</span>                <a class="code hl_variable" href="a00368.html#a1b68bb37e2c97bbed196a3883879fc6f">SMBIOSMemoryType</a> = obj[<span class="stringliteral">&quot;SMBIOSMemoryType&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  349</span>                <a class="code hl_variable" href="a00368.html#ad9162ab95195cf3479da6d470ad25c73">speed</a> = obj[<span class="stringliteral">&quot;Speed&quot;</span>].ToString();</div>
+<div class="line"><span class="lineno">  350</span>            }</div>
+<div class="line"><span class="lineno">  351</span>            <a class="code hl_variable" href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">max</a> = <span class="keyword">new</span> Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1000000;</div>
+<div class="line"><span class="lineno">  352</span>            <a class="code hl_variable" href="a00368.html#a894f11041acad3bac21a9fe88256c6ee">used</a> = <span class="keyword">new</span> Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1000000;</div>
+<div class="line"><span class="lineno">  353</span>            <a class="code hl_variable" href="a00368.html#a4c886bf0df3c61ac5be0a8cbfae2104f">ramVirtual</a> = <span class="keyword">new</span> Microsoft.VisualBasic.Devices.ComputerInfo().AvailableVirtualMemory / 1000000;</div>
+<div class="line"><span class="lineno">  354</span>            <a class="code hl_variable" href="a00368.html#a67e64019e421e74d6ad559c1a5bf37ad">maxMB</a> = (int)<a class="code hl_variable" href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">max</a>;</div>
+<div class="line"><span class="lineno">  355</span>            <a class="code hl_variable" href="a00368.html#a428ed827c43ab809e3336ab43cd9ec91">usedMB</a> = (int)<a class="code hl_variable" href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">max</a> - (<span class="keywordtype">int</span>)<a class="code hl_variable" href="a00368.html#a894f11041acad3bac21a9fe88256c6ee">used</a>;</div>
+<div class="line"><span class="lineno">  356</span>            <a class="code hl_variable" href="a00368.html#a8719251cc3b108db24c4a56a22d371c5">intRamVirtual</a> = (int)<a class="code hl_variable" href="a00368.html#a4c886bf0df3c61ac5be0a8cbfae2104f">ramVirtual</a>;</div>
+<div class="line"><span class="lineno">  357</span>        }</div>
+<div class="ttc" id="aa00368_html_a0bbb39bb0740c5c8e8c198871e6dbe46"><div class="ttname"><a href="a00368.html#a0bbb39bb0740c5c8e8c198871e6dbe46">VitNX.Functions.Common.Information.Ram.maxVoltage</a></div><div class="ttdeci">static string maxVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00323">Information.cs:323</a></div></div>
+<div class="ttc" id="aa00368_html_a1b68bb37e2c97bbed196a3883879fc6f"><div class="ttname"><a href="a00368.html#a1b68bb37e2c97bbed196a3883879fc6f">VitNX.Functions.Common.Information.Ram.SMBIOSMemoryType</a></div><div class="ttdeci">static string SMBIOSMemoryType</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00327">Information.cs:327</a></div></div>
+<div class="ttc" id="aa00368_html_a22248d5005f91728b723f7deb2eb17b2"><div class="ttname"><a href="a00368.html#a22248d5005f91728b723f7deb2eb17b2">VitNX.Functions.Common.Information.Ram.serialNumber</a></div><div class="ttdeci">static string serialNumber</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00326">Information.cs:326</a></div></div>
+<div class="ttc" id="aa00368_html_a287afd0bb9b6ec593c7be29f101d7ade"><div class="ttname"><a href="a00368.html#a287afd0bb9b6ec593c7be29f101d7ade">VitNX.Functions.Common.Information.Ram.minVoltage</a></div><div class="ttdeci">static string minVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00325">Information.cs:325</a></div></div>
+<div class="ttc" id="aa00368_html_a428ed827c43ab809e3336ab43cd9ec91"><div class="ttname"><a href="a00368.html#a428ed827c43ab809e3336ab43cd9ec91">VitNX.Functions.Common.Information.Ram.usedMB</a></div><div class="ttdeci">static int usedMB</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00330">Information.cs:330</a></div></div>
+<div class="ttc" id="aa00368_html_a4c886bf0df3c61ac5be0a8cbfae2104f"><div class="ttname"><a href="a00368.html#a4c886bf0df3c61ac5be0a8cbfae2104f">VitNX.Functions.Common.Information.Ram.ramVirtual</a></div><div class="ttdeci">static ulong ramVirtual</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00334">Information.cs:334</a></div></div>
+<div class="ttc" id="aa00368_html_a67e64019e421e74d6ad559c1a5bf37ad"><div class="ttname"><a href="a00368.html#a67e64019e421e74d6ad559c1a5bf37ad">VitNX.Functions.Common.Information.Ram.maxMB</a></div><div class="ttdeci">static int maxMB</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00329">Information.cs:329</a></div></div>
+<div class="ttc" id="aa00368_html_a6ecec143d7b97cc521b572930cc849a6"><div class="ttname"><a href="a00368.html#a6ecec143d7b97cc521b572930cc849a6">VitNX.Functions.Common.Information.Ram.memoryType</a></div><div class="ttdeci">static string memoryType</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00324">Information.cs:324</a></div></div>
+<div class="ttc" id="aa00368_html_a778e9f93cf9d844a5f7a6ee8a549f411"><div class="ttname"><a href="a00368.html#a778e9f93cf9d844a5f7a6ee8a549f411">VitNX.Functions.Common.Information.Ram.max</a></div><div class="ttdeci">static ulong max</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00332">Information.cs:332</a></div></div>
+<div class="ttc" id="aa00368_html_a8719251cc3b108db24c4a56a22d371c5"><div class="ttname"><a href="a00368.html#a8719251cc3b108db24c4a56a22d371c5">VitNX.Functions.Common.Information.Ram.intRamVirtual</a></div><div class="ttdeci">static int intRamVirtual</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00331">Information.cs:331</a></div></div>
+<div class="ttc" id="aa00368_html_a894f11041acad3bac21a9fe88256c6ee"><div class="ttname"><a href="a00368.html#a894f11041acad3bac21a9fe88256c6ee">VitNX.Functions.Common.Information.Ram.used</a></div><div class="ttdeci">static ulong used</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00333">Information.cs:333</a></div></div>
+<div class="ttc" id="aa00368_html_a9beeaee0d9231072abb77ec0eb0f04f8"><div class="ttname"><a href="a00368.html#a9beeaee0d9231072abb77ec0eb0f04f8">VitNX.Functions.Common.Information.Ram.nameID</a></div><div class="ttdeci">static string nameID</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00320">Information.cs:320</a></div></div>
+<div class="ttc" id="aa00368_html_ad170c14e39261ebd2f4012b8efd5e8d0"><div class="ttname"><a href="a00368.html#ad170c14e39261ebd2f4012b8efd5e8d0">VitNX.Functions.Common.Information.Ram.configuredVoltage</a></div><div class="ttdeci">static string configuredVoltage</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00322">Information.cs:322</a></div></div>
+<div class="ttc" id="aa00368_html_ad9162ab95195cf3479da6d470ad25c73"><div class="ttname"><a href="a00368.html#ad9162ab95195cf3479da6d470ad25c73">VitNX.Functions.Common.Information.Ram.speed</a></div><div class="ttdeci">static string speed</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00328">Information.cs:328</a></div></div>
+<div class="ttc" id="aa00368_html_afbb1edd1caafb4b686e35c985c7fd180"><div class="ttname"><a href="a00368.html#afbb1edd1caafb4b686e35c985c7fd180">VitNX.Functions.Common.Information.Ram.capacity</a></div><div class="ttdeci">static string capacity</div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00321">Information.cs:321</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,7 +195,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00328">328</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00321">321</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -219,7 +219,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00329">329</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00322">322</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -243,7 +243,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00338">338</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00331">331</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -267,7 +267,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00339">339</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00332">332</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -291,7 +291,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00336">336</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00329">329</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -315,7 +315,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00330">330</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00323">323</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -339,7 +339,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00331">331</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00324">324</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00332">332</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00325">325</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -387,7 +387,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00327">327</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00320">320</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -411,7 +411,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00341">341</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00334">334</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -435,7 +435,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00333">333</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00326">326</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00334">334</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00327">327</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00335">335</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00328">328</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -507,7 +507,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00340">340</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00333">333</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -531,7 +531,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00337">337</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00330">330</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
