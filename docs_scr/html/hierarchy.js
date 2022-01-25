@@ -1,137 +1,176 @@
 var hierarchy =
 [
+    [ "BitmapExtensions", "a00743.html", null ],
     [ "Button", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button", "a00500.html", null ],
-      [ "VitNX.UI.ControlsV2.VitNX2_Button", "a00712.html", null ]
+      [ "VitNX_Button", "a00579.html", null ],
+      [ "VitNX2_Button", "a00791.html", null ]
     ] ],
     [ "CheckBox", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox", "a00504.html", null ],
-      [ "VitNX.UI.ControlsV2.VitNX2_ToogleButton", "a00732.html", null ]
+      [ "VitNX_CheckBox", "a00583.html", null ],
+      [ "VitNX2_ToogleButton", "a00811.html", null ]
     ] ],
-    [ "VitNX.UI.BasedOnDarkUI.Config.Colors", "a00488.html", null ],
+    [ "Colors", "a00567.html", null ],
     [ "ComboBox", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox", "a00508.html", null ]
+      [ "VitNX_ComboBox", "a00587.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.Win32.Constants", "a00440.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Config.Constsants", "a00492.html", null ],
+    [ "Constants", "a00459.html", null ],
+    [ "Constsants", "a00571.html", null ],
     [ "ContextMenuStrip", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContextMenu", "a00512.html", null ]
+      [ "VitNX_ContextMenu", "a00591.html", null ]
     ] ],
     [ "Control", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList", "a00520.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar", "a00560.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase", "a00564.html", [
-        [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollView", "a00568.html", [
-          [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView", "a00536.html", null ],
-          [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView", "a00600.html", null ]
+      [ "VitNX_DropdownList", "a00599.html", null ],
+      [ "VitNX_ScrollBar", "a00639.html", null ],
+      [ "VitNX_ScrollBase", "a00643.html", [
+        [ "VitNX_ScrollView", "a00647.html", [
+          [ "VitNX_ListView", "a00615.html", null ],
+          [ "VitNX_TreeView", "a00679.html", null ]
         ] ]
       ] ],
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_Separator", "a00576.html", null ]
+      [ "VitNX_Separator", "a00655.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.Information.CPU", "a00340.html", null ],
-    [ "VitNX.Functions.Windows.Information.Disk", "a00344.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Docking.DockGroupState", "a00616.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Docking.DockPanelState", "a00620.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Docking.DockRegionState", "a00624.html", null ],
-    [ "VitNX.Functions.Windows.Win32.Enums", "a00444.html", null ],
+    [ "Cpu", "a00343.html", null ],
+    [ "Disk", "a00351.html", null ],
+    [ "Helper.DISPLAYCONFIG_2DREGION", "a00491.html", null ],
+    [ "Helper.DISPLAYCONFIG_DEVICE_INFO_HEADER", "a00523.html", null ],
+    [ "Helper.DISPLAYCONFIG_MODE_INFO", "a00515.html", null ],
+    [ "Helper.DISPLAYCONFIG_MODE_INFO_UNION", "a00511.html", null ],
+    [ "Helper.DISPLAYCONFIG_PATH_INFO", "a00487.html", null ],
+    [ "Helper.DISPLAYCONFIG_PATH_SOURCE_INFO", "a00475.html", null ],
+    [ "Helper.DISPLAYCONFIG_PATH_TARGET_INFO", "a00479.html", null ],
+    [ "Helper.DISPLAYCONFIG_RATIONAL", "a00483.html", null ],
+    [ "Helper.DISPLAYCONFIG_SOURCE_MODE", "a00507.html", null ],
+    [ "Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME", "a00527.html", null ],
+    [ "Helper.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS", "a00519.html", null ],
+    [ "Helper.DISPLAYCONFIG_TARGET_MODE", "a00499.html", null ],
+    [ "Helper.DISPLAYCONFIG_VIDEO_SIGNAL_INFO", "a00495.html", null ],
+    [ "DockDropArea", "a00687.html", null ],
+    [ "DockDropCollection", "a00691.html", null ],
+    [ "DockGroupState", "a00695.html", null ],
+    [ "DockIcons", "a00531.html", null ],
+    [ "DockPanelState", "a00699.html", null ],
+    [ "DockRegionState", "a00703.html", null ],
+    [ "DropdownIcons", "a00535.html", null ],
+    [ "Enums", "a00463.html", null ],
     [ "EventArgs", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Collections.ObservableListModified< T >", "a00484.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Controls.ScrollValueEventArgs", "a00496.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Docking.DockContentEventArgs", "a00604.html", null ]
+      [ "ObservableListModified< T >", "a00563.html", null ],
+      [ "ScrollValueEventArgs", "a00575.html", null ],
+      [ "DockContentEventArgs", "a00683.html", null ]
     ] ],
-    [ "VitNX.Functions.Common.FileSystem", "a00328.html", null ],
+    [ "FileSystem", "a00331.html", null ],
     [ "Form", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form", "a00676.html", [
-        [ "VitNX.UI.BasedOnDarkUI.Forms.VitNX_Dialog", "a00672.html", [
-          [ "VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBox", "a00680.html", null ]
+      [ "VitNX_Form", "a00755.html", [
+        [ "VitNX_Dialog", "a00751.html", [
+          [ "VitNX_MessageBox", "a00759.html", null ]
         ] ]
       ] ],
-      [ "VitNX.UI.ControlsV2.VitNX2_MessageBox_Form", "a00720.html", null ]
+      [ "VitNX_TranslucentForm", "a00763.html", null ],
+      [ "VitNX2_MessageBox_Form", "a00799.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.NativeControls.GetClipboardText", "a00424.html", null ],
+    [ "GetClipboardText", "a00443.html", null ],
+    [ "Gpu", "a00347.html", null ],
     [ "GroupBox", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox", "a00524.html", null ]
+      [ "VitNX_GroupBox", "a00603.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.Win32.Helper", "a00448.html", null ],
-    [ "VitNX.UI.ControlsV2.Helper", "a00708.html", null ],
+    [ "Helper", "a00335.html", null ],
+    [ "Helper", "a00467.html", null ],
+    [ "Helper", "a00787.html", null ],
+    [ "VolumeControl.IAudioEndpointVolume", "a00439.html", null ],
+    [ "VolumeControl.IAudioEndpointVolumeCallback", "a00435.html", null ],
     [ "IDisposable", null, [
-      [ "VitNX.Functions.ConsoleProgressBar", "a00356.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Collections.ObservableList< T >", "a00480.html", null ]
+      [ "ConsoleProgressBar", "a00379.html", null ],
+      [ "ObservableList< T >", "a00559.html", null ]
     ] ],
+    [ "IEnumerableExtensions", "a00747.html", null ],
     [ "IMessageFilter", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Win32.ControlScrollFilter", "a00696.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter", "a00700.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter", "a00704.html", null ]
+      [ "ControlScrollFilter", "a00775.html", null ],
+      [ "DockContentDragFilter", "a00779.html", null ],
+      [ "DockResizeFilter", "a00783.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.Win32.Import", "a00436.html", null ],
-    [ "VitNX.Functions.Windows.Apps.Installed", "a00368.html", null ],
+    [ "VolumeControl.IMMDevice", "a00431.html", null ],
+    [ "VolumeControl.IMMDeviceEnumerator", "a00427.html", null ],
+    [ "Import", "a00455.html", null ],
+    [ "Installed", "a00387.html", null ],
     [ "IProgress", null, [
-      [ "VitNX.Functions.ConsoleProgressBar", "a00356.html", null ]
+      [ "ConsoleProgressBar", "a00379.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.NativeControls.Keyboard", "a00432.html", null ],
+    [ "Keyboard", "a00451.html", null ],
     [ "Label", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label", "a00528.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_Title", "a00588.html", null ]
+      [ "VitNX_Label", "a00607.html", null ],
+      [ "VitNX_Title", "a00667.html", null ]
     ] ],
     [ "List", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Collections.ObservableList< T >", "a00480.html", null ]
+      [ "ObservableList< T >", "a00559.html", null ]
     ] ],
-    [ "VitNX.MenuIcons", "a00460.html", null ],
+    [ "Helper.LUID", "a00471.html", null ],
+    [ "MenuIcons", "a00539.html", null ],
     [ "MenuStrip", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_MenuStrip", "a00540.html", null ]
+      [ "VitNX_MenuStrip", "a00619.html", null ]
     ] ],
-    [ "VitNX.Functions.Windows.Information.Monitor", "a00348.html", null ],
-    [ "VitNX.Functions.Windows.Information.Motherboard", "a00352.html", null ],
-    [ "VitNX.Functions.Windows.NativeControls.NewFolderDialog", "a00384.html", null ],
+    [ "MessageBoxIcons", "a00543.html", null ],
+    [ "VolumeControl.MMDeviceEnumerator", "a00423.html", null ],
+    [ "Monitor", "a00355.html", null ],
+    [ "Motherboard", "a00359.html", null ],
+    [ "NewFolderDialog", "a00403.html", null ],
     [ "NumericUpDown", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown", "a00544.html", null ]
+      [ "VitNX_NumericUpDown", "a00623.html", null ]
     ] ],
-    [ "VitNX.UI.BasedOnDarkUI.Collections.ObservableList< VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode >", "a00480.html", null ],
+    [ "ObservableList< VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode >", "a00559.html", null ],
     [ "Panel", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel", "a00572.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup", "a00632.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion", "a00640.html", null ],
-      [ "VitNX.UI.ControlsV2.VitNX2_Panel", "a00724.html", null ]
+      [ "VitNX_SectionPanel", "a00651.html", null ],
+      [ "VitNX_DockGroup", "a00711.html", null ],
+      [ "VitNX_DockRegion", "a00719.html", null ],
+      [ "VitNX2_Panel", "a00803.html", null ]
     ] ],
-    [ "VitNX.Functions.Common.Power", "a00332.html", null ],
-    [ "VitNX.Functions.Windows.Apps.Processes", "a00364.html", null ],
+    [ "Helper.POINTL", "a00503.html", null ],
+    [ "Power", "a00367.html", null ],
+    [ "Processes", "a00383.html", null ],
     [ "ProgressBar", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ProgressBar", "a00548.html", null ],
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ProgressBarRounded", "a00552.html", null ]
+      [ "VitNX_ProgressBar", "a00627.html", null ],
+      [ "VitNX_ProgressBarRounded", "a00631.html", null ]
     ] ],
     [ "RadioButton", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton", "a00556.html", null ]
+      [ "VitNX_RadioButton", "a00635.html", null ]
     ] ],
+    [ "Ram", "a00363.html", null ],
+    [ "Resources", "a00555.html", null ],
+    [ "ScrollIcons", "a00547.html", null ],
+    [ "STATask", "a00447.html", null ],
     [ "StatusStrip", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_StatusStrip", "a00580.html", null ]
+      [ "VitNX_StatusStrip", "a00659.html", null ]
     ] ],
     [ "TabControl", null, [
-      [ "VitNX.UI.ControlsV2.VitNX2_Tab", "a00728.html", null ]
+      [ "VitNX2_Tab", "a00807.html", null ]
     ] ],
+    [ "TaskBarProgressBar", "a00391.html", null ],
+    [ "Text", "a00371.html", null ],
     [ "TextBox", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_TextBox", "a00584.html", null ]
+      [ "VitNX_TextBox", "a00663.html", null ]
     ] ],
     [ "ToolStrip", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ToolStrip", "a00592.html", null ]
+      [ "VitNX_ToolStrip", "a00671.html", null ]
     ] ],
     [ "ToolStripRenderer", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer", "a00688.html", [
-        [ "VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer", "a00692.html", null ]
+      [ "VitNX_MenuRenderer", "a00767.html", [
+        [ "VitNX_ToolStripRenderer", "a00771.html", null ]
       ] ]
     ] ],
+    [ "TreeViewIcons", "a00551.html", null ],
     [ "UserControl", null, [
-      [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent", "a00628.html", [
-        [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_Document", "a00656.html", null ],
-        [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow", "a00660.html", null ]
+      [ "VitNX_DockContent", "a00707.html", [
+        [ "VitNX_Document", "a00735.html", null ],
+        [ "VitNX_ToolWindow", "a00739.html", null ]
       ] ],
-      [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel", "a00636.html", null ]
+      [ "VitNX_DockPanel", "a00715.html", null ]
     ] ],
-    [ "VitNX.UI.ControlsV2.VitNX2_MessageBox", "a00716.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter", "a00644.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownItem", "a00516.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem", "a00532.html", null ],
-    [ "VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode", "a00596.html", null ],
-    [ "VitNX.Functions.Windows.NativeControls.VolumeControl", "a00400.html", null ],
-    [ "VitNX.Functions.Web", "a00360.html", null ],
-    [ "VitNX.Functions.Windows.Information.Windows", "a00336.html", null ]
+    [ "VitNX2_MessageBox", "a00795.html", null ],
+    [ "VitNX_DockSplitter", "a00723.html", null ],
+    [ "VitNX_DockTab", "a00727.html", null ],
+    [ "VitNX_DockTabArea", "a00731.html", null ],
+    [ "VitNX_DropdownItem", "a00595.html", null ],
+    [ "VitNX_ListItem", "a00611.html", null ],
+    [ "VitNX_TreeNode", "a00675.html", null ],
+    [ "VolumeControl", "a00419.html", null ],
+    [ "Web", "a00375.html", null ],
+    [ "Windows", "a00339.html", null ]
 ];

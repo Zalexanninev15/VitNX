@@ -1,8 +1,6 @@
 var a00288 =
 [
-    [ "CPU", "a00340.html", null ],
-    [ "Disk", "a00344.html", null ],
-    [ "Monitor", "a00348.html", null ],
-    [ "Motherboard", "a00352.html", null ],
-    [ "Windows", "a00336.html", null ]
+    [ "Common", "a00289.html", "a00289" ],
+    [ "Windows", "a00291.html", "a00291" ],
+    [ "ConsoleProgressBar", "a00379.html", "a00379" ]
 ];

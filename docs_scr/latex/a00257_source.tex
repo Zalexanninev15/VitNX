@@ -1,180 +1,264 @@
-\doxysection{Dock\+Resize\+Filter.\+cs}
-\label{a00257_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Win32/DockResizeFilter.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Win32/DockResizeFilter.cs}}
+\doxysection{Dock\+Content\+Drag\+Filter.\+cs}
+\label{a00257_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Win32/DockContentDragFilter.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Win32/DockContentDragFilter.cs}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Collections.Generic;}
 \DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
 \DoxyCodeLine{00003 \textcolor{keyword}{using} System.Windows.Forms;}
-\DoxyCodeLine{00004 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Docking;}
-\DoxyCodeLine{00005 }
-\DoxyCodeLine{00006 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Win32}
-\DoxyCodeLine{00007 \{}
-\DoxyCodeLine{00008     \textcolor{keyword}{public} \textcolor{keyword}{class }DockResizeFilter : IMessageFilter}
-\DoxyCodeLine{00009     \{}
-\DoxyCodeLine{00010 \textcolor{preprocessor}{        \#region Field Region}}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012         \textcolor{keyword}{private} VitNX\_DockPanel \_dockPanel;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Docking;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Forms;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Win32}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \textcolor{keyword}{public} \textcolor{keyword}{class }DockContentDragFilter : IMessageFilter}
+\DoxyCodeLine{00011     \{}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{        \#region Field Region}}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{00014         \textcolor{keyword}{private} Timer \_dragTimer;}
-\DoxyCodeLine{00015         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_isDragging;}
-\DoxyCodeLine{00016         \textcolor{keyword}{private} Point \_initialContact;}
-\DoxyCodeLine{00017         \textcolor{keyword}{private} VitNX\_DockSplitter \_activeSplitter;}
-\DoxyCodeLine{00018 }
-\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#endregion Field Region}}
-\DoxyCodeLine{00020 }
-\DoxyCodeLine{00021 \textcolor{preprocessor}{        \#region Constructor Region}}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023         \textcolor{keyword}{public} DockResizeFilter(VitNX\_DockPanel dockPanel)}
-\DoxyCodeLine{00024         \{}
-\DoxyCodeLine{00025             \_dockPanel = dockPanel;}
-\DoxyCodeLine{00026 }
-\DoxyCodeLine{00027             \_dragTimer = \textcolor{keyword}{new} Timer();}
-\DoxyCodeLine{00028             \_dragTimer.Interval = 1;}
-\DoxyCodeLine{00029             \_dragTimer.Tick += DragTimer\_Tick;}
-\DoxyCodeLine{00030         \}}
+\DoxyCodeLine{00014         \textcolor{keyword}{private} VitNX\_DockPanel \_dockPanel;}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016         \textcolor{keyword}{private} VitNX\_DockContent \_dragContent;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018         \textcolor{keyword}{private} VitNX\_TranslucentForm \_highlightForm;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_isDragging = \textcolor{keyword}{false};}
+\DoxyCodeLine{00021         \textcolor{keyword}{private} VitNX\_DockRegion \_targetRegion;}
+\DoxyCodeLine{00022         \textcolor{keyword}{private} VitNX\_DockGroup \_targetGroup;}
+\DoxyCodeLine{00023         \textcolor{keyword}{private} DockInsertType \_insertType = DockInsertType.None;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{private} Dictionary<VitNX\_DockRegion, DockDropArea> \_regionDropAreas = \textcolor{keyword}{new} Dictionary<VitNX\_DockRegion, DockDropArea>();}
+\DoxyCodeLine{00026         \textcolor{keyword}{private} Dictionary<VitNX\_DockGroup, DockDropCollection> \_groupDropAreas = \textcolor{keyword}{new} Dictionary<VitNX\_DockGroup, DockDropCollection>();}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 \textcolor{preprocessor}{        \#region Constructor Region}}
 \DoxyCodeLine{00031 }
-\DoxyCodeLine{00032 \textcolor{preprocessor}{        \#endregion Constructor Region}}
-\DoxyCodeLine{00033 }
-\DoxyCodeLine{00034 \textcolor{preprocessor}{        \#region IMessageFilter Region}}
+\DoxyCodeLine{00032         \textcolor{keyword}{public} DockContentDragFilter(VitNX\_DockPanel dockPanel)}
+\DoxyCodeLine{00033         \{}
+\DoxyCodeLine{00034             \_dockPanel = dockPanel;}
 \DoxyCodeLine{00035 }
-\DoxyCodeLine{00036         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} PreFilterMessage(ref Message m)}
-\DoxyCodeLine{00037         \{}
-\DoxyCodeLine{00038             \textcolor{comment}{// We only care about mouse events}}
-\DoxyCodeLine{00039             \textcolor{keywordflow}{if} (!(m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE ||}
-\DoxyCodeLine{00040                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDBLCLK ||}
-\DoxyCodeLine{00041                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDBLCLK))}
-\DoxyCodeLine{00042                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00043 }
-\DoxyCodeLine{00044             \textcolor{comment}{// Stop drag.}}
-\DoxyCodeLine{00045             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP)}
-\DoxyCodeLine{00046             \{}
-\DoxyCodeLine{00047                 \textcolor{keywordflow}{if} (\_isDragging)}
-\DoxyCodeLine{00048                 \{}
-\DoxyCodeLine{00049                     StopDrag();}
-\DoxyCodeLine{00050                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00051                 \}}
-\DoxyCodeLine{00052             \}}
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00054             \textcolor{comment}{// Exit out early if we're simply releasing a non-\/splitter drag over the area}}
-\DoxyCodeLine{00055             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP \&\& !\_isDragging)}
-\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00057 }
-\DoxyCodeLine{00058             \textcolor{comment}{// Force cursor if already dragging.}}
-\DoxyCodeLine{00059             \textcolor{keywordflow}{if} (\_isDragging)}
-\DoxyCodeLine{00060                 Cursor.Current = \_activeSplitter.ResizeCursor;}
+\DoxyCodeLine{00036             \_highlightForm = \textcolor{keyword}{new} VitNX\_TranslucentForm(Colors.BlueSelection);}
+\DoxyCodeLine{00037         \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{preprocessor}{        \#region IMessageFilter Region}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} PreFilterMessage(ref Message m)}
+\DoxyCodeLine{00044         \{}
+\DoxyCodeLine{00045             \textcolor{comment}{// Exit out early if we're not dragging any content}}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{if} (!\_isDragging)}
+\DoxyCodeLine{00047                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049             \textcolor{comment}{// We only care about mouse events}}
+\DoxyCodeLine{00050             \textcolor{keywordflow}{if} (!(m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE ||}
+\DoxyCodeLine{00051                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDBLCLK ||}
+\DoxyCodeLine{00052                   m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDOWN || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONUP || m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.RBUTTONDBLCLK))}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055             \textcolor{comment}{// Move content}}
+\DoxyCodeLine{00056             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE)}
+\DoxyCodeLine{00057             \{}
+\DoxyCodeLine{00058                 HandleDrag();}
+\DoxyCodeLine{00059                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00060             \}}
 \DoxyCodeLine{00061 }
-\DoxyCodeLine{00062             \textcolor{comment}{// Return out early if we're dragging something that's not a splitter.}}
-\DoxyCodeLine{00063             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.MOUSEMOVE \&\& !\_isDragging \&\& \_dockPanel.MouseButtonState != MouseButtons.None)}
-\DoxyCodeLine{00064                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00065 }
-\DoxyCodeLine{00066             \textcolor{comment}{// Try and create a control from the message handle.}}
-\DoxyCodeLine{00067             var control = Control.FromHandle(m.HWnd);}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069             \textcolor{comment}{// Exit out if we didn't manage to create a control.}}
-\DoxyCodeLine{00070             \textcolor{keywordflow}{if} (control == \textcolor{keyword}{null})}
-\DoxyCodeLine{00071                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00072 }
-\DoxyCodeLine{00073             \textcolor{comment}{// Exit out if the control is not the dock panel or a child control.}}
-\DoxyCodeLine{00074             \textcolor{keywordflow}{if} (!(control == \_dockPanel || \_dockPanel.Contains(control)))}
-\DoxyCodeLine{00075                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077             \textcolor{comment}{// Update the mouse cursor}}
-\DoxyCodeLine{00078             CheckCursor();}
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{00080             \textcolor{comment}{// Start drag.}}
-\DoxyCodeLine{00081             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONDOWN)}
-\DoxyCodeLine{00082             \{}
-\DoxyCodeLine{00083                 var hotSplitter = HotSplitter();}
-\DoxyCodeLine{00084                 \textcolor{keywordflow}{if} (hotSplitter != \textcolor{keyword}{null})}
-\DoxyCodeLine{00085                 \{}
-\DoxyCodeLine{00086                     StartDrag(hotSplitter);}
-\DoxyCodeLine{00087                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00088                 \}}
-\DoxyCodeLine{00089             \}}
-\DoxyCodeLine{00090 }
-\DoxyCodeLine{00091             \textcolor{comment}{// Stop events passing through if we're hovering over a splitter}}
-\DoxyCodeLine{00092             \textcolor{keywordflow}{if} (HotSplitter() != \textcolor{keyword}{null})}
-\DoxyCodeLine{00093                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00062             \textcolor{comment}{// Drop content}}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{if} (m.Msg == (\textcolor{keywordtype}{int})Functions.Windows.Win32.Enums.WINDOW\_MESSAGE.LBUTTONUP)}
+\DoxyCodeLine{00064             \{}
+\DoxyCodeLine{00065                 \textcolor{keywordflow}{if} (\_targetRegion != \textcolor{keyword}{null})}
+\DoxyCodeLine{00066                 \{}
+\DoxyCodeLine{00067                     \_dockPanel.RemoveContent(\_dragContent);}
+\DoxyCodeLine{00068                     \_dragContent.DockArea = \_targetRegion.DockArea;}
+\DoxyCodeLine{00069                     \_dockPanel.AddContent(\_dragContent);}
+\DoxyCodeLine{00070                 \}}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_targetGroup != \textcolor{keyword}{null})}
+\DoxyCodeLine{00072                 \{}
+\DoxyCodeLine{00073                     \_dockPanel.RemoveContent(\_dragContent);}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075                     \textcolor{keywordflow}{switch} (\_insertType)}
+\DoxyCodeLine{00076                     \{}
+\DoxyCodeLine{00077                         \textcolor{keywordflow}{case} DockInsertType.None:}
+\DoxyCodeLine{00078                             \_dockPanel.AddContent(\_dragContent, \_targetGroup);}
+\DoxyCodeLine{00079                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081                         \textcolor{keywordflow}{case} DockInsertType.Before:}
+\DoxyCodeLine{00082                         \textcolor{keywordflow}{case} DockInsertType.After:}
+\DoxyCodeLine{00083                             \_dockPanel.InsertContent(\_dragContent, \_targetGroup, \_insertType);}
+\DoxyCodeLine{00084                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00085                     \}}
+\DoxyCodeLine{00086                 \}}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088                 StopDrag();}
+\DoxyCodeLine{00089                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00090             \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00093         \}}
 \DoxyCodeLine{00094 }
-\DoxyCodeLine{00095             \textcolor{comment}{// Stop all events from going through if we're dragging a splitter.}}
-\DoxyCodeLine{00096             \textcolor{keywordflow}{if} (\_isDragging)}
-\DoxyCodeLine{00097                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00095 \textcolor{preprocessor}{        \#endregion IMessageFilter Region}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097 \textcolor{preprocessor}{        \#region Method Region}}
 \DoxyCodeLine{00098 }
-\DoxyCodeLine{00099             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00100         \}}
-\DoxyCodeLine{00101 }
-\DoxyCodeLine{00102 \textcolor{preprocessor}{        \#endregion IMessageFilter Region}}
+\DoxyCodeLine{00099         \textcolor{keyword}{public} \textcolor{keywordtype}{void} StartDrag(VitNX\_DockContent content)}
+\DoxyCodeLine{00100         \{}
+\DoxyCodeLine{00101             \_regionDropAreas = \textcolor{keyword}{new} Dictionary<VitNX\_DockRegion, DockDropArea>();}
+\DoxyCodeLine{00102             \_groupDropAreas = \textcolor{keyword}{new} Dictionary<VitNX\_DockGroup, DockDropCollection>();}
 \DoxyCodeLine{00103 }
-\DoxyCodeLine{00104 \textcolor{preprocessor}{        \#region Event Handler Region}}
-\DoxyCodeLine{00105 }
-\DoxyCodeLine{00106         \textcolor{keyword}{private} \textcolor{keywordtype}{void} DragTimer\_Tick(\textcolor{keywordtype}{object} sender, EventArgs e)}
-\DoxyCodeLine{00107         \{}
-\DoxyCodeLine{00108             \textcolor{keywordflow}{if} (\_dockPanel.MouseButtonState != MouseButtons.Left)}
-\DoxyCodeLine{00109             \{}
-\DoxyCodeLine{00110                 StopDrag();}
-\DoxyCodeLine{00111                 \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00112             \}}
-\DoxyCodeLine{00113 }
-\DoxyCodeLine{00114             var difference = \textcolor{keyword}{new} Point(\_initialContact.X -\/ Cursor.Position.X, \_initialContact.Y -\/ Cursor.Position.Y);}
-\DoxyCodeLine{00115             \_activeSplitter.UpdateOverlay(difference);}
-\DoxyCodeLine{00116         \}}
-\DoxyCodeLine{00117 }
-\DoxyCodeLine{00118 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
-\DoxyCodeLine{00119 }
-\DoxyCodeLine{00120 \textcolor{preprocessor}{        \#region Method Region}}
-\DoxyCodeLine{00121 }
-\DoxyCodeLine{00122         \textcolor{keyword}{private} \textcolor{keywordtype}{void} StartDrag(VitNX\_DockSplitter splitter)}
-\DoxyCodeLine{00123         \{}
-\DoxyCodeLine{00124             \_activeSplitter = splitter;}
-\DoxyCodeLine{00125             Cursor.Current = \_activeSplitter.ResizeCursor;}
+\DoxyCodeLine{00104             \textcolor{comment}{// Add all regions and groups to the drop collections}}
+\DoxyCodeLine{00105             \textcolor{keywordflow}{foreach} (var region \textcolor{keywordflow}{in} \_dockPanel.Regions.Values)}
+\DoxyCodeLine{00106             \{}
+\DoxyCodeLine{00107                 \textcolor{keywordflow}{if} (region.DockArea == VitNX\_DockArea.Document)}
+\DoxyCodeLine{00108                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110                 \textcolor{comment}{// If the region is visible then build drop areas for the groups.}}
+\DoxyCodeLine{00111                 \textcolor{keywordflow}{if} (region.Visible)}
+\DoxyCodeLine{00112                 \{}
+\DoxyCodeLine{00113                     \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} region.Groups)}
+\DoxyCodeLine{00114                     \{}
+\DoxyCodeLine{00115                         var collection = \textcolor{keyword}{new} DockDropCollection(\_dockPanel, group);}
+\DoxyCodeLine{00116                         \_groupDropAreas.Add(group, collection);}
+\DoxyCodeLine{00117                     \}}
+\DoxyCodeLine{00118                 \}}
+\DoxyCodeLine{00119                 \textcolor{comment}{// If the region is NOT visible then build the drop area for the region itself.}}
+\DoxyCodeLine{00120                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00121                 \{}
+\DoxyCodeLine{00122                     var area = \textcolor{keyword}{new} DockDropArea(\_dockPanel, region);}
+\DoxyCodeLine{00123                     \_regionDropAreas.Add(region, area);}
+\DoxyCodeLine{00124                 \}}
+\DoxyCodeLine{00125             \}}
 \DoxyCodeLine{00126 }
-\DoxyCodeLine{00127             \_initialContact = Cursor.Position;}
+\DoxyCodeLine{00127             \_dragContent = content;}
 \DoxyCodeLine{00128             \_isDragging = \textcolor{keyword}{true};}
-\DoxyCodeLine{00129 }
-\DoxyCodeLine{00130             \_activeSplitter.ShowOverlay();}
-\DoxyCodeLine{00131             \_dragTimer.Start();}
-\DoxyCodeLine{00132         \}}
-\DoxyCodeLine{00133 }
-\DoxyCodeLine{00134         \textcolor{keyword}{private} \textcolor{keywordtype}{void} StopDrag()}
-\DoxyCodeLine{00135         \{}
-\DoxyCodeLine{00136             \_dragTimer.Stop();}
-\DoxyCodeLine{00137             \_activeSplitter.HideOverlay();}
-\DoxyCodeLine{00138 }
-\DoxyCodeLine{00139             var difference = \textcolor{keyword}{new} Point(\_initialContact.X -\/ Cursor.Position.X, \_initialContact.Y -\/ Cursor.Position.Y);}
-\DoxyCodeLine{00140             \_activeSplitter.Move(difference);}
-\DoxyCodeLine{00141 }
-\DoxyCodeLine{00142             \_isDragging = \textcolor{keyword}{false};}
-\DoxyCodeLine{00143         \}}
-\DoxyCodeLine{00144 }
-\DoxyCodeLine{00145         \textcolor{keyword}{private} VitNX\_DockSplitter HotSplitter()}
-\DoxyCodeLine{00146         \{}
-\DoxyCodeLine{00147             \textcolor{keywordflow}{foreach} (var splitter \textcolor{keywordflow}{in} \_dockPanel.Splitters)}
-\DoxyCodeLine{00148             \{}
-\DoxyCodeLine{00149                 \textcolor{keywordflow}{if} (splitter.Bounds.Contains(Cursor.Position))}
-\DoxyCodeLine{00150                     \textcolor{keywordflow}{return} splitter;}
-\DoxyCodeLine{00151             \}}
-\DoxyCodeLine{00152 }
-\DoxyCodeLine{00153             \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
-\DoxyCodeLine{00154         \}}
-\DoxyCodeLine{00155 }
-\DoxyCodeLine{00156         \textcolor{keyword}{private} \textcolor{keywordtype}{void} CheckCursor()}
-\DoxyCodeLine{00157         \{}
-\DoxyCodeLine{00158             \textcolor{keywordflow}{if} (\_isDragging)}
-\DoxyCodeLine{00159                 \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00160 }
-\DoxyCodeLine{00161             var hotSplitter = HotSplitter();}
-\DoxyCodeLine{00162             \textcolor{keywordflow}{if} (hotSplitter != \textcolor{keyword}{null})}
-\DoxyCodeLine{00163                 Cursor.Current = hotSplitter.ResizeCursor;}
-\DoxyCodeLine{00164         \}}
-\DoxyCodeLine{00165 }
-\DoxyCodeLine{00166         \textcolor{keyword}{private} \textcolor{keywordtype}{void} ResetCursor()}
-\DoxyCodeLine{00167         \{}
-\DoxyCodeLine{00168             Cursor.Current = Cursors.Default;}
-\DoxyCodeLine{00169             CheckCursor();}
-\DoxyCodeLine{00170         \}}
-\DoxyCodeLine{00171 }
-\DoxyCodeLine{00172 \textcolor{preprocessor}{        \#endregion Method Region}}
-\DoxyCodeLine{00173     \}}
-\DoxyCodeLine{00174 \}}
+\DoxyCodeLine{00129         \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keyword}{private} \textcolor{keywordtype}{void} StopDrag()}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             Cursor.Current = Cursors.Default;}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135             \_highlightForm.Hide();}
+\DoxyCodeLine{00136             \_dragContent = \textcolor{keyword}{null};}
+\DoxyCodeLine{00137             \_isDragging = \textcolor{keyword}{false};}
+\DoxyCodeLine{00138         \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140         \textcolor{keyword}{private} \textcolor{keywordtype}{void} UpdateHighlightForm(Rectangle rect)}
+\DoxyCodeLine{00141         \{}
+\DoxyCodeLine{00142             Cursor.Current = Cursors.SizeAll;}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144             \_highlightForm.SuspendLayout();}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146             \_highlightForm.Size = \textcolor{keyword}{new} Size(rect.Width, rect.Height);}
+\DoxyCodeLine{00147             \_highlightForm.Location = \textcolor{keyword}{new} Point(rect.X, rect.Y);}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149             \_highlightForm.ResumeLayout();}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151             \textcolor{keywordflow}{if} (!\_highlightForm.Visible)}
+\DoxyCodeLine{00152             \{}
+\DoxyCodeLine{00153                 \_highlightForm.Show();}
+\DoxyCodeLine{00154                 \_highlightForm.BringToFront();}
+\DoxyCodeLine{00155             \}}
+\DoxyCodeLine{00156         \}}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158         \textcolor{keyword}{private} \textcolor{keywordtype}{void} HandleDrag()}
+\DoxyCodeLine{00159         \{}
+\DoxyCodeLine{00160             var location = Cursor.Position;}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162             \_insertType = DockInsertType.None;}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164             \_targetRegion = \textcolor{keyword}{null};}
+\DoxyCodeLine{00165             \_targetGroup = \textcolor{keyword}{null};}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167             \textcolor{comment}{// Check all region drop areas}}
+\DoxyCodeLine{00168             \textcolor{keywordflow}{foreach} (var area \textcolor{keywordflow}{in} \_regionDropAreas.Values)}
+\DoxyCodeLine{00169             \{}
+\DoxyCodeLine{00170                 \textcolor{keywordflow}{if} (area.DropArea.Contains(location))}
+\DoxyCodeLine{00171                 \{}
+\DoxyCodeLine{00172                     \_insertType = DockInsertType.None;}
+\DoxyCodeLine{00173                     \_targetRegion = area.DockRegion;}
+\DoxyCodeLine{00174                     UpdateHighlightForm(area.HighlightArea);}
+\DoxyCodeLine{00175                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00176                 \}}
+\DoxyCodeLine{00177             \}}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179             \textcolor{comment}{// Check all group drop areas}}
+\DoxyCodeLine{00180             \textcolor{keywordflow}{foreach} (var collection \textcolor{keywordflow}{in} \_groupDropAreas.Values)}
+\DoxyCodeLine{00181             \{}
+\DoxyCodeLine{00182                 var sameRegion = \textcolor{keyword}{false};}
+\DoxyCodeLine{00183                 var sameGroup = \textcolor{keyword}{false};}
+\DoxyCodeLine{00184                 var groupHasOtherContent = \textcolor{keyword}{false};}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186                 \textcolor{keywordflow}{if} (collection.DropArea.DockGroup == \_dragContent.DockGroup)}
+\DoxyCodeLine{00187                     sameGroup = \textcolor{keyword}{true};}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189                 \textcolor{keywordflow}{if} (collection.DropArea.DockGroup.DockRegion == \_dragContent.DockRegion)}
+\DoxyCodeLine{00190                     sameRegion = \textcolor{keyword}{true};}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192                 \textcolor{keywordflow}{if} (\_dragContent.DockGroup.ContentCount > 1)}
+\DoxyCodeLine{00193                     groupHasOtherContent = \textcolor{keyword}{true};}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195                 \textcolor{comment}{// If we're hovering over the group itself, only allow inserting before/after if multiple content is tabbed.}}
+\DoxyCodeLine{00196                 \textcolor{keywordflow}{if} (!sameGroup || groupHasOtherContent)}
+\DoxyCodeLine{00197                 \{}
+\DoxyCodeLine{00198                     var skipBefore = \textcolor{keyword}{false};}
+\DoxyCodeLine{00199                     var skipAfter = \textcolor{keyword}{false};}
+\DoxyCodeLine{00200 }
+\DoxyCodeLine{00201                     \textcolor{comment}{// Inserting before/after other content might cause the content to be dropped on to its own location.}}
+\DoxyCodeLine{00202                     \textcolor{comment}{// Check if the group above/below the hovered group contains our drag content.}}
+\DoxyCodeLine{00203                     \textcolor{keywordflow}{if} (sameRegion \&\& !groupHasOtherContent)}
+\DoxyCodeLine{00204                     \{}
+\DoxyCodeLine{00205                         \textcolor{keywordflow}{if} (collection.InsertBeforeArea.DockGroup.Order == \_dragContent.DockGroup.Order + 1)}
+\DoxyCodeLine{00206                             skipBefore = \textcolor{keyword}{true};}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208                         \textcolor{keywordflow}{if} (collection.InsertAfterArea.DockGroup.Order == \_dragContent.DockGroup.Order -\/ 1)}
+\DoxyCodeLine{00209                             skipAfter = \textcolor{keyword}{true};}
+\DoxyCodeLine{00210                     \}}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212                     \textcolor{keywordflow}{if} (!skipBefore)}
+\DoxyCodeLine{00213                     \{}
+\DoxyCodeLine{00214                         \textcolor{keywordflow}{if} (collection.InsertBeforeArea.DropArea.Contains(location))}
+\DoxyCodeLine{00215                         \{}
+\DoxyCodeLine{00216                             \_insertType = DockInsertType.Before;}
+\DoxyCodeLine{00217                             \_targetGroup = collection.InsertBeforeArea.DockGroup;}
+\DoxyCodeLine{00218                             UpdateHighlightForm(collection.InsertBeforeArea.HighlightArea);}
+\DoxyCodeLine{00219                             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00220                         \}}
+\DoxyCodeLine{00221                     \}}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223                     \textcolor{keywordflow}{if} (!skipAfter)}
+\DoxyCodeLine{00224                     \{}
+\DoxyCodeLine{00225                         \textcolor{keywordflow}{if} (collection.InsertAfterArea.DropArea.Contains(location))}
+\DoxyCodeLine{00226                         \{}
+\DoxyCodeLine{00227                             \_insertType = DockInsertType.After;}
+\DoxyCodeLine{00228                             \_targetGroup = collection.InsertAfterArea.DockGroup;}
+\DoxyCodeLine{00229                             UpdateHighlightForm(collection.InsertAfterArea.HighlightArea);}
+\DoxyCodeLine{00230                             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00231                         \}}
+\DoxyCodeLine{00232                     \}}
+\DoxyCodeLine{00233                 \}}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235                 \textcolor{comment}{// Don't allow content to be dragged on to itself}}
+\DoxyCodeLine{00236                 \textcolor{keywordflow}{if} (!sameGroup)}
+\DoxyCodeLine{00237                 \{}
+\DoxyCodeLine{00238                     \textcolor{keywordflow}{if} (collection.DropArea.DropArea.Contains(location))}
+\DoxyCodeLine{00239                     \{}
+\DoxyCodeLine{00240                         \_insertType = DockInsertType.None;}
+\DoxyCodeLine{00241                         \_targetGroup = collection.DropArea.DockGroup;}
+\DoxyCodeLine{00242                         UpdateHighlightForm(collection.DropArea.HighlightArea);}
+\DoxyCodeLine{00243                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00244                     \}}
+\DoxyCodeLine{00245                 \}}
+\DoxyCodeLine{00246             \}}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248             \textcolor{comment}{// Not hovering over anything -\/ hide the highlight}}
+\DoxyCodeLine{00249             \textcolor{keywordflow}{if} (\_highlightForm.Visible)}
+\DoxyCodeLine{00250                 \_highlightForm.Hide();}
+\DoxyCodeLine{00251 }
+\DoxyCodeLine{00252             \textcolor{comment}{// Show we can't drag here}}
+\DoxyCodeLine{00253             Cursor.Current = Cursors.No;}
+\DoxyCodeLine{00254         \}}
+\DoxyCodeLine{00255 }
+\DoxyCodeLine{00256 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00257     \}}
+\DoxyCodeLine{00258 \}}
 
 \end{DoxyCode}

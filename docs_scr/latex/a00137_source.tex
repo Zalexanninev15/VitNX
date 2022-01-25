@@ -1,152 +1,66 @@
-\doxysection{Vit\+NX\+\_\+\+Section\+Panel.\+cs}
-\label{a00137_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_SectionPanel.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_SectionPanel.cs}}
+\doxysection{Vit\+NX\+\_\+\+Scroll\+View.\+cs}
+\label{a00137_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollView.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollView.cs}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 \textcolor{keyword}{using} System.ComponentModel;}
-\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
-\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Windows.Forms;}
-\DoxyCodeLine{00004 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
-\DoxyCodeLine{00005 }
-\DoxyCodeLine{00006 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
-\DoxyCodeLine{00007 \{}
-\DoxyCodeLine{00008     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_SectionPanel : Panel}
-\DoxyCodeLine{00009     \{}
-\DoxyCodeLine{00010 \textcolor{preprocessor}{        \#region Field Region}}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_sectionHeader;}
-\DoxyCodeLine{00013 }
-\DoxyCodeLine{00014 \textcolor{preprocessor}{        \#endregion Field Region}}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{00016 \textcolor{preprocessor}{        \#region Property Region}}
-\DoxyCodeLine{00017 }
-\DoxyCodeLine{00018         [Browsable(\textcolor{keyword}{false})]}
-\DoxyCodeLine{00019         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
-\DoxyCodeLine{00020         \textcolor{keyword}{public} \textcolor{keyword}{new} Padding Padding}
-\DoxyCodeLine{00021         \{}
-\DoxyCodeLine{00022             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Padding; \}}
-\DoxyCodeLine{00023         \}}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{00025         [Category(\textcolor{stringliteral}{"{}Appearance"{}})]}
-\DoxyCodeLine{00026         [Description(\textcolor{stringliteral}{"{}The section header text associated with this control."{}})]}
-\DoxyCodeLine{00027         \textcolor{keyword}{public} \textcolor{keywordtype}{string} SectionHeader}
-\DoxyCodeLine{00028         \{}
-\DoxyCodeLine{00029             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_sectionHeader; \}}
-\DoxyCodeLine{00030             \textcolor{keyword}{set}}
-\DoxyCodeLine{00031             \{}
-\DoxyCodeLine{00032                 \_sectionHeader = value;}
-\DoxyCodeLine{00033                 Invalidate();}
-\DoxyCodeLine{00034             \}}
-\DoxyCodeLine{00035         \}}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00037 \textcolor{preprocessor}{        \#endregion Property Region}}
-\DoxyCodeLine{00038 }
-\DoxyCodeLine{00039 \textcolor{preprocessor}{        \#region Constructor Region}}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{00041         \textcolor{keyword}{public} VitNX\_SectionPanel()}
-\DoxyCodeLine{00042         \{}
-\DoxyCodeLine{00043             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
-\DoxyCodeLine{00044                      ControlStyles.ResizeRedraw |}
-\DoxyCodeLine{00045                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
-\DoxyCodeLine{00046 }
-\DoxyCodeLine{00047             base.Padding = \textcolor{keyword}{new} Padding(1, 25, 1, 1);}
-\DoxyCodeLine{00048         \}}
-\DoxyCodeLine{00049 }
-\DoxyCodeLine{00050 \textcolor{preprocessor}{        \#endregion Constructor Region}}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052 \textcolor{preprocessor}{        \#region Event Handler Region}}
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00054         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnEnter(System.EventArgs e)}
-\DoxyCodeLine{00055         \{}
-\DoxyCodeLine{00056             base.OnEnter(e);}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00005 \{}
+\DoxyCodeLine{00006     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class }VitNX\_ScrollView : VitNX\_ScrollBase}
+\DoxyCodeLine{00007     \{}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010         \textcolor{keyword}{protected} VitNX\_ScrollView()}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00013                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00014                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00015         \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#region Paint Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{protected} \textcolor{keyword}{abstract} \textcolor{keywordtype}{void} PaintContent(Graphics g);}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             var g = e.Graphics;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \textcolor{comment}{// Draw background}}
+\DoxyCodeLine{00028             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(BackColor))}
+\DoxyCodeLine{00029             \{}
+\DoxyCodeLine{00030                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00031             \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033             \textcolor{comment}{// Offset the graphics based on the viewport, render the control contents, then reset it.}}
+\DoxyCodeLine{00034             g.TranslateTransform(Viewport.Left * -\/1, Viewport.Top * -\/1);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             PaintContent(g);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038             g.TranslateTransform(Viewport.Left, Viewport.Top);}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040             \textcolor{comment}{// Draw the bit where the scrollbars meet}}
+\DoxyCodeLine{00041             \textcolor{keywordflow}{if} (\_vScrollBar.Visible \&\& \_hScrollBar.Visible)}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(BackColor))}
+\DoxyCodeLine{00044                 \{}
+\DoxyCodeLine{00045                     var rect = \textcolor{keyword}{new} Rectangle(\_hScrollBar.Right, \_vScrollBar.Bottom, \_vScrollBar.Width,}
+\DoxyCodeLine{00046                                              \_hScrollBar.Height);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048                     g.FillRectangle(b, rect);}
+\DoxyCodeLine{00049                 \}}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaintBackground(PaintEventArgs e)}
+\DoxyCodeLine{00054         \{}
+\DoxyCodeLine{00055             \textcolor{comment}{// Absorb event}}
+\DoxyCodeLine{00056         \}}
 \DoxyCodeLine{00057 }
-\DoxyCodeLine{00058             Invalidate();}
-\DoxyCodeLine{00059         \}}
-\DoxyCodeLine{00060 }
-\DoxyCodeLine{00061         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLeave(System.EventArgs e)}
-\DoxyCodeLine{00062         \{}
-\DoxyCodeLine{00063             base.OnLeave(e);}
-\DoxyCodeLine{00064 }
-\DoxyCodeLine{00065             Invalidate();}
-\DoxyCodeLine{00066         \}}
-\DoxyCodeLine{00067 }
-\DoxyCodeLine{00068         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseDown(MouseEventArgs e)}
-\DoxyCodeLine{00069         \{}
-\DoxyCodeLine{00070             base.OnMouseDown(e);}
-\DoxyCodeLine{00071 }
-\DoxyCodeLine{00072             \textcolor{keywordflow}{if} (Controls.Count > 0)}
-\DoxyCodeLine{00073                 Controls[0].Focus();}
-\DoxyCodeLine{00074         \}}
-\DoxyCodeLine{00075 }
-\DoxyCodeLine{00076 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
-\DoxyCodeLine{00077 }
-\DoxyCodeLine{00078 \textcolor{preprocessor}{        \#region Paint Region}}
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{00080         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
-\DoxyCodeLine{00081         \{}
-\DoxyCodeLine{00082             var g = e.Graphics;}
-\DoxyCodeLine{00083             var rect = ClientRectangle;}
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085             \textcolor{comment}{// Fill body}}
-\DoxyCodeLine{00086             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
-\DoxyCodeLine{00087             \{}
-\DoxyCodeLine{00088                 g.FillRectangle(b, rect);}
-\DoxyCodeLine{00089             \}}
-\DoxyCodeLine{00090 }
-\DoxyCodeLine{00091             \textcolor{comment}{// Draw header}}
-\DoxyCodeLine{00092             var bgColor = ContainsFocus ? Colors.BlueBackground : Colors.HeaderBackground;}
-\DoxyCodeLine{00093             var VitNXColor = ContainsFocus ? Colors.VitNXBlueBorder : Colors.VitNXBorder;}
-\DoxyCodeLine{00094             var lightColor = ContainsFocus ? Colors.LightBlueBorder : Colors.LightBorder;}
-\DoxyCodeLine{00095 }
-\DoxyCodeLine{00096             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(bgColor))}
-\DoxyCodeLine{00097             \{}
-\DoxyCodeLine{00098                 var bgRect = \textcolor{keyword}{new} Rectangle(0, 0, rect.Width, 25);}
-\DoxyCodeLine{00099                 g.FillRectangle(b, bgRect);}
-\DoxyCodeLine{00100             \}}
-\DoxyCodeLine{00101 }
-\DoxyCodeLine{00102             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(VitNXColor))}
-\DoxyCodeLine{00103             \{}
-\DoxyCodeLine{00104                 g.DrawLine(p, rect.Left, 0, rect.Right, 0);}
-\DoxyCodeLine{00105                 g.DrawLine(p, rect.Left, 25 -\/ 1, rect.Right, 25 -\/ 1);}
-\DoxyCodeLine{00106             \}}
-\DoxyCodeLine{00107 }
-\DoxyCodeLine{00108             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(lightColor))}
-\DoxyCodeLine{00109             \{}
-\DoxyCodeLine{00110                 g.DrawLine(p, rect.Left, 1, rect.Right, 1);}
-\DoxyCodeLine{00111             \}}
-\DoxyCodeLine{00112 }
-\DoxyCodeLine{00113             var xOffset = 3;}
-\DoxyCodeLine{00114 }
-\DoxyCodeLine{00115             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightText))}
-\DoxyCodeLine{00116             \{}
-\DoxyCodeLine{00117                 var textRect = \textcolor{keyword}{new} Rectangle(xOffset, 0, rect.Width -\/ 4 -\/ xOffset, 25);}
-\DoxyCodeLine{00118 }
-\DoxyCodeLine{00119                 var format = \textcolor{keyword}{new} StringFormat}
-\DoxyCodeLine{00120                 \{}
-\DoxyCodeLine{00121                     Alignment = StringAlignment.Near,}
-\DoxyCodeLine{00122                     LineAlignment = StringAlignment.Center,}
-\DoxyCodeLine{00123                     FormatFlags = StringFormatFlags.NoWrap,}
-\DoxyCodeLine{00124                     Trimming = StringTrimming.EllipsisCharacter}
-\DoxyCodeLine{00125                 \};}
-\DoxyCodeLine{00126 }
-\DoxyCodeLine{00127                 g.DrawString(SectionHeader, Font, b, textRect, format);}
-\DoxyCodeLine{00128             \}}
-\DoxyCodeLine{00129 }
-\DoxyCodeLine{00130             \textcolor{comment}{// Draw border}}
-\DoxyCodeLine{00131             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.VitNXBorder, 1))}
-\DoxyCodeLine{00132             \{}
-\DoxyCodeLine{00133                 var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1);}
-\DoxyCodeLine{00134 }
-\DoxyCodeLine{00135                 g.DrawRectangle(p, modRect);}
-\DoxyCodeLine{00136             \}}
-\DoxyCodeLine{00137         \}}
-\DoxyCodeLine{00138 }
-\DoxyCodeLine{00139         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaintBackground(PaintEventArgs e)}
-\DoxyCodeLine{00140         \{}
-\DoxyCodeLine{00141             \textcolor{comment}{// Absorb event}}
-\DoxyCodeLine{00142         \}}
-\DoxyCodeLine{00143 }
-\DoxyCodeLine{00144 \textcolor{preprocessor}{        \#endregion Paint Region}}
-\DoxyCodeLine{00145     \}}
-\DoxyCodeLine{00146 \}}
+\DoxyCodeLine{00058 \textcolor{preprocessor}{        \#endregion Paint Region}}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 \}}
 
 \end{DoxyCode}

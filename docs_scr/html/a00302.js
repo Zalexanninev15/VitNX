@@ -1,6 +1,5 @@
 var a00302 =
 [
-    [ "ControlScrollFilter", "a00696.html", null ],
-    [ "DockContentDragFilter", "a00700.html", null ],
-    [ "DockResizeFilter", "a00704.html", null ]
+    [ "BitmapExtensions", "a00743.html", "a00743" ],
+    [ "IEnumerableExtensions", "a00747.html", "a00747" ]
 ];

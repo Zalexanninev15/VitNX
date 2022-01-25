@@ -1,103 +1,17 @@
-\doxysection{Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}
-\label{a00110_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_NumericUpDown.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_NumericUpDown.cs}}
+\doxysection{Vit\+NX\+\_\+\+Menu\+Strip.\+cs}
+\label{a00110_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_MenuStrip.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_MenuStrip.cs}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
-\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
-\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
-\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Reflection;}
-\DoxyCodeLine{00005 \textcolor{keyword}{using} System.Security;}
-\DoxyCodeLine{00006 \textcolor{keyword}{using} System.Windows.Forms;}
-\DoxyCodeLine{00007 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
-\DoxyCodeLine{00008 }
-\DoxyCodeLine{00009 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
-\DoxyCodeLine{00010 \{}
-\DoxyCodeLine{00011     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_NumericUpDown : NumericUpDown}
-\DoxyCodeLine{00012     \{}
-\DoxyCodeLine{00013         [Browsable(\textcolor{keyword}{false})]}
-\DoxyCodeLine{00014         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
-\DoxyCodeLine{00015         \textcolor{keyword}{public} \textcolor{keyword}{new} Color ForeColor \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
-\DoxyCodeLine{00016 }
-\DoxyCodeLine{00017         [Browsable(\textcolor{keyword}{false})]}
-\DoxyCodeLine{00018         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
-\DoxyCodeLine{00019         \textcolor{keyword}{public} \textcolor{keyword}{new} Color BackColor \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
-\DoxyCodeLine{00020 }
-\DoxyCodeLine{00021         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_mouseDown;}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023         \textcolor{keyword}{public} VitNX\_NumericUpDown()}
-\DoxyCodeLine{00024         \{}
-\DoxyCodeLine{00025             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, \textcolor{keyword}{true});}
-\DoxyCodeLine{00026             base.ForeColor = Color.Gainsboro;}
-\DoxyCodeLine{00027             base.BackColor = Colors.LightBackground;}
-\DoxyCodeLine{00028             Controls[0].Paint += VitNX\_NumericUpDown\_Paint;}
-\DoxyCodeLine{00029             \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00030             \{}
-\DoxyCodeLine{00031                 Type type = Controls[0].GetType();}
-\DoxyCodeLine{00032                 BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Instance;}
-\DoxyCodeLine{00033                 MethodInfo method = type.GetMethod(\textcolor{stringliteral}{"{}SetStyle"{}}, flags);}
-\DoxyCodeLine{00034                 \textcolor{keywordflow}{if} (method != \textcolor{keyword}{null})}
-\DoxyCodeLine{00035                 \{}
-\DoxyCodeLine{00036                     \textcolor{keywordtype}{object}[] param = \{ ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, \textcolor{keyword}{true} \};}
-\DoxyCodeLine{00037                     method.Invoke(Controls[0], param);}
-\DoxyCodeLine{00038                 \}}
-\DoxyCodeLine{00039             \}}
-\DoxyCodeLine{00040             \textcolor{keywordflow}{catch} (SecurityException) \{ \}}
-\DoxyCodeLine{00041         \}}
-\DoxyCodeLine{00042 }
-\DoxyCodeLine{00043         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseMove(MouseEventArgs e)}
-\DoxyCodeLine{00044         \{ Invalidate(); \}}
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00046         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseDown(MouseEventArgs e)}
-\DoxyCodeLine{00047         \{ \_mouseDown = \textcolor{keyword}{true}; Invalidate(); \}}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00049         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseUp(MouseEventArgs mevent)}
-\DoxyCodeLine{00050         \{ \_mouseDown = \textcolor{keyword}{false}; Invalidate(); \}}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseEnter(EventArgs e)}
-\DoxyCodeLine{00053         \{ base.OnMouseEnter(e); Invalidate(); \}}
-\DoxyCodeLine{00054 }
-\DoxyCodeLine{00055         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseLeave(EventArgs e)}
-\DoxyCodeLine{00056         \{ base.OnMouseLeave(e); Invalidate(); \}}
-\DoxyCodeLine{00057 }
-\DoxyCodeLine{00058         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnGotFocus(EventArgs e)}
-\DoxyCodeLine{00059         \{ base.OnGotFocus(e); Invalidate(); \}}
-\DoxyCodeLine{00060 }
-\DoxyCodeLine{00061         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLostFocus(EventArgs e)}
-\DoxyCodeLine{00062         \{ base.OnLostFocus(e); Invalidate(); \}}
-\DoxyCodeLine{00063 }
-\DoxyCodeLine{00064         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnTextBoxLostFocus(\textcolor{keywordtype}{object} source, EventArgs e)}
-\DoxyCodeLine{00065         \{ base.OnTextBoxLostFocus(source, e); Invalidate(); \}}
-\DoxyCodeLine{00066 }
-\DoxyCodeLine{00067         \textcolor{keyword}{private} \textcolor{keywordtype}{void} VitNX\_NumericUpDown\_Paint(\textcolor{keywordtype}{object} sender, PaintEventArgs e)}
-\DoxyCodeLine{00068         \{}
-\DoxyCodeLine{00069             var g = e.Graphics;}
-\DoxyCodeLine{00070             var rect = e.ClipRectangle;}
-\DoxyCodeLine{00071             var fillColor = Colors.HeaderBackground;}
-\DoxyCodeLine{00072             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor)) \{ g.FillRectangle(b, rect); \}}
-\DoxyCodeLine{00073             var mousePos = Controls[0].PointToClient(Cursor.Position);}
-\DoxyCodeLine{00074             var upArea = \textcolor{keyword}{new} Rectangle(0, 0, rect.Width, rect.Height / 2);}
-\DoxyCodeLine{00075             var upHot = upArea.Contains(mousePos);}
-\DoxyCodeLine{00076             var upIcon = upHot ? ScrollIcons.scrollbar\_arrow\_small\_hot : ScrollIcons.scrollbar\_arrow\_small\_standard;}
-\DoxyCodeLine{00077             \textcolor{keywordflow}{if} (upHot \&\& \_mouseDown) \{ upIcon = ScrollIcons.scrollbar\_arrow\_small\_clicked; \}}
-\DoxyCodeLine{00078             upIcon.RotateFlip(RotateFlipType.RotateNoneFlipY);}
-\DoxyCodeLine{00079             g.DrawImageUnscaled(upIcon, (upArea.Width / 2) -\/ (upIcon.Width / 2), (upArea.Height / 2) -\/ (upIcon.Height / 2));}
-\DoxyCodeLine{00080             var downArea = \textcolor{keyword}{new} Rectangle(0, rect.Height / 2, rect.Width, rect.Height / 2);}
-\DoxyCodeLine{00081             var downHot = downArea.Contains(mousePos);}
-\DoxyCodeLine{00082             var downIcon = downHot ? ScrollIcons.scrollbar\_arrow\_small\_hot : ScrollIcons.scrollbar\_arrow\_small\_standard;}
-\DoxyCodeLine{00083             \textcolor{keywordflow}{if} (downHot \&\& \_mouseDown) \{ downIcon = ScrollIcons.scrollbar\_arrow\_small\_clicked; \}}
-\DoxyCodeLine{00084             g.DrawImageUnscaled(downIcon, (downArea.Width / 2) -\/ (downIcon.Width / 2), downArea.Top + (downArea.Height / 2) -\/ (downIcon.Height / 2));}
-\DoxyCodeLine{00085         \}}
-\DoxyCodeLine{00086 }
-\DoxyCodeLine{00087         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
-\DoxyCodeLine{00088         \{}
-\DoxyCodeLine{00089             base.OnPaint(e);}
-\DoxyCodeLine{00090             var g = e.Graphics;}
-\DoxyCodeLine{00091             var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
-\DoxyCodeLine{00092             var borderColor = Colors.GreySelection;}
-\DoxyCodeLine{00093             \textcolor{keywordflow}{if} (Focused \&\& TabStop) \{ borderColor = Colors.BlueHighlight; \}}
-\DoxyCodeLine{00094             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(borderColor, 1)) \{ var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1); g.DrawRectangle(p, modRect); \}}
-\DoxyCodeLine{00095         \}}
-\DoxyCodeLine{00096     \}}
-\DoxyCodeLine{00097 \}}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Renderers;}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00005 \{}
+\DoxyCodeLine{00006     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_MenuStrip : MenuStrip}
+\DoxyCodeLine{00007     \{}
+\DoxyCodeLine{00008         \textcolor{keyword}{public} VitNX\_MenuStrip()}
+\DoxyCodeLine{00009         \{ Renderer = \textcolor{keyword}{new} VitNX\_MenuRenderer(); Padding = \textcolor{keyword}{new} Padding(3, 2, 0, 2); \}}
+\DoxyCodeLine{00010     \}}
+\DoxyCodeLine{00011 \}}
 
 \end{DoxyCode}
