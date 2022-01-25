@@ -42,13 +42,13 @@ namespace VitNX.Functions.Common.Information
             return memoryStream;
         }
 
-        public static void GetAllUsers()
+        public static string WriteAllUsersToTempFile()
         {
             string users = Processes.Execute("wmic", "useraccount list full");
-            string temp_file = $@"{Path.GetTempPath()}\Пользователи.txt";
-            FileSystem.WriteTextToFileUTF8(users, temp_file);
-            string[] lines = File.ReadAllLines(temp_file);
-            using (StreamWriter writer = new StreamWriter(temp_file))
+            string tempFile = $@"{Path.GetTempPath()}\Users.txt";
+            FileSystem.WriteTextToFileUTF8(users, tempFile);
+            string[] lines = File.ReadAllLines(tempFile);
+            using (StreamWriter writer = new StreamWriter(tempFile))
             {
                 foreach (string line in lines)
                 {
@@ -56,33 +56,26 @@ namespace VitNX.Functions.Common.Information
                         writer.WriteLine(line);
                 }
             }
-            string[] rep = File.ReadAllLines(temp_file);
-            for (int i = 0; i < rep.Length; i++)
+            string[] usersList = File.ReadAllLines(tempFile);
+            for (int i = 0; i < usersList.Length; i++)
             {
                 if (i == 0)
-                {
-                    rep[0] = "Пользователи:\n\n" + rep[0];
-                }
-                rep[i] = rep[i].Replace("TRUE", "Да");
-                rep[i] = rep[i].Replace("FALSE", "Нет");
-                rep[i] = rep[i].Replace("Description", "Описание");
-                rep[i] = rep[i].Replace("Domain", "Домен");
-                rep[i] = rep[i].Replace("FullName", "Полное имя");
-                rep[i] = rep[i].Replace("Name", "Имя");
-                rep[i] = rep[i].Replace("LocalAccount", "Локальная запись");
-                rep[i] = rep[i].Replace("Disabled", "Отключена");
-                rep[i] = rep[i].Replace("Status", "Статус");
-                rep[i] = rep[i].Replace("Lockout", "Блокировка");
-                rep[i] = rep[i].Replace("Degraded", "Отключён\n");
-                rep[i] = rep[i].Replace("InstallDate", "Дата создания");
-                rep[i] = rep[i].Replace("AccountType", "Тип учётной записи");
-                rep[i] = rep[i].Replace("PasswordChangeable", "Пароль можно изменить");
-                rep[i] = rep[i].Replace("PasswordExpires", "Срок действия пароля истекает");
-                rep[i] = rep[i].Replace("PasswordRequired", "Требуется пароль");
-                rep[i] = rep[i].Replace("512", "Обычный [512]").Replace("2", "Отключённый [2]").Replace("256", "Временная дублирующая учётная запись [256]").Replace("128", "Разрешён зашифрованный пароль [128]");
-                rep[i] = rep[i].Replace("OK", "Включён\n");
+                    usersList[0] = "Users:\n\n" + usersList[0];
+                usersList[i] = usersList[i].Replace("TRUE", "Yes");
+                usersList[i] = usersList[i].Replace("FALSE", "No");
+                usersList[i] = usersList[i].Replace("FullName", "Full name");
+                usersList[i] = usersList[i].Replace("LocalAccount", "Local account");
+                usersList[i] = usersList[i].Replace("Degraded", "Degraded\n");
+                usersList[i] = usersList[i].Replace("InstallDate", "Creation date");
+                usersList[i] = usersList[i].Replace("AccountType", "Account type");
+                usersList[i] = usersList[i].Replace("PasswordChangeable", "Password changeable");
+                usersList[i] = usersList[i].Replace("PasswordExpires", "Password expires");
+                usersList[i] = usersList[i].Replace("PasswordRequired", "Password required");
+                usersList[i] = usersList[i].Replace("512", "Plain [512]").Replace("2", "Disconnected [2]").Replace("256", "Temporary duplicate account [256]").Replace("128", "Encrypted password allowed [128]");
+                usersList[i] = usersList[i].Replace("OK", "Enabled\n");
             }
-            File.WriteAllLines(temp_file, rep);
+            File.WriteAllLines(tempFile, usersList);
+            return tempFile;
         }
     }
 
