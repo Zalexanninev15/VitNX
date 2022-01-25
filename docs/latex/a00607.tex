@@ -1,0 +1,162 @@
+\doxysection{Vit\+NX\+\_\+\+Label Class Reference}
+\label{a00607}\index{VitNX\_Label@{VitNX\_Label}}
+Inheritance diagram for Vit\+NX\+\_\+\+Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00607}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Text\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Font\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Size\+Changed} (Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Auto\+Update\+Height}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new bool \textbf{ Auto\+Size}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 9} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00607_ad36db9d68a2ec33ecd78fb3d7b0b611d}} 
+\index{VitNX\_Label@{VitNX\_Label}!VitNX\_Label@{VitNX\_Label}}
+\index{VitNX\_Label@{VitNX\_Label}!VitNX\_Label@{VitNX\_Label}}
+\doxysubsubsection{VitNX\_Label()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Label} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 54} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             ForeColor = Colors.LightText;}
+\DoxyCodeLine{00057         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00607_a8fd8f7c011758f190b0085001e46b8e5}} 
+\index{VitNX\_Label@{VitNX\_Label}!OnFontChanged@{OnFontChanged}}
+\index{OnFontChanged@{OnFontChanged}!VitNX\_Label@{VitNX\_Label}}
+\doxysubsubsection{OnFontChanged()}
+{\footnotesize\ttfamily override void On\+Font\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             base.OnFontChanged(e);}
+\DoxyCodeLine{00094             ResizeLabel();}
+\DoxyCodeLine{00095         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00607_a176ea4b330212089872d54c0be3ce12a}} 
+\index{VitNX\_Label@{VitNX\_Label}!OnSizeChanged@{OnSizeChanged}}
+\index{OnSizeChanged@{OnSizeChanged}!VitNX\_Label@{VitNX\_Label}}
+\doxysubsubsection{OnSizeChanged()}
+{\footnotesize\ttfamily override void On\+Size\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 97} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098         \{}
+\DoxyCodeLine{00099             base.OnSizeChanged(e);}
+\DoxyCodeLine{00100             ResizeLabel();}
+\DoxyCodeLine{00101         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00607_a61d244fc3301ae30de624fea31fe176e}} 
+\index{VitNX\_Label@{VitNX\_Label}!OnTextChanged@{OnTextChanged}}
+\index{OnTextChanged@{OnTextChanged}!VitNX\_Label@{VitNX\_Label}}
+\doxysubsubsection{OnTextChanged()}
+{\footnotesize\ttfamily override void On\+Text\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 85} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086         \{}
+\DoxyCodeLine{00087             base.OnTextChanged(e);}
+\DoxyCodeLine{00088             ResizeLabel();}
+\DoxyCodeLine{00089         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00607_aeda78af14798ecd59170047c215bb8e9}} 
+\index{VitNX\_Label@{VitNX\_Label}!AutoSize@{AutoSize}}
+\index{AutoSize@{AutoSize}!VitNX\_Label@{VitNX\_Label}}
+\doxysubsubsection{AutoSize}
+{\footnotesize\ttfamily new bool Auto\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 38} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.AutoSize; \}}
+\DoxyCodeLine{00041             \textcolor{keyword}{set}}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 base.AutoSize = value;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045                 \textcolor{keywordflow}{if} (AutoSize)}
+\DoxyCodeLine{00046                     AutoUpdateHeight = \textcolor{keyword}{false};}
+\DoxyCodeLine{00047             \}}
+\DoxyCodeLine{00048         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00607_ac031631ec5f073e82b9de20f17a84514}} 
+\index{VitNX\_Label@{VitNX\_Label}!AutoUpdateHeight@{AutoUpdateHeight}}
+\index{AutoUpdateHeight@{AutoUpdateHeight}!VitNX\_Label@{VitNX\_Label}}
+\doxysubsubsection{AutoUpdateHeight}
+{\footnotesize\ttfamily bool Auto\+Update\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_autoUpdateHeight; \}}
+\DoxyCodeLine{00026             \textcolor{keyword}{set}}
+\DoxyCodeLine{00027             \{}
+\DoxyCodeLine{00028                 \_autoUpdateHeight = value;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030                 \textcolor{keywordflow}{if} (\_autoUpdateHeight)}
+\DoxyCodeLine{00031                 \{}
+\DoxyCodeLine{00032                     AutoSize = \textcolor{keyword}{false};}
+\DoxyCodeLine{00033                     ResizeLabel();}
+\DoxyCodeLine{00034                 \}}
+\DoxyCodeLine{00035             \}}
+\DoxyCodeLine{00036         \}}
+
+\end{DoxyCode}

@@ -1,0 +1,97 @@
+\doxysection{Vit\+NX\+\_\+\+Translucent\+Form Class Reference}
+\label{a00763}\index{VitNX\_TranslucentForm@{VitNX\_TranslucentForm}}
+Inheritance diagram for Vit\+NX\+\_\+\+Translucent\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00763}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Translucent\+Form} (Color back\+Color, double opacity=0.\+6)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Handle\+Created} (Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override bool \textbf{ Show\+Without\+Activation}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 7} of file \textbf{ Vit\+NX\+\_\+\+Translucent\+Form.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00763_a2fb91354737d2e38d647051099f949a1}} 
+\index{VitNX\_TranslucentForm@{VitNX\_TranslucentForm}!VitNX\_TranslucentForm@{VitNX\_TranslucentForm}}
+\index{VitNX\_TranslucentForm@{VitNX\_TranslucentForm}!VitNX\_TranslucentForm@{VitNX\_TranslucentForm}}
+\doxysubsubsection{VitNX\_TranslucentForm()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Translucent\+Form} (\begin{DoxyParamCaption}\item[{Color}]{back\+Color,  }\item[{double}]{opacity = {\ttfamily 0.6} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 26} of file \textbf{ Vit\+NX\+\_\+\+Translucent\+Form.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027         \{}
+\DoxyCodeLine{00028             StartPosition = FormStartPosition.Manual;}
+\DoxyCodeLine{00029             FormBorderStyle = FormBorderStyle.None;}
+\DoxyCodeLine{00030             Size = \textcolor{keyword}{new} Size(1, 1);}
+\DoxyCodeLine{00031             ShowInTaskbar = \textcolor{keyword}{false};}
+\DoxyCodeLine{00032             AllowTransparency = \textcolor{keyword}{true};}
+\DoxyCodeLine{00033             Opacity = opacity;}
+\DoxyCodeLine{00034             BackColor = backColor;}
+\DoxyCodeLine{00035         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00763_a7b19995fa6f1ffa45c00cfeef387d73e}} 
+\index{VitNX\_TranslucentForm@{VitNX\_TranslucentForm}!OnHandleCreated@{OnHandleCreated}}
+\index{OnHandleCreated@{OnHandleCreated}!VitNX\_TranslucentForm@{VitNX\_TranslucentForm}}
+\doxysubsubsection{OnHandleCreated()}
+{\footnotesize\ttfamily override void On\+Handle\+Created (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 9} of file \textbf{ Vit\+NX\+\_\+\+Translucent\+Form.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010         \{}
+\DoxyCodeLine{00011             \textcolor{keywordflow}{if} (Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 19, \textcolor{keyword}{new}[] \{ 1 \}, 4) != 0)}
+\DoxyCodeLine{00012                 Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 20, \textcolor{keyword}{new}[] \{ 1 \}, 4);}
+\DoxyCodeLine{00013         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00763_a75531e013369d33c764cb2517795c912}} 
+\index{VitNX\_TranslucentForm@{VitNX\_TranslucentForm}!ShowWithoutActivation@{ShowWithoutActivation}}
+\index{ShowWithoutActivation@{ShowWithoutActivation}!VitNX\_TranslucentForm@{VitNX\_TranslucentForm}}
+\doxysubsubsection{ShowWithoutActivation}
+{\footnotesize\ttfamily override bool Show\+Without\+Activation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX\+\_\+\+Translucent\+Form.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018         \{}
+\DoxyCodeLine{00019             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{00020         \}}
+
+\end{DoxyCode}

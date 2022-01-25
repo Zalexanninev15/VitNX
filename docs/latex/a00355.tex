@@ -1,0 +1,101 @@
+\doxysection{Monitor Class Reference}
+\label{a00355}\index{Monitor@{Monitor}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ string $>$ \textbf{ Get\+All} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Get\+Resolution2} ()
+\item 
+static string \textbf{ Get\+Resolution} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 275} of file \textbf{ Information.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00355_a22eee4dc3eb8637cf0413bd7f54f4e2d}} 
+\index{Monitor@{Monitor}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!Monitor@{Monitor}}
+\doxysubsubsection{GetAll()}
+{\footnotesize\ttfamily List$<$ string $>$ Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 300} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00301         \{}
+\DoxyCodeLine{00302             List<string> screensall = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00303             Screen[] allScreens = Screen.AllScreens;}
+\DoxyCodeLine{00304             \textcolor{keywordflow}{foreach} (var screen \textcolor{keywordflow}{in} allScreens)}
+\DoxyCodeLine{00305             \{}
+\DoxyCodeLine{00306                 \textcolor{keywordtype}{string} screenString = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00307                 screenString =}
+\DoxyCodeLine{00308                     screen.DeviceName.Replace(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, \textcolor{stringliteral}{"{}"{}}).Replace(\textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}"{}}) + \textcolor{stringliteral}{"{};"{}} +}
+\DoxyCodeLine{00309                     screen.Bounds.Width + \textcolor{stringliteral}{"{}|"{}} + screen.Bounds.Height + \textcolor{stringliteral}{"{};"{}} +}
+\DoxyCodeLine{00310                     Functions.Windows.Win32.Helper.DeviceFriendlyName(screen) + \textcolor{stringliteral}{"{};"{}} +}
+\DoxyCodeLine{00311                     screen.Primary.ToString();}
+\DoxyCodeLine{00312                 screensall.Add(screenString);}
+\DoxyCodeLine{00313                 screenString = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00314             \}}
+\DoxyCodeLine{00315             \textcolor{keywordflow}{return} screensall;}
+\DoxyCodeLine{00316         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00355_ac8e991256c5bf4d53b86d6b769258e23}} 
+\index{Monitor@{Monitor}!GetResolution@{GetResolution}}
+\index{GetResolution@{GetResolution}!Monitor@{Monitor}}
+\doxysubsubsection{GetResolution()}
+{\footnotesize\ttfamily static string Get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 288} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00289         \{}
+\DoxyCodeLine{00290             UInt32 width = 0;}
+\DoxyCodeLine{00291             UInt32 height = 0;}
+\DoxyCodeLine{00292             \textcolor{keywordflow}{foreach} (var desktopMonitor \textcolor{keywordflow}{in} \textcolor{keyword}{new} ManagementObjectSearcher(\textcolor{stringliteral}{"{}ROOT\(\backslash\)\(\backslash\)CIMV2"{}}, \textcolor{stringliteral}{"{}SELECT * FROM Win32\_DesktopMonitor"{}}).Get())}
+\DoxyCodeLine{00293             \{}
+\DoxyCodeLine{00294                 width = (UInt32)desktopMonitor[\textcolor{stringliteral}{"{}ScreenWidth"{}}];}
+\DoxyCodeLine{00295                 height = (UInt32)desktopMonitor[\textcolor{stringliteral}{"{}ScreenHeight"{}}];}
+\DoxyCodeLine{00296             \}}
+\DoxyCodeLine{00297             \textcolor{keywordflow}{return} \$\textcolor{stringliteral}{"{}\{Convert.ToString(width)\}x\{Convert.ToString(height)\}"{}};}
+\DoxyCodeLine{00298         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00355_a3f91984a77b21e1ba229a18363da4c49}} 
+\index{Monitor@{Monitor}!GetResolution2@{GetResolution2}}
+\index{GetResolution2@{GetResolution2}!Monitor@{Monitor}}
+\doxysubsubsection{GetResolution2()}
+{\footnotesize\ttfamily static string Get\+Resolution2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 277} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00278         \{}
+\DoxyCodeLine{00279             \textcolor{keywordtype}{string} size = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00280             Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);}
+\DoxyCodeLine{00281             IntPtr desktop = graphics.GetHdc();}
+\DoxyCodeLine{00282             \textcolor{keywordtype}{int} monitorHeight = Import.GetDeviceCaps(desktop, 6);}
+\DoxyCodeLine{00283             \textcolor{keywordtype}{int} monitorWidth = Import.GetDeviceCaps(desktop, 4);}
+\DoxyCodeLine{00284             size = \$\textcolor{stringliteral}{"{}\{Math.Sqrt(Math.Pow(monitorHeight, 2) + Math.Pow(monitorWidth, 2)) / 25,4:\#,\#\#0.00\}"{}};}
+\DoxyCodeLine{00285             \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{00286         \}}
+
+\end{DoxyCode}

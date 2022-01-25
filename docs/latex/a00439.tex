@@ -1,0 +1,66 @@
+\doxysection{Volume\+Control.\+IAudio\+Endpoint\+Volume Interface Reference}
+\label{a00439}\index{VolumeControl.IAudioEndpointVolume@{VolumeControl.IAudioEndpointVolume}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{a00439_a9ef1b564f0ddb00054685e307f2d16d5}} 
+int {\bfseries Register\+Control\+Change\+Notify} (\textbf{ IAudio\+Endpoint\+Volume\+Callback} p\+Notify)
+\item 
+\mbox{\label{a00439_a28652a4a80e29427007eb21ed93a1c52}} 
+int {\bfseries Unregister\+Control\+Change\+Notify} (\textbf{ IAudio\+Endpoint\+Volume\+Callback} p\+Notify)
+\item 
+\mbox{\label{a00439_a37f53d7ddb5420751248161d4c796894}} 
+int {\bfseries Get\+Channel\+Count} (out int pn\+Channel\+Count)
+\item 
+\mbox{\label{a00439_a58ccaeb8aa9a1d8ac7aaaa37b26a66ca}} 
+int {\bfseries Set\+Master\+Volume\+Level} (float f\+Level\+DB, Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_acf1f1b5c96f112e044ecc5fd805ebc81}} 
+int {\bfseries Set\+Master\+Volume\+Level\+Scalar} (float f\+Level, Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_aa28616de080fd1f0f8c7c35d54dbdb18}} 
+int {\bfseries Get\+Master\+Volume\+Level} (out float pf\+Level\+DB)
+\item 
+\mbox{\label{a00439_a45100dd31f35ccd80a9a849b6a45ddb1}} 
+int {\bfseries Get\+Master\+Volume\+Level\+Scalar} (out float pf\+Level)
+\item 
+\mbox{\label{a00439_a56416abfc5acae4b4603321deda24042}} 
+int {\bfseries Set\+Channel\+Volume\+Level} (uint n\+Channel, float f\+Level\+DB, Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_a495b1ffaa59f9497e909b9c8c727c8ce}} 
+int {\bfseries Set\+Channel\+Volume\+Level\+Scalar} (uint n\+Channel, float f\+Level, Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_abc2d0dfcc5c3d261a37b070662cbf921}} 
+int {\bfseries Get\+Channel\+Volume\+Level} (uint n\+Channel, out float pf\+Level\+DB)
+\item 
+\mbox{\label{a00439_a97af863f6df70e1a90ad03782a09d593}} 
+int {\bfseries Get\+Channel\+Volume\+Level\+Scalar} (uint n\+Channel, out float pf\+Level)
+\item 
+\mbox{\label{a00439_a58ce410f57d10f3a2447a2d51bf04c3c}} 
+int {\bfseries Set\+Mute} ([Marshal\+As(Unmanaged\+Type.\+Bool)] bool b\+Mute, Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_a008f8c689a43fa6c60d9c59639cd4983}} 
+int {\bfseries Get\+Mute} (out bool pb\+Mute)
+\item 
+\mbox{\label{a00439_acba848e4a9edbeee1e083ccaabebe718}} 
+int {\bfseries Get\+Volume\+Step\+Info} (out uint pn\+Step, out uint pn\+Step\+Count)
+\item 
+\mbox{\label{a00439_a64dfab1d7782620dd8ee7ea234912623}} 
+int {\bfseries Volume\+Step\+Up} (Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_ae95d3ae4c1d4dea12896263e10595b45}} 
+int {\bfseries Volume\+Step\+Down} (Guid pguid\+Event\+Context)
+\item 
+\mbox{\label{a00439_a5ab743435d83ca791ab6ed8bd0f530f3}} 
+int {\bfseries Query\+Hardware\+Support} (out uint pdw\+Hardware\+Support\+Mask)
+\item 
+\mbox{\label{a00439_a7913de69e719a81a4812ce5e86c65dff}} 
+int {\bfseries Get\+Volume\+Range} (out float pfl\+Volume\+MindB, out float pfl\+Volume\+MaxdB, out float pfl\+Volume\+IncrementdB)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 232} of file \textbf{ Native\+Controls.\+cs}.
+

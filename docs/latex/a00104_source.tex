@@ -1,0 +1,69 @@
+\doxysection{Vit\+NX\+\_\+\+List\+Item.\+cs}
+\label{a00104_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ListItem.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ListItem.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_ListItem}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{        \#region Event Region}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler TextChanged;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{        \#endregion Event Region}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_text;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Text}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_text; \}}
+\DoxyCodeLine{00026             \textcolor{keyword}{set}}
+\DoxyCodeLine{00027             \{}
+\DoxyCodeLine{00028                 \_text = value;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030                 \textcolor{keywordflow}{if} (TextChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00031                     TextChanged(\textcolor{keyword}{this}, \textcolor{keyword}{new} EventArgs());}
+\DoxyCodeLine{00032             \}}
+\DoxyCodeLine{00033         \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{keyword}{public} Rectangle Area \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037         \textcolor{keyword}{public} Color TextColor \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{keyword}{public} FontStyle FontStyle \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keyword}{public} Bitmap Icon \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         \textcolor{keyword}{public} \textcolor{keywordtype}{object} Tag \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \textcolor{keyword}{public} VitNX\_ListItem()}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             TextColor = Colors.LightText;}
+\DoxyCodeLine{00052             FontStyle = FontStyle.Regular;}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keyword}{public} VitNX\_ListItem(\textcolor{keywordtype}{string} text)}
+\DoxyCodeLine{00056             : \textcolor{keyword}{this}()}
+\DoxyCodeLine{00057         \{}
+\DoxyCodeLine{00058             Text = text;}
+\DoxyCodeLine{00059         \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063 \}}
+
+\end{DoxyCode}

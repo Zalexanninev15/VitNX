@@ -1,0 +1,150 @@
+\doxysection{Menu\+Icons Class Reference}
+\label{a00539}\index{MenuIcons@{MenuIcons}}
+
+
+Класс ресурса со строгой типизацией для поиска локализованных строк и т.  
+
+
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static global\+::\+System.\+Resources.\+Resource\+Manager \textbf{ Resource\+Manager}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Возвращает кэшированный экземпляр Resource\+Manager, использованный этим классом. \end{DoxyCompactList}\item 
+static global\+::\+System.\+Globalization.\+Culture\+Info \textbf{ Culture}\hspace{0.3cm}{\ttfamily  [get, set]}
+\begin{DoxyCompactList}\small\item\em Перезаписывает свойство Current\+UICulture текущего потока для всех обращений к ресурсу с помощью этого класса ресурса со строгой типизацией. \end{DoxyCompactList}\item 
+static System.\+Drawing.\+Bitmap \textbf{ grip}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Поиск локализованного ресурса типа System.\+Drawing.\+Bitmap. \end{DoxyCompactList}\item 
+static System.\+Drawing.\+Bitmap \textbf{ tick}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Поиск локализованного ресурса типа System.\+Drawing.\+Bitmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс ресурса со строгой типизацией для поиска локализованных строк и т. 
+
+д. 
+
+Definition at line \textbf{ 25} of file \textbf{ Menu\+Icons.\+Designer.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00539_aade179e7abc72a17dc0bd89afad05bb5}} 
+\index{MenuIcons@{MenuIcons}!MenuIcons@{MenuIcons}}
+\index{MenuIcons@{MenuIcons}!MenuIcons@{MenuIcons}}
+\doxysubsubsection{MenuIcons()}
+{\footnotesize\ttfamily \textbf{ Menu\+Icons} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 32} of file \textbf{ Menu\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032                              \{}
+\DoxyCodeLine{00033         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00539_a97174a2d0af83f0bd014787ac18be56c}} 
+\index{MenuIcons@{MenuIcons}!Culture@{Culture}}
+\index{Culture@{Culture}!MenuIcons@{MenuIcons}}
+\doxysubsubsection{Culture}
+{\footnotesize\ttfamily global.\+System.\+Globalization.\+Culture\+Info Culture\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Перезаписывает свойство Current\+UICulture текущего потока для всех обращений к ресурсу с помощью этого класса ресурса со строгой типизацией. 
+
+
+
+Definition at line \textbf{ 54} of file \textbf{ Menu\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054                                                                      \{}
+\DoxyCodeLine{00055             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} resourceCulture;}
+\DoxyCodeLine{00057             \}}
+\DoxyCodeLine{00058             \textcolor{keyword}{set} \{}
+\DoxyCodeLine{00059                 resourceCulture = value;}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00539_ada6e7fad5af7350caf9434a70ac78a10}} 
+\index{MenuIcons@{MenuIcons}!grip@{grip}}
+\index{grip@{grip}!MenuIcons@{MenuIcons}}
+\doxysubsubsection{grip}
+{\footnotesize\ttfamily System.\+Drawing.\+Bitmap grip\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Поиск локализованного ресурса типа System.\+Drawing.\+Bitmap. 
+
+
+
+Definition at line \textbf{ 66} of file \textbf{ Menu\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                                                  \{}
+\DoxyCodeLine{00067             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00068                 \textcolor{keywordtype}{object} obj = ResourceManager.GetObject(\textcolor{stringliteral}{"{}grip"{}}, resourceCulture);}
+\DoxyCodeLine{00069                 \textcolor{keywordflow}{return} ((System.Drawing.Bitmap)(obj));}
+\DoxyCodeLine{00070             \}}
+\DoxyCodeLine{00071         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00539_a0facd9f93017f922ba97bef37fd95b1d}} 
+\index{MenuIcons@{MenuIcons}!ResourceManager@{ResourceManager}}
+\index{ResourceManager@{ResourceManager}!MenuIcons@{MenuIcons}}
+\doxysubsubsection{ResourceManager}
+{\footnotesize\ttfamily global.\+System.\+Resources.\+Resource\+Manager Resource\+Manager\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Возвращает кэшированный экземпляр Resource\+Manager, использованный этим классом. 
+
+
+
+Definition at line \textbf{ 39} of file \textbf{ Menu\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039                                                                              \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00041                 \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object}.ReferenceEquals(resourceMan, \textcolor{keyword}{null})) \{}
+\DoxyCodeLine{00042                     global::System.Resources.ResourceManager temp = \textcolor{keyword}{new} global::System.Resources.ResourceManager(\textcolor{stringliteral}{"{}VitNX.Icons.MenuIcons"{}}, typeof(MenuIcons).Assembly);}
+\DoxyCodeLine{00043                     resourceMan = temp;}
+\DoxyCodeLine{00044                 \}}
+\DoxyCodeLine{00045                 \textcolor{keywordflow}{return} resourceMan;}
+\DoxyCodeLine{00046             \}}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00539_aafac52af753555af47d942dbc84c26d8}} 
+\index{MenuIcons@{MenuIcons}!tick@{tick}}
+\index{tick@{tick}!MenuIcons@{MenuIcons}}
+\doxysubsubsection{tick}
+{\footnotesize\ttfamily System.\+Drawing.\+Bitmap tick\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Поиск локализованного ресурса типа System.\+Drawing.\+Bitmap. 
+
+
+
+Definition at line \textbf{ 76} of file \textbf{ Menu\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076                                                  \{}
+\DoxyCodeLine{00077             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00078                 \textcolor{keywordtype}{object} obj = ResourceManager.GetObject(\textcolor{stringliteral}{"{}tick"{}}, resourceCulture);}
+\DoxyCodeLine{00079                 \textcolor{keywordflow}{return} ((System.Drawing.Bitmap)(obj));}
+\DoxyCodeLine{00080             \}}
+\DoxyCodeLine{00081         \}}
+
+\end{DoxyCode}

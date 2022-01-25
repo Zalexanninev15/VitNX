@@ -1,0 +1,171 @@
+\doxysection{Vit\+NX\+\_\+\+Combo\+Box.\+cs}
+\label{a00080_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ComboBox.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ComboBox.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00008 \{}
+\DoxyCodeLine{00009     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_ComboBox : ComboBox}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00012         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00013         \textcolor{keyword}{public} \textcolor{keyword}{new} Color ForeColor \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00016         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00017         \textcolor{keyword}{public} \textcolor{keyword}{new} Color BackColor \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00020         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00021         \textcolor{keyword}{public} \textcolor{keyword}{new} FlatStyle FlatStyle \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00024         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00025         \textcolor{keyword}{public} \textcolor{keyword}{new} ComboBoxStyle DropDownStyle \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{private} Bitmap \_buffer;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keyword}{public} VitNX\_ComboBox() : base()}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00032             DrawMode = DrawMode.OwnerDrawVariable;}
+\DoxyCodeLine{00033             base.FlatStyle = FlatStyle.Flat;}
+\DoxyCodeLine{00034             base.DropDownStyle = ComboBoxStyle.DropDownList;}
+\DoxyCodeLine{00035         \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} Dispose(\textcolor{keywordtype}{bool} disposing)}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             \textcolor{keywordflow}{if} (disposing)}
+\DoxyCodeLine{00040                 \_buffer = \textcolor{keyword}{null};}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042             base.Dispose(disposing);}
+\DoxyCodeLine{00043         \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnTabStopChanged(EventArgs e)}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             base.OnTabStopChanged(e);}
+\DoxyCodeLine{00048             Invalidate();}
+\DoxyCodeLine{00049         \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnTabIndexChanged(EventArgs e)}
+\DoxyCodeLine{00052         \{}
+\DoxyCodeLine{00053             base.OnTabIndexChanged(e);}
+\DoxyCodeLine{00054             Invalidate();}
+\DoxyCodeLine{00055         \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnGotFocus(EventArgs e)}
+\DoxyCodeLine{00058         \{}
+\DoxyCodeLine{00059             base.OnGotFocus(e);}
+\DoxyCodeLine{00060             Invalidate();}
+\DoxyCodeLine{00061         \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLostFocus(EventArgs e)}
+\DoxyCodeLine{00064         \{}
+\DoxyCodeLine{00065             base.OnLostFocus(e);}
+\DoxyCodeLine{00066             Invalidate();}
+\DoxyCodeLine{00067         \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnTextChanged(EventArgs e)}
+\DoxyCodeLine{00070         \{}
+\DoxyCodeLine{00071             base.OnTextChanged(e);}
+\DoxyCodeLine{00072             Invalidate();}
+\DoxyCodeLine{00073         \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnTextUpdate(EventArgs e)}
+\DoxyCodeLine{00076         \{}
+\DoxyCodeLine{00077             base.OnTextUpdate(e);}
+\DoxyCodeLine{00078             Invalidate();}
+\DoxyCodeLine{00079         \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnSelectedValueChanged(EventArgs e)}
+\DoxyCodeLine{00082         \{}
+\DoxyCodeLine{00083             base.OnSelectedValueChanged(e);}
+\DoxyCodeLine{00084             Invalidate();}
+\DoxyCodeLine{00085         \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnInvalidated(InvalidateEventArgs e)}
+\DoxyCodeLine{00088         \{}
+\DoxyCodeLine{00089             base.OnInvalidated(e);}
+\DoxyCodeLine{00090             PaintCombobox();}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnResize(EventArgs e)}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             base.OnResize(e);}
+\DoxyCodeLine{00096             \_buffer = \textcolor{keyword}{null};}
+\DoxyCodeLine{00097             Invalidate();}
+\DoxyCodeLine{00098         \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100         \textcolor{keyword}{private} \textcolor{keywordtype}{void} PaintCombobox()}
+\DoxyCodeLine{00101         \{}
+\DoxyCodeLine{00102             \textcolor{keywordflow}{if} (\_buffer == \textcolor{keyword}{null}) \{ \_buffer = \textcolor{keyword}{new} Bitmap(ClientRectangle.Width, ClientRectangle.Height); \}}
+\DoxyCodeLine{00103             \textcolor{keyword}{using} (var g = Graphics.FromImage(\_buffer))}
+\DoxyCodeLine{00104             \{}
+\DoxyCodeLine{00105                 var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00106                 var textColor = Colors.LightText;}
+\DoxyCodeLine{00107                 var borderColor = Colors.GreySelection;}
+\DoxyCodeLine{00108                 var fillColor = Colors.LightBackground;}
+\DoxyCodeLine{00109                 \textcolor{keywordflow}{if} (Focused \&\& TabStop) \{ borderColor = Colors.BlueHighlight; \}}
+\DoxyCodeLine{00110                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor)) \{ g.FillRectangle(b, rect); \}}
+\DoxyCodeLine{00111                 \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(borderColor, 1)) \{ var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1); g.DrawRectangle(p, modRect); \}}
+\DoxyCodeLine{00112                 var icon = ScrollIcons.scrollbar\_arrow\_hot;}
+\DoxyCodeLine{00113                 g.DrawImageUnscaled(icon, rect.Right -\/ icon.Width -\/ (Constsants.Padding / 2), (rect.Height / 2) -\/ (icon.Height / 2));}
+\DoxyCodeLine{00114                 var text = SelectedItem != \textcolor{keyword}{null} ? SelectedItem.ToString() : Text;}
+\DoxyCodeLine{00115                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00116                 \{}
+\DoxyCodeLine{00117                     var padding = 2;}
+\DoxyCodeLine{00118                     var modRect = \textcolor{keyword}{new} Rectangle(rect.Left + padding, rect.Top + padding, rect.Width -\/ icon.Width -\/ (Constsants.Padding / 2) -\/ (padding * 2), rect.Height -\/ (padding * 2));}
+\DoxyCodeLine{00119                     var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00120                     \{}
+\DoxyCodeLine{00121                         LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00122                         Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00123                         FormatFlags = StringFormatFlags.NoWrap,}
+\DoxyCodeLine{00124                         Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00125                     \};}
+\DoxyCodeLine{00126                     g.DrawString(text, Font, b, modRect, stringFormat);}
+\DoxyCodeLine{00127                 \}}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129         \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{if} (\_buffer == \textcolor{keyword}{null}) \{ PaintCombobox(); \}}
+\DoxyCodeLine{00134             var g = e.Graphics;}
+\DoxyCodeLine{00135             g.DrawImageUnscaled(\_buffer, Point.Empty);}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnDrawItem(DrawItemEventArgs e)}
+\DoxyCodeLine{00139         \{}
+\DoxyCodeLine{00140             var g = e.Graphics;}
+\DoxyCodeLine{00141             var rect = e.Bounds;}
+\DoxyCodeLine{00142             var textColor = Colors.LightText;}
+\DoxyCodeLine{00143             var fillColor = Colors.LightBackground;}
+\DoxyCodeLine{00144             \textcolor{keywordflow}{if} ((e.State \& DrawItemState.Selected) == DrawItemState.Selected || (e.State \& DrawItemState.Focus) == DrawItemState.Focus || (e.State \& DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect) \{ fillColor = Colors.BlueSelection; \}}
+\DoxyCodeLine{00145             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor)) \{ g.FillRectangle(b, rect); \}}
+\DoxyCodeLine{00146             \textcolor{keywordflow}{if} (e.Index >= 0 \&\& e.Index < Items.Count)}
+\DoxyCodeLine{00147             \{}
+\DoxyCodeLine{00148                 var text = Items[e.Index].ToString();}
+\DoxyCodeLine{00149                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00150                 \{}
+\DoxyCodeLine{00151                     var padding = 2;}
+\DoxyCodeLine{00152                     var modRect = \textcolor{keyword}{new} Rectangle(rect.Left + padding, rect.Top + padding, rect.Width -\/ (padding * 2), rect.Height -\/ (padding * 2));}
+\DoxyCodeLine{00153                     var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00154                     \{}
+\DoxyCodeLine{00155                         LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00156                         Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00157                         FormatFlags = StringFormatFlags.NoWrap,}
+\DoxyCodeLine{00158                         Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00159                     \};}
+\DoxyCodeLine{00160                     g.DrawString(text, Font, b, modRect, stringFormat);}
+\DoxyCodeLine{00161                 \}}
+\DoxyCodeLine{00162             \}}
+\DoxyCodeLine{00163         \}}
+\DoxyCodeLine{00164     \}}
+\DoxyCodeLine{00165 \}}
+
+\end{DoxyCode}

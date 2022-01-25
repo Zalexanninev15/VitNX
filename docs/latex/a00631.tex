@@ -1,0 +1,171 @@
+\doxysection{Vit\+NX\+\_\+\+Progress\+Bar\+Rounded Class Reference}
+\label{a00631}\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+Inheritance diagram for Vit\+NX\+\_\+\+Progress\+Bar\+Rounded\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00631}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+new void \textbf{ Dispose} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Font \textbf{ Text\+Font} = new Font(Font\+Family.\+Generic\+Serif, 11, Font\+Style.\+Bold)\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ Text\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ Progress\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Vit\+NX\+\_\+\+Progress\+Bar\+Display\+Mode \textbf{ Visual\+Mode}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Custom\+Text}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00631_a8ff3d4170bb994a0d8d5d2e7765c5fb9}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{VitNX\_ProgressBarRounded()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+Rounded} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 65} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066         \{ Value = Minimum; FixComponentBlinking(); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00631_aea7338fb010ac599afe389c37598a943}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{Dispose()}
+{\footnotesize\ttfamily new void Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 102} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103         \{ \_textColourBrush.Dispose(); \_progressColourBrush.Dispose(); base.Dispose(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00631_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 77} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078         \{}
+\DoxyCodeLine{00079             IntPtr hrgn = Functions.Windows.Win32.Import.CreateRoundRectRgn(0, 0, Width, Height, 7, 7); \textcolor{comment}{// 0, 0, Width, Height, [x], [x] ; x -\/ degree of roundness of the control (set depending on the size of the control on the form), recommended = 4}}
+\DoxyCodeLine{00080             Region = Region.FromHrgn(hrgn);}
+\DoxyCodeLine{00081             Graphics g = e.Graphics; DrawProgressBar(g); DrawStringIfNeeded(g);}
+\DoxyCodeLine{00082         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00631_a84c1fe645cab57f8028babbcc9254a41}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!CustomText@{CustomText}}
+\index{CustomText@{CustomText}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{CustomText}
+{\footnotesize\ttfamily string Custom\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 34} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_text; \} \textcolor{keyword}{set} \{ \_text = value; Invalidate(); \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00631_a7417cccc3ef1623b2b9903cc284b2e14}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!ProgressColor@{ProgressColor}}
+\index{ProgressColor@{ProgressColor}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{ProgressColor}
+{\footnotesize\ttfamily Color Progress\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 22} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_progressColourBrush.Color; \} \textcolor{keyword}{set} \{ \_progressColourBrush.Dispose(); \_progressColourBrush = \textcolor{keyword}{new} SolidBrush(value); \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00631_aaac0de1a44fd8367423f7b79964ff260}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!TextColor@{TextColor}}
+\index{TextColor@{TextColor}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{TextColor}
+{\footnotesize\ttfamily Color Text\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 16} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_textColourBrush.Color; \} \textcolor{keyword}{set} \{ \_textColourBrush.Dispose(); \_textColourBrush = \textcolor{keyword}{new} SolidBrush(value); \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00631_ac0b1be12a6f322c4cb874e3455f78497}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!TextFont@{TextFont}}
+\index{TextFont@{TextFont}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{TextFont}
+{\footnotesize\ttfamily Font Text\+Font = new Font(Font\+Family.\+Generic\+Serif, 11, Font\+Style.\+Bold)\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{keyword}{new} Font(FontFamily.GenericSerif, 11, FontStyle.Bold);}
+
+\end{DoxyCode}
+\mbox{\label{a00631_a8dd375f9ebdece382663c03dc85e73c4}} 
+\index{VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}!VisualMode@{VisualMode}}
+\index{VisualMode@{VisualMode}!VitNX\_ProgressBarRounded@{VitNX\_ProgressBarRounded}}
+\doxysubsubsection{VisualMode}
+{\footnotesize\ttfamily Vit\+NX\+\_\+\+Progress\+Bar\+Display\+Mode Visual\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+\_\+\+Rounded.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_visualMode; \} \textcolor{keyword}{set} \{ \_visualMode = value; Invalidate(); \} \}}
+
+\end{DoxyCode}

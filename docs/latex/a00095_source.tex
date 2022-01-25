@@ -1,0 +1,499 @@
+\doxysection{Vit\+NX\+\_\+\+Dropdown\+List.\+cs}
+\label{a00095_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_DropdownList.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_DropdownList.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Collections.ObjectModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Collections.Specialized;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00007 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00010 \{}
+\DoxyCodeLine{00011     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_DropdownList : Control}
+\DoxyCodeLine{00012     \{}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{        \#region Event Region}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler SelectedItemChanged;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#endregion Event Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{private} VitNX\_ControlState \_controlState = VitNX\_ControlState.Normal;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{private} ObservableCollection<VitNX\_DropdownItem> \_items = \textcolor{keyword}{new} ObservableCollection<VitNX\_DropdownItem>();}
+\DoxyCodeLine{00024         \textcolor{keyword}{private} VitNX\_DropdownItem \_selectedItem;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         \textcolor{keyword}{private} VitNX\_ContextMenu \_menu = \textcolor{keyword}{new} VitNX\_ContextMenu();}
+\DoxyCodeLine{00027         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_menuOpen = \textcolor{keyword}{false};}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_showBorder = \textcolor{keyword}{true};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_itemHeight = 22;}
+\DoxyCodeLine{00032         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_maxHeight = 130;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keyword}{private} readonly \textcolor{keywordtype}{int} \_iconSize = 16;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keyword}{private} ToolStripDropDownDirection \_dropdownDirection = ToolStripDropDownDirection.Default;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00043         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00044         \textcolor{keyword}{public} ObservableCollection<VitNX\_DropdownItem> Items}
+\DoxyCodeLine{00045         \{}
+\DoxyCodeLine{00046             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_items; \}}
+\DoxyCodeLine{00047         \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00050         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00051         \textcolor{keyword}{public} VitNX\_DropdownItem SelectedItem}
+\DoxyCodeLine{00052         \{}
+\DoxyCodeLine{00053             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_selectedItem; \}}
+\DoxyCodeLine{00054             \textcolor{keyword}{set}}
+\DoxyCodeLine{00055             \{}
+\DoxyCodeLine{00056                 \_selectedItem = value;}
+\DoxyCodeLine{00057                 SelectedItemChanged?.Invoke(\textcolor{keyword}{this}, \textcolor{keyword}{new} EventArgs());}
+\DoxyCodeLine{00058             \}}
+\DoxyCodeLine{00059         \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061         [Category(\textcolor{stringliteral}{"{}Appearance"{}})]}
+\DoxyCodeLine{00062         [Description(\textcolor{stringliteral}{"{}Determines whether a border is drawn around the control."{}})]}
+\DoxyCodeLine{00063         [DefaultValue(\textcolor{keyword}{true})]}
+\DoxyCodeLine{00064         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} ShowBorder}
+\DoxyCodeLine{00065         \{}
+\DoxyCodeLine{00066             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_showBorder; \}}
+\DoxyCodeLine{00067             \textcolor{keyword}{set}}
+\DoxyCodeLine{00068             \{}
+\DoxyCodeLine{00069                 \_showBorder = value;}
+\DoxyCodeLine{00070                 Invalidate();}
+\DoxyCodeLine{00071             \}}
+\DoxyCodeLine{00072         \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074         \textcolor{keyword}{protected} \textcolor{keyword}{override} Size DefaultSize}
+\DoxyCodeLine{00075         \{}
+\DoxyCodeLine{00076             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} Size(100, 26); \}}
+\DoxyCodeLine{00077         \}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00080         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00081         \textcolor{keyword}{public} VitNX\_ControlState ControlState}
+\DoxyCodeLine{00082         \{}
+\DoxyCodeLine{00083             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_controlState; \}}
+\DoxyCodeLine{00084         \}}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086         [Category(\textcolor{stringliteral}{"{}Appearance"{}})]}
+\DoxyCodeLine{00087         [Description(\textcolor{stringliteral}{"{}Determines the height of the individual list view items."{}})]}
+\DoxyCodeLine{00088         [DefaultValue(22)]}
+\DoxyCodeLine{00089         \textcolor{keyword}{public} \textcolor{keywordtype}{int} ItemHeight}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_itemHeight; \}}
+\DoxyCodeLine{00092             \textcolor{keyword}{set}}
+\DoxyCodeLine{00093             \{}
+\DoxyCodeLine{00094                 \_itemHeight = value;}
+\DoxyCodeLine{00095                 ResizeMenu();}
+\DoxyCodeLine{00096             \}}
+\DoxyCodeLine{00097         \}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099         [Category(\textcolor{stringliteral}{"{}Appearance"{}})]}
+\DoxyCodeLine{00100         [Description(\textcolor{stringliteral}{"{}Determines the maximum height of the dropdown panel."{}})]}
+\DoxyCodeLine{00101         [DefaultValue(130)]}
+\DoxyCodeLine{00102         \textcolor{keyword}{public} \textcolor{keywordtype}{int} MaxHeight}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_maxHeight; \}}
+\DoxyCodeLine{00105             \textcolor{keyword}{set}}
+\DoxyCodeLine{00106             \{}
+\DoxyCodeLine{00107                 \_maxHeight = value;}
+\DoxyCodeLine{00108                 ResizeMenu();}
+\DoxyCodeLine{00109             \}}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00113         [Description(\textcolor{stringliteral}{"{}Determines what location the dropdown list appears."{}})]}
+\DoxyCodeLine{00114         [DefaultValue(ToolStripDropDownDirection.Default)]}
+\DoxyCodeLine{00115         \textcolor{keyword}{public} ToolStripDropDownDirection DropdownDirection}
+\DoxyCodeLine{00116         \{}
+\DoxyCodeLine{00117             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_dropdownDirection; \}}
+\DoxyCodeLine{00118             \textcolor{keyword}{set} \{ \_dropdownDirection = value; \}}
+\DoxyCodeLine{00119         \}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125         \textcolor{keyword}{public} VitNX\_DropdownList()}
+\DoxyCodeLine{00126         \{}
+\DoxyCodeLine{00127             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00128                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00129                      ControlStyles.UserPaint |}
+\DoxyCodeLine{00130                      ControlStyles.Selectable |}
+\DoxyCodeLine{00131                      ControlStyles.UserMouse, \textcolor{keyword}{true});}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133             \_menu.AutoSize = \textcolor{keyword}{false};}
+\DoxyCodeLine{00134             \_menu.Closed += Menu\_Closed;}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136             Items.CollectionChanged += Items\_CollectionChanged;}
+\DoxyCodeLine{00137             SelectedItemChanged += VitNX\_DropdownList\_SelectedItemChanged;}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00140         \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146         \textcolor{keyword}{private} ToolStripMenuItem GetMenuItem(VitNX\_DropdownItem item)}
+\DoxyCodeLine{00147         \{}
+\DoxyCodeLine{00148             \textcolor{keywordflow}{foreach} (ToolStripMenuItem menuItem \textcolor{keywordflow}{in} \_menu.Items)}
+\DoxyCodeLine{00149             \{}
+\DoxyCodeLine{00150                 \textcolor{keywordflow}{if} ((VitNX\_DropdownItem)menuItem.Tag == item)}
+\DoxyCodeLine{00151                     \textcolor{keywordflow}{return} menuItem;}
+\DoxyCodeLine{00152             \}}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154             \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00155         \}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetControlState(VitNX\_ControlState controlState)}
+\DoxyCodeLine{00158         \{}
+\DoxyCodeLine{00159             \textcolor{keywordflow}{if} (\_menuOpen)}
+\DoxyCodeLine{00160                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162             \textcolor{keywordflow}{if} (\_controlState != controlState)}
+\DoxyCodeLine{00163             \{}
+\DoxyCodeLine{00164                 \_controlState = controlState;}
+\DoxyCodeLine{00165                 Invalidate();}
+\DoxyCodeLine{00166             \}}
+\DoxyCodeLine{00167         \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169         \textcolor{keyword}{private} \textcolor{keywordtype}{void} ShowMenu()}
+\DoxyCodeLine{00170         \{}
+\DoxyCodeLine{00171             \textcolor{keywordflow}{if} (\_menu.Visible)}
+\DoxyCodeLine{00172                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174             SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176             \_menuOpen = \textcolor{keyword}{true};}
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178             var pos = \textcolor{keyword}{new} Point(0, ClientRectangle.Bottom);}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180             \textcolor{keywordflow}{if} (\_dropdownDirection == ToolStripDropDownDirection.AboveLeft || \_dropdownDirection == ToolStripDropDownDirection.AboveRight)}
+\DoxyCodeLine{00181                 pos.Y = 0;}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183             \_menu.Show(\textcolor{keyword}{this}, pos, \_dropdownDirection);}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185             \textcolor{keywordflow}{if} (SelectedItem != \textcolor{keyword}{null})}
+\DoxyCodeLine{00186             \{}
+\DoxyCodeLine{00187                 var selectedItem = GetMenuItem(SelectedItem);}
+\DoxyCodeLine{00188                 selectedItem.Select();}
+\DoxyCodeLine{00189             \}}
+\DoxyCodeLine{00190         \}}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192         \textcolor{keyword}{private} \textcolor{keywordtype}{void} ResizeMenu()}
+\DoxyCodeLine{00193         \{}
+\DoxyCodeLine{00194             var width = ClientRectangle.Width;}
+\DoxyCodeLine{00195             var height = (\_menu.Items.Count * \_itemHeight) + 4;}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197             \textcolor{keywordflow}{if} (height > \_maxHeight)}
+\DoxyCodeLine{00198                 height = \_maxHeight;}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200             \textcolor{comment}{// Dirty: Check what the autosized items are}}
+\DoxyCodeLine{00201             \textcolor{keywordflow}{foreach} (ToolStripMenuItem item \textcolor{keywordflow}{in} \_menu.Items)}
+\DoxyCodeLine{00202             \{}
+\DoxyCodeLine{00203                 item.AutoSize = \textcolor{keyword}{true};}
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205                 \textcolor{keywordflow}{if} (item.Size.Width > width)}
+\DoxyCodeLine{00206                     width = item.Size.Width;}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208                 item.AutoSize = \textcolor{keyword}{false};}
+\DoxyCodeLine{00209             \}}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211             \textcolor{comment}{// Force the size}}
+\DoxyCodeLine{00212             \textcolor{keywordflow}{foreach} (ToolStripMenuItem item \textcolor{keywordflow}{in} \_menu.Items)}
+\DoxyCodeLine{00213                 item.Size = \textcolor{keyword}{new} Size(width -\/ 1, \_itemHeight);}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215             \_menu.Size = \textcolor{keyword}{new} Size(width, height);}
+\DoxyCodeLine{00216         \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220 \textcolor{preprocessor}{        \#region Event Handler Region}}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Items\_CollectionChanged(\textcolor{keywordtype}{object} sender, NotifyCollectionChangedEventArgs e)}
+\DoxyCodeLine{00223         \{}
+\DoxyCodeLine{00224             \textcolor{keywordflow}{if} (e.Action == NotifyCollectionChangedAction.Add)}
+\DoxyCodeLine{00225             \{}
+\DoxyCodeLine{00226                 \textcolor{keywordflow}{foreach} (VitNX\_DropdownItem item \textcolor{keywordflow}{in} e.NewItems)}
+\DoxyCodeLine{00227                 \{}
+\DoxyCodeLine{00228                     var menuItem = \textcolor{keyword}{new} ToolStripMenuItem(item.Text)}
+\DoxyCodeLine{00229                     \{}
+\DoxyCodeLine{00230                         Image = item.Icon,}
+\DoxyCodeLine{00231                         AutoSize = \textcolor{keyword}{false},}
+\DoxyCodeLine{00232                         Height = \_itemHeight,}
+\DoxyCodeLine{00233                         Font = Font,}
+\DoxyCodeLine{00234                         Tag = item,}
+\DoxyCodeLine{00235                         TextAlign = ContentAlignment.MiddleLeft}
+\DoxyCodeLine{00236                     \};}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238                     \_menu.Items.Add(menuItem);}
+\DoxyCodeLine{00239                     menuItem.Click += Item\_Select;}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241                     \textcolor{keywordflow}{if} (SelectedItem == \textcolor{keyword}{null})}
+\DoxyCodeLine{00242                         SelectedItem = item;}
+\DoxyCodeLine{00243                 \}}
+\DoxyCodeLine{00244             \}}
+\DoxyCodeLine{00245 }
+\DoxyCodeLine{00246             \textcolor{keywordflow}{if} (e.Action == NotifyCollectionChangedAction.Remove)}
+\DoxyCodeLine{00247             \{}
+\DoxyCodeLine{00248                 \textcolor{keywordflow}{foreach} (VitNX\_DropdownItem item \textcolor{keywordflow}{in} e.OldItems)}
+\DoxyCodeLine{00249                 \{}
+\DoxyCodeLine{00250                     \textcolor{keywordflow}{foreach} (ToolStripMenuItem menuItem \textcolor{keywordflow}{in} \_menu.Items)}
+\DoxyCodeLine{00251                     \{}
+\DoxyCodeLine{00252                         \textcolor{keywordflow}{if} ((VitNX\_DropdownItem)menuItem.Tag == item)}
+\DoxyCodeLine{00253                             \_menu.Items.Remove(menuItem);}
+\DoxyCodeLine{00254                     \}}
+\DoxyCodeLine{00255                 \}}
+\DoxyCodeLine{00256             \}}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258             \textcolor{keywordflow}{if} (e.Action == NotifyCollectionChangedAction.Reset)}
+\DoxyCodeLine{00259             \{}
+\DoxyCodeLine{00260                 \_menu.Items.Clear();}
+\DoxyCodeLine{00261                 SelectedItem = \textcolor{keyword}{null};}
+\DoxyCodeLine{00262             \}}
+\DoxyCodeLine{00263 }
+\DoxyCodeLine{00264             ResizeMenu();}
+\DoxyCodeLine{00265         \}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Item\_Select(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00268         \{}
+\DoxyCodeLine{00269             var menuItem = sender as ToolStripMenuItem;}
+\DoxyCodeLine{00270             \textcolor{keywordflow}{if} (menuItem == \textcolor{keyword}{null})}
+\DoxyCodeLine{00271                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00272 }
+\DoxyCodeLine{00273             var dropdownItem = (VitNX\_DropdownItem)menuItem.Tag;}
+\DoxyCodeLine{00274             if (\_selectedItem != dropdownItem)}
+\DoxyCodeLine{00275                 SelectedItem = dropdownItem;}
+\DoxyCodeLine{00276         \}}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278         \textcolor{keyword}{private} \textcolor{keywordtype}{void} VitNX\_DropdownList\_SelectedItemChanged(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00279         \{}
+\DoxyCodeLine{00280             \textcolor{keywordflow}{foreach} (ToolStripMenuItem item \textcolor{keywordflow}{in} \_menu.Items)}
+\DoxyCodeLine{00281             \{}
+\DoxyCodeLine{00282                 \textcolor{keywordflow}{if} ((VitNX\_DropdownItem)item.Tag == SelectedItem)}
+\DoxyCodeLine{00283                 \{}
+\DoxyCodeLine{00284                     item.BackColor = Colors.VitNXBlueBackground;}
+\DoxyCodeLine{00285                     item.Font = \textcolor{keyword}{new} Font(Font, FontStyle.Bold);}
+\DoxyCodeLine{00286                 \}}
+\DoxyCodeLine{00287                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00288                 \{}
+\DoxyCodeLine{00289                     item.BackColor = Colors.GreyBackground;}
+\DoxyCodeLine{00290                     item.Font = \textcolor{keyword}{new} Font(Font, FontStyle.Regular);}
+\DoxyCodeLine{00291                 \}}
+\DoxyCodeLine{00292             \}}
+\DoxyCodeLine{00293 }
+\DoxyCodeLine{00294             Invalidate();}
+\DoxyCodeLine{00295         \}}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{00297         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnResize(EventArgs e)}
+\DoxyCodeLine{00298         \{}
+\DoxyCodeLine{00299             base.OnResize(e);}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301             ResizeMenu();}
+\DoxyCodeLine{00302         \}}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseMove(MouseEventArgs e)}
+\DoxyCodeLine{00305         \{}
+\DoxyCodeLine{00306             base.OnMouseMove(e);}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00309             \{}
+\DoxyCodeLine{00310                 \textcolor{keywordflow}{if} (ClientRectangle.Contains(e.Location))}
+\DoxyCodeLine{00311                     SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00312                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00313                     SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00314             \}}
+\DoxyCodeLine{00315             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00316             \{}
+\DoxyCodeLine{00317                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00318             \}}
+\DoxyCodeLine{00319         \}}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseDown(MouseEventArgs e)}
+\DoxyCodeLine{00322         \{}
+\DoxyCodeLine{00323             base.OnMouseDown(e);}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325             ShowMenu();}
+\DoxyCodeLine{00326         \}}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseUp(MouseEventArgs e)}
+\DoxyCodeLine{00329         \{}
+\DoxyCodeLine{00330             base.OnMouseUp(e);}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00333         \}}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseLeave(EventArgs e)}
+\DoxyCodeLine{00336         \{}
+\DoxyCodeLine{00337             base.OnMouseLeave(e);}
+\DoxyCodeLine{00338 }
+\DoxyCodeLine{00339             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00340         \}}
+\DoxyCodeLine{00341 }
+\DoxyCodeLine{00342         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseCaptureChanged(EventArgs e)}
+\DoxyCodeLine{00343         \{}
+\DoxyCodeLine{00344             base.OnMouseCaptureChanged(e);}
+\DoxyCodeLine{00345 }
+\DoxyCodeLine{00346             var location = Cursor.Position;}
+\DoxyCodeLine{00347 }
+\DoxyCodeLine{00348             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00349                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00350         \}}
+\DoxyCodeLine{00351 }
+\DoxyCodeLine{00352         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnGotFocus(EventArgs e)}
+\DoxyCodeLine{00353         \{}
+\DoxyCodeLine{00354             base.OnGotFocus(e);}
+\DoxyCodeLine{00355 }
+\DoxyCodeLine{00356             Invalidate();}
+\DoxyCodeLine{00357         \}}
+\DoxyCodeLine{00358 }
+\DoxyCodeLine{00359         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLostFocus(EventArgs e)}
+\DoxyCodeLine{00360         \{}
+\DoxyCodeLine{00361             base.OnLostFocus(e);}
+\DoxyCodeLine{00362 }
+\DoxyCodeLine{00363             var location = Cursor.Position;}
+\DoxyCodeLine{00364 }
+\DoxyCodeLine{00365             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00366                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00367             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00368                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00369         \}}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnKeyDown(KeyEventArgs e)}
+\DoxyCodeLine{00372         \{}
+\DoxyCodeLine{00373             base.OnKeyDown(e);}
+\DoxyCodeLine{00374 }
+\DoxyCodeLine{00375             \textcolor{keywordflow}{if} (e.KeyCode == Keys.Space)}
+\DoxyCodeLine{00376                 ShowMenu();}
+\DoxyCodeLine{00377         \}}
+\DoxyCodeLine{00378 }
+\DoxyCodeLine{00379         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Menu\_Closed(\textcolor{keywordtype}{object} sender, ToolStripDropDownClosedEventArgs e)}
+\DoxyCodeLine{00380         \{}
+\DoxyCodeLine{00381             \_menuOpen = \textcolor{keyword}{false};}
+\DoxyCodeLine{00382 }
+\DoxyCodeLine{00383             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(MousePosition))}
+\DoxyCodeLine{00384                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00385             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00386                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00387         \}}
+\DoxyCodeLine{00388 }
+\DoxyCodeLine{00389 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
+\DoxyCodeLine{00390 }
+\DoxyCodeLine{00391 \textcolor{preprocessor}{        \#region Render Region}}
+\DoxyCodeLine{00392 }
+\DoxyCodeLine{00393         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00394         \{}
+\DoxyCodeLine{00395             var g = e.Graphics;}
+\DoxyCodeLine{00396 }
+\DoxyCodeLine{00397             \textcolor{comment}{// Draw background}}
+\DoxyCodeLine{00398             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.MediumBackground))}
+\DoxyCodeLine{00399             \{}
+\DoxyCodeLine{00400                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00401             \}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403             \textcolor{comment}{// Draw normal state}}
+\DoxyCodeLine{00404             \textcolor{keywordflow}{if} (ControlState == VitNX\_ControlState.Normal)}
+\DoxyCodeLine{00405             \{}
+\DoxyCodeLine{00406                 \textcolor{keywordflow}{if} (ShowBorder)}
+\DoxyCodeLine{00407                 \{}
+\DoxyCodeLine{00408                     \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.LightBorder, 1))}
+\DoxyCodeLine{00409                     \{}
+\DoxyCodeLine{00410                         var modRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width -\/ 1, ClientRectangle.Height -\/ 1);}
+\DoxyCodeLine{00411                         g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00412                     \}}
+\DoxyCodeLine{00413                 \}}
+\DoxyCodeLine{00414             \}}
+\DoxyCodeLine{00415 }
+\DoxyCodeLine{00416             \textcolor{comment}{// Draw hover state}}
+\DoxyCodeLine{00417             \textcolor{keywordflow}{if} (ControlState == VitNX\_ControlState.Hover)}
+\DoxyCodeLine{00418             \{}
+\DoxyCodeLine{00419                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.VitNXBorder))}
+\DoxyCodeLine{00420                 \{}
+\DoxyCodeLine{00421                     g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00422                 \}}
+\DoxyCodeLine{00423 }
+\DoxyCodeLine{00424                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.VitNXBackground))}
+\DoxyCodeLine{00425                 \{}
+\DoxyCodeLine{00426                     var arrowRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Right -\/ DropdownIcons.small\_arrow.Width -\/ 8, ClientRectangle.Top, DropdownIcons.small\_arrow.Width + 8, ClientRectangle.Height);}
+\DoxyCodeLine{00427                     g.FillRectangle(b, arrowRect);}
+\DoxyCodeLine{00428                 \}}
+\DoxyCodeLine{00429 }
+\DoxyCodeLine{00430                 \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.BlueSelection, 1))}
+\DoxyCodeLine{00431                 \{}
+\DoxyCodeLine{00432                     var modRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width -\/ 1 -\/ DropdownIcons.small\_arrow.Width -\/ 8, ClientRectangle.Height -\/ 1);}
+\DoxyCodeLine{00433                     g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00434                 \}}
+\DoxyCodeLine{00435             \}}
+\DoxyCodeLine{00436 }
+\DoxyCodeLine{00437             \textcolor{comment}{// Draw pressed state}}
+\DoxyCodeLine{00438             \textcolor{keywordflow}{if} (ControlState == VitNX\_ControlState.Pressed)}
+\DoxyCodeLine{00439             \{}
+\DoxyCodeLine{00440                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.VitNXBorder))}
+\DoxyCodeLine{00441                 \{}
+\DoxyCodeLine{00442                     g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00443                 \}}
+\DoxyCodeLine{00444 }
+\DoxyCodeLine{00445                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.BlueSelection))}
+\DoxyCodeLine{00446                 \{}
+\DoxyCodeLine{00447                     var arrowRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Right -\/ DropdownIcons.small\_arrow.Width -\/ 8, ClientRectangle.Top, DropdownIcons.small\_arrow.Width + 8, ClientRectangle.Height);}
+\DoxyCodeLine{00448                     g.FillRectangle(b, arrowRect);}
+\DoxyCodeLine{00449                 \}}
+\DoxyCodeLine{00450             \}}
+\DoxyCodeLine{00451 }
+\DoxyCodeLine{00452             \textcolor{comment}{// Draw dropdown arrow}}
+\DoxyCodeLine{00453             \textcolor{keyword}{using} (var img = DropdownIcons.small\_arrow)}
+\DoxyCodeLine{00454             \{}
+\DoxyCodeLine{00455                 g.DrawImageUnscaled(img, ClientRectangle.Right -\/ img.Width -\/ 4, ClientRectangle.Top + (ClientRectangle.Height / 2) -\/ (img.Height / 2));}
+\DoxyCodeLine{00456             \}}
+\DoxyCodeLine{00457 }
+\DoxyCodeLine{00458             \textcolor{comment}{// Draw selected item}}
+\DoxyCodeLine{00459             \textcolor{keywordflow}{if} (SelectedItem != \textcolor{keyword}{null})}
+\DoxyCodeLine{00460             \{}
+\DoxyCodeLine{00461                 \textcolor{comment}{// Draw Icon}}
+\DoxyCodeLine{00462                 var hasIcon = SelectedItem.Icon != \textcolor{keyword}{null};}
+\DoxyCodeLine{00463 }
+\DoxyCodeLine{00464                 \textcolor{keywordflow}{if} (hasIcon)}
+\DoxyCodeLine{00465                 \{}
+\DoxyCodeLine{00466                     g.DrawImageUnscaled(SelectedItem.Icon, \textcolor{keyword}{new} Point(ClientRectangle.Left + 5, ClientRectangle.Top + (ClientRectangle.Height / 2) -\/ (\_iconSize / 2)));}
+\DoxyCodeLine{00467                 \}}
+\DoxyCodeLine{00468 }
+\DoxyCodeLine{00469                 \textcolor{comment}{// Draw Text}}
+\DoxyCodeLine{00470                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightText))}
+\DoxyCodeLine{00471                 \{}
+\DoxyCodeLine{00472                     var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00473                     \{}
+\DoxyCodeLine{00474                         Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00475                         LineAlignment = StringAlignment.Center}
+\DoxyCodeLine{00476                     \};}
+\DoxyCodeLine{00477 }
+\DoxyCodeLine{00478                     var rect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Left + 2, ClientRectangle.Top, ClientRectangle.Width -\/ 16, ClientRectangle.Height);}
+\DoxyCodeLine{00479 }
+\DoxyCodeLine{00480                     \textcolor{keywordflow}{if} (hasIcon)}
+\DoxyCodeLine{00481                     \{}
+\DoxyCodeLine{00482                         rect.X += \_iconSize + 7;}
+\DoxyCodeLine{00483                         rect.Width -\/= \_iconSize + 7;}
+\DoxyCodeLine{00484                     \}}
+\DoxyCodeLine{00485 }
+\DoxyCodeLine{00486                     g.DrawString(SelectedItem.Text, Font, b, rect, stringFormat);}
+\DoxyCodeLine{00487                 \}}
+\DoxyCodeLine{00488             \}}
+\DoxyCodeLine{00489         \}}
+\DoxyCodeLine{00490 }
+\DoxyCodeLine{00491 \textcolor{preprocessor}{        \#endregion Render Region}}
+\DoxyCodeLine{00492     \}}
+\DoxyCodeLine{00493 \}}
+
+\end{DoxyCode}

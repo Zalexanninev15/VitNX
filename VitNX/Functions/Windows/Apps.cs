@@ -30,14 +30,14 @@ namespace VitNX.Functions.Windows.Apps
             return procList;
         }
 
-        public static void Run(string file,
+        public static void Run(string targetFile,
             string arguments = "")
         {
             var start = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = file,
+                    FileName = targetFile,
                     Arguments = arguments,
                     Verb = "open"
                 }
@@ -45,7 +45,7 @@ namespace VitNX.Functions.Windows.Apps
             start.Start();
         }
 
-        public static string Execute(string file,
+        public static string Execute(string targetFile,
             string arguments)
         {
             var codepage = System.Globalization.CultureInfo.CurrentCulture.TextInfo.OEMCodePage;
@@ -54,7 +54,7 @@ namespace VitNX.Functions.Windows.Apps
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = file,
+                    FileName = targetFile,
                     Arguments = arguments,
                     CreateNoWindow = true,
                     UseShellExecute = false,
@@ -70,9 +70,9 @@ namespace VitNX.Functions.Windows.Apps
             return output;
         }
 
-        public static void Open(string element)
+        public static void Open(string targetFile)
         {
-            var ps = new ProcessStartInfo(element)
+            var ps = new ProcessStartInfo(targetFile)
             {
                 UseShellExecute = true,
                 Verb = "open"
@@ -100,14 +100,14 @@ namespace VitNX.Functions.Windows.Apps
             Process.GetCurrentProcess().Kill();
         }
 
-        public static void Kill(string process)
+        public static void Kill(string processNameWithExe)
         {
             var start = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = "taskkill",
-                    Arguments = $"/IM \"{process}\" /F /T",
+                    Arguments = $"/IM \"{processNameWithExe}\" /F /T",
                     CreateNoWindow = true,
                     WindowStyle = ProcessWindowStyle.Hidden,
                 }
@@ -125,7 +125,7 @@ namespace VitNX.Functions.Windows.Apps
     {
         public static string GetList()
         {
-            string toText = "Установленные приложения:";
+            string toText = "Installed apps:";
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Product");
             ManagementObjectCollection information = searcher.Get();
             foreach (ManagementObject app in information)
@@ -138,11 +138,11 @@ namespace VitNX.Functions.Windows.Apps
                         toTextText = GetPath(Convert.ToString(app["IdentifyingNumber"]));
                 }
                 catch { }
-                toText += ($"\n\nНазвание: {app["Name"]} ({app["Caption"]})" +
-                $"\nВерсия: {app["Version"]}" +
-                $"\nРазработчик: {app["Vendor"]}" +
-                $"\nДата установки: {app["InstallDate"]}" +
-                $"\nМестоположение: {toTextText}");
+                toText += ($"\nName: {app["Name"]} ({app["Caption"]})" +
+                $"\nVersion: {app["Version"]}" +
+                $"\nAuthor: {app["Vendor"]}" +
+                $"\nInstall date: {app["InstallDate"]}" +
+                $"\nInstall path: {toTextText}");
             }
             return toText;
         }

@@ -1,0 +1,25 @@
+var a00455 =
+[
+    [ "CreateRoundRectRgn", "a00455.html#a7cd6f2cd42f7f96e6e7200f63c16ab4c", null ],
+    [ "DisplayConfigGetDeviceInfo", "a00455.html#a6125c6f63216a87cbfc5879bb9715f7b", null ],
+    [ "DwmSetWindowAttribute", "a00455.html#a25c45c2a76b59049a505e5a47689b03f", null ],
+    [ "ExitWindowsEx", "a00455.html#a5730dcec67a5327ebbb6866233008004", null ],
+    [ "FindWindow", "a00455.html#a7a7210adc4665be83f63c9ac1ee0ed0b", null ],
+    [ "GetDeviceCaps", "a00455.html#ac9b67fea8dd72343204ab96b28a4cd80", null ],
+    [ "GetDisplayConfigBufferSizes", "a00455.html#a9e38dd75ee4a2075239e39f824fa2e08", null ],
+    [ "keybd_event", "a00455.html#a9f3f350a126504deefac746a4f111ae1", null ],
+    [ "LockWorkStation", "a00455.html#a0dc1877fbfffbfbeeb8a3d55d1ff5029", null ],
+    [ "MessageBeep", "a00455.html#aaf778166e93c6ade4025a1be47de6912", null ],
+    [ "mouse_event", "a00455.html#ace1a907d0c061ef7fcb04d3348f464d0", null ],
+    [ "PostMessage", "a00455.html#ae28f86ba54fbd0452c26688775e8ed6a", null ],
+    [ "QueryDisplayConfig", "a00455.html#a564392b5d80699487929525b19a32b09", null ],
+    [ "ReleaseCapture", "a00455.html#a3b003b34b31aec8e35d935565c08b61b", null ],
+    [ "SendMessage", "a00455.html#afe3edb1586df66a3e7c9542266dedbd1", null ],
+    [ "SetFocus", "a00455.html#a209129dbaa57b394c435d249abed16dd", null ],
+    [ "SetProcessDpiAwareness", "a00455.html#a14df8cafd9adcdf76b29806fd473e7d4", null ],
+    [ "SetThreadExecutionState", "a00455.html#a19897cdfc2cc27a73d9e1dc865d0dab4", null ],
+    [ "SetWindowPos", "a00455.html#a21758c3ac6f64d66c27df3169d32b015", null ],
+    [ "SetWindowTheme", "a00455.html#a3ee250611d064c7aa47b200ec22284c2", null ],
+    [ "SHEmptyRecycleBin", "a00455.html#a92a8ab40d455916eac282740bb74aa96", null ],
+    [ "WindowFromPoint", "a00455.html#a9e24a4eb2232e0829406cbc38f8886ec", null ]
+];

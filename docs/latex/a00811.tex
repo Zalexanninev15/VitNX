@@ -1,0 +1,243 @@
+\doxysection{Vit\+NX2\+\_\+\+Toogle\+Button Class Reference}
+\label{a00811}\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+Inheritance diagram for Vit\+NX2\+\_\+\+Toogle\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00811}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args pevent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Color \textbf{ On\+Back\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ On\+Toggle\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ Off\+Back\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ Off\+Toggle\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+override string \textbf{ Text}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Solid\+Style}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00811_af00adddbfc36fe72c27df9732830b22e}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{VitNX2\_ToogleButton()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 97} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098         \{}
+\DoxyCodeLine{00099             MinimumSize = \textcolor{keyword}{new} Size(46, 23);}
+\DoxyCodeLine{00100         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00811_a4948a2d75172f121522711a8f5c9cbcd}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{pevent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116         \{}
+\DoxyCodeLine{00117             \textcolor{keywordtype}{int} toggleSize = Height -\/ 5;}
+\DoxyCodeLine{00118             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;}
+\DoxyCodeLine{00119             pevent.Graphics.Clear(Parent.BackColor);}
+\DoxyCodeLine{00120             \textcolor{keywordflow}{if} (Checked)}
+\DoxyCodeLine{00121             \{}
+\DoxyCodeLine{00122                 \textcolor{keywordflow}{if} (solidStyle) pevent.Graphics.FillPath(\textcolor{keyword}{new} SolidBrush(onBackColor), GetFigurePath());}
+\DoxyCodeLine{00123                 \textcolor{keywordflow}{else} pevent.Graphics.DrawPath(\textcolor{keyword}{new} Pen(onBackColor, 2), GetFigurePath());}
+\DoxyCodeLine{00124                 pevent.Graphics.FillEllipse(\textcolor{keyword}{new} SolidBrush(onToggleColor),}
+\DoxyCodeLine{00125                     \textcolor{keyword}{new} Rectangle(Width -\/ Height + 1, 2, toggleSize,}
+\DoxyCodeLine{00126                     toggleSize));}
+\DoxyCodeLine{00127             \}}
+\DoxyCodeLine{00128             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00129             \{}
+\DoxyCodeLine{00130                 \textcolor{keywordflow}{if} (solidStyle) pevent.Graphics.FillPath(\textcolor{keyword}{new} SolidBrush(offBackColor), GetFigurePath());}
+\DoxyCodeLine{00131                 \textcolor{keywordflow}{else} pevent.Graphics.DrawPath(\textcolor{keyword}{new} Pen(offBackColor, 2), GetFigurePath());}
+\DoxyCodeLine{00132                 pevent.Graphics.FillEllipse(\textcolor{keyword}{new} SolidBrush(offToggleColor),}
+\DoxyCodeLine{00133                     \textcolor{keyword}{new} Rectangle(2, 2,}
+\DoxyCodeLine{00134                     toggleSize,}
+\DoxyCodeLine{00135                     toggleSize));}
+\DoxyCodeLine{00136             \}}
+\DoxyCodeLine{00137         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00811_a898d3546ffb693677d598422206b0942}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!OffBackColor@{OffBackColor}}
+\index{OffBackColor@{OffBackColor}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{OffBackColor}
+{\footnotesize\ttfamily Color Off\+Back\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 45} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             \textcolor{keyword}{get}}
+\DoxyCodeLine{00048             \{}
+\DoxyCodeLine{00049                 \textcolor{keywordflow}{return} offBackColor;}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051             \textcolor{keyword}{set}}
+\DoxyCodeLine{00052             \{}
+\DoxyCodeLine{00053                 offBackColor = value;}
+\DoxyCodeLine{00054                 Invalidate();}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00811_a14132160d30e37568e01851fcf7c5480}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!OffToggleColor@{OffToggleColor}}
+\index{OffToggleColor@{OffToggleColor}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{OffToggleColor}
+{\footnotesize\ttfamily Color Off\+Toggle\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 59} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060         \{}
+\DoxyCodeLine{00061             \textcolor{keyword}{get}}
+\DoxyCodeLine{00062             \{}
+\DoxyCodeLine{00063                 \textcolor{keywordflow}{return} offToggleColor;}
+\DoxyCodeLine{00064             \}}
+\DoxyCodeLine{00065             \textcolor{keyword}{set}}
+\DoxyCodeLine{00066             \{}
+\DoxyCodeLine{00067                 offToggleColor = value;}
+\DoxyCodeLine{00068                 Invalidate();}
+\DoxyCodeLine{00069             \}}
+\DoxyCodeLine{00070         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00811_a4dc9380fa0bbec07bb20ce412aacfdfa}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!OnBackColor@{OnBackColor}}
+\index{OnBackColor@{OnBackColor}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{OnBackColor}
+{\footnotesize\ttfamily Color On\+Back\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018         \{}
+\DoxyCodeLine{00019             \textcolor{keyword}{get}}
+\DoxyCodeLine{00020             \{}
+\DoxyCodeLine{00021                 \textcolor{keywordflow}{return} onBackColor;}
+\DoxyCodeLine{00022             \}}
+\DoxyCodeLine{00023             \textcolor{keyword}{set}}
+\DoxyCodeLine{00024             \{}
+\DoxyCodeLine{00025                 onBackColor = value;}
+\DoxyCodeLine{00026                 Invalidate();}
+\DoxyCodeLine{00027             \}}
+\DoxyCodeLine{00028         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00811_a3b48b93200b6bc22df3c5637f0bc8875}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!OnToggleColor@{OnToggleColor}}
+\index{OnToggleColor@{OnToggleColor}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{OnToggleColor}
+{\footnotesize\ttfamily Color On\+Toggle\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 31} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             \textcolor{keyword}{get}}
+\DoxyCodeLine{00034             \{}
+\DoxyCodeLine{00035                 \textcolor{keywordflow}{return} onToggleColor;}
+\DoxyCodeLine{00036             \}}
+\DoxyCodeLine{00037             \textcolor{keyword}{set}}
+\DoxyCodeLine{00038             \{}
+\DoxyCodeLine{00039                 onToggleColor = value;}
+\DoxyCodeLine{00040                 Invalidate();}
+\DoxyCodeLine{00041             \}}
+\DoxyCodeLine{00042         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00811_ac8262063a8bfbfd5e242cf837d51f2d9}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!SolidStyle@{SolidStyle}}
+\index{SolidStyle@{SolidStyle}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{SolidStyle}
+{\footnotesize\ttfamily bool Solid\+Style\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 84} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085         \{}
+\DoxyCodeLine{00086             \textcolor{keyword}{get}}
+\DoxyCodeLine{00087             \{}
+\DoxyCodeLine{00088                 \textcolor{keywordflow}{return} solidStyle;}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090             \textcolor{keyword}{set}}
+\DoxyCodeLine{00091             \{}
+\DoxyCodeLine{00092                 solidStyle = value;}
+\DoxyCodeLine{00093                 Invalidate();}
+\DoxyCodeLine{00094             \}}
+\DoxyCodeLine{00095         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00811_a9edbda6bee91454681dcefdbf05d5439}} 
+\index{VitNX2\_ToogleButton@{VitNX2\_ToogleButton}!Text@{Text}}
+\index{Text@{Text}!VitNX2\_ToogleButton@{VitNX2\_ToogleButton}}
+\doxysubsubsection{Text}
+{\footnotesize\ttfamily override string Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 73} of file \textbf{ Vit\+NX2\+\_\+\+Toogle\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074         \{}
+\DoxyCodeLine{00075             \textcolor{keyword}{get}}
+\DoxyCodeLine{00076             \{}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{return} base.Text;}
+\DoxyCodeLine{00078             \}}
+\DoxyCodeLine{00079             \textcolor{keyword}{set} \{ \}}
+\DoxyCodeLine{00080         \}}
+
+\end{DoxyCode}
