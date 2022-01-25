@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     [ToolboxItem(false)]
     public class VitNX_Document : VitNX_DockContent

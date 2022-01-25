@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Docking;
+using VitNX.UI.BasedOnDarkUI.Docking;
 
-namespace VitNX.Win32
+namespace VitNX.UI.BasedOnDarkUI.Win32
 {
     public class DockResizeFilter : IMessageFilter
     {

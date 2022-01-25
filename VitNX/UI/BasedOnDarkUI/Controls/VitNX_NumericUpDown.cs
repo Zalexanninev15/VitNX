@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Reflection;
 using System.Security;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_NumericUpDown : NumericUpDown
     {

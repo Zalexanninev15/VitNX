@@ -1,0 +1,283 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content Class Reference}
+\label{a00628}\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.560976cm]{a00628}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Close} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Enter} (Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ Dock\+Text}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Image \textbf{ Icon}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Vit\+NX\+\_\+\+Dock\+Area \textbf{ Default\+Dock\+Area}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Serialization\+Key}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} \textbf{ Dock\+Panel}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Region} \textbf{ Dock\+Region}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Group} \textbf{ Dock\+Group}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Vit\+NX\+\_\+\+Dock\+Area \textbf{ Dock\+Area}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Order}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler \textbf{ Dock\+Text\+Changed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 9} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00628_a4681550c9c8175abf0837aff3df75657}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!VitNX\_DockContent@{VitNX\_DockContent}}
+\index{VitNX\_DockContent@{VitNX\_DockContent}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{VitNX\_DockContent()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Vit\+NX\+\_\+\+Dock\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 89} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090         \{ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00628_ad333a61a3dac014bdbe2c187a2420a71}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!Close@{Close}}
+\index{Close@{Close}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{Close()}
+{\footnotesize\ttfamily virtual void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \textbf{ 96} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             \textcolor{keywordflow}{if} (DockPanel != \textcolor{keyword}{null})}
+\DoxyCodeLine{00099                 DockPanel.RemoveContent(\textcolor{keyword}{this});}
+\DoxyCodeLine{00100         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_ace353c29a230ecf1cc24c489ca036c9d}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{OnEnter()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+On\+Enter (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 106} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107         \{}
+\DoxyCodeLine{00108             base.OnEnter(e);}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110             \textcolor{keywordflow}{if} (DockPanel == \textcolor{keyword}{null})}
+\DoxyCodeLine{00111                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113             DockPanel.ActiveContent = \textcolor{keyword}{this};}
+\DoxyCodeLine{00114         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00628_aad642b3eb46e60e1dfd40d3a9cf723fb}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DefaultDockArea@{DefaultDockArea}}
+\index{DefaultDockArea@{DefaultDockArea}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DefaultDockArea}
+{\footnotesize\ttfamily Vit\+NX\+\_\+\+Dock\+Area Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Default\+Dock\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 59} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_ab926b20126a24b2c293661c10039a789}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DockArea@{DockArea}}
+\index{DockArea@{DockArea}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DockArea}
+{\footnotesize\ttfamily Vit\+NX\+\_\+\+Dock\+Area Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Dock\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 79} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_a331b89ecb35082ec8fb47779992b4d46}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DockGroup@{DockGroup}}
+\index{DockGroup@{DockGroup}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DockGroup}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Group} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Dock\+Group\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 75} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075 \{ \textcolor{keyword}{get}; \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_a9daec0dc3bc4c10fd28c34e0e1864a54}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DockPanel@{DockPanel}}
+\index{DockPanel@{DockPanel}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DockPanel}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Panel} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Dock\+Panel\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 67} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067 \{ \textcolor{keyword}{get}; \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_aadbeee7b0ba09da638c3ba09abb4ee23}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DockRegion@{DockRegion}}
+\index{DockRegion@{DockRegion}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DockRegion}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Region} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Dock\+Region\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 71} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071 \{ \textcolor{keyword}{get}; \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_adee9bf237690f46416ed4a62f2f7daa0}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DockText@{DockText}}
+\index{DockText@{DockText}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DockText}
+{\footnotesize\ttfamily string Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Dock\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029         \{}
+\DoxyCodeLine{00030             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_dockText; \}}
+\DoxyCodeLine{00031             \textcolor{keyword}{set}}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 var oldText = \_dockText;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035                 \_dockText = value;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037                 \textcolor{keywordflow}{if} (DockTextChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00038                     DockTextChanged(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040                 Invalidate();}
+\DoxyCodeLine{00041             \}}
+\DoxyCodeLine{00042         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_ac3e71b6cc602416f897c7015e6958f5e}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!Icon@{Icon}}
+\index{Icon@{Icon}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{Icon}
+{\footnotesize\ttfamily Image Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Icon\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 46} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047         \{}
+\DoxyCodeLine{00048             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_icon; \}}
+\DoxyCodeLine{00049             \textcolor{keyword}{set}}
+\DoxyCodeLine{00050             \{}
+\DoxyCodeLine{00051                 \_icon = value;}
+\DoxyCodeLine{00052                 Invalidate();}
+\DoxyCodeLine{00053             \}}
+\DoxyCodeLine{00054         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_a289871056f2c8b5ff363cdbe00240e1b}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!Order@{Order}}
+\index{Order@{Order}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{Order}
+{\footnotesize\ttfamily int Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Order\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 83} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00628_abe4940b39947ab435029e7ac8c2cd78f}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!SerializationKey@{SerializationKey}}
+\index{SerializationKey@{SerializationKey}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{SerializationKey}
+{\footnotesize\ttfamily string Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Serialization\+Key\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 63} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00628_a7537b1dfa66db90d3b1bc804166225bb}} 
+\index{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}!DockTextChanged@{DockTextChanged}}
+\index{DockTextChanged@{DockTextChanged}!VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent@{VitNX.UI.BasedOnDarkUI.Docking.VitNX\_DockContent}}
+\doxysubsubsection{DockTextChanged}
+{\footnotesize\ttfamily Event\+Handler Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Docking.\+Vit\+NX\+\_\+\+Dock\+Content.\+Dock\+Text\+Changed}
+
+
+
+Definition at line \textbf{ 13} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Content.\+cs}.
+

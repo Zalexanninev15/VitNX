@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     [ToolboxBitmap(typeof(Button))]
     [DefaultEvent("Click")]
@@ -18,7 +18,7 @@ namespace VitNX.Controls
         private bool _isDefault;
         private bool _spacePressed;
 
-        private int _padding = Consts.Padding / 2;
+        private int _padding = Constsants.Padding / 2;
         private int _imagePadding = 5;
 
         #endregion Field Region

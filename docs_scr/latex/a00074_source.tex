@@ -1,0 +1,356 @@
+\doxysection{Vit\+NX\+\_\+\+Check\+Box.\+cs}
+\label{a00074_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_CheckBox.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_CheckBox.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00008 \{}
+\DoxyCodeLine{00009     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_CheckBox : CheckBox}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013         \textcolor{keyword}{private} VitNX\_ControlState \_controlState = VitNX\_ControlState.Normal;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_spacePressed;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00022         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00023         \textcolor{keyword}{public} \textcolor{keyword}{new} Appearance Appearance}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Appearance; \}}
+\DoxyCodeLine{00026         \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00029         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00030         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{bool} AutoEllipsis}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.AutoEllipsis; \}}
+\DoxyCodeLine{00033         \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00036         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00037         \textcolor{keyword}{public} \textcolor{keyword}{new} Image BackgroundImage}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.BackgroundImage; \}}
+\DoxyCodeLine{00040         \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00043         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00044         \textcolor{keyword}{public} \textcolor{keyword}{new} ImageLayout BackgroundImageLayout}
+\DoxyCodeLine{00045         \{}
+\DoxyCodeLine{00046             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.BackgroundImageLayout; \}}
+\DoxyCodeLine{00047         \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00050         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00051         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{bool} FlatAppearance}
+\DoxyCodeLine{00052         \{}
+\DoxyCodeLine{00053             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00054         \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00057         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00058         \textcolor{keyword}{public} \textcolor{keyword}{new} FlatStyle FlatStyle}
+\DoxyCodeLine{00059         \{}
+\DoxyCodeLine{00060             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.FlatStyle; \}}
+\DoxyCodeLine{00061         \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00064         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00065         \textcolor{keyword}{public} \textcolor{keyword}{new} Image Image}
+\DoxyCodeLine{00066         \{}
+\DoxyCodeLine{00067             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Image; \}}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00071         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00072         \textcolor{keyword}{public} \textcolor{keyword}{new} ContentAlignment ImageAlign}
+\DoxyCodeLine{00073         \{}
+\DoxyCodeLine{00074             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageAlign; \}}
+\DoxyCodeLine{00075         \}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00078         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00079         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{int} ImageIndex}
+\DoxyCodeLine{00080         \{}
+\DoxyCodeLine{00081             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageIndex; \}}
+\DoxyCodeLine{00082         \}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00085         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00086         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{string} ImageKey}
+\DoxyCodeLine{00087         \{}
+\DoxyCodeLine{00088             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageKey; \}}
+\DoxyCodeLine{00089         \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00092         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00093         \textcolor{keyword}{public} \textcolor{keyword}{new} ImageList ImageList}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageList; \}}
+\DoxyCodeLine{00096         \}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00099         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00100         \textcolor{keyword}{public} \textcolor{keyword}{new} ContentAlignment TextAlign}
+\DoxyCodeLine{00101         \{}
+\DoxyCodeLine{00102             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.TextAlign; \}}
+\DoxyCodeLine{00103         \}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00106         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00107         \textcolor{keyword}{public} \textcolor{keyword}{new} TextImageRelation TextImageRelation}
+\DoxyCodeLine{00108         \{}
+\DoxyCodeLine{00109             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.TextImageRelation; \}}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00113         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00114         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{bool} ThreeState}
+\DoxyCodeLine{00115         \{}
+\DoxyCodeLine{00116             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ThreeState; \}}
+\DoxyCodeLine{00117         \}}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00120         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00121         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{bool} UseCompatibleTextRendering}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00124         \}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126         [Browsable(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00127         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]}
+\DoxyCodeLine{00128         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{bool} UseVisualStyleBackColor}
+\DoxyCodeLine{00129         \{}
+\DoxyCodeLine{00130             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00131         \}}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137         \textcolor{keyword}{public} VitNX\_CheckBox()}
+\DoxyCodeLine{00138         \{}
+\DoxyCodeLine{00139             SetStyle(ControlStyles.SupportsTransparentBackColor |}
+\DoxyCodeLine{00140                      ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00141                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00142                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00143         \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetControlState(VitNX\_ControlState controlState)}
+\DoxyCodeLine{00150         \{}
+\DoxyCodeLine{00151             \textcolor{keywordflow}{if} (\_controlState != controlState)}
+\DoxyCodeLine{00152             \{}
+\DoxyCodeLine{00153                 \_controlState = controlState;}
+\DoxyCodeLine{00154                 Invalidate();}
+\DoxyCodeLine{00155             \}}
+\DoxyCodeLine{00156         \}}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160 \textcolor{preprocessor}{        \#region Event Handler Region}}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseMove(MouseEventArgs e)}
+\DoxyCodeLine{00163         \{}
+\DoxyCodeLine{00164             base.OnMouseMove(e);}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00167                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00170             \{}
+\DoxyCodeLine{00171                 \textcolor{keywordflow}{if} (ClientRectangle.Contains(e.Location))}
+\DoxyCodeLine{00172                     SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00173                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00174                     SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00175             \}}
+\DoxyCodeLine{00176             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00177             \{}
+\DoxyCodeLine{00178                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00179             \}}
+\DoxyCodeLine{00180         \}}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseDown(MouseEventArgs e)}
+\DoxyCodeLine{00183         \{}
+\DoxyCodeLine{00184             base.OnMouseDown(e);}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(e.Location))}
+\DoxyCodeLine{00187                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189             SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00190         \}}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseUp(MouseEventArgs e)}
+\DoxyCodeLine{00193         \{}
+\DoxyCodeLine{00194             base.OnMouseUp(e);}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00197                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00200         \}}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseLeave(EventArgs e)}
+\DoxyCodeLine{00203         \{}
+\DoxyCodeLine{00204             base.OnMouseLeave(e);}
+\DoxyCodeLine{00205 }
+\DoxyCodeLine{00206             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00207                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00210         \}}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseCaptureChanged(EventArgs e)}
+\DoxyCodeLine{00213         \{}
+\DoxyCodeLine{00214             base.OnMouseCaptureChanged(e);}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00217                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219             var location = Cursor.Position;}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00222                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00223         \}}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnGotFocus(EventArgs e)}
+\DoxyCodeLine{00226         \{}
+\DoxyCodeLine{00227             base.OnGotFocus(e);}
+\DoxyCodeLine{00228 }
+\DoxyCodeLine{00229             Invalidate();}
+\DoxyCodeLine{00230         \}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLostFocus(EventArgs e)}
+\DoxyCodeLine{00233         \{}
+\DoxyCodeLine{00234             base.OnLostFocus(e);}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236             \_spacePressed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238             var location = Cursor.Position;}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00241                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00242             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00243                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00244         \}}
+\DoxyCodeLine{00245 }
+\DoxyCodeLine{00246         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnKeyDown(KeyEventArgs e)}
+\DoxyCodeLine{00247         \{}
+\DoxyCodeLine{00248             base.OnKeyDown(e);}
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00250             \textcolor{keywordflow}{if} (e.KeyCode == Keys.Space)}
+\DoxyCodeLine{00251             \{}
+\DoxyCodeLine{00252                 \_spacePressed = \textcolor{keyword}{true};}
+\DoxyCodeLine{00253                 SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00254             \}}
+\DoxyCodeLine{00255         \}}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnKeyUp(KeyEventArgs e)}
+\DoxyCodeLine{00258         \{}
+\DoxyCodeLine{00259             base.OnKeyUp(e);}
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{00261             \textcolor{keywordflow}{if} (e.KeyCode == Keys.Space)}
+\DoxyCodeLine{00262             \{}
+\DoxyCodeLine{00263                 \_spacePressed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265                 var location = Cursor.Position;}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267                 \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00268                     SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00269                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00270                     SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00271             \}}
+\DoxyCodeLine{00272         \}}
+\DoxyCodeLine{00273 }
+\DoxyCodeLine{00274 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276 \textcolor{preprocessor}{        \#region Paint Region}}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00279         \{}
+\DoxyCodeLine{00280             var g = e.Graphics;}
+\DoxyCodeLine{00281             var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283             var size = Constsants.CheckBoxSize;}
+\DoxyCodeLine{00284 }
+\DoxyCodeLine{00285             var textColor = Colors.LightText;}
+\DoxyCodeLine{00286             var borderColor = Colors.LightText;}
+\DoxyCodeLine{00287             var fillColor = Colors.LightestBackground;}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289             \textcolor{keywordflow}{if} (Enabled)}
+\DoxyCodeLine{00290             \{}
+\DoxyCodeLine{00291                 \textcolor{keywordflow}{if} (Focused)}
+\DoxyCodeLine{00292                 \{}
+\DoxyCodeLine{00293                     borderColor = Colors.BlueHighlight;}
+\DoxyCodeLine{00294                     fillColor = Colors.BlueSelection;}
+\DoxyCodeLine{00295                 \}}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{00297                 \textcolor{keywordflow}{if} (\_controlState == VitNX\_ControlState.Hover)}
+\DoxyCodeLine{00298                 \{}
+\DoxyCodeLine{00299                     borderColor = Colors.BlueHighlight;}
+\DoxyCodeLine{00300                     fillColor = Colors.BlueSelection;}
+\DoxyCodeLine{00301                 \}}
+\DoxyCodeLine{00302                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_controlState == VitNX\_ControlState.Pressed)}
+\DoxyCodeLine{00303                 \{}
+\DoxyCodeLine{00304                     borderColor = Colors.GreyHighlight;}
+\DoxyCodeLine{00305                     fillColor = Colors.GreySelection;}
+\DoxyCodeLine{00306                 \}}
+\DoxyCodeLine{00307             \}}
+\DoxyCodeLine{00308             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00309             \{}
+\DoxyCodeLine{00310                 textColor = Colors.DisabledText;}
+\DoxyCodeLine{00311                 borderColor = Colors.GreyHighlight;}
+\DoxyCodeLine{00312                 fillColor = Colors.GreySelection;}
+\DoxyCodeLine{00313             \}}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00316             \{}
+\DoxyCodeLine{00317                 g.FillRectangle(b, rect);}
+\DoxyCodeLine{00318             \}}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(borderColor))}
+\DoxyCodeLine{00321             \{}
+\DoxyCodeLine{00322                 var boxRect = \textcolor{keyword}{new} Rectangle(0, (rect.Height / 2) -\/ (size / 2), size, size);}
+\DoxyCodeLine{00323                 g.DrawRectangle(p, boxRect);}
+\DoxyCodeLine{00324             \}}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326             \textcolor{keywordflow}{if} (Checked)}
+\DoxyCodeLine{00327             \{}
+\DoxyCodeLine{00328                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor))}
+\DoxyCodeLine{00329                 \{}
+\DoxyCodeLine{00330                     Rectangle boxRect = \textcolor{keyword}{new} Rectangle(2, (rect.Height / 2) -\/ ((size -\/ 4) / 2), size -\/ 3, size -\/ 3);}
+\DoxyCodeLine{00331                     g.FillRectangle(b, boxRect);}
+\DoxyCodeLine{00332                 \}}
+\DoxyCodeLine{00333             \}}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00336             \{}
+\DoxyCodeLine{00337                 var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00338                 \{}
+\DoxyCodeLine{00339                     LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00340                     Alignment = StringAlignment.Near}
+\DoxyCodeLine{00341                 \};}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343                 var modRect = \textcolor{keyword}{new} Rectangle(size + 4, 0, rect.Width -\/ size, rect.Height);}
+\DoxyCodeLine{00344                 g.DrawString(Text, Font, b, modRect, stringFormat);}
+\DoxyCodeLine{00345             \}}
+\DoxyCodeLine{00346         \}}
+\DoxyCodeLine{00347 }
+\DoxyCodeLine{00348 \textcolor{preprocessor}{        \#endregion Paint Region}}
+\DoxyCodeLine{00349     \}}
+\DoxyCodeLine{00350 \}}
+
+\end{DoxyCode}

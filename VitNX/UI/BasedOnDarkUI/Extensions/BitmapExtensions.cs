@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace VitNX.Extensions
+namespace VitNX.UI.BasedOnDarkUI.Extensions
 {
     internal static class BitmapExtensions
     {

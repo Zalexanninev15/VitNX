@@ -1,6 +1,6 @@
-﻿using VitNX.Controls;
+﻿using VitNX.UI.BasedOnDarkUI.Controls;
 
-namespace VitNX.Forms
+namespace VitNX.UI.BasedOnDarkUI.Forms
 {
     partial class VitNX_Dialog
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using VitNX.Collections;
+using VitNX.UI.BasedOnDarkUI.Collections;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_TreeNode
     {

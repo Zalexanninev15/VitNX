@@ -1,4 +1,4 @@
-﻿namespace VitNX.Controls
+﻿namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public enum VitNX_ButtonStyle
     {

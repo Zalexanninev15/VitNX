@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace VitNX.Extensions
+namespace VitNX.UI.BasedOnDarkUI.Extensions
 {
     internal static class IEnumerableExtensions
     {

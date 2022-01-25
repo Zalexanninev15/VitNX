@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Docking
+namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     [ToolboxItem(false)]
     public class VitNX_DockGroup : Panel
@@ -165,20 +165,20 @@ namespace VitNX.Docking
             switch (DockArea)
             {
                 case VitNX_DockArea.Document:
-                    size = _tabArea.Visible ? Consts.DocumentTabAreaSize : 0;
+                    size = _tabArea.Visible ? Constsants.DocumentTabAreaSize : 0;
                     Padding = new Padding(0, size, 0, 0);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, 0, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
 
                 case VitNX_DockArea.Left:
                 case VitNX_DockArea.Right:
-                    size = _tabArea.Visible ? Consts.ToolWindowTabAreaSize : 0;
+                    size = _tabArea.Visible ? Constsants.ToolWindowTabAreaSize : 0;
                     Padding = new Padding(0, 0, 0, size);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, ClientRectangle.Bottom - size, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
 
                 case VitNX_DockArea.Bottom:
-                    size = _tabArea.Visible ? Consts.ToolWindowTabAreaSize : 0;
+                    size = _tabArea.Visible ? Constsants.ToolWindowTabAreaSize : 0;
                     Padding = new Padding(1, 0, 0, size);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, ClientRectangle.Bottom - size, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
@@ -186,7 +186,7 @@ namespace VitNX.Docking
 
             if (DockArea == VitNX_DockArea.Document)
             {
-                var dropdownSize = Consts.DocumentTabAreaSize;
+                var dropdownSize = Constsants.DocumentTabAreaSize;
                 _tabArea.DropdownRectangle = new Rectangle(_tabArea.ClientRectangle.Right - dropdownSize, 0, dropdownSize, dropdownSize);
             }
 
@@ -234,8 +234,8 @@ namespace VitNX.Docking
                 tab.ShowSeparator = true;
                 width += 1;
 
-                var y = DockArea == VitNX_DockArea.Document ? 0 : ClientRectangle.Height - Consts.ToolWindowTabAreaSize;
-                var height = DockArea == VitNX_DockArea.Document ? Consts.DocumentTabAreaSize : Consts.ToolWindowTabAreaSize;
+                var y = DockArea == VitNX_DockArea.Document ? 0 : ClientRectangle.Height - Constsants.ToolWindowTabAreaSize;
+                var height = DockArea == VitNX_DockArea.Document ? Constsants.DocumentTabAreaSize : Constsants.ToolWindowTabAreaSize;
 
                 var tabRect = new Rectangle(_tabArea.ClientRectangle.Left + totalSize, y, width, height);
                 tab.ClientRectangle = tabRect;

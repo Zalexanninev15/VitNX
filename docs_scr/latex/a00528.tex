@@ -1,0 +1,162 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label Class Reference}
+\label{a00528}\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00528}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Text\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Font\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Size\+Changed} (Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Auto\+Update\+Height}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new bool \textbf{ Auto\+Size}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 9} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00528_ad8671b8a8f0f01848ec4c4abec469a3c}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}!VitNX\_Label@{VitNX\_Label}}
+\index{VitNX\_Label@{VitNX\_Label}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+\doxysubsubsection{VitNX\_Label()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label.\+Vit\+NX\+\_\+\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 54} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             ForeColor = Colors.LightText;}
+\DoxyCodeLine{00057         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00528_a12fc87a113cb3c8e482a27fb766ee31b}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}!OnFontChanged@{OnFontChanged}}
+\index{OnFontChanged@{OnFontChanged}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+\doxysubsubsection{OnFontChanged()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label.\+On\+Font\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             base.OnFontChanged(e);}
+\DoxyCodeLine{00094             ResizeLabel();}
+\DoxyCodeLine{00095         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00528_a26b233eb766c3ef309f7cd5dccc60740}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}!OnSizeChanged@{OnSizeChanged}}
+\index{OnSizeChanged@{OnSizeChanged}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+\doxysubsubsection{OnSizeChanged()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label.\+On\+Size\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 97} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098         \{}
+\DoxyCodeLine{00099             base.OnSizeChanged(e);}
+\DoxyCodeLine{00100             ResizeLabel();}
+\DoxyCodeLine{00101         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00528_aa2f4b0eaf82f91232823e9f4eb1ed911}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}!OnTextChanged@{OnTextChanged}}
+\index{OnTextChanged@{OnTextChanged}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+\doxysubsubsection{OnTextChanged()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label.\+On\+Text\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 85} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086         \{}
+\DoxyCodeLine{00087             base.OnTextChanged(e);}
+\DoxyCodeLine{00088             ResizeLabel();}
+\DoxyCodeLine{00089         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00528_a33c69e6975133f5ac11801c133940fdf}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}!AutoSize@{AutoSize}}
+\index{AutoSize@{AutoSize}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+\doxysubsubsection{AutoSize}
+{\footnotesize\ttfamily new bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label.\+Auto\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 38} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.AutoSize; \}}
+\DoxyCodeLine{00041             \textcolor{keyword}{set}}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 base.AutoSize = value;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045                 \textcolor{keywordflow}{if} (AutoSize)}
+\DoxyCodeLine{00046                     AutoUpdateHeight = \textcolor{keyword}{false};}
+\DoxyCodeLine{00047             \}}
+\DoxyCodeLine{00048         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00528_a816e02561a239184458f9595d1e3edd0}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}!AutoUpdateHeight@{AutoUpdateHeight}}
+\index{AutoUpdateHeight@{AutoUpdateHeight}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Label}}
+\doxysubsubsection{AutoUpdateHeight}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Label.\+Auto\+Update\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Vit\+NX\+\_\+\+Label.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_autoUpdateHeight; \}}
+\DoxyCodeLine{00026             \textcolor{keyword}{set}}
+\DoxyCodeLine{00027             \{}
+\DoxyCodeLine{00028                 \_autoUpdateHeight = value;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030                 \textcolor{keywordflow}{if} (\_autoUpdateHeight)}
+\DoxyCodeLine{00031                 \{}
+\DoxyCodeLine{00032                     AutoSize = \textcolor{keyword}{false};}
+\DoxyCodeLine{00033                     ResizeLabel();}
+\DoxyCodeLine{00034                 \}}
+\DoxyCodeLine{00035             \}}
+\DoxyCodeLine{00036         \}}
+
+\end{DoxyCode}

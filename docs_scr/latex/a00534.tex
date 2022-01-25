@@ -1,0 +1,234 @@
+\doxysection{Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View Class Reference}
+\label{a00534}\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+Inheritance diagram for Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{a00534}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ Get\+Item\+Index} (\textbf{ Vit\+NX\+\_\+\+List\+Item} item)
+\item 
+void \textbf{ Select\+Item} (int index)
+\item 
+void \textbf{ Select\+Items} (IEnumerable$<$ int $>$ indexes)
+\item 
+void \textbf{ Toggle\+Item} (int index)
+\item 
+void \textbf{ Select\+Items} (int start\+Range, int end\+Range)
+\item 
+void \textbf{ Ensure\+Visible} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Key\+Down} (Key\+Event\+Args e)
+\item 
+override void \textbf{ Paint\+Content} (Graphics g)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Observable\+Collection$<$ \textbf{ Vit\+NX\+\_\+\+List\+Item} $>$ \textbf{ Items}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+List$<$ int $>$ \textbf{ Selected\+Indices}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+int \textbf{ Item\+Height}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Multi\+Select}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Show\+Icons}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler \textbf{ Selected\+Indices\+Changed}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 13} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00534_a217547a674682db5d36b5ae09f0305e8}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!VitNX\_ListView@{VitNX\_ListView}}
+\index{VitNX\_ListView@{VitNX\_ListView}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{VitNX\_ListView()}
+{\footnotesize\ttfamily Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Vit\+NX\+\_\+\+List\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 93} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00534_af3a3d6d61d98055095c9c7aae64e67af}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!EnsureVisible@{EnsureVisible}}
+\index{EnsureVisible@{EnsureVisible}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{EnsureVisible()}
+{\footnotesize\ttfamily void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Ensure\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 455} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a16b512d7f54851f3bbe51a37f616988f}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!GetItemIndex@{GetItemIndex}}
+\index{GetItemIndex@{GetItemIndex}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{GetItemIndex()}
+{\footnotesize\ttfamily int Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Get\+Item\+Index (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+List\+Item}}]{item }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 248} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_aee0f1e5d137583cea519235001206cea}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!OnKeyDown@{OnKeyDown}}
+\index{OnKeyDown@{OnKeyDown}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{OnKeyDown()}
+{\footnotesize\ttfamily override void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+On\+Key\+Down (\begin{DoxyParamCaption}\item[{Key\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 199} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a1daf70fce5ffcc93f35124ffbf1ca2ac}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 165} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_aa6c9cd4903cd72e33bc38dd00cc4e1a3}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!PaintContent@{PaintContent}}
+\index{PaintContent@{PaintContent}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{PaintContent()}
+{\footnotesize\ttfamily override void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Paint\+Content (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+Scroll\+View} \doxyref{}{p.}{a00566}.
+
+
+
+Definition at line \textbf{ 503} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_af0e882aac5407a0b2c986a5b57c099ca}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!SelectItem@{SelectItem}}
+\index{SelectItem@{SelectItem}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{SelectItem()}
+{\footnotesize\ttfamily void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Select\+Item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 253} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a4afabec1753859c5856d937d8ab7ddf1}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!SelectItems@{SelectItems}}
+\index{SelectItems@{SelectItems}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{SelectItems()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Select\+Items (\begin{DoxyParamCaption}\item[{IEnumerable$<$ int $>$}]{indexes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 270} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a5c026955b99beb4903c2a77b26272c41}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!SelectItems@{SelectItems}}
+\index{SelectItems@{SelectItems}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{SelectItems()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Select\+Items (\begin{DoxyParamCaption}\item[{int}]{start\+Range,  }\item[{int}]{end\+Range }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 349} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a3c605cf8cb62b26fc6431f788d37ce2c}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!ToggleItem@{ToggleItem}}
+\index{ToggleItem@{ToggleItem}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{ToggleItem()}
+{\footnotesize\ttfamily void Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Toggle\+Item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 293} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00534_ae804ffa096fae287ec421ea3c40ffa47}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!ItemHeight@{ItemHeight}}
+\index{ItemHeight@{ItemHeight}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{ItemHeight}
+{\footnotesize\ttfamily int Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Item\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 65} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_ae5636039c05f0fc7ed738a92aa49a76f}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!Items@{Items}}
+\index{Items@{Items}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{Items}
+{\footnotesize\ttfamily Observable\+Collection$<$\textbf{ Vit\+NX\+\_\+\+List\+Item}$>$ Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Items\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 39} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a62946be86e01726fd46867b079da0d68}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!MultiSelect@{MultiSelect}}
+\index{MultiSelect@{MultiSelect}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{MultiSelect}
+{\footnotesize\ttfamily bool Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Multi\+Select\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 78} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a4400265abaa9c4e8c5eeabd736dd5474}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!SelectedIndices@{SelectedIndices}}
+\index{SelectedIndices@{SelectedIndices}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{SelectedIndices}
+{\footnotesize\ttfamily List$<$int$>$ Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Selected\+Indices\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 57} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+\mbox{\label{a00534_a96af12e41a576710ff80bd4d942d4f71}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!ShowIcons@{ShowIcons}}
+\index{ShowIcons@{ShowIcons}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{ShowIcons}
+{\footnotesize\ttfamily bool Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Show\+Icons\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00534_ad82db41091a1352df5d21269975eaacf}} 
+\index{VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}!SelectedIndicesChanged@{SelectedIndicesChanged}}
+\index{SelectedIndicesChanged@{SelectedIndicesChanged}!VitNX.Controls.VitNX\_ListView@{VitNX.Controls.VitNX\_ListView}}
+\doxysubsubsection{SelectedIndicesChanged}
+{\footnotesize\ttfamily Event\+Handler Vit\+NX.\+Controls.\+Vit\+NX\+\_\+\+List\+View.\+Selected\+Indices\+Changed}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX\+\_\+\+List\+View.\+cs}.
+

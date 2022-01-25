@@ -1,4 +1,4 @@
-﻿namespace VitNX.ControlsV2
+﻿namespace VitNX.UI.ControlsV2
 {
     partial class MyMessageBox_Form
     {
@@ -32,9 +32,9 @@
             this.labelCaption = new System.Windows.Forms.Label();
             this.titleExit = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.button3 = new VitNX.ControlsV2.MyButton();
-            this.button2 = new VitNX.ControlsV2.MyButton();
-            this.button1 = new VitNX.ControlsV2.MyButton();
+            this.button3 = new VitNX.UI.ControlsV2.MyButton();
+            this.button2 = new VitNX.UI.ControlsV2.MyButton();
+            this.button1 = new VitNX.UI.ControlsV2.MyButton();
             this.panelBody = new System.Windows.Forms.Panel();
             this.labelMessage = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
@@ -243,9 +243,9 @@
 
         private System.Windows.Forms.Panel windowTitle;
         private System.Windows.Forms.Panel panelButtons;
-        private VitNX.ControlsV2.MyButton button3;
-        private VitNX.ControlsV2.MyButton button2;
-        private VitNX.ControlsV2.MyButton button1;
+        private VitNX.UI.ControlsV2.MyButton button3;
+        private VitNX.UI.ControlsV2.MyButton button2;
+        private VitNX.UI.ControlsV2.MyButton button1;
         private System.Windows.Forms.Label titleExit;
         private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.Label labelMessage;

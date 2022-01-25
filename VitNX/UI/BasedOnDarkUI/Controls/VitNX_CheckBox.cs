@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using VitNX.Config;
+using VitNX.UI.BasedOnDarkUI.Config;
 
-namespace VitNX.Controls
+namespace VitNX.UI.BasedOnDarkUI.Controls
 {
     public class VitNX_CheckBox : CheckBox
     {
@@ -280,7 +280,7 @@ namespace VitNX.Controls
             var g = e.Graphics;
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
-            var size = Consts.CheckBoxSize;
+            var size = Constsants.CheckBoxSize;
 
             var textColor = Colors.LightText;
             var borderColor = Colors.LightText;

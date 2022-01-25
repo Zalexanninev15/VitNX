@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace VitNX.Forms
+namespace VitNX.UI.BasedOnDarkUI.Forms
 {
     public partial class VitNX_MessageBox : VitNX_Dialog
     {

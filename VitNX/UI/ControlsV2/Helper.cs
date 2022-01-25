@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace VitNX.ControlsV2
+namespace VitNX.UI.ControlsV2
 {
     public class Helper
     {

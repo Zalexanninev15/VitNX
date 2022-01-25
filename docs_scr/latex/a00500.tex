@@ -1,0 +1,646 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button Class Reference}
+\label{a00500}\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00500}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ Notify\+Default} (bool value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Create\+Control} ()
+\item 
+override void \textbf{ On\+Mouse\+Move} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Up} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Leave} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Capture\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Got\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Lost\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Key\+Down} (Key\+Event\+Args e)
+\item 
+override void \textbf{ On\+Key\+Up} (Key\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new string \textbf{ Text}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new bool \textbf{ Enabled}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Vit\+NX\+\_\+\+Button\+Style \textbf{ Button\+Style}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Image\+Padding}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new bool \textbf{ Auto\+Ellipsis}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Vit\+NX\+\_\+\+Control\+State \textbf{ Button\+State}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Content\+Alignment \textbf{ Image\+Align}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Flat\+Appearance}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Flat\+Style \textbf{ Flat\+Style}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Content\+Alignment \textbf{ Text\+Align}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Use\+Compatible\+Text\+Rendering}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Use\+Visual\+Style\+Back\+Color}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00500_a49006cc1a3347c5564deed71b9a1037f}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!VitNX\_Button@{VitNX\_Button}}
+\index{VitNX\_Button@{VitNX\_Button}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{VitNX\_Button()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Vit\+NX\+\_\+\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 122} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123         \{}
+\DoxyCodeLine{00124             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00125             base.UseVisualStyleBackColor = \textcolor{keyword}{false};}
+\DoxyCodeLine{00126             base.UseCompatibleTextRendering = \textcolor{keyword}{false};}
+\DoxyCodeLine{00127             SetButtonState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00128             Padding = \textcolor{keyword}{new} Padding(\_padding);}
+\DoxyCodeLine{00129         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00500_a893a407aa886914e823839b527b79636}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!NotifyDefault@{NotifyDefault}}
+\index{NotifyDefault@{NotifyDefault}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{NotifyDefault()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Notify\+Default (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 234} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00235         \{}
+\DoxyCodeLine{00236             base.NotifyDefault(value);}
+\DoxyCodeLine{00237             \textcolor{keywordflow}{if} (!DesignMode) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{00238             \_isDefault = value;}
+\DoxyCodeLine{00239             Invalidate();}
+\DoxyCodeLine{00240         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_ad2c47276595941e346381d5f9c5aadef}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnCreateControl@{OnCreateControl}}
+\index{OnCreateControl@{OnCreateControl}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnCreateControl()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Create\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 148} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149         \{}
+\DoxyCodeLine{00150             base.OnCreateControl();}
+\DoxyCodeLine{00151             var form = FindForm();}
+\DoxyCodeLine{00152             \textcolor{keywordflow}{if} (form != \textcolor{keyword}{null})}
+\DoxyCodeLine{00153             \{}
+\DoxyCodeLine{00154                 \textcolor{keywordflow}{if} (form.AcceptButton == \textcolor{keyword}{this})}
+\DoxyCodeLine{00155                     \_isDefault = \textcolor{keyword}{true};}
+\DoxyCodeLine{00156             \}}
+\DoxyCodeLine{00157         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a8965cad4a718909d8d0a8c075234e739}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnGotFocus@{OnGotFocus}}
+\index{OnGotFocus@{OnGotFocus}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnGotFocus()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Got\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 200} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201         \{ base.OnGotFocus(e); Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a20f93eca1aba23b6604aa6c54a21814f}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnKeyDown@{OnKeyDown}}
+\index{OnKeyDown@{OnKeyDown}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnKeyDown()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Key\+Down (\begin{DoxyParamCaption}\item[{Key\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 212} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00213         \{}
+\DoxyCodeLine{00214             base.OnKeyDown(e);}
+\DoxyCodeLine{00215             \textcolor{keywordflow}{if} (e.KeyCode == Keys.Space)}
+\DoxyCodeLine{00216             \{}
+\DoxyCodeLine{00217                 \_spacePressed = \textcolor{keyword}{true};}
+\DoxyCodeLine{00218                 SetButtonState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00219             \}}
+\DoxyCodeLine{00220         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a31ccd8e25b9719db5a04c33096abafca}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnKeyUp@{OnKeyUp}}
+\index{OnKeyUp@{OnKeyUp}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnKeyUp()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Key\+Up (\begin{DoxyParamCaption}\item[{Key\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 222} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00223         \{}
+\DoxyCodeLine{00224             base.OnKeyUp(e);}
+\DoxyCodeLine{00225             \textcolor{keywordflow}{if} (e.KeyCode == Keys.Space)}
+\DoxyCodeLine{00226             \{}
+\DoxyCodeLine{00227                 \_spacePressed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00228                 var location = Cursor.Position;}
+\DoxyCodeLine{00229                 \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location)) \{ SetButtonState(VitNX\_ControlState.Normal); \}}
+\DoxyCodeLine{00230                 \textcolor{keywordflow}{else} \{ SetButtonState(VitNX\_ControlState.Hover); \}}
+\DoxyCodeLine{00231             \}}
+\DoxyCodeLine{00232         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_af400da3f2143e903cfbb5ddb5b2f072c}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnLostFocus@{OnLostFocus}}
+\index{OnLostFocus@{OnLostFocus}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnLostFocus()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Lost\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 203} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204         \{}
+\DoxyCodeLine{00205             base.OnLostFocus(e);}
+\DoxyCodeLine{00206             \_spacePressed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00207             var location = Cursor.Position;}
+\DoxyCodeLine{00208             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location)) \{ SetButtonState(VitNX\_ControlState.Normal); \}}
+\DoxyCodeLine{00209             \textcolor{keywordflow}{else} \{ SetButtonState(VitNX\_ControlState.Hover); \}}
+\DoxyCodeLine{00210         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a1de827d1761427552486edb46e9ea819}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnMouseCaptureChanged@{OnMouseCaptureChanged}}
+\index{OnMouseCaptureChanged@{OnMouseCaptureChanged}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnMouseCaptureChanged()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Mouse\+Capture\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 192} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00193         \{}
+\DoxyCodeLine{00194             base.OnMouseCaptureChanged(e);}
+\DoxyCodeLine{00195             \textcolor{keywordflow}{if} (\_spacePressed) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{00196             var location = Cursor.Position;}
+\DoxyCodeLine{00197             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location)) \{ SetButtonState(VitNX\_ControlState.Normal); \}}
+\DoxyCodeLine{00198         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_ab63d70a9d19e711c5906cfda7af64d7f}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 171} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172         \{}
+\DoxyCodeLine{00173             base.OnMouseDown(e);}
+\DoxyCodeLine{00174             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(e.Location)) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{00175             SetButtonState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00176         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a7b7d4fe4bded0d16480f6076a47a566e}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnMouseLeave@{OnMouseLeave}}
+\index{OnMouseLeave@{OnMouseLeave}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnMouseLeave()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Mouse\+Leave (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 185} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00186         \{}
+\DoxyCodeLine{00187             base.OnMouseLeave(e);}
+\DoxyCodeLine{00188             \textcolor{keywordflow}{if} (\_spacePressed) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{00189             SetButtonState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00190         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a14521c228db2978e97471e278b5ae2b1}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnMouseMove()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 159} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160         \{}
+\DoxyCodeLine{00161             base.OnMouseMove(e);}
+\DoxyCodeLine{00162             \textcolor{keywordflow}{if} (\_spacePressed) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{00163             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00164             \{}
+\DoxyCodeLine{00165                 \textcolor{keywordflow}{if} (ClientRectangle.Contains(e.Location)) \{ SetButtonState(VitNX\_ControlState.Pressed); \}}
+\DoxyCodeLine{00166                 \textcolor{keywordflow}{else} \{ SetButtonState(VitNX\_ControlState.Hover); \}}
+\DoxyCodeLine{00167             \}}
+\DoxyCodeLine{00168             \textcolor{keywordflow}{else} \{ SetButtonState(VitNX\_ControlState.Hover); \}}
+\DoxyCodeLine{00169         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a3f3ae53d9f8ea99907cd63bef1f37ce8}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnMouseUp()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 178} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179         \{}
+\DoxyCodeLine{00180             base.OnMouseUp(e);}
+\DoxyCodeLine{00181             \textcolor{keywordflow}{if} (\_spacePressed) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{00182             SetButtonState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00183         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_aca55981fdf8578b2ac8db82d59bfea64}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 246} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00247         \{}
+\DoxyCodeLine{00248             var g = e.Graphics;}
+\DoxyCodeLine{00249             var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00250             var textColor = Colors.LightText;}
+\DoxyCodeLine{00251             var borderColor = Colors.GreySelection;}
+\DoxyCodeLine{00252             var fillColor = \_isDefault ? Colors.VitNXBlueBackground : Colors.LightBackground;}
+\DoxyCodeLine{00253             \textcolor{keywordflow}{if} (Enabled)}
+\DoxyCodeLine{00254             \{}
+\DoxyCodeLine{00255                 \textcolor{keywordflow}{if} (ButtonStyle == VitNX\_ButtonStyle.Normal)}
+\DoxyCodeLine{00256                 \{}
+\DoxyCodeLine{00257                     \textcolor{keywordflow}{if} (Focused \&\& TabStop) \{ borderColor = Colors.BlueHighlight; \}}
+\DoxyCodeLine{00258                     \textcolor{keywordflow}{switch} (ButtonState)}
+\DoxyCodeLine{00259                     \{}
+\DoxyCodeLine{00260                         \textcolor{keywordflow}{case} VitNX\_ControlState.Hover:}
+\DoxyCodeLine{00261                             fillColor = \_isDefault ? Colors.BlueBackground : Colors.LighterBackground;}
+\DoxyCodeLine{00262                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00263 }
+\DoxyCodeLine{00264                         \textcolor{keywordflow}{case} VitNX\_ControlState.Pressed:}
+\DoxyCodeLine{00265                             fillColor = \_isDefault ? Colors.VitNXBackground : Colors.VitNXBackground;}
+\DoxyCodeLine{00266                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00267                     \}}
+\DoxyCodeLine{00268                 \}}
+\DoxyCodeLine{00269                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ButtonStyle == VitNX\_ButtonStyle.Flat)}
+\DoxyCodeLine{00270                 \{}
+\DoxyCodeLine{00271                     \textcolor{keywordflow}{switch} (ButtonState)}
+\DoxyCodeLine{00272                     \{}
+\DoxyCodeLine{00273                         \textcolor{keywordflow}{case} VitNX\_ControlState.Normal:}
+\DoxyCodeLine{00274                             fillColor = Colors.GreyBackground;}
+\DoxyCodeLine{00275                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00276 }
+\DoxyCodeLine{00277                         \textcolor{keywordflow}{case} VitNX\_ControlState.Hover:}
+\DoxyCodeLine{00278                             fillColor = Colors.MediumBackground;}
+\DoxyCodeLine{00279                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00280 }
+\DoxyCodeLine{00281                         \textcolor{keywordflow}{case} VitNX\_ControlState.Pressed:}
+\DoxyCodeLine{00282                             fillColor = Colors.VitNXBackground;}
+\DoxyCodeLine{00283                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00284                     \}}
+\DoxyCodeLine{00285                 \}}
+\DoxyCodeLine{00286             \}}
+\DoxyCodeLine{00287             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00288             \{}
+\DoxyCodeLine{00289                 textColor = Colors.DisabledText;}
+\DoxyCodeLine{00290                 fillColor = Colors.VitNXGreySelection;}
+\DoxyCodeLine{00291             \}}
+\DoxyCodeLine{00292             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor)) \{ g.FillRectangle(b, rect); \}}
+\DoxyCodeLine{00293             \textcolor{keywordflow}{if} (ButtonStyle == VitNX\_ButtonStyle.Normal)}
+\DoxyCodeLine{00294             \{}
+\DoxyCodeLine{00295                 \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(borderColor, 1))}
+\DoxyCodeLine{00296                 \{}
+\DoxyCodeLine{00297                     var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1);}
+\DoxyCodeLine{00298                     g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00299                 \}}
+\DoxyCodeLine{00300             \}}
+\DoxyCodeLine{00301             var textOffsetX = 0;}
+\DoxyCodeLine{00302             var textOffsetY = 0;}
+\DoxyCodeLine{00303             \textcolor{keywordflow}{if} (Image != \textcolor{keyword}{null})}
+\DoxyCodeLine{00304             \{}
+\DoxyCodeLine{00305                 var stringSize = g.MeasureString(Text, Font, rect.Size);}
+\DoxyCodeLine{00306                 var x = (ClientSize.Width / 2) -\/ (Image.Size.Width / 2);}
+\DoxyCodeLine{00307                 var y = (ClientSize.Height / 2) -\/ (Image.Size.Height / 2);}
+\DoxyCodeLine{00308                 \textcolor{keywordflow}{switch} (TextImageRelation)}
+\DoxyCodeLine{00309                 \{}
+\DoxyCodeLine{00310                     \textcolor{keywordflow}{case} TextImageRelation.ImageAboveText:}
+\DoxyCodeLine{00311                         textOffsetY = (Image.Size.Height / 2) + (ImagePadding / 2);}
+\DoxyCodeLine{00312                         y = y -\/ ((int)(stringSize.Height / 2) + (ImagePadding / 2));}
+\DoxyCodeLine{00313                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315                     \textcolor{keywordflow}{case} TextImageRelation.TextAboveImage:}
+\DoxyCodeLine{00316                         textOffsetY = ((Image.Size.Height / 2) + (ImagePadding / 2)) * -\/1;}
+\DoxyCodeLine{00317                         y = y + ((int)(stringSize.Height / 2) + (ImagePadding / 2));}
+\DoxyCodeLine{00318                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320                     \textcolor{keywordflow}{case} TextImageRelation.ImageBeforeText:}
+\DoxyCodeLine{00321                         textOffsetX = Image.Size.Width + (ImagePadding * 2);}
+\DoxyCodeLine{00322                         x = ImagePadding;}
+\DoxyCodeLine{00323                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325                     \textcolor{keywordflow}{case} TextImageRelation.TextBeforeImage:}
+\DoxyCodeLine{00326                         x = x + (int)stringSize.Width;}
+\DoxyCodeLine{00327                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00328                 \}}
+\DoxyCodeLine{00329                 g.DrawImageUnscaled(Image, x, y);}
+\DoxyCodeLine{00330             \}}
+\DoxyCodeLine{00331             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00332             \{}
+\DoxyCodeLine{00333                 var modRect = \textcolor{keyword}{new} Rectangle(rect.Left + textOffsetX + Padding.Left, rect.Top + textOffsetY + Padding.Top, rect.Width -\/ Padding.Horizontal, rect.Height -\/ Padding.Vertical);}
+\DoxyCodeLine{00334                 var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00335                 \{}
+\DoxyCodeLine{00336                     LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00337                     Alignment = StringAlignment.Center,}
+\DoxyCodeLine{00338                     Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00339                 \};}
+\DoxyCodeLine{00340                 g.DrawString(Text, Font, b, modRect, stringFormat);}
+\DoxyCodeLine{00341             \}}
+\DoxyCodeLine{00342         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00500_a2327cf6bf137ab2b5fd2be9833874fc1}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!AutoEllipsis@{AutoEllipsis}}
+\index{AutoEllipsis@{AutoEllipsis}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{AutoEllipsis}
+{\footnotesize\ttfamily new bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Auto\+Ellipsis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 80} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a19b4e9698a2c5d08b21e3268f5c370f8}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!ButtonState@{ButtonState}}
+\index{ButtonState@{ButtonState}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{ButtonState}
+{\footnotesize\ttfamily Vit\+NX\+\_\+\+Control\+State Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Button\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 85} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_buttonState; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a95d153a3ce65626640f7afbae0bbd4d6}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!ButtonStyle@{ButtonStyle}}
+\index{ButtonStyle@{ButtonStyle}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{ButtonStyle}
+{\footnotesize\ttfamily Vit\+NX\+\_\+\+Button\+Style Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Button\+Style\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 51} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052         \{}
+\DoxyCodeLine{00053             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_style; \}}
+\DoxyCodeLine{00054             \textcolor{keyword}{set}}
+\DoxyCodeLine{00055             \{}
+\DoxyCodeLine{00056                 \_style = value;}
+\DoxyCodeLine{00057                 Invalidate();}
+\DoxyCodeLine{00058             \}}
+\DoxyCodeLine{00059         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a34c326e207fbc37d4946530ac07cfc73}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!Enabled@{Enabled}}
+\index{Enabled@{Enabled}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{Enabled}
+{\footnotesize\ttfamily new bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Enabled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 38} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Enabled; \}}
+\DoxyCodeLine{00041             \textcolor{keyword}{set}}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 base.Enabled = value;}
+\DoxyCodeLine{00044                 Invalidate();}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_aecd49f46b7bf7bb810ca3fa005beb6ec}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!FlatAppearance@{FlatAppearance}}
+\index{FlatAppearance@{FlatAppearance}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{FlatAppearance}
+{\footnotesize\ttfamily new bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Flat\+Appearance\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 95} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a06c731686c17edf9efeae330c31e6d40}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!FlatStyle@{FlatStyle}}
+\index{FlatStyle@{FlatStyle}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{FlatStyle}
+{\footnotesize\ttfamily new Flat\+Style Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Flat\+Style\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 100} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.FlatStyle; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_ae5bfed0e86bbaf9e111c0af0acd803c7}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!ImageAlign@{ImageAlign}}
+\index{ImageAlign@{ImageAlign}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{ImageAlign}
+{\footnotesize\ttfamily new Content\+Alignment Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Image\+Align\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 90} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageAlign; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a3238d56bc0d5b7f8e152e26439680d46}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!ImagePadding@{ImagePadding}}
+\index{ImagePadding@{ImagePadding}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{ImagePadding}
+{\footnotesize\ttfamily int Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Image\+Padding\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 64} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065         \{}
+\DoxyCodeLine{00066             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_imagePadding; \}}
+\DoxyCodeLine{00067             \textcolor{keyword}{set}}
+\DoxyCodeLine{00068             \{}
+\DoxyCodeLine{00069                 \_imagePadding = value;}
+\DoxyCodeLine{00070                 Invalidate();}
+\DoxyCodeLine{00071             \}}
+\DoxyCodeLine{00072         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_acb986e8ce28573d3efdb4164791c648e}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!Text@{Text}}
+\index{Text@{Text}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{Text}
+{\footnotesize\ttfamily new string Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029         \{}
+\DoxyCodeLine{00030             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Text; \}}
+\DoxyCodeLine{00031             \textcolor{keyword}{set}}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 base.Text = value;}
+\DoxyCodeLine{00034                 Invalidate();}
+\DoxyCodeLine{00035             \}}
+\DoxyCodeLine{00036         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_ab681f2a4194555826eee9419785da707}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!TextAlign@{TextAlign}}
+\index{TextAlign@{TextAlign}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{TextAlign}
+{\footnotesize\ttfamily new Content\+Alignment Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Text\+Align\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 105} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.TextAlign; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_a66a706ec43dc554f1071437604fae255}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!UseCompatibleTextRendering@{UseCompatibleTextRendering}}
+\index{UseCompatibleTextRendering@{UseCompatibleTextRendering}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{UseCompatibleTextRendering}
+{\footnotesize\ttfamily new bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Use\+Compatible\+Text\+Rendering\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 110} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \} \}}
+
+\end{DoxyCode}
+\mbox{\label{a00500_ad70e787e55c467ed313d09cb8d5fa395}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}!UseVisualStyleBackColor@{UseVisualStyleBackColor}}
+\index{UseVisualStyleBackColor@{UseVisualStyleBackColor}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_Button}}
+\doxysubsubsection{UseVisualStyleBackColor}
+{\footnotesize\ttfamily new bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Button.\+Use\+Visual\+Style\+Back\+Color\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Vit\+NX\+\_\+\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116 \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \} \}}
+
+\end{DoxyCode}

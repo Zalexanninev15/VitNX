@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using VitNX.Controls;
+using VitNX.UI.BasedOnDarkUI.Controls;
 
-namespace VitNX.Forms
+namespace VitNX.UI.BasedOnDarkUI.Forms
 {
     public partial class VitNX_Dialog : VitNX_Form
     {

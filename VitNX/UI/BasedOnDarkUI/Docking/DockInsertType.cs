@@ -1,4 +1,4 @@
-﻿namespace VitNX.Docking
+﻿namespace VitNX.UI.BasedOnDarkUI.Docking
 {
     public enum DockInsertType
     {

@@ -1,0 +1,256 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down Class Reference}
+\label{a00544}\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+Inheritance diagram for Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00544}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Mouse\+Move} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Up} (Mouse\+Event\+Args mevent)
+\item 
+override void \textbf{ On\+Mouse\+Enter} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Leave} (Event\+Args e)
+\item 
+override void \textbf{ On\+Got\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Lost\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Text\+Box\+Lost\+Focus} (object source, Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new Color \textbf{ Fore\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new Color \textbf{ Back\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00544_ac4746bb9eb2cd3dee843f96b0a912902}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!VitNX\_NumericUpDown@{VitNX\_NumericUpDown}}
+\index{VitNX\_NumericUpDown@{VitNX\_NumericUpDown}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{VitNX\_NumericUpDown()}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00026             base.ForeColor = Color.Gainsboro;}
+\DoxyCodeLine{00027             base.BackColor = Colors.LightBackground;}
+\DoxyCodeLine{00028             Controls[0].Paint += VitNX\_NumericUpDown\_Paint;}
+\DoxyCodeLine{00029             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00030             \{}
+\DoxyCodeLine{00031                 Type type = Controls[0].GetType();}
+\DoxyCodeLine{00032                 BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Instance;}
+\DoxyCodeLine{00033                 MethodInfo method = type.GetMethod(\textcolor{stringliteral}{"{}SetStyle"{}}, flags);}
+\DoxyCodeLine{00034                 \textcolor{keywordflow}{if} (method != \textcolor{keyword}{null})}
+\DoxyCodeLine{00035                 \{}
+\DoxyCodeLine{00036                     \textcolor{keywordtype}{object}[] param = \{ ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, \textcolor{keyword}{true} \};}
+\DoxyCodeLine{00037                     method.Invoke(Controls[0], param);}
+\DoxyCodeLine{00038                 \}}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040             \textcolor{keywordflow}{catch} (SecurityException) \{ \}}
+\DoxyCodeLine{00041         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00544_ade6421c403d3a47621b61100b262d4ef}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnGotFocus@{OnGotFocus}}
+\index{OnGotFocus@{OnGotFocus}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnGotFocus()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Got\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 58} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059         \{ base.OnGotFocus(e); Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_acb43830a3b6b733c4718a958ef61a88f}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnLostFocus@{OnLostFocus}}
+\index{OnLostFocus@{OnLostFocus}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnLostFocus()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Lost\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 61} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062         \{ base.OnLostFocus(e); Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a7f9dacecddf2ccdad8d403153d79bd08}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 46} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047         \{ \_mouseDown = \textcolor{keyword}{true}; Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_ae8601c9b23c9d464c23020e3ccb3be51}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnMouseEnter@{OnMouseEnter}}
+\index{OnMouseEnter@{OnMouseEnter}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnMouseEnter()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Mouse\+Enter (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 52} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053         \{ base.OnMouseEnter(e); Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a0be62682a3025d3f3327bae5762287c7}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnMouseLeave@{OnMouseLeave}}
+\index{OnMouseLeave@{OnMouseLeave}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnMouseLeave()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Mouse\+Leave (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 55} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056         \{ base.OnMouseLeave(e); Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a3bbf586d546ba1690a6284f901e5fad0}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnMouseMove()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 43} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044         \{ Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a0bc5d42d5ec28af389d358ba13af76a1}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnMouseUp()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{mevent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 49} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050         \{ \_mouseDown = \textcolor{keyword}{false}; Invalidate(); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a483e6b8e3c53c80215269640c0a73bc2}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088         \{}
+\DoxyCodeLine{00089             base.OnPaint(e);}
+\DoxyCodeLine{00090             var g = e.Graphics;}
+\DoxyCodeLine{00091             var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00092             var borderColor = Colors.GreySelection;}
+\DoxyCodeLine{00093             \textcolor{keywordflow}{if} (Focused \&\& TabStop) \{ borderColor = Colors.BlueHighlight; \}}
+\DoxyCodeLine{00094             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(borderColor, 1)) \{ var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1); g.DrawRectangle(p, modRect); \}}
+\DoxyCodeLine{00095         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a08e3ad9b09b5e54f7f78142276e91089}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!OnTextBoxLostFocus@{OnTextBoxLostFocus}}
+\index{OnTextBoxLostFocus@{OnTextBoxLostFocus}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{OnTextBoxLostFocus()}
+{\footnotesize\ttfamily override void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+On\+Text\+Box\+Lost\+Focus (\begin{DoxyParamCaption}\item[{object}]{source,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 64} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065         \{ base.OnTextBoxLostFocus(source, e); Invalidate(); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00544_a69c821a0451f9b352dc7515c98eae5fc}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!BackColor@{BackColor}}
+\index{BackColor@{BackColor}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{BackColor}
+{\footnotesize\ttfamily new Color Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+Back\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00544_a7e30ee9a99a2c02c5adf31d78a4ae26a}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}!ForeColor@{ForeColor}}
+\index{ForeColor@{ForeColor}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_NumericUpDown}}
+\doxysubsubsection{ForeColor}
+{\footnotesize\ttfamily new Color Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+Fore\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX\+\_\+\+Numeric\+Up\+Down.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}

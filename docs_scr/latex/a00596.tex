@@ -1,0 +1,623 @@
+\doxysection{Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node Class Reference}
+\label{a00596}\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ Is\+Node\+Ancestor} (\textbf{ Vit\+NX\+\_\+\+Tree\+Node} node)
+\item 
+\textbf{ Vit\+NX\+\_\+\+Tree\+Node} (string text)
+\item 
+void \textbf{ Remove} ()
+\item 
+void \textbf{ Ensure\+Visible} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ Text}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Rectangle \textbf{ Expand\+Area}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Rectangle \textbf{ Icon\+Area}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Rectangle \textbf{ Text\+Area}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Rectangle \textbf{ Full\+Area}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Expand\+Area\+Hot}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Bitmap \textbf{ Icon}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Bitmap \textbf{ Expanded\+Icon}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Expanded}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Observable\+List}$<$ \textbf{ Vit\+NX\+\_\+\+Tree\+Node} $>$ \textbf{ Nodes}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Is\+Root}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Tree\+View} \textbf{ Parent\+Tree}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Tree\+Node} \textbf{ Parent\+Node}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Odd}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+object \textbf{ Node\+Type}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+object \textbf{ Tag}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Full\+Path}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Tree\+Node} \textbf{ Prev\+Visible\+Node}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Tree\+Node} \textbf{ Next\+Visible\+Node}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Visible\+Index}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler$<$ \textbf{ Observable\+List\+Modified}$<$ \textbf{ Vit\+NX\+\_\+\+Tree\+Node} $>$ $>$ \textbf{ Items\+Added}
+\item 
+Event\+Handler$<$ \textbf{ Observable\+List\+Modified}$<$ \textbf{ Vit\+NX\+\_\+\+Tree\+Node} $>$ $>$ \textbf{ Items\+Removed}
+\item 
+Event\+Handler \textbf{ Text\+Changed}
+\item 
+Event\+Handler \textbf{ Node\+Expanded}
+\item 
+Event\+Handler \textbf{ Node\+Collapsed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 7} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00596_a7dbf9211f17df6aa55aed358310613ea}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!VitNX\_TreeNode@{VitNX\_TreeNode}}
+\index{VitNX\_TreeNode@{VitNX\_TreeNode}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{VitNX\_TreeNode()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Vit\+NX\+\_\+\+Tree\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 184} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185         \{}
+\DoxyCodeLine{00186             Nodes = \textcolor{keyword}{new} ObservableList<VitNX\_TreeNode>();}
+\DoxyCodeLine{00187         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_afd1b8b1fbb949150f5b7b63c07a1afea}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!VitNX\_TreeNode@{VitNX\_TreeNode}}
+\index{VitNX\_TreeNode@{VitNX\_TreeNode}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{VitNX\_TreeNode()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Vit\+NX\+\_\+\+Tree\+Node (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 189} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190             : \textcolor{keyword}{this}()}
+\DoxyCodeLine{00191         \{}
+\DoxyCodeLine{00192             Text = text;}
+\DoxyCodeLine{00193         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00596_a14b02123ceeb4ff419a7c2dfa17ca6a7}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!EnsureVisible@{EnsureVisible}}
+\index{EnsureVisible@{EnsureVisible}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{EnsureVisible()}
+{\footnotesize\ttfamily void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Ensure\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 207} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00208         \{}
+\DoxyCodeLine{00209             var parent = ParentNode;}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211             \textcolor{keywordflow}{while} (parent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00212             \{}
+\DoxyCodeLine{00213                 parent.Expanded = \textcolor{keyword}{true};}
+\DoxyCodeLine{00214                 parent = parent.ParentNode;}
+\DoxyCodeLine{00215             \}}
+\DoxyCodeLine{00216         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_ab22cd2efd094d0f3ae69ba4179c7099a}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!IsNodeAncestor@{IsNodeAncestor}}
+\index{IsNodeAncestor@{IsNodeAncestor}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{IsNodeAncestor()}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Is\+Node\+Ancestor (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Tree\+Node}}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 166} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167         \{}
+\DoxyCodeLine{00168             var parent = ParentNode;}
+\DoxyCodeLine{00169             \textcolor{keywordflow}{while} (parent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00170             \{}
+\DoxyCodeLine{00171                 \textcolor{keywordflow}{if} (parent == node)}
+\DoxyCodeLine{00172                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174                 parent = parent.ParentNode;}
+\DoxyCodeLine{00175             \}}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00178         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a6de7ec2e23e7293985e7332d065be5b5}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Remove@{Remove}}
+\index{Remove@{Remove}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Remove()}
+{\footnotesize\ttfamily void Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 199} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200         \{}
+\DoxyCodeLine{00201             \textcolor{keywordflow}{if} (ParentNode != \textcolor{keyword}{null})}
+\DoxyCodeLine{00202                 ParentNode.Nodes.Remove(\textcolor{keyword}{this});}
+\DoxyCodeLine{00203             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00204                 ParentTree.Nodes.Remove(\textcolor{keyword}{this});}
+\DoxyCodeLine{00205         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00596_a64ae9fff50aebae838f3ea50c9af3d5e}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ExpandArea@{ExpandArea}}
+\index{ExpandArea@{ExpandArea}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ExpandArea}
+{\footnotesize\ttfamily Rectangle Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Expand\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 52} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a60153b55bb21d9ccb38e04c6b6b3478d}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ExpandAreaHot@{ExpandAreaHot}}
+\index{ExpandAreaHot@{ExpandAreaHot}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ExpandAreaHot}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Expand\+Area\+Hot\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 60} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a4738ccffc75b551e399a65145c825732}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Expanded@{Expanded}}
+\index{Expanded@{Expanded}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Expanded}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Expanded\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 66} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_expanded; \}}
+\DoxyCodeLine{00069             \textcolor{keyword}{set}}
+\DoxyCodeLine{00070             \{}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{if} (\_expanded == value)}
+\DoxyCodeLine{00072                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074                 \textcolor{keywordflow}{if} (value == \textcolor{keyword}{true} \&\& Nodes.Count == 0)}
+\DoxyCodeLine{00075                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077                 \_expanded = value;}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079                 \textcolor{keywordflow}{if} (\_expanded)}
+\DoxyCodeLine{00080                 \{}
+\DoxyCodeLine{00081                     \textcolor{keywordflow}{if} (NodeExpanded != \textcolor{keyword}{null})}
+\DoxyCodeLine{00082                         NodeExpanded(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00083                 \}}
+\DoxyCodeLine{00084                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00085                 \{}
+\DoxyCodeLine{00086                     \textcolor{keywordflow}{if} (NodeCollapsed != \textcolor{keyword}{null})}
+\DoxyCodeLine{00087                         NodeCollapsed(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00088                 \}}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_aba3caad880480d872cd517cafc09cf0a}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ExpandedIcon@{ExpandedIcon}}
+\index{ExpandedIcon@{ExpandedIcon}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ExpandedIcon}
+{\footnotesize\ttfamily Bitmap Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Expanded\+Icon\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 64} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a709315855a1c7ef05ca6289c5ddb5688}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!FullArea@{FullArea}}
+\index{FullArea@{FullArea}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{FullArea}
+{\footnotesize\ttfamily Rectangle Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Full\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 58} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_ab45fc280e7c44ee784e92749502e2ccc}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!FullPath@{FullPath}}
+\index{FullPath@{FullPath}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{FullPath}
+{\footnotesize\ttfamily string Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Full\+Path\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 143} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144         \{}
+\DoxyCodeLine{00145             \textcolor{keyword}{get}}
+\DoxyCodeLine{00146             \{}
+\DoxyCodeLine{00147                 var parent = ParentNode;}
+\DoxyCodeLine{00148                 var path = Text;}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150                 \textcolor{keywordflow}{while} (parent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00151                 \{}
+\DoxyCodeLine{00152                     path = \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}\{0\}\{1\}\{2\}"{}}, parent.Text, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, path);}
+\DoxyCodeLine{00153                     parent = parent.ParentNode;}
+\DoxyCodeLine{00154                 \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156                 \textcolor{keywordflow}{return} path;}
+\DoxyCodeLine{00157             \}}
+\DoxyCodeLine{00158         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a55f0fb9475f594d7db4261172d50bd03}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Icon@{Icon}}
+\index{Icon@{Icon}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Icon}
+{\footnotesize\ttfamily Bitmap Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Icon\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 62} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_aa7734118c645ac77fa2d65013d031ac6}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!IconArea@{IconArea}}
+\index{IconArea@{IconArea}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{IconArea}
+{\footnotesize\ttfamily Rectangle Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Icon\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 54} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a396f7b6ba1122c15774b8950822139ae}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!IsRoot@{IsRoot}}
+\index{IsRoot@{IsRoot}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{IsRoot}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Is\+Root\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 110} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111         \{}
+\DoxyCodeLine{00112             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_isRoot; \}}
+\DoxyCodeLine{00113             \textcolor{keyword}{set} \{ \_isRoot = value; \}}
+\DoxyCodeLine{00114         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_afc7de7a96a75187a02175c59c7e35e57}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!NextVisibleNode@{NextVisibleNode}}
+\index{NextVisibleNode@{NextVisibleNode}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{NextVisibleNode}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Tree\+Node} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Next\+Visible\+Node\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 162} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_aa67f7bd2c5c4b5c2f103d31df92b86d1}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Nodes}
+{\footnotesize\ttfamily \textbf{ Observable\+List}$<$\textbf{ Vit\+NX\+\_\+\+Tree\+Node}$>$ Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Nodes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 92} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093         \{}
+\DoxyCodeLine{00094             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_nodes; \}}
+\DoxyCodeLine{00095             \textcolor{keyword}{set}}
+\DoxyCodeLine{00096             \{}
+\DoxyCodeLine{00097                 \textcolor{keywordflow}{if} (\_nodes != \textcolor{keyword}{null})}
+\DoxyCodeLine{00098                 \{}
+\DoxyCodeLine{00099                     \_nodes.ItemsAdded -\/= Nodes\_ItemsAdded;}
+\DoxyCodeLine{00100                     \_nodes.ItemsRemoved -\/= Nodes\_ItemsRemoved;}
+\DoxyCodeLine{00101                 \}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103                 \_nodes = value;}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105                 \_nodes.ItemsAdded += Nodes\_ItemsAdded;}
+\DoxyCodeLine{00106                 \_nodes.ItemsRemoved += Nodes\_ItemsRemoved;}
+\DoxyCodeLine{00107             \}}
+\DoxyCodeLine{00108         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a07c59db4149ccb2595b706df0fce095c}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!NodeType@{NodeType}}
+\index{NodeType@{NodeType}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{NodeType}
+{\footnotesize\ttfamily object Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Node\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 139} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_ac744ded1c03a9532f0e975f23244db44}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Odd@{Odd}}
+\index{Odd@{Odd}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Odd}
+{\footnotesize\ttfamily bool Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Odd\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 137} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00137 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a26e4c3f694aea4035321ab395d4915c8}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ParentNode@{ParentNode}}
+\index{ParentNode@{ParentNode}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ParentNode}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Tree\+Node} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Parent\+Node\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 131} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_parentNode; \}}
+\DoxyCodeLine{00134             \textcolor{keyword}{set} \{ \_parentNode = value; \}}
+\DoxyCodeLine{00135         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a905dd097555c297f90195577a66ff543}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ParentTree@{ParentTree}}
+\index{ParentTree@{ParentTree}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ParentTree}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Tree\+View} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Parent\+Tree\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 116} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117         \{}
+\DoxyCodeLine{00118             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_parentTree; \}}
+\DoxyCodeLine{00119             \textcolor{keyword}{set}}
+\DoxyCodeLine{00120             \{}
+\DoxyCodeLine{00121                 \textcolor{keywordflow}{if} (\_parentTree == value)}
+\DoxyCodeLine{00122                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124                 \_parentTree = value;}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126                 \textcolor{keywordflow}{foreach} (var node \textcolor{keywordflow}{in} Nodes)}
+\DoxyCodeLine{00127                     node.ParentTree = \_parentTree;}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a7e8b83a53768fca252fd035ee87678da}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!PrevVisibleNode@{PrevVisibleNode}}
+\index{PrevVisibleNode@{PrevVisibleNode}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{PrevVisibleNode}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Tree\+Node} Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Prev\+Visible\+Node\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 160} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a0c0ed1c74248f8384cbd22c8c9870023}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Tag@{Tag}}
+\index{Tag@{Tag}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Tag}
+{\footnotesize\ttfamily object Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Tag\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 141} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a9fe4f5917dac84f8972e22fcf92d12dc}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!Text@{Text}}
+\index{Text@{Text}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{Text}
+{\footnotesize\ttfamily string Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 38} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_text; \}}
+\DoxyCodeLine{00041             \textcolor{keyword}{set}}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 \textcolor{keywordflow}{if} (\_text == value)}
+\DoxyCodeLine{00044                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046                 \_text = value;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048                 OnTextChanged();}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a6f8172bf4edc90303a13fa4ed1f37671}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!TextArea@{TextArea}}
+\index{TextArea@{TextArea}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{TextArea}
+{\footnotesize\ttfamily Rectangle Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Text\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 56} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00596_a9be0865bd01134123b11d1661ce6843a}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!VisibleIndex@{VisibleIndex}}
+\index{VisibleIndex@{VisibleIndex}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{VisibleIndex}
+{\footnotesize\ttfamily int Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Visible\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 164} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00596_ac3c306c7b8e91cf1ed3ee0097e49d582}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ItemsAdded@{ItemsAdded}}
+\index{ItemsAdded@{ItemsAdded}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ItemsAdded}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Observable\+List\+Modified}$<$\textbf{ Vit\+NX\+\_\+\+Tree\+Node}$>$ $>$ Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Items\+Added}
+
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+\mbox{\label{a00596_aa285855432d258c21d890f92faa172ea}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!ItemsRemoved@{ItemsRemoved}}
+\index{ItemsRemoved@{ItemsRemoved}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{ItemsRemoved}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Observable\+List\+Modified}$<$\textbf{ Vit\+NX\+\_\+\+Tree\+Node}$>$ $>$ Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Items\+Removed}
+
+
+
+Definition at line \textbf{ 13} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+\mbox{\label{a00596_ad5a40569523dc888601c71523145f6cd}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!NodeCollapsed@{NodeCollapsed}}
+\index{NodeCollapsed@{NodeCollapsed}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{NodeCollapsed}
+{\footnotesize\ttfamily Event\+Handler Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Node\+Collapsed}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+\mbox{\label{a00596_a39ff83f3c019eb9e9bc77a6043b8be3e}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!NodeExpanded@{NodeExpanded}}
+\index{NodeExpanded@{NodeExpanded}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{NodeExpanded}
+{\footnotesize\ttfamily Event\+Handler Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Node\+Expanded}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+
+\mbox{\label{a00596_a8ac0828deb2d564dde9735293d508f2c}} 
+\index{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}!TextChanged@{TextChanged}}
+\index{TextChanged@{TextChanged}!VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode@{VitNX.UI.BasedOnDarkUI.Controls.VitNX\_TreeNode}}
+\doxysubsubsection{TextChanged}
+{\footnotesize\ttfamily Event\+Handler Vit\+NX.\+UI.\+Based\+On\+Dark\+UI.\+Controls.\+Vit\+NX\+\_\+\+Tree\+Node.\+Text\+Changed}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX\+\_\+\+Tree\+Node.\+cs}.
+

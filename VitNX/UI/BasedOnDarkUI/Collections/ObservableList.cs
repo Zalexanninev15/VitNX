@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace VitNX.Collections
+namespace VitNX.UI.BasedOnDarkUI.Collections
 {
     public class ObservableList<T> : List<T>, IDisposable
     {

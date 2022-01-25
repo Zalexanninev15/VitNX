@@ -1,4 +1,4 @@
-﻿namespace VitNX.Forms
+﻿namespace VitNX.UI.BasedOnDarkUI.Forms
 {
     public enum VitNX_MessageBoxIcon
     {

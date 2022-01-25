@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace VitNX.ControlsV2
+namespace VitNX.UI.ControlsV2
 {
     public abstract class MyMessageBox
     {
