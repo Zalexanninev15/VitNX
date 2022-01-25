@@ -62,6 +62,7 @@ $(document).ready(function(){initNavTree('a00583.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="a00580.html">List of all members</a>  </div>
@@ -75,6 +76,11 @@ Inheritance diagram for VitNX_CheckBox:</div>
   <img src="a00583.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aea94d30edb10a618f6d551b490546b3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html#aea94d30edb10a618f6d551b490546b3a">VitNX_CheckBox</a> ()</td></tr>
+<tr class="separator:aea94d30edb10a618f6d551b490546b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a57b5b248770a2c1e2514b619b8bb59b2"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html#a57b5b248770a2c1e2514b619b8bb59b2">OnMouseMove</a> (MouseEventArgs e)</td></tr>
@@ -104,7 +110,7 @@ Properties</h2></td></tr>
 <tr class="separator:aa63fd39e67c70074ca7bebd7396d9292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56fbb6c99dc3e679db36723d03b21b1e"><td class="memItemLeft" align="right" valign="top">new bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html#a56fbb6c99dc3e679db36723d03b21b1e">AutoEllipsis</a><code> [get]</code></td></tr>
 <tr class="separator:a56fbb6c99dc3e679db36723d03b21b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eb6684f9f58a8c0331750965a40a6fc"><td class="memItemLeft" align="right" valign="top">new Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html#a4eb6684f9f58a8c0331750965a40a6fc">BackgroundImage</a><code> [get]</code></td></tr>
+<tr class="memitem:a4eb6684f9f58a8c0331750965a40a6fc"><td class="memItemLeft" align="right" valign="top">new <a class="el" href="a00583.html#a57e4053953b71ec7da8debea965024bc">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html#a4eb6684f9f58a8c0331750965a40a6fc">BackgroundImage</a><code> [get]</code></td></tr>
 <tr class="separator:a4eb6684f9f58a8c0331750965a40a6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06432c626f789ee77ba170b014d82744"><td class="memItemLeft" align="right" valign="top">new ImageLayout&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html#a06432c626f789ee77ba170b014d82744">BackgroundImageLayout</a><code> [get]</code></td></tr>
 <tr class="separator:a06432c626f789ee77ba170b014d82744"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,9 +233,10 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  250</span>            <span class="keywordflow">if</span> (e.KeyCode == Keys.Space)</div>
 <div class="line"><span class="lineno">  251</span>            {</div>
 <div class="line"><span class="lineno">  252</span>                _spacePressed = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  253</span>                SetControlState(VitNX_ControlState.Pressed);</div>
+<div class="line"><span class="lineno">  253</span>                SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Pressed);</div>
 <div class="line"><span class="lineno">  254</span>            }</div>
 <div class="line"><span class="lineno">  255</span>        }</div>
+<div class="ttc" id="aa00300_html_a573ad492d79172a6ff93e935feb131ec"><div class="ttname"><a href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX.UI.BasedOnDarkUI.Controls.VitNX_ControlState</a></div><div class="ttdeci">VitNX_ControlState</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00003">VitNX_ControlState.cs:4</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -268,9 +275,9 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  265</span>                var location = Cursor.Position;</div>
 <div class="line"><span class="lineno">  266</span> </div>
 <div class="line"><span class="lineno">  267</span>                <span class="keywordflow">if</span> (!ClientRectangle.Contains(location))</div>
-<div class="line"><span class="lineno">  268</span>                    SetControlState(VitNX_ControlState.Normal);</div>
+<div class="line"><span class="lineno">  268</span>                    SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Normal);</div>
 <div class="line"><span class="lineno">  269</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  270</span>                    SetControlState(VitNX_ControlState.Hover);</div>
+<div class="line"><span class="lineno">  270</span>                    SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Hover);</div>
 <div class="line"><span class="lineno">  271</span>            }</div>
 <div class="line"><span class="lineno">  272</span>        }</div>
 </div><!-- fragment -->
@@ -309,9 +316,9 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  238</span>            var location = Cursor.Position;</div>
 <div class="line"><span class="lineno">  239</span> </div>
 <div class="line"><span class="lineno">  240</span>            <span class="keywordflow">if</span> (!ClientRectangle.Contains(location))</div>
-<div class="line"><span class="lineno">  241</span>                SetControlState(VitNX_ControlState.Normal);</div>
+<div class="line"><span class="lineno">  241</span>                SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Normal);</div>
 <div class="line"><span class="lineno">  242</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  243</span>                SetControlState(VitNX_ControlState.Hover);</div>
+<div class="line"><span class="lineno">  243</span>                SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Hover);</div>
 <div class="line"><span class="lineno">  244</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -350,7 +357,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  219</span>            var location = Cursor.Position;</div>
 <div class="line"><span class="lineno">  220</span> </div>
 <div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span> (!ClientRectangle.Contains(location))</div>
-<div class="line"><span class="lineno">  222</span>                SetControlState(VitNX_ControlState.Normal);</div>
+<div class="line"><span class="lineno">  222</span>                SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Normal);</div>
 <div class="line"><span class="lineno">  223</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -386,7 +393,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  186</span>            <span class="keywordflow">if</span> (!ClientRectangle.Contains(e.Location))</div>
 <div class="line"><span class="lineno">  187</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>            SetControlState(VitNX_ControlState.Pressed);</div>
+<div class="line"><span class="lineno">  189</span>            SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Pressed);</div>
 <div class="line"><span class="lineno">  190</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -422,7 +429,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  206</span>            <span class="keywordflow">if</span> (_spacePressed)</div>
 <div class="line"><span class="lineno">  207</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  208</span> </div>
-<div class="line"><span class="lineno">  209</span>            SetControlState(VitNX_ControlState.Normal);</div>
+<div class="line"><span class="lineno">  209</span>            SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Normal);</div>
 <div class="line"><span class="lineno">  210</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -461,13 +468,13 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  169</span>            <span class="keywordflow">if</span> (e.Button == MouseButtons.Left)</div>
 <div class="line"><span class="lineno">  170</span>            {</div>
 <div class="line"><span class="lineno">  171</span>                <span class="keywordflow">if</span> (ClientRectangle.Contains(e.Location))</div>
-<div class="line"><span class="lineno">  172</span>                    SetControlState(VitNX_ControlState.Pressed);</div>
+<div class="line"><span class="lineno">  172</span>                    SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Pressed);</div>
 <div class="line"><span class="lineno">  173</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  174</span>                    SetControlState(VitNX_ControlState.Hover);</div>
+<div class="line"><span class="lineno">  174</span>                    SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Hover);</div>
 <div class="line"><span class="lineno">  175</span>            }</div>
 <div class="line"><span class="lineno">  176</span>            <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  177</span>            {</div>
-<div class="line"><span class="lineno">  178</span>                SetControlState(VitNX_ControlState.Hover);</div>
+<div class="line"><span class="lineno">  178</span>                SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Hover);</div>
 <div class="line"><span class="lineno">  179</span>            }</div>
 <div class="line"><span class="lineno">  180</span>        }</div>
 </div><!-- fragment -->
@@ -504,7 +511,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  196</span>            <span class="keywordflow">if</span> (_spacePressed)</div>
 <div class="line"><span class="lineno">  197</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>            SetControlState(VitNX_ControlState.Normal);</div>
+<div class="line"><span class="lineno">  199</span>            SetControlState(<a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Normal);</div>
 <div class="line"><span class="lineno">  200</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -538,39 +545,39 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  280</span>            var g = e.Graphics;</div>
 <div class="line"><span class="lineno">  281</span>            var rect = <span class="keyword">new</span> Rectangle(0, 0, ClientSize.Width, ClientSize.Height);</div>
 <div class="line"><span class="lineno">  282</span> </div>
-<div class="line"><span class="lineno">  283</span>            var size = <a class="code hl_class" href="a00571.html">Constsants</a>.CheckBoxSize;</div>
+<div class="line"><span class="lineno">  283</span>            var size = <a class="code hl_class" href="a00571.html">Constsants</a>.<a class="code hl_variable" href="a00571.html#af8d51c32e941eb21846e7e76a061e477">CheckBoxSize</a>;</div>
 <div class="line"><span class="lineno">  284</span> </div>
-<div class="line"><span class="lineno">  285</span>            var textColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightText;</div>
-<div class="line"><span class="lineno">  286</span>            var borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightText;</div>
-<div class="line"><span class="lineno">  287</span>            var fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightestBackground;</div>
+<div class="line"><span class="lineno">  285</span>            var textColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
+<div class="line"><span class="lineno">  286</span>            var borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
+<div class="line"><span class="lineno">  287</span>            var fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a0e4fb7fa615bbc1866ac477dde528899">LightestBackground</a>;</div>
 <div class="line"><span class="lineno">  288</span> </div>
 <div class="line"><span class="lineno">  289</span>            <span class="keywordflow">if</span> (Enabled)</div>
 <div class="line"><span class="lineno">  290</span>            {</div>
 <div class="line"><span class="lineno">  291</span>                <span class="keywordflow">if</span> (Focused)</div>
 <div class="line"><span class="lineno">  292</span>                {</div>
-<div class="line"><span class="lineno">  293</span>                    borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.BlueHighlight;</div>
-<div class="line"><span class="lineno">  294</span>                    fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.BlueSelection;</div>
+<div class="line"><span class="lineno">  293</span>                    borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a9a985c86c3ea1a8f9541d362b153e0cf">BlueHighlight</a>;</div>
+<div class="line"><span class="lineno">  294</span>                    fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">BlueSelection</a>;</div>
 <div class="line"><span class="lineno">  295</span>                }</div>
 <div class="line"><span class="lineno">  296</span> </div>
-<div class="line"><span class="lineno">  297</span>                <span class="keywordflow">if</span> (_controlState == VitNX_ControlState.Hover)</div>
+<div class="line"><span class="lineno">  297</span>                <span class="keywordflow">if</span> (_controlState == <a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Hover)</div>
 <div class="line"><span class="lineno">  298</span>                {</div>
-<div class="line"><span class="lineno">  299</span>                    borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.BlueHighlight;</div>
-<div class="line"><span class="lineno">  300</span>                    fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.BlueSelection;</div>
+<div class="line"><span class="lineno">  299</span>                    borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a9a985c86c3ea1a8f9541d362b153e0cf">BlueHighlight</a>;</div>
+<div class="line"><span class="lineno">  300</span>                    fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">BlueSelection</a>;</div>
 <div class="line"><span class="lineno">  301</span>                }</div>
-<div class="line"><span class="lineno">  302</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_controlState == VitNX_ControlState.Pressed)</div>
+<div class="line"><span class="lineno">  302</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_controlState == <a class="code hl_enumeration" href="a00300.html#a573ad492d79172a6ff93e935feb131ec">VitNX_ControlState</a>.Pressed)</div>
 <div class="line"><span class="lineno">  303</span>                {</div>
-<div class="line"><span class="lineno">  304</span>                    borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreyHighlight;</div>
-<div class="line"><span class="lineno">  305</span>                    fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreySelection;</div>
+<div class="line"><span class="lineno">  304</span>                    borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">GreyHighlight</a>;</div>
+<div class="line"><span class="lineno">  305</span>                    fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a51a100ff74f3dddc6997dd784dbf565d">GreySelection</a>;</div>
 <div class="line"><span class="lineno">  306</span>                }</div>
 <div class="line"><span class="lineno">  307</span>            }</div>
 <div class="line"><span class="lineno">  308</span>            <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  309</span>            {</div>
-<div class="line"><span class="lineno">  310</span>                textColor = <a class="code hl_class" href="a00567.html">Colors</a>.DisabledText;</div>
-<div class="line"><span class="lineno">  311</span>                borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreyHighlight;</div>
-<div class="line"><span class="lineno">  312</span>                fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreySelection;</div>
+<div class="line"><span class="lineno">  310</span>                textColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#af19493f42acfeeadd16bae88041b9623">DisabledText</a>;</div>
+<div class="line"><span class="lineno">  311</span>                borderColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">GreyHighlight</a>;</div>
+<div class="line"><span class="lineno">  312</span>                fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a51a100ff74f3dddc6997dd784dbf565d">GreySelection</a>;</div>
 <div class="line"><span class="lineno">  313</span>            }</div>
 <div class="line"><span class="lineno">  314</span> </div>
-<div class="line"><span class="lineno">  315</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.GreyBackground))</div>
+<div class="line"><span class="lineno">  315</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(<a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>))</div>
 <div class="line"><span class="lineno">  316</span>            {</div>
 <div class="line"><span class="lineno">  317</span>                g.FillRectangle(b, rect);</div>
 <div class="line"><span class="lineno">  318</span>            }</div>
@@ -603,7 +610,16 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  345</span>            }</div>
 <div class="line"><span class="lineno">  346</span>        }</div>
 <div class="ttc" id="aa00567_html"><div class="ttname"><a href="a00567.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00567_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00567.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00062">Colors.cs:63</a></div></div>
+<div class="ttc" id="aa00567_html_a0e4fb7fa615bbc1866ac477dde528899"><div class="ttname"><a href="a00567.html#a0e4fb7fa615bbc1866ac477dde528899">VitNX.UI.BasedOnDarkUI.Config.Colors.LightestBackground</a></div><div class="ttdeci">static Color LightestBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00047">Colors.cs:48</a></div></div>
+<div class="ttc" id="aa00567_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00007">Colors.cs:8</a></div></div>
+<div class="ttc" id="aa00567_html_a3e84957ccd8663503dc957f0c6a2688e"><div class="ttname"><a href="a00567.html#a3e84957ccd8663503dc957f0c6a2688e">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyHighlight</a></div><div class="ttdeci">static Color GreyHighlight</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00082">Colors.cs:83</a></div></div>
+<div class="ttc" id="aa00567_html_a51a100ff74f3dddc6997dd784dbf565d"><div class="ttname"><a href="a00567.html#a51a100ff74f3dddc6997dd784dbf565d">VitNX.UI.BasedOnDarkUI.Config.Colors.GreySelection</a></div><div class="ttdeci">static Color GreySelection</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00087">Colors.cs:88</a></div></div>
+<div class="ttc" id="aa00567_html_a9a985c86c3ea1a8f9541d362b153e0cf"><div class="ttname"><a href="a00567.html#a9a985c86c3ea1a8f9541d362b153e0cf">VitNX.UI.BasedOnDarkUI.Config.Colors.BlueHighlight</a></div><div class="ttdeci">static Color BlueHighlight</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00072">Colors.cs:73</a></div></div>
+<div class="ttc" id="aa00567_html_af19493f42acfeeadd16bae88041b9623"><div class="ttname"><a href="a00567.html#af19493f42acfeeadd16bae88041b9623">VitNX.UI.BasedOnDarkUI.Config.Colors.DisabledText</a></div><div class="ttdeci">static Color DisabledText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00067">Colors.cs:68</a></div></div>
+<div class="ttc" id="aa00567_html_af4d2c6571dcc805fcd8241006beeff0a"><div class="ttname"><a href="a00567.html#af4d2c6571dcc805fcd8241006beeff0a">VitNX.UI.BasedOnDarkUI.Config.Colors.BlueSelection</a></div><div class="ttdeci">static Color BlueSelection</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00077">Colors.cs:78</a></div></div>
 <div class="ttc" id="aa00571_html"><div class="ttname"><a href="a00571.html">VitNX.UI.BasedOnDarkUI.Config.Constsants</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00003">Consts.cs:4</a></div></div>
+<div class="ttc" id="aa00571_html_af8d51c32e941eb21846e7e76a061e477"><div class="ttname"><a href="a00571.html#af8d51c32e941eb21846e7e76a061e477">VitNX.UI.BasedOnDarkUI.Config.Constsants.CheckBoxSize</a></div><div class="ttdeci">static int CheckBoxSize</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00009">Consts.cs:9</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -672,7 +688,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">new Image BackgroundImage</td>
+          <td class="memname">new <a class="el" href="a00583.html#a57e4053953b71ec7da8debea965024bc">Image</a> BackgroundImage</td>
         </tr>
       </table>
   </td>

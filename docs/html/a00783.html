@@ -153,10 +153,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   57</span> </div>
 <div class="line"><span class="lineno">   58</span>            <span class="comment">// Force cursor if already dragging.</span></div>
 <div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (_isDragging)</div>
-<div class="line"><span class="lineno">   60</span>                Cursor.Current = _activeSplitter.ResizeCursor;</div>
+<div class="line"><span class="lineno">   60</span>                Cursor.Current = _activeSplitter.<a class="code hl_property" href="a00723.html#a89999dffc2aab7af00e7d0c9894133cc">ResizeCursor</a>;</div>
 <div class="line"><span class="lineno">   61</span> </div>
 <div class="line"><span class="lineno">   62</span>            <span class="comment">// Return out early if we&#39;re dragging something that&#39;s not a splitter.</span></div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE &amp;&amp; !_isDragging &amp;&amp; _dockPanel.MouseButtonState != MouseButtons.None)</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (m.Msg == (<span class="keywordtype">int</span>)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE &amp;&amp; !_isDragging &amp;&amp; _dockPanel.<a class="code hl_property" href="a00715.html#ad8fa9b0e3856e7e06470567f5db29f6d">MouseButtonState</a> != MouseButtons.None)</div>
 <div class="line"><span class="lineno">   64</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   65</span> </div>
 <div class="line"><span class="lineno">   66</span>            <span class="comment">// Try and create a control from the message handle.</span></div>
@@ -194,6 +194,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  100</span>        }</div>
+<div class="ttc" id="aa00715_html_ad8fa9b0e3856e7e06470567f5db29f6d"><div class="ttname"><a href="a00715.html#ad8fa9b0e3856e7e06470567f5db29f6d">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.MouseButtonState</a></div><div class="ttdeci">MouseButtons MouseButtonState</div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00095">VitNX_DockPanel.cs:96</a></div></div>
+<div class="ttc" id="aa00723_html_a89999dffc2aab7af00e7d0c9894133cc"><div class="ttname"><a href="a00723.html#a89999dffc2aab7af00e7d0c9894133cc">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.ResizeCursor</a></div><div class="ttdeci">Cursor ResizeCursor</div><div class="ttdef"><b>Definition:</b> <a href="a00200_source.html#l00027">VitNX_DockSplitter.cs:27</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

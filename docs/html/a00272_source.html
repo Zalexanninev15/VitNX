@@ -73,24 +73,24 @@ $(document).ready(function(){initNavTree('a00272_source.html',''); initResizable
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00799.html">    8</a></span>    <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_class" href="a00799.html">VitNX2_MessageBox_Form</a> : Form</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> SquaredOnWin11 = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00799.html#a0611a516e3cf5b7bf18ab4aa8209ff80">   10</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="a00799.html#a0611a516e3cf5b7bf18ab4aa8209ff80">SquaredOnWin11</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">private</span> Color primaryColor = Color.FromArgb(21, 29, 38);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> borderSize = 0;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">public</span> Color PrimaryColor</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">   14</a></span>        <span class="keyword">public</span> Color <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> primaryColor; }</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keyword">set</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                primaryColor = value;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                BackColor = primaryColor;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                windowTitle.BackColor = PrimaryColor;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                windowTitle.BackColor = <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> OnPaint(PaintEventArgs e)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00799.html#a7b49a512aef9068aebdc17097736f6b9">   25</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00799.html#a7b49a512aef9068aebdc17097736f6b9">OnPaint</a>(PaintEventArgs e)</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">if</span> (SquaredOnWin11)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00799.html#a0611a516e3cf5b7bf18ab4aa8209ff80">SquaredOnWin11</a>)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                base.OnPaint(e);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                Graphics g = e.Graphics;</div>
@@ -100,43 +100,43 @@ $(document).ready(function(){initNavTree('a00272_source.html',''); initResizable
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">public</span> <a class="code hl_class" href="a00799.html">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="a00799.html#aac99ffe24418f1b32a4b6a60f35ff399">   37</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00799.html#aac99ffe24418f1b32a4b6a60f35ff399">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text)</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            InitializeComponent();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            InitializeItems();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            PrimaryColor = primaryColor;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a> = primaryColor;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            labelMessage.Text = text;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            labelCaption.Text = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            SetFormSize();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">public</span> <a class="code hl_class" href="a00799.html">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="a00799.html#a3b9fed254a24ef0bd679943a48c55c11">   47</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00799.html#a3b9fed254a24ef0bd679943a48c55c11">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            InitializeComponent();</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            InitializeItems();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            PrimaryColor = primaryColor;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a> = primaryColor;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            labelMessage.Text = text;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            labelCaption.Text = caption;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            SetFormSize();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">public</span> <a class="code hl_class" href="a00799.html">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption, MessageBoxButtons buttons)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a00799.html#a334bf2d789626ec5639290cbdf2bde5e">   58</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00799.html#a334bf2d789626ec5639290cbdf2bde5e">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption, MessageBoxButtons buttons)</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            InitializeComponent();</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            InitializeItems();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            PrimaryColor = primaryColor;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a> = primaryColor;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            labelMessage.Text = text;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            labelCaption.Text = caption;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            SetFormSize();</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            SetButtons(buttons, MessageBoxDefaultButton.Button1);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">public</span> <a class="code hl_class" href="a00799.html">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption, MessageBoxButtons buttons, MessageBoxIcon icon)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="a00799.html#aa9c4f04c1991cc73bb827d4f240bc240">   69</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00799.html#aa9c4f04c1991cc73bb827d4f240bc240">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption, MessageBoxButtons buttons, MessageBoxIcon icon)</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            InitializeComponent();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            InitializeItems();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            PrimaryColor = primaryColor;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a> = primaryColor;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            labelMessage.Text = text;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            labelCaption.Text = caption;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            SetFormSize();</div>
@@ -144,11 +144,11 @@ $(document).ready(function(){initNavTree('a00272_source.html',''); initResizable
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            SetIcon(icon);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">public</span> <a class="code hl_class" href="a00799.html">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="a00799.html#a96ebfa5bc68e5e5f66395fe7d9986c2a">   81</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00799.html#a96ebfa5bc68e5e5f66395fe7d9986c2a">VitNX2_MessageBox_Form</a>(<span class="keywordtype">string</span> text, <span class="keywordtype">string</span> caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            InitializeComponent();</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            InitializeItems();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            PrimaryColor = primaryColor;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <a class="code hl_property" href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">PrimaryColor</a> = primaryColor;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            labelMessage.Text = text;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            labelCaption.Text = caption;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            SetFormSize();</div>
@@ -342,15 +342,15 @@ $(document).ready(function(){initNavTree('a00272_source.html',''); initResizable
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> titleExit_Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            Close();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <a class="code hl_enumvalue" href="a00303.html#a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418">Close</a>();</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        }</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> windowTitle_MouseDown(<span class="keywordtype">object</span> sender, MouseEventArgs e)</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <a class="code hl_class" href="a00455.html">Import</a>.ReleaseCapture();</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <a class="code hl_class" href="a00455.html">Import</a>.PostMessage(Handle,</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                <a class="code hl_class" href="a00459.html">Constants</a>.WM_SYSCOMMAND,</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                <a class="code hl_class" href="a00459.html">Constants</a>.DOMOVE, 0);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <a class="code hl_class" href="a00455.html">Import</a>.<a class="code hl_function" href="a00455.html#a3b003b34b31aec8e35d935565c08b61b">ReleaseCapture</a>();</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <a class="code hl_class" href="a00455.html">Import</a>.<a class="code hl_function" href="a00455.html#ae28f86ba54fbd0452c26688775e8ed6a">PostMessage</a>(Handle,</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                <a class="code hl_class" href="a00459.html">Constants</a>.<a class="code hl_variable" href="a00459.html#a8ca727c6aabd71f5b770ab73a7afd005">WM_SYSCOMMAND</a>,</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                <a class="code hl_class" href="a00459.html">Constants</a>.<a class="code hl_variable" href="a00459.html#a664575bc1548e694c2649268151dda27">DOMOVE</a>, 0);</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        }</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> titleExit_MouseEnter(<span class="keywordtype">object</span> sender, EventArgs e)</div>
@@ -369,12 +369,25 @@ $(document).ready(function(){initNavTree('a00272_source.html',''); initResizable
 <div class="ttc" id="aa00291_html"><div class="ttname"><a href="a00291.html">VitNX.Functions.Windows</a></div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00008">Apps.cs:9</a></div></div>
 <div class="ttc" id="aa00294_html"><div class="ttname"><a href="a00294.html">VitNX.Functions.Windows.Win32</a></div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00009">Win32.cs:10</a></div></div>
 <div class="ttc" id="aa00295_html"><div class="ttname"><a href="a00295.html">VitNX.Properties</a></div><div class="ttdef"><b>Definition:</b> <a href="a00053_source.html#l00011">Resources.Designer.cs:11</a></div></div>
+<div class="ttc" id="aa00303_html_a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418"><div class="ttname"><a href="a00303.html#a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.Close</a></div><div class="ttdeci">@ Close</div></div>
 <div class="ttc" id="aa00306_html"><div class="ttname"><a href="a00306.html">VitNX.UI.ControlsV2</a></div><div class="ttdef"><b>Definition:</b> <a href="a00263_source.html#l00004">Helper.cs:5</a></div></div>
 <div class="ttc" id="aa00455_html"><div class="ttname"><a href="a00455.html">VitNX.Functions.Windows.Win32.Import</a></div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00011">Win32.cs:12</a></div></div>
+<div class="ttc" id="aa00455_html_a3b003b34b31aec8e35d935565c08b61b"><div class="ttname"><a href="a00455.html#a3b003b34b31aec8e35d935565c08b61b">VitNX.Functions.Windows.Win32.Import.ReleaseCapture</a></div><div class="ttdeci">static bool ReleaseCapture()</div></div>
+<div class="ttc" id="aa00455_html_ae28f86ba54fbd0452c26688775e8ed6a"><div class="ttname"><a href="a00455.html#ae28f86ba54fbd0452c26688775e8ed6a">VitNX.Functions.Windows.Win32.Import.PostMessage</a></div><div class="ttdeci">static bool PostMessage(IntPtr hWnd, uint Msg, uint WParam, uint LParam)</div></div>
 <div class="ttc" id="aa00459_html"><div class="ttname"><a href="a00459.html">VitNX.Functions.Windows.Win32.Constants</a></div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00118">Win32.cs:119</a></div></div>
+<div class="ttc" id="aa00459_html_a664575bc1548e694c2649268151dda27"><div class="ttname"><a href="a00459.html#a664575bc1548e694c2649268151dda27">VitNX.Functions.Windows.Win32.Constants.DOMOVE</a></div><div class="ttdeci">const uint DOMOVE</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00122">Win32.cs:122</a></div></div>
+<div class="ttc" id="aa00459_html_a8ca727c6aabd71f5b770ab73a7afd005"><div class="ttname"><a href="a00459.html#a8ca727c6aabd71f5b770ab73a7afd005">VitNX.Functions.Windows.Win32.Constants.WM_SYSCOMMAND</a></div><div class="ttdeci">const uint WM_SYSCOMMAND</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00121">Win32.cs:121</a></div></div>
 <div class="ttc" id="aa00555_html"><div class="ttname"><a href="a00555.html">VitNX.Properties.Resources</a></div><div class="ttdoc">Класс ресурса со строгой типизацией для поиска локализованных строк и т.</div><div class="ttdef"><b>Definition:</b> <a href="a00053_source.html#l00025">Resources.Designer.cs:25</a></div></div>
 <div class="ttc" id="aa00555_html_ab72e0381082460a307d89cbf5260229f"><div class="ttname"><a href="a00555.html#ab72e0381082460a307d89cbf5260229f">VitNX.Properties.Resources.Error1</a></div><div class="ttdeci">static System.Drawing.Bitmap Error1</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00053_source.html#l00066">Resources.Designer.cs:66</a></div></div>
 <div class="ttc" id="aa00799_html"><div class="ttname"><a href="a00799.html">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form</a></div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00008">VitNX2_MessageBox_Form.cs:9</a></div></div>
+<div class="ttc" id="aa00799_html_a0611a516e3cf5b7bf18ab4aa8209ff80"><div class="ttname"><a href="a00799.html#a0611a516e3cf5b7bf18ab4aa8209ff80">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.SquaredOnWin11</a></div><div class="ttdeci">bool SquaredOnWin11</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00010">VitNX2_MessageBox_Form.cs:10</a></div></div>
+<div class="ttc" id="aa00799_html_a334bf2d789626ec5639290cbdf2bde5e"><div class="ttname"><a href="a00799.html#a334bf2d789626ec5639290cbdf2bde5e">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.VitNX2_MessageBox_Form</a></div><div class="ttdeci">VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons)</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00058">VitNX2_MessageBox_Form.cs:58</a></div></div>
+<div class="ttc" id="aa00799_html_a3b9fed254a24ef0bd679943a48c55c11"><div class="ttname"><a href="a00799.html#a3b9fed254a24ef0bd679943a48c55c11">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.VitNX2_MessageBox_Form</a></div><div class="ttdeci">VitNX2_MessageBox_Form(string text, string caption)</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00047">VitNX2_MessageBox_Form.cs:47</a></div></div>
+<div class="ttc" id="aa00799_html_a7b49a512aef9068aebdc17097736f6b9"><div class="ttname"><a href="a00799.html#a7b49a512aef9068aebdc17097736f6b9">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.OnPaint</a></div><div class="ttdeci">override void OnPaint(PaintEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00025">VitNX2_MessageBox_Form.cs:25</a></div></div>
+<div class="ttc" id="aa00799_html_a90ffae67e0f0164c7ef70add92f7c59d"><div class="ttname"><a href="a00799.html#a90ffae67e0f0164c7ef70add92f7c59d">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.PrimaryColor</a></div><div class="ttdeci">Color PrimaryColor</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00014">VitNX2_MessageBox_Form.cs:15</a></div></div>
+<div class="ttc" id="aa00799_html_a96ebfa5bc68e5e5f66395fe7d9986c2a"><div class="ttname"><a href="a00799.html#a96ebfa5bc68e5e5f66395fe7d9986c2a">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.VitNX2_MessageBox_Form</a></div><div class="ttdeci">VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00081">VitNX2_MessageBox_Form.cs:81</a></div></div>
+<div class="ttc" id="aa00799_html_aa9c4f04c1991cc73bb827d4f240bc240"><div class="ttname"><a href="a00799.html#aa9c4f04c1991cc73bb827d4f240bc240">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.VitNX2_MessageBox_Form</a></div><div class="ttdeci">VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00069">VitNX2_MessageBox_Form.cs:69</a></div></div>
+<div class="ttc" id="aa00799_html_aac99ffe24418f1b32a4b6a60f35ff399"><div class="ttname"><a href="a00799.html#aac99ffe24418f1b32a4b6a60f35ff399">VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.VitNX2_MessageBox_Form</a></div><div class="ttdeci">VitNX2_MessageBox_Form(string text)</div><div class="ttdef"><b>Definition:</b> <a href="a00272_source.html#l00037">VitNX2_MessageBox_Form.cs:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -71,7 +71,7 @@ $(document).ready(function(){initNavTree('a00723.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a79400a104f40f3f591cc1083a5c9a2d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00723.html#a79400a104f40f3f591cc1083a5c9a2d7">VitNX_DockSplitter</a> (Control parentControl, Control control, VitNX_SplitterType splitterType)</td></tr>
+<tr class="memitem:a79400a104f40f3f591cc1083a5c9a2d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00723.html#a79400a104f40f3f591cc1083a5c9a2d7">VitNX_DockSplitter</a> (Control parentControl, Control control, <a class="el" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a> splitterType)</td></tr>
 <tr class="separator:a79400a104f40f3f591cc1083a5c9a2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67d845ba4dc3f15fee909406c4cc33e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00723.html#a67d845ba4dc3f15fee909406c4cc33e2">ShowOverlay</a> ()</td></tr>
 <tr class="separator:a67d845ba4dc3f15fee909406c4cc33e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +116,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">VitNX_SplitterType&#160;</td>
+          <td class="paramtype"><a class="el" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>&#160;</td>
           <td class="paramname"><em>splitterType</em>&#160;</td>
         </tr>
         <tr>
@@ -135,17 +135,19 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   38</span> </div>
 <div class="line"><span class="lineno">   39</span>            <span class="keywordflow">switch</span> (_splitterType)</div>
 <div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Left:</div>
-<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Right:</div>
-<div class="line"><span class="lineno">   43</span>                    ResizeCursor = Cursors.SizeWE;</div>
+<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Left:</div>
+<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Right:</div>
+<div class="line"><span class="lineno">   43</span>                    <a class="code hl_property" href="a00723.html#a89999dffc2aab7af00e7d0c9894133cc">ResizeCursor</a> = Cursors.SizeWE;</div>
 <div class="line"><span class="lineno">   44</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Top:</div>
-<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Bottom:</div>
-<div class="line"><span class="lineno">   48</span>                    ResizeCursor = Cursors.SizeNS;</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Top:</div>
+<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Bottom:</div>
+<div class="line"><span class="lineno">   48</span>                    <a class="code hl_property" href="a00723.html#a89999dffc2aab7af00e7d0c9894133cc">ResizeCursor</a> = Cursors.SizeNS;</div>
 <div class="line"><span class="lineno">   49</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   50</span>            }</div>
 <div class="line"><span class="lineno">   51</span>        }</div>
+<div class="ttc" id="aa00301_html_ae48effe2de0c7ef774d834b7d4602b2b"><div class="ttname"><a href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType</a></div><div class="ttdeci">VitNX_SplitterType</div><div class="ttdef"><b>Definition:</b> <a href="a00212_source.html#l00003">VitNX_SplitterType.cs:4</a></div></div>
+<div class="ttc" id="aa00723_html_a89999dffc2aab7af00e7d0c9894133cc"><div class="ttname"><a href="a00723.html#a89999dffc2aab7af00e7d0c9894133cc">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.ResizeCursor</a></div><div class="ttdeci">Cursor ResizeCursor</div><div class="ttdef"><b>Definition:</b> <a href="a00200_source.html#l00027">VitNX_DockSplitter.cs:27</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -192,25 +194,26 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  117</span>        {</div>
 <div class="line"><span class="lineno">  118</span>            <span class="keywordflow">switch</span> (_splitterType)</div>
 <div class="line"><span class="lineno">  119</span>            {</div>
-<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Left:</div>
+<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Left:</div>
 <div class="line"><span class="lineno">  121</span>                    _control.Width += difference.X;</div>
 <div class="line"><span class="lineno">  122</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Right:</div>
+<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Right:</div>
 <div class="line"><span class="lineno">  125</span>                    _control.Width -= difference.X;</div>
 <div class="line"><span class="lineno">  126</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Top:</div>
+<div class="line"><span class="lineno">  128</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Top:</div>
 <div class="line"><span class="lineno">  129</span>                    _control.Height += difference.Y;</div>
 <div class="line"><span class="lineno">  130</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Bottom:</div>
+<div class="line"><span class="lineno">  132</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Bottom:</div>
 <div class="line"><span class="lineno">  133</span>                    _control.Height -= difference.Y;</div>
 <div class="line"><span class="lineno">  134</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  135</span>            }</div>
 <div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>            UpdateBounds();</div>
+<div class="line"><span class="lineno">  137</span>            <a class="code hl_function" href="a00723.html#a1db9cbd6086ef5b725ef6dca456b0dc5">UpdateBounds</a>();</div>
 <div class="line"><span class="lineno">  138</span>        }</div>
+<div class="ttc" id="aa00723_html_a1db9cbd6086ef5b725ef6dca456b0dc5"><div class="ttname"><a href="a00723.html#a1db9cbd6086ef5b725ef6dca456b0dc5">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.UpdateBounds</a></div><div class="ttdeci">void UpdateBounds()</div><div class="ttdef"><b>Definition:</b> <a href="a00200_source.html#l00140">VitNX_DockSplitter.cs:140</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -234,8 +237,9 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   59</span>            _overlayForm = <span class="keyword">new</span> <a class="code hl_class" href="a00763.html">VitNX_TranslucentForm</a>(Color.Black);</div>
 <div class="line"><span class="lineno">   60</span>            _overlayForm.Visible = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>            UpdateOverlay(<span class="keyword">new</span> Point(0, 0));</div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_function" href="a00723.html#ad451a4521d685e682f88c756f1e0552c">UpdateOverlay</a>(<span class="keyword">new</span> Point(0, 0));</div>
 <div class="line"><span class="lineno">   63</span>        }</div>
+<div class="ttc" id="aa00723_html_ad451a4521d685e682f88c756f1e0552c"><div class="ttname"><a href="a00723.html#ad451a4521d685e682f88c756f1e0552c">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.UpdateOverlay</a></div><div class="ttdeci">void UpdateOverlay(Point difference)</div><div class="ttdef"><b>Definition:</b> <a href="a00200_source.html#l00070">VitNX_DockSplitter.cs:70</a></div></div>
 <div class="ttc" id="aa00763_html"><div class="ttname"><a href="a00763.html">VitNX.UI.BasedOnDarkUI.Forms.VitNX_TranslucentForm</a></div><div class="ttdef"><b>Definition:</b> <a href="a00245_source.html#l00007">VitNX_TranslucentForm.cs:8</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -261,27 +265,28 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  143</span> </div>
 <div class="line"><span class="lineno">  144</span>            <span class="keywordflow">switch</span> (_splitterType)</div>
 <div class="line"><span class="lineno">  145</span>            {</div>
-<div class="line"><span class="lineno">  146</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Left:</div>
-<div class="line"><span class="lineno">  147</span>                    Bounds = <span class="keyword">new</span> Rectangle(bounds.Left - 2, bounds.Top, 5, bounds.Height);</div>
+<div class="line"><span class="lineno">  146</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Left:</div>
+<div class="line"><span class="lineno">  147</span>                    <a class="code hl_property" href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">Bounds</a> = <span class="keyword">new</span> Rectangle(bounds.Left - 2, bounds.Top, 5, bounds.Height);</div>
 <div class="line"><span class="lineno">  148</span>                    _maximum = bounds.Right - 2 - _control.MinimumSize.Width;</div>
 <div class="line"><span class="lineno">  149</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Right:</div>
-<div class="line"><span class="lineno">  152</span>                    Bounds = <span class="keyword">new</span> Rectangle(bounds.Right - 2, bounds.Top, 5, bounds.Height);</div>
+<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Right:</div>
+<div class="line"><span class="lineno">  152</span>                    <a class="code hl_property" href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">Bounds</a> = <span class="keyword">new</span> Rectangle(bounds.Right - 2, bounds.Top, 5, bounds.Height);</div>
 <div class="line"><span class="lineno">  153</span>                    _minimum = bounds.Left - 2 + _control.MinimumSize.Width;</div>
 <div class="line"><span class="lineno">  154</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Top:</div>
-<div class="line"><span class="lineno">  157</span>                    Bounds = <span class="keyword">new</span> Rectangle(bounds.Left, bounds.Top - 2, bounds.Width, 5);</div>
+<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Top:</div>
+<div class="line"><span class="lineno">  157</span>                    <a class="code hl_property" href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">Bounds</a> = <span class="keyword">new</span> Rectangle(bounds.Left, bounds.Top - 2, bounds.Width, 5);</div>
 <div class="line"><span class="lineno">  158</span>                    _maximum = bounds.Bottom - 2 - _control.MinimumSize.Height;</div>
 <div class="line"><span class="lineno">  159</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Bottom:</div>
-<div class="line"><span class="lineno">  162</span>                    Bounds = <span class="keyword">new</span> Rectangle(bounds.Left, bounds.Bottom - 2, bounds.Width, 5);</div>
+<div class="line"><span class="lineno">  161</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Bottom:</div>
+<div class="line"><span class="lineno">  162</span>                    <a class="code hl_property" href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">Bounds</a> = <span class="keyword">new</span> Rectangle(bounds.Left, bounds.Bottom - 2, bounds.Width, 5);</div>
 <div class="line"><span class="lineno">  163</span>                    _minimum = bounds.Top - 2 + _control.MinimumSize.Height;</div>
 <div class="line"><span class="lineno">  164</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  165</span>            }</div>
 <div class="line"><span class="lineno">  166</span>        }</div>
+<div class="ttc" id="aa00723_html_a3ced51d921c8b8c3db571eac591fa459"><div class="ttname"><a href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.Bounds</a></div><div class="ttdeci">Rectangle Bounds</div><div class="ttdef"><b>Definition:</b> <a href="a00200_source.html#l00025">VitNX_DockSplitter.cs:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -303,11 +308,11 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="a00200_source.html#l00070">70</a> of file <a class="el" href="a00200_source.html">VitNX_DockSplitter.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
-<div class="line"><span class="lineno">   72</span>            var bounds = <span class="keyword">new</span> Rectangle(Bounds.Location, Bounds.Size);</div>
+<div class="line"><span class="lineno">   72</span>            var bounds = <span class="keyword">new</span> Rectangle(<a class="code hl_property" href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">Bounds</a>.Location, <a class="code hl_property" href="a00723.html#a3ced51d921c8b8c3db571eac591fa459">Bounds</a>.Size);</div>
 <div class="line"><span class="lineno">   73</span> </div>
 <div class="line"><span class="lineno">   74</span>            <span class="keywordflow">switch</span> (_splitterType)</div>
 <div class="line"><span class="lineno">   75</span>            {</div>
-<div class="line"><span class="lineno">   76</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Left:</div>
+<div class="line"><span class="lineno">   76</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Left:</div>
 <div class="line"><span class="lineno">   77</span>                    var leftX = Math.Max(bounds.Location.X - difference.X, _minimum);</div>
 <div class="line"><span class="lineno">   78</span> </div>
 <div class="line"><span class="lineno">   79</span>                    <span class="keywordflow">if</span> (_maximum != 0 &amp;&amp; leftX &gt; _maximum)</div>
@@ -316,7 +321,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   82</span>                    bounds.Location = <span class="keyword">new</span> Point(leftX, bounds.Location.Y);</div>
 <div class="line"><span class="lineno">   83</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Right:</div>
+<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Right:</div>
 <div class="line"><span class="lineno">   86</span>                    var rightX = Math.Max(bounds.Location.X - difference.X, _minimum);</div>
 <div class="line"><span class="lineno">   87</span> </div>
 <div class="line"><span class="lineno">   88</span>                    <span class="keywordflow">if</span> (_maximum != 0 &amp;&amp; rightX &gt; _maximum)</div>
@@ -325,7 +330,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   91</span>                    bounds.Location = <span class="keyword">new</span> Point(rightX, bounds.Location.Y);</div>
 <div class="line"><span class="lineno">   92</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Top:</div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Top:</div>
 <div class="line"><span class="lineno">   95</span>                    var topY = Math.Max(bounds.Location.Y - difference.Y, _minimum);</div>
 <div class="line"><span class="lineno">   96</span> </div>
 <div class="line"><span class="lineno">   97</span>                    <span class="keywordflow">if</span> (_maximum != 0 &amp;&amp; topY &gt; _maximum)</div>
@@ -334,7 +339,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  100</span>                    bounds.Location = <span class="keyword">new</span> Point(bounds.Location.X, topY);</div>
 <div class="line"><span class="lineno">  101</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">case</span> VitNX_SplitterType.Bottom:</div>
+<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">case</span> <a class="code hl_enumeration" href="a00301.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a>.Bottom:</div>
 <div class="line"><span class="lineno">  104</span>                    var bottomY = Math.Max(bounds.Location.Y - difference.Y, _minimum);</div>
 <div class="line"><span class="lineno">  105</span> </div>
 <div class="line"><span class="lineno">  106</span>                    <span class="keywordflow">if</span> (_maximum != 0 &amp;&amp; bottomY &gt; _maximum)</div>

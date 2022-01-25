@@ -62,6 +62,7 @@ $(document).ready(function(){initNavTree('a00603.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="a00600.html">List of all members</a>  </div>
@@ -75,6 +76,11 @@ Inheritance diagram for VitNX_GroupBox:</div>
   <img src="a00603.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab1dcdc954f8a773d558251238f89a4ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00603.html#ab1dcdc954f8a773d558251238f89a4ed">VitNX_GroupBox</a> ()</td></tr>
+<tr class="separator:ab1dcdc954f8a773d558251238f89a4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7b49a512aef9068aebdc17097736f6b9"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00603.html#a7b49a512aef9068aebdc17097736f6b9">OnPaint</a> (PaintEventArgs e)</td></tr>
@@ -143,15 +149,15 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   34</span>            var g = e.Graphics;</div>
 <div class="line"><span class="lineno">   35</span>            var rect = <span class="keyword">new</span> Rectangle(0, 0, ClientSize.Width, ClientSize.Height);</div>
 <div class="line"><span class="lineno">   36</span>            var stringSize = g.MeasureString(Text, Font);</div>
-<div class="line"><span class="lineno">   37</span>            var textColor = <a class="code hl_class" href="a00567.html">Colors</a>.LightText;</div>
-<div class="line"><span class="lineno">   38</span>            var fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.GreyBackground;</div>
+<div class="line"><span class="lineno">   37</span>            var textColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
+<div class="line"><span class="lineno">   38</span>            var fillColor = <a class="code hl_class" href="a00567.html">Colors</a>.<a class="code hl_property" href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
 <div class="line"><span class="lineno">   39</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(fillColor)) { g.FillRectangle(b, rect); }</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(BorderColor, 1))</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_property" href="a00603.html#a9a254702537f8e1665a6d94154198b04">BorderColor</a>, 1))</div>
 <div class="line"><span class="lineno">   41</span>            {</div>
 <div class="line"><span class="lineno">   42</span>                var borderRect = <span class="keyword">new</span> Rectangle(0, (<span class="keywordtype">int</span>)stringSize.Height / 2, rect.Width - 1, rect.Height - ((<span class="keywordtype">int</span>)stringSize.Height / 2) - 1);</div>
 <div class="line"><span class="lineno">   43</span>                g.DrawRectangle(p, borderRect);</div>
 <div class="line"><span class="lineno">   44</span>            }</div>
-<div class="line"><span class="lineno">   45</span>            var textRect = <span class="keyword">new</span> Rectangle(rect.Left + <a class="code hl_class" href="a00571.html">Constsants</a>.Padding, rect.Top, rect.Width - (<a class="code hl_class" href="a00571.html">Constsants</a>.Padding * 2), (<span class="keywordtype">int</span>)stringSize.Height);</div>
+<div class="line"><span class="lineno">   45</span>            var textRect = <span class="keyword">new</span> Rectangle(rect.Left + <a class="code hl_class" href="a00571.html">Constsants</a>.<a class="code hl_variable" href="a00571.html#a7b317e9a3cb35e32c6f91108c01d64a9">Padding</a>, rect.Top, rect.Width - (<a class="code hl_class" href="a00571.html">Constsants</a>.<a class="code hl_variable" href="a00571.html#a7b317e9a3cb35e32c6f91108c01d64a9">Padding</a> * 2), (<span class="keywordtype">int</span>)stringSize.Height);</div>
 <div class="line"><span class="lineno">   46</span>            <span class="keyword">using</span> (var b2 = <span class="keyword">new</span> SolidBrush(fillColor))</div>
 <div class="line"><span class="lineno">   47</span>            {</div>
 <div class="line"><span class="lineno">   48</span>                var modRect = <span class="keyword">new</span> Rectangle(textRect.Left, textRect.Top, Math.Min(textRect.Width, (<span class="keywordtype">int</span>)stringSize.Width), textRect.Height);</div>
@@ -170,7 +176,11 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   61</span>            }</div>
 <div class="line"><span class="lineno">   62</span>        }</div>
 <div class="ttc" id="aa00567_html"><div class="ttname"><a href="a00567.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00567_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00567.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00062">Colors.cs:63</a></div></div>
+<div class="ttc" id="aa00567_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00567.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00007">Colors.cs:8</a></div></div>
 <div class="ttc" id="aa00571_html"><div class="ttname"><a href="a00571.html">VitNX.UI.BasedOnDarkUI.Config.Constsants</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00003">Consts.cs:4</a></div></div>
+<div class="ttc" id="aa00571_html_a7b317e9a3cb35e32c6f91108c01d64a9"><div class="ttname"><a href="a00571.html#a7b317e9a3cb35e32c6f91108c01d64a9">VitNX.UI.BasedOnDarkUI.Config.Constsants.Padding</a></div><div class="ttdeci">static int Padding</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">Consts.cs:5</a></div></div>
+<div class="ttc" id="aa00603_html_a9a254702537f8e1665a6d94154198b04"><div class="ttname"><a href="a00603.html#a9a254702537f8e1665a6d94154198b04">VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdef"><b>Definition:</b> <a href="a00098_source.html#l00015">VitNX_GroupBox.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
