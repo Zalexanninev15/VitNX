@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX_Label.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Controls/VitNX_GroupBox.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,134 +61,94 @@ $(document).ready(function(){initNavTree('a00101_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_Label.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_GroupBox.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.ComponentModel;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Drawing;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Windows.Forms;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00287.html">VitNX</a>.<a class="code hl_namespace" href="a00296.html">UI</a>.<a class="code hl_namespace" href="a00297.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00299.html">Config</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00290.html">VitNX</a>.<a class="code hl_namespace" href="a00300.html">UI</a>.<a class="code hl_namespace" href="a00301.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00303.html">Config</a>;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00300.html">VitNX.UI.BasedOnDarkUI.Controls</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00304.html">VitNX.UI.BasedOnDarkUI.Controls</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00616.html">    9</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00616.html">VitNX_Label</a> : Label</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00624.html">    9</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00624.html">VitNX_GroupBox</a> : GroupBox</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">        #region Field Region</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">private</span> Color _borderColor = <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNXBorder</a>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _autoUpdateHeight;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _isGrowing;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">        #endregion Field Region</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">        #region Property Region</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        [Category(<span class="stringliteral">&quot;Layout&quot;</span>)]</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        [Description(<span class="stringliteral">&quot;Enables automatic height sizing based on the contents of the label.&quot;</span>)]</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        [DefaultValue(<span class="keyword">false</span>)]</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="a00616.html#ac031631ec5f073e82b9de20f17a84514">   23</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00616.html#ac031631ec5f073e82b9de20f17a84514">AutoUpdateHeight</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> _autoUpdateHeight; }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keyword">set</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                _autoUpdateHeight = value;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <span class="keywordflow">if</span> (_autoUpdateHeight)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                    <a class="code hl_property" href="a00616.html#aeda78af14798ecd59170047c215bb8e9">AutoSize</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    ResizeLabel();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a00616.html#aeda78af14798ecd59170047c215bb8e9">   38</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00616.html#aeda78af14798ecd59170047c215bb8e9">AutoSize</a></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> base.AutoSize; }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keyword">set</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                base.AutoSize = value;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                <span class="keywordflow">if</span> (<a class="code hl_property" href="a00616.html#aeda78af14798ecd59170047c215bb8e9">AutoSize</a>)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    <a class="code hl_property" href="a00616.html#ac031631ec5f073e82b9de20f17a84514">AutoUpdateHeight</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">        #endregion Property Region</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">        #region Constructor Region</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="a00616.html#ad36db9d68a2ec33ecd78fb3d7b0b611d">   54</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00616.html#ad36db9d68a2ec33ecd78fb3d7b0b611d">VitNX_Label</a>()</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            ForeColor = <a class="code hl_class" href="a00576.html">Colors</a>.<a class="code hl_property" href="a00576.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">        #endregion Constructor Region</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">        #region Method Region</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> ResizeLabel()</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span> (!_autoUpdateHeight || _isGrowing)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                _isGrowing = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                var sz = <span class="keyword">new</span> Size(Width, <span class="keywordtype">int</span>.MaxValue);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                sz = TextRenderer.MeasureText(Text, Font, sz, TextFormatFlags.WordBreak);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                Height = sz.Height + Padding.Vertical;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">finally</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                _isGrowing = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">        #endregion Method Region</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">        #region Event Handler Region</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="a00616.html#a61d244fc3301ae30de624fea31fe176e">   85</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00616.html#a61d244fc3301ae30de624fea31fe176e">OnTextChanged</a>(EventArgs e)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            base.OnTextChanged(e);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            ResizeLabel();</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="a00616.html#a8fd8f7c011758f190b0085001e46b8e5">   91</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00616.html#a8fd8f7c011758f190b0085001e46b8e5">OnFontChanged</a>(EventArgs e)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            base.OnFontChanged(e);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            ResizeLabel();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="a00616.html#a176ea4b330212089872d54c0be3ce12a">   97</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00616.html#a176ea4b330212089872d54c0be3ce12a">OnSizeChanged</a>(EventArgs e)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            base.OnSizeChanged(e);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            ResizeLabel();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">        #endregion Event Handler Region</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
-<div class="ttc" id="aa00287_html"><div class="ttname"><a href="a00287.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
-<div class="ttc" id="aa00296_html"><div class="ttname"><a href="a00296.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00297_html"><div class="ttname"><a href="a00297.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00299_html"><div class="ttname"><a href="a00299.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00003">Colors.cs:4</a></div></div>
-<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">VitNX.UI.BasedOnDarkUI.Controls</a></div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00003">ScrollValueEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00576_html"><div class="ttname"><a href="a00576.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
-<div class="ttc" id="aa00576_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00576.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00062">Colors.cs:63</a></div></div>
-<div class="ttc" id="aa00616_html"><div class="ttname"><a href="a00616.html">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label</a></div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00009">VitNX_Label.cs:10</a></div></div>
-<div class="ttc" id="aa00616_html_a176ea4b330212089872d54c0be3ce12a"><div class="ttname"><a href="a00616.html#a176ea4b330212089872d54c0be3ce12a">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.OnSizeChanged</a></div><div class="ttdeci">override void OnSizeChanged(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00097">VitNX_Label.cs:97</a></div></div>
-<div class="ttc" id="aa00616_html_a61d244fc3301ae30de624fea31fe176e"><div class="ttname"><a href="a00616.html#a61d244fc3301ae30de624fea31fe176e">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.OnTextChanged</a></div><div class="ttdeci">override void OnTextChanged(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00085">VitNX_Label.cs:85</a></div></div>
-<div class="ttc" id="aa00616_html_a8fd8f7c011758f190b0085001e46b8e5"><div class="ttname"><a href="a00616.html#a8fd8f7c011758f190b0085001e46b8e5">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.OnFontChanged</a></div><div class="ttdeci">override void OnFontChanged(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00091">VitNX_Label.cs:91</a></div></div>
-<div class="ttc" id="aa00616_html_ac031631ec5f073e82b9de20f17a84514"><div class="ttname"><a href="a00616.html#ac031631ec5f073e82b9de20f17a84514">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.AutoUpdateHeight</a></div><div class="ttdeci">bool AutoUpdateHeight</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00023">VitNX_Label.cs:24</a></div></div>
-<div class="ttc" id="aa00616_html_ad36db9d68a2ec33ecd78fb3d7b0b611d"><div class="ttname"><a href="a00616.html#ad36db9d68a2ec33ecd78fb3d7b0b611d">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.VitNX_Label</a></div><div class="ttdeci">VitNX_Label()</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00054">VitNX_Label.cs:54</a></div></div>
-<div class="ttc" id="aa00616_html_aeda78af14798ecd59170047c215bb8e9"><div class="ttname"><a href="a00616.html#aeda78af14798ecd59170047c215bb8e9">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.AutoSize</a></div><div class="ttdeci">new bool AutoSize</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00038">VitNX_Label.cs:39</a></div></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        [Category(<span class="stringliteral">&quot;Appearance&quot;</span>)]</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        [Description(<span class="stringliteral">&quot;Determines the color of the border.&quot;</span>)]</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="a00624.html#a9a254702537f8e1665a6d94154198b04">   15</a></span>        <span class="keyword">public</span> Color <a class="code hl_property" href="a00624.html#a9a254702537f8e1665a6d94154198b04">BorderColor</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> _borderColor; }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keyword">set</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                _borderColor = value;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                Invalidate();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00624.html#ab1dcdc954f8a773d558251238f89a4ed">   25</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00624.html#ab1dcdc954f8a773d558251238f89a4ed">VitNX_GroupBox</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            ResizeRedraw = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            DoubleBuffered = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a00624.html#a7b49a512aef9068aebdc17097736f6b9">   32</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00624.html#a7b49a512aef9068aebdc17097736f6b9">OnPaint</a>(PaintEventArgs e)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            var g = e.Graphics;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            var rect = <span class="keyword">new</span> Rectangle(0, 0, ClientSize.Width, ClientSize.Height);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            var stringSize = g.MeasureString(Text, Font);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            var textColor = <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a093c37128b364ecb51d993b7abbac73b">LightText</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            var fillColor = <a class="code hl_class" href="a00588.html">Colors</a>.<a class="code hl_property" href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(fillColor)) { g.FillRectangle(b, rect); }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_property" href="a00624.html#a9a254702537f8e1665a6d94154198b04">BorderColor</a>, 1))</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                var borderRect = <span class="keyword">new</span> Rectangle(0, (<span class="keywordtype">int</span>)stringSize.Height / 2, rect.Width - 1, rect.Height - ((<span class="keywordtype">int</span>)stringSize.Height / 2) - 1);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                g.DrawRectangle(p, borderRect);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            var textRect = <span class="keyword">new</span> Rectangle(rect.Left + <a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#a7b317e9a3cb35e32c6f91108c01d64a9">Padding</a>, rect.Top, rect.Width - (<a class="code hl_class" href="a00592.html">Constsants</a>.<a class="code hl_variable" href="a00592.html#a7b317e9a3cb35e32c6f91108c01d64a9">Padding</a> * 2), (<span class="keywordtype">int</span>)stringSize.Height);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keyword">using</span> (var b2 = <span class="keyword">new</span> SolidBrush(fillColor))</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                var modRect = <span class="keyword">new</span> Rectangle(textRect.Left, textRect.Top, Math.Min(textRect.Width, (<span class="keywordtype">int</span>)stringSize.Width), textRect.Height);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                g.FillRectangle(b2, modRect);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keyword">using</span> (var b = <span class="keyword">new</span> SolidBrush(textColor))</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                var stringFormat = <span class="keyword">new</span> StringFormat</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    LineAlignment = StringAlignment.Center,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    Alignment = StringAlignment.Near,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    FormatFlags = StringFormatFlags.NoWrap,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    Trimming = StringTrimming.EllipsisCharacter</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                g.DrawString(Text, Font, b, textRect, stringFormat);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+<div class="ttc" id="aa00290_html"><div class="ttname"><a href="a00290.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
+<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00303_html"><div class="ttname"><a href="a00303.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00003">Colors.cs:4</a></div></div>
+<div class="ttc" id="aa00304_html"><div class="ttname"><a href="a00304.html">VitNX.UI.BasedOnDarkUI.Controls</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00003">ScrollValueEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00588_html"><div class="ttname"><a href="a00588.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00588_html_a093c37128b364ecb51d993b7abbac73b"><div class="ttname"><a href="a00588.html#a093c37128b364ecb51d993b7abbac73b">VitNX.UI.BasedOnDarkUI.Config.Colors.LightText</a></div><div class="ttdeci">static Color LightText</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00062">Colors.cs:63</a></div></div>
+<div class="ttc" id="aa00588_html_a177c5e90efbbd2ad1b059426fbc70a98"><div class="ttname"><a href="a00588.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNX.UI.BasedOnDarkUI.Config.Colors.VitNXBorder</a></div><div class="ttdeci">static Color VitNXBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00057">Colors.cs:58</a></div></div>
+<div class="ttc" id="aa00588_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00588.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00007">Colors.cs:8</a></div></div>
+<div class="ttc" id="aa00592_html"><div class="ttname"><a href="a00592.html">VitNX.UI.BasedOnDarkUI.Config.Constsants</a></div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00003">Consts.cs:4</a></div></div>
+<div class="ttc" id="aa00592_html_a7b317e9a3cb35e32c6f91108c01d64a9"><div class="ttname"><a href="a00592.html#a7b317e9a3cb35e32c6f91108c01d64a9">VitNX.UI.BasedOnDarkUI.Config.Constsants.Padding</a></div><div class="ttdeci">static int Padding</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00005">Consts.cs:5</a></div></div>
+<div class="ttc" id="aa00624_html"><div class="ttname"><a href="a00624.html">VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox</a></div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00009">VitNX_GroupBox.cs:10</a></div></div>
+<div class="ttc" id="aa00624_html_a7b49a512aef9068aebdc17097736f6b9"><div class="ttname"><a href="a00624.html#a7b49a512aef9068aebdc17097736f6b9">VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox.OnPaint</a></div><div class="ttdeci">override void OnPaint(PaintEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00032">VitNX_GroupBox.cs:32</a></div></div>
+<div class="ttc" id="aa00624_html_a9a254702537f8e1665a6d94154198b04"><div class="ttname"><a href="a00624.html#a9a254702537f8e1665a6d94154198b04">VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00015">VitNX_GroupBox.cs:16</a></div></div>
+<div class="ttc" id="aa00624_html_ab1dcdc954f8a773d558251238f89a4ed"><div class="ttname"><a href="a00624.html#ab1dcdc954f8a773d558251238f89a4ed">VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox.VitNX_GroupBox</a></div><div class="ttdeci">VitNX_GroupBox()</div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00025">VitNX_GroupBox.cs:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_3f70b4b1a5e5c1234dbce451e3d4bb72.html">Controls</a></li><li class="navelem"><b>VitNX_Label.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_3f70b4b1a5e5c1234dbce451e3d4bb72.html">Controls</a></li><li class="navelem"><b>VitNX_GroupBox.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

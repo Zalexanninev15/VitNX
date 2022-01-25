@@ -1,6 +1,29 @@
 var a00664 =
 [
-    [ "VitNX_Separator", "a00664.html#add51b2a93f38cbb7138921005ed28f01", null ],
-    [ "OnPaint", "a00664.html#a7b49a512aef9068aebdc17097736f6b9", null ],
-    [ "OnPaintBackground", "a00664.html#a2fed73cd0a8cd763a6a18be00a05d4ed", null ]
+    [ "VitNX_ScrollBase", "a00664.html#a659726e0e9ae09a283cb9aca2092aec6", null ],
+    [ "HScrollTo", "a00664.html#a476f8b072071c273f8025e3049db8c96", null ],
+    [ "OnCreateControl", "a00664.html#ad53e3abd3a95679a61df7bf633885341", null ],
+    [ "OnGotFocus", "a00664.html#ae5c0b188f25d5235d5568fd584bf7592", null ],
+    [ "OnLostFocus", "a00664.html#ab47291f2e471a96bef84161450d63f6e", null ],
+    [ "OnMouseDown", "a00664.html#a99a67e51ce554f65bcccc19aad37f46b", null ],
+    [ "OnMouseMove", "a00664.html#a57b5b248770a2c1e2514b619b8bb59b2", null ],
+    [ "OnMouseWheel", "a00664.html#a416d6c973899bfee94f6c67f543d94ea", null ],
+    [ "OnPreviewKeyDown", "a00664.html#a265dde899a7d83aca128095499d3c547", null ],
+    [ "OnResize", "a00664.html#aa643318db0b6d4130246fd4792d95e90", null ],
+    [ "PointToView", "a00664.html#af2aeef2684b56a3291b86abc9dbd2825", null ],
+    [ "RectangleToView", "a00664.html#a5e0b58ac0531a941285c7b613e4ceef0", null ],
+    [ "ScrollTo", "a00664.html#aa2701fac7fa98143e92836642c634a3c", null ],
+    [ "StartDrag", "a00664.html#a84ca7f4eee5f9d99d80520bae28e6055", null ],
+    [ "StopDrag", "a00664.html#ab793ffb3d7a76e0a59e4ff32a4bc6f4c", null ],
+    [ "VScrollTo", "a00664.html#aa906a7699f3c3e3647af76c6a405f4c6", null ],
+    [ "_hScrollBar", "a00664.html#a5b67b376148827375812ee41de61e25d", null ],
+    [ "_vScrollBar", "a00664.html#a20070030b033ff483f52a47068ee8977", null ],
+    [ "ContentSize", "a00664.html#adf0505da3a0175900f2f5b8fda49b858", null ],
+    [ "HideScrollBars", "a00664.html#a26e52057aac7a375d0aa7e6021fe229d", null ],
+    [ "IsDragging", "a00664.html#a6da52442147ba928a951afd5afca823c", null ],
+    [ "MaxDragChange", "a00664.html#a18e3afaf55d3f8dd336b224018ad7cb3", null ],
+    [ "OffsetMousePosition", "a00664.html#a13835b012ac5d50a5e46e2556d9b0f07", null ],
+    [ "Viewport", "a00664.html#adbce97a664d6b5b7deec9d6b23c0b96c", null ],
+    [ "ContentSizeChanged", "a00664.html#ac5a1bb8ef9b52e14f689919ba3b8b551", null ],
+    [ "ViewportChanged", "a00664.html#a0eac0931d79331b2d0f9462c653b6296", null ]
 ];

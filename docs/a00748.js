@@ -1,11 +1,11 @@
 var a00748 =
 [
-    [ "VitNX_ToolWindow", "a00748.html#a27afb7c97e47dc530ce2f3ac65ffb0e6", null ],
-    [ "OnMouseDown", "a00748.html#a99a67e51ce554f65bcccc19aad37f46b", null ],
-    [ "OnMouseMove", "a00748.html#a57b5b248770a2c1e2514b619b8bb59b2", null ],
-    [ "OnMouseUp", "a00748.html#a2a183abcbee81d20477e5e9f00da9363", null ],
-    [ "OnPaint", "a00748.html#a7b49a512aef9068aebdc17097736f6b9", null ],
-    [ "OnPaintBackground", "a00748.html#a2fed73cd0a8cd763a6a18be00a05d4ed", null ],
-    [ "OnResize", "a00748.html#aa643318db0b6d4130246fd4792d95e90", null ],
-    [ "Padding", "a00748.html#a05e74e33b0f3811419c1b6052e1df5fc", null ]
+    [ "VitNX_DockTab", "a00748.html#a8e7cb3557dc6115306b52c200a537256", null ],
+    [ "CalculateWidth", "a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3", null ],
+    [ "ClientRectangle", "a00748.html#adce05c41aca696cec6694e3a743c252b", null ],
+    [ "CloseButtonHot", "a00748.html#a60a39ed2d3561dac8f69fab3b2a53440", null ],
+    [ "CloseButtonRectangle", "a00748.html#a4799ecdc568d7bf7101531246ad24227", null ],
+    [ "DockContent", "a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b", null ],
+    [ "Hot", "a00748.html#aeb691638a772b5fbf5e1e51bdd19a158", null ],
+    [ "ShowSeparator", "a00748.html#a4d708fd4da59b9fc82b7b163c1e33535", null ]
 ];

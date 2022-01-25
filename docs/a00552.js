@@ -1,10 +1,16 @@
 var a00552 =
 [
-    [ "MessageBoxIcons", "a00552.html#a94a4ce481b7d390544b695ee095700b5", null ],
+    [ "DockIcons", "a00552.html#a9497a002e0918066f3425fbc2c5b4866", null ],
+    [ "active_inactive_close", "a00552.html#a33e23505dc88ddfba700c583649af4ff", null ],
+    [ "arrow", "a00552.html#aa4a6897269f524145297c9198adc585d", null ],
+    [ "close", "a00552.html#a5cef09275cd864d13f73ca7368372e6c", null ],
+    [ "close_selected", "a00552.html#ada360403da3b50372d1d81b31ad40b5d", null ],
     [ "Culture", "a00552.html#a97174a2d0af83f0bd014787ac18be56c", null ],
-    [ "error", "a00552.html#afcd020574d1cccb190f2fd076cc88908", null ],
-    [ "info", "a00552.html#a2b1d11b80123922ad944262898671d5b", null ],
-    [ "question", "a00552.html#a1ae5f8c0e0707dfd60993ce539cabb79", null ],
+    [ "inactive_close", "a00552.html#a81c823c3036b83d31f4d83113b05f452", null ],
+    [ "inactive_close_selected", "a00552.html#ae42354868199affef90338e6f80d1eb2", null ],
     [ "ResourceManager", "a00552.html#a0facd9f93017f922ba97bef37fd95b1d", null ],
-    [ "warning", "a00552.html#aa02e51aff045f2433a708e65a26a3756", null ]
+    [ "tw_active_close", "a00552.html#ab0dcda08001821f09e2851a1bcfdff6a", null ],
+    [ "tw_active_close_selected", "a00552.html#a67b4bff1216e65629e3a7eb293a8107e", null ],
+    [ "tw_close", "a00552.html#ac3fc916fa2f5aa003b13d979e4e675e1", null ],
+    [ "tw_close_selected", "a00552.html#a05ad65a4d2a6cd56f7a96ea209551db1", null ]
 ];

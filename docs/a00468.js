@@ -1,9 +1,20 @@
 var a00468 =
 [
-    [ "CS_DROPSHADOW", "a00468.html#a2e0dcc14d8c916f4bd2afa7a4efac6f3", null ],
-    [ "DOMOVE", "a00468.html#a664575bc1548e694c2649268151dda27", null ],
-    [ "MOUSEEVENTF_MOVE", "a00468.html#a24f7364525001b274ca441965303ceb3", null ],
-    [ "SC_MONITORPOWER", "a00468.html#a267942b05409ab506e26ebe9db9ecef9", null ],
-    [ "STD_OUTPUT_HANDLE", "a00468.html#a112a5aca594c119cdc130c6a2c748cb7", null ],
-    [ "WM_SYSCOMMAND", "a00468.html#a8ca727c6aabd71f5b770ab73a7afd005", null ]
+    [ "DISPLAYCONFIG_2DREGION", "a00492.html", "a00492" ],
+    [ "DISPLAYCONFIG_DEVICE_INFO_HEADER", "a00524.html", "a00524" ],
+    [ "DISPLAYCONFIG_MODE_INFO", "a00516.html", "a00516" ],
+    [ "DISPLAYCONFIG_MODE_INFO_UNION", "a00512.html", "a00512" ],
+    [ "DISPLAYCONFIG_PATH_INFO", "a00488.html", "a00488" ],
+    [ "DISPLAYCONFIG_PATH_SOURCE_INFO", "a00476.html", "a00476" ],
+    [ "DISPLAYCONFIG_PATH_TARGET_INFO", "a00480.html", "a00480" ],
+    [ "DISPLAYCONFIG_RATIONAL", "a00484.html", "a00484" ],
+    [ "DISPLAYCONFIG_SOURCE_MODE", "a00508.html", "a00508" ],
+    [ "DISPLAYCONFIG_TARGET_DEVICE_NAME", "a00528.html", "a00528" ],
+    [ "DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS", "a00520.html", "a00520" ],
+    [ "DISPLAYCONFIG_TARGET_MODE", "a00500.html", "a00500" ],
+    [ "DISPLAYCONFIG_VIDEO_SIGNAL_INFO", "a00496.html", "a00496" ],
+    [ "LUID", "a00472.html", "a00472" ],
+    [ "POINTL", "a00504.html", null ],
+    [ "DeviceFriendlyName", "a00468.html#a598627b008da5c2a816df6bdf3c8181b", null ],
+    [ "ERROR_SUCCESS", "a00468.html#a1e0aba7d75341634f54d7bfba21a9972", null ]
 ];

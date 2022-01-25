@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 
@@ -14,6 +15,16 @@ namespace VitNX.Functions.Common
                     return client.DownloadString($"https://ipinfo.io/{ip}/json");
             }
             catch { return "404"; }
+        }
+
+        public static bool IsValidTelegramBotToken(string botToken)
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                    return !client.DownloadString(new Uri($"https://api.telegram.org/bot{botToken}/getMe")).Contains("error_code");
+            }
+            catch { return false; }
         }
     }
 

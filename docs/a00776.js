@@ -1,11 +1,7 @@
 var a00776 =
 [
-    [ "Initialize", "a00776.html#aeda128f2591b20850e09e76ed292583f", null ],
-    [ "InitializeItem", "a00776.html#a823017123fe3d397ed3f679456a852dc", null ],
-    [ "OnRenderArrow", "a00776.html#a1bbf6f1c084af62099942331d545a5f1", null ],
-    [ "OnRenderImageMargin", "a00776.html#a5683d07e430987f32c9b8aa27f17c500", null ],
-    [ "OnRenderItemCheck", "a00776.html#a110bf95f8b34d13710077a0d664ad947", null ],
-    [ "OnRenderMenuItemBackground", "a00776.html#a28f40f7bec0254833c532dec0ac1be1a", null ],
-    [ "OnRenderSeparator", "a00776.html#ab2cd206b1c8d378136e8addd1a1c0456", null ],
-    [ "OnRenderToolStripBackground", "a00776.html#ab77e18678841ca4b76523be8653233a8", null ]
+    [ "VitNX_Form", "a00776.html#a3bb8c24c1844c9f1d112037f92dd5140", null ],
+    [ "OnHandleCreated", "a00776.html#a7b19995fa6f1ffa45c00cfeef387d73e", null ],
+    [ "OnPaintBackground", "a00776.html#a2fed73cd0a8cd763a6a18be00a05d4ed", null ],
+    [ "FlatBorder", "a00776.html#a645d6e9c07083eaf18a8b9370cef6f1b", null ]
 ];

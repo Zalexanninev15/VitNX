@@ -102,8 +102,8 @@ namespace VitNX.Functions.Common
         public static void CleanRecycleBin()
         {
             Windows.Win32.Import.SHEmptyRecycleBin(IntPtr.Zero, null,
-Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOSOUND |
-Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION);
+            Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOSOUND |
+            Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION);
         }
 
         public static void CreateFileBackup(string sourceFolder, string newFileExtension, bool saveOldFile)

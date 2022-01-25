@@ -1,9 +1,7 @@
 var a00712 =
 [
-    [ "DockRegionState", "a00712.html#a4a8258c3a12c25773e7512adc333d22d", null ],
-    [ "DockRegionState", "a00712.html#a69040551ffe21a3e2aa4408d75a905db", null ],
-    [ "DockRegionState", "a00712.html#a77be1b5b21b346a74d65c744c075bc49", null ],
-    [ "Area", "a00712.html#a5096dfb0c89076c0e76bf427cfbccf28", null ],
-    [ "Groups", "a00712.html#a48e556ee995b30e09e1672eb1fb47dfb", null ],
-    [ "Size", "a00712.html#a1e0bb30e5229d6f89323259356e364fd", null ]
+    [ "DockDropCollection", "a00712.html#ae574c8b56ca9b274b786e75fc7a0dd84", null ],
+    [ "DropArea", "a00712.html#a17a9f89e10aaaada74924bf00074597f", null ],
+    [ "InsertAfterArea", "a00712.html#a2f26969631c4ed564d5f6808c27a89d3", null ],
+    [ "InsertBeforeArea", "a00712.html#a537a734a590d618aa56c6330fd04a7c9", null ]
 ];

@@ -1,6 +1,4 @@
 var a00612 =
 [
-    [ "VitNX_GroupBox", "a00612.html#ab1dcdc954f8a773d558251238f89a4ed", null ],
-    [ "OnPaint", "a00612.html#a7b49a512aef9068aebdc17097736f6b9", null ],
-    [ "BorderColor", "a00612.html#a9a254702537f8e1665a6d94154198b04", null ]
+    [ "VitNX_ContextMenu", "a00612.html#a012be989556a4f6c16258f87fbd5e26b", null ]
 ];

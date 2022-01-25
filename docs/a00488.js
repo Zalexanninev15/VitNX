@@ -1,8 +1,6 @@
 var a00488 =
 [
-    [ "adapterId", "a00488.html#a22bf811db6ac29015c61e8cffe1b3e84", null ],
-    [ "id", "a00488.html#a37e2ea357c25dfa93b154d03c233cd23", null ],
-    [ "modeInfoIdx", "a00488.html#a517d1318e20ac5034dff34368eea3ea9", null ],
-    [ "statusFlags", "a00488.html#a9ab03dff0407c02cf6c2a0b92080a33e", null ],
-    [ "targetAvailable", "a00488.html#a66d8d589839fce58ca7fc69505d8dc20", null ]
+    [ "flags", "a00488.html#a660f9db871d26052904976a8bfe8432d", null ],
+    [ "sourceInfo", "a00488.html#af6c1c3f8e2e2ebceec35df1c9f613836", null ],
+    [ "targetInfo", "a00488.html#a8811e8f2b4f262d26a982f12277b9d9e", null ]
 ];

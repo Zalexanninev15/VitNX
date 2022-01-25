@@ -1,11 +1,23 @@
 var a00732 =
 [
-    [ "VitNX_DockSplitter", "a00732.html#a79400a104f40f3f591cc1083a5c9a2d7", null ],
-    [ "HideOverlay", "a00732.html#a7218d0b298b6d5b0849447250fbe9bec", null ],
-    [ "Move", "a00732.html#aba99a8a15d7d65c97334d3235a55bcb0", null ],
-    [ "ShowOverlay", "a00732.html#a67d845ba4dc3f15fee909406c4cc33e2", null ],
-    [ "UpdateBounds", "a00732.html#a1db9cbd6086ef5b725ef6dca456b0dc5", null ],
-    [ "UpdateOverlay", "a00732.html#ad451a4521d685e682f88c756f1e0552c", null ],
-    [ "Bounds", "a00732.html#a3ced51d921c8b8c3db571eac591fa459", null ],
-    [ "ResizeCursor", "a00732.html#a89999dffc2aab7af00e7d0c9894133cc", null ]
+    [ "VitNX_DockGroup", "a00732.html#abbac36f34c1e885acbac5efc15806651", null ],
+    [ "AddContent", "a00732.html#a851dd7bf4d148af9c13820d03588b89a", null ],
+    [ "EnsureVisible", "a00732.html#a48bcce1827576730d16cb76b3e9523f3", null ],
+    [ "GetContents", "a00732.html#a55ffe1730ef362a3e66cc1d1268619d2", null ],
+    [ "OnMouseDown", "a00732.html#a99a67e51ce554f65bcccc19aad37f46b", null ],
+    [ "OnMouseLeave", "a00732.html#a5e9098abfe10508ccd3d96b81f1d8923", null ],
+    [ "OnMouseMove", "a00732.html#a57b5b248770a2c1e2514b619b8bb59b2", null ],
+    [ "OnMouseUp", "a00732.html#a2a183abcbee81d20477e5e9f00da9363", null ],
+    [ "OnPaint", "a00732.html#a7b49a512aef9068aebdc17097736f6b9", null ],
+    [ "OnPaintBackground", "a00732.html#a2fed73cd0a8cd763a6a18be00a05d4ed", null ],
+    [ "OnResize", "a00732.html#adfff87b03ef3d0b1c7235b6a2575de4e", null ],
+    [ "Redraw", "a00732.html#abb6b3ccab84333a2dfaa3e87cfc3c3ab", null ],
+    [ "RemoveContent", "a00732.html#a4cdc2cf4cdc8cdf509431d29968dd1dd", null ],
+    [ "SetVisibleContent", "a00732.html#a8bcb46d4ac675cc4e4dd63134681ba41", null ],
+    [ "ContentCount", "a00732.html#aa7a2d811db4e0ce35217af8c6808f41c", null ],
+    [ "DockArea", "a00732.html#af941ee900f7fa46e65e655857bc88057", null ],
+    [ "DockPanel", "a00732.html#a7e5069afa4bf46cb927ce1ff28bcd549", null ],
+    [ "DockRegion", "a00732.html#ac52eeda800be822b04f7f4326cd0686a", null ],
+    [ "Order", "a00732.html#a50c390aab6a4df930a876c163e793ce1", null ],
+    [ "VisibleContent", "a00732.html#a5abcbb24689d5664cbba4bd33a307086", null ]
 ];

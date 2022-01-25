@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: Windows Class Reference</title>
+<title>VitNX: Helper Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,51 +62,23 @@ $(document).ready(function(){initNavTree('a00340.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="a00337.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Windows Class Reference</div></div>
+  <div class="headertitle"><div class="title">Helper Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af639d5b2963f93e55ab0bc9e41f386f6"><td class="memItemLeft" align="right" valign="top">static MemoryStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#af639d5b2963f93e55ab0bc9e41f386f6">GetScreen</a> ()</td></tr>
-<tr class="separator:af639d5b2963f93e55ab0bc9e41f386f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfa3b25cf077cb14cf3d18c3a0376149"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#acfa3b25cf077cb14cf3d18c3a0376149">GetAllUsers</a> ()</td></tr>
-<tr class="separator:acfa3b25cf077cb14cf3d18c3a0376149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a6c5244c5eb651493e28bc6499bd52d05"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a6c5244c5eb651493e28bc6499bd52d05">_computerName</a> = Environment.MachineName</td></tr>
-<tr class="separator:a6c5244c5eb651493e28bc6499bd52d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f0c9f212fcff664c73c80a433bb30a"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a75f0c9f212fcff664c73c80a433bb30a">_currentUsername</a> = Environment.UserName</td></tr>
-<tr class="separator:a75f0c9f212fcff664c73c80a433bb30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22b9ea4ab3b34a7f15c30edcfccb0129"><td class="memItemLeft" align="right" valign="top">static DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a22b9ea4ab3b34a7f15c30edcfccb0129">_localTime</a> = new Microsoft.VisualBasic.Devices.Clock().LocalTime</td></tr>
-<tr class="separator:a22b9ea4ab3b34a7f15c30edcfccb0129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a053129a3ef1a36a1bebad475abda1c29"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a053129a3ef1a36a1bebad475abda1c29">_is64bit</a> = Environment.Is64BitOperatingSystem</td></tr>
-<tr class="separator:a053129a3ef1a36a1bebad475abda1c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a199b71f5bc3f05d24e9f57b7a4fd012e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a199b71f5bc3f05d24e9f57b7a4fd012e">_windowsVersion</a> = Convert.ToString(Environment.OSVersion.Version)</td></tr>
-<tr class="separator:a199b71f5bc3f05d24e9f57b7a4fd012e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34681d849fc59c231256ccdf392d9866"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a34681d849fc59c231256ccdf392d9866">_windowsVersionFromREG</a> = double.Parse((string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;CurrentVersion&quot;, &quot;&quot;), System.Globalization.CultureInfo.InvariantCulture)</td></tr>
-<tr class="separator:a34681d849fc59c231256ccdf392d9866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a408a883857cd1df22aac9ed0fcabc101"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a408a883857cd1df22aac9ed0fcabc101">_windowsEditionIDFromREG</a> = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;EditionID&quot;, &quot;&quot;)</td></tr>
-<tr class="separator:a408a883857cd1df22aac9ed0fcabc101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab64dcb415074919a1b2d76ab53565002"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#ab64dcb415074919a1b2d76ab53565002">_windowsCurrentBuildNumberFromREG</a> = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;CurrentBuildNumber&quot;, &quot;&quot;)</td></tr>
-<tr class="separator:ab64dcb415074919a1b2d76ab53565002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a605ea11c23d2877280e804ae27d760af"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#a605ea11c23d2877280e804ae27d760af">_windowsProductNameFromREG</a> = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;ProductName&quot;, &quot;&quot;)</td></tr>
-<tr class="separator:a605ea11c23d2877280e804ae27d760af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac34deb23c137f409433bb07d95db0699"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#ac34deb23c137f409433bb07d95db0699">_windowsDisplayVersionFromREG</a> = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;DisplayVersion&quot;, &quot;&quot;)</td></tr>
-<tr class="separator:ac34deb23c137f409433bb07d95db0699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac305f669be8b8c17f691d6e8ec99beb7"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#ac305f669be8b8c17f691d6e8ec99beb7">_windowsReleaseIdFromREG</a> = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;ReleaseId&quot;, &quot;&quot;)</td></tr>
-<tr class="separator:ac305f669be8b8c17f691d6e8ec99beb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad745a696304d24c95a403ca7eefc5ec2"><td class="memItemLeft" align="right" valign="top">static readonly string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340.html#ad745a696304d24c95a403ca7eefc5ec2">_sizeSuffixes</a> = { &quot;Bytes&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;, &quot;PB&quot;, &quot;EB&quot;, &quot;ZB&quot;, &quot;YB&quot; }</td></tr>
+<tr class="separator:ad745a696304d24c95a403ca7eefc5ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00020">20</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="acfa3b25cf077cb14cf3d18c3a0376149" name="acfa3b25cf077cb14cf3d18c3a0376149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa3b25cf077cb14cf3d18c3a0376149">&#9670;&nbsp;</a></span>GetAllUsers()</h2>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00015">15</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad745a696304d24c95a403ca7eefc5ec2" name="ad745a696304d24c95a403ca7eefc5ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad745a696304d24c95a403ca7eefc5ec2">&#9670;&nbsp;</a></span>_sizeSuffixes</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -115,10 +87,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void GetAllUsers </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">readonly string [] _sizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;, &quot;PB&quot;, &quot;EB&quot;, &quot;ZB&quot;, &quot;YB&quot; }</td>
         </tr>
       </table>
   </td>
@@ -128,351 +97,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00045">45</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>        {</div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordtype">string</span> users = <a class="code hl_class" href="a00392.html">Processes</a>.<a class="code hl_function" href="a00392.html#ac8c4d5d06de749d6d24c46be912c9ce8">Execute</a>(<span class="stringliteral">&quot;wmic&quot;</span>, <span class="stringliteral">&quot;useraccount list full&quot;</span>);</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordtype">string</span> temp_file = $<span class="stringliteral">@&quot;{Path.GetTempPath()}\Пользователи.txt&quot;</span>;</div>
-<div class="line"><span class="lineno">   49</span>            FileSystem.WriteTextToFileUTF8(users, temp_file);</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordtype">string</span>[] lines = File.ReadAllLines(temp_file);</div>
-<div class="line"><span class="lineno">   51</span>            <span class="keyword">using</span> (StreamWriter writer = <span class="keyword">new</span> StreamWriter(temp_file))</div>
-<div class="line"><span class="lineno">   52</span>            {</div>
-<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> line <span class="keywordflow">in</span> lines)</div>
-<div class="line"><span class="lineno">   54</span>                {</div>
-<div class="line"><span class="lineno">   55</span>                    <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrWhiteSpace(line))</div>
-<div class="line"><span class="lineno">   56</span>                        writer.WriteLine(line);</div>
-<div class="line"><span class="lineno">   57</span>                }</div>
-<div class="line"><span class="lineno">   58</span>            }</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordtype">string</span>[] rep = File.ReadAllLines(temp_file);</div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rep.Length; i++)</div>
-<div class="line"><span class="lineno">   61</span>            {</div>
-<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">if</span> (i == 0)</div>
-<div class="line"><span class="lineno">   63</span>                {</div>
-<div class="line"><span class="lineno">   64</span>                    rep[0] = <span class="stringliteral">&quot;Пользователи:\n\n&quot;</span> + rep[0];</div>
-<div class="line"><span class="lineno">   65</span>                }</div>
-<div class="line"><span class="lineno">   66</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;TRUE&quot;</span>, <span class="stringliteral">&quot;Да&quot;</span>);</div>
-<div class="line"><span class="lineno">   67</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;FALSE&quot;</span>, <span class="stringliteral">&quot;Нет&quot;</span>);</div>
-<div class="line"><span class="lineno">   68</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Description&quot;</span>, <span class="stringliteral">&quot;Описание&quot;</span>);</div>
-<div class="line"><span class="lineno">   69</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Domain&quot;</span>, <span class="stringliteral">&quot;Домен&quot;</span>);</div>
-<div class="line"><span class="lineno">   70</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;FullName&quot;</span>, <span class="stringliteral">&quot;Полное имя&quot;</span>);</div>
-<div class="line"><span class="lineno">   71</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Name&quot;</span>, <span class="stringliteral">&quot;Имя&quot;</span>);</div>
-<div class="line"><span class="lineno">   72</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;LocalAccount&quot;</span>, <span class="stringliteral">&quot;Локальная запись&quot;</span>);</div>
-<div class="line"><span class="lineno">   73</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Disabled&quot;</span>, <span class="stringliteral">&quot;Отключена&quot;</span>);</div>
-<div class="line"><span class="lineno">   74</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Status&quot;</span>, <span class="stringliteral">&quot;Статус&quot;</span>);</div>
-<div class="line"><span class="lineno">   75</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Lockout&quot;</span>, <span class="stringliteral">&quot;Блокировка&quot;</span>);</div>
-<div class="line"><span class="lineno">   76</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;Degraded&quot;</span>, <span class="stringliteral">&quot;Отключён\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   77</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;InstallDate&quot;</span>, <span class="stringliteral">&quot;Дата создания&quot;</span>);</div>
-<div class="line"><span class="lineno">   78</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;AccountType&quot;</span>, <span class="stringliteral">&quot;Тип учётной записи&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;PasswordChangeable&quot;</span>, <span class="stringliteral">&quot;Пароль можно изменить&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;PasswordExpires&quot;</span>, <span class="stringliteral">&quot;Срок действия пароля истекает&quot;</span>);</div>
-<div class="line"><span class="lineno">   81</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;PasswordRequired&quot;</span>, <span class="stringliteral">&quot;Требуется пароль&quot;</span>);</div>
-<div class="line"><span class="lineno">   82</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;512&quot;</span>, <span class="stringliteral">&quot;Обычный [512]&quot;</span>).Replace(<span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;Отключённый [2]&quot;</span>).Replace(<span class="stringliteral">&quot;256&quot;</span>, <span class="stringliteral">&quot;Временная дублирующая учётная запись [256]&quot;</span>).Replace(<span class="stringliteral">&quot;128&quot;</span>, <span class="stringliteral">&quot;Разрешён зашифрованный пароль [128]&quot;</span>);</div>
-<div class="line"><span class="lineno">   83</span>                rep[i] = rep[i].Replace(<span class="stringliteral">&quot;OK&quot;</span>, <span class="stringliteral">&quot;Включён\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   84</span>            }</div>
-<div class="line"><span class="lineno">   85</span>            File.WriteAllLines(temp_file, rep);</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="ttc" id="aa00392_html"><div class="ttname"><a href="a00392.html">VitNX.Functions.Windows.Apps.Processes</a></div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00012">Apps.cs:13</a></div></div>
-<div class="ttc" id="aa00392_html_ac8c4d5d06de749d6d24c46be912c9ce8"><div class="ttname"><a href="a00392.html#ac8c4d5d06de749d6d24c46be912c9ce8">VitNX.Functions.Windows.Apps.Processes.Execute</a></div><div class="ttdeci">static string Execute(string targetFile, string arguments)</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00058">Apps.cs:58</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af639d5b2963f93e55ab0bc9e41f386f6" name="af639d5b2963f93e55ab0bc9e41f386f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af639d5b2963f93e55ab0bc9e41f386f6">&#9670;&nbsp;</a></span>GetScreen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static MemoryStream GetScreen </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00034">34</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>        {</div>
-<div class="line"><span class="lineno">   36</span>            Bitmap BM = <span class="keyword">new</span> Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);</div>
-<div class="line"><span class="lineno">   37</span>            Graphics GH = Graphics.FromImage(BM);</div>
-<div class="line"><span class="lineno">   38</span>            GH.CopyFromScreen(0, 0, 0, 0, BM.Size);</div>
-<div class="line"><span class="lineno">   39</span>            MemoryStream memoryStream = <span class="keyword">new</span> MemoryStream();</div>
-<div class="line"><span class="lineno">   40</span>            BM.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);</div>
-<div class="line"><span class="lineno">   41</span>            memoryStream.Position = 0;</div>
-<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">return</span> memoryStream;</div>
-<div class="line"><span class="lineno">   43</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6c5244c5eb651493e28bc6499bd52d05" name="a6c5244c5eb651493e28bc6499bd52d05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c5244c5eb651493e28bc6499bd52d05">&#9670;&nbsp;</a></span>_computerName</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _computerName = Environment.MachineName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00022">22</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a75f0c9f212fcff664c73c80a433bb30a" name="a75f0c9f212fcff664c73c80a433bb30a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75f0c9f212fcff664c73c80a433bb30a">&#9670;&nbsp;</a></span>_currentUsername</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _currentUsername = Environment.UserName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00023">23</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a053129a3ef1a36a1bebad475abda1c29" name="a053129a3ef1a36a1bebad475abda1c29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a053129a3ef1a36a1bebad475abda1c29">&#9670;&nbsp;</a></span>_is64bit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool _is64bit = Environment.Is64BitOperatingSystem</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00025">25</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a22b9ea4ab3b34a7f15c30edcfccb0129" name="a22b9ea4ab3b34a7f15c30edcfccb0129"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22b9ea4ab3b34a7f15c30edcfccb0129">&#9670;&nbsp;</a></span>_localTime</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">DateTime _localTime = new Microsoft.VisualBasic.Devices.Clock().LocalTime</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00024">24</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="ab64dcb415074919a1b2d76ab53565002" name="ab64dcb415074919a1b2d76ab53565002"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab64dcb415074919a1b2d76ab53565002">&#9670;&nbsp;</a></span>_windowsCurrentBuildNumberFromREG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _windowsCurrentBuildNumberFromREG = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;CurrentBuildNumber&quot;, &quot;&quot;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00029">29</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="ac34deb23c137f409433bb07d95db0699" name="ac34deb23c137f409433bb07d95db0699"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac34deb23c137f409433bb07d95db0699">&#9670;&nbsp;</a></span>_windowsDisplayVersionFromREG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _windowsDisplayVersionFromREG = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;DisplayVersion&quot;, &quot;&quot;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00031">31</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a408a883857cd1df22aac9ed0fcabc101" name="a408a883857cd1df22aac9ed0fcabc101"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a408a883857cd1df22aac9ed0fcabc101">&#9670;&nbsp;</a></span>_windowsEditionIDFromREG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _windowsEditionIDFromREG = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;EditionID&quot;, &quot;&quot;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00028">28</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a605ea11c23d2877280e804ae27d760af" name="a605ea11c23d2877280e804ae27d760af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a605ea11c23d2877280e804ae27d760af">&#9670;&nbsp;</a></span>_windowsProductNameFromREG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _windowsProductNameFromREG = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;ProductName&quot;, &quot;&quot;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00030">30</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="ac305f669be8b8c17f691d6e8ec99beb7" name="ac305f669be8b8c17f691d6e8ec99beb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac305f669be8b8c17f691d6e8ec99beb7">&#9670;&nbsp;</a></span>_windowsReleaseIdFromREG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _windowsReleaseIdFromREG = (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;ReleaseId&quot;, &quot;&quot;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00032">32</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a199b71f5bc3f05d24e9f57b7a4fd012e" name="a199b71f5bc3f05d24e9f57b7a4fd012e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a199b71f5bc3f05d24e9f57b7a4fd012e">&#9670;&nbsp;</a></span>_windowsVersion</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string _windowsVersion = Convert.ToString(Environment.OSVersion.Version)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00026">26</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
-
-</div>
-</div>
-<a id="a34681d849fc59c231256ccdf392d9866" name="a34681d849fc59c231256ccdf392d9866"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34681d849fc59c231256ccdf392d9866">&#9670;&nbsp;</a></span>_windowsVersionFromREG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double _windowsVersionFromREG = double.Parse((string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;, &quot;CurrentVersion&quot;, &quot;&quot;), System.Globalization.CultureInfo.InvariantCulture)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00027">27</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00005_source.html#l00017">17</a> of file <a class="el" href="a00005_source.html">Information.cs</a>.</p>
 
 </div>
 </div>
@@ -481,7 +106,7 @@ Static Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00288.html">Functions</a></li><li class="navelem"><a class="el" href="a00289.html">Common</a></li><li class="navelem"><a class="el" href="a00290.html">Information</a></li><li class="navelem"><a class="el" href="a00340.html">Windows</a></li>
+    <li class="navelem"><a class="el" href="a00290.html">VitNX</a></li><li class="navelem"><a class="el" href="a00291.html">Functions</a></li><li class="navelem"><a class="el" href="a00292.html">Common</a></li><li class="navelem"><a class="el" href="a00293.html">Information</a></li><li class="navelem"><a class="el" href="a00340.html">Helper</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

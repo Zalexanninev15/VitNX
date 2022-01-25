@@ -1,6 +1,6 @@
 var a00812 =
 [
-    [ "VitNX2_Panel", "a00812.html#ab5f62a958fcdfa92a2d2d46aa451a01d", null ],
+    [ "VitNX2_Button", "a00812.html#a36fe2bcc12c06b6ef4e85e6cc21cd4e8", null ],
     [ "OnHandleCreated", "a00812.html#a7b19995fa6f1ffa45c00cfeef387d73e", null ],
     [ "OnPaint", "a00812.html#a4948a2d75172f121522711a8f5c9cbcd", null ],
     [ "BackgroundColor", "a00812.html#a34ba57954db00b68526dfc733ff9b8c3", null ],

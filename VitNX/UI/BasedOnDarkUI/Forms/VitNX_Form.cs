@@ -67,5 +67,18 @@ namespace VitNX.UI.BasedOnDarkUI.Forms
         }
 
         #endregion Paint Region
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // VitNX_Form
+            // 
+            this.ClientSize = new Size(284, 265);
+            this.Name = "VitNX_Form";
+            this.TopMost = true;
+            this.ResumeLayout(false);
+
+        }
     }
 }

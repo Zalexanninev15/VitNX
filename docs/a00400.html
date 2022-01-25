@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: TaskBarProgressBar Class Reference</title>
+<title>VitNX: Installed Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,26 +62,27 @@ $(document).ready(function(){initNavTree('a00400.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="a00397.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">TaskBarProgressBar Class Reference</div></div>
+  <div class="headertitle"><div class="title">Installed Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0658c89cedbb8b83d3d9b42a1c2b6b2d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#a0658c89cedbb8b83d3d9b42a1c2b6b2d">SetState</a> (IntPtr windowHandle, <a class="el" href="a00472.html#a9a982addcbd5ba10a4bf0ea32abecfe5">Enums.TASKBAR_STATES</a> taskbarState)</td></tr>
-<tr class="separator:a0658c89cedbb8b83d3d9b42a1c2b6b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2264716f254748bb33bce7dab8cdf5d4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#a2264716f254748bb33bce7dab8cdf5d4">SetValue</a> (IntPtr windowHandle, double Value, double Max)</td></tr>
-<tr class="separator:a2264716f254748bb33bce7dab8cdf5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c6c2ccfe855ad26d1693624a81466a"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#a07c6c2ccfe855ad26d1693624a81466a">GetList</a> ()</td></tr>
+<tr class="separator:a07c6c2ccfe855ad26d1693624a81466a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a396ce67a029836cc8a2dffba290366e5"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#a396ce67a029836cc8a2dffba290366e5">GetPath</a> (string applicationName)</td></tr>
+<tr class="separator:a396ce67a029836cc8a2dffba290366e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb282243664b0995a909f1b77d37140"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#a7bb282243664b0995a909f1b77d37140">FindAppPath</a> (string keyPath, string applicationName)</td></tr>
+<tr class="separator:a7bb282243664b0995a909f1b77d37140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00011">11</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00020_source.html#l00144">144</a> of file <a class="el" href="a00020_source.html">Apps.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0658c89cedbb8b83d3d9b42a1c2b6b2d" name="a0658c89cedbb8b83d3d9b42a1c2b6b2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0658c89cedbb8b83d3d9b42a1c2b6b2d">&#9670;&nbsp;</a></span>SetState()</h2>
+<a id="a7bb282243664b0995a909f1b77d37140" name="a7bb282243664b0995a909f1b77d37140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb282243664b0995a909f1b77d37140">&#9670;&nbsp;</a></span>FindAppPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -90,16 +91,16 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void SetState </td>
+          <td class="memname">static string FindAppPath </td>
           <td>(</td>
-          <td class="paramtype">IntPtr&#160;</td>
-          <td class="paramname"><em>windowHandle</em>, </td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>keyPath</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00472.html#a9a982addcbd5ba10a4bf0ea32abecfe5">Enums.TASKBAR_STATES</a>&#160;</td>
-          <td class="paramname"><em>taskbarState</em>&#160;</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>applicationName</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -114,16 +115,23 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00053">53</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>        {</div>
-<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">if</span> (taskbarSupported)</div>
-<div class="line"><span class="lineno">   57</span>                taskbarInstance.SetProgressState(windowHandle, taskbarState);</div>
-<div class="line"><span class="lineno">   58</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="a00020_source.html#l00180">180</a> of file <a class="el" href="a00020_source.html">Apps.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>        {</div>
+<div class="line"><span class="lineno">  182</span>            var uninstall = Registry.LocalMachine.OpenSubKey(keyPath);</div>
+<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">foreach</span> (var productSubKey <span class="keywordflow">in</span> uninstall.GetSubKeyNames())</div>
+<div class="line"><span class="lineno">  184</span>            {</div>
+<div class="line"><span class="lineno">  185</span>                var product = uninstall.OpenSubKey(productSubKey);</div>
+<div class="line"><span class="lineno">  186</span>                var displayName = product.GetValue(<span class="stringliteral">&quot;DisplayName&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>                <span class="keywordflow">if</span> (Convert.ToString(displayName) != <span class="stringliteral">&quot;&quot;</span> &amp;&amp; Convert.ToString(displayName).Contains(applicationName))</div>
+<div class="line"><span class="lineno">  188</span>                    <span class="keywordflow">return</span> product.GetValue(<span class="stringliteral">&quot;InstallLocation&quot;</span>).ToString();</div>
+<div class="line"><span class="lineno">  189</span>            }</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  191</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2264716f254748bb33bce7dab8cdf5d4" name="a2264716f254748bb33bce7dab8cdf5d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2264716f254748bb33bce7dab8cdf5d4">&#9670;&nbsp;</a></span>SetValue()</h2>
+<a id="a07c6c2ccfe855ad26d1693624a81466a" name="a07c6c2ccfe855ad26d1693624a81466a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c6c2ccfe855ad26d1693624a81466a">&#9670;&nbsp;</a></span>GetList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,27 +140,10 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void SetValue </td>
+          <td class="memname">static string GetList </td>
           <td>(</td>
-          <td class="paramtype">IntPtr&#160;</td>
-          <td class="paramname"><em>windowHandle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>Value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>Max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -162,11 +153,67 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00060">60</a> of file <a class="el" href="a00023_source.html">NativeControls.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>        {</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (taskbarSupported)</div>
-<div class="line"><span class="lineno">   65</span>                taskbarInstance.SetProgressValue(windowHandle, (ulong)Value, (ulong)Max);</div>
-<div class="line"><span class="lineno">   66</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="a00020_source.html#l00146">146</a> of file <a class="el" href="a00020_source.html">Apps.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>        {</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordtype">string</span> toText = <span class="stringliteral">&quot;Installed apps:&quot;</span>;</div>
+<div class="line"><span class="lineno">  149</span>            ManagementObjectSearcher searcher = <span class="keyword">new</span> ManagementObjectSearcher(<span class="stringliteral">&quot;SELECT * FROM Win32_Product&quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span>            ManagementObjectCollection information = searcher.Get();</div>
+<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">foreach</span> (ManagementObject app <span class="keywordflow">in</span> information)</div>
+<div class="line"><span class="lineno">  152</span>            {</div>
+<div class="line"><span class="lineno">  153</span>                <span class="keywordtype">string</span> toTextText = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  154</span>                <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  155</span>                {</div>
+<div class="line"><span class="lineno">  156</span>                    toTextText = <a class="code hl_function" href="a00400.html#a396ce67a029836cc8a2dffba290366e5">GetPath</a>(Convert.ToString(app[<span class="stringliteral">&quot;Name&quot;</span>]));</div>
+<div class="line"><span class="lineno">  157</span>                    <span class="keywordflow">if</span> (toTextText == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  158</span>                        toTextText = <a class="code hl_function" href="a00400.html#a396ce67a029836cc8a2dffba290366e5">GetPath</a>(Convert.ToString(app[<span class="stringliteral">&quot;IdentifyingNumber&quot;</span>]));</div>
+<div class="line"><span class="lineno">  159</span>                }</div>
+<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">catch</span> { }</div>
+<div class="line"><span class="lineno">  161</span>                toText += ($<span class="stringliteral">&quot;\nName: {app[&quot;</span>Name<span class="stringliteral">&quot;]} ({app[&quot;</span>Caption<span class="stringliteral">&quot;]})&quot;</span> +</div>
+<div class="line"><span class="lineno">  162</span>                $<span class="stringliteral">&quot;\nVersion: {app[&quot;</span>Version<span class="stringliteral">&quot;]}&quot;</span> +</div>
+<div class="line"><span class="lineno">  163</span>                $<span class="stringliteral">&quot;\nAuthor: {app[&quot;</span>Vendor<span class="stringliteral">&quot;]}&quot;</span> +</div>
+<div class="line"><span class="lineno">  164</span>                $<span class="stringliteral">&quot;\nInstall date: {app[&quot;</span>InstallDate<span class="stringliteral">&quot;]}&quot;</span> +</div>
+<div class="line"><span class="lineno">  165</span>                $<span class="stringliteral">&quot;\nInstall path: {toTextText}&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span>            }</div>
+<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">return</span> toText;</div>
+<div class="line"><span class="lineno">  168</span>        }</div>
+<div class="ttc" id="aa00400_html_a396ce67a029836cc8a2dffba290366e5"><div class="ttname"><a href="a00400.html#a396ce67a029836cc8a2dffba290366e5">VitNX.Functions.Windows.Apps.Installed.GetPath</a></div><div class="ttdeci">static string GetPath(string applicationName)</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00170">Apps.cs:170</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a396ce67a029836cc8a2dffba290366e5" name="a396ce67a029836cc8a2dffba290366e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a396ce67a029836cc8a2dffba290366e5">&#9670;&nbsp;</a></span>GetPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string GetPath </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>applicationName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00020_source.html#l00170">170</a> of file <a class="el" href="a00020_source.html">Apps.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>        {</div>
+<div class="line"><span class="lineno">  172</span>            var installPath = <a class="code hl_function" href="a00400.html#a7bb282243664b0995a909f1b77d37140">FindAppPath</a>(<span class="stringliteral">@&quot;SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall&quot;</span>, applicationName);</div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">if</span> (installPath == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  174</span>                installPath = <a class="code hl_function" href="a00400.html#a7bb282243664b0995a909f1b77d37140">FindAppPath</a>(<span class="stringliteral">@&quot;SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall&quot;</span>, applicationName);</div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">if</span> (installPath == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  176</span>                installPath = <a class="code hl_function" href="a00400.html#a7bb282243664b0995a909f1b77d37140">FindAppPath</a>(<span class="stringliteral">@&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall&quot;</span>, applicationName);</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">return</span> installPath;</div>
+<div class="line"><span class="lineno">  178</span>        }</div>
+<div class="ttc" id="aa00400_html_a7bb282243664b0995a909f1b77d37140"><div class="ttname"><a href="a00400.html#a7bb282243664b0995a909f1b77d37140">VitNX.Functions.Windows.Apps.Installed.FindAppPath</a></div><div class="ttdeci">static string FindAppPath(string keyPath, string applicationName)</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00180">Apps.cs:180</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -175,7 +222,7 @@ Static Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00288.html">Functions</a></li><li class="navelem"><a class="el" href="a00291.html">Windows</a></li><li class="navelem"><a class="el" href="a00293.html">NativeControls</a></li><li class="navelem"><a class="el" href="a00400.html">TaskBarProgressBar</a></li>
+    <li class="navelem"><a class="el" href="a00290.html">VitNX</a></li><li class="navelem"><a class="el" href="a00291.html">Functions</a></li><li class="navelem"><a class="el" href="a00295.html">Windows</a></li><li class="navelem"><a class="el" href="a00296.html">Apps</a></li><li class="navelem"><a class="el" href="a00400.html">Installed</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

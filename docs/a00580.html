@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: Constsants Class Reference</title>
+<title>VitNX: ObservableList&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,39 +62,157 @@ $(document).ready(function(){initNavTree('a00580.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="a00577.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Constsants Class Reference</div></div>
+  <div class="headertitle"><div class="title">ObservableList&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for ObservableList&lt; T &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00580.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a7b317e9a3cb35e32c6f91108c01d64a9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a7b317e9a3cb35e32c6f91108c01d64a9">Padding</a> = 10</td></tr>
-<tr class="separator:a7b317e9a3cb35e32c6f91108c01d64a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b54795fb88d28acc73971c716cb745a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a5b54795fb88d28acc73971c716cb745a">ScrollBarSize</a> = 15</td></tr>
-<tr class="separator:a5b54795fb88d28acc73971c716cb745a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac7302b1a30ad6b8b88e192852f210b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a2ac7302b1a30ad6b8b88e192852f210b">ArrowButtonSize</a> = 15</td></tr>
-<tr class="separator:a2ac7302b1a30ad6b8b88e192852f210b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d53d2cc6f753da8b1a26f3f67020ec7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a9d53d2cc6f753da8b1a26f3f67020ec7">MinimumThumbSize</a> = 11</td></tr>
-<tr class="separator:a9d53d2cc6f753da8b1a26f3f67020ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8d51c32e941eb21846e7e76a061e477"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#af8d51c32e941eb21846e7e76a061e477">CheckBoxSize</a> = 12</td></tr>
-<tr class="separator:af8d51c32e941eb21846e7e76a061e477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab03f5206c7a2ce1d7a949197e0deb369"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#ab03f5206c7a2ce1d7a949197e0deb369">RadioButtonSize</a> = 12</td></tr>
-<tr class="separator:ab03f5206c7a2ce1d7a949197e0deb369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad7abd061e1748fb890bd5fff310150a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#aad7abd061e1748fb890bd5fff310150a">ToolWindowHeaderSize</a> = 25</td></tr>
-<tr class="separator:aad7abd061e1748fb890bd5fff310150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af60ab9ef2171b3baa79cf44f575f90ec"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#af60ab9ef2171b3baa79cf44f575f90ec">DocumentTabAreaSize</a> = 24</td></tr>
-<tr class="separator:af60ab9ef2171b3baa79cf44f575f90ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05e511eb055078e4dae407edc1f3627e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a05e511eb055078e4dae407edc1f3627e">ToolWindowTabAreaSize</a> = 21</td></tr>
-<tr class="separator:a05e511eb055078e4dae407edc1f3627e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6e2d745cdb7a7b983f861ed6a9a541a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a> ()</td></tr>
+<tr class="separator:a6e2d745cdb7a7b983f861ed6a9a541a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada298f12eac3d460dcd3723be000d8dd"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#ada298f12eac3d460dcd3723be000d8dd">Add</a> (T item)</td></tr>
+<tr class="separator:ada298f12eac3d460dcd3723be000d8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32139b8dfb6944923778903e0a3301e"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#aa32139b8dfb6944923778903e0a3301e">AddRange</a> (IEnumerable&lt; T &gt; collection)</td></tr>
+<tr class="separator:aa32139b8dfb6944923778903e0a3301e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00a8317cd454bcc75e3bad9758cf52d"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#ae00a8317cd454bcc75e3bad9758cf52d">Remove</a> (T item)</td></tr>
+<tr class="separator:ae00a8317cd454bcc75e3bad9758cf52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96041cf263757ba62edf0e9009d05b92"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a96041cf263757ba62edf0e9009d05b92">Clear</a> ()</td></tr>
+<tr class="separator:a96041cf263757ba62edf0e9009d05b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8ad4348ef0f9969025bab397e7e27e26"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a8ad4348ef0f9969025bab397e7e27e26">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a8ad4348ef0f9969025bab397e7e27e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a7da3e21a29e293d111aedd757fe0fef3"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="a00584.html">ObservableListModified</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a></td></tr>
+<tr class="separator:a7da3e21a29e293d111aedd757fe0fef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9856a105cbf4527cb8dc444f5982369"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="a00584.html">ObservableListModified</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a></td></tr>
+<tr class="separator:aa9856a105cbf4527cb8dc444f5982369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00003">3</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2ac7302b1a30ad6b8b88e192852f210b" name="a2ac7302b1a30ad6b8b88e192852f210b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ac7302b1a30ad6b8b88e192852f210b">&#9670;&nbsp;</a></span>ArrowButtonSize</h2>
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00007">7</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada298f12eac3d460dcd3723be000d8dd" name="ada298f12eac3d460dcd3723be000d8dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada298f12eac3d460dcd3723be000d8dd">&#9670;&nbsp;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">new void Add </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00058">58</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            base.Add(item);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   63</span>                <a class="code hl_event" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+<div class="ttc" id="aa00580_html_a7da3e21a29e293d111aedd757fe0fef3"><div class="ttname"><a href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.ItemsAdded</a></div><div class="ttdeci">EventHandler&lt; ObservableListModified&lt; T &gt; &gt; ItemsAdded</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00017">ObservableList.cs:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa32139b8dfb6944923778903e0a3301e" name="aa32139b8dfb6944923778903e0a3301e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32139b8dfb6944923778903e0a3301e">&#9670;&nbsp;</a></span>AddRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">new void AddRange </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>collection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00066">66</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            var list = collection.ToList();</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>            base.AddRange(list);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   73</span>                <a class="code hl_event" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(list));</div>
+<div class="line"><span class="lineno">   74</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a96041cf263757ba62edf0e9009d05b92" name="a96041cf263757ba62edf0e9009d05b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96041cf263757ba62edf0e9009d05b92">&#9670;&nbsp;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">new void Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00084">84</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>        {</div>
+<div class="line"><span class="lineno">   86</span>            ObservableListModified&lt;T&gt; removed = <span class="keyword">new</span> ObservableListModified&lt;T&gt;(this.ToList&lt;T&gt;());</div>
+<div class="line"><span class="lineno">   87</span>            base.Clear();</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> (removed.Items.Count() &gt; 0 &amp;&amp; <a class="code hl_event" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   90</span>                <a class="code hl_event" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>(<span class="keyword">this</span>, removed);</div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+<div class="ttc" id="aa00580_html_aa9856a105cbf4527cb8dc444f5982369"><div class="ttname"><a href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.ItemsRemoved</a></div><div class="ttdeci">EventHandler&lt; ObservableListModified&lt; T &gt; &gt; ItemsRemoved</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00019">ObservableList.cs:19</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6e2d745cdb7a7b983f861ed6a9a541a7" name="a6e2d745cdb7a7b983f861ed6a9a541a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2d745cdb7a7b983f861ed6a9a541a7">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00034">34</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>        {</div>
+<div class="line"><span class="lineno">   36</span>            <a class="code hl_function" href="a00580.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   37</span>            GC.SuppressFinalize(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+<div class="ttc" id="aa00580_html_a6e2d745cdb7a7b983f861ed6a9a541a7"><div class="ttname"><a href="a00580.html#a6e2d745cdb7a7b983f861ed6a9a541a7">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Dispose</a></div><div class="ttdeci">void Dispose()</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00034">ObservableList.cs:34</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ad4348ef0f9969025bab397e7e27e26" name="a8ad4348ef0f9969025bab397e7e27e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ad4348ef0f9969025bab397e7e27e26">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -103,209 +221,92 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ArrowButtonSize = 15</td>
+          <td class="memname">virtual void Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00007">7</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00040">40</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>        {</div>
+<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">if</span> (!_disposed)</div>
+<div class="line"><span class="lineno">   43</span>            {</div>
+<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   45</span>                    <a class="code hl_event" href="a00580.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   48</span>                    <a class="code hl_event" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>                _disposed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   51</span>            }</div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="af8d51c32e941eb21846e7e76a061e477" name="af8d51c32e941eb21846e7e76a061e477"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8d51c32e941eb21846e7e76a061e477">&#9670;&nbsp;</a></span>CheckBoxSize</h2>
+<a id="ae00a8317cd454bcc75e3bad9758cf52d" name="ae00a8317cd454bcc75e3bad9758cf52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00a8317cd454bcc75e3bad9758cf52d">&#9670;&nbsp;</a></span>Remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int CheckBoxSize = 12</td>
+          <td class="memname">new void Remove </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00009">9</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00076">76</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            base.Remove(item);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   81</span>                <a class="code hl_event" href="a00580.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>(<span class="keyword">this</span>, <span class="keyword">new</span> ObservableListModified&lt;T&gt;(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="af60ab9ef2171b3baa79cf44f575f90ec" name="af60ab9ef2171b3baa79cf44f575f90ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af60ab9ef2171b3baa79cf44f575f90ec">&#9670;&nbsp;</a></span>DocumentTabAreaSize</h2>
+<h2 class="groupheader">Event Documentation</h2>
+<a id="a7da3e21a29e293d111aedd757fe0fef3" name="a7da3e21a29e293d111aedd757fe0fef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da3e21a29e293d111aedd757fe0fef3">&#9670;&nbsp;</a></span>ItemsAdded</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int DocumentTabAreaSize = 24</td>
+          <td class="memname">EventHandler&lt;<a class="el" href="a00584.html">ObservableListModified</a>&lt;T&gt; &gt; ItemsAdded</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00012">12</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00017">17</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
 
 </div>
 </div>
-<a id="a9d53d2cc6f753da8b1a26f3f67020ec7" name="a9d53d2cc6f753da8b1a26f3f67020ec7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d53d2cc6f753da8b1a26f3f67020ec7">&#9670;&nbsp;</a></span>MinimumThumbSize</h2>
+<a id="aa9856a105cbf4527cb8dc444f5982369" name="aa9856a105cbf4527cb8dc444f5982369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9856a105cbf4527cb8dc444f5982369">&#9670;&nbsp;</a></span>ItemsRemoved</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int MinimumThumbSize = 11</td>
+          <td class="memname">EventHandler&lt;<a class="el" href="a00584.html">ObservableListModified</a>&lt;T&gt; &gt; ItemsRemoved</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00008">8</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
-</div>
-</div>
-<a id="a7b317e9a3cb35e32c6f91108c01d64a9" name="a7b317e9a3cb35e32c6f91108c01d64a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b317e9a3cb35e32c6f91108c01d64a9">&#9670;&nbsp;</a></span>Padding</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Padding = 10</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00005">5</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
-</div>
-</div>
-<a id="ab03f5206c7a2ce1d7a949197e0deb369" name="ab03f5206c7a2ce1d7a949197e0deb369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab03f5206c7a2ce1d7a949197e0deb369">&#9670;&nbsp;</a></span>RadioButtonSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int RadioButtonSize = 12</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00010">10</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
-</div>
-</div>
-<a id="a5b54795fb88d28acc73971c716cb745a" name="a5b54795fb88d28acc73971c716cb745a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b54795fb88d28acc73971c716cb745a">&#9670;&nbsp;</a></span>ScrollBarSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ScrollBarSize = 15</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00006">6</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
-</div>
-</div>
-<a id="aad7abd061e1748fb890bd5fff310150a" name="aad7abd061e1748fb890bd5fff310150a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad7abd061e1748fb890bd5fff310150a">&#9670;&nbsp;</a></span>ToolWindowHeaderSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int ToolWindowHeaderSize = 25</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00011">11</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
-
-</div>
-</div>
-<a id="a05e511eb055078e4dae407edc1f3627e" name="a05e511eb055078e4dae407edc1f3627e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e511eb055078e4dae407edc1f3627e">&#9670;&nbsp;</a></span>ToolWindowTabAreaSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int ToolWindowTabAreaSize = 21</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00013">13</a> of file <a class="el" href="a00065_source.html">Consts.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00059_source.html#l00019">19</a> of file <a class="el" href="a00059_source.html">ObservableList.cs</a>.</p>
 
 </div>
 </div>
@@ -314,7 +315,7 @@ Static Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00287.html">VitNX</a></li><li class="navelem"><a class="el" href="a00296.html">UI</a></li><li class="navelem"><a class="el" href="a00297.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="a00299.html">Config</a></li><li class="navelem"><a class="el" href="a00580.html">Constsants</a></li>
+    <li class="navelem"><a class="el" href="a00290.html">VitNX</a></li><li class="navelem"><a class="el" href="a00300.html">UI</a></li><li class="navelem"><a class="el" href="a00301.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="a00302.html">Collections</a></li><li class="navelem"><a class="el" href="a00580.html">ObservableList</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

@@ -1,6 +1,5 @@
 var a00756 =
 [
-    [ "IsFirst< T >", "a00756.html#a3e9d7c8aea29f8930bc68d64dcc78bb1", null ],
-    [ "IsFirstOrLast< T >", "a00756.html#a94716bf37fd7a2d53956d073baa70acf", null ],
-    [ "IsLast< T >", "a00756.html#ae5fe0c162fc14a815a09250d1ff5c4f0", null ]
+    [ "VitNX_Document", "a00756.html#aca2dd35a9bc6c3781eb1394e107e4c10", null ],
+    [ "DefaultDockArea", "a00756.html#a058b44109b84664828001334e4910a29", null ]
 ];

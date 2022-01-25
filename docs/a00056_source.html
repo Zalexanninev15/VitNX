@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Collections/ObservableList.cs Source File</title>
+<title>VitNX: VitNX/Properties/Resources.Designer.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,122 +61,129 @@ $(document).ready(function(){initNavTree('a00056_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">ObservableList.cs</div></div>
+  <div class="headertitle"><div class="title">Resources.Designer.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Collections.Generic;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Linq;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="a00296.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00298.html">VitNX.UI.BasedOnDarkUI.Collections</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00568.html">    7</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00568.html">ObservableList</a>&lt;T&gt; : List&lt;T&gt;, IDisposable</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">        #region Field Region</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// &lt;auto-generated&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//     Этот код создан программой.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//     Исполняемая версия:4.0.30319.42000</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//     Изменения в этом файле могут привести к неправильной работе и будут потеряны в случае</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//     повторной генерации кода.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// &lt;/auto-generated&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _disposed;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">        #endregion Field Region</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">        #region Event Region</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">   17</a></span>        <span class="keyword">public</span> <span class="keyword">event</span> EventHandler&lt;ObservableListModified&lt;T&gt;&gt; <a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">   19</a></span>        <span class="keyword">public</span> <span class="keyword">event</span> EventHandler&lt;ObservableListModified&lt;T&gt;&gt; <a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        #endregion Event Region</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">        #region Destructor Region</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="a00568.html">~ObservableList</a>()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_function" href="a00568.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">        #endregion Destructor Region</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">        #region Dispose Region</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="a00568.html#a6e2d745cdb7a7b983f861ed6a9a541a7">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00568.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a>()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_function" href="a00568.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            GC.SuppressFinalize(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="a00568.html#a8ad4348ef0f9969025bab397e7e27e26">   40</a></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00568.html#a8ad4348ef0f9969025bab397e7e27e26">Dispose</a>(<span class="keywordtype">bool</span> disposing)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">if</span> (!_disposed)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    <a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordflow">if</span> (<a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    <a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                _disposed = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">        #endregion Dispose Region</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">        #region Method Region</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a00568.html#ada298f12eac3d460dcd3723be000d8dd">   58</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00568.html#ada298f12eac3d460dcd3723be000d8dd">Add</a>(T item)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            base.Add(item);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>(<span class="keyword">this</span>, <span class="keyword">new</span> <a class="code hl_class" href="a00572.html">ObservableListModified&lt;T&gt;</a>(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="a00568.html#aa32139b8dfb6944923778903e0a3301e">   66</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00568.html#aa32139b8dfb6944923778903e0a3301e">AddRange</a>(IEnumerable&lt;T&gt; collection)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            var list = collection.ToList();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            base.AddRange(list);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <a class="code hl_event" href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">ItemsAdded</a>(<span class="keyword">this</span>, <span class="keyword">new</span> <a class="code hl_class" href="a00572.html">ObservableListModified&lt;T&gt;</a>(list));</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="a00568.html#ae00a8317cd454bcc75e3bad9758cf52d">   76</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00568.html#ae00a8317cd454bcc75e3bad9758cf52d">Remove</a>(T item)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            base.Remove(item);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">if</span> (<a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>(<span class="keyword">this</span>, <span class="keyword">new</span> <a class="code hl_class" href="a00572.html">ObservableListModified&lt;T&gt;</a>(<span class="keyword">new</span> List&lt;T&gt; { item }));</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="a00568.html#a96041cf263757ba62edf0e9009d05b92">   84</a></span>        <span class="keyword">public</span> <span class="keyword">new</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00568.html#a96041cf263757ba62edf0e9009d05b92">Clear</a>()</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <a class="code hl_class" href="a00572.html">ObservableListModified&lt;T&gt;</a> removed = <span class="keyword">new</span> <a class="code hl_class" href="a00572.html">ObservableListModified&lt;T&gt;</a>(this.ToList&lt;T&gt;());</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            base.Clear();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span> (removed.<a class="code hl_property" href="a00572.html#a76356ffd263f5ab949f4d852e7b4f489">Items</a>.Count() &gt; 0 &amp;&amp; <a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <a class="code hl_event" href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">ItemsRemoved</a>(<span class="keyword">this</span>, removed);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="a00299.html">   11</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00299.html">VitNX.Properties</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">using</span> System;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Этот класс создан автоматически классом StronglyTypedResourceBuilder</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// с помощью такого средства, как ResGen или Visual Studio.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// с параметром /str или перестройте свой проект VS.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    [global::System.CodeDom.Compiler.GeneratedCodeAttribute(<span class="stringliteral">&quot;System.Resources.Tools.StronglyTypedResourceBuilder&quot;</span>, <span class="stringliteral">&quot;17.0.0.0&quot;</span>)]</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00576.html">   25</a></span>    <span class="keyword">internal</span> <span class="keyword">class </span><a class="code hl_class" href="a00576.html">Resources</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keyword">static</span> global::System.<a class="code hl_function" href="a00576.html#aa240237f3113fca394c94bb8a463429f">Resources</a>.ResourceManager resourceMan;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> <span class="keyword">static</span> global::System.Globalization.CultureInfo resourceCulture;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(<span class="stringliteral">&quot;Microsoft.Performance&quot;</span>, <span class="stringliteral">&quot;CA1811:AvoidUncalledPrivateCode&quot;</span>)]</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a00576.html#aa240237f3113fca394c94bb8a463429f">   32</a></span>        <span class="keyword">internal</span> <a class="code hl_function" href="a00576.html#aa240237f3113fca394c94bb8a463429f">Resources</a>() {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">   39</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> global::System.Resources.ResourceManager <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">if</span> (<span class="keywordtype">object</span>.ReferenceEquals(resourceMan, <span class="keyword">null</span>)) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    global::System.<a class="code hl_function" href="a00576.html#aa240237f3113fca394c94bb8a463429f">Resources</a>.ResourceManager temp = <span class="keyword">new</span> global::System.Resources.ResourceManager(<span class="stringliteral">&quot;VitNX.Properties.Resources&quot;</span>, typeof(<a class="code hl_class" href="a00576.html">Resources</a>).Assembly);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    resourceMan = temp;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                <span class="keywordflow">return</span> resourceMan;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="a00576.html#a97174a2d0af83f0bd014787ac18be56c">   54</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> global::System.Globalization.CultureInfo <a class="code hl_property" href="a00576.html#a97174a2d0af83f0bd014787ac18be56c">Culture</a> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">return</span> resourceCulture;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">set</span> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                resourceCulture = value;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="a00576.html#ab72e0381082460a307d89cbf5260229f">   66</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#ab72e0381082460a307d89cbf5260229f">Error1</a> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;Error1&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="a00576.html#a4af1bc51432d8fa24c429d77d3fc8a45">   76</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#a4af1bc51432d8fa24c429d77d3fc8a45">Help</a> {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;Help&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="a00576.html#a6a65ea626b15103ad2d2726deb4a7f8b">   86</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#a6a65ea626b15103ad2d2726deb4a7f8b">Information</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;Information&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">        #endregion Method Region</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
-<div class="ttc" id="aa00298_html"><div class="ttname"><a href="a00298.html">VitNX.UI.BasedOnDarkUI.Collections</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00568_html"><div class="ttname"><a href="a00568.html">VitNX.UI.BasedOnDarkUI.Collections.ObservableList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00007">ObservableList.cs:8</a></div></div>
-<div class="ttc" id="aa00568_html_a6e2d745cdb7a7b983f861ed6a9a541a7"><div class="ttname"><a href="a00568.html#a6e2d745cdb7a7b983f861ed6a9a541a7">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Dispose</a></div><div class="ttdeci">void Dispose()</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00034">ObservableList.cs:34</a></div></div>
-<div class="ttc" id="aa00568_html_a7da3e21a29e293d111aedd757fe0fef3"><div class="ttname"><a href="a00568.html#a7da3e21a29e293d111aedd757fe0fef3">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.ItemsAdded</a></div><div class="ttdeci">EventHandler&lt; ObservableListModified&lt; T &gt; &gt; ItemsAdded</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00017">ObservableList.cs:17</a></div></div>
-<div class="ttc" id="aa00568_html_a8ad4348ef0f9969025bab397e7e27e26"><div class="ttname"><a href="a00568.html#a8ad4348ef0f9969025bab397e7e27e26">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Dispose</a></div><div class="ttdeci">virtual void Dispose(bool disposing)</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00040">ObservableList.cs:40</a></div></div>
-<div class="ttc" id="aa00568_html_a96041cf263757ba62edf0e9009d05b92"><div class="ttname"><a href="a00568.html#a96041cf263757ba62edf0e9009d05b92">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Clear</a></div><div class="ttdeci">new void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00084">ObservableList.cs:84</a></div></div>
-<div class="ttc" id="aa00568_html_aa32139b8dfb6944923778903e0a3301e"><div class="ttname"><a href="a00568.html#aa32139b8dfb6944923778903e0a3301e">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.AddRange</a></div><div class="ttdeci">new void AddRange(IEnumerable&lt; T &gt; collection)</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00066">ObservableList.cs:66</a></div></div>
-<div class="ttc" id="aa00568_html_aa9856a105cbf4527cb8dc444f5982369"><div class="ttname"><a href="a00568.html#aa9856a105cbf4527cb8dc444f5982369">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.ItemsRemoved</a></div><div class="ttdeci">EventHandler&lt; ObservableListModified&lt; T &gt; &gt; ItemsRemoved</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00019">ObservableList.cs:19</a></div></div>
-<div class="ttc" id="aa00568_html_ada298f12eac3d460dcd3723be000d8dd"><div class="ttname"><a href="a00568.html#ada298f12eac3d460dcd3723be000d8dd">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Add</a></div><div class="ttdeci">new void Add(T item)</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00058">ObservableList.cs:58</a></div></div>
-<div class="ttc" id="aa00568_html_ae00a8317cd454bcc75e3bad9758cf52d"><div class="ttname"><a href="a00568.html#ae00a8317cd454bcc75e3bad9758cf52d">VitNX.UI.BasedOnDarkUI.Collections.ObservableList.Remove</a></div><div class="ttdeci">new void Remove(T item)</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00076">ObservableList.cs:76</a></div></div>
-<div class="ttc" id="aa00572_html"><div class="ttname"><a href="a00572.html">VitNX.UI.BasedOnDarkUI.Collections.ObservableListModified</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00006">ObservableListModified.cs:7</a></div></div>
-<div class="ttc" id="aa00572_html_a76356ffd263f5ab949f4d852e7b4f489"><div class="ttname"><a href="a00572.html#a76356ffd263f5ab949f4d852e7b4f489">VitNX.UI.BasedOnDarkUI.Collections.ObservableListModified.Items</a></div><div class="ttdeci">IEnumerable&lt; T &gt; Items</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00008">ObservableListModified.cs:8</a></div></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="a00576.html#a64b436e84c032c1255aafa92bf206d63">   96</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#a64b436e84c032c1255aafa92bf206d63">News</a> {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;News&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="a00576.html#a5d9fca3758cdc01667b58473bfea3dfa">  106</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#a5d9fca3758cdc01667b58473bfea3dfa">Question1</a> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;Question1&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="a00576.html#a3243a72b4c33d5dffeb6bf0ec54e51ce">  116</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#a3243a72b4c33d5dffeb6bf0ec54e51ce">Shield</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;Shield&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="a00576.html#abd72043a4ec1e871cc1ed2800987c093">  126</a></span>        <span class="keyword">internal</span> <span class="keyword">static</span> System.Drawing.Bitmap <a class="code hl_property" href="a00576.html#abd72043a4ec1e871cc1ed2800987c093">Warning1</a> {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keyword">get</span> {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="keywordtype">object</span> obj = <a class="code hl_property" href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">ResourceManager</a>.GetObject(<span class="stringliteral">&quot;Warning1&quot;</span>, resourceCulture);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="keywordflow">return</span> ((System.Drawing.Bitmap)(obj));</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+<div class="ttc" id="aa00299_html"><div class="ttname"><a href="a00299.html">VitNX.Properties</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00011">Resources.Designer.cs:11</a></div></div>
+<div class="ttc" id="aa00576_html"><div class="ttname"><a href="a00576.html">VitNX.Properties.Resources</a></div><div class="ttdoc">Класс ресурса со строгой типизацией для поиска локализованных строк и т.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00025">Resources.Designer.cs:25</a></div></div>
+<div class="ttc" id="aa00576_html_a0facd9f93017f922ba97bef37fd95b1d"><div class="ttname"><a href="a00576.html#a0facd9f93017f922ba97bef37fd95b1d">VitNX.Properties.Resources.ResourceManager</a></div><div class="ttdeci">static global::System.Resources.ResourceManager ResourceManager</div><div class="ttdoc">Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00039">Resources.Designer.cs:39</a></div></div>
+<div class="ttc" id="aa00576_html_a3243a72b4c33d5dffeb6bf0ec54e51ce"><div class="ttname"><a href="a00576.html#a3243a72b4c33d5dffeb6bf0ec54e51ce">VitNX.Properties.Resources.Shield</a></div><div class="ttdeci">static System.Drawing.Bitmap Shield</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00116">Resources.Designer.cs:116</a></div></div>
+<div class="ttc" id="aa00576_html_a4af1bc51432d8fa24c429d77d3fc8a45"><div class="ttname"><a href="a00576.html#a4af1bc51432d8fa24c429d77d3fc8a45">VitNX.Properties.Resources.Help</a></div><div class="ttdeci">static System.Drawing.Bitmap Help</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00076">Resources.Designer.cs:76</a></div></div>
+<div class="ttc" id="aa00576_html_a5d9fca3758cdc01667b58473bfea3dfa"><div class="ttname"><a href="a00576.html#a5d9fca3758cdc01667b58473bfea3dfa">VitNX.Properties.Resources.Question1</a></div><div class="ttdeci">static System.Drawing.Bitmap Question1</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00106">Resources.Designer.cs:106</a></div></div>
+<div class="ttc" id="aa00576_html_a64b436e84c032c1255aafa92bf206d63"><div class="ttname"><a href="a00576.html#a64b436e84c032c1255aafa92bf206d63">VitNX.Properties.Resources.News</a></div><div class="ttdeci">static System.Drawing.Bitmap News</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00096">Resources.Designer.cs:96</a></div></div>
+<div class="ttc" id="aa00576_html_a6a65ea626b15103ad2d2726deb4a7f8b"><div class="ttname"><a href="a00576.html#a6a65ea626b15103ad2d2726deb4a7f8b">VitNX.Properties.Resources.Information</a></div><div class="ttdeci">static System.Drawing.Bitmap Information</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00086">Resources.Designer.cs:86</a></div></div>
+<div class="ttc" id="aa00576_html_a97174a2d0af83f0bd014787ac18be56c"><div class="ttname"><a href="a00576.html#a97174a2d0af83f0bd014787ac18be56c">VitNX.Properties.Resources.Culture</a></div><div class="ttdeci">static global::System.Globalization.CultureInfo Culture</div><div class="ttdoc">Перезаписывает свойство CurrentUICulture текущего потока для всех обращений к ресурсу с помощью этого...</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00054">Resources.Designer.cs:54</a></div></div>
+<div class="ttc" id="aa00576_html_aa240237f3113fca394c94bb8a463429f"><div class="ttname"><a href="a00576.html#aa240237f3113fca394c94bb8a463429f">VitNX.Properties.Resources.Resources</a></div><div class="ttdeci">Resources()</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00032">Resources.Designer.cs:32</a></div></div>
+<div class="ttc" id="aa00576_html_ab72e0381082460a307d89cbf5260229f"><div class="ttname"><a href="a00576.html#ab72e0381082460a307d89cbf5260229f">VitNX.Properties.Resources.Error1</a></div><div class="ttdeci">static System.Drawing.Bitmap Error1</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00066">Resources.Designer.cs:66</a></div></div>
+<div class="ttc" id="aa00576_html_abd72043a4ec1e871cc1ed2800987c093"><div class="ttname"><a href="a00576.html#abd72043a4ec1e871cc1ed2800987c093">VitNX.Properties.Resources.Warning1</a></div><div class="ttdeci">static System.Drawing.Bitmap Warning1</div><div class="ttdoc">Поиск локализованного ресурса типа System.Drawing.Bitmap.</div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00126">Resources.Designer.cs:126</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_c4db9414b731285e3cb4f29d85b06e47.html">Collections</a></li><li class="navelem"><b>ObservableList.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_f836d4b85334b11a7635b35d627374d1.html">Properties</a></li><li class="navelem"><b>Resources.Designer.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

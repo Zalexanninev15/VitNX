@@ -1,27 +1,15 @@
 var a00644 =
 [
-    [ "VitNX_RadioButton", "a00644.html#a3746eab15f168d60e34684b60a7333a5", null ],
+    [ "VitNX_NumericUpDown", "a00644.html#ac7d3173568c40b7899da6fd2c4e0ea0a", null ],
     [ "OnGotFocus", "a00644.html#ae5c0b188f25d5235d5568fd584bf7592", null ],
     [ "OnLostFocus", "a00644.html#ab47291f2e471a96bef84161450d63f6e", null ],
-    [ "OnMouseCaptureChanged", "a00644.html#acc75e41a41d2b30f2e1d580a7397d26a", null ],
     [ "OnMouseDown", "a00644.html#a99a67e51ce554f65bcccc19aad37f46b", null ],
+    [ "OnMouseEnter", "a00644.html#a2d40cb32494ede008316a6c0632530d0", null ],
     [ "OnMouseLeave", "a00644.html#a5e9098abfe10508ccd3d96b81f1d8923", null ],
     [ "OnMouseMove", "a00644.html#a57b5b248770a2c1e2514b619b8bb59b2", null ],
-    [ "OnMouseUp", "a00644.html#a2a183abcbee81d20477e5e9f00da9363", null ],
+    [ "OnMouseUp", "a00644.html#a228317c36cc3af8d13c04a71b2bfe926", null ],
     [ "OnPaint", "a00644.html#a7b49a512aef9068aebdc17097736f6b9", null ],
-    [ "Appearance", "a00644.html#aa63fd39e67c70074ca7bebd7396d9292", null ],
-    [ "AutoEllipsis", "a00644.html#a56fbb6c99dc3e679db36723d03b21b1e", null ],
-    [ "BackgroundImage", "a00644.html#a4eb6684f9f58a8c0331750965a40a6fc", null ],
-    [ "BackgroundImageLayout", "a00644.html#a06432c626f789ee77ba170b014d82744", null ],
-    [ "FlatAppearance", "a00644.html#af647f92a830c4c55b1c97d2857885c18", null ],
-    [ "FlatStyle", "a00644.html#a9772f8ca8405eaebaec05f1d4ee7ed65", null ],
-    [ "Image", "a00644.html#a57e4053953b71ec7da8debea965024bc", null ],
-    [ "ImageAlign", "a00644.html#a2c06a5e5241e6bfd63fe18e0fefdc7cf", null ],
-    [ "ImageIndex", "a00644.html#a687435e739ef95c7a6491745133a729e", null ],
-    [ "ImageKey", "a00644.html#a068e765d57b74f7467baed5e614aa279", null ],
-    [ "ImageList", "a00644.html#ae09d7e90ebda2d55e0dd9ef52677c88f", null ],
-    [ "TextAlign", "a00644.html#a0a2081df853451f279c2c9250de60345", null ],
-    [ "TextImageRelation", "a00644.html#aab97a1ad38cdef3b6435950383f42a1c", null ],
-    [ "UseCompatibleTextRendering", "a00644.html#aee903a7964844655200f47a3f7f1e661", null ],
-    [ "UseVisualStyleBackColor", "a00644.html#aa870078506e860496226c3d1a92ea3b0", null ]
+    [ "OnTextBoxLostFocus", "a00644.html#aa4647e4c051c2266f43451c0f56fc303", null ],
+    [ "BackColor", "a00644.html#a8ae9cbb9eb1666f85de1d125aa6dcc0f", null ],
+    [ "ForeColor", "a00644.html#afb27be0173351853d8277603a503ff8c", null ]
 ];

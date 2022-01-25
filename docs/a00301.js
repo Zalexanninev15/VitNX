@@ -1,36 +1,11 @@
 var a00301 =
 [
-    [ "DockContentEventArgs", "a00692.html", "a00692" ],
-    [ "DockDropArea", "a00696.html", "a00696" ],
-    [ "DockDropCollection", "a00700.html", "a00700" ],
-    [ "DockGroupState", "a00704.html", "a00704" ],
-    [ "DockPanelState", "a00708.html", "a00708" ],
-    [ "DockRegionState", "a00712.html", "a00712" ],
-    [ "VitNX_DockContent", "a00716.html", "a00716" ],
-    [ "VitNX_DockGroup", "a00720.html", "a00720" ],
-    [ "VitNX_DockPanel", "a00724.html", "a00724" ],
-    [ "VitNX_DockRegion", "a00728.html", "a00728" ],
-    [ "VitNX_DockSplitter", "a00732.html", "a00732" ],
-    [ "VitNX_DockTab", "a00736.html", "a00736" ],
-    [ "VitNX_DockTabArea", "a00740.html", "a00740" ],
-    [ "VitNX_Document", "a00744.html", "a00744" ],
-    [ "VitNX_ToolWindow", "a00748.html", "a00748" ],
-    [ "DockInsertType", "a00301.html#a29dc304d5ff759b6c6f865ebf9833e9c", [
-      [ "None", "a00301.html#a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Before", "a00301.html#a29dc304d5ff759b6c6f865ebf9833e9ca9060587edeb01a63e3d3edc959678d1e", null ],
-      [ "After", "a00301.html#a29dc304d5ff759b6c6f865ebf9833e9ca7bfcadb5535fe8aad5032762b7bfe159", null ]
-    ] ],
-    [ "VitNX_DockArea", "a00301.html#a07913461bb014f52dd5bfafabe7d3587", [
-      [ "None", "a00301.html#a07913461bb014f52dd5bfafabe7d3587a6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Document", "a00301.html#a07913461bb014f52dd5bfafabe7d3587a0945359809dad1fbf3dea1c95a0da951", null ],
-      [ "Left", "a00301.html#a07913461bb014f52dd5bfafabe7d3587a945d5e233cf7d6240f6b783b36a374ff", null ],
-      [ "Right", "a00301.html#a07913461bb014f52dd5bfafabe7d3587a92b09c7c48c520c3c55e497875da437c", null ],
-      [ "Bottom", "a00301.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4", null ]
-    ] ],
-    [ "VitNX_SplitterType", "a00301.html#ae48effe2de0c7ef774d834b7d4602b2b", [
-      [ "Left", "a00301.html#ae48effe2de0c7ef774d834b7d4602b2ba945d5e233cf7d6240f6b783b36a374ff", null ],
-      [ "Right", "a00301.html#ae48effe2de0c7ef774d834b7d4602b2ba92b09c7c48c520c3c55e497875da437c", null ],
-      [ "Top", "a00301.html#ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00", null ],
-      [ "Bottom", "a00301.html#ae48effe2de0c7ef774d834b7d4602b2ba2ad9d63b69c4a10a5cc9cad923133bc4", null ]
-    ] ]
+    [ "Collections", "a00302.html", "a00302" ],
+    [ "Config", "a00303.html", "a00303" ],
+    [ "Controls", "a00304.html", "a00304" ],
+    [ "Docking", "a00305.html", "a00305" ],
+    [ "Extensions", "a00306.html", "a00306" ],
+    [ "Forms", "a00307.html", "a00307" ],
+    [ "Renderers", "a00308.html", "a00308" ],
+    [ "Win32", "a00309.html", "a00309" ]
 ];

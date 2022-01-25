@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX_DockArea.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Docking/DockRegionState.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,31 +61,63 @@ $(document).ready(function(){initNavTree('a00185_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_DockArea.cs</div></div>
+  <div class="headertitle"><div class="title">DockRegionState.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        <a class="code hl_enumvalue" href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <a class="code hl_enumvalue" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587a0945359809dad1fbf3dea1c95a0da951">Document</a>,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        Left,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        Right,</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_enumvalue" href="a00301.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
-<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea</a></div><div class="ttdeci">VitNX_DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00003">VitNX_DockArea.cs:4</a></div></div>
-<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587a0945359809dad1fbf3dea1c95a0da951"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587a0945359809dad1fbf3dea1c95a0da951">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Document</a></div><div class="ttdeci">@ Document</div></div>
-<div class="ttc" id="aa00301_html_a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4"><div class="ttname"><a href="a00301.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Bottom</a></div><div class="ttdeci">@ Bottom</div></div>
-<div class="ttc" id="aa00301_html_a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="a00301.html#a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.None</a></div><div class="ttdeci">@ None</div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Drawing;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="a00724.html">    6</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00724.html">DockRegionState</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00724.html#a5096dfb0c89076c0e76bf427cfbccf28">   10</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a> <a class="code hl_property" href="a00724.html#a5096dfb0c89076c0e76bf427cfbccf28">Area</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="a00724.html#a1e0bb30e5229d6f89323259356e364fd">   12</a></span>        <span class="keyword">public</span> <a class="code hl_property" href="a00724.html#a1e0bb30e5229d6f89323259356e364fd">Size</a> <a class="code hl_property" href="a00724.html#a1e0bb30e5229d6f89323259356e364fd">Size</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00724.html#a48e556ee995b30e09e1672eb1fb47dfb">   14</a></span>        <span class="keyword">public</span> List&lt;DockGroupState&gt; <a class="code hl_property" href="a00724.html#a48e556ee995b30e09e1672eb1fb47dfb">Groups</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">        #endregion Property Region</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">        #region Constructor Region</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="a00724.html#a4a8258c3a12c25773e7512adc333d22d">   20</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00724.html#a4a8258c3a12c25773e7512adc333d22d">DockRegionState</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_property" href="a00724.html#a48e556ee995b30e09e1672eb1fb47dfb">Groups</a> = <span class="keyword">new</span> List&lt;DockGroupState&gt;();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00724.html#a69040551ffe21a3e2aa4408d75a905db">   25</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00724.html#a69040551ffe21a3e2aa4408d75a905db">DockRegionState</a>(<a class="code hl_enumeration" href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a> area)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            : this()</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <a class="code hl_property" href="a00724.html#a5096dfb0c89076c0e76bf427cfbccf28">Area</a> = area;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="a00724.html#a77be1b5b21b346a74d65c744c075bc49">   31</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00724.html#a77be1b5b21b346a74d65c744c075bc49">DockRegionState</a>(<a class="code hl_enumeration" href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX_DockArea</a> area, <a class="code hl_property" href="a00724.html#a1e0bb30e5229d6f89323259356e364fd">Size</a> size)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            : this(area)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <a class="code hl_property" href="a00724.html#a1e0bb30e5229d6f89323259356e364fd">Size</a> = size;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">        #endregion Constructor Region</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00305_html_a07913461bb014f52dd5bfafabe7d3587"><div class="ttname"><a href="a00305.html#a07913461bb014f52dd5bfafabe7d3587">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea</a></div><div class="ttdeci">VitNX_DockArea</div><div class="ttdef"><b>Definition:</b> <a href="a00188_source.html#l00003">VitNX_DockArea.cs:4</a></div></div>
+<div class="ttc" id="aa00724_html"><div class="ttname"><a href="a00724.html">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState</a></div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00006">DockRegionState.cs:7</a></div></div>
+<div class="ttc" id="aa00724_html_a1e0bb30e5229d6f89323259356e364fd"><div class="ttname"><a href="a00724.html#a1e0bb30e5229d6f89323259356e364fd">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.Size</a></div><div class="ttdeci">Size Size</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00012">DockRegionState.cs:12</a></div></div>
+<div class="ttc" id="aa00724_html_a48e556ee995b30e09e1672eb1fb47dfb"><div class="ttname"><a href="a00724.html#a48e556ee995b30e09e1672eb1fb47dfb">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.Groups</a></div><div class="ttdeci">List&lt; DockGroupState &gt; Groups</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00014">DockRegionState.cs:14</a></div></div>
+<div class="ttc" id="aa00724_html_a4a8258c3a12c25773e7512adc333d22d"><div class="ttname"><a href="a00724.html#a4a8258c3a12c25773e7512adc333d22d">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.DockRegionState</a></div><div class="ttdeci">DockRegionState()</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00020">DockRegionState.cs:20</a></div></div>
+<div class="ttc" id="aa00724_html_a5096dfb0c89076c0e76bf427cfbccf28"><div class="ttname"><a href="a00724.html#a5096dfb0c89076c0e76bf427cfbccf28">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.Area</a></div><div class="ttdeci">VitNX_DockArea Area</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00010">DockRegionState.cs:10</a></div></div>
+<div class="ttc" id="aa00724_html_a69040551ffe21a3e2aa4408d75a905db"><div class="ttname"><a href="a00724.html#a69040551ffe21a3e2aa4408d75a905db">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.DockRegionState</a></div><div class="ttdeci">DockRegionState(VitNX_DockArea area)</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00025">DockRegionState.cs:25</a></div></div>
+<div class="ttc" id="aa00724_html_a77be1b5b21b346a74d65c744c075bc49"><div class="ttname"><a href="a00724.html#a77be1b5b21b346a74d65c744c075bc49">VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.DockRegionState</a></div><div class="ttdeci">DockRegionState(VitNX_DockArea area, Size size)</div><div class="ttdef"><b>Definition:</b> <a href="a00185_source.html#l00031">DockRegionState.cs:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_DockArea.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>DockRegionState.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

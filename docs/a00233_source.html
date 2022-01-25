@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Forms/VitNX_Form.cs Source File</title>
+<title>VitNX: VitNX/UI/BasedOnDarkUI/Forms/VitNX_DialogButton.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,99 +61,37 @@ $(document).ready(function(){initNavTree('a00233_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_Form.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_DialogButton.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.ComponentModel;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Drawing;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Windows.Forms;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00287.html">VitNX</a>.<a class="code hl_namespace" href="a00296.html">UI</a>.<a class="code hl_namespace" href="a00297.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00299.html">Config</a>;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00303.html">VitNX.UI.BasedOnDarkUI.Forms</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00764.html">    9</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00764.html">VitNX_Form</a> : Form</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">        #region Field Region</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00764.html#a7b19995fa6f1ffa45c00cfeef387d73e">   13</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00764.html#a7b19995fa6f1ffa45c00cfeef387d73e">OnHandleCreated</a>(EventArgs e)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keywordflow">if</span> (Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 19, <span class="keyword">new</span>[] { 1 }, 4) != 0)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 20, <span class="keyword">new</span>[] { 1 }, 4);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _flatBorder;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">        #endregion Field Region</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">        #region Property Region</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        [Category(<span class="stringliteral">&quot;Appearance&quot;</span>)]</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        [Description(<span class="stringliteral">&quot;Determines whether a single pixel border should be rendered around the form.&quot;</span>)]</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        [DefaultValue(<span class="keyword">false</span>)]</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="a00764.html#a645d6e9c07083eaf18a8b9370cef6f1b">   30</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00764.html#a645d6e9c07083eaf18a8b9370cef6f1b">FlatBorder</a></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> _flatBorder; }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keyword">set</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                _flatBorder = value;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                Invalidate();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">        #endregion Property Region</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">        #region Constructor Region</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a00764.html#a3bb8c24c1844c9f1d112037f92dd5140">   44</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00764.html#a3bb8c24c1844c9f1d112037f92dd5140">VitNX_Form</a>()</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            BackColor = <a class="code hl_class" href="a00576.html">Colors</a>.<a class="code hl_property" href="a00576.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">        #endregion Constructor Region</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">        #region Paint Region</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="a00764.html#a2fed73cd0a8cd763a6a18be00a05d4ed">   53</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00764.html#a2fed73cd0a8cd763a6a18be00a05d4ed">OnPaintBackground</a>(PaintEventArgs e)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            base.OnPaintBackground(e);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">if</span> (!_flatBorder)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            var g = e.Graphics;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00576.html">Colors</a>.<a class="code hl_property" href="a00576.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNXBorder</a>))</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                var modRect = <span class="keyword">new</span> Rectangle(ClientRectangle.Location, <span class="keyword">new</span> Size(ClientRectangle.Width - 1, ClientRectangle.Height - 1));</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                g.DrawRectangle(p, modRect);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">        #endregion Paint Region</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
-<div class="ttc" id="aa00287_html"><div class="ttname"><a href="a00287.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
-<div class="ttc" id="aa00296_html"><div class="ttname"><a href="a00296.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00297_html"><div class="ttname"><a href="a00297.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00299_html"><div class="ttname"><a href="a00299.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00003">Colors.cs:4</a></div></div>
-<div class="ttc" id="aa00303_html"><div class="ttname"><a href="a00303.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00224_source.html#l00007">VitNX_Dialog.cs:8</a></div></div>
-<div class="ttc" id="aa00576_html"><div class="ttname"><a href="a00576.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00005">Colors.cs:6</a></div></div>
-<div class="ttc" id="aa00576_html_a177c5e90efbbd2ad1b059426fbc70a98"><div class="ttname"><a href="a00576.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNX.UI.BasedOnDarkUI.Config.Colors.VitNXBorder</a></div><div class="ttdeci">static Color VitNXBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00057">Colors.cs:58</a></div></div>
-<div class="ttc" id="aa00576_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00576.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00007">Colors.cs:8</a></div></div>
-<div class="ttc" id="aa00764_html"><div class="ttname"><a href="a00764.html">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form</a></div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00009">VitNX_Form.cs:10</a></div></div>
-<div class="ttc" id="aa00764_html_a2fed73cd0a8cd763a6a18be00a05d4ed"><div class="ttname"><a href="a00764.html#a2fed73cd0a8cd763a6a18be00a05d4ed">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.OnPaintBackground</a></div><div class="ttdeci">override void OnPaintBackground(PaintEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00053">VitNX_Form.cs:53</a></div></div>
-<div class="ttc" id="aa00764_html_a3bb8c24c1844c9f1d112037f92dd5140"><div class="ttname"><a href="a00764.html#a3bb8c24c1844c9f1d112037f92dd5140">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.VitNX_Form</a></div><div class="ttdeci">VitNX_Form()</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00044">VitNX_Form.cs:44</a></div></div>
-<div class="ttc" id="aa00764_html_a645d6e9c07083eaf18a8b9370cef6f1b"><div class="ttname"><a href="a00764.html#a645d6e9c07083eaf18a8b9370cef6f1b">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.FlatBorder</a></div><div class="ttdeci">bool FlatBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00030">VitNX_Form.cs:31</a></div></div>
-<div class="ttc" id="aa00764_html_a7b19995fa6f1ffa45c00cfeef387d73e"><div class="ttname"><a href="a00764.html#a7b19995fa6f1ffa45c00cfeef387d73e">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.OnHandleCreated</a></div><div class="ttdeci">override void OnHandleCreated(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00013">VitNX_Form.cs:13</a></div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00307.html">VitNX.UI.BasedOnDarkUI.Forms</a></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00307.html#a010904af204758783ad686b09d4153b6">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00307.html#a010904af204758783ad686b09d4153b6">VitNX_DialogButton</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6aa60852f204ed8028c1c58808b746d115">Ok</a>,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418">Close</a>,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6a4b116999b87115628973f2e30b59fd08">OkCancel</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6ab65ffbcb4dcfb93ecdc257d6e4ba42c4">YesNo</a>,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6a71fc7b7aece69111c0b6967de4b101c5">YesNoCancel</a>,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6a5d1f937d009d6f924b50b9e742ecc8ac">RetryCancel</a>,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_enumvalue" href="a00307.html#a010904af204758783ad686b09d4153b6a080cccc8400ed0226bf270eadb078851">AbortRetryIgnore</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="ttc" id="aa00307_html"><div class="ttname"><a href="a00307.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00227_source.html#l00007">VitNX_Dialog.cs:8</a></div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton</a></div><div class="ttdeci">VitNX_DialogButton</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00003">VitNX_DialogButton.cs:4</a></div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6a080cccc8400ed0226bf270eadb078851"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6a080cccc8400ed0226bf270eadb078851">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.AbortRetryIgnore</a></div><div class="ttdeci">@ AbortRetryIgnore</div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6a4b116999b87115628973f2e30b59fd08"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6a4b116999b87115628973f2e30b59fd08">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.OkCancel</a></div><div class="ttdeci">@ OkCancel</div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6a5d1f937d009d6f924b50b9e742ecc8ac"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6a5d1f937d009d6f924b50b9e742ecc8ac">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.RetryCancel</a></div><div class="ttdeci">@ RetryCancel</div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6a71fc7b7aece69111c0b6967de4b101c5"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6a71fc7b7aece69111c0b6967de4b101c5">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.YesNoCancel</a></div><div class="ttdeci">@ YesNoCancel</div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6aa60852f204ed8028c1c58808b746d115"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6aa60852f204ed8028c1c58808b746d115">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.Ok</a></div><div class="ttdeci">@ Ok</div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6ab65ffbcb4dcfb93ecdc257d6e4ba42c4"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6ab65ffbcb4dcfb93ecdc257d6e4ba42c4">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.YesNo</a></div><div class="ttdeci">@ YesNo</div></div>
+<div class="ttc" id="aa00307_html_a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418"><div class="ttname"><a href="a00307.html#a010904af204758783ad686b09d4153b6ad3d2e617335f08df83599665eef8a418">VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.Close</a></div><div class="ttdeci">@ Close</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_bf891227bbea9a5714ef4945bdaa53ce.html">Forms</a></li><li class="navelem"><b>VitNX_Form.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_bf891227bbea9a5714ef4945bdaa53ce.html">Forms</a></li><li class="navelem"><b>VitNX_DialogButton.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
