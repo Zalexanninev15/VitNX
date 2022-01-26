@@ -1,0 +1,70 @@
+\doxysection{Vit\+NX\+\_\+\+Group\+Box.\+cs}
+\label{a00101_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_GroupBox.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_GroupBox.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00008 \{}
+\DoxyCodeLine{00009     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_GroupBox : GroupBox}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011         \textcolor{keyword}{private} Color \_borderColor = Colors.VitNXBorder;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013         [Category(\textcolor{stringliteral}{"{}Appearance"{}})]}
+\DoxyCodeLine{00014         [Description(\textcolor{stringliteral}{"{}Determines the color of the border."{}})]}
+\DoxyCodeLine{00015         \textcolor{keyword}{public} Color BorderColor}
+\DoxyCodeLine{00016         \{}
+\DoxyCodeLine{00017             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_borderColor; \}}
+\DoxyCodeLine{00018             \textcolor{keyword}{set}}
+\DoxyCodeLine{00019             \{}
+\DoxyCodeLine{00020                 \_borderColor = value;}
+\DoxyCodeLine{00021                 Invalidate();}
+\DoxyCodeLine{00022             \}}
+\DoxyCodeLine{00023         \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{public} VitNX\_GroupBox()}
+\DoxyCodeLine{00026         \{}
+\DoxyCodeLine{00027             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00028             ResizeRedraw = \textcolor{keyword}{true};}
+\DoxyCodeLine{00029             DoubleBuffered = \textcolor{keyword}{true};}
+\DoxyCodeLine{00030         \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00033         \{}
+\DoxyCodeLine{00034             var g = e.Graphics;}
+\DoxyCodeLine{00035             var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00036             var stringSize = g.MeasureString(Text, Font);}
+\DoxyCodeLine{00037             var textColor = Colors.LightText;}
+\DoxyCodeLine{00038             var fillColor = Colors.GreyBackground;}
+\DoxyCodeLine{00039             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor)) \{ g.FillRectangle(b, rect); \}}
+\DoxyCodeLine{00040             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(BorderColor, 1))}
+\DoxyCodeLine{00041             \{}
+\DoxyCodeLine{00042                 var borderRect = \textcolor{keyword}{new} Rectangle(0, (\textcolor{keywordtype}{int})stringSize.Height / 2, rect.Width -\/ 1, rect.Height -\/ ((\textcolor{keywordtype}{int})stringSize.Height / 2) -\/ 1);}
+\DoxyCodeLine{00043                 g.DrawRectangle(p, borderRect);}
+\DoxyCodeLine{00044             \}}
+\DoxyCodeLine{00045             var textRect = \textcolor{keyword}{new} Rectangle(rect.Left + Constsants.Padding, rect.Top, rect.Width -\/ (Constsants.Padding * 2), (\textcolor{keywordtype}{int})stringSize.Height);}
+\DoxyCodeLine{00046             \textcolor{keyword}{using} (var b2 = \textcolor{keyword}{new} SolidBrush(fillColor))}
+\DoxyCodeLine{00047             \{}
+\DoxyCodeLine{00048                 var modRect = \textcolor{keyword}{new} Rectangle(textRect.Left, textRect.Top, Math.Min(textRect.Width, (\textcolor{keywordtype}{int})stringSize.Width), textRect.Height);}
+\DoxyCodeLine{00049                 g.FillRectangle(b2, modRect);}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00052             \{}
+\DoxyCodeLine{00053                 var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00054                 \{}
+\DoxyCodeLine{00055                     LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00056                     Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00057                     FormatFlags = StringFormatFlags.NoWrap,}
+\DoxyCodeLine{00058                     Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00059                 \};}
+\DoxyCodeLine{00060                 g.DrawString(Text, Font, b, textRect, stringFormat);}
+\DoxyCodeLine{00061             \}}
+\DoxyCodeLine{00062         \}}
+\DoxyCodeLine{00063     \}}
+\DoxyCodeLine{00064 \}}
+
+\end{DoxyCode}

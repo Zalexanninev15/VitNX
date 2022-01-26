@@ -1,0 +1,305 @@
+\doxysection{Vit\+NX\+\_\+\+Tool\+Window Class Reference}
+\label{a00750}\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+Inheritance diagram for Vit\+NX\+\_\+\+Tool\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{a00750}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Tool\+Window} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Resize} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Move} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Up} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint\+Background} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new Padding \textbf{ Padding}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 10} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00750_a27afb7c97e47dc530ce2f3ac65ffb0e6}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{VitNX\_ToolWindow()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Tool\+Window} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 36} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00039                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00040                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042             BackColor = Colors.GreyBackground;}
+\DoxyCodeLine{00043             base.Padding = \textcolor{keyword}{new} Padding(0, Constsants.ToolWindowHeaderSize, 0, 0);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045             UpdateCloseButton();}
+\DoxyCodeLine{00046         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00750_a99a67e51ce554f65bcccc19aad37f46b}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 118} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119         \{}
+\DoxyCodeLine{00120             base.OnMouseDown(e);}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122             \textcolor{keywordflow}{if} (\_closeButtonRect.Contains(e.Location))}
+\DoxyCodeLine{00123             \{}
+\DoxyCodeLine{00124                 \_closeButtonPressed = \textcolor{keyword}{true};}
+\DoxyCodeLine{00125                 \_closeButtonHot = \textcolor{keyword}{true};}
+\DoxyCodeLine{00126                 Invalidate();}
+\DoxyCodeLine{00127                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130             \textcolor{keywordflow}{if} (\_headerRect.Contains(e.Location))}
+\DoxyCodeLine{00131             \{}
+\DoxyCodeLine{00132                 \_shouldDrag = \textcolor{keyword}{true};}
+\DoxyCodeLine{00133                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00134             \}}
+\DoxyCodeLine{00135         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00750_a57b5b248770a2c1e2514b619b8bb59b2}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{OnMouseMove()}
+{\footnotesize\ttfamily override void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 90} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091         \{}
+\DoxyCodeLine{00092             base.OnMouseMove(e);}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094             \textcolor{keywordflow}{if} (\_closeButtonRect.Contains(e.Location) || \_closeButtonPressed)}
+\DoxyCodeLine{00095             \{}
+\DoxyCodeLine{00096                 \textcolor{keywordflow}{if} (!\_closeButtonHot)}
+\DoxyCodeLine{00097                 \{}
+\DoxyCodeLine{00098                     \_closeButtonHot = \textcolor{keyword}{true};}
+\DoxyCodeLine{00099                     Invalidate();}
+\DoxyCodeLine{00100                 \}}
+\DoxyCodeLine{00101             \}}
+\DoxyCodeLine{00102             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00103             \{}
+\DoxyCodeLine{00104                 \textcolor{keywordflow}{if} (\_closeButtonHot)}
+\DoxyCodeLine{00105                 \{}
+\DoxyCodeLine{00106                     \_closeButtonHot = \textcolor{keyword}{false};}
+\DoxyCodeLine{00107                     Invalidate();}
+\DoxyCodeLine{00108                 \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110                 \textcolor{keywordflow}{if} (\_shouldDrag)}
+\DoxyCodeLine{00111                 \{}
+\DoxyCodeLine{00112                     DockPanel.DragContent(\textcolor{keyword}{this});}
+\DoxyCodeLine{00113                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00114                 \}}
+\DoxyCodeLine{00115             \}}
+\DoxyCodeLine{00116         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00750_a2a183abcbee81d20477e5e9f00da9363}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{OnMouseUp()}
+{\footnotesize\ttfamily override void On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 137} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138         \{}
+\DoxyCodeLine{00139             base.OnMouseUp(e);}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141             \textcolor{keywordflow}{if} (\_closeButtonRect.Contains(e.Location) \&\& \_closeButtonPressed)}
+\DoxyCodeLine{00142                 Close();}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144             \_closeButtonPressed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00145             \_closeButtonHot = \textcolor{keyword}{false};}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147             \_shouldDrag = \textcolor{keyword}{false};}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149             Invalidate();}
+\DoxyCodeLine{00150         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00750_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 156} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157         \{}
+\DoxyCodeLine{00158             var g = e.Graphics;}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160             \textcolor{comment}{// Fill body}}
+\DoxyCodeLine{00161             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00162             \{}
+\DoxyCodeLine{00163                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00164             \}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166             var isActive = IsActive();}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168             \textcolor{comment}{// Draw header}}
+\DoxyCodeLine{00169             var bgColor = isActive ? Colors.BlueBackground : Colors.HeaderBackground;}
+\DoxyCodeLine{00170             var VitNXColor = isActive ? Colors.VitNXBlueBorder : Colors.VitNXBorder;}
+\DoxyCodeLine{00171             var lightColor = isActive ? Colors.LightBlueBorder : Colors.LightBorder;}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(bgColor))}
+\DoxyCodeLine{00174             \{}
+\DoxyCodeLine{00175                 var bgRect = \textcolor{keyword}{new} Rectangle(0, 0, ClientRectangle.Width, Constsants.ToolWindowHeaderSize);}
+\DoxyCodeLine{00176                 g.FillRectangle(b, bgRect);}
+\DoxyCodeLine{00177             \}}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(VitNXColor))}
+\DoxyCodeLine{00180             \{}
+\DoxyCodeLine{00181                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);}
+\DoxyCodeLine{00182                 g.DrawLine(p, ClientRectangle.Left, Constsants.ToolWindowHeaderSize -\/ 1, ClientRectangle.Right, Constsants.ToolWindowHeaderSize -\/ 1);}
+\DoxyCodeLine{00183             \}}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(lightColor))}
+\DoxyCodeLine{00186             \{}
+\DoxyCodeLine{00187                 g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);}
+\DoxyCodeLine{00188             \}}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190             var xOffset = 2;}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192             \textcolor{comment}{// Draw icon}}
+\DoxyCodeLine{00193             \textcolor{keywordflow}{if} (Icon != \textcolor{keyword}{null})}
+\DoxyCodeLine{00194             \{}
+\DoxyCodeLine{00195                 g.DrawImageUnscaled(Icon, ClientRectangle.Left + 5, ClientRectangle.Top + (Constsants.ToolWindowHeaderSize / 2) -\/ (Icon.Height / 2) + 1);}
+\DoxyCodeLine{00196                 xOffset = Icon.Width + 8;}
+\DoxyCodeLine{00197             \}}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199             \textcolor{comment}{// Draw text}}
+\DoxyCodeLine{00200             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightText))}
+\DoxyCodeLine{00201             \{}
+\DoxyCodeLine{00202                 var textRect = \textcolor{keyword}{new} Rectangle(xOffset, 0, ClientRectangle.Width -\/ 4 -\/ xOffset, Constsants.ToolWindowHeaderSize);}
+\DoxyCodeLine{00203 }
+\DoxyCodeLine{00204                 var format = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00205                 \{}
+\DoxyCodeLine{00206                     Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00207                     LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00208                     FormatFlags = StringFormatFlags.NoWrap,}
+\DoxyCodeLine{00209                     Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00210                 \};}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212                 g.DrawString(DockText, Font, b, textRect, format);}
+\DoxyCodeLine{00213             \}}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215             \textcolor{comment}{// Close button}}
+\DoxyCodeLine{00216             var img = \_closeButtonHot ? DockIcons.tw\_close\_selected : DockIcons.tw\_close;}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218             \textcolor{keywordflow}{if} (isActive)}
+\DoxyCodeLine{00219                 img = \_closeButtonHot ? DockIcons.tw\_active\_close\_selected : DockIcons.tw\_active\_close;}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221             g.DrawImageUnscaled(img, \_closeButtonRect.Left, \_closeButtonRect.Top);}
+\DoxyCodeLine{00222         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00750_a2fed73cd0a8cd763a6a18be00a05d4ed}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!OnPaintBackground@{OnPaintBackground}}
+\index{OnPaintBackground@{OnPaintBackground}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{OnPaintBackground()}
+{\footnotesize\ttfamily override void On\+Paint\+Background (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 224} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00225         \{}
+\DoxyCodeLine{00226             \textcolor{comment}{// Absorb event}}
+\DoxyCodeLine{00227         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00750_aa643318db0b6d4130246fd4792d95e90}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{OnResize()}
+{\footnotesize\ttfamily override void On\+Resize (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 83} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084         \{}
+\DoxyCodeLine{00085             base.OnResize(e);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087             UpdateCloseButton();}
+\DoxyCodeLine{00088         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00750_a05e74e33b0f3811419c1b6052e1df5fc}} 
+\index{VitNX\_ToolWindow@{VitNX\_ToolWindow}!Padding@{Padding}}
+\index{Padding@{Padding}!VitNX\_ToolWindow@{VitNX\_ToolWindow}}
+\doxysubsubsection{Padding}
+{\footnotesize\ttfamily new Padding Padding\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ Vit\+NX\+\_\+\+Tool\+Window.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028         \{}
+\DoxyCodeLine{00029             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Padding; \}}
+\DoxyCodeLine{00030         \}}
+
+\end{DoxyCode}

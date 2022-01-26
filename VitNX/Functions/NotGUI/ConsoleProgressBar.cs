@@ -19,22 +19,37 @@ namespace VitNX.Functions.NotGUI
         private ConsoleColor pb = new ConsoleColor();
 
         public ConsoleProgressBar()
-        { timer = new Timer(TimerHandler); if (!Console.IsOutputRedirected) { ResetTimer(); } }
+        { 
+            timer = new Timer(TimerHandler); 
+            if (!Console.IsOutputRedirected) 
+                ResetTimer();
+        }
 
         public void Report(double value)
-        { value = Math.Max(0, Math.Min(1, value)); Interlocked.Exchange(ref currentProgress, value); }
+        {
+            value = Math.Max(0, Math.Min(1, value)); 
+            Interlocked.Exchange(ref currentProgress, value); 
+        }
 
         public void SetColor(ConsoleColor my_pb)
-        { pb = my_pb; }
+        {
+            pb = my_pb;
+        }
 
         public void SetText(string work1)
-        { work = work1; }
+        {
+            work = work1;
+        }
 
         public void NotUsed(bool pbd)
-        { workdo = pbd; }
+        {
+            workdo = pbd;
+        }
 
         private void ResetTimer()
-        { timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1)); }
+        {
+            timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1)); 
+        }
 
         private void TimerHandler(object state)
         {
@@ -42,7 +57,8 @@ namespace VitNX.Functions.NotGUI
             {
                 if (workdo == true)
                 {
-                    if (disposed) return;
+                    if (disposed) 
+                        return;
                     int progressBlockCount = (int)(currentProgress * blockCount);
                     int percent = (int)(currentProgress * 100);
                     string text = string.Format(work + ": [{0}{1}] {2,3}% {3}", new string('▰', progressBlockCount), new string('-', blockCount - progressBlockCount), percent, animation[animationIndex++ % animation.Length]);
@@ -56,7 +72,8 @@ namespace VitNX.Functions.NotGUI
         {
             int commonPrefixLength = 0;
             int commonLength = Math.Min(currentText.Length, text.Length);
-            while (commonPrefixLength < commonLength && text[commonPrefixLength] == currentText[commonPrefixLength]) { commonPrefixLength++; }
+            while (commonPrefixLength < commonLength && text[commonPrefixLength] == currentText[commonPrefixLength])
+                commonPrefixLength++;
             StringBuilder outputBuilder = new StringBuilder();
             outputBuilder.Append('\b', currentText.Length - commonPrefixLength);
             outputBuilder.Append(text.Substring(commonPrefixLength));

@@ -134,8 +134,10 @@ namespace VitNX.UI.ControlsV2
                         button2.Text = "Cancel";
                         button2.DialogResult = DialogResult.Cancel;
                         button2.BackColor = Color.DimGray;
-                        if (defaultButton != MessageBoxDefaultButton.Button3) SetDefaultButton(defaultButton);
-                        else SetDefaultButton(MessageBoxDefaultButton.Button1);
+                        if (defaultButton != MessageBoxDefaultButton.Button3) 
+                            SetDefaultButton(defaultButton);
+                        else 
+                            SetDefaultButton(MessageBoxDefaultButton.Button1);
                         break;
                     }
                 case MessageBoxButtons.RetryCancel:
@@ -149,8 +151,10 @@ namespace VitNX.UI.ControlsV2
                         button2.Text = "Cancel";
                         button2.DialogResult = DialogResult.Cancel;
                         button2.BackColor = Color.DimGray;
-                        if (defaultButton != MessageBoxDefaultButton.Button3) SetDefaultButton(defaultButton);
-                        else SetDefaultButton(MessageBoxDefaultButton.Button1);
+                        if (defaultButton != MessageBoxDefaultButton.Button3) 
+                            SetDefaultButton(defaultButton);
+                        else
+                            SetDefaultButton(MessageBoxDefaultButton.Button1);
                         break;
                     }
                 case MessageBoxButtons.YesNo:
@@ -164,8 +168,10 @@ namespace VitNX.UI.ControlsV2
                         button2.Text = "No";
                         button2.DialogResult = DialogResult.No;
                         button2.BackColor = Color.IndianRed;
-                        if (defaultButton != MessageBoxDefaultButton.Button3) SetDefaultButton(defaultButton);
-                        else SetDefaultButton(MessageBoxDefaultButton.Button1);
+                        if (defaultButton != MessageBoxDefaultButton.Button3) 
+                            SetDefaultButton(defaultButton);
+                        else 
+                            SetDefaultButton(MessageBoxDefaultButton.Button1);
                         break;
                     }
                 case MessageBoxButtons.YesNoCancel:
@@ -243,7 +249,7 @@ namespace VitNX.UI.ControlsV2
             {
                 case MessageBoxIcon.Error:
                     {
-                        pictureBoxIcon.Image = VitNX.Properties.Resources.Error1;
+                        pictureBoxIcon.Image = Properties.Resources.Error1;
                         //PrimaryColor = Color.FromArgb(224, 79, 95);
                         break;
                     }

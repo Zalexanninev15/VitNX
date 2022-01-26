@@ -1,0 +1,21 @@
+\doxysection{Observable\+List\+Modified.\+cs}
+\label{a00062_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Collections/ObservableListModified.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Collections/ObservableListModified.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Collections}
+\DoxyCodeLine{00005 \{}
+\DoxyCodeLine{00006     \textcolor{keyword}{public} \textcolor{keyword}{class }ObservableListModified<T> : EventArgs}
+\DoxyCodeLine{00007     \{}
+\DoxyCodeLine{00008         \textcolor{keyword}{public} IEnumerable<T> Items \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010         \textcolor{keyword}{public} ObservableListModified(IEnumerable<T> items)}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             Items = items;}
+\DoxyCodeLine{00013         \}}
+\DoxyCodeLine{00014     \}}
+\DoxyCodeLine{00015 \}}
+
+\end{DoxyCode}

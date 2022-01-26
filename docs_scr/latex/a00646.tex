@@ -1,0 +1,610 @@
+\doxysection{Vit\+NX\+\_\+\+Radio\+Button Class Reference}
+\label{a00646}\index{VitNX\_RadioButton@{VitNX\_RadioButton}}
+Inheritance diagram for Vit\+NX\+\_\+\+Radio\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00646}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Radio\+Button} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Mouse\+Move} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Up} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Leave} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Capture\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Got\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Lost\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new Appearance \textbf{ Appearance}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Auto\+Ellipsis}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new \textbf{ Image} \textbf{ Background\+Image}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Image\+Layout \textbf{ Background\+Image\+Layout}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Flat\+Appearance}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Flat\+Style \textbf{ Flat\+Style}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Image \textbf{ Image}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Content\+Alignment \textbf{ Image\+Align}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new int \textbf{ Image\+Index}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new string \textbf{ Image\+Key}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Image\+List \textbf{ Image\+List}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Content\+Alignment \textbf{ Text\+Align}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new Text\+Image\+Relation \textbf{ Text\+Image\+Relation}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Use\+Compatible\+Text\+Rendering}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+new bool \textbf{ Use\+Visual\+Style\+Back\+Color}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 10} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00646_a3746eab15f168d60e34684b60a7333a5}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{VitNX\_RadioButton()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Radio\+Button} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 131} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             SetStyle(ControlStyles.SupportsTransparentBackColor |}
+\DoxyCodeLine{00134                      ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00135                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00136                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00137         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00646_ae5c0b188f25d5235d5568fd584bf7592}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnGotFocus@{OnGotFocus}}
+\index{OnGotFocus@{OnGotFocus}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnGotFocus()}
+{\footnotesize\ttfamily override void On\+Got\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 219} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00220         \{}
+\DoxyCodeLine{00221             base.OnGotFocus(e);}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223             Invalidate();}
+\DoxyCodeLine{00224         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_ab47291f2e471a96bef84161450d63f6e}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnLostFocus@{OnLostFocus}}
+\index{OnLostFocus@{OnLostFocus}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnLostFocus()}
+{\footnotesize\ttfamily override void On\+Lost\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 226} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227         \{}
+\DoxyCodeLine{00228             base.OnLostFocus(e);}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230             \_spacePressed = \textcolor{keyword}{false};}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232             var location = Cursor.Position;}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00235                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00236             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00237                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00238         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_acc75e41a41d2b30f2e1d580a7397d26a}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnMouseCaptureChanged@{OnMouseCaptureChanged}}
+\index{OnMouseCaptureChanged@{OnMouseCaptureChanged}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnMouseCaptureChanged()}
+{\footnotesize\ttfamily override void On\+Mouse\+Capture\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 206} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207         \{}
+\DoxyCodeLine{00208             base.OnMouseCaptureChanged(e);}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00211                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213             var location = Cursor.Position;}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00216                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00217         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a99a67e51ce554f65bcccc19aad37f46b}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 176} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177         \{}
+\DoxyCodeLine{00178             base.OnMouseDown(e);}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(e.Location))}
+\DoxyCodeLine{00181                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183             SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00184         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a5e9098abfe10508ccd3d96b81f1d8923}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnMouseLeave@{OnMouseLeave}}
+\index{OnMouseLeave@{OnMouseLeave}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnMouseLeave()}
+{\footnotesize\ttfamily override void On\+Mouse\+Leave (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 196} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197         \{}
+\DoxyCodeLine{00198             base.OnMouseLeave(e);}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00201                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00204         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a57b5b248770a2c1e2514b619b8bb59b2}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnMouseMove()}
+{\footnotesize\ttfamily override void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 156} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157         \{}
+\DoxyCodeLine{00158             base.OnMouseMove(e);}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00161                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00164             \{}
+\DoxyCodeLine{00165                 \textcolor{keywordflow}{if} (ClientRectangle.Contains(e.Location))}
+\DoxyCodeLine{00166                     SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00167                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00168                     SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00169             \}}
+\DoxyCodeLine{00170             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00171             \{}
+\DoxyCodeLine{00172                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00173             \}}
+\DoxyCodeLine{00174         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a2a183abcbee81d20477e5e9f00da9363}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnMouseUp()}
+{\footnotesize\ttfamily override void On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 186} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187         \{}
+\DoxyCodeLine{00188             base.OnMouseUp(e);}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190             \textcolor{keywordflow}{if} (\_spacePressed)}
+\DoxyCodeLine{00191                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00194         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 244} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00245         \{}
+\DoxyCodeLine{00246             var g = e.Graphics;}
+\DoxyCodeLine{00247             var rect = \textcolor{keyword}{new} Rectangle(0, 0, ClientSize.Width, ClientSize.Height);}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249             var size = Constsants.RadioButtonSize;}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251             var textColor = Colors.LightText;}
+\DoxyCodeLine{00252             var borderColor = Colors.LightText;}
+\DoxyCodeLine{00253             var fillColor = Colors.LightestBackground;}
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255             \textcolor{keywordflow}{if} (Enabled)}
+\DoxyCodeLine{00256             \{}
+\DoxyCodeLine{00257                 \textcolor{keywordflow}{if} (Focused)}
+\DoxyCodeLine{00258                 \{}
+\DoxyCodeLine{00259                     borderColor = Colors.BlueHighlight;}
+\DoxyCodeLine{00260                     fillColor = Colors.BlueSelection;}
+\DoxyCodeLine{00261                 \}}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263                 \textcolor{keywordflow}{if} (\_controlState == VitNX\_ControlState.Hover)}
+\DoxyCodeLine{00264                 \{}
+\DoxyCodeLine{00265                     borderColor = Colors.BlueHighlight;}
+\DoxyCodeLine{00266                     fillColor = Colors.BlueSelection;}
+\DoxyCodeLine{00267                 \}}
+\DoxyCodeLine{00268                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_controlState == VitNX\_ControlState.Pressed)}
+\DoxyCodeLine{00269                 \{}
+\DoxyCodeLine{00270                     borderColor = Colors.GreyHighlight;}
+\DoxyCodeLine{00271                     fillColor = Colors.GreySelection;}
+\DoxyCodeLine{00272                 \}}
+\DoxyCodeLine{00273             \}}
+\DoxyCodeLine{00274             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00275             \{}
+\DoxyCodeLine{00276                 textColor = Colors.DisabledText;}
+\DoxyCodeLine{00277                 borderColor = Colors.GreyHighlight;}
+\DoxyCodeLine{00278                 fillColor = Colors.GreySelection;}
+\DoxyCodeLine{00279             \}}
+\DoxyCodeLine{00280 }
+\DoxyCodeLine{00281             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00282             \{}
+\DoxyCodeLine{00283                 g.FillRectangle(b, rect);}
+\DoxyCodeLine{00284             \}}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286             g.SmoothingMode = SmoothingMode.HighQuality;}
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(borderColor))}
+\DoxyCodeLine{00289             \{}
+\DoxyCodeLine{00290                 var boxRect = \textcolor{keyword}{new} Rectangle(0, (rect.Height / 2) -\/ (size / 2), size, size);}
+\DoxyCodeLine{00291                 g.DrawEllipse(p, boxRect);}
+\DoxyCodeLine{00292             \}}
+\DoxyCodeLine{00293 }
+\DoxyCodeLine{00294             \textcolor{keywordflow}{if} (Checked)}
+\DoxyCodeLine{00295             \{}
+\DoxyCodeLine{00296                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor))}
+\DoxyCodeLine{00297                 \{}
+\DoxyCodeLine{00298                     Rectangle boxRect = \textcolor{keyword}{new} Rectangle(3, (rect.Height / 2) -\/ ((size -\/ 7) / 2) -\/ 1, size -\/ 6, size -\/ 6);}
+\DoxyCodeLine{00299                     g.FillEllipse(b, boxRect);}
+\DoxyCodeLine{00300                 \}}
+\DoxyCodeLine{00301             \}}
+\DoxyCodeLine{00302 }
+\DoxyCodeLine{00303             g.SmoothingMode = SmoothingMode.Default;}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00306             \{}
+\DoxyCodeLine{00307                 var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00308                 \{}
+\DoxyCodeLine{00309                     LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00310                     Alignment = StringAlignment.Near}
+\DoxyCodeLine{00311                 \};}
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{00313                 var modRect = \textcolor{keyword}{new} Rectangle(size + 4, 0, rect.Width -\/ size, rect.Height);}
+\DoxyCodeLine{00314                 g.DrawString(Text, Font, b, modRect, stringFormat);}
+\DoxyCodeLine{00315             \}}
+\DoxyCodeLine{00316         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00646_aa63fd39e67c70074ca7bebd7396d9292}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!Appearance@{Appearance}}
+\index{Appearance@{Appearance}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{Appearance}
+{\footnotesize\ttfamily new Appearance Appearance\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 24} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Appearance; \}}
+\DoxyCodeLine{00027         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a56fbb6c99dc3e679db36723d03b21b1e}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!AutoEllipsis@{AutoEllipsis}}
+\index{AutoEllipsis@{AutoEllipsis}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{AutoEllipsis}
+{\footnotesize\ttfamily new bool Auto\+Ellipsis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 31} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.AutoEllipsis; \}}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a4eb6684f9f58a8c0331750965a40a6fc}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!BackgroundImage@{BackgroundImage}}
+\index{BackgroundImage@{BackgroundImage}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{BackgroundImage}
+{\footnotesize\ttfamily new \textbf{ Image} Background\+Image\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 38} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.BackgroundImage; \}}
+\DoxyCodeLine{00041         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a06432c626f789ee77ba170b014d82744}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!BackgroundImageLayout@{BackgroundImageLayout}}
+\index{BackgroundImageLayout@{BackgroundImageLayout}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{BackgroundImageLayout}
+{\footnotesize\ttfamily new Image\+Layout Background\+Image\+Layout\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 45} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.BackgroundImageLayout; \}}
+\DoxyCodeLine{00048         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_af647f92a830c4c55b1c97d2857885c18}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!FlatAppearance@{FlatAppearance}}
+\index{FlatAppearance@{FlatAppearance}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{FlatAppearance}
+{\footnotesize\ttfamily new bool Flat\+Appearance\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 52} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053         \{}
+\DoxyCodeLine{00054             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00055         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a9772f8ca8405eaebaec05f1d4ee7ed65}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!FlatStyle@{FlatStyle}}
+\index{FlatStyle@{FlatStyle}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{FlatStyle}
+{\footnotesize\ttfamily new Flat\+Style Flat\+Style\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 59} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060         \{}
+\DoxyCodeLine{00061             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.FlatStyle; \}}
+\DoxyCodeLine{00062         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a57e4053953b71ec7da8debea965024bc}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!Image@{Image}}
+\index{Image@{Image}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{Image}
+{\footnotesize\ttfamily new Image Image\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 66} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Image; \}}
+\DoxyCodeLine{00069         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a2c06a5e5241e6bfd63fe18e0fefdc7cf}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!ImageAlign@{ImageAlign}}
+\index{ImageAlign@{ImageAlign}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{ImageAlign}
+{\footnotesize\ttfamily new Content\+Alignment Image\+Align\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 73} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074         \{}
+\DoxyCodeLine{00075             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageAlign; \}}
+\DoxyCodeLine{00076         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a687435e739ef95c7a6491745133a729e}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!ImageIndex@{ImageIndex}}
+\index{ImageIndex@{ImageIndex}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{ImageIndex}
+{\footnotesize\ttfamily new int Image\+Index\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 80} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081         \{}
+\DoxyCodeLine{00082             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageIndex; \}}
+\DoxyCodeLine{00083         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a068e765d57b74f7467baed5e614aa279}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!ImageKey@{ImageKey}}
+\index{ImageKey@{ImageKey}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{ImageKey}
+{\footnotesize\ttfamily new string Image\+Key\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088         \{}
+\DoxyCodeLine{00089             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageKey; \}}
+\DoxyCodeLine{00090         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_ae09d7e90ebda2d55e0dd9ef52677c88f}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!ImageList@{ImageList}}
+\index{ImageList@{ImageList}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{ImageList}
+{\footnotesize\ttfamily new Image\+List Image\+List\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 94} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095         \{}
+\DoxyCodeLine{00096             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.ImageList; \}}
+\DoxyCodeLine{00097         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_a0a2081df853451f279c2c9250de60345}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!TextAlign@{TextAlign}}
+\index{TextAlign@{TextAlign}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{TextAlign}
+{\footnotesize\ttfamily new Content\+Alignment Text\+Align\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 101} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102         \{}
+\DoxyCodeLine{00103             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.TextAlign; \}}
+\DoxyCodeLine{00104         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_aab97a1ad38cdef3b6435950383f42a1c}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!TextImageRelation@{TextImageRelation}}
+\index{TextImageRelation@{TextImageRelation}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{TextImageRelation}
+{\footnotesize\ttfamily new Text\+Image\+Relation Text\+Image\+Relation\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 108} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109         \{}
+\DoxyCodeLine{00110             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.TextImageRelation; \}}
+\DoxyCodeLine{00111         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_aee903a7964844655200f47a3f7f1e661}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!UseCompatibleTextRendering@{UseCompatibleTextRendering}}
+\index{UseCompatibleTextRendering@{UseCompatibleTextRendering}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{UseCompatibleTextRendering}
+{\footnotesize\ttfamily new bool Use\+Compatible\+Text\+Rendering\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116         \{}
+\DoxyCodeLine{00117             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00118         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00646_aa870078506e860496226c3d1a92ea3b0}} 
+\index{VitNX\_RadioButton@{VitNX\_RadioButton}!UseVisualStyleBackColor@{UseVisualStyleBackColor}}
+\index{UseVisualStyleBackColor@{UseVisualStyleBackColor}!VitNX\_RadioButton@{VitNX\_RadioButton}}
+\doxysubsubsection{UseVisualStyleBackColor}
+{\footnotesize\ttfamily new bool Use\+Visual\+Style\+Back\+Color\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 122} of file \textbf{ Vit\+NX\+\_\+\+Radio\+Button.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123         \{}
+\DoxyCodeLine{00124             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00125         \}}
+
+\end{DoxyCode}

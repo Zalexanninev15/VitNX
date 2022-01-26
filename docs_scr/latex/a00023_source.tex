@@ -1,0 +1,611 @@
+\doxysection{Native\+Controls.\+cs}
+\label{a00023_source}\index{E:/Github/VitNX/VitNX/Functions/Windows/NativeControls.cs@{E:/Github/VitNX/VitNX/Functions/Windows/NativeControls.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} System.Reflection;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using} System.Runtime.InteropServices;}
+\DoxyCodeLine{00007 \textcolor{keyword}{using} System.Threading;}
+\DoxyCodeLine{00008 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{00009 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00010 \textcolor{keyword}{using} VitNX.Functions.Windows.Win32;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{namespace }VitNX.Functions.Windows.NativeControls}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{class }TaskBarProgressBar}
+\DoxyCodeLine{00015     \{}
+\DoxyCodeLine{00016         [ComImport()]}
+\DoxyCodeLine{00017         [Guid(\textcolor{stringliteral}{"{}ea1afb91-\/9e28-\/4b86-\/90e9-\/9e9f8a5eefaf"{}})]}
+\DoxyCodeLine{00018         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]}
+\DoxyCodeLine{00019         \textcolor{keyword}{private} \textcolor{keyword}{interface }ITaskbarList3}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021             [PreserveSig]}
+\DoxyCodeLine{00022             \textcolor{keywordtype}{void} HrInit();}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024             [PreserveSig]}
+\DoxyCodeLine{00025             \textcolor{keywordtype}{void} AddTab(IntPtr hwnd);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             [PreserveSig]}
+\DoxyCodeLine{00028             \textcolor{keywordtype}{void} DeleteTab(IntPtr hwnd);}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030             [PreserveSig]}
+\DoxyCodeLine{00031             \textcolor{keywordtype}{void} ActivateTab(IntPtr hwnd);}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033             [PreserveSig]}
+\DoxyCodeLine{00034             \textcolor{keywordtype}{void} SetActiveAlt(IntPtr hwnd);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             [PreserveSig]}
+\DoxyCodeLine{00037             \textcolor{keywordtype}{void} MarkFullscreenWindow(IntPtr hwnd, [MarshalAs(UnmanagedType.Bool)] \textcolor{keywordtype}{bool} fFullscreen);}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039             [PreserveSig]}
+\DoxyCodeLine{00040             \textcolor{keywordtype}{void} SetProgressValue(IntPtr hwnd, UInt64 ullCompleted, UInt64 ullTotal);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042             [PreserveSig]}
+\DoxyCodeLine{00043             \textcolor{keywordtype}{void} SetProgressState(IntPtr hwnd, Enums.TASKBAR\_STATES state);}
+\DoxyCodeLine{00044         \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         [ComImport()]}
+\DoxyCodeLine{00047         [Guid(\textcolor{stringliteral}{"{}56fdf344-\/fd6d-\/11d0-\/958a-\/006097c9a090"{}})]}
+\DoxyCodeLine{00048         [ClassInterface(ClassInterfaceType.None)]}
+\DoxyCodeLine{00049         \textcolor{keyword}{private} \textcolor{keyword}{class }TaskbarInstance}
+\DoxyCodeLine{00050         \{ \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         \textcolor{keyword}{private} \textcolor{keyword}{static} ITaskbarList3 taskbarInstance = (ITaskbarList3)\textcolor{keyword}{new} TaskbarInstance();}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} taskbarSupported = Environment.OSVersion.Version >= \textcolor{keyword}{new} Version(6, 1);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} SetState(IntPtr windowHandle,}
+\DoxyCodeLine{00057             Enums.TASKBAR\_STATES taskbarState)}
+\DoxyCodeLine{00058         \{}
+\DoxyCodeLine{00059             \textcolor{keywordflow}{if} (taskbarSupported)}
+\DoxyCodeLine{00060                 taskbarInstance.SetProgressState(windowHandle, taskbarState);}
+\DoxyCodeLine{00061         \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} SetValue(IntPtr windowHandle,}
+\DoxyCodeLine{00064             \textcolor{keywordtype}{double} Value,}
+\DoxyCodeLine{00065             \textcolor{keywordtype}{double} Max)}
+\DoxyCodeLine{00066         \{}
+\DoxyCodeLine{00067             \textcolor{keywordflow}{if} (taskbarSupported)}
+\DoxyCodeLine{00068                 taskbarInstance.SetProgressValue(windowHandle, (ulong)Value, (ulong)Max);}
+\DoxyCodeLine{00069         \}}
+\DoxyCodeLine{00070     \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keyword}{public} \textcolor{keyword}{class }NewFolderDialog}
+\DoxyCodeLine{00073     \{}
+\DoxyCodeLine{00074         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_initialDirectory;}
+\DoxyCodeLine{00075         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_title;}
+\DoxyCodeLine{00076         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_fileName = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078         \textcolor{keyword}{public} \textcolor{keywordtype}{string} InitialDirectory}
+\DoxyCodeLine{00079         \{}
+\DoxyCodeLine{00080             \textcolor{keyword}{get}}
+\DoxyCodeLine{00081             \{}
+\DoxyCodeLine{00082                 \textcolor{keywordflow}{return} \textcolor{keywordtype}{string}.IsNullOrEmpty(\_initialDirectory) ? Environment.CurrentDirectory : \_initialDirectory;}
+\DoxyCodeLine{00083             \}}
+\DoxyCodeLine{00084             \textcolor{keyword}{set}}
+\DoxyCodeLine{00085             \{}
+\DoxyCodeLine{00086                 \_initialDirectory = value;}
+\DoxyCodeLine{00087             \}}
+\DoxyCodeLine{00088         \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Title}
+\DoxyCodeLine{00091         \{}
+\DoxyCodeLine{00092             \textcolor{keyword}{get}}
+\DoxyCodeLine{00093             \{}
+\DoxyCodeLine{00094                 \textcolor{keywordflow}{return} \_title ?? \textcolor{stringliteral}{"{}Select a folder"{}};}
+\DoxyCodeLine{00095             \}}
+\DoxyCodeLine{00096             \textcolor{keyword}{set}}
+\DoxyCodeLine{00097             \{}
+\DoxyCodeLine{00098                 \_title = value;}
+\DoxyCodeLine{00099             \}}
+\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102         \textcolor{keyword}{public} \textcolor{keywordtype}{string} FileName}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             \textcolor{keyword}{get}}
+\DoxyCodeLine{00105             \{}
+\DoxyCodeLine{00106                 \textcolor{keywordflow}{return} \_fileName;}
+\DoxyCodeLine{00107             \}}
+\DoxyCodeLine{00108         \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} Show()}
+\DoxyCodeLine{00111         \{ \textcolor{keywordflow}{return} Show(IntPtr.Zero); \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} Show(IntPtr hWndOwner)}
+\DoxyCodeLine{00114         \{}
+\DoxyCodeLine{00115             var result = Environment.OSVersion.Version.Major >= 6 ? ModernDialog.Show(hWndOwner, InitialDirectory, Title) : ShowXpDialog(hWndOwner, InitialDirectory, Title);}
+\DoxyCodeLine{00116             \_fileName = result.FileName;}
+\DoxyCodeLine{00117             \textcolor{keywordflow}{return} result.Result;}
+\DoxyCodeLine{00118         \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         \textcolor{keyword}{private} \textcolor{keyword}{struct }ShowDialogResult}
+\DoxyCodeLine{00121         \{}
+\DoxyCodeLine{00122             \textcolor{keyword}{public} \textcolor{keywordtype}{bool} Result \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00123             \textcolor{keyword}{public} \textcolor{keywordtype}{string} FileName \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00124         \}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126         \textcolor{keyword}{private} \textcolor{keyword}{static} ShowDialogResult ShowXpDialog(IntPtr ownerHandle,}
+\DoxyCodeLine{00127             \textcolor{keywordtype}{string} initialDirectory,}
+\DoxyCodeLine{00128             \textcolor{keywordtype}{string} title)}
+\DoxyCodeLine{00129         \{}
+\DoxyCodeLine{00130             var folderBrowserDialog = \textcolor{keyword}{new} FolderBrowserDialog}
+\DoxyCodeLine{00131             \{ Description = title, SelectedPath = initialDirectory, ShowNewFolderButton = \textcolor{keyword}{false} \};}
+\DoxyCodeLine{00132             var dialogResult = \textcolor{keyword}{new} ShowDialogResult();}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{if} (folderBrowserDialog.ShowDialog(\textcolor{keyword}{new} WindowWrapper(ownerHandle)) == DialogResult.OK)}
+\DoxyCodeLine{00134             \{}
+\DoxyCodeLine{00135                 dialogResult.Result = \textcolor{keyword}{true};}
+\DoxyCodeLine{00136                 dialogResult.FileName = folderBrowserDialog.SelectedPath;}
+\DoxyCodeLine{00137             \}}
+\DoxyCodeLine{00138             \textcolor{keywordflow}{return} dialogResult;}
+\DoxyCodeLine{00139         \}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{class }ModernDialog}
+\DoxyCodeLine{00142         \{}
+\DoxyCodeLine{00143             \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} c\_foldersFilter = \textcolor{stringliteral}{"{}Folders|\(\backslash\)n"{}};}
+\DoxyCodeLine{00144             \textcolor{keyword}{private} \textcolor{keyword}{const} BindingFlags c\_flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;}
+\DoxyCodeLine{00145             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly Assembly s\_windowsFormsAssembly = typeof(FileDialog).Assembly;}
+\DoxyCodeLine{00146             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly Type s\_iFileDialogType = s\_windowsFormsAssembly.GetType(\textcolor{stringliteral}{"{}System.Windows.Forms.FileDialogNative+IFileDialog"{}});}
+\DoxyCodeLine{00147             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_createVistaDialogMethodInfo = typeof(OpenFileDialog).GetMethod(\textcolor{stringliteral}{"{}CreateVistaDialog"{}}, c\_flags);}
+\DoxyCodeLine{00148             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_onBeforeVistaDialogMethodInfo = typeof(OpenFileDialog).GetMethod(\textcolor{stringliteral}{"{}OnBeforeVistaDialog"{}}, c\_flags);}
+\DoxyCodeLine{00149             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_getOptionsMethodInfo = typeof(FileDialog).GetMethod(\textcolor{stringliteral}{"{}GetOptions"{}}, c\_flags);}
+\DoxyCodeLine{00150             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_setOptionsMethodInfo = s\_iFileDialogType.GetMethod(\textcolor{stringliteral}{"{}SetOptions"{}}, c\_flags);}
+\DoxyCodeLine{00151             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly uint s\_fosPickFoldersBitFlag = (uint)s\_windowsFormsAssembly.GetType(\textcolor{stringliteral}{"{}System.Windows.Forms.FileDialogNative+FOS"{}}).GetField(\textcolor{stringliteral}{"{}FOS\_PICKFOLDERS"{}}).GetValue(\textcolor{keyword}{null});}
+\DoxyCodeLine{00152             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly ConstructorInfo s\_VistaDialogEventsConstructorInfo = s\_windowsFormsAssembly.GetType(\textcolor{stringliteral}{"{}System.Windows.Forms.FileDialog+VistaDialogEvents"{}}).GetConstructor(c\_flags, \textcolor{keyword}{null}, \textcolor{keyword}{new}[] \{ typeof(FileDialog) \}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00153             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_adviseMethodInfo = s\_iFileDialogType.GetMethod(\textcolor{stringliteral}{"{}Advise"{}});}
+\DoxyCodeLine{00154             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_unAdviseMethodInfo = s\_iFileDialogType.GetMethod(\textcolor{stringliteral}{"{}Unadvise"{}});}
+\DoxyCodeLine{00155             \textcolor{keyword}{private} \textcolor{keyword}{static} readonly MethodInfo s\_showMethodInfo = s\_iFileDialogType.GetMethod(\textcolor{stringliteral}{"{}Show"{}});}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157             \textcolor{keyword}{public} \textcolor{keyword}{static} ShowDialogResult Show(IntPtr ownerHandle, \textcolor{keywordtype}{string} initialDirectory, \textcolor{keywordtype}{string} title)}
+\DoxyCodeLine{00158             \{}
+\DoxyCodeLine{00159                 var openFileDialog = \textcolor{keyword}{new} OpenFileDialog}
+\DoxyCodeLine{00160                 \{}
+\DoxyCodeLine{00161                     AddExtension = \textcolor{keyword}{false},}
+\DoxyCodeLine{00162                     CheckFileExists = \textcolor{keyword}{false},}
+\DoxyCodeLine{00163                     DereferenceLinks = \textcolor{keyword}{true},}
+\DoxyCodeLine{00164                     Filter = c\_foldersFilter,}
+\DoxyCodeLine{00165                     InitialDirectory = initialDirectory,}
+\DoxyCodeLine{00166                     Multiselect = \textcolor{keyword}{false},}
+\DoxyCodeLine{00167                     Title = title}
+\DoxyCodeLine{00168                 \};}
+\DoxyCodeLine{00169                 var iFileDialog = s\_createVistaDialogMethodInfo.Invoke(openFileDialog, \textcolor{keyword}{new} \textcolor{keywordtype}{object}[] \{ \});}
+\DoxyCodeLine{00170                 s\_onBeforeVistaDialogMethodInfo.Invoke(openFileDialog, \textcolor{keyword}{new}[] \{ iFileDialog \});}
+\DoxyCodeLine{00171                 s\_setOptionsMethodInfo.Invoke(iFileDialog, \textcolor{keyword}{new} \textcolor{keywordtype}{object}[] \{ (uint)s\_getOptionsMethodInfo.Invoke(openFileDialog, \textcolor{keyword}{new} \textcolor{keywordtype}{object}[] \{ \}) | s\_fosPickFoldersBitFlag \});}
+\DoxyCodeLine{00172                 var adviseParametersWithOutputConnectionToken = \textcolor{keyword}{new}[] \{ s\_VistaDialogEventsConstructorInfo.Invoke(\textcolor{keyword}{new} \textcolor{keywordtype}{object}[] \{ openFileDialog \}), 0U \};}
+\DoxyCodeLine{00173                 s\_adviseMethodInfo.Invoke(iFileDialog, adviseParametersWithOutputConnectionToken);}
+\DoxyCodeLine{00174                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00175                 \{}
+\DoxyCodeLine{00176                     \textcolor{keywordtype}{int} retVal = (int)s\_showMethodInfo.Invoke(iFileDialog, \textcolor{keyword}{new} \textcolor{keywordtype}{object}[] \{ ownerHandle \});}
+\DoxyCodeLine{00177                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} ShowDialogResult \{ Result = retVal == 0, FileName = openFileDialog.FileName \};}
+\DoxyCodeLine{00178                 \}}
+\DoxyCodeLine{00179                 \textcolor{keywordflow}{finally} \{ s\_unAdviseMethodInfo.Invoke(iFileDialog, \textcolor{keyword}{new}[] \{ adviseParametersWithOutputConnectionToken[1] \}); \}}
+\DoxyCodeLine{00180             \}}
+\DoxyCodeLine{00181         \}}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183         \textcolor{keyword}{private} \textcolor{keyword}{class }WindowWrapper : IWin32Window}
+\DoxyCodeLine{00184         \{}
+\DoxyCodeLine{00185             \textcolor{keyword}{private} readonly IntPtr \_handle;}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187             \textcolor{keyword}{public} WindowWrapper(IntPtr handle)}
+\DoxyCodeLine{00188             \{ \_handle = handle; \}}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190             \textcolor{keyword}{public} IntPtr Handle}
+\DoxyCodeLine{00191             \{}
+\DoxyCodeLine{00192                 \textcolor{keyword}{get}}
+\DoxyCodeLine{00193                 \{}
+\DoxyCodeLine{00194                     \textcolor{keywordflow}{return} \_handle;}
+\DoxyCodeLine{00195                 \}}
+\DoxyCodeLine{00196             \}}
+\DoxyCodeLine{00197         \}}
+\DoxyCodeLine{00198     \}}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200     \textcolor{keyword}{public} \textcolor{keyword}{class }VolumeControl}
+\DoxyCodeLine{00201     \{}
+\DoxyCodeLine{00202         [ComImport]}
+\DoxyCodeLine{00203         [Guid(\textcolor{stringliteral}{"{}BCDE0395-\/E52F-\/467C-\/8E3D-\/C4579291692E"{}})]}
+\DoxyCodeLine{00204         \textcolor{keyword}{internal} \textcolor{keyword}{class }MMDeviceEnumerator}
+\DoxyCodeLine{00205         \{ \}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207         [Guid(\textcolor{stringliteral}{"{}A95664D2-\/9614-\/4F35-\/A746-\/DE8DB63617E6"{}}), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]}
+\DoxyCodeLine{00208         \textcolor{keyword}{internal} \textcolor{keyword}{interface }IMMDeviceEnumerator}
+\DoxyCodeLine{00209         \{}
+\DoxyCodeLine{00210             \textcolor{keywordtype}{int} NotImpl1();}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212             [PreserveSig]}
+\DoxyCodeLine{00213             \textcolor{keywordtype}{int} GetDefaultAudioEndpoint(Enums.E\_DATA\_FLOW dataFlow,}
+\DoxyCodeLine{00214                 Enums.E\_ROLE role,}
+\DoxyCodeLine{00215                 out IMMDevice ppDevice);}
+\DoxyCodeLine{00216         \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218         [Guid(\textcolor{stringliteral}{"{}D666063F-\/1587-\/4E43-\/81F1-\/B948E807363F"{}}), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]}
+\DoxyCodeLine{00219         \textcolor{keyword}{internal} \textcolor{keyword}{interface }IMMDevice}
+\DoxyCodeLine{00220         \{}
+\DoxyCodeLine{00221             [PreserveSig]}
+\DoxyCodeLine{00222             \textcolor{keywordtype}{int} Activate(ref Guid iid,}
+\DoxyCodeLine{00223                 \textcolor{keywordtype}{int} dwClsCtx,}
+\DoxyCodeLine{00224                 IntPtr pActivationParams,}
+\DoxyCodeLine{00225                 [MarshalAs(UnmanagedType.IUnknown)] out \textcolor{keywordtype}{object} ppInterface);}
+\DoxyCodeLine{00226         \}}
+\DoxyCodeLine{00227 }
+\DoxyCodeLine{00228         [Guid(\textcolor{stringliteral}{"{}657804FA-\/D6AD-\/4496-\/8A60-\/352752AF4F89"{}}), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]}
+\DoxyCodeLine{00229         \textcolor{keyword}{internal} \textcolor{keyword}{interface }IAudioEndpointVolumeCallback}
+\DoxyCodeLine{00230         \{}
+\DoxyCodeLine{00231             \textcolor{keywordtype}{int} OnNotify(IntPtr pNotifyData);}
+\DoxyCodeLine{00232         \};}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234         [Guid(\textcolor{stringliteral}{"{}5CDF2C82-\/841E-\/4546-\/9722-\/0CF74078229A"{}}), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]}
+\DoxyCodeLine{00235         \textcolor{keyword}{internal} \textcolor{keyword}{interface }IAudioEndpointVolume}
+\DoxyCodeLine{00236         \{}
+\DoxyCodeLine{00237             \textcolor{keywordtype}{int} RegisterControlChangeNotify(IAudioEndpointVolumeCallback pNotify);}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239             \textcolor{keywordtype}{int} UnregisterControlChangeNotify(IAudioEndpointVolumeCallback pNotify);}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241             \textcolor{keywordtype}{int} GetChannelCount(out \textcolor{keywordtype}{int} pnChannelCount);}
+\DoxyCodeLine{00242 }
+\DoxyCodeLine{00243             \textcolor{keywordtype}{int} SetMasterVolumeLevel(\textcolor{keywordtype}{float} fLevelDB, Guid pguidEventContext);}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245             \textcolor{keywordtype}{int} SetMasterVolumeLevelScalar(\textcolor{keywordtype}{float} fLevel, Guid pguidEventContext);}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247             \textcolor{keywordtype}{int} GetMasterVolumeLevel(out \textcolor{keywordtype}{float} pfLevelDB);}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249             \textcolor{keywordtype}{int} GetMasterVolumeLevelScalar(out \textcolor{keywordtype}{float} pfLevel);}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251             \textcolor{keywordtype}{int} SetChannelVolumeLevel(uint nChannel, \textcolor{keywordtype}{float} fLevelDB, Guid pguidEventContext);}
+\DoxyCodeLine{00252 }
+\DoxyCodeLine{00253             \textcolor{keywordtype}{int} SetChannelVolumeLevelScalar(uint nChannel, \textcolor{keywordtype}{float} fLevel, Guid pguidEventContext);}
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255             \textcolor{keywordtype}{int} GetChannelVolumeLevel(uint nChannel, out \textcolor{keywordtype}{float} pfLevelDB);}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257             \textcolor{keywordtype}{int} GetChannelVolumeLevelScalar(uint nChannel, out \textcolor{keywordtype}{float} pfLevel);}
+\DoxyCodeLine{00258 }
+\DoxyCodeLine{00259             \textcolor{keywordtype}{int} SetMute([MarshalAs(UnmanagedType.Bool)] \textcolor{keywordtype}{bool} bMute, Guid pguidEventContext);}
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{00261             \textcolor{keywordtype}{int} GetMute(out \textcolor{keywordtype}{bool} pbMute);}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263             \textcolor{keywordtype}{int} GetVolumeStepInfo(out uint pnStep, out uint pnStepCount);}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265             \textcolor{keywordtype}{int} VolumeStepUp(Guid pguidEventContext);}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267             \textcolor{keywordtype}{int} VolumeStepDown(Guid pguidEventContext);}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269             \textcolor{keywordtype}{int} QueryHardwareSupport(out uint pdwHardwareSupportMask);}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271             \textcolor{keywordtype}{int} GetVolumeRange(out \textcolor{keywordtype}{float} pflVolumeMindB, out \textcolor{keywordtype}{float} pflVolumeMaxdB, out \textcolor{keywordtype}{float} pflVolumeIncrementdB);}
+\DoxyCodeLine{00272         \}}
+\DoxyCodeLine{00273 }
+\DoxyCodeLine{00274         \textcolor{keyword}{public} \textcolor{keywordtype}{void} Set(\textcolor{keywordtype}{float} level)}
+\DoxyCodeLine{00275         \{}
+\DoxyCodeLine{00276             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)\textcolor{keyword}{new} MMDeviceEnumerator();}
+\DoxyCodeLine{00277             IMMDevice speakers = \textcolor{keyword}{null};}
+\DoxyCodeLine{00278             IAudioEndpointVolume vol = \textcolor{keyword}{null};}
+\DoxyCodeLine{00279             deviceEnumerator.GetDefaultAudioEndpoint(Enums.E\_DATA\_FLOW.eRender,}
+\DoxyCodeLine{00280                 Enums.E\_ROLE.eMultimedia,}
+\DoxyCodeLine{00281                 out speakers);}
+\DoxyCodeLine{00282             Guid IID\_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;}
+\DoxyCodeLine{00283             speakers.Activate(ref IID\_IAudioEndpointVolume,}
+\DoxyCodeLine{00284                 0,}
+\DoxyCodeLine{00285                 IntPtr.Zero,}
+\DoxyCodeLine{00286                 out \textcolor{keywordtype}{object} o);}
+\DoxyCodeLine{00287             vol = (IAudioEndpointVolume)o;}
+\DoxyCodeLine{00288             vol.SetMasterVolumeLevelScalar(level, Guid.Empty);}
+\DoxyCodeLine{00289             \textcolor{keywordflow}{if} (vol != \textcolor{keyword}{null}) Marshal.ReleaseComObject(vol);}
+\DoxyCodeLine{00290             \textcolor{keywordflow}{if} (speakers != \textcolor{keyword}{null}) Marshal.ReleaseComObject(speakers);}
+\DoxyCodeLine{00291             \textcolor{keywordflow}{if} (deviceEnumerator != \textcolor{keyword}{null}) Marshal.ReleaseComObject(deviceEnumerator);}
+\DoxyCodeLine{00292         \}}
+\DoxyCodeLine{00293 }
+\DoxyCodeLine{00294         \textcolor{keyword}{public} \textcolor{keywordtype}{float} Get()}
+\DoxyCodeLine{00295         \{}
+\DoxyCodeLine{00296             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)\textcolor{keyword}{new} MMDeviceEnumerator();}
+\DoxyCodeLine{00297             IMMDevice speakers = \textcolor{keyword}{null};}
+\DoxyCodeLine{00298             IAudioEndpointVolume vol = \textcolor{keyword}{null};}
+\DoxyCodeLine{00299             deviceEnumerator.GetDefaultAudioEndpoint(Enums.E\_DATA\_FLOW.eRender,}
+\DoxyCodeLine{00300                 Enums.E\_ROLE.eMultimedia,}
+\DoxyCodeLine{00301                 out speakers);}
+\DoxyCodeLine{00302             Guid IID\_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;}
+\DoxyCodeLine{00303             speakers.Activate(ref IID\_IAudioEndpointVolume, 0, IntPtr.Zero, out \textcolor{keywordtype}{object} o);}
+\DoxyCodeLine{00304             vol = (IAudioEndpointVolume)o;}
+\DoxyCodeLine{00305             \textcolor{keywordtype}{float} currentVolume = 0;}
+\DoxyCodeLine{00306             vol.GetMasterVolumeLevelScalar(out currentVolume);}
+\DoxyCodeLine{00307             \textcolor{keywordflow}{if} (vol != \textcolor{keyword}{null}) Marshal.ReleaseComObject(vol);}
+\DoxyCodeLine{00308             \textcolor{keywordflow}{if} (speakers != \textcolor{keyword}{null}) Marshal.ReleaseComObject(speakers);}
+\DoxyCodeLine{00309             \textcolor{keywordflow}{if} (deviceEnumerator != \textcolor{keyword}{null}) Marshal.ReleaseComObject(deviceEnumerator);}
+\DoxyCodeLine{00310             \textcolor{keywordflow}{return} currentVolume;}
+\DoxyCodeLine{00311         \}}
+\DoxyCodeLine{00312     \}}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314     \textcolor{keyword}{public} \textcolor{keyword}{class }GetClipboardText}
+\DoxyCodeLine{00315     \{}
+\DoxyCodeLine{00316         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_GetText;}
+\DoxyCodeLine{00317 }
+\DoxyCodeLine{00318         \textcolor{keyword}{private} \textcolor{keywordtype}{void} \_thGetText(\textcolor{keywordtype}{object} format)}
+\DoxyCodeLine{00319         \{}
+\DoxyCodeLine{00320             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00321             \{}
+\DoxyCodeLine{00322                 \textcolor{keywordflow}{if} (format == \textcolor{keyword}{null}) \{ \_GetText = Clipboard.GetText(); \}}
+\DoxyCodeLine{00323                 \textcolor{keywordflow}{else} \{ \_GetText = Clipboard.GetText((TextDataFormat)format); \}}
+\DoxyCodeLine{00324             \}}
+\DoxyCodeLine{00325             \textcolor{keywordflow}{catch} \{ \_GetText = \textcolor{keywordtype}{string}.Empty; \}}
+\DoxyCodeLine{00326         \}}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} GetText()}
+\DoxyCodeLine{00329         \{}
+\DoxyCodeLine{00330             GetClipboardText instance = \textcolor{keyword}{new} GetClipboardText();}
+\DoxyCodeLine{00331             Thread staThread = \textcolor{keyword}{new} Thread(instance.\_thGetText);}
+\DoxyCodeLine{00332             staThread.SetApartmentState(ApartmentState.STA);}
+\DoxyCodeLine{00333             staThread.Start();}
+\DoxyCodeLine{00334             staThread.Join();}
+\DoxyCodeLine{00335             \textcolor{keywordflow}{return} instance.\_GetText;}
+\DoxyCodeLine{00336         \}}
+\DoxyCodeLine{00337     \}}
+\DoxyCodeLine{00338 }
+\DoxyCodeLine{00339     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{class }STATask}
+\DoxyCodeLine{00340     \{}
+\DoxyCodeLine{00341         \textcolor{keyword}{public} \textcolor{keyword}{static} Task<TResult> Run<TResult>(Func<TResult> \textcolor{keyword}{function})}
+\DoxyCodeLine{00342         \{}
+\DoxyCodeLine{00343             var tcs = \textcolor{keyword}{new} TaskCompletionSource<TResult>();}
+\DoxyCodeLine{00344 }
+\DoxyCodeLine{00345             var thread = \textcolor{keyword}{new} Thread(() =>}
+\DoxyCodeLine{00346             \{}
+\DoxyCodeLine{00347                 \textcolor{keywordflow}{try} \{ tcs.SetResult(\textcolor{keyword}{function}()); \}}
+\DoxyCodeLine{00348                 \textcolor{keywordflow}{catch} (Exception e) \{ tcs.SetException(e); \}}
+\DoxyCodeLine{00349             \});}
+\DoxyCodeLine{00350             thread.SetApartmentState(ApartmentState.STA);}
+\DoxyCodeLine{00351             thread.Start();}
+\DoxyCodeLine{00352             \textcolor{keywordflow}{return} tcs.Task;}
+\DoxyCodeLine{00353         \}}
+\DoxyCodeLine{00354 }
+\DoxyCodeLine{00355         \textcolor{keyword}{public} \textcolor{keyword}{static} Task Run(Action action)}
+\DoxyCodeLine{00356         \{}
+\DoxyCodeLine{00357             var tcs = \textcolor{keyword}{new} TaskCompletionSource<object>();}
+\DoxyCodeLine{00358             var thread = \textcolor{keyword}{new} Thread(() =>}
+\DoxyCodeLine{00359             \{}
+\DoxyCodeLine{00360                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00361                 \{}
+\DoxyCodeLine{00362                     action();}
+\DoxyCodeLine{00363                     tcs.SetResult(\textcolor{keyword}{null});}
+\DoxyCodeLine{00364                 \}}
+\DoxyCodeLine{00365                 \textcolor{keywordflow}{catch} (Exception e) \{ tcs.SetException(e); \}}
+\DoxyCodeLine{00366             \});}
+\DoxyCodeLine{00367             thread.SetApartmentState(ApartmentState.STA);}
+\DoxyCodeLine{00368             thread.Start();}
+\DoxyCodeLine{00369             \textcolor{keywordflow}{return} tcs.Task;}
+\DoxyCodeLine{00370         \}}
+\DoxyCodeLine{00371     \}}
+\DoxyCodeLine{00372 }
+\DoxyCodeLine{00373     \textcolor{keyword}{public} \textcolor{keyword}{class }Keyboard}
+\DoxyCodeLine{00374     \{}
+\DoxyCodeLine{00375         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} KeyDown(Keys vKey)}
+\DoxyCodeLine{00376         \{}
+\DoxyCodeLine{00377             Import.keybd\_event((\textcolor{keywordtype}{byte})vKey, 0, (\textcolor{keywordtype}{int})Enums.KEYEVENTF.KEYEVENTF\_EXTENDEDKEY, 0);}
+\DoxyCodeLine{00378         \}}
+\DoxyCodeLine{00379 }
+\DoxyCodeLine{00380         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} KeyUp(Keys vKey)}
+\DoxyCodeLine{00381         \{}
+\DoxyCodeLine{00382             Import.keybd\_event((\textcolor{keywordtype}{byte})vKey, 0, (\textcolor{keywordtype}{int})Enums.KEYEVENTF.KEYEVENTF\_EXTENDEDKEY | (\textcolor{keywordtype}{int})Enums.KEYEVENTF.KEYEVENTF\_KEYUP, 0);}
+\DoxyCodeLine{00383         \}}
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} WindowsKeyboardEventsAPI(\textcolor{keywordtype}{int} status, \textcolor{keywordtype}{string} keys = \textcolor{stringliteral}{"{}none"{}})}
+\DoxyCodeLine{00386         \{}
+\DoxyCodeLine{00387             \textcolor{keywordflow}{switch} (status)}
+\DoxyCodeLine{00388             \{}
+\DoxyCodeLine{00389                 \textcolor{keywordflow}{case} -\/1:}
+\DoxyCodeLine{00390                     \{}
+\DoxyCodeLine{00391                         KeyDown(Keys.LWin);}
+\DoxyCodeLine{00392                         KeyDown(Keys.D);}
+\DoxyCodeLine{00393                         KeyUp(Keys.LWin);}
+\DoxyCodeLine{00394                         KeyUp(Keys.D);}
+\DoxyCodeLine{00395                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00396                     \}}
+\DoxyCodeLine{00397                 \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{00398                     \{}
+\DoxyCodeLine{00399                         KeyDown(Keys.LWin);}
+\DoxyCodeLine{00400                         KeyDown(Keys.M);}
+\DoxyCodeLine{00401                         KeyUp(Keys.LWin);}
+\DoxyCodeLine{00402                         KeyUp(Keys.M);}
+\DoxyCodeLine{00403                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00404                     \}}
+\DoxyCodeLine{00405                 \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{00406                     \{}
+\DoxyCodeLine{00407                         KeyDown(Keys.LWin);}
+\DoxyCodeLine{00408                         KeyDown(Keys.LShiftKey);}
+\DoxyCodeLine{00409                         KeyDown(Keys.M);}
+\DoxyCodeLine{00410                         KeyUp(Keys.LWin);}
+\DoxyCodeLine{00411                         KeyUp(Keys.LShiftKey);}
+\DoxyCodeLine{00412                         KeyUp(Keys.M);}
+\DoxyCodeLine{00413                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00414                     \}}
+\DoxyCodeLine{00415             \}}
+\DoxyCodeLine{00416         \}}
+\DoxyCodeLine{00417     \}}
+\DoxyCodeLine{00418 }
+\DoxyCodeLine{00419     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{class }Monitor}
+\DoxyCodeLine{00420     \{}
+\DoxyCodeLine{00421         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} ERROR\_SUCCESS = 0;}
+\DoxyCodeLine{00422 }
+\DoxyCodeLine{00423         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00424         \textcolor{keyword}{public} \textcolor{keyword}{struct }LUID}
+\DoxyCodeLine{00425         \{}
+\DoxyCodeLine{00426             \textcolor{keyword}{public} uint LowPart;}
+\DoxyCodeLine{00427             \textcolor{keyword}{public} \textcolor{keywordtype}{int} HighPart;}
+\DoxyCodeLine{00428         \}}
+\DoxyCodeLine{00429 }
+\DoxyCodeLine{00430         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00431         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_PATH\_SOURCE\_INFO}
+\DoxyCodeLine{00432         \{}
+\DoxyCodeLine{00433             \textcolor{keyword}{public} LUID adapterId;}
+\DoxyCodeLine{00434             \textcolor{keyword}{public} uint id;}
+\DoxyCodeLine{00435             \textcolor{keyword}{public} uint modeInfoIdx;}
+\DoxyCodeLine{00436             \textcolor{keyword}{public} uint statusFlags;}
+\DoxyCodeLine{00437         \}}
+\DoxyCodeLine{00438 }
+\DoxyCodeLine{00439         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00440         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_PATH\_TARGET\_INFO}
+\DoxyCodeLine{00441         \{}
+\DoxyCodeLine{00442             \textcolor{keyword}{public} LUID adapterId;}
+\DoxyCodeLine{00443             \textcolor{keyword}{public} uint id;}
+\DoxyCodeLine{00444             \textcolor{keyword}{public} uint modeInfoIdx;}
+\DoxyCodeLine{00445             \textcolor{keyword}{private} Enums.DISPLAYCONFIG\_VIDEO\_OUTPUT\_TECHNOLOGY outputTechnology;}
+\DoxyCodeLine{00446             \textcolor{keyword}{private} Enums.DISPLAYCONFIG\_ROTATION rotation;}
+\DoxyCodeLine{00447             \textcolor{keyword}{private} Enums.DISPLAYCONFIG\_SCALING scaling;}
+\DoxyCodeLine{00448             \textcolor{keyword}{private} DISPLAYCONFIG\_RATIONAL refreshRate;}
+\DoxyCodeLine{00449             \textcolor{keyword}{private} Enums.DISPLAYCONFIG\_SCANLINE\_ORDERING scanLineOrdering;}
+\DoxyCodeLine{00450             \textcolor{keyword}{public} \textcolor{keywordtype}{bool} targetAvailable;}
+\DoxyCodeLine{00451             \textcolor{keyword}{public} uint statusFlags;}
+\DoxyCodeLine{00452         \}}
+\DoxyCodeLine{00453 }
+\DoxyCodeLine{00454         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00455         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_RATIONAL}
+\DoxyCodeLine{00456         \{}
+\DoxyCodeLine{00457             \textcolor{keyword}{public} uint Numerator;}
+\DoxyCodeLine{00458             \textcolor{keyword}{public} uint Denominator;}
+\DoxyCodeLine{00459         \}}
+\DoxyCodeLine{00460 }
+\DoxyCodeLine{00461         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00462         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_PATH\_INFO}
+\DoxyCodeLine{00463         \{}
+\DoxyCodeLine{00464             \textcolor{keyword}{public} DISPLAYCONFIG\_PATH\_SOURCE\_INFO sourceInfo;}
+\DoxyCodeLine{00465             \textcolor{keyword}{public} DISPLAYCONFIG\_PATH\_TARGET\_INFO targetInfo;}
+\DoxyCodeLine{00466             \textcolor{keyword}{public} uint flags;}
+\DoxyCodeLine{00467         \}}
+\DoxyCodeLine{00468 }
+\DoxyCodeLine{00469         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00470         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_2DREGION}
+\DoxyCodeLine{00471         \{}
+\DoxyCodeLine{00472             \textcolor{keyword}{public} uint cx;}
+\DoxyCodeLine{00473             \textcolor{keyword}{public} uint cy;}
+\DoxyCodeLine{00474         \}}
+\DoxyCodeLine{00475 }
+\DoxyCodeLine{00476         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00477         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_VIDEO\_SIGNAL\_INFO}
+\DoxyCodeLine{00478         \{}
+\DoxyCodeLine{00479             \textcolor{keyword}{public} ulong pixelRate;}
+\DoxyCodeLine{00480             \textcolor{keyword}{public} DISPLAYCONFIG\_RATIONAL hSyncFreq;}
+\DoxyCodeLine{00481             \textcolor{keyword}{public} DISPLAYCONFIG\_RATIONAL vSyncFreq;}
+\DoxyCodeLine{00482             \textcolor{keyword}{public} DISPLAYCONFIG\_2DREGION activeSize;}
+\DoxyCodeLine{00483             \textcolor{keyword}{public} DISPLAYCONFIG\_2DREGION totalSize;}
+\DoxyCodeLine{00484             \textcolor{keyword}{public} uint videoStandard;}
+\DoxyCodeLine{00485             \textcolor{keyword}{public} Enums.DISPLAYCONFIG\_SCANLINE\_ORDERING scanLineOrdering;}
+\DoxyCodeLine{00486         \}}
+\DoxyCodeLine{00487 }
+\DoxyCodeLine{00488         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00489         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_TARGET\_MODE}
+\DoxyCodeLine{00490         \{}
+\DoxyCodeLine{00491             \textcolor{keyword}{public} DISPLAYCONFIG\_VIDEO\_SIGNAL\_INFO targetVideoSignalInfo;}
+\DoxyCodeLine{00492         \}}
+\DoxyCodeLine{00493 }
+\DoxyCodeLine{00494         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00495         \textcolor{keyword}{public} \textcolor{keyword}{struct }POINTL}
+\DoxyCodeLine{00496         \{}
+\DoxyCodeLine{00497             \textcolor{keyword}{private} \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{00498             \textcolor{keyword}{private} \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{00499         \}}
+\DoxyCodeLine{00500 }
+\DoxyCodeLine{00501         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00502         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_SOURCE\_MODE}
+\DoxyCodeLine{00503         \{}
+\DoxyCodeLine{00504             \textcolor{keyword}{public} uint width;}
+\DoxyCodeLine{00505             \textcolor{keyword}{public} uint height;}
+\DoxyCodeLine{00506             \textcolor{keyword}{public} Enums.DISPLAYCONFIG\_PIXELFORMAT pixelFormat;}
+\DoxyCodeLine{00507             \textcolor{keyword}{public} POINTL position;}
+\DoxyCodeLine{00508         \}}
+\DoxyCodeLine{00509 }
+\DoxyCodeLine{00510         [StructLayout(LayoutKind.Explicit)]}
+\DoxyCodeLine{00511         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_MODE\_INFO\_UNION}
+\DoxyCodeLine{00512         \{}
+\DoxyCodeLine{00513             [FieldOffset(0)]}
+\DoxyCodeLine{00514             \textcolor{keyword}{public} DISPLAYCONFIG\_TARGET\_MODE targetMode;}
+\DoxyCodeLine{00515 }
+\DoxyCodeLine{00516             [FieldOffset(0)]}
+\DoxyCodeLine{00517             \textcolor{keyword}{public} DISPLAYCONFIG\_SOURCE\_MODE sourceMode;}
+\DoxyCodeLine{00518         \}}
+\DoxyCodeLine{00519 }
+\DoxyCodeLine{00520         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00521         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_MODE\_INFO}
+\DoxyCodeLine{00522         \{}
+\DoxyCodeLine{00523             \textcolor{keyword}{public} Enums.DISPLAYCONFIG\_MODE\_INFO\_TYPE infoType;}
+\DoxyCodeLine{00524             \textcolor{keyword}{public} uint id;}
+\DoxyCodeLine{00525             \textcolor{keyword}{public} LUID adapterId;}
+\DoxyCodeLine{00526             \textcolor{keyword}{public} DISPLAYCONFIG\_MODE\_INFO\_UNION modeInfo;}
+\DoxyCodeLine{00527         \}}
+\DoxyCodeLine{00528 }
+\DoxyCodeLine{00529         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00530         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_TARGET\_DEVICE\_NAME\_FLAGS}
+\DoxyCodeLine{00531         \{}
+\DoxyCodeLine{00532             \textcolor{keyword}{public} uint value;}
+\DoxyCodeLine{00533         \}}
+\DoxyCodeLine{00534 }
+\DoxyCodeLine{00535         [StructLayout(LayoutKind.Sequential)]}
+\DoxyCodeLine{00536         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_DEVICE\_INFO\_HEADER}
+\DoxyCodeLine{00537         \{}
+\DoxyCodeLine{00538             \textcolor{keyword}{public} Enums.DISPLAYCONFIG\_DEVICE\_INFO\_TYPE type;}
+\DoxyCodeLine{00539             \textcolor{keyword}{public} uint size;}
+\DoxyCodeLine{00540             \textcolor{keyword}{public} LUID adapterId;}
+\DoxyCodeLine{00541             \textcolor{keyword}{public} uint id;}
+\DoxyCodeLine{00542         \}}
+\DoxyCodeLine{00543 }
+\DoxyCodeLine{00544         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]}
+\DoxyCodeLine{00545         \textcolor{keyword}{public} \textcolor{keyword}{struct }DISPLAYCONFIG\_TARGET\_DEVICE\_NAME}
+\DoxyCodeLine{00546         \{}
+\DoxyCodeLine{00547             \textcolor{keyword}{public} DISPLAYCONFIG\_DEVICE\_INFO\_HEADER header;}
+\DoxyCodeLine{00548             \textcolor{keyword}{public} DISPLAYCONFIG\_TARGET\_DEVICE\_NAME\_FLAGS flags;}
+\DoxyCodeLine{00549             \textcolor{keyword}{public} Enums.DISPLAYCONFIG\_VIDEO\_OUTPUT\_TECHNOLOGY outputTechnology;}
+\DoxyCodeLine{00550             \textcolor{keyword}{public} ushort edidManufactureId;}
+\DoxyCodeLine{00551             \textcolor{keyword}{public} ushort edidProductCodeId;}
+\DoxyCodeLine{00552             \textcolor{keyword}{public} uint connectorInstance;}
+\DoxyCodeLine{00553 }
+\DoxyCodeLine{00554             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]}
+\DoxyCodeLine{00555             \textcolor{keyword}{public} \textcolor{keywordtype}{string} monitorFriendlyDeviceName;}
+\DoxyCodeLine{00556 }
+\DoxyCodeLine{00557             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]}
+\DoxyCodeLine{00558             \textcolor{keyword}{public} \textcolor{keywordtype}{string} monitorDevicePath;}
+\DoxyCodeLine{00559         \}}
+\DoxyCodeLine{00560 }
+\DoxyCodeLine{00561         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{string} MonitorFriendlyName(LUID adapterId, uint targetId)}
+\DoxyCodeLine{00562         \{}
+\DoxyCodeLine{00563             var deviceName = \textcolor{keyword}{new} DISPLAYCONFIG\_TARGET\_DEVICE\_NAME}
+\DoxyCodeLine{00564             \{}
+\DoxyCodeLine{00565                 header =}
+\DoxyCodeLine{00566                 \{}
+\DoxyCodeLine{00567                     size = (uint)Marshal.SizeOf(typeof (DISPLAYCONFIG\_TARGET\_DEVICE\_NAME)),}
+\DoxyCodeLine{00568                     adapterId = adapterId,}
+\DoxyCodeLine{00569                     \textcolor{keywordtype}{id} = targetId,}
+\DoxyCodeLine{00570                     type = Enums.DISPLAYCONFIG\_DEVICE\_INFO\_TYPE.DISPLAYCONFIG\_DEVICE\_INFO\_GET\_TARGET\_NAME}
+\DoxyCodeLine{00571                 \}}
+\DoxyCodeLine{00572             \};}
+\DoxyCodeLine{00573             var error = Import.DisplayConfigGetDeviceInfo(ref deviceName);}
+\DoxyCodeLine{00574             \textcolor{keywordflow}{if} (error != ERROR\_SUCCESS)}
+\DoxyCodeLine{00575                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Win32Exception(error);}
+\DoxyCodeLine{00576             \textcolor{keywordflow}{return} deviceName.monitorFriendlyDeviceName;}
+\DoxyCodeLine{00577         \}}
+\DoxyCodeLine{00578 }
+\DoxyCodeLine{00579         \textcolor{keyword}{private} \textcolor{keyword}{static} IEnumerable<string> GetAllMonitorsFriendlyNames()}
+\DoxyCodeLine{00580         \{}
+\DoxyCodeLine{00581             uint pathCount, modeCount;}
+\DoxyCodeLine{00582             var error = Import.GetDisplayConfigBufferSizes(Enums.QUERY\_DEVICE\_CONFIG\_FLAGS.QDC\_ONLY\_ACTIVE\_PATHS, out pathCount, out modeCount);}
+\DoxyCodeLine{00583             \textcolor{keywordflow}{if} (error != ERROR\_SUCCESS)}
+\DoxyCodeLine{00584                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Win32Exception(error);}
+\DoxyCodeLine{00585             var displayPaths = \textcolor{keyword}{new} DISPLAYCONFIG\_PATH\_INFO[pathCount];}
+\DoxyCodeLine{00586             var displayModes = \textcolor{keyword}{new} DISPLAYCONFIG\_MODE\_INFO[modeCount];}
+\DoxyCodeLine{00587             error = Import.QueryDisplayConfig(Enums.QUERY\_DEVICE\_CONFIG\_FLAGS.QDC\_ONLY\_ACTIVE\_PATHS,}
+\DoxyCodeLine{00588                 ref pathCount, displayPaths, ref modeCount, displayModes, IntPtr.Zero);}
+\DoxyCodeLine{00589             \textcolor{keywordflow}{if} (error != ERROR\_SUCCESS)}
+\DoxyCodeLine{00590                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Win32Exception(error);}
+\DoxyCodeLine{00591             \textcolor{keywordflow}{for} (var i = 0; i < modeCount; i++)}
+\DoxyCodeLine{00592                 \textcolor{keywordflow}{if} (displayModes[i].infoType == Enums.DISPLAYCONFIG\_MODE\_INFO\_TYPE.DISPLAYCONFIG\_MODE\_INFO\_TYPE\_TARGET)}
+\DoxyCodeLine{00593                     yield \textcolor{keywordflow}{return} MonitorFriendlyName(displayModes[i].adapterId, displayModes[i].\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00594         \}}
+\DoxyCodeLine{00595 }
+\DoxyCodeLine{00596         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} DeviceFriendlyName(\textcolor{keyword}{this} Screen screen)}
+\DoxyCodeLine{00597         \{}
+\DoxyCodeLine{00598             var allFriendlyNames = GetAllMonitorsFriendlyNames();}
+\DoxyCodeLine{00599             \textcolor{keywordflow}{for} (var index = 0; index < Screen.AllScreens.Length; index++)}
+\DoxyCodeLine{00600                 \textcolor{keywordflow}{if} (Equals(screen, Screen.AllScreens[index]))}
+\DoxyCodeLine{00601                     \textcolor{keywordflow}{return} allFriendlyNames.ToArray()[index];}
+\DoxyCodeLine{00602             \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00603         \}}
+\DoxyCodeLine{00604     \}}
+\DoxyCodeLine{00605 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,268 @@
+\doxysection{Vit\+NX\+\_\+\+Tree\+Node.\+cs}
+\label{a00152_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_TreeNode.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_TreeNode.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Collections;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_TreeNode}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{        \#region Event Region}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler<ObservableListModified<VitNX\_TreeNode>> ItemsAdded;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler<ObservableListModified<VitNX\_TreeNode>> ItemsRemoved;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler TextChanged;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler NodeExpanded;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler NodeCollapsed;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{        \#endregion Event Region}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_text;}
+\DoxyCodeLine{00026         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_isRoot;}
+\DoxyCodeLine{00027         \textcolor{keyword}{private} VitNX\_TreeView \_parentTree;}
+\DoxyCodeLine{00028         \textcolor{keyword}{private} VitNX\_TreeNode \_parentNode;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         \textcolor{keyword}{private} ObservableList<VitNX\_TreeNode> \_nodes;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_expanded;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Text}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_text; \}}
+\DoxyCodeLine{00041             \textcolor{keyword}{set}}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 \textcolor{keywordflow}{if} (\_text == value)}
+\DoxyCodeLine{00044                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046                 \_text = value;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048                 OnTextChanged();}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050         \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         \textcolor{keyword}{public} Rectangle ExpandArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         \textcolor{keyword}{public} Rectangle IconArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056         \textcolor{keyword}{public} Rectangle TextArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         \textcolor{keyword}{public} Rectangle FullArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} ExpandAreaHot \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062         \textcolor{keyword}{public} Bitmap Icon \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064         \textcolor{keyword}{public} Bitmap ExpandedIcon \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} Expanded}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_expanded; \}}
+\DoxyCodeLine{00069             \textcolor{keyword}{set}}
+\DoxyCodeLine{00070             \{}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{if} (\_expanded == value)}
+\DoxyCodeLine{00072                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074                 \textcolor{keywordflow}{if} (value == \textcolor{keyword}{true} \&\& Nodes.Count == 0)}
+\DoxyCodeLine{00075                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077                 \_expanded = value;}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079                 \textcolor{keywordflow}{if} (\_expanded)}
+\DoxyCodeLine{00080                 \{}
+\DoxyCodeLine{00081                     \textcolor{keywordflow}{if} (NodeExpanded != \textcolor{keyword}{null})}
+\DoxyCodeLine{00082                         NodeExpanded(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00083                 \}}
+\DoxyCodeLine{00084                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00085                 \{}
+\DoxyCodeLine{00086                     \textcolor{keywordflow}{if} (NodeCollapsed != \textcolor{keyword}{null})}
+\DoxyCodeLine{00087                         NodeCollapsed(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00088                 \}}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090         \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         \textcolor{keyword}{public} ObservableList<VitNX\_TreeNode> Nodes}
+\DoxyCodeLine{00093         \{}
+\DoxyCodeLine{00094             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_nodes; \}}
+\DoxyCodeLine{00095             \textcolor{keyword}{set}}
+\DoxyCodeLine{00096             \{}
+\DoxyCodeLine{00097                 \textcolor{keywordflow}{if} (\_nodes != \textcolor{keyword}{null})}
+\DoxyCodeLine{00098                 \{}
+\DoxyCodeLine{00099                     \_nodes.ItemsAdded -\/= Nodes\_ItemsAdded;}
+\DoxyCodeLine{00100                     \_nodes.ItemsRemoved -\/= Nodes\_ItemsRemoved;}
+\DoxyCodeLine{00101                 \}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103                 \_nodes = value;}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105                 \_nodes.ItemsAdded += Nodes\_ItemsAdded;}
+\DoxyCodeLine{00106                 \_nodes.ItemsRemoved += Nodes\_ItemsRemoved;}
+\DoxyCodeLine{00107             \}}
+\DoxyCodeLine{00108         \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} IsRoot}
+\DoxyCodeLine{00111         \{}
+\DoxyCodeLine{00112             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_isRoot; \}}
+\DoxyCodeLine{00113             \textcolor{keyword}{set} \{ \_isRoot = value; \}}
+\DoxyCodeLine{00114         \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116         \textcolor{keyword}{public} VitNX\_TreeView ParentTree}
+\DoxyCodeLine{00117         \{}
+\DoxyCodeLine{00118             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_parentTree; \}}
+\DoxyCodeLine{00119             \textcolor{keyword}{set}}
+\DoxyCodeLine{00120             \{}
+\DoxyCodeLine{00121                 \textcolor{keywordflow}{if} (\_parentTree == value)}
+\DoxyCodeLine{00122                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124                 \_parentTree = value;}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126                 \textcolor{keywordflow}{foreach} (var node \textcolor{keywordflow}{in} Nodes)}
+\DoxyCodeLine{00127                     node.ParentTree = \_parentTree;}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129         \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keyword}{public} VitNX\_TreeNode ParentNode}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_parentNode; \}}
+\DoxyCodeLine{00134             \textcolor{keyword}{set} \{ \_parentNode = value; \}}
+\DoxyCodeLine{00135         \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} Odd \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139         \textcolor{keyword}{public} \textcolor{keywordtype}{object} NodeType \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141         \textcolor{keyword}{public} \textcolor{keywordtype}{object} Tag \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143         \textcolor{keyword}{public} \textcolor{keywordtype}{string} FullPath}
+\DoxyCodeLine{00144         \{}
+\DoxyCodeLine{00145             \textcolor{keyword}{get}}
+\DoxyCodeLine{00146             \{}
+\DoxyCodeLine{00147                 var parent = ParentNode;}
+\DoxyCodeLine{00148                 var path = Text;}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150                 \textcolor{keywordflow}{while} (parent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00151                 \{}
+\DoxyCodeLine{00152                     path = \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}\{0\}\{1\}\{2\}"{}}, parent.Text, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, path);}
+\DoxyCodeLine{00153                     parent = parent.ParentNode;}
+\DoxyCodeLine{00154                 \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156                 \textcolor{keywordflow}{return} path;}
+\DoxyCodeLine{00157             \}}
+\DoxyCodeLine{00158         \}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160         \textcolor{keyword}{public} VitNX\_TreeNode PrevVisibleNode \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162         \textcolor{keyword}{public} VitNX\_TreeNode NextVisibleNode \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164         \textcolor{keyword}{public} \textcolor{keywordtype}{int} VisibleIndex \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} IsNodeAncestor(VitNX\_TreeNode node)}
+\DoxyCodeLine{00167         \{}
+\DoxyCodeLine{00168             var parent = ParentNode;}
+\DoxyCodeLine{00169             \textcolor{keywordflow}{while} (parent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00170             \{}
+\DoxyCodeLine{00171                 \textcolor{keywordflow}{if} (parent == node)}
+\DoxyCodeLine{00172                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174                 parent = parent.ParentNode;}
+\DoxyCodeLine{00175             \}}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00178         \}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184         \textcolor{keyword}{public} VitNX\_TreeNode()}
+\DoxyCodeLine{00185         \{}
+\DoxyCodeLine{00186             Nodes = \textcolor{keyword}{new} ObservableList<VitNX\_TreeNode>();}
+\DoxyCodeLine{00187         \}}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189         \textcolor{keyword}{public} VitNX\_TreeNode(\textcolor{keywordtype}{string} text)}
+\DoxyCodeLine{00190             : this()}
+\DoxyCodeLine{00191         \{}
+\DoxyCodeLine{00192             Text = text;}
+\DoxyCodeLine{00193         \}}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199         \textcolor{keyword}{public} \textcolor{keywordtype}{void} Remove()}
+\DoxyCodeLine{00200         \{}
+\DoxyCodeLine{00201             \textcolor{keywordflow}{if} (ParentNode != \textcolor{keyword}{null})}
+\DoxyCodeLine{00202                 ParentNode.Nodes.Remove(\textcolor{keyword}{this});}
+\DoxyCodeLine{00203             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00204                 ParentTree.Nodes.Remove(\textcolor{keyword}{this});}
+\DoxyCodeLine{00205         \}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207         \textcolor{keyword}{public} \textcolor{keywordtype}{void} EnsureVisible()}
+\DoxyCodeLine{00208         \{}
+\DoxyCodeLine{00209             var parent = ParentNode;}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211             \textcolor{keywordflow}{while} (parent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00212             \{}
+\DoxyCodeLine{00213                 parent.Expanded = \textcolor{keyword}{true};}
+\DoxyCodeLine{00214                 parent = parent.ParentNode;}
+\DoxyCodeLine{00215             \}}
+\DoxyCodeLine{00216         \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220 \textcolor{preprocessor}{        \#region Event Handler Region}}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222         \textcolor{keyword}{private} \textcolor{keywordtype}{void} OnTextChanged()}
+\DoxyCodeLine{00223         \{}
+\DoxyCodeLine{00224             \textcolor{keywordflow}{if} (ParentTree != \textcolor{keyword}{null} \&\& ParentTree.TreeViewNodeSorter != \textcolor{keyword}{null})}
+\DoxyCodeLine{00225             \{}
+\DoxyCodeLine{00226                 \textcolor{keywordflow}{if} (ParentNode != \textcolor{keyword}{null})}
+\DoxyCodeLine{00227                     ParentNode.Nodes.Sort(ParentTree.TreeViewNodeSorter);}
+\DoxyCodeLine{00228                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00229                     ParentTree.Nodes.Sort(ParentTree.TreeViewNodeSorter);}
+\DoxyCodeLine{00230             \}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232             \textcolor{keywordflow}{if} (TextChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00233                 TextChanged(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00234         \}}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Nodes\_ItemsAdded(\textcolor{keywordtype}{object} sender, ObservableListModified<VitNX\_TreeNode> e)}
+\DoxyCodeLine{00237         \{}
+\DoxyCodeLine{00238             \textcolor{keywordflow}{foreach} (var node \textcolor{keywordflow}{in} e.Items)}
+\DoxyCodeLine{00239             \{}
+\DoxyCodeLine{00240                 node.ParentNode = \textcolor{keyword}{this};}
+\DoxyCodeLine{00241                 node.ParentTree = ParentTree;}
+\DoxyCodeLine{00242             \}}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{00244             \textcolor{keywordflow}{if} (ParentTree != \textcolor{keyword}{null} \&\& ParentTree.TreeViewNodeSorter != \textcolor{keyword}{null})}
+\DoxyCodeLine{00245                 Nodes.Sort(ParentTree.TreeViewNodeSorter);}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247             \textcolor{keywordflow}{if} (ItemsAdded != \textcolor{keyword}{null})}
+\DoxyCodeLine{00248                 ItemsAdded(\textcolor{keyword}{this}, e);}
+\DoxyCodeLine{00249         \}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251         \textcolor{keyword}{private} \textcolor{keywordtype}{void} Nodes\_ItemsRemoved(\textcolor{keywordtype}{object} sender, ObservableListModified<VitNX\_TreeNode> e)}
+\DoxyCodeLine{00252         \{}
+\DoxyCodeLine{00253             \textcolor{keywordflow}{if} (Nodes.Count == 0)}
+\DoxyCodeLine{00254                 Expanded = \textcolor{keyword}{false};}
+\DoxyCodeLine{00255 }
+\DoxyCodeLine{00256             \textcolor{keywordflow}{if} (ItemsRemoved != \textcolor{keyword}{null})}
+\DoxyCodeLine{00257                 ItemsRemoved(\textcolor{keyword}{this}, e);}
+\DoxyCodeLine{00258         \}}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
+\DoxyCodeLine{00261     \}}
+\DoxyCodeLine{00262 \}}
+
+\end{DoxyCode}

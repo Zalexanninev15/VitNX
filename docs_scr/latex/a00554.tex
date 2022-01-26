@@ -1,0 +1,129 @@
+\doxysection{Dropdown\+Icons Class Reference}
+\label{a00554}\index{DropdownIcons@{DropdownIcons}}
+
+
+Класс ресурса со строгой типизацией для поиска локализованных строк и т.  
+
+
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dropdown\+Icons} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static global\+::\+System.\+Resources.\+Resource\+Manager \textbf{ Resource\+Manager}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Возвращает кэшированный экземпляр Resource\+Manager, использованный этим классом. \end{DoxyCompactList}\item 
+static global\+::\+System.\+Globalization.\+Culture\+Info \textbf{ Culture}\hspace{0.3cm}{\ttfamily  [get, set]}
+\begin{DoxyCompactList}\small\item\em Перезаписывает свойство Current\+UICulture текущего потока для всех обращений к ресурсу с помощью этого класса ресурса со строгой типизацией. \end{DoxyCompactList}\item 
+static System.\+Drawing.\+Bitmap \textbf{ small\+\_\+arrow}\hspace{0.3cm}{\ttfamily  [get]}
+\begin{DoxyCompactList}\small\item\em Поиск локализованного ресурса типа System.\+Drawing.\+Bitmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс ресурса со строгой типизацией для поиска локализованных строк и т. 
+
+д. 
+
+Definition at line \textbf{ 25} of file \textbf{ Dropdown\+Icons.\+Designer.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00554_a64406b79e1fe6f92fab7f7742dca6b21}} 
+\index{DropdownIcons@{DropdownIcons}!DropdownIcons@{DropdownIcons}}
+\index{DropdownIcons@{DropdownIcons}!DropdownIcons@{DropdownIcons}}
+\doxysubsubsection{DropdownIcons()}
+{\footnotesize\ttfamily \textbf{ Dropdown\+Icons} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 32} of file \textbf{ Dropdown\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032                                  \{}
+\DoxyCodeLine{00033         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00554_a97174a2d0af83f0bd014787ac18be56c}} 
+\index{DropdownIcons@{DropdownIcons}!Culture@{Culture}}
+\index{Culture@{Culture}!DropdownIcons@{DropdownIcons}}
+\doxysubsubsection{Culture}
+{\footnotesize\ttfamily global.\+System.\+Globalization.\+Culture\+Info Culture\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [package]}}
+
+
+
+Перезаписывает свойство Current\+UICulture текущего потока для всех обращений к ресурсу с помощью этого класса ресурса со строгой типизацией. 
+
+
+
+Definition at line \textbf{ 54} of file \textbf{ Dropdown\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054                                                                        \{}
+\DoxyCodeLine{00055             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} resourceCulture;}
+\DoxyCodeLine{00057             \}}
+\DoxyCodeLine{00058             \textcolor{keyword}{set} \{}
+\DoxyCodeLine{00059                 resourceCulture = value;}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00554_a0facd9f93017f922ba97bef37fd95b1d}} 
+\index{DropdownIcons@{DropdownIcons}!ResourceManager@{ResourceManager}}
+\index{ResourceManager@{ResourceManager}!DropdownIcons@{DropdownIcons}}
+\doxysubsubsection{ResourceManager}
+{\footnotesize\ttfamily global.\+System.\+Resources.\+Resource\+Manager Resource\+Manager\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Возвращает кэшированный экземпляр Resource\+Manager, использованный этим классом. 
+
+
+
+Definition at line \textbf{ 39} of file \textbf{ Dropdown\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039                                                                                \{}
+\DoxyCodeLine{00040             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00041                 \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object}.ReferenceEquals(resourceMan, \textcolor{keyword}{null})) \{}
+\DoxyCodeLine{00042                     global::System.Resources.ResourceManager temp = \textcolor{keyword}{new} global::System.Resources.ResourceManager(\textcolor{stringliteral}{"{}VitNX.Icons.DropdownIcons"{}}, typeof(DropdownIcons).Assembly);}
+\DoxyCodeLine{00043                     resourceMan = temp;}
+\DoxyCodeLine{00044                 \}}
+\DoxyCodeLine{00045                 \textcolor{keywordflow}{return} resourceMan;}
+\DoxyCodeLine{00046             \}}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00554_ab8e2beb57deed28ea93d0889baf7ec8d}} 
+\index{DropdownIcons@{DropdownIcons}!small\_arrow@{small\_arrow}}
+\index{small\_arrow@{small\_arrow}!DropdownIcons@{DropdownIcons}}
+\doxysubsubsection{small\_arrow}
+{\footnotesize\ttfamily System.\+Drawing.\+Bitmap small\+\_\+arrow\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Поиск локализованного ресурса типа System.\+Drawing.\+Bitmap. 
+
+
+
+Definition at line \textbf{ 66} of file \textbf{ Dropdown\+Icons.\+Designer.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                                                           \{}
+\DoxyCodeLine{00067             \textcolor{keyword}{get} \{}
+\DoxyCodeLine{00068                 \textcolor{keywordtype}{object} obj = ResourceManager.GetObject(\textcolor{stringliteral}{"{}small\_arrow"{}}, resourceCulture);}
+\DoxyCodeLine{00069                 \textcolor{keywordflow}{return} ((System.Drawing.Bitmap)(obj));}
+\DoxyCodeLine{00070             \}}
+\DoxyCodeLine{00071         \}}
+
+\end{DoxyCode}

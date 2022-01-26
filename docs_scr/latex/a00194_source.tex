@@ -1,0 +1,176 @@
+\doxysection{Vit\+NX\+\_\+\+Dock\+Splitter.\+cs}
+\label{a00194_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX\_DockSplitter.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX\_DockSplitter.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Forms;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Docking}
+\DoxyCodeLine{00007 \{}
+\DoxyCodeLine{00008     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_DockSplitter}
+\DoxyCodeLine{00009     \{}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012         \textcolor{keyword}{private} Control \_parentControl;}
+\DoxyCodeLine{00013         \textcolor{keyword}{private} Control \_control;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015         \textcolor{keyword}{private} VitNX\_SplitterType \_splitterType;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_minimum;}
+\DoxyCodeLine{00018         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_maximum;}
+\DoxyCodeLine{00019         \textcolor{keyword}{private} VitNX\_TranslucentForm \_overlayForm;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{public} Rectangle Bounds \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{public} Cursor ResizeCursor \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keyword}{public} VitNX\_DockSplitter(Control parentControl, Control control, VitNX\_SplitterType splitterType)}
+\DoxyCodeLine{00034         \{}
+\DoxyCodeLine{00035             \_parentControl = parentControl;}
+\DoxyCodeLine{00036             \_control = control;}
+\DoxyCodeLine{00037             \_splitterType = splitterType;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039             \textcolor{keywordflow}{switch} (\_splitterType)}
+\DoxyCodeLine{00040             \{}
+\DoxyCodeLine{00041                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Left:}
+\DoxyCodeLine{00042                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Right:}
+\DoxyCodeLine{00043                     ResizeCursor = Cursors.SizeWE;}
+\DoxyCodeLine{00044                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Top:}
+\DoxyCodeLine{00047                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Bottom:}
+\DoxyCodeLine{00048                     ResizeCursor = Cursors.SizeNS;}
+\DoxyCodeLine{00049                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ShowOverlay()}
+\DoxyCodeLine{00058         \{}
+\DoxyCodeLine{00059             \_overlayForm = \textcolor{keyword}{new} VitNX\_TranslucentForm(Color.Black);}
+\DoxyCodeLine{00060             \_overlayForm.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             UpdateOverlay(\textcolor{keyword}{new} Point(0, 0));}
+\DoxyCodeLine{00063         \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065         \textcolor{keyword}{public} \textcolor{keywordtype}{void} HideOverlay()}
+\DoxyCodeLine{00066         \{}
+\DoxyCodeLine{00067             \_overlayForm.Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         \textcolor{keyword}{public} \textcolor{keywordtype}{void} UpdateOverlay(Point difference)}
+\DoxyCodeLine{00071         \{}
+\DoxyCodeLine{00072             var bounds = \textcolor{keyword}{new} Rectangle(Bounds.Location, Bounds.Size);}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074             \textcolor{keywordflow}{switch} (\_splitterType)}
+\DoxyCodeLine{00075             \{}
+\DoxyCodeLine{00076                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Left:}
+\DoxyCodeLine{00077                     var leftX = Math.Max(bounds.Location.X -\/ difference.X, \_minimum);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079                     \textcolor{keywordflow}{if} (\_maximum != 0 \&\& leftX > \_maximum)}
+\DoxyCodeLine{00080                         leftX = \_maximum;}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082                     bounds.Location = \textcolor{keyword}{new} Point(leftX, bounds.Location.Y);}
+\DoxyCodeLine{00083                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Right:}
+\DoxyCodeLine{00086                     var rightX = Math.Max(bounds.Location.X -\/ difference.X, \_minimum);}
+\DoxyCodeLine{00087 }
+\DoxyCodeLine{00088                     \textcolor{keywordflow}{if} (\_maximum != 0 \&\& rightX > \_maximum)}
+\DoxyCodeLine{00089                         rightX = \_maximum;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091                     bounds.Location = \textcolor{keyword}{new} Point(rightX, bounds.Location.Y);}
+\DoxyCodeLine{00092                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Top:}
+\DoxyCodeLine{00095                     var topY = Math.Max(bounds.Location.Y -\/ difference.Y, \_minimum);}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097                     \textcolor{keywordflow}{if} (\_maximum != 0 \&\& topY > \_maximum)}
+\DoxyCodeLine{00098                         topY = \_maximum;}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100                     bounds.Location = \textcolor{keyword}{new} Point(bounds.Location.X, topY);}
+\DoxyCodeLine{00101                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Bottom:}
+\DoxyCodeLine{00104                     var bottomY = Math.Max(bounds.Location.Y -\/ difference.Y, \_minimum);}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106                     \textcolor{keywordflow}{if} (\_maximum != 0 \&\& bottomY > \_maximum)}
+\DoxyCodeLine{00107                         topY = \_maximum;}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109                     bounds.Location = \textcolor{keyword}{new} Point(bounds.Location.X, bottomY);}
+\DoxyCodeLine{00110                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00111             \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113             \_overlayForm.Bounds = bounds;}
+\DoxyCodeLine{00114         \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116         \textcolor{keyword}{public} \textcolor{keywordtype}{void} Move(Point difference)}
+\DoxyCodeLine{00117         \{}
+\DoxyCodeLine{00118             \textcolor{keywordflow}{switch} (\_splitterType)}
+\DoxyCodeLine{00119             \{}
+\DoxyCodeLine{00120                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Left:}
+\DoxyCodeLine{00121                     \_control.Width += difference.X;}
+\DoxyCodeLine{00122                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Right:}
+\DoxyCodeLine{00125                     \_control.Width -\/= difference.X;}
+\DoxyCodeLine{00126                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Top:}
+\DoxyCodeLine{00129                     \_control.Height += difference.Y;}
+\DoxyCodeLine{00130                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Bottom:}
+\DoxyCodeLine{00133                     \_control.Height -\/= difference.Y;}
+\DoxyCodeLine{00134                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00135             \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137             UpdateBounds();}
+\DoxyCodeLine{00138         \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140         \textcolor{keyword}{public} \textcolor{keywordtype}{void} UpdateBounds()}
+\DoxyCodeLine{00141         \{}
+\DoxyCodeLine{00142             var bounds = \_parentControl.RectangleToScreen(\_control.Bounds);}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144             \textcolor{keywordflow}{switch} (\_splitterType)}
+\DoxyCodeLine{00145             \{}
+\DoxyCodeLine{00146                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Left:}
+\DoxyCodeLine{00147                     Bounds = \textcolor{keyword}{new} Rectangle(bounds.Left -\/ 2, bounds.Top, 5, bounds.Height);}
+\DoxyCodeLine{00148                     \_maximum = bounds.Right -\/ 2 -\/ \_control.MinimumSize.Width;}
+\DoxyCodeLine{00149                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Right:}
+\DoxyCodeLine{00152                     Bounds = \textcolor{keyword}{new} Rectangle(bounds.Right -\/ 2, bounds.Top, 5, bounds.Height);}
+\DoxyCodeLine{00153                     \_minimum = bounds.Left -\/ 2 + \_control.MinimumSize.Width;}
+\DoxyCodeLine{00154                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Top:}
+\DoxyCodeLine{00157                     Bounds = \textcolor{keyword}{new} Rectangle(bounds.Left, bounds.Top -\/ 2, bounds.Width, 5);}
+\DoxyCodeLine{00158                     \_maximum = bounds.Bottom -\/ 2 -\/ \_control.MinimumSize.Height;}
+\DoxyCodeLine{00159                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161                 \textcolor{keywordflow}{case} VitNX\_SplitterType.Bottom:}
+\DoxyCodeLine{00162                     Bounds = \textcolor{keyword}{new} Rectangle(bounds.Left, bounds.Bottom -\/ 2, bounds.Width, 5);}
+\DoxyCodeLine{00163                     \_minimum = bounds.Top -\/ 2 + \_control.MinimumSize.Height;}
+\DoxyCodeLine{00164                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00165             \}}
+\DoxyCodeLine{00166         \}}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00169     \}}
+\DoxyCodeLine{00170 \}}
+
+\end{DoxyCode}

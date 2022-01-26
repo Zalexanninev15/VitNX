@@ -1,0 +1,418 @@
+\doxysection{Vit\+NX\+\_\+\+Dock\+Region.\+cs}
+\label{a00191_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX\_DockRegion.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX\_DockRegion.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00007 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Docking}
+\DoxyCodeLine{00010 \{}
+\DoxyCodeLine{00011     [ToolboxItem(\textcolor{keyword}{false})]}
+\DoxyCodeLine{00012     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_DockRegion : Panel}
+\DoxyCodeLine{00013     \{}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016         \textcolor{keyword}{private} List<VitNX\_DockGroup> \_groups;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018         \textcolor{keyword}{private} Form \_parentForm;}
+\DoxyCodeLine{00019         \textcolor{keyword}{private} VitNX\_DockSplitter \_splitter;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{public} VitNX\_DockPanel DockPanel \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{public} VitNX\_DockArea DockArea \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keyword}{public} VitNX\_DockContent ActiveDocument}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             \textcolor{keyword}{get}}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 \textcolor{keywordflow}{if} (DockArea != VitNX\_DockArea.Document || \_groups.Count == 0)}
+\DoxyCodeLine{00034                     \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036                 \textcolor{keywordflow}{return} \_groups[0].VisibleContent;}
+\DoxyCodeLine{00037             \}}
+\DoxyCodeLine{00038         \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         \textcolor{keyword}{public} List<VitNX\_DockGroup> Groups}
+\DoxyCodeLine{00041         \{}
+\DoxyCodeLine{00042             \textcolor{keyword}{get}}
+\DoxyCodeLine{00043             \{}
+\DoxyCodeLine{00044                 \textcolor{keywordflow}{return} \_groups.ToList();}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046         \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         \textcolor{keyword}{public} VitNX\_DockRegion(VitNX\_DockPanel dockPanel, VitNX\_DockArea dockArea)}
+\DoxyCodeLine{00053         \{}
+\DoxyCodeLine{00054             \_groups = \textcolor{keyword}{new} List<VitNX\_DockGroup>();}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056             DockPanel = dockPanel;}
+\DoxyCodeLine{00057             DockArea = dockArea;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059             BuildProperties();}
+\DoxyCodeLine{00060         \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066         \textcolor{keyword}{internal} \textcolor{keywordtype}{void} AddContent(VitNX\_DockContent dockContent)}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             AddContent(dockContent, \textcolor{keyword}{null});}
+\DoxyCodeLine{00069         \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071         \textcolor{keyword}{internal} \textcolor{keywordtype}{void} AddContent(VitNX\_DockContent dockContent, VitNX\_DockGroup dockGroup)}
+\DoxyCodeLine{00072         \{}
+\DoxyCodeLine{00073             \textcolor{comment}{// If no existing group is specified then create a new one}}
+\DoxyCodeLine{00074             \textcolor{keywordflow}{if} (dockGroup == \textcolor{keyword}{null})}
+\DoxyCodeLine{00075             \{}
+\DoxyCodeLine{00076                 \textcolor{comment}{// If this is the document region, then default to first group if it exists}}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Document \&\& \_groups.Count > 0)}
+\DoxyCodeLine{00078                     dockGroup = \_groups[0];}
+\DoxyCodeLine{00079                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00080                     dockGroup = CreateGroup();}
+\DoxyCodeLine{00081             \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083             dockContent.DockRegion = \textcolor{keyword}{this};}
+\DoxyCodeLine{00084             dockGroup.AddContent(dockContent);}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086             \textcolor{keywordflow}{if} (!Visible)}
+\DoxyCodeLine{00087             \{}
+\DoxyCodeLine{00088                 Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00089                 CreateSplitter();}
+\DoxyCodeLine{00090             \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092             PositionGroups();}
+\DoxyCodeLine{00093         \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095         \textcolor{keyword}{internal} \textcolor{keywordtype}{void} InsertContent(VitNX\_DockContent dockContent, VitNX\_DockGroup dockGroup, DockInsertType insertType)}
+\DoxyCodeLine{00096         \{}
+\DoxyCodeLine{00097             var order = dockGroup.Order;}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099             \textcolor{keywordflow}{if} (insertType == DockInsertType.After)}
+\DoxyCodeLine{00100                 order++;}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102             var newGroup = InsertGroup(order);}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104             dockContent.DockRegion = \textcolor{keyword}{this};}
+\DoxyCodeLine{00105             newGroup.AddContent(dockContent);}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107             \textcolor{keywordflow}{if} (!Visible)}
+\DoxyCodeLine{00108             \{}
+\DoxyCodeLine{00109                 Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00110                 CreateSplitter();}
+\DoxyCodeLine{00111             \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113             PositionGroups();}
+\DoxyCodeLine{00114         \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116         \textcolor{keyword}{internal} \textcolor{keywordtype}{void} RemoveContent(VitNX\_DockContent dockContent)}
+\DoxyCodeLine{00117         \{}
+\DoxyCodeLine{00118             dockContent.DockRegion = \textcolor{keyword}{null};}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120             var group = dockContent.DockGroup;}
+\DoxyCodeLine{00121             group.RemoveContent(dockContent);}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123             dockContent.DockArea = VitNX\_DockArea.None;}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125             \textcolor{comment}{// If that was the final content in the group then remove the group}}
+\DoxyCodeLine{00126             \textcolor{keywordflow}{if} (group.ContentCount == 0)}
+\DoxyCodeLine{00127                 RemoveGroup(group);}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129             \textcolor{comment}{// If we just removed the final group, and this isn't the document region, then hide}}
+\DoxyCodeLine{00130             \textcolor{keywordflow}{if} (\_groups.Count == 0 \&\& DockArea != VitNX\_DockArea.Document)}
+\DoxyCodeLine{00131             \{}
+\DoxyCodeLine{00132                 Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00133                 RemoveSplitter();}
+\DoxyCodeLine{00134             \}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136             PositionGroups();}
+\DoxyCodeLine{00137         \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139         \textcolor{keyword}{public} List<VitNX\_DockContent> GetContents()}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             var result = \textcolor{keyword}{new} List<VitNX\_DockContent>();}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143             \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00144                 result.AddRange(group.GetContents());}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00147         \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{keyword}{private} VitNX\_DockGroup CreateGroup()}
+\DoxyCodeLine{00150         \{}
+\DoxyCodeLine{00151             var order = 0;}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153             \textcolor{keywordflow}{if} (\_groups.Count >= 1)}
+\DoxyCodeLine{00154             \{}
+\DoxyCodeLine{00155                 order = -\/1;}
+\DoxyCodeLine{00156                 \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00157                 \{}
+\DoxyCodeLine{00158                     \textcolor{keywordflow}{if} (group.Order >= order)}
+\DoxyCodeLine{00159                         order = group.Order + 1;}
+\DoxyCodeLine{00160                 \}}
+\DoxyCodeLine{00161             \}}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163             var newGroup = \textcolor{keyword}{new} VitNX\_DockGroup(DockPanel, \textcolor{keyword}{this}, order);}
+\DoxyCodeLine{00164             \_groups.Add(newGroup);}
+\DoxyCodeLine{00165             Controls.Add(newGroup);}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167             \textcolor{keywordflow}{return} newGroup;}
+\DoxyCodeLine{00168         \}}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170         \textcolor{keyword}{private} VitNX\_DockGroup InsertGroup(\textcolor{keywordtype}{int} order)}
+\DoxyCodeLine{00171         \{}
+\DoxyCodeLine{00172             \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00173             \{}
+\DoxyCodeLine{00174                 \textcolor{keywordflow}{if} (group.Order >= order)}
+\DoxyCodeLine{00175                     group.Order++;}
+\DoxyCodeLine{00176             \}}
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178             var newGroup = \textcolor{keyword}{new} VitNX\_DockGroup(DockPanel, \textcolor{keyword}{this}, order);}
+\DoxyCodeLine{00179             \_groups.Add(newGroup);}
+\DoxyCodeLine{00180             Controls.Add(newGroup);}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182             \textcolor{keywordflow}{return} newGroup;}
+\DoxyCodeLine{00183         \}}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185         \textcolor{keyword}{private} \textcolor{keywordtype}{void} RemoveGroup(VitNX\_DockGroup group)}
+\DoxyCodeLine{00186         \{}
+\DoxyCodeLine{00187             var lastOrder = group.Order;}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189             \_groups.Remove(group);}
+\DoxyCodeLine{00190             Controls.Remove(group);}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192             \textcolor{keywordflow}{foreach} (var otherGroup \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00193             \{}
+\DoxyCodeLine{00194                 \textcolor{keywordflow}{if} (otherGroup.Order > lastOrder)}
+\DoxyCodeLine{00195                     otherGroup.Order-\/-\/;}
+\DoxyCodeLine{00196             \}}
+\DoxyCodeLine{00197         \}}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199         \textcolor{keyword}{private} \textcolor{keywordtype}{void} PositionGroups()}
+\DoxyCodeLine{00200         \{}
+\DoxyCodeLine{00201             DockStyle dockStyle;}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203             \textcolor{keywordflow}{switch} (DockArea)}
+\DoxyCodeLine{00204             \{}
+\DoxyCodeLine{00205                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00206                 \textcolor{keywordflow}{case} VitNX\_DockArea.Document:}
+\DoxyCodeLine{00207                     dockStyle = DockStyle.Fill;}
+\DoxyCodeLine{00208                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210                 \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00211                 \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00212                     dockStyle = DockStyle.Top;}
+\DoxyCodeLine{00213                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215                 \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00216                     dockStyle = DockStyle.Left;}
+\DoxyCodeLine{00217                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00218             \}}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220             \textcolor{keywordflow}{if} (\_groups.Count == 1)}
+\DoxyCodeLine{00221             \{}
+\DoxyCodeLine{00222                 \_groups[0].Dock = DockStyle.Fill;}
+\DoxyCodeLine{00223                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00224             \}}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226             \textcolor{keywordflow}{if} (\_groups.Count > 1)}
+\DoxyCodeLine{00227             \{}
+\DoxyCodeLine{00228                 var lastGroup = \_groups.OrderByDescending(g => g.Order).First();}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230                 \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups.OrderByDescending(g => g.Order))}
+\DoxyCodeLine{00231                 \{}
+\DoxyCodeLine{00232                     group.SendToBack();}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234                     \textcolor{keywordflow}{if} (group.Order == lastGroup.Order)}
+\DoxyCodeLine{00235                         group.Dock = DockStyle.Fill;}
+\DoxyCodeLine{00236                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00237                         group.Dock = dockStyle;}
+\DoxyCodeLine{00238                 \}}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240                 SizeGroups();}
+\DoxyCodeLine{00241             \}}
+\DoxyCodeLine{00242         \}}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{00244         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SizeGroups()}
+\DoxyCodeLine{00245         \{}
+\DoxyCodeLine{00246             \textcolor{keywordflow}{if} (\_groups.Count <= 1)}
+\DoxyCodeLine{00247                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249             var size = \textcolor{keyword}{new} Size(0, 0);}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251             \textcolor{keywordflow}{switch} (DockArea)}
+\DoxyCodeLine{00252             \{}
+\DoxyCodeLine{00253                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00254                 \textcolor{keywordflow}{case} VitNX\_DockArea.Document:}
+\DoxyCodeLine{00255                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257                 \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00258                 \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00259                     size = \textcolor{keyword}{new} Size(ClientRectangle.Width, ClientRectangle.Height / \_groups.Count);}
+\DoxyCodeLine{00260                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00261 }
+\DoxyCodeLine{00262                 \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00263                     size = \textcolor{keyword}{new} Size(ClientRectangle.Width / \_groups.Count, ClientRectangle.Height);}
+\DoxyCodeLine{00264                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00265             \}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267             \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00268                 group.Size = size;}
+\DoxyCodeLine{00269         \}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271         \textcolor{keyword}{private} \textcolor{keywordtype}{void} BuildProperties()}
+\DoxyCodeLine{00272         \{}
+\DoxyCodeLine{00273             MinimumSize = \textcolor{keyword}{new} Size(50, 50);}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275             \textcolor{keywordflow}{switch} (DockArea)}
+\DoxyCodeLine{00276             \{}
+\DoxyCodeLine{00277                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00278                 \textcolor{keywordflow}{case} VitNX\_DockArea.Document:}
+\DoxyCodeLine{00279                     Dock = DockStyle.Fill;}
+\DoxyCodeLine{00280                     Padding = \textcolor{keyword}{new} Padding(0, 1, 0, 0);}
+\DoxyCodeLine{00281                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283                 \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00284                     Dock = DockStyle.Left;}
+\DoxyCodeLine{00285                     Padding = \textcolor{keyword}{new} Padding(0, 0, 1, 0);}
+\DoxyCodeLine{00286                     Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00287                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289                 \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00290                     Dock = DockStyle.Right;}
+\DoxyCodeLine{00291                     Padding = \textcolor{keyword}{new} Padding(1, 0, 0, 0);}
+\DoxyCodeLine{00292                     Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00293                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295                 \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00296                     Dock = DockStyle.Bottom;}
+\DoxyCodeLine{00297                     Padding = \textcolor{keyword}{new} Padding(0, 0, 0, 0);}
+\DoxyCodeLine{00298                     Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00299                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00300             \}}
+\DoxyCodeLine{00301         \}}
+\DoxyCodeLine{00302 }
+\DoxyCodeLine{00303         \textcolor{keyword}{private} \textcolor{keywordtype}{void} CreateSplitter()}
+\DoxyCodeLine{00304         \{}
+\DoxyCodeLine{00305             \textcolor{keywordflow}{if} (\_splitter != \textcolor{keyword}{null} \&\& DockPanel.Splitters.Contains(\_splitter))}
+\DoxyCodeLine{00306                 DockPanel.Splitters.Remove(\_splitter);}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308             \textcolor{keywordflow}{switch} (DockArea)}
+\DoxyCodeLine{00309             \{}
+\DoxyCodeLine{00310                 \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00311                     \_splitter = \textcolor{keyword}{new} VitNX\_DockSplitter(DockPanel, \textcolor{keyword}{this}, VitNX\_SplitterType.Right);}
+\DoxyCodeLine{00312                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314                 \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00315                     \_splitter = \textcolor{keyword}{new} VitNX\_DockSplitter(DockPanel, \textcolor{keyword}{this}, VitNX\_SplitterType.Left);}
+\DoxyCodeLine{00316                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00317 }
+\DoxyCodeLine{00318                 \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00319                     \_splitter = \textcolor{keyword}{new} VitNX\_DockSplitter(DockPanel, \textcolor{keyword}{this}, VitNX\_SplitterType.Top);}
+\DoxyCodeLine{00320                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00321 }
+\DoxyCodeLine{00322                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00323                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00324             \}}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326             DockPanel.Splitters.Add(\_splitter);}
+\DoxyCodeLine{00327         \}}
+\DoxyCodeLine{00328 }
+\DoxyCodeLine{00329         \textcolor{keyword}{private} \textcolor{keywordtype}{void} RemoveSplitter()}
+\DoxyCodeLine{00330         \{}
+\DoxyCodeLine{00331             \textcolor{keywordflow}{if} (DockPanel.Splitters.Contains(\_splitter))}
+\DoxyCodeLine{00332                 DockPanel.Splitters.Remove(\_splitter);}
+\DoxyCodeLine{00333         \}}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00336 }
+\DoxyCodeLine{00337 \textcolor{preprocessor}{        \#region Event Handler Region}}
+\DoxyCodeLine{00338 }
+\DoxyCodeLine{00339         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnCreateControl()}
+\DoxyCodeLine{00340         \{}
+\DoxyCodeLine{00341             base.OnCreateControl();}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343             \_parentForm = FindForm();}
+\DoxyCodeLine{00344             \_parentForm.ResizeEnd += ParentForm\_ResizeEnd;}
+\DoxyCodeLine{00345         \}}
+\DoxyCodeLine{00346 }
+\DoxyCodeLine{00347         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnResize(EventArgs eventargs)}
+\DoxyCodeLine{00348         \{}
+\DoxyCodeLine{00349             base.OnResize(eventargs);}
+\DoxyCodeLine{00350 }
+\DoxyCodeLine{00351             SizeGroups();}
+\DoxyCodeLine{00352         \}}
+\DoxyCodeLine{00353 }
+\DoxyCodeLine{00354         \textcolor{keyword}{private} \textcolor{keywordtype}{void} ParentForm\_ResizeEnd(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00355         \{}
+\DoxyCodeLine{00356             \textcolor{keywordflow}{if} (\_splitter != \textcolor{keyword}{null})}
+\DoxyCodeLine{00357                 \_splitter.UpdateBounds();}
+\DoxyCodeLine{00358         \}}
+\DoxyCodeLine{00359 }
+\DoxyCodeLine{00360         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnLayout(LayoutEventArgs e)}
+\DoxyCodeLine{00361         \{}
+\DoxyCodeLine{00362             base.OnLayout(e);}
+\DoxyCodeLine{00363 }
+\DoxyCodeLine{00364             \textcolor{keywordflow}{if} (\_splitter != \textcolor{keyword}{null})}
+\DoxyCodeLine{00365                 \_splitter.UpdateBounds();}
+\DoxyCodeLine{00366         \}}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
+\DoxyCodeLine{00369 }
+\DoxyCodeLine{00370 \textcolor{preprocessor}{        \#region Paint Region}}
+\DoxyCodeLine{00371 }
+\DoxyCodeLine{00372         \textcolor{keyword}{public} \textcolor{keywordtype}{void} Redraw()}
+\DoxyCodeLine{00373         \{}
+\DoxyCodeLine{00374             Invalidate();}
+\DoxyCodeLine{00375 }
+\DoxyCodeLine{00376             \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} \_groups)}
+\DoxyCodeLine{00377                 group.Redraw();}
+\DoxyCodeLine{00378         \}}
+\DoxyCodeLine{00379 }
+\DoxyCodeLine{00380         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00381         \{}
+\DoxyCodeLine{00382             var g = e.Graphics;}
+\DoxyCodeLine{00383 }
+\DoxyCodeLine{00384             \textcolor{keywordflow}{if} (!Visible)}
+\DoxyCodeLine{00385                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00386 }
+\DoxyCodeLine{00387             \textcolor{comment}{// Fill body}}
+\DoxyCodeLine{00388             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00389             \{}
+\DoxyCodeLine{00390                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00391             \}}
+\DoxyCodeLine{00392 }
+\DoxyCodeLine{00393             \textcolor{comment}{// Draw border}}
+\DoxyCodeLine{00394             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.VitNXBorder))}
+\DoxyCodeLine{00395             \{}
+\DoxyCodeLine{00396                 \textcolor{comment}{// Top border}}
+\DoxyCodeLine{00397                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Document)}
+\DoxyCodeLine{00398                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);}
+\DoxyCodeLine{00399 }
+\DoxyCodeLine{00400                 \textcolor{comment}{// Left border}}
+\DoxyCodeLine{00401                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Right)}
+\DoxyCodeLine{00402                     g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Left, ClientRectangle.Height);}
+\DoxyCodeLine{00403 }
+\DoxyCodeLine{00404                 \textcolor{comment}{// Right border}}
+\DoxyCodeLine{00405                 \textcolor{keywordflow}{if} (DockArea == VitNX\_DockArea.Left)}
+\DoxyCodeLine{00406                     g.DrawLine(p, ClientRectangle.Right -\/ 1, 0, ClientRectangle.Right -\/ 1, ClientRectangle.Height);}
+\DoxyCodeLine{00407             \}}
+\DoxyCodeLine{00408         \}}
+\DoxyCodeLine{00409 }
+\DoxyCodeLine{00410 \textcolor{preprocessor}{        \#endregion Paint Region}}
+\DoxyCodeLine{00411     \}}
+\DoxyCodeLine{00412 \}}
+
+\end{DoxyCode}

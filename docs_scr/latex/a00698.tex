@@ -1,0 +1,194 @@
+\doxysection{Dock\+Drop\+Area Class Reference}
+\label{a00698}\index{DockDropArea@{DockDropArea}}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Dock\+Drop\+Area} (\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} dock\+Panel, \textbf{ Vit\+NX\+\_\+\+Dock\+Region} region)
+\item 
+\textbf{ Dock\+Drop\+Area} (\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} dock\+Panel, \textbf{ Vit\+NX\+\_\+\+Dock\+Group} group, \textbf{ Dock\+Insert\+Type} insert\+Type)
+\item 
+void \textbf{ Build\+Areas} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} \textbf{ Dock\+Panel}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Rectangle \textbf{ Drop\+Area}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Rectangle \textbf{ Highlight\+Area}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Region} \textbf{ Dock\+Region}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Group} \textbf{ Dock\+Group}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Dock\+Insert\+Type} \textbf{ Insert\+Type}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 5} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00698_a880370c9eee9fbd9276d63210c7937ab}} 
+\index{DockDropArea@{DockDropArea}!DockDropArea@{DockDropArea}}
+\index{DockDropArea@{DockDropArea}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{DockDropArea()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ Dock\+Drop\+Area} (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Panel}}]{dock\+Panel,  }\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Region}}]{region }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026         \{}
+\DoxyCodeLine{00027             DockPanel = dockPanel;}
+\DoxyCodeLine{00028             DockRegion = region;}
+\DoxyCodeLine{00029             InsertType = DockInsertType.None;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031             BuildAreas();}
+\DoxyCodeLine{00032         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00698_a14a1570eb61a4ed3097aa1542dacc477}} 
+\index{DockDropArea@{DockDropArea}!DockDropArea@{DockDropArea}}
+\index{DockDropArea@{DockDropArea}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{DockDropArea()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ Dock\+Drop\+Area} (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Panel}}]{dock\+Panel,  }\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Group}}]{group,  }\item[{\textbf{ Dock\+Insert\+Type}}]{insert\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 34} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036             DockPanel = dockPanel;}
+\DoxyCodeLine{00037             DockGroup = group;}
+\DoxyCodeLine{00038             InsertType = insertType;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040             BuildAreas();}
+\DoxyCodeLine{00041         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00698_a09dbb1fb246b7e9c24f61e6c7cf764ed}} 
+\index{DockDropArea@{DockDropArea}!BuildAreas@{BuildAreas}}
+\index{BuildAreas@{BuildAreas}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{BuildAreas()}
+{\footnotesize\ttfamily void Build\+Areas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 47} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048         \{}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (DockRegion != \textcolor{keyword}{null})}
+\DoxyCodeLine{00050                 BuildRegionAreas();}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (DockGroup != \textcolor{keyword}{null})}
+\DoxyCodeLine{00052                 BuildGroupAreas();}
+\DoxyCodeLine{00053         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00698_a4a97df4da4747a010ebce1a6f3425c3c}} 
+\index{DockDropArea@{DockDropArea}!DockGroup@{DockGroup}}
+\index{DockGroup@{DockGroup}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{DockGroup}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Group} Dock\+Group\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00698_a7e5069afa4bf46cb927ce1ff28bcd549}} 
+\index{DockDropArea@{DockDropArea}!DockPanel@{DockPanel}}
+\index{DockPanel@{DockPanel}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{DockPanel}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Panel} Dock\+Panel\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 9} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00698_ac52eeda800be822b04f7f4326cd0686a}} 
+\index{DockDropArea@{DockDropArea}!DockRegion@{DockRegion}}
+\index{DockRegion@{DockRegion}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{DockRegion}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Region} Dock\+Region\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00698_afb2ac75f8fdb15f12962d34786da25c3}} 
+\index{DockDropArea@{DockDropArea}!DropArea@{DropArea}}
+\index{DropArea@{DropArea}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{DropArea}
+{\footnotesize\ttfamily Rectangle Drop\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 11} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00698_a098f21357e2a39c4229c18ed495bd348}} 
+\index{DockDropArea@{DockDropArea}!HighlightArea@{HighlightArea}}
+\index{HighlightArea@{HighlightArea}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{HighlightArea}
+{\footnotesize\ttfamily Rectangle Highlight\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 13} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00698_a99db1c5c076518351918889c7cf971dc}} 
+\index{DockDropArea@{DockDropArea}!InsertType@{InsertType}}
+\index{InsertType@{InsertType}!DockDropArea@{DockDropArea}}
+\doxysubsubsection{InsertType}
+{\footnotesize\ttfamily \textbf{ Dock\+Insert\+Type} Insert\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Dock\+Drop\+Area.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}

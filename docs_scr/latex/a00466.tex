@@ -1,0 +1,89 @@
+\doxysection{Monitor Class Reference}
+\label{a00466}\index{Monitor@{Monitor}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+2\+DREGION}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+DEVICE\+\_\+\+INFO\+\_\+\+HEADER}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+MODE\+\_\+\+INFO}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+MODE\+\_\+\+INFO\+\_\+\+UNION}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+PATH\+\_\+\+INFO}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+PATH\+\_\+\+SOURCE\+\_\+\+INFO}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+PATH\+\_\+\+TARGET\+\_\+\+INFO}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+RATIONAL}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+SOURCE\+\_\+\+MODE}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+TARGET\+\_\+\+DEVICE\+\_\+\+NAME}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+TARGET\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+FLAGS}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+TARGET\+\_\+\+MODE}
+\item 
+struct \textbf{ DISPLAYCONFIG\+\_\+\+VIDEO\+\_\+\+SIGNAL\+\_\+\+INFO}
+\item 
+struct \textbf{ LUID}
+\item 
+struct \textbf{ POINTL}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Device\+Friendly\+Name} (this Screen screen)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \textbf{ ERROR\+\_\+\+SUCCESS} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 419} of file \textbf{ Native\+Controls.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00466_a598627b008da5c2a816df6bdf3c8181b}} 
+\index{Monitor@{Monitor}!DeviceFriendlyName@{DeviceFriendlyName}}
+\index{DeviceFriendlyName@{DeviceFriendlyName}!Monitor@{Monitor}}
+\doxysubsubsection{DeviceFriendlyName()}
+{\footnotesize\ttfamily static string Device\+Friendly\+Name (\begin{DoxyParamCaption}\item[{this Screen}]{screen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 596} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00597         \{}
+\DoxyCodeLine{00598             var allFriendlyNames = GetAllMonitorsFriendlyNames();}
+\DoxyCodeLine{00599             \textcolor{keywordflow}{for} (var index = 0; index < Screen.AllScreens.Length; index++)}
+\DoxyCodeLine{00600                 \textcolor{keywordflow}{if} (Equals(screen, Screen.AllScreens[index]))}
+\DoxyCodeLine{00601                     \textcolor{keywordflow}{return} allFriendlyNames.ToArray()[index];}
+\DoxyCodeLine{00602             \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00603         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{a00466_a1e0aba7d75341634f54d7bfba21a9972}} 
+\index{Monitor@{Monitor}!ERROR\_SUCCESS@{ERROR\_SUCCESS}}
+\index{ERROR\_SUCCESS@{ERROR\_SUCCESS}!Monitor@{Monitor}}
+\doxysubsubsection{ERROR\_SUCCESS}
+{\footnotesize\ttfamily const int ERROR\+\_\+\+SUCCESS = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 421} of file \textbf{ Native\+Controls.\+cs}.
+

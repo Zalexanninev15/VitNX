@@ -14,22 +14,22 @@ namespace VitNX.Functions.Common.Information
 {
     public class Helper
     {
-        public static readonly string[] _sizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+        public static readonly string[] SizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
     }
 
     public class Windows
     {
-        public static string _computerName = Environment.MachineName;
-        public static string _currentUsername = Environment.UserName;
-        public static DateTime _localTime = new Microsoft.VisualBasic.Devices.Clock().LocalTime;
-        public static bool _is64bit = Environment.Is64BitOperatingSystem;
-        public static string _windowsVersion = Convert.ToString(Environment.OSVersion.Version);
-        public static double _windowsVersionFromREG = double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", ""), System.Globalization.CultureInfo.InvariantCulture);
-        public static string _windowsEditionIDFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "");
-        public static string _windowsCurrentBuildNumberFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuildNumber", "");
-        public static string _windowsProductNameFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "");
-        public static string _windowsDisplayVersionFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "");
-        public static string _windowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
+        public static string ComputerName = Environment.MachineName;
+        public static string CurrentUsername = Environment.UserName;
+        public static DateTime LocalTime = new Microsoft.VisualBasic.Devices.Clock().LocalTime;
+        public static bool Is64bit = Environment.Is64BitOperatingSystem;
+        public static string WindowsVersion = Convert.ToString(Environment.OSVersion.Version);
+        public static double WindowsVersionFromREG = double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", ""), System.Globalization.CultureInfo.InvariantCulture);
+        public static string WindowsEditionIDFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "");
+        public static string WindowsCurrentBuildNumberFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuildNumber", "");
+        public static string WindowsProductNameFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "");
+        public static string WindowsDisplayVersionFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "");
+        public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
 
         public static MemoryStream GetScreen()
         {
@@ -81,51 +81,51 @@ namespace VitNX.Functions.Common.Information
 
     public class Cpu
     {
-        public static string name = "";
-        public static string deviceID = "";
-        public static string manufacturer = "";
-        public static string currentClockSpeed = "";
-        public static string maxClockSpeed = "";
-        public static string caption = "";
-        public static string numberOfCores = "";
-        public static string numberOfEnabledCore = "";
-        public static string numberOfLogicalProcessors = "";
-        public static string architecture = "";
-        public static string family = "";
-        public static string processorType = "";
-        public static string characteristics = "";
-        public static string addressWidth = "";
-        public static string serialNumber = "";
-        public static string threadCount = "";
-        public static string loadPercentage = "";
-        public static string currentVoltage = "";
-        public static int usagePercent = 0;
+        public static string _Name = "";
+        public static string _DeviceID = "";
+        public static string _Manufacturer = "";
+        public static string _CurrentClockSpeed = "";
+        public static string _MaxClockSpeed = "";
+        public static string _Caption = "";
+        public static string _NumberOfCores = "";
+        public static string _NumberOfEnabledCore = "";
+        public static string _NumberOfLogicalProcessors = "";
+        public static string _Architecture = "";
+        public static string _Family = "";
+        public static string _ProcessorType = "";
+        public static string _Characteristics = "";
+        public static string _AddressWidth = "";
+        public static string _SerialNumber = "";
+        public static string _ThreadCount = "";
+        public static string _LoadPercentage = "";
+        public static string _CurrentVoltage = "";
+        public static int _UsagePercent = 0;
 
         public static void Set()
         {
             ManagementObjectSearcher myProcessorObject = new ManagementObjectSearcher("select * from Win32_Processor");
             foreach (ManagementObject obj in myProcessorObject.Get())
             {
-                name = obj["Name"].ToString();
-                deviceID = obj["DeviceID"].ToString();
-                manufacturer = obj["Manufacturer"].ToString();
-                currentClockSpeed = obj["CurrentClockSpeed"].ToString();
-                maxClockSpeed = obj["MaxClockSpeed"].ToString();
-                caption = obj["Caption"].ToString();
-                numberOfCores = obj["NumberOfCores"].ToString();
-                numberOfEnabledCore = obj["NumberOfEnabledCore"].ToString();
-                numberOfLogicalProcessors = obj["NumberOfLogicalProcessors"].ToString();
-                architecture = obj["Architecture"].ToString();
-                family = obj["Family"].ToString();
-                processorType = obj["ProcessorType"].ToString();
-                characteristics = obj["Characteristics"].ToString();
-                addressWidth = obj["AddressWidth"].ToString();
-                serialNumber = obj["SerialNumber"].ToString();
-                threadCount = obj["ThreadCount"].ToString();
-                loadPercentage = obj["LoadPercentage"].ToString();
-                currentVoltage = obj["CurrentVoltage"].ToString();
+                _Name = obj["Name"].ToString();
+                _DeviceID = obj["DeviceID"].ToString();
+                _Manufacturer = obj["Manufacturer"].ToString();
+                _CurrentClockSpeed = obj["CurrentClockSpeed"].ToString();
+                _MaxClockSpeed = obj["MaxClockSpeed"].ToString();
+                _Caption = obj["Caption"].ToString();
+                _NumberOfCores = obj["NumberOfCores"].ToString();
+                _NumberOfEnabledCore = obj["NumberOfEnabledCore"].ToString();
+                _NumberOfLogicalProcessors = obj["NumberOfLogicalProcessors"].ToString();
+                _Architecture = obj["Architecture"].ToString();
+                _Family = obj["Family"].ToString();
+                _ProcessorType = obj["ProcessorType"].ToString();
+                _Characteristics = obj["Characteristics"].ToString();
+                _AddressWidth = obj["AddressWidth"].ToString();
+                _SerialNumber = obj["SerialNumber"].ToString();
+                _ThreadCount = obj["ThreadCount"].ToString();
+                _LoadPercentage = obj["LoadPercentage"].ToString();
+                _CurrentVoltage = obj["CurrentVoltage"].ToString();
             }
-            usagePercent = Convert.ToInt32(new PerformanceCounter("Processor", "% Processor Time", "_Total").NextValue());
+            _UsagePercent = Convert.ToInt32(new PerformanceCounter("Processor", "% Processor Time", "_Total").NextValue());
         }
 
         public static string GetArchitecture()
@@ -162,38 +162,38 @@ namespace VitNX.Functions.Common.Information
 
     public class Gpu
     {
-        public static string name = "";
-        public static string status = "";
-        public static string deviceID = "";
-        public static string adapterRAM = "";
-        public static string adapterDACType = "";
-        public static string monochrome = "";
-        public static string installedDisplayDrivers = "";
-        public static string driverVersion = "";
-        public static string videoArchitecture = "";
-        public static string videoMemoryType = "";
-        public static string maxRefreshRate = "";
-        public static string minRefreshRate = "";
-        public static string videoModeDescription = "";
+        public static string _Name = "";
+        public static string _Status = "";
+        public static string _DeviceID = "";
+        public static string _AdapterRAM = "";
+        public static string _AdapterDACType = "";
+        public static string _Monochrome = "";
+        public static string _InstalledDisplayDrivers = "";
+        public static string _DriverVersion = "";
+        public static string _VideoArchitecture = "";
+        public static string _VideoMemoryType = "";
+        public static string _MaxRefreshRate = "";
+        public static string _MinRefreshRate = "";
+        public static string _VideoModeDescription = "";
 
         public static void Set()
         {
             ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
             foreach (ManagementObject obj in myVideoObject.Get())
             {
-                name = obj["Name"].ToString();
-                status = obj["Status"].ToString();
-                deviceID = obj["DeviceID"].ToString();
-                adapterRAM = SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
-                adapterDACType = obj["AdapterDACType"].ToString();
-                monochrome = obj["Monochrome"].ToString();
-                installedDisplayDrivers = obj["InstalledDisplayDrivers"].ToString();
-                driverVersion = obj["DriverVersion"].ToString();
-                videoArchitecture = obj["VideoArchitecture"].ToString();
-                videoMemoryType = obj["VideoMemoryType"].ToString();
-                maxRefreshRate = obj["MaxRefreshRate"].ToString();
-                minRefreshRate = obj["MinRefreshRate"].ToString();
-                videoModeDescription = obj["VideoModeDescription"].ToString();
+                _Name = obj["Name"].ToString();
+                _Status = obj["Status"].ToString();
+                _DeviceID = obj["DeviceID"].ToString();
+                _AdapterRAM = SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
+                _AdapterDACType = obj["AdapterDACType"].ToString();
+                _Monochrome = obj["Monochrome"].ToString();
+                _InstalledDisplayDrivers = obj["InstalledDisplayDrivers"].ToString();
+                _DriverVersion = obj["DriverVersion"].ToString();
+                _VideoArchitecture = obj["VideoArchitecture"].ToString();
+                _VideoMemoryType = obj["VideoMemoryType"].ToString();
+                _MaxRefreshRate = obj["MaxRefreshRate"].ToString();
+                _MinRefreshRate = obj["MinRefreshRate"].ToString();
+                _VideoModeDescription = obj["VideoModeDescription"].ToString();
             }
         }
 
@@ -205,7 +205,7 @@ namespace VitNX.Functions.Common.Information
                 return "0.0 bytes";
             int mag = (int)Math.Log(value, 1024);
             decimal adjustedSize = (decimal)value / (1L << (mag * 10));
-            return string.Format("{0:n1} {1}", adjustedSize, Helper._sizeSuffixes[mag]);
+            return string.Format("{0:n1} {1}", adjustedSize, Helper.SizeSuffixes[mag]);
         }
     }
 
@@ -317,43 +317,43 @@ namespace VitNX.Functions.Common.Information
 
     public class Ram
     {
-        public static string nameID = "";
-        public static string capacity = "";
-        public static string configuredVoltage = "";
-        public static string maxVoltage = "";
-        public static string memoryType = "";
-        public static string minVoltage = "";
-        public static string serialNumber = "";
-        public static string SMBIOSMemoryType = "";
-        public static string speed = "";
-        public static int maxMB = 0;
-        public static int usedMB = 0;
-        public static int intRamVirtual = 0;
-        public static ulong max = 0;
-        public static ulong used = 0;
-        public static ulong ramVirtual = 0;
+        public static string _NameID = "";
+        public static string _Capacity = "";
+        public static string _ConfiguredVoltage = "";
+        public static string _MaxVoltage = "";
+        public static string _MemoryType = "";
+        public static string _MinVoltage = "";
+        public static string _SerialNumber = "";
+        public static string _SMBIOSMemoryType = "";
+        public static string _Speed = "";
+        public static int _MaxMB = 0;
+        public static int _UsedMB = 0;
+        public static int _IntRamVirtual = 0;
+        public static ulong _Max = 0;
+        public static ulong _Used = 0;
+        public static ulong _RamVirtual = 0;
 
         public static void Set()
         {
             ManagementObjectSearcher myRamObject = new ManagementObjectSearcher("select * from Win32_PhysicalMemory");
             foreach (ManagementObject obj in myRamObject.Get())
             {
-                nameID = obj["Name"].ToString();
-                capacity = obj["Capacity"].ToString();
-                configuredVoltage = obj["ConfiguredVoltage"].ToString();
-                maxVoltage = obj["MaxVoltage"].ToString();
-                memoryType = obj["MemoryType"].ToString();
-                minVoltage = obj["MinVoltage"].ToString();
-                serialNumber = obj["SerialNumber"].ToString();
-                SMBIOSMemoryType = obj["SMBIOSMemoryType"].ToString();
-                speed = obj["Speed"].ToString();
+                _NameID = obj["Name"].ToString();
+                _Capacity = obj["Capacity"].ToString();
+                _ConfiguredVoltage = obj["ConfiguredVoltage"].ToString();
+                _MaxVoltage = obj["MaxVoltage"].ToString();
+                _MemoryType = obj["MemoryType"].ToString();
+                _MinVoltage = obj["MinVoltage"].ToString();
+                _SerialNumber = obj["SerialNumber"].ToString();
+                _SMBIOSMemoryType = obj["SMBIOSMemoryType"].ToString();
+                _Speed = obj["Speed"].ToString();
             }
-            max = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1000000;
-            used = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1000000;
-            ramVirtual = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailableVirtualMemory / 1000000;
-            maxMB = (int)max;
-            usedMB = (int)max - (int)used;
-            intRamVirtual = (int)ramVirtual;
+            _Max = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1000000;
+            _Used = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1000000;
+            _RamVirtual = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailableVirtualMemory / 1000000;
+            _MaxMB = (int)_Max;
+            _UsedMB = (int)_Max - (int)_Used;
+            _IntRamVirtual = (int)_RamVirtual;
         }
     }
 }

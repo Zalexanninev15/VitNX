@@ -1,0 +1,575 @@
+\doxysection{Vit\+NX\+\_\+\+Dropdown\+List Class Reference}
+\label{a00618}\index{VitNX\_DropdownList@{VitNX\_DropdownList}}
+Inheritance diagram for Vit\+NX\+\_\+\+Dropdown\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00618}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dropdown\+List} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Resize} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Move} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Up} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Leave} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Capture\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Got\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Lost\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Key\+Down} (Key\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Observable\+Collection$<$ \textbf{ Vit\+NX\+\_\+\+Dropdown\+Item} $>$ \textbf{ Items}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dropdown\+Item} \textbf{ Selected\+Item}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Show\+Border}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+override Size \textbf{ Default\+Size}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Control\+State} \textbf{ Control\+State}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+int \textbf{ Item\+Height}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Max\+Height}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Tool\+Strip\+Drop\+Down\+Direction \textbf{ Dropdown\+Direction}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler \textbf{ Selected\+Item\+Changed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00618_a12d627e2aa80ae72f896417b5e3f7806}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{VitNX\_DropdownList()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dropdown\+List} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 125} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126         \{}
+\DoxyCodeLine{00127             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00128                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00129                      ControlStyles.UserPaint |}
+\DoxyCodeLine{00130                      ControlStyles.Selectable |}
+\DoxyCodeLine{00131                      ControlStyles.UserMouse, \textcolor{keyword}{true});}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133             \_menu.AutoSize = \textcolor{keyword}{false};}
+\DoxyCodeLine{00134             \_menu.Closed += Menu\_Closed;}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136             Items.CollectionChanged += Items\_CollectionChanged;}
+\DoxyCodeLine{00137             SelectedItemChanged += VitNX\_DropdownList\_SelectedItemChanged;}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00140         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00618_ae5c0b188f25d5235d5568fd584bf7592}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnGotFocus@{OnGotFocus}}
+\index{OnGotFocus@{OnGotFocus}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnGotFocus()}
+{\footnotesize\ttfamily override void On\+Got\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 352} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00353         \{}
+\DoxyCodeLine{00354             base.OnGotFocus(e);}
+\DoxyCodeLine{00355 }
+\DoxyCodeLine{00356             Invalidate();}
+\DoxyCodeLine{00357         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_aee1aa50aec444e9bfc979db72c008456}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnKeyDown@{OnKeyDown}}
+\index{OnKeyDown@{OnKeyDown}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnKeyDown()}
+{\footnotesize\ttfamily override void On\+Key\+Down (\begin{DoxyParamCaption}\item[{Key\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 371} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00372         \{}
+\DoxyCodeLine{00373             base.OnKeyDown(e);}
+\DoxyCodeLine{00374 }
+\DoxyCodeLine{00375             \textcolor{keywordflow}{if} (e.KeyCode == Keys.Space)}
+\DoxyCodeLine{00376                 ShowMenu();}
+\DoxyCodeLine{00377         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_ab47291f2e471a96bef84161450d63f6e}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnLostFocus@{OnLostFocus}}
+\index{OnLostFocus@{OnLostFocus}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnLostFocus()}
+{\footnotesize\ttfamily override void On\+Lost\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 359} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00360         \{}
+\DoxyCodeLine{00361             base.OnLostFocus(e);}
+\DoxyCodeLine{00362 }
+\DoxyCodeLine{00363             var location = Cursor.Position;}
+\DoxyCodeLine{00364 }
+\DoxyCodeLine{00365             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00366                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00367             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00368                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00369         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_acc75e41a41d2b30f2e1d580a7397d26a}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnMouseCaptureChanged@{OnMouseCaptureChanged}}
+\index{OnMouseCaptureChanged@{OnMouseCaptureChanged}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnMouseCaptureChanged()}
+{\footnotesize\ttfamily override void On\+Mouse\+Capture\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 342} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00343         \{}
+\DoxyCodeLine{00344             base.OnMouseCaptureChanged(e);}
+\DoxyCodeLine{00345 }
+\DoxyCodeLine{00346             var location = Cursor.Position;}
+\DoxyCodeLine{00347 }
+\DoxyCodeLine{00348             \textcolor{keywordflow}{if} (!ClientRectangle.Contains(location))}
+\DoxyCodeLine{00349                 SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00350         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a99a67e51ce554f65bcccc19aad37f46b}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 321} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00322         \{}
+\DoxyCodeLine{00323             base.OnMouseDown(e);}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325             ShowMenu();}
+\DoxyCodeLine{00326         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a5e9098abfe10508ccd3d96b81f1d8923}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnMouseLeave@{OnMouseLeave}}
+\index{OnMouseLeave@{OnMouseLeave}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnMouseLeave()}
+{\footnotesize\ttfamily override void On\+Mouse\+Leave (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 335} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00336         \{}
+\DoxyCodeLine{00337             base.OnMouseLeave(e);}
+\DoxyCodeLine{00338 }
+\DoxyCodeLine{00339             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00340         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a57b5b248770a2c1e2514b619b8bb59b2}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnMouseMove()}
+{\footnotesize\ttfamily override void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 304} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00305         \{}
+\DoxyCodeLine{00306             base.OnMouseMove(e);}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00309             \{}
+\DoxyCodeLine{00310                 \textcolor{keywordflow}{if} (ClientRectangle.Contains(e.Location))}
+\DoxyCodeLine{00311                     SetControlState(VitNX\_ControlState.Pressed);}
+\DoxyCodeLine{00312                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00313                     SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00314             \}}
+\DoxyCodeLine{00315             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00316             \{}
+\DoxyCodeLine{00317                 SetControlState(VitNX\_ControlState.Hover);}
+\DoxyCodeLine{00318             \}}
+\DoxyCodeLine{00319         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a2a183abcbee81d20477e5e9f00da9363}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnMouseUp()}
+{\footnotesize\ttfamily override void On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 328} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00329         \{}
+\DoxyCodeLine{00330             base.OnMouseUp(e);}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332             SetControlState(VitNX\_ControlState.Normal);}
+\DoxyCodeLine{00333         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 393} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00394         \{}
+\DoxyCodeLine{00395             var g = e.Graphics;}
+\DoxyCodeLine{00396 }
+\DoxyCodeLine{00397             \textcolor{comment}{// Draw background}}
+\DoxyCodeLine{00398             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.MediumBackground))}
+\DoxyCodeLine{00399             \{}
+\DoxyCodeLine{00400                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00401             \}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403             \textcolor{comment}{// Draw normal state}}
+\DoxyCodeLine{00404             \textcolor{keywordflow}{if} (ControlState == VitNX\_ControlState.Normal)}
+\DoxyCodeLine{00405             \{}
+\DoxyCodeLine{00406                 \textcolor{keywordflow}{if} (ShowBorder)}
+\DoxyCodeLine{00407                 \{}
+\DoxyCodeLine{00408                     \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.LightBorder, 1))}
+\DoxyCodeLine{00409                     \{}
+\DoxyCodeLine{00410                         var modRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width -\/ 1, ClientRectangle.Height -\/ 1);}
+\DoxyCodeLine{00411                         g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00412                     \}}
+\DoxyCodeLine{00413                 \}}
+\DoxyCodeLine{00414             \}}
+\DoxyCodeLine{00415 }
+\DoxyCodeLine{00416             \textcolor{comment}{// Draw hover state}}
+\DoxyCodeLine{00417             \textcolor{keywordflow}{if} (ControlState == VitNX\_ControlState.Hover)}
+\DoxyCodeLine{00418             \{}
+\DoxyCodeLine{00419                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.VitNXBorder))}
+\DoxyCodeLine{00420                 \{}
+\DoxyCodeLine{00421                     g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00422                 \}}
+\DoxyCodeLine{00423 }
+\DoxyCodeLine{00424                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.VitNXBackground))}
+\DoxyCodeLine{00425                 \{}
+\DoxyCodeLine{00426                     var arrowRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Right -\/ DropdownIcons.small\_arrow.Width -\/ 8, ClientRectangle.Top, DropdownIcons.small\_arrow.Width + 8, ClientRectangle.Height);}
+\DoxyCodeLine{00427                     g.FillRectangle(b, arrowRect);}
+\DoxyCodeLine{00428                 \}}
+\DoxyCodeLine{00429 }
+\DoxyCodeLine{00430                 \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.BlueSelection, 1))}
+\DoxyCodeLine{00431                 \{}
+\DoxyCodeLine{00432                     var modRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width -\/ 1 -\/ DropdownIcons.small\_arrow.Width -\/ 8, ClientRectangle.Height -\/ 1);}
+\DoxyCodeLine{00433                     g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00434                 \}}
+\DoxyCodeLine{00435             \}}
+\DoxyCodeLine{00436 }
+\DoxyCodeLine{00437             \textcolor{comment}{// Draw pressed state}}
+\DoxyCodeLine{00438             \textcolor{keywordflow}{if} (ControlState == VitNX\_ControlState.Pressed)}
+\DoxyCodeLine{00439             \{}
+\DoxyCodeLine{00440                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.VitNXBorder))}
+\DoxyCodeLine{00441                 \{}
+\DoxyCodeLine{00442                     g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00443                 \}}
+\DoxyCodeLine{00444 }
+\DoxyCodeLine{00445                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.BlueSelection))}
+\DoxyCodeLine{00446                 \{}
+\DoxyCodeLine{00447                     var arrowRect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Right -\/ DropdownIcons.small\_arrow.Width -\/ 8, ClientRectangle.Top, DropdownIcons.small\_arrow.Width + 8, ClientRectangle.Height);}
+\DoxyCodeLine{00448                     g.FillRectangle(b, arrowRect);}
+\DoxyCodeLine{00449                 \}}
+\DoxyCodeLine{00450             \}}
+\DoxyCodeLine{00451 }
+\DoxyCodeLine{00452             \textcolor{comment}{// Draw dropdown arrow}}
+\DoxyCodeLine{00453             \textcolor{keyword}{using} (var img = DropdownIcons.small\_arrow)}
+\DoxyCodeLine{00454             \{}
+\DoxyCodeLine{00455                 g.DrawImageUnscaled(img, ClientRectangle.Right -\/ img.Width -\/ 4, ClientRectangle.Top + (ClientRectangle.Height / 2) -\/ (img.Height / 2));}
+\DoxyCodeLine{00456             \}}
+\DoxyCodeLine{00457 }
+\DoxyCodeLine{00458             \textcolor{comment}{// Draw selected item}}
+\DoxyCodeLine{00459             \textcolor{keywordflow}{if} (SelectedItem != \textcolor{keyword}{null})}
+\DoxyCodeLine{00460             \{}
+\DoxyCodeLine{00461                 \textcolor{comment}{// Draw Icon}}
+\DoxyCodeLine{00462                 var hasIcon = SelectedItem.Icon != \textcolor{keyword}{null};}
+\DoxyCodeLine{00463 }
+\DoxyCodeLine{00464                 \textcolor{keywordflow}{if} (hasIcon)}
+\DoxyCodeLine{00465                 \{}
+\DoxyCodeLine{00466                     g.DrawImageUnscaled(SelectedItem.Icon, \textcolor{keyword}{new} Point(ClientRectangle.Left + 5, ClientRectangle.Top + (ClientRectangle.Height / 2) -\/ (\_iconSize / 2)));}
+\DoxyCodeLine{00467                 \}}
+\DoxyCodeLine{00468 }
+\DoxyCodeLine{00469                 \textcolor{comment}{// Draw Text}}
+\DoxyCodeLine{00470                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightText))}
+\DoxyCodeLine{00471                 \{}
+\DoxyCodeLine{00472                     var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00473                     \{}
+\DoxyCodeLine{00474                         Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00475                         LineAlignment = StringAlignment.Center}
+\DoxyCodeLine{00476                     \};}
+\DoxyCodeLine{00477 }
+\DoxyCodeLine{00478                     var rect = \textcolor{keyword}{new} Rectangle(ClientRectangle.Left + 2, ClientRectangle.Top, ClientRectangle.Width -\/ 16, ClientRectangle.Height);}
+\DoxyCodeLine{00479 }
+\DoxyCodeLine{00480                     \textcolor{keywordflow}{if} (hasIcon)}
+\DoxyCodeLine{00481                     \{}
+\DoxyCodeLine{00482                         rect.X += \_iconSize + 7;}
+\DoxyCodeLine{00483                         rect.Width -\/= \_iconSize + 7;}
+\DoxyCodeLine{00484                     \}}
+\DoxyCodeLine{00485 }
+\DoxyCodeLine{00486                     g.DrawString(SelectedItem.Text, Font, b, rect, stringFormat);}
+\DoxyCodeLine{00487                 \}}
+\DoxyCodeLine{00488             \}}
+\DoxyCodeLine{00489         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_aa643318db0b6d4130246fd4792d95e90}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{OnResize()}
+{\footnotesize\ttfamily override void On\+Resize (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 297} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00298         \{}
+\DoxyCodeLine{00299             base.OnResize(e);}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301             ResizeMenu();}
+\DoxyCodeLine{00302         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00618_a74e960fb8238cebb7130121da84b1528}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!ControlState@{ControlState}}
+\index{ControlState@{ControlState}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{ControlState}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Control\+State} Control\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 81} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082         \{}
+\DoxyCodeLine{00083             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_controlState; \}}
+\DoxyCodeLine{00084         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_adefb4bb5f84dc5d236a73c7166b10eec}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!DefaultSize@{DefaultSize}}
+\index{DefaultSize@{DefaultSize}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{DefaultSize}
+{\footnotesize\ttfamily override Size Default\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 74} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075         \{}
+\DoxyCodeLine{00076             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} Size(100, 26); \}}
+\DoxyCodeLine{00077         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a3659d47b2e89ccec81efb5ec63de4ff4}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!DropdownDirection@{DropdownDirection}}
+\index{DropdownDirection@{DropdownDirection}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{DropdownDirection}
+{\footnotesize\ttfamily Tool\+Strip\+Drop\+Down\+Direction Dropdown\+Direction\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116         \{}
+\DoxyCodeLine{00117             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_dropdownDirection; \}}
+\DoxyCodeLine{00118             \textcolor{keyword}{set} \{ \_dropdownDirection = value; \}}
+\DoxyCodeLine{00119         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a65654118aba03c05eca2fd1f47b0d52b}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!ItemHeight@{ItemHeight}}
+\index{ItemHeight@{ItemHeight}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{ItemHeight}
+{\footnotesize\ttfamily int Item\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 89} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_itemHeight; \}}
+\DoxyCodeLine{00092             \textcolor{keyword}{set}}
+\DoxyCodeLine{00093             \{}
+\DoxyCodeLine{00094                 \_itemHeight = value;}
+\DoxyCodeLine{00095                 ResizeMenu();}
+\DoxyCodeLine{00096             \}}
+\DoxyCodeLine{00097         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a8a0a4b60e8fd60ff2bb7f909492ca6ac}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!Items@{Items}}
+\index{Items@{Items}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{Items}
+{\footnotesize\ttfamily Observable\+Collection$<$\textbf{ Vit\+NX\+\_\+\+Dropdown\+Item}$>$ Items\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 44} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045         \{}
+\DoxyCodeLine{00046             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_items; \}}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_adfa437da4e02b40690baf91e7f0d48d5}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!MaxHeight@{MaxHeight}}
+\index{MaxHeight@{MaxHeight}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{MaxHeight}
+{\footnotesize\ttfamily int Max\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 102} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_maxHeight; \}}
+\DoxyCodeLine{00105             \textcolor{keyword}{set}}
+\DoxyCodeLine{00106             \{}
+\DoxyCodeLine{00107                 \_maxHeight = value;}
+\DoxyCodeLine{00108                 ResizeMenu();}
+\DoxyCodeLine{00109             \}}
+\DoxyCodeLine{00110         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_a391a3c06d5c77cdb1e531067485327e8}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!SelectedItem@{SelectedItem}}
+\index{SelectedItem@{SelectedItem}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{SelectedItem}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dropdown\+Item} Selected\+Item\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 51} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052         \{}
+\DoxyCodeLine{00053             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_selectedItem; \}}
+\DoxyCodeLine{00054             \textcolor{keyword}{set}}
+\DoxyCodeLine{00055             \{}
+\DoxyCodeLine{00056                 \_selectedItem = value;}
+\DoxyCodeLine{00057                 SelectedItemChanged?.Invoke(\textcolor{keyword}{this}, \textcolor{keyword}{new} EventArgs());}
+\DoxyCodeLine{00058             \}}
+\DoxyCodeLine{00059         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00618_ada7106bbe8e39b024636bf0c592b425a}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!ShowBorder@{ShowBorder}}
+\index{ShowBorder@{ShowBorder}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{ShowBorder}
+{\footnotesize\ttfamily bool Show\+Border\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 64} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065         \{}
+\DoxyCodeLine{00066             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_showBorder; \}}
+\DoxyCodeLine{00067             \textcolor{keyword}{set}}
+\DoxyCodeLine{00068             \{}
+\DoxyCodeLine{00069                 \_showBorder = value;}
+\DoxyCodeLine{00070                 Invalidate();}
+\DoxyCodeLine{00071             \}}
+\DoxyCodeLine{00072         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00618_aecf53841c0d3f929fd04d789f05689cd}} 
+\index{VitNX\_DropdownList@{VitNX\_DropdownList}!SelectedItemChanged@{SelectedItemChanged}}
+\index{SelectedItemChanged@{SelectedItemChanged}!VitNX\_DropdownList@{VitNX\_DropdownList}}
+\doxysubsubsection{SelectedItemChanged}
+{\footnotesize\ttfamily Event\+Handler Selected\+Item\+Changed}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX\+\_\+\+Dropdown\+List.\+cs}.
+

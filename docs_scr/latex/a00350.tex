@@ -1,0 +1,349 @@
+\doxysection{Cpu Class Reference}
+\label{a00350}\index{Cpu@{Cpu}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Set} ()
+\item 
+static string \textbf{ Get\+Architecture} ()
+\item 
+static string \textbf{ Get\+Clock\+Speed} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ \+\_\+\+Name} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Device\+ID} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Manufacturer} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Current\+Clock\+Speed} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Max\+Clock\+Speed} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Caption} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Number\+Of\+Cores} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Number\+Of\+Enabled\+Core} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Number\+Of\+Logical\+Processors} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Architecture} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Family} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Processor\+Type} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Characteristics} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Address\+Width} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Serial\+Number} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Thread\+Count} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Load\+Percentage} = \char`\"{}\char`\"{}
+\item 
+static string \textbf{ \+\_\+\+Current\+Voltage} = \char`\"{}\char`\"{}
+\item 
+static int \textbf{ \+\_\+\+Usage\+Percent} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 82} of file \textbf{ Information.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00350_ad17ace5fe58792562f6ff4085e49326a}} 
+\index{Cpu@{Cpu}!GetArchitecture@{GetArchitecture}}
+\index{GetArchitecture@{GetArchitecture}!Cpu@{Cpu}}
+\doxysubsubsection{GetArchitecture()}
+{\footnotesize\ttfamily static string Get\+Architecture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 131} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             \textcolor{keywordtype}{string} result = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00134             \textcolor{keywordflow}{switch} (typeof(\textcolor{keywordtype}{string}).Assembly.GetName().ProcessorArchitecture)}
+\DoxyCodeLine{00135             \{}
+\DoxyCodeLine{00136                 \textcolor{keywordflow}{case} ProcessorArchitecture.X86:}
+\DoxyCodeLine{00137                     result = \textcolor{stringliteral}{"{}x86"{}};}
+\DoxyCodeLine{00138                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140                 \textcolor{keywordflow}{case} ProcessorArchitecture.Amd64:}
+\DoxyCodeLine{00141                     result = \textcolor{stringliteral}{"{}x64"{}};}
+\DoxyCodeLine{00142                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144                 \textcolor{keywordflow}{case} ProcessorArchitecture.Arm:}
+\DoxyCodeLine{00145                     result = \textcolor{stringliteral}{"{}ARM"{}};}
+\DoxyCodeLine{00146                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00147             \}}
+\DoxyCodeLine{00148             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00149         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00350_a998749b79b539d79947ca247d450dd6d}} 
+\index{Cpu@{Cpu}!GetClockSpeed@{GetClockSpeed}}
+\index{GetClockSpeed@{GetClockSpeed}!Cpu@{Cpu}}
+\doxysubsubsection{GetClockSpeed()}
+{\footnotesize\ttfamily static string Get\+Clock\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 151} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152         \{}
+\DoxyCodeLine{00153             \textcolor{keywordtype}{string} clockSpeed = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00154             \textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} \textcolor{keyword}{new} ManagementObjectSearcher(\textcolor{stringliteral}{"{}select MaxClockSpeed from Win32\_Processor"{}}).Get())}
+\DoxyCodeLine{00155             \{}
+\DoxyCodeLine{00156                 var clockSpeedx = (uint)item[\textcolor{stringliteral}{"{}MaxClockSpeed"{}}];}
+\DoxyCodeLine{00157                 clockSpeed = clockSpeedx.ToString();}
+\DoxyCodeLine{00158             \}}
+\DoxyCodeLine{00159             \textcolor{keywordflow}{return} clockSpeed;}
+\DoxyCodeLine{00160         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00350_aad3b33b4c65e3cc3202d3331078a5666}} 
+\index{Cpu@{Cpu}!Set@{Set}}
+\index{Set@{Set}!Cpu@{Cpu}}
+\doxysubsubsection{Set()}
+{\footnotesize\ttfamily static void Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 104} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105         \{}
+\DoxyCodeLine{00106             ManagementObjectSearcher myProcessorObject = \textcolor{keyword}{new} ManagementObjectSearcher(\textcolor{stringliteral}{"{}select * from Win32\_Processor"{}});}
+\DoxyCodeLine{00107             \textcolor{keywordflow}{foreach} (ManagementObject obj \textcolor{keywordflow}{in} myProcessorObject.Get())}
+\DoxyCodeLine{00108             \{}
+\DoxyCodeLine{00109                 \_Name = obj[\textcolor{stringliteral}{"{}Name"{}}].ToString();}
+\DoxyCodeLine{00110                 \_DeviceID = obj[\textcolor{stringliteral}{"{}DeviceID"{}}].ToString();}
+\DoxyCodeLine{00111                 \_Manufacturer = obj[\textcolor{stringliteral}{"{}Manufacturer"{}}].ToString();}
+\DoxyCodeLine{00112                 \_CurrentClockSpeed = obj[\textcolor{stringliteral}{"{}CurrentClockSpeed"{}}].ToString();}
+\DoxyCodeLine{00113                 \_MaxClockSpeed = obj[\textcolor{stringliteral}{"{}MaxClockSpeed"{}}].ToString();}
+\DoxyCodeLine{00114                 \_Caption = obj[\textcolor{stringliteral}{"{}Caption"{}}].ToString();}
+\DoxyCodeLine{00115                 \_NumberOfCores = obj[\textcolor{stringliteral}{"{}NumberOfCores"{}}].ToString();}
+\DoxyCodeLine{00116                 \_NumberOfEnabledCore = obj[\textcolor{stringliteral}{"{}NumberOfEnabledCore"{}}].ToString();}
+\DoxyCodeLine{00117                 \_NumberOfLogicalProcessors = obj[\textcolor{stringliteral}{"{}NumberOfLogicalProcessors"{}}].ToString();}
+\DoxyCodeLine{00118                 \_Architecture = obj[\textcolor{stringliteral}{"{}Architecture"{}}].ToString();}
+\DoxyCodeLine{00119                 \_Family = obj[\textcolor{stringliteral}{"{}Family"{}}].ToString();}
+\DoxyCodeLine{00120                 \_ProcessorType = obj[\textcolor{stringliteral}{"{}ProcessorType"{}}].ToString();}
+\DoxyCodeLine{00121                 \_Characteristics = obj[\textcolor{stringliteral}{"{}Characteristics"{}}].ToString();}
+\DoxyCodeLine{00122                 \_AddressWidth = obj[\textcolor{stringliteral}{"{}AddressWidth"{}}].ToString();}
+\DoxyCodeLine{00123                 \_SerialNumber = obj[\textcolor{stringliteral}{"{}SerialNumber"{}}].ToString();}
+\DoxyCodeLine{00124                 \_ThreadCount = obj[\textcolor{stringliteral}{"{}ThreadCount"{}}].ToString();}
+\DoxyCodeLine{00125                 \_LoadPercentage = obj[\textcolor{stringliteral}{"{}LoadPercentage"{}}].ToString();}
+\DoxyCodeLine{00126                 \_CurrentVoltage = obj[\textcolor{stringliteral}{"{}CurrentVoltage"{}}].ToString();}
+\DoxyCodeLine{00127             \}}
+\DoxyCodeLine{00128             \_UsagePercent = Convert.ToInt32(\textcolor{keyword}{new} PerformanceCounter(\textcolor{stringliteral}{"{}Processor"{}}, \textcolor{stringliteral}{"{}\% Processor Time"{}}, \textcolor{stringliteral}{"{}\_Total"{}}).NextValue());}
+\DoxyCodeLine{00129         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{a00350_a83c86167c5eae3d9fe6d8b4f49d4649f}} 
+\index{Cpu@{Cpu}!\_AddressWidth@{\_AddressWidth}}
+\index{\_AddressWidth@{\_AddressWidth}!Cpu@{Cpu}}
+\doxysubsubsection{\_AddressWidth}
+{\footnotesize\ttfamily string \+\_\+\+Address\+Width = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 97} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_ae4fb83fa74eecd3e32e89bb0486b7240}} 
+\index{Cpu@{Cpu}!\_Architecture@{\_Architecture}}
+\index{\_Architecture@{\_Architecture}!Cpu@{Cpu}}
+\doxysubsubsection{\_Architecture}
+{\footnotesize\ttfamily string \+\_\+\+Architecture = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 93} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a12c2d4d9968501a3f56ccfb9561a15c8}} 
+\index{Cpu@{Cpu}!\_Caption@{\_Caption}}
+\index{\_Caption@{\_Caption}!Cpu@{Cpu}}
+\doxysubsubsection{\_Caption}
+{\footnotesize\ttfamily string \+\_\+\+Caption = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 89} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a9cab5892545d1c971c6242a1973e6c56}} 
+\index{Cpu@{Cpu}!\_Characteristics@{\_Characteristics}}
+\index{\_Characteristics@{\_Characteristics}!Cpu@{Cpu}}
+\doxysubsubsection{\_Characteristics}
+{\footnotesize\ttfamily string \+\_\+\+Characteristics = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 96} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a9fc326086eb86b25e0a403bb8765f863}} 
+\index{Cpu@{Cpu}!\_CurrentClockSpeed@{\_CurrentClockSpeed}}
+\index{\_CurrentClockSpeed@{\_CurrentClockSpeed}!Cpu@{Cpu}}
+\doxysubsubsection{\_CurrentClockSpeed}
+{\footnotesize\ttfamily string \+\_\+\+Current\+Clock\+Speed = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a64ea04ea745c55e2148fec4c1150e411}} 
+\index{Cpu@{Cpu}!\_CurrentVoltage@{\_CurrentVoltage}}
+\index{\_CurrentVoltage@{\_CurrentVoltage}!Cpu@{Cpu}}
+\doxysubsubsection{\_CurrentVoltage}
+{\footnotesize\ttfamily string \+\_\+\+Current\+Voltage = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 101} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a094c984fd25c6a3f706f65831e7a7c68}} 
+\index{Cpu@{Cpu}!\_DeviceID@{\_DeviceID}}
+\index{\_DeviceID@{\_DeviceID}!Cpu@{Cpu}}
+\doxysubsubsection{\_DeviceID}
+{\footnotesize\ttfamily string \+\_\+\+Device\+ID = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 85} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a80e6171c9315b490eff559f5deee8474}} 
+\index{Cpu@{Cpu}!\_Family@{\_Family}}
+\index{\_Family@{\_Family}!Cpu@{Cpu}}
+\doxysubsubsection{\_Family}
+{\footnotesize\ttfamily string \+\_\+\+Family = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 94} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_ae66d65aef94f0105e024c13776717004}} 
+\index{Cpu@{Cpu}!\_LoadPercentage@{\_LoadPercentage}}
+\index{\_LoadPercentage@{\_LoadPercentage}!Cpu@{Cpu}}
+\doxysubsubsection{\_LoadPercentage}
+{\footnotesize\ttfamily string \+\_\+\+Load\+Percentage = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 100} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_acfd74eb635def1d9ecd768cef1758bfc}} 
+\index{Cpu@{Cpu}!\_Manufacturer@{\_Manufacturer}}
+\index{\_Manufacturer@{\_Manufacturer}!Cpu@{Cpu}}
+\doxysubsubsection{\_Manufacturer}
+{\footnotesize\ttfamily string \+\_\+\+Manufacturer = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 86} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a1d7a7cbc1c0dd146d02208371ad0d4a7}} 
+\index{Cpu@{Cpu}!\_MaxClockSpeed@{\_MaxClockSpeed}}
+\index{\_MaxClockSpeed@{\_MaxClockSpeed}!Cpu@{Cpu}}
+\doxysubsubsection{\_MaxClockSpeed}
+{\footnotesize\ttfamily string \+\_\+\+Max\+Clock\+Speed = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 88} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a34eafe957887db988e3ebb45a131033b}} 
+\index{Cpu@{Cpu}!\_Name@{\_Name}}
+\index{\_Name@{\_Name}!Cpu@{Cpu}}
+\doxysubsubsection{\_Name}
+{\footnotesize\ttfamily string \+\_\+\+Name = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 84} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a3ce388c25658d458952b3188818b6b72}} 
+\index{Cpu@{Cpu}!\_NumberOfCores@{\_NumberOfCores}}
+\index{\_NumberOfCores@{\_NumberOfCores}!Cpu@{Cpu}}
+\doxysubsubsection{\_NumberOfCores}
+{\footnotesize\ttfamily string \+\_\+\+Number\+Of\+Cores = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 90} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_ae5c15e13aa9c56c5adebfd0a0e1caf10}} 
+\index{Cpu@{Cpu}!\_NumberOfEnabledCore@{\_NumberOfEnabledCore}}
+\index{\_NumberOfEnabledCore@{\_NumberOfEnabledCore}!Cpu@{Cpu}}
+\doxysubsubsection{\_NumberOfEnabledCore}
+{\footnotesize\ttfamily string \+\_\+\+Number\+Of\+Enabled\+Core = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a4457ea4f2bbe0a84a02c1d91dd1929c0}} 
+\index{Cpu@{Cpu}!\_NumberOfLogicalProcessors@{\_NumberOfLogicalProcessors}}
+\index{\_NumberOfLogicalProcessors@{\_NumberOfLogicalProcessors}!Cpu@{Cpu}}
+\doxysubsubsection{\_NumberOfLogicalProcessors}
+{\footnotesize\ttfamily string \+\_\+\+Number\+Of\+Logical\+Processors = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 92} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a689189f2e6313cfdccea5193ffea8503}} 
+\index{Cpu@{Cpu}!\_ProcessorType@{\_ProcessorType}}
+\index{\_ProcessorType@{\_ProcessorType}!Cpu@{Cpu}}
+\doxysubsubsection{\_ProcessorType}
+{\footnotesize\ttfamily string \+\_\+\+Processor\+Type = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 95} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a82fb9b544bca9430851d78454b616c5a}} 
+\index{Cpu@{Cpu}!\_SerialNumber@{\_SerialNumber}}
+\index{\_SerialNumber@{\_SerialNumber}!Cpu@{Cpu}}
+\doxysubsubsection{\_SerialNumber}
+{\footnotesize\ttfamily string \+\_\+\+Serial\+Number = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 98} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a137a1ae15fd7e83de2471a6b0a82691a}} 
+\index{Cpu@{Cpu}!\_ThreadCount@{\_ThreadCount}}
+\index{\_ThreadCount@{\_ThreadCount}!Cpu@{Cpu}}
+\doxysubsubsection{\_ThreadCount}
+{\footnotesize\ttfamily string \+\_\+\+Thread\+Count = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 99} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00350_a205eff565a5fe0f43af1825b33d4a3c2}} 
+\index{Cpu@{Cpu}!\_UsagePercent@{\_UsagePercent}}
+\index{\_UsagePercent@{\_UsagePercent}!Cpu@{Cpu}}
+\doxysubsubsection{\_UsagePercent}
+{\footnotesize\ttfamily int \+\_\+\+Usage\+Percent = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 102} of file \textbf{ Information.\+cs}.
+

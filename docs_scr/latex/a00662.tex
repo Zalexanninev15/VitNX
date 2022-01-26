@@ -1,0 +1,255 @@
+\doxysection{Vit\+NX\+\_\+\+Section\+Panel Class Reference}
+\label{a00662}\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+Inheritance diagram for Vit\+NX\+\_\+\+Section\+Panel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00662}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Section\+Panel} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Enter} (System.\+Event\+Args e)
+\item 
+override void \textbf{ On\+Leave} (System.\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\item 
+override void \textbf{ On\+Paint\+Background} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new Padding \textbf{ Padding}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+string \textbf{ Section\+Header}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00662_ad1df411d088ce62fde5de9e33e447e92}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{VitNX\_SectionPanel()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Section\+Panel} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 41} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00044                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00045                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047             base.Padding = \textcolor{keyword}{new} Padding(1, 25, 1, 1);}
+\DoxyCodeLine{00048         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00662_a69f91ddfc836f4f43077a7857c6b79df}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!OnEnter@{OnEnter}}
+\index{OnEnter@{OnEnter}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{OnEnter()}
+{\footnotesize\ttfamily override void On\+Enter (\begin{DoxyParamCaption}\item[{System.\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 54} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             base.OnEnter(e);}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058             Invalidate();}
+\DoxyCodeLine{00059         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00662_ade7bcfc964b3ca0a7fb7287c2660c677}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!OnLeave@{OnLeave}}
+\index{OnLeave@{OnLeave}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{OnLeave()}
+{\footnotesize\ttfamily override void On\+Leave (\begin{DoxyParamCaption}\item[{System.\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 61} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062         \{}
+\DoxyCodeLine{00063             base.OnLeave(e);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065             Invalidate();}
+\DoxyCodeLine{00066         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00662_a99a67e51ce554f65bcccc19aad37f46b}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 68} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069         \{}
+\DoxyCodeLine{00070             base.OnMouseDown(e);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072             \textcolor{keywordflow}{if} (Controls.Count > 0)}
+\DoxyCodeLine{00073                 Controls[0].Focus();}
+\DoxyCodeLine{00074         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00662_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 80} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081         \{}
+\DoxyCodeLine{00082             var g = e.Graphics;}
+\DoxyCodeLine{00083             var rect = ClientRectangle;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085             \textcolor{comment}{// Fill body}}
+\DoxyCodeLine{00086             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.GreyBackground))}
+\DoxyCodeLine{00087             \{}
+\DoxyCodeLine{00088                 g.FillRectangle(b, rect);}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091             \textcolor{comment}{// Draw header}}
+\DoxyCodeLine{00092             var bgColor = ContainsFocus ? Colors.BlueBackground : Colors.HeaderBackground;}
+\DoxyCodeLine{00093             var VitNXColor = ContainsFocus ? Colors.VitNXBlueBorder : Colors.VitNXBorder;}
+\DoxyCodeLine{00094             var lightColor = ContainsFocus ? Colors.LightBlueBorder : Colors.LightBorder;}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(bgColor))}
+\DoxyCodeLine{00097             \{}
+\DoxyCodeLine{00098                 var bgRect = \textcolor{keyword}{new} Rectangle(0, 0, rect.Width, 25);}
+\DoxyCodeLine{00099                 g.FillRectangle(b, bgRect);}
+\DoxyCodeLine{00100             \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(VitNXColor))}
+\DoxyCodeLine{00103             \{}
+\DoxyCodeLine{00104                 g.DrawLine(p, rect.Left, 0, rect.Right, 0);}
+\DoxyCodeLine{00105                 g.DrawLine(p, rect.Left, 25 -\/ 1, rect.Right, 25 -\/ 1);}
+\DoxyCodeLine{00106             \}}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(lightColor))}
+\DoxyCodeLine{00109             \{}
+\DoxyCodeLine{00110                 g.DrawLine(p, rect.Left, 1, rect.Right, 1);}
+\DoxyCodeLine{00111             \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113             var xOffset = 3;}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(Colors.LightText))}
+\DoxyCodeLine{00116             \{}
+\DoxyCodeLine{00117                 var textRect = \textcolor{keyword}{new} Rectangle(xOffset, 0, rect.Width -\/ 4 -\/ xOffset, 25);}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119                 var format = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00120                 \{}
+\DoxyCodeLine{00121                     Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00122                     LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00123                     FormatFlags = StringFormatFlags.NoWrap,}
+\DoxyCodeLine{00124                     Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00125                 \};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127                 g.DrawString(SectionHeader, Font, b, textRect, format);}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130             \textcolor{comment}{// Draw border}}
+\DoxyCodeLine{00131             \textcolor{keyword}{using} (var p = \textcolor{keyword}{new} Pen(Colors.VitNXBorder, 1))}
+\DoxyCodeLine{00132             \{}
+\DoxyCodeLine{00133                 var modRect = \textcolor{keyword}{new} Rectangle(rect.Left, rect.Top, rect.Width -\/ 1, rect.Height -\/ 1);}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135                 g.DrawRectangle(p, modRect);}
+\DoxyCodeLine{00136             \}}
+\DoxyCodeLine{00137         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00662_a2fed73cd0a8cd763a6a18be00a05d4ed}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!OnPaintBackground@{OnPaintBackground}}
+\index{OnPaintBackground@{OnPaintBackground}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{OnPaintBackground()}
+{\footnotesize\ttfamily override void On\+Paint\+Background (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 139} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             \textcolor{comment}{// Absorb event}}
+\DoxyCodeLine{00142         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00662_a05e74e33b0f3811419c1b6052e1df5fc}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!Padding@{Padding}}
+\index{Padding@{Padding}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{Padding}
+{\footnotesize\ttfamily new Padding Padding\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 20} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021         \{}
+\DoxyCodeLine{00022             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Padding; \}}
+\DoxyCodeLine{00023         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00662_ab6307fd8f16965b81465f2d766bc37b6}} 
+\index{VitNX\_SectionPanel@{VitNX\_SectionPanel}!SectionHeader@{SectionHeader}}
+\index{SectionHeader@{SectionHeader}!VitNX\_SectionPanel@{VitNX\_SectionPanel}}
+\doxysubsubsection{SectionHeader}
+{\footnotesize\ttfamily string Section\+Header\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ Vit\+NX\+\_\+\+Section\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028         \{}
+\DoxyCodeLine{00029             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_sectionHeader; \}}
+\DoxyCodeLine{00030             \textcolor{keyword}{set}}
+\DoxyCodeLine{00031             \{}
+\DoxyCodeLine{00032                 \_sectionHeader = value;}
+\DoxyCodeLine{00033                 Invalidate();}
+\DoxyCodeLine{00034             \}}
+\DoxyCodeLine{00035         \}}
+
+\end{DoxyCode}

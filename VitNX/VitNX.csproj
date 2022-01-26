@@ -110,11 +110,11 @@
     <Compile Include="UI\ControlsV2\VitNX2_ToogleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBarDisplayMode.cs" />
-    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar.cs">
+    <Compile Include="UI\ControlsV1\VitNX_ProgressBarDisplayMode.cs" />
+    <Compile Include="UI\ControlsV1\VitNX_ProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar_Rounded.cs">
+    <Compile Include="UI\ControlsV1\VitNX_ProgressBar_Rounded.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\BasedOnDarkUI\Controls\ScrollValueEventArgs.cs" />
@@ -262,10 +262,10 @@
       <DependentUpon>VitNX_TranslucentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.resx" />
-    <EmbeddedResource Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar.resx">
+    <EmbeddedResource Include="UI\ControlsV1\VitNX_ProgressBar.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\BasedOnDarkUI\Controls\VitNX_ProgressBar_Rounded.resx">
+    <EmbeddedResource Include="UI\ControlsV1\VitNX_ProgressBar_Rounded.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BasedOnDarkUI\Forms\VitNX_Dialog.resx" />
