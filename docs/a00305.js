@@ -1,36 +1,46 @@
 var a00305 =
 [
-    [ "DockContentEventArgs", "a00704.html", "a00704" ],
-    [ "DockDropArea", "a00708.html", "a00708" ],
-    [ "DockDropCollection", "a00712.html", "a00712" ],
-    [ "DockGroupState", "a00716.html", "a00716" ],
-    [ "DockPanelState", "a00720.html", "a00720" ],
-    [ "DockRegionState", "a00724.html", "a00724" ],
-    [ "VitNX_DockContent", "a00728.html", "a00728" ],
-    [ "VitNX_DockGroup", "a00732.html", "a00732" ],
-    [ "VitNX_DockPanel", "a00736.html", "a00736" ],
-    [ "VitNX_DockRegion", "a00740.html", "a00740" ],
-    [ "VitNX_DockSplitter", "a00744.html", "a00744" ],
-    [ "VitNX_DockTab", "a00748.html", "a00748" ],
-    [ "VitNX_DockTabArea", "a00752.html", "a00752" ],
-    [ "VitNX_Document", "a00756.html", "a00756" ],
-    [ "VitNX_ToolWindow", "a00760.html", "a00760" ],
-    [ "DockInsertType", "a00305.html#a29dc304d5ff759b6c6f865ebf9833e9c", [
-      [ "None", "a00305.html#a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Before", "a00305.html#a29dc304d5ff759b6c6f865ebf9833e9ca9060587edeb01a63e3d3edc959678d1e", null ],
-      [ "After", "a00305.html#a29dc304d5ff759b6c6f865ebf9833e9ca7bfcadb5535fe8aad5032762b7bfe159", null ]
+    [ "ScrollValueEventArgs", "a00594.html", "a00594" ],
+    [ "VitNX_Button", "a00598.html", "a00598" ],
+    [ "VitNX_CheckBox", "a00602.html", "a00602" ],
+    [ "VitNX_ComboBox", "a00606.html", "a00606" ],
+    [ "VitNX_ContextMenu", "a00610.html", "a00610" ],
+    [ "VitNX_DropdownItem", "a00614.html", "a00614" ],
+    [ "VitNX_DropdownList", "a00618.html", "a00618" ],
+    [ "VitNX_GroupBox", "a00622.html", "a00622" ],
+    [ "VitNX_Label", "a00626.html", "a00626" ],
+    [ "VitNX_ListItem", "a00630.html", "a00630" ],
+    [ "VitNX_ListView", "a00634.html", "a00634" ],
+    [ "VitNX_MenuStrip", "a00638.html", "a00638" ],
+    [ "VitNX_NumericUpDown", "a00642.html", "a00642" ],
+    [ "VitNX_RadioButton", "a00646.html", "a00646" ],
+    [ "VitNX_ScrollBar", "a00650.html", "a00650" ],
+    [ "VitNX_ScrollBase", "a00654.html", "a00654" ],
+    [ "VitNX_ScrollView", "a00658.html", "a00658" ],
+    [ "VitNX_SectionPanel", "a00662.html", "a00662" ],
+    [ "VitNX_Separator", "a00666.html", "a00666" ],
+    [ "VitNX_StatusStrip", "a00670.html", "a00670" ],
+    [ "VitNX_TextBox", "a00674.html", "a00674" ],
+    [ "VitNX_Title", "a00678.html", "a00678" ],
+    [ "VitNX_ToolStrip", "a00682.html", "a00682" ],
+    [ "VitNX_TreeNode", "a00686.html", "a00686" ],
+    [ "VitNX_TreeView", "a00690.html", "a00690" ],
+    [ "VitNX_ButtonStyle", "a00305.html#a333906fcb1d9f965a47fd9f304911502", [
+      [ "Normal", "a00305.html#a333906fcb1d9f965a47fd9f304911502a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Flat", "a00305.html#a333906fcb1d9f965a47fd9f304911502a745e3db6a7ffd50e1a72b39482f0882d", null ]
     ] ],
-    [ "VitNX_DockArea", "a00305.html#a07913461bb014f52dd5bfafabe7d3587", [
-      [ "None", "a00305.html#a07913461bb014f52dd5bfafabe7d3587a6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Document", "a00305.html#a07913461bb014f52dd5bfafabe7d3587a0945359809dad1fbf3dea1c95a0da951", null ],
-      [ "Left", "a00305.html#a07913461bb014f52dd5bfafabe7d3587a945d5e233cf7d6240f6b783b36a374ff", null ],
-      [ "Right", "a00305.html#a07913461bb014f52dd5bfafabe7d3587a92b09c7c48c520c3c55e497875da437c", null ],
-      [ "Bottom", "a00305.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4", null ]
+    [ "VitNX_ContentAlignment", "a00305.html#a16f00da2792cd1a2adf8e8b875fbd2d0", [
+      [ "Center", "a00305.html#a16f00da2792cd1a2adf8e8b875fbd2d0a4f1f6016fc9f3f2353c0cc7c67b292bd", null ],
+      [ "Left", "a00305.html#a16f00da2792cd1a2adf8e8b875fbd2d0a945d5e233cf7d6240f6b783b36a374ff", null ],
+      [ "Right", "a00305.html#a16f00da2792cd1a2adf8e8b875fbd2d0a92b09c7c48c520c3c55e497875da437c", null ]
     ] ],
-    [ "VitNX_SplitterType", "a00305.html#ae48effe2de0c7ef774d834b7d4602b2b", [
-      [ "Left", "a00305.html#ae48effe2de0c7ef774d834b7d4602b2ba945d5e233cf7d6240f6b783b36a374ff", null ],
-      [ "Right", "a00305.html#ae48effe2de0c7ef774d834b7d4602b2ba92b09c7c48c520c3c55e497875da437c", null ],
-      [ "Top", "a00305.html#ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00", null ],
-      [ "Bottom", "a00305.html#ae48effe2de0c7ef774d834b7d4602b2ba2ad9d63b69c4a10a5cc9cad923133bc4", null ]
+    [ "VitNX_ControlState", "a00305.html#a573ad492d79172a6ff93e935feb131ec", [
+      [ "Normal", "a00305.html#a573ad492d79172a6ff93e935feb131eca960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Hover", "a00305.html#a573ad492d79172a6ff93e935feb131ecaeee0168be69b854c20621fc6f01cc3fc", null ],
+      [ "Pressed", "a00305.html#a573ad492d79172a6ff93e935feb131ecad78a68f6a85421ae121c2cb5b73a1040", null ]
+    ] ],
+    [ "VitNX_ScrollOrientation", "a00305.html#a9cc539df8ec0d958e8231b8bf514971e", [
+      [ "Vertical", "a00305.html#a9cc539df8ec0d958e8231b8bf514971ea06ce2a25e5d12c166a36f654dbea6012", null ],
+      [ "Horizontal", "a00305.html#a9cc539df8ec0d958e8231b8bf514971eac1b5fa03ecdb95d4a45dd1c40b02527f", null ]
     ] ]
 ];

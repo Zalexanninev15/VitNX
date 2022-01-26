@@ -1,4 +1,5 @@
 var a00294 =
 [
-    [ "ConsoleProgressBar", "a00392.html", "a00392" ]
+    [ "Config", "a00386.html", "a00386" ],
+    [ "DataFromSites", "a00382.html", "a00382" ]
 ];
