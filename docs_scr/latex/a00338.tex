@@ -1,0 +1,395 @@
+\doxysection{File\+System Class Reference}
+\label{a00338}\index{FileSystem@{FileSystem}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ string $>$ \textbf{ Return\+Recurs\+FList} (string source\+Folder)
+\item 
+static long \textbf{ Get\+Directory\+Size} (Directory\+Info source\+Folder)
+\item 
+static void \textbf{ Delete\+File\+Forever} (string target\+File)
+\item 
+static void \textbf{ Delete\+File\+To\+Trash} (string target\+File)
+\item 
+static void \textbf{ Delete\+Directory\+To\+Trash} (string target\+Folder)
+\item 
+static string[$\,$] \textbf{ Write\+Text\+To\+File\+UTF8} (string text, string target\+File)
+\item 
+static string \textbf{ Get\+Text} (string target\+File)
+\item 
+static string \textbf{ Get\+MD5} (string target\+File)
+\item 
+static string \textbf{ File\+Name\+Generator} (string tag, string file\+Extension)
+\item 
+static void \textbf{ Clean\+Recycle\+Bin} ()
+\item 
+static void \textbf{ Create\+File\+Backup} (string source\+Folder, string new\+File\+Extension, bool save\+Old\+File)
+\item 
+static void \textbf{ Create\+Shortcut} (string shortcut, string target\+File, string name\+Exe)
+\item 
+static void \textbf{ Copy\+Folder} (string source\+Folder, string target\+Folder)
+\item 
+static bool \textbf{ Is\+Pe\+Exe} (string target\+File)
+\item 
+static void \textbf{ Zip\+Folder} (string source\+Folder, string zip\+File)
+\item 
+static void \textbf{ Unzip\+File} (string zip\+File, string target\+Folder)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ File\+System.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00338_a1dc8eba3092c5512ec777e6984bda5ac}} 
+\index{FileSystem@{FileSystem}!CleanRecycleBin@{CleanRecycleBin}}
+\index{CleanRecycleBin@{CleanRecycleBin}!FileSystem@{FileSystem}}
+\doxysubsubsection{CleanRecycleBin()}
+{\footnotesize\ttfamily static void Clean\+Recycle\+Bin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 102} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             Windows.Win32.Import.SHEmptyRecycleBin(IntPtr.Zero, \textcolor{keyword}{null},}
+\DoxyCodeLine{00105             Windows.Win32.Enums.SHERB\_RECYCLE.SHERB\_NOSOUND |}
+\DoxyCodeLine{00106             Windows.Win32.Enums.SHERB\_RECYCLE.SHERB\_NOCONFIRMATION);}
+\DoxyCodeLine{00107         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a8c184612421e6919c01c9472095db1b9}} 
+\index{FileSystem@{FileSystem}!CopyFolder@{CopyFolder}}
+\index{CopyFolder@{CopyFolder}!FileSystem@{FileSystem}}
+\doxysubsubsection{CopyFolder()}
+{\footnotesize\ttfamily static void Copy\+Folder (\begin{DoxyParamCaption}\item[{string}]{source\+Folder,  }\item[{string}]{target\+Folder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 130} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131         \{ }
+\DoxyCodeLine{00132             Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, targetFolder); }
+\DoxyCodeLine{00133         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a49d7f49bdd88a7485d52a10b3cdc1ee7}} 
+\index{FileSystem@{FileSystem}!CreateFileBackup@{CreateFileBackup}}
+\index{CreateFileBackup@{CreateFileBackup}!FileSystem@{FileSystem}}
+\doxysubsubsection{CreateFileBackup()}
+{\footnotesize\ttfamily static void Create\+File\+Backup (\begin{DoxyParamCaption}\item[{string}]{source\+Folder,  }\item[{string}]{new\+File\+Extension,  }\item[{bool}]{save\+Old\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 109} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110         \{}
+\DoxyCodeLine{00111             \textcolor{keywordtype}{string} bak\_file = sourceFolder + \textcolor{stringliteral}{"{}."{}} + newFileExtension.Replace(\textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00112             \textcolor{keywordflow}{if} (File.Exists(bak\_file)) \{ \textcolor{keywordflow}{try} \{ File.Delete(bak\_file); \} \textcolor{keywordflow}{catch} \{ \} \}}
+\DoxyCodeLine{00113             \textcolor{keywordflow}{if} (saveOldFile == \textcolor{keyword}{false}) \{ \textcolor{keywordflow}{try} \{ File.Move(sourceFolder, bak\_file); \} \textcolor{keywordflow}{catch} \{ \} \}}
+\DoxyCodeLine{00114             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115             \{}
+\DoxyCodeLine{00116                 File.Copy(sourceFolder, bak\_file);}
+\DoxyCodeLine{00117                 \textcolor{keywordflow}{try} \{ File.Delete(sourceFolder); \} \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a6f458c2473f0ecfcbf83b1374a94a63e}} 
+\index{FileSystem@{FileSystem}!CreateShortcut@{CreateShortcut}}
+\index{CreateShortcut@{CreateShortcut}!FileSystem@{FileSystem}}
+\doxysubsubsection{CreateShortcut()}
+{\footnotesize\ttfamily static void Create\+Shortcut (\begin{DoxyParamCaption}\item[{string}]{shortcut,  }\item[{string}]{target\+File,  }\item[{string}]{name\+Exe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 121} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             IWshRuntimeLibrary.WshShell wshShell = \textcolor{keyword}{new} IWshRuntimeLibrary.WshShell();}
+\DoxyCodeLine{00124             IWshRuntimeLibrary.IWshShortcut Shortcut = (IWshRuntimeLibrary.IWshShortcut)wshShell.CreateShortcut(shortcut);}
+\DoxyCodeLine{00125             Shortcut.TargetPath = targetFile;}
+\DoxyCodeLine{00126             Shortcut.WorkingDirectory = targetFile.Replace(\textcolor{stringliteral}{@"{}\(\backslash\)"{}} + nameExe, \textcolor{stringliteral}{"{}"{}}).Replace(\textcolor{stringliteral}{"{}.exe"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00127             Shortcut.Save();}
+\DoxyCodeLine{00128         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a1a1cbade20f95cc46f98909bed5a54bc}} 
+\index{FileSystem@{FileSystem}!DeleteDirectoryToTrash@{DeleteDirectoryToTrash}}
+\index{DeleteDirectoryToTrash@{DeleteDirectoryToTrash}!FileSystem@{FileSystem}}
+\doxysubsubsection{DeleteDirectoryToTrash()}
+{\footnotesize\ttfamily static void Delete\+Directory\+To\+Trash (\begin{DoxyParamCaption}\item[{string}]{target\+Folder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 49} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(targetFolder,}
+\DoxyCodeLine{00052                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,}
+\DoxyCodeLine{00053                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);}
+\DoxyCodeLine{00054         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a0131d4d6645805fe8db21a8643dc45f7}} 
+\index{FileSystem@{FileSystem}!DeleteFileForever@{DeleteFileForever}}
+\index{DeleteFileForever@{DeleteFileForever}!FileSystem@{FileSystem}}
+\doxysubsubsection{DeleteFileForever()}
+{\footnotesize\ttfamily static void Delete\+File\+Forever (\begin{DoxyParamCaption}\item[{string}]{target\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 36} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037         \{}
+\DoxyCodeLine{00038             \textcolor{keywordflow}{try} \{ File.Delete(targetFile); \} \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00039         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a9f342a8384ab7ddc6f9dc0199c9c18bb}} 
+\index{FileSystem@{FileSystem}!DeleteFileToTrash@{DeleteFileToTrash}}
+\index{DeleteFileToTrash@{DeleteFileToTrash}!FileSystem@{FileSystem}}
+\doxysubsubsection{DeleteFileToTrash()}
+{\footnotesize\ttfamily static void Delete\+File\+To\+Trash (\begin{DoxyParamCaption}\item[{string}]{target\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 41} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{try} \{ File.SetAttributes(targetFile, FileAttributes.Normal); \} \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00044             Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,}
+\DoxyCodeLine{00045                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,}
+\DoxyCodeLine{00046                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a001250d45f585210ea1a3778892e3a33}} 
+\index{FileSystem@{FileSystem}!FileNameGenerator@{FileNameGenerator}}
+\index{FileNameGenerator@{FileNameGenerator}!FileSystem@{FileSystem}}
+\doxysubsubsection{FileNameGenerator()}
+{\footnotesize\ttfamily static string File\+Name\+Generator (\begin{DoxyParamCaption}\item[{string}]{tag,  }\item[{string}]{file\+Extension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 92} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093         \{}
+\DoxyCodeLine{00094             \textcolor{keywordtype}{string} fileName = \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}\{0\}\_\{1\}\_\{2\}.\{3\}"{}},}
+\DoxyCodeLine{00095                 tag,}
+\DoxyCodeLine{00096                 DateTime.Now.ToString(\textcolor{stringliteral}{"{}yyyyMMddHHmmssfff"{}}),}
+\DoxyCodeLine{00097                 Guid.NewGuid(),}
+\DoxyCodeLine{00098                 fileExtension);}
+\DoxyCodeLine{00099             \textcolor{keywordflow}{return} fileName;}
+\DoxyCodeLine{00100         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_ac02ad540e3de526f1a3aa8857fb2de16}} 
+\index{FileSystem@{FileSystem}!GetDirectorySize@{GetDirectorySize}}
+\index{GetDirectorySize@{GetDirectorySize}!FileSystem@{FileSystem}}
+\doxysubsubsection{GetDirectorySize()}
+{\footnotesize\ttfamily static long Get\+Directory\+Size (\begin{DoxyParamCaption}\item[{Directory\+Info}]{source\+Folder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 24} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             \textcolor{keywordtype}{long} size = 0;}
+\DoxyCodeLine{00027             FileInfo[] fis = sourceFolder.GetFiles();}
+\DoxyCodeLine{00028             \textcolor{keywordflow}{foreach} (FileInfo fi \textcolor{keywordflow}{in} fis)}
+\DoxyCodeLine{00029                 size += fi.Length;}
+\DoxyCodeLine{00030             DirectoryInfo[] dis = sourceFolder.GetDirectories();}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{foreach} (DirectoryInfo di \textcolor{keywordflow}{in} dis)}
+\DoxyCodeLine{00032                 size += GetDirectorySize(di);}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{00034         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a401ef944c8fec8ad2b482b068ec7ed63}} 
+\index{FileSystem@{FileSystem}!GetMD5@{GetMD5}}
+\index{GetMD5@{GetMD5}!FileSystem@{FileSystem}}
+\doxysubsubsection{GetMD5()}
+{\footnotesize\ttfamily static string Get\+MD5 (\begin{DoxyParamCaption}\item[{string}]{target\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 77} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078         \{}
+\DoxyCodeLine{00079             \textcolor{keyword}{using} (var md5 = System.Security.Cryptography.MD5.Create())}
+\DoxyCodeLine{00080             \{}
+\DoxyCodeLine{00081                 \textcolor{keyword}{using} (var Stream = File.OpenRead(targetFile))}
+\DoxyCodeLine{00082                 \{}
+\DoxyCodeLine{00083                     var hashBytes = md5.ComputeHash(Stream);}
+\DoxyCodeLine{00084                     var sb = \textcolor{keyword}{new} StringBuilder();}
+\DoxyCodeLine{00085                     \textcolor{keywordflow}{foreach} (var t \textcolor{keywordflow}{in} hashBytes)}
+\DoxyCodeLine{00086                         sb.Append(t.ToString(\textcolor{stringliteral}{"{}X2"{}}));}
+\DoxyCodeLine{00087                     \textcolor{keywordflow}{return} Convert.ToString(sb);}
+\DoxyCodeLine{00088                 \}}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_aabd531404ce05ef934390fa0de838a64}} 
+\index{FileSystem@{FileSystem}!GetText@{GetText}}
+\index{GetText@{GetText}!FileSystem@{FileSystem}}
+\doxysubsubsection{GetText()}
+{\footnotesize\ttfamily static string Get\+Text (\begin{DoxyParamCaption}\item[{string}]{target\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 69} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070         \{}
+\DoxyCodeLine{00071             \textcolor{keywordtype}{string} text = \textcolor{stringliteral}{"{}Text file not found"{}};}
+\DoxyCodeLine{00072             \textcolor{keyword}{using} (StreamReader sr = File.OpenText(targetFile))}
+\DoxyCodeLine{00073                 text = sr.ReadToEnd();}
+\DoxyCodeLine{00074             \textcolor{keywordflow}{return} text;}
+\DoxyCodeLine{00075         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_abaebd20c11c4e3e506841ae9975408a4}} 
+\index{FileSystem@{FileSystem}!IsPeExe@{IsPeExe}}
+\index{IsPeExe@{IsPeExe}!FileSystem@{FileSystem}}
+\doxysubsubsection{IsPeExe()}
+{\footnotesize\ttfamily static bool Is\+Pe\+Exe (\begin{DoxyParamCaption}\item[{string}]{target\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 135} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136         \{}
+\DoxyCodeLine{00137             var twoBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[2];}
+\DoxyCodeLine{00138             \textcolor{keyword}{using} (var fileStream = File.Open(targetFile, FileMode.Open))}
+\DoxyCodeLine{00139                 fileStream.Read(twoBytes, 0, 2);}
+\DoxyCodeLine{00140             \textcolor{keywordflow}{return} Encoding.UTF8.GetString(twoBytes) == \textcolor{stringliteral}{"{}MZ"{}};}
+\DoxyCodeLine{00141         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a5a1d985b98a2d935f4920d20e57ce9ee}} 
+\index{FileSystem@{FileSystem}!ReturnRecursFList@{ReturnRecursFList}}
+\index{ReturnRecursFList@{ReturnRecursFList}!FileSystem@{FileSystem}}
+\doxysubsubsection{ReturnRecursFList()}
+{\footnotesize\ttfamily static List$<$ string $>$ Return\+Recurs\+FList (\begin{DoxyParamCaption}\item[{string}]{source\+Folder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 10} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             List<string> ls = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00013             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00014             \{}
+\DoxyCodeLine{00015                 \textcolor{keywordtype}{string}[] folders = Directory.GetDirectories(sourceFolder);}
+\DoxyCodeLine{00016                 \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} folder \textcolor{keywordflow}{in} folders) ls.Add(\textcolor{stringliteral}{"{}Folder: "{}} + folder);}
+\DoxyCodeLine{00017                 \textcolor{keywordtype}{string}[] files = Directory.GetFiles(sourceFolder);}
+\DoxyCodeLine{00018                 \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} filename \textcolor{keywordflow}{in} files) ls.Add(\textcolor{stringliteral}{"{}File: "{}} + filename);}
+\DoxyCodeLine{00019             \}}
+\DoxyCodeLine{00020             \textcolor{keywordflow}{catch} (Exception e) \{ ls.Add(e.Message.Trim(\textcolor{charliteral}{'\(\backslash\)n'})); \}}
+\DoxyCodeLine{00021             \textcolor{keywordflow}{return} ls;}
+\DoxyCodeLine{00022         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_ad65aab51858bbae9b552bf0247e192c0}} 
+\index{FileSystem@{FileSystem}!UnzipFile@{UnzipFile}}
+\index{UnzipFile@{UnzipFile}!FileSystem@{FileSystem}}
+\doxysubsubsection{UnzipFile()}
+{\footnotesize\ttfamily static void Unzip\+File (\begin{DoxyParamCaption}\item[{string}]{zip\+File,  }\item[{string}]{target\+Folder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 156} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157         \{}
+\DoxyCodeLine{00158             \textcolor{keywordflow}{if} (!Directory.Exists(targetFolder))}
+\DoxyCodeLine{00159                 Directory.CreateDirectory(targetFolder);}
+\DoxyCodeLine{00160             dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID(\textcolor{stringliteral}{"{}Shell.Application"{}}));}
+\DoxyCodeLine{00161             dynamic compressedFolderContents = shellApplication.NameSpace(zipFile).Items;}
+\DoxyCodeLine{00162             dynamic destinationFolder = shellApplication.NameSpace(targetFolder);}
+\DoxyCodeLine{00163             destinationFolder.CopyHere(compressedFolderContents);}
+\DoxyCodeLine{00164         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a4893e85cfa85fedb3f174712929aaba6}} 
+\index{FileSystem@{FileSystem}!WriteTextToFileUTF8@{WriteTextToFileUTF8}}
+\index{WriteTextToFileUTF8@{WriteTextToFileUTF8}!FileSystem@{FileSystem}}
+\doxysubsubsection{WriteTextToFileUTF8()}
+{\footnotesize\ttfamily static string[$\,$] Write\+Text\+To\+File\+UTF8 (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{target\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 56} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057         \{}
+\DoxyCodeLine{00058             \textcolor{keywordtype}{string} fileName = FileNameGenerator(targetFile, \textcolor{stringliteral}{"{}txt"{}});}
+\DoxyCodeLine{00059             \textcolor{keywordtype}{string} filePath = \$\textcolor{stringliteral}{@"{}\{Path.GetTempPath()\}\(\backslash\)\{fileName\}"{}};}
+\DoxyCodeLine{00060             \textcolor{keyword}{using} (FileStream fs = File.OpenWrite(filePath))}
+\DoxyCodeLine{00061             \{}
+\DoxyCodeLine{00062                 var data = text;}
+\DoxyCodeLine{00063                 \textcolor{keywordtype}{byte}[] bytes = System.Text.Encoding.UTF8.GetBytes(data);}
+\DoxyCodeLine{00064                 fs.Write(bytes, 0, bytes.Length);}
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \textcolor{keywordtype}{string}[] \{ fileName, filePath \};}
+\DoxyCodeLine{00067         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00338_a82a9f3291c286e262d28b914623dce91}} 
+\index{FileSystem@{FileSystem}!ZipFolder@{ZipFolder}}
+\index{ZipFolder@{ZipFolder}!FileSystem@{FileSystem}}
+\doxysubsubsection{ZipFolder()}
+{\footnotesize\ttfamily static void Zip\+Folder (\begin{DoxyParamCaption}\item[{string}]{source\+Folder,  }\item[{string}]{zip\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 143} of file \textbf{ File\+System.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144         \{}
+\DoxyCodeLine{00145             \textcolor{keywordflow}{if} (!Directory.Exists(sourceFolder))}
+\DoxyCodeLine{00146                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}sourceDirectory"{}});}
+\DoxyCodeLine{00147             \textcolor{keywordtype}{byte}[] zipHeader = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[] \{ 80, 75, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \};}
+\DoxyCodeLine{00148             \textcolor{keyword}{using} (FileStream fs = File.Create(zipFile))}
+\DoxyCodeLine{00149                 fs.Write(zipHeader, 0, zipHeader.Length);}
+\DoxyCodeLine{00150             dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID(\textcolor{stringliteral}{"{}Shell.Application"{}}));}
+\DoxyCodeLine{00151             dynamic source = shellApplication.NameSpace(sourceFolder);}
+\DoxyCodeLine{00152             dynamic destination = shellApplication.NameSpace(zipFile);}
+\DoxyCodeLine{00153             destination.CopyHere(source.Items(), 20);}
+\DoxyCodeLine{00154         \}}
+
+\end{DoxyCode}

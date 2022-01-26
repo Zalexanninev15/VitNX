@@ -1,0 +1,546 @@
+\doxysection{Vit\+NX\+\_\+\+Scroll\+Bar.\+cs}
+\label{a00122_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollBar.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollBar.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.ComponentModel;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using} VitNX.UI.BasedOnDarkUI.Config;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00008 \{}
+\DoxyCodeLine{00009     \textcolor{keyword}{public} \textcolor{keyword}{class }VitNX\_ScrollBar : Control}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{        \#region Event Region}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013         \textcolor{keyword}{public} \textcolor{keyword}{event} EventHandler<ScrollValueEventArgs> ValueChanged;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{        \#endregion Event Region}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#region Field Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019         \textcolor{keyword}{private} VitNX\_ScrollOrientation \_scrollOrientation;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_value;}
+\DoxyCodeLine{00022         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_minimum = 0;}
+\DoxyCodeLine{00023         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_maximum = 100;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_viewSize;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{private} Rectangle \_trackArea;}
+\DoxyCodeLine{00028         \textcolor{keyword}{private} \textcolor{keywordtype}{float} \_viewContentRatio;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030         \textcolor{keyword}{private} Rectangle \_thumbArea;}
+\DoxyCodeLine{00031         \textcolor{keyword}{private} Rectangle \_upArrowArea;}
+\DoxyCodeLine{00032         \textcolor{keyword}{private} Rectangle \_downArrowArea;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_thumbHot;}
+\DoxyCodeLine{00035         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_upArrowHot;}
+\DoxyCodeLine{00036         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_downArrowHot;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_thumbClicked;}
+\DoxyCodeLine{00039         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_upArrowClicked;}
+\DoxyCodeLine{00040         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_downArrowClicked;}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \_isScrolling;}
+\DoxyCodeLine{00043         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_initialValue;}
+\DoxyCodeLine{00044         \textcolor{keyword}{private} Point \_initialContact;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{keyword}{private} Timer \_scrollTimer;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{preprocessor}{        \#endregion Field Region}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 \textcolor{preprocessor}{        \#region Property Region}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00053         [Description(\textcolor{stringliteral}{"{}The orientation type of the scrollbar."{}})]}
+\DoxyCodeLine{00054         [DefaultValue(VitNX\_ScrollOrientation.Vertical)]}
+\DoxyCodeLine{00055         \textcolor{keyword}{public} VitNX\_ScrollOrientation ScrollOrientation}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_scrollOrientation; \}}
+\DoxyCodeLine{00058             \textcolor{keyword}{set}}
+\DoxyCodeLine{00059             \{}
+\DoxyCodeLine{00060                 \_scrollOrientation = value;}
+\DoxyCodeLine{00061                 UpdateScrollBar();}
+\DoxyCodeLine{00062             \}}
+\DoxyCodeLine{00063         \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00066         [Description(\textcolor{stringliteral}{"{}The value that the scroll thumb position represents."{}})]}
+\DoxyCodeLine{00067         [DefaultValue(0)]}
+\DoxyCodeLine{00068         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Value}
+\DoxyCodeLine{00069         \{}
+\DoxyCodeLine{00070             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_value; \}}
+\DoxyCodeLine{00071             \textcolor{keyword}{set}}
+\DoxyCodeLine{00072             \{}
+\DoxyCodeLine{00073                 \textcolor{keywordflow}{if} (value < Minimum)}
+\DoxyCodeLine{00074                     value = Minimum;}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076                 var maximumValue = Maximum -\/ ViewSize;}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{if} (value > maximumValue)}
+\DoxyCodeLine{00078                     value = maximumValue;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080                 \textcolor{keywordflow}{if} (\_value == value)}
+\DoxyCodeLine{00081                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083                 \_value = value;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085                 UpdateThumb(\textcolor{keyword}{true});}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087                 \textcolor{keywordflow}{if} (ValueChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00088                     ValueChanged(\textcolor{keyword}{this}, \textcolor{keyword}{new} ScrollValueEventArgs(Value));}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090         \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00093         [Description(\textcolor{stringliteral}{"{}The lower limit value of the scrollable range."{}})]}
+\DoxyCodeLine{00094         [DefaultValue(0)]}
+\DoxyCodeLine{00095         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Minimum}
+\DoxyCodeLine{00096         \{}
+\DoxyCodeLine{00097             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_minimum; \}}
+\DoxyCodeLine{00098             \textcolor{keyword}{set}}
+\DoxyCodeLine{00099             \{}
+\DoxyCodeLine{00100                 \_minimum = value;}
+\DoxyCodeLine{00101                 UpdateScrollBar();}
+\DoxyCodeLine{00102             \}}
+\DoxyCodeLine{00103         \}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00106         [Description(\textcolor{stringliteral}{"{}The upper limit value of the scrollable range."{}})]}
+\DoxyCodeLine{00107         [DefaultValue(100)]}
+\DoxyCodeLine{00108         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Maximum}
+\DoxyCodeLine{00109         \{}
+\DoxyCodeLine{00110             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_maximum; \}}
+\DoxyCodeLine{00111             \textcolor{keyword}{set}}
+\DoxyCodeLine{00112             \{}
+\DoxyCodeLine{00113                 \_maximum = value;}
+\DoxyCodeLine{00114                 UpdateScrollBar();}
+\DoxyCodeLine{00115             \}}
+\DoxyCodeLine{00116         \}}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118         [Category(\textcolor{stringliteral}{"{}Behavior"{}})]}
+\DoxyCodeLine{00119         [Description(\textcolor{stringliteral}{"{}The view size for the scrollable area."{}})]}
+\DoxyCodeLine{00120         [DefaultValue(0)]}
+\DoxyCodeLine{00121         \textcolor{keyword}{public} \textcolor{keywordtype}{int} ViewSize}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_viewSize; \}}
+\DoxyCodeLine{00124             \textcolor{keyword}{set}}
+\DoxyCodeLine{00125             \{}
+\DoxyCodeLine{00126                 \_viewSize = value;}
+\DoxyCodeLine{00127                 UpdateScrollBar();}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129         \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keyword}{public} \textcolor{keyword}{new} \textcolor{keywordtype}{bool} Visible}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} base.Visible; \}}
+\DoxyCodeLine{00134             \textcolor{keyword}{set}}
+\DoxyCodeLine{00135             \{}
+\DoxyCodeLine{00136                 \textcolor{keywordflow}{if} (base.Visible == value)}
+\DoxyCodeLine{00137                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139                 base.Visible = value;}
+\DoxyCodeLine{00140             \}}
+\DoxyCodeLine{00141         \}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143 \textcolor{preprocessor}{        \#endregion Property Region}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147         \textcolor{keyword}{public} VitNX\_ScrollBar()}
+\DoxyCodeLine{00148         \{}
+\DoxyCodeLine{00149             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00150                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00151                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153             SetStyle(ControlStyles.Selectable, \textcolor{keyword}{false});}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155             \_scrollTimer = \textcolor{keyword}{new} Timer();}
+\DoxyCodeLine{00156             \_scrollTimer.Interval = 1;}
+\DoxyCodeLine{00157             \_scrollTimer.Tick += ScrollTimerTick;}
+\DoxyCodeLine{00158         \}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162 \textcolor{preprocessor}{        \#region Event Handler Region}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnResize(EventArgs e)}
+\DoxyCodeLine{00165         \{}
+\DoxyCodeLine{00166             base.OnResize(e);}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168             UpdateScrollBar();}
+\DoxyCodeLine{00169         \}}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseDown(MouseEventArgs e)}
+\DoxyCodeLine{00172         \{}
+\DoxyCodeLine{00173             base.OnMouseDown(e);}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175             \textcolor{keywordflow}{if} (\_thumbArea.Contains(e.Location) \&\& e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00176             \{}
+\DoxyCodeLine{00177                 \_isScrolling = \textcolor{keyword}{true};}
+\DoxyCodeLine{00178                 \_initialContact = e.Location;}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180                 \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00181                     \_initialValue = \_thumbArea.Top;}
+\DoxyCodeLine{00182                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00183                     \_initialValue = \_thumbArea.Left;}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185                 Invalidate();}
+\DoxyCodeLine{00186                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00187             \}}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189             \textcolor{keywordflow}{if} (\_upArrowArea.Contains(e.Location) \&\& e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00190             \{}
+\DoxyCodeLine{00191                 \_upArrowClicked = \textcolor{keyword}{true};}
+\DoxyCodeLine{00192                 \_scrollTimer.Enabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194                 Invalidate();}
+\DoxyCodeLine{00195                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00196             \}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198             \textcolor{keywordflow}{if} (\_downArrowArea.Contains(e.Location) \&\& e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00199             \{}
+\DoxyCodeLine{00200                 \_downArrowClicked = \textcolor{keyword}{true};}
+\DoxyCodeLine{00201                 \_scrollTimer.Enabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203                 Invalidate();}
+\DoxyCodeLine{00204                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00205             \}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207             \textcolor{keywordflow}{if} (\_trackArea.Contains(e.Location) \&\& e.Button == MouseButtons.Left)}
+\DoxyCodeLine{00208             \{}
+\DoxyCodeLine{00209                 \textcolor{comment}{// Step 1. Check if our input is at least aligned with the thumb}}
+\DoxyCodeLine{00210                 \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00211                 \{}
+\DoxyCodeLine{00212                     var modRect = \textcolor{keyword}{new} Rectangle(\_thumbArea.Left, \_trackArea.Top, \_thumbArea.Width, \_trackArea.Height);}
+\DoxyCodeLine{00213                     \textcolor{keywordflow}{if} (!modRect.Contains(e.Location))}
+\DoxyCodeLine{00214                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00215                 \}}
+\DoxyCodeLine{00216                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00217                 \{}
+\DoxyCodeLine{00218                     var modRect = \textcolor{keyword}{new} Rectangle(\_trackArea.Left, \_thumbArea.Top, \_trackArea.Width, \_thumbArea.Height);}
+\DoxyCodeLine{00219                     \textcolor{keywordflow}{if} (!modRect.Contains(e.Location))}
+\DoxyCodeLine{00220                         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00221                 \}}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223                 \textcolor{comment}{// Step 2. Scroll to the area initially clicked.}}
+\DoxyCodeLine{00224                 \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00225                 \{}
+\DoxyCodeLine{00226                     var loc = e.Location.Y;}
+\DoxyCodeLine{00227                     loc -\/= \_upArrowArea.Bottom -\/ 1;}
+\DoxyCodeLine{00228                     loc -\/= \_thumbArea.Height / 2;}
+\DoxyCodeLine{00229                     ScrollToPhysical(loc);}
+\DoxyCodeLine{00230                 \}}
+\DoxyCodeLine{00231                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00232                 \{}
+\DoxyCodeLine{00233                     var loc = e.Location.X;}
+\DoxyCodeLine{00234                     loc -\/= \_upArrowArea.Right -\/ 1;}
+\DoxyCodeLine{00235                     loc -\/= \_thumbArea.Width / 2;}
+\DoxyCodeLine{00236                     ScrollToPhysical(loc);}
+\DoxyCodeLine{00237                 \}}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239                 \textcolor{comment}{// Step 3. Initiate a thumb drag.}}
+\DoxyCodeLine{00240                 \_isScrolling = \textcolor{keyword}{true};}
+\DoxyCodeLine{00241                 \_initialContact = e.Location;}
+\DoxyCodeLine{00242                 \_thumbHot = \textcolor{keyword}{true};}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{00244                 \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00245                     \_initialValue = \_thumbArea.Top;}
+\DoxyCodeLine{00246                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00247                     \_initialValue = \_thumbArea.Left;}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249                 Invalidate();}
+\DoxyCodeLine{00250                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00251             \}}
+\DoxyCodeLine{00252         \}}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseUp(MouseEventArgs e)}
+\DoxyCodeLine{00255         \{}
+\DoxyCodeLine{00256             base.OnMouseUp(e);}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258             \_isScrolling = \textcolor{keyword}{false};}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260             \_thumbClicked = \textcolor{keyword}{false};}
+\DoxyCodeLine{00261             \_upArrowClicked = \textcolor{keyword}{false};}
+\DoxyCodeLine{00262             \_downArrowClicked = \textcolor{keyword}{false};}
+\DoxyCodeLine{00263 }
+\DoxyCodeLine{00264             Invalidate();}
+\DoxyCodeLine{00265         \}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseMove(MouseEventArgs e)}
+\DoxyCodeLine{00268         \{}
+\DoxyCodeLine{00269             base.OnMouseMove(e);}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271             \textcolor{keywordflow}{if} (!\_isScrolling)}
+\DoxyCodeLine{00272             \{}
+\DoxyCodeLine{00273                 var thumbHot = \_thumbArea.Contains(e.Location);}
+\DoxyCodeLine{00274                 \textcolor{keywordflow}{if} (\_thumbHot != thumbHot)}
+\DoxyCodeLine{00275                 \{}
+\DoxyCodeLine{00276                     \_thumbHot = thumbHot;}
+\DoxyCodeLine{00277                     Invalidate();}
+\DoxyCodeLine{00278                 \}}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280                 var upArrowHot = \_upArrowArea.Contains(e.Location);}
+\DoxyCodeLine{00281                 \textcolor{keywordflow}{if} (\_upArrowHot != upArrowHot)}
+\DoxyCodeLine{00282                 \{}
+\DoxyCodeLine{00283                     \_upArrowHot = upArrowHot;}
+\DoxyCodeLine{00284                     Invalidate();}
+\DoxyCodeLine{00285                 \}}
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287                 var downArrowHot = \_downArrowArea.Contains(e.Location);}
+\DoxyCodeLine{00288                 \textcolor{keywordflow}{if} (\_downArrowHot != downArrowHot)}
+\DoxyCodeLine{00289                 \{}
+\DoxyCodeLine{00290                     \_downArrowHot = downArrowHot;}
+\DoxyCodeLine{00291                     Invalidate();}
+\DoxyCodeLine{00292                 \}}
+\DoxyCodeLine{00293             \}}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295             \textcolor{keywordflow}{if} (\_isScrolling)}
+\DoxyCodeLine{00296             \{}
+\DoxyCodeLine{00297                 \textcolor{keywordflow}{if} (e.Button != MouseButtons.Left)}
+\DoxyCodeLine{00298                 \{}
+\DoxyCodeLine{00299                     OnMouseUp(\textcolor{keyword}{null});}
+\DoxyCodeLine{00300                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00301                 \}}
+\DoxyCodeLine{00302 }
+\DoxyCodeLine{00303                 var difference = \textcolor{keyword}{new} Point(e.Location.X -\/ \_initialContact.X, e.Location.Y -\/ \_initialContact.Y);}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305                 \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00306                 \{}
+\DoxyCodeLine{00307                     var thumbPos = (\_initialValue -\/ \_trackArea.Top);}
+\DoxyCodeLine{00308                     var newPosition = thumbPos + difference.Y;}
+\DoxyCodeLine{00309 }
+\DoxyCodeLine{00310                     ScrollToPhysical(newPosition);}
+\DoxyCodeLine{00311                 \}}
+\DoxyCodeLine{00312                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00313                 \{}
+\DoxyCodeLine{00314                     var thumbPos = (\_initialValue -\/ \_trackArea.Left);}
+\DoxyCodeLine{00315                     var newPosition = thumbPos + difference.X;}
+\DoxyCodeLine{00316 }
+\DoxyCodeLine{00317                     ScrollToPhysical(newPosition);}
+\DoxyCodeLine{00318                 \}}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320                 UpdateScrollBar();}
+\DoxyCodeLine{00321             \}}
+\DoxyCodeLine{00322         \}}
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{00324         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnMouseLeave(EventArgs e)}
+\DoxyCodeLine{00325         \{}
+\DoxyCodeLine{00326             base.OnMouseLeave(e);}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328             \_thumbHot = \textcolor{keyword}{false};}
+\DoxyCodeLine{00329             \_upArrowHot = \textcolor{keyword}{false};}
+\DoxyCodeLine{00330             \_downArrowHot = \textcolor{keyword}{false};}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332             Invalidate();}
+\DoxyCodeLine{00333         \}}
+\DoxyCodeLine{00334 }
+\DoxyCodeLine{00335         \textcolor{keyword}{private} \textcolor{keywordtype}{void} ScrollTimerTick(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00336         \{}
+\DoxyCodeLine{00337             \textcolor{keywordflow}{if} (!\_upArrowClicked \&\& !\_downArrowClicked)}
+\DoxyCodeLine{00338             \{}
+\DoxyCodeLine{00339                 \_scrollTimer.Enabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{00340                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00341             \}}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343             \textcolor{keywordflow}{if} (\_upArrowClicked)}
+\DoxyCodeLine{00344                 ScrollBy(-\/1);}
+\DoxyCodeLine{00345             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_downArrowClicked)}
+\DoxyCodeLine{00346                 ScrollBy(1);}
+\DoxyCodeLine{00347         \}}
+\DoxyCodeLine{00348 }
+\DoxyCodeLine{00349 \textcolor{preprocessor}{        \#endregion Event Handler Region}}
+\DoxyCodeLine{00350 }
+\DoxyCodeLine{00351 \textcolor{preprocessor}{        \#region Method Region}}
+\DoxyCodeLine{00352 }
+\DoxyCodeLine{00353         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ScrollTo(\textcolor{keywordtype}{int} position)}
+\DoxyCodeLine{00354         \{}
+\DoxyCodeLine{00355             Value = position;}
+\DoxyCodeLine{00356         \}}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ScrollToPhysical(\textcolor{keywordtype}{int} positionInPixels)}
+\DoxyCodeLine{00359         \{}
+\DoxyCodeLine{00360             var isVert = \_scrollOrientation == VitNX\_ScrollOrientation.Vertical;}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362             var trackAreaSize = isVert ? \_trackArea.Height -\/ \_thumbArea.Height : \_trackArea.Width -\/ \_thumbArea.Width;}
+\DoxyCodeLine{00363 }
+\DoxyCodeLine{00364             var positionRatio = (float)positionInPixels / (\textcolor{keywordtype}{float})trackAreaSize;}
+\DoxyCodeLine{00365             var viewScrollSize = (Maximum -\/ ViewSize);}
+\DoxyCodeLine{00366 }
+\DoxyCodeLine{00367             var newValue = (int)(positionRatio * viewScrollSize);}
+\DoxyCodeLine{00368             Value = newValue;}
+\DoxyCodeLine{00369         \}}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ScrollBy(\textcolor{keywordtype}{int} offset)}
+\DoxyCodeLine{00372         \{}
+\DoxyCodeLine{00373             var newValue = Value + offset;}
+\DoxyCodeLine{00374             ScrollTo(newValue);}
+\DoxyCodeLine{00375         \}}
+\DoxyCodeLine{00376 }
+\DoxyCodeLine{00377         \textcolor{keyword}{public} \textcolor{keywordtype}{void} ScrollByPhysical(\textcolor{keywordtype}{int} offsetInPixels)}
+\DoxyCodeLine{00378         \{}
+\DoxyCodeLine{00379             var isVert = \_scrollOrientation == VitNX\_ScrollOrientation.Vertical;}
+\DoxyCodeLine{00380 }
+\DoxyCodeLine{00381             var thumbPos = isVert ? (\_thumbArea.Top -\/ \_trackArea.Top) : (\_thumbArea.Left -\/ \_trackArea.Left);}
+\DoxyCodeLine{00382 }
+\DoxyCodeLine{00383             var newPosition = thumbPos -\/ offsetInPixels;}
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385             ScrollToPhysical(newPosition);}
+\DoxyCodeLine{00386         \}}
+\DoxyCodeLine{00387 }
+\DoxyCodeLine{00388         \textcolor{keyword}{public} \textcolor{keywordtype}{void} UpdateScrollBar()}
+\DoxyCodeLine{00389         \{}
+\DoxyCodeLine{00390             var area = ClientRectangle;}
+\DoxyCodeLine{00391 }
+\DoxyCodeLine{00392             \textcolor{comment}{// Arrow buttons}}
+\DoxyCodeLine{00393             \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00394             \{}
+\DoxyCodeLine{00395                 \_upArrowArea = \textcolor{keyword}{new} Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);}
+\DoxyCodeLine{00396                 \_downArrowArea = \textcolor{keyword}{new} Rectangle(area.Left, area.Bottom -\/ Constsants.ArrowButtonSize, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);}
+\DoxyCodeLine{00397             \}}
+\DoxyCodeLine{00398             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00399             \{}
+\DoxyCodeLine{00400                 \_upArrowArea = \textcolor{keyword}{new} Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);}
+\DoxyCodeLine{00401                 \_downArrowArea = \textcolor{keyword}{new} Rectangle(area.Right -\/ Constsants.ArrowButtonSize, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);}
+\DoxyCodeLine{00402             \}}
+\DoxyCodeLine{00403 }
+\DoxyCodeLine{00404             \textcolor{comment}{// Track}}
+\DoxyCodeLine{00405             \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00406             \{}
+\DoxyCodeLine{00407                 \_trackArea = \textcolor{keyword}{new} Rectangle(area.Left, area.Top + Constsants.ArrowButtonSize, area.Width, area.Height -\/ (Constsants.ArrowButtonSize * 2));}
+\DoxyCodeLine{00408             \}}
+\DoxyCodeLine{00409             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00410             \{}
+\DoxyCodeLine{00411                 \_trackArea = \textcolor{keyword}{new} Rectangle(area.Left + Constsants.ArrowButtonSize, area.Top, area.Width -\/ (Constsants.ArrowButtonSize * 2), area.Height);}
+\DoxyCodeLine{00412             \}}
+\DoxyCodeLine{00413 }
+\DoxyCodeLine{00414             \textcolor{comment}{// Thumb}}
+\DoxyCodeLine{00415             UpdateThumb();}
+\DoxyCodeLine{00416 }
+\DoxyCodeLine{00417             Invalidate();}
+\DoxyCodeLine{00418         \}}
+\DoxyCodeLine{00419 }
+\DoxyCodeLine{00420         \textcolor{keyword}{private} \textcolor{keywordtype}{void} UpdateThumb(\textcolor{keywordtype}{bool} forceRefresh = \textcolor{keyword}{false})}
+\DoxyCodeLine{00421         \{}
+\DoxyCodeLine{00422             \textcolor{keywordflow}{if} (ViewSize >= Maximum)}
+\DoxyCodeLine{00423                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00424 }
+\DoxyCodeLine{00425             \textcolor{comment}{// Cap to maximum value}}
+\DoxyCodeLine{00426             var maximumValue = Maximum -\/ ViewSize;}
+\DoxyCodeLine{00427             \textcolor{keywordflow}{if} (Value > maximumValue)}
+\DoxyCodeLine{00428                 Value = maximumValue;}
+\DoxyCodeLine{00429 }
+\DoxyCodeLine{00430             \textcolor{comment}{// Calculate size ratio}}
+\DoxyCodeLine{00431             \_viewContentRatio = (float)ViewSize / (\textcolor{keywordtype}{float})Maximum;}
+\DoxyCodeLine{00432             var viewAreaSize = Maximum -\/ ViewSize;}
+\DoxyCodeLine{00433             var positionRatio = (float)Value / (\textcolor{keywordtype}{float})viewAreaSize;}
+\DoxyCodeLine{00434 }
+\DoxyCodeLine{00435             \textcolor{comment}{// Update area}}
+\DoxyCodeLine{00436             \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00437             \{}
+\DoxyCodeLine{00438                 var thumbSize = (int)(\_trackArea.Height * \_viewContentRatio);}
+\DoxyCodeLine{00439 }
+\DoxyCodeLine{00440                 \textcolor{keywordflow}{if} (thumbSize < Constsants.MinimumThumbSize)}
+\DoxyCodeLine{00441                     thumbSize = Constsants.MinimumThumbSize;}
+\DoxyCodeLine{00442 }
+\DoxyCodeLine{00443                 var trackAreaSize = \_trackArea.Height -\/ thumbSize;}
+\DoxyCodeLine{00444                 var thumbPosition = (int)(trackAreaSize * positionRatio);}
+\DoxyCodeLine{00445 }
+\DoxyCodeLine{00446                 \_thumbArea = \textcolor{keyword}{new} Rectangle(\_trackArea.Left + 3, \_trackArea.Top + thumbPosition, Constsants.ScrollBarSize -\/ 6, thumbSize);}
+\DoxyCodeLine{00447             \}}
+\DoxyCodeLine{00448             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00449             \{}
+\DoxyCodeLine{00450                 var thumbSize = (int)(\_trackArea.Width * \_viewContentRatio);}
+\DoxyCodeLine{00451 }
+\DoxyCodeLine{00452                 \textcolor{keywordflow}{if} (thumbSize < Constsants.MinimumThumbSize)}
+\DoxyCodeLine{00453                     thumbSize = Constsants.MinimumThumbSize;}
+\DoxyCodeLine{00454 }
+\DoxyCodeLine{00455                 var trackAreaSize = \_trackArea.Width -\/ thumbSize;}
+\DoxyCodeLine{00456                 var thumbPosition = (int)(trackAreaSize * positionRatio);}
+\DoxyCodeLine{00457 }
+\DoxyCodeLine{00458                 \_thumbArea = \textcolor{keyword}{new} Rectangle(\_trackArea.Left + thumbPosition, \_trackArea.Top + 3, thumbSize, Constsants.ScrollBarSize -\/ 6);}
+\DoxyCodeLine{00459             \}}
+\DoxyCodeLine{00460 }
+\DoxyCodeLine{00461             \textcolor{keywordflow}{if} (forceRefresh)}
+\DoxyCodeLine{00462             \{}
+\DoxyCodeLine{00463                 Invalidate();}
+\DoxyCodeLine{00464                 Update();}
+\DoxyCodeLine{00465             \}}
+\DoxyCodeLine{00466         \}}
+\DoxyCodeLine{00467 }
+\DoxyCodeLine{00468 \textcolor{preprocessor}{        \#endregion Method Region}}
+\DoxyCodeLine{00469 }
+\DoxyCodeLine{00470 \textcolor{preprocessor}{        \#region Paint Region}}
+\DoxyCodeLine{00471 }
+\DoxyCodeLine{00472         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00473         \{}
+\DoxyCodeLine{00474             var g = e.Graphics;}
+\DoxyCodeLine{00475 }
+\DoxyCodeLine{00476             \textcolor{comment}{// DEBUG: Scrollbar bg}}
+\DoxyCodeLine{00477             \textcolor{comment}{/*using (var b = new SolidBrush(Colors.MediumBackground))}}
+\DoxyCodeLine{00478 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00479 \textcolor{comment}{                g.FillRectangle(b, ClientRectangle);}}
+\DoxyCodeLine{00480 \textcolor{comment}{            \}*/}}
+\DoxyCodeLine{00481 }
+\DoxyCodeLine{00482             \textcolor{comment}{// DEBUG: Arrow backgrounds}}
+\DoxyCodeLine{00483             \textcolor{comment}{/*using (var b = new SolidBrush(Color.White))}}
+\DoxyCodeLine{00484 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00485 \textcolor{comment}{                g.FillRectangle(b, \_upArrowArea);}}
+\DoxyCodeLine{00486 \textcolor{comment}{                g.FillRectangle(b, \_downArrowArea);}}
+\DoxyCodeLine{00487 \textcolor{comment}{            \}*/}}
+\DoxyCodeLine{00488 }
+\DoxyCodeLine{00489             \textcolor{comment}{// Up arrow}}
+\DoxyCodeLine{00490             var upIcon = \_upArrowHot ? ScrollIcons.scrollbar\_arrow\_hot : ScrollIcons.scrollbar\_arrow\_standard;}
+\DoxyCodeLine{00491 }
+\DoxyCodeLine{00492             \textcolor{keywordflow}{if} (\_upArrowClicked)}
+\DoxyCodeLine{00493                 upIcon = ScrollIcons.scrollbar\_arrow\_clicked;}
+\DoxyCodeLine{00494 }
+\DoxyCodeLine{00495             \textcolor{keywordflow}{if} (!Enabled)}
+\DoxyCodeLine{00496                 upIcon = ScrollIcons.scrollbar\_arrow\_disabled;}
+\DoxyCodeLine{00497 }
+\DoxyCodeLine{00498             \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Vertical)}
+\DoxyCodeLine{00499                 upIcon.RotateFlip(RotateFlipType.RotateNoneFlipY);}
+\DoxyCodeLine{00500             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00501                 upIcon.RotateFlip(RotateFlipType.Rotate90FlipNone);}
+\DoxyCodeLine{00502 }
+\DoxyCodeLine{00503             g.DrawImageUnscaled(upIcon,}
+\DoxyCodeLine{00504                                 \_upArrowArea.Left + (\_upArrowArea.Width / 2) -\/ (upIcon.Width / 2),}
+\DoxyCodeLine{00505                                 \_upArrowArea.Top + (\_upArrowArea.Height / 2) -\/ (upIcon.Height / 2));}
+\DoxyCodeLine{00506 }
+\DoxyCodeLine{00507             \textcolor{comment}{// Down arrow}}
+\DoxyCodeLine{00508             var downIcon = \_downArrowHot ? ScrollIcons.scrollbar\_arrow\_hot : ScrollIcons.scrollbar\_arrow\_standard;}
+\DoxyCodeLine{00509 }
+\DoxyCodeLine{00510             \textcolor{keywordflow}{if} (\_downArrowClicked)}
+\DoxyCodeLine{00511                 downIcon = ScrollIcons.scrollbar\_arrow\_clicked;}
+\DoxyCodeLine{00512 }
+\DoxyCodeLine{00513             \textcolor{keywordflow}{if} (!Enabled)}
+\DoxyCodeLine{00514                 downIcon = ScrollIcons.scrollbar\_arrow\_disabled;}
+\DoxyCodeLine{00515 }
+\DoxyCodeLine{00516             \textcolor{keywordflow}{if} (\_scrollOrientation == VitNX\_ScrollOrientation.Horizontal)}
+\DoxyCodeLine{00517                 downIcon.RotateFlip(RotateFlipType.Rotate270FlipNone);}
+\DoxyCodeLine{00518 }
+\DoxyCodeLine{00519             g.DrawImageUnscaled(downIcon,}
+\DoxyCodeLine{00520                                 \_downArrowArea.Left + (\_downArrowArea.Width / 2) -\/ (downIcon.Width / 2),}
+\DoxyCodeLine{00521                                 \_downArrowArea.Top + (\_downArrowArea.Height / 2) -\/ (downIcon.Height / 2));}
+\DoxyCodeLine{00522 }
+\DoxyCodeLine{00523             \textcolor{comment}{// Draw thumb}}
+\DoxyCodeLine{00524             \textcolor{keywordflow}{if} (Enabled)}
+\DoxyCodeLine{00525             \{}
+\DoxyCodeLine{00526                 var scrollColor = \_thumbHot ? Colors.GreyHighlight : Colors.GreySelection;}
+\DoxyCodeLine{00527 }
+\DoxyCodeLine{00528                 \textcolor{keywordflow}{if} (\_isScrolling)}
+\DoxyCodeLine{00529                     scrollColor = Colors.ActiveControl;}
+\DoxyCodeLine{00530 }
+\DoxyCodeLine{00531                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(scrollColor))}
+\DoxyCodeLine{00532                 \{}
+\DoxyCodeLine{00533                     g.FillRectangle(b, \_thumbArea);}
+\DoxyCodeLine{00534                 \}}
+\DoxyCodeLine{00535             \}}
+\DoxyCodeLine{00536         \}}
+\DoxyCodeLine{00537 }
+\DoxyCodeLine{00538 \textcolor{preprocessor}{        \#endregion Paint Region}}
+\DoxyCodeLine{00539     \}}
+\DoxyCodeLine{00540 \}}
+
+\end{DoxyCode}

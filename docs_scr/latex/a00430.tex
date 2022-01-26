@@ -1,0 +1,95 @@
+\doxysection{Volume\+Control Class Reference}
+\label{a00430}\index{VolumeControl@{VolumeControl}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \textbf{ IAudio\+Endpoint\+Volume}
+\item 
+interface \textbf{ IAudio\+Endpoint\+Volume\+Callback}
+\item 
+interface \textbf{ IMMDevice}
+\item 
+interface \textbf{ IMMDevice\+Enumerator}
+\item 
+class \textbf{ MMDevice\+Enumerator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set} (float level)
+\item 
+float \textbf{ Get} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 200} of file \textbf{ Native\+Controls.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00430_ae843a9d94bd34236b8a23ee0c89db1ea}} 
+\index{VolumeControl@{VolumeControl}!Get@{Get}}
+\index{Get@{Get}!VolumeControl@{VolumeControl}}
+\doxysubsubsection{Get()}
+{\footnotesize\ttfamily float Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 294} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295         \{}
+\DoxyCodeLine{00296             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)\textcolor{keyword}{new} MMDeviceEnumerator();}
+\DoxyCodeLine{00297             IMMDevice speakers = \textcolor{keyword}{null};}
+\DoxyCodeLine{00298             IAudioEndpointVolume vol = \textcolor{keyword}{null};}
+\DoxyCodeLine{00299             deviceEnumerator.GetDefaultAudioEndpoint(Enums.E\_DATA\_FLOW.eRender,}
+\DoxyCodeLine{00300                 Enums.E\_ROLE.eMultimedia,}
+\DoxyCodeLine{00301                 out speakers);}
+\DoxyCodeLine{00302             Guid IID\_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;}
+\DoxyCodeLine{00303             speakers.Activate(ref IID\_IAudioEndpointVolume, 0, IntPtr.Zero, out \textcolor{keywordtype}{object} o);}
+\DoxyCodeLine{00304             vol = (IAudioEndpointVolume)o;}
+\DoxyCodeLine{00305             \textcolor{keywordtype}{float} currentVolume = 0;}
+\DoxyCodeLine{00306             vol.GetMasterVolumeLevelScalar(out currentVolume);}
+\DoxyCodeLine{00307             \textcolor{keywordflow}{if} (vol != \textcolor{keyword}{null}) Marshal.ReleaseComObject(vol);}
+\DoxyCodeLine{00308             \textcolor{keywordflow}{if} (speakers != \textcolor{keyword}{null}) Marshal.ReleaseComObject(speakers);}
+\DoxyCodeLine{00309             \textcolor{keywordflow}{if} (deviceEnumerator != \textcolor{keyword}{null}) Marshal.ReleaseComObject(deviceEnumerator);}
+\DoxyCodeLine{00310             \textcolor{keywordflow}{return} currentVolume;}
+\DoxyCodeLine{00311         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00430_a805063c77e108404041e05d030a19304}} 
+\index{VolumeControl@{VolumeControl}!Set@{Set}}
+\index{Set@{Set}!VolumeControl@{VolumeControl}}
+\doxysubsubsection{Set()}
+{\footnotesize\ttfamily void Set (\begin{DoxyParamCaption}\item[{float}]{level }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 274} of file \textbf{ Native\+Controls.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00275         \{}
+\DoxyCodeLine{00276             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)\textcolor{keyword}{new} MMDeviceEnumerator();}
+\DoxyCodeLine{00277             IMMDevice speakers = \textcolor{keyword}{null};}
+\DoxyCodeLine{00278             IAudioEndpointVolume vol = \textcolor{keyword}{null};}
+\DoxyCodeLine{00279             deviceEnumerator.GetDefaultAudioEndpoint(Enums.E\_DATA\_FLOW.eRender,}
+\DoxyCodeLine{00280                 Enums.E\_ROLE.eMultimedia,}
+\DoxyCodeLine{00281                 out speakers);}
+\DoxyCodeLine{00282             Guid IID\_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;}
+\DoxyCodeLine{00283             speakers.Activate(ref IID\_IAudioEndpointVolume,}
+\DoxyCodeLine{00284                 0,}
+\DoxyCodeLine{00285                 IntPtr.Zero,}
+\DoxyCodeLine{00286                 out \textcolor{keywordtype}{object} o);}
+\DoxyCodeLine{00287             vol = (IAudioEndpointVolume)o;}
+\DoxyCodeLine{00288             vol.SetMasterVolumeLevelScalar(level, Guid.Empty);}
+\DoxyCodeLine{00289             \textcolor{keywordflow}{if} (vol != \textcolor{keyword}{null}) Marshal.ReleaseComObject(vol);}
+\DoxyCodeLine{00290             \textcolor{keywordflow}{if} (speakers != \textcolor{keyword}{null}) Marshal.ReleaseComObject(speakers);}
+\DoxyCodeLine{00291             \textcolor{keywordflow}{if} (deviceEnumerator != \textcolor{keyword}{null}) Marshal.ReleaseComObject(deviceEnumerator);}
+\DoxyCodeLine{00292         \}}
+
+\end{DoxyCode}

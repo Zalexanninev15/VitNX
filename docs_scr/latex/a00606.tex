@@ -1,0 +1,389 @@
+\doxysection{Vit\+NX\+\_\+\+Combo\+Box Class Reference}
+\label{a00606}\index{VitNX\_ComboBox@{VitNX\_ComboBox}}
+Inheritance diagram for Vit\+NX\+\_\+\+Combo\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00606}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Combo\+Box} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ Dispose} (bool disposing)
+\item 
+override void \textbf{ On\+Tab\+Stop\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Tab\+Index\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Got\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Lost\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Text\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Text\+Update} (Event\+Args e)
+\item 
+override void \textbf{ On\+Selected\+Value\+Changed} (Event\+Args e)
+\item 
+override void \textbf{ On\+Invalidated} (Invalidate\+Event\+Args e)
+\item 
+override void \textbf{ On\+Resize} (Event\+Args e)
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\item 
+override void \textbf{ On\+Draw\+Item} (Draw\+Item\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new Color \textbf{ Fore\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new Color \textbf{ Back\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new Flat\+Style \textbf{ Flat\+Style}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+new Combo\+Box\+Style \textbf{ Drop\+Down\+Style}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 9} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00606_a10c5e1d69d4027d32beaba3739fa6b8c}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{VitNX\_ComboBox()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Combo\+Box} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029                                 : base()}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00032             DrawMode = DrawMode.OwnerDrawVariable;}
+\DoxyCodeLine{00033             base.FlatStyle = FlatStyle.Flat;}
+\DoxyCodeLine{00034             base.DropDownStyle = ComboBoxStyle.DropDownList;}
+\DoxyCodeLine{00035         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00606_a849c3c7f8d08104f0cdb46bee9fe6389}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{Dispose()}
+{\footnotesize\ttfamily override void Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 37} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             \textcolor{keywordflow}{if} (disposing)}
+\DoxyCodeLine{00040                 \_buffer = \textcolor{keyword}{null};}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042             base.Dispose(disposing);}
+\DoxyCodeLine{00043         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a717e0c10fed7b94f47339c662368af1a}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnDrawItem@{OnDrawItem}}
+\index{OnDrawItem@{OnDrawItem}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnDrawItem()}
+{\footnotesize\ttfamily override void On\+Draw\+Item (\begin{DoxyParamCaption}\item[{Draw\+Item\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 138} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139         \{}
+\DoxyCodeLine{00140             var g = e.Graphics;}
+\DoxyCodeLine{00141             var rect = e.Bounds;}
+\DoxyCodeLine{00142             var textColor = Colors.LightText;}
+\DoxyCodeLine{00143             var fillColor = Colors.LightBackground;}
+\DoxyCodeLine{00144             \textcolor{keywordflow}{if} ((e.State \& DrawItemState.Selected) == DrawItemState.Selected || (e.State \& DrawItemState.Focus) == DrawItemState.Focus || (e.State \& DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect) \{ fillColor = Colors.BlueSelection; \}}
+\DoxyCodeLine{00145             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(fillColor)) \{ g.FillRectangle(b, rect); \}}
+\DoxyCodeLine{00146             \textcolor{keywordflow}{if} (e.Index >= 0 \&\& e.Index < Items.Count)}
+\DoxyCodeLine{00147             \{}
+\DoxyCodeLine{00148                 var text = Items[e.Index].ToString();}
+\DoxyCodeLine{00149                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(textColor))}
+\DoxyCodeLine{00150                 \{}
+\DoxyCodeLine{00151                     var padding = 2;}
+\DoxyCodeLine{00152                     var modRect = \textcolor{keyword}{new} Rectangle(rect.Left + padding, rect.Top + padding, rect.Width -\/ (padding * 2), rect.Height -\/ (padding * 2));}
+\DoxyCodeLine{00153                     var stringFormat = \textcolor{keyword}{new} StringFormat}
+\DoxyCodeLine{00154                     \{}
+\DoxyCodeLine{00155                         LineAlignment = StringAlignment.Center,}
+\DoxyCodeLine{00156                         Alignment = StringAlignment.Near,}
+\DoxyCodeLine{00157                         FormatFlags = StringFormatFlags.NoWrap,}
+\DoxyCodeLine{00158                         Trimming = StringTrimming.EllipsisCharacter}
+\DoxyCodeLine{00159                     \};}
+\DoxyCodeLine{00160                     g.DrawString(text, Font, b, modRect, stringFormat);}
+\DoxyCodeLine{00161                 \}}
+\DoxyCodeLine{00162             \}}
+\DoxyCodeLine{00163         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_ae5c0b188f25d5235d5568fd584bf7592}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnGotFocus@{OnGotFocus}}
+\index{OnGotFocus@{OnGotFocus}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnGotFocus()}
+{\footnotesize\ttfamily override void On\+Got\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 57} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058         \{}
+\DoxyCodeLine{00059             base.OnGotFocus(e);}
+\DoxyCodeLine{00060             Invalidate();}
+\DoxyCodeLine{00061         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a7cde784cedf2cc0266bef0f6166b91a8}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnInvalidated@{OnInvalidated}}
+\index{OnInvalidated@{OnInvalidated}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnInvalidated()}
+{\footnotesize\ttfamily override void On\+Invalidated (\begin{DoxyParamCaption}\item[{Invalidate\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088         \{}
+\DoxyCodeLine{00089             base.OnInvalidated(e);}
+\DoxyCodeLine{00090             PaintCombobox();}
+\DoxyCodeLine{00091         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_ab47291f2e471a96bef84161450d63f6e}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnLostFocus@{OnLostFocus}}
+\index{OnLostFocus@{OnLostFocus}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnLostFocus()}
+{\footnotesize\ttfamily override void On\+Lost\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 63} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064         \{}
+\DoxyCodeLine{00065             base.OnLostFocus(e);}
+\DoxyCodeLine{00066             Invalidate();}
+\DoxyCodeLine{00067         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 131} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132         \{}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{if} (\_buffer == \textcolor{keyword}{null}) \{ PaintCombobox(); \}}
+\DoxyCodeLine{00134             var g = e.Graphics;}
+\DoxyCodeLine{00135             g.DrawImageUnscaled(\_buffer, Point.Empty);}
+\DoxyCodeLine{00136         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_aa643318db0b6d4130246fd4792d95e90}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnResize()}
+{\footnotesize\ttfamily override void On\+Resize (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 93} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             base.OnResize(e);}
+\DoxyCodeLine{00096             \_buffer = \textcolor{keyword}{null};}
+\DoxyCodeLine{00097             Invalidate();}
+\DoxyCodeLine{00098         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_ad2635ac08a3738f31ed09f34ad5ab959}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnSelectedValueChanged@{OnSelectedValueChanged}}
+\index{OnSelectedValueChanged@{OnSelectedValueChanged}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnSelectedValueChanged()}
+{\footnotesize\ttfamily override void On\+Selected\+Value\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 81} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082         \{}
+\DoxyCodeLine{00083             base.OnSelectedValueChanged(e);}
+\DoxyCodeLine{00084             Invalidate();}
+\DoxyCodeLine{00085         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a8615b060232a44c3e23f1f028b2e008c}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnTabIndexChanged@{OnTabIndexChanged}}
+\index{OnTabIndexChanged@{OnTabIndexChanged}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnTabIndexChanged()}
+{\footnotesize\ttfamily override void On\+Tab\+Index\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 51} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052         \{}
+\DoxyCodeLine{00053             base.OnTabIndexChanged(e);}
+\DoxyCodeLine{00054             Invalidate();}
+\DoxyCodeLine{00055         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a98a676acbdf0c1473abdf00fea6d645a}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnTabStopChanged@{OnTabStopChanged}}
+\index{OnTabStopChanged@{OnTabStopChanged}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnTabStopChanged()}
+{\footnotesize\ttfamily override void On\+Tab\+Stop\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 45} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             base.OnTabStopChanged(e);}
+\DoxyCodeLine{00048             Invalidate();}
+\DoxyCodeLine{00049         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a61d244fc3301ae30de624fea31fe176e}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnTextChanged@{OnTextChanged}}
+\index{OnTextChanged@{OnTextChanged}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnTextChanged()}
+{\footnotesize\ttfamily override void On\+Text\+Changed (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 69} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070         \{}
+\DoxyCodeLine{00071             base.OnTextChanged(e);}
+\DoxyCodeLine{00072             Invalidate();}
+\DoxyCodeLine{00073         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a2d3ad3103993494f1496d5d198a896de}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!OnTextUpdate@{OnTextUpdate}}
+\index{OnTextUpdate@{OnTextUpdate}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{OnTextUpdate()}
+{\footnotesize\ttfamily override void On\+Text\+Update (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 75} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076         \{}
+\DoxyCodeLine{00077             base.OnTextUpdate(e);}
+\DoxyCodeLine{00078             Invalidate();}
+\DoxyCodeLine{00079         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00606_a8ae9cbb9eb1666f85de1d125aa6dcc0f}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!BackColor@{BackColor}}
+\index{BackColor@{BackColor}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{BackColor}
+{\footnotesize\ttfamily new Color Back\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a50de7435a959566341da96f180aa01d8}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!DropDownStyle@{DropDownStyle}}
+\index{DropDownStyle@{DropDownStyle}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{DropDownStyle}
+{\footnotesize\ttfamily new Combo\+Box\+Style Drop\+Down\+Style\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_a9772f8ca8405eaebaec05f1d4ee7ed65}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!FlatStyle@{FlatStyle}}
+\index{FlatStyle@{FlatStyle}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{FlatStyle}
+{\footnotesize\ttfamily new Flat\+Style Flat\+Style\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00606_afb27be0173351853d8277603a503ff8c}} 
+\index{VitNX\_ComboBox@{VitNX\_ComboBox}!ForeColor@{ForeColor}}
+\index{ForeColor@{ForeColor}!VitNX\_ComboBox@{VitNX\_ComboBox}}
+\doxysubsubsection{ForeColor}
+{\footnotesize\ttfamily new Color Fore\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 13} of file \textbf{ Vit\+NX\+\_\+\+Combo\+Box.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}

@@ -13,13 +13,10 @@ namespace VitNX.UI.ControlsV2
         private Color offToggleColor = Color.Gainsboro;
         private bool solidStyle = true;
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color OnBackColor
         {
-            get
-            {
-                return onBackColor;
-            }
+            get { return onBackColor; }
             set
             {
                 onBackColor = value;
@@ -27,13 +24,10 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color OnToggleColor
         {
-            get
-            {
-                return onToggleColor;
-            }
+            get { return onToggleColor; }
             set
             {
                 onToggleColor = value;
@@ -41,13 +35,10 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color OffBackColor
         {
-            get
-            {
-                return offBackColor;
-            }
+            get { return offBackColor; }
             set
             {
                 offBackColor = value;
@@ -55,13 +46,10 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color OffToggleColor
         {
-            get
-            {
-                return offToggleColor;
-            }
+            get { return offToggleColor; }
             set
             {
                 offToggleColor = value;
@@ -72,21 +60,15 @@ namespace VitNX.UI.ControlsV2
         [Browsable(false)]
         public override string Text
         {
-            get
-            {
-                return base.Text;
-            }
+            get { return base.Text; }
             set { }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         [DefaultValue(true)]
         public bool SolidStyle
         {
-            get
-            {
-                return solidStyle;
-            }
+            get { return solidStyle; }
             set
             {
                 solidStyle = value;
@@ -119,16 +101,20 @@ namespace VitNX.UI.ControlsV2
             pevent.Graphics.Clear(Parent.BackColor);
             if (Checked)
             {
-                if (solidStyle) pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
-                else pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
+                if (solidStyle) 
+                    pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
+                else 
+                    pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
                 pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor),
                     new Rectangle(Width - Height + 1, 2, toggleSize,
                     toggleSize));
             }
             else
             {
-                if (solidStyle) pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
-                else pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
+                if (solidStyle) 
+                    pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
+                else 
+                    pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
                     new Rectangle(2, 2,
                     toggleSize,

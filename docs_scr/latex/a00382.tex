@@ -1,0 +1,92 @@
+\doxysection{Data\+From\+Sites Class Reference}
+\label{a00382}\index{DataFromSites@{DataFromSites}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Get\+Geo} (string ip)
+\item 
+static bool \textbf{ Is\+Valid\+Telegram\+Bot\+Token} (string bot\+Token)
+\item 
+static int \textbf{ IHave\+Internet} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Web.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00382_a5bc35b4089670d851260e4883dd630a4}} 
+\index{DataFromSites@{DataFromSites}!GetGeo@{GetGeo}}
+\index{GetGeo@{GetGeo}!DataFromSites@{DataFromSites}}
+\doxysubsubsection{GetGeo()}
+{\footnotesize\ttfamily static string Get\+Geo (\begin{DoxyParamCaption}\item[{string}]{ip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 10} of file \textbf{ Web.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00013             \{}
+\DoxyCodeLine{00014                 \textcolor{keyword}{using} (WebClient client = \textcolor{keyword}{new} WebClient())}
+\DoxyCodeLine{00015                     \textcolor{keywordflow}{return} client.DownloadString(\$\textcolor{stringliteral}{"{}https://ipinfo.io/\{ip\}/json"{}});}
+\DoxyCodeLine{00016             \}}
+\DoxyCodeLine{00017             \textcolor{keywordflow}{catch} \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}404"{}}; \}}
+\DoxyCodeLine{00018         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00382_a37a756a63945f5290b3bd33fbd439c84}} 
+\index{DataFromSites@{DataFromSites}!IHaveInternet@{IHaveInternet}}
+\index{IHaveInternet@{IHaveInternet}!DataFromSites@{DataFromSites}}
+\doxysubsubsection{IHaveInternet()}
+{\footnotesize\ttfamily static int IHave\+Internet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 30} of file \textbf{ Web.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031         \{}
+\DoxyCodeLine{00032             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00033             \{}
+\DoxyCodeLine{00034                 Ping ping = \textcolor{keyword}{new} Ping();}
+\DoxyCodeLine{00035                 PingReply pingReply = \textcolor{keyword}{null};}
+\DoxyCodeLine{00036                 pingReply = ping.Send(\textcolor{stringliteral}{"{}google.com"{}});}
+\DoxyCodeLine{00037                 \textcolor{keywordflow}{if} (pingReply.Status == IPStatus.Success)}
+\DoxyCodeLine{00038                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00039                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00040                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{00041             \}}
+\DoxyCodeLine{00042             \textcolor{keywordflow}{catch} \{ \textcolor{keywordflow}{return} 0; \}}
+\DoxyCodeLine{00043         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00382_abd2d6c17b1c37163c41252db99f0d5a3}} 
+\index{DataFromSites@{DataFromSites}!IsValidTelegramBotToken@{IsValidTelegramBotToken}}
+\index{IsValidTelegramBotToken@{IsValidTelegramBotToken}!DataFromSites@{DataFromSites}}
+\doxysubsubsection{IsValidTelegramBotToken()}
+{\footnotesize\ttfamily static bool Is\+Valid\+Telegram\+Bot\+Token (\begin{DoxyParamCaption}\item[{string}]{bot\+Token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 20} of file \textbf{ Web.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021         \{}
+\DoxyCodeLine{00022             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00023             \{}
+\DoxyCodeLine{00024                 \textcolor{keyword}{using} (WebClient client = \textcolor{keyword}{new} WebClient())}
+\DoxyCodeLine{00025                     \textcolor{keywordflow}{return} !client.DownloadString(\textcolor{keyword}{new} Uri(\$\textcolor{stringliteral}{"{}https://api.telegram.org/bot\{botToken\}/getMe"{}})).Contains(\textcolor{stringliteral}{"{}error\_code"{}});}
+\DoxyCodeLine{00026             \}}
+\DoxyCodeLine{00027             \textcolor{keywordflow}{catch} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00028         \}}
+
+\end{DoxyCode}

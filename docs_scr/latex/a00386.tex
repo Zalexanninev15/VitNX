@@ -1,0 +1,128 @@
+\doxysection{Config Class Reference}
+\label{a00386}\index{Config@{Config}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Set} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Host} = Dns.\+Get\+Host\+Name()
+\item 
+static string \textbf{ Local\+Ip\+For\+Net4} = Dns.\+Get\+Host\+By\+Name(Dns.\+Get\+Host\+Name()).Address\+List[0].To\+String()
+\item 
+static string \textbf{ \+\_\+\+Public\+Ip} = \char`\"{}0.\+0.\+0.\+0\char`\"{}
+\item 
+static IPAddress \textbf{ Default\+Gateway}
+\item 
+static Security\+Protocol\+Type \textbf{ Use\+Protocols}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 46} of file \textbf{ Web.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00386_aad3b33b4c65e3cc3202d3331078a5666}} 
+\index{Config@{Config}!Set@{Set}}
+\index{Set@{Set}!Config@{Config}}
+\doxysubsubsection{Set()}
+{\footnotesize\ttfamily static void Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 52} of file \textbf{ Web.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053         \{}
+\DoxyCodeLine{00054             \textcolor{keyword}{using} (WebClient client = \textcolor{keyword}{new} WebClient())}
+\DoxyCodeLine{00055             \{}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{try} \{ \_PublicIp = client.DownloadString(\textcolor{stringliteral}{"{}https://icanhazip.com"{}}); \} \textcolor{keywordflow}{catch} \{ \_PublicIp = client.DownloadString(\textcolor{stringliteral}{"{}https://checkip.amazonaws.com"{}}); \}}
+\DoxyCodeLine{00057                 \textcolor{keywordflow}{if} (\_PublicIp == \textcolor{stringliteral}{"{}"{}} || \_PublicIp == \textcolor{stringliteral}{"{}0.0.0.0"{}})}
+\DoxyCodeLine{00058                 \{}
+\DoxyCodeLine{00059                     \textcolor{keywordflow}{try} \{ \_PublicIp = client.DownloadString(\textcolor{stringliteral}{"{}https://checkip.amazonaws.com"{}}); \} \textcolor{keywordflow}{catch} \{ \}}
+\DoxyCodeLine{00060                 \}}
+\DoxyCodeLine{00061             \}}
+\DoxyCodeLine{00062             \_PublicIp = \_PublicIp.ToString().Replace(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}, \textcolor{stringliteral}{"{}"{}}).Replace(\textcolor{stringliteral}{"{}\(\backslash\)r"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00063         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{a00386_ac628945c9a1d6920eba69362782d858f}} 
+\index{Config@{Config}!\_PublicIp@{\_PublicIp}}
+\index{\_PublicIp@{\_PublicIp}!Config@{Config}}
+\doxysubsubsection{\_PublicIp}
+{\footnotesize\ttfamily string \+\_\+\+Public\+Ip = \char`\"{}0.\+0.\+0.\+0\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 50} of file \textbf{ Web.\+cs}.
+
+\mbox{\label{a00386_aa1c8cc9d959a9a8987a52ca3d1cd7193}} 
+\index{Config@{Config}!DefaultGateway@{DefaultGateway}}
+\index{DefaultGateway@{DefaultGateway}!Config@{Config}}
+\doxysubsubsection{DefaultGateway}
+{\footnotesize\ttfamily IPAddress Default\+Gateway\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= NetworkInterface}
+\DoxyCodeLine{        .GetAllNetworkInterfaces()}
+\DoxyCodeLine{        .Where(n => n.OperationalStatus == OperationalStatus.Up)}
+\DoxyCodeLine{        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)}
+\DoxyCodeLine{        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)}
+\DoxyCodeLine{        .Select(g => g?.Address)}
+\DoxyCodeLine{        .Where(a => a != \textcolor{keyword}{null})}
+\DoxyCodeLine{        .FirstOrDefault()}
+
+\end{DoxyCode}
+
+
+Definition at line \textbf{ 65} of file \textbf{ Web.\+cs}.
+
+\mbox{\label{a00386_abd5d02452d0753592d3ade6268727de8}} 
+\index{Config@{Config}!Host@{Host}}
+\index{Host@{Host}!Config@{Config}}
+\doxysubsubsection{Host}
+{\footnotesize\ttfamily string Host = Dns.\+Get\+Host\+Name()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 48} of file \textbf{ Web.\+cs}.
+
+\mbox{\label{a00386_a04df096ee50bcc6a754da84263d4b316}} 
+\index{Config@{Config}!LocalIpForNet4@{LocalIpForNet4}}
+\index{LocalIpForNet4@{LocalIpForNet4}!Config@{Config}}
+\doxysubsubsection{LocalIpForNet4}
+{\footnotesize\ttfamily string Local\+Ip\+For\+Net4 = Dns.\+Get\+Host\+By\+Name(Dns.\+Get\+Host\+Name()).Address\+List[0].To\+String()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 49} of file \textbf{ Web.\+cs}.
+
+\mbox{\label{a00386_a916a54d7e95e3f0571186bba9c1885a3}} 
+\index{Config@{Config}!UseProtocols@{UseProtocols}}
+\index{UseProtocols@{UseProtocols}!Config@{Config}}
+\doxysubsubsection{UseProtocols}
+{\footnotesize\ttfamily Security\+Protocol\+Type Use\+Protocols\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= SecurityProtocolType.Tls13 |}
+\DoxyCodeLine{        SecurityProtocolType.Tls12 |}
+\DoxyCodeLine{        SecurityProtocolType.Tls11 |}
+\DoxyCodeLine{        SecurityProtocolType.Tls}
+
+\end{DoxyCode}
+
+
+Definition at line \textbf{ 74} of file \textbf{ Web.\+cs}.
+

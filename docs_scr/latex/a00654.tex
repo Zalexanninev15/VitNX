@@ -1,0 +1,611 @@
+\doxysection{Vit\+NX\+\_\+\+Scroll\+Base Class Reference}
+\label{a00654}\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+Inheritance diagram for Vit\+NX\+\_\+\+Scroll\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{a00654}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Scroll\+To} (Point point)
+\item 
+void \textbf{ VScroll\+To} (int value)
+\item 
+void \textbf{ HScroll\+To} (int value)
+\item 
+Point \textbf{ Point\+To\+View} (Point point)
+\item 
+Rectangle \textbf{ Rectangle\+To\+View} (Rectangle rect)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Scroll\+Base} ()
+\item 
+virtual void \textbf{ Start\+Drag} ()
+\item 
+virtual void \textbf{ Stop\+Drag} ()
+\item 
+override void \textbf{ On\+Create\+Control} ()
+\item 
+override void \textbf{ On\+Got\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Lost\+Focus} (Event\+Args e)
+\item 
+override void \textbf{ On\+Resize} (Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Move} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Down} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Mouse\+Wheel} (Mouse\+Event\+Args e)
+\item 
+override void \textbf{ On\+Preview\+Key\+Down} (Preview\+Key\+Down\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly \textbf{ Vit\+NX\+\_\+\+Scroll\+Bar} \textbf{ \+\_\+v\+Scroll\+Bar}
+\item 
+readonly \textbf{ Vit\+NX\+\_\+\+Scroll\+Bar} \textbf{ \+\_\+h\+Scroll\+Bar}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Rectangle \textbf{ Viewport}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Size \textbf{ Content\+Size}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Point \textbf{ Offset\+Mouse\+Position}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+int \textbf{ Max\+Drag\+Change}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+bool \textbf{ Is\+Dragging}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+bool \textbf{ Hide\+Scroll\+Bars}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler \textbf{ Viewport\+Changed}
+\item 
+Event\+Handler \textbf{ Content\+Size\+Changed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 9} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00654_a659726e0e9ae09a283cb9aca2092aec6}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{VitNX\_ScrollBase()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Scroll\+Base} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 110} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111         \{}
+\DoxyCodeLine{00112             SetStyle(ControlStyles.Selectable |}
+\DoxyCodeLine{00113                      ControlStyles.UserMouse, \textcolor{keyword}{true});}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115             \_vScrollBar = \textcolor{keyword}{new} VitNX\_ScrollBar \{ ScrollOrientation = VitNX\_ScrollOrientation.Vertical \};}
+\DoxyCodeLine{00116             \_hScrollBar = \textcolor{keyword}{new} VitNX\_ScrollBar \{ ScrollOrientation = VitNX\_ScrollOrientation.Horizontal \};}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118             Controls.Add(\_vScrollBar);}
+\DoxyCodeLine{00119             Controls.Add(\_hScrollBar);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121             \_vScrollBar.ValueChanged += delegate \{ UpdateViewport(); \};}
+\DoxyCodeLine{00122             \_hScrollBar.ValueChanged += delegate \{ UpdateViewport(); \};}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124             \_vScrollBar.MouseDown += delegate \{ Select(); \};}
+\DoxyCodeLine{00125             \_hScrollBar.MouseDown += delegate \{ Select(); \};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127             \_dragTimer = \textcolor{keyword}{new} Timer();}
+\DoxyCodeLine{00128             \_dragTimer.Interval = 1;}
+\DoxyCodeLine{00129             \_dragTimer.Tick += DragTimer\_Tick;}
+\DoxyCodeLine{00130         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00654_a476f8b072071c273f8025e3049db8c96}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!HScrollTo@{HScrollTo}}
+\index{HScrollTo@{HScrollTo}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{HScrollTo()}
+{\footnotesize\ttfamily void HScroll\+To (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 239} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00240         \{}
+\DoxyCodeLine{00241             \textcolor{keywordflow}{if} (\_hScrollBar.Visible)}
+\DoxyCodeLine{00242                 \_hScrollBar.Value = value;}
+\DoxyCodeLine{00243         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_ad53e3abd3a95679a61df7bf633885341}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnCreateControl@{OnCreateControl}}
+\index{OnCreateControl@{OnCreateControl}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnCreateControl()}
+{\footnotesize\ttfamily override void On\+Create\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 271} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00272         \{}
+\DoxyCodeLine{00273             base.OnCreateControl();}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275             UpdateScrollBars();}
+\DoxyCodeLine{00276         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_ae5c0b188f25d5235d5568fd584bf7592}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnGotFocus@{OnGotFocus}}
+\index{OnGotFocus@{OnGotFocus}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnGotFocus()}
+{\footnotesize\ttfamily override void On\+Got\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 278} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00279         \{}
+\DoxyCodeLine{00280             base.OnGotFocus(e);}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282             Invalidate();}
+\DoxyCodeLine{00283         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_ab47291f2e471a96bef84161450d63f6e}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnLostFocus@{OnLostFocus}}
+\index{OnLostFocus@{OnLostFocus}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnLostFocus()}
+{\footnotesize\ttfamily override void On\+Lost\+Focus (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 285} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286         \{}
+\DoxyCodeLine{00287             base.OnLostFocus(e);}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289             Invalidate();}
+\DoxyCodeLine{00290         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a99a67e51ce554f65bcccc19aad37f46b}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnMouseDown()}
+{\footnotesize\ttfamily override void On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 306} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00307         \{}
+\DoxyCodeLine{00308             base.OnMouseDown(e);}
+\DoxyCodeLine{00309 }
+\DoxyCodeLine{00310             \textcolor{keywordflow}{if} (e.Button == MouseButtons.Right)}
+\DoxyCodeLine{00311                 Select();}
+\DoxyCodeLine{00312         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a57b5b248770a2c1e2514b619b8bb59b2}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnMouseMove()}
+{\footnotesize\ttfamily override void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 299} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00300         \{}
+\DoxyCodeLine{00301             base.OnMouseMove(e);}
+\DoxyCodeLine{00302 }
+\DoxyCodeLine{00303             \_offsetMousePosition = \textcolor{keyword}{new} Point(e.X + Viewport.Left, e.Y + Viewport.Top);}
+\DoxyCodeLine{00304         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a416d6c973899bfee94f6c67f543d94ea}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnMouseWheel@{OnMouseWheel}}
+\index{OnMouseWheel@{OnMouseWheel}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnMouseWheel()}
+{\footnotesize\ttfamily override void On\+Mouse\+Wheel (\begin{DoxyParamCaption}\item[{Mouse\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 314} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315         \{}
+\DoxyCodeLine{00316             base.OnMouseWheel(e);}
+\DoxyCodeLine{00317 }
+\DoxyCodeLine{00318             var horizontal = \textcolor{keyword}{false};}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320             \textcolor{keywordflow}{if} (\_hScrollBar.Visible \&\& ModifierKeys == Keys.Control)}
+\DoxyCodeLine{00321                 horizontal = \textcolor{keyword}{true};}
+\DoxyCodeLine{00322 }
+\DoxyCodeLine{00323             \textcolor{keywordflow}{if} (\_hScrollBar.Visible \&\& !\_vScrollBar.Visible)}
+\DoxyCodeLine{00324                 horizontal = \textcolor{keyword}{true};}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326             \textcolor{keywordflow}{if} (!horizontal)}
+\DoxyCodeLine{00327             \{}
+\DoxyCodeLine{00328                 \textcolor{keywordflow}{if} (e.Delta > 0)}
+\DoxyCodeLine{00329                     \_vScrollBar.ScrollByPhysical(3);}
+\DoxyCodeLine{00330                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (e.Delta < 0)}
+\DoxyCodeLine{00331                     \_vScrollBar.ScrollByPhysical(-\/3);}
+\DoxyCodeLine{00332             \}}
+\DoxyCodeLine{00333             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00334             \{}
+\DoxyCodeLine{00335                 \textcolor{keywordflow}{if} (e.Delta > 0)}
+\DoxyCodeLine{00336                     \_hScrollBar.ScrollByPhysical(3);}
+\DoxyCodeLine{00337                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (e.Delta < 0)}
+\DoxyCodeLine{00338                     \_hScrollBar.ScrollByPhysical(-\/3);}
+\DoxyCodeLine{00339             \}}
+\DoxyCodeLine{00340         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a265dde899a7d83aca128095499d3c547}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnPreviewKeyDown@{OnPreviewKeyDown}}
+\index{OnPreviewKeyDown@{OnPreviewKeyDown}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnPreviewKeyDown()}
+{\footnotesize\ttfamily override void On\+Preview\+Key\+Down (\begin{DoxyParamCaption}\item[{Preview\+Key\+Down\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 342} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00343         \{}
+\DoxyCodeLine{00344             base.OnPreviewKeyDown(e);}
+\DoxyCodeLine{00345 }
+\DoxyCodeLine{00346             \textcolor{comment}{// Allows arrow keys to trigger OnKeyPress}}
+\DoxyCodeLine{00347             \textcolor{keywordflow}{switch} (e.KeyCode)}
+\DoxyCodeLine{00348             \{}
+\DoxyCodeLine{00349                 \textcolor{keywordflow}{case} Keys.Up:}
+\DoxyCodeLine{00350                 \textcolor{keywordflow}{case} Keys.Down:}
+\DoxyCodeLine{00351                 \textcolor{keywordflow}{case} Keys.Left:}
+\DoxyCodeLine{00352                 \textcolor{keywordflow}{case} Keys.Right:}
+\DoxyCodeLine{00353                     e.IsInputKey = \textcolor{keyword}{true};}
+\DoxyCodeLine{00354                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00355             \}}
+\DoxyCodeLine{00356         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_aa643318db0b6d4130246fd4792d95e90}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OnResize()}
+{\footnotesize\ttfamily override void On\+Resize (\begin{DoxyParamCaption}\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 292} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00293         \{}
+\DoxyCodeLine{00294             base.OnResize(e);}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296             UpdateScrollBars();}
+\DoxyCodeLine{00297         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_af2aeef2684b56a3291b86abc9dbd2825}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!PointToView@{PointToView}}
+\index{PointToView@{PointToView}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{PointToView()}
+{\footnotesize\ttfamily Point Point\+To\+View (\begin{DoxyParamCaption}\item[{Point}]{point }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 257} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258         \{}
+\DoxyCodeLine{00259             \textcolor{keywordflow}{return} \textcolor{keyword}{new} Point(point.X -\/ Viewport.Left, point.Y -\/ Viewport.Top);}
+\DoxyCodeLine{00260         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a5e0b58ac0531a941285c7b613e4ceef0}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!RectangleToView@{RectangleToView}}
+\index{RectangleToView@{RectangleToView}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{RectangleToView()}
+{\footnotesize\ttfamily Rectangle Rectangle\+To\+View (\begin{DoxyParamCaption}\item[{Rectangle}]{rect }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 262} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00263         \{}
+\DoxyCodeLine{00264             \textcolor{keywordflow}{return} \textcolor{keyword}{new} Rectangle(\textcolor{keyword}{new} Point(rect.Left -\/ Viewport.Left, rect.Top -\/ Viewport.Top), rect.Size);}
+\DoxyCodeLine{00265         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_aa2701fac7fa98143e92836642c634a3c}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!ScrollTo@{ScrollTo}}
+\index{ScrollTo@{ScrollTo}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{ScrollTo()}
+{\footnotesize\ttfamily void Scroll\+To (\begin{DoxyParamCaption}\item[{Point}]{point }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 227} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228         \{}
+\DoxyCodeLine{00229             HScrollTo(point.X);}
+\DoxyCodeLine{00230             VScrollTo(point.Y);}
+\DoxyCodeLine{00231         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a84ca7f4eee5f9d99d80520bae28e6055}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!StartDrag@{StartDrag}}
+\index{StartDrag@{StartDrag}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{StartDrag()}
+{\footnotesize\ttfamily virtual void Start\+Drag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ Vit\+NX\+\_\+\+Tree\+View} \doxyref{}{p.}{a00690_aba3ab6f804721ddc93d26efca60c6a73}.
+
+
+
+Definition at line \textbf{ 245} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246         \{}
+\DoxyCodeLine{00247             IsDragging = \textcolor{keyword}{true};}
+\DoxyCodeLine{00248             \_dragTimer.Start();}
+\DoxyCodeLine{00249         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_ab793ffb3d7a76e0a59e4ff32a4bc6f4c}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!StopDrag@{StopDrag}}
+\index{StopDrag@{StopDrag}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{StopDrag()}
+{\footnotesize\ttfamily virtual void Stop\+Drag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ Vit\+NX\+\_\+\+Tree\+View} \doxyref{}{p.}{a00690_ab8a333650c8767b2acf04239ba185c64}.
+
+
+
+Definition at line \textbf{ 251} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252         \{}
+\DoxyCodeLine{00253             IsDragging = \textcolor{keyword}{false};}
+\DoxyCodeLine{00254             \_dragTimer.Stop();}
+\DoxyCodeLine{00255         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_aa906a7699f3c3e3647af76c6a405f4c6}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!VScrollTo@{VScrollTo}}
+\index{VScrollTo@{VScrollTo}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{VScrollTo()}
+{\footnotesize\ttfamily void VScroll\+To (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 233} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234         \{}
+\DoxyCodeLine{00235             \textcolor{keywordflow}{if} (\_vScrollBar.Visible)}
+\DoxyCodeLine{00236                 \_vScrollBar.Value = value;}
+\DoxyCodeLine{00237         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{a00654_a5b67b376148827375812ee41de61e25d}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!\_hScrollBar@{\_hScrollBar}}
+\index{\_hScrollBar@{\_hScrollBar}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{\_hScrollBar}
+{\footnotesize\ttfamily readonly \textbf{ Vit\+NX\+\_\+\+Scroll\+Bar} \+\_\+h\+Scroll\+Bar\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 22} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+\mbox{\label{a00654_a20070030b033ff483f52a47068ee8977}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!\_vScrollBar@{\_vScrollBar}}
+\index{\_vScrollBar@{\_vScrollBar}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{\_vScrollBar}
+{\footnotesize\ttfamily readonly \textbf{ Vit\+NX\+\_\+\+Scroll\+Bar} \+\_\+v\+Scroll\+Bar\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00654_adf0505da3a0175900f2f5b8fda49b858}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!ContentSize@{ContentSize}}
+\index{ContentSize@{ContentSize}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{ContentSize}
+{\footnotesize\ttfamily Size Content\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 56} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057         \{}
+\DoxyCodeLine{00058             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_contentSize; \}}
+\DoxyCodeLine{00059             \textcolor{keyword}{set}}
+\DoxyCodeLine{00060             \{}
+\DoxyCodeLine{00061                 \_contentSize = value;}
+\DoxyCodeLine{00062                 UpdateScrollBars();}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064                 \textcolor{keywordflow}{if} (ContentSizeChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00065                     ContentSizeChanged(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00066             \}}
+\DoxyCodeLine{00067         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a26e52057aac7a375d0aa7e6021fe229d}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!HideScrollBars@{HideScrollBars}}
+\index{HideScrollBars@{HideScrollBars}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{HideScrollBars}
+{\footnotesize\ttfamily bool Hide\+Scroll\+Bars\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 96} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_hideScrollBars; \}}
+\DoxyCodeLine{00099             \textcolor{keyword}{set}}
+\DoxyCodeLine{00100             \{}
+\DoxyCodeLine{00101                 \_hideScrollBars = value;}
+\DoxyCodeLine{00102                 UpdateScrollBars();}
+\DoxyCodeLine{00103             \}}
+\DoxyCodeLine{00104         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a6da52442147ba928a951afd5afca823c}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!IsDragging@{IsDragging}}
+\index{IsDragging@{IsDragging}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{IsDragging}
+{\footnotesize\ttfamily bool Is\+Dragging\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a18e3afaf55d3f8dd336b224018ad7cb3}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!MaxDragChange@{MaxDragChange}}
+\index{MaxDragChange@{MaxDragChange}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{MaxDragChange}
+{\footnotesize\ttfamily int Max\+Drag\+Change\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 79} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080         \{}
+\DoxyCodeLine{00081             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_maxDragChange; \}}
+\DoxyCodeLine{00082             \textcolor{keyword}{set}}
+\DoxyCodeLine{00083             \{}
+\DoxyCodeLine{00084                 \_maxDragChange = value;}
+\DoxyCodeLine{00085                 Invalidate();}
+\DoxyCodeLine{00086             \}}
+\DoxyCodeLine{00087         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_a13835b012ac5d50a5e46e2556d9b0f07}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!OffsetMousePosition@{OffsetMousePosition}}
+\index{OffsetMousePosition@{OffsetMousePosition}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{OffsetMousePosition}
+{\footnotesize\ttfamily Point Offset\+Mouse\+Position\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 71} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072         \{}
+\DoxyCodeLine{00073             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_offsetMousePosition; \}}
+\DoxyCodeLine{00074         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00654_adbce97a664d6b5b7deec9d6b23c0b96c}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!Viewport@{Viewport}}
+\index{Viewport@{Viewport}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{Viewport}
+{\footnotesize\ttfamily Rectangle Viewport\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 42} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043         \{}
+\DoxyCodeLine{00044             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_viewport; \}}
+\DoxyCodeLine{00045             \textcolor{keyword}{private} \textcolor{keyword}{set}}
+\DoxyCodeLine{00046             \{}
+\DoxyCodeLine{00047                 \_viewport = value;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049                 \textcolor{keywordflow}{if} (ViewportChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00050                     ViewportChanged(\textcolor{keyword}{this}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00051             \}}
+\DoxyCodeLine{00052         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00654_ac5a1bb8ef9b52e14f689919ba3b8b551}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!ContentSizeChanged@{ContentSizeChanged}}
+\index{ContentSizeChanged@{ContentSizeChanged}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{ContentSizeChanged}
+{\footnotesize\ttfamily Event\+Handler Content\+Size\+Changed}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+
+\mbox{\label{a00654_a0eac0931d79331b2d0f9462c653b6296}} 
+\index{VitNX\_ScrollBase@{VitNX\_ScrollBase}!ViewportChanged@{ViewportChanged}}
+\index{ViewportChanged@{ViewportChanged}!VitNX\_ScrollBase@{VitNX\_ScrollBase}}
+\doxysubsubsection{ViewportChanged}
+{\footnotesize\ttfamily Event\+Handler Viewport\+Changed}
+
+
+
+Definition at line \textbf{ 13} of file \textbf{ Vit\+NX\+\_\+\+Scroll\+Base.\+cs}.
+

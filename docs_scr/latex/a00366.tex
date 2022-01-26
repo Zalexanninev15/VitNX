@@ -1,0 +1,34 @@
+\doxysection{Motherboard Class Reference}
+\label{a00366}\index{Motherboard@{Motherboard}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Get\+Firmware\+Type} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 310} of file \textbf{ Information.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00366_ae6447abcf02dacbdb38b57db5d9ac7b1}} 
+\index{Motherboard@{Motherboard}!GetFirmwareType@{GetFirmwareType}}
+\index{GetFirmwareType@{GetFirmwareType}!Motherboard@{Motherboard}}
+\doxysubsubsection{GetFirmwareType()}
+{\footnotesize\ttfamily static string Get\+Firmware\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 312} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00313         \{}
+\DoxyCodeLine{00314             \textcolor{keywordflow}{return} Processes.Execute(\textcolor{stringliteral}{"{}cmd"{}}, \textcolor{stringliteral}{"{}/C echo \%firmware\_type\%"{}});}
+\DoxyCodeLine{00315         \}}
+
+\end{DoxyCode}

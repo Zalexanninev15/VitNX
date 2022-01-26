@@ -12,7 +12,7 @@ namespace VitNX.UI.ControlsV2
         private int borderRadius = 0;
         private Color borderColor = Color.PaleVioletRed;
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -23,13 +23,10 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public int BorderRadius
         {
-            get
-            {
-                return borderRadius;
-            }
+            get  {  return borderRadius; }
             set
             {
                 borderRadius = value;
@@ -37,13 +34,10 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color BorderColor
         {
-            get
-            {
-                return borderColor;
-            }
+            get  { return borderColor; }
             set
             {
                 borderColor = value;
@@ -51,30 +45,18 @@ namespace VitNX.UI.ControlsV2
             }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color BackgroundColor
         {
-            get
-            {
-                return BackColor;
-            }
-            set
-            {
-                BackColor = value;
-            }
+            get { return BackColor; }
+            set { BackColor = value; }
         }
 
-        [Category("Внешний вид")]
+        [Category("Appearance")]
         public Color TextColor
         {
-            get
-            {
-                return ForeColor;
-            }
-            set
-            {
-                ForeColor = value;
-            }
+            get { return ForeColor; }
+            set {  ForeColor = value; }
         }
 
         public VitNX2_Button()
@@ -105,7 +87,8 @@ namespace VitNX.UI.ControlsV2
             Rectangle rectSurface = ClientRectangle;
             Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
             int smoothSize = 2;
-            if (borderSize > 0) smoothSize = borderSize;
+            if (borderSize > 0) 
+                smoothSize = borderSize;
             if (borderRadius > 2)
             {
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
@@ -116,7 +99,8 @@ namespace VitNX.UI.ControlsV2
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     Region = new Region(pathSurface);
                     pevent.Graphics.DrawPath(penSurface, pathSurface);
-                    if (borderSize >= 1) pevent.Graphics.DrawPath(penBorder, pathBorder);
+                    if (borderSize >= 1)
+                        pevent.Graphics.DrawPath(penBorder, pathBorder);
                 }
             }
             else
@@ -147,7 +131,8 @@ namespace VitNX.UI.ControlsV2
 
         private void Panel_Resize(object sender, EventArgs e)
         {
-            if (borderRadius > Height) borderRadius = Height;
+            if (borderRadius > Height) 
+                borderRadius = Height;
         }
     }
 }

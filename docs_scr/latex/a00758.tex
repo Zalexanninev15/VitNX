@@ -1,0 +1,74 @@
+\doxysection{IEnumerable\+Extensions Class Reference}
+\label{a00758}\index{IEnumerableExtensions@{IEnumerableExtensions}}
+\doxysubsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \textbf{ Is\+Last$<$ T $>$} (this IEnumerable$<$ T $>$ items, T item)
+\item 
+static bool \textbf{ Is\+First$<$ T $>$} (this IEnumerable$<$ T $>$ items, T item)
+\item 
+static bool \textbf{ Is\+First\+Or\+Last$<$ T $>$} (this IEnumerable$<$ T $>$ items, T item)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 6} of file \textbf{ IEnumerable\+Extensions.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00758_a3e9d7c8aea29f8930bc68d64dcc78bb1}} 
+\index{IEnumerableExtensions@{IEnumerableExtensions}!IsFirst$<$ T $>$@{IsFirst$<$ T $>$}}
+\index{IsFirst$<$ T $>$@{IsFirst$<$ T $>$}!IEnumerableExtensions@{IEnumerableExtensions}}
+\doxysubsubsection{IsFirst$<$ T $>$()}
+{\footnotesize\ttfamily static bool Is\+First$<$ T $>$ (\begin{DoxyParamCaption}\item[{this IEnumerable$<$ T $>$}]{items,  }\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ IEnumerable\+Extensions.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016         \{}
+\DoxyCodeLine{00017             var first = items.FirstOrDefault();}
+\DoxyCodeLine{00018             \textcolor{keywordflow}{if} (first == \textcolor{keyword}{null}) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00019             \textcolor{keywordflow}{return} item.Equals(first);}
+\DoxyCodeLine{00020         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00758_a94716bf37fd7a2d53956d073baa70acf}} 
+\index{IEnumerableExtensions@{IEnumerableExtensions}!IsFirstOrLast$<$ T $>$@{IsFirstOrLast$<$ T $>$}}
+\index{IsFirstOrLast$<$ T $>$@{IsFirstOrLast$<$ T $>$}!IEnumerableExtensions@{IEnumerableExtensions}}
+\doxysubsubsection{IsFirstOrLast$<$ T $>$()}
+{\footnotesize\ttfamily static bool Is\+First\+Or\+Last$<$ T $>$ (\begin{DoxyParamCaption}\item[{this IEnumerable$<$ T $>$}]{items,  }\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 22} of file \textbf{ IEnumerable\+Extensions.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023         \{ \textcolor{keywordflow}{return} items.IsFirst(item) || items.IsLast(item); \}}
+
+\end{DoxyCode}
+\mbox{\label{a00758_ae5fe0c162fc14a815a09250d1ff5c4f0}} 
+\index{IEnumerableExtensions@{IEnumerableExtensions}!IsLast$<$ T $>$@{IsLast$<$ T $>$}}
+\index{IsLast$<$ T $>$@{IsLast$<$ T $>$}!IEnumerableExtensions@{IEnumerableExtensions}}
+\doxysubsubsection{IsLast$<$ T $>$()}
+{\footnotesize\ttfamily static bool Is\+Last$<$ T $>$ (\begin{DoxyParamCaption}\item[{this IEnumerable$<$ T $>$}]{items,  }\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Definition at line \textbf{ 8} of file \textbf{ IEnumerable\+Extensions.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009         \{}
+\DoxyCodeLine{00010             var last = items.LastOrDefault();}
+\DoxyCodeLine{00011             \textcolor{keywordflow}{if} (last == \textcolor{keyword}{null}) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00012             \textcolor{keywordflow}{return} item.Equals(last);}
+\DoxyCodeLine{00013         \}}
+
+\end{DoxyCode}

@@ -1,0 +1,204 @@
+\doxysection{Vit\+NX\+\_\+\+Progress\+Bar Class Reference}
+\label{a00798}\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+Inheritance diagram for Vit\+NX\+\_\+\+Progress\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00798}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Progress\+Bar} ()
+\item 
+new void \textbf{ Dispose} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \textbf{ On\+Paint} (Paint\+Event\+Args e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Font \textbf{ Text\+Font} = new Font(Font\+Family.\+Generic\+Serif, 11, Font\+Style.\+Bold)\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ Text\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Color \textbf{ Progress\+Color}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+Display\+Mode} \textbf{ Visual\+Mode}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Custom\+Text}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 8} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00798_a323fac1ef3ae1ddb20ae850b504495fd}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{VitNX\_ProgressBar()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Progress\+Bar} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 93} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             Value = Minimum; FixComponentBlinking();}
+\DoxyCodeLine{00096         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00798_aea7338fb010ac599afe389c37598a943}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{Dispose()}
+{\footnotesize\ttfamily new void Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 142} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143         \{}
+\DoxyCodeLine{00144             \_textColourBrush.Dispose(); \_progressColourBrush.Dispose();}
+\DoxyCodeLine{00145             base.Dispose();}
+\DoxyCodeLine{00146         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00798_a7b49a512aef9068aebdc17097736f6b9}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{OnPaint()}
+{\footnotesize\ttfamily override void On\+Paint (\begin{DoxyParamCaption}\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116         \{ }
+\DoxyCodeLine{00117             Graphics g = e.Graphics; DrawProgressBar(g); DrawStringIfNeeded(g);}
+\DoxyCodeLine{00118         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00798_a84c1fe645cab57f8028babbcc9254a41}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!CustomText@{CustomText}}
+\index{CustomText@{CustomText}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{CustomText}
+{\footnotesize\ttfamily string Custom\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 55} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_text; \} }
+\DoxyCodeLine{00058             \textcolor{keyword}{set}}
+\DoxyCodeLine{00059             \{ }
+\DoxyCodeLine{00060                 \_text = value;}
+\DoxyCodeLine{00061                 Invalidate(); }
+\DoxyCodeLine{00062             \} }
+\DoxyCodeLine{00063         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00798_a7417cccc3ef1623b2b9903cc284b2e14}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!ProgressColor@{ProgressColor}}
+\index{ProgressColor@{ProgressColor}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{ProgressColor}
+{\footnotesize\ttfamily Color Progress\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030         \{ }
+\DoxyCodeLine{00031             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_progressColourBrush.Color; \} }
+\DoxyCodeLine{00032             \textcolor{keyword}{set} }
+\DoxyCodeLine{00033             \{}
+\DoxyCodeLine{00034                 \_progressColourBrush.Dispose(); }
+\DoxyCodeLine{00035                 \_progressColourBrush = \textcolor{keyword}{new} SolidBrush(value);}
+\DoxyCodeLine{00036             \} }
+\DoxyCodeLine{00037         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00798_aaac0de1a44fd8367423f7b79964ff260}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!TextColor@{TextColor}}
+\index{TextColor@{TextColor}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{TextColor}
+{\footnotesize\ttfamily Color Text\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 16} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017         \{}
+\DoxyCodeLine{00018             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_textColourBrush.Color; \} }
+\DoxyCodeLine{00019             \textcolor{keyword}{set} }
+\DoxyCodeLine{00020             \{}
+\DoxyCodeLine{00021                 \_textColourBrush.Dispose();}
+\DoxyCodeLine{00022                 \_textColourBrush = \textcolor{keyword}{new} SolidBrush(value);}
+\DoxyCodeLine{00023             \} }
+\DoxyCodeLine{00024         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00798_ac0b1be12a6f322c4cb874e3455f78497}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!TextFont@{TextFont}}
+\index{TextFont@{TextFont}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{TextFont}
+{\footnotesize\ttfamily Font Text\+Font = new Font(Font\+Family.\+Generic\+Serif, 11, Font\+Style.\+Bold)\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{keyword}{new} Font(FontFamily.GenericSerif, 11, FontStyle.Bold);}
+
+\end{DoxyCode}
+\mbox{\label{a00798_a8dd375f9ebdece382663c03dc85e73c4}} 
+\index{VitNX\_ProgressBar@{VitNX\_ProgressBar}!VisualMode@{VisualMode}}
+\index{VisualMode@{VisualMode}!VitNX\_ProgressBar@{VitNX\_ProgressBar}}
+\doxysubsubsection{VisualMode}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Progress\+Bar\+Display\+Mode} Visual\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 42} of file \textbf{ Vit\+NX\+\_\+\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043         \{}
+\DoxyCodeLine{00044             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_visualMode; \}}
+\DoxyCodeLine{00045             \textcolor{keyword}{set}}
+\DoxyCodeLine{00046             \{}
+\DoxyCodeLine{00047                 \_visualMode = value;}
+\DoxyCodeLine{00048                 Invalidate(); }
+\DoxyCodeLine{00049             \} }
+\DoxyCodeLine{00050         \}}
+
+\end{DoxyCode}

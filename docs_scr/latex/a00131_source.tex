@@ -1,0 +1,66 @@
+\doxysection{Vit\+NX\+\_\+\+Scroll\+View.\+cs}
+\label{a00131_source}\index{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollView.cs@{E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Controls/VitNX\_ScrollView.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{namespace }VitNX.UI.BasedOnDarkUI.Controls}
+\DoxyCodeLine{00005 \{}
+\DoxyCodeLine{00006     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class }VitNX\_ScrollView : VitNX\_ScrollBase}
+\DoxyCodeLine{00007     \{}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{        \#region Constructor Region}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010         \textcolor{keyword}{protected} VitNX\_ScrollView()}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             SetStyle(ControlStyles.OptimizedDoubleBuffer |}
+\DoxyCodeLine{00013                      ControlStyles.ResizeRedraw |}
+\DoxyCodeLine{00014                      ControlStyles.UserPaint, \textcolor{keyword}{true});}
+\DoxyCodeLine{00015         \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#endregion Constructor Region}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#region Paint Region}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keyword}{protected} \textcolor{keyword}{abstract} \textcolor{keywordtype}{void} PaintContent(Graphics g);}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             var g = e.Graphics;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \textcolor{comment}{// Draw background}}
+\DoxyCodeLine{00028             \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(BackColor))}
+\DoxyCodeLine{00029             \{}
+\DoxyCodeLine{00030                 g.FillRectangle(b, ClientRectangle);}
+\DoxyCodeLine{00031             \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033             \textcolor{comment}{// Offset the graphics based on the viewport, render the control contents, then reset it.}}
+\DoxyCodeLine{00034             g.TranslateTransform(Viewport.Left * -\/1, Viewport.Top * -\/1);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             PaintContent(g);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038             g.TranslateTransform(Viewport.Left, Viewport.Top);}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040             \textcolor{comment}{// Draw the bit where the scrollbars meet}}
+\DoxyCodeLine{00041             \textcolor{keywordflow}{if} (\_vScrollBar.Visible \&\& \_hScrollBar.Visible)}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 \textcolor{keyword}{using} (var b = \textcolor{keyword}{new} SolidBrush(BackColor))}
+\DoxyCodeLine{00044                 \{}
+\DoxyCodeLine{00045                     var rect = \textcolor{keyword}{new} Rectangle(\_hScrollBar.Right, \_vScrollBar.Bottom, \_vScrollBar.Width,}
+\DoxyCodeLine{00046                                              \_hScrollBar.Height);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048                     g.FillRectangle(b, rect);}
+\DoxyCodeLine{00049                 \}}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaintBackground(PaintEventArgs e)}
+\DoxyCodeLine{00054         \{}
+\DoxyCodeLine{00055             \textcolor{comment}{// Absorb event}}
+\DoxyCodeLine{00056         \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 \textcolor{preprocessor}{        \#endregion Paint Region}}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}

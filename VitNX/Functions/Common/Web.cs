@@ -3,9 +3,9 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 
-namespace VitNX.Functions.Common
+namespace VitNX.Functions.Common.Web
 {
-    public class Web
+    public class DataFromSites
     {
         public static string GetGeo(string ip)
         {
@@ -26,45 +26,6 @@ namespace VitNX.Functions.Common
             }
             catch { return false; }
         }
-    }
-
-    public class Ip
-    {
-        public static string host = "localhost";
-        public static string localIp = "0.0.0.0";
-        public static string publicIp = "0.0.0.0";
-
-        public static void Set()
-        {
-            using (WebClient client = new WebClient())
-            {
-                try { publicIp = client.DownloadString("https://icanhazip.com"); } catch { publicIp = client.DownloadString("https://checkip.amazonaws.com"); }
-                if (publicIp == "" || localIp == "0.0.0.0")
-                {
-                    try { publicIp = client.DownloadString("https://checkip.amazonaws.com"); } catch { }
-                }
-            }
-            host = Dns.GetHostName();
-            publicIp = localIp.ToString().Replace("\n", "").Replace("\r", "");
-            localIp = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
-        }
-
-        public static IPAddress _defaultGateway = NetworkInterface
-        .GetAllNetworkInterfaces()
-        .Where(n => n.OperationalStatus == OperationalStatus.Up)
-        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
-        .Select(g => g?.Address)
-        .Where(a => a != null)
-        .FirstOrDefault();
-    }
-
-    public class Config
-    {
-        public static SecurityProtocolType _useProtocols = SecurityProtocolType.Tls13 |
-        SecurityProtocolType.Tls12 |
-        SecurityProtocolType.Tls11 |
-        SecurityProtocolType.Tls;
 
         public static int IHaveInternet()
         {
@@ -80,5 +41,39 @@ namespace VitNX.Functions.Common
             }
             catch { return 0; }
         }
+    }
+
+    public class Config
+    {
+        public static string Host = Dns.GetHostName();
+        public static string LocalIpForNet4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+        public static string _PublicIp = "0.0.0.0";
+
+        public static void Set()
+        {
+            using (WebClient client = new WebClient())
+            {
+                try { _PublicIp = client.DownloadString("https://icanhazip.com"); } catch { _PublicIp = client.DownloadString("https://checkip.amazonaws.com"); }
+                if (_PublicIp == "" || _PublicIp == "0.0.0.0")
+                {
+                    try { _PublicIp = client.DownloadString("https://checkip.amazonaws.com"); } catch { }
+                }
+            }
+            _PublicIp = _PublicIp.ToString().Replace("\n", "").Replace("\r", "");
+        }
+
+        public static IPAddress DefaultGateway = NetworkInterface
+        .GetAllNetworkInterfaces()
+        .Where(n => n.OperationalStatus == OperationalStatus.Up)
+        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
+        .Select(g => g?.Address)
+        .Where(a => a != null)
+        .FirstOrDefault();
+
+        public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls13 |
+        SecurityProtocolType.Tls12 |
+        SecurityProtocolType.Tls11 |
+        SecurityProtocolType.Tls;
     }
 }

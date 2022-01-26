@@ -1,0 +1,228 @@
+\doxysection{Windows Class Reference}
+\label{a00346}\index{Windows@{Windows}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Memory\+Stream \textbf{ Get\+Screen} ()
+\item 
+static string \textbf{ Write\+All\+Users\+To\+Temp\+File} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \textbf{ Computer\+Name} = Environment.\+Machine\+Name
+\item 
+static string \textbf{ Current\+Username} = Environment.\+User\+Name
+\item 
+static Date\+Time \textbf{ Local\+Time} = new Microsoft.\+Visual\+Basic.\+Devices.\+Clock().Local\+Time
+\item 
+static bool \textbf{ Is64bit} = Environment.\+Is64\+Bit\+Operating\+System
+\item 
+static string \textbf{ Windows\+Version} = Convert.\+To\+String(Environment.\+OSVersion.\+Version)
+\item 
+static double \textbf{ Windows\+Version\+From\+REG} = double.\+Parse((string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Current\+Version\char`\"{}, \char`\"{}\char`\"{}), System.\+Globalization.\+Culture\+Info.\+Invariant\+Culture)
+\item 
+static string \textbf{ Windows\+Edition\+IDFrom\+REG} = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Edition\+ID\char`\"{}, \char`\"{}\char`\"{})
+\item 
+static string \textbf{ Windows\+Current\+Build\+Number\+From\+REG} = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Current\+Build\+Number\char`\"{}, \char`\"{}\char`\"{})
+\item 
+static string \textbf{ Windows\+Product\+Name\+From\+REG} = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Product\+Name\char`\"{}, \char`\"{}\char`\"{})
+\item 
+static string \textbf{ Windows\+Display\+Version\+From\+REG} = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Display\+Version\char`\"{}, \char`\"{}\char`\"{})
+\item 
+static string \textbf{ Windows\+Release\+Id\+From\+REG} = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Release\+Id\char`\"{}, \char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 20} of file \textbf{ Information.\+cs}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00346_af639d5b2963f93e55ab0bc9e41f386f6}} 
+\index{Windows@{Windows}!GetScreen@{GetScreen}}
+\index{GetScreen@{GetScreen}!Windows@{Windows}}
+\doxysubsubsection{GetScreen()}
+{\footnotesize\ttfamily static Memory\+Stream Get\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 34} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036             Bitmap BM = \textcolor{keyword}{new} Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);}
+\DoxyCodeLine{00037             Graphics GH = Graphics.FromImage(BM);}
+\DoxyCodeLine{00038             GH.CopyFromScreen(0, 0, 0, 0, BM.Size);}
+\DoxyCodeLine{00039             MemoryStream memoryStream = \textcolor{keyword}{new} MemoryStream();}
+\DoxyCodeLine{00040             BM.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);}
+\DoxyCodeLine{00041             memoryStream.Position = 0;}
+\DoxyCodeLine{00042             \textcolor{keywordflow}{return} memoryStream;}
+\DoxyCodeLine{00043         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00346_aea84f5b2079fbab026b6ba621113e2bf}} 
+\index{Windows@{Windows}!WriteAllUsersToTempFile@{WriteAllUsersToTempFile}}
+\index{WriteAllUsersToTempFile@{WriteAllUsersToTempFile}!Windows@{Windows}}
+\doxysubsubsection{WriteAllUsersToTempFile()}
+{\footnotesize\ttfamily static string Write\+All\+Users\+To\+Temp\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 45} of file \textbf{ Information.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046         \{}
+\DoxyCodeLine{00047             \textcolor{keywordtype}{string} users = Processes.Execute(\textcolor{stringliteral}{"{}wmic"{}}, \textcolor{stringliteral}{"{}useraccount list full"{}});}
+\DoxyCodeLine{00048             \textcolor{keywordtype}{string} tempFile = \$\textcolor{stringliteral}{@"{}\{Path.GetTempPath()\}\(\backslash\)Users.txt"{}};}
+\DoxyCodeLine{00049             FileSystem.WriteTextToFileUTF8(users, tempFile);}
+\DoxyCodeLine{00050             \textcolor{keywordtype}{string}[] lines = File.ReadAllLines(tempFile);}
+\DoxyCodeLine{00051             \textcolor{keyword}{using} (StreamWriter writer = \textcolor{keyword}{new} StreamWriter(tempFile))}
+\DoxyCodeLine{00052             \{}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} line \textcolor{keywordflow}{in} lines)}
+\DoxyCodeLine{00054                 \{}
+\DoxyCodeLine{00055                     \textcolor{keywordflow}{if} (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(line))}
+\DoxyCodeLine{00056                         writer.WriteLine(line);}
+\DoxyCodeLine{00057                 \}}
+\DoxyCodeLine{00058             \}}
+\DoxyCodeLine{00059             \textcolor{keywordtype}{string}[] usersList = File.ReadAllLines(tempFile);}
+\DoxyCodeLine{00060             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < usersList.Length; i++)}
+\DoxyCodeLine{00061             \{}
+\DoxyCodeLine{00062                 \textcolor{keywordflow}{if} (i == 0)}
+\DoxyCodeLine{00063                     usersList[0] = \textcolor{stringliteral}{"{}Users:\(\backslash\)n\(\backslash\)n"{}} + usersList[0];}
+\DoxyCodeLine{00064                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}TRUE"{}}, \textcolor{stringliteral}{"{}Yes"{}});}
+\DoxyCodeLine{00065                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}FALSE"{}}, \textcolor{stringliteral}{"{}No"{}});}
+\DoxyCodeLine{00066                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}FullName"{}}, \textcolor{stringliteral}{"{}Full name"{}});}
+\DoxyCodeLine{00067                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}LocalAccount"{}}, \textcolor{stringliteral}{"{}Local account"{}});}
+\DoxyCodeLine{00068                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}Degraded"{}}, \textcolor{stringliteral}{"{}Degraded\(\backslash\)n"{}});}
+\DoxyCodeLine{00069                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}InstallDate"{}}, \textcolor{stringliteral}{"{}Creation date"{}});}
+\DoxyCodeLine{00070                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}AccountType"{}}, \textcolor{stringliteral}{"{}Account type"{}});}
+\DoxyCodeLine{00071                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}PasswordChangeable"{}}, \textcolor{stringliteral}{"{}Password changeable"{}});}
+\DoxyCodeLine{00072                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}PasswordExpires"{}}, \textcolor{stringliteral}{"{}Password expires"{}});}
+\DoxyCodeLine{00073                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}PasswordRequired"{}}, \textcolor{stringliteral}{"{}Password required"{}});}
+\DoxyCodeLine{00074                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}512"{}}, \textcolor{stringliteral}{"{}Plain [512]"{}}).Replace(\textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}Disconnected [2]"{}}).Replace(\textcolor{stringliteral}{"{}256"{}}, \textcolor{stringliteral}{"{}Temporary duplicate account [256]"{}}).Replace(\textcolor{stringliteral}{"{}128"{}}, \textcolor{stringliteral}{"{}Encrypted password allowed [128]"{}});}
+\DoxyCodeLine{00075                 usersList[i] = usersList[i].Replace(\textcolor{stringliteral}{"{}OK"{}}, \textcolor{stringliteral}{"{}Enabled\(\backslash\)n"{}});}
+\DoxyCodeLine{00076             \}}
+\DoxyCodeLine{00077             File.WriteAllLines(tempFile, usersList);}
+\DoxyCodeLine{00078             \textcolor{keywordflow}{return} tempFile;}
+\DoxyCodeLine{00079         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{a00346_a8e9fde0b477094bc4f06cb2f4776e927}} 
+\index{Windows@{Windows}!ComputerName@{ComputerName}}
+\index{ComputerName@{ComputerName}!Windows@{Windows}}
+\doxysubsubsection{ComputerName}
+{\footnotesize\ttfamily string Computer\+Name = Environment.\+Machine\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 22} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a929c89d04e0e8a2d0ef21078f4099eb0}} 
+\index{Windows@{Windows}!CurrentUsername@{CurrentUsername}}
+\index{CurrentUsername@{CurrentUsername}!Windows@{Windows}}
+\doxysubsubsection{CurrentUsername}
+{\footnotesize\ttfamily string Current\+Username = Environment.\+User\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a60cf74d6de29686d0a2fce9729b391b9}} 
+\index{Windows@{Windows}!Is64bit@{Is64bit}}
+\index{Is64bit@{Is64bit}!Windows@{Windows}}
+\doxysubsubsection{Is64bit}
+{\footnotesize\ttfamily bool Is64bit = Environment.\+Is64\+Bit\+Operating\+System\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a4ccf92e8a362a51c0b5c516212e963db}} 
+\index{Windows@{Windows}!LocalTime@{LocalTime}}
+\index{LocalTime@{LocalTime}!Windows@{Windows}}
+\doxysubsubsection{LocalTime}
+{\footnotesize\ttfamily Date\+Time Local\+Time = new Microsoft.\+Visual\+Basic.\+Devices.\+Clock().Local\+Time\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 24} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_ae99eb0f44c53967c288eb2dfa4501874}} 
+\index{Windows@{Windows}!WindowsCurrentBuildNumberFromREG@{WindowsCurrentBuildNumberFromREG}}
+\index{WindowsCurrentBuildNumberFromREG@{WindowsCurrentBuildNumberFromREG}!Windows@{Windows}}
+\doxysubsubsection{WindowsCurrentBuildNumberFromREG}
+{\footnotesize\ttfamily string Windows\+Current\+Build\+Number\+From\+REG = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Current\+Build\+Number\char`\"{}, \char`\"{}\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a71d145926c1dc667373fb8b8a885889b}} 
+\index{Windows@{Windows}!WindowsDisplayVersionFromREG@{WindowsDisplayVersionFromREG}}
+\index{WindowsDisplayVersionFromREG@{WindowsDisplayVersionFromREG}!Windows@{Windows}}
+\doxysubsubsection{WindowsDisplayVersionFromREG}
+{\footnotesize\ttfamily string Windows\+Display\+Version\+From\+REG = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Display\+Version\char`\"{}, \char`\"{}\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 31} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a1dc6692d1e8d75f2d94ccc55795ec817}} 
+\index{Windows@{Windows}!WindowsEditionIDFromREG@{WindowsEditionIDFromREG}}
+\index{WindowsEditionIDFromREG@{WindowsEditionIDFromREG}!Windows@{Windows}}
+\doxysubsubsection{WindowsEditionIDFromREG}
+{\footnotesize\ttfamily string Windows\+Edition\+IDFrom\+REG = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Edition\+ID\char`\"{}, \char`\"{}\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a6a5bb0d3d368e1e8f49f909adadda7f7}} 
+\index{Windows@{Windows}!WindowsProductNameFromREG@{WindowsProductNameFromREG}}
+\index{WindowsProductNameFromREG@{WindowsProductNameFromREG}!Windows@{Windows}}
+\doxysubsubsection{WindowsProductNameFromREG}
+{\footnotesize\ttfamily string Windows\+Product\+Name\+From\+REG = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Product\+Name\char`\"{}, \char`\"{}\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 30} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a3fbb72ef4a25354dfc6a51aa757340f7}} 
+\index{Windows@{Windows}!WindowsReleaseIdFromREG@{WindowsReleaseIdFromREG}}
+\index{WindowsReleaseIdFromREG@{WindowsReleaseIdFromREG}!Windows@{Windows}}
+\doxysubsubsection{WindowsReleaseIdFromREG}
+{\footnotesize\ttfamily string Windows\+Release\+Id\+From\+REG = (string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Release\+Id\char`\"{}, \char`\"{}\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 32} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_a69dfcae2e1d9f569fff8b61b8d07cd70}} 
+\index{Windows@{Windows}!WindowsVersion@{WindowsVersion}}
+\index{WindowsVersion@{WindowsVersion}!Windows@{Windows}}
+\doxysubsubsection{WindowsVersion}
+{\footnotesize\ttfamily string Windows\+Version = Convert.\+To\+String(Environment.\+OSVersion.\+Version)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 26} of file \textbf{ Information.\+cs}.
+
+\mbox{\label{a00346_af540f73cd62d13aff0b92db660c8ecdb}} 
+\index{Windows@{Windows}!WindowsVersionFromREG@{WindowsVersionFromREG}}
+\index{WindowsVersionFromREG@{WindowsVersionFromREG}!Windows@{Windows}}
+\doxysubsubsection{WindowsVersionFromREG}
+{\footnotesize\ttfamily double Windows\+Version\+From\+REG = double.\+Parse((string)Registry.\+Get\+Value(@\char`\"{}HKEY\+\_\+\+LOCAL\+\_\+\+MACHINE\textbackslash{}\+SOFTWARE\textbackslash{}\+Microsoft\textbackslash{}\+Windows NT\textbackslash{}\+Current\+Version\char`\"{}, \char`\"{}Current\+Version\char`\"{}, \char`\"{}\char`\"{}), System.\+Globalization.\+Culture\+Info.\+Invariant\+Culture)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ Information.\+cs}.
+

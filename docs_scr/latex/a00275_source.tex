@@ -1,0 +1,312 @@
+\doxysection{Vit\+NX2\+\_\+\+Message\+Box\+\_\+\+Form.\+cs}
+\label{a00275_source}\index{E:/Github/VitNX/VitNX/UI/ControlsV2/VitNX2\_MessageBox/VitNX2\_MessageBox\_Form.cs@{E:/Github/VitNX/VitNX/UI/ControlsV2/VitNX2\_MessageBox/VitNX2\_MessageBox\_Form.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using} System.Drawing;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using} System.Windows.Forms;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using} VitNX.Functions.Windows.Win32;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{namespace }VitNX.UI.ControlsV2}
+\DoxyCodeLine{00007 \{}
+\DoxyCodeLine{00008     \textcolor{keyword}{public} \textcolor{keyword}{partial class }VitNX2\_MessageBox\_Form : Form}
+\DoxyCodeLine{00009     \{}
+\DoxyCodeLine{00010         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} squaredWindowOnWin11 = \textcolor{keyword}{false};}
+\DoxyCodeLine{00011         \textcolor{keyword}{private} Color primaryColor = Color.FromArgb(21, 29, 38);}
+\DoxyCodeLine{00012         \textcolor{keyword}{private} \textcolor{keywordtype}{int} borderSize = 0;}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014         \textcolor{keyword}{public} Color PrimaryColor}
+\DoxyCodeLine{00015         \{}
+\DoxyCodeLine{00016             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} primaryColor; \}}
+\DoxyCodeLine{00017             \textcolor{keyword}{set}}
+\DoxyCodeLine{00018             \{}
+\DoxyCodeLine{00019                 primaryColor = value;}
+\DoxyCodeLine{00020                 BackColor = primaryColor;}
+\DoxyCodeLine{00021                 windowTitle.BackColor = PrimaryColor;}
+\DoxyCodeLine{00022             \}}
+\DoxyCodeLine{00023         \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} OnPaint(PaintEventArgs e)}
+\DoxyCodeLine{00026         \{}
+\DoxyCodeLine{00027             \textcolor{keywordflow}{if} (squaredWindowOnWin11)}
+\DoxyCodeLine{00028             \{}
+\DoxyCodeLine{00029                 base.OnPaint(e);}
+\DoxyCodeLine{00030                 Graphics g = e.Graphics;}
+\DoxyCodeLine{00031                 Rectangle rect = \textcolor{keyword}{new} Rectangle(\textcolor{keyword}{new} Point(0, 0), \textcolor{keyword}{new} Size(Width, Height));}
+\DoxyCodeLine{00032                 Pen pen = \textcolor{keyword}{new} Pen(Color.FromArgb(26, 32, 48));}
+\DoxyCodeLine{00033                 g.DrawRectangle(pen, rect);}
+\DoxyCodeLine{00034             \}}
+\DoxyCodeLine{00035         \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037         \textcolor{keyword}{public} VitNX2\_MessageBox\_Form(\textcolor{keywordtype}{string} text)}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             InitializeComponent();}
+\DoxyCodeLine{00040             InitializeItems();}
+\DoxyCodeLine{00041             PrimaryColor = primaryColor;}
+\DoxyCodeLine{00042             labelMessage.Text = text;}
+\DoxyCodeLine{00043             labelCaption.Text = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00044             SetFormSize();}
+\DoxyCodeLine{00045         \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \textcolor{keyword}{public} VitNX2\_MessageBox\_Form(\textcolor{keywordtype}{string} text, \textcolor{keywordtype}{string} caption)}
+\DoxyCodeLine{00048         \{}
+\DoxyCodeLine{00049             InitializeComponent();}
+\DoxyCodeLine{00050             InitializeItems();}
+\DoxyCodeLine{00051             PrimaryColor = primaryColor;}
+\DoxyCodeLine{00052             labelMessage.Text = text;}
+\DoxyCodeLine{00053             labelCaption.Text = caption;}
+\DoxyCodeLine{00054             SetFormSize();}
+\DoxyCodeLine{00055             SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);}
+\DoxyCodeLine{00056         \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         \textcolor{keyword}{public} VitNX2\_MessageBox\_Form(\textcolor{keywordtype}{string} text, \textcolor{keywordtype}{string} caption, MessageBoxButtons buttons)}
+\DoxyCodeLine{00059         \{}
+\DoxyCodeLine{00060             InitializeComponent();}
+\DoxyCodeLine{00061             InitializeItems();}
+\DoxyCodeLine{00062             PrimaryColor = primaryColor;}
+\DoxyCodeLine{00063             labelMessage.Text = text;}
+\DoxyCodeLine{00064             labelCaption.Text = caption;}
+\DoxyCodeLine{00065             SetFormSize();}
+\DoxyCodeLine{00066             SetButtons(buttons, MessageBoxDefaultButton.Button1);}
+\DoxyCodeLine{00067         \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069         \textcolor{keyword}{public} VitNX2\_MessageBox\_Form(\textcolor{keywordtype}{string} text, \textcolor{keywordtype}{string} caption, MessageBoxButtons buttons, MessageBoxIcon icon)}
+\DoxyCodeLine{00070         \{}
+\DoxyCodeLine{00071             InitializeComponent();}
+\DoxyCodeLine{00072             InitializeItems();}
+\DoxyCodeLine{00073             PrimaryColor = primaryColor;}
+\DoxyCodeLine{00074             labelMessage.Text = text;}
+\DoxyCodeLine{00075             labelCaption.Text = caption;}
+\DoxyCodeLine{00076             SetFormSize();}
+\DoxyCodeLine{00077             SetButtons(buttons, MessageBoxDefaultButton.Button1);}
+\DoxyCodeLine{00078             SetIcon(icon);}
+\DoxyCodeLine{00079         \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081         \textcolor{keyword}{public} VitNX2\_MessageBox\_Form(\textcolor{keywordtype}{string} text, \textcolor{keywordtype}{string} caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)}
+\DoxyCodeLine{00082         \{}
+\DoxyCodeLine{00083             InitializeComponent();}
+\DoxyCodeLine{00084             InitializeItems();}
+\DoxyCodeLine{00085             PrimaryColor = primaryColor;}
+\DoxyCodeLine{00086             labelMessage.Text = text;}
+\DoxyCodeLine{00087             labelCaption.Text = caption;}
+\DoxyCodeLine{00088             SetFormSize();}
+\DoxyCodeLine{00089             SetButtons(buttons, defaultButton);}
+\DoxyCodeLine{00090             SetIcon(icon);}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{keyword}{private} \textcolor{keywordtype}{void} InitializeItems()}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             FormBorderStyle = FormBorderStyle.None;}
+\DoxyCodeLine{00096             Padding = \textcolor{keyword}{new} Padding(borderSize);}
+\DoxyCodeLine{00097             labelMessage.MaximumSize = \textcolor{keyword}{new} Size(550, 0);}
+\DoxyCodeLine{00098             button1.DialogResult = DialogResult.OK;}
+\DoxyCodeLine{00099             button1.Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00100             button2.Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00101             button3.Visible = \textcolor{keyword}{false};}
+\DoxyCodeLine{00102         \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetFormSize()}
+\DoxyCodeLine{00105         \{}
+\DoxyCodeLine{00106             \textcolor{keywordtype}{int} widht = labelMessage.Width + pictureBoxIcon.Width + panelBody.Padding.Left;}
+\DoxyCodeLine{00107             \textcolor{keywordtype}{int} height = windowTitle.Height + labelMessage.Height + panelButtons.Height + panelBody.Padding.Top;}
+\DoxyCodeLine{00108             Size = \textcolor{keyword}{new} Size(widht, height);}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetButtons(MessageBoxButtons buttons, MessageBoxDefaultButton defaultButton)}
+\DoxyCodeLine{00112         \{}
+\DoxyCodeLine{00113             \textcolor{keywordtype}{int} xCenter = (panelButtons.Width -\/ button1.Width) / 2;}
+\DoxyCodeLine{00114             \textcolor{keywordtype}{int} yCenter = (panelButtons.Height -\/ button1.Height) / 2;}
+\DoxyCodeLine{00115             \textcolor{keywordflow}{switch} (buttons)}
+\DoxyCodeLine{00116             \{}
+\DoxyCodeLine{00117                 \textcolor{keywordflow}{case} MessageBoxButtons.OK:}
+\DoxyCodeLine{00118                     \{}
+\DoxyCodeLine{00119                         button1.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00120                         button1.Location = \textcolor{keyword}{new} Point(xCenter, yCenter);}
+\DoxyCodeLine{00121                         button1.Text = \textcolor{stringliteral}{"{}OK"{}};}
+\DoxyCodeLine{00122                         button1.DialogResult = DialogResult.OK;}
+\DoxyCodeLine{00123                         SetDefaultButton(defaultButton);}
+\DoxyCodeLine{00124                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125                     \}}
+\DoxyCodeLine{00126                 \textcolor{keywordflow}{case} MessageBoxButtons.OKCancel:}
+\DoxyCodeLine{00127                     \{}
+\DoxyCodeLine{00128                         button1.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00129                         button1.Location = \textcolor{keyword}{new} Point(xCenter -\/ (button1.Width / 2) -\/ 5, yCenter);}
+\DoxyCodeLine{00130                         button1.Text = \textcolor{stringliteral}{"{}OK"{}};}
+\DoxyCodeLine{00131                         button1.DialogResult = DialogResult.OK;}
+\DoxyCodeLine{00132                         button2.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00133                         button2.Location = \textcolor{keyword}{new} Point(xCenter + (button2.Width / 2) + 5, yCenter);}
+\DoxyCodeLine{00134                         button2.Text = \textcolor{stringliteral}{"{}Cancel"{}};}
+\DoxyCodeLine{00135                         button2.DialogResult = DialogResult.Cancel;}
+\DoxyCodeLine{00136                         button2.BackColor = Color.DimGray;}
+\DoxyCodeLine{00137                         \textcolor{keywordflow}{if} (defaultButton != MessageBoxDefaultButton.Button3) }
+\DoxyCodeLine{00138                             SetDefaultButton(defaultButton);}
+\DoxyCodeLine{00139                         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00140                             SetDefaultButton(MessageBoxDefaultButton.Button1);}
+\DoxyCodeLine{00141                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00142                     \}}
+\DoxyCodeLine{00143                 \textcolor{keywordflow}{case} MessageBoxButtons.RetryCancel:}
+\DoxyCodeLine{00144                     \{}
+\DoxyCodeLine{00145                         button1.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00146                         button1.Location = \textcolor{keyword}{new} Point(xCenter -\/ (button1.Width / 2) -\/ 5, yCenter);}
+\DoxyCodeLine{00147                         button1.Text = \textcolor{stringliteral}{"{}Retry"{}};}
+\DoxyCodeLine{00148                         button1.DialogResult = DialogResult.Retry;}
+\DoxyCodeLine{00149                         button2.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00150                         button2.Location = \textcolor{keyword}{new} Point(xCenter + (button2.Width / 2) + 5, yCenter);}
+\DoxyCodeLine{00151                         button2.Text = \textcolor{stringliteral}{"{}Cancel"{}};}
+\DoxyCodeLine{00152                         button2.DialogResult = DialogResult.Cancel;}
+\DoxyCodeLine{00153                         button2.BackColor = Color.DimGray;}
+\DoxyCodeLine{00154                         \textcolor{keywordflow}{if} (defaultButton != MessageBoxDefaultButton.Button3) }
+\DoxyCodeLine{00155                             SetDefaultButton(defaultButton);}
+\DoxyCodeLine{00156                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00157                             SetDefaultButton(MessageBoxDefaultButton.Button1);}
+\DoxyCodeLine{00158                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00159                     \}}
+\DoxyCodeLine{00160                 \textcolor{keywordflow}{case} MessageBoxButtons.YesNo:}
+\DoxyCodeLine{00161                     \{}
+\DoxyCodeLine{00162                         button1.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00163                         button1.Location = \textcolor{keyword}{new} Point(xCenter -\/ (button1.Width / 2) -\/ 5, yCenter);}
+\DoxyCodeLine{00164                         button1.Text = \textcolor{stringliteral}{"{}Yes"{}};}
+\DoxyCodeLine{00165                         button1.DialogResult = DialogResult.Yes;}
+\DoxyCodeLine{00166                         button2.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00167                         button2.Location = \textcolor{keyword}{new} Point(xCenter + (button2.Width / 2) + 5, yCenter);}
+\DoxyCodeLine{00168                         button2.Text = \textcolor{stringliteral}{"{}No"{}};}
+\DoxyCodeLine{00169                         button2.DialogResult = DialogResult.No;}
+\DoxyCodeLine{00170                         button2.BackColor = Color.IndianRed;}
+\DoxyCodeLine{00171                         \textcolor{keywordflow}{if} (defaultButton != MessageBoxDefaultButton.Button3) }
+\DoxyCodeLine{00172                             SetDefaultButton(defaultButton);}
+\DoxyCodeLine{00173                         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00174                             SetDefaultButton(MessageBoxDefaultButton.Button1);}
+\DoxyCodeLine{00175                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00176                     \}}
+\DoxyCodeLine{00177                 \textcolor{keywordflow}{case} MessageBoxButtons.YesNoCancel:}
+\DoxyCodeLine{00178                     \{}
+\DoxyCodeLine{00179                         button1.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00180                         button1.Location = \textcolor{keyword}{new} Point(xCenter -\/ button1.Width -\/ 5, yCenter);}
+\DoxyCodeLine{00181                         button1.Text = \textcolor{stringliteral}{"{}Yes"{}};}
+\DoxyCodeLine{00182                         button1.DialogResult = DialogResult.Yes;}
+\DoxyCodeLine{00183                         button2.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00184                         button2.Location = \textcolor{keyword}{new} Point(xCenter, yCenter);}
+\DoxyCodeLine{00185                         button2.Text = \textcolor{stringliteral}{"{}No"{}};}
+\DoxyCodeLine{00186                         button2.DialogResult = DialogResult.No;}
+\DoxyCodeLine{00187                         button2.BackColor = Color.IndianRed;}
+\DoxyCodeLine{00188                         button3.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00189                         button3.Location = \textcolor{keyword}{new} Point(xCenter + button2.Width + 5, yCenter);}
+\DoxyCodeLine{00190                         button3.Text = \textcolor{stringliteral}{"{}Cancel"{}};}
+\DoxyCodeLine{00191                         button3.DialogResult = DialogResult.Cancel;}
+\DoxyCodeLine{00192                         button3.BackColor = Color.DimGray;}
+\DoxyCodeLine{00193                         SetDefaultButton(defaultButton);}
+\DoxyCodeLine{00194                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00195                     \}}
+\DoxyCodeLine{00196                 \textcolor{keywordflow}{case} MessageBoxButtons.AbortRetryIgnore:}
+\DoxyCodeLine{00197                     \{}
+\DoxyCodeLine{00198                         button1.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00199                         button1.Location = \textcolor{keyword}{new} Point(xCenter -\/ button1.Width -\/ 5, yCenter);}
+\DoxyCodeLine{00200                         button1.Text = \textcolor{stringliteral}{"{}Abort"{}};}
+\DoxyCodeLine{00201                         button1.DialogResult = DialogResult.Abort;}
+\DoxyCodeLine{00202                         button1.BackColor = Color.Goldenrod;}
+\DoxyCodeLine{00203                         button2.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00204                         button2.Location = \textcolor{keyword}{new} Point(xCenter, yCenter);}
+\DoxyCodeLine{00205                         button2.Text = \textcolor{stringliteral}{"{}Retry"{}};}
+\DoxyCodeLine{00206                         button2.DialogResult = DialogResult.Retry;}
+\DoxyCodeLine{00207                         button3.Visible = \textcolor{keyword}{true};}
+\DoxyCodeLine{00208                         button3.Location = \textcolor{keyword}{new} Point(xCenter + button2.Width + 5, yCenter);}
+\DoxyCodeLine{00209                         button3.Text = \textcolor{stringliteral}{"{}Ignore"{}};}
+\DoxyCodeLine{00210                         button3.DialogResult = DialogResult.Ignore;}
+\DoxyCodeLine{00211                         button3.BackColor = Color.IndianRed;}
+\DoxyCodeLine{00212                         SetDefaultButton(defaultButton);}
+\DoxyCodeLine{00213                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00214                     \}}
+\DoxyCodeLine{00215             \}}
+\DoxyCodeLine{00216         \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetDefaultButton(MessageBoxDefaultButton defaultButton)}
+\DoxyCodeLine{00219         \{}
+\DoxyCodeLine{00220             \textcolor{keywordflow}{switch} (defaultButton)}
+\DoxyCodeLine{00221             \{}
+\DoxyCodeLine{00222                 \textcolor{keywordflow}{case} MessageBoxDefaultButton.Button1:}
+\DoxyCodeLine{00223                     \{}
+\DoxyCodeLine{00224                         button1.Select();}
+\DoxyCodeLine{00225                         button1.ForeColor = Color.White;}
+\DoxyCodeLine{00226                         button1.Font = \textcolor{keyword}{new} Font(button1.Font, FontStyle.Regular);}
+\DoxyCodeLine{00227                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00228                     \}}
+\DoxyCodeLine{00229                 \textcolor{keywordflow}{case} MessageBoxDefaultButton.Button2:}
+\DoxyCodeLine{00230                     \{}
+\DoxyCodeLine{00231                         button2.Select();}
+\DoxyCodeLine{00232                         button2.ForeColor = Color.White;}
+\DoxyCodeLine{00233                         button2.Font = \textcolor{keyword}{new} Font(button2.Font, FontStyle.Regular);}
+\DoxyCodeLine{00234                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00235                     \}}
+\DoxyCodeLine{00236                 \textcolor{keywordflow}{case} MessageBoxDefaultButton.Button3:}
+\DoxyCodeLine{00237                     \{}
+\DoxyCodeLine{00238                         button3.Select();}
+\DoxyCodeLine{00239                         button3.ForeColor = Color.White;}
+\DoxyCodeLine{00240                         button3.Font = \textcolor{keyword}{new} Font(button3.Font, FontStyle.Regular);}
+\DoxyCodeLine{00241                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00242                     \}}
+\DoxyCodeLine{00243             \}}
+\DoxyCodeLine{00244         \}}
+\DoxyCodeLine{00245 }
+\DoxyCodeLine{00246         \textcolor{keyword}{private} \textcolor{keywordtype}{void} SetIcon(MessageBoxIcon icon)}
+\DoxyCodeLine{00247         \{}
+\DoxyCodeLine{00248             \textcolor{keywordflow}{switch} (icon)}
+\DoxyCodeLine{00249             \{}
+\DoxyCodeLine{00250                 \textcolor{keywordflow}{case} MessageBoxIcon.Error:}
+\DoxyCodeLine{00251                     \{}
+\DoxyCodeLine{00252                         pictureBoxIcon.Image = Properties.Resources.Error1;}
+\DoxyCodeLine{00253                         \textcolor{comment}{//PrimaryColor = Color.FromArgb(224, 79, 95);}}
+\DoxyCodeLine{00254                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00255                     \}}
+\DoxyCodeLine{00256                 \textcolor{keywordflow}{case} MessageBoxIcon.Information:}
+\DoxyCodeLine{00257                     \{}
+\DoxyCodeLine{00258                         pictureBoxIcon.Image = Properties.Resources.Information;}
+\DoxyCodeLine{00259                         \textcolor{comment}{//PrimaryColor = Color.FromArgb(38, 191, 166);}}
+\DoxyCodeLine{00260                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00261                     \}}
+\DoxyCodeLine{00262                 \textcolor{keywordflow}{case} MessageBoxIcon.Question:}
+\DoxyCodeLine{00263                     \{}
+\DoxyCodeLine{00264                         pictureBoxIcon.Image = Properties.Resources.Question1;}
+\DoxyCodeLine{00265                         \textcolor{comment}{//PrimaryColor = Color.FromArgb(10, 119, 232);}}
+\DoxyCodeLine{00266                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00267                     \}}
+\DoxyCodeLine{00268                 \textcolor{keywordflow}{case} MessageBoxIcon.Exclamation:}
+\DoxyCodeLine{00269                     \{}
+\DoxyCodeLine{00270                         pictureBoxIcon.Image = Properties.Resources.Warning1;}
+\DoxyCodeLine{00271                         \textcolor{comment}{//PrimaryColor = Color.FromArgb(255, 140, 0);}}
+\DoxyCodeLine{00272                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00273                     \}}
+\DoxyCodeLine{00274                 \textcolor{keywordflow}{case} MessageBoxIcon.None:}
+\DoxyCodeLine{00275                     \{}
+\DoxyCodeLine{00276                         pictureBoxIcon.Image = Properties.Resources.News;}
+\DoxyCodeLine{00277                         \textcolor{comment}{//PrimaryColor = Color.CornflowerBlue;}}
+\DoxyCodeLine{00278                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00279                     \}}
+\DoxyCodeLine{00280             \}}
+\DoxyCodeLine{00281         \}}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283         \textcolor{keyword}{private} \textcolor{keywordtype}{void} titleExit\_Click(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00284         \{}
+\DoxyCodeLine{00285             Close();}
+\DoxyCodeLine{00286         \}}
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288         \textcolor{keyword}{private} \textcolor{keywordtype}{void} windowTitle\_MouseDown(\textcolor{keywordtype}{object} sender, MouseEventArgs e)}
+\DoxyCodeLine{00289         \{}
+\DoxyCodeLine{00290             Import.ReleaseCapture();}
+\DoxyCodeLine{00291             Import.PostMessage(Handle,}
+\DoxyCodeLine{00292                 Constants.WM\_SYSCOMMAND,}
+\DoxyCodeLine{00293                 Constants.DOMOVE, 0);}
+\DoxyCodeLine{00294         \}}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296         \textcolor{keyword}{private} \textcolor{keywordtype}{void} titleExit\_MouseEnter(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00297         \{}
+\DoxyCodeLine{00298             titleExit.ForeColor = Color.Red;}
+\DoxyCodeLine{00299         \}}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301         \textcolor{keyword}{private} \textcolor{keywordtype}{void} titleExit\_MouseLeave(\textcolor{keywordtype}{object} sender, EventArgs e)}
+\DoxyCodeLine{00302         \{}
+\DoxyCodeLine{00303             titleExit.ForeColor = Color.FromArgb(183, 185, 191);}
+\DoxyCodeLine{00304         \}}
+\DoxyCodeLine{00305     \}}
+\DoxyCodeLine{00306 \}}
+
+\end{DoxyCode}

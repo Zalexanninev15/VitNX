@@ -1,0 +1,145 @@
+\doxysection{Console\+Progress\+Bar Class Reference}
+\label{a00390}\index{ConsoleProgressBar@{ConsoleProgressBar}}
+Inheritance diagram for Console\+Progress\+Bar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00390}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Console\+Progress\+Bar} ()
+\item 
+void \textbf{ Report} (double value)
+\item 
+void \textbf{ Set\+Color} (Console\+Color my\+\_\+pb)
+\item 
+void \textbf{ Set\+Text} (string work1)
+\item 
+void \textbf{ Not\+Used} (bool pbd)
+\item 
+void \textbf{ Dispose} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 7} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00390_a58920b6ea158774251f2a61d232db5f3}} 
+\index{ConsoleProgressBar@{ConsoleProgressBar}!ConsoleProgressBar@{ConsoleProgressBar}}
+\index{ConsoleProgressBar@{ConsoleProgressBar}!ConsoleProgressBar@{ConsoleProgressBar}}
+\doxysubsubsection{ConsoleProgressBar()}
+{\footnotesize\ttfamily \textbf{ Console\+Progress\+Bar} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022         \{ }
+\DoxyCodeLine{00023             timer = \textcolor{keyword}{new} Timer(TimerHandler); }
+\DoxyCodeLine{00024             \textcolor{keywordflow}{if} (!Console.IsOutputRedirected) }
+\DoxyCodeLine{00025                 ResetTimer();}
+\DoxyCodeLine{00026         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00390_a6e2d745cdb7a7b983f861ed6a9a541a7}} 
+\index{ConsoleProgressBar@{ConsoleProgressBar}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!ConsoleProgressBar@{ConsoleProgressBar}}
+\doxysubsubsection{Dispose()}
+{\footnotesize\ttfamily void Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             lock (timer)}
+\DoxyCodeLine{00094             \{}
+\DoxyCodeLine{00095                 disposed = \textcolor{keyword}{true};}
+\DoxyCodeLine{00096                 UpdateText(\textcolor{keywordtype}{string}.Empty);}
+\DoxyCodeLine{00097             \}}
+\DoxyCodeLine{00098         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00390_acefb193397e5aada9555bda4019d9f98}} 
+\index{ConsoleProgressBar@{ConsoleProgressBar}!NotUsed@{NotUsed}}
+\index{NotUsed@{NotUsed}!ConsoleProgressBar@{ConsoleProgressBar}}
+\doxysubsubsection{NotUsed()}
+{\footnotesize\ttfamily void Not\+Used (\begin{DoxyParamCaption}\item[{bool}]{pbd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 44} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045         \{}
+\DoxyCodeLine{00046             workdo = pbd;}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00390_ab2b47e4abe4b3d5ea617d694d9bc218d}} 
+\index{ConsoleProgressBar@{ConsoleProgressBar}!Report@{Report}}
+\index{Report@{Report}!ConsoleProgressBar@{ConsoleProgressBar}}
+\doxysubsubsection{Report()}
+{\footnotesize\ttfamily void Report (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029         \{}
+\DoxyCodeLine{00030             value = Math.Max(0, Math.Min(1, value)); }
+\DoxyCodeLine{00031             Interlocked.Exchange(ref currentProgress, value); }
+\DoxyCodeLine{00032         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00390_abece47daa160a5f59bd4bf20a9d4579a}} 
+\index{ConsoleProgressBar@{ConsoleProgressBar}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!ConsoleProgressBar@{ConsoleProgressBar}}
+\doxysubsubsection{SetColor()}
+{\footnotesize\ttfamily void Set\+Color (\begin{DoxyParamCaption}\item[{Console\+Color}]{my\+\_\+pb }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 34} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036             pb = my\_pb;}
+\DoxyCodeLine{00037         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00390_a554744c6dc4cb73c1d9002dfb91727d7}} 
+\index{ConsoleProgressBar@{ConsoleProgressBar}!SetText@{SetText}}
+\index{SetText@{SetText}!ConsoleProgressBar@{ConsoleProgressBar}}
+\doxysubsubsection{SetText()}
+{\footnotesize\ttfamily void Set\+Text (\begin{DoxyParamCaption}\item[{string}]{work1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 39} of file \textbf{ Console\+Progress\+Bar.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040         \{}
+\DoxyCodeLine{00041             work = work1;}
+\DoxyCodeLine{00042         \}}
+
+\end{DoxyCode}

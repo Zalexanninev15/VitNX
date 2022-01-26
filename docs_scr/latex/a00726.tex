@@ -1,0 +1,586 @@
+\doxysection{Vit\+NX\+\_\+\+Dock\+Panel Class Reference}
+\label{a00726}\index{VitNX\_DockPanel@{VitNX\_DockPanel}}
+Inheritance diagram for Vit\+NX\+\_\+\+Dock\+Panel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00726}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Panel} ()
+\item 
+void \textbf{ Add\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content)
+\item 
+void \textbf{ Add\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content, \textbf{ Vit\+NX\+\_\+\+Dock\+Group} dock\+Group)
+\item 
+void \textbf{ Insert\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content, \textbf{ Vit\+NX\+\_\+\+Dock\+Group} dock\+Group, \textbf{ Dock\+Insert\+Type} insert\+Type)
+\item 
+void \textbf{ Remove\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content)
+\item 
+bool \textbf{ Contains\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} dock\+Content)
+\item 
+List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ \textbf{ Get\+Documents} ()
+\item 
+void \textbf{ Drag\+Content} (\textbf{ Vit\+NX\+\_\+\+Dock\+Content} content)
+\item 
+\textbf{ Dock\+Panel\+State} \textbf{ Get\+Dock\+Panel\+State} ()
+\item 
+void \textbf{ Restore\+Dock\+Panel\+State} (\textbf{ Dock\+Panel\+State} state, Func$<$ string, \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ get\+Content\+By\+Serialization\+Key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Content} \textbf{ Active\+Content}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Region} \textbf{ Active\+Region}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Group} \textbf{ Active\+Group}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Vit\+NX\+\_\+\+Dock\+Content} \textbf{ Active\+Document}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Dock\+Content\+Drag\+Filter} \textbf{ Dock\+Content\+Drag\+Filter}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\textbf{ Dock\+Resize\+Filter} \textbf{ Dock\+Resize\+Filter}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Splitter} $>$ \textbf{ Splitters}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Mouse\+Buttons \textbf{ Mouse\+Button\+State}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+Dictionary$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Area}, \textbf{ Vit\+NX\+\_\+\+Dock\+Region} $>$ \textbf{ Regions}\hspace{0.3cm}{\ttfamily  [get]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler$<$ \textbf{ Dock\+Content\+Event\+Args} $>$ \textbf{ Active\+Content\+Changed}
+\item 
+Event\+Handler$<$ \textbf{ Dock\+Content\+Event\+Args} $>$ \textbf{ Content\+Added}
+\item 
+Event\+Handler$<$ \textbf{ Dock\+Content\+Event\+Args} $>$ \textbf{ Content\+Removed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 11} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{a00726_a501559c95235d2aa4ce28f2e788b63e5}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{VitNX\_DockPanel()}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Panel} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 118} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119         \{}
+\DoxyCodeLine{00120             Splitters = \textcolor{keyword}{new} List<VitNX\_DockSplitter>();}
+\DoxyCodeLine{00121             DockContentDragFilter = \textcolor{keyword}{new} DockContentDragFilter(\textcolor{keyword}{this});}
+\DoxyCodeLine{00122             DockResizeFilter = \textcolor{keyword}{new} DockResizeFilter(\textcolor{keyword}{this});}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124             \_regions = \textcolor{keyword}{new} Dictionary<VitNX\_DockArea, VitNX\_DockRegion>();}
+\DoxyCodeLine{00125             \_contents = \textcolor{keyword}{new} List<VitNX\_DockContent>();}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127             BackColor = Colors.GreyBackground;}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129             CreateRegions();}
+\DoxyCodeLine{00130         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{a00726_a851dd7bf4d148af9c13820d03588b89a}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!AddContent@{AddContent}}
+\index{AddContent@{AddContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{AddContent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Add\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 136} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00137         \{}
+\DoxyCodeLine{00138             AddContent(dockContent, \textcolor{keyword}{null});}
+\DoxyCodeLine{00139         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a37ba961625d290a378ecd2904f7d1cbb}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!AddContent@{AddContent}}
+\index{AddContent@{AddContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{AddContent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Add\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content,  }\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Group}}]{dock\+Group }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 141} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142         \{}
+\DoxyCodeLine{00143             \textcolor{keywordflow}{if} (\_contents.Contains(dockContent))}
+\DoxyCodeLine{00144                 RemoveContent(dockContent);}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146             dockContent.DockPanel = \textcolor{keyword}{this};}
+\DoxyCodeLine{00147             \_contents.Add(dockContent);}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149             \textcolor{keywordflow}{if} (dockGroup != \textcolor{keyword}{null})}
+\DoxyCodeLine{00150                 dockContent.DockArea = dockGroup.DockArea;}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152             \textcolor{keywordflow}{if} (dockContent.DockArea == VitNX\_DockArea.None)}
+\DoxyCodeLine{00153                 dockContent.DockArea = dockContent.DefaultDockArea;}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155             var region = \_regions[dockContent.DockArea];}
+\DoxyCodeLine{00156             region.AddContent(dockContent, dockGroup);}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158             \textcolor{keywordflow}{if} (ContentAdded != \textcolor{keyword}{null})}
+\DoxyCodeLine{00159                 ContentAdded(\textcolor{keyword}{this}, \textcolor{keyword}{new} DockContentEventArgs(dockContent));}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161             dockContent.Select();}
+\DoxyCodeLine{00162         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_ad1fd7d3cd3b2bf81c471b041940371f8}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ContainsContent@{ContainsContent}}
+\index{ContainsContent@{ContainsContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ContainsContent()}
+{\footnotesize\ttfamily bool Contains\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 198} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00199         \{}
+\DoxyCodeLine{00200             \textcolor{keywordflow}{return} \_contents.Contains(dockContent);}
+\DoxyCodeLine{00201         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_abdddaf4e1ee22391be8803f4b3e51ead}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!DragContent@{DragContent}}
+\index{DragContent@{DragContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{DragContent()}
+{\footnotesize\ttfamily void Drag\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 236} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00237         \{}
+\DoxyCodeLine{00238             DockContentDragFilter.StartDrag(content);}
+\DoxyCodeLine{00239         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_adb170f620941f25f19d8450ea380ff19}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!GetDockPanelState@{GetDockPanelState}}
+\index{GetDockPanelState@{GetDockPanelState}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{GetDockPanelState()}
+{\footnotesize\ttfamily \textbf{ Dock\+Panel\+State} Get\+Dock\+Panel\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 245} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00246         \{}
+\DoxyCodeLine{00247             var state = \textcolor{keyword}{new} DockPanelState();}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249             state.Regions.Add(\textcolor{keyword}{new} DockRegionState(VitNX\_DockArea.Document));}
+\DoxyCodeLine{00250             state.Regions.Add(\textcolor{keyword}{new} DockRegionState(VitNX\_DockArea.Left, \_regions[VitNX\_DockArea.Left].Size));}
+\DoxyCodeLine{00251             state.Regions.Add(\textcolor{keyword}{new} DockRegionState(VitNX\_DockArea.Right, \_regions[VitNX\_DockArea.Right].Size));}
+\DoxyCodeLine{00252             state.Regions.Add(\textcolor{keyword}{new} DockRegionState(VitNX\_DockArea.Bottom, \_regions[VitNX\_DockArea.Bottom].Size));}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254             var \_groupStates = \textcolor{keyword}{new} Dictionary<VitNX\_DockGroup, DockGroupState>();}
+\DoxyCodeLine{00255 }
+\DoxyCodeLine{00256             var orderedContent = \_contents.OrderBy(c => c.Order);}
+\DoxyCodeLine{00257             \textcolor{keywordflow}{foreach} (var content \textcolor{keywordflow}{in} orderedContent)}
+\DoxyCodeLine{00258             \{}
+\DoxyCodeLine{00259                 \textcolor{keywordflow}{foreach} (var region \textcolor{keywordflow}{in} state.Regions)}
+\DoxyCodeLine{00260                 \{}
+\DoxyCodeLine{00261                     \textcolor{keywordflow}{if} (region.Area == content.DockArea)}
+\DoxyCodeLine{00262                     \{}
+\DoxyCodeLine{00263                         DockGroupState groupState;}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265                         \textcolor{keywordflow}{if} (\_groupStates.ContainsKey(content.DockGroup))}
+\DoxyCodeLine{00266                         \{}
+\DoxyCodeLine{00267                             groupState = \_groupStates[content.DockGroup];}
+\DoxyCodeLine{00268                         \}}
+\DoxyCodeLine{00269                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00270                         \{}
+\DoxyCodeLine{00271                             groupState = \textcolor{keyword}{new} DockGroupState();}
+\DoxyCodeLine{00272                             region.Groups.Add(groupState);}
+\DoxyCodeLine{00273                             \_groupStates.Add(content.DockGroup, groupState);}
+\DoxyCodeLine{00274                         \}}
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276                         groupState.Contents.Add(content.SerializationKey);}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278                         groupState.VisibleContent = content.DockGroup.VisibleContent.SerializationKey;}
+\DoxyCodeLine{00279                     \}}
+\DoxyCodeLine{00280                 \}}
+\DoxyCodeLine{00281             \}}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283             \textcolor{keywordflow}{return} state;}
+\DoxyCodeLine{00284         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a00fad7049093586359c4b4c49252a19e}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!GetDocuments@{GetDocuments}}
+\index{GetDocuments@{GetDocuments}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{GetDocuments()}
+{\footnotesize\ttfamily List$<$ \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$ Get\+Documents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 203} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204         \{}
+\DoxyCodeLine{00205             \textcolor{keywordflow}{return} \_regions[VitNX\_DockArea.Document].GetContents();}
+\DoxyCodeLine{00206         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a2bf33cc7e1b5c7b47c62202d7301023e}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!InsertContent@{InsertContent}}
+\index{InsertContent@{InsertContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{InsertContent()}
+{\footnotesize\ttfamily void Insert\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content,  }\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Group}}]{dock\+Group,  }\item[{\textbf{ Dock\+Insert\+Type}}]{insert\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 164} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165         \{}
+\DoxyCodeLine{00166             \textcolor{keywordflow}{if} (\_contents.Contains(dockContent))}
+\DoxyCodeLine{00167                 RemoveContent(dockContent);}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169             dockContent.DockPanel = \textcolor{keyword}{this};}
+\DoxyCodeLine{00170             \_contents.Add(dockContent);}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172             dockContent.DockArea = dockGroup.DockArea;}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174             var region = \_regions[dockGroup.DockArea];}
+\DoxyCodeLine{00175             region.InsertContent(dockContent, dockGroup, insertType);}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177             \textcolor{keywordflow}{if} (ContentAdded != \textcolor{keyword}{null})}
+\DoxyCodeLine{00178                 ContentAdded(\textcolor{keyword}{this}, \textcolor{keyword}{new} DockContentEventArgs(dockContent));}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180             dockContent.Select();}
+\DoxyCodeLine{00181         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a4cdc2cf4cdc8cdf509431d29968dd1dd}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!RemoveContent@{RemoveContent}}
+\index{RemoveContent@{RemoveContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{RemoveContent()}
+{\footnotesize\ttfamily void Remove\+Content (\begin{DoxyParamCaption}\item[{\textbf{ Vit\+NX\+\_\+\+Dock\+Content}}]{dock\+Content }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 183} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184         \{}
+\DoxyCodeLine{00185             \textcolor{keywordflow}{if} (!\_contents.Contains(dockContent))}
+\DoxyCodeLine{00186                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188             dockContent.DockPanel = \textcolor{keyword}{null};}
+\DoxyCodeLine{00189             \_contents.Remove(dockContent);}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191             var region = \_regions[dockContent.DockArea];}
+\DoxyCodeLine{00192             region.RemoveContent(dockContent);}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194             \textcolor{keywordflow}{if} (ContentRemoved != \textcolor{keyword}{null})}
+\DoxyCodeLine{00195                 ContentRemoved(\textcolor{keyword}{this}, \textcolor{keyword}{new} DockContentEventArgs(dockContent));}
+\DoxyCodeLine{00196         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a11df7c7281951855ee3c3adad3978065}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!RestoreDockPanelState@{RestoreDockPanelState}}
+\index{RestoreDockPanelState@{RestoreDockPanelState}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{RestoreDockPanelState()}
+{\footnotesize\ttfamily void Restore\+Dock\+Panel\+State (\begin{DoxyParamCaption}\item[{\textbf{ Dock\+Panel\+State}}]{state,  }\item[{Func$<$ string, \textbf{ Vit\+NX\+\_\+\+Dock\+Content} $>$}]{get\+Content\+By\+Serialization\+Key }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 286} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287         \{}
+\DoxyCodeLine{00288             \textcolor{keywordflow}{foreach} (var region \textcolor{keywordflow}{in} state.Regions)}
+\DoxyCodeLine{00289             \{}
+\DoxyCodeLine{00290                 \textcolor{keywordflow}{switch} (region.Area)}
+\DoxyCodeLine{00291                 \{}
+\DoxyCodeLine{00292                     \textcolor{keywordflow}{case} VitNX\_DockArea.Left:}
+\DoxyCodeLine{00293                         \_regions[VitNX\_DockArea.Left].Size = region.Size;}
+\DoxyCodeLine{00294                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296                     \textcolor{keywordflow}{case} VitNX\_DockArea.Right:}
+\DoxyCodeLine{00297                         \_regions[VitNX\_DockArea.Right].Size = region.Size;}
+\DoxyCodeLine{00298                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00299 }
+\DoxyCodeLine{00300                     \textcolor{keywordflow}{case} VitNX\_DockArea.Bottom:}
+\DoxyCodeLine{00301                         \_regions[VitNX\_DockArea.Bottom].Size = region.Size;}
+\DoxyCodeLine{00302                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00303                 \}}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305                 \textcolor{keywordflow}{foreach} (var group \textcolor{keywordflow}{in} region.Groups)}
+\DoxyCodeLine{00306                 \{}
+\DoxyCodeLine{00307                     VitNX\_DockContent previousContent = \textcolor{keyword}{null};}
+\DoxyCodeLine{00308                     VitNX\_DockContent visibleContent = \textcolor{keyword}{null};}
+\DoxyCodeLine{00309 }
+\DoxyCodeLine{00310                     \textcolor{keywordflow}{foreach} (var contentKey \textcolor{keywordflow}{in} group.Contents)}
+\DoxyCodeLine{00311                     \{}
+\DoxyCodeLine{00312                         var content = getContentBySerializationKey(contentKey);}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314                         \textcolor{keywordflow}{if} (content == \textcolor{keyword}{null})}
+\DoxyCodeLine{00315                             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00316 }
+\DoxyCodeLine{00317                         content.DockArea = region.Area;}
+\DoxyCodeLine{00318 }
+\DoxyCodeLine{00319                         \textcolor{keywordflow}{if} (previousContent == \textcolor{keyword}{null})}
+\DoxyCodeLine{00320                             AddContent(content);}
+\DoxyCodeLine{00321                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00322                             AddContent(content, previousContent.DockGroup);}
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{00324                         previousContent = content;}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326                         \textcolor{keywordflow}{if} (group.VisibleContent == contentKey)}
+\DoxyCodeLine{00327                             visibleContent = content;}
+\DoxyCodeLine{00328                     \}}
+\DoxyCodeLine{00329 }
+\DoxyCodeLine{00330                     \textcolor{keywordflow}{if} (visibleContent != \textcolor{keyword}{null})}
+\DoxyCodeLine{00331                         visibleContent.Select();}
+\DoxyCodeLine{00332                 \}}
+\DoxyCodeLine{00333             \}}
+\DoxyCodeLine{00334         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{a00726_a920c14cfcb5e6e5b7e44facbeaad3a72}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ActiveContent@{ActiveContent}}
+\index{ActiveContent@{ActiveContent}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ActiveContent}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Content} Active\+Content\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 37} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_activeContent; \}}
+\DoxyCodeLine{00040             \textcolor{keyword}{set}}
+\DoxyCodeLine{00041             \{}
+\DoxyCodeLine{00042                 \textcolor{comment}{// Don't let content visibility changes re-\/trigger event}}
+\DoxyCodeLine{00043                 \textcolor{keywordflow}{if} (\_switchingContent)}
+\DoxyCodeLine{00044                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046                 \_switchingContent = \textcolor{keyword}{true};}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048                 \_activeContent = value;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050                 ActiveGroup = \_activeContent.DockGroup;}
+\DoxyCodeLine{00051                 ActiveRegion = ActiveGroup.DockRegion;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{foreach} (var region \textcolor{keywordflow}{in} \_regions.Values)}
+\DoxyCodeLine{00054                     region.Redraw();}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{if} (ActiveContentChanged != \textcolor{keyword}{null})}
+\DoxyCodeLine{00057                     ActiveContentChanged(\textcolor{keyword}{this}, \textcolor{keyword}{new} DockContentEventArgs(\_activeContent));}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059                 \_switchingContent = \textcolor{keyword}{false};}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_aa6fd0f34ce00e8c68b964966f126ce77}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ActiveDocument@{ActiveDocument}}
+\index{ActiveDocument@{ActiveDocument}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ActiveDocument}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Content} Active\+Document\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 73} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074         \{}
+\DoxyCodeLine{00075             \textcolor{keyword}{get}}
+\DoxyCodeLine{00076             \{}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{return} \_regions[VitNX\_DockArea.Document].ActiveDocument;}
+\DoxyCodeLine{00078             \}}
+\DoxyCodeLine{00079         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a62eb786ffe6da4157513c0bdef4aa244}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ActiveGroup@{ActiveGroup}}
+\index{ActiveGroup@{ActiveGroup}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ActiveGroup}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Group} Active\+Group\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 69} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069 \{ \textcolor{keyword}{get}; \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_abc99195064a5f4dac020b4e150185dbe}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ActiveRegion@{ActiveRegion}}
+\index{ActiveRegion@{ActiveRegion}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ActiveRegion}
+{\footnotesize\ttfamily \textbf{ Vit\+NX\+\_\+\+Dock\+Region} Active\+Region\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 65} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{ \textcolor{keyword}{get}; \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_af89c0c9d730e87df7c042de2bc1c1475}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!DockContentDragFilter@{DockContentDragFilter}}
+\index{DockContentDragFilter@{DockContentDragFilter}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{DockContentDragFilter}
+{\footnotesize\ttfamily \textbf{ Dock\+Content\+Drag\+Filter} \textbf{ Dock\+Content\+Drag\+Filter}\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 83} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_acf683616ada9013672bc4f01c20f9e1a}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!DockResizeFilter@{DockResizeFilter}}
+\index{DockResizeFilter@{DockResizeFilter}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{DockResizeFilter}
+{\footnotesize\ttfamily \textbf{ Dock\+Resize\+Filter} \textbf{ Dock\+Resize\+Filter}\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 87} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_ad8fa9b0e3856e7e06470567f5db29f6d}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!MouseButtonState@{MouseButtonState}}
+\index{MouseButtonState@{MouseButtonState}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{MouseButtonState}
+{\footnotesize\ttfamily Mouse\+Buttons Mouse\+Button\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 95} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096         \{}
+\DoxyCodeLine{00097             \textcolor{keyword}{get}}
+\DoxyCodeLine{00098             \{}
+\DoxyCodeLine{00099                 var buttonState = MouseButtons;}
+\DoxyCodeLine{00100                 \textcolor{keywordflow}{return} buttonState;}
+\DoxyCodeLine{00101             \}}
+\DoxyCodeLine{00102         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_a9b2421ae3c60aacc8f54964fa73f69a4}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!Regions@{Regions}}
+\index{Regions@{Regions}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{Regions}
+{\footnotesize\ttfamily Dictionary$<$\textbf{ Vit\+NX\+\_\+\+Dock\+Area}, \textbf{ Vit\+NX\+\_\+\+Dock\+Region}$>$ Regions\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 106} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107         \{}
+\DoxyCodeLine{00108             \textcolor{keyword}{get}}
+\DoxyCodeLine{00109             \{}
+\DoxyCodeLine{00110                 \textcolor{keywordflow}{return} \_regions;}
+\DoxyCodeLine{00111             \}}
+\DoxyCodeLine{00112         \}}
+
+\end{DoxyCode}
+\mbox{\label{a00726_aa493355bf008ddf37b4281cb6c6c6875}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!Splitters@{Splitters}}
+\index{Splitters@{Splitters}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{Splitters}
+{\footnotesize\ttfamily List$<$\textbf{ Vit\+NX\+\_\+\+Dock\+Splitter}$>$ Splitters\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \textbf{ 91} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Event Documentation}
+\mbox{\label{a00726_aa3cfe863beb23e51452df120893a6a26}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ActiveContentChanged@{ActiveContentChanged}}
+\index{ActiveContentChanged@{ActiveContentChanged}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ActiveContentChanged}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Dock\+Content\+Event\+Args}$>$ Active\+Content\+Changed}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00726_afe7fd77d04ea21c3d7c23f93b36abaff}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ContentAdded@{ContentAdded}}
+\index{ContentAdded@{ContentAdded}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ContentAdded}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Dock\+Content\+Event\+Args}$>$ Content\+Added}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
+\mbox{\label{a00726_a664e458563b286721a52931cfc44ae23}} 
+\index{VitNX\_DockPanel@{VitNX\_DockPanel}!ContentRemoved@{ContentRemoved}}
+\index{ContentRemoved@{ContentRemoved}!VitNX\_DockPanel@{VitNX\_DockPanel}}
+\doxysubsubsection{ContentRemoved}
+{\footnotesize\ttfamily Event\+Handler$<$\textbf{ Dock\+Content\+Event\+Args}$>$ Content\+Removed}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Vit\+NX\+\_\+\+Dock\+Panel.\+cs}.
+
