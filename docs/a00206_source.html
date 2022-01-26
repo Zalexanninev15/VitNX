@@ -1,28 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: VitNX/UI/BasedOnDarkUI/Docking/VitNX_DockTab.cs Source File</title>
+<title>VitNX: E:/Github/VitNX/VitNX/UI/BasedOnDarkUI/Docking/VitNX_SplitterType.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
+ <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
-  <td id="projectalign">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">VitNX
    </div>
    <div id="projectbrief">Controls for WinForms and necessary functions for interaction (.NET Framework 4.8)</div>
@@ -61,73 +66,44 @@ $(document).ready(function(){initNavTree('a00206_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_DockTab.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_SplitterType.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System.Drawing;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="a00748.html">    5</a></span>    <span class="keyword">internal</span> <span class="keyword">class </span><a class="code hl_class" href="a00748.html">VitNX_DockTab</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">        #region Property Region</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">    9</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="a00728.html">VitNX_DockContent</a> <a class="code hl_property" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">DockContent</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="a00748.html#adce05c41aca696cec6694e3a743c252b">   11</a></span>        <span class="keyword">public</span> Rectangle <a class="code hl_property" href="a00748.html#adce05c41aca696cec6694e3a743c252b">ClientRectangle</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00748.html#a4799ecdc568d7bf7101531246ad24227">   13</a></span>        <span class="keyword">public</span> Rectangle <a class="code hl_property" href="a00748.html#a4799ecdc568d7bf7101531246ad24227">CloseButtonRectangle</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="a00748.html#aeb691638a772b5fbf5e1e51bdd19a158">   15</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00748.html#aeb691638a772b5fbf5e1e51bdd19a158">Hot</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="a00748.html#a60a39ed2d3561dac8f69fab3b2a53440">   17</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00748.html#a60a39ed2d3561dac8f69fab3b2a53440">CloseButtonHot</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="a00748.html#a4d708fd4da59b9fc82b7b163c1e33535">   19</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00748.html#a4d708fd4da59b9fc82b7b163c1e33535">ShowSeparator</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        #endregion Property Region</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">        #region Constructor Region</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a00748.html#a8e7cb3557dc6115306b52c200a537256">   25</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00748.html#a8e7cb3557dc6115306b52c200a537256">VitNX_DockTab</a>(<a class="code hl_class" href="a00728.html">VitNX_DockContent</a> content)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_property" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">DockContent</a> = content;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">        #endregion Constructor Region</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">        #region Method Region</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3">CalculateWidth</a>(Graphics g, Font font)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            var width = (int)g.MeasureString(<a class="code hl_property" href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">DockContent</a>.<a class="code hl_property" href="a00728.html#af4a79a39ce7090e7884cd0ffa9506a97">DockText</a>, font).Width;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            width += 10;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">return</span> width;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">        #endregion Method Region</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00728_html"><div class="ttname"><a href="a00728.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent</a></div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00009">VitNX_DockContent.cs:10</a></div></div>
-<div class="ttc" id="aa00728_html_af4a79a39ce7090e7884cd0ffa9506a97"><div class="ttname"><a href="a00728.html#af4a79a39ce7090e7884cd0ffa9506a97">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockText</a></div><div class="ttdeci">string DockText</div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00028">VitNX_DockContent.cs:29</a></div></div>
-<div class="ttc" id="aa00748_html"><div class="ttname"><a href="a00748.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab</a></div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00005">VitNX_DockTab.cs:6</a></div></div>
-<div class="ttc" id="aa00748_html_a1d8dbe97d212b2b4aac3367e8a6b881b"><div class="ttname"><a href="a00748.html#a1d8dbe97d212b2b4aac3367e8a6b881b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.DockContent</a></div><div class="ttdeci">VitNX_DockContent DockContent</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00009">VitNX_DockTab.cs:9</a></div></div>
-<div class="ttc" id="aa00748_html_a4799ecdc568d7bf7101531246ad24227"><div class="ttname"><a href="a00748.html#a4799ecdc568d7bf7101531246ad24227">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.CloseButtonRectangle</a></div><div class="ttdeci">Rectangle CloseButtonRectangle</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00013">VitNX_DockTab.cs:13</a></div></div>
-<div class="ttc" id="aa00748_html_a4d708fd4da59b9fc82b7b163c1e33535"><div class="ttname"><a href="a00748.html#a4d708fd4da59b9fc82b7b163c1e33535">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.ShowSeparator</a></div><div class="ttdeci">bool ShowSeparator</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00019">VitNX_DockTab.cs:19</a></div></div>
-<div class="ttc" id="aa00748_html_a60a39ed2d3561dac8f69fab3b2a53440"><div class="ttname"><a href="a00748.html#a60a39ed2d3561dac8f69fab3b2a53440">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.CloseButtonHot</a></div><div class="ttdeci">bool CloseButtonHot</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00017">VitNX_DockTab.cs:17</a></div></div>
-<div class="ttc" id="aa00748_html_a8e7cb3557dc6115306b52c200a537256"><div class="ttname"><a href="a00748.html#a8e7cb3557dc6115306b52c200a537256">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.VitNX_DockTab</a></div><div class="ttdeci">VitNX_DockTab(VitNX_DockContent content)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00025">VitNX_DockTab.cs:25</a></div></div>
-<div class="ttc" id="aa00748_html_a97f1c62db7af4d3201e76ed1fdc098c3"><div class="ttname"><a href="a00748.html#a97f1c62db7af4d3201e76ed1fdc098c3">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.CalculateWidth</a></div><div class="ttdeci">int CalculateWidth(Graphics g, Font font)</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00034">VitNX_DockTab.cs:34</a></div></div>
-<div class="ttc" id="aa00748_html_adce05c41aca696cec6694e3a743c252b"><div class="ttname"><a href="a00748.html#adce05c41aca696cec6694e3a743c252b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.ClientRectangle</a></div><div class="ttdeci">Rectangle ClientRectangle</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00011">VitNX_DockTab.cs:11</a></div></div>
-<div class="ttc" id="aa00748_html_aeb691638a772b5fbf5e1e51bdd19a158"><div class="ttname"><a href="a00748.html#aeb691638a772b5fbf5e1e51bdd19a158">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockTab.Hot</a></div><div class="ttdeci">bool Hot</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00015">VitNX_DockTab.cs:15</a></div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00306.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00306.html#ae48effe2de0c7ef774d834b7d4602b2b">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00306.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX_SplitterType</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        Left,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        Right,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <a class="code hl_enumvalue" href="a00306.html#ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00">Top</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <a class="code hl_enumvalue" href="a00306.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4">Bottom</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+<div class="ttc" id="aa00306_html"><div class="ttname"><a href="a00306.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00306_html_a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4"><div class="ttname"><a href="a00306.html#a07913461bb014f52dd5bfafabe7d3587a2ad9d63b69c4a10a5cc9cad923133bc4">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Bottom</a></div><div class="ttdeci">@ Bottom</div></div>
+<div class="ttc" id="aa00306_html_ae48effe2de0c7ef774d834b7d4602b2b"><div class="ttname"><a href="a00306.html#ae48effe2de0c7ef774d834b7d4602b2b">VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType</a></div><div class="ttdeci">VitNX_SplitterType</div><div class="ttdef"><b>Definition:</b> <a href="a00206_source.html#l00003">VitNX_SplitterType.cs:4</a></div></div>
+<div class="ttc" id="aa00306_html_ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00"><div class="ttname"><a href="a00306.html#ae48effe2de0c7ef774d834b7d4602b2baa4ffdcf0dc1f31b9acaf295d75b51d00">VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType.Top</a></div><div class="ttdeci">@ Top</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_DockTab.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_bc2f719b269f1610bc8c25783e250bad.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_ee6270b0cb7d3a503533bd8f72cf1929.html">UI</a></li><li class="navelem"><a class="el" href="dir_900049c1abe4b97a29691377fdc5fb3c.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_a2d3fcbb3339b459cbe4e97c5cc6d07c.html">Docking</a></li><li class="navelem"><b>VitNX_SplitterType.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
+<script type="text/javascript">
+  $(function() {
+     toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+     toggleButton.title = "Toggle Light/Dark Mode"
+     $(document).ready(function(){
+       document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+     })
+     $(window).resize(function(){
+       document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+     })
+   })
+</script>
 </body>
 </html>

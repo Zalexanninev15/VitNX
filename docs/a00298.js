@@ -1,7 +1,10 @@
 var a00298 =
 [
-    [ "Constants", "a00536.html", "a00536" ],
-    [ "Enums", "a00540.html", "a00540" ],
-    [ "Import", "a00532.html", "a00532" ],
-    [ "StandaloneImportFunctions", "a00544.html", "a00544" ]
+    [ "GetClipboardText", "a00454.html", "a00454" ],
+    [ "Keyboard", "a00462.html", "a00462" ],
+    [ "Monitor", "a00466.html", "a00466" ],
+    [ "NewFolderDialog", "a00414.html", "a00414" ],
+    [ "STATask", "a00458.html", "a00458" ],
+    [ "TaskBarProgressBar", "a00402.html", "a00402" ],
+    [ "VolumeControl", "a00430.html", "a00430" ]
 ];

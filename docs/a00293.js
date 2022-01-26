@@ -1,11 +1,11 @@
 var a00293 =
 [
-    [ "Cpu", "a00348.html", "a00348" ],
-    [ "Disk", "a00356.html", "a00356" ],
-    [ "Gpu", "a00352.html", "a00352" ],
-    [ "Helper", "a00340.html", "a00340" ],
-    [ "Monitor", "a00360.html", "a00360" ],
-    [ "Motherboard", "a00364.html", "a00364" ],
-    [ "Ram", "a00368.html", "a00368" ],
-    [ "Windows", "a00344.html", "a00344" ]
+    [ "Cpu", "a00350.html", "a00350" ],
+    [ "Disk", "a00358.html", "a00358" ],
+    [ "Gpu", "a00354.html", "a00354" ],
+    [ "Helper", "a00342.html", "a00342" ],
+    [ "Monitor", "a00362.html", "a00362" ],
+    [ "Motherboard", "a00366.html", "a00366" ],
+    [ "Ram", "a00370.html", "a00370" ],
+    [ "Windows", "a00346.html", "a00346" ]
 ];
