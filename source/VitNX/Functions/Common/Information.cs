@@ -31,7 +31,7 @@ namespace VitNX.Functions.Common.Information
         public static string WindowsDisplayVersionFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "");
         public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
 
-        public static MemoryStream GetScreen()
+        public static MemoryStream GetScreenToMemoryStream()
         {
             Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics GH = Graphics.FromImage(BM);
