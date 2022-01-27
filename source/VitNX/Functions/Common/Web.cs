@@ -46,20 +46,22 @@ namespace VitNX.Functions.Common.Web
     public class Config
     {
         public static string Host = Dns.GetHostName();
-        public static string LocalIpForNet4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
-        public static string _PublicIp = "0.0.0.0";
+        public static string LocalIPv6 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+        public static string LocalIPv4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
+        public static string _PublicIP = "0.0.0.0";
 
         public static void Set()
         {
             using (WebClient client = new WebClient())
             {
-                try { _PublicIp = client.DownloadString("https://icanhazip.com"); } catch { _PublicIp = client.DownloadString("https://checkip.amazonaws.com"); }
-                if (_PublicIp == "" || _PublicIp == "0.0.0.0")
+                try { _PublicIP = client.DownloadString("https://icanhazip.com"); } 
+                catch { _PublicIP = client.DownloadString("https://checkip.amazonaws.com"); }
+                if (_PublicIP == "" || _PublicIP == "0.0.0.0")
                 {
-                    try { _PublicIp = client.DownloadString("https://checkip.amazonaws.com"); } catch { }
+                    try { _PublicIP = client.DownloadString("https://checkip.amazonaws.com"); } catch { }
                 }
             }
-            _PublicIp = _PublicIp.ToString().Replace("\n", "").Replace("\r", "");
+            _PublicIP = _PublicIP.Trim();
         }
 
         public static IPAddress DefaultGateway = NetworkInterface

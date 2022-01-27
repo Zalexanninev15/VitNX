@@ -78,10 +78,12 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:abd5d02452d0753592d3ade6268727de8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#abd5d02452d0753592d3ade6268727de8">Host</a> = Dns.GetHostName()</td></tr>
 <tr class="separator:abd5d02452d0753592d3ade6268727de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04df096ee50bcc6a754da84263d4b316"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a04df096ee50bcc6a754da84263d4b316">LocalIpForNet4</a> = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString()</td></tr>
-<tr class="separator:a04df096ee50bcc6a754da84263d4b316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac628945c9a1d6920eba69362782d858f"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = &quot;0.0.0.0&quot;</td></tr>
-<tr class="separator:ac628945c9a1d6920eba69362782d858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a383dd6ecd680e206def72d0131f33731"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a383dd6ecd680e206def72d0131f33731">LocalIPv6</a> = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString()</td></tr>
+<tr class="separator:a383dd6ecd680e206def72d0131f33731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff96838b5fee1d4f1d9c1e94ed78256"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a4ff96838b5fee1d4f1d9c1e94ed78256">LocalIPv4</a> = Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString()</td></tr>
+<tr class="separator:a4ff96838b5fee1d4f1d9c1e94ed78256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1ebc41d4dce552b47aef21850b99d1"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> = &quot;0.0.0.0&quot;</td></tr>
+<tr class="separator:acc1ebc41d4dce552b47aef21850b99d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1c8cc9d959a9a8987a52ca3d1cd7193"><td class="memItemLeft" align="right" valign="top">static IPAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#aa1c8cc9d959a9a8987a52ca3d1cd7193">DefaultGateway</a></td></tr>
 <tr class="separator:aa1c8cc9d959a9a8987a52ca3d1cd7193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a916a54d7e95e3f0571186bba9c1885a3"><td class="memItemLeft" align="right" valign="top">static SecurityProtocolType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a916a54d7e95e3f0571186bba9c1885a3">UseProtocols</a></td></tr>
@@ -114,25 +116,26 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00052">52</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>        {</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keyword">using</span> (WebClient client = <span class="keyword">new</span> WebClient())</div>
-<div class="line"><span class="lineno">   55</span>            {</div>
-<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">try</span> { <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = client.DownloadString(<span class="stringliteral">&quot;https://icanhazip.com&quot;</span>); } <span class="keywordflow">catch</span> { <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = client.DownloadString(<span class="stringliteral">&quot;https://checkip.amazonaws.com&quot;</span>); }</div>
-<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> == <span class="stringliteral">&quot;&quot;</span> || <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> == <span class="stringliteral">&quot;0.0.0.0&quot;</span>)</div>
-<div class="line"><span class="lineno">   58</span>                {</div>
-<div class="line"><span class="lineno">   59</span>                    <span class="keywordflow">try</span> { <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = client.DownloadString(<span class="stringliteral">&quot;https://checkip.amazonaws.com&quot;</span>); } <span class="keywordflow">catch</span> { }</div>
-<div class="line"><span class="lineno">   60</span>                }</div>
-<div class="line"><span class="lineno">   61</span>            }</div>
-<div class="line"><span class="lineno">   62</span>            <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a>.ToString().Replace(<span class="stringliteral">&quot;\n&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Replace(<span class="stringliteral">&quot;\r&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="ttc" id="aa00386_html_ac628945c9a1d6920eba69362782d858f"><div class="ttname"><a href="a00386.html#ac628945c9a1d6920eba69362782d858f">VitNX.Functions.Common.Web.Config._PublicIp</a></div><div class="ttdeci">static string _PublicIp</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00050">Web.cs:50</a></div></div>
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00053">53</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>        {</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keyword">using</span> (WebClient client = <span class="keyword">new</span> WebClient())</div>
+<div class="line"><span class="lineno">   56</span>            {</div>
+<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">try</span> { <a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> = client.DownloadString(<span class="stringliteral">&quot;https://icanhazip.com&quot;</span>); } </div>
+<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">catch</span> { <a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> = client.DownloadString(<span class="stringliteral">&quot;https://checkip.amazonaws.com&quot;</span>); }</div>
+<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> == <span class="stringliteral">&quot;&quot;</span> || <a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> == <span class="stringliteral">&quot;0.0.0.0&quot;</span>)</div>
+<div class="line"><span class="lineno">   60</span>                {</div>
+<div class="line"><span class="lineno">   61</span>                    <span class="keywordflow">try</span> { <a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> = client.DownloadString(<span class="stringliteral">&quot;https://checkip.amazonaws.com&quot;</span>); } <span class="keywordflow">catch</span> { }</div>
+<div class="line"><span class="lineno">   62</span>                }</div>
+<div class="line"><span class="lineno">   63</span>            }</div>
+<div class="line"><span class="lineno">   64</span>            <a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a> = <a class="code hl_variable" href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">_PublicIP</a>.Trim();</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="ttc" id="aa00386_html_acc1ebc41d4dce552b47aef21850b99d1"><div class="ttname"><a href="a00386.html#acc1ebc41d4dce552b47aef21850b99d1">VitNX.Functions.Common.Web.Config._PublicIP</a></div><div class="ttdeci">static string _PublicIP</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00051">Web.cs:51</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac628945c9a1d6920eba69362782d858f" name="ac628945c9a1d6920eba69362782d858f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac628945c9a1d6920eba69362782d858f">&#9670;&nbsp;</a></span>_PublicIp</h2>
+<a id="acc1ebc41d4dce552b47aef21850b99d1" name="acc1ebc41d4dce552b47aef21850b99d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1ebc41d4dce552b47aef21850b99d1">&#9670;&nbsp;</a></span>_PublicIP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +144,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string _PublicIp = &quot;0.0.0.0&quot;</td>
+          <td class="memname">string _PublicIP = &quot;0.0.0.0&quot;</td>
         </tr>
       </table>
   </td>
@@ -151,7 +154,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00050">50</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00051">51</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
 
 </div>
 </div>
@@ -183,7 +186,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        .Where(a =&gt; a != <span class="keyword">null</span>)</div>
 <div class="line">        .FirstOrDefault()</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00065">65</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00067">67</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
 
 </div>
 </div>
@@ -211,8 +214,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a04df096ee50bcc6a754da84263d4b316" name="a04df096ee50bcc6a754da84263d4b316"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04df096ee50bcc6a754da84263d4b316">&#9670;&nbsp;</a></span>LocalIpForNet4</h2>
+<a id="a4ff96838b5fee1d4f1d9c1e94ed78256" name="a4ff96838b5fee1d4f1d9c1e94ed78256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff96838b5fee1d4f1d9c1e94ed78256">&#9670;&nbsp;</a></span>LocalIPv4</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +224,31 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string LocalIpForNet4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString()</td>
+          <td class="memname">string LocalIPv4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00050">50</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+
+</div>
+</div>
+<a id="a383dd6ecd680e206def72d0131f33731" name="a383dd6ecd680e206def72d0131f33731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a383dd6ecd680e206def72d0131f33731">&#9670;&nbsp;</a></span>LocalIPv6</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string LocalIPv6 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString()</td>
         </tr>
       </table>
   </td>
@@ -259,7 +286,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        SecurityProtocolType.Tls11 |</div>
 <div class="line">        SecurityProtocolType.Tls</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00074">74</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00014_source.html#l00076">76</a> of file <a class="el" href="a00014_source.html">Web.cs</a>.</p>
 
 </div>
 </div>
