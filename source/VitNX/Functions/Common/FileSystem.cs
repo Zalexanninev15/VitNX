@@ -7,21 +7,23 @@ namespace VitNX.Functions.Common
 {
     public class FileSystem
     {
-        public static List<string> ReturnRecursFList(string sourceFolder)
+        public static List<string> GetItemsListInFolder(string sourceFolder)
         {
             List<string> ls = new List<string>();
             try
             {
                 string[] folders = Directory.GetDirectories(sourceFolder);
-                foreach (string folder in folders) ls.Add("Folder: " + folder);
+                foreach (string folder in folders) 
+                    ls.Add("Folder: " + folder);
                 string[] files = Directory.GetFiles(sourceFolder);
-                foreach (string filename in files) ls.Add("File: " + filename);
+                foreach (string filename in files) 
+                    ls.Add("File: " + filename);
             }
             catch (Exception e) { ls.Add(e.Message.Trim('\n')); }
             return ls;
         }
 
-        public static long GetDirectorySize(DirectoryInfo sourceFolder)
+        public static long GetFolderSize(DirectoryInfo sourceFolder)
         {
             long size = 0;
             FileInfo[] fis = sourceFolder.GetFiles();
@@ -29,7 +31,7 @@ namespace VitNX.Functions.Common
                 size += fi.Length;
             DirectoryInfo[] dis = sourceFolder.GetDirectories();
             foreach (DirectoryInfo di in dis)
-                size += GetDirectorySize(di);
+                size += GetFolderSize(di);
             return size;
         }
 
@@ -46,7 +48,7 @@ namespace VitNX.Functions.Common
                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
         }
 
-        public static void DeleteDirectoryToTrash(string targetFolder)
+        public static void DeleteFolderToTrash(string targetFolder)
         {
             Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(targetFolder,
                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
@@ -60,13 +62,13 @@ namespace VitNX.Functions.Common
             using (FileStream fs = File.OpenWrite(filePath))
             {
                 var data = text;
-                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(data);
+                byte[] bytes = Encoding.UTF8.GetBytes(data);
                 fs.Write(bytes, 0, bytes.Length);
             }
             return new string[] { fileName, filePath };
         }
 
-        public static string GetText(string targetFile)
+        public static string GetMD5FromFile(string targetFile)
         {
             string text = "Text file not found";
             using (StreamReader sr = File.OpenText(targetFile))
