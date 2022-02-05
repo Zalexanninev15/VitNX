@@ -1,12 +1,28 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Text;
 
 namespace VitNX.Functions.Common.Web
 {
     public class DataFromSites
     {
+        public static string DownloadString(string url, bool get = false, string options = "")
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.Proxy = null;
+                    return Text.FixText(client.DownloadString(url));
+                }
+            }
+            catch (Exception ex) { return ex.Message; }
+        }
+
         public static string GetGeo(string ip)
         {
             try
@@ -14,7 +30,7 @@ namespace VitNX.Functions.Common.Web
                 using (WebClient client = new WebClient())
                     return client.DownloadString($"https://ipinfo.io/{ip}/json");
             }
-            catch { return "404"; }
+            catch (Exception ex) { return ex.Message; }
         }
 
         public static bool IsValidTelegramBotToken(string botToken)
@@ -48,15 +64,15 @@ namespace VitNX.Functions.Common.Web
         public static string Host = Dns.GetHostName();
         public static string LocalIPv6 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
         public static string LocalIPv4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
-        public static string _PublicIP = "0.0.0.0";
+        public static string _PublicIP = "localhost";
 
         public static void Set()
         {
             using (WebClient client = new WebClient())
             {
-                try { _PublicIP = client.DownloadString("https://icanhazip.com"); } 
+                try { _PublicIP = client.DownloadString("https://icanhazip.com"); }
                 catch { _PublicIP = client.DownloadString("https://checkip.amazonaws.com"); }
-                if (_PublicIP == "" || _PublicIP == "0.0.0.0")
+                if (_PublicIP == "" || _PublicIP == "0.0.0.0" || _PublicIP == "localhost")
                 {
                     try { _PublicIP = client.DownloadString("https://checkip.amazonaws.com"); } catch { }
                 }
@@ -77,5 +93,49 @@ namespace VitNX.Functions.Common.Web
         SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;
+
+        public static bool OpenLink(string link)
+        {
+            try
+            {
+                Process.Start(link);
+                return true;
+            }
+            catch { return false; }
+        }
+    }
+
+    public class SendDataToSites
+    {
+        public static string Post(string url, string options)
+        {
+            // Example: Post("https://site.com/auth", "client_id=43435&key=create");
+            try
+            {
+                WebRequest req = WebRequest.Create(url);
+                req.Method = "POST";
+                req.Timeout = 100000;
+                req.ContentType = "application/x-www-form-urlencoded";
+                byte[] sentData = Encoding.UTF8.GetBytes(options);
+                req.ContentLength = sentData.Length;
+                Stream sendStream = req.GetRequestStream();
+                sendStream.Write(sentData, 0, sentData.Length);
+                sendStream.Close();
+                WebResponse res = req.GetResponse();
+                Stream ReceiveStream = res.GetResponseStream();
+                StreamReader sr = new StreamReader(ReceiveStream, Encoding.UTF8);
+                char[] read = new char[256];
+                int count = sr.Read(read, 0, 256);
+                string Out = string.Empty;
+                while (count > 0)
+                {
+                    string str = new string(read, 0, count);
+                    Out += str;
+                    count = sr.Read(read, 0, 256);
+                }
+                return Out;
+            }
+            catch (Exception ex) { return ex.Message; }
+        }
     }
 }

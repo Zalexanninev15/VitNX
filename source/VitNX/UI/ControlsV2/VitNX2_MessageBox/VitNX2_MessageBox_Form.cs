@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+
 using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.UI.ControlsV2
@@ -134,9 +135,9 @@ namespace VitNX.UI.ControlsV2
                         button2.Text = "Cancel";
                         button2.DialogResult = DialogResult.Cancel;
                         button2.BackColor = Color.DimGray;
-                        if (defaultButton != MessageBoxDefaultButton.Button3) 
+                        if (defaultButton != MessageBoxDefaultButton.Button3)
                             SetDefaultButton(defaultButton);
-                        else 
+                        else
                             SetDefaultButton(MessageBoxDefaultButton.Button1);
                         break;
                     }
@@ -151,7 +152,7 @@ namespace VitNX.UI.ControlsV2
                         button2.Text = "Cancel";
                         button2.DialogResult = DialogResult.Cancel;
                         button2.BackColor = Color.DimGray;
-                        if (defaultButton != MessageBoxDefaultButton.Button3) 
+                        if (defaultButton != MessageBoxDefaultButton.Button3)
                             SetDefaultButton(defaultButton);
                         else
                             SetDefaultButton(MessageBoxDefaultButton.Button1);
@@ -168,9 +169,9 @@ namespace VitNX.UI.ControlsV2
                         button2.Text = "No";
                         button2.DialogResult = DialogResult.No;
                         button2.BackColor = Color.IndianRed;
-                        if (defaultButton != MessageBoxDefaultButton.Button3) 
+                        if (defaultButton != MessageBoxDefaultButton.Button3)
                             SetDefaultButton(defaultButton);
-                        else 
+                        else
                             SetDefaultButton(MessageBoxDefaultButton.Button1);
                         break;
                     }

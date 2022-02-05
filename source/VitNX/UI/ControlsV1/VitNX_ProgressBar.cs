@@ -15,25 +15,25 @@ namespace VitNX.UI.ControlsV1
         [Category("Additional Options")]
         public Color TextColor
         {
-            get { return _textColourBrush.Color; } 
-            set 
+            get { return _textColourBrush.Color; }
+            set
             {
                 _textColourBrush.Dispose();
                 _textColourBrush = new SolidBrush(value);
-            } 
+            }
         }
 
         private SolidBrush _progressColourBrush = (SolidBrush)Brushes.DodgerBlue;
 
         [Category("Additional Options"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
         public Color ProgressColor
-        { 
-            get { return _progressColourBrush.Color; } 
-            set 
+        {
+            get { return _progressColourBrush.Color; }
+            set
             {
-                _progressColourBrush.Dispose(); 
+                _progressColourBrush.Dispose();
                 _progressColourBrush = new SolidBrush(value);
-            } 
+            }
         }
 
         private VitNX_ProgressBarDisplayMode _visualMode = VitNX_ProgressBarDisplayMode.CurrProgress;
@@ -45,8 +45,8 @@ namespace VitNX.UI.ControlsV1
             set
             {
                 _visualMode = value;
-                Invalidate(); 
-            } 
+                Invalidate();
+            }
         }
 
         private string _text = string.Empty;
@@ -54,12 +54,12 @@ namespace VitNX.UI.ControlsV1
         [Description("If it's empty, % will be shown"), Category("Additional Options"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
         public string CustomText
         {
-            get { return _text; } 
+            get { return _text; }
             set
-            { 
+            {
                 _text = value;
-                Invalidate(); 
-            } 
+                Invalidate();
+            }
         }
 
         private string _textToDraw
@@ -97,7 +97,7 @@ namespace VitNX.UI.ControlsV1
 
         private string _currProgressStr
         {
-            get { return $"{Value}/{Maximum}"; } 
+            get { return $"{Value}/{Maximum}"; }
         }
 
         private void FixComponentBlinking()
@@ -107,13 +107,14 @@ namespace VitNX.UI.ControlsV1
 
         private string _percentageStr
         {
-            get {
+            get
+            {
                 return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %";
-            } 
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
-        { 
+        {
             Graphics g = e.Graphics; DrawProgressBar(g); DrawStringIfNeeded(g);
         }
 
@@ -122,7 +123,7 @@ namespace VitNX.UI.ControlsV1
             Rectangle rect = ClientRectangle;
             ProgressBarRenderer.DrawHorizontalBar(g, rect);
             if (Value > 0)
-            { 
+            {
                 Rectangle clip = new Rectangle(rect.X, rect.Y, (int)Math.Round((float)Value / Maximum * rect.Width), rect.Height);
                 g.FillRectangle(_progressColourBrush, clip);
             }
@@ -147,9 +148,9 @@ namespace VitNX.UI.ControlsV1
 
         private void InitializeComponent()
         {
-            SuspendLayout(); 
-            BackColor = Color.FromArgb(69, 73, 74); 
-            ResumeLayout(false); 
+            SuspendLayout();
+            BackColor = Color.FromArgb(69, 73, 74);
+            ResumeLayout(false);
         }
     }
 }

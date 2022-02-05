@@ -19,16 +19,16 @@ namespace VitNX.Functions.NotGUI
         private ConsoleColor pb = new ConsoleColor();
 
         public ConsoleProgressBar()
-        { 
-            timer = new Timer(TimerHandler); 
-            if (!Console.IsOutputRedirected) 
+        {
+            timer = new Timer(TimerHandler);
+            if (!Console.IsOutputRedirected)
                 ResetTimer();
         }
 
         public void Report(double value)
         {
-            value = Math.Max(0, Math.Min(1, value)); 
-            Interlocked.Exchange(ref currentProgress, value); 
+            value = Math.Max(0, Math.Min(1, value));
+            Interlocked.Exchange(ref currentProgress, value);
         }
 
         public void SetColor(ConsoleColor my_pb)
@@ -48,7 +48,7 @@ namespace VitNX.Functions.NotGUI
 
         private void ResetTimer()
         {
-            timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1)); 
+            timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1));
         }
 
         private void TimerHandler(object state)
@@ -57,7 +57,7 @@ namespace VitNX.Functions.NotGUI
             {
                 if (workdo == true)
                 {
-                    if (disposed) 
+                    if (disposed)
                         return;
                     int progressBlockCount = (int)(currentProgress * blockCount);
                     int percent = (int)(currentProgress * 100);

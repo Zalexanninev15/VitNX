@@ -13,10 +13,10 @@ namespace VitNX.Functions.Common
             try
             {
                 string[] folders = Directory.GetDirectories(sourceFolder);
-                foreach (string folder in folders) 
+                foreach (string folder in folders)
                     ls.Add("Folder: " + folder);
                 string[] files = Directory.GetFiles(sourceFolder);
-                foreach (string filename in files) 
+                foreach (string filename in files)
                     ls.Add("File: " + filename);
             }
             catch (Exception e) { ls.Add(e.Message.Trim('\n')); }
@@ -130,8 +130,8 @@ namespace VitNX.Functions.Common
         }
 
         public static void CopyFolder(string sourceFolder, string targetFolder)
-        { 
-            Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, targetFolder); 
+        {
+            Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, targetFolder);
         }
 
         public static bool IsPeExe(string targetFile)

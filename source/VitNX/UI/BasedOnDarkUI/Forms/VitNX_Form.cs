@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+
 using VitNX.UI.BasedOnDarkUI.Config;
 
 namespace VitNX.UI.BasedOnDarkUI.Forms
@@ -71,14 +72,13 @@ namespace VitNX.UI.BasedOnDarkUI.Forms
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // VitNX_Form
-            // 
+            //
             this.ClientSize = new Size(284, 265);
             this.Name = "VitNX_Form";
             this.TopMost = true;
             this.ResumeLayout(false);
-
         }
     }
 }

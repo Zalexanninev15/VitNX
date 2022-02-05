@@ -101,9 +101,9 @@ namespace VitNX.UI.ControlsV2
             pevent.Graphics.Clear(Parent.BackColor);
             if (Checked)
             {
-                if (solidStyle) 
+                if (solidStyle)
                     pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
-                else 
+                else
                     pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
                 pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor),
                     new Rectangle(Width - Height + 1, 2, toggleSize,
@@ -111,9 +111,9 @@ namespace VitNX.UI.ControlsV2
             }
             else
             {
-                if (solidStyle) 
+                if (solidStyle)
                     pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
-                else 
+                else
                     pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
                     new Rectangle(2, 2,

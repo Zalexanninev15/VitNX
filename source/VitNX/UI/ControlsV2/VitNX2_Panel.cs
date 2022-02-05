@@ -97,7 +97,7 @@ namespace VitNX.UI.ControlsV2
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     Region = new Region(pathSurface);
                     pevent.Graphics.DrawPath(penSurface, pathSurface);
-                    if (borderSize >= 1) 
+                    if (borderSize >= 1)
                         pevent.Graphics.DrawPath(penBorder, pathBorder);
                 }
             }
@@ -129,7 +129,7 @@ namespace VitNX.UI.ControlsV2
 
         private void Button_Resize(object sender, EventArgs e)
         {
-            if (borderRadius > Height) 
+            if (borderRadius > Height)
                 borderRadius = Height;
         }
     }
