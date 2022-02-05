@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/source/VitNX/UI/ControlsV2/Helper.cs Source File</title>
+<title>VitNX: E:/Github/VitNX/source/VitNX/UI/ControlsV1/VitNX_ProgressBarDisplayMode.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,48 +61,35 @@ $(document).ready(function(){initNavTree('a00266_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">Helper.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_ProgressBarDisplayMode.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Drawing;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="a00312.html">    4</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00312.html">VitNX.UI.ControlsV2</a></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="a00806.html">    6</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00806.html">Helper</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00806.html#a26de0a0f54e31eecd331279d55c7761d">    8</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="a00806.html#a26de0a0f54e31eecd331279d55c7761d">VitNX2_TextBoxesFocus</a>(<span class="keywordtype">bool</span> enter)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            <span class="keywordflow">if</span> (enter) <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keywordflow">else</span> <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        }</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00806.html#a3d5e897786048a5ffa00aa536704c762">   14</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00806.html#a3d5e897786048a5ffa00aa536704c762">VitNX2_Button_MouseLeave</a>(<span class="keywordtype">object</span> sender, EventArgs e)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <a class="code hl_class" href="a00810.html">VitNX2_Button</a> temp = sender as <a class="code hl_class" href="a00810.html">VitNX2_Button</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            temp.<a class="code hl_property" href="a00810.html#a9a254702537f8e1665a6d94154198b04">BorderColor</a> = Color.FromArgb(26, 32, 48);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="a00806.html#a45f962097bd56f366fe1a193024c3272">   20</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00806.html#a45f962097bd56f366fe1a193024c3272">VitNX2_Button_MouseEnter</a>(<span class="keywordtype">object</span> sender, EventArgs e)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_class" href="a00810.html">VitNX2_Button</a> temp = sender as <a class="code hl_class" href="a00810.html">VitNX2_Button</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            temp.<a class="code hl_property" href="a00810.html#a9a254702537f8e1665a6d94154198b04">BorderColor</a> = Color.FromArgb(45, 50, 65);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
-<div class="ttc" id="aa00312_html"><div class="ttname"><a href="a00312.html">VitNX.UI.ControlsV2</a></div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00004">Helper.cs:5</a></div></div>
-<div class="ttc" id="aa00806_html"><div class="ttname"><a href="a00806.html">VitNX.UI.ControlsV2.Helper</a></div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00006">Helper.cs:7</a></div></div>
-<div class="ttc" id="aa00806_html_a26de0a0f54e31eecd331279d55c7761d"><div class="ttname"><a href="a00806.html#a26de0a0f54e31eecd331279d55c7761d">VitNX.UI.ControlsV2.Helper.VitNX2_TextBoxesFocus</a></div><div class="ttdeci">static int VitNX2_TextBoxesFocus(bool enter)</div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00008">Helper.cs:8</a></div></div>
-<div class="ttc" id="aa00806_html_a3d5e897786048a5ffa00aa536704c762"><div class="ttname"><a href="a00806.html#a3d5e897786048a5ffa00aa536704c762">VitNX.UI.ControlsV2.Helper.VitNX2_Button_MouseLeave</a></div><div class="ttdeci">static void VitNX2_Button_MouseLeave(object sender, EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00014">Helper.cs:14</a></div></div>
-<div class="ttc" id="aa00806_html_a45f962097bd56f366fe1a193024c3272"><div class="ttname"><a href="a00806.html#a45f962097bd56f366fe1a193024c3272">VitNX.UI.ControlsV2.Helper.VitNX2_Button_MouseEnter</a></div><div class="ttdeci">static void VitNX2_Button_MouseEnter(object sender, EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00020">Helper.cs:20</a></div></div>
-<div class="ttc" id="aa00810_html"><div class="ttname"><a href="a00810.html">VitNX.UI.ControlsV2.VitNX2_Button</a></div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00009">VitNX2_Button.cs:10</a></div></div>
-<div class="ttc" id="aa00810_html_a9a254702537f8e1665a6d94154198b04"><div class="ttname"><a href="a00810.html#a9a254702537f8e1665a6d94154198b04">VitNX.UI.ControlsV2.VitNX2_Button.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdef"><b>Definition:</b> <a href="a00269_source.html#l00038">VitNX2_Button.cs:39</a></div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00326.html">VitNX.UI.ControlsV1</a></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367e">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367e">VitNX_ProgressBarDisplayMode</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        <a class="code hl_enumvalue" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367eae57f1ec1e509fec39b52832c2185eab1">NoText</a>,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <a class="code hl_enumvalue" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea37be07209f53a5d636d5c904ca9ae64c">Percentage</a>,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <a class="code hl_enumvalue" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea896a0b1be25ef8b8df6e677544b356da">CurrProgress</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <a class="code hl_enumvalue" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea61534008683fdfaa116faa6097518761">CustomText</a>,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_enumvalue" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea2a62ed06cde6977ca97f06bba12fd6d6">TextAndPercentage</a>,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_enumvalue" href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367eade77f4101ed2e18acace104b199a62af">TextAndCurrProgress</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="ttc" id="aa00326_html"><div class="ttname"><a href="a00326.html">VitNX.UI.ControlsV1</a></div><div class="ttdef"><b>Definition:</b> <a href="a00263_source.html#l00006">VitNX_ProgressBar.cs:7</a></div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367e"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367e">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode</a></div><div class="ttdeci">VitNX_ProgressBarDisplayMode</div><div class="ttdef"><b>Definition:</b> <a href="a00266_source.html#l00003">VitNX_ProgressBarDisplayMode.cs:4</a></div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367ea2a62ed06cde6977ca97f06bba12fd6d6"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea2a62ed06cde6977ca97f06bba12fd6d6">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.TextAndPercentage</a></div><div class="ttdeci">@ TextAndPercentage</div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367ea37be07209f53a5d636d5c904ca9ae64c"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea37be07209f53a5d636d5c904ca9ae64c">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.Percentage</a></div><div class="ttdeci">@ Percentage</div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367ea61534008683fdfaa116faa6097518761"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea61534008683fdfaa116faa6097518761">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.CustomText</a></div><div class="ttdeci">@ CustomText</div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367ea896a0b1be25ef8b8df6e677544b356da"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367ea896a0b1be25ef8b8df6e677544b356da">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.CurrProgress</a></div><div class="ttdeci">@ CurrProgress</div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367eade77f4101ed2e18acace104b199a62af"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367eade77f4101ed2e18acace104b199a62af">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.TextAndCurrProgress</a></div><div class="ttdeci">@ TextAndCurrProgress</div></div>
+<div class="ttc" id="aa00326_html_a22a7bd23973dd617cc1a8cf0ba1c367eae57f1ec1e509fec39b52832c2185eab1"><div class="ttname"><a href="a00326.html#a22a7bd23973dd617cc1a8cf0ba1c367eae57f1ec1e509fec39b52832c2185eab1">VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.NoText</a></div><div class="ttdeci">@ NoText</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_8fa0f6026512987dea24c6bb733e7911.html">ControlsV2</a></li><li class="navelem"><b>Helper.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_cad09cf0417a70ebac95044a6c16ea67.html">ControlsV1</a></li><li class="navelem"><b>VitNX_ProgressBarDisplayMode.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

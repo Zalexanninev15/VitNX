@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Security;
 using System.Windows.Forms;
+
 using VitNX.UI.BasedOnDarkUI.Config;
 
 namespace VitNX.UI.BasedOnDarkUI.Controls

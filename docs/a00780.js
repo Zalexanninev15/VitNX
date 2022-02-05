@@ -1,0 +1,25 @@
+var a00780 =
+[
+    [ "VitNX_DockPanel", "a00780.html#a501559c95235d2aa4ce28f2e788b63e5", null ],
+    [ "AddContent", "a00780.html#a851dd7bf4d148af9c13820d03588b89a", null ],
+    [ "AddContent", "a00780.html#a37ba961625d290a378ecd2904f7d1cbb", null ],
+    [ "ContainsContent", "a00780.html#ad1fd7d3cd3b2bf81c471b041940371f8", null ],
+    [ "DragContent", "a00780.html#abdddaf4e1ee22391be8803f4b3e51ead", null ],
+    [ "GetDockPanelState", "a00780.html#adb170f620941f25f19d8450ea380ff19", null ],
+    [ "GetDocuments", "a00780.html#a00fad7049093586359c4b4c49252a19e", null ],
+    [ "InsertContent", "a00780.html#a2bf33cc7e1b5c7b47c62202d7301023e", null ],
+    [ "RemoveContent", "a00780.html#a4cdc2cf4cdc8cdf509431d29968dd1dd", null ],
+    [ "RestoreDockPanelState", "a00780.html#a11df7c7281951855ee3c3adad3978065", null ],
+    [ "ActiveContent", "a00780.html#a920c14cfcb5e6e5b7e44facbeaad3a72", null ],
+    [ "ActiveDocument", "a00780.html#aa6fd0f34ce00e8c68b964966f126ce77", null ],
+    [ "ActiveGroup", "a00780.html#a62eb786ffe6da4157513c0bdef4aa244", null ],
+    [ "ActiveRegion", "a00780.html#abc99195064a5f4dac020b4e150185dbe", null ],
+    [ "DockContentDragFilter", "a00780.html#af89c0c9d730e87df7c042de2bc1c1475", null ],
+    [ "DockResizeFilter", "a00780.html#acf683616ada9013672bc4f01c20f9e1a", null ],
+    [ "MouseButtonState", "a00780.html#ad8fa9b0e3856e7e06470567f5db29f6d", null ],
+    [ "Regions", "a00780.html#a9b2421ae3c60aacc8f54964fa73f69a4", null ],
+    [ "Splitters", "a00780.html#aa493355bf008ddf37b4281cb6c6c6875", null ],
+    [ "ActiveContentChanged", "a00780.html#aa3cfe863beb23e51452df120893a6a26", null ],
+    [ "ContentAdded", "a00780.html#afe7fd77d04ea21c3d7c23f93b36abaff", null ],
+    [ "ContentRemoved", "a00780.html#a664e458563b286721a52931cfc44ae23", null ]
+];

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+
 using VitNX.UI.BasedOnDarkUI.Config;
 
 namespace VitNX.UI.BasedOnDarkUI.Docking

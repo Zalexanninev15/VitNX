@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/source/VitNX/UI/BasedOnDarkUI/Forms/VitNX_MessageBox.Designer.cs Source File</title>
+<title>VitNX: E:/Github/VitNX/source/VitNX/UI/BasedOnDarkUI/Forms/VitNX_Form.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,95 +61,112 @@ $(document).ready(function(){initNavTree('a00233_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_MessageBox.Designer.cs</div></div>
+  <div class="headertitle"><div class="title">VitNX_Form.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00290.html">VitNX</a>.<a class="code hl_namespace" href="a00301.html">UI</a>.<a class="code hl_namespace" href="a00302.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00305.html">Controls</a>;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00308.html">VitNX.UI.BasedOnDarkUI.Forms</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keyword">partial class </span>VitNX_MessageBox</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">private</span> System.ComponentModel.IContainer components = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="a00770.html#a849c3c7f8d08104f0cdb46bee9fe6389">   16</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00770.html#a849c3c7f8d08104f0cdb46bee9fe6389">Dispose</a>(<span class="keywordtype">bool</span> disposing)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordflow">if</span> (disposing &amp;&amp; (components != <span class="keyword">null</span>))</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                components.Dispose();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            base.Dispose(disposing);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">        #region Windows Form Designer generated code</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> InitializeComponent()</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.ComponentModel;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Drawing;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Windows.Forms;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using</span> <a class="code hl_namespace" href="a00305.html">VitNX</a>.<a class="code hl_namespace" href="a00316.html">UI</a>.<a class="code hl_namespace" href="a00317.html">BasedOnDarkUI</a>.<a class="code hl_namespace" href="a00319.html">Config</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00323.html">VitNX.UI.BasedOnDarkUI.Forms</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00820.html">   10</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00820.html">VitNX_Form</a> : Form</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">        #region Field Region</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00820.html#a7b19995fa6f1ffa45c00cfeef387d73e">   14</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00820.html#a7b19995fa6f1ffa45c00cfeef387d73e">OnHandleCreated</a>(EventArgs e)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordflow">if</span> (Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 19, <span class="keyword">new</span>[] { 1 }, 4) != 0)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 20, <span class="keyword">new</span>[] { 1 }, 4);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">private</span> <span class="keywordtype">bool</span> _flatBorder;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">        #endregion Field Region</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        [Category(<span class="stringliteral">&quot;Appearance&quot;</span>)]</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        [Description(<span class="stringliteral">&quot;Determines whether a single pixel border should be rendered around the form.&quot;</span>)]</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        [DefaultValue(<span class="keyword">false</span>)]</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="a00820.html#a645d6e9c07083eaf18a8b9370cef6f1b">   31</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="a00820.html#a645d6e9c07083eaf18a8b9370cef6f1b">FlatBorder</a></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            this.TopMost = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            this.picIcon = <span class="keyword">new</span> System.Windows.Forms.PictureBox();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            this.lblText = <span class="keyword">new</span> <a class="code hl_class" href="a00626.html">VitNX_Label</a>();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            this.SuspendLayout();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="comment">// </span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="comment">// picIcon</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="comment">// </span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            this.picIcon.Location = <span class="keyword">new</span> System.Drawing.Point(10, 10);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            this.picIcon.Name = <span class="stringliteral">&quot;picIcon&quot;</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            this.picIcon.Size = <span class="keyword">new</span> System.Drawing.Size(32, 32);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            this.picIcon.TabIndex = 3;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            this.picIcon.TabStop = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="comment">// </span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="comment">// lblText</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="comment">// </span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            this.lblText.ForeColor = System.Drawing.Color.FromArgb(((<span class="keywordtype">int</span>)(((<span class="keywordtype">byte</span>)(220)))), ((<span class="keywordtype">int</span>)(((<span class="keywordtype">byte</span>)(220)))), ((<span class="keywordtype">int</span>)(((<span class="keywordtype">byte</span>)(220)))));</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            this.lblText.Location = <span class="keyword">new</span> System.Drawing.Point(50, 9);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            this.lblText.Name = <span class="stringliteral">&quot;lblText&quot;</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            this.lblText.Size = <span class="keyword">new</span> System.Drawing.Size(185, 15);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            this.lblText.TabIndex = 4;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            this.lblText.Text = <span class="stringliteral">&quot;Something something something&quot;</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// </span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="comment">// VitNX_MessageBox</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="comment">// </span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            this.AutoScaleDimensions = <span class="keyword">new</span> System.Drawing.SizeF(7F, 15F);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            this.ClientSize = <span class="keyword">new</span> System.Drawing.Size(244, 86);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            this.Controls.Add(this.lblText);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            this.Controls.Add(this.picIcon);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            this.Font = <span class="keyword">new</span> System.Drawing.Font(<span class="stringliteral">&quot;Segoe UI&quot;</span>, 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((<span class="keywordtype">byte</span>)(0)));</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            this.MaximizeBox = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            this.MinimizeBox = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            this.Name = <span class="stringliteral">&quot;VitNX_MessageBox&quot;</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            this.ShowIcon = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            this.ShowInTaskbar = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            this.Text = <span class="stringliteral">&quot;Message box&quot;</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            this.Controls.SetChildIndex(this.picIcon, 0);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            this.Controls.SetChildIndex(this.lblText, 0);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            this.ResumeLayout(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">        #endregion</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">private</span> System.Windows.Forms.PictureBox picIcon;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">private</span> <a class="code hl_class" href="a00626.html">VitNX_Label</a> lblText;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keyword">get</span> { <span class="keywordflow">return</span> _flatBorder; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keyword">set</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                _flatBorder = value;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                Invalidate();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">        #endregion Property Region</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">        #region Constructor Region</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a00820.html#a3bb8c24c1844c9f1d112037f92dd5140">   45</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00820.html#a3bb8c24c1844c9f1d112037f92dd5140">VitNX_Form</a>()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            BackColor = <a class="code hl_class" href="a00640.html">Colors</a>.<a class="code hl_property" href="a00640.html#a1c81e866cb79dc5b725f8765dba0791b">GreyBackground</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">        #endregion Constructor Region</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">        #region Paint Region</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="a00820.html#a2fed73cd0a8cd763a6a18be00a05d4ed">   54</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00820.html#a2fed73cd0a8cd763a6a18be00a05d4ed">OnPaintBackground</a>(PaintEventArgs e)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            base.OnPaintBackground(e);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">if</span> (!_flatBorder)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            var g = e.Graphics;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keyword">using</span> (var p = <span class="keyword">new</span> Pen(<a class="code hl_class" href="a00640.html">Colors</a>.<a class="code hl_property" href="a00640.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNXBorder</a>))</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                var modRect = <span class="keyword">new</span> Rectangle(ClientRectangle.Location, <span class="keyword">new</span> Size(ClientRectangle.Width - 1, ClientRectangle.Height - 1));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                g.DrawRectangle(p, modRect);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">        #endregion Paint Region</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> InitializeComponent()</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            this.SuspendLayout();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="comment">//</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="comment">// VitNX_Form</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="comment">//</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            this.ClientSize = <span class="keyword">new</span> Size(284, 265);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            this.Name = <span class="stringliteral">&quot;VitNX_Form&quot;</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            this.TopMost = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            this.ResumeLayout(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
-<div class="ttc" id="aa00290_html"><div class="ttname"><a href="a00290.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00006">FileSystem.cs:7</a></div></div>
-<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00302_html"><div class="ttname"><a href="a00302.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">ObservableList.cs:6</a></div></div>
-<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Controls</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00003">ScrollValueEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00308_html"><div class="ttname"><a href="a00308.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00218_source.html#l00007">VitNX_Dialog.cs:8</a></div></div>
-<div class="ttc" id="aa00626_html"><div class="ttname"><a href="a00626.html">VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label</a></div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00009">VitNX_Label.cs:10</a></div></div>
-<div class="ttc" id="aa00770_html_a849c3c7f8d08104f0cdb46bee9fe6389"><div class="ttname"><a href="a00770.html#a849c3c7f8d08104f0cdb46bee9fe6389">VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBox.Dispose</a></div><div class="ttdeci">override void Dispose(bool disposing)</div><div class="ttdoc">Clean up any resources being used.</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00016">VitNX_MessageBox.Designer.cs:16</a></div></div>
+<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00004">CShap.cs:5</a></div></div>
+<div class="ttc" id="aa00316_html"><div class="ttname"><a href="a00316.html">VitNX.UI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00317_html"><div class="ttname"><a href="a00317.html">VitNX.UI.BasedOnDarkUI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">ObservableList.cs:6</a></div></div>
+<div class="ttc" id="aa00319_html"><div class="ttname"><a href="a00319.html">VitNX.UI.BasedOnDarkUI.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00003">Colors.cs:4</a></div></div>
+<div class="ttc" id="aa00323_html"><div class="ttname"><a href="a00323.html">VitNX.UI.BasedOnDarkUI.Forms</a></div><div class="ttdef"><b>Definition:</b> <a href="a00224_source.html#l00008">VitNX_Dialog.cs:9</a></div></div>
+<div class="ttc" id="aa00640_html"><div class="ttname"><a href="a00640.html">VitNX.UI.BasedOnDarkUI.Config.Colors</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00005">Colors.cs:6</a></div></div>
+<div class="ttc" id="aa00640_html_a177c5e90efbbd2ad1b059426fbc70a98"><div class="ttname"><a href="a00640.html#a177c5e90efbbd2ad1b059426fbc70a98">VitNX.UI.BasedOnDarkUI.Config.Colors.VitNXBorder</a></div><div class="ttdeci">static Color VitNXBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00057">Colors.cs:58</a></div></div>
+<div class="ttc" id="aa00640_html_a1c81e866cb79dc5b725f8765dba0791b"><div class="ttname"><a href="a00640.html#a1c81e866cb79dc5b725f8765dba0791b">VitNX.UI.BasedOnDarkUI.Config.Colors.GreyBackground</a></div><div class="ttdeci">static Color GreyBackground</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00007">Colors.cs:8</a></div></div>
+<div class="ttc" id="aa00820_html"><div class="ttname"><a href="a00820.html">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form</a></div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00010">VitNX_Form.cs:11</a></div></div>
+<div class="ttc" id="aa00820_html_a2fed73cd0a8cd763a6a18be00a05d4ed"><div class="ttname"><a href="a00820.html#a2fed73cd0a8cd763a6a18be00a05d4ed">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.OnPaintBackground</a></div><div class="ttdeci">override void OnPaintBackground(PaintEventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00054">VitNX_Form.cs:54</a></div></div>
+<div class="ttc" id="aa00820_html_a3bb8c24c1844c9f1d112037f92dd5140"><div class="ttname"><a href="a00820.html#a3bb8c24c1844c9f1d112037f92dd5140">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.VitNX_Form</a></div><div class="ttdeci">VitNX_Form()</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00045">VitNX_Form.cs:45</a></div></div>
+<div class="ttc" id="aa00820_html_a645d6e9c07083eaf18a8b9370cef6f1b"><div class="ttname"><a href="a00820.html#a645d6e9c07083eaf18a8b9370cef6f1b">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.FlatBorder</a></div><div class="ttdeci">bool FlatBorder</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00031">VitNX_Form.cs:32</a></div></div>
+<div class="ttc" id="aa00820_html_a7b19995fa6f1ffa45c00cfeef387d73e"><div class="ttname"><a href="a00820.html#a7b19995fa6f1ffa45c00cfeef387d73e">VitNX.UI.BasedOnDarkUI.Forms.VitNX_Form.OnHandleCreated</a></div><div class="ttdeci">override void OnHandleCreated(EventArgs e)</div><div class="ttdef"><b>Definition:</b> <a href="a00233_source.html#l00014">VitNX_Form.cs:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_b5e0836d0bcab11fd706193acffa4a90.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_0db359fb32a0487652e58dc648238f41.html">Forms</a></li><li class="navelem"><b>VitNX_MessageBox.Designer.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_b5e0836d0bcab11fd706193acffa4a90.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_0db359fb32a0487652e58dc648238f41.html">Forms</a></li><li class="navelem"><b>VitNX_Form.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

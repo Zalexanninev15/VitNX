@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+
 using VitNX.UI.BasedOnDarkUI.Config;
 
 namespace VitNX.UI.BasedOnDarkUI.Controls

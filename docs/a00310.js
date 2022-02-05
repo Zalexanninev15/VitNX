@@ -1,6 +1,6 @@
 var a00310 =
 [
-    [ "ControlScrollFilter", "a00786.html", "a00786" ],
-    [ "DockContentDragFilter", "a00790.html", "a00790" ],
-    [ "DockResizeFilter", "a00794.html", "a00794" ]
+    [ "ConsoleProgressBar", "a00416.html", "a00416" ],
+    [ "FontAwesome4", "a00420.html", "a00420" ],
+    [ "FontAwesomeExtensions", "a00428.html", "a00428" ]
 ];
