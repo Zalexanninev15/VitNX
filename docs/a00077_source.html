@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/source/VitNX/UI/BasedOnDarkUI/Controls/VitNX_ButtonStyle.cs Source File</title>
+<title>VitNX: E:/Github/VitNX/source/VitNX/UI/BasedOnDarkUI/Controls/ScrollValueEventArgs.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,27 +61,33 @@ $(document).ready(function(){initNavTree('a00077_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">VitNX_ButtonStyle.cs</div></div>
+  <div class="headertitle"><div class="title">ScrollValueEventArgs.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00305.html">VitNX.UI.BasedOnDarkUI.Controls</a></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00305.html#a333906fcb1d9f965a47fd9f304911502">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00305.html#a333906fcb1d9f965a47fd9f304911502">VitNX_ButtonStyle</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        <a class="code hl_enumvalue" href="a00305.html#a333906fcb1d9f965a47fd9f304911502a960b44c579bc2f6818d2daaf9e4c16f0">Normal</a>,</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <a class="code hl_enumvalue" href="a00305.html#a333906fcb1d9f965a47fd9f304911502a745e3db6a7ffd50e1a72b39482f0882d">Flat</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    }</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
-<div class="ttc" id="aa00305_html"><div class="ttname"><a href="a00305.html">VitNX.UI.BasedOnDarkUI.Controls</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00003">ScrollValueEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00305_html_a333906fcb1d9f965a47fd9f304911502"><div class="ttname"><a href="a00305.html#a333906fcb1d9f965a47fd9f304911502">VitNX.UI.BasedOnDarkUI.Controls.VitNX_ButtonStyle</a></div><div class="ttdeci">VitNX_ButtonStyle</div><div class="ttdef"><b>Definition:</b> <a href="a00077_source.html#l00003">VitNX_ButtonStyle.cs:4</a></div></div>
-<div class="ttc" id="aa00305_html_a333906fcb1d9f965a47fd9f304911502a745e3db6a7ffd50e1a72b39482f0882d"><div class="ttname"><a href="a00305.html#a333906fcb1d9f965a47fd9f304911502a745e3db6a7ffd50e1a72b39482f0882d">VitNX.UI.BasedOnDarkUI.Controls.VitNX_ButtonStyle.Flat</a></div><div class="ttdeci">@ Flat</div></div>
-<div class="ttc" id="aa00305_html_a333906fcb1d9f965a47fd9f304911502a960b44c579bc2f6818d2daaf9e4c16f0"><div class="ttname"><a href="a00305.html#a333906fcb1d9f965a47fd9f304911502a960b44c579bc2f6818d2daaf9e4c16f0">VitNX.UI.BasedOnDarkUI.Controls.VitNX_ButtonStyle.Normal</a></div><div class="ttdeci">@ Normal</div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00320.html">    3</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00320.html">VitNX.UI.BasedOnDarkUI.Controls</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="a00648.html">    5</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00648.html">ScrollValueEventArgs</a> : EventArgs</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00648.html#aca5c8bf6cfb5ea8d150d4b2f394fd552">    7</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="a00648.html#aca5c8bf6cfb5ea8d150d4b2f394fd552">Value</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00648.html#ae66453eeea27ed6617f9aca32c18b7bd">    9</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="a00648.html#ae66453eeea27ed6617f9aca32c18b7bd">ScrollValueEventArgs</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <a class="code hl_property" href="a00648.html#aca5c8bf6cfb5ea8d150d4b2f394fd552">Value</a> = value;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="ttc" id="aa00320_html"><div class="ttname"><a href="a00320.html">VitNX.UI.BasedOnDarkUI.Controls</a></div><div class="ttdef"><b>Definition:</b> <a href="a00077_source.html#l00003">ScrollValueEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00648_html"><div class="ttname"><a href="a00648.html">VitNX.UI.BasedOnDarkUI.Controls.ScrollValueEventArgs</a></div><div class="ttdef"><b>Definition:</b> <a href="a00077_source.html#l00005">ScrollValueEventArgs.cs:6</a></div></div>
+<div class="ttc" id="aa00648_html_aca5c8bf6cfb5ea8d150d4b2f394fd552"><div class="ttname"><a href="a00648.html#aca5c8bf6cfb5ea8d150d4b2f394fd552">VitNX.UI.BasedOnDarkUI.Controls.ScrollValueEventArgs.Value</a></div><div class="ttdeci">int Value</div><div class="ttdef"><b>Definition:</b> <a href="a00077_source.html#l00007">ScrollValueEventArgs.cs:7</a></div></div>
+<div class="ttc" id="aa00648_html_ae66453eeea27ed6617f9aca32c18b7bd"><div class="ttname"><a href="a00648.html#ae66453eeea27ed6617f9aca32c18b7bd">VitNX.UI.BasedOnDarkUI.Controls.ScrollValueEventArgs.ScrollValueEventArgs</a></div><div class="ttdeci">ScrollValueEventArgs(int value)</div><div class="ttdef"><b>Definition:</b> <a href="a00077_source.html#l00009">ScrollValueEventArgs.cs:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_b5e0836d0bcab11fd706193acffa4a90.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_16a76119e027b2966723d25b5766abd6.html">Controls</a></li><li class="navelem"><b>VitNX_ButtonStyle.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_b5e0836d0bcab11fd706193acffa4a90.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_16a76119e027b2966723d25b5766abd6.html">Controls</a></li><li class="navelem"><b>ScrollValueEventArgs.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

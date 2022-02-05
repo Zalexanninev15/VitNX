@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace VitNX.Functions.Common
 {
@@ -34,18 +35,24 @@ namespace VitNX.Functions.Common
 
         private static Random random = new Random();
 
-        public static string RandomChars(int dolzina)
+        public static string RandomChars(int number)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%@#()$?*_[]+-";
-            return new string(Enumerable.Repeat(chars, dolzina)
+            return new string(Enumerable.Repeat(chars, number)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public static string RandomNums(int dolzina)
+        public static string RandomNums(int number)
         {
             const string chars = "1234567890";
-            return new string(Enumerable.Repeat(chars, dolzina)
+            return new string(Enumerable.Repeat(chars, number)
               .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public static string FixText(string text)
+        {
+            byte[] bytes = Encoding.Default.GetBytes(text);
+            return Encoding.UTF8.GetString(bytes);
         }
     }
 }

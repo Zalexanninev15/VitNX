@@ -26,7 +26,7 @@ namespace VitNX.UI.ControlsV2
         [Category("Appearance")]
         public int BorderRadius
         {
-            get  {  return borderRadius; }
+            get { return borderRadius; }
             set
             {
                 borderRadius = value;
@@ -37,7 +37,7 @@ namespace VitNX.UI.ControlsV2
         [Category("Appearance")]
         public Color BorderColor
         {
-            get  { return borderColor; }
+            get { return borderColor; }
             set
             {
                 borderColor = value;
@@ -56,7 +56,7 @@ namespace VitNX.UI.ControlsV2
         public Color TextColor
         {
             get { return ForeColor; }
-            set {  ForeColor = value; }
+            set { ForeColor = value; }
         }
 
         public VitNX2_Button()
@@ -87,7 +87,7 @@ namespace VitNX.UI.ControlsV2
             Rectangle rectSurface = ClientRectangle;
             Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
             int smoothSize = 2;
-            if (borderSize > 0) 
+            if (borderSize > 0)
                 smoothSize = borderSize;
             if (borderRadius > 2)
             {
@@ -131,7 +131,7 @@ namespace VitNX.UI.ControlsV2
 
         private void Panel_Resize(object sender, EventArgs e)
         {
-            if (borderRadius > Height) 
+            if (borderRadius > Height)
                 borderRadius = Height;
         }
     }

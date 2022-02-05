@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -99,7 +100,7 @@ namespace VitNX.Functions.Windows.Apps
                 if (i.Id != current.Id)
                 {
                     if (Assembly.GetExecutingAssembly().Location.Replace("/", "\\") == current.MainModule.FileName)
-                    { return i; }
+                        return i;
                 }
             }
             return null;

@@ -50,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Common\CShap.cs" />
     <Compile Include="Functions\Common\PowerControl.cs" />
     <Compile Include="Functions\Common\Text.cs" />
+    <Compile Include="Functions\NotGUI\FontAwesome.cs" />
     <Compile Include="Functions\Windows\WindowsControl.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -93,6 +95,13 @@
     <Compile Include="UI\BasedOnDarkUI\Config\Colors.cs" />
     <Compile Include="UI\BasedOnDarkUI\Config\Consts.cs" />
     <Compile Include="UI\ControlsV2\Helper.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_TextBox.Designer.cs" />
     <Compile Include="UI\ControlsV2\VitNX2_Button.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -261,6 +270,7 @@
     <EmbeddedResource Include="UI\BasedOnDarkUI\Forms\VitNX_TranslucentForm.resx">
       <DependentUpon>VitNX_TranslucentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_TextBox.resx" />
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.resx" />
     <EmbeddedResource Include="UI\ControlsV1\VitNX_ProgressBar.resx">
       <SubType>Designer</SubType>

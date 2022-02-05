@@ -39,14 +39,13 @@ namespace VitNX.UI.BasedOnDarkUI.Forms
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // VitNX_TranslucentForm
-            // 
+            //
             this.ClientSize = new System.Drawing.Size(284, 265);
             this.Name = "VitNX_TranslucentForm";
             this.TopMost = true;
             this.ResumeLayout(false);
-
         }
     }
 }

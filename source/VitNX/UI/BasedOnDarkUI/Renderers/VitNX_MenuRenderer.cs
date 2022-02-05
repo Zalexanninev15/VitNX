@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+
 using VitNX.UI.BasedOnDarkUI.Config;
 
 namespace VitNX.UI.BasedOnDarkUI.Renderers

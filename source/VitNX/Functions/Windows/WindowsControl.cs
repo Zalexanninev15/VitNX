@@ -1,4 +1,5 @@
 ﻿using System;
+
 using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.Functions.Windows

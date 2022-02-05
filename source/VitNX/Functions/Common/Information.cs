@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Management;
 using System.Reflection;
 using System.Windows.Forms;
+
 using VitNX.Functions.Windows.Apps;
 using VitNX.Functions.Windows.Win32;
 
@@ -30,8 +32,9 @@ namespace VitNX.Functions.Common.Information
         public static string WindowsProductNameFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "");
         public static string WindowsDisplayVersionFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "");
         public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
+        public static string WindowsStartupFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
 
-        public static MemoryStream GetScreen()
+        public static MemoryStream GetScreenToMemoryStream()
         {
             Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics GH = Graphics.FromImage(BM);
@@ -199,9 +202,9 @@ namespace VitNX.Functions.Common.Information
 
         private static string SizeSuffix(Int64 value)
         {
-            if (value < 0) 
+            if (value < 0)
                 return "-" + SizeSuffix(-value);
-            if (value == 0) 
+            if (value == 0)
                 return "0.0 bytes";
             int mag = (int)Math.Log(value, 1024);
             decimal adjustedSize = (decimal)value / (1L << (mag * 10));
@@ -305,6 +308,8 @@ namespace VitNX.Functions.Common.Information
             }
             return screensall;
         }
+
+        public static Screen WorkingArea = Screen.PrimaryScreen;
     }
 
     public class Motherboard

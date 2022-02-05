@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
+
+using static VitNX.Functions.Windows.Win32.Enums;
 
 namespace VitNX.Functions.Windows.Win32
 {
@@ -9,21 +12,57 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetConsoleWindow();
 
+        [DllImport("dwmapi.dll")]
+        public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd,
+            ref MARGINS pMarInset);
+
         [DllImport("dwmapi.dll", SetLastError = true)]
         public static extern int DwmSetWindowAttribute(IntPtr hWnd,
             int attribute,
-            int[] pvAttribute,
+            int[] attrValue,
             uint cbAttribute);
+
+        [DllImport("dwmapi.dll")]
+        public static extern int DwmIsCompositionEnabled(ref int pfEnabled);
+
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        public static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+            );
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
 
         [DllImport("user32.dll")]
         public static extern IntPtr WindowFromPoint(Point point);
+
+        [DllImport("uxtheme.dll", EntryPoint = "#95")]
+        public static extern uint GetImmersiveColorFromColorSetEx(uint dwImmersiveColorSet,
+            uint dwImmersiveColorType,
+            bool bIgnoreHighContrast,
+            uint dwHighContrastCacheMode);
+
+        [DllImport("uxtheme.dll", EntryPoint = "#96")]
+        public static extern uint GetImmersiveColorTypeFromName(IntPtr pName);
+
+        [DllImport("uxtheme.dll", EntryPoint = "#98")]
+        public static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry,
+            bool bSkipCheckOnFail);
 
         [DllImport("gdi32.dll")]
         public static extern int GetDeviceCaps(IntPtr hdc,
             int nIndex);
 
         [DllImport("user32.dll")]
-        public static extern int GetDisplayConfigBufferSizes(Enums.QUERY_DEVICE_CONFIG_FLAGS flags, out uint numPathArrayElements, out uint numModeInfoArrayElements);
+        public static extern int GetDisplayConfigBufferSizes(Enums.QUERY_DEVICE_CONFIG_FLAGS flags,
+            out uint numPathArrayElements,
+            out uint numModeInfoArrayElements);
 
         [DllImport("user32.dll")]
         public static extern int QueryDisplayConfig(Enums.QUERY_DEVICE_CONFIG_FLAGS flags,
@@ -45,15 +84,7 @@ namespace VitNX.Functions.Windows.Win32
             int y,
             int cx,
             int cy,
-            int uFlags);
-
-        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn", SetLastError = true)]
-        public static extern IntPtr CreateRoundRectRgn(int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse);
+            SetWindowPosFlags uFlags);
 
         [DllImport("user32.dll")]
         public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
@@ -125,10 +156,94 @@ namespace VitNX.Functions.Windows.Win32
         public const int STD_OUTPUT_HANDLE = -11;
         public const int MOUSEEVENTF_MOVE = 0x0001;
         public const int SC_MONITORPOWER = 0xF170;
+        public const int DWMWA_WINDOW_CORNER_PREFERENCE = 33;
+        public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        public static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+        public static readonly IntPtr HWND_TOP = new IntPtr(0);
+        public static readonly IntPtr HWND_BOTTOM = new IntPtr(1);
+        public const int WM_NCHITTEST = 0x84;
+        public const int HTCLIENT = 0x1;
+        public const int HTCAPTION = 0x2;
+        public const int WM_NCPAINT = 0x0085;
+        public const int WM_ACTIVATEAPP = 0x001C;
+
+        public static class SWP
+        {
+            public static readonly int
+            NOSIZE = 0x0001,
+            NOMOVE = 0x0002,
+            NOZORDER = 0x0004,
+            NOREDRAW = 0x0008,
+            NOACTIVATE = 0x0010,
+            DRAWFRAME = 0x0020,
+            FRAMECHANGED = 0x0020,
+            SHOWWINDOW = 0x0040,
+            HIDEWINDOW = 0x0080,
+            NOCOPYBITS = 0x0100,
+            NOOWNERZORDER = 0x0200,
+            NOREPOSITION = 0x0200,
+            NOSENDCHANGING = 0x0400,
+            DEFERERASE = 0x2000,
+            ASYNCWINDOWPOS = 0x4000;
+        }
     }
 
     public class Enums
     {
+        public struct MARGINS
+        {
+            public static int leftWidth = 0;
+            public static int rightWidth = 0;
+            public static int topHeight = 0;
+            public static int bottomHeight = 1;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
+        }
+
+        public static class HWND
+        {
+            public static IntPtr
+            NoTopMost = new IntPtr(-2),
+            TopMost = new IntPtr(-1),
+            Top = new IntPtr(0),
+            Bottom = new IntPtr(1);
+        }
+
+        [Flags]
+        public enum SetWindowPosFlags : uint
+        {
+            SWP_ASYNCWINDOWPOS = 0x4000,
+            SWP_DEFERERASE = 0x2000,
+            SWP_DRAWFRAME = 0x0020,
+            SWP_FRAMECHANGED = 0x0020,
+            SWP_HIDEWINDOW = 0x0080,
+            SWP_NOACTIVATE = 0x0010,
+            SWP_NOCOPYBITS = 0x0100,
+            SWP_NOMOVE = 0x0002,
+            SWP_NOOWNERZORDER = 0x0200,
+            SWP_NOREDRAW = 0x0008,
+            SWP_NOREPOSITION = 0x0200,
+            SWP_NOSENDCHANGING = 0x0400,
+            SWP_NOSIZE = 0x0001,
+            SWP_NOZORDER = 0x0004,
+            SWP_SHOWWINDOW = 0x0040,
+        }
+
+        public enum SpecialWindowHandles
+        {
+            HWND_TOP = 0,
+            HWND_BOTTOM = 1,
+            HWND_TOPMOST = -1,
+            HWND_NOTOPMOST = -2
+        }
+
         public enum QUERY_DEVICE_CONFIG_FLAGS : uint
         {
             QDC_ALL_PATHS = 0x00000001,
@@ -541,6 +656,42 @@ namespace VitNX.Functions.Windows.Win32
 
     public static class StandaloneImportFunctions
     {
+        public static bool Drag;
+        public static int MouseX;
+        public static int MouseY;
+
         public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
+
+        public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
+        {
+            try
+            {
+                var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
+                var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+                Import.DwmSetWindowAttribute(Handler, attribute, new[] { Convert.ToInt32(preference) }, sizeof(uint));
+            }
+            catch { }
+        }
+
+        public static Color GetWindowsAccentColor()
+        {
+            var userColorSet = Import.GetImmersiveUserColorSetPreference(false, false);
+            var colorType = Import.GetImmersiveColorTypeFromName(Marshal.StringToHGlobalUni("ImmersiveStartSelectionBackground"));
+            var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet, colorType, false, 0);
+            return Common.CShap.ConvertDWordColorToRGB(colorSetEx);
+        }
+
+        public static void WindowToLowerRightCorner(IntPtr Handler)
+        {
+            RECT rct;
+            Import.GetWindowRect(Handler, out rct);
+            Rectangle screen = Screen.FromHandle(Handler).Bounds;
+            Point pt = new Point(screen.Left + screen.Width / 2 - (rct.Right - rct.Left) / 2,
+                screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
+            Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
+                pt.X, pt.Y, 0, 0,
+                SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOSIZE |
+                SetWindowPosFlags.SWP_SHOWWINDOW);
+        }
     }
 }

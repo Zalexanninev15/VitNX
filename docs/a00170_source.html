@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/source/VitNX/UI/BasedOnDarkUI/Docking/DockInsertType.cs Source File</title>
+<title>VitNX: E:/Github/VitNX/source/VitNX/UI/BasedOnDarkUI/Docking/DockDropCollection.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,29 +61,51 @@ $(document).ready(function(){initNavTree('a00170_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">DockInsertType.cs</div></div>
+  <div class="headertitle"><div class="title">DockDropCollection.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00306.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00321.html">VitNX.UI.BasedOnDarkUI.Docking</a></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9c">    3</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="a00756.html">    3</a></span>    <span class="keyword">internal</span> <span class="keyword">class </span><a class="code hl_class" href="a00756.html">DockDropCollection</a></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        <a class="code hl_enumvalue" href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <a class="code hl_enumvalue" href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9ca9060587edeb01a63e3d3edc959678d1e">Before</a>,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <a class="code hl_enumvalue" href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9ca7bfcadb5535fe8aad5032762b7bfe159">After</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    }</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
-<div class="ttc" id="aa00306_html"><div class="ttname"><a href="a00306.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00158_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
-<div class="ttc" id="aa00306_html_a29dc304d5ff759b6c6f865ebf9833e9c"><div class="ttname"><a href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9c">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType</a></div><div class="ttdeci">DockInsertType</div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00003">DockInsertType.cs:4</a></div></div>
-<div class="ttc" id="aa00306_html_a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9ca6adf97f83acf6453d4a6a4b1070f3754">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.None</a></div><div class="ttdeci">@ None</div></div>
-<div class="ttc" id="aa00306_html_a29dc304d5ff759b6c6f865ebf9833e9ca7bfcadb5535fe8aad5032762b7bfe159"><div class="ttname"><a href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9ca7bfcadb5535fe8aad5032762b7bfe159">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.After</a></div><div class="ttdeci">@ After</div></div>
-<div class="ttc" id="aa00306_html_a29dc304d5ff759b6c6f865ebf9833e9ca9060587edeb01a63e3d3edc959678d1e"><div class="ttname"><a href="a00306.html#a29dc304d5ff759b6c6f865ebf9833e9ca9060587edeb01a63e3d3edc959678d1e">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.Before</a></div><div class="ttdeci">@ Before</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">        #region Property Region</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00756.html#a17a9f89e10aaaada74924bf00074597f">    7</a></span>        <span class="keyword">internal</span> <a class="code hl_class" href="a00752.html">DockDropArea</a> <a class="code hl_property" href="a00756.html#a17a9f89e10aaaada74924bf00074597f">DropArea</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00756.html#a537a734a590d618aa56c6330fd04a7c9">    9</a></span>        <span class="keyword">internal</span> <a class="code hl_class" href="a00752.html">DockDropArea</a> <a class="code hl_property" href="a00756.html#a537a734a590d618aa56c6330fd04a7c9">InsertBeforeArea</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="a00756.html#a2f26969631c4ed564d5f6808c27a89d3">   11</a></span>        <span class="keyword">internal</span> <a class="code hl_class" href="a00752.html">DockDropArea</a> <a class="code hl_property" href="a00756.html#a2f26969631c4ed564d5f6808c27a89d3">InsertAfterArea</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">        #endregion Property Region</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">        #region Constructor Region</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="a00756.html#ae574c8b56ca9b274b786e75fc7a0dd84">   17</a></span>        <span class="keyword">internal</span> <a class="code hl_function" href="a00756.html#ae574c8b56ca9b274b786e75fc7a0dd84">DockDropCollection</a>(<a class="code hl_class" href="a00780.html">VitNX_DockPanel</a> dockPanel, <a class="code hl_class" href="a00776.html">VitNX_DockGroup</a> group)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <a class="code hl_property" href="a00756.html#a17a9f89e10aaaada74924bf00074597f">DropArea</a> = <span class="keyword">new</span> <a class="code hl_class" href="a00752.html">DockDropArea</a>(dockPanel, group, <a class="code hl_enumeration" href="a00321.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.None);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <a class="code hl_property" href="a00756.html#a537a734a590d618aa56c6330fd04a7c9">InsertBeforeArea</a> = <span class="keyword">new</span> <a class="code hl_class" href="a00752.html">DockDropArea</a>(dockPanel, group, <a class="code hl_enumeration" href="a00321.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.Before);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <a class="code hl_property" href="a00756.html#a2f26969631c4ed564d5f6808c27a89d3">InsertAfterArea</a> = <span class="keyword">new</span> <a class="code hl_class" href="a00752.html">DockDropArea</a>(dockPanel, group, <a class="code hl_enumeration" href="a00321.html#a29dc304d5ff759b6c6f865ebf9833e9c">DockInsertType</a>.After);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">        #endregion Constructor Region</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="ttc" id="aa00321_html"><div class="ttname"><a href="a00321.html">VitNX.UI.BasedOnDarkUI.Docking</a></div><div class="ttdef"><b>Definition:</b> <a href="a00164_source.html#l00003">DockContentEventArgs.cs:4</a></div></div>
+<div class="ttc" id="aa00321_html_a29dc304d5ff759b6c6f865ebf9833e9c"><div class="ttname"><a href="a00321.html#a29dc304d5ff759b6c6f865ebf9833e9c">VitNX.UI.BasedOnDarkUI.Docking.DockInsertType</a></div><div class="ttdeci">DockInsertType</div><div class="ttdef"><b>Definition:</b> <a href="a00176_source.html#l00003">DockInsertType.cs:4</a></div></div>
+<div class="ttc" id="aa00752_html"><div class="ttname"><a href="a00752.html">VitNX.UI.BasedOnDarkUI.Docking.DockDropArea</a></div><div class="ttdef"><b>Definition:</b> <a href="a00167_source.html#l00005">DockDropArea.cs:6</a></div></div>
+<div class="ttc" id="aa00756_html"><div class="ttname"><a href="a00756.html">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection</a></div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00003">DockDropCollection.cs:4</a></div></div>
+<div class="ttc" id="aa00756_html_a17a9f89e10aaaada74924bf00074597f"><div class="ttname"><a href="a00756.html#a17a9f89e10aaaada74924bf00074597f">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection.DropArea</a></div><div class="ttdeci">DockDropArea DropArea</div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00007">DockDropCollection.cs:7</a></div></div>
+<div class="ttc" id="aa00756_html_a2f26969631c4ed564d5f6808c27a89d3"><div class="ttname"><a href="a00756.html#a2f26969631c4ed564d5f6808c27a89d3">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection.InsertAfterArea</a></div><div class="ttdeci">DockDropArea InsertAfterArea</div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00011">DockDropCollection.cs:11</a></div></div>
+<div class="ttc" id="aa00756_html_a537a734a590d618aa56c6330fd04a7c9"><div class="ttname"><a href="a00756.html#a537a734a590d618aa56c6330fd04a7c9">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection.InsertBeforeArea</a></div><div class="ttdeci">DockDropArea InsertBeforeArea</div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00009">DockDropCollection.cs:9</a></div></div>
+<div class="ttc" id="aa00756_html_ae574c8b56ca9b274b786e75fc7a0dd84"><div class="ttname"><a href="a00756.html#ae574c8b56ca9b274b786e75fc7a0dd84">VitNX.UI.BasedOnDarkUI.Docking.DockDropCollection.DockDropCollection</a></div><div class="ttdeci">DockDropCollection(VitNX_DockPanel dockPanel, VitNX_DockGroup group)</div><div class="ttdef"><b>Definition:</b> <a href="a00170_source.html#l00017">DockDropCollection.cs:17</a></div></div>
+<div class="ttc" id="aa00776_html"><div class="ttname"><a href="a00776.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup</a></div><div class="ttdef"><b>Definition:</b> <a href="a00191_source.html#l00013">VitNX_DockGroup.cs:14</a></div></div>
+<div class="ttc" id="aa00780_html"><div class="ttname"><a href="a00780.html">VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="a00194_source.html#l00012">VitNX_DockPanel.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_b5e0836d0bcab11fd706193acffa4a90.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_554105499e8f07207a5f52b2ddd219fd.html">Docking</a></li><li class="navelem"><b>DockInsertType.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_d35bbdb7533d3b74bc478a8d00265681.html">UI</a></li><li class="navelem"><a class="el" href="dir_b5e0836d0bcab11fd706193acffa4a90.html">BasedOnDarkUI</a></li><li class="navelem"><a class="el" href="dir_554105499e8f07207a5f52b2ddd219fd.html">Docking</a></li><li class="navelem"><b>DockDropCollection.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
