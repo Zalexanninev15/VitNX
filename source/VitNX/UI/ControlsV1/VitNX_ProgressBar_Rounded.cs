@@ -42,25 +42,25 @@ namespace VitNX.UI.ControlsV1
                 switch (VisualMode)
                 {
                     case VitNX_ProgressBarDisplayMode.Percentage:
-                    {
-                        text = _percentageStr;
-                        break;
-                    }
+                        {
+                            text = _percentageStr;
+                            break;
+                        }
                     case VitNX_ProgressBarDisplayMode.CurrProgress:
-                    {
-                        text = _currProgressStr;
-                        break;
-                    }
+                        {
+                            text = _currProgressStr;
+                            break;
+                        }
                     case VitNX_ProgressBarDisplayMode.TextAndCurrProgress:
-                    {
-                        text = $"{CustomText}: {_currProgressStr}";
-                        break;
-                    }
+                        {
+                            text = $"{CustomText}: {_currProgressStr}";
+                            break;
+                        }
                     case VitNX_ProgressBarDisplayMode.TextAndPercentage:
-                    {
-                        text = $"{CustomText}: {_percentageStr}";
-                        break;
-                    }
+                        {
+                            text = $"{CustomText}: {_percentageStr}";
+                            break;
+                        }
                 }
                 return text;
             }
@@ -83,20 +83,20 @@ namespace VitNX.UI.ControlsV1
         {
             IntPtr hrgn = Functions.Windows.Win32.Import.CreateRoundRectRgn(0, 0, Width, Height, 7, 7); // 0, 0, Width, Height, [x], [x] ; x - degree of roundness of the control (set depending on the size of the control on the form), recommended = 4
             Region = Region.FromHrgn(hrgn);
-            Graphics g = e.Graphics; 
+            Graphics g = e.Graphics;
             DrawProgressBar(g);
-             DrawStringIfNeeded(g);
+            DrawStringIfNeeded(g);
         }
 
         private void DrawProgressBar(Graphics g)
         {
             Rectangle rect = ClientRectangle;
             ProgressBarRenderer.DrawHorizontalBar(g, rect);
-            if (Value > 0) 
-            { 
+            if (Value > 0)
+            {
                 Rectangle clip = new Rectangle(rect.X, rect.Y, (int)Math.Round((float)Value / Maximum * rect.Width), rect.Height);
-                 g.FillRectangle(_progressColourBrush, clip); 
-             }
+                g.FillRectangle(_progressColourBrush, clip);
+            }
         }
 
         private void DrawStringIfNeeded(Graphics g)
@@ -111,16 +111,16 @@ namespace VitNX.UI.ControlsV1
         }
 
         public new void Dispose()
-        { 
+        {
             _textColourBrush.Dispose();
-             _progressColourBrush.Dispose();
-              base.Dispose(); 
+            _progressColourBrush.Dispose();
+            base.Dispose();
         }
 
         private void InitializeComponent()
-        { 
-            SuspendLayout(); 
-            BackColor = Color.FromArgb(69, 73, 74); ResumeLayout(false); 
+        {
+            SuspendLayout();
+            BackColor = Color.FromArgb(69, 73, 74); ResumeLayout(false);
         }
     }
 }

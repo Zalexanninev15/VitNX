@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace VitNX.Functions.Common
 {
-    public class Power
+    public class PowerControl
     {
-        public static void ComputerPowerControl(Windows.Win32.Enums.SYSTEM_POWER_CONTROL method)
+        public static void Computer(Windows.Win32.Enums.SYSTEM_POWER_CONTROL method)
         {
             switch (method)
             {
@@ -33,7 +33,7 @@ namespace VitNX.Functions.Common
             }
         }
 
-        public static void MonitorPowerControl(bool worked)
+        public static void Monitor(bool worked)
         {
             Form frm = new Form();
             if (worked)

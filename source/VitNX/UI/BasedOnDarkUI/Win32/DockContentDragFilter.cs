@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+
 using VitNX.UI.BasedOnDarkUI.Config;
 using VitNX.UI.BasedOnDarkUI.Docking;
 using VitNX.UI.BasedOnDarkUI.Forms;

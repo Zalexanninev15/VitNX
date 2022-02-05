@@ -1,5 +1,6 @@
 var a00309 =
 [
-    [ "VitNX_MenuRenderer", "a00778.html", "a00778" ],
-    [ "VitNX_ToolStripRenderer", "a00782.html", "a00782" ]
+    [ "Config", "a00408.html", "a00408" ],
+    [ "DataFromSites", "a00404.html", "a00404" ],
+    [ "SendDataToSites", "a00412.html", "a00412" ]
 ];

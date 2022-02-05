@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitNX: E:/Github/VitNX/source/VitNX/Functions/Common/Web.cs Source File</title>
+<title>VitNX: E:/Github/VitNX/source/VitNX/Functions/Common/Text.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,106 +61,86 @@ $(document).ready(function(){initNavTree('a00014_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">Web.cs</div></div>
+  <div class="headertitle"><div class="title">Text.cs</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Linq;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Net;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Net.NetworkInformation;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Linq;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Text;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="a00294.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00294.html">VitNX.Functions.Common.Web</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00307.html">VitNX.Functions.Common</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00382.html">    8</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00382.html">DataFromSites</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00400.html">    8</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00400.html">Text</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00382.html#a5bc35b4089670d851260e4883dd630a4">   10</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="a00382.html#a5bc35b4089670d851260e4883dd630a4">GetGeo</a>(<span class="keywordtype">string</span> ip)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                <span class="keyword">using</span> (WebClient client = <span class="keyword">new</span> WebClient())</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                    <span class="keywordflow">return</span> client.DownloadString($<span class="stringliteral">&quot;https://ipinfo.io/{ip}/json&quot;</span>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordflow">catch</span> { <span class="keywordflow">return</span> <span class="stringliteral">&quot;404&quot;</span>; }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00400.html#a151ddc9530ede22032c1a2e3bd0ff178">   10</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00400.html#a151ddc9530ede22032c1a2e3bd0ff178">TextContainsOnlyLatters</a>(<span class="keywordtype">string</span> text) =&gt; text.All(Char.IsLetter) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="a00400.html#adb3e5c6f05753c8d54fcea31709ab420">   12</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00400.html#adb3e5c6f05753c8d54fcea31709ab420">TextContainsNumbersLatters</a>(<span class="keywordtype">string</span> text) =&gt; text.All(Char.IsLetterOrDigit) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00400.html#a7154d162e9440fa902c1544ec97d0b5f">   14</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00400.html#a7154d162e9440fa902c1544ec97d0b5f">TextContainsOnlyNumbers</a>(<span class="keywordtype">string</span> text) =&gt; text.All(Char.IsDigit) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="a00400.html#acf8136232efcacc65f14fcb22326028a">   16</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00400.html#acf8136232efcacc65f14fcb22326028a">TextContainsSymbols</a>(<span class="keywordtype">string</span> text) =&gt; text.All(Char.IsSymbol) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="a00400.html#a23e04e4459d565aa1ea6e01ab024e274">   18</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00400.html#a23e04e4459d565aa1ea6e01ab024e274">TextContainsSpaces</a>(<span class="keywordtype">string</span> text) =&gt; text.All(Char.IsWhiteSpace) ? true : <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="a00382.html#abd2d6c17b1c37163c41252db99f0d5a3">   20</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00382.html#abd2d6c17b1c37163c41252db99f0d5a3">IsValidTelegramBotToken</a>(<span class="keywordtype">string</span> botToken)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keyword">using</span> (WebClient client = <span class="keyword">new</span> WebClient())</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    <span class="keywordflow">return</span> !client.DownloadString(<span class="keyword">new</span> Uri($<span class="stringliteral">&quot;https://api.telegram.org/bot{botToken}/getMe&quot;</span>)).Contains(<span class="stringliteral">&quot;error_code&quot;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">catch</span> { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="a00382.html#a37a756a63945f5290b3bd33fbd439c84">   30</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="a00382.html#a37a756a63945f5290b3bd33fbd439c84">IHaveInternet</a>()</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                Ping ping = <span class="keyword">new</span> Ping();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                PingReply pingReply = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                pingReply = ping.Send(<span class="stringliteral">&quot;google.com&quot;</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <span class="keywordflow">if</span> (pingReply.Status == IPStatus.Success)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">catch</span> { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="a00400.html#ad404a1ca537619a61d189d0405f003b0">   20</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a00400.html#ad404a1ca537619a61d189d0405f003b0">ListContainsString</a>(List&lt;string&gt; list, <span class="keywordtype">string</span> text) =&gt; list.Where(CheckString =&gt; CheckString.Contains(text)) != <span class="keyword">null</span> ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="a00400.html#ae1c7edca344af2aa2621747d2410403b">   22</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;string&gt; <a class="code hl_function" href="a00400.html#ae1c7edca344af2aa2621747d2410403b">ListAddStringsToList</a>(List&lt;string&gt; list, <span class="keywordtype">string</span>[] strings)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; strings.Length; i++)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                list.Add(strings[i]);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">return</span> list;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="a00400.html#aeaf4a6b9f137752ee2952e6c19f47c56">   29</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;string&gt; <a class="code hl_function" href="a00400.html#aeaf4a6b9f137752ee2952e6c19f47c56">ListRemoveStringsFromList</a>(List&lt;string&gt; list, <span class="keywordtype">string</span>[] strings)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; strings.Length; i++)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                list.Remove(strings[i]);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">return</span> list;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">private</span> <span class="keyword">static</span> Random random = <span class="keyword">new</span> Random();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a00400.html#aca80f8f2ceebe4c3e70bb23166ef59d4">   38</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="a00400.html#aca80f8f2ceebe4c3e70bb23166ef59d4">RandomChars</a>(<span class="keywordtype">int</span> number)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">const</span> <span class="keywordtype">string</span> chars = <span class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%@#()$?*_[]+-&quot;</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> string(Enumerable.Repeat(chars, number)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>              .Select(s =&gt; s[random.Next(s.Length)]).ToArray());</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="a00386.html">   46</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="a00386.html">Config</a></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="a00386.html#abd5d02452d0753592d3ade6268727de8">   48</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="a00386.html#abd5d02452d0753592d3ade6268727de8">Host</a> = Dns.GetHostName();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="a00386.html#a04df096ee50bcc6a754da84263d4b316">   49</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="a00386.html#a04df096ee50bcc6a754da84263d4b316">LocalIpForNet4</a> = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="a00386.html#ac628945c9a1d6920eba69362782d858f">   50</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = <span class="stringliteral">&quot;0.0.0.0&quot;</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a00400.html#ac58bfa2e5dcb38914d6ed719fd7603a9">   45</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="a00400.html#ac58bfa2e5dcb38914d6ed719fd7603a9">RandomNums</a>(<span class="keywordtype">int</span> number)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keyword">const</span> <span class="keywordtype">string</span> chars = <span class="stringliteral">&quot;1234567890&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> string(Enumerable.Repeat(chars, number)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>              .Select(s =&gt; s[random.Next(s.Length)]).ToArray());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a00386.html#aad3b33b4c65e3cc3202d3331078a5666">   52</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a00386.html#aad3b33b4c65e3cc3202d3331078a5666">Set</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a00400.html#a0f1a9ca6142f089735c7aa090fa0ea5b">   52</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="a00400.html#a0f1a9ca6142f089735c7aa090fa0ea5b">FixText</a>(<span class="keywordtype">string</span> text)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">using</span> (WebClient client = <span class="keyword">new</span> WebClient())</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">try</span> { <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = client.DownloadString(<span class="stringliteral">&quot;https://icanhazip.com&quot;</span>); } <span class="keywordflow">catch</span> { <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = client.DownloadString(<span class="stringliteral">&quot;https://checkip.amazonaws.com&quot;</span>); }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> == <span class="stringliteral">&quot;&quot;</span> || <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> == <span class="stringliteral">&quot;0.0.0.0&quot;</span>)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    <span class="keywordflow">try</span> { <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = client.DownloadString(<span class="stringliteral">&quot;https://checkip.amazonaws.com&quot;</span>); } <span class="keywordflow">catch</span> { }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a> = <a class="code hl_variable" href="a00386.html#ac628945c9a1d6920eba69362782d858f">_PublicIp</a>.ToString().Replace(<span class="stringliteral">&quot;\n&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).Replace(<span class="stringliteral">&quot;\r&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="a00386.html#aa1c8cc9d959a9a8987a52ca3d1cd7193">   65</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> IPAddress <a class="code hl_variable" href="a00386.html#aa1c8cc9d959a9a8987a52ca3d1cd7193">DefaultGateway</a> = NetworkInterface</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        .GetAllNetworkInterfaces()</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        .Where(n =&gt; n.OperationalStatus == OperationalStatus.Up)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        .Where(n =&gt; n.NetworkInterfaceType != NetworkInterfaceType.Loopback)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        .SelectMany(n =&gt; n.GetIPProperties()?.GatewayAddresses)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        .Select(g =&gt; g?.Address)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        .Where(a =&gt; a != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        .FirstOrDefault();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="a00386.html#a916a54d7e95e3f0571186bba9c1885a3">   74</a></span>        <span class="keyword">public</span> <span class="keyword">static</span> SecurityProtocolType <a class="code hl_variable" href="a00386.html#a916a54d7e95e3f0571186bba9c1885a3">UseProtocols</a> = SecurityProtocolType.Tls13 |</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        SecurityProtocolType.Tls12 |</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        SecurityProtocolType.Tls11 |</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        SecurityProtocolType.Tls;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
-<div class="ttc" id="aa00294_html"><div class="ttname"><a href="a00294.html">VitNX.Functions.Common.Web</a></div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00006">Web.cs:7</a></div></div>
-<div class="ttc" id="aa00382_html"><div class="ttname"><a href="a00382.html">VitNX.Functions.Common.Web.DataFromSites</a></div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00008">Web.cs:9</a></div></div>
-<div class="ttc" id="aa00382_html_a37a756a63945f5290b3bd33fbd439c84"><div class="ttname"><a href="a00382.html#a37a756a63945f5290b3bd33fbd439c84">VitNX.Functions.Common.Web.DataFromSites.IHaveInternet</a></div><div class="ttdeci">static int IHaveInternet()</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00030">Web.cs:30</a></div></div>
-<div class="ttc" id="aa00382_html_a5bc35b4089670d851260e4883dd630a4"><div class="ttname"><a href="a00382.html#a5bc35b4089670d851260e4883dd630a4">VitNX.Functions.Common.Web.DataFromSites.GetGeo</a></div><div class="ttdeci">static string GetGeo(string ip)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00010">Web.cs:10</a></div></div>
-<div class="ttc" id="aa00382_html_abd2d6c17b1c37163c41252db99f0d5a3"><div class="ttname"><a href="a00382.html#abd2d6c17b1c37163c41252db99f0d5a3">VitNX.Functions.Common.Web.DataFromSites.IsValidTelegramBotToken</a></div><div class="ttdeci">static bool IsValidTelegramBotToken(string botToken)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00020">Web.cs:20</a></div></div>
-<div class="ttc" id="aa00386_html"><div class="ttname"><a href="a00386.html">VitNX.Functions.Common.Web.Config</a></div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00046">Web.cs:47</a></div></div>
-<div class="ttc" id="aa00386_html_a04df096ee50bcc6a754da84263d4b316"><div class="ttname"><a href="a00386.html#a04df096ee50bcc6a754da84263d4b316">VitNX.Functions.Common.Web.Config.LocalIpForNet4</a></div><div class="ttdeci">static string LocalIpForNet4</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00049">Web.cs:49</a></div></div>
-<div class="ttc" id="aa00386_html_a916a54d7e95e3f0571186bba9c1885a3"><div class="ttname"><a href="a00386.html#a916a54d7e95e3f0571186bba9c1885a3">VitNX.Functions.Common.Web.Config.UseProtocols</a></div><div class="ttdeci">static SecurityProtocolType UseProtocols</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00074">Web.cs:74</a></div></div>
-<div class="ttc" id="aa00386_html_aa1c8cc9d959a9a8987a52ca3d1cd7193"><div class="ttname"><a href="a00386.html#aa1c8cc9d959a9a8987a52ca3d1cd7193">VitNX.Functions.Common.Web.Config.DefaultGateway</a></div><div class="ttdeci">static IPAddress DefaultGateway</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00065">Web.cs:65</a></div></div>
-<div class="ttc" id="aa00386_html_aad3b33b4c65e3cc3202d3331078a5666"><div class="ttname"><a href="a00386.html#aad3b33b4c65e3cc3202d3331078a5666">VitNX.Functions.Common.Web.Config.Set</a></div><div class="ttdeci">static void Set()</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00052">Web.cs:52</a></div></div>
-<div class="ttc" id="aa00386_html_abd5d02452d0753592d3ade6268727de8"><div class="ttname"><a href="a00386.html#abd5d02452d0753592d3ade6268727de8">VitNX.Functions.Common.Web.Config.Host</a></div><div class="ttdeci">static string Host</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00048">Web.cs:48</a></div></div>
-<div class="ttc" id="aa00386_html_ac628945c9a1d6920eba69362782d858f"><div class="ttname"><a href="a00386.html#ac628945c9a1d6920eba69362782d858f">VitNX.Functions.Common.Web.Config._PublicIp</a></div><div class="ttdeci">static string _PublicIp</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00050">Web.cs:50</a></div></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordtype">byte</span>[] bytes = Encoding.Default.GetBytes(text);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">return</span> Encoding.UTF8.GetString(bytes);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="ttc" id="aa00307_html"><div class="ttname"><a href="a00307.html">VitNX.Functions.Common</a></div><div class="ttdef"><b>Definition:</b> <a href="a00002_source.html#l00004">CShap.cs:5</a></div></div>
+<div class="ttc" id="aa00400_html"><div class="ttname"><a href="a00400.html">VitNX.Functions.Common.Text</a></div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00008">Text.cs:9</a></div></div>
+<div class="ttc" id="aa00400_html_a0f1a9ca6142f089735c7aa090fa0ea5b"><div class="ttname"><a href="a00400.html#a0f1a9ca6142f089735c7aa090fa0ea5b">VitNX.Functions.Common.Text.FixText</a></div><div class="ttdeci">static string FixText(string text)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00052">Text.cs:52</a></div></div>
+<div class="ttc" id="aa00400_html_a151ddc9530ede22032c1a2e3bd0ff178"><div class="ttname"><a href="a00400.html#a151ddc9530ede22032c1a2e3bd0ff178">VitNX.Functions.Common.Text.TextContainsOnlyLatters</a></div><div class="ttdeci">static bool TextContainsOnlyLatters(string text)</div></div>
+<div class="ttc" id="aa00400_html_a23e04e4459d565aa1ea6e01ab024e274"><div class="ttname"><a href="a00400.html#a23e04e4459d565aa1ea6e01ab024e274">VitNX.Functions.Common.Text.TextContainsSpaces</a></div><div class="ttdeci">static bool TextContainsSpaces(string text)</div></div>
+<div class="ttc" id="aa00400_html_a7154d162e9440fa902c1544ec97d0b5f"><div class="ttname"><a href="a00400.html#a7154d162e9440fa902c1544ec97d0b5f">VitNX.Functions.Common.Text.TextContainsOnlyNumbers</a></div><div class="ttdeci">static bool TextContainsOnlyNumbers(string text)</div></div>
+<div class="ttc" id="aa00400_html_ac58bfa2e5dcb38914d6ed719fd7603a9"><div class="ttname"><a href="a00400.html#ac58bfa2e5dcb38914d6ed719fd7603a9">VitNX.Functions.Common.Text.RandomNums</a></div><div class="ttdeci">static string RandomNums(int number)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00045">Text.cs:45</a></div></div>
+<div class="ttc" id="aa00400_html_aca80f8f2ceebe4c3e70bb23166ef59d4"><div class="ttname"><a href="a00400.html#aca80f8f2ceebe4c3e70bb23166ef59d4">VitNX.Functions.Common.Text.RandomChars</a></div><div class="ttdeci">static string RandomChars(int number)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00038">Text.cs:38</a></div></div>
+<div class="ttc" id="aa00400_html_acf8136232efcacc65f14fcb22326028a"><div class="ttname"><a href="a00400.html#acf8136232efcacc65f14fcb22326028a">VitNX.Functions.Common.Text.TextContainsSymbols</a></div><div class="ttdeci">static bool TextContainsSymbols(string text)</div></div>
+<div class="ttc" id="aa00400_html_ad404a1ca537619a61d189d0405f003b0"><div class="ttname"><a href="a00400.html#ad404a1ca537619a61d189d0405f003b0">VitNX.Functions.Common.Text.ListContainsString</a></div><div class="ttdeci">static bool ListContainsString(List&lt; string &gt; list, string text)</div></div>
+<div class="ttc" id="aa00400_html_adb3e5c6f05753c8d54fcea31709ab420"><div class="ttname"><a href="a00400.html#adb3e5c6f05753c8d54fcea31709ab420">VitNX.Functions.Common.Text.TextContainsNumbersLatters</a></div><div class="ttdeci">static bool TextContainsNumbersLatters(string text)</div></div>
+<div class="ttc" id="aa00400_html_ae1c7edca344af2aa2621747d2410403b"><div class="ttname"><a href="a00400.html#ae1c7edca344af2aa2621747d2410403b">VitNX.Functions.Common.Text.ListAddStringsToList</a></div><div class="ttdeci">static List&lt; string &gt; ListAddStringsToList(List&lt; string &gt; list, string[] strings)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00022">Text.cs:22</a></div></div>
+<div class="ttc" id="aa00400_html_aeaf4a6b9f137752ee2952e6c19f47c56"><div class="ttname"><a href="a00400.html#aeaf4a6b9f137752ee2952e6c19f47c56">VitNX.Functions.Common.Text.ListRemoveStringsFromList</a></div><div class="ttdeci">static List&lt; string &gt; ListRemoveStringsFromList(List&lt; string &gt; list, string[] strings)</div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00029">Text.cs:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_cbbd982ac2e143b43f18dd015ec4c8f2.html">Functions</a></li><li class="navelem"><a class="el" href="dir_1851e1d8ad9a2832a1d6cc0a35bab653.html">Common</a></li><li class="navelem"><b>Web.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_f82d119ba1c8b5cd9b010b67e029ee31.html">VitNX</a></li><li class="navelem"><a class="el" href="dir_cbbd982ac2e143b43f18dd015ec4c8f2.html">Functions</a></li><li class="navelem"><a class="el" href="dir_1851e1d8ad9a2832a1d6cc0a35bab653.html">Common</a></li><li class="navelem"><b>Text.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

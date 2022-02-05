@@ -1,0 +1,20 @@
+var a00504 =
+[
+    [ "DISPLAYCONFIG_2DREGION", "a00528.html", "a00528" ],
+    [ "DISPLAYCONFIG_DEVICE_INFO_HEADER", "a00560.html", "a00560" ],
+    [ "DISPLAYCONFIG_MODE_INFO", "a00552.html", "a00552" ],
+    [ "DISPLAYCONFIG_MODE_INFO_UNION", "a00548.html", "a00548" ],
+    [ "DISPLAYCONFIG_PATH_INFO", "a00524.html", "a00524" ],
+    [ "DISPLAYCONFIG_PATH_SOURCE_INFO", "a00512.html", "a00512" ],
+    [ "DISPLAYCONFIG_PATH_TARGET_INFO", "a00516.html", "a00516" ],
+    [ "DISPLAYCONFIG_RATIONAL", "a00520.html", "a00520" ],
+    [ "DISPLAYCONFIG_SOURCE_MODE", "a00544.html", "a00544" ],
+    [ "DISPLAYCONFIG_TARGET_DEVICE_NAME", "a00564.html", "a00564" ],
+    [ "DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS", "a00556.html", "a00556" ],
+    [ "DISPLAYCONFIG_TARGET_MODE", "a00536.html", "a00536" ],
+    [ "DISPLAYCONFIG_VIDEO_SIGNAL_INFO", "a00532.html", "a00532" ],
+    [ "LUID", "a00508.html", "a00508" ],
+    [ "POINTL", "a00540.html", null ],
+    [ "DeviceFriendlyName", "a00504.html#a598627b008da5c2a816df6bdf3c8181b", null ],
+    [ "ERROR_SUCCESS", "a00504.html#a1e0aba7d75341634f54d7bfba21a9972", null ]
+];
