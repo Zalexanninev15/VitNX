@@ -9,6 +9,9 @@ using System.Threading;
 
 namespace VitNX.Functions.Windows.Apps
 {
+    /// <summary>
+    /// Work with processes.
+    /// </summary>
     public class Processes
     {
         public static string GetListWithInformation()
