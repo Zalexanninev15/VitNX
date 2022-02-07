@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Management;
-using System.Reflection;
 using System.Security.Principal;
 using System.Threading;
 
@@ -91,24 +90,19 @@ namespace VitNX.Functions.Windows.Apps
             Process.Start(ps);
         }
 
-        public static Process OnlyOneProcess()
+        public static Process OnlyOne(Process currentProcess, string currentExeAssemblyLocation)
         {
-            Process current = Process.GetCurrentProcess();
-            Process[] pr = Process.GetProcessesByName(current.ProcessName);
+            currentExeAssemblyLocation = currentExeAssemblyLocation.Replace("/", "\\");
+            Process[] pr = Process.GetProcessesByName(currentProcess.ProcessName);
             foreach (Process i in pr)
             {
-                if (i.Id != current.Id)
+                if (i.Id != currentProcess.Id)
                 {
-                    if (Assembly.GetExecutingAssembly().Location.Replace("/", "\\") == current.MainModule.FileName)
+                    if (currentExeAssemblyLocation == currentProcess.MainModule.FileName)
                         return i;
                 }
             }
             return null;
-        }
-
-        public static void KillThis()
-        {
-            Process.GetCurrentProcess().Kill();
         }
 
         public static void Kill(string processNameWithExe)
@@ -133,12 +127,9 @@ namespace VitNX.Functions.Windows.Apps
 
         public static bool IsOneYourApp(string appTitle)
         {
-            bool createdNew = false;
-            Mutex currentApp = new Mutex(false, appTitle, out createdNew);
-            if (!createdNew)
-                return false;
-            else
-                return true;
+            bool createdNew;
+            Mutex currentApp = new Mutex(true, appTitle, out createdNew);
+            return createdNew;
         }
     }
 

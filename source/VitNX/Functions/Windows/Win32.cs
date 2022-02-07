@@ -12,6 +12,14 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetConsoleWindow();
 
+        [DllImport("winmm.dll")]
+        public static extern int WaveOutGetVolume(IntPtr h,
+            out uint dwVolume);
+
+        [DllImport("winmm.dll")]
+        public static extern int WaveOutSetVolume(IntPtr h,
+            uint dwVolume);
+
         [DllImport("dwmapi.dll")]
         public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd,
             ref MARGINS pMarInset);
@@ -25,6 +33,10 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("dwmapi.dll")]
         public static extern int DwmIsCompositionEnabled(ref int pfEnabled);
 
+        [DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true)]
+        public static extern bool CheckRemoteDebuggerPresent(IntPtr hProcess,
+            ref bool isDebuggerPresent);
+
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         public static extern IntPtr CreateRoundRectRgn(
             int nLeftRect,
@@ -37,7 +49,8 @@ namespace VitNX.Functions.Windows.Win32
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+        public static extern bool GetWindowRect(IntPtr hWnd,
+            out RECT lpRect);
 
         [DllImport("user32.dll")]
         public static extern IntPtr WindowFromPoint(Point point);
@@ -100,10 +113,10 @@ namespace VitNX.Functions.Windows.Win32
             int dwExtraInfo);
 
         [DllImport("shcore.dll", SetLastError = true)]
-        public static extern int SetProcessDpiAwareness(Enums.PROCESS_DPI_AWARENESS PROCESS_DPI_UNAWARE);
+        public static extern int SetProcessDpiAwareness(PROCESS_DPI_AWARENESS PROCESS_DPI_UNAWARE);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern Enums.EXECUTION_STATE SetThreadExecutionState(Enums.EXECUTION_STATE esFlags);
+        public static extern Enums.EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
 
         [DllImport("uxtheme.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
         public static extern int SetWindowTheme(IntPtr hWnd,
@@ -113,7 +126,7 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("shell32.dll")]
         public static extern int SHEmptyRecycleBin(IntPtr hWnd,
             string pszRootPath,
-            Enums.SHERB_RECYCLE dwFlags);
+            SHERB_RECYCLE dwFlags);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern bool PostMessage(IntPtr hWnd,
@@ -660,6 +673,9 @@ namespace VitNX.Functions.Windows.Win32
         public static int MouseX;
         public static int MouseY;
 
+        private static uint SavedVolumeLevel;
+        private static Boolean VolumeLevelSaved = false;
+
         public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
 
         public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
@@ -692,6 +708,38 @@ namespace VitNX.Functions.Windows.Win32
                 pt.X, pt.Y, 0, 0,
                 SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOSIZE |
                 SetWindowPosFlags.SWP_SHOWWINDOW);
+        }
+
+        public static bool Check()
+        {
+            bool isDebuggerPresent = false;
+            try
+            {
+                Import.CheckRemoteDebuggerPresent(System.Diagnostics.Process.GetCurrentProcess().Handle, ref isDebuggerPresent);
+                return isDebuggerPresent;
+            }
+            catch
+            {
+                return isDebuggerPresent;
+            }
+        }
+
+        public static void VolumeOnFocus(bool off = true)
+        {
+            if (off)
+            {
+                Import.WaveOutGetVolume(IntPtr.Zero, out SavedVolumeLevel);
+                VolumeLevelSaved = true;
+                Import.WaveOutSetVolume(IntPtr.Zero, 0);
+            }
+            else
+            {
+                if (VolumeLevelSaved)
+                {
+                    Import.WaveOutSetVolume(IntPtr.Zero, SavedVolumeLevel);
+                    VolumeLevelSaved = true;
+                }
+            }
         }
     }
 }

@@ -53,7 +53,7 @@
     <Compile Include="Functions\Common\CShap.cs" />
     <Compile Include="Functions\Common\PowerControl.cs" />
     <Compile Include="Functions\Common\Text.cs" />
-    <Compile Include="Functions\NotGUI\FontAwesome.cs" />
+    <Compile Include="UI\OtherControls\FontAwesome.cs" />
     <Compile Include="Functions\Windows\WindowsControl.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -250,7 +250,7 @@
     <Compile Include="Functions\Windows\Apps.cs" />
     <Compile Include="Functions\Common\Web.cs" />
     <Compile Include="Functions\Windows\Win32.cs" />
-    <Compile Include="Functions\NotGUI\ConsoleProgressBar.cs" />
+    <Compile Include="UI\OtherControls\ConsoleProgressBar.cs" />
     <Compile Include="Functions\Windows\NativeControls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\BasedOnDarkUI\Renderers\VitNX_MenuRenderer.cs" />
@@ -430,6 +430,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Error1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\OtherControls\Notification\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

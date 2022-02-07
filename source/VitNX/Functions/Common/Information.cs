@@ -14,11 +14,9 @@ using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.Functions.Common.Information
 {
-    public class Helper
-    {
-        public static readonly string[] SizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
-    }
-
+    /// <summary>
+    /// Work with informations of Windows System.
+    /// </summary>
     public class Windows
     {
         public static string ComputerName = Environment.MachineName;
@@ -34,7 +32,11 @@ namespace VitNX.Functions.Common.Information
         public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
         public static string WindowsStartupFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
 
-        public static MemoryStream GetScreenToMemoryStream()
+        /// <summary>
+        /// Gets the screenshot to memory stream.
+        /// </summary>
+        /// <returns>A MemoryStream.</returns>
+        public static MemoryStream GetScreenshotToMemoryStream()
         {
             Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics GH = Graphics.FromImage(BM);
@@ -45,6 +47,10 @@ namespace VitNX.Functions.Common.Information
             return memoryStream;
         }
 
+        /// <summary>
+        /// Writes the all users to temp file: %TEMP%\Users.txt.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string WriteAllUsersToTempFile()
         {
             string users = Processes.Execute("wmic", "useraccount list full");
@@ -82,6 +88,9 @@ namespace VitNX.Functions.Common.Information
         }
     }
 
+    /// <summary>
+    /// Work with informations of CPU.
+    /// </summary>
     public class Cpu
     {
         public static string _Name = "";
@@ -104,6 +113,9 @@ namespace VitNX.Functions.Common.Information
         public static string _CurrentVoltage = "";
         public static int _UsagePercent = 0;
 
+        /// <summary>
+        /// Set (get) values for CPU variables.
+        /// </summary>
         public static void Set()
         {
             ManagementObjectSearcher myProcessorObject = new ManagementObjectSearcher("select * from Win32_Processor");
@@ -131,6 +143,10 @@ namespace VitNX.Functions.Common.Information
             _UsagePercent = Convert.ToInt32(new PerformanceCounter("Processor", "% Processor Time", "_Total").NextValue());
         }
 
+        /// <summary>
+        /// Gets the architecture of CPU.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetArchitecture()
         {
             string result = string.Empty;
@@ -151,6 +167,10 @@ namespace VitNX.Functions.Common.Information
             return result;
         }
 
+        /// <summary>
+        /// Gets the clock speed of CPU.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetClockSpeed()
         {
             string clockSpeed = "";
@@ -163,6 +183,9 @@ namespace VitNX.Functions.Common.Information
         }
     }
 
+    /// <summary>
+    /// Work with informations of GPU.
+    /// </summary>
     public class Gpu
     {
         public static string _Name = "";
@@ -179,6 +202,9 @@ namespace VitNX.Functions.Common.Information
         public static string _MinRefreshRate = "";
         public static string _VideoModeDescription = "";
 
+        /// <summary>
+        /// Set (get) values for GPU variables.
+        /// </summary>
         public static void Set()
         {
             ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
@@ -198,17 +224,6 @@ namespace VitNX.Functions.Common.Information
                 _MinRefreshRate = obj["MinRefreshRate"].ToString();
                 _VideoModeDescription = obj["VideoModeDescription"].ToString();
             }
-        }
-
-        private static string SizeSuffix(Int64 value)
-        {
-            if (value < 0)
-                return "-" + SizeSuffix(-value);
-            if (value == 0)
-                return "0.0 bytes";
-            int mag = (int)Math.Log(value, 1024);
-            decimal adjustedSize = (decimal)value / (1L << (mag * 10));
-            return string.Format("{0:n1} {1}", adjustedSize, Helper.SizeSuffixes[mag]);
         }
     }
 
@@ -281,12 +296,12 @@ namespace VitNX.Functions.Common.Information
 
         public static string GetResolution()
         {
-            UInt32 width = 0;
-            UInt32 height = 0;
+            uint width = 0;
+            uint height = 0;
             foreach (var desktopMonitor in new ManagementObjectSearcher("ROOT\\CIMV2", "SELECT * FROM Win32_DesktopMonitor").Get())
             {
-                width = (UInt32)desktopMonitor["ScreenWidth"];
-                height = (UInt32)desktopMonitor["ScreenHeight"];
+                width = (uint)desktopMonitor["ScreenWidth"];
+                height = (uint)desktopMonitor["ScreenHeight"];
             }
             return $"{Convert.ToString(width)}x{Convert.ToString(height)}";
         }

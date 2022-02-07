@@ -17,10 +17,35 @@ namespace VitNX.Functions.Common.Web
                 using (WebClient client = new WebClient())
                 {
                     client.Proxy = null;
-                    return Text.FixText(client.DownloadString(url));
+                    return Text.Work.FixDeEncoding(client.DownloadString(url));
                 }
             }
             catch (Exception ex) { return ex.Message; }
+        }
+
+        public static string[] GetHeaderAndContent(string url, string useragent)
+        {
+            string[] data = { "Header", "Content" };
+            HttpWebRequest wReq;
+            HttpWebResponse wResp;
+            Stream rStream;
+            wReq = (HttpWebRequest)WebRequest.Create(url);
+            wReq.KeepAlive = false;
+            wReq.Referer = url;
+            wReq.UserAgent = useragent;
+            wResp = (HttpWebResponse)wReq.GetResponse();
+            data[0] = wResp.Headers.ToString();
+            rStream = wResp.GetResponseStream();
+            int bufCount = 0;
+            byte[] byteBuf = new byte[1024];
+            do
+            {
+                bufCount = rStream.Read(byteBuf, 0, byteBuf.Length);
+                if (bufCount != 0)
+                    data[1] += Encoding.ASCII.GetString(byteBuf, 0, bufCount);
+            }
+            while (bufCount > 0);
+            return data;
         }
 
         public static string GetGeo(string ip)
