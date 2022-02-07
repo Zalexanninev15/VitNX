@@ -55,6 +55,21 @@ namespace VitNX.Functions.Windows.Apps
             start.Start();
         }
 
+        /// <summary>
+        /// Opens the link of site.
+        /// </summary>
+        /// <param name="link">The link.</param>
+        /// <returns>A bool.</returns>
+        public static bool OpenLink(string link)
+        {
+            try
+            {
+                Process.Start(link);
+                return true;
+            }
+            catch { return false; }
+        }
+
         public static string Execute(string targetFile,
             string arguments)
         {

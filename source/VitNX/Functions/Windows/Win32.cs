@@ -626,14 +626,6 @@ namespace VitNX.Functions.Windows.Win32
             PROCESS_PER_MONITOR_DPI_Aware = 2
         }
 
-        public enum SYSTEM_POWER_CONTROL
-        {
-            SYSTEM_LOGOFF,
-            SYSTEM_SHUTDOWN,
-            SYSTEM_REBOOT,
-            SYSTEM_LOCK
-        }
-
         public enum SHERB_RECYCLE : int
         {
             SHERB_NOCONFIRMATION = 0x00000001,

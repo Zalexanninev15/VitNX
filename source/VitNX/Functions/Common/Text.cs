@@ -23,35 +23,35 @@ namespace VitNX.Functions.Common.Text
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns>A bool.</returns>
-        public static bool ContainsOnlyLatters(string text) => text.All(Char.IsLetter) ? true : false;
+        public static bool ContainsOnlyLatters(string text) => text.All(char.IsLetter) ? true : false;
 
         /// <summary>
         /// Contains the numbers latters.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns>A bool.</returns>
-        public static bool ContainsNumbersLatters(string text) => text.All(Char.IsLetterOrDigit) ? true : false;
+        public static bool ContainsNumbersLatters(string text) => text.All(char.IsLetterOrDigit) ? true : false;
 
         /// <summary>
         /// Contains the only numbers.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns>A bool.</returns>
-        public static bool ContainsOnlyNumbers(string text) => text.All(Char.IsDigit) ? true : false;
+        public static bool ContainsOnlyNumbers(string text) => text.All(char.IsDigit) ? true : false;
 
         /// <summary>
         /// Contains the symbols.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns>A bool.</returns>
-        public static bool ContainsSymbols(string text) => text.All(Char.IsSymbol) ? true : false;
+        public static bool ContainsSymbols(string text) => text.All(char.IsSymbol) ? true : false;
 
         /// <summary>
         /// Contains the spaces.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns>A bool.</returns>
-        public static bool ContainsSpaces(string text) => text.All(Char.IsWhiteSpace) ? true : false;
+        public static bool ContainsSpaces(string text) => text.All(char.IsWhiteSpace) ? true : false;
 
         /// <summary>
         /// Lists the contains string.
@@ -267,6 +267,12 @@ namespace VitNX.Functions.Common.Text
             catch { return new byte[0]; }
         }
 
+        /// <summary>
+        /// Transforms the text.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="CryptoTransform">The crypto transform.</param>
+        /// <returns>An array of byte.</returns>
         private static byte[] Transform(byte[] input, ICryptoTransform CryptoTransform)
         {
             MemoryStream memStream = new MemoryStream();
