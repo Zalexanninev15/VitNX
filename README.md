@@ -13,7 +13,7 @@
 
 ## Description
 
-Controls for WinForms and necessary functions for interaction (.NET Framework 4.8). Based on [DarkUI](https://github.com/RobinPerris/DarkUI), but does not completely match the code base. It develops in different directions, depending on my needs
+Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.8)
 
 ## Documentation
 
@@ -21,7 +21,7 @@ A full description of all classes and functions can be found in the [generated d
 
 ## Used in
 
-* [Jetpack Downgrader](https://github.com/Zalexanninev15/Jetpack-Downgrader) (Version 1.1.3-PreFinalBeta)
+* [Jetpack Downgrader](https://github.com/Zalexanninev15/Jetpack-Downgrader) (VitNX Version 1.1.3-PreFinalBeta)
 
 ## Build
 
