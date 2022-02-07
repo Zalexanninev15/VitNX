@@ -213,7 +213,7 @@ namespace VitNX.Functions.Common.Information
                 _Name = obj["Name"].ToString();
                 _Status = obj["Status"].ToString();
                 _DeviceID = obj["DeviceID"].ToString();
-                _AdapterRAM = SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
+                _AdapterRAM = Text.Work.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
                 _AdapterDACType = obj["AdapterDACType"].ToString();
                 _Monochrome = obj["Monochrome"].ToString();
                 _InstalledDisplayDrivers = obj["InstalledDisplayDrivers"].ToString();

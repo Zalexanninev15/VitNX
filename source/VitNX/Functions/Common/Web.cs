@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -8,9 +7,17 @@ using System.Text;
 
 namespace VitNX.Functions.Common.Web
 {
+    /// <summary>
+    /// Work with data from sites.
+    /// </summary>
     public class DataFromSites
     {
-        public static string DownloadString(string url, bool get = false, string options = "")
+        /// <summary>
+        /// Downloads the string from site/server.
+        /// </summary>
+        /// <param name="url">The url.</param>
+        /// <returns>A string.</returns>
+        public static string DownloadString(string url)
         {
             try
             {
@@ -23,6 +30,12 @@ namespace VitNX.Functions.Common.Web
             catch (Exception ex) { return ex.Message; }
         }
 
+        /// <summary>
+        /// Gets the header and content of site.
+        /// </summary>
+        /// <param name="url">The url.</param>
+        /// <param name="useragent">The useragent.</param>
+        /// <returns>An array of string.</returns>
         public static string[] GetHeaderAndContent(string url, string useragent)
         {
             string[] data = { "Header", "Content" };
@@ -48,6 +61,11 @@ namespace VitNX.Functions.Common.Web
             return data;
         }
 
+        /// <summary>
+        /// Gets the geolocation of PC.
+        /// </summary>
+        /// <param name="ip">The ip.</param>
+        /// <returns>A string.</returns>
         public static string GetGeo(string ip)
         {
             try
@@ -58,6 +76,11 @@ namespace VitNX.Functions.Common.Web
             catch (Exception ex) { return ex.Message; }
         }
 
+        /// <summary>
+        /// Are the valid telegram bot token.
+        /// </summary>
+        /// <param name="botToken">The bot token.</param>
+        /// <returns>A bool.</returns>
         public static bool IsValidTelegramBotToken(string botToken)
         {
             try
@@ -68,7 +91,11 @@ namespace VitNX.Functions.Common.Web
             catch { return false; }
         }
 
-        public static int IHaveInternet()
+        /// <summary>
+        /// Are yout have the internet connection on PC.
+        /// </summary>
+        /// <returns>An int.</returns>
+        public static int IsHaveInternet()
         {
             try
             {
@@ -84,13 +111,24 @@ namespace VitNX.Functions.Common.Web
         }
     }
 
+    /// <summary>
+    /// Work with config of PC.
+    /// </summary>
     public class Config
     {
         public static string Host = Dns.GetHostName();
+
+        [Obsolete]
         public static string LocalIPv6 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+
+        [Obsolete]
         public static string LocalIPv4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
+
         public static string _PublicIP = "localhost";
 
+        /// <summary>
+        /// Set (get) value of _PublicIP for PC internet config.
+        /// </summary>
         public static void Set()
         {
             using (WebClient client = new WebClient())
@@ -105,6 +143,9 @@ namespace VitNX.Functions.Common.Web
             _PublicIP = _PublicIP.Trim();
         }
 
+        /// <summary>
+        /// Get DefaultGateway of NetworkInterface in IPAddress.
+        /// </summary>
         public static IPAddress DefaultGateway = NetworkInterface
         .GetAllNetworkInterfaces()
         .Where(n => n.OperationalStatus == OperationalStatus.Up)
@@ -114,27 +155,29 @@ namespace VitNX.Functions.Common.Web
         .Where(a => a != null)
         .FirstOrDefault();
 
+        /// <summary>
+        /// Activate all security protocols for all network functions to work (HTTPS).
+        /// </summary>
         public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls13 |
         SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;
-
-        public static bool OpenLink(string link)
-        {
-            try
-            {
-                Process.Start(link);
-                return true;
-            }
-            catch { return false; }
-        }
     }
 
+    /// <summary>
+    /// The send data to sites.
+    /// </summary>
     public class SendDataToSites
     {
+        /// <summary>
+        /// Using POST request to send text data.
+        ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");
+        /// </summary>
+        /// <param name="url">The url.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>A string.</returns>
         public static string Post(string url, string options)
         {
-            // Example: Post("https://site.com/auth", "client_id=43435&key=create");
             try
             {
                 WebRequest req = WebRequest.Create(url);
