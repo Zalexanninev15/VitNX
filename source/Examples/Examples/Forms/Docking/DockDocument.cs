@@ -1,8 +1,8 @@
-﻿using VitNX.Controls;
-using VitNX.Docking;
-using VitNX.Forms;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
 
 namespace Example
 {
@@ -24,7 +24,10 @@ namespace Example
             cmbOptions.Items.Add(new VitNX_DropdownItem("400%"));
         }
 
-        public DockDocument(string text, Image icon) : this() { DockText = text; Icon = icon; }
+        public DockDocument(string text, Image icon) : this()
+        {
+            DockText = text; Icon = icon;
+        }
 
         public override void Close()
         {
