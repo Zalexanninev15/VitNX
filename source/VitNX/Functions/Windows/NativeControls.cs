@@ -51,7 +51,6 @@ namespace VitNX.Functions.Windows.NativeControls
         { }
 
         private static ITaskbarList3 taskbarInstance = (ITaskbarList3)new TaskbarInstance();
-
         private static bool taskbarSupported = Environment.OSVersion.Version >= new Version(6, 1);
 
         public static void SetState(IntPtr windowHandle,
@@ -80,32 +79,22 @@ namespace VitNX.Functions.Windows.NativeControls
         {
             get
             {
-                return string.IsNullOrEmpty(_initialDirectory) ? Environment.CurrentDirectory : _initialDirectory;
+                return string.IsNullOrEmpty(_initialDirectory) ?
+                    Environment.CurrentDirectory :
+                    _initialDirectory;
             }
-            set
-            {
-                _initialDirectory = value;
-            }
+            set { _initialDirectory = value; }
         }
 
         public string Title
         {
-            get
-            {
-                return _title ?? "Select a folder";
-            }
-            set
-            {
-                _title = value;
-            }
+            get { return _title ?? "Select a folder"; }
+            set { _title = value; }
         }
 
         public string FileName
         {
-            get
-            {
-                return _fileName;
-            }
+            get { return _fileName; }
         }
 
         public bool Show()
@@ -113,7 +102,9 @@ namespace VitNX.Functions.Windows.NativeControls
 
         public bool Show(IntPtr hWndOwner)
         {
-            var result = Environment.OSVersion.Version.Major >= 6 ? ModernDialog.Show(hWndOwner, InitialDirectory, Title) : ShowXpDialog(hWndOwner, InitialDirectory, Title);
+            var result = Environment.OSVersion.Version.Major >= 6 ?
+                ModernDialog.Show(hWndOwner, InitialDirectory, Title) :
+                ShowXpDialog(hWndOwner, InitialDirectory, Title);
             _fileName = result.FileName;
             return result.Result;
         }
@@ -142,20 +133,49 @@ namespace VitNX.Functions.Windows.NativeControls
         private static class ModernDialog
         {
             private const string c_foldersFilter = "Folders|\n";
-            private const BindingFlags c_flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            private static readonly Assembly s_windowsFormsAssembly = typeof(FileDialog).Assembly;
-            private static readonly Type s_iFileDialogType = s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialogNative+IFileDialog");
-            private static readonly MethodInfo s_createVistaDialogMethodInfo = typeof(OpenFileDialog).GetMethod("CreateVistaDialog", c_flags);
-            private static readonly MethodInfo s_onBeforeVistaDialogMethodInfo = typeof(OpenFileDialog).GetMethod("OnBeforeVistaDialog", c_flags);
-            private static readonly MethodInfo s_getOptionsMethodInfo = typeof(FileDialog).GetMethod("GetOptions", c_flags);
-            private static readonly MethodInfo s_setOptionsMethodInfo = s_iFileDialogType.GetMethod("SetOptions", c_flags);
-            private static readonly uint s_fosPickFoldersBitFlag = (uint)s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialogNative+FOS").GetField("FOS_PICKFOLDERS").GetValue(null);
-            private static readonly ConstructorInfo s_VistaDialogEventsConstructorInfo = s_windowsFormsAssembly.GetType("System.Windows.Forms.FileDialog+VistaDialogEvents").GetConstructor(c_flags, null, new[] { typeof(FileDialog) }, null);
-            private static readonly MethodInfo s_adviseMethodInfo = s_iFileDialogType.GetMethod("Advise");
-            private static readonly MethodInfo s_unAdviseMethodInfo = s_iFileDialogType.GetMethod("Unadvise");
-            private static readonly MethodInfo s_showMethodInfo = s_iFileDialogType.GetMethod("Show");
 
-            public static ShowDialogResult Show(IntPtr ownerHandle, string initialDirectory, string title)
+            private const BindingFlags c_flags = BindingFlags.Instance |
+                BindingFlags.Public |
+                BindingFlags.NonPublic;
+
+            private static readonly Assembly s_windowsFormsAssembly = typeof(FileDialog).Assembly;
+
+            private static readonly Type s_iFileDialogType = s_windowsFormsAssembly.
+                GetType("System.Windows.Forms.FileDialogNative+IFileDialog");
+
+            private static readonly MethodInfo s_createVistaDialogMethodInfo = typeof(OpenFileDialog).
+                GetMethod("CreateVistaDialog", c_flags);
+
+            private static readonly MethodInfo s_onBeforeVistaDialogMethodInfo = typeof(OpenFileDialog).
+                GetMethod("OnBeforeVistaDialog", c_flags);
+
+            private static readonly MethodInfo s_getOptionsMethodInfo = typeof(FileDialog).
+                GetMethod("GetOptions", c_flags);
+
+            private static readonly MethodInfo s_setOptionsMethodInfo = s_iFileDialogType.
+                GetMethod("SetOptions", c_flags);
+
+            private static readonly uint s_fosPickFoldersBitFlag = (uint)s_windowsFormsAssembly.
+                GetType("System.Windows.Forms.FileDialogNative+FOS").
+                GetField("FOS_PICKFOLDERS").
+                GetValue(null);
+
+            private static readonly ConstructorInfo s_VistaDialogEventsConstructorInfo = s_windowsFormsAssembly.
+                GetType("System.Windows.Forms.FileDialog+VistaDialogEvents").
+                GetConstructor(c_flags, null, new[] { typeof(FileDialog) }, null);
+
+            private static readonly MethodInfo s_adviseMethodInfo = s_iFileDialogType.
+                GetMethod("Advise");
+
+            private static readonly MethodInfo s_unAdviseMethodInfo = s_iFileDialogType.
+                GetMethod("Unadvise");
+
+            private static readonly MethodInfo s_showMethodInfo = s_iFileDialogType.
+                GetMethod("Show");
+
+            public static ShowDialogResult Show(IntPtr ownerHandle,
+                string initialDirectory,
+                string title)
             {
                 var openFileDialog = new OpenFileDialog
                 {
@@ -169,15 +189,26 @@ namespace VitNX.Functions.Windows.NativeControls
                 };
                 var iFileDialog = s_createVistaDialogMethodInfo.Invoke(openFileDialog, new object[] { });
                 s_onBeforeVistaDialogMethodInfo.Invoke(openFileDialog, new[] { iFileDialog });
-                s_setOptionsMethodInfo.Invoke(iFileDialog, new object[] { (uint)s_getOptionsMethodInfo.Invoke(openFileDialog, new object[] { }) | s_fosPickFoldersBitFlag });
-                var adviseParametersWithOutputConnectionToken = new[] { s_VistaDialogEventsConstructorInfo.Invoke(new object[] { openFileDialog }), 0U };
+                s_setOptionsMethodInfo.Invoke(iFileDialog, new object[]
+                { (uint)s_getOptionsMethodInfo.Invoke(openFileDialog, new object[] { }) | s_fosPickFoldersBitFlag });
+                var adviseParametersWithOutputConnectionToken = new[]
+                { s_VistaDialogEventsConstructorInfo.Invoke(new object[] { openFileDialog }), 0U };
                 s_adviseMethodInfo.Invoke(iFileDialog, adviseParametersWithOutputConnectionToken);
                 try
                 {
-                    int retVal = (int)s_showMethodInfo.Invoke(iFileDialog, new object[] { ownerHandle });
-                    return new ShowDialogResult { Result = retVal == 0, FileName = openFileDialog.FileName };
+                    int retVal = (int)s_showMethodInfo.Invoke(iFileDialog,
+                        new object[] { ownerHandle });
+                    return new ShowDialogResult
+                    {
+                        Result = retVal == 0,
+                        FileName = openFileDialog.FileName
+                    };
                 }
-                finally { s_unAdviseMethodInfo.Invoke(iFileDialog, new[] { adviseParametersWithOutputConnectionToken[1] }); }
+                finally
+                {
+                    s_unAdviseMethodInfo.Invoke(iFileDialog,
+              new[] { adviseParametersWithOutputConnectionToken[1] });
+                }
             }
         }
 
@@ -190,10 +221,7 @@ namespace VitNX.Functions.Windows.NativeControls
 
             public IntPtr Handle
             {
-                get
-                {
-                    return _handle;
-                }
+                get { return _handle; }
             }
         }
     }
@@ -241,27 +269,36 @@ namespace VitNX.Functions.Windows.NativeControls
 
             int GetChannelCount(out int pnChannelCount);
 
-            int SetMasterVolumeLevel(float fLevelDB, Guid pguidEventContext);
+            int SetMasterVolumeLevel(float fLevelDB,
+                Guid pguidEventContext);
 
-            int SetMasterVolumeLevelScalar(float fLevel, Guid pguidEventContext);
+            int SetMasterVolumeLevelScalar(float fLevel,
+                Guid pguidEventContext);
 
             int GetMasterVolumeLevel(out float pfLevelDB);
 
             int GetMasterVolumeLevelScalar(out float pfLevel);
 
-            int SetChannelVolumeLevel(uint nChannel, float fLevelDB, Guid pguidEventContext);
+            int SetChannelVolumeLevel(uint nChannel,
+                float fLevelDB,
+                Guid pguidEventContext);
 
-            int SetChannelVolumeLevelScalar(uint nChannel, float fLevel, Guid pguidEventContext);
+            int SetChannelVolumeLevelScalar(uint nChannel,
+                float fLevel,
+                Guid pguidEventContext);
 
-            int GetChannelVolumeLevel(uint nChannel, out float pfLevelDB);
+            int GetChannelVolumeLevel(uint nChannel,
+                out float pfLevelDB);
 
-            int GetChannelVolumeLevelScalar(uint nChannel, out float pfLevel);
+            int GetChannelVolumeLevelScalar(uint nChannel,
+                out float pfLevel);
 
             int SetMute([MarshalAs(UnmanagedType.Bool)] bool bMute, Guid pguidEventContext);
 
             int GetMute(out bool pbMute);
 
-            int GetVolumeStepInfo(out uint pnStep, out uint pnStepCount);
+            int GetVolumeStepInfo(out uint pnStep,
+                out uint pnStepCount);
 
             int VolumeStepUp(Guid pguidEventContext);
 
@@ -269,7 +306,9 @@ namespace VitNX.Functions.Windows.NativeControls
 
             int QueryHardwareSupport(out uint pdwHardwareSupportMask);
 
-            int GetVolumeRange(out float pflVolumeMindB, out float pflVolumeMaxdB, out float pflVolumeIncrementdB);
+            int GetVolumeRange(out float pflVolumeMindB,
+                out float pflVolumeMaxdB,
+                out float pflVolumeIncrementdB);
         }
 
         public void Set(float level)
@@ -281,8 +320,7 @@ namespace VitNX.Functions.Windows.NativeControls
                 Enums.E_ROLE.eMultimedia,
                 out speakers);
             Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;
-            speakers.Activate(ref IID_IAudioEndpointVolume,
-                0,
+            speakers.Activate(ref IID_IAudioEndpointVolume, 0,
                 IntPtr.Zero,
                 out object o);
             vol = (IAudioEndpointVolume)o;
@@ -301,7 +339,9 @@ namespace VitNX.Functions.Windows.NativeControls
                 Enums.E_ROLE.eMultimedia,
                 out speakers);
             Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;
-            speakers.Activate(ref IID_IAudioEndpointVolume, 0, IntPtr.Zero, out object o);
+            speakers.Activate(ref IID_IAudioEndpointVolume, 0,
+                IntPtr.Zero,
+                out object o);
             vol = (IAudioEndpointVolume)o;
             float currentVolume = 0;
             vol.GetMasterVolumeLevelScalar(out currentVolume);
@@ -342,7 +382,6 @@ namespace VitNX.Functions.Windows.NativeControls
         public static Task<TResult> Run<TResult>(Func<TResult> function)
         {
             var tcs = new TaskCompletionSource<TResult>();
-
             var thread = new Thread(() =>
             {
                 try { tcs.SetResult(function()); }
@@ -375,15 +414,19 @@ namespace VitNX.Functions.Windows.NativeControls
     {
         public static void KeyDown(Keys vKey)
         {
-            Import.keybd_event((byte)vKey, 0, (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
+            Import.keybd_event((byte)vKey, 0,
+                (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
         }
 
         public static void KeyUp(Keys vKey)
         {
-            Import.keybd_event((byte)vKey, 0, (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY | (int)Enums.KEYEVENTF.KEYEVENTF_KEYUP, 0);
+            Import.keybd_event((byte)vKey, 0,
+                (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY |
+                (int)Enums.KEYEVENTF.KEYEVENTF_KEYUP, 0);
         }
 
-        public static void WindowsKeyboardEventsAPI(int status, string keys = "none")
+        public static void WindowsKeyboardEventsAPI(int status,
+            string keys = "none")
         {
             switch (status)
             {
@@ -559,7 +602,8 @@ namespace VitNX.Functions.Windows.NativeControls
             public string monitorDevicePath;
         }
 
-        private static string MonitorFriendlyName(LUID adapterId, uint targetId)
+        private static string MonitorFriendlyName(LUID adapterId,
+            uint targetId)
         {
             var deviceName = new DISPLAYCONFIG_TARGET_DEVICE_NAME
             {
@@ -580,13 +624,19 @@ namespace VitNX.Functions.Windows.NativeControls
         private static IEnumerable<string> GetAllMonitorsFriendlyNames()
         {
             uint pathCount, modeCount;
-            var error = Import.GetDisplayConfigBufferSizes(Enums.QUERY_DEVICE_CONFIG_FLAGS.QDC_ONLY_ACTIVE_PATHS, out pathCount, out modeCount);
+            var error = Import.GetDisplayConfigBufferSizes(Enums.QUERY_DEVICE_CONFIG_FLAGS.QDC_ONLY_ACTIVE_PATHS,
+                out pathCount,
+                out modeCount);
             if (error != ERROR_SUCCESS)
                 throw new Win32Exception(error);
             var displayPaths = new DISPLAYCONFIG_PATH_INFO[pathCount];
             var displayModes = new DISPLAYCONFIG_MODE_INFO[modeCount];
             error = Import.QueryDisplayConfig(Enums.QUERY_DEVICE_CONFIG_FLAGS.QDC_ONLY_ACTIVE_PATHS,
-                ref pathCount, displayPaths, ref modeCount, displayModes, IntPtr.Zero);
+                ref pathCount,
+                displayPaths,
+                ref modeCount,
+                displayModes,
+                IntPtr.Zero);
             if (error != ERROR_SUCCESS)
                 throw new Win32Exception(error);
             for (var i = 0; i < modeCount; i++)

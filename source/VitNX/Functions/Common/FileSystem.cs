@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace VitNX.Functions.Common
 {
+    /// <summary>
+    /// Work with the file system.
+    /// </summary>
     public class FileSystem
     {
+        /// <summary>
+        /// Gets the items list in folder.
+        /// </summary>
+        /// <param name="sourceFolder">The source folder.</param>
+        /// <returns>A list of string.</returns>
         public static List<string> GetItemsListInFolder(string sourceFolder)
         {
             List<string> ls = new List<string>();
@@ -23,6 +32,11 @@ namespace VitNX.Functions.Common
             return ls;
         }
 
+        /// <summary>
+        /// Gets the folder size.
+        /// </summary>
+        /// <param name="sourceFolder">The source folder.</param>
+        /// <returns>A long.</returns>
         public static long GetFolderSize(DirectoryInfo sourceFolder)
         {
             long size = 0;
@@ -35,12 +49,20 @@ namespace VitNX.Functions.Common
             return size;
         }
 
+        /// <summary>
+        /// Deletes the file forever.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
         public static void DeleteFileForever(string targetFile)
         {
             try { File.Delete(targetFile); } catch { }
         }
 
-        public static void DeleteFileToTrash(string targetFile)
+        /// <summary>
+        /// Deletes the file to Recycle Bin.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        public static void DeleteFileToRecycleBin(string targetFile)
         {
             try { File.SetAttributes(targetFile, FileAttributes.Normal); } catch { }
             Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,
@@ -48,13 +70,23 @@ namespace VitNX.Functions.Common
                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
         }
 
-        public static void DeleteFolderToTrash(string targetFolder)
+        /// <summary>
+        /// Deletes the folder to Recycle Bin.
+        /// </summary>
+        /// <param name="targetFolder">The target folder.</param>
+        public static void DeleteFolderToRecycleBin(string targetFolder)
         {
             Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(targetFolder,
                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
         }
 
+        /// <summary>
+        /// Writes the text to file UTF-8.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="targetFile">The target file.</param>
+        /// <returns>An array of string.</returns>
         public static string[] WriteTextToFileUTF8(string text, string targetFile)
         {
             string fileName = FileNameGenerator(targetFile, "txt");
@@ -68,7 +100,12 @@ namespace VitNX.Functions.Common
             return new string[] { fileName, filePath };
         }
 
-        public static string GetMD5FromFile(string targetFile)
+        /// <summary>
+        /// Gets the MD5 from file.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        /// <returns>A string.</returns>
+        public static string GetMD5FromFile_Method1(string targetFile)
         {
             string text = "Text file not found";
             using (StreamReader sr = File.OpenText(targetFile))
@@ -76,7 +113,12 @@ namespace VitNX.Functions.Common
             return text;
         }
 
-        public static string GetMD5(string targetFile)
+        /// <summary>
+        /// Gets the MD5 from file.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        /// <returns>A string.</returns>
+        public static string GetMD5FromFile_Method2(string targetFile)
         {
             using (var md5 = System.Security.Cryptography.MD5.Create())
             {
@@ -91,6 +133,12 @@ namespace VitNX.Functions.Common
             }
         }
 
+        /// <summary>
+        /// Files the name generator.
+        /// </summary>
+        /// <param name="tag">The tag.</param>
+        /// <param name="fileExtension">The file extension.</param>
+        /// <returns>A string.</returns>
         public static string FileNameGenerator(string tag, string fileExtension)
         {
             string fileName = string.Format("{0}_{1}_{2}.{3}",
@@ -101,6 +149,9 @@ namespace VitNX.Functions.Common
             return fileName;
         }
 
+        /// <summary>
+        /// Cleans the Recycle Bin.
+        /// </summary>
         public static void CleanRecycleBin()
         {
             Windows.Win32.Import.SHEmptyRecycleBin(IntPtr.Zero, null,
@@ -108,6 +159,12 @@ namespace VitNX.Functions.Common
             Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION);
         }
 
+        /// <summary>
+        /// Creates the file backup.
+        /// </summary>
+        /// <param name="sourceFolder">The source folder.</param>
+        /// <param name="newFileExtension">The new file extension.</param>
+        /// <param name="saveOldFile">If true, save old file.</param>
         public static void CreateFileBackup(string sourceFolder, string newFileExtension, bool saveOldFile)
         {
             string bak_file = sourceFolder + "." + newFileExtension.Replace(".", "");
@@ -120,6 +177,12 @@ namespace VitNX.Functions.Common
             }
         }
 
+        /// <summary>
+        /// Creates the shortcut.
+        /// </summary>
+        /// <param name="shortcut">The shortcut.</param>
+        /// <param name="targetFile">The target file.</param>
+        /// <param name="nameExe">The name exe.</param>
         public static void CreateShortcut(string shortcut, string targetFile, string nameExe)
         {
             IWshRuntimeLibrary.WshShell wshShell = new IWshRuntimeLibrary.WshShell();
@@ -129,11 +192,21 @@ namespace VitNX.Functions.Common
             Shortcut.Save();
         }
 
+        /// <summary>
+        /// Copies the folder.
+        /// </summary>
+        /// <param name="sourceFolder">The source folder.</param>
+        /// <param name="targetFolder">The target folder.</param>
         public static void CopyFolder(string sourceFolder, string targetFolder)
         {
             Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, targetFolder);
         }
 
+        /// <summary>
+        /// Is this a PE file.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        /// <returns>A bool.</returns>
         public static bool IsPeExe(string targetFile)
         {
             var twoBytes = new byte[2];
@@ -142,6 +215,11 @@ namespace VitNX.Functions.Common
             return Encoding.UTF8.GetString(twoBytes) == "MZ";
         }
 
+        /// <summary>
+        /// Zips the folder.
+        /// </summary>
+        /// <param name="sourceFolder">The source folder.</param>
+        /// <param name="zipFile">The zip file.</param>
         public static void ZipFolder(string sourceFolder, string zipFile)
         {
             if (!Directory.Exists(sourceFolder))
@@ -155,7 +233,12 @@ namespace VitNX.Functions.Common
             destination.CopyHere(source.Items(), 20);
         }
 
-        public static void UnzipFile(string zipFile, string targetFolder)
+        /// <summary>
+        /// Uns the zip file.
+        /// </summary>
+        /// <param name="zipFile">The zip file.</param>
+        /// <param name="targetFolder">The target folder.</param>
+        public static void UnZipFile(string zipFile, string targetFolder)
         {
             if (!Directory.Exists(targetFolder))
                 Directory.CreateDirectory(targetFolder);
@@ -163,6 +246,75 @@ namespace VitNX.Functions.Common
             dynamic compressedFolderContents = shellApplication.NameSpace(zipFile).Items;
             dynamic destinationFolder = shellApplication.NameSpace(targetFolder);
             destinationFolder.CopyHere(compressedFolderContents);
+        }
+
+        /// <summary>
+        /// Saves the text dialog.
+        /// </summary>
+        /// <param name="fileExtension">The file extension.</param>
+        /// <param name="filter">The filter.</param>
+        /// <param name="text">The text.</param>
+        public static void SaveTextDialog(string fileExtension = "*.txt", string filter = "Text files|*.txt", string text = "Hi!")
+        {
+            SaveFileDialog saveFile1 = new SaveFileDialog();
+            saveFile1.DefaultExt = fileExtension;
+            saveFile1.Filter = filter;
+            if (saveFile1.ShowDialog() == DialogResult.OK && saveFile1.FileName.Length > 0)
+            {
+                using (StreamWriter sw = new StreamWriter(saveFile1.FileName, true))
+                {
+                    sw.WriteLine(text);
+                    sw.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Splits the file.
+        /// </summary>
+        /// <param name="fileInputPath">The file input path.</param>
+        /// <param name="folderOutputPath">The folder output path.</param>
+        /// <param name="countOfOutputFiles">The count of output files.</param>
+        public static void SplitFile(string fileInputPath, string folderOutputPath, int countOfOutputFiles)
+        {
+            byte[] byteSource = File.ReadAllBytes(fileInputPath);
+            FileInfo fiSource = new FileInfo(fileInputPath);
+            int partSize = (int)Math.Ceiling((double)(fiSource.Length / countOfOutputFiles));
+            int fileOffset = 0;
+            string currPartPath;
+            FileStream fsPart;
+            int sizeRemaining = (int)fiSource.Length;
+            for (int i = 0; i < countOfOutputFiles; i++)
+            {
+                currPartPath = folderOutputPath + "\\" + fiSource.Name + "." + string.Format(@"{0:D4}", i) + ".part";
+                if (!File.Exists(currPartPath))
+                {
+                    fsPart = new FileStream(currPartPath, FileMode.CreateNew);
+                    sizeRemaining = (int)fiSource.Length - (i * partSize);
+                    if (sizeRemaining < partSize)
+                        partSize = sizeRemaining;
+                    fsPart.Write(byteSource, fileOffset, partSize);
+                    fsPart.Close();
+                    fileOffset += partSize;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Joins the files.
+        /// </summary>
+        /// <param name="folderInputPath">The folder input path.</param>
+        /// <param name="fileOutputPath">The file output path.</param>
+        public static void JoinFiles(string folderInputPath, string fileOutputPath)
+        {
+            DirectoryInfo diSource = new DirectoryInfo(folderInputPath);
+            FileStream fsSource = new FileStream(fileOutputPath, FileMode.Append);
+            foreach (FileInfo fiPart in diSource.GetFiles(@"*.part"))
+            {
+                byte[] bytePart = File.ReadAllBytes(fiPart.FullName);
+                fsSource.Write(bytePart, 0, bytePart.Length);
+            }
+            fsSource.Close();
         }
     }
 }
