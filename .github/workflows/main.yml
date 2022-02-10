@@ -26,7 +26,7 @@ jobs:
 #       run: nuget restore source\VitNX.sln
 
     - name: Build the Solution
-      run: msbuild source\VitNX.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+      run: msbuild source\VitNX.sln /p:Configuration=Release
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v2.3.1
