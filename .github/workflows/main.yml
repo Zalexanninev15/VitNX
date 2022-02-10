@@ -14,9 +14,8 @@ jobs:
     runs-on: [windows-latest]
 
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      
+    
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
 
@@ -30,7 +29,13 @@ jobs:
       run: msbuild source\VitNX.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
     
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v2.3.1
       with:
         name: VitNX2.dll
-        path: bin\Release\Publish
+        path: bin\Release
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        name: VitNX2.dll
+        path: bin\Release
