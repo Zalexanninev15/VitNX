@@ -153,7 +153,7 @@ namespace VitNX.UI.OtherControls
             switch (manager.PositionType)
             {
                 case NotificationPosition.Right:
-                    x = Screen.PrimaryScreen.WorkingArea.Width - Width - 10;
+                    x = Functions.Common.Information.Monitor.WorkingArea.Width - Width - 10;
                     break;
 
                 case NotificationPosition.Left:
@@ -161,10 +161,10 @@ namespace VitNX.UI.OtherControls
                     break;
 
                 case NotificationPosition.Middle:
-                    x = (Screen.PrimaryScreen.WorkingArea.Width - Width) / 2;
+                    x = (Functions.Common.Information.Monitor.WorkingArea.Width - Width) / 2;
                     break;
             }
-            y = !manager.InvertAdding ? Screen.PrimaryScreen.WorkingArea.Height - Height * Count - 5 * Count : Height * Count + 5 * Count;
+            y = !manager.InvertAdding ? Functions.Common.Information.Monitor.WorkingArea.Height - Height * Count - 5 * Count : Height * Count + 5 * Count;
             Location = new Point(x, y);
             if (manager.PositionType == NotificationPosition.Right)
                 NotifySettings.right++;
@@ -172,7 +172,7 @@ namespace VitNX.UI.OtherControls
                 NotifySettings.left++;
             if (manager.PositionType == NotificationPosition.Middle)
                 NotifySettings.middle++;
-            x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+            x = Functions.Common.Information.Monitor.WorkingArea.Width - base.Width - 5;
             button1.Image = notify.Images.Cancel;
             switch (type)
             {
@@ -241,11 +241,11 @@ namespace VitNX.UI.OtherControls
 
         public void ChangePosition()
         {
-            if (manager.InvertAdding ? Location.Y > Height + 5 : Location.Y < Screen.PrimaryScreen.WorkingArea.Height - Height - 5)
+            if (manager.InvertAdding ? Location.Y > Height + 5 : Location.Y < Functions.Common.Information.Monitor.WorkingArea.Height - Height - 5)
             {
                 Timer timer = new Timer();
                 timer.Tag = (manager.InvertAdding && Location.Y != Height + 5)
-                    || (!manager.InvertAdding && Location.Y != Screen.PrimaryScreen.WorkingArea.Height - Height - 5) ? Height - 1 : 0;
+                    || (!manager.InvertAdding && Location.Y != Functions.Common.Information.Monitor.WorkingArea.Height - Height - 5) ? Height - 1 : 0;
                 timer.Interval = 1;
                 timer.Tick += ((se, evu) =>
                 {

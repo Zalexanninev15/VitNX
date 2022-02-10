@@ -114,7 +114,7 @@ namespace VitNX.Functions.Common.Information
         public static int _UsagePercent = 0;
 
         /// <summary>
-        /// Set (get) values for CPU variables.
+        /// Set (get) values for CPU's variables.
         /// </summary>
         public static void Set()
         {
@@ -144,7 +144,7 @@ namespace VitNX.Functions.Common.Information
         }
 
         /// <summary>
-        /// Gets the architecture of CPU.
+        /// Gets the architecture.
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetArchitecture()
@@ -168,7 +168,7 @@ namespace VitNX.Functions.Common.Information
         }
 
         /// <summary>
-        /// Gets the clock speed of CPU.
+        /// Gets the clock speed.
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetClockSpeed()
@@ -184,7 +184,7 @@ namespace VitNX.Functions.Common.Information
     }
 
     /// <summary>
-    /// Work with informations of GPU.
+    /// Work with informations of GPU(s).
     /// </summary>
     public class Gpu
     {
@@ -203,7 +203,7 @@ namespace VitNX.Functions.Common.Information
         public static string _VideoModeDescription = "";
 
         /// <summary>
-        /// Set (get) values for GPU variables.
+        /// Set (get) values for GPU's variables.
         /// </summary>
         public static void Set()
         {
@@ -227,11 +227,18 @@ namespace VitNX.Functions.Common.Information
         }
     }
 
+    /// <summary>
+    /// Work with informations of Disk(s).
+    /// </summary>
     public class Disk
     {
-        public static long windowsDiskAvailableFreeSpace = 0;
-        public static long windowsDiskTotalSize = 0;
+        public static long _WindowsDiskAvailableFreeSpace = 0;
+        public static long _WindowsDiskTotalSize = 0;
 
+        /// <summary>
+        /// Gets the all (logical).
+        /// </summary>
+        /// <returns>A list of string.</returns>
         public static List<string> GetAll()
         {
             List<string> drives = new List<string>();
@@ -253,6 +260,11 @@ namespace VitNX.Functions.Common.Information
             return drives;
         }
 
+        /// <summary>
+        /// Gets the total free space.
+        /// </summary>
+        /// <param name="driveName">The drive name.</param>
+        /// <returns>A long.</returns>
         public static long GetTotalFreeSpace(string driveName)
         {
             foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -263,6 +275,11 @@ namespace VitNX.Functions.Common.Information
             return -1;
         }
 
+        /// <summary>
+        /// Gets the total space.
+        /// </summary>
+        /// <param name="driveName">The drive name.</param>
+        /// <returns>A long.</returns>
         public static long GetTotalSpace(string driveName)
         {
             foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -273,16 +290,31 @@ namespace VitNX.Functions.Common.Information
             return -1;
         }
 
+        /// <summary>
+        /// Set (get) values for Disk's variables (size of Windows).
+        /// </summary>
         public static void SetCWindowsSize()
         {
             DriveInfo driveInfo = new DriveInfo(@"C:\Windows");
-            windowsDiskAvailableFreeSpace = driveInfo.AvailableFreeSpace / 1000000;
-            windowsDiskTotalSize = driveInfo.TotalSize / 1000000;
+            _WindowsDiskAvailableFreeSpace = driveInfo.AvailableFreeSpace / 1000000;
+            _WindowsDiskTotalSize = driveInfo.TotalSize / 1000000;
         }
     }
 
+    /// <summary>
+    /// Work with informations of Monitor(s).
+    /// </summary>
     public class Monitor
     {
+        /// <summary>
+        /// Gets the working area of monitor in Windows.
+        /// </summary>
+        public static Rectangle WorkingArea = Screen.PrimaryScreen.WorkingArea;
+
+        /// <summary>
+        /// Gets the resolution (method 2).
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetResolution2()
         {
             string size = string.Empty;
@@ -294,6 +326,10 @@ namespace VitNX.Functions.Common.Information
             return size;
         }
 
+        /// <summary>
+        /// Gets the resolution (method 1).
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetResolution()
         {
             uint width = 0;
@@ -306,7 +342,11 @@ namespace VitNX.Functions.Common.Information
             return $"{Convert.ToString(width)}x{Convert.ToString(height)}";
         }
 
-        public List<string> GetAll()
+        /// <summary>
+        /// Gets the all.
+        /// </summary>
+        /// <returns>A list of string.</returns>
+        public static List<string> GetAll()
         {
             List<string> screensall = new List<string>();
             Screen[] allScreens = Screen.AllScreens;
@@ -323,18 +363,26 @@ namespace VitNX.Functions.Common.Information
             }
             return screensall;
         }
-
-        public static Screen WorkingArea = Screen.PrimaryScreen;
     }
 
+    /// <summary>
+    /// Work with informations of Motherboard.
+    /// </summary>
     public class Motherboard
     {
+        /// <summary>
+        /// Gets the firmware type.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetFirmwareType()
         {
             return Processes.Execute("cmd", "/C echo %firmware_type%");
         }
     }
 
+    /// <summary>
+    /// Work with informations of RAM.
+    /// </summary>
     public class Ram
     {
         public static string _NameID = "";
@@ -353,6 +401,9 @@ namespace VitNX.Functions.Common.Information
         public static ulong _Used = 0;
         public static ulong _RamVirtual = 0;
 
+        /// <summary>
+        /// Set (get) values for RAM's variables.
+        /// </summary>
         public static void Set()
         {
             ManagementObjectSearcher myRamObject = new ManagementObjectSearcher("select * from Win32_PhysicalMemory");
