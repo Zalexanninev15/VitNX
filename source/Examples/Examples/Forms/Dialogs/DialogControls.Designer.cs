@@ -2,6 +2,9 @@
 
 namespace Example
 {
+    /// <summary>
+    /// The dialog controls.
+    /// </summary>
     partial class DialogControls
     {
         /// <summary>

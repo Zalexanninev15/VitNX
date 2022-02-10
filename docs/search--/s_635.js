@@ -1,0 +1,1 @@
+search_result['635']=["topic_00000000000001F9.html","StandaloneImportFunctions.GetWindowsAccentColor Method","Gets the windows accent color."];

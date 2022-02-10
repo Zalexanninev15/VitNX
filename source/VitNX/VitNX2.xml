@@ -489,6 +489,60 @@ The power of monitor.</summary>
       <param name="worked">
 If true, worked.</param>
     </member>
+    <member name="T:VitNX.Functions.Common.IniSettings32">
+      <summary>
+Work with INI config files with Windows System functions.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.IniSettings32.Initialize(System.String)">
+      <summary>
+Initializing the configuration INI file.</summary>
+      <param name="file">
+The ini file.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.IniSettings32.Read(System.String,System.String)">
+      <summary>
+Reads value of key from section.</summary>
+      <returns>
+A string.</returns>
+      <param name="key">
+The key.</param>
+      <param name="section">
+The section.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.IniSettings32.Write(System.String,System.String,System.String)">
+      <summary>
+Writes the value to key in section.</summary>
+      <param name="key">
+The key.</param>
+      <param name="value">
+The value.</param>
+      <param name="section">
+The section.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.IniSettings32.DeleteKey(System.String,System.String)">
+      <summary>
+Deletes the key in section.</summary>
+      <param name="key">
+The key.</param>
+      <param name="section">
+The section.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.IniSettings32.DeleteSection(System.String)">
+      <summary>
+Deletes the section.</summary>
+      <param name="section">
+The section.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.IniSettings32.KeyExists(System.String,System.String)">
+      <summary>
+Is key exist.</summary>
+      <returns>
+A bool.</returns>
+      <param name="key">
+The key.</param>
+      <param name="section">
+The section.</param>
+    </member>
     <member name="N:VitNX.Functions.Common.Text">
     </member>
     <member name="T:VitNX.Functions.Common.Text.Work">
@@ -893,13 +947,13 @@ The key path.</param>
       <param name="applicationName">
 The application name.</param>
     </member>
-    <member name="N:VitNX.Functions.Windows.NativeControls">
+    <member name="N:VitNX.Functions.Windows.Controllers">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.TaskBarProgressBar">
+    <member name="T:VitNX.Functions.Windows.Controllers.TaskBarProgressBar">
       <summary>
 Work with progressbar on taskbar.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.TaskBarProgressBar.SetState(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.TASKBAR_STATES)">
+    <member name="M:VitNX.Functions.Windows.Controllers.TaskBarProgressBar.SetState(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.TASKBAR_STATES)">
       <summary>
 Sets the state.</summary>
       <param name="windowHandle">
@@ -907,7 +961,7 @@ The window handle.</param>
       <param name="taskbarState">
 The taskbar state.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.TaskBarProgressBar.SetValue(System.IntPtr,System.Double,System.Double)">
+    <member name="M:VitNX.Functions.Windows.Controllers.TaskBarProgressBar.SetValue(System.IntPtr,System.Double,System.Double)">
       <summary>
 Sets the value.</summary>
       <param name="windowHandle">
@@ -917,77 +971,59 @@ The value.</param>
       <param name="Max">
 The max.</param>
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.NewFolderDialog">
-      <summary>
-Work with the folder dialog, Windows Vista+.</summary>
+    <member name="T:VitNX.Functions.Windows.Controllers.VolumeControl">
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.NewFolderDialog.Show">
-      <summary>
-Shows the folder dialog.</summary>
-      <returns>
-A bool.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.NewFolderDialog.Show(System.IntPtr)">
-      <summary>
-Are shows the folder dialog.</summary>
-      <returns>
-A bool.</returns>
-      <param name="hWndOwner">
-The h wnd owner.</param>
-    </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.VolumeControl">
-    </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.VolumeControl.Set(System.Single)">
+    <member name="M:VitNX.Functions.Windows.Controllers.VolumeControl.Set(System.Single)">
       <summary>
 Sets the current total sound volume.</summary>
       <param name="level">
 The level.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.VolumeControl.Get">
+    <member name="M:VitNX.Functions.Windows.Controllers.VolumeControl.Get">
       <summary>
 Gets the current total sound volume.</summary>
       <returns>
 A float.</returns>
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.GetClipboardText">
+    <member name="T:VitNX.Functions.Windows.Controllers.GetClipboardText">
       <summary>
 Get clipboard text.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.GetClipboardText.GetText">
+    <member name="M:VitNX.Functions.Windows.Controllers.GetClipboardText.GetText">
       <summary>
 Gets the text.</summary>
       <returns>
 A string.</returns>
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.STATask">
+    <member name="T:VitNX.Functions.Windows.Controllers.STATask">
       <summary>
 Set clipboard text.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.STATask.Run``1(System.Func{``0})">
+    <member name="M:VitNX.Functions.Windows.Controllers.STATask.Run``1(System.Func{``0})">
       <param name="function">
 </param>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.STATask.Run(System.Action)">
+    <member name="M:VitNX.Functions.Windows.Controllers.STATask.Run(System.Action)">
       <param name="action">
 </param>
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Keyboard">
+    <member name="T:VitNX.Functions.Windows.Controllers.Keyboard">
       <summary>
 Control the keyboard.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.Keyboard.KeyDown(System.Windows.Forms.Keys)">
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.KeyDown(System.Windows.Forms.Keys)">
       <summary>
 Sets the KeyDown.</summary>
       <param name="vKey">
 The vkey.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.Keyboard.KeyUp(System.Windows.Forms.Keys)">
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.KeyUp(System.Windows.Forms.Keys)">
       <summary>
 Sets the KeyUp.</summary>
       <param name="vKey">
 The vkey.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.Keyboard.WindowsKeyboardEventsAPI(System.Int32,System.String)">
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.WindowsKeyboardEventsAPI(System.Int32,System.String)">
       <summary>
 The keyboard events of Windows.</summary>
       <param name="status">
@@ -995,141 +1031,141 @@ The status.</param>
       <param name="keys">
 The keys.</param>
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor">
       <summary>
 Work with monitor.</summary>
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.ERROR_SUCCESS">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.ERROR_SUCCESS">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.LUID">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.LUID">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.LUID.LowPart">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.LUID.LowPart">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.LUID.HighPart">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.LUID.HighPart">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.adapterId">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.adapterId">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.id">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.id">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.modeInfoIdx">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.modeInfoIdx">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.statusFlags">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_SOURCE_INFO.statusFlags">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.adapterId">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.adapterId">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.id">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.id">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.modeInfoIdx">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.modeInfoIdx">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.targetAvailable">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.targetAvailable">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.statusFlags">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_TARGET_INFO.statusFlags">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_RATIONAL">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_RATIONAL">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_RATIONAL.Numerator">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_RATIONAL.Numerator">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_RATIONAL.Denominator">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_RATIONAL.Denominator">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_INFO">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO.sourceInfo">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_INFO.sourceInfo">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO.targetInfo">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_INFO.targetInfo">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO.flags">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_INFO.flags">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_2DREGION">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_2DREGION">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_2DREGION.cx">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_2DREGION.cx">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_2DREGION.cy">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_2DREGION.cy">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.pixelRate">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.pixelRate">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.hSyncFreq">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.hSyncFreq">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.vSyncFreq">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.vSyncFreq">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.activeSize">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.activeSize">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.totalSize">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.totalSize">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.videoStandard">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.videoStandard">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.scanLineOrdering">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_VIDEO_SIGNAL_INFO.scanLineOrdering">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_MODE">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_MODE">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_MODE.targetVideoSignalInfo">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_MODE.targetVideoSignalInfo">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.POINTL">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.POINTL">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_SOURCE_MODE">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_SOURCE_MODE">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_SOURCE_MODE.width">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_SOURCE_MODE.width">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_SOURCE_MODE.height">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_SOURCE_MODE.height">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_SOURCE_MODE.pixelFormat">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_SOURCE_MODE.pixelFormat">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_SOURCE_MODE.position">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_SOURCE_MODE.position">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO_UNION">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO_UNION">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO_UNION.targetMode">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO_UNION.targetMode">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO_UNION.sourceMode">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO_UNION.sourceMode">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO.infoType">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO.infoType">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO.id">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO.id">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO.adapterId">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO.adapterId">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO.modeInfo">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO.modeInfo">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.value">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.value">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.type">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.type">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.size">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.size">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.adapterId">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.adapterId">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.id">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_DEVICE_INFO_HEADER.id">
     </member>
-    <member name="T:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME">
+    <member name="T:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.header">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.header">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.flags">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.flags">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.outputTechnology">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.outputTechnology">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.edidManufactureId">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.edidManufactureId">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.edidProductCodeId">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.edidProductCodeId">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.connectorInstance">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.connectorInstance">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorFriendlyDeviceName">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorFriendlyDeviceName">
     </member>
-    <member name="F:VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorDevicePath">
+    <member name="F:VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorDevicePath">
     </member>
-    <member name="M:VitNX.Functions.Windows.NativeControls.Monitor.FriendlyName(System.Windows.Forms.Screen)">
+    <member name="M:VitNX.Functions.Windows.Controllers.Monitor.FriendlyName(System.Windows.Forms.Screen)">
       <summary>
 Friendly name of monitor(s).</summary>
       <returns>
@@ -1149,6 +1185,30 @@ Import the Windows System functions from native DLL.</summary>
       <param name="h">
 </param>
       <param name="dwVolume">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.WritePrivateProfileString(System.String,System.String,System.String,System.String)">
+      <param name="Section">
+</param>
+      <param name="Key">
+</param>
+      <param name="Value">
+</param>
+      <param name="FilePath">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+      <param name="Section">
+</param>
+      <param name="Key">
+</param>
+      <param name="Default">
+</param>
+      <param name="RetVal">
+</param>
+      <param name="Size">
+</param>
+      <param name="FilePath">
 </param>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowsHookEx(System.Int32,VitNX.Functions.Windows.Win32.Import.LowLevelKeyboardProcDelegate,System.IntPtr,System.Int32)">
@@ -1323,7 +1383,7 @@ Import the Windows System functions from native DLL.</summary>
       <param name="numModeInfoArrayElements">
 </param>
     </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.QueryDisplayConfig(VitNX.Functions.Windows.Win32.Enums.QUERY_DEVICE_CONFIG_FLAGS,System.UInt32@,VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO[],System.UInt32@,VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO[],System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.Win32.Import.QueryDisplayConfig(VitNX.Functions.Windows.Win32.Enums.QUERY_DEVICE_CONFIG_FLAGS,System.UInt32@,VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_PATH_INFO[],System.UInt32@,VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_MODE_INFO[],System.IntPtr)">
       <param name="flags">
 </param>
       <param name="numPathArrayElements">
@@ -1337,7 +1397,7 @@ Import the Windows System functions from native DLL.</summary>
       <param name="currentTopologyId">
 </param>
     </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.DisplayConfigGetDeviceInfo(VitNX.Functions.Windows.NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME@)">
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DisplayConfigGetDeviceInfo(VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME@)">
       <param name="deviceName">
 </param>
     </member>
@@ -1887,767 +1947,767 @@ Applying Windows 11 roundings to a window(s).</summary>
       <param name="Handler">
 The handler.</param>
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Collections">
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.ItemsAdded">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.ItemsAdded">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.ItemsRemoved">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.ItemsRemoved">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.Dispose">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.Dispose">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.Dispose(System.Boolean)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.Dispose(System.Boolean)">
       <param name="disposing">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.Add(`0)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.Add(`0)">
       <param name="item">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
       <param name="collection">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.Remove(`0)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.Remove(`0)">
       <param name="item">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableList`1.Clear">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableList`1.Clear">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Collections.ObservableListModified`1">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableListModified`1">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Collections.ObservableListModified`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections.ObservableListModified`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
       <param name="items">
 </param>
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Config">
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Config">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Config.Colors">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Colors">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Config.Constsants">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.Padding">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.Padding">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.ScrollBarSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.ScrollBarSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.ArrowButtonSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.ArrowButtonSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.MinimumThumbSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.MinimumThumbSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.CheckBoxSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.CheckBoxSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.RadioButtonSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.RadioButtonSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.ToolWindowHeaderSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.ToolWindowHeaderSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.DocumentTabAreaSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.DocumentTabAreaSize">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Config.Constsants.ToolWindowTabAreaSize">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants.ToolWindowTabAreaSize">
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Controls">
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.ScrollValueEventArgs">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.ScrollValueEventArgs">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.ScrollValueEventArgs.#ctor(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.ScrollValueEventArgs.#ctor(System.Int32)">
       <param name="value">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnCreateControl">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnCreateControl">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnMouseCaptureChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnMouseCaptureChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.NotifyDefault(System.Boolean)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.NotifyDefault(System.Boolean)">
       <param name="value">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Button.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ButtonStyle">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ButtonStyle">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ButtonStyle.Normal">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ButtonStyle.Normal">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ButtonStyle.Flat">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ButtonStyle.Flat">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseCaptureChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnMouseCaptureChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_CheckBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.Dispose(System.Boolean)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.Dispose(System.Boolean)">
       <param name="disposing">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTabStopChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTabStopChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTabIndexChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTabIndexChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTextChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTextChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTextUpdate(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnTextUpdate(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnSelectedValueChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnSelectedValueChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnInvalidated(System.Windows.Forms.InvalidateEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnInvalidated(System.Windows.Forms.InvalidateEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnResize(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContentAlignment">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContentAlignment">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContentAlignment.Center">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContentAlignment.Center">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContentAlignment.Left">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContentAlignment.Left">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContentAlignment.Right">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContentAlignment.Right">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContextMenu">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContextMenu">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ContextMenu.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContextMenu.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ControlState">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ControlState">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ControlState.Normal">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ControlState.Normal">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ControlState.Hover">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ControlState.Hover">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ControlState.Pressed">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ControlState.Pressed">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownItem">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownItem">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownItem.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownItem.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownItem.#ctor(System.String)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownItem.#ctor(System.String)">
       <param name="text">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownItem.#ctor(System.String,System.Drawing.Bitmap)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownItem.#ctor(System.String,System.Drawing.Bitmap)">
       <param name="text">
 </param>
       <param name="icon">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.SelectedItemChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.SelectedItemChanged">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnResize(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseCaptureChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnMouseCaptureChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_DropdownList.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_GroupBox">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_GroupBox.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_GroupBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_GroupBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.OnTextChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label.OnTextChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.OnFontChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label.OnFontChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Label.OnSizeChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label.OnSizeChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListItem">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem.TextChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListItem.TextChanged">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListItem.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem.#ctor(System.String)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListItem.#ctor(System.String)">
       <param name="text">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.SelectedIndicesChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.SelectedIndicesChanged">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.GetItemIndex(VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListItem)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.GetItemIndex(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListItem)">
       <param name="item">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.SelectItem(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.SelectItem(System.Int32)">
       <param name="index">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.SelectItems(System.Collections.Generic.IEnumerable{System.Int32})">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.SelectItems(System.Collections.Generic.IEnumerable{System.Int32})">
       <param name="indexes">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.ToggleItem(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.ToggleItem(System.Int32)">
       <param name="index">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.SelectItems(System.Int32,System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.SelectItems(System.Int32,System.Int32)">
       <param name="startRange">
 </param>
       <param name="endRange">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.EnsureVisible">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.EnsureVisible">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ListView.PaintContent(System.Drawing.Graphics)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView.PaintContent(System.Drawing.Graphics)">
       <param name="g">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_MenuStrip">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_MenuStrip">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_MenuStrip.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_MenuStrip.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="mevent">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseEnter(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseEnter(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnTextBoxLostFocus(System.Object,System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnTextBoxLostFocus(System.Object,System.EventArgs)">
       <param name="source">
 </param>
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseCaptureChanged(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnMouseCaptureChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_RadioButton.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.ValueChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.ValueChanged">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnResize(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollTo(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollTo(System.Int32)">
       <param name="position">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollToPhysical(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollToPhysical(System.Int32)">
       <param name="positionInPixels">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollBy(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollBy(System.Int32)">
       <param name="offset">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollByPhysical(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.ScrollByPhysical(System.Int32)">
       <param name="offsetInPixels">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.UpdateScrollBar">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.UpdateScrollBar">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.ViewportChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.ViewportChanged">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.ContentSizeChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.ContentSizeChanged">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase._vScrollBar">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase._vScrollBar">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase._hScrollBar">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase._hScrollBar">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.ScrollTo(System.Drawing.Point)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.ScrollTo(System.Drawing.Point)">
       <param name="point">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.VScrollTo(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.VScrollTo(System.Int32)">
       <param name="value">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.HScrollTo(System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.HScrollTo(System.Int32)">
       <param name="value">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.StartDrag">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.StartDrag">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.StopDrag">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.StopDrag">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.PointToView(System.Drawing.Point)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.PointToView(System.Drawing.Point)">
       <param name="point">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.RectangleToView(System.Drawing.Rectangle)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.RectangleToView(System.Drawing.Rectangle)">
       <param name="rect">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnCreateControl">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnCreateControl">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnGotFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnGotFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnLostFocus(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnLostFocus(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnResize(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnPreviewKeyDown(System.Windows.Forms.PreviewKeyDownEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBase.OnPreviewKeyDown(System.Windows.Forms.PreviewKeyDownEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollOrientation">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollOrientation">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollOrientation.Vertical">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollOrientation.Vertical">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollOrientation.Horizontal">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollOrientation.Horizontal">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollView">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollView">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollView.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollView.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollView.PaintContent(System.Drawing.Graphics)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollView.PaintContent(System.Drawing.Graphics)">
       <param name="g">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollView.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollView.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ScrollView.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollView.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnEnter(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnEnter(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Separator">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Separator">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Separator.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Separator.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Separator.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Separator.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Separator.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Separator.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_StatusStrip">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_StatusStrip">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_StatusStrip.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_StatusStrip.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_StatusStrip.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_StatusStrip.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TextBox">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TextBox">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TextBox.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TextBox.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Title">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Title.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_Title.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ToolStrip">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ToolStrip">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_ToolStrip.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ToolStrip.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.ItemsAdded">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.ItemsAdded">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.ItemsRemoved">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.ItemsRemoved">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.TextChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.TextChanged">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.NodeExpanded">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.NodeExpanded">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.NodeCollapsed">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.NodeCollapsed">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.IsNodeAncestor(VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.IsNodeAncestor(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="node">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.#ctor(System.String)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.#ctor(System.String)">
       <param name="text">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.Remove">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.Remove">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode.EnsureVisible">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode.EnsureVisible">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.SelectedNodesChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.SelectedNodesChanged">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.AfterNodeExpand">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.AfterNodeExpand">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.AfterNodeCollapse">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.AfterNodeCollapse">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.Dispose(System.Boolean)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.Dispose(System.Boolean)">
       <param name="disposing">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.SelectNode(VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.SelectNode(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="node">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.SelectNodes(VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode,VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.SelectNodes(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode,VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="startNode">
 </param>
       <param name="endNode">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.SelectNodes(System.Collections.Generic.List{VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode},System.Boolean)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.SelectNodes(System.Collections.Generic.List{VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode},System.Boolean)">
       <param name="nodes">
 </param>
       <param name="updateAnchors">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.ToggleNode(VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.ToggleNode(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="node">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.GetNodeFullRowArea(VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.GetNodeFullRowArea(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="node">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.EnsureVisible">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.EnsureVisible">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.Sort">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.Sort">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.FindNode(System.String)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.FindNode(System.String)">
       <param name="path">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.StartDrag">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.StartDrag">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.StopDrag">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.StopDrag">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.ForceDropToParent(VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.ForceDropToParent(VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="node">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.CanMoveNodes(System.Collections.Generic.List{VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode},VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode,System.Boolean)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.CanMoveNodes(System.Collections.Generic.List{VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode},VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode,System.Boolean)">
       <param name="dragNodes">
 </param>
       <param name="dropNode">
@@ -2655,85 +2715,85 @@ The handler.</param>
       <param name="isMoving">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.MoveNodes(System.Collections.Generic.List{VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode},VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.MoveNodes(System.Collections.Generic.List{VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode},VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode)">
       <param name="dragNodes">
 </param>
       <param name="dropNode">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.NodesMoved(System.Collections.Generic.List{VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeNode})">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.NodesMoved(System.Collections.Generic.List{VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeNode})">
       <param name="nodesMoved">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Controls.VitNX_TreeView.PaintContent(System.Drawing.Graphics)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView.PaintContent(System.Drawing.Graphics)">
       <param name="g">
 </param>
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Docking">
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.DockContentEventArgs">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockContentEventArgs">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.DockContentEventArgs.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockContentEventArgs.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="content">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.DockGroupState">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockGroupState">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.DockGroupState.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockGroupState.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.DockInsertType">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockInsertType">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.None">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockInsertType.None">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.Before">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockInsertType.Before">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.DockInsertType.After">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockInsertType.After">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.DockPanelState">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockPanelState">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.DockPanelState.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockPanelState.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.DockRegionState">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockRegionState">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockRegionState.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockRegionState.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea)">
       <param name="area">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.DockRegionState.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea,System.Drawing.Size)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockRegionState.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea,System.Drawing.Size)">
       <param name="area">
 </param>
       <param name="size">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.None">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea.None">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Document">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea.Document">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Left">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea.Left">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Right">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea.Right">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea.Bottom">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea.Bottom">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.DockTextChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent.DockTextChanged">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.Close">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent.Close">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent.OnEnter(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent.OnEnter(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel,VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion,System.Int32)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion,System.Int32)">
       <param name="dockPanel">
 </param>
       <param name="dockRegion">
@@ -2741,73 +2801,73 @@ The handler.</param>
       <param name="order">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.AddContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.AddContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="dockContent">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.RemoveContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.RemoveContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="dockContent">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.GetContents">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.GetContents">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.EnsureVisible">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.EnsureVisible">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.SetVisibleContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.SetVisibleContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="content">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnResize(System.EventArgs)">
       <param name="eventargs">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.Redraw">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.Redraw">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.ActiveContentChanged">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.ActiveContentChanged">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.ContentAdded">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.ContentAdded">
     </member>
-    <member name="E:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.ContentRemoved">
+    <member name="E:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.ContentRemoved">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.AddContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.AddContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="dockContent">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.AddContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent,VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.AddContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup)">
       <param name="dockContent">
 </param>
       <param name="dockGroup">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.InsertContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent,VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockGroup,VitNX.UI.BasedOnDarkUI.Docking.DockInsertType)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.InsertContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockGroup,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockInsertType)">
       <param name="dockContent">
 </param>
       <param name="dockGroup">
@@ -2815,57 +2875,57 @@ The handler.</param>
       <param name="insertType">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.RemoveContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.RemoveContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="dockContent">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.ContainsContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.ContainsContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="dockContent">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.GetDocuments">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.GetDocuments">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.DragContent(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.DragContent(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="content">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.GetDockPanelState">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.GetDockPanelState">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel.RestoreDockPanelState(VitNX.UI.BasedOnDarkUI.Docking.DockPanelState,System.Func{System.String,VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent})">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel.RestoreDockPanelState(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.DockPanelState,System.Func{System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent})">
       <param name="state">
 </param>
       <param name="getContentBySerializationKey">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel,VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockArea)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea)">
       <param name="dockPanel">
 </param>
       <param name="dockArea">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.GetContents">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.GetContents">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.OnCreateControl">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.OnCreateControl">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.OnResize(System.EventArgs)">
       <param name="eventargs">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.OnLayout(System.Windows.Forms.LayoutEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.OnLayout(System.Windows.Forms.LayoutEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.Redraw">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.Redraw">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockRegion.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockRegion.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.#ctor(System.Windows.Forms.Control,System.Windows.Forms.Control,VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter.#ctor(System.Windows.Forms.Control,System.Windows.Forms.Control,VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_SplitterType)">
       <param name="parentControl">
 </param>
       <param name="control">
@@ -2873,195 +2933,327 @@ The handler.</param>
       <param name="splitterType">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.ShowOverlay">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter.ShowOverlay">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.HideOverlay">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter.HideOverlay">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.UpdateOverlay(System.Drawing.Point)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter.UpdateOverlay(System.Drawing.Point)">
       <param name="difference">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.Move(System.Drawing.Point)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter.Move(System.Drawing.Point)">
       <param name="difference">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockSplitter.UpdateBounds">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockSplitter.UpdateBounds">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_Document">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_Document">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_Document.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_Document.#ctor">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_SplitterType">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType.Left">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_SplitterType.Left">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType.Right">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_SplitterType.Right">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType.Top">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_SplitterType.Top">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Docking.VitNX_SplitterType.Bottom">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_SplitterType.Bottom">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.#ctor">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.#ctor">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnResize(System.EventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnResize(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_ToolWindow.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Forms">
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.Ok">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.OnHandleCreated(System.EventArgs)">
+      <param name="e">
+</param>
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.Close">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnOk">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.OkCancel">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnCancel">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.YesNo">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnClose">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.YesNoCancel">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnYes">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.RetryCancel">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnNo">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_DialogButton.AbortRetryIgnore">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnAbort">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnRetry">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.None">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.btnIgnore">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Information">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.#ctor">
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Warning">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.OnLoad(System.EventArgs)">
+      <param name="e">
+</param>
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Error">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.Dispose(System.Boolean)">
+      <summary>
+/// Clean up any resources being used. ///</summary>
+      <param name="disposing">
+true if managed resources should be disposed; otherwise, false.</param>
     </member>
-    <member name="F:VitNX.UI.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Question">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton">
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Renderers">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.Ok">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.Close">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.Initialize(System.Windows.Forms.ToolStrip)">
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.OkCancel">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.YesNo">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.YesNoCancel">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.RetryCancel">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.AbortRetryIgnore">
+    </member>
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Form">
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Form.OnHandleCreated(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Form.#ctor">
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Form.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox">
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.OnHandleCreated(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.#ctor">
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.#ctor(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton)">
+      <param name="message">
+</param>
+      <param name="title">
+</param>
+      <param name="icon">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.#ctor(System.String)">
+      <param name="message">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.#ctor(System.String,System.String)">
+      <param name="message">
+</param>
+      <param name="title">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.#ctor(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton)">
+      <param name="message">
+</param>
+      <param name="title">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.#ctor(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon)">
+      <param name="message">
+</param>
+      <param name="title">
+</param>
+      <param name="icon">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.ShowInfo(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton)">
+      <param name="message">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.ShowWarning(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton)">
+      <param name="message">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.ShowError(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton)">
+      <param name="message">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.ShowQuestion(System.String,System.String,VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton)">
+      <param name="message">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.OnLoad(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.Dispose(System.Boolean)">
+      <summary>
+/// Clean up any resources being used. ///</summary>
+      <param name="disposing">
+true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.None">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Information">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Warning">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Error">
+    </member>
+    <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon.Question">
+    </member>
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers">
+    </member>
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer">
+    </member>
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.Initialize(System.Windows.Forms.ToolStrip)">
       <param name="toolStrip">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.InitializeItem(System.Windows.Forms.ToolStripItem)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.InitializeItem(System.Windows.Forms.ToolStripItem)">
       <param name="item">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.InitializeItem(System.Windows.Forms.ToolStripItem)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.InitializeItem(System.Windows.Forms.ToolStripItem)">
       <param name="item">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="N:VitNX.UI.BasedOnDarkUI.Win32">
+    <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32">
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Win32.ControlScrollFilter">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.ControlScrollFilter">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Win32.ControlScrollFilter.PreFilterMessage(System.Windows.Forms.Message@)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.ControlScrollFilter.PreFilterMessage(System.Windows.Forms.Message@)">
       <param name="m">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockContentDragFilter">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockContentDragFilter.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel)">
       <param name="dockPanel">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter.PreFilterMessage(System.Windows.Forms.Message@)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockContentDragFilter.PreFilterMessage(System.Windows.Forms.Message@)">
       <param name="m">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Win32.DockContentDragFilter.StartDrag(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockContent)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockContentDragFilter.StartDrag(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockContent)">
       <param name="content">
 </param>
     </member>
-    <member name="T:VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter">
+    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockResizeFilter">
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter.#ctor(VitNX.UI.BasedOnDarkUI.Docking.VitNX_DockPanel)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockResizeFilter.#ctor(VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel)">
       <param name="dockPanel">
 </param>
     </member>
-    <member name="M:VitNX.UI.BasedOnDarkUI.Win32.DockResizeFilter.PreFilterMessage(System.Windows.Forms.Message@)">
+    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.DockResizeFilter.PreFilterMessage(System.Windows.Forms.Message@)">
       <param name="m">
 </param>
     </member>
@@ -3224,6 +3416,60 @@ The handler.</param>
 </param>
       <param name="defaultButton">
 </param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.squaredWindowOnWin11">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String)">
+      <param name="text">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+      <param name="icon">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+      <param name="icon">
+</param>
+      <param name="defaultButton">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.Dispose(System.Boolean)">
+      <summary>
+Clean up any resources being used.</summary>
+      <param name="disposing">
+true if managed resources should be disposed; otherwise, false.</param>
     </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_Panel">
     </member>
@@ -4973,6 +5219,24 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="fontProperties">
 </param>
     </member>
+    <member name="T:VitNX.UI.OtherControls.NewFolderDialog">
+      <summary>
+Work with the folder dialog, Windows Vista+.</summary>
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NewFolderDialog.Show">
+      <summary>
+Shows the folder dialog.</summary>
+      <returns>
+A bool.</returns>
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NewFolderDialog.Show(System.IntPtr)">
+      <summary>
+Are shows the folder dialog.</summary>
+      <returns>
+A bool.</returns>
+      <param name="hWndOwner">
+The h wnd owner.</param>
+    </member>
     <member name="T:VitNX.UI.OtherControls.Manager">
       <summary>
 The settings manager of notification.</summary>
@@ -5098,6 +5362,40 @@ Pause time in milliseconds.</param>
     <member name="F:VitNX.UI.OtherControls.NotificationPosition.Left">
     </member>
     <member name="F:VitNX.UI.OtherControls.NotificationPosition.Middle">
+    </member>
+    <member name="T:VitNX.UI.OtherControls.NotificationForm">
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NotificationForm.#ctor">
+    </member>
+    <member name="F:VitNX.UI.OtherControls.NotificationForm.manager">
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NotificationForm.showAlert(System.String,VitNX.UI.OtherControls.NotificationType,VitNX.UI.OtherControls.Manager)">
+      <param name="msg">
+</param>
+      <param name="type">
+</param>
+      <param name="notify">
+</param>
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NotificationForm.showAlert(System.String,VitNX.UI.OtherControls.NotificationType,System.Drawing.Color,System.Drawing.Image,VitNX.UI.OtherControls.Manager)">
+      <param name="msg">
+</param>
+      <param name="type">
+</param>
+      <param name="color">
+</param>
+      <param name="picture">
+</param>
+      <param name="notify">
+</param>
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NotificationForm.ChangePosition">
+    </member>
+    <member name="M:VitNX.UI.OtherControls.NotificationForm.Dispose(System.Boolean)">
+      <summary>
+/// Clean up any resources being used. ///</summary>
+      <param name="disposing">
+true if managed resources should be disposed; otherwise, false.</param>
     </member>
     <member name="T:VitNX.UI.OtherControls.NotifySettings">
       <summary>

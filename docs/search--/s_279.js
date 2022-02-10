@@ -1,0 +1,1 @@
+search_result['279']=["topic_00000000000000BC.html","Installed.GetPath Method","Gets the path of application in regedit."];

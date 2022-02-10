@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+
 [assembly: AssemblyTitle("VitNX")]
 [assembly: AssemblyDescription("Example application for VitNX")]
 [assembly: AssemblyConfiguration("")]

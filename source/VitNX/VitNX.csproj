@@ -252,13 +252,14 @@
     <Compile Include="Functions\Common\Web.cs" />
     <Compile Include="Functions\Windows\Win32.cs" />
     <Compile Include="UI\OtherControls\ConsoleProgressBar.cs" />
-    <Compile Include="Functions\Windows\NativeControls.cs" />
+    <Compile Include="Functions\Windows\Controllers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\ControlsV1\BasedOnDarkUI\Renderers\VitNX_MenuRenderer.cs" />
     <Compile Include="UI\ControlsV1\BasedOnDarkUI\Renderers\VitNX_ToolStripRenderer.cs" />
     <Compile Include="UI\ControlsV1\BasedOnDarkUI\Win32\ControlScrollFilter.cs" />
     <Compile Include="UI\ControlsV1\BasedOnDarkUI\Win32\DockResizeFilter.cs" />
     <Compile Include="UI\ControlsV1\BasedOnDarkUI\Win32\DockContentDragFilter.cs" />
+    <Compile Include="UI\OtherControls\NewFolderDialog.cs" />
     <Compile Include="UI\OtherControls\Notification\nManager.cs" />
     <Compile Include="UI\OtherControls\Notification\NotificationForm.cs">
       <SubType>Form</SubType>

@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 
 using System;
 using System.Collections.Generic;
@@ -416,7 +415,7 @@ namespace VitNX.Functions.Common.Information
                 screenString =
                     screen.DeviceName.Replace("\\", "").Replace(".", "") + ";" +
                     screen.Bounds.Width + "|" + screen.Bounds.Height + ";" +
-                    Functions.Windows.NativeControls.Monitor.FriendlyName(screen) + ";" +
+                    Functions.Windows.Controllers.Monitor.FriendlyName(screen) + ";" +
                     screen.Primary.ToString();
                 screensall.Add(screenString);
                 screenString = string.Empty;

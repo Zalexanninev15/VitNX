@@ -1,0 +1,1 @@
+search_result['304']=["topic_00000000000000C6.html","GetClipboardText.GetText Method","Gets the text."];

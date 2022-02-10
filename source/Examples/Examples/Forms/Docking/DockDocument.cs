@@ -1,7 +1,8 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
+
 using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
 using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
 
 namespace Example

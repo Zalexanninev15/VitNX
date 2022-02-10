@@ -37,7 +37,7 @@ namespace Example
 
         private void vitNXButton2_Click(object sender, EventArgs e)
         {
-            var dialog = new VitNX.Functions.Windows.NativeControls.NewFolderDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), Title = "Select Folder" };
+            var dialog = new VitNX.UI.OtherControls.NewFolderDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), Title = "Select Folder" };
             if (dialog.Show()) { VitNX_MessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example"); } else { }
         }
     }

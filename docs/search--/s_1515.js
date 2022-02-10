@@ -1,0 +1,1 @@
+search_result['1515']=["topic_000000000000071F.html","Manager.Alert (String, NotificationType) Method","/// Display a new standard type notification on the screen.\r\n\t\t///"];
