@@ -1,4 +1,5 @@
-﻿using VitNX.Controls;
+﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
 
 namespace Example
 {
@@ -30,8 +31,8 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstLayers = new VitNX.Controls.VitNX_ListView();
-            this.cmbList = new VitNX.Controls.VitNX_DropdownList();
+            this.lstLayers = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView();
+            this.cmbList = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList();
             this.SuspendLayout();
             // 
             // lstLayers
@@ -61,7 +62,7 @@ namespace Example
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstLayers);
             this.Controls.Add(this.cmbList);
-            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Right;
+            this.DefaultDockArea = VitNX_DockArea.Right;
             this.DockText = "Layers";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.Collection_16xLG;

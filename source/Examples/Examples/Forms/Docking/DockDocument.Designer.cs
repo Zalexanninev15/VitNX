@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtDocument = new System.Windows.Forms.TextBox();
-            this.cmbOptions = new VitNX.Controls.VitNX_DropdownList();
+            this.cmbOptions = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList();
             this.SuspendLayout();
             // 
             // txtDocument
@@ -75,6 +75,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtDocument;
-        private VitNX.Controls.VitNX_DropdownList cmbOptions;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList cmbOptions;
     }
 }

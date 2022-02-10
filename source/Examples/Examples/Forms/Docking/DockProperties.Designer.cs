@@ -1,4 +1,6 @@
-﻿namespace Example
+﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
+
+namespace Example
 {
     partial class DockProperties
     {
@@ -30,19 +32,19 @@
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.VitNX_RadioButton3 = new VitNX.Controls.VitNX_RadioButton();
-            this.VitNX_RadioButton2 = new VitNX.Controls.VitNX_RadioButton();
-            this.VitNX_RadioButton1 = new VitNX.Controls.VitNX_RadioButton();
-            this.VitNX_Title1 = new VitNX.Controls.VitNX_Title();
+            this.VitNX_RadioButton3 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton();
+            this.VitNX_RadioButton2 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton();
+            this.VitNX_RadioButton1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton();
+            this.VitNX_Title1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.VitNX_CheckBox3 = new VitNX.Controls.VitNX_CheckBox();
-            this.VitNX_CheckBox2 = new VitNX.Controls.VitNX_CheckBox();
-            this.VitNX_CheckBox1 = new VitNX.Controls.VitNX_CheckBox();
-            this.VitNX_Title2 = new VitNX.Controls.VitNX_Title();
-            this.VitNX_ScrollBar1 = new VitNX.Controls.VitNX_ScrollBar();
+            this.VitNX_CheckBox3 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox();
+            this.VitNX_CheckBox2 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox();
+            this.VitNX_CheckBox1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox();
+            this.VitNX_Title2 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title();
+            this.VitNX_ScrollBar1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.VitNX_Title3 = new VitNX.Controls.VitNX_Title();
-            this.cmbList = new VitNX.Controls.VitNX_DropdownList();
+            this.VitNX_Title3 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title();
+            this.cmbList = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -223,7 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.VitNX_ScrollBar1);
-            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Right;
+            this.DefaultDockArea = VitNX_DockArea.Right;
             this.DockText = "Properties";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.properties_16xLG;
@@ -245,18 +247,18 @@
 
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panel1;
-        private VitNX.Controls.VitNX_RadioButton VitNX_RadioButton3;
-        private VitNX.Controls.VitNX_RadioButton VitNX_RadioButton2;
-        private VitNX.Controls.VitNX_RadioButton VitNX_RadioButton1;
-        private VitNX.Controls.VitNX_Title VitNX_Title1;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton VitNX_RadioButton3;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton VitNX_RadioButton2;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton VitNX_RadioButton1;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title VitNX_Title1;
         private System.Windows.Forms.Panel panel2;
-        private VitNX.Controls.VitNX_CheckBox VitNX_CheckBox3;
-        private VitNX.Controls.VitNX_CheckBox VitNX_CheckBox2;
-        private VitNX.Controls.VitNX_CheckBox VitNX_CheckBox1;
-        private VitNX.Controls.VitNX_Title VitNX_Title2;
-        private VitNX.Controls.VitNX_ScrollBar VitNX_ScrollBar1;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox VitNX_CheckBox3;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox VitNX_CheckBox2;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox VitNX_CheckBox1;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title VitNX_Title2;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ScrollBar VitNX_ScrollBar1;
         private System.Windows.Forms.Panel panel3;
-        private VitNX.Controls.VitNX_Title VitNX_Title3;
-        private VitNX.Controls.VitNX_DropdownList cmbList;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title VitNX_Title3;
+        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList cmbList;
     }
 }

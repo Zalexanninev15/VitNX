@@ -1,10 +1,12 @@
-﻿using VitNX.Docking;
-using VitNX.Forms;
-using VitNX.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Win32;
+using VitNX.Functions.Windows.NativeControls;
+using static VitNX.Functions.Windows.Win32.Enums;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
 
 namespace Example
 {
@@ -19,7 +21,7 @@ namespace Example
         private DockLayers _dockLayers;
         private DockHistory _dockHistory;
 
-        #endregion
+        #endregion Field Region
 
         #region Constructor Region
 
@@ -79,7 +81,7 @@ namespace Example
             DockPanel.AddContent(new DockDocument("Document 3", Icons.document_16xLG));
         }
 
-        #endregion
+        #endregion Constructor Region
 
         #region Method Region
 
@@ -123,7 +125,7 @@ namespace Example
             mnuHistory.Checked = DockPanel.Contains(_dockHistory);
         }
 
-        #endregion
+        #endregion Method Region
 
         #region Event Handler Region
 
@@ -219,26 +221,26 @@ namespace Example
             {
                 if (toolStripComboBox1.SelectedItem == "Normal")
                 {
-                    TbProgressBar.SetState(Handle, TbProgressBar.TaskbarStates.Normal);
-                    TbProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                    TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Normal);
+                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                 }
-                if (toolStripComboBox1.SelectedItem == "Indeterminate") { TbProgressBar.SetState(Handle, TbProgressBar.TaskbarStates.Indeterminate); }
-                if (toolStripComboBox1.SelectedItem == "NoProgress") { TbProgressBar.SetState(Handle, TbProgressBar.TaskbarStates.NoProgress); }
+                if (toolStripComboBox1.SelectedItem == "Indeterminate") { TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate); }
+                if (toolStripComboBox1.SelectedItem == "NoProgress") { TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress); }
                 if (toolStripComboBox1.SelectedItem == "Error")
                 {
-                    TbProgressBar.SetState(Handle, TbProgressBar.TaskbarStates.Error);
-                    TbProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                    TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);
+                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                 }
                 if (toolStripComboBox1.SelectedItem == "Paused")
                 {
-                    TbProgressBar.SetState(Handle, TbProgressBar.TaskbarStates.Paused);
-                    TbProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                    TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Paused);
+                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                 }
             }
             else { VitNX_MessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example"); }
         }
 
-        #endregion
+        #endregion Event Handler Region
 
         #region Serialization Region
 
@@ -265,7 +267,6 @@ namespace Example
             return null;
         }
 
-
-        #endregion
+        #endregion Serialization Region
     }
 }

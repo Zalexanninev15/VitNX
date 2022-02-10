@@ -1,6 +1,5 @@
-﻿using VitNX.Config;
-using VitNX.Controls;
-using VitNX.Docking;
+﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
 
 namespace Example
 {
@@ -32,7 +31,7 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstHistory = new VitNX.Controls.VitNX_ListView();
+            this.lstHistory = new VitNX_ListView();
             this.SuspendLayout();
             // 
             // lstHistory
@@ -49,7 +48,7 @@ namespace Example
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstHistory);
-            this.DefaultDockArea = VitNX.Docking.VitNX_DockArea.Right;
+            this.DefaultDockArea = VitNX_DockArea.Right;
             this.DockText = "History";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.RefactoringLog_12810;
