@@ -162,12 +162,12 @@ namespace VitNX.Functions.Windows.Apps
         /// <summary>
         /// You only have 1 copy of the application running.
         /// </summary>
-        /// <param name="appTitle">The app title.</param>
+        /// <param name="applicationTitle">The application title.</param>
         /// <returns>A bool.</returns>
-        public static bool IsOneYourApp(string appTitle)
+        public static bool IsOneYourApp(string applicationTitle)
         {
             bool createdNew;
-            Mutex currentApp = new Mutex(true, appTitle, out createdNew);
+            Mutex currentApp = new Mutex(true, applicationTitle, out createdNew);
             return createdNew;
         }
 
@@ -227,7 +227,7 @@ namespace VitNX.Functions.Windows.Apps
         }
 
         /// <summary>
-        /// Gets the path.
+        /// Gets the path of application in regedit.
         /// </summary>
         /// <param name="applicationName">The application name.</param>
         /// <returns>A string.</returns>
@@ -242,7 +242,7 @@ namespace VitNX.Functions.Windows.Apps
         }
 
         /// <summary>
-        /// Finds the app path.
+        /// Finds the application path.
         /// </summary>
         /// <param name="regKeyPath">The key path.</param>
         /// <param name="applicationName">The application name.</param>
