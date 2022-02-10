@@ -32,10 +32,10 @@ jobs:
       uses: actions/upload-artifact@v2.3.1
       with:
         name: VitNX2.dll
-        path: source\bin\Release
+        path: source\VitNX\bin\Release
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
         name: VitNX2.dll
-        path: source\bin\Release
+        path: source\VitNX\bin\Release
