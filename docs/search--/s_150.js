@@ -1,1 +1,0 @@
-search_result['150']=["topic_0000000000000069.html","_SMBIOSMemoryType Field",""];

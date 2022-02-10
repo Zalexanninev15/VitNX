@@ -1,1 +1,0 @@
-search_result['34']=["topic_0000000000000018.html","FileSystem.JoinFiles Method","Joins the files."];

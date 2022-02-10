@@ -1,1 +1,0 @@
-search_result['159']=["topic_0000000000000072.html","PowerControl Class","Work with the power control."];

@@ -1,1 +1,0 @@
-search_result['1433']=["topic_0000000000000718.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];

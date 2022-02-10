@@ -1,1 +1,0 @@
-search_result['466']=["topic_000000000000010C.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];

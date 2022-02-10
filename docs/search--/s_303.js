@@ -1,1 +1,0 @@
-search_result['303']=["topic_00000000000000C3.html","STATask Class","Set clipboard text."];

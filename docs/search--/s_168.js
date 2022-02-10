@@ -1,1 +1,0 @@
-search_result['168']=["topic_000000000000007A.html","VitNX.Functions.Common.Text Namespace",""];

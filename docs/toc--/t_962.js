@@ -1,1 +1,0 @@
-c['962']=[['963',"AsImage(this Properties) Method","topic_0000000000000705.html",0],['964',"AsImage(this Type, Properties) Method","topic_0000000000000704.html",0]];

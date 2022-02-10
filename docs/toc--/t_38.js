@@ -1,1 +1,0 @@
-c['38']=[['39',"GetArchitecture Method","topic_000000000000003D.html",0],['40',"GetClockSpeed Method","topic_000000000000003E.html",0],['41',"Set Method","topic_000000000000003C.html",0]];

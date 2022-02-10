@@ -1,1 +1,0 @@
-c['671']=[['672',"VitNX_Separator Constructor","topic_00000000000002C1.html",0],['673',"Methods","topic_00000000000002C0_methods--.html",1]];

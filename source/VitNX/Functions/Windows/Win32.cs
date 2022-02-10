@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using System.Text;
 
 using static VitNX.Functions.Windows.Win32.Enums;
 
@@ -18,6 +18,20 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("winmm.dll")]
         public static extern int WaveOutGetVolume(IntPtr h,
             out uint dwVolume);
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        public static extern long WritePrivateProfileString(string Section,
+            string Key,
+            string Value,
+            string FilePath);
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        public static extern int GetPrivateProfileString(string Section,
+            string Key,
+            string Default,
+            StringBuilder RetVal,
+            int Size,
+            string FilePath);
 
         [DllImport("user32.dll", SetLastError = true)]
         public static extern IntPtr SetWindowsHookEx(
