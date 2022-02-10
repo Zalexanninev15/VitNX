@@ -1,0 +1,30 @@
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request 
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # This workflow contains a single job called "Build"
+  Build:
+    runs-on: [windows-latest]
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore NuGet packages
+      run: nuget restore source\VitNX.sln
+
+    - name: Build the Solution
+      run: msbuild source\VitNX.sln /p:Configuration=Release
