@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
+
+using VitNX.Functions.Windows.Apps;
 
 namespace VitNX.Functions.Common
 {
@@ -35,12 +36,14 @@ namespace VitNX.Functions.Common
                     }
                 case SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
                     {
-                        Process.Start("shutdown", "/s /t 0");
+                        // Old code: Processes.Run("shutdown", "/s /t 0");
+                        Processes.Run("powershell", "Stop-Computer");
                         break;
                     }
                 case SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
                     {
-                        Process.Start("shutdown", "/r /t 0");
+                        // Old code: Processes.Run("shutdown", "/r /t 0");
+                        Processes.Run("powershell", "Restart-Computer -Force");
                         break;
                     }
                 case SYSTEM_POWER_CONTROL.SYSTEM_LOCK:
