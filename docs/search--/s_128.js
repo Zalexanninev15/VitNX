@@ -1,0 +1,1 @@
+search_result['128']=["topic_000000000000005D.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];

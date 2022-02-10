@@ -1,0 +1,1 @@
+search_result['305']=["topic_00000000000000C7.html","STATask Class","Set clipboard text."];

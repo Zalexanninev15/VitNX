@@ -1,0 +1,1 @@
+search_result['231']=["topic_00000000000000A0.html","DataFromSites.GetHeaderAndContent Method","Gets the header and content of site."];

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 using static VitNX.Functions.Windows.Win32.Enums;
+using VitNX.Functions.Windows.Controllers;
 
 namespace VitNX.Functions.Windows.Win32
 {
@@ -143,13 +144,13 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("user32.dll")]
         public static extern int QueryDisplayConfig(QUERY_DEVICE_CONFIG_FLAGS flags,
             ref uint numPathArrayElements,
-            [Out] NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
+            [Out] Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
             ref uint numModeInfoArrayElements,
-            [Out] NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
+            [Out] Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
             IntPtr currentTopologyId);
 
         [DllImport("user32.dll")]
-        public static extern int DisplayConfigGetDeviceInfo(ref NativeControls.Monitor.
+        public static extern int DisplayConfigGetDeviceInfo(ref Monitor.
             DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
 
         [DllImport("user32.dll")]

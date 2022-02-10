@@ -1,0 +1,1 @@
+search_result['123']=["topic_0000000000000058.html","Monitor.CaptureScreen Method","Captures the screen."];

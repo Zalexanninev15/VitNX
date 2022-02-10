@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+
+using VitNX.Functions.Windows.Controllers;
+using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
 using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
 using VitNX.UI.ControlsV1.BasedOnDarkUI.Win32;
-using VitNX.Functions.Windows.NativeControls;
+
 using static VitNX.Functions.Windows.Win32.Enums;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
 
 namespace Example
 {
@@ -203,13 +205,9 @@ namespace Example
         {
             DialogResult a = VitNX_MessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
             if (a == DialogResult.Yes)
-            {
                 VitNX_MessageBox.ShowInfo("Your choice is Yes", "VitNX UI - Example");
-            }
             if (a == DialogResult.No)
-            {
                 VitNX_MessageBox.ShowInfo("Your choice is No", "VitNX UI - Example");
-            }
         }
 
         private void SetTaskBarProgressBar_Click(object sender, EventArgs e)

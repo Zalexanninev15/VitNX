@@ -1,0 +1,1 @@
+search_result['625']=["topic_00000000000001F4.html","StandaloneImportFunctions Class","Functions that use WinAPI and can be built into your applications without writing extra code."];

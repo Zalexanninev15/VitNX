@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000740.html"],['498',"VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace","topic_0000000000000210.html"],['500',"Constsants Class","topic_0000000000000212.html"],['501',"Fields","topic_0000000000000212_vars--.html"],['505',"MinimumThumbSize Field","topic_0000000000000216.html"]];

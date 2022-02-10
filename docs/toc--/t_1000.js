@@ -1,0 +1,1 @@
+c['1000']=[['1001',"GetIcon(Properties) Method","topic_00000000000003EE.html",0],['1002',"GetIcon(Type, Properties) Method","topic_00000000000003ED.html",0]];

@@ -1,0 +1,1 @@
+search_result['219']=["topic_0000000000000099.html","CompressAndDecompress.GetBytes Method","Gets the bytes.\r\nExample: CompressAndDecompress.GetBytes(input)"];
