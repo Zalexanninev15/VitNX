@@ -1,1 +1,0 @@
-search_result['236']=["topic_00000000000000A5.html","SendDataToSites Class","The send data to sites."];

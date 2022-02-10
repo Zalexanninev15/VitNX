@@ -1,1 +1,0 @@
-search_result['176']=["topic_000000000000007D.html","Work.ContainsOnlyLatters Method","Contains the only latters."];

@@ -1,1 +1,0 @@
-search_result['498']=["topic_0000000000000127.html","Import.GetDeviceCaps Method",""];

@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
 [assembly: AssemblyTitle("VitNX")]
-[assembly: AssemblyDescription("Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.6)")]
+[assembly: AssemblyDescription("Example application for VitNX")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zalexanninev15")]
 [assembly: AssemblyProduct("VitNX")]
 [assembly: AssemblyCopyright("Copyright © 2021-2022, Zalexanninev15")]
-[assembly: AssemblyTrademark("VitNX (2021-2022)")]
+[assembly: AssemblyTrademark("Zalexanninev15")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("f19472f5-8c44-4c51-a8a0-b9de5f555255")]
-[assembly: AssemblyVersion("2.4.3.0")]
-[assembly: AssemblyFileVersion("2.4.3.0")]
+[assembly: Guid("fa334815-6d78-4e9a-9f4d-6c8a58222a57")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]

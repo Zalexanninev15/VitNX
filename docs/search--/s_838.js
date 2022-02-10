@@ -1,1 +1,0 @@
-search_result['838']=["topic_0000000000000270.html","VitNX_ListView.GetItemIndex Method",""];

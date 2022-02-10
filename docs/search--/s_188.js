@@ -1,1 +1,0 @@
-search_result['188']=["topic_0000000000000089.html","Work.IsValidCardNumber Method","Are the valid card number."];
