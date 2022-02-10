@@ -138,18 +138,13 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
         {
             if (_vScrollBar.Maximum != ContentSize.Height)
                 _vScrollBar.Maximum = ContentSize.Height;
-
             if (_hScrollBar.Maximum != ContentSize.Width)
                 _hScrollBar.Maximum = ContentSize.Width;
-
             var scrollSize = Constsants.ScrollBarSize;
-
             _vScrollBar.Location = new Point(ClientSize.Width - scrollSize, 0);
             _vScrollBar.Size = new Size(scrollSize, ClientSize.Height);
-
             _hScrollBar.Location = new Point(0, ClientSize.Height - scrollSize);
             _hScrollBar.Size = new Size(ClientSize.Width, scrollSize);
-
             if (DesignMode)
                 return;
 
@@ -160,13 +155,10 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
             SetScrollBarVisibility();
             SetVisibleSize();
             SetScrollBarVisibility();
-
             if (_vScrollBar.Visible)
                 _hScrollBar.Width -= scrollSize;
-
             if (_hScrollBar.Visible)
                 _vScrollBar.Height -= scrollSize;
-
             _vScrollBar.ViewSize = _visibleSize.Height;
             _hScrollBar.ViewSize = _visibleSize.Width;
 
@@ -177,7 +169,6 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
         {
             _vScrollBar.Enabled = _visibleSize.Height < ContentSize.Height;
             _hScrollBar.Enabled = _visibleSize.Width < ContentSize.Width;
-
             if (_hideScrollBars)
             {
                 _vScrollBar.Visible = _vScrollBar.Enabled;
@@ -188,12 +179,9 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
         private void SetVisibleSize()
         {
             var scrollSize = Constsants.ScrollBarSize;
-
             _visibleSize = new Size(ClientSize.Width, ClientSize.Height);
-
             if (_vScrollBar.Visible)
                 _visibleSize.Width -= scrollSize;
-
             if (_hScrollBar.Visible)
                 _visibleSize.Height -= scrollSize;
         }
@@ -204,24 +192,19 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
             var top = 0;
             var width = ClientSize.Width;
             var height = ClientSize.Height;
-
             if (_hScrollBar.Visible)
             {
                 left = _hScrollBar.Value;
                 height -= _hScrollBar.Height;
             }
-
             if (_vScrollBar.Visible)
             {
                 top = _vScrollBar.Value;
                 width -= _vScrollBar.Width;
             }
-
             Viewport = new Rectangle(left, top, width, height);
-
             var pos = PointToClient(MousePosition);
             _offsetMousePosition = new Point(pos.X + Viewport.Left, pos.Y + Viewport.Top);
-
             Invalidate();
         }
 
@@ -272,42 +255,36 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
-
             UpdateScrollBars();
         }
 
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
-
             Invalidate();
         }
 
         protected override void OnLostFocus(EventArgs e)
         {
             base.OnLostFocus(e);
-
             Invalidate();
         }
 
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-
             UpdateScrollBars();
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
-
             _offsetMousePosition = new Point(e.X + Viewport.Left, e.Y + Viewport.Top);
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-
             if (e.Button == MouseButtons.Right)
                 Select();
         }
@@ -315,15 +292,11 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
         protected override void OnMouseWheel(MouseEventArgs e)
         {
             base.OnMouseWheel(e);
-
             var horizontal = false;
-
             if (_hScrollBar.Visible && ModifierKeys == Keys.Control)
                 horizontal = true;
-
             if (_hScrollBar.Visible && !_vScrollBar.Visible)
                 horizontal = true;
-
             if (!horizontal)
             {
                 if (e.Delta > 0)
@@ -359,16 +332,12 @@ namespace VitNX.UI.BasedOnDarkUI.Controls
         private void DragTimer_Tick(object sender, EventArgs e)
         {
             var pos = PointToClient(MousePosition);
-
             var right = ClientRectangle.Right;
             var bottom = ClientRectangle.Bottom;
-
             if (_vScrollBar.Visible)
                 right = _vScrollBar.Left;
-
             if (_hScrollBar.Visible)
                 bottom = _hScrollBar.Top;
-
             if (_vScrollBar.Visible)
             {
                 // Scroll up

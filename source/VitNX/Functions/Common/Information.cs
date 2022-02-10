@@ -14,11 +14,9 @@ using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.Functions.Common.Information
 {
-    public class Helper
-    {
-        public static readonly string[] SizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
-    }
-
+    /// <summary>
+    /// Work with informations of Windows System.
+    /// </summary>
     public class Windows
     {
         public static string ComputerName = Environment.MachineName;
@@ -34,7 +32,11 @@ namespace VitNX.Functions.Common.Information
         public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
         public static string WindowsStartupFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
 
-        public static MemoryStream GetScreenToMemoryStream()
+        /// <summary>
+        /// Gets the screenshot to memory stream.
+        /// </summary>
+        /// <returns>A MemoryStream.</returns>
+        public static MemoryStream GetScreenshotToMemoryStream()
         {
             Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics GH = Graphics.FromImage(BM);
@@ -45,6 +47,10 @@ namespace VitNX.Functions.Common.Information
             return memoryStream;
         }
 
+        /// <summary>
+        /// Writes the all users to temp file: %TEMP%\Users.txt.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string WriteAllUsersToTempFile()
         {
             string users = Processes.Execute("wmic", "useraccount list full");
@@ -82,6 +88,9 @@ namespace VitNX.Functions.Common.Information
         }
     }
 
+    /// <summary>
+    /// Work with informations of CPU.
+    /// </summary>
     public class Cpu
     {
         public static string _Name = "";
@@ -104,6 +113,9 @@ namespace VitNX.Functions.Common.Information
         public static string _CurrentVoltage = "";
         public static int _UsagePercent = 0;
 
+        /// <summary>
+        /// Set (get) values for CPU's variables.
+        /// </summary>
         public static void Set()
         {
             ManagementObjectSearcher myProcessorObject = new ManagementObjectSearcher("select * from Win32_Processor");
@@ -131,6 +143,10 @@ namespace VitNX.Functions.Common.Information
             _UsagePercent = Convert.ToInt32(new PerformanceCounter("Processor", "% Processor Time", "_Total").NextValue());
         }
 
+        /// <summary>
+        /// Gets the architecture.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetArchitecture()
         {
             string result = string.Empty;
@@ -151,6 +167,10 @@ namespace VitNX.Functions.Common.Information
             return result;
         }
 
+        /// <summary>
+        /// Gets the clock speed.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetClockSpeed()
         {
             string clockSpeed = "";
@@ -163,6 +183,9 @@ namespace VitNX.Functions.Common.Information
         }
     }
 
+    /// <summary>
+    /// Work with informations of GPU(s).
+    /// </summary>
     public class Gpu
     {
         public static string _Name = "";
@@ -179,6 +202,9 @@ namespace VitNX.Functions.Common.Information
         public static string _MinRefreshRate = "";
         public static string _VideoModeDescription = "";
 
+        /// <summary>
+        /// Set (get) values for GPU's variables.
+        /// </summary>
         public static void Set()
         {
             ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
@@ -187,7 +213,7 @@ namespace VitNX.Functions.Common.Information
                 _Name = obj["Name"].ToString();
                 _Status = obj["Status"].ToString();
                 _DeviceID = obj["DeviceID"].ToString();
-                _AdapterRAM = SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
+                _AdapterRAM = Text.Work.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
                 _AdapterDACType = obj["AdapterDACType"].ToString();
                 _Monochrome = obj["Monochrome"].ToString();
                 _InstalledDisplayDrivers = obj["InstalledDisplayDrivers"].ToString();
@@ -199,24 +225,20 @@ namespace VitNX.Functions.Common.Information
                 _VideoModeDescription = obj["VideoModeDescription"].ToString();
             }
         }
-
-        private static string SizeSuffix(Int64 value)
-        {
-            if (value < 0)
-                return "-" + SizeSuffix(-value);
-            if (value == 0)
-                return "0.0 bytes";
-            int mag = (int)Math.Log(value, 1024);
-            decimal adjustedSize = (decimal)value / (1L << (mag * 10));
-            return string.Format("{0:n1} {1}", adjustedSize, Helper.SizeSuffixes[mag]);
-        }
     }
 
+    /// <summary>
+    /// Work with informations of Disk(s).
+    /// </summary>
     public class Disk
     {
-        public static long windowsDiskAvailableFreeSpace = 0;
-        public static long windowsDiskTotalSize = 0;
+        public static long _WindowsDiskAvailableFreeSpace = 0;
+        public static long _WindowsDiskTotalSize = 0;
 
+        /// <summary>
+        /// Gets the all (logical).
+        /// </summary>
+        /// <returns>A list of string.</returns>
         public static List<string> GetAll()
         {
             List<string> drives = new List<string>();
@@ -238,6 +260,11 @@ namespace VitNX.Functions.Common.Information
             return drives;
         }
 
+        /// <summary>
+        /// Gets the total free space.
+        /// </summary>
+        /// <param name="driveName">The drive name.</param>
+        /// <returns>A long.</returns>
         public static long GetTotalFreeSpace(string driveName)
         {
             foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -248,6 +275,11 @@ namespace VitNX.Functions.Common.Information
             return -1;
         }
 
+        /// <summary>
+        /// Gets the total space.
+        /// </summary>
+        /// <param name="driveName">The drive name.</param>
+        /// <returns>A long.</returns>
         public static long GetTotalSpace(string driveName)
         {
             foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -258,16 +290,31 @@ namespace VitNX.Functions.Common.Information
             return -1;
         }
 
+        /// <summary>
+        /// Set (get) values for Disk's variables (size of Windows).
+        /// </summary>
         public static void SetCWindowsSize()
         {
             DriveInfo driveInfo = new DriveInfo(@"C:\Windows");
-            windowsDiskAvailableFreeSpace = driveInfo.AvailableFreeSpace / 1000000;
-            windowsDiskTotalSize = driveInfo.TotalSize / 1000000;
+            _WindowsDiskAvailableFreeSpace = driveInfo.AvailableFreeSpace / 1000000;
+            _WindowsDiskTotalSize = driveInfo.TotalSize / 1000000;
         }
     }
 
+    /// <summary>
+    /// Work with informations of Monitor(s).
+    /// </summary>
     public class Monitor
     {
+        /// <summary>
+        /// Gets the working area of monitor in Windows.
+        /// </summary>
+        public static Rectangle WorkingArea = Screen.PrimaryScreen.WorkingArea;
+
+        /// <summary>
+        /// Gets the resolution (method 2).
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetResolution2()
         {
             string size = string.Empty;
@@ -279,19 +326,27 @@ namespace VitNX.Functions.Common.Information
             return size;
         }
 
+        /// <summary>
+        /// Gets the resolution (method 1).
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetResolution()
         {
-            UInt32 width = 0;
-            UInt32 height = 0;
+            uint width = 0;
+            uint height = 0;
             foreach (var desktopMonitor in new ManagementObjectSearcher("ROOT\\CIMV2", "SELECT * FROM Win32_DesktopMonitor").Get())
             {
-                width = (UInt32)desktopMonitor["ScreenWidth"];
-                height = (UInt32)desktopMonitor["ScreenHeight"];
+                width = (uint)desktopMonitor["ScreenWidth"];
+                height = (uint)desktopMonitor["ScreenHeight"];
             }
             return $"{Convert.ToString(width)}x{Convert.ToString(height)}";
         }
 
-        public List<string> GetAll()
+        /// <summary>
+        /// Gets the all.
+        /// </summary>
+        /// <returns>A list of string.</returns>
+        public static List<string> GetAll()
         {
             List<string> screensall = new List<string>();
             Screen[] allScreens = Screen.AllScreens;
@@ -308,18 +363,26 @@ namespace VitNX.Functions.Common.Information
             }
             return screensall;
         }
-
-        public static Screen WorkingArea = Screen.PrimaryScreen;
     }
 
+    /// <summary>
+    /// Work with informations of Motherboard.
+    /// </summary>
     public class Motherboard
     {
+        /// <summary>
+        /// Gets the firmware type.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetFirmwareType()
         {
             return Processes.Execute("cmd", "/C echo %firmware_type%");
         }
     }
 
+    /// <summary>
+    /// Work with informations of RAM.
+    /// </summary>
     public class Ram
     {
         public static string _NameID = "";
@@ -338,6 +401,9 @@ namespace VitNX.Functions.Common.Information
         public static ulong _Used = 0;
         public static ulong _RamVirtual = 0;
 
+        /// <summary>
+        /// Set (get) values for RAM's variables.
+        /// </summary>
         public static void Set()
         {
             ManagementObjectSearcher myRamObject = new ManagementObjectSearcher("select * from Win32_PhysicalMemory");

@@ -1,31 +1,52 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
+
+using VitNX.Functions.Windows.Apps;
 
 namespace VitNX.Functions.Common
 {
+    /// <summary>
+    /// Work with the power control.
+    /// </summary>
     public class PowerControl
     {
-        public static void Computer(Windows.Win32.Enums.SYSTEM_POWER_CONTROL method)
+        /// <summary>
+        /// Options for control the power of computer.
+        /// </summary>
+        public enum SYSTEM_POWER_CONTROL
+        {
+            SYSTEM_LOGOFF,
+            SYSTEM_SHUTDOWN,
+            SYSTEM_REBOOT,
+            SYSTEM_LOCK
+        }
+
+        /// <summary>
+        /// The power of computer.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        public static void Computer(SYSTEM_POWER_CONTROL method)
         {
             switch (method)
             {
-                case Windows.Win32.Enums.SYSTEM_POWER_CONTROL.SYSTEM_LOGOFF:
+                case SYSTEM_POWER_CONTROL.SYSTEM_LOGOFF:
                     {
                         Windows.Win32.Import.ExitWindowsEx(0, 0);
                         break;
                     }
-                case Windows.Win32.Enums.SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
+                case SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
                     {
-                        Process.Start("shutdown", "/s /t 0");
+                        // Old code: Processes.Run("shutdown", "/s /t 0");
+                        Processes.Run("powershell", "Stop-Computer");
                         break;
                     }
-                case Windows.Win32.Enums.SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
+                case SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
                     {
-                        Process.Start("shutdown", "/r /t 0");
+                        // Old code: Processes.Run("shutdown", "/r /t 0");
+                        Processes.Run("powershell", "Restart-Computer -Force");
                         break;
                     }
-                case Windows.Win32.Enums.SYSTEM_POWER_CONTROL.SYSTEM_LOCK:
+                case SYSTEM_POWER_CONTROL.SYSTEM_LOCK:
                     {
                         Windows.Win32.Import.LockWorkStation();
                         break;
@@ -33,6 +54,10 @@ namespace VitNX.Functions.Common
             }
         }
 
+        /// <summary>
+        /// The power of monitor.
+        /// </summary>
+        /// <param name="worked">If true, worked.</param>
         public static void Monitor(bool worked)
         {
             Form frm = new Form();
