@@ -13,8 +13,7 @@ namespace VitNX.UI.BasedOnDarkUI.Forms
 
         protected override void OnHandleCreated(EventArgs e)
         {
-            if (Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
-                Functions.Windows.Win32.Import.DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+            Functions.Windows.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
         }
 
         private VitNX_DialogButton _dialogButtons = VitNX_DialogButton.Ok;

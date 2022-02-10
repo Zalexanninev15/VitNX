@@ -1,0 +1,1 @@
+search_result['605']=["topic_000000000000018A.html","DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY Enumeration",""];

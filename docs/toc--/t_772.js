@@ -1,0 +1,1 @@
+c['772']=[['773',"VitNX_DockPanel Constructor","topic_0000000000000322.html",0],['774',"Methods","topic_000000000000031E_methods--.html",1],['785',"Events","topic_000000000000031E_events--.html",1]];

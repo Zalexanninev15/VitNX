@@ -158,10 +158,16 @@ namespace VitNX.Functions.Common.Web
         /// <summary>
         /// Activate all security protocols for all network functions to work (HTTPS).
         /// </summary>
-        public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls13 |
-        SecurityProtocolType.Tls12 |
+        ///
+        public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;
+
+        // Code for .NET Framework 4.8+
+        // public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls13 |
+        // SecurityProtocolType.Tls12 |
+        // SecurityProtocolType.Tls11 |
+        // SecurityProtocolType.Tls;
     }
 
     /// <summary>
