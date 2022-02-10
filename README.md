@@ -17,7 +17,7 @@ Controls for WinForms and a ton of necessary features for fast and easy C# appli
 
 ## Documentation
 
-Previously was, but now it is not, looking for a documentation generator based on the source code. Old version of documentation (for current release 2.3) - available [here]([GitHub &amp; BitBucket HTML Preview](https://htmlpreview.github.io/?https://github.com/Zalexanninev15/VitNX/blob/b0c0a732441b5af853214dc462b321b0e8b07d38/docs/annotated.html)) ([download sources]([DownGit](https://downgit.github.io/#/home?url=https://github.com/Zalexanninev15/VitNX/blob/b0c0a732441b5af853214dc462b321b0e8b07d38/docs)) for normal viewer)
+Previously was, but now it is not, looking for a documentation generator based on the source code. Old version of documentation (for current release 2.3) - available [here](https://htmlpreview.github.io/?https://github.com/Zalexanninev15/VitNX/blob/b0c0a732441b5af853214dc462b321b0e8b07d38/docs/annotated.html) ([download sources](https://downgit.github.io/#/home?url=https://github.com/Zalexanninev15/VitNX/blob/b0c0a732441b5af853214dc462b321b0e8b07d38/docs)) for normal viewer)
 
 ## Used in
 
