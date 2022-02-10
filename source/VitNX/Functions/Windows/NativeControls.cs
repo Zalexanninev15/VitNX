@@ -12,8 +12,14 @@ using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.Functions.Windows.NativeControls
 {
+    /// <summary>
+    /// Work with progressbar on taskbar.
+    /// </summary>
     public static class TaskBarProgressBar
     {
+        /// <summary>
+        /// The taskbar list3.
+        /// </summary>
         [ComImport()]
         [Guid("ea1afb91-9e28-4b86-90e9-9e9f8a5eefaf")]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
@@ -34,16 +40,39 @@ namespace VitNX.Functions.Windows.NativeControls
             [PreserveSig]
             void SetActiveAlt(IntPtr hwnd);
 
+            /// <summary>
+            /// Marks the fullscreen window.
+            /// </summary>
+            /// <param name="hwnd">The hwnd.</param>
+            /// <param name="fFullscreen">If true, f fullscreen.</param>
             [PreserveSig]
-            void MarkFullscreenWindow(IntPtr hwnd, [MarshalAs(UnmanagedType.Bool)] bool fFullscreen);
+            void MarkFullscreenWindow(IntPtr hwnd,
+                [MarshalAs(UnmanagedType.Bool)] bool fFullscreen);
 
+            /// <summary>
+            /// Sets the progress value.
+            /// </summary>
+            /// <param name="hwnd">The hwnd.</param>
+            /// <param name="ullCompleted">The ull completed.</param>
+            /// <param name="ullTotal">The ull total.</param>
             [PreserveSig]
-            void SetProgressValue(IntPtr hwnd, UInt64 ullCompleted, UInt64 ullTotal);
+            void SetProgressValue(IntPtr hwnd,
+                ulong ullCompleted,
+                ulong ullTotal);
 
+            /// <summary>
+            /// Sets the progress state.
+            /// </summary>
+            /// <param name="hwnd">The hwnd.</param>
+            /// <param name="state">The state.</param>
             [PreserveSig]
-            void SetProgressState(IntPtr hwnd, Enums.TASKBAR_STATES state);
+            void SetProgressState(IntPtr hwnd,
+                Enums.TASKBAR_STATES state);
         }
 
+        /// <summary>
+        /// The progressbar of taskbar instance.
+        /// </summary>
         [ComImport()]
         [Guid("56fdf344-fd6d-11d0-958a-006097c9a090")]
         [ClassInterface(ClassInterfaceType.None)]
@@ -53,6 +82,11 @@ namespace VitNX.Functions.Windows.NativeControls
         private static ITaskbarList3 taskbarInstance = (ITaskbarList3)new TaskbarInstance();
         private static bool taskbarSupported = Environment.OSVersion.Version >= new Version(6, 1);
 
+        /// <summary>
+        /// Sets the state.
+        /// </summary>
+        /// <param name="windowHandle">The window handle.</param>
+        /// <param name="taskbarState">The taskbar state.</param>
         public static void SetState(IntPtr windowHandle,
             Enums.TASKBAR_STATES taskbarState)
         {
@@ -60,6 +94,12 @@ namespace VitNX.Functions.Windows.NativeControls
                 taskbarInstance.SetProgressState(windowHandle, taskbarState);
         }
 
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="windowHandle">The window handle.</param>
+        /// <param name="Value">The value.</param>
+        /// <param name="Max">The max.</param>
         public static void SetValue(IntPtr windowHandle,
             double Value,
             double Max)
@@ -69,12 +109,18 @@ namespace VitNX.Functions.Windows.NativeControls
         }
     }
 
+    /// <summary>
+    /// Work with the folder dialog, Windows Vista+.
+    /// </summary>
     public class NewFolderDialog
     {
         private string _initialDirectory;
         private string _title;
         private string _fileName = "";
 
+        /// <summary>
+        /// Gets or sets the initial directory.
+        /// </summary>
         public string InitialDirectory
         {
             get
@@ -86,20 +132,37 @@ namespace VitNX.Functions.Windows.NativeControls
             set { _initialDirectory = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
         public string Title
         {
             get { return _title ?? "Select a folder"; }
             set { _title = value; }
         }
 
+        /// <summary>
+        /// Gets the file name.
+        /// </summary>
         public string FileName
         {
             get { return _fileName; }
         }
 
+        /// <summary>
+        /// Shows the folder dialog.
+        /// </summary>
+        /// <returns>A bool.</returns>
         public bool Show()
-        { return Show(IntPtr.Zero); }
+        {
+            return Show(IntPtr.Zero);
+        }
 
+        /// <summary>
+        /// Are shows the folder dialog.
+        /// </summary>
+        /// <param name="hWndOwner">The h wnd owner.</param>
+        /// <returns>A bool.</returns>
         public bool Show(IntPtr hWndOwner)
         {
             var result = Environment.OSVersion.Version.Major >= 6 ?
@@ -111,7 +174,14 @@ namespace VitNX.Functions.Windows.NativeControls
 
         private struct ShowDialogResult
         {
+            /// <summary>
+            /// Gets or sets a value indicating whether result.
+            /// </summary>
             public bool Result { get; set; }
+
+            /// <summary>
+            /// Gets or sets the file name.
+            /// </summary>
             public string FileName { get; set; }
         }
 
@@ -162,7 +232,10 @@ namespace VitNX.Functions.Windows.NativeControls
 
             private static readonly ConstructorInfo s_VistaDialogEventsConstructorInfo = s_windowsFormsAssembly.
                 GetType("System.Windows.Forms.FileDialog+VistaDialogEvents").
-                GetConstructor(c_flags, null, new[] { typeof(FileDialog) }, null);
+                GetConstructor(c_flags,
+                null,
+                new[] { typeof(FileDialog) },
+                null);
 
             private static readonly MethodInfo s_adviseMethodInfo = s_iFileDialogType.
                 GetMethod("Advise");
@@ -173,6 +246,13 @@ namespace VitNX.Functions.Windows.NativeControls
             private static readonly MethodInfo s_showMethodInfo = s_iFileDialogType.
                 GetMethod("Show");
 
+            /// <summary>
+            /// Shows the folder dialog.
+            /// </summary>
+            /// <param name="ownerHandle">The owner handle.</param>
+            /// <param name="initialDirectory">The initial directory.</param>
+            /// <param name="title">The title.</param>
+            /// <returns>A ShowDialogResult.</returns>
             public static ShowDialogResult Show(IntPtr ownerHandle,
                 string initialDirectory,
                 string title)
@@ -220,9 +300,7 @@ namespace VitNX.Functions.Windows.NativeControls
             { _handle = handle; }
 
             public IntPtr Handle
-            {
-                get { return _handle; }
-            }
+            { get { return _handle; } }
         }
     }
 
@@ -267,34 +345,92 @@ namespace VitNX.Functions.Windows.NativeControls
 
             int UnregisterControlChangeNotify(IAudioEndpointVolumeCallback pNotify);
 
+            /// <summary>
+            /// Gets the volume channel(s) count.
+            /// </summary>
+            /// <param name="pnChannelCount">The pn channel count.</param>
+            /// <returns>An int.</returns>
             int GetChannelCount(out int pnChannelCount);
 
+            /// <summary>
+            /// Sets the master volume level.
+            /// </summary>
+            /// <param name="fLevelDB">The f level d b.</param>
+            /// <param name="pguidEventContext">The pguid event context.</param>
+            /// <returns>An int.</returns>
             int SetMasterVolumeLevel(float fLevelDB,
                 Guid pguidEventContext);
 
+            /// <summary>
+            /// Sets the master volume level in scalar.
+            /// </summary>
+            /// <param name="fLevel">The f level.</param>
+            /// <param name="pguidEventContext">The pguid event context.</param>
+            /// <returns>An int.</returns>
             int SetMasterVolumeLevelScalar(float fLevel,
                 Guid pguidEventContext);
 
+            /// <summary>
+            /// Gets the master volume level.
+            /// </summary>
+            /// <param name="pfLevelDB">The pf level d b.</param>
+            /// <returns>An int.</returns>
             int GetMasterVolumeLevel(out float pfLevelDB);
 
+            /// <summary>
+            /// Gets the master volume level in scalar.
+            /// </summary>
+            /// <param name="pfLevel">The pf level.</param>
+            /// <returns>An int.</returns>
             int GetMasterVolumeLevelScalar(out float pfLevel);
 
+            /// <summary>
+            /// Sets the channel volume level.
+            /// </summary>
+            /// <param name="nChannel">The n channel.</param>
+            /// <param name="fLevelDB">The f level d b.</param>
+            /// <param name="pguidEventContext">The pguid event context.</param>
+            /// <returns>An int.</returns>
             int SetChannelVolumeLevel(uint nChannel,
                 float fLevelDB,
                 Guid pguidEventContext);
 
+            /// <summary>
+            /// Sets the channel volume level scalar.
+            /// </summary>
+            /// <param name="nChannel">The n channel.</param>
+            /// <param name="fLevel">The f level.</param>
+            /// <param name="pguidEventContext">The pguid event context.</param>
+            /// <returns>An int.</returns>
             int SetChannelVolumeLevelScalar(uint nChannel,
                 float fLevel,
                 Guid pguidEventContext);
 
+            /// <summary>
+            /// Gets the channel volume level.
+            /// </summary>
+            /// <param name="nChannel">The n channel.</param>
+            /// <param name="pfLevelDB">The pf level d b.</param>
+            /// <returns>An int.</returns>
             int GetChannelVolumeLevel(uint nChannel,
                 out float pfLevelDB);
 
             int GetChannelVolumeLevelScalar(uint nChannel,
                 out float pfLevel);
 
+            /// <summary>
+            /// Sets the mute.
+            /// </summary>
+            /// <param name="bMute">If true, b mute.</param>
+            /// <param name="pguidEventContext">The pguid event context.</param>
+            /// <returns>An int.</returns>
             int SetMute([MarshalAs(UnmanagedType.Bool)] bool bMute, Guid pguidEventContext);
 
+            /// <summary>
+            /// Gets the mute.
+            /// </summary>
+            /// <param name="pbMute">If true, pb mute.</param>
+            /// <returns>An int.</returns>
             int GetMute(out bool pbMute);
 
             int GetVolumeStepInfo(out uint pnStep,
@@ -311,6 +447,10 @@ namespace VitNX.Functions.Windows.NativeControls
                 out float pflVolumeIncrementdB);
         }
 
+        /// <summary>
+        /// Sets the current total sound volume.
+        /// </summary>
+        /// <param name="level">The level.</param>
         public void Set(float level)
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
@@ -325,11 +465,18 @@ namespace VitNX.Functions.Windows.NativeControls
                 out object o);
             vol = (IAudioEndpointVolume)o;
             vol.SetMasterVolumeLevelScalar(level, Guid.Empty);
-            if (vol != null) Marshal.ReleaseComObject(vol);
-            if (speakers != null) Marshal.ReleaseComObject(speakers);
-            if (deviceEnumerator != null) Marshal.ReleaseComObject(deviceEnumerator);
+            if (vol != null)
+                Marshal.ReleaseComObject(vol);
+            if (speakers != null)
+                Marshal.ReleaseComObject(speakers);
+            if (deviceEnumerator != null)
+                Marshal.ReleaseComObject(deviceEnumerator);
         }
 
+        /// <summary>
+        /// Gets the current total sound volume.
+        /// </summary>
+        /// <returns>A float.</returns>
         public float Get()
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
@@ -345,18 +492,24 @@ namespace VitNX.Functions.Windows.NativeControls
             vol = (IAudioEndpointVolume)o;
             float currentVolume = 0;
             vol.GetMasterVolumeLevelScalar(out currentVolume);
-            if (vol != null) Marshal.ReleaseComObject(vol);
-            if (speakers != null) Marshal.ReleaseComObject(speakers);
-            if (deviceEnumerator != null) Marshal.ReleaseComObject(deviceEnumerator);
+            if (vol != null)
+                Marshal.ReleaseComObject(vol);
+            if (speakers != null)
+                Marshal.ReleaseComObject(speakers);
+            if (deviceEnumerator != null)
+                Marshal.ReleaseComObject(deviceEnumerator);
             return currentVolume;
         }
     }
 
+    /// <summary>
+    /// Get clipboard text.
+    /// </summary>
     public class GetClipboardText
     {
         private string _GetText;
 
-        private void _thGetText(object format)
+        private void _GetTexter(object format)
         {
             try
             {
@@ -366,10 +519,14 @@ namespace VitNX.Functions.Windows.NativeControls
             catch { _GetText = string.Empty; }
         }
 
+        /// <summary>
+        /// Gets the text.
+        /// </summary>
+        /// <returns>A string.</returns>
         public static string GetText()
         {
             GetClipboardText instance = new GetClipboardText();
-            Thread staThread = new Thread(instance._thGetText);
+            Thread staThread = new Thread(instance._GetTexter);
             staThread.SetApartmentState(ApartmentState.STA);
             staThread.Start();
             staThread.Join();
@@ -377,6 +534,9 @@ namespace VitNX.Functions.Windows.NativeControls
         }
     }
 
+    /// <summary>
+    /// Set clipboard text.
+    /// </summary>
     public static class STATask
     {
         public static Task<TResult> Run<TResult>(Func<TResult> function)
@@ -410,14 +570,25 @@ namespace VitNX.Functions.Windows.NativeControls
         }
     }
 
+    /// <summary>
+    /// Control the keyboard.
+    /// </summary>
     public class Keyboard
     {
+        /// <summary>
+        /// Sets the KeyDown.
+        /// </summary>
+        /// <param name="vKey">The vkey.</param>
         public static void KeyDown(Keys vKey)
         {
             Import.keybd_event((byte)vKey, 0,
                 (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
         }
 
+        /// <summary>
+        /// Sets the KeyUp.
+        /// </summary>
+        /// <param name="vKey">The vkey.</param>
         public static void KeyUp(Keys vKey)
         {
             Import.keybd_event((byte)vKey, 0,
@@ -425,6 +596,11 @@ namespace VitNX.Functions.Windows.NativeControls
                 (int)Enums.KEYEVENTF.KEYEVENTF_KEYUP, 0);
         }
 
+        /// <summary>
+        /// The keyboard events of Windows.
+        /// </summary>
+        /// <param name="status">The status.</param>
+        /// <param name="keys">The keys.</param>
         public static void WindowsKeyboardEventsAPI(int status,
             string keys = "none")
         {
@@ -460,6 +636,9 @@ namespace VitNX.Functions.Windows.NativeControls
         }
     }
 
+    /// <summary>
+    /// Work with monitor.
+    /// </summary>
     public static class Monitor
     {
         public const int ERROR_SUCCESS = 0;
@@ -644,7 +823,12 @@ namespace VitNX.Functions.Windows.NativeControls
                     yield return MonitorFriendlyName(displayModes[i].adapterId, displayModes[i].id);
         }
 
-        public static string DeviceFriendlyName(this Screen screen)
+        /// <summary>
+        /// Friendly name of monitor(s).
+        /// </summary>
+        /// <param name="screen">The screen.</param>
+        /// <returns>A string.</returns>
+        public static string FriendlyName(this Screen screen)
         {
             var allFriendlyNames = GetAllMonitorsFriendlyNames();
             for (var index = 0; index < Screen.AllScreens.Length; index++)

@@ -1,9 +1,11 @@
-﻿using Microsoft.Win32;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Microsoft.Win32;
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Management;
 using System.Reflection;
@@ -31,21 +33,6 @@ namespace VitNX.Functions.Common.Information
         public static string WindowsDisplayVersionFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "");
         public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
         public static string WindowsStartupFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
-
-        /// <summary>
-        /// Gets the screenshot to memory stream.
-        /// </summary>
-        /// <returns>A MemoryStream.</returns>
-        public static MemoryStream GetScreenshotToMemoryStream()
-        {
-            Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            Graphics GH = Graphics.FromImage(BM);
-            GH.CopyFromScreen(0, 0, 0, 0, BM.Size);
-            MemoryStream memoryStream = new MemoryStream();
-            BM.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
-            memoryStream.Position = 0;
-            return memoryStream;
-        }
 
         /// <summary>
         /// Writes the all users to temp file: %TEMP%\Users.txt.
@@ -312,6 +299,79 @@ namespace VitNX.Functions.Common.Information
         public static Rectangle WorkingArea = Screen.PrimaryScreen.WorkingArea;
 
         /// <summary>
+        /// Captures the screen to memory stream.
+        /// </summary>
+        /// <returns>A MemoryStream.</returns>
+        public static MemoryStream CaptureScreenToMemoryStream()
+        {
+            Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Graphics GH = Graphics.FromImage(BM);
+            GH.CopyFromScreen(0, 0, 0, 0, BM.Size);
+            MemoryStream memoryStream = new MemoryStream();
+            BM.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+            memoryStream.Position = 0;
+            return memoryStream;
+        }
+
+        /// <summary>
+        /// Captures the screen.
+        /// </summary>
+        /// <returns>An Image.</returns>
+        public static Image CaptureScreen()
+        {
+            return CaptureWindow(Import.GetDesktopWindow());
+        }
+
+        /// <summary>
+        /// Captures the window to file.
+        /// </summary>
+        /// <param name="handle">The handle.</param>
+        /// <param name="filename">The filename.</param>
+        /// <param name="format">The format.</param>
+        public static void CaptureWindowToFile(IntPtr handle,
+            string filename,
+            ImageFormat format)
+        {
+            Image img = CaptureWindow(handle);
+            img.Save(filename, format);
+        }
+
+        /// <summary>
+        /// Captures the screen to file.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <param name="format">The format.</param>
+        public static void CaptureScreenToFile(string filename, ImageFormat format)
+        {
+            Image img = CaptureScreen();
+            img.Save(filename, format);
+        }
+
+        /// <summary>
+        /// Captures the window.
+        /// </summary>
+        /// <param name="handle">The handle.</param>
+        /// <returns>An Image.</returns>
+        public static Image CaptureWindow(IntPtr handle)
+        {
+            IntPtr hdcSrc = Import.GetWindowDC(handle);
+            Enums.RECT windowRect = new Enums.RECT();
+            Import.GetWindowRect(handle, out windowRect);
+            int width = windowRect.Right - windowRect.Left;
+            int height = windowRect.Bottom - windowRect.Top;
+            IntPtr hdcDest = Import.CreateCompatibleDC(hdcSrc);
+            IntPtr hBitmap = Import.CreateCompatibleBitmap(hdcSrc, width, height);
+            IntPtr hOld = Import.SelectObject(hdcDest, hBitmap);
+            Import.BitBlt(hdcDest, 0, 0, width, height, hdcSrc, 0, 0, Constants.SRCCOPY);
+            Import.SelectObject(hdcDest, hOld);
+            Import.DeleteDC(hdcDest);
+            Import.ReleaseDC(handle, hdcSrc);
+            Image img = Image.FromHbitmap(hBitmap);
+            Import.DeleteObject(hBitmap);
+            return img;
+        }
+
+        /// <summary>
         /// Gets the resolution (method 2).
         /// </summary>
         /// <returns>A string.</returns>
@@ -356,7 +416,7 @@ namespace VitNX.Functions.Common.Information
                 screenString =
                     screen.DeviceName.Replace("\\", "").Replace(".", "") + ";" +
                     screen.Bounds.Width + "|" + screen.Bounds.Height + ";" +
-                    Functions.Windows.NativeControls.Monitor.DeviceFriendlyName(screen) + ";" +
+                    Functions.Windows.NativeControls.Monitor.FriendlyName(screen) + ";" +
                     screen.Primary.ToString();
                 screensall.Add(screenString);
                 screenString = string.Empty;

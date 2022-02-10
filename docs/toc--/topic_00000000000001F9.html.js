@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000737.html"],['191',"VitNX.Functions.Windows Namespace","topic_00000000000001F6.html"],['192',"WindowS Class","topic_00000000000001F7.html"],['193',"Methods","topic_00000000000001F7_methods--.html"],['195',"MaximizeAllWindows Method","topic_00000000000001F9.html"]];

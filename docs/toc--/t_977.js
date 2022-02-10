@@ -1,0 +1,1 @@
+c['977']=[['978',"Alert(string, NotificationType) Method","topic_0000000000000716.html",0],['979',"Alert(string, NotificationType, Color, Image) Method","topic_0000000000000717.html",0]];
