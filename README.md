@@ -3,21 +3,22 @@
 ![alt](https://github.com/Zalexanninev15/VitNX/raw/main/logo.png)
 
 [![](https://img.shields.io/badge/OS-Windows-informational?logo=windows)](https://github.com/Zalexanninev15/VitNX)
-[![](https://img.shields.io/badge/written_on-.NET_Framework_4.8-512BD4.svg?logo=dotnet)](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+[![](https://img.shields.io/badge/written_on-.NET_Framework_4.6-512BD4.svg?logo=dotnet)](https://dotnet.microsoft.com/download/dotnet-framework/net46)
 [![](https://img.shields.io/badge/written_on-CSharp-239120.svg?logo=csharp)](https://github.com/Zalexanninev15/xdpl)
 [![](https://img.shields.io/github/v/release/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/releases/latest)
 [![](https://img.shields.io/github/last-commit/Zalexanninev15/VitNX/main.svg)](https://github.com/Zalexanninev15/VitNX/commits/main)
+[![](https://github.com/Zalexanninev15/VitNX/actions/workflows/main.yml/badge.svg)](https://github.com/Zalexanninev15/VitNX/actions/workflows/main.yml)
 [![](https://img.shields.io/github/stars/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/stargazers)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![](https://img.shields.io/badge/donate-Buy_Me_a_Coffee-F94400.svg)](https://zalexanninev15.jimdofree.com/buy-me-a-coffee)
 
 ## Description
 
-Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.8)
+Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.6)
 
 ## Documentation
 
-Previously was, but now it is not, looking for a documentation generator based on the source code. Old version of documentation (for current release 2.3) - available [here](https://htmlpreview.github.io/?https://github.com/Zalexanninev15/VitNX/blob/b0c0a732441b5af853214dc462b321b0e8b07d38/docs/annotated.html) ([download sources](https://downgit.github.io/#/home?url=https://github.com/Zalexanninev15/VitNX/blob/b0c0a732441b5af853214dc462b321b0e8b07d38/docs) for normal viewer)
+A full description of all classes, functions and other object can be found in the generated documentation
 
 ## Used in
 
