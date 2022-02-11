@@ -1,1 +1,0 @@
-c['584']=[['585',"VitNX_Label Constructor","topic_0000000000000269.html",0],['586',"Methods","topic_0000000000000268_methods--.html",1]];

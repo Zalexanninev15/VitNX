@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# S2223: Non-constant static fields should not be visible
+dotnet_diagnostic.S2223.severity = error

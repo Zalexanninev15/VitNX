@@ -1,1 +1,0 @@
-search_result['1532']=["topic_000000000000072E.html","Images Class",""];

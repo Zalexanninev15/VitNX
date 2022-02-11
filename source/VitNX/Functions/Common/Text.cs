@@ -33,6 +33,43 @@ namespace VitNX.Functions.Common.Text
         public static bool ContainsNumbersLatters(string text) => text.All(char.IsLetterOrDigit) ? true : false;
 
         /// <summary>
+        /// Replacers the monster.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="forReplace">The for replace.</param>
+        /// <param name="toReplace">The to replace.</param>
+        /// <param name="countOfSpacesWith_forReplace">The count of spaces with forReplace. From 0 to 2.</param>
+        /// <returns>A string.</returns>
+        public static string ReplacerMonster(string text, List<string> forReplace, List<string> toReplace, int countOfSpacesWith_forReplace)
+        {
+            for (int i = 0; i < forReplace.Count; i++)
+            {
+                switch (countOfSpacesWith_forReplace)
+                {
+                    case 0:
+                        {
+                            if (text.Contains($"{forReplace[i]}"))
+                                text = text.Replace(forReplace[i], toReplace[i]);
+                            break;
+                        }
+                    case 1:
+                        {
+                            if (text.Contains($" {forReplace[i]}"))
+                                text = text.Replace(forReplace[i], toReplace[i]);
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (text.Contains($" {forReplace[i]} "))
+                                text = text.Replace(forReplace[i], toReplace[i]);
+                            break;
+                        }
+                }
+            }
+            return text;
+        }
+
+        /// <summary>
         /// Contains the only numbers.
         /// </summary>
         /// <param name="text">The text.</param>

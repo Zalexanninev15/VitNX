@@ -1,1 +1,0 @@
-c['987']=[['988',"Dispose Method","topic_00000000000003E5.html",0],['989',"NotUsed Method","topic_00000000000003E4.html",0],['990',"Report Method","topic_00000000000003E1.html",0],['991',"SetColor Method","topic_00000000000003E2.html",0],['992',"SetText Method","topic_00000000000003E3.html",0]];

@@ -1,1 +1,0 @@
-search_result['115']=["topic_0000000000000055.html","Monitor Class","Work with informations of Monitor(s)."];

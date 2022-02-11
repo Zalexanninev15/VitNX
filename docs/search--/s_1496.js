@@ -1,1 +1,0 @@
-search_result['1496']=["topic_0000000000000711.html","Manager Class","The settings manager of notification."];

@@ -20,10 +20,30 @@ namespace VitNX.Functions.Common.Information
     /// </summary>
     public class Windows
     {
-        public static string ComputerName = Environment.MachineName;
-        public static string CurrentUsername = Environment.UserName;
-        public static DateTime LocalTime = new Microsoft.VisualBasic.Devices.Clock().LocalTime;
-        public static bool Is64bit = Environment.Is64BitOperatingSystem;
+        /// <summary>
+        /// Gets the name of PC.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetComputerName() => Environment.MachineName;
+
+        /// <summary>
+        /// Gets the current user (name).
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetCurrentUsername() => Environment.UserName;
+
+        /// <summary>
+        /// Gets locals the time.
+        /// </summary>
+        /// <returns>A DateTime.</returns>
+        public static DateTime GetLocalTime() => new Microsoft.VisualBasic.Devices.Clock().LocalTime;
+
+        /// <summary>
+        /// Windows is x64 (64-bit).
+        /// </summary>
+        /// <returns>A bool.</returns>
+        public static bool Is64bit() => Environment.Is64BitOperatingSystem;
+
         public static string WindowsVersion = Convert.ToString(Environment.OSVersion.Version);
         public static double WindowsVersionFromREG = double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", ""), System.Globalization.CultureInfo.InvariantCulture);
         public static string WindowsEditionIDFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "");
@@ -71,6 +91,33 @@ namespace VitNX.Functions.Common.Information
             }
             File.WriteAllLines(tempFile, usersList);
             return tempFile;
+        }
+
+        /// <summary>
+        /// Gets Windows the serial key.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsSerialKey()
+        {
+            ManagementObjectSearcher searcher112 = new ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem");
+            ManagementObjectCollection information112 = searcher112.Get();
+            foreach (ManagementObject obj112 in information112)
+                return Convert.ToString(obj112["SerialNumber"]);
+            return "S-E-R-I-A-L_K-E-Y";
+        }
+
+        /// <summary>
+        /// Gets the Windows accent color.
+        /// </summary>
+        /// <returns>A Color.</returns>
+        public static Color GetWindowsAccentColor()
+        {
+            var userColorSet = Import.GetImmersiveUserColorSetPreference(false, false);
+            var colorType = Import.GetImmersiveColorTypeFromName(System.Runtime.InteropServices.Marshal.StringToHGlobalUni("ImmersiveStartSelectionBackground"));
+            var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
+                colorType,
+                false, 0);
+            return Common.CShap.ConvertDWordColorToRGB(colorSetEx);
         }
     }
 

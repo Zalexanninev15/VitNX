@@ -1,1 +1,0 @@
-search_result['607']=["topic_0000000000000187.html","SpecialWindowHandles Enumeration",""];

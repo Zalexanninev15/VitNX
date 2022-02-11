@@ -1,1 +1,0 @@
-c['810']=[['811',"GetContents Method","topic_0000000000000334.html",0],['812',"OnCreateControl Method","topic_0000000000000335.html",0],['813',"OnLayout Method","topic_0000000000000337.html",0],['814',"OnPaint Method","topic_0000000000000339.html",0],['815',"OnResize Method","topic_0000000000000336.html",0],['816',"Redraw Method","topic_0000000000000338.html",0]];

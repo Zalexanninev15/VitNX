@@ -1,1 +1,0 @@
-search_result['265']=["topic_00000000000000B3.html","Processes.OpenLink Method","Opens the link of site."];
