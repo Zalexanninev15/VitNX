@@ -193,81 +193,111 @@ The file output path.</param>
       <summary>
 Work with informations of Windows System.</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.ComputerName">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.CurrentUsername">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.LocalTime">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.Is64bit">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsVersion">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsVersionFromREG">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsEditionIDFromREG">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsCurrentBuildNumberFromREG">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsProductNameFromREG">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsDisplayVersionFromREG">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsReleaseIdFromREG">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Windows.WindowsStartupFolderPath">
-    </member>
-    <member name="M:VitNX.Functions.Common.Information.Windows.WriteAllUsersToTempFile">
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetComputerName">
       <summary>
-Writes the all users to temp file: %TEMP%\Users.txt.</summary>
+Gets the name of PC.</summary>
       <returns>
 A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetCurrentUsername">
+      <summary>
+Gets the current user (name).</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetLocalTime">
+      <summary>
+Gets locals the time.</summary>
+      <returns>
+A DateTime.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.Is64bit">
+      <summary>
+Windows is x64 (64-bit).</summary>
+      <returns>
+A bool.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsVersion">
+      <summary>
+Gets the Windows version.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsVersionFromREG">
+      <summary>
+Gets the Windows version from the Windows Registry.</summary>
+      <returns>
+A double.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsEditionIDFromREG">
+      <summary>
+Gets the Windows edition from the Windows Registry.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsCurrentBuildNumberFromREG">
+      <summary>
+Gets the Windows current build number from the Windows Registry.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsProductNameFromREG">
+      <summary>
+Gets the Windows product name from the Windows Registry.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsDisplayVersionFromREG">
+      <summary>
+Gets the Windows displayed version from the Windows Registry.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsReleaseIdFromREG">
+      <summary>
+Gets the windows release id from the Windows Registry.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsStartupFolderPath">
+      <summary>
+Gets the Windows startup folder path.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.WindowsUseLightThemeInSystem">
+      <summary>
+Windows use light theme in system from the Windows Registry, for Windows 10+.</summary>
+      <returns>
+A bool.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.WindowsUseLightThemeForApps">
+      <summary>
+Windows use light theme for apps from the Windows Registry, for Windows 10+.</summary>
+      <returns>
+A bool.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsSerialKey">
+      <summary>
+Gets Windows the serial key.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Windows.GetWindowsAccentColor">
+      <summary>
+Gets the Windows accent color.</summary>
+      <returns>
+A Color.</returns>
     </member>
     <member name="T:VitNX.Functions.Common.Information.Cpu">
       <summary>
 Work with informations of CPU.</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._Name">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._DeviceID">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._Manufacturer">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._CurrentClockSpeed">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._MaxClockSpeed">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._Caption">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._NumberOfCores">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._NumberOfEnabledCore">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._NumberOfLogicalProcessors">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._Architecture">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._Family">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._ProcessorType">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._Characteristics">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._AddressWidth">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._SerialNumber">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._ThreadCount">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._LoadPercentage">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._CurrentVoltage">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Cpu._UsagePercent">
-    </member>
-    <member name="M:VitNX.Functions.Common.Information.Cpu.Set">
+    <member name="M:VitNX.Functions.Common.Information.Cpu.Characteristics">
       <summary>
-Set (get) values for CPU's variables.</summary>
+Gets all characteristics.</summary>
+      <returns>
+An array of string.</returns>
     </member>
     <member name="M:VitNX.Functions.Common.Information.Cpu.GetArchitecture">
       <summary>
@@ -285,43 +315,25 @@ A string.</returns>
       <summary>
 Work with informations of GPU(s).</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._Name">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._Status">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._DeviceID">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._AdapterRAM">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._AdapterDACType">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._Monochrome">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._InstalledDisplayDrivers">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._DriverVersion">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._VideoArchitecture">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._VideoMemoryType">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._MaxRefreshRate">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._MinRefreshRate">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Gpu._VideoModeDescription">
-    </member>
-    <member name="M:VitNX.Functions.Common.Information.Gpu.Set">
+    <member name="M:VitNX.Functions.Common.Information.Gpu.Characteristics">
       <summary>
-Set (get) values for GPU's variables.</summary>
+Gets all characteristics.</summary>
+      <returns>
+An array of string.</returns>
     </member>
     <member name="T:VitNX.Functions.Common.Information.Disk">
       <summary>
 Work with informations of Disk(s).</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Disk._WindowsDiskAvailableFreeSpace">
+    <member name="M:VitNX.Functions.Common.Information.Disk.WindowsDisk">
+      <summary>
+Gets Windows Disk characteristics.</summary>
+      <returns>
+An array of string.</returns>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Disk._WindowsDiskTotalSize">
+    <member name="M:VitNX.Functions.Common.Information.Disk.SetCWindowsSize">
+      <summary>
+Set (get) values for Disk's characteristics (size of Windows).</summary>
     </member>
     <member name="M:VitNX.Functions.Common.Information.Disk.GetAll">
       <summary>
@@ -345,15 +357,11 @@ A long.</returns>
       <param name="driveName">
 The drive name.</param>
     </member>
-    <member name="M:VitNX.Functions.Common.Information.Disk.SetCWindowsSize">
-      <summary>
-Set (get) values for Disk's variables (size of Windows).</summary>
-    </member>
     <member name="T:VitNX.Functions.Common.Information.Monitor">
       <summary>
 Work with informations of Monitor(s).</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Monitor.WorkingArea">
+    <member name="M:VitNX.Functions.Common.Information.Monitor.WorkingArea">
       <summary>
 Gets the working area of monitor in Windows.</summary>
     </member>
@@ -427,39 +435,15 @@ A string.</returns>
       <summary>
 Work with informations of RAM.</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._NameID">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._Capacity">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._ConfiguredVoltage">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._MaxVoltage">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._MemoryType">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._MinVoltage">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._SerialNumber">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._SMBIOSMemoryType">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._Speed">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._MaxMB">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._UsedMB">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._IntRamVirtual">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._Max">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._Used">
-    </member>
-    <member name="F:VitNX.Functions.Common.Information.Ram._RamVirtual">
+    <member name="M:VitNX.Functions.Common.Information.Ram.Characteristics">
+      <summary>
+Gets all characteristics.</summary>
+      <returns>
+An array of string.</returns>
     </member>
     <member name="M:VitNX.Functions.Common.Information.Ram.Set">
       <summary>
-Set (get) values for RAM's variables.</summary>
+Sets (gets) values for RAM's characteristics.</summary>
     </member>
     <member name="T:VitNX.Functions.Common.PowerControl">
       <summary>
@@ -568,6 +552,20 @@ Contains the numbers latters.</summary>
 A bool.</returns>
       <param name="text">
 The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Text.Work.ReplacerMonster(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32)">
+      <summary>
+Replacers the monster.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="forReplace">
+The for replace.</param>
+      <param name="toReplace">
+The to replace.</param>
+      <param name="countOfSpacesWith_forReplace">
+The count of spaces with forReplace. From 0 to 2.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Text.Work.ContainsOnlyNumbers(System.String)">
       <summary>
@@ -809,23 +807,33 @@ An int.</returns>
       <summary>
 Work with config of PC.</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Web.Config.Host">
-    </member>
-    <member name="F:VitNX.Functions.Common.Web.Config.LocalIPv6">
-    </member>
-    <member name="F:VitNX.Functions.Common.Web.Config.LocalIPv4">
-    </member>
-    <member name="F:VitNX.Functions.Common.Web.Config._PublicIP">
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.Set">
+    <member name="M:VitNX.Functions.Common.Web.Config.GetHostName">
       <summary>
-Set (get) value of _PublicIP for PC internet config.</summary>
+Gets the host name (name of PC, Windows System).</summary>
+      <returns>
+A string.</returns>
     </member>
-    <member name="F:VitNX.Functions.Common.Web.Config.DefaultGateway">
+    <member name="M:VitNX.Functions.Common.Web.Config.GetLocalIPv6">
+      <summary>
+Gets the local IPv6 (obsolete, but work).</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Web.Config.GetLocalIPv4">
+      <summary>
+Gets the local IPv4 (obsolete, but work).</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Web.Config.GetPublicIP">
+      <summary>
+Gets the public IP of PC.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Web.Config.DefaultGateway">
       <summary>
 Get DefaultGateway of NetworkInterface in IPAddress.</summary>
     </member>
-    <member name="F:VitNX.Functions.Common.Web.Config.UseProtocols">
+    <member name="M:VitNX.Functions.Common.Web.Config.UseProtocols">
       <summary>
 Activate all security protocols for all network functions to work (HTTPS).</summary>
     </member>
@@ -931,7 +939,7 @@ A string.</returns>
     </member>
     <member name="M:VitNX.Functions.Windows.Apps.Installed.GetPath(System.String)">
       <summary>
-Gets the path of application in regedit.</summary>
+Gets the path of application from the Windows Registry.</summary>
       <returns>
 A string.</returns>
       <param name="applicationName">
@@ -1011,6 +1019,18 @@ Set clipboard text.</summary>
       <summary>
 Control the keyboard.</summary>
     </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.ShowVirtualKeyboard">
+      <summary>
+Shows the virtual keyboard.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.HideVirtualKeyboard">
+      <summary>
+Hides the virtual keyboard.</summary>
+      <returns>
+A bool.</returns>
+    </member>
     <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.KeyDown(System.Windows.Forms.Keys)">
       <summary>
 Sets the KeyDown.</summary>
@@ -1030,6 +1050,18 @@ The keyboard events of Windows.</summary>
 The status.</param>
       <param name="keys">
 The keys.</param>
+    </member>
+    <member name="T:VitNX.Functions.Windows.Controllers.FocusOnControls">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.FocusOnControls.RemoveFocus">
+      <summary>
+Removing the focus from the element/control from which the function is called.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.FocusOnControls.VolumeOnFocus(System.Boolean)">
+      <summary>
+Enable/disable sound (nasty) when focusing on an item/control..</summary>
+      <param name="off">
+If true, off.</param>
     </member>
     <member name="T:VitNX.Functions.Windows.Controllers.Monitor">
       <summary>
@@ -1885,33 +1917,11 @@ The enums for imported functions.</summary>
       <summary>
 Functions that use WinAPI and can be built into your applications without writing extra code.</summary>
     </member>
-    <member name="F:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.Drag">
-    </member>
-    <member name="F:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.MouseX">
-    </member>
-    <member name="F:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.MouseY">
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.RemoveFocus">
-      <summary>
-Removing the focus from the element/control from which the function is called.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.GetWindowsAccentColor">
-      <summary>
-Gets the windows accent color.</summary>
-      <returns>
-A Color.</returns>
-    </member>
     <member name="M:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.CheckDebugger">
       <summary>
 Checks for the debuggers.</summary>
       <returns>
 A bool.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.VolumeOnFocus(System.Boolean)">
-      <summary>
-Enable/disable sound (nasty) when focusing on an item/control..</summary>
-      <param name="off">
-If true, off.</param>
     </member>
     <member name="N:VitNX.Functions.Windows">
     </member>

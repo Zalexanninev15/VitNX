@@ -1,0 +1,1 @@
+search_result['580']=["topic_0000000000000198.html","DISPLAYCONFIG_MODE_INFO_TYPE Enumeration",""];

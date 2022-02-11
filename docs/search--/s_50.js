@@ -1,0 +1,1 @@
+search_result['50']=["topic_0000000000000023.html","Windows.GetWindowsProductNameFromREG Method","Gets the Windows product name from the Windows Registry."];

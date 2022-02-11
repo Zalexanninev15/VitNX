@@ -1,0 +1,1 @@
+c['72']=[['73',"GetFirmwareType Method","topic_0000000000000042.html",0]];

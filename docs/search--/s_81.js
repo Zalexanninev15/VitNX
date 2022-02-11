@@ -1,0 +1,1 @@
+search_result['81']=["topic_0000000000000033.html","Disk.SetCWindowsSize Method","Set (get) values for Disk\u0027s characteristics (size of Windows)."];

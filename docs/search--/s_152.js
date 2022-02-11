@@ -1,0 +1,1 @@
+search_result['152']=["topic_0000000000000060.html","Work.ListRemoveStringsFromList Method","Lists the remove strings from list."];
