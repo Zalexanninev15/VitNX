@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO.Compression;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace VitNX.Functions.Common.Text
 {
@@ -31,6 +31,43 @@ namespace VitNX.Functions.Common.Text
         /// <param name="text">The text.</param>
         /// <returns>A bool.</returns>
         public static bool ContainsNumbersLatters(string text) => text.All(char.IsLetterOrDigit) ? true : false;
+
+        /// <summary>
+        /// Replacers the monster.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="forReplace">The for replace.</param>
+        /// <param name="toReplace">The to replace.</param>
+        /// <param name="countOfSpacesWith_forReplace">The count of spaces with forReplace. From 0 to 2.</param>
+        /// <returns>A string.</returns>
+        public static string ReplacerMonster(string text, List<string> forReplace, List<string> toReplace, int countOfSpacesWith_forReplace)
+        {
+            for (int i = 0; i < forReplace.Count; i++)
+            {
+                switch (countOfSpacesWith_forReplace)
+                {
+                    case 0:
+                        {
+                            if (text.Contains($"{forReplace[i]}"))
+                                text = text.Replace(forReplace[i], toReplace[i]);
+                            break;
+                        }
+                    case 1:
+                        {
+                            if (text.Contains($" {forReplace[i]}"))
+                                text = text.Replace(forReplace[i], toReplace[i]);
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (text.Contains($" {forReplace[i]} "))
+                                text = text.Replace(forReplace[i], toReplace[i]);
+                            break;
+                        }
+                }
+            }
+            return text;
+        }
 
         /// <summary>
         /// Contains the only numbers.

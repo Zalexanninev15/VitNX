@@ -1,0 +1,1 @@
+search_result['58']=["topic_000000000000002B.html","Cpu Class","Work with informations of CPU."];

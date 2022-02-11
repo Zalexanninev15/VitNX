@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using System.Text;
+
+using VitNX.Functions.Windows.Controllers;
 
 using static VitNX.Functions.Windows.Win32.Enums;
 
@@ -18,6 +20,40 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("winmm.dll")]
         public static extern int WaveOutGetVolume(IntPtr h,
             out uint dwVolume);
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        public static extern long WritePrivateProfileString(string Section,
+            string Key,
+            string Value,
+            string FilePath);
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        public static extern int GetPrivateProfileString(string Section,
+            string Key,
+            string Default,
+            StringBuilder RetVal,
+            int Size,
+            string FilePath);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr SetWindowsHookEx(
+               int idHook,
+               LowLevelKeyboardProcDelegate lpfn,
+               IntPtr hMod, int dwThreadId);
+
+        public delegate IntPtr LowLevelKeyboardProcDelegate(
+                int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        [DllImport("Kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GetModuleHandle(IntPtr lpModuleName);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr CallNextHookEx(
+            IntPtr hhk,
+            int nCode, IntPtr wParam, IntPtr lParam);
 
         [DllImport("winmm.dll")]
         public static extern int WaveOutSetVolume(IntPtr h,
@@ -47,13 +83,12 @@ namespace VitNX.Functions.Windows.Win32
             int nRightRect,
             int nBottomRect,
             int nWidthEllipse,
-            int nHeightEllipse
-            );
+            int nHeightEllipse);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool GetWindowRect(IntPtr hWnd,
-            out RECT lpRect);
+           out RECT lpRect);
 
         [DllImport("user32.dll")]
         public static extern IntPtr WindowFromPoint(Point point);
@@ -72,6 +107,33 @@ namespace VitNX.Functions.Windows.Win32
             bool bSkipCheckOnFail);
 
         [DllImport("gdi32.dll")]
+        public static extern bool BitBlt(IntPtr hObject,
+            int nXDest,
+            int nYDest,
+            int nWidth,
+            int nHeight,
+            IntPtr hObjectSource,
+            int nXSrc,
+            int nYSrc,
+            int dwRop);
+
+        [DllImport("gdi32.dll")]
+        public static extern IntPtr CreateCompatibleBitmap(IntPtr hDC, int nWidth,
+            int nHeight);
+
+        [DllImport("gdi32.dll")]
+        public static extern IntPtr CreateCompatibleDC(IntPtr hDC);
+
+        [DllImport("gdi32.dll")]
+        public static extern bool DeleteDC(IntPtr hDC);
+
+        [DllImport("gdi32.dll")]
+        public static extern bool DeleteObject(IntPtr hObject);
+
+        [DllImport("gdi32.dll")]
+        public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
+
+        [DllImport("gdi32.dll")]
         public static extern int GetDeviceCaps(IntPtr hdc,
             int nIndex);
 
@@ -82,13 +144,15 @@ namespace VitNX.Functions.Windows.Win32
 
         [DllImport("user32.dll")]
         public static extern int QueryDisplayConfig(QUERY_DEVICE_CONFIG_FLAGS flags,
-            ref uint numPathArrayElements, [Out] NativeControls.Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
-            ref uint numModeInfoArrayElements, [Out] NativeControls.Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
-            IntPtr currentTopologyId
-            );
+            ref uint numPathArrayElements,
+            [Out] Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
+            ref uint numModeInfoArrayElements,
+            [Out] Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
+            IntPtr currentTopologyId);
 
         [DllImport("user32.dll")]
-        public static extern int DisplayConfigGetDeviceInfo(ref NativeControls.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
+        public static extern int DisplayConfigGetDeviceInfo(ref Monitor.
+            DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
 
         [DllImport("user32.dll")]
         public static extern IntPtr SetFocus(IntPtr hWnd);
@@ -101,6 +165,15 @@ namespace VitNX.Functions.Windows.Win32
             int cx,
             int cy,
             SetWindowPosFlags uFlags);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetDesktopWindow();
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowDC(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDC);
 
         [DllImport("user32.dll")]
         public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
@@ -185,6 +258,8 @@ namespace VitNX.Functions.Windows.Win32
         public const int HTCAPTION = 0x2;
         public const int WM_NCPAINT = 0x0085;
         public const int WM_ACTIVATEAPP = 0x001C;
+        public const int WH_KEYBOARD_LL = 13;
+        public const int SRCCOPY = 0x00CC0020;
 
         public static class SWP
         {
@@ -227,6 +302,16 @@ namespace VitNX.Functions.Windows.Win32
             public int Top;
             public int Right;
             public int Bottom;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct KeyboardHookStruct
+        {
+            public readonly int VirtualKeyCode;
+            public readonly int ScanCode;
+            public readonly int Flags;
+            public readonly int Time;
+            public readonly IntPtr ExtraInfo;
         }
 
         public static class HWND
@@ -673,62 +758,6 @@ namespace VitNX.Functions.Windows.Win32
     /// </summary>
     public static class StandaloneImportFunctions
     {
-        public static bool Drag;
-        public static int MouseX;
-        public static int MouseY;
-
-        private static uint SavedVolumeLevel;
-        private static bool VolumeLevelSaved = false;
-
-        /// <summary>
-        /// Removing the focus from the element/control from which the function is called.
-        /// </summary>
-        public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
-
-        /// <summary>
-        /// Applying Windows 11 roundings to a window.
-        /// </summary>
-        /// <param name="Handler">The handler.</param>
-        public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
-        {
-            try
-            {
-                var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
-                var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-                Import.DwmSetWindowAttribute(Handler, attribute, new[] { Convert.ToInt32(preference) }, sizeof(uint));
-            }
-            catch { }
-        }
-
-        /// <summary>
-        /// Gets the windows accent color.
-        /// </summary>
-        /// <returns>A Color.</returns>
-        public static Color GetWindowsAccentColor()
-        {
-            var userColorSet = Import.GetImmersiveUserColorSetPreference(false, false);
-            var colorType = Import.GetImmersiveColorTypeFromName(Marshal.StringToHGlobalUni("ImmersiveStartSelectionBackground"));
-            var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet, colorType, false, 0);
-            return Common.CShap.ConvertDWordColorToRGB(colorSetEx);
-        }
-
-        /// <summary>
-        ///Set the window to the lower right corner.
-        /// </summary>
-        /// <param name="Handler">The handler.</param>
-        public static void WindowToLowerRightCorner(IntPtr Handler)
-        {
-            RECT rct;
-            Import.GetWindowRect(Handler, out rct);
-            Rectangle screen = Screen.FromHandle(Handler).Bounds;
-            Point pt = new Point(screen.Left + screen.Width / 2 - (rct.Right - rct.Left) / 2,
-                screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
-            Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
-                pt.X, pt.Y, 0, 0,
-                SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOSIZE |
-                SetWindowPosFlags.SWP_SHOWWINDOW);
-        }
-
         /// <summary>
         /// Checks for the debuggers.
         /// </summary>
@@ -738,49 +767,14 @@ namespace VitNX.Functions.Windows.Win32
             bool isDebuggerPresent = false;
             try
             {
-                Import.CheckRemoteDebuggerPresent(System.Diagnostics.Process.GetCurrentProcess().Handle, ref isDebuggerPresent);
+                Import.CheckRemoteDebuggerPresent(System.Diagnostics.Process.GetCurrentProcess().
+                    Handle, ref isDebuggerPresent);
                 return isDebuggerPresent;
             }
             catch
             {
                 return isDebuggerPresent;
             }
-        }
-
-        /// <summary>
-        /// Enable/disable sound (nasty) when focusing on an item/control..
-        /// </summary>
-        /// <param name="off">If true, off.</param>
-        public static void VolumeOnFocus(bool off = true)
-        {
-            if (off)
-            {
-                Import.WaveOutGetVolume(IntPtr.Zero, out SavedVolumeLevel);
-                VolumeLevelSaved = true;
-                Import.WaveOutSetVolume(IntPtr.Zero, 0);
-            }
-            else
-            {
-                if (VolumeLevelSaved)
-                {
-                    Import.WaveOutSetVolume(IntPtr.Zero, SavedVolumeLevel);
-                    VolumeLevelSaved = true;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Applying a native dark window title for the application if it runs on Windows 10 or higher..
-        /// </summary>
-        /// <param name="Handler">The handler.</param>
-        public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
-        {
-            try
-            {
-                if (Import.DwmSetWindowAttribute(Handler, 19, new[] { 1 }, 4) != 0)
-                    Import.DwmSetWindowAttribute(Handler, 20, new[] { 1 }, 4);
-            }
-            catch { }
         }
     }
 }

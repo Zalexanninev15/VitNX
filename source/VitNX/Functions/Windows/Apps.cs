@@ -113,8 +113,7 @@ namespace VitNX.Functions.Windows.Apps
             };
             start.WaitForExit();
             start.Start();
-            string output = start.StandardOutput.ReadToEnd();
-            return output;
+            return start.StandardOutput.ReadToEnd();
         }
 
         /// <summary>
@@ -227,7 +226,7 @@ namespace VitNX.Functions.Windows.Apps
         }
 
         /// <summary>
-        /// Gets the path of application in regedit.
+        /// Gets the path of application from the Windows Registry.
         /// </summary>
         /// <param name="applicationName">The application name.</param>
         /// <returns>A string.</returns>

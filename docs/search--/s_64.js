@@ -1,0 +1,1 @@
+search_result['64']=["topic_000000000000002C.html","Cpu.Characteristics Method","Gets all characteristics."];
