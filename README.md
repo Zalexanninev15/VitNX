@@ -14,11 +14,11 @@
 
 ## Description
 
-Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.6)
+Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.6+)
 
 ## Documentation
 
-A full description of all classes, functions and other object can be found in the generated documentation
+A full description of all classes, functions and other object can be found in the generated [documentation](zalexanninev15.github.io/vitnx). There are also actual [examples](https://github.com/Zalexanninev15/VitNX/tree/main/source/Examples), but they use only the smallest functionality of the library (mostly implemented UI)
 
 ## Used in
 
