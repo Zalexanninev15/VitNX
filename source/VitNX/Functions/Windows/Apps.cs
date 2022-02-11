@@ -113,8 +113,7 @@ namespace VitNX.Functions.Windows.Apps
             };
             start.WaitForExit();
             start.Start();
-            string output = start.StandardOutput.ReadToEnd();
-            return output;
+            return start.StandardOutput.ReadToEnd();
         }
 
         /// <summary>
