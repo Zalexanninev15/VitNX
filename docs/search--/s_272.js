@@ -1,1 +1,0 @@
-search_result['272']=["topic_00000000000000BA.html","Installed Class","Work with installed applications."];

@@ -757,32 +757,6 @@ namespace VitNX.Functions.Windows.Win32
     /// </summary>
     public static class StandaloneImportFunctions
     {
-        public static bool Drag;
-        public static int MouseX;
-        public static int MouseY;
-
-        private static uint SavedVolumeLevel;
-        private static bool VolumeLevelSaved = false;
-
-        /// <summary>
-        /// Removing the focus from the element/control from which the function is called.
-        /// </summary>
-        public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
-
-        /// <summary>
-        /// Gets the windows accent color.
-        /// </summary>
-        /// <returns>A Color.</returns>
-        public static Color GetWindowsAccentColor()
-        {
-            var userColorSet = Import.GetImmersiveUserColorSetPreference(false, false);
-            var colorType = Import.GetImmersiveColorTypeFromName(Marshal.StringToHGlobalUni("ImmersiveStartSelectionBackground"));
-            var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
-                colorType,
-                false, 0);
-            return Common.CShap.ConvertDWordColorToRGB(colorSetEx);
-        }
-
         /// <summary>
         /// Checks for the debuggers.
         /// </summary>
@@ -799,30 +773,6 @@ namespace VitNX.Functions.Windows.Win32
             catch
             {
                 return isDebuggerPresent;
-            }
-        }
-
-        /// <summary>
-        /// Enable/disable sound (nasty) when focusing on an item/control..
-        /// </summary>
-        /// <param name="off">If true, off.</param>
-        public static void VolumeOnFocus(bool off = true)
-        {
-            if (off)
-            {
-                Import.WaveOutGetVolume(IntPtr.Zero,
-                    out SavedVolumeLevel);
-                VolumeLevelSaved = true;
-                Import.WaveOutSetVolume(IntPtr.Zero, 0);
-            }
-            else
-            {
-                if (VolumeLevelSaved)
-                {
-                    Import.WaveOutSetVolume(IntPtr.Zero,
-                        SavedVolumeLevel);
-                    VolumeLevelSaved = true;
-                }
             }
         }
     }

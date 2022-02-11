@@ -116,50 +116,57 @@ namespace VitNX.Functions.Common.Web
     /// </summary>
     public class Config
     {
-        public static string Host = Dns.GetHostName();
-
-        [Obsolete]
-        public static string LocalIPv6 = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
-
-        [Obsolete]
-        public static string LocalIPv4 = Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
-
-        public static string _PublicIP = "localhost";
+        /// <summary>
+        /// Gets the host name (name of PC, Windows System).
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetHostName() => Dns.GetHostName();
 
         /// <summary>
-        /// Set (get) value of _PublicIP for PC internet config.
+        /// Gets the local IPv6 (obsolete, but work).
         /// </summary>
-        public static void Set()
+        /// <returns>A string.</returns>
+        public static string GetLocalIPv6() => Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+
+        /// <summary>
+        /// Gets the local IPv4 (obsolete, but work).
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetLocalIPv4() => Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
+
+        /// <summary>
+        /// Gets the public IP of PC.
+        /// </summary>
+        public static string GetPublicIP()
         {
+            string PublicIP = "localhost";
             using (WebClient client = new WebClient())
             {
-                try { _PublicIP = client.DownloadString("https://icanhazip.com"); }
-                catch { _PublicIP = client.DownloadString("https://checkip.amazonaws.com"); }
-                if (_PublicIP == "" || _PublicIP == "0.0.0.0" || _PublicIP == "localhost")
+                try { PublicIP = client.DownloadString("https://icanhazip.com"); }
+                catch { PublicIP = client.DownloadString("https://checkip.amazonaws.com"); }
+                if (PublicIP == "" || PublicIP == "0.0.0.0" || PublicIP == "localhost")
                 {
-                    try { _PublicIP = client.DownloadString("https://checkip.amazonaws.com"); } catch { }
+                    try { PublicIP = client.DownloadString("https://checkip.amazonaws.com"); } catch { PublicIP = "0.0.0.0"; }
                 }
             }
-            _PublicIP = _PublicIP.Trim();
+            return PublicIP.Trim();
         }
 
         /// <summary>
         /// Get DefaultGateway of NetworkInterface in IPAddress.
         /// </summary>
-        public static IPAddress DefaultGateway = NetworkInterface
+        public static IPAddress DefaultGateway() => NetworkInterface
         .GetAllNetworkInterfaces()
         .Where(n => n.OperationalStatus == OperationalStatus.Up)
         .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
         .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
-        .Select(g => g?.Address)
-        .Where(a => a != null)
-        .FirstOrDefault();
+        .Select(g => g?.Address).FirstOrDefault(a => a != null);
 
         /// <summary>
         /// Activate all security protocols for all network functions to work (HTTPS).
         /// </summary>
         ///
-        public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls12 |
+        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;
 

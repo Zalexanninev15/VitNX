@@ -1,1 +1,0 @@
-search_result['247']=["topic_00000000000000AB.html","UseProtocols Field","Activate all security protocols for all network functions to work (HTTPS)."];

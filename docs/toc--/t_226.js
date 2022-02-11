@@ -1,1 +1,0 @@
-c['226']=[['227',"GetClipboardText Class","topic_00000000000000C5.html",1],['230',"Keyboard Class","topic_00000000000000CA.html",1],['235',"Monitor Class","topic_00000000000000CE.html",1],['318',"STATask Class","topic_00000000000000C7.html",1],['322',"TaskBarProgressBar Class","topic_00000000000000BF.html",1],['326',"VolumeControl Class","topic_00000000000000C2.html",1]];

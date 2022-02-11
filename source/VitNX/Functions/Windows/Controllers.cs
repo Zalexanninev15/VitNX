@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using VitNX.Functions.Windows.Apps;
 using VitNX.Functions.Windows.Win32;
 
 namespace VitNX.Functions.Windows.Controllers
@@ -380,6 +381,36 @@ namespace VitNX.Functions.Windows.Controllers
     public class Keyboard
     {
         /// <summary>
+        /// Shows the virtual keyboard.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static bool ShowVirtualKeyboard()
+        {
+            try
+            {
+                Processes.Run("osk");
+                List<string> processes = Processes.GetList();
+                foreach (string process in processes)
+                    return process == "osk" ? true : false;
+                return true;
+            }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// Hides the virtual keyboard.
+        /// </summary>
+        /// <returns>A bool.</returns>
+        public static bool HideVirtualKeyboard()
+        {
+            Processes.Kill("osk.exe");
+            List<string> processes = Processes.GetList();
+            foreach (string process in processes)
+                return process == "osk" ? false : true;
+            return false;
+        }
+
+        /// <summary>
         /// Sets the KeyDown.
         /// </summary>
         /// <param name="vKey">The vkey.</param>
@@ -436,6 +467,41 @@ namespace VitNX.Functions.Windows.Controllers
                         KeyUp(Keys.M);
                         break;
                     }
+            }
+        }
+    }
+
+    public static class FocusOnControls
+    {
+        /// <summary>
+        /// Removing the focus from the element/control from which the function is called.
+        /// </summary>
+        public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
+
+        private static uint SavedVolumeLevel;
+        private static bool VolumeLevelSaved = false;
+
+        /// <summary>
+        /// Enable/disable sound (nasty) when focusing on an item/control..
+        /// </summary>
+        /// <param name="off">If true, off.</param>
+        public static void VolumeOnFocus(bool off = true)
+        {
+            if (off)
+            {
+                Import.WaveOutGetVolume(IntPtr.Zero,
+                    out SavedVolumeLevel);
+                VolumeLevelSaved = true;
+                Import.WaveOutSetVolume(IntPtr.Zero, 0);
+            }
+            else
+            {
+                if (VolumeLevelSaved)
+                {
+                    Import.WaveOutSetVolume(IntPtr.Zero,
+                        SavedVolumeLevel);
+                    VolumeLevelSaved = true;
+                }
             }
         }
     }

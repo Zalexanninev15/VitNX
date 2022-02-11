@@ -1,1 +1,0 @@
-search_result['198']=["topic_000000000000008E.html","Work.RandomNums Method","Randoms the nums."];

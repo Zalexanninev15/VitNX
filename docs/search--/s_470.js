@@ -1,1 +1,0 @@
-search_result['470']=["topic_0000000000000112.html","Import Class","Import the Windows System functions from native DLL."];

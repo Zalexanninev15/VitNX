@@ -1,1 +1,0 @@
-search_result['246']=["topic_00000000000000AA.html","DefaultGateway Field","Get DefaultGateway of NetworkInterface in IPAddress."];

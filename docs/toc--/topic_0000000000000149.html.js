@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000740.html"],['330',"VitNX.Functions.Windows.Win32 Namespace","topic_0000000000000111.html"],['331',"Constants Class","topic_0000000000000144.html"],['349',"Fields","topic_0000000000000144_vars--.html"],['359',"MOUSEEVENTF_MOVE Field","topic_0000000000000149.html"]];

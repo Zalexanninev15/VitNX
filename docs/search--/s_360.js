@@ -1,1 +1,0 @@
-search_result['360']=["topic_00000000000000DE_events--.html","DISPLAYCONFIG_RATIONAL Events",""];

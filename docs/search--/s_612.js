@@ -1,1 +1,0 @@
-search_result['612']=["topic_00000000000001B0.html","DISPLAYCONFIG_SCALING Enumeration",""];

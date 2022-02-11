@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000740.html"],['330',"VitNX.Functions.Windows.Win32 Namespace","topic_0000000000000111.html"],['457',"StandaloneImportFunctions Class","topic_00000000000001F4.html"],['458',"Methods","topic_00000000000001F4_methods--.html"],['460',"GetWindowsAccentColor Method","topic_00000000000001F9.html"]];
