@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['285',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000EA.html"],['323',"Enums Class","topic_0000000000000140.html"],['354',"PROCESS_DPI_AWARENESS Enumeration","topic_00000000000001B5.html"]];

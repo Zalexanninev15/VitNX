@@ -1,0 +1,1 @@
+search_result['114']=["topic_0000000000000045.html","Ram.Set Method","Sets (gets) values for RAM\u0027s characteristics."];

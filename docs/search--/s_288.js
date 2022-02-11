@@ -1,0 +1,1 @@
+search_result['288']=["topic_00000000000000A7.html","Monitor Class","Work with monitor."];

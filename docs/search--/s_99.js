@@ -1,0 +1,1 @@
+search_result['99']=["topic_0000000000000040.html","Monitor.GetAll Method","Gets the all."];
