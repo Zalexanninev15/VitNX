@@ -25,8 +25,8 @@ jobs:
 #     - name: Restore NuGet packages
 #       run: nuget restore source\VitNX.sln
 
-    - name: Build the Solution
-      run: msbuild source\VitNX.sln /p:Configuration=Release
+    - name: Build the VitNX
+      run: msbuild source\VitNX\VitNX.csproj /p:Configuration=Release
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v2.3.1
