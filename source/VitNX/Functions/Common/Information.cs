@@ -231,42 +231,36 @@ namespace VitNX.Functions.Common.Information
     /// </summary>
     public class Gpu
     {
-        public static string _Name = "";
-        public static string _Status = "";
-        public static string _DeviceID = "";
-        public static string _AdapterRAM = "";
-        public static string _AdapterDACType = "";
-        public static string _Monochrome = "";
-        public static string _InstalledDisplayDrivers = "";
-        public static string _DriverVersion = "";
-        public static string _VideoArchitecture = "";
-        public static string _VideoMemoryType = "";
-        public static string _MaxRefreshRate = "";
-        public static string _MinRefreshRate = "";
-        public static string _VideoModeDescription = "";
+        /// <summary>
+        /// Gets all characteristics.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] Characteristics() => Set().Split('/');
 
         /// <summary>
         /// Sets (gets) values for GPU's characteristics.
         /// </summary>
-        public static void Set()
+        private static string Set()
         {
+            string toGPU = "";
             ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
             foreach (ManagementObject obj in myVideoObject.Get())
             {
-                _Name = obj["Name"].ToString();
-                _Status = obj["Status"].ToString();
-                _DeviceID = obj["DeviceID"].ToString();
-                _AdapterRAM = Text.Work.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"]));
-                _AdapterDACType = obj["AdapterDACType"].ToString();
-                _Monochrome = obj["Monochrome"].ToString();
-                _InstalledDisplayDrivers = obj["InstalledDisplayDrivers"].ToString();
-                _DriverVersion = obj["DriverVersion"].ToString();
-                _VideoArchitecture = obj["VideoArchitecture"].ToString();
-                _VideoMemoryType = obj["VideoMemoryType"].ToString();
-                _MaxRefreshRate = obj["MaxRefreshRate"].ToString();
-                _MinRefreshRate = obj["MinRefreshRate"].ToString();
-                _VideoModeDescription = obj["VideoModeDescription"].ToString();
+                toGPU += obj["Name"].ToString() + "/";
+                toGPU += obj["Status"].ToString() + "/";
+                toGPU += obj["DeviceID"].ToString() + "/";
+                toGPU += Text.Work.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"])) + "/";
+                toGPU += obj["AdapterDACType"].ToString() + "/";
+                toGPU += obj["Monochrome"].ToString() + "/";
+                toGPU += obj["InstalledDisplayDrivers"].ToString() + "/";
+                toGPU += obj["DriverVersion"].ToString() + "/";
+                toGPU += obj["VideoArchitecture"].ToString() + "/";
+                toGPU += obj["VideoMemoryType"].ToString() + "/";
+                toGPU += obj["MaxRefreshRate"].ToString() + "/";
+                toGPU += obj["MinRefreshRate"].ToString() + "/";
+                toGPU += obj["VideoModeDescription"].ToString() + "/";
             }
+            return toGPU;
         }
     }
 
@@ -275,8 +269,24 @@ namespace VitNX.Functions.Common.Information
     /// </summary>
     public class Disk
     {
-        public static long _WindowsDiskAvailableFreeSpace = 0;
-        public static long _WindowsDiskTotalSize = 0;
+        /// <summary>
+        /// Gets Windows Disk characteristics.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static long[] WindowsDisk() => SetCWindowsSize();
+
+
+        /// <summary>
+        /// Set (get) values for Disk's characteristics (size of Windows).
+        /// </summary>
+        public static long[] SetCWindowsSize()
+        {
+            long[] rt = new long[2];
+            DriveInfo driveInfo = new DriveInfo(@"C:\Windows");
+            rt[0] = driveInfo.AvailableFreeSpace / 1000000;
+            rt[1] = driveInfo.TotalSize / 1000000;
+            return rt;
+        }
 
         /// <summary>
         /// Gets the all (logical).
@@ -290,14 +300,13 @@ namespace VitNX.Functions.Common.Information
             {
                 string DriveString = string.Empty;
                 DriveString = d.Name + ";";
-                if (d.IsReady == true)
+                if (d.IsReady)
                 {
                     DriveString +=
                         d.DriveFormat + ";" +
                         d.AvailableFreeSpace + ";" +
                         d.TotalSize;
                     drives.Add(DriveString);
-                    DriveString = string.Empty;
                 }
             }
             return drives;
@@ -331,16 +340,6 @@ namespace VitNX.Functions.Common.Information
                     return drive.TotalSize;
             }
             return -1;
-        }
-
-        /// <summary>
-        /// Set (get) values for Disk's characteristics (size of Windows).
-        /// </summary>
-        public static void SetCWindowsSize()
-        {
-            DriveInfo driveInfo = new DriveInfo(@"C:\Windows");
-            _WindowsDiskAvailableFreeSpace = driveInfo.AvailableFreeSpace / 1000000;
-            _WindowsDiskTotalSize = driveInfo.TotalSize / 1000000;
         }
     }
 
@@ -502,46 +501,45 @@ namespace VitNX.Functions.Common.Information
     /// </summary>
     public class Ram
     {
-        public static string _NameID = "";
-        public static string _Capacity = "";
-        public static string _ConfiguredVoltage = "";
-        public static string _MaxVoltage = "";
-        public static string _MemoryType = "";
-        public static string _MinVoltage = "";
-        public static string _SerialNumber = "";
-        public static string _SMBIOSMemoryType = "";
-        public static string _Speed = "";
-        public static int _MaxMB = 0;
-        public static int _UsedMB = 0;
-        public static int _IntRamVirtual = 0;
-        public static ulong _Max = 0;
-        public static ulong _Used = 0;
-        public static ulong _RamVirtual = 0;
+        /// <summary>
+        /// Gets all characteristics.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] Characteristics() => Set().Split('/');
 
         /// <summary>
         /// Sets (gets) values for RAM's characteristics.
         /// </summary>
-        public static void Set()
+        public static string Set()
         {
+            string toRAM = "";
             ManagementObjectSearcher myRamObject = new ManagementObjectSearcher("select * from Win32_PhysicalMemory");
             foreach (ManagementObject obj in myRamObject.Get())
             {
-                _NameID = obj["Name"].ToString();
-                _Capacity = obj["Capacity"].ToString();
-                _ConfiguredVoltage = obj["ConfiguredVoltage"].ToString();
-                _MaxVoltage = obj["MaxVoltage"].ToString();
-                _MemoryType = obj["MemoryType"].ToString();
-                _MinVoltage = obj["MinVoltage"].ToString();
-                _SerialNumber = obj["SerialNumber"].ToString();
-                _SMBIOSMemoryType = obj["SMBIOSMemoryType"].ToString();
-                _Speed = obj["Speed"].ToString();
+                toRAM += obj["Name"].ToString() + "/";
+                toRAM += obj["Capacity"].ToString() + "/";
+                toRAM += obj["ConfiguredVoltage"].ToString() + "/";
+                toRAM += obj["MaxVoltage"].ToString() + "/";
+                toRAM += obj["MemoryType"].ToString() + "/";
+                toRAM += obj["MinVoltage"].ToString() + "/";
+                toRAM += obj["SerialNumber"].ToString() + "/";
+                toRAM += obj["SMBIOSMemoryType"].ToString() + "/";
+                toRAM += obj["Speed"].ToString() + "/";
             }
-            _Max = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1000000;
-            _Used = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / 1000000;
-            _RamVirtual = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailableVirtualMemory / 1000000;
-            _MaxMB = (int)_Max;
-            _UsedMB = (int)_Max - (int)_Used;
-            _IntRamVirtual = (int)_RamVirtual;
+            toRAM += Convert.ToString(new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .TotalPhysicalMemory / 1000000) + "/";
+            toRAM += Convert.ToString(new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .AvailablePhysicalMemory / 1000000) + "/";
+            toRAM += Convert.ToString(new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .AvailableVirtualMemory / 1000000) + "/";
+            toRAM += Convert.ToString((int)new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .TotalPhysicalMemory / 1000000) + "/";
+            toRAM += Convert.ToString((int)new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .TotalPhysicalMemory / 1000000 - (int)new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .AvailablePhysicalMemory / 1000000) + "/";
+            toRAM += Convert.ToString((int)new Microsoft.VisualBasic.Devices.ComputerInfo()
+                .AvailableVirtualMemory / 1000000) + "/";
+            return toRAM;
         }
     }
 }
