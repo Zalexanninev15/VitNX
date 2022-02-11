@@ -44,14 +44,74 @@ namespace VitNX.Functions.Common.Information
         /// <returns>A bool.</returns>
         public static bool Is64bit() => Environment.Is64BitOperatingSystem;
 
-        public static string WindowsVersion = Convert.ToString(Environment.OSVersion.Version);
-        public static double WindowsVersionFromREG = double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", ""), System.Globalization.CultureInfo.InvariantCulture);
-        public static string WindowsEditionIDFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "EditionID", "");
-        public static string WindowsCurrentBuildNumberFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuildNumber", "");
-        public static string WindowsProductNameFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "");
-        public static string WindowsDisplayVersionFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "DisplayVersion", "");
-        public static string WindowsReleaseIdFromREG = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "");
-        public static string WindowsStartupFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+        /// <summary>
+        /// Gets the Windows version.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsVersion() => Convert.ToString(Environment.OSVersion.Version);
+
+        /// <summary>
+        /// Gets the Windows version from the Windows Registry.
+        /// </summary>
+        /// <returns>A double.</returns>
+        public static double GetWindowsVersionFromREG() => double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+            "CurrentVersion", ""),
+            System.Globalization.CultureInfo.InvariantCulture);
+
+        /// <summary>
+        /// Gets the Windows edition from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsEditionIDFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+            "EditionID", "");
+
+        /// <summary>
+        /// Gets the Windows current build number from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsCurrentBuildNumberFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+            "CurrentBuildNumber", "");
+
+        /// <summary>
+        /// Gets the Windows product name from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductNameFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", 
+            "ProductName", "");
+
+        /// <summary>
+        /// Gets the Windows displayed version from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsDisplayVersionFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+            "DisplayVersion", "");
+
+        /// <summary>
+        /// Gets the windows release id from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsReleaseIdFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", 
+            "ReleaseId", "");
+
+        /// <summary>
+        /// Gets the Windows startup folder path.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsStartupFolderPath() => Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+
+        /// <summary>
+        /// Windows use light theme in system from the Windows Registry, for Windows 10+.
+        /// </summary>
+        /// <returns>A bool.</returns>
+        public static bool WindowsUseLightThemeInSystem() => (int)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize",
+            "SystemUsesLightTheme", "1") == 1 ? true : false;
+
+        /// <summary>
+        /// Windows use light theme for apps from the Windows Registry, for Windows 10+.
+        /// </summary>
+        /// <returns>A bool.</returns>
+        public static bool WindowsUseLightThemeForApps() => (int)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize",
+            "AppsUseLightTheme", "1") == 1 ? true : false;
 
         /// <summary>
         /// Writes the all users to temp file: %TEMP%\Users.txt.
@@ -117,7 +177,7 @@ namespace VitNX.Functions.Common.Information
             var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
                 colorType,
                 false, 0);
-            return Common.CShap.ConvertDWordColorToRGB(colorSetEx);
+            return CShap.ConvertDWordColorToRGB(colorSetEx);
         }
     }
 
