@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Windows.Forms;
@@ -114,46 +115,6 @@ namespace VitNX.Functions.Common.Information
             "AppsUseLightTheme", "1") == 1 ? true : false;
 
         /// <summary>
-        /// Writes the all users to temp file: %TEMP%\Users.txt.
-        /// </summary>
-        /// <returns>A string.</returns>
-        public static string WriteAllUsersToTempFile()
-        {
-            string users = Processes.Execute("wmic", "useraccount list full");
-            string tempFile = $@"{Path.GetTempPath()}\Users.txt";
-            FileSystem.WriteTextToFileUTF8(users, tempFile);
-            string[] lines = File.ReadAllLines(tempFile);
-            using (StreamWriter writer = new StreamWriter(tempFile))
-            {
-                foreach (string line in lines)
-                {
-                    if (!string.IsNullOrWhiteSpace(line))
-                        writer.WriteLine(line);
-                }
-            }
-            string[] usersList = File.ReadAllLines(tempFile);
-            for (int i = 0; i < usersList.Length; i++)
-            {
-                if (i == 0)
-                    usersList[0] = "Users:\n\n" + usersList[0];
-                usersList[i] = usersList[i].Replace("TRUE", "Yes");
-                usersList[i] = usersList[i].Replace("FALSE", "No");
-                usersList[i] = usersList[i].Replace("FullName", "Full name");
-                usersList[i] = usersList[i].Replace("LocalAccount", "Local account");
-                usersList[i] = usersList[i].Replace("Degraded", "Degraded\n");
-                usersList[i] = usersList[i].Replace("InstallDate", "Creation date");
-                usersList[i] = usersList[i].Replace("AccountType", "Account type");
-                usersList[i] = usersList[i].Replace("PasswordChangeable", "Password changeable");
-                usersList[i] = usersList[i].Replace("PasswordExpires", "Password expires");
-                usersList[i] = usersList[i].Replace("PasswordRequired", "Password required");
-                usersList[i] = usersList[i].Replace("512", "Plain [512]").Replace("2", "Disconnected [2]").Replace("256", "Temporary duplicate account [256]").Replace("128", "Encrypted password allowed [128]");
-                usersList[i] = usersList[i].Replace("OK", "Enabled\n");
-            }
-            File.WriteAllLines(tempFile, usersList);
-            return tempFile;
-        }
-
-        /// <summary>
         /// Gets Windows the serial key.
         /// </summary>
         /// <returns>A string.</returns>
@@ -186,54 +147,43 @@ namespace VitNX.Functions.Common.Information
     /// </summary>
     public class Cpu
     {
-        public static string _Name = "";
-        public static string _DeviceID = "";
-        public static string _Manufacturer = "";
-        public static string _CurrentClockSpeed = "";
-        public static string _MaxClockSpeed = "";
-        public static string _Caption = "";
-        public static string _NumberOfCores = "";
-        public static string _NumberOfEnabledCore = "";
-        public static string _NumberOfLogicalProcessors = "";
-        public static string _Architecture = "";
-        public static string _Family = "";
-        public static string _ProcessorType = "";
-        public static string _Characteristics = "";
-        public static string _AddressWidth = "";
-        public static string _SerialNumber = "";
-        public static string _ThreadCount = "";
-        public static string _LoadPercentage = "";
-        public static string _CurrentVoltage = "";
-        public static int _UsagePercent = 0;
+        /// <summary>
+        /// Gets all characteristics.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] Characteristics() => Set().Split('/');
 
         /// <summary>
-        /// Set (get) values for CPU's variables.
+        /// Sets (gets) values for CPU's characteristics.
         /// </summary>
-        public static void Set()
+        private static string Set()
         {
+            string toCPU = "";
             ManagementObjectSearcher myProcessorObject = new ManagementObjectSearcher("select * from Win32_Processor");
             foreach (ManagementObject obj in myProcessorObject.Get())
             {
-                _Name = obj["Name"].ToString();
-                _DeviceID = obj["DeviceID"].ToString();
-                _Manufacturer = obj["Manufacturer"].ToString();
-                _CurrentClockSpeed = obj["CurrentClockSpeed"].ToString();
-                _MaxClockSpeed = obj["MaxClockSpeed"].ToString();
-                _Caption = obj["Caption"].ToString();
-                _NumberOfCores = obj["NumberOfCores"].ToString();
-                _NumberOfEnabledCore = obj["NumberOfEnabledCore"].ToString();
-                _NumberOfLogicalProcessors = obj["NumberOfLogicalProcessors"].ToString();
-                _Architecture = obj["Architecture"].ToString();
-                _Family = obj["Family"].ToString();
-                _ProcessorType = obj["ProcessorType"].ToString();
-                _Characteristics = obj["Characteristics"].ToString();
-                _AddressWidth = obj["AddressWidth"].ToString();
-                _SerialNumber = obj["SerialNumber"].ToString();
-                _ThreadCount = obj["ThreadCount"].ToString();
-                _LoadPercentage = obj["LoadPercentage"].ToString();
-                _CurrentVoltage = obj["CurrentVoltage"].ToString();
+                toCPU += obj["Name"].ToString() + "/";
+                toCPU += obj["DeviceID"].ToString() + "/";
+                toCPU += obj["Manufacturer"].ToString() + "/";
+                toCPU += obj["CurrentClockSpeed"].ToString() + "/";
+                toCPU += obj["MaxClockSpeed"].ToString() + "/";
+                toCPU += obj["Caption"].ToString() + "/";
+                toCPU += obj["NumberOfCores"].ToString() + "/";
+                toCPU += obj["NumberOfEnabledCore"].ToString() + "/";
+                toCPU += obj["NumberOfLogicalProcessors"].ToString() + "/";
+                toCPU += obj["Architecture"].ToString() + "/";
+                toCPU += obj["Family"].ToString() + "/";
+                toCPU += obj["ProcessorType"].ToString() + "/";
+                toCPU += obj["Characteristics"].ToString() + "/";
+                toCPU += obj["AddressWidth"].ToString() + "/";
+                toCPU += obj["SerialNumber"].ToString() + "/";
+                toCPU += obj["ThreadCount"].ToString() + "/";
+                toCPU += obj["LoadPercentage"].ToString() + "/";
+                toCPU += obj["CurrentVoltage"].ToString() + "/";
             }
-            _UsagePercent = Convert.ToInt32(new PerformanceCounter("Processor", "% Processor Time", "_Total").NextValue());
+            toCPU += Convert.ToString(Convert.ToInt32(
+                new PerformanceCounter("Processor", "% Processor Time", "_Total").NextValue())) + "/";
+            return toCPU;
         }
 
         /// <summary>
@@ -296,7 +246,7 @@ namespace VitNX.Functions.Common.Information
         public static string _VideoModeDescription = "";
 
         /// <summary>
-        /// Set (get) values for GPU's variables.
+        /// Sets (gets) values for GPU's characteristics.
         /// </summary>
         public static void Set()
         {
@@ -384,7 +334,7 @@ namespace VitNX.Functions.Common.Information
         }
 
         /// <summary>
-        /// Set (get) values for Disk's variables (size of Windows).
+        /// Set (get) values for Disk's characteristics (size of Windows).
         /// </summary>
         public static void SetCWindowsSize()
         {
@@ -402,7 +352,7 @@ namespace VitNX.Functions.Common.Information
         /// <summary>
         /// Gets the working area of monitor in Windows.
         /// </summary>
-        public static Rectangle WorkingArea = Screen.PrimaryScreen.WorkingArea;
+        public static Rectangle WorkingArea() => Screen.PrimaryScreen.WorkingArea;
 
         /// <summary>
         /// Captures the screen to memory stream.
@@ -410,11 +360,12 @@ namespace VitNX.Functions.Common.Information
         /// <returns>A MemoryStream.</returns>
         public static MemoryStream CaptureScreenToMemoryStream()
         {
-            Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 
+                Screen.PrimaryScreen.Bounds.Height);
             Graphics GH = Graphics.FromImage(BM);
             GH.CopyFromScreen(0, 0, 0, 0, BM.Size);
             MemoryStream memoryStream = new MemoryStream();
-            BM.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+            BM.Save(memoryStream, ImageFormat.Png);
             memoryStream.Position = 0;
             return memoryStream;
         }
@@ -568,7 +519,7 @@ namespace VitNX.Functions.Common.Information
         public static ulong _RamVirtual = 0;
 
         /// <summary>
-        /// Set (get) values for RAM's variables.
+        /// Sets (gets) values for RAM's characteristics.
         /// </summary>
         public static void Set()
         {

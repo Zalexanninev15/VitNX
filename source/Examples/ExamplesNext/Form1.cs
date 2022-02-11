@@ -19,5 +19,11 @@ namespace ExamplesNext
         {
             vitNX2_Tab1.SelectedIndex = 0;
         }
+
+        private void vitNX2_Button2_Click(object sender, EventArgs e)
+        {
+            System.IO.File.WriteAllLines(VitNX.Functions.Common.FileSystem.FileNameGenerator("CPU", "txt"),
+                VitNX.Functions.Common.Information.Cpu.Characteristics());
+        }
     }
 }

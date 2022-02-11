@@ -29,60 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.vitNX_ContextMenu1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContextMenu();
-            this.helloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.приветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.您好ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vitNX2_Tab1 = new VitNX.UI.ControlsV2.VitNX2_Tab();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.vitNX2_Button2 = new VitNX.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_TextBox1 = new VitNX.UI.ControlsV2.VitNX2_TextBox();
             this.vitNX2_PictureBox1 = new VitNX.UI.ControlsV2.VitNX2_PictureBox();
             this.vitNX2_ToogleButton1 = new VitNX.UI.ControlsV2.VitNX2_ToogleButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.vitNX2_Button1 = new VitNX.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_Panel2 = new VitNX.UI.ControlsV2.VitNX2_Panel();
-            this.vitNX_ContextMenu1.SuspendLayout();
+            this.vitNX_ContextMenu1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContextMenu();
+            this.helloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.приветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.您好ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vitNX2_Tab1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vitNX2_PictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.vitNX_ContextMenu1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // vitNX_ContextMenu1
-            // 
-            this.vitNX_ContextMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.vitNX_ContextMenu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.vitNX_ContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helloToolStripMenuItem,
-            this.приветToolStripMenuItem,
-            this.您好ToolStripMenuItem});
-            this.vitNX_ContextMenu1.Name = "vitNX_ContextMenu1";
-            this.vitNX_ContextMenu1.Size = new System.Drawing.Size(115, 70);
-            this.vitNX_ContextMenu1.Text = "File";
-            // 
-            // helloToolStripMenuItem
-            // 
-            this.helloToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.helloToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.helloToolStripMenuItem.Name = "helloToolStripMenuItem";
-            this.helloToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.helloToolStripMenuItem.Text = "Hello";
-            // 
-            // приветToolStripMenuItem
-            // 
-            this.приветToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.приветToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.приветToolStripMenuItem.Name = "приветToolStripMenuItem";
-            this.приветToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.приветToolStripMenuItem.Text = "Привет";
-            // 
-            // 您好ToolStripMenuItem
-            // 
-            this.您好ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.您好ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.您好ToolStripMenuItem.Name = "您好ToolStripMenuItem";
-            this.您好ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.您好ToolStripMenuItem.Text = "您好";
             // 
             // vitNX2_Tab1
             // 
@@ -97,6 +62,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.vitNX2_Button2);
             this.tabPage1.Controls.Add(this.vitNX2_TextBox1);
             this.tabPage1.Controls.Add(this.vitNX2_PictureBox1);
             this.tabPage1.Controls.Add(this.vitNX2_ToogleButton1);
@@ -106,6 +72,26 @@
             this.tabPage1.Size = new System.Drawing.Size(426, 205);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
+            // 
+            // vitNX2_Button2
+            // 
+            this.vitNX2_Button2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.vitNX2_Button2.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.vitNX2_Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vitNX2_Button2.BorderRadius = 3;
+            this.vitNX2_Button2.BorderSize = 1;
+            this.vitNX2_Button2.FlatAppearance.BorderSize = 0;
+            this.vitNX2_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vitNX2_Button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vitNX2_Button2.ForeColor = System.Drawing.Color.Black;
+            this.vitNX2_Button2.Location = new System.Drawing.Point(198, 143);
+            this.vitNX2_Button2.Name = "vitNX2_Button2";
+            this.vitNX2_Button2.Size = new System.Drawing.Size(139, 45);
+            this.vitNX2_Button2.TabIndex = 10;
+            this.vitNX2_Button2.Text = "Write users and CPU in Windows to file";
+            this.vitNX2_Button2.TextColor = System.Drawing.Color.Black;
+            this.vitNX2_Button2.UseVisualStyleBackColor = false;
+            this.vitNX2_Button2.Click += new System.EventHandler(this.vitNX2_Button2_Click);
             // 
             // vitNX2_TextBox1
             // 
@@ -207,6 +193,42 @@
             this.vitNX2_Panel2.TabIndex = 7;
             this.vitNX2_Panel2.TextColor = System.Drawing.Color.White;
             // 
+            // vitNX_ContextMenu1
+            // 
+            this.vitNX_ContextMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.vitNX_ContextMenu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.vitNX_ContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helloToolStripMenuItem,
+            this.приветToolStripMenuItem,
+            this.您好ToolStripMenuItem});
+            this.vitNX_ContextMenu1.Name = "vitNX_ContextMenu1";
+            this.vitNX_ContextMenu1.Size = new System.Drawing.Size(115, 70);
+            this.vitNX_ContextMenu1.Text = "File";
+            // 
+            // helloToolStripMenuItem
+            // 
+            this.helloToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.helloToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.helloToolStripMenuItem.Name = "helloToolStripMenuItem";
+            this.helloToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.helloToolStripMenuItem.Text = "Hello";
+            // 
+            // приветToolStripMenuItem
+            // 
+            this.приветToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.приветToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.приветToolStripMenuItem.Name = "приветToolStripMenuItem";
+            this.приветToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.приветToolStripMenuItem.Text = "Привет";
+            // 
+            // 您好ToolStripMenuItem
+            // 
+            this.您好ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.您好ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.您好ToolStripMenuItem.Name = "您好ToolStripMenuItem";
+            this.您好ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.您好ToolStripMenuItem.Text = "您好";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,12 +239,12 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExampleNext";
-            this.vitNX_ContextMenu1.ResumeLayout(false);
             this.vitNX2_Tab1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vitNX2_PictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.vitNX_ContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -240,6 +262,7 @@
         private VitNX.UI.ControlsV2.VitNX2_ToogleButton vitNX2_ToogleButton1;
         private VitNX.UI.ControlsV2.VitNX2_Button vitNX2_Button1;
         private VitNX.UI.ControlsV2.VitNX2_Panel vitNX2_Panel2;
+        private VitNX.UI.ControlsV2.VitNX2_Button vitNX2_Button2;
     }
 }
 

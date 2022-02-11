@@ -55,7 +55,7 @@ namespace VitNX.Functions.Common
         /// <param name="targetFile">The target file.</param>
         public static void DeleteFileForever(string targetFile)
         {
-            try { File.Delete(targetFile); } catch { }
+            File.Delete(targetFile);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace VitNX.Functions.Common
         /// <param name="targetFile">The target file.</param>
         public static void DeleteFileToRecycleBin(string targetFile)
         {
-            try { File.SetAttributes(targetFile, FileAttributes.Normal); } catch { }
+            File.SetAttributes(targetFile, FileAttributes.Normal);
             Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,
                 Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
                 Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
