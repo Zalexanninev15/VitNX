@@ -3,8 +3,9 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
-using static VitNX.Functions.Windows.Win32.Enums;
 using VitNX.Functions.Windows.Controllers;
+
+using static VitNX.Functions.Windows.Win32.Enums;
 
 namespace VitNX.Functions.Windows.Win32
 {

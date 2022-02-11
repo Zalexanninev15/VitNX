@@ -227,7 +227,7 @@ namespace VitNX.Functions.Windows.Apps
         }
 
         /// <summary>
-        /// Gets the path of application in regedit.
+        /// Gets the path of application from the Windows Registry.
         /// </summary>
         /// <param name="applicationName">The application name.</param>
         /// <returns>A string.</returns>
