@@ -1,1 +1,1 @@
-search_result['1491']=["topic_0000000000000700.html","Warning Field",""];
+search_result['1491']=["topic_00000000000006FE.html","MaxCount Field","/// Maximum number of notifications on the screen.\r\n\t\t///"];

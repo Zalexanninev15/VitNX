@@ -1,1 +1,1 @@
-c['970']=[['971',"Fields","topic_0000000000000701_vars--.html",1]];
+c['970']=[['971',"GetImage(Properties) Method","topic_00000000000003DB.html",0],['972',"GetImage(Type, Properties) Method","topic_00000000000003DA.html",0],['973',"GetImage(string, Properties) Method","topic_00000000000003D9.html",0]];

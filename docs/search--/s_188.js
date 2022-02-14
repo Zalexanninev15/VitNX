@@ -1,1 +1,1 @@
-search_result['188']=["topic_0000000000000075.html","DataFromSites.GetHeaderAndContent Method","Gets the header and content of site."];
+search_result['188']=["topic_0000000000000070_attached_props--.html","PowerControl Attached Properties",""];

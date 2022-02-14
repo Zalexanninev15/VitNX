@@ -1,1 +1,1 @@
-search_result['156']=["topic_0000000000000064.html","Work.FixDeEncoding Method","Fixes the de-encoding."];
+search_result['156']=["topic_0000000000000060.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

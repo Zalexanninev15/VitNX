@@ -1,1 +1,1 @@
-search_result['1303']=["topic_000000000000038C.html","VitNX2_MessageBox.Show (String, String, MessageBoxButtons) Method",""];
+search_result['1303']=["topic_0000000000000398_attached_props--.html","Helper Attached Properties",""];

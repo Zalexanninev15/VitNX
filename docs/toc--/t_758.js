@@ -1,1 +1,1 @@
-c['758']=[['759',"GetContents Method","topic_0000000000000307.html",0],['760',"OnCreateControl Method","topic_0000000000000308.html",0],['761',"OnLayout Method","topic_000000000000030A.html",0],['762',"OnPaint Method","topic_000000000000030C.html",0],['763',"OnResize Method","topic_0000000000000309.html",0],['764',"Redraw Method","topic_000000000000030B.html",0]];
+c['758']=[['759',"VitNX_DockPanel Constructor","topic_0000000000000312.html",0],['760',"Methods","topic_000000000000030E_methods--.html",1],['771',"Events","topic_000000000000030E_events--.html",1]];

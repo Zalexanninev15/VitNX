@@ -1,1 +1,1 @@
-search_result['62']=["topic_000000000000002B_props--.html","Cpu Properties",""];
+search_result['62']=["topic_0000000000000025.html","EncrypterAndDecrypter.Encrypt Method","Encrypts the text."];

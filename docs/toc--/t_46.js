@@ -1,1 +1,1 @@
-c['46']=[['47',"Characteristics Method","topic_000000000000002C.html",0],['48',"GetArchitecture Method","topic_000000000000002D.html",0],['49',"GetClockSpeed Method","topic_000000000000002E.html",0]];
+c['46']=[['47',"Methods","topic_0000000000000028_methods--.html",1]];

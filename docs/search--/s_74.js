@@ -1,1 +1,1 @@
-search_result['74']=["topic_0000000000000031.html","Disk Class","Work with informations of Disk(s)."];
+search_result['74']=["topic_000000000000002C.html","CompressAndDecompress.DecompressBytes Method","Decompresses the bytes.\r\nExample: CompressAndDecompress.DecompressBytes(compressed)"];

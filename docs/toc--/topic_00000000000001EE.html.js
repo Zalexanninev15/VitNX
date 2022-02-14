@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['446',"VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace","topic_00000000000001E3.html"],['448',"Constsants Class","topic_00000000000001E5.html"],['449',"Fields","topic_00000000000001E5_vars--.html"],['458',"ToolWindowTabAreaSize Field","topic_00000000000001EE.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_000000000000072A.html"],['448',"VitNX.UI.ControlsV1.BasedOnDarkUI.Collections Namespace","topic_00000000000001EE.html"]];

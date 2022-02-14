@@ -1,1 +1,1 @@
-search_result['1297']=["topic_0000000000000389_props--.html","VitNX2_MessageBox Properties",""];
+search_result['1297']=["topic_000000000000038E.html","VitNX_ProgressBarRounded.OnPaint Method","Raises the Paint event."];

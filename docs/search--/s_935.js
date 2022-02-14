@@ -1,1 +1,1 @@
-search_result['935']=["topic_00000000000002A0_attached_props--.html","VitNX_TextBox Attached Properties",""];
+search_result['935']=["topic_00000000000002A9_methods--.html","VitNX_SectionPanel Methods",""];

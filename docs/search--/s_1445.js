@@ -1,1 +1,1 @@
-search_result['1445']=["topic_00000000000006E0_overloads--.html","FontAwesomeExtensions.AsIcon Method",""];
+search_result['1445']=["topic_00000000000003D8.html","FontAwesome4.GetIcon (Properties) Method",""];

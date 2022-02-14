@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>id Field</title>
+	<title>STATask.Run&lt;TResult&gt; Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">id Field</h1>
+		<h1 class="title">STATask.Run&lt;TResult&gt; Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public id As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function Run(Of  _&nbsp;<br />   <i>TResult</i>)( _&nbsp;<br />   ByVal <i>function</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1">Func</a>(Of TResult) _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1">Task</a>(Of TResult)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> id</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TResult&gt; Run&lt;TResult&gt;(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1">Func</a>&lt;TResult&gt; <i>function</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -188,11 +188,43 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
+<h4 class="subHeading">
+	Type Parameters</h4><dl paramName="TResult" class="parameterList">
+	<dt>
+		<span class="parameter">
+			
+			TResult
+		</span>
+	</dt>
+	<dd>
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
+<p />
+
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="function" class="parameterList">
+	<dt>
+		<span class="parameter">
+			function
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1">Func</a>&lt;TResult&gt; 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TResult&gt; 
 	
 
 
@@ -268,7 +300,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public uint id;
+public static Task&lt;TResult&gt; Run&lt;TResult&gt;(Func&lt;TResult&gt; function)
+ {
+     var tcs = new TaskCompletionSource&lt;TResult&gt;();
+     var thread = new Thread(() =&gt;
+     {
+         try { tcs.SetResult(function()); }
+         catch (Exception e) { tcs.SetException(e); }
+     });
+     thread.SetApartmentState(ApartmentState.STA);
+     thread.Start();
+     return tcs.Task;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +373,11 @@ public uint id;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AC.html">DISPLAYCONFIG_PATH_SOURCE_INFO Structure</a><br />
+			<a href="topic_00000000000000AD.html">STATask Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -352,11 +395,7 @@ public uint id;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
+

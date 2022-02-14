@@ -1,1 +1,1 @@
-search_result['952']=["topic_00000000000002A5_methods--.html","VitNX_ToolStrip Methods",""];
+search_result['952']=["topic_00000000000002B3.html","VitNX_Separator.OnPaintBackground Method","Paints the background of the control."];

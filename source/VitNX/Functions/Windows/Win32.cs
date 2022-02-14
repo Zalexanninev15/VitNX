@@ -17,6 +17,12 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetConsoleWindow();
 
+        [DllImport("user32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+        public static extern IntPtr RegisterDeviceNotification(IntPtr recipient, IntPtr notificationFilter, int flags);
+
+        [DllImport("user32.dll")]
+        public static extern bool UnregisterDeviceNotification(IntPtr handle);
+
         [DllImport("winmm.dll")]
         public static extern int WaveOutGetVolume(IntPtr h,
             out uint dwVolume);
@@ -340,14 +346,14 @@ namespace VitNX.Functions.Windows.Win32
             SWP_NOSENDCHANGING = 0x0400,
             SWP_NOSIZE = 0x0001,
             SWP_NOZORDER = 0x0004,
-            SWP_SHOWWINDOW = 0x0040,
+            SWP_SHOWWINDOW = 0x0040
         }
 
         public enum KEYBOARD_PRESETS: int
         {
             HIDE_THIS_WINDOW = 0,
             HIDE_OR_SHOW_ALL_WINDOWS = 1,
-            SHOW_ALL_WINDOWS = 2,
+            SHOW_ALL_WINDOWS = 2
         }
 
         public enum SpecialWindowHandles
@@ -424,7 +430,7 @@ namespace VitNX.Functions.Windows.Win32
             DISPLAYCONFIG_PIXELFORMAT_24BPP = 3,
             DISPLAYCONFIG_PIXELFORMAT_32BPP = 4,
             DISPLAYCONFIG_PIXELFORMAT_NONGDI = 5,
-            DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32 = 0xffffffff
+            DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32 = 0xFFFFFFFF
         }
 
         public enum DISPLAYCONFIG_MODE_INFO_TYPE : uint
@@ -760,38 +766,11 @@ namespace VitNX.Functions.Windows.Win32
         }
     }
 
-    /// <summary>
-    /// Functions that use WinAPI and can be built into your applications without writing extra code.
-    /// </summary>
-    public static class StandaloneImportFunctions
-    {
-        /// <summary>
-        /// Checks for the debuggers.
-        /// </summary>
-        /// <returns>A bool.</returns>
-        public static bool CheckDebugger()
-        {
-            bool isDebuggerPresent = false;
-            try
-            {
-                Import.CheckRemoteDebuggerPresent(System.Diagnostics.Process.GetCurrentProcess().
-                    Handle, ref isDebuggerPresent);
-                return isDebuggerPresent;
-            }
-            catch
-            {
-                return isDebuggerPresent;
-            }
-        }
-
-        /// <summary>
-        /// Sets the native Windows System theme for controls.
-        /// </summary>
-        /// <param name="handle">The handle.</param>
-        /// <param name="themeMode">The theme mode.</param>
-        public static void SetNativeThemeForControls(IntPtr handle, string themeMode = "DarkMode_Explorer")
-        {
-            Import.SetWindowTheme(handle, themeMode, null);
-        }
-    }
+    ///// <summary>
+    ///// Functions that use WinAPI and can be built into your applications without writing extra code.
+    ///// </summary>
+    //public static class StandaloneImportFunctions
+    //{
+        
+    //}
 }

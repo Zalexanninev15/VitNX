@@ -1,1 +1,1 @@
-search_result['93']=["topic_000000000000003A.html","Monitor.CaptureScreen Method","Captures the screen."];
+search_result['93']=["topic_000000000000003A.html","FileSystem.CopyFolder Method","Copies the folder."];

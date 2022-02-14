@@ -1,1 +1,1 @@
-search_result['916']=["topic_0000000000000298.html","VitNX_SectionPanel.OnPaintBackground Method",""];
+search_result['916']=["topic_000000000000029C.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];

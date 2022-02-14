@@ -1,1 +1,1 @@
-c['460']=[['461',"ScrollValueEventArgs Constructor","topic_00000000000001F1.html",0]];
+c['460']=[['461',"ObservableList.ItemsAdded Event","topic_00000000000001F0.html",0],['462',"ObservableList.ItemsRemoved Event","topic_00000000000001F1.html",0]];

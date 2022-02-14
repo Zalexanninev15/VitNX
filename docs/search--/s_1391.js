@@ -1,1 +1,1 @@
-search_result['1391']=["topic_00000000000003B2_props--.html","ConsoleProgressBar Properties",""];
+search_result['1391']=["topic_00000000000003BD_overloads--.html","VitNX2_Tab.WndProc Method","This member overrides WndProc."];

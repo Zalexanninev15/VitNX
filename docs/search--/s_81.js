@@ -1,1 +1,1 @@
-search_result['81']=["topic_0000000000000033.html","Disk.SetCWindowsSize Method","Set (get) values for Disk\u0027s characteristics (size of Windows)."];
+search_result['81']=["topic_000000000000002E.html","FileSystem.GetItemsListInFolder Method","Gets the items list in folder."];

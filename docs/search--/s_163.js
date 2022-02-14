@@ -1,1 +1,1 @@
-search_result['163']=["topic_0000000000000067_props--.html","EncryptAndDecrypt Properties",""];
+search_result['163']=["topic_0000000000000067.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];

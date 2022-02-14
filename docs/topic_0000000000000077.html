@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DataFromSites.IsValidTelegramBotToken Method</title>
+	<title>PowerControl.Monitor Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DataFromSites.IsValidTelegramBotToken Method</h1>
+		<h1 class="title">PowerControl.Monitor Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Are the valid telegram bot token.</summary-info>
+        <summary-info>The power of monitor.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function IsValidTelegramBotToken( _&nbsp;<br />   ByVal <i>botToken</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub Monitor( _&nbsp;<br />   ByVal <i>worked</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsValidTelegramBotToken(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>botToken</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Monitor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>worked</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,29 +191,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="botToken" class="parameterList">
+	Parameters</h4><dl paramName="worked" class="parameterList">
 	<dt>
 		<span class="parameter">
-			botToken
+			worked
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	</dd>
 </dl>
 <p>
-	The bot token. 
+	If true, worked. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		A bool. 
-	</p>
-	
 
 
 
@@ -288,14 +281,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool IsValidTelegramBotToken(string botToken)
+public static void Monitor(bool worked)
  {
-     try
+     Form frm = new Form();
+     if (worked)
      {
-         using (WebClient client = new WebClient())
-             return !client.DownloadString(new Uri($&quot;https://api.telegram.org/bot{botToken}/getMe&quot;)).Contains(&quot;error_code&quot;);
+         Windows.Win32.Import.mouse_event(Windows.Win32.Constants.MOUSEEVENTF_MOVE, 0, 1, 0, UIntPtr.Zero);
+         frm.Close();
      }
-     catch { return false; }
+     else Windows.Win32.Import.SendMessage(frm.Handle,
+         Windows.Win32.Constants.WM_SYSCOMMAND,
+         (IntPtr)Windows.Win32.Constants.SC_MONITORPOWER,
+         (IntPtr)2);
  }
 					</pre>			
 				</div>
@@ -358,11 +355,11 @@ public static bool IsValidTelegramBotToken(string botToken)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000073.html">DataFromSites Class</a><br />
+			<a href="topic_0000000000000070.html">PowerControl Class</a><br />
 
 
 
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -380,12 +377,7 @@ public static bool IsValidTelegramBotToken(string botToken)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

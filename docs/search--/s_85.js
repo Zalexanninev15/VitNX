@@ -1,1 +1,1 @@
-search_result['85']=["topic_0000000000000037.html","Monitor Class","Work with informations of Monitor(s)."];
+search_result['85']=["topic_0000000000000032.html","FileSystem.DeleteFolderToRecycleBin Method","Deletes the folder to Recycle Bin."];

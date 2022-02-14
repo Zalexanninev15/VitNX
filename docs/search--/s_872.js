@@ -1,1 +1,1 @@
-search_result['872']=["topic_0000000000000275_props--.html","VitNX_ScrollBase Properties",""];
+search_result['872']=["topic_000000000000027A.html","VitNX_RadioButton.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

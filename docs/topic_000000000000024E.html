@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ListView.EnsureVisible Method</title>
+	<title>VitNX_DropdownList.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ListView.EnsureVisible Method</h1>
+		<h1 class="title">VitNX_DropdownList.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub EnsureVisible()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,6 +190,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+	</dd>
+</dl>
+<p>
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
+</p>
+
+<p />
 
 
 
@@ -264,25 +281,102 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void EnsureVisible()
+protected override void OnPaint(PaintEventArgs e)
         {
-            if (SelectedIndices.Count == 0)
-                return;
+            var g = e.Graphics;
 
-            var itemTop = -1;
+            // Draw background
+            using (var b = new SolidBrush(Colors.MediumBackground))
+            {
+                g.FillRectangle(b, ClientRectangle);
+            }
 
-            if (!MultiSelect)
-                itemTop = SelectedIndices[0] * ItemHeight;
-            else
-                itemTop = _anchoredItemEnd * ItemHeight;
+            // Draw normal state
+            if (ControlState == VitNX_ControlState.Normal)
+            {
+                if (ShowBorder)
+                {
+                    using (var p = new Pen(Colors.LightBorder, 1))
+                    {
+                        var modRect = new Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width - 1, ClientRectangle.Height - 1);
+                        g.DrawRectangle(p, modRect);
+                    }
+                }
+            }
 
-            var itemBottom = itemTop + ItemHeight;
+            // Draw hover state
+            if (ControlState == VitNX_ControlState.Hover)
+            {
+                using (var b = new SolidBrush(Colors.VitNXBorder))
+                {
+                    g.FillRectangle(b, ClientRectangle);
+                }
 
-            if (itemTop &lt; Viewport.Top)
-                VScrollTo(itemTop);
+                using (var b = new SolidBrush(Colors.VitNXBackground))
+                {
+                    var arrowRect = new Rectangle(ClientRectangle.Right - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Top, DropdownIcons.small_arrow.Width + 8, ClientRectangle.Height);
+                    g.FillRectangle(b, arrowRect);
+                }
 
-            if (itemBottom &gt; Viewport.Bottom)
-                VScrollTo((itemBottom - Viewport.Height));
+                using (var p = new Pen(Colors.BlueSelection, 1))
+                {
+                    var modRect = new Rectangle(ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Width - 1 - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Height - 1);
+                    g.DrawRectangle(p, modRect);
+                }
+            }
+
+            // Draw pressed state
+            if (ControlState == VitNX_ControlState.Pressed)
+            {
+                using (var b = new SolidBrush(Colors.VitNXBorder))
+                {
+                    g.FillRectangle(b, ClientRectangle);
+                }
+
+                using (var b = new SolidBrush(Colors.BlueSelection))
+                {
+                    var arrowRect = new Rectangle(ClientRectangle.Right - DropdownIcons.small_arrow.Width - 8, ClientRectangle.Top, DropdownIcons.small_arrow.Width + 8, ClientRectangle.Height);
+                    g.FillRectangle(b, arrowRect);
+                }
+            }
+
+            // Draw dropdown arrow
+            using (var img = DropdownIcons.small_arrow)
+            {
+                g.DrawImageUnscaled(img, ClientRectangle.Right - img.Width - 4, ClientRectangle.Top + (ClientRectangle.Height / 2) - (img.Height / 2));
+            }
+
+            // Draw selected item
+            if (SelectedItem != null)
+            {
+                // Draw Icon
+                var hasIcon = SelectedItem.Icon != null;
+
+                if (hasIcon)
+                {
+                    g.DrawImageUnscaled(SelectedItem.Icon, new Point(ClientRectangle.Left + 5, ClientRectangle.Top + (ClientRectangle.Height / 2) - (_iconSize / 2)));
+                }
+
+                // Draw Text
+                using (var b = new SolidBrush(Colors.LightText))
+                {
+                    var stringFormat = new StringFormat
+                    {
+                        Alignment = StringAlignment.Near,
+                        LineAlignment = StringAlignment.Center
+                    };
+
+                    var rect = new Rectangle(ClientRectangle.Left + 2, ClientRectangle.Top, ClientRectangle.Width - 16, ClientRectangle.Height);
+
+                    if (hasIcon)
+                    {
+                        rect.X += _iconSize + 7;
+                        rect.Width -= _iconSize + 7;
+                    }
+
+                    g.DrawString(SelectedItem.Text, Font, b, rect, stringFormat);
+                }
+            }
         }
 					</pre>			
 				</div>
@@ -345,11 +439,11 @@ public void EnsureVisible()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000244.html">VitNX_ListView Class</a><br />
+			<a href="topic_0000000000000242.html">VitNX_DropdownList Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -367,12 +461,7 @@ public void EnsureVisible()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

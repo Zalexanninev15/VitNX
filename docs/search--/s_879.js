@@ -1,1 +1,1 @@
-search_result['879']=["topic_000000000000027B.html","VitNX_ScrollBase.ScrollTo Method",""];
+search_result['879']=["topic_000000000000027E_methods--.html","VitNX_ScrollBar Methods",""];

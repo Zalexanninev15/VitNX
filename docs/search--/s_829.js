@@ -1,1 +1,1 @@
-search_result['829']=["topic_0000000000000258.html","VitNX_NumericUpDown.OnMouseLeave Method",""];
+search_result['829']=["topic_0000000000000260.html","VitNX_ListView.GetItemIndex Method",""];

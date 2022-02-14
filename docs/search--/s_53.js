@@ -1,1 +1,1 @@
-search_result['53']=["topic_0000000000000026.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];
+search_result['53']=["topic_0000000000000021.html","EncryptAndDecrypt.SimpleDecryptAsByte Method","Simples the decrypt as byte."];

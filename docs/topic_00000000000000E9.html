@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Monitor.FriendlyName Method</title>
+	<title>value Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Monitor.FriendlyName Method</h1>
+		<h1 class="title">value Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Friendly name of monitor(s).</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;Extension()&gt; _&nbsp;<br />Public Shared Function FriendlyName( _&nbsp;<br />   ByVal <i>screen</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.screen">Screen</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public value As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> FriendlyName(&nbsp;<br />   this <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.screen">Screen</a> <i>screen</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> value</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,29 +189,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="screen" class="parameterList">
-	<dt>
-		<span class="parameter">
-			screen
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.screen">Screen</a> 
-	</dd>
-</dl>
-<p>
-	The screen. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	
 
 
@@ -288,14 +268,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string FriendlyName(this Screen screen)
- {
-     var allFriendlyNames = GetAllMonitorsFriendlyNames();
-     for (var index = 0; index &lt; Screen.AllScreens.Length; index++)
-         if (Equals(screen, Screen.AllScreens[index]))
-             return allFriendlyNames.ToArray()[index];
-     return null;
- }
+public uint value;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -357,11 +330,11 @@ public static string FriendlyName(this Screen screen)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A7.html">Monitor Class</a><br />
+			<a href="topic_00000000000000E8.html">DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS Structure</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -379,12 +352,6 @@ public static string FriendlyName(this Screen screen)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
-

@@ -1,1 +1,1 @@
-search_result['1395']=["topic_00000000000003B5.html","ConsoleProgressBar.SetColor Method",""];
+search_result['1395']=["topic_00000000000003BE_methods--.html","VitNX2_TextBox Methods",""];

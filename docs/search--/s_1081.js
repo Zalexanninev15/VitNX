@@ -1,1 +1,1 @@
-search_result['1081']=["topic_00000000000002F8.html","ActiveContentChanged Event",""];
+search_result['1081']=["topic_00000000000002FE.html","VitNX_DockContent.OnEnter Method","Raises the Enter event."];

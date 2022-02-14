@@ -248,7 +248,7 @@ namespace VitNX.Functions.Common.Information
                 toGPU += obj["Name"].ToString() + "/";
                 toGPU += obj["Status"].ToString() + "/";
                 toGPU += obj["DeviceID"].ToString() + "/";
-                toGPU += Text.Work.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"])) + "/";
+                toGPU += Data.Text.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"])) + "/";
                 toGPU += obj["AdapterDACType"].ToString() + "/";
                 toGPU += obj["Monochrome"].ToString() + "/";
                 toGPU += obj["InstalledDisplayDrivers"].ToString() + "/";
@@ -482,7 +482,6 @@ namespace VitNX.Functions.Common.Information
                     Functions.Windows.Controllers.Monitor.FriendlyName(screen) + ";" +
                     screen.Primary.ToString();
                 screensall.Add(screenString);
-                screenString = string.Empty;
             }
             return screensall;
         }
@@ -501,6 +500,21 @@ namespace VitNX.Functions.Common.Information
         {
             return Processes.Execute("cmd",
                 "/C echo %firmware_type%");
+        }
+    }
+
+    /// <summary>
+    /// Work with informations of COM port.
+    /// </summary>
+    public class ComPort
+    {
+        /// <summary>
+        /// Gets all COM ports (devices).
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] GetAllDevices()
+        {
+            return System.IO.Ports.SerialPort.GetPortNames();
         }
     }
 

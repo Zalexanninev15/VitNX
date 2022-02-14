@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Properties Constructor</title>
+	<title>VitNX2_PictureBox.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Properties Constructor</h1>
+		<h1 class="title">VitNX2_PictureBox.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls</a>
+<a href="topic_0000000000000397.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New( _&nbsp;<br />   ByVal <i>type</i> As <a target="_top" href="topic_00000000000003C6.html" onclick="this.target='';return true;">Type</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>pe</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public Properties(&nbsp;<br />   <a target="_top" href="topic_00000000000003C6.html" onclick="this.target='';return true;">Type</a> <i>type</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pe</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,18 +191,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="type" class="parameterList">
+	Parameters</h4><dl paramName="pe" class="parameterList">
 	<dt>
 		<span class="parameter">
-			type
+			pe
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000003C6.html" onclick="this.target='';return true;">Type</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -280,15 +281,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Properties(Type type)
+protected override void OnPaint(PaintEventArgs pe)
  {
-     Size = Default.Size;
-     Location = Default.Location;
-     ForeColor = Default.ForeColor;
-     BackColor = Default.BackColor;
-     BorderColor = Default.BorderColor;
-     ShowBorder = Default.ShowBorder;
-     Type = type;
+     base.OnPaint(pe);
+     var graph = pe.Graphics;
+     var rectContourSmooth = Rectangle.Inflate(ClientRectangle, -1, -1);
+     var rectBorder = Rectangle.Inflate(rectContourSmooth, -borderSize, -borderSize);
+     var smoothSize = borderSize &gt; 0 ? borderSize * 3 : 1;
+     using (var borderGColor = new LinearGradientBrush(rectBorder, borderColor, borderColor2, gradientAngle))
+     using (var pathRegion = new GraphicsPath())
+     using (var penSmooth = new Pen(Parent.BackColor, smoothSize))
+     using (var penBorder = new Pen(borderGColor, borderSize))
+     {
+         graph.SmoothingMode = SmoothingMode.AntiAlias;
+         penBorder.DashStyle = borderLineStyle;
+         penBorder.DashCap = borderCapStyle;
+         pathRegion.AddEllipse(rectContourSmooth);
+         Region = new Region(pathRegion);
+         graph.DrawEllipse(penSmooth, rectContourSmooth);
+         if (borderSize &gt; 0)
+             graph.DrawEllipse(penBorder, rectBorder);
+     }
  }
 					</pre>			
 				</div>
@@ -351,11 +364,11 @@ public Properties(Type type)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003BA.html">Properties Class</a><br />
+			<a href="topic_00000000000003B8.html">VitNX2_PictureBox Class</a><br />
 
 
 
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_0000000000000397.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			
@@ -373,12 +386,7 @@ public Properties(Type type)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

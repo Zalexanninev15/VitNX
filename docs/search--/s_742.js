@@ -1,1 +1,1 @@
-search_result['742']=["topic_0000000000000229_overloads--.html","VitNX_DropdownItem Constructor",""];
+search_result['742']=["topic_000000000000022B.html","VitNX_ComboBox.OnGotFocus Method","Raises the GotFocus event."];

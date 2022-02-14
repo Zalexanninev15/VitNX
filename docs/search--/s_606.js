@@ -1,1 +1,1 @@
-search_result['606']=["topic_00000000000001D2.html","WindowS.MaximizeAllWindows Method","Maximizes the all windows."];
+search_result['606']=["topic_00000000000001B1.html","DISPLAYCONFIG_DEVICE_INFO_TYPE Enumeration",""];

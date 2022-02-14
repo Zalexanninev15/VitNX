@@ -1,1 +1,1 @@
-search_result['1090']=["topic_00000000000002FF.html","VitNX_DockPanel.RemoveContent Method",""];
+search_result['1090']=["topic_0000000000000302.html","VitNX_DockGroup.RemoveContent Method",""];

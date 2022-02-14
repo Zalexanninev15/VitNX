@@ -1,1 +1,1 @@
-search_result['171']=["topic_000000000000006D_attached_props--.html","CompressAndDecompress Attached Properties",""];
+search_result['171']=["topic_000000000000006A.html","Motherboard.GetFirmwareType Method","Gets the firmware type."];

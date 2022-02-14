@@ -1,1 +1,1 @@
-search_result['420']=["topic_00000000000000E0.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Structure",""];
+search_result['420']=["topic_00000000000000E3_vars--.html","DISPLAYCONFIG_MODE_INFO Fields",""];

@@ -1,1 +1,1 @@
-search_result['36']=["topic_000000000000001A.html","Windows Class","Work with informations of Windows System."];
+search_result['36']=["topic_0000000000000015.html","GenerateGuid Field","Generate the GUID."];

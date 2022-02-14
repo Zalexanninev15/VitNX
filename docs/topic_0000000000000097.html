@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VolumeControl.Set Method</title>
+	<title>Processes.Run Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VolumeControl.Set Method</h1>
+		<h1 class="title">Processes.Run Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_0000000000000093.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Sets the current total sound volume.</summary-info>
+        <summary-info>Launch a third-party applications.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub Set( _&nbsp;<br />   ByVal <i>level</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">Single</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub Run( _&nbsp;<br />   ByVal <i>targetFile</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   Optional ByVal <i>arguments</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> = &quot;&quot; _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Set(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> <i>level</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Run(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>arguments</i> = &quot;&quot;&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,18 +191,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="level" class="parameterList">
+	Parameters</h4><dl paramName="targetFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			level
+			targetFile
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The level. 
+	The target file. 
+</p>
+<dl paramName="arguments" class="parameterList">
+	<dt>
+		<span class="parameter">
+			arguments
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The arguments. 
 </p>
 
 <p />
@@ -281,27 +294,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void Set(float level)
-        {
-            IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
-            IMMDevice speakers = null;
-            IAudioEndpointVolume vol = null;
-            deviceEnumerator.GetDefaultAudioEndpoint(Enums.E_DATA_FLOW.eRender,
-                Enums.E_ROLE.eMultimedia,
-                out speakers);
-            Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;
-            speakers.Activate(ref IID_IAudioEndpointVolume, 0,
-                IntPtr.Zero,
-                out object o);
-            vol = (IAudioEndpointVolume)o;
-            vol.SetMasterVolumeLevelScalar(level, Guid.Empty);
-            if (vol != null)
-         Marshal.ReleaseComObject(vol);
-            if (speakers != null)
-         Marshal.ReleaseComObject(speakers);
-            if (deviceEnumerator != null)
-                Marshal.ReleaseComObject(deviceEnumerator);
-        }
+public static void Run(string targetFile,
+     string arguments = &quot;&quot;)
+ {
+     var start = new Process
+     {
+         StartInfo = new ProcessStartInfo
+         {
+             FileName = targetFile,
+             Arguments = arguments,
+             //Verb = &quot;open&quot;
+         }
+     };
+     start.Start();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -363,11 +369,11 @@ public void Set(float level)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000096.html">VolumeControl Class</a><br />
+			<a href="topic_0000000000000094.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_0000000000000093.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			
@@ -385,12 +391,7 @@ public void Set(float level)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

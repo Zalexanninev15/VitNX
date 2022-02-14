@@ -1,1 +1,1 @@
-search_result['1499']=["topic_0000000000000703.html","Error Field",""];
+search_result['1499']=["topic_0000000000000706.html","EnableOffset Field","/// Offset of notifications after closing the previous one.\r\n\t\t///"];

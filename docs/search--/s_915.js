@@ -1,1 +1,1 @@
-search_result['915']=["topic_0000000000000297.html","VitNX_SectionPanel.OnPaint Method",""];
+search_result['915']=["topic_000000000000029B.html","VitNX_ScrollBase.OnLostFocus Method","Raises the LostFocus event."];

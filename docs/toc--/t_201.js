@@ -1,1 +1,1 @@
-c['201']=[['202',"Fields","topic_00000000000000D4_vars--.html",1]];
+c['201']=[['202',"adapterId Field","topic_00000000000000ED.html",0],['203',"id Field","topic_00000000000000EE.html",0],['204',"size Field","topic_00000000000000EC.html",0],['205',"type Field","topic_00000000000000EB.html",0]];

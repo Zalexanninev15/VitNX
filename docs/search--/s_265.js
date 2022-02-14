@@ -1,1 +1,1 @@
-search_result['265']=["topic_000000000000009B_props--.html","STATask Properties",""];
+search_result['265']=["topic_00000000000000A2.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];

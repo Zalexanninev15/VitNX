@@ -1,1 +1,1 @@
-search_result['108']=["topic_0000000000000043_attached_props--.html","Ram Attached Properties",""];
+search_result['108']=["topic_0000000000000044.html","Windows.GetCurrentUsername Method","Gets the current user (name)."];

@@ -1,1 +1,1 @@
-c['967']=[['968',"StackWith(this Bitmap, Bitmap) Method","topic_00000000000006DC.html",0],['969',"StackWith(this Bitmap, Properties) Method","topic_00000000000006DB.html",0]];
+c['967']=[['968',"GetIcon(Properties) Method","topic_00000000000003D8.html",0],['969',"GetIcon(Type, Properties) Method","topic_00000000000003D7.html",0]];

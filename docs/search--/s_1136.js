@@ -1,1 +1,1 @@
-search_result['1136']=["topic_000000000000031D.html","VitNX_ToolWindow.OnResize Method",""];
+search_result['1136']=["topic_0000000000000324.html","VitNX_DockSplitter Class",""];

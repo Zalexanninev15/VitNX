@@ -1,1 +1,1 @@
-search_result['193']=["topic_0000000000000079_attached_props--.html","Config Attached Properties",""];
+search_result['193']=["topic_0000000000000071.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];

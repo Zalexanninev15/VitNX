@@ -1,1 +1,1 @@
-search_result['221']=["topic_0000000000000087.html","Processes.OpenLink Method","Opens the link of site."];
+search_result['221']=["topic_000000000000008A.html","Config Class","Work with config of PC."];

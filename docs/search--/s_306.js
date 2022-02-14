@@ -1,1 +1,1 @@
-search_result['306']=["topic_00000000000000AC_methods--.html","DISPLAYCONFIG_PATH_SOURCE_INFO Methods",""];
+search_result['306']=["topic_00000000000000B2.html","Keyboard.HideVirtualKeyboard Method","Hides the virtual keyboard."];

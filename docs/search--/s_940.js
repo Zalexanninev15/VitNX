@@ -1,1 +1,1 @@
-search_result['940']=["topic_00000000000002A1.html","VitNX_TextBox Constructor",""];
+search_result['940']=["topic_00000000000002AC.html","VitNX_SectionPanel.OnLeave Method","Raises the Leave event."];

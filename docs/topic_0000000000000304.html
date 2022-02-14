@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockPanel.RestoreDockPanelState Method</title>
+	<title>VitNX_DockGroup.EnsureVisible Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockPanel.RestoreDockPanelState Method</h1>
+		<h1 class="title">VitNX_DockGroup.EnsureVisible Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub RestoreDockPanelState( _&nbsp;<br />   ByVal <i>state</i> As <a target="_top" href="topic_00000000000002D7.html" onclick="this.target='';return true;">DockPanelState</a>, _&nbsp;<br />   ByVal <i>getContentBySerializationKey</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-2">Func</a>(Of <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, <a target="_top" href="topic_00000000000002E3.html" onclick="this.target='';return true;">VitNX_DockContent</a>) _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub EnsureVisible()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RestoreDockPanelState(&nbsp;<br />   <a target="_top" href="topic_00000000000002D7.html" onclick="this.target='';return true;">DockPanelState</a> <i>state</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-2">Func</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>, <a target="_top" href="topic_00000000000002E3.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; <i>getContentBySerializationKey</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,35 +189,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="state" class="parameterList">
-	<dt>
-		<span class="parameter">
-			state
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000002D7.html" onclick="this.target='';return true;">DockPanelState</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="getContentBySerializationKey" class="parameterList">
-	<dt>
-		<span class="parameter">
-			getContentBySerializationKey
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-2">Func</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>, <a target="_top" href="topic_00000000000002E3.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -293,54 +264,42 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void RestoreDockPanelState(DockPanelState state, Func&lt;string, VitNX_DockContent&gt; getContentBySerializationKey)
+public void EnsureVisible()
         {
-            foreach (var region in state.Regions)
+            if (DockArea != VitNX_DockArea.Document)
+                return;
+
+            if (VisibleContent == null)
+                return;
+
+            var width = ClientRectangle.Width - Padding.Horizontal - _tabArea.DropdownRectangle.Width;
+            var offsetArea = new Rectangle(Padding.Left, 0, width, 0);
+
+            var tab = _tabs[VisibleContent];
+
+            if (tab.ClientRectangle.IsEmpty)
+                return;
+
+            if (RectangleToTabArea(tab.ClientRectangle).Left &lt; offsetArea.Left)
+                _tabArea.Offset = tab.ClientRectangle.Left;
+            else if (RectangleToTabArea(tab.ClientRectangle).Right &gt; offsetArea.Right)
+                _tabArea.Offset = tab.ClientRectangle.Right - width;
+
+            if (_tabArea.TotalTabSize &lt; offsetArea.Width)
+                _tabArea.Offset = 0;
+
+            if (_tabArea.TotalTabSize &gt; offsetArea.Width)
             {
-                switch (region.Area)
+                var orderedContent = _contents.OrderBy(x =&gt; x.Order);
+                var lastTab = _tabs[orderedContent.Last()];
+                if (lastTab != null)
                 {
-                    case VitNX_DockArea.Left:
-                        _regions[VitNX_DockArea.Left].Size = region.Size;
-                        break;
- 
-             case VitNX_DockArea.Right:
-                        _regions[VitNX_DockArea.Right].Size = region.Size;
-                        break;
- 
-             case VitNX_DockArea.Bottom:
-                        _regions[VitNX_DockArea.Bottom].Size = region.Size;
-                        break;
-                }
-
-                foreach (var group in region.Groups)
-                {
-                    VitNX_DockContent previousContent = null;
-                    VitNX_DockContent visibleContent = null;
-
-                    foreach (var contentKey in group.Contents)
-                    {
-                        var content = getContentBySerializationKey(contentKey);
-
-                        if (content == null)
-                            continue;
-
-                        content.DockArea = region.Area;
-
-                        if (previousContent == null)
-                            AddContent(content);
-                        else
-                            AddContent(content, previousContent.DockGroup);
-
-                        previousContent = content;
-
-                        if (group.VisibleContent == contentKey)
-                            visibleContent = content;
-                    }
-
-                    if (visibleContent != null)
-                        visibleContent.Select();
+                    if (RectangleToTabArea(lastTab.ClientRectangle).Right &lt; offsetArea.Right)
+                        _tabArea.Offset = lastTab.ClientRectangle.Right - width;
                 }
             }
+
+            Invalidate();
         }
 					</pre>			
 				</div>
@@ -403,11 +362,11 @@ public void RestoreDockPanelState(DockPanelState state, Func&lt;string, VitNX_Do
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002F7.html">VitNX_DockPanel Class</a><br />
+			<a href="topic_00000000000002FF.html">VitNX_DockGroup Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
 
 
 			
@@ -425,12 +384,7 @@ public void RestoreDockPanelState(DockPanelState state, Func&lt;string, VitNX_Do
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['1238']=["topic_0000000000000369_methods--.html","DockContentDragFilter Methods",""];
+search_result['1238']=["topic_0000000000000372.html","VitNX_MenuRenderer.OnRenderMenuItemBackground Method","Raises the RenderMenuItemBackground event."];

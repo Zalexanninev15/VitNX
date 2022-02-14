@@ -1,1 +1,1 @@
-search_result['204']=["topic_0000000000000080.html","SendDataToSites Class","The send data to sites."];
+search_result['204']=["topic_000000000000007B.html","IniSettings32.Write Method","Writes the value to key in section."];

@@ -1,1 +1,1 @@
-search_result['205']=["topic_0000000000000080_attached_props--.html","SendDataToSites Attached Properties",""];
+search_result['205']=["topic_000000000000007C.html","IniSettings32.DeleteKey Method","Deletes the key in section."];

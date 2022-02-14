@@ -1,1 +1,1 @@
-search_result['1475']=["topic_00000000000006F2.html","Manager.Alert (String, NotificationType) Method","/// Display a new standard type notification on the screen.\r\n\t\t///"];
+search_result['1475']=["topic_00000000000006F8_events--.html","NewFolderDialog Events",""];

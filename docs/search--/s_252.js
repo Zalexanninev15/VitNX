@@ -1,1 +1,1 @@
-search_result['252']=["topic_0000000000000097.html","VolumeControl.Set Method","Sets the current total sound volume."];
+search_result['252']=["topic_000000000000009A.html","Processes.Open Method","Opens the file/link."];

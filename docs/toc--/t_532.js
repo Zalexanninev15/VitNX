@@ -1,1 +1,1 @@
-c['532']=[['533',"VitNX_Label Constructor","topic_000000000000023C.html",0],['534',"Methods","topic_000000000000023B_methods--.html",1]];
+c['532']=[['533',"VitNX_DropdownList Constructor","topic_0000000000000244.html",0],['534',"Methods","topic_0000000000000242_methods--.html",1],['545',"Events","topic_0000000000000242_events--.html",1]];

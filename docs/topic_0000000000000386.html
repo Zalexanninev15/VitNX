@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_Button Constructor</title>
+	<title>DockResizeFilter.PreFilterMessage Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_Button Constructor</h1>
+		<h1 class="title">DockResizeFilter.PreFilterMessage Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2</a>
+<a href="topic_000000000000037D.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Filters out a message before it is dispatched.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function PreFilterMessage( _&nbsp;<br />   ByRef <i>m</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> Implements  _&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX2_Button()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PreFilterMessage(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,7 +190,34 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="m" class="parameterList">
+	<dt>
+		<span class="parameter">
+			m
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
+	</dd>
+</dl>
+<p>
+	The message to be dispatched. You cannot modify this message. 
+</p>
 
+<p />
+
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<p>
+		true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control. 
+	</p>
+	
+
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a>
+<br />
 
 
 
@@ -264,15 +292,71 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX2_Button()
- {
-     FlatStyle = FlatStyle.Flat;
-     FlatAppearance.BorderSize = 0;
-     Size = new Size(150, 40);
-     BackColor = Color.MediumSlateBlue;
-     ForeColor = Color.White;
-     Resize += new EventHandler(Panel_Resize);
- }
+public bool PreFilterMessage(ref Message m)
+        {
+            // We only care about mouse events
+            if (!(m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
+                return false;
+
+            // Stop drag.
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP)
+            {
+                if (_isDragging)
+                {
+                    StopDrag();
+                    return true;
+                }
+            }
+
+            // Exit out early if we're simply releasing a non-splitter drag over the area
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP &amp;&amp; !_isDragging)
+                return false;
+
+            // Force cursor if already dragging.
+            if (_isDragging)
+                Cursor.Current = _activeSplitter.ResizeCursor;
+
+            // Return out early if we're dragging something that's not a splitter.
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE &amp;&amp; !_isDragging &amp;&amp; _dockPanel.MouseButtonState != MouseButtons.None)
+                return false;
+
+            // Try and create a control from the message handle.
+            var control = Control.FromHandle(m.HWnd);
+
+            // Exit out if we didn't manage to create a control.
+            if (control == null)
+                return false;
+
+            // Exit out if the control is not the dock panel or a child control.
+            if (!(control == _dockPanel || _dockPanel.Contains(control)))
+                return false;
+
+            // Update the mouse cursor
+            CheckCursor();
+
+            // Start drag.
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN)
+            {
+                var hotSplitter = HotSplitter();
+                if (hotSplitter != null)
+                {
+                    StartDrag(hotSplitter);
+                    return true;
+                }
+            }
+
+            // Stop events passing through if we're hovering over a splitter
+            if (HotSplitter() != null)
+                return true;
+
+            // Stop all events from going through if we're dragging a splitter.
+            if (_isDragging)
+                return true;
+
+            return false;
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -334,11 +418,11 @@ public VitNX2_Button()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000385.html">VitNX2_Button Class</a><br />
+			<a href="topic_0000000000000384.html">DockResizeFilter Class</a><br />
 
 
 
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_000000000000037D.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32 Namespace</a><br />
 
 
 			
@@ -356,12 +440,7 @@ public VitNX2_Button()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

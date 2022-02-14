@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VolumeControl.Get Method</title>
+	<title>Processes.OpenLink Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VolumeControl.Get Method</h1>
+		<h1 class="title">Processes.OpenLink Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_0000000000000093.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the current total sound volume.</summary-info>
+        <summary-info>Opens the link of site.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function Get() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">Single</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function OpenLink( _&nbsp;<br />   ByVal <i>link</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> Get()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> OpenLink(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>link</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,12 +190,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="link" class="parameterList">
+	<dt>
+		<span class="parameter">
+			link
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The link. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 		<p>
-		A float. 
+		A bool. 
 	</p>
 	
 
@@ -272,29 +288,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public float Get()
-        {
-            IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
-            IMMDevice speakers = null;
-            IAudioEndpointVolume vol = null;
-            deviceEnumerator.GetDefaultAudioEndpoint(Enums.E_DATA_FLOW.eRender,
-                Enums.E_ROLE.eMultimedia,
-                out speakers);
-            Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;
-            speakers.Activate(ref IID_IAudioEndpointVolume, 0,
-         IntPtr.Zero,
-         out object o);
-            vol = (IAudioEndpointVolume)o;
-            float currentVolume = 0;
-            vol.GetMasterVolumeLevelScalar(out currentVolume);
-            if (vol != null)
-         Marshal.ReleaseComObject(vol);
-            if (speakers != null)
-                Marshal.ReleaseComObject(speakers);
-            if (deviceEnumerator != null)
-                Marshal.ReleaseComObject(deviceEnumerator);
-            return currentVolume;
-        }
+public static bool OpenLink(string link)
+ {
+     try
+     {
+         Process.Start(link);
+         return true;
+     }
+     catch { return false; }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -356,11 +358,11 @@ public float Get()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000096.html">VolumeControl Class</a><br />
+			<a href="topic_0000000000000094.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_0000000000000093.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			
@@ -378,12 +380,7 @@ public float Get()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FocusOnControls.VolumeOnFocus Method</title>
+	<title>TaskBarProgressBar.SetState Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FocusOnControls.VolumeOnFocus Method</h1>
+		<h1 class="title">TaskBarProgressBar.SetState Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Enable/disable sound (nasty) when focusing on an item/control..</summary-info>
+        <summary-info>Sets the state.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub VolumeOnFocus( _&nbsp;<br />   Optional ByVal <i>off</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> = true _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub SetState( _&nbsp;<br />   ByVal <i>windowHandle</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>taskbarState</i> As <a target="_top" href="topic_00000000000001DC.html" onclick="this.target='';return true;">TASKBAR_STATES</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> VolumeOnFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>off</i> = true&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetState(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>windowHandle</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000001DC.html" onclick="this.target='';return true;">TASKBAR_STATES</a> <i>taskbarState</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,18 +191,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="off" class="parameterList">
+	Parameters</h4><dl paramName="windowHandle" class="parameterList">
 	<dt>
 		<span class="parameter">
-			off
+			windowHandle
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	If true, off. 
+	The window handle. 
+</p>
+<dl paramName="taskbarState" class="parameterList">
+	<dt>
+		<span class="parameter">
+			taskbarState
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001DC.html" onclick="this.target='';return true;">TASKBAR_STATES</a> 
+	</dd>
+</dl>
+<p>
+	The taskbar state. 
 </p>
 
 <p />
@@ -281,24 +294,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void VolumeOnFocus(bool off = true)
- {
-     if (off)
-     {
-         Import.WaveOutGetVolume(IntPtr.Zero,
-             out SavedVolumeLevel);
-         VolumeLevelSaved = true;
-         Import.WaveOutSetVolume(IntPtr.Zero, 0);
-     }
-     else
-     {
-         if (VolumeLevelSaved)
-         {
-             Import.WaveOutSetVolume(IntPtr.Zero,
-                 SavedVolumeLevel);
-             VolumeLevelSaved = true;
-         }
-     }
+public static void SetState(IntPtr windowHandle,
+     Enums.TASKBAR_STATES taskbarState)
+        {
+            if (taskbarSupported)
+         taskbarInstance.SetProgressState(windowHandle, taskbarState);
  }
 					</pre>			
 				</div>
@@ -361,11 +361,11 @@ public static void VolumeOnFocus(bool off = true)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A4.html">FocusOnControls Class</a><br />
+			<a href="topic_00000000000000A5.html">TaskBarProgressBar Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -383,12 +383,7 @@ public static void VolumeOnFocus(bool off = true)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

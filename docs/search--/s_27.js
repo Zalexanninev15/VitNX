@@ -1,1 +1,1 @@
-search_result['27']=["topic_0000000000000011.html","FileSystem.CreateShortcut Method","Creates the shortcut."];
+search_result['27']=["topic_000000000000000C.html","Text.ContainsOnlyLatters Method","Contains the only latters."];

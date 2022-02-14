@@ -1,1 +1,1 @@
-search_result['395']=["topic_00000000000000D4_events--.html","DISPLAYCONFIG_MODE_INFO Events",""];
+search_result['395']=["topic_00000000000000DA_props--.html","POINTL Properties",""];

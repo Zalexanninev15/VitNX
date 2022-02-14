@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_TextBox Constructor</title>
+	<title>VitNX2_MessageBox.Show (IWin32Window, String, String, MessageBoxButtons, MessageBoxIcon) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_TextBox Constructor</h1>
+		<h1 class="title">VitNX2_MessageBox.Show (IWin32Window, String, String, MessageBoxButtons, MessageBoxIcon) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2</a>
+<a href="topic_0000000000000397.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function Show( _&nbsp;<br />   ByVal <i>owner</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.iwin32window">IWin32Window</a>, _&nbsp;<br />   ByVal <i>text</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>caption</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>buttons</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a>, _&nbsp;<br />   ByVal <i>icon</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX2_TextBox()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> Show(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.iwin32window">IWin32Window</a> <i>owner</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> <i>buttons</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> <i>icon</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,7 +189,79 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="owner" class="parameterList">
+	<dt>
+		<span class="parameter">
+			owner
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.iwin32window">IWin32Window</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="text" class="parameterList">
+	<dt>
+		<span class="parameter">
+			text
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="caption" class="parameterList">
+	<dt>
+		<span class="parameter">
+			caption
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="buttons" class="parameterList">
+	<dt>
+		<span class="parameter">
+			buttons
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="icon" class="parameterList">
+	<dt>
+		<span class="parameter">
+			icon
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
+<p />
+
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
+	
 
 
 
@@ -264,9 +336,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX2_TextBox()
+public static DialogResult Show(IWin32Window owner, 
+     string text, 
+     string caption,
+     MessageBoxButtons buttons, 
+     MessageBoxIcon icon)
  {
-     InitializeComponent();
+     DialogResult result;
+     using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons, icon))
+         result = msgForm.ShowDialog(owner);
+     return result;
  }
 					</pre>			
 				</div>
@@ -329,11 +408,11 @@ public VitNX2_TextBox()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003A7.html">VitNX2_TextBox Class</a><br />
+			<a href="topic_00000000000003A0.html">VitNX2_MessageBox Class</a><br />
 
 
 
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_0000000000000397.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			
@@ -351,12 +430,7 @@ public VitNX2_TextBox()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>RECT Structure</title>
+	<title>NOACTIVATE Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">RECT Structure</h1>
+		<h1 class="title">NOACTIVATE Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;StructLayout(LayoutKind.Sequential)&gt; _&nbsp;<br />Public Structure RECT</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared ReadOnly NOACTIVATE As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct RECT</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> NOACTIVATE</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,6 +190,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
+
 
 
 
@@ -205,133 +210,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
-
-
-
-
-
-
-
-
-  
-
-<!-- Classes -->
-
-<!-- Classes End -->
-
-<!-- Standard Modules -->
-
-<!-- Standard Modules End -->
-
-  
-
-
-
-
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
-		<div>&nbsp;</div>
-	</div>
-
-	<div id="FieldsSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_000000000000014A.html">Bottom</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_0000000000000147.html">Left</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_0000000000000149.html">Right</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_0000000000000148.html">Top</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
-
-	</div>					
-</div>
 
 
 
@@ -390,14 +268,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[StructLayout(LayoutKind.Sequential)]
- public struct RECT
- {
-     public int Left;
-     public int Top;
-     public int Right;
-     public int Bottom;
- }
+public static readonly int
+ NOSIZE = 0x0001,
+ NOMOVE = 0x0002,
+ NOZORDER = 0x0004,
+ NOREDRAW = 0x0008,
+ NOACTIVATE = 0x0010,
+ DRAWFRAME = 0x0020,
+ FRAMECHANGED = 0x0020,
+ SHOWWINDOW = 0x0040,
+ HIDEWINDOW = 0x0080,
+ NOCOPYBITS = 0x0100,
+ NOOWNERZORDER = 0x0200,
+ NOREPOSITION = 0x0200,
+ NOSENDCHANGING = 0x0400,
+ DEFERERASE = 0x2000,
+ ASYNCWINDOWPOS = 0x4000;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -451,7 +337,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>					
 </div>
 
-
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -460,10 +345,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+			<a href="topic_0000000000000141.html">SWP Class</a><br />
 
 
-	
+
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+
+
+			
 
 		</div>
 	</div>					
@@ -478,12 +367,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
-

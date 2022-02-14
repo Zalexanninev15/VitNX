@@ -1,1 +1,1 @@
-search_result['635']=["topic_00000000000001E1_vars--.html","ObservableListModified\u0026lt;T\u0026gt; Fields",""];
+search_result['635']=["topic_00000000000001EB.html","Controls.RemoveFocus Method","Removing the focus from the element/control from which the function is called."];

@@ -1,1 +1,1 @@
-search_result['600']=["topic_00000000000001D0_attached_props--.html","WindowS Attached Properties",""];
+search_result['600']=["topic_000000000000017E.html","DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY Enumeration",""];

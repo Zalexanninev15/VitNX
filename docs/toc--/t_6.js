@@ -1,1 +1,1 @@
-c['6']=[['7',"CleanMemory Method","topic_0000000000000002.html",0],['8',"ConvertDWordColorToRGB Method","topic_0000000000000004.html",0],['9',"PlaySound Method","topic_0000000000000003.html",0]];
+c['6']=[['7',"CleanMemory Method","topic_0000000000000002.html",0],['8',"ConvertDWordColorToRGB Method","topic_0000000000000004.html",0],['9',"LoadCustomFontFromFile Method","topic_0000000000000005.html",0],['10',"PlaySound Method","topic_0000000000000003.html",0]];

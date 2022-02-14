@@ -1,1 +1,1 @@
-search_result['31']=["topic_0000000000000015.html","FileSystem.UnZipFile Method","Uns the zip file."];
+search_result['31']=["topic_0000000000000010.html","Text.ContainsSymbols Method","Contains the symbols."];

@@ -1,1 +1,1 @@
-search_result['1486']=["topic_00000000000006FC_props--.html","Colors Properties",""];
+search_result['1486']=["topic_00000000000006FB_methods--.html","Manager Methods",""];

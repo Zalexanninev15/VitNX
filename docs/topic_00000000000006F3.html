@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Manager.Alert (String, NotificationType, Color, Image) Method</title>
+	<title>FontAwesomeExtensions.StackWith (Bitmap, Bitmap) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Manager.Alert (String, NotificationType, Color, Image) Method</h1>
+		<h1 class="title">FontAwesomeExtensions.StackWith (Bitmap, Bitmap) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls</a>
+<a href="topic_00000000000003C8.html">VitNX.UI.OtherControls</a>
 
 
 
@@ -89,8 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>/// Display a new custom notification on the screen.
-		///</summary-info>
 
 
 
@@ -138,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub Alert( _&nbsp;<br />   ByVal <i>message</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>type</i> As <a target="_top" href="topic_00000000000006F6.html" onclick="this.target='';return true;">NotificationType</a>, _&nbsp;<br />   ByVal <i>color</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a>, _&nbsp;<br />   ByVal <i>picture</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;Extension()&gt; _&nbsp;<br />Public Shared Function StackWith( _&nbsp;<br />   ByVal <i>backgroundImage</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a>, _&nbsp;<br />   ByVal <i>foregroundImage</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -177,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Alert(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000006F6.html" onclick="this.target='';return true;">NotificationType</a> <i>type</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> <i>color</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> <i>picture</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> StackWith(&nbsp;<br />   this <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> <i>backgroundImage</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> <i>foregroundImage</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -192,61 +190,39 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="message" class="parameterList">
+	Parameters</h4><dl paramName="backgroundImage" class="parameterList">
 	<dt>
 		<span class="parameter">
-			message
+			backgroundImage
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> 
 	</dd>
 </dl>
 <p>
-	Main message displayed. 
+	 
 </p>
-<dl paramName="type" class="parameterList">
+<dl paramName="foregroundImage" class="parameterList">
 	<dt>
 		<span class="parameter">
-			type
+			foregroundImage
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000006F6.html" onclick="this.target='';return true;">NotificationType</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> 
 	</dd>
 </dl>
 <p>
-	Notification type. Mandatory is Custom. 
-</p>
-<dl paramName="color" class="parameterList">
-	<dt>
-		<span class="parameter">
-			color
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
-	</dd>
-</dl>
-<p>
-	Notification background color. 
-</p>
-<dl paramName="picture" class="parameterList">
-	<dt>
-		<span class="parameter">
-			picture
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> 
-	</dd>
-</dl>
-<p>
-	The image displayed on the left. 
+	 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> 
+	
 
 
 
@@ -321,14 +297,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void Alert(string message, NotificationType type, Color color, Image picture)
-        {
-            if (NotifySettings.right &lt; MaxCount)
-            {
-                NotificationForm frm = new NotificationForm();
-                frm.showAlert(message, type, color, picture, this);
-            }
-        }
+public static Bitmap StackWith(this Bitmap backgroundImage, Bitmap foregroundImage)
+ {
+     var bitmap = backgroundImage;
+     Graphics g = Graphics.FromImage(backgroundImage);
+     g.DrawImage(foregroundImage, new Point(0, 0));
+     return bitmap;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -390,11 +365,11 @@ public void Alert(string message, NotificationType type, Color color, Image pict
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000006E4.html">Manager Class</a><br />
+			<a href="topic_00000000000006F1.html">FontAwesomeExtensions Class</a><br />
 
 
 
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000003C8.html">VitNX.UI.OtherControls Namespace</a><br />
 
 
 			
@@ -412,12 +387,7 @@ public void Alert(string message, NotificationType type, Color color, Image pict
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

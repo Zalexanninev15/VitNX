@@ -1,1 +1,1 @@
-search_result['1053']=["topic_00000000000002E6.html","VitNX_DockContent.Close Method",""];
+search_result['1053']=["topic_00000000000002EE_attached_props--.html","DockPanelState Attached Properties",""];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>MinimumThumbSize Field</title>
+	<title>WindowS.SetWindowsElevenStyleForWinForm Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">MinimumThumbSize Field</h1>
+		<h1 class="title">WindowS.SetWindowsElevenStyleForWinForm Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001E3.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Config</a>
+<a href="topic_00000000000001E2.html">VitNX.Functions.Windows.WindowSAndControls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Applying Windows 11 roundings to a window(s).</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared MinimumThumbSize As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub SetWindowsElevenStyleForWinForm( _&nbsp;<br />   ByVal <i>Handler</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> MinimumThumbSize</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetWindowsElevenStyleForWinForm(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,11 +190,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="Handler" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Handler
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	The handler. 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
+<p />
+
 
 
 
@@ -268,7 +281,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static int MinimumThumbSize = 11;
+public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
+ {
+     var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
+     var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+     Import.DwmSetWindowAttribute(Handler,
+         attribute,
+         new[] { Convert.ToInt32(preference) }, sizeof(uint));
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +350,11 @@ public static int MinimumThumbSize = 11;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000001E5.html">Constsants Class</a><br />
+			<a href="topic_00000000000001E3.html">WindowS Class</a><br />
 
 
 
-<a href="topic_00000000000001E3.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace</a><br />
+<a href="topic_00000000000001E2.html">VitNX.Functions.Windows.WindowSAndControls Namespace</a><br />
 
 
 			
@@ -352,11 +372,7 @@ public static int MinimumThumbSize = 11;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
+

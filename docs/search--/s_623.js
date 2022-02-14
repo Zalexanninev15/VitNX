@@ -1,1 +1,1 @@
-search_result['623']=["topic_00000000000001DC_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];
+search_result['623']=["topic_00000000000001E4.html","WindowS.MinimizeAllWindows Method","Minimizes the all windows."];

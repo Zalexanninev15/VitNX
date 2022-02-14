@@ -1,1 +1,1 @@
-c['528']=[['529',"VitNX_GroupBox Constructor","topic_0000000000000239.html",0],['530',"Methods","topic_0000000000000238_methods--.html",1]];
+c['528']=[['529',"VitNX_DropdownItem() Constructor","topic_000000000000023F.html",0],['530',"VitNX_DropdownItem(string) Constructor","topic_0000000000000240.html",0],['531',"VitNX_DropdownItem(string, Bitmap) Constructor","topic_0000000000000241.html",0]];

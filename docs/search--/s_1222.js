@@ -1,1 +1,1 @@
-search_result['1222']=["topic_0000000000000361.html","VitNX_ToolStripRenderer.OnRenderDropDownButtonBackground Method",""];
+search_result['1222']=["topic_0000000000000362.html","VitNX_MessageBox.Dispose Method","/// Clean up any resources being used.\r\n        ///"];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DISPLAYCONFIG_MODE_INFO_TYPE Enumeration</title>
+	<title>DISPLAYCONFIG_ROTATION Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DISPLAYCONFIG_MODE_INFO_TYPE Enumeration</h1>
+		<h1 class="title">DISPLAYCONFIG_ROTATION Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -134,7 +134,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DISPLAYCONFIG_MODE_INFO_TYPE_FORCE_UINT32
+	    DISPLAYCONFIG_ROTATION_FORCE_UINT32
 	  </td>
 	  <td>
 	    4294967295
@@ -146,7 +146,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE
+	    DISPLAYCONFIG_ROTATION_IDENTITY
 	  </td>
 	  <td>
 	    1
@@ -158,7 +158,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DISPLAYCONFIG_MODE_INFO_TYPE_TARGET
+	    DISPLAYCONFIG_ROTATION_ROTATE180
+	  </td>
+	  <td>
+	    3
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DISPLAYCONFIG_ROTATION_ROTATE270
+	  </td>
+	  <td>
+	    4
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DISPLAYCONFIG_ROTATION_ROTATE90
 	  </td>
 	  <td>
 	    2
@@ -243,11 +267,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum DISPLAYCONFIG_MODE_INFO_TYPE : uint
+public enum DISPLAYCONFIG_ROTATION : uint
  {
-     DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE = 1,
-     DISPLAYCONFIG_MODE_INFO_TYPE_TARGET = 2,
-     DISPLAYCONFIG_MODE_INFO_TYPE_FORCE_UINT32 = 0xFFFFFFFF
+     DISPLAYCONFIG_ROTATION_IDENTITY = 1,
+     DISPLAYCONFIG_ROTATION_ROTATE90 = 2,
+     DISPLAYCONFIG_ROTATION_ROTATE180 = 3,
+     DISPLAYCONFIG_ROTATION_ROTATE270 = 4,
+     DISPLAYCONFIG_ROTATION_FORCE_UINT32 = 0xFFFFFFFF
  }
 					</pre>			
 				</div>
@@ -270,11 +296,11 @@ public enum DISPLAYCONFIG_MODE_INFO_TYPE : uint
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000140.html">Enums Class</a><br />
+			<a href="topic_0000000000000151.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -292,11 +318,6 @@ public enum DISPLAYCONFIG_MODE_INFO_TYPE : uint
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>

@@ -1,1 +1,1 @@
-search_result['747']=["topic_000000000000022B_events--.html","VitNX_DropdownList Events",""];
+search_result['747']=["topic_0000000000000230.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];

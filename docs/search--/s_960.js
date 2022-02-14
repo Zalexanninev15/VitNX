@@ -1,1 +1,1 @@
-search_result['960']=["topic_00000000000002A7_props--.html","VitNX_TreeNode Properties",""];
+search_result['960']=["topic_00000000000002B6.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

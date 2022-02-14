@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockRegion.Redraw Method</title>
+	<title>VitNX_DockGroup.Redraw Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockRegion.Redraw Method</h1>
+		<h1 class="title">VitNX_DockGroup.Redraw Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
 
 
 
@@ -268,8 +268,8 @@ public void Redraw()
         {
             Invalidate();
 
-            foreach (var group in _groups)
-                group.Redraw();
+            foreach (var content in _contents)
+                content.Invalidate();
         }
 					</pre>			
 				</div>
@@ -332,11 +332,11 @@ public void Redraw()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000305.html">VitNX_DockRegion Class</a><br />
+			<a href="topic_00000000000002FF.html">VitNX_DockGroup Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
 
 
 			
@@ -354,12 +354,7 @@ public void Redraw()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

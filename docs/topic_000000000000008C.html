@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Processes.IsOneYourApp Method</title>
+	<title>Config.GetLocalIPv6 Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Processes.IsOneYourApp Method</h1>
+		<h1 class="title">Config.GetLocalIPv6 Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000082.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_000000000000007F.html">VitNX.Functions.Common.Web</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>You only have 1 copy of the application running.</summary-info>
+        <summary-info>Gets the local IPv6 (obsolete, but work).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function IsOneYourApp( _&nbsp;<br />   ByVal <i>applicationTitle</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetLocalIPv6() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsOneYourApp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>applicationTitle</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetLocalIPv6()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,28 +190,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="applicationTitle" class="parameterList">
-	<dt>
-		<span class="parameter">
-			applicationTitle
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The application title. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		A bool. 
+		A string. 
 	</p>
 	
 
@@ -288,12 +272,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool IsOneYourApp(string applicationTitle)
- {
-     bool createdNew;
-     Mutex currentApp = new Mutex(true, applicationTitle, out createdNew);
-     return createdNew;
- }
+public static string GetLocalIPv6() =&gt; Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -355,11 +334,11 @@ public static bool IsOneYourApp(string applicationTitle)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000083.html">Processes Class</a><br />
+			<a href="topic_000000000000008A.html">Config Class</a><br />
 
 
 
-<a href="topic_0000000000000082.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_000000000000007F.html">VitNX.Functions.Common.Web Namespace</a><br />
 
 
 			
@@ -377,12 +356,7 @@ public static bool IsOneYourApp(string applicationTitle)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

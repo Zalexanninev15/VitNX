@@ -1,1 +1,1 @@
-search_result['283']=["topic_00000000000000A4_methods--.html","FocusOnControls Methods",""];
+search_result['283']=["topic_00000000000000AA.html","VolumeControl.Get Method","Gets the current total sound volume."];

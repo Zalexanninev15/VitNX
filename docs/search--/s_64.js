@@ -1,1 +1,1 @@
-search_result['64']=["topic_000000000000002C.html","Cpu.Characteristics Method","Gets all characteristics."];
+search_result['64']=["topic_0000000000000027.html","EncrypterAndDecrypter.DecryptQryParam Method","Decrypts the text with qry param."];

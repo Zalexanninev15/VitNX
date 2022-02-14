@@ -1,1 +1,1 @@
-search_result['114']=["topic_0000000000000045.html","Ram.Set Method","Sets (gets) values for RAM\u0027s characteristics."];
+search_result['114']=["topic_000000000000004A.html","Windows.GetWindowsCurrentBuildNumberFromREG Method","Gets the Windows current build number from the Windows Registry."];

@@ -1,1 +1,1 @@
-search_result['458']=["topic_00000000000000FC.html","Import.WindowFromPoint Method",""];
+search_result['458']=["topic_00000000000000FA.html","Import Class","Import the Windows System functions from native DLL."];

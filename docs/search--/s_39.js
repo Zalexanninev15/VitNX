@@ -1,1 +1,1 @@
-search_result['39']=["topic_000000000000001A_methods--.html","Windows Methods",""];
+search_result['39']=["topic_0000000000000018.html","Text.FixDeEncoding Method","Fixes the de-encoding."];

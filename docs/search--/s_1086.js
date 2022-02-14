@@ -1,1 +1,1 @@
-search_result['1086']=["topic_00000000000002FC_overloads--.html","VitNX_DockPanel.AddContent Method",""];
+search_result['1086']=["topic_00000000000002FF_props--.html","VitNX_DockGroup Properties",""];

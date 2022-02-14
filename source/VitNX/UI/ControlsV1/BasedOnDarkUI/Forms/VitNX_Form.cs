@@ -13,7 +13,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
 
         protected override void OnHandleCreated(EventArgs e)
         {
-            Functions.Windows.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
+            Functions.Windows.WindowSAndControls.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
         }
 
         private bool _flatBorder;

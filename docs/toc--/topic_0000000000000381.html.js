@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['861',"VitNX.UI.ControlsV2 Namespace","topic_0000000000000380.html"],['862',"Helper Class","topic_0000000000000381.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_000000000000072A.html"],['867',"VitNX.UI.ControlsV1.BasedOnDarkUI.Win32 Namespace","topic_000000000000037D.html"],['871',"DockContentDragFilter Class","topic_0000000000000380.html"],['872',"DockContentDragFilter Constructor","topic_0000000000000381.html"]];

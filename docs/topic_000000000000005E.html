@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Work.ListContainsString Method</title>
+	<title>Disk.GetTotalSpace Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Work.ListContainsString Method</h1>
+		<h1 class="title">Disk.GetTotalSpace Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text</a>
+<a href="topic_0000000000000041.html">VitNX.Functions.Common.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Lists the contains string.</summary-info>
+        <summary-info>Gets the total space.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function ListContainsString( _&nbsp;<br />   ByVal <i>list</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>(Of <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>), _&nbsp;<br />   ByVal <i>text</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetTotalSpace( _&nbsp;<br />   ByVal <i>driveName</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">Long</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ListContainsString(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; <i>list</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> GetTotalSpace(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>driveName</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,23 +191,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="list" class="parameterList">
+	Parameters</h4><dl paramName="driveName" class="parameterList">
 	<dt>
 		<span class="parameter">
-			list
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
-	</dd>
-</dl>
-<p>
-	The list. 
-</p>
-<dl paramName="text" class="parameterList">
-	<dt>
-		<span class="parameter">
-			text
+			driveName
 		</span>
 	</dt>
 	<dd>
@@ -215,16 +202,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The text. 
+	The drive name. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> 
 		<p>
-		A bool. 
+		A long. 
 	</p>
 	
 
@@ -301,7 +288,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool ListContainsString(List&lt;string&gt; list, string text) =&gt; list.Where(CheckString =&gt; CheckString.Contains(text)) != null ? true : false;
+public static long GetTotalSpace(string driveName)
+ {
+     foreach (DriveInfo drive in DriveInfo.GetDrives())
+     {
+         if (drive.IsReady &amp;&amp; drive.Name == driveName)
+             return drive.TotalSize;
+     }
+     return -1;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -363,11 +358,11 @@ public static bool ListContainsString(List&lt;string&gt; list, string text) =&gt
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000056.html">Work Class</a><br />
+			<a href="topic_0000000000000059.html">Disk Class</a><br />
 
 
 
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text Namespace</a><br />
+<a href="topic_0000000000000041.html">VitNX.Functions.Common.Information Namespace</a><br />
 
 
 			
@@ -385,12 +380,7 @@ public static bool ListContainsString(List&lt;string&gt; list, string text) =&gt
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 
