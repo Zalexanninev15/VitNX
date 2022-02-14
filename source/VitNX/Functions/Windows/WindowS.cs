@@ -16,7 +16,9 @@ namespace VitNX.Functions.Windows
         public static void MinimizeAllWindows()
         {
             IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
-            Import.SendMessage(lHwnd, 0x111, (IntPtr)419, IntPtr.Zero);
+            Import.SendMessage(lHwnd, 0x111, 
+                (IntPtr)419,
+                IntPtr.Zero);
         }
 
         /// <summary>
@@ -25,7 +27,9 @@ namespace VitNX.Functions.Windows
         public static void MaximizeAllWindows()
         {
             IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
-            Import.SendMessage(lHwnd, 0x111, (IntPtr)416, IntPtr.Zero);
+            Import.SendMessage(lHwnd, 0x111,
+                (IntPtr)416,
+                IntPtr.Zero);
         }
 
         /// <summary>
@@ -59,10 +63,8 @@ namespace VitNX.Functions.Windows
         /// <param name="Handler">The handler.</param>
         public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
         {
-            if (Import.DwmSetWindowAttribute(Handler, 19,
-                new[] { 1 }, 4) != 0)
-                Import.DwmSetWindowAttribute(Handler, 20,
-                    new[] { 1 }, 4);
+            if (Import.DwmSetWindowAttribute(Handler, 19, new[] { 1 }, 4) != 0)
+                Import.DwmSetWindowAttribute(Handler, 20,  new[] { 1 }, 4);
         }
 
         /// <summary>

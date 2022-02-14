@@ -12,7 +12,8 @@ namespace VitNX.UI.ControlsV2
             return result;
         }
 
-        public static DialogResult Show(string text, string caption)
+        public static DialogResult Show(string text, 
+            string caption)
         {
             DialogResult result;
             using (var msgForm = new VitNX2_MessageBox_Form(text, caption))
@@ -20,7 +21,9 @@ namespace VitNX.UI.ControlsV2
             return result;
         }
 
-        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons)
+        public static DialogResult Show(string text,
+            string caption, 
+            MessageBoxButtons buttons)
         {
             DialogResult result;
             using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons))
@@ -28,23 +31,37 @@ namespace VitNX.UI.ControlsV2
             return result;
         }
 
-        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public static DialogResult Show(string text, 
+            string caption, 
+            MessageBoxButtons buttons,
+            MessageBoxIcon icon)
         {
             DialogResult result;
-            using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons, icon))
+            using (var msgForm = new VitNX2_MessageBox_Form(text, 
+                caption,
+                buttons, icon))
                 result = msgForm.ShowDialog();
             return result;
         }
 
-        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        public static DialogResult Show(string text, 
+            string caption, 
+            MessageBoxButtons buttons,
+            MessageBoxIcon icon,
+            MessageBoxDefaultButton defaultButton)
         {
             DialogResult result;
-            using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons, icon, defaultButton))
+            using (var msgForm = new VitNX2_MessageBox_Form(text, 
+                caption, 
+                buttons,
+                icon,
+                defaultButton))
                 result = msgForm.ShowDialog();
             return result;
         }
 
-        public static DialogResult Show(IWin32Window owner, string text)
+        public static DialogResult Show(IWin32Window owner
+            , string text)
         {
             DialogResult result;
             using (var msgForm = new VitNX2_MessageBox_Form(text))
@@ -52,23 +69,31 @@ namespace VitNX.UI.ControlsV2
             return result;
         }
 
-        public static DialogResult Show(IWin32Window owner, string text, string caption)
+        public static DialogResult Show(IWin32Window owner, 
+            string text, 
+            string caption)
         {
             DialogResult result;
-            using (var msgForm = new VitNX2_MessageBox_Form(text, caption))
+            using (var msgForm = new VitNX2_MessageBox_Form(text,  caption)) result = msgForm.ShowDialog(owner);
+            return result;
+        }
+
+        public static DialogResult Show(IWin32Window owner, 
+            string text, 
+            string caption,
+            MessageBoxButtons buttons)
+        {
+            DialogResult result;
+            using (var msgForm = new VitNX2_MessageBox_Form(text,  caption, buttons))
                 result = msgForm.ShowDialog(owner);
             return result;
         }
 
-        public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons)
-        {
-            DialogResult result;
-            using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons))
-                result = msgForm.ShowDialog(owner);
-            return result;
-        }
-
-        public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public static DialogResult Show(IWin32Window owner, 
+            string text, 
+            string caption,
+            MessageBoxButtons buttons, 
+            MessageBoxIcon icon)
         {
             DialogResult result;
             using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons, icon))
@@ -76,7 +101,12 @@ namespace VitNX.UI.ControlsV2
             return result;
         }
 
-        public static DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        public static DialogResult Show(IWin32Window owner,
+            string text, 
+            string caption,
+            MessageBoxButtons buttons, 
+            MessageBoxIcon icon, 
+            MessageBoxDefaultButton defaultButton)
         {
             DialogResult result;
             using (var msgForm = new VitNX2_MessageBox_Form(text, caption, buttons, icon, defaultButton))
