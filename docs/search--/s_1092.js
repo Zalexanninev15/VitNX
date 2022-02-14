@@ -1,1 +1,1 @@
-search_result['1092']=["topic_0000000000000301.html","VitNX_DockPanel.GetDocuments Method",""];
+search_result['1092']=["topic_0000000000000304.html","VitNX_DockGroup.EnsureVisible Method",""];

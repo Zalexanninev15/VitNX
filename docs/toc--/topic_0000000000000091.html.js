@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['157',"VitNX.Functions.Windows.Apps Namespace","topic_0000000000000082.html"],['158',"Installed Class","topic_000000000000008E.html"],['159',"Methods","topic_000000000000008E_methods--.html"],['160',"FindAppPath Method","topic_0000000000000091.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_000000000000072A.html"],['145',"VitNX.Functions.Common.Web Namespace","topic_000000000000007F.html"],['162',"SendDataToSites Class","topic_0000000000000091.html"]];

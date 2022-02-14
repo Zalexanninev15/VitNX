@@ -1,1 +1,1 @@
-search_result['1446']=["topic_00000000000006E1.html","NewFolderDialog Class","Work with the folder dialog, Windows Vista+."];
+search_result['1446']=["topic_00000000000003D8_overloads--.html","FontAwesome4.GetIcon Method",""];

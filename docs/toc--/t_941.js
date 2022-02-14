@@ -1,1 +1,1 @@
-c['941']=[['942',"Properties Class","topic_00000000000003BA.html",1],['946',"Type Enumeration","topic_00000000000003C6.html",0],['947',"Methods","topic_00000000000003B9_methods--.html",1]];
+c['941']=[['942',"VitNX2_ToogleButton Constructor","topic_00000000000003C6.html",0],['943',"Methods","topic_00000000000003C5_methods--.html",1]];

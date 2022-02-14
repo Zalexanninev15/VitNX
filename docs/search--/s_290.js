@@ -1,1 +1,1 @@
-search_result['290']=["topic_00000000000000A7_events--.html","Monitor Events",""];
+search_result['290']=["topic_00000000000000AC.html","GetClipboardText.GetText Method","Gets the text."];

@@ -1,1 +1,1 @@
-search_result['160']=["topic_0000000000000067_attached_props--.html","EncryptAndDecrypt Attached Properties",""];
+search_result['160']=["topic_0000000000000064.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];

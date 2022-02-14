@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetWindowsAccentColor Method</title>
+	<title>CompressAndDecompress.BytesToString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetWindowsAccentColor Method</h1>
+		<h1 class="title">CompressAndDecompress.BytesToString Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000006.html">VitNX.Functions.Common.Data</a>
 
 
 
@@ -89,7 +89,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the Windows accent color.</summary-info>
+        <summary-info>Bytes the to string.
+Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));</summary-info>
 
 
 
@@ -137,7 +138,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetWindowsAccentColor() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function BytesToString( _&nbsp;<br />   ByVal <i>input</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">Byte</a>() _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +177,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> GetWindowsAccentColor()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> BytesToString(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,12 +191,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="input" class="parameterList">
+	<dt>
+		<span class="parameter">
+			input
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		A Color. 
+		A string. 
 	</p>
 	
 
@@ -272,14 +289,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Color GetWindowsAccentColor()
+public static string BytesToString(byte[] input)
  {
-     var userColorSet = Import.GetImmersiveUserColorSetPreference(false, false);
-     var colorType = Import.GetImmersiveColorTypeFromName(System.Runtime.InteropServices.Marshal.StringToHGlobalUni(&quot;ImmersiveStartSelectionBackground&quot;));
-     var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
-         colorType,
-         false, 0);
-     return CShap.ConvertDWordColorToRGB(colorSetEx);
+     return Encoding.UTF8.GetString(input);
  }
 					</pre>			
 				</div>
@@ -342,11 +354,11 @@ public static Color GetWindowsAccentColor()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000001A.html">Windows Class</a><br />
+			<a href="topic_0000000000000028.html">CompressAndDecompress Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000006.html">VitNX.Functions.Common.Data Namespace</a><br />
 
 
 			
@@ -364,12 +376,7 @@ public static Color GetWindowsAccentColor()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

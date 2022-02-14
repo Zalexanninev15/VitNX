@@ -1,1 +1,1 @@
-search_result['138']=["topic_0000000000000056_attached_props--.html","Work Attached Properties",""];
+search_result['138']=["topic_0000000000000058.html","Gpu.Characteristics Method","Gets all characteristics."];

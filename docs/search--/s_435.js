@@ -1,1 +1,1 @@
-search_result['435']=["topic_00000000000000EA.html","VitNX.Functions.Windows.Win32 Namespace",""];
+search_result['435']=["topic_00000000000000EA_methods--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Methods",""];

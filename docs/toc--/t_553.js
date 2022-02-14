@@ -1,1 +1,1 @@
-c['553']=[['554',"SelectItems(IEnumerable\u003cInt32\u003e) Method","topic_000000000000024B.html",0],['555',"SelectItems(int, int) Method","topic_000000000000024D.html",0]];
+c['553']=[['554',"OnFontChanged Method","topic_0000000000000255.html",0],['555',"OnSizeChanged Method","topic_0000000000000256.html",0],['556',"OnTextChanged Method","topic_0000000000000254.html",0]];

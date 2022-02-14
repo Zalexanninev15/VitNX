@@ -1,1 +1,1 @@
-search_result['40']=["topic_000000000000001A_props--.html","Windows Properties",""];
+search_result['40']=["topic_0000000000000019.html","Text.IsValidCardNumber Method","Are the valid card number."];

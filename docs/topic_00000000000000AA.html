@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>LowPart Field</title>
+	<title>VolumeControl.Get Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">LowPart Field</h1>
+		<h1 class="title">VolumeControl.Get Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Gets the current total sound volume.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public LowPart As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function Get() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">Single</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> LowPart</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> Get()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,8 +192,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+		<p>
+		A float. 
+	</p>
 	
 
 
@@ -268,7 +272,29 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public uint LowPart;
+public float Get()
+        {
+            IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
+            IMMDevice speakers = null;
+            IAudioEndpointVolume vol = null;
+            deviceEnumerator.GetDefaultAudioEndpoint(Enums.E_DATA_FLOW.eRender,
+                Enums.E_ROLE.eMultimedia,
+                out speakers);
+            Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;
+            speakers.Activate(ref IID_IAudioEndpointVolume, 0,
+         IntPtr.Zero,
+         out object o);
+            vol = (IAudioEndpointVolume)o;
+            float currentVolume = 0;
+            vol.GetMasterVolumeLevelScalar(out currentVolume);
+            if (vol != null)
+         Marshal.ReleaseComObject(vol);
+            if (speakers != null)
+                Marshal.ReleaseComObject(speakers);
+            if (deviceEnumerator != null)
+                Marshal.ReleaseComObject(deviceEnumerator);
+            return currentVolume;
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +356,11 @@ public uint LowPart;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A9.html">LUID Structure</a><br />
+			<a href="topic_00000000000000A8.html">VolumeControl Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A4.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -352,11 +378,7 @@ public uint LowPart;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
+

@@ -29,6 +29,332 @@ A Color.</returns>
       <param name="colorSetEx">
 The color set ex.</param>
     </member>
+    <member name="M:VitNX.Functions.Common.CShap.LoadCustomFontFromFile(System.String,System.Single,System.Drawing.FontStyle)">
+      <summary>
+Loads the custom font from file.</summary>
+      <returns>
+A Font.</returns>
+      <param name="targetFile">
+The target file.</param>
+      <param name="size">
+The size.</param>
+      <param name="fontStyle">
+The font style.</param>
+    </member>
+    <member name="N:VitNX.Functions.Common.Data">
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.NumericalTextConverter">
+      <summary>
+The numerical text converter.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.NumericalTextConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+      <summary>
+Converts the value(s).</summary>
+      <returns>
+An object.</returns>
+      <param name="values">
+The values.</param>
+      <param name="targetType">
+The target type.</param>
+      <param name="parameter">
+The parameter.</param>
+      <param name="culture">
+The culture.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.NumericalTextConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+      <summary>
+Converts back the value(s).</summary>
+      <returns>
+An array of object.</returns>
+      <param name="value">
+The value.</param>
+      <param name="targetTypes">
+The target types.</param>
+      <param name="parameter">
+The parameter.</param>
+      <param name="culture">
+The culture.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.Text">
+      <summary>
+Work with text.</summary>
+    </member>
+    <member name="F:VitNX.Functions.Common.Data.Text.SizeSuffixes">
+      <summary>
+Possible size suffixes.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsOnlyLatters(System.String)">
+      <summary>
+Contains the only latters.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsNumbersLatters(System.String)">
+      <summary>
+Contains the numbers latters.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ReplacerMonster(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32)">
+      <summary>
+Replacers the monster.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="forReplace">
+The for replace.</param>
+      <param name="toReplace">
+The to replace.</param>
+      <param name="countOfSpacesWith_forReplace">
+The count of spaces with forReplace. From 0 to 2.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsOnlyNumbers(System.String)">
+      <summary>
+Contains the only numbers.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsSymbols(System.String)">
+      <summary>
+Contains the symbols.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsSpaces(System.String)">
+      <summary>
+Contains the spaces.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ListContainsString(System.Collections.Generic.List{System.String},System.String)">
+      <summary>
+Lists the contains string.</summary>
+      <returns>
+A bool.</returns>
+      <param name="list">
+The list.</param>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ListAddStringsToList(System.Collections.Generic.List{System.String},System.String[])">
+      <summary>
+Lists the add strings to list.</summary>
+      <returns>
+A list of string.</returns>
+      <param name="list">
+The list.</param>
+      <param name="strings">
+The strings.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ListRemoveStringsFromList(System.Collections.Generic.List{System.String},System.String[])">
+      <summary>
+Lists the remove strings from list.</summary>
+      <returns>
+A list of string.</returns>
+      <param name="list">
+The list.</param>
+      <param name="strings">
+The strings.</param>
+    </member>
+    <member name="F:VitNX.Functions.Common.Data.Text.GenerateGuid">
+      <summary>
+Generate the GUID.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.RandomChars(System.Int32)">
+      <summary>
+Randoms the chars.</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.RandomNums(System.Int32)">
+      <summary>
+Randoms the nums.</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.FixDeEncoding(System.String)">
+      <summary>
+Fixes the de-encoding.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.IsValidCardNumber(System.String)">
+      <summary>
+Are the valid card number.</summary>
+      <returns>
+A bool.</returns>
+      <param name="cardNumber">
+The card number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.SizeSuffix(System.Int64)">
+      <summary>
+Gives a suffix to the file size for output.</summary>
+      <returns>
+A string.</returns>
+      <param name="value">
+The value.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.EncryptAndDecrypt">
+      <summary>
+Encrypt and decrypt the text or byte[].</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.XOR_Both(System.String,System.Int32)">
+      <summary>
+XOR method (encrypt and decrypt).</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="key">
+The key.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.MD5_Encrypt(System.String)">
+      <summary>
+Encrypt by MD5.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleEncrypt(System.String,System.String)">
+      <summary>
+Simples the encrypt.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleDecrypt(System.String,System.String)">
+      <summary>
+Simples the decrypt.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleEncryptAsByte(System.Byte[],System.String)">
+      <summary>
+Simples the encrypt as byte.</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+The input.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleDecryptAsByte(System.Byte[],System.String)">
+      <summary>
+Simples the decrypt as byte.</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+The input.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.EncrypterAndDecrypter">
+      <summary>
+Encrypter and decrypter for text.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.SetPassword(System.String)">
+      <summary>
+Sets the password.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+The input.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.Decrypt(System.String)">
+      <summary>
+Decrypts the text.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.Encrypt(System.String)">
+      <summary>
+Encrypts the text.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.EncryptQryParam(System.String)">
+      <summary>
+Encrypts the text with qry param.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+The input.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.DecryptQryParam(System.String)">
+      <summary>
+Decrypts the text with qry param.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+The input.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.CompressAndDecompress">
+      <summary>
+Compress and decompress the text or byte[].</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.GetBytes(System.String)">
+      <summary>
+Gets the bytes. Example: CompressAndDecompress.GetBytes(input)</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.BytesToString(System.Byte[])">
+      <summary>
+Bytes the to string. Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.CompressBytes(System.Byte[])">
+      <summary>
+Compresses the bytes. Example: string output = Encoding.UTF8.GetString(CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input)));</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.DecompressBytes(System.Byte[])">
+      <summary>
+Decompresses the bytes. Example: CompressAndDecompress.DecompressBytes(compressed)</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+</param>
+    </member>
     <member name="T:VitNX.Functions.Common.FileSystem">
       <summary>
 Work with the file system.</summary>
@@ -431,6 +757,16 @@ Gets the firmware type.</summary>
       <returns>
 A string.</returns>
     </member>
+    <member name="T:VitNX.Functions.Common.Information.ComPort">
+      <summary>
+Work with informations of COM port.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.ComPort.GetAllDevices">
+      <summary>
+Gets all COM ports (devices).</summary>
+      <returns>
+An array of string.</returns>
+    </member>
     <member name="T:VitNX.Functions.Common.Information.Ram">
       <summary>
 Work with informations of RAM.</summary>
@@ -527,236 +863,6 @@ The key.</param>
       <param name="section">
 The section.</param>
     </member>
-    <member name="N:VitNX.Functions.Common.Text">
-    </member>
-    <member name="T:VitNX.Functions.Common.Text.Work">
-      <summary>
-Work with text.</summary>
-    </member>
-    <member name="F:VitNX.Functions.Common.Text.Work.SizeSuffixes">
-      <summary>
-Possible size suffixes.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsOnlyLatters(System.String)">
-      <summary>
-Contains the only latters.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsNumbersLatters(System.String)">
-      <summary>
-Contains the numbers latters.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ReplacerMonster(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32)">
-      <summary>
-Replacers the monster.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="forReplace">
-The for replace.</param>
-      <param name="toReplace">
-The to replace.</param>
-      <param name="countOfSpacesWith_forReplace">
-The count of spaces with forReplace. From 0 to 2.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsOnlyNumbers(System.String)">
-      <summary>
-Contains the only numbers.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsSymbols(System.String)">
-      <summary>
-Contains the symbols.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsSpaces(System.String)">
-      <summary>
-Contains the spaces.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ListContainsString(System.Collections.Generic.List{System.String},System.String)">
-      <summary>
-Lists the contains string.</summary>
-      <returns>
-A bool.</returns>
-      <param name="list">
-The list.</param>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ListAddStringsToList(System.Collections.Generic.List{System.String},System.String[])">
-      <summary>
-Lists the add strings to list.</summary>
-      <returns>
-A list of string.</returns>
-      <param name="list">
-The list.</param>
-      <param name="strings">
-The strings.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ListRemoveStringsFromList(System.Collections.Generic.List{System.String},System.String[])">
-      <summary>
-Lists the remove strings from list.</summary>
-      <returns>
-A list of string.</returns>
-      <param name="list">
-The list.</param>
-      <param name="strings">
-The strings.</param>
-    </member>
-    <member name="F:VitNX.Functions.Common.Text.Work.GenerateGuid">
-      <summary>
-Generate the GUID.</summary>
-      <returns>
-A string.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.RandomChars(System.Int32)">
-      <summary>
-Randoms the chars.</summary>
-      <returns>
-A string.</returns>
-      <param name="number">
-The number.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.RandomNums(System.Int32)">
-      <summary>
-Randoms the nums.</summary>
-      <returns>
-A string.</returns>
-      <param name="number">
-The number.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.FixDeEncoding(System.String)">
-      <summary>
-Fixes the de-encoding.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.IsValidCardNumber(System.String)">
-      <summary>
-Are the valid card number.</summary>
-      <returns>
-A bool.</returns>
-      <param name="cardNumber">
-The card number.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.SizeSuffix(System.Int64)">
-      <summary>
-Gives a suffix to the file size for output.</summary>
-      <returns>
-A string.</returns>
-      <param name="value">
-The value.</param>
-    </member>
-    <member name="T:VitNX.Functions.Common.Text.EncryptAndDecrypt">
-      <summary>
-Encrypt and decrypt the text.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.XOR_Both(System.String,System.Int32)">
-      <summary>
-XOR method (encrypt and decrypt).</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="key">
-The key.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleEncrypt(System.String,System.String)">
-      <summary>
-Simples the encrypt.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleDecrypt(System.String,System.String)">
-      <summary>
-Simples the decrypt.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleEncryptAsByte(System.Byte[],System.String)">
-      <summary>
-Simples the encrypt as byte.</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="input">
-The input.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleDecryptAsByte(System.Byte[],System.String)">
-      <summary>
-Simples the decrypt as byte.</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="input">
-The input.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="T:VitNX.Functions.Common.Text.CompressAndDecompress">
-      <summary>
-Compress and decompress the text.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.GetBytes(System.String)">
-      <summary>
-Gets the bytes. Example: CompressAndDecompress.GetBytes(input)</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="str">
-The str.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.BytesToString(System.Byte[])">
-      <summary>
-Bytes the to string. Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));</summary>
-      <returns>
-A string.</returns>
-      <param name="bytes">
-The bytes.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.CompressBytes(System.Byte[])">
-      <summary>
-Compresses the bytes. Example: string output = Encoding.UTF8.GetString(CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input)));</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="bytes">
-The bytes.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.DecompressBytes(System.Byte[])">
-      <summary>
-Decompresses the bytes. Example: CompressAndDecompress.DecompressBytes(compressed)</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="bytes">
-The bytes.</param>
-    </member>
     <member name="N:VitNX.Functions.Common.Web">
     </member>
     <member name="T:VitNX.Functions.Common.Web.DataFromSites">
@@ -796,6 +902,14 @@ Are the valid telegram bot token.</summary>
 A bool.</returns>
       <param name="botToken">
 The bot token.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS">
+    </member>
+    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.UNKNOWN_PROBLEM">
+    </member>
+    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.UNCONNECTED">
+    </member>
+    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.CONNECTED">
     </member>
     <member name="M:VitNX.Functions.Common.Web.DataFromSites.IsHaveInternet">
       <summary>
@@ -927,6 +1041,14 @@ The current process.</param>
       <param name="currentExeAssemblyLocation">
 The current exe assembly location.</param>
     </member>
+    <member name="M:VitNX.Functions.Windows.Apps.Processes.CheckDebugger(System.Diagnostics.Process)">
+      <summary>
+Checks the debugger for your app.</summary>
+      <returns>
+A bool.</returns>
+      <param name="currentProcess">
+The current process.</param>
+    </member>
     <member name="T:VitNX.Functions.Windows.Apps.Installed">
       <summary>
 Work with installed applications.</summary>
@@ -1043,25 +1165,11 @@ Sets the KeyUp.</summary>
       <param name="vKey">
 The vkey.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.WindowsKeyboardEventsAPI(System.Int32,System.String)">
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.WindowsKeyboardEventsAPI(VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS)">
       <summary>
 The keyboard events of Windows.</summary>
       <param name="status">
 The status.</param>
-      <param name="keys">
-The keys.</param>
-    </member>
-    <member name="T:VitNX.Functions.Windows.Controllers.FocusOnControls">
-    </member>
-    <member name="M:VitNX.Functions.Windows.Controllers.FocusOnControls.RemoveFocus">
-      <summary>
-Removing the focus from the element/control from which the function is called.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Controllers.FocusOnControls.VolumeOnFocus(System.Boolean)">
-      <summary>
-Enable/disable sound (nasty) when focusing on an item/control..</summary>
-      <param name="off">
-If true, off.</param>
     </member>
     <member name="T:VitNX.Functions.Windows.Controllers.Monitor">
       <summary>
@@ -1212,6 +1320,18 @@ The screen.</param>
 Import the Windows System functions from native DLL.</summary>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.GetConsoleWindow">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.RegisterDeviceNotification(System.IntPtr,System.IntPtr,System.Int32)">
+      <param name="recipient">
+</param>
+      <param name="notificationFilter">
+</param>
+      <param name="flags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.UnregisterDeviceNotification(System.IntPtr)">
+      <param name="handle">
+</param>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.WaveOutGetVolume(System.IntPtr,System.UInt32@)">
       <param name="h">
@@ -1695,6 +1815,14 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.SetWindowPosFlags.SWP_SHOWWINDOW">
     </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS.HIDE_THIS_WINDOW">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS.SHOW_ALL_WINDOWS">
+    </member>
     <member name="T:VitNX.Functions.Windows.Win32.Enums.SpecialWindowHandles">
     </member>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.SpecialWindowHandles.HWND_TOP">
@@ -1913,49 +2041,59 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.TASKBAR_STATES.Paused">
     </member>
-    <member name="T:VitNX.Functions.Windows.Win32.StandaloneImportFunctions">
-      <summary>
-Functions that use WinAPI and can be built into your applications without writing extra code.</summary>
+    <member name="N:VitNX.Functions.Windows.WindowSAndControls">
     </member>
-    <member name="M:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.CheckDebugger">
-      <summary>
-Checks for the debuggers.</summary>
-      <returns>
-A bool.</returns>
+    <member name="T:VitNX.Functions.Windows.WindowSAndControls.WindowS">
     </member>
-    <member name="N:VitNX.Functions.Windows">
-    </member>
-    <member name="T:VitNX.Functions.Windows.WindowS">
-    </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.MinimizeAllWindows">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MinimizeAllWindows">
       <summary>
 Minimizes the all windows.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.MaximizeAllWindows">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MaximizeAllWindows">
       <summary>
 Maximizes the all windows.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.HideConsoleWindow">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.HideConsoleWindow">
       <summary>
 Hides the console window.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.WindowToLowerRightCorner(System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.WindowToLowerRightCorner(System.IntPtr)">
       <summary>
 Sets the window to the lower right corner.</summary>
       <param name="Handler">
 The handler.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(System.IntPtr)">
       <summary>
 Applying a native dark window title for the application if it runs on Windows 10 or higher..</summary>
       <param name="Handler">
 The handler.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.SetWindowsElevenStyleForWinForm(System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.SetWindowsElevenStyleForWinForm(System.IntPtr)">
       <summary>
 Applying Windows 11 roundings to a window(s).</summary>
       <param name="Handler">
 The handler.</param>
+    </member>
+    <member name="T:VitNX.Functions.Windows.WindowSAndControls.Controls">
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.RemoveFocus">
+      <summary>
+Removing the focus from the element/control from which the function is called.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.VolumeOnFocus(System.Boolean)">
+      <summary>
+Enable/disable sound (nasty) when focusing on an item/control..</summary>
+      <param name="off">
+If true, off.</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.SetNativeThemeForControls(System.IntPtr,System.String)">
+      <summary>
+Sets the native Windows System theme for controls.</summary>
+      <param name="handle">
+The handle.</param>
+      <param name="themeMode">
+The theme mode.</param>
     </member>
     <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections">
     </member>

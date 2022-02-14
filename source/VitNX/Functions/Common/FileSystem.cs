@@ -174,7 +174,7 @@ namespace VitNX.Functions.Common
             string bak_file = sourceFolder + "." + newFileExtension.Replace(".", "");
             if (File.Exists(bak_file))
             {
-                try { File.Delete(bak_file); } catch { } 
+                try { File.Delete(bak_file); } catch { }
             }
             if (saveOldFile == false)
             {

@@ -1,1 +1,1 @@
-c['557']=[['558',"SelectedIndicesChanged Event","topic_0000000000000245.html",0]];
+c['557']=[['558',"VitNX_ListItem Constructor","topic_0000000000000259_overloads--.html",1],['561',"Events","topic_0000000000000257_events--.html",1]];

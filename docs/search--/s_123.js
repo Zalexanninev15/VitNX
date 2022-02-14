@@ -1,1 +1,1 @@
-search_result['123']=["topic_000000000000004D.html","PowerControl.Monitor Method","The power of monitor."];
+search_result['123']=["topic_0000000000000053.html","Cpu Class","Work with informations of CPU."];

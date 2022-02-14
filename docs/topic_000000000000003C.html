@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Monitor.CaptureScreenToFile Method</title>
+	<title>FileSystem.ZipFolder Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Monitor.CaptureScreenToFile Method</h1>
+		<h1 class="title">FileSystem.ZipFolder Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Captures the screen to file.</summary-info>
+        <summary-info>Zips the folder.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub CaptureScreenToFile( _&nbsp;<br />   ByVal <i>filename</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>format</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.imageformat">ImageFormat</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub ZipFolder( _&nbsp;<br />   ByVal <i>sourceFolder</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>zipFile</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CaptureScreenToFile(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>filename</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.imageformat">ImageFormat</a> <i>format</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ZipFolder(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>zipFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,10 +191,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="filename" class="parameterList">
+	Parameters</h4><dl paramName="sourceFolder" class="parameterList">
 	<dt>
 		<span class="parameter">
-			filename
+			sourceFolder
 		</span>
 	</dt>
 	<dd>
@@ -202,20 +202,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The filename. 
+	The source folder. 
 </p>
-<dl paramName="format" class="parameterList">
+<dl paramName="zipFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			format
+			zipFile
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.imageformat">ImageFormat</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The format. 
+	The zip file. 
 </p>
 
 <p />
@@ -294,11 +294,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void CaptureScreenToFile(string filename, ImageFormat format)
-        {
-            Image img = CaptureScreen();
-            img.Save(filename, format);
-        }
+public static void ZipFolder(string sourceFolder, 
+     string zipFile)
+ {
+     if (!Directory.Exists(sourceFolder))
+         throw new ArgumentException(&quot;sourceDirectory&quot;);
+     byte[] zipHeader = new byte[] { 80, 75, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+     using (FileStream fs = File.Create(zipFile))
+         fs.Write(zipHeader, 0, zipHeader.Length);
+     dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID(&quot;Shell.Application&quot;));
+     dynamic source = shellApplication.NameSpace(sourceFolder);
+     dynamic destination = shellApplication.NameSpace(zipFile);
+     destination.CopyHere(source.Items(), 20);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -360,11 +368,11 @@ public static void CaptureScreenToFile(string filename, ImageFormat format)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000037.html">Monitor Class</a><br />
+			<a href="topic_000000000000002D.html">FileSystem Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -382,12 +390,7 @@ public static void CaptureScreenToFile(string filename, ImageFormat format)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

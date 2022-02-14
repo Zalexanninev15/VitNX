@@ -1,1 +1,1 @@
-search_result['1454']=["topic_00000000000006E3.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];
+search_result['1454']=["topic_00000000000003DD.html","Type Enumeration",""];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockPanelState Constructor</title>
+	<title>VitNX_TreeView.SelectNodes (List&lt;VitNX_TreeNode&gt;, Boolean) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockPanelState Constructor</h1>
+		<h1 class="title">VitNX_TreeView.SelectNodes (List&lt;VitNX_TreeNode&gt;, Boolean) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub SelectNodes( _&nbsp;<br />   ByVal <i>nodes</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>(Of <a target="_top" href="topic_00000000000002BE.html" onclick="this.target='';return true;">VitNX_TreeNode</a>), _&nbsp;<br />   Optional ByVal <i>updateAnchors</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> = true _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public DockPanelState()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SelectNodes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_00000000000002BE.html" onclick="this.target='';return true;">VitNX_TreeNode</a>&gt; <i>nodes</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>updateAnchors</i> = true&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,6 +189,35 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="nodes" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nodes
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_00000000000002BE.html" onclick="this.target='';return true;">VitNX_TreeNode</a>&gt; 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="updateAnchors" class="parameterList">
+	<dt>
+		<span class="parameter">
+			updateAnchors
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 
 
@@ -264,9 +293,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public DockPanelState()
+public void SelectNodes(List&lt;VitNX_TreeNode&gt; nodes, bool updateAnchors = true)
         {
-            Regions = new List&lt;DockRegionState&gt;();
+            _selectedNodes.Clear();
+
+            foreach (var node in nodes)
+                _selectedNodes.Add(node);
+
+            if (updateAnchors &amp;&amp; _selectedNodes.Count &gt; 0)
+            {
+                _anchoredNodeStart = _selectedNodes[_selectedNodes.Count - 1];
+                _anchoredNodeEnd = _selectedNodes[_selectedNodes.Count - 1];
+            }
+
+            Invalidate();
         }
 					</pre>			
 				</div>
@@ -329,11 +369,11 @@ public DockPanelState()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002D7.html">DockPanelState Class</a><br />
+			<a href="topic_00000000000002C9.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -351,12 +391,7 @@ public DockPanelState()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

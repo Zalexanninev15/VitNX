@@ -24,7 +24,7 @@ namespace VitNX.Functions.Common.Web
                 using (WebClient client = new WebClient())
                 {
                     client.Proxy = null;
-                    return Text.Work.FixDeEncoding(client.DownloadString(url));
+                    return Data.Text.FixDeEncoding(client.DownloadString(url));
                 }
             }
             catch (Exception ex) { return ex.Message; }

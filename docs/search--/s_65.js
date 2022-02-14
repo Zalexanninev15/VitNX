@@ -1,1 +1,1 @@
-search_result['65']=["topic_000000000000002D.html","Cpu.GetArchitecture Method","Gets the architecture."];
+search_result['65']=["topic_0000000000000028.html","CompressAndDecompress Class","Compress and decompress the text or byte[]."];

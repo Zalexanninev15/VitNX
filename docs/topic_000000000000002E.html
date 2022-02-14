@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Cpu.GetClockSpeed Method</title>
+	<title>FileSystem.GetItemsListInFolder Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Cpu.GetClockSpeed Method</h1>
+		<h1 class="title">FileSystem.GetItemsListInFolder Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the clock speed.</summary-info>
+        <summary-info>Gets the items list in folder.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetClockSpeed() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetItemsListInFolder( _&nbsp;<br />   ByVal <i>sourceFolder</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>(Of <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetClockSpeed()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; GetItemsListInFolder(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,12 +190,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="sourceFolder" class="parameterList">
+	<dt>
+		<span class="parameter">
+			sourceFolder
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The source folder. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
 		<p>
-		A string. 
+		A list of string. 
 	</p>
 	
 
@@ -272,16 +288,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetClockSpeed()
-        {
-            string clockSpeed = &quot;&quot;;
-            foreach (var item in new ManagementObjectSearcher(&quot;select MaxClockSpeed from Win32_Processor&quot;).Get())
-            {
-                var clockSpeedx = (uint)item[&quot;MaxClockSpeed&quot;];
-                clockSpeed = clockSpeedx.ToString();
-            }
-            return clockSpeed;
-        }
+public static List&lt;string&gt; GetItemsListInFolder(string sourceFolder)
+ {
+     List&lt;string&gt; ls = new List&lt;string&gt;();
+     try
+     {
+         string[] folders = Directory.GetDirectories(sourceFolder);
+         foreach (string folder in folders)
+             ls.Add(&quot;Folder: &quot; + folder);
+         string[] files = Directory.GetFiles(sourceFolder);
+         foreach (string filename in files)
+             ls.Add(&quot;File: &quot; + filename);
+     }
+     catch (Exception e) { ls.Add(e.Message.Trim('\n')); }
+     return ls;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -343,11 +364,11 @@ public static string GetClockSpeed()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000002B.html">Cpu Class</a><br />
+			<a href="topic_000000000000002D.html">FileSystem Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -365,12 +386,7 @@ public static string GetClockSpeed()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

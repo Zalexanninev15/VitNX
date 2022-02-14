@@ -1,1 +1,1 @@
-c['867']=[['868',"VitNX2_Button Constructor","topic_0000000000000386.html",0],['869',"Methods","topic_0000000000000385_methods--.html",1]];
+c['867']=[['868',"ControlScrollFilter Class","topic_000000000000037E.html",1],['871',"DockContentDragFilter Class","topic_0000000000000380.html",1],['876',"DockResizeFilter Class","topic_0000000000000384.html",1]];

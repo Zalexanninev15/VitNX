@@ -1,1 +1,1 @@
-search_result['71']=["topic_000000000000002F_props--.html","Gpu Properties",""];
+search_result['71']=["topic_0000000000000029.html","CompressAndDecompress.GetBytes Method","Gets the bytes.\r\nExample: CompressAndDecompress.GetBytes(input)"];

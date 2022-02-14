@@ -1,1 +1,1 @@
-search_result['287']=["topic_00000000000000A6.html","FocusOnControls.VolumeOnFocus Method","Enable/disable sound (nasty) when focusing on an item/control.."];
+search_result['287']=["topic_00000000000000AB_methods--.html","GetClipboardText Methods",""];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DocumentTabAreaSize Field</title>
+	<title>Controls.SetNativeThemeForControls Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DocumentTabAreaSize Field</h1>
+		<h1 class="title">Controls.SetNativeThemeForControls Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001E3.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Config</a>
+<a href="topic_00000000000001E2.html">VitNX.Functions.Windows.WindowSAndControls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Sets the native Windows System theme for controls.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Const DocumentTabAreaSize As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a> = 24</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub SetNativeThemeForControls( _&nbsp;<br />   ByVal <i>handle</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   Optional ByVal <i>themeMode</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> = &quot;DarkMode_Explorer&quot; _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DocumentTabAreaSize = 24</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetNativeThemeForControls(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>handle</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>themeMode</i> = &quot;DarkMode_Explorer&quot;&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,11 +190,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="handle" class="parameterList">
+	<dt>
+		<span class="parameter">
+			handle
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	The handle. 
+</p>
+<dl paramName="themeMode" class="parameterList">
+	<dt>
+		<span class="parameter">
+			themeMode
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The theme mode. 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
+<p />
+
 
 
 
@@ -268,7 +294,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public const int DocumentTabAreaSize = 24;
+public static void SetNativeThemeForControls(IntPtr handle, string themeMode = &quot;DarkMode_Explorer&quot;)
+ {
+     Import.SetWindowTheme(handle, themeMode, null);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +359,11 @@ public const int DocumentTabAreaSize = 24;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000001E5.html">Constsants Class</a><br />
+			<a href="topic_00000000000001EA.html">Controls Class</a><br />
 
 
 
-<a href="topic_00000000000001E3.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace</a><br />
+<a href="topic_00000000000001E2.html">VitNX.Functions.Windows.WindowSAndControls Namespace</a><br />
 
 
 			
@@ -352,11 +381,7 @@ public const int DocumentTabAreaSize = 24;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
+

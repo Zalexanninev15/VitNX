@@ -1,1 +1,1 @@
-search_result['543']=["topic_0000000000000141_attached_props--.html","MARGINS Attached Properties",""];
+search_result['543']=["topic_0000000000000141_props--.html","SWP Properties",""];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ProgressBar.Dispose Method</title>
+	<title>VitNX_ToolStripRenderer.InitializeItem Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ProgressBar.Dispose Method</h1>
+		<h1 class="title">VitNX_ToolStripRenderer.InitializeItem Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000370.html">VitNX.UI.ControlsV1</a>
+<a href="topic_0000000000000369.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>When overridden in a derived class, provides for custom initialization of the given <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shadows Sub Dispose()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub InitializeItem( _&nbsp;<br />   ByVal <i>item</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">new public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Dispose()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InitializeItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> <i>item</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,6 +190,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="item" class="parameterList">
+	<dt>
+		<span class="parameter">
+			item
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> 
+	</dd>
+</dl>
+<p>
+	The <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> to be initialized. 
+</p>
+
+<p />
 
 
 
@@ -264,11 +281,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public new void Dispose()
- {
-     _textColourBrush.Dispose(); _progressColourBrush.Dispose();
-     base.Dispose();
- }
+protected override void InitializeItem(ToolStripItem item)
+        {
+            base.InitializeItem(item);
+
+            if (item.GetType() == typeof(ToolStripSeparator))
+            {
+                var castItem = (ToolStripSeparator)item;
+                if (!castItem.IsOnDropDown)
+                    item.Margin = new Padding(0, 0, 2, 0);
+            }
+
+            if (item.GetType() == typeof(ToolStripButton))
+            {
+                item.AutoSize = false;
+                item.Size = new Size(24, 24);
+            }
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +359,11 @@ public new void Dispose()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000371.html">VitNX_ProgressBar Class</a><br />
+			<a href="topic_0000000000000373.html">VitNX_ToolStripRenderer Class</a><br />
 
 
 
-<a href="topic_0000000000000370.html">VitNX.UI.ControlsV1 Namespace</a><br />
+<a href="topic_0000000000000369.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace</a><br />
 
 
 			
@@ -352,12 +381,7 @@ public new void Dispose()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['284']=["topic_00000000000000A4_props--.html","FocusOnControls Properties",""];
+search_result['284']=["topic_00000000000000AB.html","GetClipboardText Class","Get clipboard text."];

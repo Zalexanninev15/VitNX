@@ -1,1 +1,1 @@
-search_result['704']=["topic_000000000000020F.html","VitNX_ComboBox Class",""];
+search_result['704']=["topic_000000000000020E.html","VitNX_Button.OnMouseUp Method","Raises the OnMouseUp event."];

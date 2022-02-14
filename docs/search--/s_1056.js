@@ -1,1 +1,1 @@
-search_result['1056']=["topic_00000000000002E8_attached_props--.html","VitNX_DockGroup Attached Properties",""];
+search_result['1056']=["topic_00000000000002EE_props--.html","DockPanelState Properties",""];

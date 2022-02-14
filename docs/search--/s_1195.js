@@ -1,1 +1,1 @@
-search_result['1195']=["topic_000000000000034B.html","VitNX_MessageBox.Dispose Method","/// Clean up any resources being used.\r\n        ///"];
+search_result['1195']=["topic_0000000000000352.html","VitNX_Form.OnHandleCreated Method",""];

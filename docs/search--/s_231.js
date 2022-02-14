@@ -1,1 +1,1 @@
-search_result['231']=["topic_000000000000008E_methods--.html","Installed Methods",""];
+search_result['231']=["topic_000000000000008F.html","Config.DefaultGateway Method","Get DefaultGateway of NetworkInterface in IPAddress."];

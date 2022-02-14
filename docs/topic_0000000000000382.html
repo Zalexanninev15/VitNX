@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Helper.VitNX2_TextBoxesFocus Method</title>
+	<title>DockContentDragFilter.PreFilterMessage Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Helper.VitNX2_TextBoxesFocus Method</h1>
+		<h1 class="title">DockContentDragFilter.PreFilterMessage Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2</a>
+<a href="topic_000000000000037D.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Filters out a message before it is dispatched.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function VitNX2_TextBoxesFocus( _&nbsp;<br />   ByVal <i>enter</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function PreFilterMessage( _&nbsp;<br />   ByRef <i>m</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> Implements  _&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> VitNX2_TextBoxesFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>enter</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PreFilterMessage(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,26 +191,33 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="enter" class="parameterList">
+	Parameters</h4><dl paramName="m" class="parameterList">
 	<dt>
 		<span class="parameter">
-			enter
+			m
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The message to be dispatched. You cannot modify this message. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<p>
+		true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control. 
+	</p>
 	
+
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a>
+<br />
 
 
 
@@ -284,11 +292,57 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static int VitNX2_TextBoxesFocus(bool enter)
- {
-     if (enter) return 2;
-     else return 1;
- }
+public bool PreFilterMessage(ref Message m)
+        {
+            // Exit out early if we're not dragging any content
+            if (!_isDragging)
+                return false;
+
+            // We only care about mouse events
+            if (!(m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
+                return false;
+
+            // Move content
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE)
+            {
+                HandleDrag();
+                return false;
+            }
+
+            // Drop content
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP)
+            {
+                if (_targetRegion != null)
+                {
+                    _dockPanel.RemoveContent(_dragContent);
+                    _dragContent.DockArea = _targetRegion.DockArea;
+                    _dockPanel.AddContent(_dragContent);
+                }
+                else if (_targetGroup != null)
+                {
+                    _dockPanel.RemoveContent(_dragContent);
+
+                    switch (_insertType)
+                    {
+                        case DockInsertType.None:
+                            _dockPanel.AddContent(_dragContent, _targetGroup);
+                            break;
+
+                        case DockInsertType.Before:
+                        case DockInsertType.After:
+                            _dockPanel.InsertContent(_dragContent, _targetGroup, _insertType);
+                            break;
+                    }
+         }
+
+                StopDrag();
+                return false;
+            }
+
+            return true;
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -350,11 +404,11 @@ public static int VitNX2_TextBoxesFocus(bool enter)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000381.html">Helper Class</a><br />
+			<a href="topic_0000000000000380.html">DockContentDragFilter Class</a><br />
 
 
 
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_000000000000037D.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32 Namespace</a><br />
 
 
 			
@@ -372,12 +426,7 @@ public static int VitNX2_TextBoxesFocus(bool enter)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['147']=["topic_000000000000005B.html","Work.ContainsOnlyNumbers Method","Contains the only numbers."];
+search_result['147']=["topic_000000000000005C.html","Disk.GetAll Method","Gets the all (logical)."];

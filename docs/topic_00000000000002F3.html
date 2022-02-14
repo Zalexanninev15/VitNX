@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockGroup.OnMouseLeave Method</title>
+	<title>DockRegionState(VitNX_DockArea, Size) Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockGroup.OnMouseLeave Method</h1>
+		<h1 class="title">DockRegionState(VitNX_DockArea, Size) Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseLeave( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub New( _&nbsp;<br />   ByVal <i>area</i> As <a target="_top" href="topic_00000000000002F4.html" onclick="this.target='';return true;">VitNX_DockArea</a>, _&nbsp;<br />   ByVal <i>size</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.size">Size</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseLeave(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public DockRegionState(&nbsp;<br />   <a target="_top" href="topic_00000000000002F4.html" onclick="this.target='';return true;">VitNX_DockArea</a> <i>area</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.size">Size</a> <i>size</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +190,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="area" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			area
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
+		<a target="_top" href="topic_00000000000002F4.html" onclick="this.target='';return true;">VitNX_DockArea</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="size" class="parameterList">
+	<dt>
+		<span class="parameter">
+			size
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.size">Size</a> 
 	</dd>
 </dl>
 <p>
@@ -280,14 +293,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseLeave(EventArgs e)
+public DockRegionState(VitNX_DockArea area, Size size)
+            : this(area)
         {
-            base.OnMouseLeave(e);
-
-            foreach (var tab in _tabs.Values)
-                tab.Hot = false;
-
-            Invalidate();
+            Size = size;
         }
 					</pre>			
 				</div>
@@ -350,11 +359,11 @@ protected override void OnMouseLeave(EventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002E8.html">VitNX_DockGroup Class</a><br />
+			<a href="topic_00000000000002F0.html">DockRegionState Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
 
 
 			
@@ -372,12 +381,7 @@ protected override void OnMouseLeave(EventArgs e)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

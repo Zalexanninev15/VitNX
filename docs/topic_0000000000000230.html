@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DropdownList.OnMouseDown Method</title>
+	<title>VitNX_ComboBox.OnInvalidated Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DropdownList.OnMouseDown Method</h1>
+		<h1 class="title">VitNX_ComboBox.OnInvalidated Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.invalidated">Invalidated</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseDown( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnInvalidated( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.invalidateeventargs">InvalidateEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnInvalidated(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.invalidateeventargs">InvalidateEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -197,11 +198,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.invalidateeventargs">InvalidateEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.invalidateeventargs">InvalidateEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -280,11 +281,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseDown(MouseEventArgs e)
+protected override void OnInvalidated(InvalidateEventArgs e)
         {
-            base.OnMouseDown(e);
-
-            ShowMenu();
+            base.OnInvalidated(e);
+            PaintCombobox();
         }
 					</pre>			
 				</div>
@@ -347,11 +347,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000022B.html">VitNX_DropdownList Class</a><br />
+			<a href="topic_0000000000000226.html">VitNX_ComboBox Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -369,12 +369,7 @@ protected override void OnMouseDown(MouseEventArgs e)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_TreeNode.IsNodeAncestor Method</title>
+	<title>VitNX_SectionPanel.OnMouseDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_TreeNode.IsNodeAncestor Method</h1>
+		<h1 class="title">VitNX_SectionPanel.OnMouseDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousedown">MouseDown</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function IsNodeAncestor( _&nbsp;<br />   ByVal <i>node</i> As <a target="_top" href="topic_00000000000002A7.html" onclick="this.target='';return true;">VitNX_TreeNode</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseDown( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsNodeAncestor(&nbsp;<br />   <a target="_top" href="topic_00000000000002A7.html" onclick="this.target='';return true;">VitNX_TreeNode</a> <i>node</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,26 +191,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="node" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			node
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000002A7.html" onclick="this.target='';return true;">VitNX_TreeNode</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	
 
 
 
@@ -284,18 +281,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public bool IsNodeAncestor(VitNX_TreeNode node)
+protected override void OnMouseDown(MouseEventArgs e)
         {
-            var parent = ParentNode;
-            while (parent != null)
-            {
-                if (parent == node)
-                    return true;
+            base.OnMouseDown(e);
 
-                parent = parent.ParentNode;
-            }
-
-            return false;
+            if (Controls.Count &gt; 0)
+                Controls[0].Focus();
         }
 					</pre>			
 				</div>
@@ -358,11 +349,11 @@ public bool IsNodeAncestor(VitNX_TreeNode node)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002A7.html">VitNX_TreeNode Class</a><br />
+			<a href="topic_00000000000002A9.html">VitNX_SectionPanel Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -380,12 +371,7 @@ public bool IsNodeAncestor(VitNX_TreeNode node)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

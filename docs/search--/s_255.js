@@ -1,1 +1,1 @@
-search_result['255']=["topic_0000000000000099_attached_props--.html","GetClipboardText Attached Properties",""];
+search_result['255']=["topic_000000000000009D.html","Processes.IsOneYourApp Method","You only have 1 copy of the application running."];

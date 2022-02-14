@@ -1,1 +1,1 @@
-search_result['84']=["topic_0000000000000036.html","Disk.GetTotalSpace Method","Gets the total space."];
+search_result['84']=["topic_0000000000000031.html","FileSystem.DeleteFileToRecycleBin Method","Deletes the file to Recycle Bin."];

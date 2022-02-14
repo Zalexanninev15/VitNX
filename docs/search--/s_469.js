@@ -1,1 +1,1 @@
-search_result['469']=["topic_0000000000000107.html","Import.GetDisplayConfigBufferSizes Method",""];
+search_result['469']=["topic_0000000000000100.html","Import.GetPrivateProfileString Method",""];

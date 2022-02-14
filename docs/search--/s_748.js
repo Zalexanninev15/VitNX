@@ -1,1 +1,1 @@
-search_result['748']=["topic_000000000000022B_methods--.html","VitNX_DropdownList Methods",""];
+search_result['748']=["topic_0000000000000231.html","VitNX_ComboBox.OnResize Method","Raises the Resize event."];

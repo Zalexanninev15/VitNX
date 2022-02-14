@@ -1,1 +1,1 @@
-search_result['42']=["topic_000000000000001B.html","Windows.GetComputerName Method","Gets the name of PC."];
+search_result['42']=["topic_000000000000001B.html","EncryptAndDecrypt Class","Encrypt and decrypt the text or byte[]."];

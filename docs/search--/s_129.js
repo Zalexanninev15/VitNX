@@ -1,1 +1,1 @@
-search_result['129']=["topic_000000000000004E_vars--.html","IniSettings32 Fields",""];
+search_result['129']=["topic_0000000000000054.html","Cpu.Characteristics Method","Gets all characteristics."];

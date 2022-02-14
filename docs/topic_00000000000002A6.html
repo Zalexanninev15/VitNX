@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolStrip Constructor</title>
+	<title>VitNX_ScrollView.PaintContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolStrip Constructor</h1>
+		<h1 class="title">VitNX_ScrollView.PaintContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected MustOverride Sub PaintContent( _&nbsp;<br />   ByVal <i>g</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX_ToolStrip()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected abstract <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> PaintContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> <i>g</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,6 +189,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="g" class="parameterList">
+	<dt>
+		<span class="parameter">
+			g
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 
 
@@ -264,13 +280,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX_ToolStrip()
-        {
-            Renderer = new VitNX_ToolStripRenderer();
-            Padding = new Padding(5, 0, 1, 0);
-            AutoSize = false;
-            Size = new Size(1, 28);
-        }
+protected abstract void PaintContent(Graphics g);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -332,11 +342,11 @@ public VitNX_ToolStrip()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002A5.html">VitNX_ToolStrip Class</a><br />
+			<a href="topic_00000000000002A4.html">VitNX_ScrollView Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -354,12 +364,7 @@ public VitNX_ToolStrip()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['1480']=["topic_00000000000006F5.html","Manager.StopTimer Method","/// Stop all application events for the allotted time.\r\n\t\t///"];
+search_result['1480']=["topic_00000000000006F9_overloads--.html","NewFolderDialog.Show Method","Shows the folder dialog."];

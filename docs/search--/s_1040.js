@@ -1,1 +1,1 @@
-search_result['1040']=["topic_00000000000002DB.html","DockRegionState(VitNX_DockArea) Constructor",""];
+search_result['1040']=["topic_00000000000002E6_methods--.html","DockContentEventArgs Methods",""];

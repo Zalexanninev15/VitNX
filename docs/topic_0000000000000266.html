@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_RadioButton.OnPaint Method</title>
+	<title>VitNX_ListView.PaintContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_RadioButton.OnPaint Method</h1>
+		<h1 class="title">VitNX_ListView.PaintContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub PaintContent( _&nbsp;<br />   ByVal <i>g</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> PaintContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> <i>g</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +190,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="g" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			g
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> 
 	</dd>
 </dl>
 <p>
@@ -280,77 +280,63 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs e)
+protected override void PaintContent(Graphics g)
         {
-            var g = e.Graphics;
-            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
+            var range = ItemIndexesInView().ToList();
 
-            var size = Constsants.RadioButtonSize;
+            if (range.Count == 0)
+                return;
 
-            var textColor = Colors.LightText;
-            var borderColor = Colors.LightText;
-            var fillColor = Colors.LightestBackground;
+            var top = range.Min();
+            var bottom = range.Max();
 
-            if (Enabled)
+            for (var i = top; i &lt;= bottom; i++)
             {
-                if (Focused)
+                var width = Math.Max(ContentSize.Width, Viewport.Width);
+                var rect = new Rectangle(0, i * ItemHeight, width, ItemHeight);
+
+                // Background
+                var odd = i % 2 != 0;
+                var bgColor = !odd ? Colors.HeaderBackground : Colors.GreyBackground;
+
+                if (SelectedIndices.Count &gt; 0 &amp;&amp; SelectedIndices.Contains(i))
+                    bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;
+
+                using (var b = new SolidBrush(bgColor))
                 {
-                    borderColor = Colors.BlueHighlight;
-                    fillColor = Colors.BlueSelection;
+                    g.FillRectangle(b, rect);
                 }
 
-                if (_controlState == VitNX_ControlState.Hover)
+                // DEBUG: Border
+                /*using (var p = new Pen(Colors.VitNXBorder))
                 {
-                    borderColor = Colors.BlueHighlight;
-                    fillColor = Colors.BlueSelection;
+                    g.DrawLine(p, new Point(rect.Left, rect.Bottom - 1), new Point(rect.Right, rect.Bottom - 1));
+                }*/
+
+                // Icon
+                if (ShowIcons &amp;&amp; Items[i].Icon != null)
+                {
+                    g.DrawImageUnscaled(Items[i].Icon, new Point(rect.Left + 5, rect.Top + (rect.Height / 2) - (_iconSize / 2)));
                 }
-                else if (_controlState == VitNX_ControlState.Pressed)
+
+                // Text
+                using (var b = new SolidBrush(Items[i].TextColor))
                 {
-                    borderColor = Colors.GreyHighlight;
-                    fillColor = Colors.GreySelection;
+                    var stringFormat = new StringFormat
+                    {
+                        Alignment = StringAlignment.Near,
+                        LineAlignment = StringAlignment.Center
+                    };
+
+                    var modFont = new Font(Font, Items[i].FontStyle);
+
+                    var modRect = new Rectangle(rect.Left + 2, rect.Top, rect.Width, rect.Height);
+
+                    if (ShowIcons)
+                        modRect.X += _iconSize + 8;
+
+                    g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);
                 }
-            }
-            else
-            {
-                textColor = Colors.DisabledText;
-                borderColor = Colors.GreyHighlight;
-                fillColor = Colors.GreySelection;
-            }
-
-            using (var b = new SolidBrush(Colors.GreyBackground))
-            {
-                g.FillRectangle(b, rect);
-            }
-
-            g.SmoothingMode = SmoothingMode.HighQuality;
-
-            using (var p = new Pen(borderColor))
-            {
-                var boxRect = new Rectangle(0, (rect.Height / 2) - (size / 2), size, size);
-                g.DrawEllipse(p, boxRect);
-            }
-
-            if (Checked)
-            {
-                using (var b = new SolidBrush(fillColor))
-                {
-                    Rectangle boxRect = new Rectangle(3, (rect.Height / 2) - ((size - 7) / 2) - 1, size - 6, size - 6);
-                    g.FillEllipse(b, boxRect);
-                }
-            }
-
-            g.SmoothingMode = SmoothingMode.Default;
-
-            using (var b = new SolidBrush(textColor))
-            {
-                var stringFormat = new StringFormat
-                {
-                    LineAlignment = StringAlignment.Center,
-                    Alignment = StringAlignment.Near
-                };
-
-                var modRect = new Rectangle(size + 4, 0, rect.Width - size, rect.Height);
-                g.DrawString(Text, Font, b, modRect, stringFormat);
             }
         }
 					</pre>			
@@ -414,11 +400,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000025D.html">VitNX_RadioButton Class</a><br />
+			<a href="topic_000000000000025B.html">VitNX_ListView Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -436,12 +422,7 @@ protected override void OnPaint(PaintEventArgs e)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

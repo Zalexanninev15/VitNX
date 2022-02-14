@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DataFromSites.GetGeo Method</title>
+	<title>PowerControl.Computer Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DataFromSites.GetGeo Method</h1>
+		<h1 class="title">PowerControl.Computer Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the geolocation of PC.</summary-info>
+        <summary-info>The power of computer.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetGeo( _&nbsp;<br />   ByVal <i>ip</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub Computer( _&nbsp;<br />   ByVal <i>method</i> As <a target="_top" href="topic_0000000000000071.html" onclick="this.target='';return true;">SYSTEM_POWER_CONTROL</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetGeo(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>ip</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Computer(&nbsp;<br />   <a target="_top" href="topic_0000000000000071.html" onclick="this.target='';return true;">SYSTEM_POWER_CONTROL</a> <i>method</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,29 +191,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="ip" class="parameterList">
+	Parameters</h4><dl paramName="method" class="parameterList">
 	<dt>
 		<span class="parameter">
-			ip
+			method
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="topic_0000000000000071.html" onclick="this.target='';return true;">SYSTEM_POWER_CONTROL</a> 
 	</dd>
 </dl>
 <p>
-	The ip. 
+	The method. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
-	
 
 
 
@@ -288,14 +281,33 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetGeo(string ip)
+public static void Computer(SYSTEM_POWER_CONTROL method)
  {
-     try
+     switch (method)
      {
-         using (WebClient client = new WebClient())
-             return client.DownloadString($&quot;https://ipinfo.io/{ip}/json&quot;);
+         case SYSTEM_POWER_CONTROL.SYSTEM_LOGOFF:
+             {
+                 Windows.Win32.Import.ExitWindowsEx(0, 0);
+                 break;
+             }
+         case SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
+             {
+                 // Old code: Processes.Run(&quot;shutdown&quot;, &quot;/s /t 0&quot;);
+                 Processes.Run(&quot;powershell&quot;, &quot;Stop-Computer&quot;);
+                 break;
+             }
+         case SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
+             {
+                 // Old code: Processes.Run(&quot;shutdown&quot;, &quot;/r /t 0&quot;);
+                 Processes.Run(&quot;powershell&quot;, &quot;Restart-Computer -Force&quot;);
+                 break;
+             }
+         case SYSTEM_POWER_CONTROL.SYSTEM_LOCK:
+             {
+                 Windows.Win32.Import.LockWorkStation();
+                 break;
+             }
      }
-     catch (Exception ex) { return ex.Message; }
  }
 					</pre>			
 				</div>
@@ -358,11 +370,11 @@ public static string GetGeo(string ip)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000073.html">DataFromSites Class</a><br />
+			<a href="topic_0000000000000070.html">PowerControl Class</a><br />
 
 
 
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -380,12 +392,7 @@ public static string GetGeo(string ip)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

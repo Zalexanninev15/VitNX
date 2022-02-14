@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockRegionState(VitNX_DockArea) Constructor</title>
+	<title>VitNX_TreeView.EnsureVisible Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockRegionState(VitNX_DockArea) Constructor</h1>
+		<h1 class="title">VitNX_TreeView.EnsureVisible Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub New( _&nbsp;<br />   ByVal <i>area</i> As <a target="_top" href="topic_00000000000002DD.html" onclick="this.target='';return true;">VitNX_DockArea</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub EnsureVisible()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public DockRegionState(&nbsp;<br />   <a target="_top" href="topic_00000000000002DD.html" onclick="this.target='';return true;">VitNX_DockArea</a> <i>area</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,22 +189,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="area" class="parameterList">
-	<dt>
-		<span class="parameter">
-			area
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000002DD.html" onclick="this.target='';return true;">VitNX_DockArea</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -280,10 +264,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public DockRegionState(VitNX_DockArea area)
-            : this()
+public void EnsureVisible()
         {
-            Area = area;
+            if (SelectedNodes.Count == 0)
+                return;
+
+            foreach (var node in SelectedNodes)
+                node.EnsureVisible();
+
+            var itemTop = -1;
+
+            if (!MultiSelect)
+                itemTop = SelectedNodes[0].FullArea.Top;
+            else
+                itemTop = _anchoredNodeEnd.FullArea.Top;
+
+            var itemBottom = itemTop + ItemHeight;
+
+            if (itemTop &lt; Viewport.Top)
+                VScrollTo(itemTop);
+
+            if (itemBottom &gt; Viewport.Bottom)
+                VScrollTo((itemBottom - Viewport.Height));
         }
 					</pre>			
 				</div>
@@ -346,11 +348,11 @@ public DockRegionState(VitNX_DockArea area)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002D9.html">DockRegionState Class</a><br />
+			<a href="topic_00000000000002C9.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -368,12 +370,7 @@ public DockRegionState(VitNX_DockArea area)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['442']=["topic_00000000000000EC.html","Import.GetConsoleWindow Method",""];
+search_result['442']=["topic_00000000000000EF.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Structure",""];

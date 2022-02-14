@@ -1,1 +1,1 @@
-search_result['61']=["topic_000000000000002B_methods--.html","Cpu Methods",""];
+search_result['61']=["topic_0000000000000024.html","EncrypterAndDecrypter.Decrypt Method","Decrypts the text."];

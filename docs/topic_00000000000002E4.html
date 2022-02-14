@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockTextChanged Event</title>
+	<title>VitNX_TreeView.PaintContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockTextChanged Event</h1>
+		<h1 class="title">VitNX_TreeView.PaintContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Event DockTextChanged As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub PaintContent( _&nbsp;<br />   ByVal <i>g</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a> DockTextChanged</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> PaintContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> <i>g</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,6 +189,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="g" class="parameterList">
+	<dt>
+		<span class="parameter">
+			g
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 
 
@@ -264,7 +280,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public event EventHandler DockTextChanged;
+protected override void PaintContent(Graphics g)
+        {
+            foreach (var node in Nodes)
+            {
+                DrawNode(node, g);
+            }
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -326,11 +348,11 @@ public event EventHandler DockTextChanged;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002E3.html">VitNX_DockContent Class</a><br />
+			<a href="topic_00000000000002C9.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -348,11 +370,7 @@ public event EventHandler DockTextChanged;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
+

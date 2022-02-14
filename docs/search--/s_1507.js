@@ -1,1 +1,1 @@
-search_result['1507']=["topic_000000000000070B_methods--.html","NotificationForm Methods",""];
+search_result['1507']=["topic_000000000000070C.html","Manager.StopTimer Method","/// Stop all application events for the allotted time.\r\n\t\t///"];

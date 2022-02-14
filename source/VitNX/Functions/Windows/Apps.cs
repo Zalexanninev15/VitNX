@@ -7,6 +7,8 @@ using System.Management;
 using System.Security.Principal;
 using System.Threading;
 
+using VitNX.Functions.Windows.Win32;
+
 namespace VitNX.Functions.Windows.Apps
 {
     /// <summary>
@@ -189,6 +191,23 @@ namespace VitNX.Functions.Windows.Apps
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Checks the debugger for your app.
+        /// </summary>
+        /// <param name="currentProcess">The current process.</param>
+        /// <returns>A bool.</returns>
+        public static bool CheckDebugger(Process currentProcess)
+        {
+            bool isDebuggerPresent = false;
+            try
+            {
+                Import.CheckRemoteDebuggerPresent(currentProcess.Handle, ref 
+                    isDebuggerPresent);
+                return isDebuggerPresent;
+            }
+            catch { return isDebuggerPresent; }
         }
     }
 

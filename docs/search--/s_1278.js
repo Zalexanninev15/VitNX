@@ -1,1 +1,1 @@
-search_result['1278']=["topic_0000000000000381_methods--.html","Helper Methods",""];
+search_result['1278']=["topic_0000000000000386.html","DockResizeFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

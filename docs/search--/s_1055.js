@@ -1,1 +1,1 @@
-search_result['1055']=["topic_00000000000002E8.html","VitNX_DockGroup Class",""];
+search_result['1055']=["topic_00000000000002EE_methods--.html","DockPanelState Methods",""];

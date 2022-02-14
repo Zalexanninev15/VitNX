@@ -1,1 +1,1 @@
-search_result['1176']=["topic_000000000000033E_vars--.html","VitNX_MessageBox Fields",""];
+search_result['1176']=["topic_000000000000033D.html","VitNX_Dialog.OnHandleCreated Method",""];

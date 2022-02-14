@@ -44,8 +44,8 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Activities" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
@@ -54,9 +54,9 @@
     <Compile Include="Functions\Common\CShap.cs" />
     <Compile Include="Functions\Common\PowerControl.cs" />
     <Compile Include="Functions\Common\SettingsEditor32.cs" />
-    <Compile Include="Functions\Common\Text.cs" />
+    <Compile Include="Functions\Common\Data.cs" />
     <Compile Include="UI\OtherControls\FontAwesome.cs" />
-    <Compile Include="Functions\Windows\WindowS.cs" />
+    <Compile Include="Functions\Windows\WindowSAndControls.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

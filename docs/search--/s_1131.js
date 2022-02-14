@@ -1,1 +1,1 @@
-search_result['1131']=["topic_000000000000031B_events--.html","VitNX_ToolWindow Events",""];
+search_result['1131']=["topic_000000000000031F.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];

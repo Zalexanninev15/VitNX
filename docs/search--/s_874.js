@@ -1,1 +1,1 @@
-search_result['874']=["topic_0000000000000276.html","ViewportChanged Event",""];
+search_result['874']=["topic_000000000000027C.html","VitNX_RadioButton.OnLostFocus Method","Raises the OnLostFocus event."];

@@ -1,1 +1,1 @@
-search_result['1067']=["topic_00000000000002EF.html","VitNX_DockGroup.OnResize Method",""];
+search_result['1067']=["topic_00000000000002F2.html","DockRegionState(VitNX_DockArea) Constructor",""];

@@ -1,1 +1,1 @@
-search_result['1250']=["topic_000000000000036E.html","DockResizeFilter Constructor",""];
+search_result['1250']=["topic_0000000000000379.html","VitNX_ToolStripRenderer.OnRenderGrip Method","Raises the RenderGrip event."];

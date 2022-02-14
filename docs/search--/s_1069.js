@@ -1,1 +1,1 @@
-search_result['1069']=["topic_00000000000002F1.html","VitNX_DockGroup.OnMouseDown Method",""];
+search_result['1069']=["topic_00000000000002F3.html","DockRegionState(VitNX_DockArea, Size) Constructor",""];

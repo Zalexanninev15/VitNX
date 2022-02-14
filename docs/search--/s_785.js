@@ -1,1 +1,1 @@
-search_result['785']=["topic_0000000000000240_props--.html","VitNX_ListItem Properties",""];
+search_result['785']=["topic_000000000000024A.html","VitNX_DropdownList.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

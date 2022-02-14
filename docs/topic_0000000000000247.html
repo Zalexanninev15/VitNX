@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ListView.OnMouseDown Method</title>
+	<title>VitNX_DropdownList.OnMouseDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ListView.OnMouseDown Method</h1>
+		<h1 class="title">VitNX_DropdownList.OnMouseDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousedown">MouseDown</a> event.</summary-info>
 
 
 
@@ -201,7 +202,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -284,34 +285,7 @@ protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
 
-            if (Items.Count == 0)
-                return;
-
-            if (e.Button != MouseButtons.Left &amp;&amp; e.Button != MouseButtons.Right)
-                return;
-
-            var pos = OffsetMousePosition;
-
-            var range = ItemIndexesInView().ToList();
-
-            var top = range.Min();
-            var bottom = range.Max();
-            var width = Math.Max(ContentSize.Width, Viewport.Width);
-
-            for (var i = top; i &lt;= bottom; i++)
-            {
-                var rect = new Rectangle(0, i * ItemHeight, width, ItemHeight);
-
-                if (rect.Contains(pos))
-                {
-                    if (MultiSelect &amp;&amp; ModifierKeys == Keys.Shift)
-                        SelectAnchoredRange(i);
-                    else if (MultiSelect &amp;&amp; ModifierKeys == Keys.Control)
-                        ToggleItem(i);
-                    else
-                        SelectItem(i);
-                }
-            }
+            ShowMenu();
         }
 					</pre>			
 				</div>
@@ -374,11 +348,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000244.html">VitNX_ListView Class</a><br />
+			<a href="topic_0000000000000242.html">VitNX_DropdownList Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -396,12 +370,7 @@ protected override void OnMouseDown(MouseEventArgs e)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

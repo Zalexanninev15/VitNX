@@ -1,1 +1,1 @@
-search_result['598']=["topic_00000000000001CF.html","VitNX.Functions.Windows Namespace",""];
+search_result['598']=["topic_0000000000000175.html","SpecialWindowHandles Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['257']=["topic_0000000000000099_methods--.html","GetClipboardText Methods",""];
+search_result['257']=["topic_000000000000009F.html","Processes.CheckDebugger Method","Checks the debugger for your app."];

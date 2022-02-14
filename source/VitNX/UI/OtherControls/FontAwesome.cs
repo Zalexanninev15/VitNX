@@ -164,7 +164,9 @@ namespace VitNX.UI.OtherControls
                 using (Graphics g2 = Graphics.FromImage(bmp))
                 {
                     var pen = new Pen(props.BorderColor, 1);
-                    var borderRect = new Rectangle(0, 0, (int)(props.Size - pen.Width), (int)(props.Size - pen.Width));
+                    var borderRect = new Rectangle(0, 0, 
+                        (int)(props.Size - pen.Width), 
+                        (int)(props.Size - pen.Width));
                     g2.DrawRectangle(pen, borderRect);
                 }
             }
@@ -207,7 +209,10 @@ namespace VitNX.UI.OtherControls
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                g.DrawImage(imgToResize, x + props.Location.X, y + props.Location.Y, dstWidth, dstHeight);
+                g.DrawImage(imgToResize,
+                    x + props.Location.X,
+                    y + props.Location.Y,
+                    dstWidth, dstHeight);
             }
             return b;
         }
@@ -216,7 +221,8 @@ namespace VitNX.UI.OtherControls
         {
             try
             {
-                if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\{FONT_FILE_NAME}") && !string.IsNullOrEmpty(_downloadLink))
+                if (!File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\{FONT_FILE_NAME}") 
+                    && !string.IsNullOrEmpty(_downloadLink))
                 {
                     Uri downloadUri;
                     if (Uri.TryCreate(_downloadLink, UriKind.Absolute, out downloadUri)

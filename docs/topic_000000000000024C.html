@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ListView.ToggleItem Method</title>
+	<title>VitNX_DropdownList.OnLostFocus Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ListView.ToggleItem Method</h1>
+		<h1 class="title">VitNX_DropdownList.OnLostFocus Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.lostfocus">LostFocus</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub ToggleItem( _&nbsp;<br />   ByVal <i>index</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnLostFocus( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ToggleItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>index</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnLostFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,18 +191,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="index" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			index
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -280,60 +281,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void ToggleItem(int index)
+protected override void OnLostFocus(EventArgs e)
         {
-            if (_selectedIndices.Contains(index))
-            {
-                _selectedIndices.Remove(index);
+            base.OnLostFocus(e);
 
-                // If we just removed both the anchor start AND end then reset them
-                if (_anchoredItemStart == index &amp;&amp; _anchoredItemEnd == index)
-                {
-                    if (_selectedIndices.Count &gt; 0)
-                    {
-                        _anchoredItemStart = _selectedIndices[0];
-                        _anchoredItemEnd = _selectedIndices[0];
-                    }
-                    else
-                    {
-                        _anchoredItemStart = -1;
-                        _anchoredItemEnd = -1;
-                    }
-                }
+            var location = Cursor.Position;
 
-                // If we just removed the anchor start then update it accordingly
-                if (_anchoredItemStart == index)
-                {
-                    if (_anchoredItemEnd &lt; index)
-                        _anchoredItemStart = index - 1;
-                    else if (_anchoredItemEnd &gt; index)
-                        _anchoredItemStart = index + 1;
-                    else
-                        _anchoredItemStart = _anchoredItemEnd;
-                }
-
-                // If we just removed the anchor end then update it accordingly
-                if (_anchoredItemEnd == index)
-                {
-                    if (_anchoredItemStart &lt; index)
-                        _anchoredItemEnd = index - 1;
-                    else if (_anchoredItemStart &gt; index)
-                        _anchoredItemEnd = index + 1;
-                    else
-                        _anchoredItemEnd = _anchoredItemStart;
-                }
-            }
+            if (!ClientRectangle.Contains(location))
+                SetControlState(VitNX_ControlState.Normal);
             else
-            {
-                _selectedIndices.Add(index);
-                _anchoredItemStart = index;
-                _anchoredItemEnd = index;
-            }
-
-            if (SelectedIndicesChanged != null)
-                SelectedIndicesChanged(this, null);
-
-            Invalidate();
+                SetControlState(VitNX_ControlState.Hover);
         }
 					</pre>			
 				</div>
@@ -396,11 +353,11 @@ public void ToggleItem(int index)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000244.html">VitNX_ListView Class</a><br />
+			<a href="topic_0000000000000242.html">VitNX_DropdownList Class</a><br />
 
 
 
-<a href="topic_00000000000001EF.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000206.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -418,12 +375,7 @@ public void ToggleItem(int index)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

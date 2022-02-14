@@ -1,1 +1,1 @@
-search_result['1473']=["topic_00000000000006F0.html","MaxTextWidth Field",""];
+search_result['1473']=["topic_00000000000006F8.html","NewFolderDialog Class","Work with the folder dialog, Windows Vista+."];

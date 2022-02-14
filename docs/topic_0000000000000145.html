@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>bottomHeight Field</title>
+	<title>NOREDRAW Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">bottomHeight Field</h1>
+		<h1 class="title">NOREDRAW Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared bottomHeight As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared ReadOnly NOREDRAW As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> bottomHeight</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> NOREDRAW</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -268,7 +268,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static int bottomHeight = 1;
+public static readonly int
+ NOSIZE = 0x0001,
+ NOMOVE = 0x0002,
+ NOZORDER = 0x0004,
+ NOREDRAW = 0x0008,
+ NOACTIVATE = 0x0010,
+ DRAWFRAME = 0x0020,
+ FRAMECHANGED = 0x0020,
+ SHOWWINDOW = 0x0040,
+ HIDEWINDOW = 0x0080,
+ NOCOPYBITS = 0x0100,
+ NOOWNERZORDER = 0x0200,
+ NOREPOSITION = 0x0200,
+ NOSENDCHANGING = 0x0400,
+ DEFERERASE = 0x2000,
+ ASYNCWINDOWPOS = 0x4000;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +345,11 @@ public static int bottomHeight = 1;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000141.html">MARGINS Structure</a><br />
+			<a href="topic_0000000000000141.html">SWP Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -352,11 +367,6 @@ public static int bottomHeight = 1;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>

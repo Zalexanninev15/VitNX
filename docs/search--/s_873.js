@@ -1,1 +1,1 @@
-search_result['873']=["topic_0000000000000275_vars--.html","VitNX_ScrollBase Fields",""];
+search_result['873']=["topic_000000000000027B.html","VitNX_RadioButton.OnGotFocus Method","Raises the GotFocus event."];

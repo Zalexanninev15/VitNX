@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SHERB_RECYCLE Enumeration</title>
+	<title>WindowPosFlags Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SHERB_RECYCLE Enumeration</h1>
+		<h1 class="title">WindowPosFlags Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -134,22 +134,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    SHERB_NOCONFIRMATION
+	    HWND_TOPMOST
 	  </td>
 	  <td>
-	    1
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    SHERB_NOPROGRESSUI
-	  </td>
-	  <td>
-	    1
+	    -1
 	  </td>
 	  <td>
 		 
@@ -158,10 +146,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    SHERB_NOSOUND
+	    SWP_NOMOVE
 	  </td>
 	  <td>
-	    4
+	    2
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOSIZE
+	  </td>
+	  <td>
+	    1
 	  </td>
 	  <td>
 		 
@@ -243,11 +243,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum SHERB_RECYCLE : int
+public enum WindowPosFlags : int
  {
-     SHERB_NOCONFIRMATION = 0x00000001,
-     SHERB_NOPROGRESSUI = 0x00000001,
-     SHERB_NOSOUND = 0x00000004
+     HWND_TOPMOST = -1,
+     SWP_NOMOVE = 0x0002,
+     SWP_NOSIZE = 0x0001
  }
 					</pre>			
 				</div>
@@ -270,11 +270,11 @@ public enum SHERB_RECYCLE : int
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000140.html">Enums Class</a><br />
+			<a href="topic_0000000000000151.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -292,11 +292,6 @@ public enum SHERB_RECYCLE : int
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>

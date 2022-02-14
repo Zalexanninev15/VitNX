@@ -1,1 +1,1 @@
-search_result['112']=["topic_0000000000000043_vars--.html","Ram Fields",""];
+search_result['112']=["topic_0000000000000048.html","Windows.GetWindowsVersionFromREG Method","Gets the Windows version from the Windows Registry."];

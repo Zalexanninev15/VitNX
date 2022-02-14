@@ -1,1 +1,1 @@
-search_result['1236']=["topic_0000000000000369_attached_props--.html","DockContentDragFilter Attached Properties",""];
+search_result['1236']=["topic_0000000000000370.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

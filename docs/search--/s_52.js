@@ -1,1 +1,1 @@
-search_result['52']=["topic_0000000000000025.html","Windows.GetWindowsReleaseIdFromREG Method","Gets the windows release id from the Windows Registry."];
+search_result['52']=["topic_0000000000000020.html","EncryptAndDecrypt.SimpleEncryptAsByte Method","Simples the encrypt as byte."];

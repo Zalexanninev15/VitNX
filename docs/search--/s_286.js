@@ -1,1 +1,1 @@
-search_result['286']=["topic_00000000000000A5.html","FocusOnControls.RemoveFocus Method","Removing the focus from the element/control from which the function is called."];
+search_result['286']=["topic_00000000000000AB_events--.html","GetClipboardText Events",""];

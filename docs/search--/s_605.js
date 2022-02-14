@@ -1,1 +1,1 @@
-search_result['605']=["topic_00000000000001D1.html","WindowS.MinimizeAllWindows Method","Minimizes the all windows."];
+search_result['605']=["topic_00000000000001AD.html","DISPLAYCONFIG_MODE_INFO_TYPE Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['936']=["topic_00000000000002A0_events--.html","VitNX_TextBox Events",""];
+search_result['936']=["topic_00000000000002A9_props--.html","VitNX_SectionPanel Properties",""];

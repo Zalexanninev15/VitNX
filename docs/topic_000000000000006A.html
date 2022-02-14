@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>EncryptAndDecrypt.SimpleDecrypt Method</title>
+	<title>Motherboard.GetFirmwareType Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">EncryptAndDecrypt.SimpleDecrypt Method</h1>
+		<h1 class="title">Motherboard.GetFirmwareType Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text</a>
+<a href="topic_0000000000000041.html">VitNX.Functions.Common.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Simples the decrypt.</summary-info>
+        <summary-info>Gets the firmware type.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function SimpleDecrypt( _&nbsp;<br />   ByVal <i>text</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>password</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetFirmwareType() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SimpleDecrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>password</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetFirmwareType()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,35 +190,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="text" class="parameterList">
-	<dt>
-		<span class="parameter">
-			text
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The text. 
-</p>
-<dl paramName="password" class="parameterList">
-	<dt>
-		<span class="parameter">
-			password
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The password. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
@@ -301,11 +272,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string SimpleDecrypt(string text, string password)
+public static string GetFirmwareType()
  {
-     byte[] input = Convert.FromBase64String(text);
-     byte[] output = SimpleDecryptAsByte(input, password);
-     return Encoding.UTF8.GetString(output);
+     return Processes.Execute(&quot;cmd&quot;,
+         &quot;/C echo %firmware_type%&quot;);
  }
 					</pre>			
 				</div>
@@ -368,11 +338,11 @@ public static string SimpleDecrypt(string text, string password)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000067.html">EncryptAndDecrypt Class</a><br />
+			<a href="topic_0000000000000069.html">Motherboard Class</a><br />
 
 
 
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text Namespace</a><br />
+<a href="topic_0000000000000041.html">VitNX.Functions.Common.Information Namespace</a><br />
 
 
 			
@@ -390,12 +360,7 @@ public static string SimpleDecrypt(string text, string password)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['1047']=["topic_00000000000002E3_events--.html","VitNX_DockContent Events",""];
+search_result['1047']=["topic_00000000000002E8_methods--.html","DockGroupState Methods",""];

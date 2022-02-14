@@ -1,1 +1,1 @@
-search_result['974']=["topic_00000000000002B2.html","VitNX_TreeView Class",""];
+search_result['974']=["topic_00000000000002BA.html","VitNX_Title Constructor",""];

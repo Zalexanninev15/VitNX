@@ -1,1 +1,1 @@
-search_result['1500']=["topic_0000000000000704.html","Info Field",""];
+search_result['1500']=["topic_0000000000000707.html","MaxTextWidth Field",""];

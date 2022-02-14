@@ -1,1 +1,1 @@
-c['960']=[['961',"AsIcon Method","topic_00000000000006DF_overloads--.html",1],['964',"AsImage Method","topic_00000000000006DD_overloads--.html",1],['967',"StackWith Method","topic_00000000000006DB_overloads--.html",1]];
+c['960']=[['961',"Properties Class","topic_00000000000003D1.html",1],['965',"Type Enumeration","topic_00000000000003DD.html",0],['966',"Methods","topic_00000000000003D0_methods--.html",1]];

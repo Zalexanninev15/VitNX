@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DISPLAYCONFIG_PIXELFORMAT Enumeration</title>
+	<title>DISPLAYCONFIG_SCANLINE_ORDERING Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DISPLAYCONFIG_PIXELFORMAT Enumeration</h1>
+		<h1 class="title">DISPLAYCONFIG_SCANLINE_ORDERING Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -134,55 +134,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DISPLAYCONFIG_PIXELFORMAT_16BPP
-	  </td>
-	  <td>
-	    2
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    DISPLAYCONFIG_PIXELFORMAT_24BPP
-	  </td>
-	  <td>
-	    3
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    DISPLAYCONFIG_PIXELFORMAT_32BPP
-	  </td>
-	  <td>
-	    4
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    DISPLAYCONFIG_PIXELFORMAT_8BPP
-	  </td>
-	  <td>
-	    1
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32
+	    DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32
 	  </td>
 	  <td>
 	    4294967295
@@ -194,10 +146,58 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DISPLAYCONFIG_PIXELFORMAT_NONGDI
+	    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED
 	  </td>
 	  <td>
-	    5
+	    2
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST
+	  </td>
+	  <td>
+	    3
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST
+	  </td>
+	  <td>
+	    2
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE
+	  </td>
+	  <td>
+	    1
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED
+	  </td>
+	  <td>
+	    0
 	  </td>
 	  <td>
 		 
@@ -279,14 +279,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum DISPLAYCONFIG_PIXELFORMAT : uint
+public enum DISPLAYCONFIG_SCANLINE_ORDERING : uint
  {
-     DISPLAYCONFIG_PIXELFORMAT_8BPP = 1,
-     DISPLAYCONFIG_PIXELFORMAT_16BPP = 2,
-     DISPLAYCONFIG_PIXELFORMAT_24BPP = 3,
-     DISPLAYCONFIG_PIXELFORMAT_32BPP = 4,
-     DISPLAYCONFIG_PIXELFORMAT_NONGDI = 5,
-     DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32 = 0xffffffff
+     DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED = 0,
+     DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE = 1,
+     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED = 2,
+     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST = 2,
+     DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3,
+     DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = 0xFFFFFFFF
  }
 					</pre>			
 				</div>
@@ -309,11 +309,11 @@ public enum DISPLAYCONFIG_PIXELFORMAT : uint
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000140.html">Enums Class</a><br />
+			<a href="topic_0000000000000151.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -331,11 +331,6 @@ public enum DISPLAYCONFIG_PIXELFORMAT : uint
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>

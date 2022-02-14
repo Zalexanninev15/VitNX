@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockPanel.GetDockPanelState Method</title>
+	<title>VitNX_DockGroup.GetContents Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockPanel.GetDockPanelState Method</h1>
+		<h1 class="title">VitNX_DockGroup.GetContents Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function GetDockPanelState() As <a target="_top" href="topic_00000000000002D7.html" onclick="this.target='';return true;">DockPanelState</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function GetContents() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>(Of <a target="_top" href="topic_00000000000002FA.html" onclick="this.target='';return true;">VitNX_DockContent</a>)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="topic_00000000000002D7.html" onclick="this.target='';return true;">DockPanelState</a> GetDockPanelState()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_00000000000002FA.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; GetContents()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -192,7 +192,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="topic_00000000000002D7.html" onclick="this.target='';return true;">DockPanelState</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_00000000000002FA.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; 
 	
 
 
@@ -268,45 +268,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public DockPanelState GetDockPanelState()
+public List&lt;VitNX_DockContent&gt; GetContents()
         {
-            var state = new DockPanelState();
-
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Document));
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Left, _regions[VitNX_DockArea.Left].Size));
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Right, _regions[VitNX_DockArea.Right].Size));
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Bottom, _regions[VitNX_DockArea.Bottom].Size));
-
-            var _groupStates = new Dictionary&lt;VitNX_DockGroup, DockGroupState&gt;();
-
-            var orderedContent = _contents.OrderBy(c =&gt; c.Order);
-            foreach (var content in orderedContent)
-            {
-                foreach (var region in state.Regions)
-                {
-                    if (region.Area == content.DockArea)
-                    {
-                        DockGroupState groupState;
-
-                        if (_groupStates.ContainsKey(content.DockGroup))
-                        {
-                            groupState = _groupStates[content.DockGroup];
-                        }
-                        else
-                        {
-                            groupState = new DockGroupState();
-                            region.Groups.Add(groupState);
-                            _groupStates.Add(content.DockGroup, groupState);
-                        }
-
-                        groupState.Contents.Add(content.SerializationKey);
-
-                        groupState.VisibleContent = content.DockGroup.VisibleContent.SerializationKey;
-                    }
-                }
-            }
-
-            return state;
+            return _contents.OrderBy(c =&gt; c.Order).ToList();
         }
 					</pre>			
 				</div>
@@ -369,11 +333,11 @@ public DockPanelState GetDockPanelState()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002F7.html">VitNX_DockPanel Class</a><br />
+			<a href="topic_00000000000002FF.html">VitNX_DockGroup Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
 
 
 			
@@ -391,12 +355,7 @@ public DockPanelState GetDockPanelState()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

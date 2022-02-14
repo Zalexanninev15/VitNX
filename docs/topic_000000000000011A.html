@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.mouse_event Method</title>
+	<title>Import.DisplayConfigGetDeviceInfo Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.mouse_event Method</h1>
+		<h1 class="title">Import.DisplayConfigGetDeviceInfo Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)&gt; _&nbsp;<br />Public Shared Sub mouse_event( _&nbsp;<br />   ByVal <i>dwFlags</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dx</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dy</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dwData</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dwExtraInfo</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uintptr">UIntPtr</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;user32.dll&quot;)&gt; _&nbsp;<br />Public Shared Function DisplayConfigGetDeviceInfo( _&nbsp;<br />   ByRef <i>deviceName</i> As <a target="_top" href="topic_00000000000000EF.html" onclick="this.target='';return true;">DISPLAYCONFIG_TARGET_DEVICE_NAME</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> mouse_event(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwFlags</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dx</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dy</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwData</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uintptr">UIntPtr</a> <i>dwExtraInfo</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DisplayConfigGetDeviceInfo(&nbsp;<br />   ref <a target="_top" href="topic_00000000000000EF.html" onclick="this.target='';return true;">DISPLAYCONFIG_TARGET_DEVICE_NAME</a> <i>deviceName</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,66 +190,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="dwFlags" class="parameterList">
+	Parameters</h4><dl paramName="deviceName" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwFlags
+			deviceName
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dx" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dx
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dy" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dy
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwData" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwData
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwExtraInfo" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwExtraInfo
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uintptr">UIntPtr</a> 
+		<a target="_top" href="topic_00000000000000EF.html" onclick="this.target='';return true;">DISPLAYCONFIG_TARGET_DEVICE_NAME</a> 
 	</dd>
 </dl>
 <p>
@@ -258,6 +206,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -332,12 +284,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]
- public static extern void mouse_event(int dwFlags,
-     int dx,
-     int dy,
-     int dwData,
-     UIntPtr dwExtraInfo);
+[DllImport(&quot;user32.dll&quot;)]
+ public static extern int DisplayConfigGetDeviceInfo(ref Monitor.
+     DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -399,11 +348,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000EB.html">Import Class</a><br />
+			<a href="topic_00000000000000FA.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000F9.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -421,12 +370,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

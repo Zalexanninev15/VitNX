@@ -1,1 +1,1 @@
-search_result['1323']=["topic_0000000000000394_props--.html","VitNX2_MessageBox_Form Properties",""];
+search_result['1323']=["topic_00000000000003A0_methods--.html","VitNX2_MessageBox Methods",""];

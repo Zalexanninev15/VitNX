@@ -1,1 +1,1 @@
-search_result['1482']=["topic_00000000000006FC.html","Colors Class",""];
+search_result['1482']=["topic_00000000000006FA_overloads--.html","NewFolderDialog.Show Method","Are shows the folder dialog."];

@@ -1,1 +1,1 @@
-search_result['220']=["topic_0000000000000086.html","Processes.Run Method","Launch a third-party applications."];
+search_result['220']=["topic_0000000000000089.html","DataFromSites.IsHaveInternet Method","Are yout have the internet connection on PC."];

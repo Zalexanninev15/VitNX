@@ -1,1 +1,1 @@
-search_result['1246']=["topic_000000000000036D_events--.html","DockResizeFilter Events",""];
+search_result['1246']=["topic_0000000000000375.html","VitNX_ToolStripRenderer.OnRenderToolStripBackground Method","Raises the RenderToolStripBackground event."];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolStripRenderer.InitializeItem Method</title>
+	<title>VitNX_MessageBox.ShowInfo Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolStripRenderer.InitializeItem Method</h1>
+		<h1 class="title">VitNX_MessageBox.ShowInfo Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000352.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers</a>
+<a href="topic_000000000000033B.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub InitializeItem( _&nbsp;<br />   ByVal <i>item</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function ShowInfo( _&nbsp;<br />   ByVal <i>message</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>caption</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   Optional ByVal <i>buttons</i> As <a target="_top" href="topic_0000000000000349.html" onclick="this.target='';return true;">VitNX_DialogButton</a> = VitNX_DialogButton.Ok _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InitializeItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> <i>item</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> ShowInfo(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000349.html" onclick="this.target='';return true;">VitNX_DialogButton</a> <i>buttons</i> = VitNX_DialogButton.Ok&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +190,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="item" class="parameterList">
+	Parameters</h4><dl paramName="message" class="parameterList">
 	<dt>
 		<span class="parameter">
-			item
+			message
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="caption" class="parameterList">
+	<dt>
+		<span class="parameter">
+			caption
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="buttons" class="parameterList">
+	<dt>
+		<span class="parameter">
+			buttons
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000349.html" onclick="this.target='';return true;">VitNX_DialogButton</a> 
 	</dd>
 </dl>
 <p>
@@ -206,6 +232,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
+	
 
 
 
@@ -280,22 +310,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void InitializeItem(ToolStripItem item)
+public static DialogResult ShowInfo(string message, string caption, VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
         {
-            base.InitializeItem(item);
-
-            if (item.GetType() == typeof(ToolStripSeparator))
-            {
-                var castItem = (ToolStripSeparator)item;
-                if (!castItem.IsOnDropDown)
-                    item.Margin = new Padding(0, 0, 2, 0);
-            }
-
-            if (item.GetType() == typeof(ToolStripButton))
-            {
-                item.AutoSize = false;
-                item.Size = new Size(24, 24);
-            }
+            return ShowDialog(message, caption, VitNX_MessageBoxIcon.Information, buttons);
         }
 					</pre>			
 				</div>
@@ -358,11 +375,11 @@ protected override void InitializeItem(ToolStripItem item)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000035C.html">VitNX_ToolStripRenderer Class</a><br />
+			<a href="topic_0000000000000355.html">VitNX_MessageBox Class</a><br />
 
 
 
-<a href="topic_0000000000000352.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace</a><br />
+<a href="topic_000000000000033B.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms Namespace</a><br />
 
 
 			
@@ -380,12 +397,7 @@ protected override void InitializeItem(ToolStripItem item)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

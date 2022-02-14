@@ -1,1 +1,1 @@
-search_result['1521']=["topic_0000000000000712_events--.html","NotifySettings Events",""];
+search_result['1521']=["topic_0000000000000718_events--.html","Images Events",""];

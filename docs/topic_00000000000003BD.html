@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FontAwesome4.Initialize Method</title>
+	<title>VitNX2_Tab.WndProc Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FontAwesome4.Initialize Method</h1>
+		<h1 class="title">VitNX2_Tab.WndProc Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls</a>
+<a href="topic_0000000000000397.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>This member overrides <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.wndproc">WndProc</a>.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub Initialize()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub WndProc( _&nbsp;<br />   ByRef <i>m</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Initialize()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> WndProc(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,6 +190,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="m" class="parameterList">
+	<dt>
+		<span class="parameter">
+			m
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
+	</dd>
+</dl>
+<p>
+	A Windows Message Object. 
+</p>
+
+<p />
 
 
 
@@ -264,10 +281,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Initialize()
+protected override void WndProc(ref Message m)
  {
-     if (_instance == null)
-         _instance = new FontAwesome4();
+     if (m.Msg == 0x1328 &amp;&amp; !DesignMode) m.Result = (IntPtr)1;
+     else base.WndProc(ref m);
  }
 					</pre>			
 				</div>
@@ -330,11 +347,11 @@ public static void Initialize()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003B9.html">FontAwesome4 Class</a><br />
+			<a href="topic_00000000000003BC.html">VitNX2_Tab Class</a><br />
 
 
 
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_0000000000000397.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			
@@ -352,12 +369,7 @@ public static void Initialize()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 

@@ -1,1 +1,1 @@
-search_result['750']=["topic_000000000000022B_vars--.html","VitNX_DropdownList Fields",""];
+search_result['750']=["topic_0000000000000233.html","VitNX_ComboBox.OnDrawItem Method","Raises the DrawItem event."];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockRegion.OnPaint Method</title>
+	<title>VitNX_DockGroup.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockRegion.OnPaint Method</h1>
+		<h1 class="title">VitNX_DockGroup.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -201,7 +202,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -284,29 +285,50 @@ protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
 
-            if (!Visible)
-                return;
-
-            // Fill body
             using (var b = new SolidBrush(Colors.GreyBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }
 
-            // Draw border
-            using (var p = new Pen(Colors.VitNXBorder))
+            if (!_tabArea.Visible)
+                return;
+
+            using (var b = new SolidBrush(Colors.MediumBackground))
             {
-                // Top border
+                g.FillRectangle(b, _tabArea.ClientRectangle);
+            }
+
+            foreach (var tab in _tabs.Values)
+            {
                 if (DockArea == VitNX_DockArea.Document)
-                    g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
+                    PaintDocumentTab(g, tab);
+                else
+                    PaintToolWindowTab(g, tab);
+            }
 
-                // Left border
-                if (DockArea == VitNX_DockArea.Right)
-                    g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Left, ClientRectangle.Height);
+            if (DockArea == VitNX_DockArea.Document)
+            {
+                // Color divider
+                var isActiveGroup = DockPanel.ActiveGroup == this;
+                var divColor = isActiveGroup ? Colors.BlueSelection : Colors.GreySelection;
+                using (var b = new SolidBrush(divColor))
+                {
+                    var divRect = new Rectangle(_tabArea.ClientRectangle.Left, _tabArea.ClientRectangle.Bottom - 2, _tabArea.ClientRectangle.Width, 2);
+                    g.FillRectangle(b, divRect);
+                }
 
-                // Right border
-                if (DockArea == VitNX_DockArea.Left)
-                    g.DrawLine(p, ClientRectangle.Right - 1, 0, ClientRectangle.Right - 1, ClientRectangle.Height);
+                // Content dropdown list
+                var dropdownRect = new Rectangle(_tabArea.DropdownRectangle.Left, _tabArea.DropdownRectangle.Top, _tabArea.DropdownRectangle.Width, _tabArea.DropdownRectangle.Height - 2);
+
+                using (var b = new SolidBrush(Colors.MediumBackground))
+                {
+                    g.FillRectangle(b, dropdownRect);
+                }
+
+                using (var img = DockIcons.arrow)
+                {
+                    g.DrawImageUnscaled(img, dropdownRect.Left + (dropdownRect.Width / 2) - (img.Width / 2), dropdownRect.Top + (dropdownRect.Height / 2) - (img.Height / 2) + 1);
+                }
             }
         }
 					</pre>			
@@ -370,11 +392,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000305.html">VitNX_DockRegion Class</a><br />
+			<a href="topic_00000000000002FF.html">VitNX_DockGroup Class</a><br />
 
 
 
-<a href="topic_00000000000002CE.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_00000000000002E5.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
 
 
 			
@@ -392,12 +414,7 @@ protected override void OnPaint(PaintEventArgs e)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
-    </div>
+      
   </body>
 </html>
 
