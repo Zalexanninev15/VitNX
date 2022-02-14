@@ -87,7 +87,8 @@ namespace VitNX.Functions.Common
         /// <param name="text">The text.</param>
         /// <param name="targetFile">The target file.</param>
         /// <returns>An array of string.</returns>
-        public static string[] WriteTextToFileUTF8(string text, string targetFile)
+        public static string[] WriteTextToFileUTF8(string text,
+            string targetFile)
         {
             string fileName = FileNameGenerator(targetFile, "txt");
             string filePath = $@"{Path.GetTempPath()}\{fileName}";
@@ -139,7 +140,8 @@ namespace VitNX.Functions.Common
         /// <param name="tag">The tag.</param>
         /// <param name="fileExtension">The file extension.</param>
         /// <returns>A string.</returns>
-        public static string FileNameGenerator(string tag, string fileExtension)
+        public static string FileNameGenerator(string tag,
+            string fileExtension)
         {
             string fileName = string.Format("{0}_{1}_{2}.{3}",
                 tag,
@@ -165,11 +167,19 @@ namespace VitNX.Functions.Common
         /// <param name="sourceFolder">The source folder.</param>
         /// <param name="newFileExtension">The new file extension.</param>
         /// <param name="saveOldFile">If true, save old file.</param>
-        public static void CreateFileBackup(string sourceFolder, string newFileExtension, bool saveOldFile)
+        public static void CreateFileBackup(string sourceFolder
+            , string newFileExtension,
+            bool saveOldFile)
         {
             string bak_file = sourceFolder + "." + newFileExtension.Replace(".", "");
-            if (File.Exists(bak_file)) { try { File.Delete(bak_file); } catch { } }
-            if (saveOldFile == false) { try { File.Move(sourceFolder, bak_file); } catch { } }
+            if (File.Exists(bak_file))
+            {
+                try { File.Delete(bak_file); } catch { } 
+            }
+            if (saveOldFile == false)
+            {
+                try { File.Move(sourceFolder, bak_file); } catch { } 
+            }
             else
             {
                 File.Copy(sourceFolder, bak_file);
@@ -183,7 +193,9 @@ namespace VitNX.Functions.Common
         /// <param name="shortcut">The shortcut.</param>
         /// <param name="targetFile">The target file.</param>
         /// <param name="nameExe">The name exe.</param>
-        public static void CreateShortcut(string shortcut, string targetFile, string nameExe)
+        public static void CreateShortcut(string shortcut,
+            string targetFile,
+            string nameExe)
         {
             IWshRuntimeLibrary.WshShell wshShell = new IWshRuntimeLibrary.WshShell();
             IWshRuntimeLibrary.IWshShortcut Shortcut = (IWshRuntimeLibrary.IWshShortcut)wshShell.CreateShortcut(shortcut);
@@ -197,9 +209,11 @@ namespace VitNX.Functions.Common
         /// </summary>
         /// <param name="sourceFolder">The source folder.</param>
         /// <param name="targetFolder">The target folder.</param>
-        public static void CopyFolder(string sourceFolder, string targetFolder)
+        public static void CopyFolder(string sourceFolder,
+            string targetFolder)
         {
-            Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, targetFolder);
+            Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, 
+                targetFolder);
         }
 
         /// <summary>
@@ -220,7 +234,8 @@ namespace VitNX.Functions.Common
         /// </summary>
         /// <param name="sourceFolder">The source folder.</param>
         /// <param name="zipFile">The zip file.</param>
-        public static void ZipFolder(string sourceFolder, string zipFile)
+        public static void ZipFolder(string sourceFolder, 
+            string zipFile)
         {
             if (!Directory.Exists(sourceFolder))
                 throw new ArgumentException("sourceDirectory");
@@ -238,7 +253,8 @@ namespace VitNX.Functions.Common
         /// </summary>
         /// <param name="zipFile">The zip file.</param>
         /// <param name="targetFolder">The target folder.</param>
-        public static void UnZipFile(string zipFile, string targetFolder)
+        public static void UnZipFile(string zipFile,
+            string targetFolder)
         {
             if (!Directory.Exists(targetFolder))
                 Directory.CreateDirectory(targetFolder);
@@ -254,7 +270,9 @@ namespace VitNX.Functions.Common
         /// <param name="fileExtension">The file extension.</param>
         /// <param name="filter">The filter.</param>
         /// <param name="text">The text.</param>
-        public static void SaveTextDialog(string fileExtension = "*.txt", string filter = "Text files|*.txt", string text = "Hi!")
+        public static void SaveTextDialog(string fileExtension = "*.txt",
+            string filter = "Text files|*.txt", 
+            string text = "Hi!")
         {
             SaveFileDialog saveFile1 = new SaveFileDialog();
             saveFile1.DefaultExt = fileExtension;
@@ -275,7 +293,9 @@ namespace VitNX.Functions.Common
         /// <param name="fileInputPath">The file input path.</param>
         /// <param name="folderOutputPath">The folder output path.</param>
         /// <param name="countOfOutputFiles">The count of output files.</param>
-        public static void SplitFile(string fileInputPath, string folderOutputPath, int countOfOutputFiles)
+        public static void SplitFile(string fileInputPath, 
+            string folderOutputPath, 
+            int countOfOutputFiles)
         {
             byte[] byteSource = File.ReadAllBytes(fileInputPath);
             FileInfo fiSource = new FileInfo(fileInputPath);
@@ -293,7 +313,9 @@ namespace VitNX.Functions.Common
                     sizeRemaining = (int)fiSource.Length - (i * partSize);
                     if (sizeRemaining < partSize)
                         partSize = sizeRemaining;
-                    fsPart.Write(byteSource, fileOffset, partSize);
+                    fsPart.Write(byteSource,
+                        fileOffset,
+                        partSize);
                     fsPart.Close();
                     fileOffset += partSize;
                 }

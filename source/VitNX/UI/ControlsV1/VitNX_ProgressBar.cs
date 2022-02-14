@@ -25,7 +25,9 @@ namespace VitNX.UI.ControlsV1
 
         private SolidBrush _progressColourBrush = (SolidBrush)Brushes.DodgerBlue;
 
-        [Category("Additional Options"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        [Category("Additional Options"),
+            Browsable(true), 
+            EditorBrowsable(EditorBrowsableState.Always)]
         public Color ProgressColor
         {
             get { return _progressColourBrush.Color; }
@@ -51,7 +53,10 @@ namespace VitNX.UI.ControlsV1
 
         private string _text = string.Empty;
 
-        [Description("If it's empty, % will be shown"), Category("Additional Options"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        [Description("If it's empty, % will be shown"), 
+            Category("Additional Options"), 
+            Browsable(true), 
+            EditorBrowsable(EditorBrowsableState.Always)]
         public string CustomText
         {
             get { return _text; }
@@ -87,7 +92,6 @@ namespace VitNX.UI.ControlsV1
                 }
                 return text;
             }
-            set { }
         }
 
         public VitNX_ProgressBar()
@@ -102,7 +106,9 @@ namespace VitNX.UI.ControlsV1
 
         private void FixComponentBlinking()
         {
-            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            SetStyle(ControlStyles.UserPaint | 
+                ControlStyles.AllPaintingInWmPaint | 
+                ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private string _percentageStr
@@ -115,16 +121,22 @@ namespace VitNX.UI.ControlsV1
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = e.Graphics; DrawProgressBar(g); DrawStringIfNeeded(g);
+            Graphics g = e.Graphics;
+            DrawProgressBar(g);
+            DrawStringIfNeeded(g);
         }
 
         private void DrawProgressBar(Graphics g)
         {
             Rectangle rect = ClientRectangle;
-            ProgressBarRenderer.DrawHorizontalBar(g, rect);
+            ProgressBarRenderer.DrawHorizontalBar(g, 
+                rect);
             if (Value > 0)
             {
-                Rectangle clip = new Rectangle(rect.X, rect.Y, (int)Math.Round((float)Value / Maximum * rect.Width), rect.Height);
+                Rectangle clip = new Rectangle(rect.X, 
+                    rect.Y,
+                    (int)Math.Round((float)Value / Maximum * rect.Width), 
+                    rect.Height);
                 g.FillRectangle(_progressColourBrush, clip);
             }
         }
@@ -135,14 +147,19 @@ namespace VitNX.UI.ControlsV1
             {
                 string text = _textToDraw;
                 SizeF len = g.MeasureString(text, TextFont);
-                Point location = new Point((Width / 2) - (int)len.Width / 2, (Height / 2) - (int)len.Height / 2);
-                g.DrawString(text, TextFont, _textColourBrush, location);
+                Point location = new Point((Width / 2) - (int)len.Width / 2,
+                    (Height / 2) - (int)len.Height / 2);
+                g.DrawString(text,
+                    TextFont,
+                    _textColourBrush, 
+                    location);
             }
         }
 
         public new void Dispose()
         {
-            _textColourBrush.Dispose(); _progressColourBrush.Dispose();
+            _textColourBrush.Dispose(); 
+            _progressColourBrush.Dispose();
             base.Dispose();
         }
 

@@ -343,6 +343,13 @@ namespace VitNX.Functions.Windows.Win32
             SWP_SHOWWINDOW = 0x0040,
         }
 
+        public enum KEYBOARD_PRESETS: int
+        {
+            HIDE_THIS_WINDOW = 0,
+            HIDE_OR_SHOW_ALL_WINDOWS = 1,
+            SHOW_ALL_WINDOWS = 2,
+        }
+
         public enum SpecialWindowHandles
         {
             HWND_TOP = 0,
@@ -385,7 +392,7 @@ namespace VitNX.Functions.Windows.Win32
             DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED = 0,
             DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE = 1,
             DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED = 2,
-            DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST = DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED,
+            DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST = 2,
             DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3,
             DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = 0xFFFFFFFF
         }
@@ -775,6 +782,16 @@ namespace VitNX.Functions.Windows.Win32
             {
                 return isDebuggerPresent;
             }
+        }
+
+        /// <summary>
+        /// Sets the native Windows System theme for controls.
+        /// </summary>
+        /// <param name="handle">The handle.</param>
+        /// <param name="themeMode">The theme mode.</param>
+        public static void SetNativeThemeForControls(IntPtr handle, string themeMode = "DarkMode_Explorer")
+        {
+            Import.SetWindowTheme(handle, themeMode, null);
         }
     }
 }
