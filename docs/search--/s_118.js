@@ -1,1 +1,0 @@
-search_result['118']=["topic_000000000000004E.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];

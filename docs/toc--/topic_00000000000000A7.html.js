@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_000000000000072A.html"],['184',"VitNX.Functions.Windows.Controllers Namespace","topic_00000000000000A4.html"],['282',"TaskBarProgressBar Class","topic_00000000000000A5.html"],['283',"Methods","topic_00000000000000A5_methods--.html"],['285',"SetValue Method","topic_00000000000000A7.html"]];

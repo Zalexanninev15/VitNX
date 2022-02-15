@@ -1,1 +1,0 @@
-search_result['30']=["topic_000000000000000F.html","Text.ContainsOnlyNumbers Method","Contains the only numbers."];

@@ -1,1 +1,0 @@
-search_result['113']=["topic_0000000000000049.html","Windows.GetWindowsEditionIDFromREG Method","Gets the Windows edition from the Windows Registry."];

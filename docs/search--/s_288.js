@@ -1,1 +1,0 @@
-search_result['288']=["topic_00000000000000AB_props--.html","GetClipboardText Properties",""];

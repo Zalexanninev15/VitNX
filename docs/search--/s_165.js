@@ -1,1 +1,0 @@
-search_result['165']=["topic_0000000000000069.html","Motherboard Class","Work with informations of Motherboard."];

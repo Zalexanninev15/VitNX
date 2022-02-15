@@ -1,1 +1,0 @@
-search_result['415']=["topic_00000000000000E3.html","DISPLAYCONFIG_MODE_INFO Structure",""];

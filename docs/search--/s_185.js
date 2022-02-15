@@ -1,1 +1,0 @@
-search_result['185']=["topic_000000000000006E.html","Ram.Characteristics Method","Gets all characteristics."];

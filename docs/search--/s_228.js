@@ -1,1 +1,0 @@
-search_result['228']=["topic_000000000000008C.html","Config.GetLocalIPv6 Method","Gets the local IPv6 (obsolete, but work)."];

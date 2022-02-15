@@ -1,1 +1,0 @@
-search_result['194']=["topic_0000000000000076.html","PowerControl.Computer Method","The power of computer."];

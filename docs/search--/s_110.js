@@ -1,1 +1,0 @@
-search_result['110']=["topic_0000000000000046.html","Windows.Is64bit Method","Windows is x64 (64-bit)."];

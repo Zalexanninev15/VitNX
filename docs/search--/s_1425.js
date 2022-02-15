@@ -1,1 +1,0 @@
-search_result['1425']=["topic_00000000000003CF.html","ConsoleProgressBar.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

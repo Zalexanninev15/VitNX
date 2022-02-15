@@ -1,1 +1,0 @@
-search_result['217']=["topic_0000000000000083.html","DataFromSites.GetGeo Method","Gets the geolocation of PC."];

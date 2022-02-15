@@ -1,1 +1,0 @@
-search_result['117']=["topic_000000000000004D.html","Windows.GetWindowsReleaseIdFromREG Method","Gets the windows release id from the Windows Registry."];

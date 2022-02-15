@@ -1,1 +1,0 @@
-c['967']=[['968',"GetIcon(Properties) Method","topic_00000000000003D8.html",0],['969',"GetIcon(Type, Properties) Method","topic_00000000000003D7.html",0]];

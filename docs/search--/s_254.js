@@ -1,1 +1,0 @@
-search_result['254']=["topic_000000000000009C.html","Processes.IsAdministratorYourApp Method","Whether your application has administrator rights."];

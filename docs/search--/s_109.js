@@ -1,1 +1,0 @@
-search_result['109']=["topic_0000000000000045.html","Windows.GetLocalTime Method","Gets locals the time."];

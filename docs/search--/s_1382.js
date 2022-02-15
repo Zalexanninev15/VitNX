@@ -1,1 +1,0 @@
-search_result['1382']=["topic_00000000000003BA.html","VitNX2_PictureBox.OnResize Method","Raises the Resize event."];

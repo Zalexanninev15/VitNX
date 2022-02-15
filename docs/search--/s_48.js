@@ -1,1 +1,0 @@
-search_result['48']=["topic_000000000000001C.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];

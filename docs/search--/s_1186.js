@@ -1,1 +1,0 @@
-search_result['1186']=["topic_0000000000000347.html","VitNX_Dialog.OnLoad Method","Raises the Load event."];

@@ -1,1 +1,0 @@
-search_result['599']=["topic_000000000000017A.html","QUERY_DEVICE_CONFIG_FLAGS Enumeration",""];

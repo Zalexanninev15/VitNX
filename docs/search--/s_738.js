@@ -1,1 +1,0 @@
-search_result['738']=["topic_0000000000000228.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];
