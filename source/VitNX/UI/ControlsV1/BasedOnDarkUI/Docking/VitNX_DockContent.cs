@@ -9,6 +9,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
     public class VitNX_DockContent : UserControl
     {
         public event EventHandler DockTextChanged;
+
         private string _dockText;
         private Image _icon;
 

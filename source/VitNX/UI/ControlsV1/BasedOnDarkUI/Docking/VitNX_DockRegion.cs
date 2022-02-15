@@ -34,7 +34,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             get { return _groups.ToList(); }
         }
 
-        public VitNX_DockRegion(VitNX_DockPanel dockPanel, 
+        public VitNX_DockRegion(VitNX_DockPanel dockPanel,
             VitNX_DockArea dockArea)
         {
             _groups = new List<VitNX_DockGroup>();
@@ -48,12 +48,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             AddContent(dockContent, null);
         }
 
-        internal void AddContent(VitNX_DockContent dockContent, 
+        internal void AddContent(VitNX_DockContent dockContent,
             VitNX_DockGroup dockGroup)
         {
             if (dockGroup == null)
             {
-                if (DockArea == VitNX_DockArea.Document && 
+                if (DockArea == VitNX_DockArea.Document &&
                     _groups.Count > 0)
                     dockGroup = _groups[0];
                 else
@@ -69,7 +69,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             PositionGroups();
         }
 
-        internal void InsertContent(VitNX_DockContent dockContent, 
+        internal void InsertContent(VitNX_DockContent dockContent,
             VitNX_DockGroup dockGroup,
             DockInsertType insertType)
         {
@@ -124,7 +124,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                         order = group.Order + 1;
                 }
             }
-            var newGroup = new VitNX_DockGroup(DockPanel, this, 
+            var newGroup = new VitNX_DockGroup(DockPanel, this,
                 order);
             _groups.Add(newGroup);
             Controls.Add(newGroup);
@@ -138,7 +138,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 if (group.Order >= order)
                     group.Order++;
             }
-            var newGroup = new VitNX_DockGroup(DockPanel, this, 
+            var newGroup = new VitNX_DockGroup(DockPanel, this,
                 order);
             _groups.Add(newGroup);
             Controls.Add(newGroup);
@@ -165,10 +165,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 default:
                     dockStyle = DockStyle.Fill;
                     break;
+
                 case VitNX_DockArea.Left:
                 case VitNX_DockArea.Right:
                     dockStyle = DockStyle.Top;
                     break;
+
                 case VitNX_DockArea.Bottom:
                     dockStyle = DockStyle.Left;
                     break;
@@ -200,13 +202,15 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 default:
                 case VitNX_DockArea.Document:
                     return;
+
                 case VitNX_DockArea.Left:
                 case VitNX_DockArea.Right:
-                    size = new Size(ClientRectangle.Width, 
+                    size = new Size(ClientRectangle.Width,
                         ClientRectangle.Height / _groups.Count);
                     break;
+
                 case VitNX_DockArea.Bottom:
-                    size = new Size(ClientRectangle.Width / _groups.Count, 
+                    size = new Size(ClientRectangle.Width / _groups.Count,
                         ClientRectangle.Height);
                     break;
             }
@@ -224,16 +228,19 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     Dock = DockStyle.Fill;
                     Padding = new Padding(0, 1, 0, 0);
                     break;
+
                 case VitNX_DockArea.Left:
                     Dock = DockStyle.Left;
                     Padding = new Padding(0, 0, 1, 0);
                     Visible = false;
                     break;
+
                 case VitNX_DockArea.Right:
                     Dock = DockStyle.Right;
                     Padding = new Padding(1, 0, 0, 0);
                     Visible = false;
                     break;
+
                 case VitNX_DockArea.Bottom:
                     Dock = DockStyle.Bottom;
                     Padding = new Padding(0, 0, 0, 0);
@@ -249,17 +256,20 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             switch (DockArea)
             {
                 case VitNX_DockArea.Left:
-                    _splitter = new VitNX_DockSplitter(DockPanel, this, 
+                    _splitter = new VitNX_DockSplitter(DockPanel, this,
                         VitNX_SplitterType.Right);
                     break;
+
                 case VitNX_DockArea.Right:
-                    _splitter = new VitNX_DockSplitter(DockPanel, this, 
+                    _splitter = new VitNX_DockSplitter(DockPanel, this,
                         VitNX_SplitterType.Left);
                     break;
+
                 case VitNX_DockArea.Bottom:
-                    _splitter = new VitNX_DockSplitter(DockPanel, this, 
+                    _splitter = new VitNX_DockSplitter(DockPanel, this,
                         VitNX_SplitterType.Top);
                     break;
+
                 default:
                     return;
             }
@@ -316,15 +326,15 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             using (var p = new Pen(Colors.VitNXBorder))
             {
                 if (DockArea == VitNX_DockArea.Document)
-                    g.DrawLine(p, ClientRectangle.Left, 0, 
+                    g.DrawLine(p, ClientRectangle.Left, 0,
                         ClientRectangle.Right, 0);
                 if (DockArea == VitNX_DockArea.Right)
-                    g.DrawLine(p, ClientRectangle.Left, 0, 
-                        ClientRectangle.Left, 
+                    g.DrawLine(p, ClientRectangle.Left, 0,
+                        ClientRectangle.Left,
                         ClientRectangle.Height);
                 if (DockArea == VitNX_DockArea.Left)
                     g.DrawLine(p, ClientRectangle.Right - 1, 0,
-                        ClientRectangle.Right - 1, 
+                        ClientRectangle.Right - 1,
                         ClientRectangle.Height);
             }
         }
