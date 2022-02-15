@@ -28,10 +28,10 @@ namespace Example
 
         public override void Close()
         {
-            var result = VitNX_MessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?", 
-                @"Close document", 
+            var result = VitNX_MessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?",
+                @"Close document",
                 VitNX_DialogButton.YesNo);
-            if (result == DialogResult.No) 
+            if (result == DialogResult.No)
                 return;
             base.Close();
         }

@@ -12,7 +12,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
     public class VitNX_DockPanel : UserControl
     {
         public event EventHandler<DockContentEventArgs> ActiveContentChanged;
+
         public event EventHandler<DockContentEventArgs> ContentAdded;
+
         public event EventHandler<DockContentEventArgs> ContentRemoved;
 
         private List<VitNX_DockContent> _contents;
@@ -102,7 +104,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             AddContent(dockContent, null);
         }
 
-        public void AddContent(VitNX_DockContent dockContent, 
+        public void AddContent(VitNX_DockContent dockContent,
             VitNX_DockGroup dockGroup)
         {
             if (_contents.Contains(dockContent))
@@ -116,12 +118,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             var region = _regions[dockContent.DockArea];
             region.AddContent(dockContent, dockGroup);
             if (ContentAdded != null)
-                ContentAdded(this, 
+                ContentAdded(this,
                     new DockContentEventArgs(dockContent));
             dockContent.Select();
         }
 
-        public void InsertContent(VitNX_DockContent dockContent, 
+        public void InsertContent(VitNX_DockContent dockContent,
             VitNX_DockGroup dockGroup,
             DockInsertType insertType)
         {
@@ -161,16 +163,16 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
 
         private void CreateRegions()
         {
-            var documentRegion = new VitNX_DockRegion(this, 
+            var documentRegion = new VitNX_DockRegion(this,
                 VitNX_DockArea.Document);
             _regions.Add(VitNX_DockArea.Document, documentRegion);
-            var leftRegion = new VitNX_DockRegion(this, 
+            var leftRegion = new VitNX_DockRegion(this,
                 VitNX_DockArea.Left);
             _regions.Add(VitNX_DockArea.Left, leftRegion);
             var rightRegion = new VitNX_DockRegion(this,
                 VitNX_DockArea.Right);
             _regions.Add(VitNX_DockArea.Right, rightRegion);
-            var bottomRegion = new VitNX_DockRegion(this, 
+            var bottomRegion = new VitNX_DockRegion(this,
                 VitNX_DockArea.Bottom);
             _regions.Add(VitNX_DockArea.Bottom, bottomRegion);
             Controls.Add(documentRegion);
@@ -192,11 +194,11 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
         {
             var state = new DockPanelState();
             state.Regions.Add(new DockRegionState(VitNX_DockArea.Document));
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Left, 
+            state.Regions.Add(new DockRegionState(VitNX_DockArea.Left,
                 _regions[VitNX_DockArea.Left].Size));
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Right, 
+            state.Regions.Add(new DockRegionState(VitNX_DockArea.Right,
                 _regions[VitNX_DockArea.Right].Size));
-            state.Regions.Add(new DockRegionState(VitNX_DockArea.Bottom, 
+            state.Regions.Add(new DockRegionState(VitNX_DockArea.Bottom,
                 _regions[VitNX_DockArea.Bottom].Size));
             var _groupStates = new Dictionary<VitNX_DockGroup, DockGroupState>();
             var orderedContent = _contents.OrderBy(c => c.Order);
@@ -223,7 +225,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             return state;
         }
 
-        public void RestoreDockPanelState(DockPanelState state, 
+        public void RestoreDockPanelState(DockPanelState state,
             Func<string, VitNX_DockContent> getContentBySerializationKey)
         {
             foreach (var region in state.Regions)
@@ -233,9 +235,11 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     case VitNX_DockArea.Left:
                         _regions[VitNX_DockArea.Left].Size = region.Size;
                         break;
+
                     case VitNX_DockArea.Right:
                         _regions[VitNX_DockArea.Right].Size = region.Size;
                         break;
+
                     case VitNX_DockArea.Bottom:
                         _regions[VitNX_DockArea.Bottom].Size = region.Size;
                         break;

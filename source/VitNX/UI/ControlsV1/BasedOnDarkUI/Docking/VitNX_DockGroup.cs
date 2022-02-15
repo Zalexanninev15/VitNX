@@ -21,9 +21,10 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
         public VitNX_DockArea DockArea { get; private set; }
         public VitNX_DockContent VisibleContent { get; private set; }
         public int Order { get; set; }
-        public int ContentCount  { get { return _contents.Count; } }
+        public int ContentCount
+        { get { return _contents.Count; } }
 
-        public VitNX_DockGroup(VitNX_DockPanel dockPanel, 
+        public VitNX_DockGroup(VitNX_DockPanel dockPanel,
             VitNX_DockRegion dockRegion,
             int order)
         {
@@ -119,11 +120,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 case VitNX_DockArea.Document:
                     size = _tabArea.Visible ? Constsants.DocumentTabAreaSize : 0;
                     Padding = new Padding(0, size, 0, 0);
-                    _tabArea.ClientRectangle = new Rectangle(Padding.Left, 
-                        0, 
+                    _tabArea.ClientRectangle = new Rectangle(Padding.Left,
+                        0,
                         ClientRectangle.Width - Padding.Horizontal,
                         size);
                     break;
+
                 case VitNX_DockArea.Left:
                 case VitNX_DockArea.Right:
                     size = _tabArea.Visible ? Constsants.ToolWindowTabAreaSize : 0;
@@ -133,6 +135,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                         ClientRectangle.Width - Padding.Horizontal,
                         size);
                     break;
+
                 case VitNX_DockArea.Bottom:
                     size = _tabArea.Visible ? Constsants.ToolWindowTabAreaSize : 0;
                     Padding = new Padding(1, 0, 0, size);
@@ -145,7 +148,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             if (DockArea == VitNX_DockArea.Document)
             {
                 var dropdownSize = Constsants.DocumentTabAreaSize;
-                _tabArea.DropdownRectangle = new Rectangle(_tabArea.ClientRectangle.Right - dropdownSize, 0, 
+                _tabArea.DropdownRectangle = new Rectangle(_tabArea.ClientRectangle.Right - dropdownSize, 0,
                     dropdownSize, dropdownSize);
             }
             BuildTabs();
@@ -177,8 +180,8 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 width += 1;
                 var y = DockArea == VitNX_DockArea.Document ? 0 : ClientRectangle.Height - Constsants.ToolWindowTabAreaSize;
                 var height = DockArea == VitNX_DockArea.Document ? Constsants.DocumentTabAreaSize : Constsants.ToolWindowTabAreaSize;
-                var tabRect = new Rectangle(_tabArea.ClientRectangle.Left + totalSize, 
-                    y, 
+                var tabRect = new Rectangle(_tabArea.ClientRectangle.Left + totalSize,
+                    y,
                     width,
                     height);
                 tab.ClientRectangle = tabRect;
@@ -192,7 +195,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     var lastTab = _tabs[orderedContent.Last()];
                     var tabRect = lastTab.ClientRectangle;
                     lastTab.ClientRectangle = new Rectangle(tabRect.Left,
-                        tabRect.Top, 
+                        tabRect.Top,
                         tabRect.Width - 1,
                         tabRect.Height);
                     lastTab.ShowSeparator = false;
@@ -211,8 +214,8 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                             {
                                 var rect = tab.ClientRectangle;
                                 tab.ClientRectangle = new Rectangle(rect.Left,
-                                    rect.Top, 
-                                    rect.Width - 1, 
+                                    rect.Top,
+                                    rect.Width - 1,
                                     rect.Height);
                                 differenceMadeUp += 1;
                             }
@@ -225,7 +228,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                         var rect = tab.ClientRectangle;
                         tab.ClientRectangle = new Rectangle(_tabArea.ClientRectangle.Left + xOffset,
                             rect.Top,
-                            rect.Width, 
+                            rect.Width,
                             rect.Height);
                         xOffset += rect.Width;
                     }
@@ -326,7 +329,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 {
                     if (_dragTab.DockContent.Order > 0)
                     {
-                        var otherTabs = _tabs.Values.Where(t => t.DockContent.Order == 
+                        var otherTabs = _tabs.Values.Where(t => t.DockContent.Order ==
                         _dragTab.DockContent.Order - 1).ToList();
                         if (otherTabs.Count == 0)
                             return;
@@ -518,12 +521,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 var divColor = isActiveGroup ? Colors.BlueSelection : Colors.GreySelection;
                 using (var b = new SolidBrush(divColor))
                 {
-                    var divRect = new Rectangle(_tabArea.ClientRectangle.Left, 
-                        _tabArea.ClientRectangle.Bottom - 2, 
+                    var divRect = new Rectangle(_tabArea.ClientRectangle.Left,
+                        _tabArea.ClientRectangle.Bottom - 2,
                         _tabArea.ClientRectangle.Width, 2);
                     g.FillRectangle(b, divRect);
                 }
-                var dropdownRect = new Rectangle(_tabArea.DropdownRectangle.Left, 
+                var dropdownRect = new Rectangle(_tabArea.DropdownRectangle.Left,
                     _tabArea.DropdownRectangle.Top,
                     _tabArea.DropdownRectangle.Width,
                     _tabArea.DropdownRectangle.Height - 2);
@@ -535,7 +538,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             }
         }
 
-        private void PaintDocumentTab(Graphics g, 
+        private void PaintDocumentTab(Graphics g,
             VitNX_DockTab tab)
         {
             var tabRect = RectangleToTabArea(tab.ClientRectangle);
@@ -551,7 +554,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             if (tab.ShowSeparator)
             {
                 using (var p = new Pen(Colors.VitNXBorder))
-                    g.DrawLine(p, 
+                    g.DrawLine(p,
                         tabRect.Right - 1,
                         tabRect.Top,
                         tabRect.Right - 1,
@@ -575,12 +578,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             var textColor = isVisibleTab ? Colors.LightText : Colors.DisabledText;
             using (var b = new SolidBrush(textColor))
             {
-                var textRect = new Rectangle(tabRect.Left + 5 + xOffset, 
-                    tabRect.Top, 
+                var textRect = new Rectangle(tabRect.Left + 5 + xOffset,
+                    tabRect.Top,
                     tabRect.Width - tab.CloseButtonRectangle.Width - 7 - 5 - xOffset,
                     tabRect.Height);
-                g.DrawString(tab.DockContent.DockText, 
-                    Font, b, 
+                g.DrawString(tab.DockContent.DockText,
+                    Font, b,
                     textRect,
                     tabTextFormat);
             }
@@ -596,7 +599,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             g.DrawImageUnscaled(img, closeRect.Left, closeRect.Top);
         }
 
-        private void PaintToolWindowTab(Graphics g, 
+        private void PaintToolWindowTab(Graphics g,
             VitNX_DockTab tab)
         {
             var tabRect = tab.ClientRectangle;
@@ -624,20 +627,19 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             var textColor = isVisibleTab ? Colors.BlueHighlight : Colors.DisabledText;
             using (var b = new SolidBrush(textColor))
             {
-                var textRect = new Rectangle(tabRect.Left + 5, 
+                var textRect = new Rectangle(tabRect.Left + 5,
                     tabRect.Top,
-                    tabRect.Width - 5, 
+                    tabRect.Width - 5,
                     tabRect.Height);
-                g.DrawString(tab.DockContent.DockText, 
+                g.DrawString(tab.DockContent.DockText,
                     Font, b,
-                    textRect, 
+                    textRect,
                     tabTextFormat);
             }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-
         }
     }
 }

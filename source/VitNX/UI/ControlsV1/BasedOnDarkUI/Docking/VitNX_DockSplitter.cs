@@ -65,6 +65,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     bounds.Location = new Point(leftX,
                         bounds.Location.Y);
                     break;
+
                 case VitNX_SplitterType.Right:
                     var rightX = Math.Max(bounds.Location.X - difference.X,
                         _minimum);
@@ -73,6 +74,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     bounds.Location = new Point(rightX,
                         bounds.Location.Y);
                     break;
+
                 case VitNX_SplitterType.Top:
                     var topY = Math.Max(bounds.Location.Y - difference.Y,
                         _minimum);
@@ -81,6 +83,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     bounds.Location = new Point(bounds.Location.X,
                         topY);
                     break;
+
                 case VitNX_SplitterType.Bottom:
                     var bottomY = Math.Max(bounds.Location.Y - difference.Y,
                         _minimum);
