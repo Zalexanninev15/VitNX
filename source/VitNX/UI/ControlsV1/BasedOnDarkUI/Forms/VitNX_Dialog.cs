@@ -85,17 +85,20 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
                     ShowButton(btnOk, true);
                     AcceptButton = btnOk;
                     break;
+
                 case VitNX_DialogButton.Close:
                     ShowButton(btnClose, true);
                     AcceptButton = btnClose;
                     CancelButton = btnClose;
                     break;
+
                 case VitNX_DialogButton.OkCancel:
                     ShowButton(btnOk);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnOk;
                     CancelButton = btnCancel;
                     break;
+
                 case VitNX_DialogButton.AbortRetryIgnore:
                     ShowButton(btnAbort);
                     ShowButton(btnRetry);
@@ -103,18 +106,21 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
                     AcceptButton = btnAbort;
                     CancelButton = btnIgnore;
                     break;
+
                 case VitNX_DialogButton.RetryCancel:
                     ShowButton(btnRetry);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnRetry;
                     CancelButton = btnCancel;
                     break;
+
                 case VitNX_DialogButton.YesNo:
                     ShowButton(btnYes);
                     ShowButton(btnNo, true);
                     AcceptButton = btnYes;
                     CancelButton = btnNo;
                     break;
+
                 case VitNX_DialogButton.YesNoCancel:
                     ShowButton(btnYes);
                     ShowButton(btnNo);
@@ -126,7 +132,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             SetFlowSize();
         }
 
-        private void ShowButton(VitNX_Button button, 
+        private void ShowButton(VitNX_Button button,
             bool isLast = false)
         {
             button.SendToBack();

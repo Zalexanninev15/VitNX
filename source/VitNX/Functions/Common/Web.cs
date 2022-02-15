@@ -91,7 +91,7 @@ namespace VitNX.Functions.Common.Web
             catch { return false; }
         }
 
-        public enum INTERNET_STATUS: int
+        public enum INTERNET_STATUS : int
         {
             UNKNOWN_PROBLEM = -1,
             UNCONNECTED = 0,

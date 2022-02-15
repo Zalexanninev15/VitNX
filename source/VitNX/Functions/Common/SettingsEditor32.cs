@@ -28,7 +28,7 @@ namespace VitNX.Functions.Common
         /// <param name="key">The key.</param>
         /// <param name="section">The section.</param>
         /// <returns>A string.</returns>
-        public static string Read(string key, 
+        public static string Read(string key,
             string section = null)
         {
             var retVal = new StringBuilder(255);
@@ -43,7 +43,7 @@ namespace VitNX.Functions.Common
         /// <param name="value">The value.</param>
         /// <param name="section">The section.</param>
         public static void Write(string key,
-            string value, 
+            string value,
             string section = null)
         {
             Import.WritePrivateProfileString(section ?? defValue, key, value, path);
@@ -75,7 +75,7 @@ namespace VitNX.Functions.Common
         /// <param name="key">The key.</param>
         /// <param name="section">The section.</param>
         /// <returns>A bool.</returns>
-        public static bool KeyExists(string key, 
+        public static bool KeyExists(string key,
             string section = null)
         {
             return Read(key, section).Length > 0;

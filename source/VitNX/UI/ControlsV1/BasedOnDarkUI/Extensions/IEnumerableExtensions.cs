@@ -8,7 +8,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Extensions
         internal static bool IsLast<T>(this IEnumerable<T> items, T item)
         {
             var last = items.LastOrDefault();
-            if (last == null) 
+            if (last == null)
                 return false;
             return item.Equals(last);
         }
@@ -22,7 +22,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Extensions
         }
 
         internal static bool IsFirstOrLast<T>(this IEnumerable<T> items, T item)
-        { 
+        {
             return items.IsFirst(item) || items.IsLast(item);
         }
     }

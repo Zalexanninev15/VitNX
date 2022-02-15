@@ -395,7 +395,7 @@ namespace VitNX.Functions.Common.Information
         /// </summary>
         /// <param name="filename">The filename.</param>
         /// <param name="format">The format.</param>
-        public static void CaptureScreenToFile(string filename, 
+        public static void CaptureScreenToFile(string filename,
             ImageFormat format)
         {
             Image img = CaptureScreen();
@@ -416,14 +416,14 @@ namespace VitNX.Functions.Common.Information
             int height = windowRect.Bottom - windowRect.Top;
             IntPtr hdcDest = Import.CreateCompatibleDC(hdcSrc);
             IntPtr hBitmap = Import.CreateCompatibleBitmap(hdcSrc,
-                width, 
+                width,
                 height);
             IntPtr hOld = Import.SelectObject(hdcDest,
                 hBitmap);
             Import.BitBlt(hdcDest, 0, 0,
                 width,
                 height, hdcSrc,
-                0, 0, 
+                0, 0,
                 Constants.SRCCOPY);
             Import.SelectObject(hdcDest, hOld);
             Import.DeleteDC(hdcDest);
@@ -456,7 +456,7 @@ namespace VitNX.Functions.Common.Information
         {
             uint width = 0;
             uint height = 0;
-            foreach (var desktopMonitor in new ManagementObjectSearcher("ROOT\\CIMV2", 
+            foreach (var desktopMonitor in new ManagementObjectSearcher("ROOT\\CIMV2",
                 "SELECT * FROM Win32_DesktopMonitor").Get())
             {
                 width = (uint)desktopMonitor["ScreenWidth"];

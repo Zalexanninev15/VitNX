@@ -32,9 +32,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             InitializeComponent();
         }
 
-        public VitNX_MessageBox(string message, 
-            string title, 
-            VitNX_MessageBoxIcon icon, 
+        public VitNX_MessageBox(string message,
+            string title,
+            VitNX_MessageBoxIcon icon,
             VitNX_DialogButton buttons)
             : this()
         {
@@ -45,66 +45,66 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
         }
 
         public VitNX_MessageBox(string message)
-            : this(message, null, 
-                  VitNX_MessageBoxIcon.None, 
+            : this(message, null,
+                  VitNX_MessageBoxIcon.None,
                   VitNX_DialogButton.Ok)
         { }
 
         public VitNX_MessageBox(string message,
             string title)
             : this(message, title,
-                  VitNX_MessageBoxIcon.None, 
+                  VitNX_MessageBoxIcon.None,
                   VitNX_DialogButton.Ok)
         { }
 
         public VitNX_MessageBox(string message,
-            string title, 
+            string title,
             VitNX_DialogButton buttons)
-            : this(message, title, 
-                  VitNX_MessageBoxIcon.None, 
+            : this(message, title,
+                  VitNX_MessageBoxIcon.None,
                   buttons)
         { }
 
         public VitNX_MessageBox(string message,
             string title,
             VitNX_MessageBoxIcon icon)
-            : this(message, 
+            : this(message,
                   title,
-                  icon, 
+                  icon,
                   VitNX_DialogButton.Ok)
         { }
 
-        public static DialogResult ShowInfo(string message, 
+        public static DialogResult ShowInfo(string message,
             string caption,
             VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
         {
-            return ShowDialog(message, 
-                caption, 
+            return ShowDialog(message,
+                caption,
                 VitNX_MessageBoxIcon.Information,
                 buttons);
         }
 
         public static DialogResult ShowWarning(string message,
-            string caption, 
-            VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
-        {
-            return ShowDialog(message, 
-                caption, 
-                VitNX_MessageBoxIcon.Warning, 
-                buttons);
-        }
-
-        public static DialogResult ShowError(string message, 
-            string caption, 
+            string caption,
             VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
         {
             return ShowDialog(message,
-                caption, 
-                VitNX_MessageBoxIcon.Error, 
+                caption,
+                VitNX_MessageBoxIcon.Warning,
                 buttons);
         }
 
-        public static DialogResult ShowQuestion(string message, 
+        public static DialogResult ShowError(string message,
+            string caption,
+            VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
+        {
+            return ShowDialog(message,
+                caption,
+                VitNX_MessageBoxIcon.Error,
+                buttons);
+        }
+
+        public static DialogResult ShowQuestion(string message,
             string caption,
             VitNX_DialogButton buttons = VitNX_DialogButton.YesNo)
         {
@@ -114,14 +114,14 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
                 buttons);
         }
 
-        private static DialogResult ShowDialog(string message, 
-            string caption, 
-            VitNX_MessageBoxIcon icon, 
+        private static DialogResult ShowDialog(string message,
+            string caption,
+            VitNX_MessageBoxIcon icon,
             VitNX_DialogButton buttons)
         {
             using (var dlg = new VitNX_MessageBox(message,
-                caption, 
-                icon, 
+                caption,
+                icon,
                 buttons))
             {
                 var result = dlg.ShowDialog();
@@ -163,7 +163,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             lblText.Text = string.Empty;
             lblText.AutoSize = true;
             lblText.Text = _message;
-            var minWidth = Math.Max(width, 
+            var minWidth = Math.Max(width,
                 TotalButtonSize + 15);
             var totalWidth = lblText.Right + 25;
             if (totalWidth < _maximumWidth)

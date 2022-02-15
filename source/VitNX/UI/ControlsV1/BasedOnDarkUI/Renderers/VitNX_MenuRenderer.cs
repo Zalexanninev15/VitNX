@@ -44,7 +44,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
             var g = e.Graphics;
             var rect = new Rectangle(e.ImageRectangle.Left - 2,
                 e.ImageRectangle.Top - 2,
-                                         e.ImageRectangle.Width + 4, 
+                                         e.ImageRectangle.Width + 4,
                                          e.ImageRectangle.Height + 4);
             using (var b = new SolidBrush(Colors.LightBorder))
                 g.FillRectangle(b, rect);

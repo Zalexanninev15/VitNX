@@ -25,11 +25,11 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
         public bool PreFilterMessage(ref Message m)
         {
             if (!(m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE ||
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || 
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP ||
                   m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || 
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP ||
                   m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
                 return false;
             if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP)
@@ -40,7 +40,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                     return true;
                 }
             }
-            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP && 
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP &&
                 !_isDragging)
                 return false;
             if (_isDragging)
@@ -71,7 +71,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                 return true;
             return false;
         }
-
 
         private void DragTimer_Tick(object sender, EventArgs e)
         {

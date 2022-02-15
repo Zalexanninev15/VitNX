@@ -23,9 +23,9 @@ namespace VitNX.Functions.Common.Data
         /// <param name="parameter">The parameter.</param>
         /// <param name="culture">The culture.</param>
         /// <returns>An object.</returns>
-        public object Convert(object[] values, 
-            Type targetType, 
-            object parameter, 
+        public object Convert(object[] values,
+            Type targetType,
+            object parameter,
             CultureInfo culture)
         {
             string rType = "";
@@ -57,7 +57,6 @@ namespace VitNX.Functions.Common.Data
             throw new NotSupportedException();
         }
     }
-
 
     /// <summary>
     /// Work with text.
@@ -417,22 +416,22 @@ namespace VitNX.Functions.Common.Data
             try
             {
                 byte[] EncryptedData = Convert.FromBase64String(input);
-                byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString()); 
-                PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt); 
-                ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32), 
+                byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+                PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+                ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32),
                     SecretKey.GetBytes(16));
                 MemoryStream memoryStream = new MemoryStream(EncryptedData);
-                CryptoStream cryptoStream = new CryptoStream(memoryStream, 
-                    Decryptor, 
+                CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                    Decryptor,
                     CryptoStreamMode.Read);
                 byte[] PlainText = new byte[EncryptedData.Length];
-                int DecryptedCount = cryptoStream.Read(PlainText, 0, 
+                int DecryptedCount = cryptoStream.Read(PlainText, 0,
                     PlainText.Length);
                 memoryStream.Close();
                 cryptoStream.Close();
                 DecryptedData = Encoding.Unicode.GetString(PlainText, 0, DecryptedCount);
             }
-            catch  { DecryptedData = input; }
+            catch { DecryptedData = input; }
             return DecryptedData;
         }
 
@@ -446,14 +445,14 @@ namespace VitNX.Functions.Common.Data
             RijndaelManaged RijndaelCipher = new RijndaelManaged();
             byte[] PlainText = Encoding.Unicode.GetBytes(input);
             byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
-            PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);  
+            PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
             ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32),
                 SecretKey.GetBytes(16));
             MemoryStream memoryStream = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(memoryStream,
-                Encryptor, 
+                Encryptor,
                 CryptoStreamMode.Write);
-            cryptoStream.Write(PlainText, 0, PlainText.Length);   
+            cryptoStream.Write(PlainText, 0, PlainText.Length);
             cryptoStream.FlushFinalBlock();
             byte[] CipherBytes = memoryStream.ToArray();
             memoryStream.Close();
@@ -475,18 +474,17 @@ namespace VitNX.Functions.Common.Data
             PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
             ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32),
                 SecretKey.GetBytes(16));
-            MemoryStream memoryStream = new MemoryStream();   
-            CryptoStream cryptoStream = new CryptoStream(memoryStream, 
-                Encryptor, 
+            MemoryStream memoryStream = new MemoryStream();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream,
+                Encryptor,
                 CryptoStreamMode.Write);
-            cryptoStream.Write(PlainText, 0, PlainText.Length); 
+            cryptoStream.Write(PlainText, 0, PlainText.Length);
             cryptoStream.FlushFinalBlock();
             byte[] CipherBytes = memoryStream.ToArray();
             memoryStream.Close();
             cryptoStream.Close();
             string EncryptedData = Convert.ToBase64String(CipherBytes);
             return EncryptedData.Replace("+", "~").Replace("/", "^");
-
         }
 
         /// <summary>
@@ -503,8 +501,8 @@ namespace VitNX.Functions.Common.Data
             {
                 byte[] EncryptedData = Convert.FromBase64String(input);
                 byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
-                PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);  
-                ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32), 
+                PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+                ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32),
                     SecretKey.GetBytes(16));
                 MemoryStream memoryStream = new MemoryStream(EncryptedData);
                 CryptoStream cryptoStream = new CryptoStream(memoryStream,
@@ -514,7 +512,7 @@ namespace VitNX.Functions.Common.Data
                 int DecryptedCount = cryptoStream.Read(PlainText, 0, PlainText.Length);
                 memoryStream.Close();
                 cryptoStream.Close();
-                DecryptedData = Encoding.Unicode.GetString(PlainText, 0, 
+                DecryptedData = Encoding.Unicode.GetString(PlainText, 0,
                     DecryptedCount);
             }
             catch { DecryptedData = input; }

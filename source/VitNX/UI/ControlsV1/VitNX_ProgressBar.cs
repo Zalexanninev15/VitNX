@@ -26,7 +26,7 @@ namespace VitNX.UI.ControlsV1
         private SolidBrush _progressColourBrush = (SolidBrush)Brushes.DodgerBlue;
 
         [Category("Additional Options"),
-            Browsable(true), 
+            Browsable(true),
             EditorBrowsable(EditorBrowsableState.Always)]
         public Color ProgressColor
         {
@@ -53,9 +53,9 @@ namespace VitNX.UI.ControlsV1
 
         private string _text = string.Empty;
 
-        [Description("If it's empty, % will be shown"), 
-            Category("Additional Options"), 
-            Browsable(true), 
+        [Description("If it's empty, % will be shown"),
+            Category("Additional Options"),
+            Browsable(true),
             EditorBrowsable(EditorBrowsableState.Always)]
         public string CustomText
         {
@@ -106,8 +106,8 @@ namespace VitNX.UI.ControlsV1
 
         private void FixComponentBlinking()
         {
-            SetStyle(ControlStyles.UserPaint | 
-                ControlStyles.AllPaintingInWmPaint | 
+            SetStyle(ControlStyles.UserPaint |
+                ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer, true);
         }
 
@@ -129,13 +129,13 @@ namespace VitNX.UI.ControlsV1
         private void DrawProgressBar(Graphics g)
         {
             Rectangle rect = ClientRectangle;
-            ProgressBarRenderer.DrawHorizontalBar(g, 
+            ProgressBarRenderer.DrawHorizontalBar(g,
                 rect);
             if (Value > 0)
             {
-                Rectangle clip = new Rectangle(rect.X, 
+                Rectangle clip = new Rectangle(rect.X,
                     rect.Y,
-                    (int)Math.Round((float)Value / Maximum * rect.Width), 
+                    (int)Math.Round((float)Value / Maximum * rect.Width),
                     rect.Height);
                 g.FillRectangle(_progressColourBrush, clip);
             }
@@ -151,14 +151,14 @@ namespace VitNX.UI.ControlsV1
                     (Height / 2) - (int)len.Height / 2);
                 g.DrawString(text,
                     TextFont,
-                    _textColourBrush, 
+                    _textColourBrush,
                     location);
             }
         }
 
         public new void Dispose()
         {
-            _textColourBrush.Dispose(); 
+            _textColourBrush.Dispose();
             _progressColourBrush.Dispose();
             base.Dispose();
         }
