@@ -1,1 +1,0 @@
-search_result['371']=["topic_00000000000000D0.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Structure",""];

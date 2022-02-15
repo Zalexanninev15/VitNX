@@ -1,1 +1,0 @@
-search_result['287']=["topic_00000000000000AB_methods--.html","GetClipboardText Methods",""];

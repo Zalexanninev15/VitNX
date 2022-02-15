@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_000000000000072A.html"],['845',"VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace","topic_0000000000000369.html"],['856',"VitNX_ToolStripRenderer Class","topic_0000000000000373.html"],['857',"Methods","topic_0000000000000373_methods--.html"],['866',"OnRenderToolStripBorder Method","topic_0000000000000376.html"]];

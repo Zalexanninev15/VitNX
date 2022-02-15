@@ -1,1 +1,0 @@
-search_result['432']=["topic_00000000000000EA.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Structure",""];

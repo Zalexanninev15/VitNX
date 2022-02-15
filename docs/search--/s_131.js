@@ -1,1 +1,0 @@
-search_result['131']=["topic_0000000000000056.html","Cpu.GetClockSpeed Method","Gets the clock speed."];

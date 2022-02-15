@@ -1,1 +1,0 @@
-search_result['123']=["topic_0000000000000053.html","Cpu Class","Work with informations of CPU."];

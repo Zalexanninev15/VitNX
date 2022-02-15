@@ -1,1 +1,0 @@
-search_result['130']=["topic_0000000000000055.html","Cpu.GetArchitecture Method","Gets the architecture."];

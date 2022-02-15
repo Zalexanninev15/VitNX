@@ -1,1 +1,0 @@
-search_result['206']=["topic_000000000000007D.html","IniSettings32.DeleteSection Method","Deletes the section."];

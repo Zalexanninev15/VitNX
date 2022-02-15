@@ -1,1 +1,0 @@
-search_result['780']=["topic_0000000000000245.html","VitNX_DropdownList.OnResize Method","Raises the Resize event."];

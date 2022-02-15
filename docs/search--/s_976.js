@@ -1,1 +1,0 @@
-search_result['976']=["topic_00000000000002BC.html","VitNX_ToolStrip Class",""];

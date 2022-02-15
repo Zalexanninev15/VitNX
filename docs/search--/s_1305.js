@@ -1,1 +1,0 @@
-search_result['1305']=["topic_0000000000000398_methods--.html","Helper Methods",""];

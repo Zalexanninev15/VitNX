@@ -1,1 +1,0 @@
-search_result['196']=["topic_0000000000000078.html","IniSettings32 Class","Work with INI config files with Windows System functions."];

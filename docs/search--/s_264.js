@@ -1,1 +1,0 @@
-search_result['264']=["topic_00000000000000A1.html","Installed.GetList Method","Gets the list."];

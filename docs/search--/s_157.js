@@ -1,1 +1,0 @@
-search_result['157']=["topic_0000000000000061.html","Monitor.CaptureScreenToMemoryStream Method","Captures the screen to memory stream."];

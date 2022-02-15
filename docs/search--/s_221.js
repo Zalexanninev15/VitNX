@@ -1,1 +1,0 @@
-search_result['221']=["topic_000000000000008A.html","Config Class","Work with config of PC."];

@@ -1,1 +1,0 @@
-search_result['602']=["topic_0000000000000198.html","DISPLAYCONFIG_ROTATION Enumeration",""];

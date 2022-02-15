@@ -1,1 +1,0 @@
-search_result['115']=["topic_000000000000004B.html","Windows.GetWindowsProductNameFromREG Method","Gets the Windows product name from the Windows Registry."];

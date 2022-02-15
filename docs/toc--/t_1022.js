@@ -1,1 +1,0 @@
-c['1022']=[['1023',"NotificationForm Constructor","topic_0000000000000723.html",0],['1024',"Methods","topic_0000000000000722_methods--.html",1],['1031',"Fields","topic_0000000000000722_vars--.html",1]];

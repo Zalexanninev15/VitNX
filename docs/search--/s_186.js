@@ -1,1 +1,0 @@
-search_result['186']=["topic_000000000000006F.html","Ram.Set Method","Sets (gets) values for RAM\u0027s characteristics."];

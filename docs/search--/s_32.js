@@ -1,1 +1,0 @@
-search_result['32']=["topic_0000000000000011.html","Text.ContainsSpaces Method","Contains the spaces."];
