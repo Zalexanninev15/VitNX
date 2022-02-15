@@ -34,13 +34,13 @@ namespace VitNX.Functions.Common
         /// <summary>
         /// Converts the DWord color to RGB.
         /// </summary>
-        /// <param name="colorSetEx">The color set ex.</param>
+        /// <param name="color">Color as unit.</param>
         /// <returns>A Color.</returns>
-        public static Color ConvertDWordColorToRGB(uint colorSetEx)
+        public static Color ConvertDWordColorToRGB(uint color)
         {
-            byte redColor = (byte)((0x000000FF & colorSetEx) >> 0);
-            byte greenColor = (byte)((0x0000FF00 & colorSetEx) >> 8);
-            byte blueColor = (byte)((0x00FF0000 & colorSetEx) >> 16);
+            byte redColor = (byte)((0x000000FF & color) >> 0);
+            byte greenColor = (byte)((0x0000FF00 & color) >> 8);
+            byte blueColor = (byte)((0x00FF0000 & color) >> 16);
             return Color.FromArgb(redColor, greenColor, blueColor);
         }
 
