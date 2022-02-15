@@ -18,10 +18,20 @@ namespace VitNX.Functions.Windows.Win32
         public static extern IntPtr GetConsoleWindow();
 
         [DllImport("user32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
-        public static extern IntPtr RegisterDeviceNotification(IntPtr recipient, IntPtr notificationFilter, int flags);
+        public static extern IntPtr RegisterDeviceNotification(IntPtr recipient, 
+            IntPtr notificationFilter, 
+            int flags);
 
         [DllImport("user32.dll")]
         public static extern bool UnregisterDeviceNotification(IntPtr handle);
+
+        [DllImport("Setupapi.dll", EntryPoint = "InstallHinfSection", 
+            CallingConvention = CallingConvention.StdCall, 
+            CharSet = CharSet.Unicode)]
+        public static extern void InstallHinfSection([In] IntPtr hwnd,
+        [In] IntPtr ModuleHandle,
+        [In, MarshalAs(UnmanagedType.LPWStr)] string CmdLineBuffer,
+        int nCmdShow);
 
         [DllImport("winmm.dll")]
         public static extern int WaveOutGetVolume(IntPtr h,
@@ -124,7 +134,8 @@ namespace VitNX.Functions.Windows.Win32
             int dwRop);
 
         [DllImport("gdi32.dll")]
-        public static extern IntPtr CreateCompatibleBitmap(IntPtr hDC, int nWidth,
+        public static extern IntPtr CreateCompatibleBitmap(IntPtr hDC,
+            int nWidth,
             int nHeight);
 
         [DllImport("gdi32.dll")]
@@ -137,7 +148,8 @@ namespace VitNX.Functions.Windows.Win32
         public static extern bool DeleteObject(IntPtr hObject);
 
         [DllImport("gdi32.dll")]
-        public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
+        public static extern IntPtr SelectObject(IntPtr hDC,
+            IntPtr hObject);
 
         [DllImport("gdi32.dll")]
         public static extern int GetDeviceCaps(IntPtr hdc,
@@ -163,7 +175,8 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("user32.dll")]
         public static extern IntPtr SetFocus(IntPtr hWnd);
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", 
+            SetLastError = true)]
         public static extern bool SetWindowPos(IntPtr hWnd,
             IntPtr hWndInsertAfter,
             int x,
@@ -179,10 +192,12 @@ namespace VitNX.Functions.Windows.Win32
         public static extern IntPtr GetWindowDC(IntPtr hWnd);
 
         [DllImport("user32.dll")]
-        public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDC);
+        public static extern IntPtr ReleaseDC(IntPtr hWnd,
+            IntPtr hDC);
 
         [DllImport("user32.dll")]
-        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        public static extern bool ShowWindow(IntPtr hWnd, 
+            int nCmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr FindWindow(string lpClassName,
@@ -194,13 +209,19 @@ namespace VitNX.Functions.Windows.Win32
             int dwFlags,
             int dwExtraInfo);
 
-        [DllImport("shcore.dll", SetLastError = true)]
+        [DllImport("shcore.dll", 
+            SetLastError = true)]
         public static extern int SetProcessDpiAwareness(PROCESS_DPI_AWARENESS PROCESS_DPI_UNAWARE);
 
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("kernel32.dll", 
+            CharSet = CharSet.Auto, 
+            SetLastError = true)]
         public static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
 
-        [DllImport("uxtheme.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
+        [DllImport("uxtheme.dll",
+            SetLastError = true,
+            ExactSpelling = true,
+            CharSet = CharSet.Unicode)]
         public static extern int SetWindowTheme(IntPtr hWnd,
             string pszSubAppName,
             string pszSubIdList);
@@ -210,36 +231,50 @@ namespace VitNX.Functions.Windows.Win32
             string pszRootPath,
             SHERB_RECYCLE dwFlags);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", 
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
         public static extern bool PostMessage(IntPtr hWnd,
             uint Msg,
             uint WParam,
             uint LParam);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", 
+            CharSet = CharSet.Auto, 
+            SetLastError = true)]
         public static extern bool ReleaseCapture();
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", 
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
         public static extern bool ExitWindowsEx(uint uFlags,
             uint dwReason);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
         public static extern void LockWorkStation();
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", 
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
         public static extern void mouse_event(int dwFlags,
             int dx,
             int dy,
             int dwData,
             UIntPtr dwExtraInfo);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", 
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
         public static extern IntPtr SendMessage(IntPtr hWnd,
             uint Msg,
             IntPtr wParam,
             IntPtr lParam);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", 
+            CharSet = CharSet.Auto, 
+            SetLastError = true)]
         public static extern bool MessageBeep(uint type);
     }
 
@@ -765,12 +800,4 @@ namespace VitNX.Functions.Windows.Win32
             Paused = 0x8
         }
     }
-
-    ///// <summary>
-    ///// Functions that use WinAPI and can be built into your applications without writing extra code.
-    ///// </summary>
-    //public static class StandaloneImportFunctions
-    //{
-        
-    //}
 }

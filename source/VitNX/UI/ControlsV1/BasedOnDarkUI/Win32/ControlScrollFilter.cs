@@ -13,7 +13,10 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                 case (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEHWHEEL:
                     var hControlUnderMouse = Functions.Windows.Win32.Import.WindowFromPoint(new Point((int)m.LParam));
                     if (hControlUnderMouse == m.HWnd) { return false; }
-                    Functions.Windows.Win32.Import.SendMessage(hControlUnderMouse, (uint)m.Msg, m.WParam, m.LParam);
+                    Functions.Windows.Win32.Import.SendMessage(hControlUnderMouse,
+                        (uint)m.Msg,
+                        m.WParam,
+                        m.LParam);
                     return true;
             }
             return false;

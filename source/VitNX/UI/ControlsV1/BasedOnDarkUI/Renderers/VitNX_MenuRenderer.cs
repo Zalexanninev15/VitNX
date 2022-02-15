@@ -10,7 +10,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
         protected override void Initialize(ToolStrip toolStrip)
         {
             base.Initialize(toolStrip);
-
             toolStrip.BackColor = Colors.GreyBackground;
             toolStrip.ForeColor = Colors.LightText;
         }
@@ -18,14 +17,10 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
         protected override void InitializeItem(ToolStripItem item)
         {
             base.InitializeItem(item);
-
             item.BackColor = Colors.GreyBackground;
             item.ForeColor = Colors.LightText;
-
             if (item.GetType() == typeof(ToolStripSeparator))
-            {
                 item.Margin = new Padding(0, 0, 0, 1);
-            }
         }
 
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
@@ -38,7 +33,8 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
         protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            var rect = new Rectangle(0, 0, e.ToolStrip.Width - 1, e.ToolStrip.Height - 1);
+            var rect = new Rectangle(0, 0, e.ToolStrip.Width - 1,
+                e.ToolStrip.Height - 1);
             using (var p = new Pen(Colors.LightBorder))
                 g.DrawRectangle(p, rect);
         }
@@ -46,13 +42,18 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
         protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
         {
             var g = e.Graphics;
-            var rect = new Rectangle(e.ImageRectangle.Left - 2, e.ImageRectangle.Top - 2,
-                                         e.ImageRectangle.Width + 4, e.ImageRectangle.Height + 4);
+            var rect = new Rectangle(e.ImageRectangle.Left - 2,
+                e.ImageRectangle.Top - 2,
+                                         e.ImageRectangle.Width + 4, 
+                                         e.ImageRectangle.Height + 4);
             using (var b = new SolidBrush(Colors.LightBorder))
                 g.FillRectangle(b, rect);
             using (var p = new Pen(Colors.BlueHighlight))
             {
-                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+                var modRect = new Rectangle(rect.Left,
+                    rect.Top,
+                    rect.Width - 1,
+                    rect.Height - 1);
                 g.DrawRectangle(p, modRect);
             }
             if (e.Item.ImageIndex == -1 &&

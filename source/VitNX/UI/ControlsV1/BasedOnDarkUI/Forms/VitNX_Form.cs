@@ -9,18 +9,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
 {
     public class VitNX_Form : Form
     {
-        #region Field Region
-
         protected override void OnHandleCreated(EventArgs e)
         {
             Functions.Windows.WindowSAndControls.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
         }
 
         private bool _flatBorder;
-
-        #endregion Field Region
-
-        #region Property Region
 
         [Category("Appearance")]
         [Description("Determines whether a single pixel border should be rendered around the form.")]
@@ -35,43 +29,29 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             }
         }
 
-        #endregion Property Region
-
-        #region Constructor Region
-
         public VitNX_Form()
         {
             BackColor = Colors.GreyBackground;
         }
 
-        #endregion Constructor Region
-
-        #region Paint Region
-
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             base.OnPaintBackground(e);
-
             if (!_flatBorder)
                 return;
-
             var g = e.Graphics;
-
             using (var p = new Pen(Colors.VitNXBorder))
             {
-                var modRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width - 1, ClientRectangle.Height - 1));
+                var modRect = new Rectangle(ClientRectangle.Location,
+                    new Size(ClientRectangle.Width - 1, 
+                    ClientRectangle.Height - 1));
                 g.DrawRectangle(p, modRect);
             }
         }
 
-        #endregion Paint Region
-
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            //
-            // VitNX_Form
-            //
             this.ClientSize = new Size(284, 265);
             this.Name = "VitNX_Form";
             this.TopMost = true;
