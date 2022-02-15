@@ -14,10 +14,10 @@ namespace VitNX.UI.ControlsV1
 
         [Category("Additional Options")]
         public Color TextColor
-        { 
-            get { return _textColourBrush.Color; } 
-            set 
-            { 
+        {
+            get { return _textColourBrush.Color; }
+            set
+            {
                 _textColourBrush.Dispose();
                 _textColourBrush = new SolidBrush(value);
             }
@@ -25,15 +25,16 @@ namespace VitNX.UI.ControlsV1
 
         private SolidBrush _progressColourBrush = (SolidBrush)Brushes.DodgerBlue;
 
-        [Category("Additional Options"), 
-            Browsable(true), 
+        [Category("Additional Options"),
+            Browsable(true),
             EditorBrowsable(EditorBrowsableState.Always)]
         public Color ProgressColor
-        { 
-            get { return _progressColourBrush.Color; } 
-            set {
+        {
+            get { return _progressColourBrush.Color; }
+            set
+            {
                 _progressColourBrush.Dispose();
-                _progressColourBrush = new SolidBrush(value); 
+                _progressColourBrush = new SolidBrush(value);
             }
         }
 
@@ -41,29 +42,29 @@ namespace VitNX.UI.ControlsV1
 
         [Category("Additional Options"), Browsable(true)]
         public VitNX_ProgressBarDisplayMode VisualMode
-        { 
-            get { return _visualMode; } 
-            set 
-            { 
+        {
+            get { return _visualMode; }
+            set
+            {
                 _visualMode = value;
-                Invalidate(); 
-            } 
+                Invalidate();
+            }
         }
 
         private string _text = string.Empty;
 
-        [Description("If it's empty, % will be shown"), 
-            Category("Additional Options"), 
+        [Description("If it's empty, % will be shown"),
+            Category("Additional Options"),
             Browsable(true),
             EditorBrowsable(EditorBrowsableState.Always)]
         public string CustomText
-        { 
-            get { return _text; } 
-            set 
-            { 
+        {
+            get { return _text; }
+            set
+            {
                 _text = value;
                 Invalidate();
-            } 
+            }
         }
 
         private string _textToDraw
@@ -100,25 +101,25 @@ namespace VitNX.UI.ControlsV1
 
         public VitNX_ProgressBarRounded()
         {
-            Value = Minimum; 
-            FixComponentBlinking(); 
+            Value = Minimum;
+            FixComponentBlinking();
         }
 
         private string _currProgressStr
         {
-            get { return $"{Value}/{Maximum}"; } 
+            get { return $"{Value}/{Maximum}"; }
         }
 
         private void FixComponentBlinking()
-        { 
+        {
             SetStyle(ControlStyles.UserPaint |
-                ControlStyles.AllPaintingInWmPaint | 
-                ControlStyles.OptimizedDoubleBuffer, true); 
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private string _percentageStr
-        { 
-            get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; } 
+        {
+            get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -139,7 +140,7 @@ namespace VitNX.UI.ControlsV1
             {
                 Rectangle clip = new Rectangle(rect.X,
                     rect.Y,
-                    (int)Math.Round((float)Value / Maximum * rect.Width), 
+                    (int)Math.Round((float)Value / Maximum * rect.Width),
                     rect.Height);
                 g.FillRectangle(_progressColourBrush,
                     clip);
@@ -152,10 +153,10 @@ namespace VitNX.UI.ControlsV1
             {
                 string text = _textToDraw;
                 SizeF len = g.MeasureString(text, TextFont);
-                Point location = new Point((Width / 2) - (int)len.Width / 2, 
+                Point location = new Point((Width / 2) - (int)len.Width / 2,
                     (Height / 2) - (int)len.Height / 2);
-                g.DrawString(text, 
-                    TextFont, 
+                g.DrawString(text,
+                    TextFont,
                     _textColourBrush
                     , location);
             }

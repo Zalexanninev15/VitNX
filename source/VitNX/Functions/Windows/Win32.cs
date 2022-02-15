@@ -18,15 +18,15 @@ namespace VitNX.Functions.Windows.Win32
         public static extern IntPtr GetConsoleWindow();
 
         [DllImport("user32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
-        public static extern IntPtr RegisterDeviceNotification(IntPtr recipient, 
-            IntPtr notificationFilter, 
+        public static extern IntPtr RegisterDeviceNotification(IntPtr recipient,
+            IntPtr notificationFilter,
             int flags);
 
         [DllImport("user32.dll")]
         public static extern bool UnregisterDeviceNotification(IntPtr handle);
 
-        [DllImport("Setupapi.dll", EntryPoint = "InstallHinfSection", 
-            CallingConvention = CallingConvention.StdCall, 
+        [DllImport("Setupapi.dll", EntryPoint = "InstallHinfSection",
+            CallingConvention = CallingConvention.StdCall,
             CharSet = CharSet.Unicode)]
         public static extern void InstallHinfSection([In] IntPtr hwnd,
         [In] IntPtr ModuleHandle,
@@ -175,7 +175,7 @@ namespace VitNX.Functions.Windows.Win32
         [DllImport("user32.dll")]
         public static extern IntPtr SetFocus(IntPtr hWnd);
 
-        [DllImport("user32.dll", 
+        [DllImport("user32.dll",
             SetLastError = true)]
         public static extern bool SetWindowPos(IntPtr hWnd,
             IntPtr hWndInsertAfter,
@@ -196,7 +196,7 @@ namespace VitNX.Functions.Windows.Win32
             IntPtr hDC);
 
         [DllImport("user32.dll")]
-        public static extern bool ShowWindow(IntPtr hWnd, 
+        public static extern bool ShowWindow(IntPtr hWnd,
             int nCmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
@@ -209,12 +209,12 @@ namespace VitNX.Functions.Windows.Win32
             int dwFlags,
             int dwExtraInfo);
 
-        [DllImport("shcore.dll", 
+        [DllImport("shcore.dll",
             SetLastError = true)]
         public static extern int SetProcessDpiAwareness(PROCESS_DPI_AWARENESS PROCESS_DPI_UNAWARE);
 
-        [DllImport("kernel32.dll", 
-            CharSet = CharSet.Auto, 
+        [DllImport("kernel32.dll",
+            CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
 
@@ -231,7 +231,7 @@ namespace VitNX.Functions.Windows.Win32
             string pszRootPath,
             SHERB_RECYCLE dwFlags);
 
-        [DllImport("user32.dll", 
+        [DllImport("user32.dll",
             CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern bool PostMessage(IntPtr hWnd,
@@ -239,12 +239,12 @@ namespace VitNX.Functions.Windows.Win32
             uint WParam,
             uint LParam);
 
-        [DllImport("user32.dll", 
-            CharSet = CharSet.Auto, 
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern bool ReleaseCapture();
 
-        [DllImport("user32.dll", 
+        [DllImport("user32.dll",
             CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern bool ExitWindowsEx(uint uFlags,
@@ -255,7 +255,7 @@ namespace VitNX.Functions.Windows.Win32
             SetLastError = true)]
         public static extern void LockWorkStation();
 
-        [DllImport("user32.dll", 
+        [DllImport("user32.dll",
             CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern void mouse_event(int dwFlags,
@@ -264,7 +264,7 @@ namespace VitNX.Functions.Windows.Win32
             int dwData,
             UIntPtr dwExtraInfo);
 
-        [DllImport("user32.dll", 
+        [DllImport("user32.dll",
             CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern IntPtr SendMessage(IntPtr hWnd,
@@ -272,8 +272,8 @@ namespace VitNX.Functions.Windows.Win32
             IntPtr wParam,
             IntPtr lParam);
 
-        [DllImport("user32.dll", 
-            CharSet = CharSet.Auto, 
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto,
             SetLastError = true)]
         public static extern bool MessageBeep(uint type);
     }
@@ -384,7 +384,7 @@ namespace VitNX.Functions.Windows.Win32
             SWP_SHOWWINDOW = 0x0040
         }
 
-        public enum KEYBOARD_PRESETS: int
+        public enum KEYBOARD_PRESETS : int
         {
             HIDE_THIS_WINDOW = 0,
             HIDE_OR_SHOW_ALL_WINDOWS = 1,

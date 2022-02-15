@@ -7,7 +7,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Collections
     public class ObservableList<T> : List<T>, IDisposable
     {
         private bool _disposed;
+
         public event EventHandler<ObservableListModified<T>> ItemsAdded;
+
         public event EventHandler<ObservableListModified<T>> ItemsRemoved;
 
         ~ObservableList()

@@ -16,7 +16,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             get { return true; }
         }
 
-        public VitNX_TranslucentForm(Color backColor, 
+        public VitNX_TranslucentForm(Color backColor,
             double opacity = 0.6)
         {
             StartPosition = FormStartPosition.Manual;

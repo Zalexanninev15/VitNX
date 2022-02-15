@@ -105,13 +105,13 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
             var rect = new Rectangle(3, 3, 2, e.Item.Height - 4);
             using (var p = new Pen(Colors.VitNXBorder))
                 g.DrawLine(p, rect.Left,
-                    rect.Top, 
+                    rect.Top,
                     rect.Left,
                     rect.Height);
             using (var p = new Pen(Colors.LightBorder))
-                g.DrawLine(p, rect.Left + 1, 
+                g.DrawLine(p, rect.Left + 1,
                     rect.Top,
-                    rect.Left + 1, 
+                    rect.Left + 1,
                     rect.Height);
         }
 
@@ -121,12 +121,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers
             if (e.Image == null)
                 return;
             if (e.Item.Enabled)
-                g.DrawImageUnscaled(e.Image, new Point(e.ImageRectangle.Left, 
+                g.DrawImageUnscaled(e.Image, new Point(e.ImageRectangle.Left,
                     e.ImageRectangle.Top));
             else
                 ControlPaint.DrawImageDisabled(g, e.Image,
                     e.ImageRectangle.Left,
-                    e.ImageRectangle.Top, 
+                    e.ImageRectangle.Top,
                     Color.Transparent);
         }
     }

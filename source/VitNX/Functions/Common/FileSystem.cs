@@ -178,7 +178,7 @@ namespace VitNX.Functions.Common
             }
             if (saveOldFile == false)
             {
-                try { File.Move(sourceFolder, bak_file); } catch { } 
+                try { File.Move(sourceFolder, bak_file); } catch { }
             }
             else
             {
@@ -212,7 +212,7 @@ namespace VitNX.Functions.Common
         public static void CopyFolder(string sourceFolder,
             string targetFolder)
         {
-            Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder, 
+            Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder,
                 targetFolder);
         }
 
@@ -234,7 +234,7 @@ namespace VitNX.Functions.Common
         /// </summary>
         /// <param name="sourceFolder">The source folder.</param>
         /// <param name="zipFile">The zip file.</param>
-        public static void ZipFolder(string sourceFolder, 
+        public static void ZipFolder(string sourceFolder,
             string zipFile)
         {
             if (!Directory.Exists(sourceFolder))
@@ -271,7 +271,7 @@ namespace VitNX.Functions.Common
         /// <param name="filter">The filter.</param>
         /// <param name="text">The text.</param>
         public static void SaveTextDialog(string fileExtension = "*.txt",
-            string filter = "Text files|*.txt", 
+            string filter = "Text files|*.txt",
             string text = "Hi!")
         {
             SaveFileDialog saveFile1 = new SaveFileDialog();
@@ -293,8 +293,8 @@ namespace VitNX.Functions.Common
         /// <param name="fileInputPath">The file input path.</param>
         /// <param name="folderOutputPath">The folder output path.</param>
         /// <param name="countOfOutputFiles">The count of output files.</param>
-        public static void SplitFile(string fileInputPath, 
-            string folderOutputPath, 
+        public static void SplitFile(string fileInputPath,
+            string folderOutputPath,
             int countOfOutputFiles)
         {
             byte[] byteSource = File.ReadAllBytes(fileInputPath);

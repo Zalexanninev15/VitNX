@@ -43,7 +43,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             using (var p = new Pen(Colors.VitNXBorder))
             {
                 var modRect = new Rectangle(ClientRectangle.Location,
-                    new Size(ClientRectangle.Width - 1, 
+                    new Size(ClientRectangle.Width - 1,
                     ClientRectangle.Height - 1));
                 g.DrawRectangle(p, modRect);
             }

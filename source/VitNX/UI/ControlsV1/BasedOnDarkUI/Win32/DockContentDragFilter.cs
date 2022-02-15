@@ -31,11 +31,11 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
             if (!_isDragging)
                 return false;
             if (!(m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE ||
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN ||
                   m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP ||
                   m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || 
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP ||
                   m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
                 return false;
             if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE)
@@ -60,9 +60,10 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                             _dockPanel.AddContent(_dragContent,
                                 _targetGroup);
                             break;
+
                         case DockInsertType.Before:
                         case DockInsertType.After:
-                            _dockPanel.InsertContent(_dragContent, 
+                            _dockPanel.InsertContent(_dragContent,
                                 _targetGroup,
                                 _insertType);
                             break;
@@ -114,7 +115,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
         {
             Cursor.Current = Cursors.SizeAll;
             _highlightForm.SuspendLayout();
-            _highlightForm.Size = new Size(rect.Width, 
+            _highlightForm.Size = new Size(rect.Width,
                 rect.Height);
             _highlightForm.Location = new Point(rect.X,
                 rect.Y);

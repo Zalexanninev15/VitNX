@@ -29,7 +29,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
             BackColor = Colors.GreyBackground;
-            base.Padding = new Padding(0, 
+            base.Padding = new Padding(0,
                 Constsants.ToolWindowHeaderSize, 0, 0);
             UpdateCloseButton();
         }
@@ -136,11 +136,11 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             using (var p = new Pen(VitNXColor))
             {
                 g.DrawLine(p, ClientRectangle.Left,
-                    0, 
+                    0,
                     ClientRectangle.Right, 0);
                 g.DrawLine(p, ClientRectangle.Left,
-                    Constsants.ToolWindowHeaderSize - 1, 
-                    ClientRectangle.Right, 
+                    Constsants.ToolWindowHeaderSize - 1,
+                    ClientRectangle.Right,
                     Constsants.ToolWindowHeaderSize - 1);
             }
             using (var p = new Pen(lightColor))
@@ -149,15 +149,15 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             if (Icon != null)
             {
                 g.DrawImageUnscaled(Icon,
-                    ClientRectangle.Left + 5, 
+                    ClientRectangle.Left + 5,
                     ClientRectangle.Top + (Constsants.ToolWindowHeaderSize / 2) - (Icon.Height / 2) + 1);
                 xOffset = Icon.Width + 8;
             }
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 
-                    0, 
-                    ClientRectangle.Width - 4 - xOffset, 
+                var textRect = new Rectangle(xOffset,
+                    0,
+                    ClientRectangle.Width - 4 - xOffset,
                     Constsants.ToolWindowHeaderSize);
                 var format = new StringFormat
                 {
@@ -166,23 +166,22 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                     FormatFlags = StringFormatFlags.NoWrap,
                     Trimming = StringTrimming.EllipsisCharacter
                 };
-                g.DrawString(DockText, 
+                g.DrawString(DockText,
                     Font,
-                    b, 
+                    b,
                     textRect,
                     format);
             }
             var img = _closeButtonHot ? DockIcons.tw_close_selected : DockIcons.tw_close;
             if (isActive)
                 img = _closeButtonHot ? DockIcons.tw_active_close_selected : DockIcons.tw_active_close;
-            g.DrawImageUnscaled(img, 
+            g.DrawImageUnscaled(img,
                 _closeButtonRect.Left,
                 _closeButtonRect.Top);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-
         }
     }
 }

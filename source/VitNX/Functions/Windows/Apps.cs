@@ -203,7 +203,7 @@ namespace VitNX.Functions.Windows.Apps
             bool isDebuggerPresent = false;
             try
             {
-                Import.CheckRemoteDebuggerPresent(currentProcess.Handle, ref 
+                Import.CheckRemoteDebuggerPresent(currentProcess.Handle, ref
                     isDebuggerPresent);
                 return isDebuggerPresent;
             }
