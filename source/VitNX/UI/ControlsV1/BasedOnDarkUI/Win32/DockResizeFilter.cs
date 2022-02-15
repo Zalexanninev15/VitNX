@@ -8,41 +8,30 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
 {
     public class DockResizeFilter : IMessageFilter
     {
-        #region Field Region
-
         private VitNX_DockPanel _dockPanel;
-
         private Timer _dragTimer;
         private bool _isDragging;
         private Point _initialContact;
         private VitNX_DockSplitter _activeSplitter;
 
-        #endregion Field Region
-
-        #region Constructor Region
-
         public DockResizeFilter(VitNX_DockPanel dockPanel)
         {
             _dockPanel = dockPanel;
-
             _dragTimer = new Timer();
             _dragTimer.Interval = 1;
             _dragTimer.Tick += DragTimer_Tick;
         }
 
-        #endregion Constructor Region
-
-        #region IMessageFilter Region
-
         public bool PreFilterMessage(ref Message m)
         {
-            // We only care about mouse events
             if (!(m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE ||
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
-                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDOWN || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONUP || 
+                  m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
                 return false;
-
-            // Stop drag.
             if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP)
             {
                 if (_isDragging)
@@ -51,34 +40,22 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                     return true;
                 }
             }
-
-            // Exit out early if we're simply releasing a non-splitter drag over the area
-            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP && !_isDragging)
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONUP && 
+                !_isDragging)
                 return false;
-
-            // Force cursor if already dragging.
             if (_isDragging)
                 Cursor.Current = _activeSplitter.ResizeCursor;
-
-            // Return out early if we're dragging something that's not a splitter.
-            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE && !_isDragging && _dockPanel.MouseButtonState != MouseButtons.None)
+            if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEMOVE &&
+                !_isDragging &&
+                _dockPanel.MouseButtonState !=
+                MouseButtons.None)
                 return false;
-
-            // Try and create a control from the message handle.
             var control = Control.FromHandle(m.HWnd);
-
-            // Exit out if we didn't manage to create a control.
             if (control == null)
                 return false;
-
-            // Exit out if the control is not the dock panel or a child control.
             if (!(control == _dockPanel || _dockPanel.Contains(control)))
                 return false;
-
-            // Update the mouse cursor
             CheckCursor();
-
-            // Start drag.
             if (m.Msg == (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.LBUTTONDOWN)
             {
                 var hotSplitter = HotSplitter();
@@ -88,21 +65,13 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                     return true;
                 }
             }
-
-            // Stop events passing through if we're hovering over a splitter
             if (HotSplitter() != null)
                 return true;
-
-            // Stop all events from going through if we're dragging a splitter.
             if (_isDragging)
                 return true;
-
             return false;
         }
 
-        #endregion IMessageFilter Region
-
-        #region Event Handler Region
 
         private void DragTimer_Tick(object sender, EventArgs e)
         {
@@ -111,23 +80,17 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                 StopDrag();
                 return;
             }
-
-            var difference = new Point(_initialContact.X - Cursor.Position.X, _initialContact.Y - Cursor.Position.Y);
+            var difference = new Point(_initialContact.X - Cursor.Position.X
+                , _initialContact.Y - Cursor.Position.Y);
             _activeSplitter.UpdateOverlay(difference);
         }
-
-        #endregion Event Handler Region
-
-        #region Method Region
 
         private void StartDrag(VitNX_DockSplitter splitter)
         {
             _activeSplitter = splitter;
             Cursor.Current = _activeSplitter.ResizeCursor;
-
             _initialContact = Cursor.Position;
             _isDragging = true;
-
             _activeSplitter.ShowOverlay();
             _dragTimer.Start();
         }
@@ -136,10 +99,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
         {
             _dragTimer.Stop();
             _activeSplitter.HideOverlay();
-
-            var difference = new Point(_initialContact.X - Cursor.Position.X, _initialContact.Y - Cursor.Position.Y);
+            var difference = new Point(_initialContact.X - Cursor.Position.X,
+                _initialContact.Y - Cursor.Position.Y);
             _activeSplitter.Move(difference);
-
             _isDragging = false;
         }
 
@@ -150,7 +112,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
                 if (splitter.Bounds.Contains(Cursor.Position))
                     return splitter;
             }
-
             return null;
         }
 
@@ -158,7 +119,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
         {
             if (_isDragging)
                 return;
-
             var hotSplitter = HotSplitter();
             if (hotSplitter != null)
                 Cursor.Current = hotSplitter.ResizeCursor;
@@ -169,7 +129,5 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Win32
             Cursor.Current = Cursors.Default;
             CheckCursor();
         }
-
-        #endregion Method Region
     }
 }

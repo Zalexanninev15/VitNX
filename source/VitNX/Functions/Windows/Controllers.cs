@@ -679,4 +679,19 @@ namespace VitNX.Functions.Windows.Controllers
             return null;
         }
     }
+
+    /// <summary>
+    /// Work with system.
+    /// </summary>
+    public static class WorkWithSystem
+    {
+        /// <summary>
+        /// Installs the INF driver file into the Windows System.
+        /// </summary>
+        /// <param name="pathToInf">The path to INF driver file.</param>
+        public static void InstallInfDriver(string pathToInf)
+        {
+            Import.InstallHinfSection(IntPtr.Zero, IntPtr.Zero, pathToInf, 0);
+        }
+    }
 }

@@ -8,45 +8,23 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
 {
     internal class VitNX_DockTabArea
     {
-        #region Field Region
-
         private Dictionary<VitNX_DockContent, VitNX_DockTab> _tabs = new Dictionary<VitNX_DockContent, VitNX_DockTab>();
-
         private List<ToolStripMenuItem> _menuItems = new List<ToolStripMenuItem>();
         private VitNX_ContextMenu _tabMenu = new VitNX_ContextMenu();
 
-        #endregion Field Region
-
-        #region Property Region
-
         public VitNX_DockArea DockArea { get; private set; }
-
         public Rectangle ClientRectangle { get; set; }
-
         public Rectangle DropdownRectangle { get; set; }
-
         public bool DropdownHot { get; set; }
-
         public int Offset { get; set; }
-
         public int TotalTabSize { get; set; }
-
         public bool Visible { get; set; }
-
         public VitNX_DockTab ClickedCloseButton { get; set; }
-
-        #endregion Property Region
-
-        #region Constructor Region
 
         public VitNX_DockTabArea(VitNX_DockArea dockArea)
         {
             DockArea = dockArea;
         }
-
-        #endregion Constructor Region
-
-        #region Method Region
 
         public void ShowMenu(Control control, Point location)
         {
@@ -73,20 +51,16 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 var menuContent = item.Tag as VitNX_DockContent;
                 if (menuContent == null)
                     continue;
-
                 if (menuContent == content)
                     menuItem = item;
             }
-
             return menuItem;
         }
 
         public void RebuildMenu()
         {
             _tabMenu.Items.Clear();
-
             var orderedItems = new List<ToolStripMenuItem>();
-
             var index = 0;
             for (var i = 0; i < _menuItems.Count; i++)
             {
@@ -98,11 +72,8 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 }
                 index++;
             }
-
             foreach (var item in orderedItems)
                 _tabMenu.Items.Add(item);
         }
-
-        #endregion Method Region
     }
 }
