@@ -15,7 +15,13 @@
 
 ## Description
 
-Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.6+)
+Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.5+). 
+
+## Features
+
+- There are a huge number of functions for working with various aspects (from the C# programming language itself and work with text to files, web and deep interaction with the Windows System). Functions are actually unbelievable much ... and it will be even more 💖
+- A beautiful, undemanding and relatively functional interface also awaits you! From progress bars for the console and controls for WinFroms to dialogs and other windows on WinForms with support for cool system features and consuming a minimal amount of resources, taking into account the overall beauty of the UI
+- There is also documentation with comments in the code (see below)
 
 ## Documentation
 
