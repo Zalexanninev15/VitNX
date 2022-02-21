@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>adapterId Field</title>
+	<title>GetClipboardText.GetText Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">adapterId Field</h1>
+		<h1 class="title">GetClipboardText.GetText Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Gets the text.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public adapterId As <a target="_top" href="topic_00000000000000A9.html" onclick="this.target='';return true;">LUID</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetText() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="topic_00000000000000A9.html" onclick="this.target='';return true;">LUID</a> adapterId</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetText()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,8 +192,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="topic_00000000000000A9.html" onclick="this.target='';return true;">LUID</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
 	
 
 
@@ -268,7 +272,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public LUID adapterId;
+public static string GetText()
+ {
+     GetClipboardText instance = new GetClipboardText();
+     Thread staThread = new Thread(instance._GetTexter);
+     staThread.SetApartmentState(ApartmentState.STA);
+     staThread.Start();
+     staThread.Join();
+     return instance._GetText;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +342,11 @@ public LUID adapterId;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AC.html">DISPLAYCONFIG_PATH_SOURCE_INFO Structure</a><br />
+			<a href="topic_00000000000000AC.html">GetClipboardText Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -352,11 +364,8 @@ public LUID adapterId;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
+

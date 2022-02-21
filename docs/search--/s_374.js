@@ -1,1 +1,1 @@
-search_result['374']=["topic_00000000000000CB_vars--.html","POINTL Fields",""];
+search_result['374']=["topic_00000000000000D1_events--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Events",""];

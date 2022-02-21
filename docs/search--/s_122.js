@@ -1,1 +1,1 @@
-search_result['122']=["topic_000000000000004C.html","PowerControl.Computer Method","The power of computer."];
+search_result['122']=["topic_0000000000000052.html","Windows.GetWindowsSerialKey Method","Gets Windows the serial key."];

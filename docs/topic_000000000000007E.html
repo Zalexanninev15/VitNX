@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Config.DefaultGateway Method</title>
+	<title>IniSettings32.DeleteSection Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Config.DefaultGateway Method</h1>
+		<h1 class="title">IniSettings32.DeleteSection Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Get DefaultGateway of NetworkInterface in IPAddress.</summary-info>
+        <summary-info>Deletes the section.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function DefaultGateway() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub DeleteSection( _&nbsp;<br />   Optional ByVal <i>section</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> = null _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a> DefaultGateway()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteSection(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>section</i> = null&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,11 +190,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="section" class="parameterList">
+	<dt>
+		<span class="parameter">
+			section
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The section. 
+</p>
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a> 
-	
+<p />
+
 
 
 
@@ -269,12 +281,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static IPAddress DefaultGateway() =&gt; NetworkInterface
- .GetAllNetworkInterfaces()
- .Where(n =&gt; n.OperationalStatus == OperationalStatus.Up)
- .Where(n =&gt; n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
- .SelectMany(n =&gt; n.GetIPProperties()?.GatewayAddresses)
- .Select(g =&gt; g?.Address).FirstOrDefault(a =&gt; a != null);
+public static void DeleteSection(string section = null)
+ {
+     Write(null, null, section ?? defValue);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -336,11 +346,11 @@ public static IPAddress DefaultGateway() =&gt; NetworkInterface
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000079.html">Config Class</a><br />
+			<a href="topic_0000000000000079.html">IniSettings32 Class</a><br />
 
 
 
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -358,11 +368,7 @@ public static IPAddress DefaultGateway() =&gt; NetworkInterface
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-c['539']=[['540',"VitNX_ListItem() Constructor","topic_0000000000000242.html",0],['541',"VitNX_ListItem(string) Constructor","topic_0000000000000243.html",0]];
+c['539']=[['540',"Fields","topic_0000000000000289_vars--.html",1]];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FileSystem.DeleteFolderToRecycleBin Method</title>
+	<title>NumericalTextConverter.ConvertBack Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FileSystem.DeleteFolderToRecycleBin Method</h1>
+		<h1 class="title">NumericalTextConverter.ConvertBack Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Deletes the folder to Recycle Bin.</summary-info>
+        <summary-info>Converts back the value(s).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub DeleteFolderToRecycleBin( _&nbsp;<br />   ByVal <i>targetFolder</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function ConvertBack( _&nbsp;<br />   ByVal <i>value</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>, _&nbsp;<br />   ByVal <i>targetTypes</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a>(), _&nbsp;<br />   ByVal <i>parameter</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>, _&nbsp;<br />   ByVal <i>culture</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>() Implements  _&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.imultivalueconverter.convertback">IMultiValueConverter.ConvertBack</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteFolderToRecycleBin(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFolder</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] ConvertBack(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>value</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a>[] <i>targetTypes</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>parameter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> <i>culture</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,22 +191,72 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="targetFolder" class="parameterList">
+	Parameters</h4><dl paramName="value" class="parameterList">
 	<dt>
 		<span class="parameter">
-			targetFolder
+			value
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
 	</dd>
 </dl>
 <p>
-	The target folder. 
+	The value. 
+</p>
+<dl paramName="targetTypes" class="parameterList">
+	<dt>
+		<span class="parameter">
+			targetTypes
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a>[] 
+	</dd>
+</dl>
+<p>
+	The target types. 
+</p>
+<dl paramName="parameter" class="parameterList">
+	<dt>
+		<span class="parameter">
+			parameter
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
+	</dd>
+</dl>
+<p>
+	The parameter. 
+</p>
+<dl paramName="culture" class="parameterList">
+	<dt>
+		<span class="parameter">
+			culture
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> 
+	</dd>
+</dl>
+<p>
+	The culture. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] 
+		<p>
+		An array of object. 
+	</p>
+	
+
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.imultivalueconverter.convertback">IMultiValueConverter.ConvertBack</a>
+<br />
 
 
 
@@ -281,11 +331,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void DeleteFolderToRecycleBin(string targetFolder)
+public object[] ConvertBack(
+     object value, Type[] targetTypes, object parameter, CultureInfo culture)
  {
-     Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(targetFolder,
-         Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
-         Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
+     throw new NotSupportedException();
  }
 					</pre>			
 				</div>
@@ -348,11 +397,11 @@ public static void DeleteFolderToRecycleBin(string targetFolder)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000005.html">FileSystem Class</a><br />
+			<a href="topic_0000000000000008.html">NumericalTextConverter Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
 
 
 			
@@ -370,11 +419,7 @@ public static void DeleteFolderToRecycleBin(string targetFolder)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_ToogleButton.OnPaint Method</title>
+	<title>VitNX_NumericUpDown.OnTextBoxLostFocus Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_ToogleButton.OnPaint Method</h1>
+		<h1 class="title">VitNX_NumericUpDown.OnTextBoxLostFocus Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.lostfocus">LostFocus</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>pevent</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnTextBoxLostFocus( _&nbsp;<br />   ByVal <i>source</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>, _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pevent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnTextBoxLostFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>source</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,18 +191,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="pevent" class="parameterList">
+	Parameters</h4><dl paramName="source" class="parameterList">
 	<dt>
 		<span class="parameter">
-			pevent
+			source
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The source of the event. 
+</p>
+<dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
+	</dd>
+</dl>
+<p>
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -280,33 +294,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs pevent)
- {
-     int toggleSize = Height - 5;
-     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-     pevent.Graphics.Clear(Parent.BackColor);
-     if (Checked)
-     {
-         if (solidStyle)
-             pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
-         else
-             pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
-         pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor),
-             new Rectangle(Width - Height + 1, 2, toggleSize,
-             toggleSize));
-     }
-     else
-     {
-         if (solidStyle)
-             pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
-         else
-             pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
-         pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
-             new Rectangle(2, 2,
-             toggleSize,
-             toggleSize));
-     }
- }
+protected override void OnTextBoxLostFocus(object source, EventArgs e)
+ { base.OnTextBoxLostFocus(source, e); Invalidate(); }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -368,11 +357,11 @@ protected override void OnPaint(PaintEventArgs pevent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003AE.html">VitNX2_ToogleButton Class</a><br />
+			<a href="topic_00000000000003A7.html">VitNX_NumericUpDown Class</a><br />
 
 
 
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -390,11 +379,7 @@ protected override void OnPaint(PaintEventArgs pevent)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

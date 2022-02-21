@@ -1,1 +1,1 @@
-search_result['95']=["topic_000000000000003C.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];
+search_result['95']=["topic_000000000000003C.html","FileSystem.IsPeExe Method","Is this a PE file."];

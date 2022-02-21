@@ -1,1 +1,1 @@
-search_result['1088']=["topic_00000000000002FD_overloads--.html","VitNX_DockPanel.AddContent Method",""];
+search_result['1088']=["topic_0000000000000326.html","ProgressBar.SetColor Method","Sets the color."];

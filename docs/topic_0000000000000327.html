@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>btnOk Field</title>
+	<title>ProgressBar.SetText Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">btnOk Field</h1>
+		<h1 class="title">ProgressBar.SetText Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000324.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms</a>
+<a href="topic_0000000000000322.html">VitNX.UI.Console</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Sets the text.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected btnOk As <a target="_top" href="topic_00000000000001F2.html" onclick="this.target='';return true;">VitNX_Button</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub SetText( _&nbsp;<br />   ByVal <i>work1</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected <a target="_top" href="topic_00000000000001F2.html" onclick="this.target='';return true;">VitNX_Button</a> btnOk</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetText(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>work1</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,11 +190,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="work1" class="parameterList">
+	<dt>
+		<span class="parameter">
+			work1
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The text. 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="topic_00000000000001F2.html" onclick="this.target='';return true;">VitNX_Button</a> 
-	
+<p />
+
 
 
 
@@ -268,7 +281,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected VitNX_Button btnOk;
+public void SetText(string work1)
+ {
+     work = work1;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +346,11 @@ protected VitNX_Button btnOk;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000325.html">VitNX_Dialog Class</a><br />
+			<a href="topic_0000000000000323.html">ProgressBar Class</a><br />
 
 
 
-<a href="topic_0000000000000324.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms Namespace</a><br />
+<a href="topic_0000000000000322.html">VitNX.UI.Console Namespace</a><br />
 
 
 			
@@ -352,11 +368,8 @@ protected VitNX_Button btnOk;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
+

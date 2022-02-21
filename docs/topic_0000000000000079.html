@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Config Class</title>
+	<title>IniSettings32 Class</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Config Class</h1>
+		<h1 class="title">IniSettings32 Class</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Work with config of PC.</summary-info>
+        <summary-info>Work with INI config files with Windows System functions.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Class Config</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Class IniSettings32</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public class Config</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public class IniSettings32</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -247,12 +247,41 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
     
 	</td>
 	<td>
-	<a href="topic_000000000000007E.html">DefaultGateway()</a>
+	<a href="topic_000000000000007D.html">DeleteKey(string, string)</a>
 
 	</td>
 	<td>
 
-Get DefaultGateway of NetworkInterface in IPAddress.
+Deletes the key in section.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000007E.html">DeleteSection(string)</a>
+
+	</td>
+	<td>
+
+Deletes the section.
 
 	</td>
 </tr>
@@ -281,7 +310,7 @@ inheritedMember
 	</td>
 	<td>
 
-
+Determines whether the specified <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a> is equal to the current <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
 
 	</td>
@@ -314,7 +343,7 @@ inheritedMember
 	</td>
 	<td>
 
-
+Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
 
 	</td>
@@ -344,124 +373,8 @@ inheritedMember
 	</td>
 	<td>
 
-
+Serves as a hash function for a particular type.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000007A.html">GetHostName()</a>
-
-	</td>
-	<td>
-
-Gets the host name (name of PC, Windows System).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000007C.html">GetLocalIPv4()</a>
-
-	</td>
-	<td>
-
-Gets the local IPv4 (obsolete, but work).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000007B.html">GetLocalIPv6()</a>
-
-	</td>
-	<td>
-
-Gets the local IPv6 (obsolete, but work).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000007D.html">GetPublicIP()</a>
-
-	</td>
-	<td>
-
-Gets the public IP of PC.
 
 	</td>
 </tr>
@@ -490,8 +403,66 @@ inheritedMember
 	</td>
 	<td>
 
-
+Gets the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> of the current instance.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000007A.html">Initialize(string)</a>
+
+	</td>
+	<td>
+
+Initializing the configuration INI file.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000007F.html">KeyExists(string, string)</a>
+
+	</td>
+	<td>
+
+Is key exist.
 
 	</td>
 </tr>
@@ -523,8 +494,37 @@ inheritedMember
 	</td>
 	<td>
 
-
+Creates a shallow copy of the current <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000007B.html">Read(string, string)</a>
+
+	</td>
+	<td>
+
+Reads value of key from section.
 
 	</td>
 </tr>
@@ -553,7 +553,7 @@ inheritedMember
 	</td>
 	<td>
 
-
+Returns a string that represents the current object.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
 
 	</td>
@@ -578,12 +578,12 @@ inheritedMember
     
 	</td>
 	<td>
-	<a href="topic_000000000000007F.html">UseProtocols()</a>
+	<a href="topic_000000000000007C.html">Write(string, string, string)</a>
 
 	</td>
 	<td>
 
-Activate all security protocols for all network functions to work (HTTPS).
+Writes the value to key in section.
 
 	</td>
 </tr>
@@ -661,7 +661,7 @@ Activate all security protocols for all network functions to work (HTTPS).
 
 
 
-<div style="padding-left:1em;">VitNX.Functions.Common.Web.Config</div>
+<div style="padding-left:1em;">VitNX.Functions.Common.IniSettings32</div>
 
 				
 </div>
@@ -729,7 +729,7 @@ Activate all security protocols for all network functions to work (HTTPS).
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_0000000000000072.html">VitNX.Functions.Common.Web Namespace</a><br />
+	<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 	
@@ -747,11 +747,7 @@ Activate all security protocols for all network functions to work (HTTPS).
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['459',"VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace","topic_00000000000001EF.html"],['653',"VitNX_ToolStrip Class","topic_00000000000002A5.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['294',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000FC.html"],['332',"Enums Class","topic_00000000000001D2.html"],['559',"KEYBOARD_PRESETS Enumeration","topic_00000000000002A5.html"]];

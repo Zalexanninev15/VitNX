@@ -1,1 +1,1 @@
-search_result['49']=["topic_0000000000000022.html","Windows.GetWindowsCurrentBuildNumberFromREG Method","Gets the Windows current build number from the Windows Registry."];
+search_result['49']=["topic_000000000000001D.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];

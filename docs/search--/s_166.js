@@ -1,1 +1,1 @@
-search_result['166']=["topic_0000000000000069.html","EncryptAndDecrypt.SimpleEncrypt Method","Simples the encrypt."];
+search_result['166']=["topic_000000000000006A.html","Motherboard Class","Work with informations of Motherboard."];

@@ -1,1 +1,1 @@
-search_result['203']=["topic_000000000000007F.html","Config.UseProtocols Method","Activate all security protocols for all network functions to work (HTTPS)."];
+search_result['203']=["topic_000000000000007A.html","IniSettings32.Initialize Method","Initializing the configuration INI file."];

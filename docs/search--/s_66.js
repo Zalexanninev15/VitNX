@@ -1,1 +1,1 @@
-search_result['66']=["topic_000000000000002E.html","Cpu.GetClockSpeed Method","Gets the clock speed."];
+search_result['66']=["topic_0000000000000029.html","CompressAndDecompress Class","Compress and decompress the text or byte[]."];

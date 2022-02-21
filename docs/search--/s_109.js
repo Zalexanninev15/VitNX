@@ -1,1 +1,1 @@
-search_result['109']=["topic_0000000000000043_events--.html","Ram Events",""];
+search_result['109']=["topic_0000000000000045.html","Windows.GetCurrentUsername Method","Gets the current user (name)."];

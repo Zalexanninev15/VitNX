@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['148',"VitNX.Functions.Windows Namespace","topic_00000000000001CF.html"],['149',"WindowS Class","topic_00000000000001D0.html"],['150',"Methods","topic_00000000000001D0_methods--.html"],['152',"MaximizeAllWindows Method","topic_00000000000001D2.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['294',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000FC.html"],['332',"Enums Class","topic_00000000000001D2.html"]];

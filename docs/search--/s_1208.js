@@ -1,1 +1,1 @@
-search_result['1208']=["topic_0000000000000358.html","VitNX_MenuRenderer.OnRenderItemCheck Method",""];
+search_result['1208']=["topic_000000000000036E.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];

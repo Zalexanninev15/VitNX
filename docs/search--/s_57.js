@@ -1,1 +1,1 @@
-search_result['57']=["topic_000000000000002A.html","Windows.GetWindowsAccentColor Method","Gets the Windows accent color."];
+search_result['57']=["topic_0000000000000023_events--.html","EncrypterAndDecrypter Events",""];

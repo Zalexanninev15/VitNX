@@ -14,25 +14,58 @@ namespace VitNX.UI.ControlsV1
 
         [Category("Additional Options")]
         public Color TextColor
-        { get { return _textColourBrush.Color; } set { _textColourBrush.Dispose(); _textColourBrush = new SolidBrush(value); } }
+        {
+            get { return _textColourBrush.Color; }
+            set
+            {
+                _textColourBrush.Dispose();
+                _textColourBrush = new SolidBrush(value);
+            }
+        }
 
         private SolidBrush _progressColourBrush = (SolidBrush)Brushes.DodgerBlue;
 
-        [Category("Additional Options"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        [Category("Additional Options"),
+            Browsable(true),
+            EditorBrowsable(EditorBrowsableState.Always)]
         public Color ProgressColor
-        { get { return _progressColourBrush.Color; } set { _progressColourBrush.Dispose(); _progressColourBrush = new SolidBrush(value); } }
+        {
+            get { return _progressColourBrush.Color; }
+            set
+            {
+                _progressColourBrush.Dispose();
+                _progressColourBrush = new SolidBrush(value);
+            }
+        }
 
         private VitNX_ProgressBarDisplayMode _visualMode = VitNX_ProgressBarDisplayMode.CurrProgress;
 
         [Category("Additional Options"), Browsable(true)]
         public VitNX_ProgressBarDisplayMode VisualMode
-        { get { return _visualMode; } set { _visualMode = value; Invalidate(); } }
+        {
+            get { return _visualMode; }
+            set
+            {
+                _visualMode = value;
+                Invalidate();
+            }
+        }
 
         private string _text = string.Empty;
 
-        [Description("If it's empty, % will be shown"), Category("Additional Options"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        [Description("If it's empty, % will be shown"),
+            Category("Additional Options"),
+            Browsable(true),
+            EditorBrowsable(EditorBrowsableState.Always)]
         public string CustomText
-        { get { return _text; } set { _text = value; Invalidate(); } }
+        {
+            get { return _text; }
+            set
+            {
+                _text = value;
+                Invalidate();
+            }
+        }
 
         private string _textToDraw
         {
@@ -64,24 +97,35 @@ namespace VitNX.UI.ControlsV1
                 }
                 return text;
             }
-            set { }
         }
 
         public VitNX_ProgressBarRounded()
-        { Value = Minimum; FixComponentBlinking(); }
+        {
+            Value = Minimum;
+            FixComponentBlinking();
+        }
 
         private string _currProgressStr
-        { get { return $"{Value}/{Maximum}"; } }
+        {
+            get { return $"{Value}/{Maximum}"; }
+        }
 
         private void FixComponentBlinking()
-        { SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true); }
+        {
+            SetStyle(ControlStyles.UserPaint |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.OptimizedDoubleBuffer, true);
+        }
 
         private string _percentageStr
-        { get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; } }
+        {
+            get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; }
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            IntPtr hrgn = Functions.Windows.Win32.Import.CreateRoundRectRgn(0, 0, Width, Height, 7, 7); // 0, 0, Width, Height, [x], [x] ; x - degree of roundness of the control (set depending on the size of the control on the form), recommended = 4
+            // 0, 0, Width, Height, [x], [x] ; x - degree of roundness of the control (set depending on the size of the control on the form), recommended = 4
+            IntPtr hrgn = Functions.Windows.Win32.Import.CreateRoundRectRgn(0, 0, Width, Height, 7, 7);
             Region = Region.FromHrgn(hrgn);
             Graphics g = e.Graphics;
             DrawProgressBar(g);
@@ -94,8 +138,12 @@ namespace VitNX.UI.ControlsV1
             ProgressBarRenderer.DrawHorizontalBar(g, rect);
             if (Value > 0)
             {
-                Rectangle clip = new Rectangle(rect.X, rect.Y, (int)Math.Round((float)Value / Maximum * rect.Width), rect.Height);
-                g.FillRectangle(_progressColourBrush, clip);
+                Rectangle clip = new Rectangle(rect.X,
+                    rect.Y,
+                    (int)Math.Round((float)Value / Maximum * rect.Width),
+                    rect.Height);
+                g.FillRectangle(_progressColourBrush,
+                    clip);
             }
         }
 
@@ -105,8 +153,12 @@ namespace VitNX.UI.ControlsV1
             {
                 string text = _textToDraw;
                 SizeF len = g.MeasureString(text, TextFont);
-                Point location = new Point((Width / 2) - (int)len.Width / 2, (Height / 2) - (int)len.Height / 2);
-                g.DrawString(text, TextFont, _textColourBrush, location);
+                Point location = new Point((Width / 2) - (int)len.Width / 2,
+                    (Height / 2) - (int)len.Height / 2);
+                g.DrawString(text,
+                    TextFont,
+                    _textColourBrush
+                    , location);
             }
         }
 

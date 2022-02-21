@@ -1,1 +1,1 @@
-search_result['1333']=["topic_000000000000039A.html","VitNX2_MessageBox_Form(String, String, MessageBoxButtons, MessageBoxIcon) Constructor",""];
+search_result['1333']=["topic_00000000000003B8.html","VitNX_RadioButton.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

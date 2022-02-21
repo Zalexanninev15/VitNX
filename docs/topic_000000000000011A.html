@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.mouse_event Method</title>
+	<title>Import.DrawThemeBackgroundEx Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.mouse_event Method</h1>
+		<h1 class="title">Import.DrawThemeBackgroundEx Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)&gt; _&nbsp;<br />Public Shared Sub mouse_event( _&nbsp;<br />   ByVal <i>dwFlags</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dx</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dy</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dwData</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>dwExtraInfo</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uintptr">UIntPtr</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;uxtheme.dll&quot;)&gt; _&nbsp;<br />Public Shared Function DrawThemeBackgroundEx( _&nbsp;<br />   ByVal <i>hTheme</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>hdc</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>iPartId</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>iStateId</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByRef <i>pRect</i> As <a target="_top" href="topic_000000000000023C.html" onclick="this.target='';return true;">RECT</a>, _&nbsp;<br />   ByRef <i>pOptions</i> As <a target="_top" href="topic_00000000000001D8.html" onclick="this.target='';return true;">DTBGOPTS</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> mouse_event(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwFlags</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dx</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dy</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwData</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uintptr">UIntPtr</a> <i>dwExtraInfo</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DrawThemeBackgroundEx(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hTheme</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iPartId</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iStateId</i>,&nbsp;<br />   ref <a target="_top" href="topic_000000000000023C.html" onclick="this.target='';return true;">RECT</a> <i>pRect</i>,&nbsp;<br />   ref <a target="_top" href="topic_00000000000001D8.html" onclick="this.target='';return true;">DTBGOPTS</a> <i>pOptions</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,10 +190,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="dwFlags" class="parameterList">
+	Parameters</h4><dl paramName="hTheme" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwFlags
+			hTheme
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hdc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hdc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="iPartId" class="parameterList">
+	<dt>
+		<span class="parameter">
+			iPartId
 		</span>
 	</dt>
 	<dd>
@@ -203,10 +229,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="dx" class="parameterList">
+<dl paramName="iStateId" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dx
+			iStateId
 		</span>
 	</dt>
 	<dd>
@@ -216,40 +242,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="dy" class="parameterList">
+<dl paramName="pRect" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dy
+			pRect
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="topic_000000000000023C.html" onclick="this.target='';return true;">RECT</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="dwData" class="parameterList">
+<dl paramName="pOptions" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwData
+			pOptions
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwExtraInfo" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwExtraInfo
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uintptr">UIntPtr</a> 
+		<a target="_top" href="topic_00000000000001D8.html" onclick="this.target='';return true;">DTBGOPTS</a> 
 	</dd>
 </dl>
 <p>
@@ -258,6 +271,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -332,12 +349,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]
- public static extern void mouse_event(int dwFlags,
-     int dx,
-     int dy,
-     int dwData,
-     UIntPtr dwExtraInfo);
+[DllImport(&quot;uxtheme.dll&quot;)]
+ public static extern int DrawThemeBackgroundEx(IntPtr hTheme,
+     IntPtr hdc,
+     int iPartId,
+     int iStateId,
+     ref RECT pRect,
+     ref DTBGOPTS pOptions);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -399,11 +417,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000EB.html">Import Class</a><br />
+			<a href="topic_00000000000000FD.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -421,11 +439,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

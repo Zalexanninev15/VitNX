@@ -9,20 +9,13 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
 {
     public partial class VitNX_Dialog : VitNX_Form
     {
-        #region Field Region
-
         protected override void OnHandleCreated(EventArgs e)
         {
-            Functions.Windows.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
+            Functions.Windows.WindowSAndControls.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
         }
 
         private VitNX_DialogButton _dialogButtons = VitNX_DialogButton.Ok;
         private List<VitNX_Button> _buttons;
-
-        #endregion Field Region
-
-        #region Button Region
-
         protected VitNX_Button btnOk;
         protected VitNX_Button btnCancel;
         protected VitNX_Button btnClose;
@@ -31,10 +24,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
         protected VitNX_Button btnAbort;
         protected VitNX_Button btnRetry;
         protected VitNX_Button btnIgnore;
-
-        #endregion Button Region
-
-        #region Property Region
 
         [Description("Determines the type of the dialog window.")]
         [DefaultValue(VitNX_DialogButton.Ok)]
@@ -45,7 +34,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             {
                 if (_dialogButtons == value)
                     return;
-
                 _dialogButtons = value;
                 SetButtons();
             }
@@ -71,14 +59,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             private set { base.CancelButton = value; }
         }
 
-        #endregion Property Region
-
-        #region Constructor Region
-
         public VitNX_Dialog()
         {
             InitializeComponent();
-
             _buttons = new List<VitNX_Button>
                 {
                     btnAbort, btnRetry, btnIgnore, btnOk,
@@ -86,26 +69,16 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
                 };
         }
 
-        #endregion Constructor Region
-
-        #region Event Handler Region
-
-        protected override void OnLoad(System.EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
             SetButtons();
         }
-
-        #endregion Event Handler Region
-
-        #region Method Region
 
         private void SetButtons()
         {
             foreach (var btn in _buttons)
                 btn.Visible = false;
-
             switch (_dialogButtons)
             {
                 case VitNX_DialogButton.Ok:
@@ -156,34 +129,28 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
                     CancelButton = btnCancel;
                     break;
             }
-
             SetFlowSize();
         }
 
-        private void ShowButton(VitNX_Button button, bool isLast = false)
+        private void ShowButton(VitNX_Button button,
+            bool isLast = false)
         {
             button.SendToBack();
-
             if (!isLast)
                 button.Margin = new Padding(0, 0, 10, 0);
-
             button.Visible = true;
         }
 
         private void SetFlowSize()
         {
             var width = flowInner.Padding.Horizontal;
-
             foreach (var btn in _buttons)
             {
                 if (btn.Visible)
                     width += btn.Width + btn.Margin.Right;
             }
-
             flowInner.Width = width;
             TotalButtonSize = width;
         }
-
-        #endregion Method Region
     }
 }

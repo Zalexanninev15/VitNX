@@ -1,1 +1,1 @@
-search_result['82']=["topic_0000000000000034.html","Disk.GetAll Method","Gets the all (logical)."];
+search_result['82']=["topic_000000000000002F.html","FileSystem.GetItemsListInFolder Method","Gets the items list in folder."];

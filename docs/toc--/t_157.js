@@ -1,1 +1,1 @@
-c['157']=[['158',"Installed Class","topic_000000000000008E.html",1],['163',"Processes Class","topic_0000000000000083.html",1]];
+c['157']=[['158',"DownloadString Method","topic_0000000000000082.html",0],['159',"GetGeo Method","topic_0000000000000084.html",0],['160',"GetHeaderAndContent Method","topic_0000000000000083.html",0],['161',"IsHaveInternet Method","topic_000000000000008A.html",0],['162',"IsValidTelegramBotToken Method","topic_0000000000000085.html",0]];

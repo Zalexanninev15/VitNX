@@ -1,1 +1,1 @@
-search_result['10']=["topic_0000000000000005.html","FileSystem Class","Work with the file system."];
+search_result['10']=["topic_0000000000000005.html","CShap.ConvertColorToConsoleColor Method","Converts the color to color for console."];

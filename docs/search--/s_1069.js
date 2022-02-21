@@ -1,1 +1,1 @@
-search_result['1069']=["topic_00000000000002F1.html","VitNX_DockGroup.OnMouseDown Method",""];
+search_result['1069']=["topic_000000000000031D.html","WindowS.SetWindowsElevenStyleForWinForm Method","Applying Windows 11 roundings to a window(s)."];

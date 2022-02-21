@@ -1,1 +1,1 @@
-search_result['402']=["topic_00000000000000D8.html","modeInfo Field",""];
+search_result['402']=["topic_00000000000000DC_props--.html","DISPLAYCONFIG_SOURCE_MODE Properties",""];

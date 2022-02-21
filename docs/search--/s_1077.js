@@ -1,1 +1,1 @@
-search_result['1077']=["topic_00000000000002F7_events--.html","VitNX_DockPanel Events",""];
+search_result['1077']=["topic_0000000000000320.html","Controls.VolumeOnFocus Method","Enable/disable sound (nasty) when focusing on an item/control.."];

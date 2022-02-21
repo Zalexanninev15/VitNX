@@ -1,1 +1,1 @@
-c['46']=[['47',"Characteristics Method","topic_000000000000002C.html",0],['48',"GetArchitecture Method","topic_000000000000002D.html",0],['49',"GetClockSpeed Method","topic_000000000000002E.html",0]];
+c['46']=[['47',"CompressAndDecompress Class","topic_0000000000000029.html",1],['53',"EncryptAndDecrypt Class","topic_000000000000001C.html",1],['61',"EncrypterAndDecrypter Class","topic_0000000000000023.html",1],['68',"NumericalTextConverter Class","topic_0000000000000008.html",1],['72',"Text Class","topic_000000000000000B.html",1]];

@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['175',"VitNX.Functions.Windows.Controllers Namespace","topic_0000000000000092.html"],['190',"Monitor Class","topic_00000000000000A7.html"],['233',"DISPLAYCONFIG_SOURCE_MODE Structure","topic_00000000000000CC.html"],['234',"Fields","topic_00000000000000CC_vars--.html"]];

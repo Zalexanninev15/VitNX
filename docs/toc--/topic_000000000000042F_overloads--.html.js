@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['1071',"VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace","topic_0000000000000423.html"],['1078',"DockRegionState Class","topic_000000000000042E.html"],['1079',"DockRegionState Constructor","topic_000000000000042F_overloads--.html"]];

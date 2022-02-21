@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['4',"VitNX.Functions.Common Namespace","topic_0000000000000000.html"],['39',"PowerControl Class","topic_0000000000000046.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['91',"VitNX.Functions.Common.Information Namespace","topic_0000000000000042.html"],['128',"Windows Class","topic_0000000000000043.html"],['129',"Methods","topic_0000000000000043_methods--.html"],['132',"GetLocalTime Method","topic_0000000000000046.html"]];

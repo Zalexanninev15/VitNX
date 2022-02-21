@@ -1,1 +1,1 @@
-c['905']=[['906',"OnPaint Method","topic_00000000000003A4.html",0],['907',"OnResize Method","topic_00000000000003A3.html",0]];
+c['905']=[['906',"VitNX_ListItem Constructor","topic_0000000000000397_overloads--.html",1],['909',"Events","topic_0000000000000395_events--.html",1]];

@@ -1,1 +1,1 @@
-search_result['1256']=["topic_0000000000000371_methods--.html","VitNX_ProgressBar Methods",""];
+search_result['1256']=["topic_000000000000038D_vars--.html","VitNX_GroupBox Fields",""];

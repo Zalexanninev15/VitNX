@@ -1,1 +1,1 @@
-search_result['486']=["topic_0000000000000118.html","Import.ExitWindowsEx Method",""];
+search_result['486']=["topic_000000000000010C.html","Import.CreateCompatibleBitmap Method",""];

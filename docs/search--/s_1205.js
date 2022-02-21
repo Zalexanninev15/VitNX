@@ -1,1 +1,1 @@
-search_result['1205']=["topic_0000000000000355.html","VitNX_MenuRenderer.InitializeItem Method",""];
+search_result['1205']=["topic_000000000000036B.html","VitNX_ComboBox.OnTextChanged Method","Raises the TextChanged event."];

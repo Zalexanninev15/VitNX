@@ -116,7 +116,8 @@ namespace VitNX.Functions.Windows.Controllers
         internal class MMDeviceEnumerator
         { }
 
-        [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"),
+            InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         internal interface IMMDeviceEnumerator
         {
             int NotImpl1();
@@ -127,7 +128,8 @@ namespace VitNX.Functions.Windows.Controllers
                 out IMMDevice ppDevice);
         }
 
-        [Guid("D666063F-1587-4E43-81F1-B948E807363F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("D666063F-1587-4E43-81F1-B948E807363F"),
+            InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         internal interface IMMDevice
         {
             [PreserveSig]
@@ -137,13 +139,15 @@ namespace VitNX.Functions.Windows.Controllers
                 [MarshalAs(UnmanagedType.IUnknown)] out object ppInterface);
         }
 
-        [Guid("657804FA-D6AD-4496-8A60-352752AF4F89"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("657804FA-D6AD-4496-8A60-352752AF4F89"),
+            InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         internal interface IAudioEndpointVolumeCallback
         {
             int OnNotify(IntPtr pNotifyData);
         };
 
-        [Guid("5CDF2C82-841E-4546-9722-0CF74078229A"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("5CDF2C82-841E-4546-9722-0CF74078229A"),
+            InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         internal interface IAudioEndpointVolume
         {
             int RegisterControlChangeNotify(IAudioEndpointVolumeCallback pNotify);
@@ -435,13 +439,11 @@ namespace VitNX.Functions.Windows.Controllers
         /// The keyboard events of Windows.
         /// </summary>
         /// <param name="status">The status.</param>
-        /// <param name="keys">The keys.</param>
-        public static void WindowsKeyboardEventsAPI(int status,
-            string keys = "none")
+        public static void WindowsKeyboardEventsAPI(Enums.KEYBOARD_PRESETS status)
         {
             switch (status)
             {
-                case -1:
+                case Enums.KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.D);
@@ -449,7 +451,7 @@ namespace VitNX.Functions.Windows.Controllers
                         KeyUp(Keys.D);
                         break;
                     }
-                case 0:
+                case Enums.KEYBOARD_PRESETS.HIDE_THIS_WINDOW:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.M);
@@ -457,7 +459,7 @@ namespace VitNX.Functions.Windows.Controllers
                         KeyUp(Keys.M);
                         break;
                     }
-                case 1:
+                case Enums.KEYBOARD_PRESETS.SHOW_ALL_WINDOWS:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.LShiftKey);
@@ -467,41 +469,6 @@ namespace VitNX.Functions.Windows.Controllers
                         KeyUp(Keys.M);
                         break;
                     }
-            }
-        }
-    }
-
-    public static class FocusOnControls
-    {
-        /// <summary>
-        /// Removing the focus from the element/control from which the function is called.
-        /// </summary>
-        public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
-
-        private static uint SavedVolumeLevel;
-        private static bool VolumeLevelSaved = false;
-
-        /// <summary>
-        /// Enable/disable sound (nasty) when focusing on an item/control..
-        /// </summary>
-        /// <param name="off">If true, off.</param>
-        public static void VolumeOnFocus(bool off = true)
-        {
-            if (off)
-            {
-                Import.WaveOutGetVolume(IntPtr.Zero,
-                    out SavedVolumeLevel);
-                VolumeLevelSaved = true;
-                Import.WaveOutSetVolume(IntPtr.Zero, 0);
-            }
-            else
-            {
-                if (VolumeLevelSaved)
-                {
-                    Import.WaveOutSetVolume(IntPtr.Zero,
-                        SavedVolumeLevel);
-                    VolumeLevelSaved = true;
-                }
             }
         }
     }
@@ -710,6 +677,21 @@ namespace VitNX.Functions.Windows.Controllers
                 if (Equals(screen, Screen.AllScreens[index]))
                     return allFriendlyNames.ToArray()[index];
             return null;
+        }
+    }
+
+    /// <summary>
+    /// Work with system.
+    /// </summary>
+    public static class WorkWithSystem
+    {
+        /// <summary>
+        /// Installs the INF driver file into the Windows System.
+        /// </summary>
+        /// <param name="pathToInf">The path to INF driver file.</param>
+        public static void InstallInfDriver(string pathToInf)
+        {
+            Import.InstallHinfSection(IntPtr.Zero, IntPtr.Zero, pathToInf, 0);
         }
     }
 }

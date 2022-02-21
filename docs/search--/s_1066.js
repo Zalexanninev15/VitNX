@@ -1,1 +1,1 @@
-search_result['1066']=["topic_00000000000002EE.html","VitNX_DockGroup.SetVisibleContent Method",""];
+search_result['1066']=["topic_000000000000031A.html","WindowS.HideConsoleWindow Method","Hides the console window."];

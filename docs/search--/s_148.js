@@ -1,1 +1,1 @@
-search_result['148']=["topic_000000000000005C.html","Work.ContainsSymbols Method","Contains the symbols."];
+search_result['148']=["topic_000000000000005D.html","Disk.GetAll Method","Gets the all (logical)."];

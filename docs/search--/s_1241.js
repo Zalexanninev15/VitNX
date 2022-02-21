@@ -1,1 +1,1 @@
-search_result['1241']=["topic_000000000000036A.html","DockContentDragFilter Constructor",""];
+search_result['1241']=["topic_0000000000000383.html","VitNX_DropdownList.OnResize Method","Raises the Resize event."];

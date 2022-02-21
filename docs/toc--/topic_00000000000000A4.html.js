@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['175',"VitNX.Functions.Windows.Controllers Namespace","topic_0000000000000092.html"],['176',"FocusOnControls Class","topic_00000000000000A4.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['166',"VitNX.Functions.Windows.Apps Namespace","topic_0000000000000094.html"],['167',"Installed Class","topic_00000000000000A1.html"],['168',"Methods","topic_00000000000000A1_methods--.html"],['169',"FindAppPath Method","topic_00000000000000A4.html"]];

@@ -1,1 +1,1 @@
-search_result['1268']=["topic_0000000000000375_vars--.html","VitNX_ProgressBarRounded Fields",""];
+search_result['1268']=["topic_0000000000000394.html","VitNX_Label.OnSizeChanged Method","Raises the SizeChanged event."];

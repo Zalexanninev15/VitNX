@@ -1,1 +1,1 @@
-search_result['1236']=["topic_0000000000000369_attached_props--.html","DockContentDragFilter Attached Properties",""];
+search_result['1236']=["topic_0000000000000380_methods--.html","VitNX_DropdownList Methods",""];

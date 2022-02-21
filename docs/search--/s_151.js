@@ -1,1 +1,1 @@
-search_result['151']=["topic_000000000000005F.html","Work.ListAddStringsToList Method","Lists the add strings to list."];
+search_result['151']=["topic_0000000000000060.html","Monitor Class","Work with informations of Monitor(s)."];

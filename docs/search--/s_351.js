@@ -1,1 +1,1 @@
-search_result['351']=["topic_00000000000000C1_events--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Events",""];
+search_result['351']=["topic_00000000000000C7_props--.html","DISPLAYCONFIG_RATIONAL Properties",""];

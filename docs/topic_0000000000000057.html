@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SizeSuffixes Field</title>
+	<title>Cpu.GetClockSpeed Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SizeSuffixes Field</h1>
+		<h1 class="title">Cpu.GetClockSpeed Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text</a>
+<a href="topic_0000000000000042.html">VitNX.Functions.Common.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Possible size suffixes.</summary-info>
+        <summary-info>Gets the clock speed.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared ReadOnly SizeSuffixes As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetClockSpeed() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] SizeSuffixes</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetClockSpeed()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -192,8 +192,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
 	
 
 
@@ -269,7 +272,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static readonly string[] SizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;, &quot;PB&quot;, &quot;EB&quot;, &quot;ZB&quot;, &quot;YB&quot; };
+public static string GetClockSpeed()
+ {
+     string clockSpeed = &quot;&quot;;
+     foreach (var item in new ManagementObjectSearcher(&quot;select MaxClockSpeed from Win32_Processor&quot;).Get())
+     {
+         var clockSpeedx = (uint)item[&quot;MaxClockSpeed&quot;];
+         clockSpeed = clockSpeedx.ToString();
+     }
+     return clockSpeed;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -331,11 +343,11 @@ public static readonly string[] SizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quo
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000056.html">Work Class</a><br />
+			<a href="topic_0000000000000054.html">Cpu Class</a><br />
 
 
 
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text Namespace</a><br />
+<a href="topic_0000000000000042.html">VitNX.Functions.Common.Information Namespace</a><br />
 
 
 			
@@ -353,11 +365,8 @@ public static readonly string[] SizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quo
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
+

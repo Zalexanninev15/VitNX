@@ -1,1 +1,1 @@
-search_result['1396']=["topic_00000000000003B6.html","ConsoleProgressBar.SetText Method",""];
+search_result['1396']=["topic_00000000000003E7_methods--.html","VitNX_SectionPanel Methods",""];

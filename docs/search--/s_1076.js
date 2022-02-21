@@ -1,1 +1,1 @@
-search_result['1076']=["topic_00000000000002F7_attached_props--.html","VitNX_DockPanel Attached Properties",""];
+search_result['1076']=["topic_000000000000031F.html","Controls.RemoveFocus Method","Removing the focus from the element/control from which the function is called."];

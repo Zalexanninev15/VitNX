@@ -1,1 +1,1 @@
-search_result['1376']=["topic_00000000000003AD.html","VitNX2_TextBox.Dispose Method","Clean up any resources being used."];
+search_result['1376']=["topic_00000000000003D9.html","VitNX_ScrollBase.OnLostFocus Method","Raises the LostFocus event."];

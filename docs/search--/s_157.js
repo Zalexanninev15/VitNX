@@ -1,1 +1,1 @@
-search_result['157']=["topic_0000000000000065.html","Work.IsValidCardNumber Method","Are the valid card number."];
+search_result['157']=["topic_0000000000000061.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

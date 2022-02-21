@@ -1,1 +1,1 @@
-c['1005']=[['1006',"ChangePosition Method","topic_0000000000000710.html",0],['1007',"Dispose Method","topic_0000000000000711_overloads--.html",1],['1009',"showAlert Method","topic_000000000000070E_overloads--.html",1]];
+c['1005']=[['1006',"VitNX_Separator Constructor","topic_00000000000003EF.html",0],['1007',"Methods","topic_00000000000003EE_methods--.html",1]];

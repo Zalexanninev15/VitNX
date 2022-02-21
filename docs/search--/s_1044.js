@@ -1,1 +1,1 @@
-search_result['1044']=["topic_00000000000002DD.html","VitNX_DockArea Enumeration",""];
+search_result['1044']=["topic_00000000000002D2.html","DISPLAYCONFIG_SCALING Enumeration",""];

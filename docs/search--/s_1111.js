@@ -1,1 +1,1 @@
-search_result['1111']=["topic_000000000000030D_events--.html","VitNX_DockSplitter Events",""];
+search_result['1111']=["topic_0000000000000331_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];

@@ -1,1 +1,1 @@
-search_result['437']=["topic_00000000000000EB_attached_props--.html","Import Attached Properties",""];
+search_result['437']=["topic_00000000000000EB_props--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Properties",""];

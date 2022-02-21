@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Text;
 
 namespace VitNX.Functions.Common
 {
@@ -33,14 +34,44 @@ namespace VitNX.Functions.Common
         /// <summary>
         /// Converts the DWord color to RGB.
         /// </summary>
-        /// <param name="colorSetEx">The color set ex.</param>
+        /// <param name="color">Color as unit.</param>
         /// <returns>A Color.</returns>
-        public static Color ConvertDWordColorToRGB(uint colorSetEx)
+        public static Color ConvertDWordColorToRGB(uint color)
         {
-            byte redColor = (byte)((0x000000FF & colorSetEx) >> 0);
-            byte greenColor = (byte)((0x0000FF00 & colorSetEx) >> 8);
-            byte blueColor = (byte)((0x00FF0000 & colorSetEx) >> 16);
+            byte redColor = (byte)((0x000000FF & color) >> 0);
+            byte greenColor = (byte)((0x0000FF00 & color) >> 8);
+            byte blueColor = (byte)((0x00FF0000 & color) >> 16);
             return Color.FromArgb(redColor, greenColor, blueColor);
+        }
+
+        /// <summary>
+        /// Converts the color to color for console.
+        /// </summary>
+        /// <param name="color">The color.</param>
+        /// <returns></returns>
+        public static ConsoleColor ConvertColorToConsoleColor(Color color)
+        {
+            int index = (color.R > 128 | color.G > 128 | color.B > 128) ? 8 : 0;
+            index |= (color.R > 64) ? 4 : 0;
+            index |= (color.G > 64) ? 2 : 0;
+            index |= (color.B > 64) ? 1 : 0;
+            return (ConsoleColor)index;
+        }
+
+        /// <summary>
+        /// Loads the custom font from file.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        /// <param name="size">The size.</param>
+        /// <param name="fontStyle">The font style.</param>
+        /// <returns>A Font.</returns>
+        public static Font LoadCustomFontFromFile(string targetFile,
+            float size = 16,
+            FontStyle fontStyle = FontStyle.Regular)
+        {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(targetFile);
+            return new Font(pfc.Families[0], size, fontStyle);
         }
     }
 }

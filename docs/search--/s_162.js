@@ -1,1 +1,1 @@
-search_result['162']=["topic_0000000000000067_methods--.html","EncryptAndDecrypt Methods",""];
+search_result['162']=["topic_0000000000000066.html","Monitor.CaptureWindow Method","Captures the window."];

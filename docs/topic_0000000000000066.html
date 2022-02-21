@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Work.SizeSuffix Method</title>
+	<title>Monitor.CaptureWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Work.SizeSuffix Method</h1>
+		<h1 class="title">Monitor.CaptureWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text</a>
+<a href="topic_0000000000000042.html">VitNX.Functions.Common.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gives a suffix to the file size for output.</summary-info>
+        <summary-info>Captures the window.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function SizeSuffix( _&nbsp;<br />   ByVal <i>value</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">Long</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function CaptureWindow( _&nbsp;<br />   ByVal <i>handle</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SizeSuffix(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> <i>value</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> CaptureWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>handle</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,27 +191,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="value" class="parameterList">
+	Parameters</h4><dl paramName="handle" class="parameterList">
 	<dt>
 		<span class="parameter">
-			value
+			handle
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	The value. 
+	The handle. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> 
 		<p>
-		A string. 
+		An Image. 
 	</p>
 	
 
@@ -288,15 +288,30 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string SizeSuffix(long value)
+public static Image CaptureWindow(IntPtr handle)
  {
-     if (value &lt; 0)
-         return &quot;-&quot; + SizeSuffix(-value);
-     if (value == 0)
-         return &quot;0.0 bytes&quot;;
-     int mag = (int)Math.Log(value, 1024);
-     decimal adjustedSize = (decimal)value / (1L &lt;&lt; (mag * 10));
-     return string.Format(&quot;{0:n1} {1}&quot;, adjustedSize, SizeSuffixes[mag]);
+     IntPtr hdcSrc = Import.GetWindowDC(handle);
+     Enums.RECT windowRect = new Enums.RECT();
+     Import.GetWindowRect(handle, out windowRect);
+     int width = windowRect.Right - windowRect.Left;
+     int height = windowRect.Bottom - windowRect.Top;
+     IntPtr hdcDest = Import.CreateCompatibleDC(hdcSrc);
+     IntPtr hBitmap = Import.CreateCompatibleBitmap(hdcSrc,
+         width,
+         height);
+     IntPtr hOld = Import.SelectObject(hdcDest,
+         hBitmap);
+     Import.BitBlt(hdcDest, 0, 0,
+         width,
+         height, hdcSrc,
+         0, 0,
+         Constants.SRCCOPY);
+     Import.SelectObject(hdcDest, hOld);
+     Import.DeleteDC(hdcDest);
+     Import.ReleaseDC(handle, hdcSrc);
+     Image img = Image.FromHbitmap(hBitmap);
+     Import.DeleteObject(hBitmap);
+     return img;
  }
 					</pre>			
 				</div>
@@ -359,11 +374,11 @@ public static string SizeSuffix(long value)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000056.html">Work Class</a><br />
+			<a href="topic_0000000000000060.html">Monitor Class</a><br />
 
 
 
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text Namespace</a><br />
+<a href="topic_0000000000000042.html">VitNX.Functions.Common.Information Namespace</a><br />
 
 
 			
@@ -381,11 +396,7 @@ public static string SizeSuffix(long value)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

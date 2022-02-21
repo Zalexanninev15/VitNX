@@ -1,1 +1,1 @@
-search_result['607']=["topic_00000000000001D3.html","WindowS.HideConsoleWindow Method","Hides the console window."];
+search_result['607']=["topic_000000000000017D.html","Import.ValidateRect (IntPtr, ref RECT) Method",""];

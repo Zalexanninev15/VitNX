@@ -1,1 +1,1 @@
-search_result['1078']=["topic_00000000000002F7_methods--.html","VitNX_DockPanel Methods",""];
+search_result['1078']=["topic_0000000000000321.html","Controls.SetNativeThemeForControls Method","Sets the native Windows System theme for controls."];

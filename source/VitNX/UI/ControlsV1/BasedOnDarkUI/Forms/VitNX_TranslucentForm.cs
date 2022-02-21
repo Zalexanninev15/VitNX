@@ -8,21 +8,16 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
     {
         protected override void OnHandleCreated(EventArgs e)
         {
-            Functions.Windows.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
+            Functions.Windows.WindowSAndControls.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);
         }
-
-        #region Property Region
 
         protected override bool ShowWithoutActivation
         {
             get { return true; }
         }
 
-        #endregion Property Region
-
-        #region Constructor Region
-
-        public VitNX_TranslucentForm(Color backColor, double opacity = 0.6)
+        public VitNX_TranslucentForm(Color backColor,
+            double opacity = 0.6)
         {
             StartPosition = FormStartPosition.Manual;
             FormBorderStyle = FormBorderStyle.None;
@@ -33,14 +28,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Forms
             BackColor = backColor;
         }
 
-        #endregion Constructor Region
-
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            //
-            // VitNX_TranslucentForm
-            //
             this.ClientSize = new System.Drawing.Size(284, 265);
             this.Name = "VitNX_TranslucentForm";
             this.TopMost = true;

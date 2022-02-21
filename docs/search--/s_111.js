@@ -1,1 +1,1 @@
-search_result['111']=["topic_0000000000000043_props--.html","Ram Properties",""];
+search_result['111']=["topic_0000000000000047.html","Windows.Is64bit Method","Windows is x64 (64-bit)."];

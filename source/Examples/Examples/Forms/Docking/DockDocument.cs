@@ -12,11 +12,7 @@ namespace Example
         public DockDocument()
         {
             InitializeComponent();
-
-            // Workaround to stop the textbox from highlight all text.
             txtDocument.SelectionStart = txtDocument.Text.Length;
-
-            // Build dummy dropdown data
             cmbOptions.Items.Add(new VitNX_DropdownItem("25%"));
             cmbOptions.Items.Add(new VitNX_DropdownItem("50%"));
             cmbOptions.Items.Add(new VitNX_DropdownItem("100%"));
@@ -27,13 +23,17 @@ namespace Example
 
         public DockDocument(string text, Image icon) : this()
         {
-            DockText = text; Icon = icon;
+            DockText = text;
+            Icon = icon;
         }
 
         public override void Close()
         {
-            var result = VitNX_MessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?", @"Close document", VitNX_DialogButton.YesNo);
-            if (result == DialogResult.No) { return; }
+            var result = VitNX_MessageBox.ShowWarning(@"You will lose any unsaved changes. Continue?",
+                @"Close document",
+                VitNX_DialogButton.YesNo);
+            if (result == DialogResult.No)
+                return;
             base.Close();
         }
     }

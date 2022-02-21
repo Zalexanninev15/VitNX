@@ -1,1 +1,1 @@
-search_result['1200']=["topic_0000000000000353_events--.html","VitNX_MenuRenderer Events",""];
+search_result['1200']=["topic_0000000000000366_overloads--.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];

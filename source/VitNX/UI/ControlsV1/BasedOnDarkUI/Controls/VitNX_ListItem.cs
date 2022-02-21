@@ -7,19 +7,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
 {
     public class VitNX_ListItem
     {
-        #region Event Region
-
         public event EventHandler TextChanged;
 
-        #endregion Event Region
-
-        #region Field Region
-
         private string _text;
-
-        #endregion Field Region
-
-        #region Property Region
 
         public string Text
         {
@@ -27,25 +17,16 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
             set
             {
                 _text = value;
-
                 if (TextChanged != null)
                     TextChanged(this, new EventArgs());
             }
         }
 
         public Rectangle Area { get; set; }
-
         public Color TextColor { get; set; }
-
         public FontStyle FontStyle { get; set; }
-
         public Bitmap Icon { get; set; }
-
         public object Tag { get; set; }
-
-        #endregion Property Region
-
-        #region Constructor Region
 
         public VitNX_ListItem()
         {
@@ -58,7 +39,5 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
         {
             Text = text;
         }
-
-        #endregion Constructor Region
     }
 }

@@ -1,1 +1,1 @@
-search_result['375']=["topic_00000000000000CC.html","DISPLAYCONFIG_SOURCE_MODE Structure",""];
+search_result['375']=["topic_00000000000000D1_methods--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Methods",""];

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function ConvertDWordColorToRGB( _&nbsp;<br />   ByVal <i>colorSetEx</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function ConvertDWordColorToRGB( _&nbsp;<br />   ByVal <i>color</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> ConvertDWordColorToRGB(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>colorSetEx</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> ConvertDWordColorToRGB(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>color</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,10 +191,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="colorSetEx" class="parameterList">
+	Parameters</h4><dl paramName="color" class="parameterList">
 	<dt>
 		<span class="parameter">
-			colorSetEx
+			color
 		</span>
 	</dt>
 	<dd>
@@ -202,7 +202,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The color set ex. 
+	Color as unit. 
 </p>
 
 <p />
@@ -288,11 +288,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Color ConvertDWordColorToRGB(uint colorSetEx)
+public static Color ConvertDWordColorToRGB(uint color)
  {
-     byte redColor = (byte)((0x000000FF &amp; colorSetEx) &gt;&gt; 0);
-     byte greenColor = (byte)((0x0000FF00 &amp; colorSetEx) &gt;&gt; 8);
-     byte blueColor = (byte)((0x00FF0000 &amp; colorSetEx) &gt;&gt; 16);
+     byte redColor = (byte)((0x000000FF &amp; color) &gt;&gt; 0);
+     byte greenColor = (byte)((0x0000FF00 &amp; color) &gt;&gt; 8);
+     byte blueColor = (byte)((0x00FF0000 &amp; color) &gt;&gt; 16);
      return Color.FromArgb(redColor, greenColor, blueColor);
  }
 					</pre>			
@@ -378,11 +378,7 @@ public static Color ConvertDWordColorToRGB(uint colorSetEx)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

@@ -14,8 +14,6 @@ namespace Example
 {
     public partial class MainForm : VitNX_Form
     {
-        #region Field Region
-
         private List<VitNX_DockContent> _toolWindows = new List<VitNX_DockContent>();
         private DockProject _dockProject;
         private DockProperties _dockProperties;
@@ -23,90 +21,51 @@ namespace Example
         private DockLayers _dockLayers;
         private DockHistory _dockHistory;
 
-        #endregion Field Region
-
-        #region Constructor Region
-
         public MainForm()
         {
             InitializeComponent();
-
-            // Add the control scroll message filter to re-route all mousewheel events
-            // to the control the user is currently hovering over with their cursor.
             Application.AddMessageFilter(new ControlScrollFilter());
-
-            // Add the dock content drag message filter to handle moving dock content around.
             Application.AddMessageFilter(DockPanel.DockContentDragFilter);
-
-            // Add the dock panel message filter to filter through for dock panel splitter
-            // input before letting events pass through to the rest of the application.
             Application.AddMessageFilter(DockPanel.DockResizeFilter);
-
-            // Hook in all the UI events manually for clarity.
             HookEvents();
-
-            // Build the tool windows and add them to the dock panel
             _dockProject = new DockProject();
             _dockProperties = new DockProperties();
             _dockConsole = new DockConsole();
             _dockLayers = new DockLayers();
             _dockHistory = new DockHistory();
-
-            // Add the tool windows to a list
             _toolWindows.Add(_dockProject);
             _toolWindows.Add(_dockProperties);
             _toolWindows.Add(_dockConsole);
             _toolWindows.Add(_dockLayers);
             _toolWindows.Add(_dockHistory);
-
-            // Deserialize if a previous state is stored
             if (File.Exists("dockpanel.config"))
-            {
                 DeserializeDockPanel("dockpanel.config");
-            }
             else
             {
-                // Add the tool window list contents to the dock panel
                 foreach (var toolWindow in _toolWindows)
                     DockPanel.AddContent(toolWindow);
-
-                // Add the history panel to the layer panel group
                 DockPanel.AddContent(_dockHistory, _dockLayers.DockGroup);
             }
-
-            // Check window menu items which are contained in the dock panel
             BuildWindowMenu();
-
-            // Add dummy documents to the main document area of the dock panel
             DockPanel.AddContent(new DockDocument("Document 1", Icons.document_16xLG));
             DockPanel.AddContent(new DockDocument("Document 2", Icons.document_16xLG));
             DockPanel.AddContent(new DockDocument("Document 3", Icons.document_16xLG));
         }
 
-        #endregion Constructor Region
-
-        #region Method Region
-
         private void HookEvents()
         {
             FormClosing += MainForm_FormClosing;
-
             DockPanel.ContentAdded += DockPanel_ContentAdded;
             DockPanel.ContentRemoved += DockPanel_ContentRemoved;
-
             mnuNewFile.Click += NewFile_Click;
             mnuClose.Click += Close_Click;
-
             btnNewFile.Click += NewFile_Click;
-
             mnuDialog.Click += Dialog_Click;
-
             mnuProject.Click += Project_Click;
             mnuProperties.Click += Properties_Click;
             mnuConsole.Click += Console_Click;
             mnuLayers.Click += Layers_Click;
             mnuHistory.Click += History_Click;
-
             mnuAbout.Click += About_Click;
         }
 
@@ -126,10 +85,6 @@ namespace Example
             mnuLayers.Checked = DockPanel.Contains(_dockLayers);
             mnuHistory.Checked = DockPanel.Contains(_dockHistory);
         }
-
-        #endregion Method Region
-
-        #region Event Handler Region
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -212,35 +167,42 @@ namespace Example
 
         private void SetTaskBarProgressBar_Click(object sender, EventArgs e)
         {
-            // Call only on Forms, it will not work on the Dock!
-            if (toolStripTextBox1.Text == "") { toolStripTextBox1.Text = "50"; }
-            if (toolStripComboBox1.SelectedItem == "Type") { toolStripComboBox1.SelectedItem = "Normal"; }
+            if (toolStripTextBox1.Text == "")
+                toolStripTextBox1.Text = "50";
+            if (toolStripComboBox1.SelectedItem == "Type")
+                toolStripComboBox1.SelectedItem = "Normal";
             if (Convert.ToInt32(toolStripTextBox1.Text) <= 100)
             {
-                if (toolStripComboBox1.SelectedItem == "Normal")
+                switch (toolStripComboBox1.SelectedItem)
                 {
-                    TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Normal);
-                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
-                }
-                if (toolStripComboBox1.SelectedItem == "Indeterminate") { TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate); }
-                if (toolStripComboBox1.SelectedItem == "NoProgress") { TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress); }
-                if (toolStripComboBox1.SelectedItem == "Error")
-                {
-                    TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);
-                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
-                }
-                if (toolStripComboBox1.SelectedItem == "Paused")
-                {
-                    TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Paused);
-                    TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                    case "Normal":
+                        {
+                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Normal);
+                            TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                            break;
+                        }
+                    case "Indeterminate":
+                        TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate);
+                        break;
+                    case "NoProgress":
+                        TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress);
+                        break;
+                    case "Error":
+                        {
+                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);
+                            TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                            break;
+                        }
+                    case "Paused":
+                        {
+                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Paused);
+                            TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
+                            break;
+                        }
                 }
             }
             else { VitNX_MessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example"); }
         }
-
-        #endregion Event Handler Region
-
-        #region Serialization Region
 
         private void SerializeDockPanel(string path)
         {
@@ -261,10 +223,7 @@ namespace Example
                 if (window.SerializationKey == key)
                     return window;
             }
-
             return null;
         }
-
-        #endregion Serialization Region
     }
 }
