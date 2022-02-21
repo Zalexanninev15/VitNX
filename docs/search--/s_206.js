@@ -1,0 +1,1 @@
+search_result['206']=["topic_000000000000007D.html","IniSettings32.DeleteKey Method","Deletes the key in section."];

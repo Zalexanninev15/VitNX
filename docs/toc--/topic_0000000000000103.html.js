@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['294',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000FC.html"],['569',"Import Class","topic_00000000000000FD.html"],['571',"Methods","topic_00000000000000FD_methods--.html"],['579',"CancelDC Method","topic_0000000000000103.html"]];

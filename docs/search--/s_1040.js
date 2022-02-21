@@ -1,0 +1,1 @@
+search_result['1040']=["topic_00000000000002AE.html","QUERY_DEVICE_CONFIG_FLAGS Enumeration",""];

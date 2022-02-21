@@ -1,0 +1,1 @@
+search_result['49']=["topic_000000000000001D.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];

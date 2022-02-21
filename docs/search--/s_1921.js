@@ -1,0 +1,1 @@
+search_result['1921']=["topic_000000000000082E.html","NewFolderDialog Class","Work with the folder dialog, Windows Vista+."];

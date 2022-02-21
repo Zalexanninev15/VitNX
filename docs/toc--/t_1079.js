@@ -1,0 +1,1 @@
+c['1079']=[['1080',"DockRegionState() Constructor","topic_000000000000042F.html",0],['1081',"DockRegionState(VitNX_DockArea) Constructor","topic_0000000000000430.html",0],['1082',"DockRegionState(VitNX_DockArea, Size) Constructor","topic_0000000000000431.html",0]];

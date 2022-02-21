@@ -1,0 +1,1 @@
+search_result['231']=["topic_000000000000008F.html","Config.GetPublicIP Method","Gets the public IP of PC."];

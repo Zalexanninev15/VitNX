@@ -1,0 +1,1 @@
+search_result['118']=["topic_000000000000004E.html","Windows.GetWindowsReleaseIdFromREG Method","Gets the windows release id from the Windows Registry."];

@@ -1,0 +1,1 @@
+search_result['28']=["topic_000000000000000D.html","Text.ContainsOnlyLatters Method","Contains the only latters."];

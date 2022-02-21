@@ -1,0 +1,1 @@
+search_result['896']=["topic_000000000000023C.html","RECT Structure",""];

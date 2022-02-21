@@ -1,0 +1,1 @@
+search_result['41']=["topic_000000000000001A.html","Text.IsValidCardNumber Method","Are the valid card number."];

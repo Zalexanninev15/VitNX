@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['826',"VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace","topic_0000000000000344.html"],['928',"VitNX_NumericUpDown Class","topic_00000000000003A7.html"],['930',"Methods","topic_00000000000003A7_methods--.html"],['939',"OnTextBoxLostFocus Method","topic_00000000000003B0.html"]];
