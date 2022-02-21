@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['294',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000FC.html"],['332',"Enums Class","topic_00000000000001D2.html"],['453',"POINT Structure","topic_0000000000000239.html"],['454',"Fields","topic_0000000000000239_vars--.html"],['456',"y Field","topic_000000000000023B.html"]];

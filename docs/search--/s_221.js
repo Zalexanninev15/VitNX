@@ -1,0 +1,1 @@
+search_result['221']=["topic_000000000000008A.html","DataFromSites.IsHaveInternet Method","Are yout have the internet connection on PC."];

@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['185',"VitNX.Functions.Windows.Controllers Namespace","topic_00000000000000A5.html"],['189',"Keyboard Class","topic_00000000000000B1.html"],['190',"Methods","topic_00000000000000B1_methods--.html"],['191',"HideVirtualKeyboard Method","topic_00000000000000B3.html"]];

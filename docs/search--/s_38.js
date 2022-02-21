@@ -1,0 +1,1 @@
+search_result['38']=["topic_0000000000000017.html","Text.RandomChars Method","Randoms the chars."];

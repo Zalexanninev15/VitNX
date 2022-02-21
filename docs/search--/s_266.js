@@ -1,0 +1,1 @@
+search_result['266']=["topic_00000000000000A3.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];
