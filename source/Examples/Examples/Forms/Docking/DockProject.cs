@@ -11,7 +11,6 @@ namespace Example
         public DockProject()
         {
             InitializeComponent();
-            // Build dummy nodes
             var childCount = 0;
             for (var i = 0; i < 10; i++)
             {
@@ -30,15 +29,27 @@ namespace Example
         }
 
         private void vitNXButton1_Click(object sender, EventArgs e)
-        { vitNXProgressBarStyle21.Value = 0; vitNXProgressBar1.Value = 0; timer1.Start(); }
+        {
+            vitNXProgressBarStyle21.Value = 0;
+            vitNXProgressBar1.Value = 0;
+            timer1.Start();
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
-        { vitNXProgressBar1.Increment(1); vitNXProgressBarStyle21.Increment(1); }
+        {
+            vitNXProgressBar1.Increment(1);
+            vitNXProgressBarStyle21.Increment(1);
+        }
 
         private void vitNXButton2_Click(object sender, EventArgs e)
         {
-            var dialog = new VitNX.UI.OtherControls.NewFolderDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), Title = "Select Folder" };
-            if (dialog.Show()) { VitNX_MessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example"); } else { }
+            var dialog = new VitNX.UI.OtherControls.NewFolderDialog
+            {
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
+                Title = "Select Folder"
+            };
+            if (dialog.Show())
+                VitNX_MessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example");
         }
     }
 }

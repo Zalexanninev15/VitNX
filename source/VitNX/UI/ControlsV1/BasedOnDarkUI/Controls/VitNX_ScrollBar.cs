@@ -42,13 +42,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
 
         private bool _isScrolling;
         private int _initialValue;
+
         private Point _initialContact;
-
         private Timer _scrollTimer;
-
-        #endregion Field Region
-
-        #region Property Region
 
         [Category("Behavior")]
         [Description("The orientation type of the scrollbar.")]
@@ -73,18 +69,13 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
             {
                 if (value < Minimum)
                     value = Minimum;
-
                 var maximumValue = Maximum - ViewSize;
                 if (value > maximumValue)
                     value = maximumValue;
-
                 if (_value == value)
                     return;
-
                 _value = value;
-
                 UpdateThumb(true);
-
                 if (ValueChanged != null)
                     ValueChanged(this, new ScrollValueEventArgs(Value));
             }
@@ -136,53 +127,35 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
             {
                 if (base.Visible == value)
                     return;
-
                 base.Visible = value;
             }
         }
-
-        #endregion Property Region
-
-        #region Constructor Region
 
         public VitNX_ScrollBar()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
-
             SetStyle(ControlStyles.Selectable, false);
-
             _scrollTimer = new Timer();
             _scrollTimer.Interval = 1;
             _scrollTimer.Tick += ScrollTimerTick;
         }
 
-        #endregion Constructor Region
-
-        #region Event Handler Region
-
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-
             UpdateScrollBar();
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-
             if (_thumbArea.Contains(e.Location) && e.Button == MouseButtons.Left)
             {
                 _isScrolling = true;
                 _initialContact = e.Location;
-
-                if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-                    _initialValue = _thumbArea.Top;
-                else
-                    _initialValue = _thumbArea.Left;
-
+                _initialValue = _scrollOrientation == VitNX_ScrollOrientation.Vertical ? _thumbArea.Top : _thumbArea.Left;
                 Invalidate();
                 return;
             }
@@ -191,7 +164,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
             {
                 _upArrowClicked = true;
                 _scrollTimer.Enabled = true;
-
                 Invalidate();
                 return;
             }
@@ -200,14 +172,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
             {
                 _downArrowClicked = true;
                 _scrollTimer.Enabled = true;
-
                 Invalidate();
                 return;
             }
 
             if (_trackArea.Contains(e.Location) && e.Button == MouseButtons.Left)
             {
-                // Step 1. Check if our input is at least aligned with the thumb
                 if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
                 {
                     var modRect = new Rectangle(_thumbArea.Left, _trackArea.Top, _thumbArea.Width, _trackArea.Height);
@@ -220,8 +190,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
                     if (!modRect.Contains(e.Location))
                         return;
                 }
-
-                // Step 2. Scroll to the area initially clicked.
                 if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
                 {
                     var loc = e.Location.Y;
@@ -236,17 +204,10 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
                     loc -= _thumbArea.Width / 2;
                     ScrollToPhysical(loc);
                 }
-
-                // Step 3. Initiate a thumb drag.
                 _isScrolling = true;
                 _initialContact = e.Location;
                 _thumbHot = true;
-
-                if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-                    _initialValue = _thumbArea.Top;
-                else
-                    _initialValue = _thumbArea.Left;
-
+                _initialValue = _scrollOrientation == VitNX_ScrollOrientation.Vertical ? _thumbArea.Top : _thumbArea.Left;
                 Invalidate();
                 return;
             }
@@ -255,20 +216,16 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-
             _isScrolling = false;
-
             _thumbClicked = false;
             _upArrowClicked = false;
             _downArrowClicked = false;
-
             Invalidate();
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
-
             if (!_isScrolling)
             {
                 var thumbHot = _thumbArea.Contains(e.Location);
@@ -277,14 +234,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
                     _thumbHot = thumbHot;
                     Invalidate();
                 }
-
                 var upArrowHot = _upArrowArea.Contains(e.Location);
                 if (_upArrowHot != upArrowHot)
                 {
                     _upArrowHot = upArrowHot;
                     Invalidate();
                 }
-
                 var downArrowHot = _downArrowArea.Contains(e.Location);
                 if (_downArrowHot != downArrowHot)
                 {
@@ -292,7 +247,6 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
                     Invalidate();
                 }
             }
-
             if (_isScrolling)
             {
                 if (e.Button != MouseButtons.Left)
@@ -300,24 +254,22 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
                     OnMouseUp(null);
                     return;
                 }
-
                 var difference = new Point(e.Location.X - _initialContact.X, e.Location.Y - _initialContact.Y);
-
                 if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
                 {
                     var thumbPos = (_initialValue - _trackArea.Top);
                     var newPosition = thumbPos + difference.Y;
-
                     ScrollToPhysical(newPosition);
                 }
-                else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+                else
                 {
-                    var thumbPos = (_initialValue - _trackArea.Left);
-                    var newPosition = thumbPos + difference.X;
-
-                    ScrollToPhysical(newPosition);
+                    if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+                    {
+                        var thumbPos = (_initialValue - _trackArea.Left);
+                        var newPosition = thumbPos + difference.X;
+                        ScrollToPhysical(newPosition);
+                    }
                 }
-
                 UpdateScrollBar();
             }
         }
@@ -325,11 +277,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
-
             _thumbHot = false;
             _upArrowHot = false;
             _downArrowHot = false;
-
             Invalidate();
         }
 
@@ -340,16 +290,14 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
                 _scrollTimer.Enabled = false;
                 return;
             }
-
             if (_upArrowClicked)
                 ScrollBy(-1);
-            else if (_downArrowClicked)
-                ScrollBy(1);
+            else
+            {
+                if (_downArrowClicked)
+                    ScrollBy(1);
+            }
         }
-
-        #endregion Event Handler Region
-
-        #region Method Region
 
         public void ScrollTo(int position)
         {
@@ -359,12 +307,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
         public void ScrollToPhysical(int positionInPixels)
         {
             var isVert = _scrollOrientation == VitNX_ScrollOrientation.Vertical;
-
             var trackAreaSize = isVert ? _trackArea.Height - _thumbArea.Height : _trackArea.Width - _thumbArea.Width;
-
             var positionRatio = (float)positionInPixels / (float)trackAreaSize;
             var viewScrollSize = (Maximum - ViewSize);
-
             var newValue = (int)(positionRatio * viewScrollSize);
             Value = newValue;
         }
@@ -378,43 +323,40 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
         public void ScrollByPhysical(int offsetInPixels)
         {
             var isVert = _scrollOrientation == VitNX_ScrollOrientation.Vertical;
-
             var thumbPos = isVert ? (_thumbArea.Top - _trackArea.Top) : (_thumbArea.Left - _trackArea.Left);
-
             var newPosition = thumbPos - offsetInPixels;
-
             ScrollToPhysical(newPosition);
         }
 
         public void UpdateScrollBar()
         {
             var area = ClientRectangle;
-
-            // Arrow buttons
             if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
             {
                 _upArrowArea = new Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
                 _downArrowArea = new Rectangle(area.Left, area.Bottom - Constsants.ArrowButtonSize, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
             }
-            else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+            else
             {
-                _upArrowArea = new Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
-                _downArrowArea = new Rectangle(area.Right - Constsants.ArrowButtonSize, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
+                if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+                {
+                    _upArrowArea = new Rectangle(area.Left, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
+                    _downArrowArea = new Rectangle(area.Right - Constsants.ArrowButtonSize, area.Top, Constsants.ArrowButtonSize, Constsants.ArrowButtonSize);
+                }
             }
-
-            // Track
             if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-            {
                 _trackArea = new Rectangle(area.Left, area.Top + Constsants.ArrowButtonSize, area.Width, area.Height - (Constsants.ArrowButtonSize * 2));
-            }
-            else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+            else
             {
-                _trackArea = new Rectangle(area.Left + Constsants.ArrowButtonSize, area.Top, area.Width - (Constsants.ArrowButtonSize * 2), area.Height);
+                if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+                {
+                    _trackArea = new Rectangle(area.Left + Constsants.ArrowButtonSize,
+                        area.Top,
+                        area.Width - (Constsants.ArrowButtonSize * 2),
+                        area.Height);
+                }
             }
-
-            // Thumb
             UpdateThumb();
-
             Invalidate();
         }
 
@@ -422,37 +364,28 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
         {
             if (ViewSize >= Maximum)
                 return;
-
-            // Cap to maximum value
             var maximumValue = Maximum - ViewSize;
             if (Value > maximumValue)
                 Value = maximumValue;
-
-            // Calculate size ratio
             _viewContentRatio = (float)ViewSize / (float)Maximum;
             var viewAreaSize = Maximum - ViewSize;
             var positionRatio = (float)Value / (float)viewAreaSize;
-
-            // Update area
             if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
             {
                 var thumbSize = (int)(_trackArea.Height * _viewContentRatio);
-
                 if (thumbSize < Constsants.MinimumThumbSize)
                     thumbSize = Constsants.MinimumThumbSize;
-
                 var trackAreaSize = _trackArea.Height - thumbSize;
                 var thumbPosition = (int)(trackAreaSize * positionRatio);
-
-                _thumbArea = new Rectangle(_trackArea.Left + 3, _trackArea.Top + thumbPosition, Constsants.ScrollBarSize - 6, thumbSize);
+                _thumbArea = new Rectangle(_trackArea.Left + 3,
+                    _trackArea.Top + thumbPosition,
+                    Constsants.ScrollBarSize - 6, thumbSize);
             }
             else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
             {
                 var thumbSize = (int)(_trackArea.Width * _viewContentRatio);
-
                 if (thumbSize < Constsants.MinimumThumbSize)
                     thumbSize = Constsants.MinimumThumbSize;
-
                 var trackAreaSize = _trackArea.Width - thumbSize;
                 var thumbPosition = (int)(trackAreaSize * positionRatio);
 
@@ -466,7 +399,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Controls
             }
         }
 
-        #endregion Method Region
+        #endregion Field Region
 
         #region Paint Region
 

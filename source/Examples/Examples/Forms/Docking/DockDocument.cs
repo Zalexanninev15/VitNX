@@ -23,7 +23,8 @@ namespace Example
 
         public DockDocument(string text, Image icon) : this()
         {
-            DockText = text; Icon = icon;
+            DockText = text;
+            Icon = icon;
         }
 
         public override void Close()
