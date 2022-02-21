@@ -8,7 +8,6 @@
 [![](https://img.shields.io/github/v/release/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/releases/latest)
 [![](https://img.shields.io/github/downloads/Zalexanninev15/VitNX/total.svg)](https://github.com/Zalexanninev15/VitNX/releases)
 [![](https://img.shields.io/github/last-commit/Zalexanninev15/VitNX/main.svg)](https://github.com/Zalexanninev15/VitNX/commits/main)
-[![VitNX Builder](https://github.com/Zalexanninev15/VitNX/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Zalexanninev15/VitNX/actions/workflows/main.yml)
 [![](https://img.shields.io/github/stars/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/stargazers)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![](https://img.shields.io/badge/donate-Buy_Me_a_Coffee-F94400.svg)](https://zalexanninev15.jimdofree.com/buy-me-a-coffee)
