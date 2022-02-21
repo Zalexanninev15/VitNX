@@ -11,6 +11,7 @@ namespace VitNX.Functions.Windows.Win32
 {
     /// <summary>
     /// Import the Windows System functions from native DLL.
+    /// About functions: https://www.pinvoke.net
     /// </summary>
     public class Import
     {
