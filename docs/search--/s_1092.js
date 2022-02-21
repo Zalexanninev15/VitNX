@@ -1,1 +1,1 @@
-search_result['1092']=["topic_0000000000000301.html","VitNX_DockPanel.GetDocuments Method",""];
+search_result['1092']=["topic_000000000000032A.html","Text Class","The tools for work with console UI."];

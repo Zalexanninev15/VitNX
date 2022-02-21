@@ -1,1 +1,1 @@
-search_result['115']=["topic_0000000000000046.html","PowerControl Class","Work with the power control."];
+search_result['115']=["topic_000000000000004B.html","Windows.GetWindowsCurrentBuildNumberFromREG Method","Gets the Windows current build number from the Windows Registry."];

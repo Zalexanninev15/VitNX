@@ -1,1 +1,1 @@
-search_result['28']=["topic_0000000000000012.html","FileSystem.CopyFolder Method","Copies the folder."];
+search_result['28']=["topic_000000000000000D.html","Text.ContainsOnlyLatters Method","Contains the only latters."];

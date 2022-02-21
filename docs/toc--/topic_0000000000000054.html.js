@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['4',"VitNX.Functions.Common Namespace","topic_0000000000000000.html"],['31',"IniSettings32 Class","topic_000000000000004E.html"],['32',"Methods","topic_000000000000004E_methods--.html"],['36',"KeyExists Method","topic_0000000000000054.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['91',"VitNX.Functions.Common.Information Namespace","topic_0000000000000042.html"],['95',"Cpu Class","topic_0000000000000054.html"]];

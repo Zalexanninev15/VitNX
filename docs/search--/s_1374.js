@@ -1,1 +1,1 @@
-search_result['1374']=["topic_00000000000003AB.html","VitNX2_TextBox.OnLoad Method",""];
+search_result['1374']=["topic_00000000000003D7.html","VitNX_ScrollBase.OnCreateControl Method","Raises the CreateControl method."];

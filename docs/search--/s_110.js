@@ -1,1 +1,1 @@
-search_result['110']=["topic_0000000000000043_methods--.html","Ram Methods",""];
+search_result['110']=["topic_0000000000000046.html","Windows.GetLocalTime Method","Gets locals the time."];

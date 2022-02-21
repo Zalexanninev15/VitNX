@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>_TextChanged Event</title>
+	<title>VitNX_NumericUpDown Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">_TextChanged Event</h1>
+		<h1 class="title">VitNX_NumericUpDown Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Event _TextChanged As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Sub New()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a> _TextChanged</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX_NumericUpDown()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -264,7 +264,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public event EventHandler _TextChanged;
+public VitNX_NumericUpDown()
+        {
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
+            base.ForeColor = Color.Gainsboro;
+            base.BackColor = Colors.LightBackground;
+            Controls[0].Paint += VitNX_NumericUpDown_Paint;
+            try
+            {
+                Type type = Controls[0].GetType();
+                BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Instance;
+                MethodInfo method = type.GetMethod(&quot;SetStyle&quot;, flags);
+                if (method != null)
+                {
+                    object[] param = { ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, true };
+                    method.Invoke(Controls[0], param);
+                }
+            }
+            catch (SecurityException) { }
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -326,11 +344,11 @@ public event EventHandler _TextChanged;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003A7.html">VitNX2_TextBox Class</a><br />
+			<a href="topic_00000000000003A7.html">VitNX_NumericUpDown Class</a><br />
 
 
 
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -348,11 +366,8 @@ public event EventHandler _TextChanged;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
+

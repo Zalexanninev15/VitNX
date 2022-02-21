@@ -1,1 +1,1 @@
-search_result['119']=["topic_0000000000000046_props--.html","PowerControl Properties",""];
+search_result['119']=["topic_000000000000004F.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];

@@ -1,1 +1,1 @@
-search_result['753']=["topic_000000000000022E.html","VitNX_DropdownList.OnResize Method",""];
+search_result['753']=["topic_00000000000001E4.html","LOGBRUSH Structure",""];

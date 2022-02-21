@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_Button.OnPaint Method</title>
+	<title>VitNX_DropdownList.OnMouseLeave Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_Button.OnPaint Method</h1>
+		<h1 class="title">VitNX_DropdownList.OnMouseLeave Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mouseleave">MouseLeave</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>pevent</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseLeave( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pevent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseLeave(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,18 +191,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="pevent" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			pevent
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -280,42 +281,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs pevent)
- {
-     base.OnPaint(pevent);
-     Rectangle rectSurface = ClientRectangle;
-     Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
-     int smoothSize = 2;
-     if (borderSize &gt; 0)
-         smoothSize = borderSize;
-     if (borderRadius &gt; 2)
-     {
-         using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
-         using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-         using (Pen penSurface = new Pen(Parent.BackColor, smoothSize))
-         using (Pen penBorder = new Pen(borderColor, borderSize))
-         {
-             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-             Region = new Region(pathSurface);
-             pevent.Graphics.DrawPath(penSurface, pathSurface);
-             if (borderSize &gt;= 1)
-                 pevent.Graphics.DrawPath(penBorder, pathBorder);
-         }
-     }
-     else
-     {
-         pevent.Graphics.SmoothingMode = SmoothingMode.None;
-         Region = new Region(rectSurface);
-         if (borderSize &gt;= 1)
-         {
-             using (Pen penBorder = new Pen(borderColor, borderSize))
-             {
-                 penBorder.Alignment = PenAlignment.Inset;
-                 pevent.Graphics.DrawRectangle(penBorder, 0, 0, Width - 1, Height - 1);
-             }
-         }
-     }
- }
+protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+
+            SetControlState(VitNX_ControlState.Normal);
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -377,11 +348,11 @@ protected override void OnPaint(PaintEventArgs pevent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000385.html">VitNX2_Button Class</a><br />
+			<a href="topic_0000000000000380.html">VitNX_DropdownList Class</a><br />
 
 
 
-<a href="topic_0000000000000380.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -399,11 +370,7 @@ protected override void OnPaint(PaintEventArgs pevent)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

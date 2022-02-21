@@ -1,1 +1,1 @@
-search_result['1192']=["topic_0000000000000348.html","VitNX_MessageBox.ShowError Method",""];
+search_result['1192']=["topic_0000000000000364.html","VitNX_ComboBox Class",""];

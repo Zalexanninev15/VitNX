@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FontAwesome4.GetImage (String, Properties) Method</title>
+	<title>VitNX_ScrollBar.OnMouseMove Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FontAwesome4.GetImage (String, Properties) Method</h1>
+		<h1 class="title">VitNX_ScrollBar.OnMouseMove Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function GetImage( _&nbsp;<br />   ByVal <i>name</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   Optional ByVal <i>props</i> As <a target="_top" href="topic_00000000000003BA.html" onclick="this.target='';return true;">Properties</a> = null _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseMove( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> GetImage(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>name</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000003BA.html" onclick="this.target='';return true;">Properties</a> <i>props</i> = null&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,39 +191,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="name" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			name
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="props" class="parameterList">
-	<dt>
-		<span class="parameter">
-			props
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000003BA.html" onclick="this.target='';return true;">Properties</a> 
-	</dd>
-</dl>
-<p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> 
-	
 
 
 
@@ -297,13 +281,55 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Bitmap GetImage(string name, Properties props = null)
+protected override void OnMouseMove(MouseEventArgs e)
  {
-     if (props == null)
-         props = Properties.Default;
-     if (props.Type != Type.None)
-         return GetImage(Properties.Get(ParseType(name)));
-     return null;
+     base.OnMouseMove(e);
+     if (!_isScrolling)
+     {
+         var thumbHot = _thumbArea.Contains(e.Location);
+         if (_thumbHot != thumbHot)
+         {
+             _thumbHot = thumbHot;
+             Invalidate();
+         }
+         var upArrowHot = _upArrowArea.Contains(e.Location);
+         if (_upArrowHot != upArrowHot)
+         {
+             _upArrowHot = upArrowHot;
+             Invalidate();
+         }
+         var downArrowHot = _downArrowArea.Contains(e.Location);
+         if (_downArrowHot != downArrowHot)
+         {
+             _downArrowHot = downArrowHot;
+             Invalidate();
+         }
+     }
+     if (_isScrolling)
+     {
+         if (e.Button != MouseButtons.Left)
+         {
+             OnMouseUp(null);
+             return;
+         }
+         var difference = new Point(e.Location.X - _initialContact.X, e.Location.Y - _initialContact.Y);
+         if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
+         {
+             var thumbPos = (_initialValue - _trackArea.Top);
+             var newPosition = thumbPos + difference.Y;
+             ScrollToPhysical(newPosition);
+         }
+         else
+         {
+             if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+             {
+                 var thumbPos = (_initialValue - _trackArea.Left);
+                 var newPosition = thumbPos + difference.X;
+                 ScrollToPhysical(newPosition);
+             }
+         }
+         UpdateScrollBar();
+     }
  }
 					</pre>			
 				</div>
@@ -366,11 +392,11 @@ public Bitmap GetImage(string name, Properties props = null)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003B9.html">FontAwesome4 Class</a><br />
+			<a href="topic_00000000000003BC.html">VitNX_ScrollBar Class</a><br />
 
 
 
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -388,11 +414,7 @@ public Bitmap GetImage(string name, Properties props = null)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

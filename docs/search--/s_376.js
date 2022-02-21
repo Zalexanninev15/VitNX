@@ -1,1 +1,1 @@
-search_result['376']=["topic_00000000000000CC_attached_props--.html","DISPLAYCONFIG_SOURCE_MODE Attached Properties",""];
+search_result['376']=["topic_00000000000000D1_props--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Properties",""];

@@ -5,17 +5,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
 {
     public class DockRegionState
     {
-        #region Property Region
-
         public VitNX_DockArea Area { get; set; }
-
         public Size Size { get; set; }
-
         public List<DockGroupState> Groups { get; set; }
-
-        #endregion Property Region
-
-        #region Constructor Region
 
         public DockRegionState()
         {
@@ -28,12 +20,11 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             Area = area;
         }
 
-        public DockRegionState(VitNX_DockArea area, Size size)
+        public DockRegionState(VitNX_DockArea area,
+            Size size)
             : this(area)
         {
             Size = size;
         }
-
-        #endregion Constructor Region
     }
 }

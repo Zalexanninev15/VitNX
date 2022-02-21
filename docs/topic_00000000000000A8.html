@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ERROR_SUCCESS Field</title>
+	<title>TaskBarProgressBar.SetValue Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ERROR_SUCCESS Field</h1>
+		<h1 class="title">TaskBarProgressBar.SetValue Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Sets the value.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Const ERROR_SUCCESS As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a> = 0</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub SetValue( _&nbsp;<br />   ByVal <i>windowHandle</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>Value</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">Double</a>, _&nbsp;<br />   ByVal <i>Max</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">Double</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ERROR_SUCCESS = 0</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetValue(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>windowHandle</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">double</a> <i>Value</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">double</a> <i>Max</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,11 +190,49 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="windowHandle" class="parameterList">
+	<dt>
+		<span class="parameter">
+			windowHandle
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	The window handle. 
+</p>
+<dl paramName="Value" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Value
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">double</a> 
+	</dd>
+</dl>
+<p>
+	The value. 
+</p>
+<dl paramName="Max" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Max
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">double</a> 
+	</dd>
+</dl>
+<p>
+	The max. 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
+<p />
+
 
 
 
@@ -268,7 +307,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public const int ERROR_SUCCESS = 0;
+public static void SetValue(IntPtr windowHandle,
+     double Value,
+     double Max)
+ {
+     if (taskbarSupported)
+                taskbarInstance.SetProgressValue(windowHandle, (ulong)Value, (ulong)Max);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -330,11 +375,11 @@ public const int ERROR_SUCCESS = 0;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A7.html">Monitor Class</a><br />
+			<a href="topic_00000000000000A6.html">TaskBarProgressBar Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -352,11 +397,8 @@ public const int ERROR_SUCCESS = 0;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
+

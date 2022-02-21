@@ -1,1 +1,1 @@
-search_result['1421']=["topic_00000000000003C2_overloads--.html","FontAwesome4.GetImage Method",""];
+search_result['1421']=["topic_00000000000003F4.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

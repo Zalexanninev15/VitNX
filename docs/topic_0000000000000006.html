@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FileSystem.GetItemsListInFolder Method</title>
+	<title>CShap.LoadCustomFontFromFile Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FileSystem.GetItemsListInFolder Method</h1>
+		<h1 class="title">CShap.LoadCustomFontFromFile Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the items list in folder.</summary-info>
+        <summary-info>Loads the custom font from file.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetItemsListInFolder( _&nbsp;<br />   ByVal <i>sourceFolder</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>(Of <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function LoadCustomFontFromFile( _&nbsp;<br />   ByVal <i>targetFile</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   Optional ByVal <i>size</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">Single</a> = 16, _&nbsp;<br />   Optional ByVal <i>fontStyle</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> = FontStyle.Regular _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; GetItemsListInFolder(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> LoadCustomFontFromFile(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> <i>size</i> = 16,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> <i>fontStyle</i> = FontStyle.Regular&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,10 +191,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="sourceFolder" class="parameterList">
+	Parameters</h4><dl paramName="targetFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			sourceFolder
+			targetFile
 		</span>
 	</dt>
 	<dd>
@@ -202,16 +202,42 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The source folder. 
+	The target file. 
+</p>
+<dl paramName="size" class="parameterList">
+	<dt>
+		<span class="parameter">
+			size
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+	</dd>
+</dl>
+<p>
+	The size. 
+</p>
+<dl paramName="fontStyle" class="parameterList">
+	<dt>
+		<span class="parameter">
+			fontStyle
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> 
+	</dd>
+</dl>
+<p>
+	The font style. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> 
 		<p>
-		A list of string. 
+		A Font. 
 	</p>
 	
 
@@ -288,20 +314,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static List&lt;string&gt; GetItemsListInFolder(string sourceFolder)
+public static Font LoadCustomFontFromFile(string targetFile,
+     float size = 16,
+     FontStyle fontStyle = FontStyle.Regular)
  {
-     List&lt;string&gt; ls = new List&lt;string&gt;();
-     try
-     {
-         string[] folders = Directory.GetDirectories(sourceFolder);
-         foreach (string folder in folders)
-             ls.Add(&quot;Folder: &quot; + folder);
-         string[] files = Directory.GetFiles(sourceFolder);
-         foreach (string filename in files)
-             ls.Add(&quot;File: &quot; + filename);
-     }
-     catch (Exception e) { ls.Add(e.Message.Trim('\n')); }
-     return ls;
+     PrivateFontCollection pfc = new PrivateFontCollection();
+     pfc.AddFontFile(targetFile);
+     return new Font(pfc.Families[0], size, fontStyle);
  }
 					</pre>			
 				</div>
@@ -364,7 +383,7 @@ public static List&lt;string&gt; GetItemsListInFolder(string sourceFolder)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000005.html">FileSystem Class</a><br />
+			<a href="topic_0000000000000001.html">CShap Class</a><br />
 
 
 
@@ -386,11 +405,7 @@ public static List&lt;string&gt; GetItemsListInFolder(string sourceFolder)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

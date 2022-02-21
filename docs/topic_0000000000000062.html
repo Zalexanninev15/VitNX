@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Work.RandomChars Method</title>
+	<title>Monitor.CaptureScreenToMemoryStream Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Work.RandomChars Method</h1>
+		<h1 class="title">Monitor.CaptureScreenToMemoryStream Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text</a>
+<a href="topic_0000000000000042.html">VitNX.Functions.Common.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Randoms the chars.</summary-info>
+        <summary-info>Captures the screen to memory stream.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function RandomChars( _&nbsp;<br />   ByVal <i>number</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function CaptureScreenToMemoryStream() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.memorystream">MemoryStream</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> RandomChars(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>number</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.memorystream">MemoryStream</a> CaptureScreenToMemoryStream()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,28 +190,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="number" class="parameterList">
-	<dt>
-		<span class="parameter">
-			number
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	The number. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.memorystream">MemoryStream</a> 
 		<p>
-		A string. 
+		A MemoryStream. 
 	</p>
 	
 
@@ -288,11 +272,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string RandomChars(int number)
+public static MemoryStream CaptureScreenToMemoryStream()
  {
-     const string chars = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%@#()$?*_[]+-&quot;;
-     return new string(Enumerable.Repeat(chars, number)
-       .Select(s =&gt; s[randomData.Next(s.Length)]).ToArray());
+     Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
+         Screen.PrimaryScreen.Bounds.Height);
+     Graphics GH = Graphics.FromImage(BM);
+     GH.CopyFromScreen(0, 0, 0, 0, BM.Size);
+     MemoryStream memoryStream = new MemoryStream();
+     BM.Save(memoryStream, ImageFormat.Png);
+     memoryStream.Position = 0;
+     return memoryStream;
  }
 					</pre>			
 				</div>
@@ -355,11 +344,11 @@ public static string RandomChars(int number)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000056.html">Work Class</a><br />
+			<a href="topic_0000000000000060.html">Monitor Class</a><br />
 
 
 
-<a href="topic_0000000000000055.html">VitNX.Functions.Common.Text Namespace</a><br />
+<a href="topic_0000000000000042.html">VitNX.Functions.Common.Information Namespace</a><br />
 
 
 			
@@ -377,11 +366,7 @@ public static string RandomChars(int number)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

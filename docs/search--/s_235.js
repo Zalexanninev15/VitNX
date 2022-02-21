@@ -1,1 +1,1 @@
-search_result['235']=["topic_0000000000000090.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];
+search_result['235']=["topic_0000000000000092_attached_props--.html","SendDataToSites Attached Properties",""];

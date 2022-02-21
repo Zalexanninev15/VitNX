@@ -1,1 +1,1 @@
-search_result['97']=["topic_000000000000003E.html","Monitor.GetResolution2 Method","Gets the resolution (method 2)."];
+search_result['97']=["topic_000000000000003E.html","FileSystem.UnZipFile Method","Uns the zip file."];

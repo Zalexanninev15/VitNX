@@ -1,1 +1,1 @@
-search_result['121']=["topic_0000000000000047.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];
+search_result['121']=["topic_0000000000000051.html","Windows.WindowsUseLightThemeForApps Method","Windows use light theme for apps from the Windows Registry, for Windows 10+."];

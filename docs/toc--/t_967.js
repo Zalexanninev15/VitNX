@@ -1,1 +1,1 @@
-c['967']=[['968',"StackWith(this Bitmap, Bitmap) Method","topic_00000000000006DC.html",0],['969',"StackWith(this Bitmap, Properties) Method","topic_00000000000006DB.html",0]];
+c['967']=[['968',"VitNX_ScrollBase Constructor","topic_00000000000003CF.html",0],['969',"Methods","topic_00000000000003CA_methods--.html",1],['985',"Events","topic_00000000000003CA_events--.html",1],['988',"Fields","topic_00000000000003CA_vars--.html",1]];

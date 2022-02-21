@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ASYNCWINDOWPOS Field</title>
+	<title>Import.GetUpdateRect Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ASYNCWINDOWPOS Field</h1>
+		<h1 class="title">Import.GetUpdateRect Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared ReadOnly ASYNCWINDOWPOS As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto)&gt; _&nbsp;<br />Public Shared Function GetUpdateRect( _&nbsp;<br />   ByVal <i>hWnd</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByRef <i>lpRect</i> As <a target="_top" href="topic_000000000000023C.html" onclick="this.target='';return true;">RECT</a>, _&nbsp;<br />   ByVal <i>erase</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ASYNCWINDOWPOS</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> GetUpdateRect(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_000000000000023C.html" onclick="this.target='';return true;">RECT</a> <i>lpRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>erase</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,10 +191,52 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hWnd
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_000000000000023C.html" onclick="this.target='';return true;">RECT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="erase" class="parameterList">
+	<dt>
+		<span class="parameter">
+			erase
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -268,22 +312,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static readonly int
- NOSIZE = 0x0001,
- NOMOVE = 0x0002,
- NOZORDER = 0x0004,
- NOREDRAW = 0x0008,
- NOACTIVATE = 0x0010,
- DRAWFRAME = 0x0020,
- FRAMECHANGED = 0x0020,
- SHOWWINDOW = 0x0040,
- HIDEWINDOW = 0x0080,
- NOCOPYBITS = 0x0100,
- NOOWNERZORDER = 0x0200,
- NOREPOSITION = 0x0200,
- NOSENDCHANGING = 0x0400,
- DEFERERASE = 0x2000,
- ASYNCWINDOWPOS = 0x4000;
+[DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool GetUpdateRect(IntPtr hWnd,
+     ref RECT lpRect,
+     bool erase);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -345,11 +378,11 @@ public static readonly int
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000130.html">SWP Class</a><br />
+			<a href="topic_00000000000000FD.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -367,11 +400,8 @@ public static readonly int
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
+

@@ -1,1 +1,1 @@
-search_result['218']=["topic_0000000000000084.html","Processes.GetListWithInformation Method","Gets the list of all processes with information."];
+search_result['218']=["topic_0000000000000084.html","DataFromSites.GetGeo Method","Gets the geolocation of PC."];

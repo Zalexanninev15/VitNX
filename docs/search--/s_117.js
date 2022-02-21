@@ -1,1 +1,1 @@
-search_result['117']=["topic_0000000000000046_events--.html","PowerControl Events",""];
+search_result['117']=["topic_000000000000004D.html","Windows.GetWindowsDisplayVersionFromREG Method","Gets the Windows displayed version from the Windows Registry."];

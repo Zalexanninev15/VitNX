@@ -1,1 +1,1 @@
-search_result['1248']=["topic_000000000000036D_props--.html","DockResizeFilter Properties",""];
+search_result['1248']=["topic_000000000000038A.html","VitNX_DropdownList.OnLostFocus Method","Raises the LostFocus event."];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Keyboard.KeyUp Method</title>
+	<title>Installed.GetList Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Keyboard.KeyUp Method</h1>
+		<h1 class="title">Installed.GetList Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Sets the KeyUp.</summary-info>
+        <summary-info>Gets the list.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub KeyUp( _&nbsp;<br />   ByVal <i>vKey</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keys">Keys</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetList() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> KeyUp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keys">Keys</a> <i>vKey</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetList()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,23 +190,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="vKey" class="parameterList">
-	<dt>
-		<span class="parameter">
-			vKey
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keys">Keys</a> 
-	</dd>
-</dl>
-<p>
-	The vkey. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -281,11 +272,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void KeyUp(Keys vKey)
+public static string GetList()
  {
-     Import.keybd_event((byte)vKey, 0,
-         (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY |
-         (int)Enums.KEYEVENTF.KEYEVENTF_KEYUP, 0);
+     string toText = &quot;Installed apps:&quot;;
+     ManagementObjectSearcher searcher = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_Product&quot;);
+     ManagementObjectCollection information = searcher.Get();
+     foreach (ManagementObject app in information)
+     {
+         string toTextText = &quot;&quot;;
+         try
+         {
+             toTextText = GetPath(Convert.ToString(app[&quot;Name&quot;]));
+             if (toTextText == &quot;&quot;)
+                 toTextText = GetPath(Convert.ToString(app[&quot;IdentifyingNumber&quot;]));
+         }
+         catch { }
+         toText += ($&quot;\nName: {app[&quot;Name&quot;]} ({app[&quot;Caption&quot;]})&quot; +
+         $&quot;\nVersion: {app[&quot;Version&quot;]}&quot; +
+         $&quot;\nAuthor: {app[&quot;Vendor&quot;]}&quot; +
+         $&quot;\nInstall date: {app[&quot;InstallDate&quot;]}&quot; +
+         $&quot;\nInstall path: {toTextText}&quot;);
+     }
+     return toText;
  }
 					</pre>			
 				</div>
@@ -348,11 +356,11 @@ public static void KeyUp(Keys vKey)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000009E.html">Keyboard Class</a><br />
+			<a href="topic_00000000000000A1.html">Installed Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			
@@ -370,11 +378,7 @@ public static void KeyUp(Keys vKey)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

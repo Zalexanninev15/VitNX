@@ -1,1 +1,1 @@
-search_result['436']=["topic_00000000000000EB.html","Import Class","Import the Windows System functions from native DLL."];
+search_result['436']=["topic_00000000000000EB_methods--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Methods",""];

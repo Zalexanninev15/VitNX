@@ -1,1 +1,1 @@
-search_result['102']=["topic_0000000000000041_events--.html","Motherboard Events",""];
+search_result['102']=["topic_0000000000000043.html","Windows Class","Work with informations of Windows System."];

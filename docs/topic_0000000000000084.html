@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Processes.GetListWithInformation Method</title>
+	<title>DataFromSites.GetGeo Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Processes.GetListWithInformation Method</h1>
+		<h1 class="title">DataFromSites.GetGeo Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000082.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_0000000000000080.html">VitNX.Functions.Common.Web</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the list of all processes with information.</summary-info>
+        <summary-info>Gets the geolocation of PC.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetListWithInformation() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetGeo( _&nbsp;<br />   ByVal <i>ip</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetListWithInformation()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetGeo(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>ip</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,6 +190,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="ip" class="parameterList">
+	<dt>
+		<span class="parameter">
+			ip
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The ip. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
@@ -272,25 +288,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetListWithInformation()
+public static string GetGeo(string ip)
  {
-     string procList = &quot;All processes:&quot;;
-     foreach (Process process in Process.GetProcesses())
+     try
      {
-         var procSize = &quot;0x0&quot;;
-         try
-         {
-             var counter = new PerformanceCounter(&quot;Process&quot;, &quot;Working Set - Private&quot;, process.ProcessName);
-             procSize = Convert.ToString(counter.RawValue / 1048576);
-         }
-         catch { }
-         if (procSize != &quot;0x0&quot; &amp;&amp; procSize != &quot;0&quot;)
-             procList += $&quot;\n\nName: {process.ProcessName}.exe&quot; +
-                 $&quot;\nID: {process.Id}&quot; +
-                 $&quot;\nUsed memory: {procSize} МБ&quot; +
-                 $&quot;\nTitle &amp; Handle: \&quot;{process.MainWindowTitle}\&quot; &amp; {process.MainWindowHandle}&quot;;
+         using (WebClient client = new WebClient())
+             return client.DownloadString($&quot;https://ipinfo.io/{ip}/json&quot;);
      }
-     return procList;
+     catch (Exception ex) { return ex.Message; }
  }
 					</pre>			
 				</div>
@@ -353,11 +358,11 @@ public static string GetListWithInformation()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000083.html">Processes Class</a><br />
+			<a href="topic_0000000000000081.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_0000000000000082.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_0000000000000080.html">VitNX.Functions.Common.Web Namespace</a><br />
 
 
 			
@@ -375,11 +380,7 @@ public static string GetListWithInformation()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

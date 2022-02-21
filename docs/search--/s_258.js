@@ -1,1 +1,1 @@
-search_result['258']=["topic_0000000000000099_props--.html","GetClipboardText Properties",""];
+search_result['258']=["topic_00000000000000A0.html","Processes.CheckDebugger Method","Checks the debugger for your app."];

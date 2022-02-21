@@ -1,1 +1,1 @@
-search_result['1209']=["topic_0000000000000359.html","VitNX_MenuRenderer.OnRenderSeparator Method",""];
+search_result['1209']=["topic_000000000000036F.html","VitNX_ComboBox.OnResize Method","Raises the Resize event."];

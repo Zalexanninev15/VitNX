@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetImmersiveUserColorSetPreference Method</title>
+	<title>Import.AlphaBlend Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetImmersiveUserColorSetPreference Method</h1>
+		<h1 class="title">Import.AlphaBlend Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)&gt; _&nbsp;<br />Public Shared Function GetImmersiveUserColorSetPreference( _&nbsp;<br />   ByVal <i>bForceCheckRegistry</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a>, _&nbsp;<br />   ByVal <i>bSkipCheckOnFail</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;msimg32.dll&quot;,
+            CharSet = CharSet.Auto)&gt; _&nbsp;<br />Public Shared Function AlphaBlend( _&nbsp;<br />   ByVal <i>hdcDest</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>nXOriginDest</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>nYOriginDest</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>nWidthDest</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>nHeightDest</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>hdcSrc</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>nXOriginSrc</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>nYOriginSrc</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>nWidthSrc</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>nHeightSrc</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>blendFunction</i> As <a target="_top" href="topic_00000000000001D3.html" onclick="this.target='';return true;">BLENDFUNCTION</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetImmersiveUserColorSetPreference(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bForceCheckRegistry</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bSkipCheckOnFail</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;msimg32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> AlphaBlend(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nXOriginDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nYOriginDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nWidthDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nHeightDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nXOriginSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nYOriginSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nWidthSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nHeightSrc</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000001D3.html" onclick="this.target='';return true;">BLENDFUNCTION</a> <i>blendFunction</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,27 +192,144 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="bForceCheckRegistry" class="parameterList">
+	Parameters</h4><dl paramName="hdcDest" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bForceCheckRegistry
+			hdcDest
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="bSkipCheckOnFail" class="parameterList">
+<dl paramName="nXOriginDest" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bSkipCheckOnFail
+			nXOriginDest
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nYOriginDest" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nYOriginDest
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nWidthDest" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nWidthDest
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nHeightDest" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nHeightDest
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hdcSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hdcSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nXOriginSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nXOriginSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nYOriginSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nYOriginSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nWidthSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nWidthSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nHeightSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nHeightSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="blendFunction" class="parameterList">
+	<dt>
+		<span class="parameter">
+			blendFunction
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001D3.html" onclick="this.target='';return true;">BLENDFUNCTION</a> 
 	</dd>
 </dl>
 <p>
@@ -221,7 +340,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -297,9 +416,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]
- public static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry,
-     bool bSkipCheckOnFail);
+[return: MarshalAs(UnmanagedType.Bool)]
+ [DllImport(&quot;msimg32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool AlphaBlend(IntPtr hdcDest,
+     int nXOriginDest,
+     int nYOriginDest,
+     int nWidthDest,
+     int nHeightDest,
+     IntPtr hdcSrc,
+     int nXOriginSrc,
+     int nYOriginSrc,
+     int nWidthSrc,
+     int nHeightSrc,
+     BLENDFUNCTION blendFunction);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -361,11 +491,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000EB.html">Import Class</a><br />
+			<a href="topic_00000000000000FD.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -383,11 +513,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

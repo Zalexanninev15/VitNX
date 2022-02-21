@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ConsoleProgressBar.SetColor Method</title>
+	<title>VitNX_RadioButton.OnMouseDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ConsoleProgressBar.SetColor Method</h1>
+		<h1 class="title">VitNX_RadioButton.OnMouseDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmousedown">OnMouseDown</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub SetColor( _&nbsp;<br />   ByVal <i>my_pb</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseDown( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetColor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> <i>my_pb</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +191,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="my_pb" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			my_pb
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
@@ -280,10 +281,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void SetColor(ConsoleColor my_pb)
- {
-     pb = my_pb;
- }
+protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+
+            if (!ClientRectangle.Contains(e.Location))
+                return;
+
+            SetControlState(VitNX_ControlState.Pressed);
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -345,11 +351,11 @@ public void SetColor(ConsoleColor my_pb)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003B2.html">ConsoleProgressBar Class</a><br />
+			<a href="topic_00000000000003B2.html">VitNX_RadioButton Class</a><br />
 
 
 
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -367,11 +373,7 @@ public void SetColor(ConsoleColor my_pb)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

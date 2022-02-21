@@ -1,1 +1,1 @@
-search_result['400']=["topic_00000000000000D6.html","id Field",""];
+search_result['400']=["topic_00000000000000DC_events--.html","DISPLAYCONFIG_SOURCE_MODE Events",""];

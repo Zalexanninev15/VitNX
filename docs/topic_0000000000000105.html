@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SelectObject Method</title>
+	<title>Import.ClientToScreen Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SelectObject Method</h1>
+		<h1 class="title">Import.ClientToScreen Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;gdi32.dll&quot;)&gt; _&nbsp;<br />Public Shared Function SelectObject( _&nbsp;<br />   ByVal <i>hDC</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>hObject</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;user32.dll&quot;)&gt; _&nbsp;<br />Public Shared Function ClientToScreen( _&nbsp;<br />   ByVal <i>hWnd</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByRef <i>lpPoint</i> As <a target="_top" href="topic_0000000000000239.html" onclick="this.target='';return true;">POINT</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> SelectObject(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hDC</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hObject</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ClientToScreen(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000239.html" onclick="this.target='';return true;">POINT</a> <i>lpPoint</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,10 +190,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hDC" class="parameterList">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hDC
+			hWnd
 		</span>
 	</dt>
 	<dd>
@@ -203,14 +203,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="hObject" class="parameterList">
+<dl paramName="lpPoint" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hObject
+			lpPoint
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="topic_0000000000000239.html" onclick="this.target='';return true;">POINT</a> 
 	</dd>
 </dl>
 <p>
@@ -221,7 +221,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -297,8 +297,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;gdi32.dll&quot;)]
- public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
+[DllImport(&quot;user32.dll&quot;)]
+ public static extern bool ClientToScreen(IntPtr hWnd,
+     ref POINT lpPoint);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -360,11 +361,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000EB.html">Import Class</a><br />
+			<a href="topic_00000000000000FD.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			
@@ -382,11 +383,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

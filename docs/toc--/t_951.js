@@ -1,1 +1,1 @@
-c['951']=[['952',"GetImage(Properties) Method","topic_00000000000003C4.html",0],['953',"GetImage(Type, Properties) Method","topic_00000000000003C3.html",0],['954',"GetImage(string, Properties) Method","topic_00000000000003C2.html",0]];
+c['951']=[['952',"VitNX_ScrollBar Constructor","topic_00000000000003BE.html",0],['953',"Methods","topic_00000000000003BC_methods--.html",1],['965',"Events","topic_00000000000003BC_events--.html",1]];

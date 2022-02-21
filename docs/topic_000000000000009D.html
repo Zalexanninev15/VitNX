@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>STATask.Run Method</title>
+	<title>Processes.IsAdministratorYourApp Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">STATask.Run Method</h1>
+		<h1 class="title">Processes.IsAdministratorYourApp Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Whether your application has administrator rights.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function Run( _&nbsp;<br />   ByVal <i>action</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action">Action</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task">Task</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function IsAdministratorYourApp() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task">Task</a> Run(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action">Action</a> <i>action</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsAdministratorYourApp()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,26 +190,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="action" class="parameterList">
-	<dt>
-		<span class="parameter">
-			action
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action">Action</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task">Task</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<p>
+		A bool. 
+	</p>
 	
 
 
@@ -284,21 +272,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Task Run(Action action)
+public static bool IsAdministratorYourApp()
  {
-     var tcs = new TaskCompletionSource&lt;object&gt;();
-     var thread = new Thread(() =&gt;
-     {
-         try
-         {
-             action();
-             tcs.SetResult(null);
-         }
-         catch (Exception e) { tcs.SetException(e); }
-     });
-     thread.SetApartmentState(ApartmentState.STA);
-     thread.Start();
-     return tcs.Task;
+     return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
  }
 					</pre>			
 				</div>
@@ -361,11 +337,11 @@ public static Task Run(Action action)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000009B.html">STATask Class</a><br />
+			<a href="topic_0000000000000095.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			
@@ -383,11 +359,7 @@ public static Task Run(Action action)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

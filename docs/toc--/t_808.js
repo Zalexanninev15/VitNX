@@ -1,1 +1,1 @@
-c['808']=[['809',"VitNX_MessageBox Constructor","topic_0000000000000340_overloads--.html",1],['816',"Methods","topic_000000000000033E_methods--.html",1]];
+c['808']=[['809',"ObservableList.ItemsAdded Event","topic_000000000000032E.html",0],['810',"ObservableList.ItemsRemoved Event","topic_000000000000032F.html",0]];

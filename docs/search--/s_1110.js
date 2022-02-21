@@ -1,1 +1,1 @@
-search_result['1110']=["topic_000000000000030D_attached_props--.html","VitNX_DockSplitter Attached Properties",""];
+search_result['1110']=["topic_0000000000000331.html","ObservableList\u0026lt;T\u0026gt;.Dispose (Boolean) Method",""];

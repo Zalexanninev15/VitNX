@@ -24,7 +24,7 @@ namespace VitNX.Functions.Common.Web
                 using (WebClient client = new WebClient())
                 {
                     client.Proxy = null;
-                    return Text.Work.FixDeEncoding(client.DownloadString(url));
+                    return Data.Text.FixDeEncoding(client.DownloadString(url));
                 }
             }
             catch (Exception ex) { return ex.Message; }
@@ -91,11 +91,18 @@ namespace VitNX.Functions.Common.Web
             catch { return false; }
         }
 
+        public enum INTERNET_STATUS : int
+        {
+            UNKNOWN_PROBLEM = -1,
+            UNCONNECTED = 0,
+            CONNECTED = 1
+        }
+
         /// <summary>
         /// Are yout have the internet connection on PC.
         /// </summary>
         /// <returns>An int.</returns>
-        public static int IsHaveInternet()
+        public static INTERNET_STATUS IsHaveInternet()
         {
             try
             {
@@ -103,11 +110,11 @@ namespace VitNX.Functions.Common.Web
                 PingReply pingReply = null;
                 pingReply = ping.Send("google.com");
                 if (pingReply.Status == IPStatus.Success)
-                    return 1;
+                    return INTERNET_STATUS.CONNECTED;
                 else
-                    return -1;
+                    return INTERNET_STATUS.UNCONNECTED;
             }
-            catch { return 0; }
+            catch { return INTERNET_STATUS.UNKNOWN_PROBLEM; }
         }
     }
 

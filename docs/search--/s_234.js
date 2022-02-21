@@ -1,1 +1,1 @@
-search_result['234']=["topic_000000000000008F.html","Installed.GetList Method","Gets the list."];
+search_result['234']=["topic_0000000000000092.html","SendDataToSites Class","The send data to sites."];

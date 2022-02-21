@@ -1,1 +1,1 @@
-search_result['792']=["topic_0000000000000244.html","VitNX_ListView Class",""];
+search_result['792']=["topic_00000000000001FC.html","MINMAXINFO Structure",""];

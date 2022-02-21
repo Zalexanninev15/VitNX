@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.WaveOutSetVolume Method</title>
+	<title>edidProductCodeId Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.WaveOutSetVolume Method</h1>
+		<h1 class="title">edidProductCodeId Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;winmm.dll&quot;)&gt; _&nbsp;<br />Public Shared Function WaveOutSetVolume( _&nbsp;<br />   ByVal <i>h</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>dwVolume</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public edidProductCodeId As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint16">UInt16</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;winmm.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> WaveOutSetVolume(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>h</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwVolume</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint16">UInt16</a> edidProductCodeId</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,39 +189,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="h" class="parameterList">
-	<dt>
-		<span class="parameter">
-			h
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwVolume" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwVolume
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint16">UInt16</a> 
 	
 
 
@@ -297,9 +268,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;winmm.dll&quot;)]
- public static extern int WaveOutSetVolume(IntPtr h,
-     uint dwVolume);
+public ushort edidProductCodeId;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -361,11 +330,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000EB.html">Import Class</a><br />
+			<a href="topic_00000000000000F0.html">DISPLAYCONFIG_TARGET_DEVICE_NAME Structure</a><br />
 
 
 
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
 			
@@ -383,12 +352,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>
-

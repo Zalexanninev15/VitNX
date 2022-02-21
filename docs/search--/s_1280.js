@@ -1,1 +1,1 @@
-search_result['1280']=["topic_0000000000000381_vars--.html","Helper Fields",""];
+search_result['1280']=["topic_0000000000000399.html","VitNX_ListView Class",""];

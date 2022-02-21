@@ -1,1 +1,1 @@
-search_result['219']=["topic_0000000000000085.html","Processes.GetList Method","Gets the list of all processes."];
+search_result['219']=["topic_0000000000000085.html","DataFromSites.IsValidTelegramBotToken Method","Are the valid telegram bot token."];

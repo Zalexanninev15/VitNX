@@ -1,1 +1,1 @@
-search_result['124']=["topic_000000000000004E.html","IniSettings32 Class","Work with INI config files with Windows System functions."];
+search_result['124']=["topic_0000000000000054.html","Cpu Class","Work with informations of CPU."];

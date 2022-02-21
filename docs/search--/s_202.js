@@ -1,1 +1,1 @@
-search_result['202']=["topic_000000000000007E.html","Config.DefaultGateway Method","Get DefaultGateway of NetworkInterface in IPAddress."];
+search_result['202']=["topic_0000000000000079_vars--.html","IniSettings32 Fields",""];

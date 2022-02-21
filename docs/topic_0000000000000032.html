@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Disk.WindowsDisk Method</title>
+	<title>FileSystem.DeleteFileToRecycleBin Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Disk.WindowsDisk Method</h1>
+		<h1 class="title">FileSystem.DeleteFileToRecycleBin Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets Windows Disk characteristics.</summary-info>
+        <summary-info>Deletes the file to Recycle Bin.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function WindowsDisk() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">Long</a>()</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub DeleteFileToRecycleBin( _&nbsp;<br />   ByVal <i>targetFile</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a>[] WindowsDisk()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteFileToRecycleBin(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +190,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="targetFile" class="parameterList">
+	<dt>
+		<span class="parameter">
+			targetFile
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The target file. 
+</p>
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a>[] 
-		<p>
-		An array of string. 
-	</p>
-	
+<p />
+
 
 
 
@@ -272,7 +281,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static long[] WindowsDisk() =&gt; SetCWindowsSize();
+public static void DeleteFileToRecycleBin(string targetFile)
+ {
+     File.SetAttributes(targetFile, FileAttributes.Normal);
+     Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,
+         Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
+         Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -334,11 +349,11 @@ public static long[] WindowsDisk() =&gt; SetCWindowsSize();
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000031.html">Disk Class</a><br />
+			<a href="topic_000000000000002E.html">FileSystem Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -356,11 +371,7 @@ public static long[] WindowsDisk() =&gt; SetCWindowsSize();
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['44',"VitNX.Functions.Common.Information Namespace","topic_0000000000000019.html"],['45',"Cpu Class","topic_000000000000002B.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['46',"VitNX.Functions.Common.Data Namespace","topic_0000000000000007.html"],['47',"CompressAndDecompress Class","topic_0000000000000029.html"],['48',"Methods","topic_0000000000000029_methods--.html"],['49',"BytesToString Method","topic_000000000000002B.html"]];

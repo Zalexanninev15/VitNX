@@ -1,1 +1,1 @@
-search_result['866']=["topic_0000000000000273.html","VitNX_ScrollBar.UpdateScrollBar Method",""];
+search_result['866']=["topic_0000000000000228.html","PAINTSTRUCT Structure",""];

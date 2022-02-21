@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.WindowsUseLightThemeInSystem Method</title>
+	<title>EncrypterAndDecrypter.EncryptQryParam Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.WindowsUseLightThemeInSystem Method</h1>
+		<h1 class="title">EncrypterAndDecrypter.EncryptQryParam Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Windows use light theme in system from the Windows Registry, for Windows 10+.</summary-info>
+        <summary-info>Encrypts the text with qry param.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function WindowsUseLightThemeInSystem() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function EncryptQryParam( _&nbsp;<br />   ByVal <i>input</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> WindowsUseLightThemeInSystem()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> EncryptQryParam(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,12 +190,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="input" class="parameterList">
+	<dt>
+		<span class="parameter">
+			input
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The input. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		A bool. 
+		A string. 
 	</p>
 	
 
@@ -272,8 +288,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool WindowsUseLightThemeInSystem() =&gt; (int)Registry.GetValue(@&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize&quot;,
-     &quot;SystemUsesLightTheme&quot;, &quot;1&quot;) == 1 ? true : false;
+public static string EncryptQryParam(string input)
+ {
+     RijndaelManaged RijndaelCipher = new RijndaelManaged();
+     byte[] PlainText = Encoding.Unicode.GetBytes(input);
+     byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+     PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+     ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32),
+         SecretKey.GetBytes(16));
+     MemoryStream memoryStream = new MemoryStream();
+     CryptoStream cryptoStream = new CryptoStream(memoryStream,
+         Encryptor,
+         CryptoStreamMode.Write);
+     cryptoStream.Write(PlainText, 0, PlainText.Length);
+     cryptoStream.FlushFinalBlock();
+     byte[] CipherBytes = memoryStream.ToArray();
+     memoryStream.Close();
+     cryptoStream.Close();
+     string EncryptedData = Convert.ToBase64String(CipherBytes);
+     return EncryptedData.Replace(&quot;+&quot;, &quot;~&quot;).Replace(&quot;/&quot;, &quot;^&quot;);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -335,11 +369,11 @@ public static bool WindowsUseLightThemeInSystem() =&gt; (int)Registry.GetValue(@
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000001A.html">Windows Class</a><br />
+			<a href="topic_0000000000000023.html">EncrypterAndDecrypter Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
 
 
 			
@@ -357,11 +391,7 @@ public static bool WindowsUseLightThemeInSystem() =&gt; (int)Registry.GetValue(@
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

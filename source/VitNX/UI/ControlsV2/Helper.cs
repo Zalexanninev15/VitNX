@@ -7,8 +7,10 @@ namespace VitNX.UI.ControlsV2
     {
         public static int VitNX2_TextBoxesFocus(bool enter)
         {
-            if (enter) return 2;
-            else return 1;
+            if (enter)
+                return 2;
+            else
+                return 1;
         }
 
         public static void VitNX2_Button_MouseLeave(object sender, EventArgs e)

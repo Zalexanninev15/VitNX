@@ -1,1 +1,1 @@
-search_result['434']=["topic_00000000000000E9.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];
+search_result['434']=["topic_00000000000000EB_attached_props--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Attached Properties",""];

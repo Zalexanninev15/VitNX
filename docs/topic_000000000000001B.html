@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetComputerName Method</title>
+	<title>Text.SizeSuffix Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetComputerName Method</h1>
+		<h1 class="title">Text.SizeSuffix Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the name of PC.</summary-info>
+        <summary-info>Gives a suffix to the file size for output.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetComputerName() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function SizeSuffix( _&nbsp;<br />   ByVal <i>value</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">Long</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetComputerName()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SizeSuffix(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> <i>value</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,6 +190,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="value" class="parameterList">
+	<dt>
+		<span class="parameter">
+			value
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> 
+	</dd>
+</dl>
+<p>
+	The value. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
@@ -272,7 +288,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetComputerName() =&gt; Environment.MachineName;
+public static string SizeSuffix(long value)
+ {
+     if (value &lt; 0)
+         return &quot;-&quot; + SizeSuffix(-value);
+     if (value == 0)
+         return &quot;0.0 bytes&quot;;
+     int mag = (int)Math.Log(value, 1024);
+     decimal adjustedSize = (decimal)value / (1L &lt;&lt; (mag * 10));
+     return string.Format(&quot;{0:n1} {1}&quot;, adjustedSize, SizeSuffixes[mag]);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -334,11 +359,11 @@ public static string GetComputerName() =&gt; Environment.MachineName;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000001A.html">Windows Class</a><br />
+			<a href="topic_000000000000000B.html">Text Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
 
 
 			
@@ -356,11 +381,7 @@ public static string GetComputerName() =&gt; Environment.MachineName;
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

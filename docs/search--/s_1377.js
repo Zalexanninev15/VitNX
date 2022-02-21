@@ -1,1 +1,1 @@
-search_result['1377']=["topic_00000000000003AD_overloads--.html","VitNX2_TextBox.Dispose Method","Clean up any resources being used."];
+search_result['1377']=["topic_00000000000003DA.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];

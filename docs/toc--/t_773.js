@@ -1,1 +1,1 @@
-c['773']=[['774',"VitNX_Document Constructor","topic_0000000000000315.html",0]];
+c['773']=[['774',"Dispose Method","topic_0000000000000329.html",0],['775',"NotUsed Method","topic_0000000000000328.html",0],['776',"Report Method","topic_0000000000000325.html",0],['777',"SetColor Method","topic_0000000000000326.html",0],['778',"SetText Method","topic_0000000000000327.html",0]];

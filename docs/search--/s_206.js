@@ -1,1 +1,1 @@
-search_result['206']=["topic_0000000000000080_events--.html","SendDataToSites Events",""];
+search_result['206']=["topic_000000000000007D.html","IniSettings32.DeleteKey Method","Deletes the key in section."];

@@ -1,1 +1,1 @@
-search_result['131']=["topic_0000000000000050.html","IniSettings32.Read Method","Reads value of key from section."];
+search_result['131']=["topic_0000000000000056.html","Cpu.GetArchitecture Method","Gets the architecture."];

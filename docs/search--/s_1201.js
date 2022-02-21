@@ -1,1 +1,1 @@
-search_result['1201']=["topic_0000000000000353_methods--.html","VitNX_MenuRenderer Methods",""];
+search_result['1201']=["topic_0000000000000367.html","VitNX_ComboBox.OnTabStopChanged Method","Raises the TabStopChanged event."];

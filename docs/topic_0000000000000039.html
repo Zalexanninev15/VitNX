@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Monitor.CaptureScreenToMemoryStream Method</title>
+	<title>FileSystem.CreateFileBackup Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Monitor.CaptureScreenToMemoryStream Method</h1>
+		<h1 class="title">FileSystem.CreateFileBackup Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Captures the screen to memory stream.</summary-info>
+        <summary-info>Creates the file backup.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function CaptureScreenToMemoryStream() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.memorystream">MemoryStream</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Sub CreateFileBackup( _&nbsp;<br />   ByVal <i>sourceFolder</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>newFileExtension</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>saveOldFile</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.memorystream">MemoryStream</a> CaptureScreenToMemoryStream()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CreateFileBackup(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>newFileExtension</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>saveOldFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +190,49 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="sourceFolder" class="parameterList">
+	<dt>
+		<span class="parameter">
+			sourceFolder
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The source folder. 
+</p>
+<dl paramName="newFileExtension" class="parameterList">
+	<dt>
+		<span class="parameter">
+			newFileExtension
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The new file extension. 
+</p>
+<dl paramName="saveOldFile" class="parameterList">
+	<dt>
+		<span class="parameter">
+			saveOldFile
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	If true, save old file. 
+</p>
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.io.memorystream">MemoryStream</a> 
-		<p>
-		A MemoryStream. 
-	</p>
-	
+<p />
+
 
 
 
@@ -272,16 +307,24 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static MemoryStream CaptureScreenToMemoryStream()
+public static void CreateFileBackup(string sourceFolder
+     , string newFileExtension,
+     bool saveOldFile)
  {
-     Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 
-         Screen.PrimaryScreen.Bounds.Height);
-     Graphics GH = Graphics.FromImage(BM);
-     GH.CopyFromScreen(0, 0, 0, 0, BM.Size);
-     MemoryStream memoryStream = new MemoryStream();
-     BM.Save(memoryStream, ImageFormat.Png);
-     memoryStream.Position = 0;
-     return memoryStream;
+     string bak_file = sourceFolder + &quot;.&quot; + newFileExtension.Replace(&quot;.&quot;, &quot;&quot;);
+     if (File.Exists(bak_file))
+     {
+         try { File.Delete(bak_file); } catch { }
+     }
+     if (saveOldFile == false)
+     {
+         try { File.Move(sourceFolder, bak_file); } catch { }
+     }
+     else
+     {
+         File.Copy(sourceFolder, bak_file);
+         try { File.Delete(sourceFolder); } catch { }
+     }
  }
 					</pre>			
 				</div>
@@ -344,11 +387,11 @@ public static MemoryStream CaptureScreenToMemoryStream()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000037.html">Monitor Class</a><br />
+			<a href="topic_000000000000002E.html">FileSystem Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			
@@ -366,11 +409,7 @@ public static MemoryStream CaptureScreenToMemoryStream()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

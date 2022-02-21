@@ -1,1 +1,1 @@
-search_result['1472']=["topic_00000000000006EF.html","EnableOffset Field","/// Offset of notifications after closing the previous one.\r\n\t\t///"];
+search_result['1472']=["topic_000000000000040C.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];

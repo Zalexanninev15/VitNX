@@ -1,1 +1,1 @@
-search_result['1244']=["topic_000000000000036D.html","DockResizeFilter Class",""];
+search_result['1244']=["topic_0000000000000386.html","VitNX_DropdownList.OnMouseUp Method","Raises the MouseUp event."];

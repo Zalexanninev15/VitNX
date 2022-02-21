@@ -1,1 +1,1 @@
-search_result['254']=["topic_0000000000000099.html","GetClipboardText Class","Get clipboard text."];
+search_result['254']=["topic_000000000000009C.html","Processes.Kill Method","Kills the process."];

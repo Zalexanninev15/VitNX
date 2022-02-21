@@ -1,1 +1,1 @@
-search_result['1313']=["topic_0000000000000391.html","VitNX2_MessageBox.Show (IWin32Window, String, String, MessageBoxButtons) Method",""];
+search_result['1313']=["topic_00000000000003A9.html","VitNX_NumericUpDown.OnMouseMove Method","Raises the MouseMove event."];

@@ -1,1 +1,1 @@
-search_result['1098']=["topic_0000000000000305_events--.html","VitNX_DockRegion Events",""];
+search_result['1098']=["topic_000000000000032B.html","Text.Writeln Method","Writeln text with the colors."];

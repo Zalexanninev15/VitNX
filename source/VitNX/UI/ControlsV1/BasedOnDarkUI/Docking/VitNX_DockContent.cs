@@ -8,20 +8,10 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
     [ToolboxItem(false)]
     public class VitNX_DockContent : UserControl
     {
-        #region Event Handler Region
-
         public event EventHandler DockTextChanged;
-
-        #endregion Event Handler Region
-
-        #region Field Region
 
         private string _dockText;
         private Image _icon;
-
-        #endregion Field Region
-
-        #region Property Region
 
         [Category("Appearance")]
         [Description("Determines the text that will appear in the content tabs and headers.")]
@@ -31,12 +21,9 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
             set
             {
                 var oldText = _dockText;
-
                 _dockText = value;
-
                 if (DockTextChanged != null)
                     DockTextChanged(this, null);
-
                 Invalidate();
             }
         }
@@ -82,16 +69,8 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int Order { get; set; }
 
-        #endregion Property Region
-
-        #region Constructor Region
-
         public VitNX_DockContent()
         { }
-
-        #endregion Constructor Region
-
-        #region Method Region
 
         public virtual void Close()
         {
@@ -99,20 +78,12 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
                 DockPanel.RemoveContent(this);
         }
 
-        #endregion Method Region
-
-        #region Event Handler Region
-
         protected override void OnEnter(EventArgs e)
         {
             base.OnEnter(e);
-
             if (DockPanel == null)
                 return;
-
             DockPanel.ActiveContent = this;
         }
-
-        #endregion Event Handler Region
     }
 }

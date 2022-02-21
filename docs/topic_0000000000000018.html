@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FileSystem.JoinFiles Method</title>
+	<title>Text.RandomNums Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FileSystem.JoinFiles Method</h1>
+		<h1 class="title">Text.RandomNums Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Joins the files.</summary-info>
+        <summary-info>Randoms the nums.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub JoinFiles( _&nbsp;<br />   ByVal <i>folderInputPath</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>, _&nbsp;<br />   ByVal <i>fileOutputPath</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function RandomNums( _&nbsp;<br />   ByVal <i>number</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> JoinFiles(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>folderInputPath</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>fileOutputPath</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> RandomNums(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>number</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,35 +191,29 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="folderInputPath" class="parameterList">
+	Parameters</h4><dl paramName="number" class="parameterList">
 	<dt>
 		<span class="parameter">
-			folderInputPath
+			number
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
-	The folder input path. 
-</p>
-<dl paramName="fileOutputPath" class="parameterList">
-	<dt>
-		<span class="parameter">
-			fileOutputPath
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The file output path. 
+	The number. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -294,16 +288,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void JoinFiles(string folderInputPath, string fileOutputPath)
+public static string RandomNums(int number)
  {
-     DirectoryInfo diSource = new DirectoryInfo(folderInputPath);
-     FileStream fsSource = new FileStream(fileOutputPath, FileMode.Append);
-     foreach (FileInfo fiPart in diSource.GetFiles(@&quot;*.part&quot;))
-     {
-         byte[] bytePart = File.ReadAllBytes(fiPart.FullName);
-         fsSource.Write(bytePart, 0, bytePart.Length);
-     }
-     fsSource.Close();
+     const string chars = &quot;1234567890&quot;;
+     return new string(Enumerable.Repeat(chars, number)
+       .Select(s =&gt; s[randomData.Next(s.Length)]).ToArray());
  }
 					</pre>			
 				</div>
@@ -366,11 +355,11 @@ public static void JoinFiles(string folderInputPath, string fileOutputPath)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000005.html">FileSystem Class</a><br />
+			<a href="topic_000000000000000B.html">Text Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
 
 
 			
@@ -388,11 +377,7 @@ public static void JoinFiles(string folderInputPath, string fileOutputPath)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

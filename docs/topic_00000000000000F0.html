@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetWindowsHookEx Method</title>
+	<title>DISPLAYCONFIG_TARGET_DEVICE_NAME Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetWindowsHookEx Method</h1>
+		<h1 class="title">DISPLAYCONFIG_TARGET_DEVICE_NAME Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;user32.dll&quot;, SetLastError = true)&gt; _&nbsp;<br />Public Shared Function SetWindowsHookEx( _&nbsp;<br />   ByVal <i>idHook</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a>, _&nbsp;<br />   ByVal <i>lpfn</i> As <a target="_top" href="topic_00000000000000F1.html" onclick="this.target='';return true;">LowLevelKeyboardProcDelegate</a>, _&nbsp;<br />   ByVal <i>hMod</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a>, _&nbsp;<br />   ByVal <i>dwThreadId</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">&lt;StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)&gt; _&nbsp;<br />Public Structure DISPLAYCONFIG_TARGET_DEVICE_NAME</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;, SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> SetWindowsHookEx(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>idHook</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000000F1.html" onclick="this.target='';return true;">LowLevelKeyboardProcDelegate</a> <i>lpfn</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hMod</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwThreadId</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]&nbsp;<br />public struct DISPLAYCONFIG_TARGET_DEVICE_NAME</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,66 +189,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="idHook" class="parameterList">
-	<dt>
-		<span class="parameter">
-			idHook
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="lpfn" class="parameterList">
-	<dt>
-		<span class="parameter">
-			lpfn
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000000F1.html" onclick="this.target='';return true;">LowLevelKeyboardProcDelegate</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="hMod" class="parameterList">
-	<dt>
-		<span class="parameter">
-			hMod
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwThreadId" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwThreadId
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
-
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	
 
 
 
@@ -265,6 +205,209 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F6.html">connectorInstance</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F4.html">edidManufactureId</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F5.html">edidProductCodeId</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F2.html">flags</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F1.html">header</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F8.html">monitorDevicePath</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F7.html">monitorFriendlyDeviceName</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000F3.html">outputTechnology</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -323,11 +466,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;, SetLastError = true)]
- public static extern IntPtr SetWindowsHookEx(
-        int idHook,
-        LowLevelKeyboardProcDelegate lpfn,
-        IntPtr hMod, int dwThreadId);
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+ public struct DISPLAYCONFIG_TARGET_DEVICE_NAME
+ {
+     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+     public DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS flags;
+     public Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
+     public ushort edidManufactureId;
+     public ushort edidProductCodeId;
+     public uint connectorInstance;
+ 
+     [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
+     public string monitorFriendlyDeviceName;
+ 
+     [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+     public string monitorDevicePath;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -381,6 +535,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -389,14 +544,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000EB.html">Import Class</a><br />
+	<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
 
 
-
-<a href="topic_00000000000000EA.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					
@@ -411,11 +562,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

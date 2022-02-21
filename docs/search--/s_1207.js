@@ -1,1 +1,1 @@
-search_result['1207']=["topic_0000000000000357.html","VitNX_MenuRenderer.OnRenderImageMargin Method",""];
+search_result['1207']=["topic_000000000000036D.html","VitNX_ComboBox.OnSelectedValueChanged Method","Raises the SelectedValueChanged event."];

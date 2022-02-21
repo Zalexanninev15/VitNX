@@ -26,8 +26,340 @@ Plays the error/successes sound.</summary>
 Converts the DWord color to RGB.</summary>
       <returns>
 A Color.</returns>
-      <param name="colorSetEx">
-The color set ex.</param>
+      <param name="color">
+Color as unit.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.CShap.ConvertColorToConsoleColor(System.Drawing.Color)">
+      <summary>
+Converts the color to color for console.</summary>
+      <param name="color">
+The color.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.CShap.LoadCustomFontFromFile(System.String,System.Single,System.Drawing.FontStyle)">
+      <summary>
+Loads the custom font from file.</summary>
+      <returns>
+A Font.</returns>
+      <param name="targetFile">
+The target file.</param>
+      <param name="size">
+The size.</param>
+      <param name="fontStyle">
+The font style.</param>
+    </member>
+    <member name="N:VitNX.Functions.Common.Data">
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.NumericalTextConverter">
+      <summary>
+The numerical text converter.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.NumericalTextConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+      <summary>
+Converts the value(s).</summary>
+      <returns>
+An object.</returns>
+      <param name="values">
+The values.</param>
+      <param name="targetType">
+The target type.</param>
+      <param name="parameter">
+The parameter.</param>
+      <param name="culture">
+The culture.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.NumericalTextConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+      <summary>
+Converts back the value(s).</summary>
+      <returns>
+An array of object.</returns>
+      <param name="value">
+The value.</param>
+      <param name="targetTypes">
+The target types.</param>
+      <param name="parameter">
+The parameter.</param>
+      <param name="culture">
+The culture.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.Text">
+      <summary>
+Work with text.</summary>
+    </member>
+    <member name="F:VitNX.Functions.Common.Data.Text.SizeSuffixes">
+      <summary>
+Possible size suffixes.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsOnlyLatters(System.String)">
+      <summary>
+Contains the only latters.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsNumbersLatters(System.String)">
+      <summary>
+Contains the numbers latters.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ReplacerMonster(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32)">
+      <summary>
+Replacers the monster.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="forReplace">
+The for replace.</param>
+      <param name="toReplace">
+The to replace.</param>
+      <param name="countOfSpacesWith_forReplace">
+The count of spaces with forReplace. From 0 to 2.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsOnlyNumbers(System.String)">
+      <summary>
+Contains the only numbers.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsSymbols(System.String)">
+      <summary>
+Contains the symbols.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ContainsSpaces(System.String)">
+      <summary>
+Contains the spaces.</summary>
+      <returns>
+A bool.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ListContainsString(System.Collections.Generic.List{System.String},System.String)">
+      <summary>
+Lists the contains string.</summary>
+      <returns>
+A bool.</returns>
+      <param name="list">
+The list.</param>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ListAddStringsToList(System.Collections.Generic.List{System.String},System.String[])">
+      <summary>
+Lists the add strings to list.</summary>
+      <returns>
+A list of string.</returns>
+      <param name="list">
+The list.</param>
+      <param name="strings">
+The strings.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ListRemoveStringsFromList(System.Collections.Generic.List{System.String},System.String[])">
+      <summary>
+Lists the remove strings from list.</summary>
+      <returns>
+A list of string.</returns>
+      <param name="list">
+The list.</param>
+      <param name="strings">
+The strings.</param>
+    </member>
+    <member name="F:VitNX.Functions.Common.Data.Text.GenerateGuid">
+      <summary>
+Generate the GUID.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.RandomChars(System.Int32)">
+      <summary>
+Randoms the chars.</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.RandomNums(System.Int32)">
+      <summary>
+Randoms the nums.</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.FixDeEncoding(System.String)">
+      <summary>
+Fixes the de-encoding.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.IsValidCardNumber(System.String)">
+      <summary>
+Are the valid card number.</summary>
+      <returns>
+A bool.</returns>
+      <param name="cardNumber">
+The card number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.SizeSuffix(System.Int64)">
+      <summary>
+Gives a suffix to the file size for output.</summary>
+      <returns>
+A string.</returns>
+      <param name="value">
+The value.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.EncryptAndDecrypt">
+      <summary>
+Encrypt and decrypt the text or byte[].</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.XOR_Both(System.String,System.Int32)">
+      <summary>
+XOR method (encrypt and decrypt).</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="key">
+The key.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.MD5_Encrypt(System.String)">
+      <summary>
+Encrypt by MD5.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleEncrypt(System.String,System.String)">
+      <summary>
+Simples the encrypt.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleDecrypt(System.String,System.String)">
+      <summary>
+Simples the decrypt.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+The text.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleEncryptAsByte(System.Byte[],System.String)">
+      <summary>
+Simples the encrypt as byte.</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+The input.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleDecryptAsByte(System.Byte[],System.String)">
+      <summary>
+Simples the decrypt as byte.</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+The input.</param>
+      <param name="password">
+The password.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.EncrypterAndDecrypter">
+      <summary>
+Encrypter and decrypter for text.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.SetPassword(System.String)">
+      <summary>
+Sets the password.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+The input.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.Decrypt(System.String)">
+      <summary>
+Decrypts the text.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.Encrypt(System.String)">
+      <summary>
+Encrypts the text.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.EncryptQryParam(System.String)">
+      <summary>
+Encrypts the text with qry param.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+The input.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncrypterAndDecrypter.DecryptQryParam(System.String)">
+      <summary>
+Decrypts the text with qry param.</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+The input.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Data.CompressAndDecompress">
+      <summary>
+Compress and decompress the text or byte[].</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.GetBytes(System.String)">
+      <summary>
+Gets the bytes. Example: CompressAndDecompress.GetBytes(input)</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.BytesToString(System.Byte[])">
+      <summary>
+Bytes the to string. Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));</summary>
+      <returns>
+A string.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.CompressBytes(System.Byte[])">
+      <summary>
+Compresses the bytes. Example: string output = Encoding.UTF8.GetString(CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input)));</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.DecompressBytes(System.Byte[])">
+      <summary>
+Decompresses the bytes. Example: CompressAndDecompress.DecompressBytes(compressed)</summary>
+      <returns>
+An array of byte.</returns>
+      <param name="input">
+</param>
     </member>
     <member name="T:VitNX.Functions.Common.FileSystem">
       <summary>
@@ -71,7 +403,7 @@ The target folder.</param>
       <summary>
 Writes the text to file UTF-8.</summary>
       <returns>
-An array of string.</returns>
+An array of string (File name and File path).</returns>
       <param name="text">
 The text.</param>
       <param name="targetFile">
@@ -431,6 +763,16 @@ Gets the firmware type.</summary>
       <returns>
 A string.</returns>
     </member>
+    <member name="T:VitNX.Functions.Common.Information.ComPort">
+      <summary>
+Work with informations of COM port.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.ComPort.GetAllDevices">
+      <summary>
+Gets all COM ports (devices).</summary>
+      <returns>
+An array of string.</returns>
+    </member>
     <member name="T:VitNX.Functions.Common.Information.Ram">
       <summary>
 Work with informations of RAM.</summary>
@@ -527,236 +869,6 @@ The key.</param>
       <param name="section">
 The section.</param>
     </member>
-    <member name="N:VitNX.Functions.Common.Text">
-    </member>
-    <member name="T:VitNX.Functions.Common.Text.Work">
-      <summary>
-Work with text.</summary>
-    </member>
-    <member name="F:VitNX.Functions.Common.Text.Work.SizeSuffixes">
-      <summary>
-Possible size suffixes.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsOnlyLatters(System.String)">
-      <summary>
-Contains the only latters.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsNumbersLatters(System.String)">
-      <summary>
-Contains the numbers latters.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ReplacerMonster(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32)">
-      <summary>
-Replacers the monster.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="forReplace">
-The for replace.</param>
-      <param name="toReplace">
-The to replace.</param>
-      <param name="countOfSpacesWith_forReplace">
-The count of spaces with forReplace. From 0 to 2.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsOnlyNumbers(System.String)">
-      <summary>
-Contains the only numbers.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsSymbols(System.String)">
-      <summary>
-Contains the symbols.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ContainsSpaces(System.String)">
-      <summary>
-Contains the spaces.</summary>
-      <returns>
-A bool.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ListContainsString(System.Collections.Generic.List{System.String},System.String)">
-      <summary>
-Lists the contains string.</summary>
-      <returns>
-A bool.</returns>
-      <param name="list">
-The list.</param>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ListAddStringsToList(System.Collections.Generic.List{System.String},System.String[])">
-      <summary>
-Lists the add strings to list.</summary>
-      <returns>
-A list of string.</returns>
-      <param name="list">
-The list.</param>
-      <param name="strings">
-The strings.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.ListRemoveStringsFromList(System.Collections.Generic.List{System.String},System.String[])">
-      <summary>
-Lists the remove strings from list.</summary>
-      <returns>
-A list of string.</returns>
-      <param name="list">
-The list.</param>
-      <param name="strings">
-The strings.</param>
-    </member>
-    <member name="F:VitNX.Functions.Common.Text.Work.GenerateGuid">
-      <summary>
-Generate the GUID.</summary>
-      <returns>
-A string.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.RandomChars(System.Int32)">
-      <summary>
-Randoms the chars.</summary>
-      <returns>
-A string.</returns>
-      <param name="number">
-The number.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.RandomNums(System.Int32)">
-      <summary>
-Randoms the nums.</summary>
-      <returns>
-A string.</returns>
-      <param name="number">
-The number.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.FixDeEncoding(System.String)">
-      <summary>
-Fixes the de-encoding.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.IsValidCardNumber(System.String)">
-      <summary>
-Are the valid card number.</summary>
-      <returns>
-A bool.</returns>
-      <param name="cardNumber">
-The card number.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.Work.SizeSuffix(System.Int64)">
-      <summary>
-Gives a suffix to the file size for output.</summary>
-      <returns>
-A string.</returns>
-      <param name="value">
-The value.</param>
-    </member>
-    <member name="T:VitNX.Functions.Common.Text.EncryptAndDecrypt">
-      <summary>
-Encrypt and decrypt the text.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.XOR_Both(System.String,System.Int32)">
-      <summary>
-XOR method (encrypt and decrypt).</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="key">
-The key.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleEncrypt(System.String,System.String)">
-      <summary>
-Simples the encrypt.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleDecrypt(System.String,System.String)">
-      <summary>
-Simples the decrypt.</summary>
-      <returns>
-A string.</returns>
-      <param name="text">
-The text.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleEncryptAsByte(System.Byte[],System.String)">
-      <summary>
-Simples the encrypt as byte.</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="input">
-The input.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.EncryptAndDecrypt.SimpleDecryptAsByte(System.Byte[],System.String)">
-      <summary>
-Simples the decrypt as byte.</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="input">
-The input.</param>
-      <param name="password">
-The password.</param>
-    </member>
-    <member name="T:VitNX.Functions.Common.Text.CompressAndDecompress">
-      <summary>
-Compress and decompress the text.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.GetBytes(System.String)">
-      <summary>
-Gets the bytes. Example: CompressAndDecompress.GetBytes(input)</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="str">
-The str.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.BytesToString(System.Byte[])">
-      <summary>
-Bytes the to string. Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));</summary>
-      <returns>
-A string.</returns>
-      <param name="bytes">
-The bytes.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.CompressBytes(System.Byte[])">
-      <summary>
-Compresses the bytes. Example: string output = Encoding.UTF8.GetString(CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input)));</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="bytes">
-The bytes.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.Text.CompressAndDecompress.DecompressBytes(System.Byte[])">
-      <summary>
-Decompresses the bytes. Example: CompressAndDecompress.DecompressBytes(compressed)</summary>
-      <returns>
-An array of byte.</returns>
-      <param name="bytes">
-The bytes.</param>
-    </member>
     <member name="N:VitNX.Functions.Common.Web">
     </member>
     <member name="T:VitNX.Functions.Common.Web.DataFromSites">
@@ -796,6 +908,14 @@ Are the valid telegram bot token.</summary>
 A bool.</returns>
       <param name="botToken">
 The bot token.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS">
+    </member>
+    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.UNKNOWN_PROBLEM">
+    </member>
+    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.UNCONNECTED">
+    </member>
+    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.CONNECTED">
     </member>
     <member name="M:VitNX.Functions.Common.Web.DataFromSites.IsHaveInternet">
       <summary>
@@ -927,6 +1047,14 @@ The current process.</param>
       <param name="currentExeAssemblyLocation">
 The current exe assembly location.</param>
     </member>
+    <member name="M:VitNX.Functions.Windows.Apps.Processes.CheckDebugger(System.Diagnostics.Process)">
+      <summary>
+Checks the debugger for your app.</summary>
+      <returns>
+A bool.</returns>
+      <param name="currentProcess">
+The current process.</param>
+    </member>
     <member name="T:VitNX.Functions.Windows.Apps.Installed">
       <summary>
 Work with installed applications.</summary>
@@ -1043,25 +1171,11 @@ Sets the KeyUp.</summary>
       <param name="vKey">
 The vkey.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.WindowsKeyboardEventsAPI(System.Int32,System.String)">
+    <member name="M:VitNX.Functions.Windows.Controllers.Keyboard.WindowsKeyboardEventsAPI(VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS)">
       <summary>
 The keyboard events of Windows.</summary>
       <param name="status">
 The status.</param>
-      <param name="keys">
-The keys.</param>
-    </member>
-    <member name="T:VitNX.Functions.Windows.Controllers.FocusOnControls">
-    </member>
-    <member name="M:VitNX.Functions.Windows.Controllers.FocusOnControls.RemoveFocus">
-      <summary>
-Removing the focus from the element/control from which the function is called.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Controllers.FocusOnControls.VolumeOnFocus(System.Boolean)">
-      <summary>
-Enable/disable sound (nasty) when focusing on an item/control..</summary>
-      <param name="off">
-If true, off.</param>
     </member>
     <member name="T:VitNX.Functions.Windows.Controllers.Monitor">
       <summary>
@@ -1205,13 +1319,1077 @@ A string.</returns>
       <param name="screen">
 The screen.</param>
     </member>
+    <member name="T:VitNX.Functions.Windows.Controllers.WorkWithSystem">
+      <summary>
+Work with system.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.WorkWithSystem.InstallInfDriver(System.String)">
+      <summary>
+Installs the INF driver file into the Windows System.</summary>
+      <param name="pathToInf">
+The path to INF driver file.</param>
+    </member>
     <member name="N:VitNX.Functions.Windows.Win32">
     </member>
     <member name="T:VitNX.Functions.Windows.Win32.Import">
       <summary>
-Import the Windows System functions from native DLL.</summary>
+Import the Windows System functions from native DLL. About functions: https://www.pinvoke.net</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.AdjustWindowRectEx(VitNX.Functions.Windows.Win32.Enums.RECT@,System.Int32,System.Boolean,System.Int32)">
+      <param name="lpRect">
+</param>
+      <param name="dwStyle">
+</param>
+      <param name="bMenu">
+</param>
+      <param name="dwExStyle">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.AlphaBlend(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION)">
+      <param name="hdcDest">
+</param>
+      <param name="nXOriginDest">
+</param>
+      <param name="nYOriginDest">
+</param>
+      <param name="nWidthDest">
+</param>
+      <param name="nHeightDest">
+</param>
+      <param name="hdcSrc">
+</param>
+      <param name="nXOriginSrc">
+</param>
+      <param name="nYOriginSrc">
+</param>
+      <param name="nWidthSrc">
+</param>
+      <param name="nHeightSrc">
+</param>
+      <param name="blendFunction">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.AnimateWindow(System.IntPtr,System.Int32,System.Int32)">
+      <param name="hwnd">
+</param>
+      <param name="dwTime">
+</param>
+      <param name="dwFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.BeginPaint(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT@)">
+      <param name="hWnd">
+</param>
+      <param name="lpPaint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.BringWindowToTop(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CancelDC(System.IntPtr)">
+      <param name="hdc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ChildWindowFromPoint(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.POINT)">
+      <param name="hWndParent">
+</param>
+      <param name="Point">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ClientToScreen(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hWnd">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CloseHandle(System.IntPtr)">
+      <param name="hObject">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CloseThemeData(System.IntPtr)">
+      <param name="hTheme">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CoCreateInstance(System.Guid@,System.Object,System.Int32,System.Guid@)">
+      <param name="clsid">
+</param>
+      <param name="punkOuter">
+</param>
+      <param name="context">
+</param>
+      <param name="iid">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CombineRgn(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)">
+      <param name="hrgnDest">
+</param>
+      <param name="hrgnSrc1">
+</param>
+      <param name="hrgnSrc2">
+</param>
+      <param name="fnCombineMode">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateBitmap(System.Int32,System.Int32,System.Int32,System.Int32,System.Int16[])">
+      <param name="nWidth">
+</param>
+      <param name="nHeight">
+</param>
+      <param name="nPlanes">
+</param>
+      <param name="nBitsPerPixel">
+</param>
+      <param name="lpvBits">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateBrushIndirect(VitNX.Functions.Windows.Win32.Enums.LOGBRUSH@)">
+      <param name="lplb">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateCompatibleBitmap(System.IntPtr,System.Int32,System.Int32)">
+      <param name="hDC">
+</param>
+      <param name="nWidth">
+</param>
+      <param name="nHeight">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateCompatibleDC(System.IntPtr)">
+      <param name="hDC">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateFontIndirect(VitNX.Functions.Windows.Win32.Enums.LOGFONT@)">
+      <param name="lplf">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreatePatternBrush(System.IntPtr)">
+      <param name="hBitmap">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateRectRgn(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <param name="nLeftRect">
+</param>
+      <param name="nTopRect">
+</param>
+      <param name="nRightRect">
+</param>
+      <param name="nBottomRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateRectRgnIndirect(VitNX.Functions.Windows.Win32.Enums.RECT@)">
+      <param name="lprc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateSolidBrush(System.Int32)">
+      <param name="crColor">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DeleteDC(System.IntPtr)">
+      <param name="hDC">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DeleteObject(System.IntPtr)">
+      <param name="hObject">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DispatchMessage(VitNX.Functions.Windows.Win32.Enums.MSG@)">
+      <param name="msg">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DrawEdge(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@,System.Int32,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="qrc">
+</param>
+      <param name="edge">
+</param>
+      <param name="grfFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DrawFrameControl(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@,System.Int32,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="lprc">
+</param>
+      <param name="uType">
+</param>
+      <param name="uState">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DrawText(System.IntPtr,System.String,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="lpString">
+</param>
+      <param name="cbString">
+</param>
+      <param name="lpRect">
+</param>
+      <param name="uFormat">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DrawThemeBackground(System.IntPtr,System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@,VitNX.Functions.Windows.Win32.Enums.RECT@)">
+      <param name="hTheme">
+</param>
+      <param name="hdc">
+</param>
+      <param name="iPartId">
+</param>
+      <param name="iStateId">
+</param>
+      <param name="pRect">
+</param>
+      <param name="pClipRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DrawThemeBackgroundEx(System.IntPtr,System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@,VitNX.Functions.Windows.Win32.Enums.DTBGOPTS@)">
+      <param name="hTheme">
+</param>
+      <param name="hdc">
+</param>
+      <param name="iPartId">
+</param>
+      <param name="iStateId">
+</param>
+      <param name="pRect">
+</param>
+      <param name="pOptions">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.DrawThemeEdge(System.IntPtr,System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@)">
+      <param name="hTheme">
+</param>
+      <param name="hdc">
+</param>
+      <param name="iPartId">
+</param>
+      <param name="iStateId">
+</param>
+      <param name="pDestRect">
+</param>
+      <param name="uEdge">
+</param>
+      <param name="uFlags">
+</param>
+      <param name="pContentRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.EnableWindow(System.IntPtr,System.Boolean)">
+      <param name="hWnd">
+</param>
+      <param name="bEnable">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.EndPaint(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT@)">
+      <param name="hWnd">
+</param>
+      <param name="lpPaint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.EnumThreadWindows(System.UInt32,VitNX.Functions.Windows.Win32.Enums.EnumThreadWindowsCallBack,System.IntPtr)">
+      <param name="dwThreadId">
+</param>
+      <param name="lpfn">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ExcludeClipRect(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="nLeftRect">
+</param>
+      <param name="nTopRect">
+</param>
+      <param name="nRightRect">
+</param>
+      <param name="nBottomRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.FindWindow(System.Text.StringBuilder,System.Text.StringBuilder)">
+      <param name="lpszClass">
+</param>
+      <param name="lpszWindow">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.FindWindowEx(System.IntPtr,System.IntPtr,System.Text.StringBuilder,System.Text.StringBuilder)">
+      <param name="hwndParent">
+</param>
+      <param name="hwndChildAfter">
+</param>
+      <param name="lpszClass">
+</param>
+      <param name="lpszWindow">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetActiveWindow">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetAncestor(System.IntPtr,System.UInt32)">
+      <param name="hWnd">
+</param>
+      <param name="gaFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetCapture">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetClientRect(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@)">
+      <param name="hWnd">
+</param>
+      <param name="lpRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetClipBox(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@)">
+      <param name="hdc">
+</param>
+      <param name="lprc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetCurrentThemeName(System.Text.StringBuilder,System.Int32,System.Text.StringBuilder,System.Int32,System.Text.StringBuilder,System.Int32)">
+      <param name="pszThemeFileName">
+</param>
+      <param name="dwMaxNameChars">
+</param>
+      <param name="pszColorBuff">
+</param>
+      <param name="cchMaxColorChars">
+</param>
+      <param name="pszSizeBuff">
+</param>
+      <param name="cchMaxSizeChars">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetCurrentThreadId">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetDC(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetDeviceCaps(System.IntPtr,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="nIndex">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetFocus">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetForegroundWindow">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetGraphicsMode(System.IntPtr)">
+      <param name="hdc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetIconInfo(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.ICONINFO@)">
+      <param name="hIcon">
+</param>
+      <param name="iconInfo">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetLastError">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetLayout(System.IntPtr)">
+      <param name="hdc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetMapMode(System.IntPtr)">
+      <param name="hdc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetMessage(VitNX.Functions.Windows.Win32.Enums.MSG@,System.Int32,System.UInt32,System.UInt32)">
+      <param name="msg">
+</param>
+      <param name="hWnd">
+</param>
+      <param name="wFilterMin">
+</param>
+      <param name="wFilterMax">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetParent(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetScrollBarInfo(System.IntPtr,System.UInt32,VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO@)">
+      <param name="hWnd">
+</param>
+      <param name="idObject">
+</param>
+      <param name="psbi">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetScrollInfo(System.IntPtr,System.Int32,VitNX.Functions.Windows.Win32.Enums.SCROLLINFO@)">
+      <param name="hWnd">
+</param>
+      <param name="fnBar">
+</param>
+      <param name="lpsi">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetSysColor(System.Int32)">
+      <param name="nIndex">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetTextAlign(System.IntPtr)">
+      <param name="hdc">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetTextExtentExPoint(System.IntPtr,System.String,System.Int32,System.Int32,System.Int16@,System.IntPtr,VitNX.Functions.Windows.Win32.Enums.SIZE@)">
+      <param name="hdc">
+</param>
+      <param name="lpszStr">
+</param>
+      <param name="cchString">
+</param>
+      <param name="nMaxExtent">
+</param>
+      <param name="lpnFit">
+</param>
+      <param name="alpDx">
+</param>
+      <param name="lpSize">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetTextExtentPoint32(System.IntPtr,System.String,System.Int32,VitNX.Functions.Windows.Win32.Enums.SIZE@)">
+      <param name="hdc">
+</param>
+      <param name="lpString">
+</param>
+      <param name="cbString">
+</param>
+      <param name="lpSize">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetTextMetrics(System.IntPtr,System.IntPtr)">
+      <param name="hdc">
+</param>
+      <param name="lptm">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetThemeMargins(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@,VitNX.Functions.Windows.Win32.Enums.MARGINS@)">
+      <param name="hTheme">
+</param>
+      <param name="hdc">
+</param>
+      <param name="iPartId">
+</param>
+      <param name="iStateId">
+</param>
+      <param name="iPropId">
+</param>
+      <param name="prc">
+</param>
+      <param name="pMargins">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetThemeMetric(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32@)">
+      <param name="hTheme">
+</param>
+      <param name="hdc">
+</param>
+      <param name="iPartId">
+</param>
+      <param name="iStateId">
+</param>
+      <param name="iPropId">
+</param>
+      <param name="piVal">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetThemePartSize(System.IntPtr,System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.RECT@,VitNX.Functions.Windows.Win32.Enums.THEMESIZE,VitNX.Functions.Windows.Win32.Enums.SIZE@)">
+      <param name="hTheme">
+</param>
+      <param name="hdc">
+</param>
+      <param name="iPartId">
+</param>
+      <param name="iStateId">
+</param>
+      <param name="prc">
+</param>
+      <param name="eSize">
+</param>
+      <param name="psz">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetThemeSysFont(System.IntPtr,System.Int32,VitNX.Functions.Windows.Win32.Enums.LOGFONT@)">
+      <param name="hTheme">
+</param>
+      <param name="iIntID">
+</param>
+      <param name="pFont">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetUpdateRect(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@,System.Boolean)">
+      <param name="hWnd">
+</param>
+      <param name="lpRect">
+</param>
+      <param name="erase">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetWindow(System.IntPtr,System.UInt32)">
+      <param name="hWnd">
+</param>
+      <param name="uCmd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetWindowLong(System.IntPtr,System.Int32)">
+      <param name="hWnd">
+</param>
+      <param name="nIndex">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetWindowPlacement(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT@)">
+      <param name="hWnd">
+</param>
+      <param name="lpwndpl">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.GetWindowThreadProcessId(System.IntPtr,System.Int32@)">
+      <param name="hWnd">
+</param>
+      <param name="lpdwProcessId">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.HideCaret(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.IntersectClipRect(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="nLeftRect">
+</param>
+      <param name="nTopRect">
+</param>
+      <param name="nRightRect">
+</param>
+      <param name="nBottomRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.InvalidateRect(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@,System.Boolean)">
+      <param name="hWnd">
+</param>
+      <param name="lpRect">
+</param>
+      <param name="bErase">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.InvalidateRect(System.IntPtr,System.IntPtr,System.Boolean)">
+      <param name="hWnd">
+</param>
+      <param name="rectangle">
+</param>
+      <param name="bErase">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.KillTimer(System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="nIDEvent">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.MapVirtualKey(System.Int32,System.Int32)">
+      <param name="uCode">
+</param>
+      <param name="uMapType">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.MaskBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.UInt32)">
+      <param name="hdcDest">
+</param>
+      <param name="nXDest">
+</param>
+      <param name="nYDest">
+</param>
+      <param name="nWidth">
+</param>
+      <param name="nHeight">
+</param>
+      <param name="hdcSrc">
+</param>
+      <param name="nXSrc">
+</param>
+      <param name="nYSrc">
+</param>
+      <param name="hbmMask">
+</param>
+      <param name="xMask">
+</param>
+      <param name="yMask">
+</param>
+      <param name="dwRop">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.MessageBeep(System.Int32)">
+      <param name="type">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ModifyWorldTransform(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.XFORM@,System.UInt32)">
+      <param name="tmp_hDC">
+</param>
+      <param name="lpXform">
+</param>
+      <param name="iMode">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.MsgWaitForMultipleObjects(System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32)">
+      <param name="nCount">
+</param>
+      <param name="pHandles">
+</param>
+      <param name="fWaitAll">
+</param>
+      <param name="dwMilliseconds">
+</param>
+      <param name="dwWakeMask">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.OffsetViewportOrgEx(System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hdc">
+</param>
+      <param name="nXOffset">
+</param>
+      <param name="nYOffset">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.OffsetWindowOrgEx(System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hdc">
+</param>
+      <param name="nXOffset">
+</param>
+      <param name="nYOffset">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.OpenProcess(System.Int32,System.Boolean,System.Int32)">
+      <param name="dwDesiredAccess">
+</param>
+      <param name="bInheritHandle">
+</param>
+      <param name="dwProcessId">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.OpenThemeData(System.IntPtr,System.String)">
+      <param name="hWnd">
+</param>
+      <param name="ClassList">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.PatBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="nXLeft">
+</param>
+      <param name="nYLeft">
+</param>
+      <param name="nWidth">
+</param>
+      <param name="nHeight">
+</param>
+      <param name="dwRop">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.PeekMessage(VitNX.Functions.Windows.Win32.Enums.MSG@,System.Int32,System.UInt32,System.UInt32,System.UInt32)">
+      <param name="msg">
+</param>
+      <param name="hWnd">
+</param>
+      <param name="wFilterMin">
+</param>
+      <param name="wFilterMax">
+</param>
+      <param name="wFlag">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.PostMessage(System.IntPtr,System.Int32,System.UInt32,System.UInt32)">
+      <param name="hWnd">
+</param>
+      <param name="Msg">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.PrintWindow(System.IntPtr,System.IntPtr,System.Int32)">
+      <param name="hwnd">
+</param>
+      <param name="hdc">
+</param>
+      <param name="nFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ReadProcessMemory(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32,System.Int32@)">
+      <param name="hProcess">
+</param>
+      <param name="lpBaseAddress">
+</param>
+      <param name="lpBuffer">
+</param>
+      <param name="nSize">
+</param>
+      <param name="lpNumberOfBytesWritten">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.Rectangle(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="nLeftRect">
+</param>
+      <param name="nTopRect">
+</param>
+      <param name="nRightRect">
+</param>
+      <param name="nBottomRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.RedrawWindow(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)">
+      <param name="hWnd">
+</param>
+      <param name="lprcUpdate">
+</param>
+      <param name="hrgnUpdate">
+</param>
+      <param name="flags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SelectClipRgn(System.IntPtr,System.IntPtr)">
+      <param name="hdc">
+</param>
+      <param name="hrgn">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SelectObject(System.IntPtr,System.IntPtr)">
+      <param name="hDC">
+</param>
+      <param name="hObject">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="msg">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SendNotifyMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="msg">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetActiveWindow(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetBkColor(System.IntPtr,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="crColor">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetBkMode(System.IntPtr,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="iBkMode">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetCaretPos(System.Int32,System.Int32)">
+      <param name="X">
+</param>
+      <param name="Y">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetFocus(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetForegroundWindow(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetGraphicsMode(System.IntPtr,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="iMode">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetLayeredWindowAttributes(System.IntPtr,System.Int32,System.Byte,System.Int32)">
+      <param name="hwnd">
+</param>
+      <param name="crKey">
+</param>
+      <param name="bAlpha">
+</param>
+      <param name="dwFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetLayout(System.IntPtr,System.UInt32)">
+      <param name="hdc">
+</param>
+      <param name="dwLayout">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetMapMode(System.IntPtr,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="fnMapMode">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetParent(System.IntPtr,System.IntPtr)">
+      <param name="hWndChild">
+</param>
+      <param name="hWndNewParent">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetScrollInfo(System.IntPtr,System.Int32,VitNX.Functions.Windows.Win32.Enums.SCROLLINFO@,System.Boolean)">
+      <param name="hWnd">
+</param>
+      <param name="fnBar">
+</param>
+      <param name="lpsi">
+</param>
+      <param name="fRedraw">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetTextAlign(System.IntPtr,System.UInt32)">
+      <param name="hdc">
+</param>
+      <param name="fMode">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetTextColor(System.IntPtr,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="crColor">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetViewportExtEx(System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hdc">
+</param>
+      <param name="nXOffset">
+</param>
+      <param name="nYOffset">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetViewportOrgEx(System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hdc">
+</param>
+      <param name="nXOffset">
+</param>
+      <param name="nYOffset">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowExtEx(System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hdc">
+</param>
+      <param name="X">
+</param>
+      <param name="Y">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowLong(System.IntPtr,System.Int32,System.Int32)">
+      <param name="hWnd">
+</param>
+      <param name="nIndex">
+</param>
+      <param name="dwNewLong">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowOrgEx(System.IntPtr,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.POINT@)">
+      <param name="hdc">
+</param>
+      <param name="X">
+</param>
+      <param name="Y">
+</param>
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowPos(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.UInt32)">
+      <param name="hWnd">
+</param>
+      <param name="hWndInsertAfter">
+</param>
+      <param name="iX">
+</param>
+      <param name="iY">
+</param>
+      <param name="cX">
+</param>
+      <param name="cY">
+</param>
+      <param name="uFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowRgn(System.IntPtr,System.IntPtr,System.Int32)">
+      <param name="hWnd">
+</param>
+      <param name="hRgn">
+</param>
+      <param name="bRedraw">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SetWorldTransform(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.XFORM@)">
+      <param name="tmp_hDC">
+</param>
+      <param name="lpXform">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SHAutoComplete(System.IntPtr,System.UInt32)">
+      <param name="hwndEdit">
+</param>
+      <param name="dwFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ShowCaret(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ShowWindow(System.IntPtr,System.Int32)">
+      <param name="hWnd">
+</param>
+      <param name="nCmdShow">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.SystemParametersInfo(System.Int32,System.Int32,System.IntPtr,System.Int32)">
+      <param name="uiAction">
+</param>
+      <param name="uiParam">
+</param>
+      <param name="pvParam">
+</param>
+      <param name="fWinIni">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.TextOut(System.IntPtr,System.Int32,System.Int32,System.String,System.Int32)">
+      <param name="hdc">
+</param>
+      <param name="nXStart">
+</param>
+      <param name="nYStart">
+</param>
+      <param name="lpString">
+</param>
+      <param name="cbString">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.TrackMouseEvent(VitNX.Functions.Windows.Win32.Enums.TRACKMOUSEEVENT@)">
+      <param name="lpEventTrack">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.TranslateMessage(VitNX.Functions.Windows.Win32.Enums.MSG@)">
+      <param name="msg">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.UpdateLayeredWindow(System.IntPtr,System.IntPtr,VitNX.Functions.Windows.Win32.Enums.POINT@,VitNX.Functions.Windows.Win32.Enums.SIZE@,System.IntPtr,VitNX.Functions.Windows.Win32.Enums.POINT@,System.Int32,VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION@,System.Int32)">
+      <param name="hwnd">
+</param>
+      <param name="hdcDst">
+</param>
+      <param name="pptDst">
+</param>
+      <param name="psize">
+</param>
+      <param name="hdcSrc">
+</param>
+      <param name="pprSrc">
+</param>
+      <param name="crKey">
+</param>
+      <param name="pblend">
+</param>
+      <param name="dwFlags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.UpdateWindow(System.IntPtr)">
+      <param name="hwnd">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ValidateRect(System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="rectangle">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.ValidateRect(System.IntPtr,VitNX.Functions.Windows.Win32.Enums.RECT@)">
+      <param name="hWnd">
+</param>
+      <param name="lpRect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.VirtualAllocEx(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32)">
+      <param name="hProcess">
+</param>
+      <param name="lpAddress">
+</param>
+      <param name="dwSize">
+</param>
+      <param name="flAllocationType">
+</param>
+      <param name="flProtect">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.VirtualFreeEx(System.IntPtr,System.IntPtr,System.Int32,System.Int32)">
+      <param name="hProcess">
+</param>
+      <param name="lpAddress">
+</param>
+      <param name="dwSize">
+</param>
+      <param name="dwFreeType">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.VkKeyScan(System.Char)">
+      <param name="ch">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.WaitMessage">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.WindowFromPoint(VitNX.Functions.Windows.Win32.Enums.POINT)">
+      <param name="Point">
+</param>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.GetConsoleWindow">
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.RegisterDeviceNotification(System.IntPtr,System.IntPtr,System.Int32)">
+      <param name="recipient">
+</param>
+      <param name="notificationFilter">
+</param>
+      <param name="flags">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.UnregisterDeviceNotification(System.IntPtr)">
+      <param name="handle">
+</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Win32.Import.InstallHinfSection(System.IntPtr,System.IntPtr,System.String,System.Int32)">
+      <param name="hwnd">
+</param>
+      <param name="ModuleHandle">
+</param>
+      <param name="CmdLineBuffer">
+</param>
+      <param name="nCmdShow">
+</param>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.WaveOutGetVolume(System.IntPtr,System.UInt32@)">
       <param name="h">
@@ -1375,38 +2553,6 @@ Import the Windows System functions from native DLL.</summary>
       <param name="dwRop">
 </param>
     </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateCompatibleBitmap(System.IntPtr,System.Int32,System.Int32)">
-      <param name="hDC">
-</param>
-      <param name="nWidth">
-</param>
-      <param name="nHeight">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.CreateCompatibleDC(System.IntPtr)">
-      <param name="hDC">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.DeleteDC(System.IntPtr)">
-      <param name="hDC">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.DeleteObject(System.IntPtr)">
-      <param name="hObject">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.SelectObject(System.IntPtr,System.IntPtr)">
-      <param name="hDC">
-</param>
-      <param name="hObject">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.GetDeviceCaps(System.IntPtr,System.Int32)">
-      <param name="hdc">
-</param>
-      <param name="nIndex">
-</param>
-    </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.GetDisplayConfigBufferSizes(VitNX.Functions.Windows.Win32.Enums.QUERY_DEVICE_CONFIG_FLAGS,System.UInt32@,System.UInt32@)">
       <param name="flags">
 </param>
@@ -1431,10 +2577,6 @@ Import the Windows System functions from native DLL.</summary>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.DisplayConfigGetDeviceInfo(VitNX.Functions.Windows.Controllers.Monitor.DISPLAYCONFIG_TARGET_DEVICE_NAME@)">
       <param name="deviceName">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.SetFocus(System.IntPtr)">
-      <param name="hWnd">
 </param>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.SetWindowPos(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,VitNX.Functions.Windows.Win32.Enums.SetWindowPosFlags)">
@@ -1463,12 +2605,6 @@ Import the Windows System functions from native DLL.</summary>
       <param name="hWnd">
 </param>
       <param name="hDC">
-</param>
-    </member>
-    <member name="M:VitNX.Functions.Windows.Win32.Import.ShowWindow(System.IntPtr,System.Int32)">
-      <param name="hWnd">
-</param>
-      <param name="nCmdShow">
 </param>
     </member>
     <member name="M:VitNX.Functions.Windows.Win32.Import.FindWindow(System.String,System.String)">
@@ -1633,15 +2769,219 @@ The constants for imported functions.</summary>
       <summary>
 The enums for imported functions.</summary>
     </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION.BlendOp">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION.BlendFlags">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION.SourceConstantAlpha">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.BLENDFUNCTION.AlphaFormat">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.DTBGOPTS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.DTBGOPTS.dwSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.DTBGOPTS.dwFlags">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.DTBGOPTS.rcClip">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.EnumThreadWindowsCallBack">
+      <param name="hWnd">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.ICONINFO">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.KBDLLHOOKSTRUCT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KBDLLHOOKSTRUCT.vkCode">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KBDLLHOOKSTRUCT.scanCode">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KBDLLHOOKSTRUCT.flags">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KBDLLHOOKSTRUCT.time">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KBDLLHOOKSTRUCT.dwExtraInfo">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.LOGBRUSH">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGBRUSH.lbStyle">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGBRUSH.lbColor">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGBRUSH.lbHatch">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.LOGFONT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfHeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfEscapement">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfOrientation">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfWeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfItalic">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfUnderline">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfStrikeOut">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfCharSet">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfOutPrecision">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfClipPrecision">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfQuality">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfPitchAndFamily">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.LOGFONT.lfFaceName">
+    </member>
     <member name="T:VitNX.Functions.Windows.Win32.Enums.MARGINS">
     </member>
-    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.leftWidth">
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.cxLeftWidth">
     </member>
-    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.rightWidth">
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.cxRightWidth">
     </member>
-    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.topHeight">
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.cyTopHeight">
     </member>
-    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.bottomHeight">
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MARGINS.cyBottomHeight">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.MINMAXINFO">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MINMAXINFO.ptReserved">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MINMAXINFO.ptMaxSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MINMAXINFO.ptMaxPosition">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MINMAXINFO.ptMinTrackSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MINMAXINFO.ptMaxTrackSize">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCT.pt_x">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCT.pt_y">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCT.hWnd">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCT.wHitTestCode">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCT.dwExtraInfo">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCTEX">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCTEX.MOUSEHOOKSTRUCT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MOUSEHOOKSTRUCTEX.mouseData">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.MSG">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.hwnd">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.message">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.wParam">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.lParam">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.time">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.pt_x">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.MSG.pt_y">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.NCCALCSIZE_PARAMS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NCCALCSIZE_PARAMS.rgrc0">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NCCALCSIZE_PARAMS.rgrc1">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NCCALCSIZE_PARAMS.rgrc2">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NCCALCSIZE_PARAMS.lppos">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.cbSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iBorderWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iScrollWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iScrollHeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iCaptionWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iCaptionHeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.lfCaptionFont">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iSmCaptionWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iSmCaptionHeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.lfSmCaptionFont">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iMenuWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.iMenuHeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.lfMenuFont">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.lfStatusFont">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.NONCLIENTMETRICS.lfMessageFont">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.hdc">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.fErase">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.rcPaint_left">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.rcPaint_top">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.rcPaint_right">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.rcPaint_bottom">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.fRestore">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.fIncUpdate">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved1">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved2">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved3">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved4">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved5">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved6">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved7">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.PAINTSTRUCT.reserved8">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.POINT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.POINT.x">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.POINT.y">
     </member>
     <member name="T:VitNX.Functions.Windows.Win32.Enums.RECT">
     </member>
@@ -1652,6 +2992,164 @@ The enums for imported functions.</summary>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.RECT.Right">
     </member>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.RECT.Bottom">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.cbSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.rcScrollBar">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.dxyLineButton">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.xyThumbTop">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.xyThumbBottom">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.reserved">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLBARINFO.rgstate">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.cbSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.fMask">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.nMin">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.nMax">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.nPage">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.nPos">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SCROLLINFO.nTrackPos">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.SIZE">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SIZE.cx">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.SIZE.cy">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.TBBUTTON">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.iBitmap">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.idCommand">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.fsState">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.fsStyle">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.bReserved">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.dwData">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TBBUTTON.iString">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmHeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmAscent">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmDescent">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmInternalLeading">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmExternalLeading">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmAveCharWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmMaxCharWidth">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmWeight">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmOverhang">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmDigitizedAspectX">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmDigitizedAspectY">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmFirstChar">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmLastChar">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmDefaultChar">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmBreakChar">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmItalic">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmUnderlined">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmStruckOut">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmPitchAndFamily">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TEXTMETRIC.tmCharSet">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.THEMESIZE">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.THEMESIZE.TS_MIN">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.THEMESIZE.TS_TRUE">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.THEMESIZE.TS_DRAW">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.TRACKMOUSEEVENT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TRACKMOUSEEVENT.cbSize">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TRACKMOUSEEVENT.dwFlags">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TRACKMOUSEEVENT.hwndTrack">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.TRACKMOUSEEVENT.dwHoverTime">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT.length">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT.flags">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT.showCmd">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT.ptMinPosition">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT.ptMaxPosition">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPLACEMENT.rcNormalPosition">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.hwnd">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.hwndInsertAfter">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.x">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.y">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.cx">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.cy">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.WINDOWPOS.flags">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.XFORM">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.XFORM.eM11">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.XFORM.eM12">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.XFORM.eM21">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.XFORM.eM22">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.XFORM.eDx">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.XFORM.eDy">
     </member>
     <member name="T:VitNX.Functions.Windows.Win32.Enums.HWND">
     </member>
@@ -1694,6 +3192,14 @@ The enums for imported functions.</summary>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.SetWindowPosFlags.SWP_NOZORDER">
     </member>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.SetWindowPosFlags.SWP_SHOWWINDOW">
+    </member>
+    <member name="T:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS.HIDE_THIS_WINDOW">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS">
+    </member>
+    <member name="F:VitNX.Functions.Windows.Win32.Enums.KEYBOARD_PRESETS.SHOW_ALL_WINDOWS">
     </member>
     <member name="T:VitNX.Functions.Windows.Win32.Enums.SpecialWindowHandles">
     </member>
@@ -1913,49 +3419,103 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX.Functions.Windows.Win32.Enums.TASKBAR_STATES.Paused">
     </member>
-    <member name="T:VitNX.Functions.Windows.Win32.StandaloneImportFunctions">
-      <summary>
-Functions that use WinAPI and can be built into your applications without writing extra code.</summary>
+    <member name="N:VitNX.Functions.Windows.WindowSAndControls">
     </member>
-    <member name="M:VitNX.Functions.Windows.Win32.StandaloneImportFunctions.CheckDebugger">
-      <summary>
-Checks for the debuggers.</summary>
-      <returns>
-A bool.</returns>
+    <member name="T:VitNX.Functions.Windows.WindowSAndControls.WindowS">
     </member>
-    <member name="N:VitNX.Functions.Windows">
-    </member>
-    <member name="T:VitNX.Functions.Windows.WindowS">
-    </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.MinimizeAllWindows">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MinimizeAllWindows">
       <summary>
 Minimizes the all windows.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.MaximizeAllWindows">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MaximizeAllWindows">
       <summary>
 Maximizes the all windows.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.HideConsoleWindow">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.HideConsoleWindow">
       <summary>
 Hides the console window.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.WindowToLowerRightCorner(System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.WindowToLowerRightCorner(System.IntPtr)">
       <summary>
 Sets the window to the lower right corner.</summary>
       <param name="Handler">
 The handler.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark(System.IntPtr)">
       <summary>
 Applying a native dark window title for the application if it runs on Windows 10 or higher..</summary>
       <param name="Handler">
 The handler.</param>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowS.SetWindowsElevenStyleForWinForm(System.IntPtr)">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.SetWindowsElevenStyleForWinForm(System.IntPtr)">
       <summary>
 Applying Windows 11 roundings to a window(s).</summary>
       <param name="Handler">
 The handler.</param>
+    </member>
+    <member name="T:VitNX.Functions.Windows.WindowSAndControls.Controls">
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.RemoveFocus">
+      <summary>
+Removing the focus from the element/control from which the function is called.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.VolumeOnFocus(System.Boolean)">
+      <summary>
+Enable/disable sound (nasty) when focusing on an item/control..</summary>
+      <param name="off">
+If true, off.</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.SetNativeThemeForControls(System.IntPtr,System.String)">
+      <summary>
+Sets the native Windows System theme for controls.</summary>
+      <param name="handle">
+The handle.</param>
+      <param name="themeMode">
+The theme mode.</param>
+    </member>
+    <member name="N:VitNX.UI.Console">
+    </member>
+    <member name="T:VitNX.UI.Console.ProgressBar">
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.#ctor">
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.Report(System.Double)">
+      <param name="value">
+</param>
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.SetColor(System.ConsoleColor)">
+      <summary>
+Sets the color.</summary>
+      <param name="consoleColor">
+The console color.</param>
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.SetText(System.String)">
+      <summary>
+Sets the text.</summary>
+      <param name="work1">
+The text.</param>
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.NotUsed(System.Boolean)">
+      <summary>
+Stop this task or not use console progressbar.</summary>
+      <param name="stopper">
+The bool value.</param>
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.Dispose">
+    </member>
+    <member name="T:VitNX.UI.Console.Text">
+      <summary>
+The tools for work with console UI.</summary>
+    </member>
+    <member name="M:VitNX.UI.Console.Text.Writeln(System.String,System.Drawing.Color,System.Drawing.Color)">
+      <summary>
+Writeln text with the colors.</summary>
+      <param name="text">
+The text.</param>
+      <param name="textColor">
+The text color.</param>
+      <param name="backgroundColor">
+The background color.</param>
     </member>
     <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Collections">
     </member>
@@ -3231,10 +4791,6 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
-      <param name="e">
-</param>
-    </member>
     <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32">
     </member>
     <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Win32.ControlScrollFilter">
@@ -3544,28 +5100,6 @@ true if managed resources should be disposed; otherwise, false.</param>
 </param>
     </member>
     <member name="N:VitNX.UI.OtherControls">
-    </member>
-    <member name="T:VitNX.UI.OtherControls.ConsoleProgressBar">
-    </member>
-    <member name="M:VitNX.UI.OtherControls.ConsoleProgressBar.#ctor">
-    </member>
-    <member name="M:VitNX.UI.OtherControls.ConsoleProgressBar.Report(System.Double)">
-      <param name="value">
-</param>
-    </member>
-    <member name="M:VitNX.UI.OtherControls.ConsoleProgressBar.SetColor(System.ConsoleColor)">
-      <param name="my_pb">
-</param>
-    </member>
-    <member name="M:VitNX.UI.OtherControls.ConsoleProgressBar.SetText(System.String)">
-      <param name="work1">
-</param>
-    </member>
-    <member name="M:VitNX.UI.OtherControls.ConsoleProgressBar.NotUsed(System.Boolean)">
-      <param name="pbd">
-</param>
-    </member>
-    <member name="M:VitNX.UI.OtherControls.ConsoleProgressBar.Dispose">
     </member>
     <member name="T:VitNX.UI.OtherControls.FontAwesome4">
     </member>
@@ -5403,7 +6937,7 @@ Pause time in milliseconds.</param>
     </member>
     <member name="M:VitNX.UI.OtherControls.NotificationForm.Dispose(System.Boolean)">
       <summary>
-/// Clean up any resources being used. ///</summary>
+Clean up any resources being used.</summary>
       <param name="disposing">
 true if managed resources should be disposed; otherwise, false.</param>
     </member>

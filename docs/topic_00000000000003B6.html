@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ConsoleProgressBar.SetText Method</title>
+	<title>VitNX_RadioButton.OnMouseUp Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ConsoleProgressBar.SetText Method</h1>
+		<h1 class="title">VitNX_RadioButton.OnMouseUp Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mouseup">MouseUp</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub SetText( _&nbsp;<br />   ByVal <i>work1</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnMouseUp( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetText(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>work1</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseUp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +191,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="work1" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			work1
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
@@ -280,10 +281,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void SetText(string work1)
- {
-     work = work1;
- }
+protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+
+            if (_spacePressed)
+                return;
+
+            SetControlState(VitNX_ControlState.Normal);
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -345,11 +351,11 @@ public void SetText(string work1)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003B2.html">ConsoleProgressBar Class</a><br />
+			<a href="topic_00000000000003B2.html">VitNX_RadioButton Class</a><br />
 
 
 
-<a href="topic_00000000000003B1.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -367,11 +373,7 @@ public void SetText(string work1)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

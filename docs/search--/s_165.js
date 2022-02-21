@@ -1,1 +1,1 @@
-search_result['165']=["topic_0000000000000068.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];
+search_result['165']=["topic_0000000000000069.html","Monitor.GetAll Method","Gets the all."];

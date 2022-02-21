@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000713.html"],['285',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000EA.html"],['286',"Constants Class","topic_000000000000011D.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['294',"VitNX.Functions.Windows.Win32 Namespace","topic_00000000000000FC.html"],['569',"Import Class","topic_00000000000000FD.html"],['571',"Methods","topic_00000000000000FD_methods--.html"],['611',"EndPaint Method","topic_000000000000011D.html"]];

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ControlScrollFilter.PreFilterMessage Method</title>
+	<title>VitNX_ComboBox.OnTabIndexChanged Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ControlScrollFilter.PreFilterMessage Method</h1>
+		<h1 class="title">VitNX_ComboBox.OnTabIndexChanged Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000366.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32</a>
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.tabindexchanged">TabIndexChanged</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function PreFilterMessage( _&nbsp;<br />   ByRef <i>m</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> Implements  _&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnTabIndexChanged( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> _&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PreFilterMessage(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnTabIndexChanged(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,30 +191,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="m" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			m
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	
-
-	<h4 class="subHeading">
-		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a>
-<br />
 
 
 
@@ -288,18 +281,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public bool PreFilterMessage(ref Message m)
+protected override void OnTabIndexChanged(EventArgs e)
         {
-            switch (m.Msg)
-            {
-                case (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEWHEEL:
-                case (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEHWHEEL:
-                    var hControlUnderMouse = Functions.Windows.Win32.Import.WindowFromPoint(new Point((int)m.LParam));
-                    if (hControlUnderMouse == m.HWnd) { return false; }
-                    Functions.Windows.Win32.Import.SendMessage(hControlUnderMouse, (uint)m.Msg, m.WParam, m.LParam);
-                    return true;
-            }
-            return false;
+            base.OnTabIndexChanged(e);
+            Invalidate();
         }
 					</pre>			
 				</div>
@@ -362,11 +347,11 @@ public bool PreFilterMessage(ref Message m)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000367.html">ControlScrollFilter Class</a><br />
+			<a href="topic_0000000000000364.html">VitNX_ComboBox Class</a><br />
 
 
 
-<a href="topic_0000000000000366.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32 Namespace</a><br />
+<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			
@@ -384,11 +369,7 @@ public bool PreFilterMessage(ref Message m)
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

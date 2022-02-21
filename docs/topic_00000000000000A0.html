@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Keyboard.HideVirtualKeyboard Method</title>
+	<title>Processes.CheckDebugger Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Keyboard.HideVirtualKeyboard Method</h1>
+		<h1 class="title">Processes.CheckDebugger Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Hides the virtual keyboard.</summary-info>
+        <summary-info>Checks the debugger for your app.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function HideVirtualKeyboard() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Shared Function CheckDebugger( _&nbsp;<br />   ByVal <i>currentProcess</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> HideVirtualKeyboard()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CheckDebugger(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> <i>currentProcess</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,6 +190,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="currentProcess" class="parameterList">
+	<dt>
+		<span class="parameter">
+			currentProcess
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> 
+	</dd>
+</dl>
+<p>
+	The current process. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
@@ -272,13 +288,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool HideVirtualKeyboard()
+public static bool CheckDebugger(Process currentProcess)
  {
-     Processes.Kill(&quot;osk.exe&quot;);
-     List&lt;string&gt; processes = Processes.GetList();
-     foreach (string process in processes)
-         return process == &quot;osk&quot; ? false : true;
-     return false;
+     bool isDebuggerPresent = false;
+     try
+     {
+         Import.CheckRemoteDebuggerPresent(currentProcess.Handle, ref
+             isDebuggerPresent);
+         return isDebuggerPresent;
+     }
+     catch { return isDebuggerPresent; }
  }
 					</pre>			
 				</div>
@@ -341,11 +360,11 @@ public static bool HideVirtualKeyboard()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000009E.html">Keyboard Class</a><br />
+			<a href="topic_0000000000000095.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000092.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			
@@ -363,11 +382,7 @@ public static bool HideVirtualKeyboard()
 			</div>
 
 			</div>
-      <div id="footer">
-	   <div id="footer-container">
-      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

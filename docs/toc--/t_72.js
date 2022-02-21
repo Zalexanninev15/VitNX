@@ -1,1 +1,1 @@
-c['72']=[['73',"GetFirmwareType Method","topic_0000000000000042.html",0]];
+c['72']=[['73',"Methods","topic_000000000000000B_methods--.html",1],['88',"Fields","topic_000000000000000B_vars--.html",1]];

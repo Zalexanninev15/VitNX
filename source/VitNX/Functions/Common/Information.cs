@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Windows.Forms;
@@ -77,7 +76,7 @@ namespace VitNX.Functions.Common.Information
         /// Gets the Windows product name from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsProductNameFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", 
+        public static string GetWindowsProductNameFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "ProductName", "");
 
         /// <summary>
@@ -91,7 +90,7 @@ namespace VitNX.Functions.Common.Information
         /// Gets the windows release id from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsReleaseIdFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", 
+        public static string GetWindowsReleaseIdFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "ReleaseId", "");
 
         /// <summary>
@@ -249,7 +248,7 @@ namespace VitNX.Functions.Common.Information
                 toGPU += obj["Name"].ToString() + "/";
                 toGPU += obj["Status"].ToString() + "/";
                 toGPU += obj["DeviceID"].ToString() + "/";
-                toGPU += Text.Work.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"])) + "/";
+                toGPU += Data.Text.SizeSuffix((long)Convert.ToDouble(obj["AdapterRAM"])) + "/";
                 toGPU += obj["AdapterDACType"].ToString() + "/";
                 toGPU += obj["Monochrome"].ToString() + "/";
                 toGPU += obj["InstalledDisplayDrivers"].ToString() + "/";
@@ -274,7 +273,6 @@ namespace VitNX.Functions.Common.Information
         /// </summary>
         /// <returns>An array of string.</returns>
         public static long[] WindowsDisk() => SetCWindowsSize();
-
 
         /// <summary>
         /// Set (get) values for Disk's characteristics (size of Windows).
@@ -359,7 +357,7 @@ namespace VitNX.Functions.Common.Information
         /// <returns>A MemoryStream.</returns>
         public static MemoryStream CaptureScreenToMemoryStream()
         {
-            Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 
+            Bitmap BM = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
                 Screen.PrimaryScreen.Bounds.Height);
             Graphics GH = Graphics.FromImage(BM);
             GH.CopyFromScreen(0, 0, 0, 0, BM.Size);
@@ -397,7 +395,8 @@ namespace VitNX.Functions.Common.Information
         /// </summary>
         /// <param name="filename">The filename.</param>
         /// <param name="format">The format.</param>
-        public static void CaptureScreenToFile(string filename, ImageFormat format)
+        public static void CaptureScreenToFile(string filename,
+            ImageFormat format)
         {
             Image img = CaptureScreen();
             img.Save(filename, format);
@@ -416,9 +415,16 @@ namespace VitNX.Functions.Common.Information
             int width = windowRect.Right - windowRect.Left;
             int height = windowRect.Bottom - windowRect.Top;
             IntPtr hdcDest = Import.CreateCompatibleDC(hdcSrc);
-            IntPtr hBitmap = Import.CreateCompatibleBitmap(hdcSrc, width, height);
-            IntPtr hOld = Import.SelectObject(hdcDest, hBitmap);
-            Import.BitBlt(hdcDest, 0, 0, width, height, hdcSrc, 0, 0, Constants.SRCCOPY);
+            IntPtr hBitmap = Import.CreateCompatibleBitmap(hdcSrc,
+                width,
+                height);
+            IntPtr hOld = Import.SelectObject(hdcDest,
+                hBitmap);
+            Import.BitBlt(hdcDest, 0, 0,
+                width,
+                height, hdcSrc,
+                0, 0,
+                Constants.SRCCOPY);
             Import.SelectObject(hdcDest, hOld);
             Import.DeleteDC(hdcDest);
             Import.ReleaseDC(handle, hdcSrc);
@@ -450,7 +456,8 @@ namespace VitNX.Functions.Common.Information
         {
             uint width = 0;
             uint height = 0;
-            foreach (var desktopMonitor in new ManagementObjectSearcher("ROOT\\CIMV2", "SELECT * FROM Win32_DesktopMonitor").Get())
+            foreach (var desktopMonitor in new ManagementObjectSearcher("ROOT\\CIMV2",
+                "SELECT * FROM Win32_DesktopMonitor").Get())
             {
                 width = (uint)desktopMonitor["ScreenWidth"];
                 height = (uint)desktopMonitor["ScreenHeight"];
@@ -475,7 +482,6 @@ namespace VitNX.Functions.Common.Information
                     Functions.Windows.Controllers.Monitor.FriendlyName(screen) + ";" +
                     screen.Primary.ToString();
                 screensall.Add(screenString);
-                screenString = string.Empty;
             }
             return screensall;
         }
@@ -492,7 +498,23 @@ namespace VitNX.Functions.Common.Information
         /// <returns>A string.</returns>
         public static string GetFirmwareType()
         {
-            return Processes.Execute("cmd", "/C echo %firmware_type%");
+            return Processes.Execute("cmd",
+                "/C echo %firmware_type%");
+        }
+    }
+
+    /// <summary>
+    /// Work with informations of COM port.
+    /// </summary>
+    public class ComPort
+    {
+        /// <summary>
+        /// Gets all COM ports (devices).
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] GetAllDevices()
+        {
+            return System.IO.Ports.SerialPort.GetPortNames();
         }
     }
 

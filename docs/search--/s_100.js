@@ -1,1 +1,1 @@
-search_result['100']=["topic_0000000000000041.html","Motherboard Class","Work with informations of Motherboard."];
+search_result['100']=["topic_0000000000000041.html","FileSystem.JoinFiles Method","Joins the files."];

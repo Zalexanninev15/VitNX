@@ -1,1 +1,1 @@
-search_result['1503']=["topic_0000000000000707.html","NotificationPosition Enumeration","/// Место отображения уведомлений на экране.\r\n    ///"];
+search_result['1503']=["topic_0000000000000424_vars--.html","DockContentEventArgs Fields",""];

@@ -1,1 +1,1 @@
-search_result['201']=["topic_000000000000007D.html","Config.GetPublicIP Method","Gets the public IP of PC."];
+search_result['201']=["topic_0000000000000079_props--.html","IniSettings32 Properties",""];
