@@ -45,6 +45,20 @@ namespace VitNX.Functions.Common
         }
 
         /// <summary>
+        /// Converts the color to color for console.
+        /// </summary>
+        /// <param name="color">The color.</param>
+        /// <returns></returns>
+        public static ConsoleColor ConvertColorToConsoleColor(Color color)
+        {
+            int index = (color.R > 128 | color.G > 128 | color.B > 128) ? 8 : 0;
+            index |= (color.R > 64) ? 4 : 0;
+            index |= (color.G > 64) ? 2 : 0;
+            index |= (color.B > 64) ? 1 : 0;
+            return (ConsoleColor)index;
+        }
+
+        /// <summary>
         /// Loads the custom font from file.
         /// </summary>
         /// <param name="targetFile">The target file.</param>

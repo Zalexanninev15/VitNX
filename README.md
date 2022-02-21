@@ -15,7 +15,7 @@
 
 ## Description
 
-Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.5+). 
+Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.5+). Planned version for .NET Core 3.1 /5/6
 
 ## Features
 

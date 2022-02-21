@@ -21,6 +21,7 @@ namespace VitNX.UI.ControlsV1.BasedOnDarkUI.Docking
         public VitNX_DockArea DockArea { get; private set; }
         public VitNX_DockContent VisibleContent { get; private set; }
         public int Order { get; set; }
+
         public int ContentCount
         { get { return _contents.Count; } }
 

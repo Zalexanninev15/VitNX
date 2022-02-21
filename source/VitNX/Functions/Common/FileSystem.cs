@@ -86,7 +86,7 @@ namespace VitNX.Functions.Common
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="targetFile">The target file.</param>
-        /// <returns>An array of string.</returns>
+        /// <returns>An array of string (File name and File path).</returns>
         public static string[] WriteTextToFileUTF8(string text,
             string targetFile)
         {

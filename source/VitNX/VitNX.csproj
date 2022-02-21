@@ -252,7 +252,6 @@
     <Compile Include="Functions\Windows\Apps.cs" />
     <Compile Include="Functions\Common\Web.cs" />
     <Compile Include="Functions\Windows\Win32.cs" />
-    <Compile Include="UI\OtherControls\ConsoleProgressBar.cs" />
     <Compile Include="Functions\Windows\Controllers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\ControlsV1\BasedOnDarkUI\Renderers\VitNX_MenuRenderer.cs" />
@@ -269,6 +268,8 @@
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\OtherControls\Notification\NotifySettings.cs" />
+    <Compile Include="UI\Console\ProgressBar.cs" />
+    <Compile Include="UI\Console\Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -460,6 +461,7 @@
   <ItemGroup>
     <None Include="Resources\cancelN.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
