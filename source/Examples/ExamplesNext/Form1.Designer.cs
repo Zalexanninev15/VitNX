@@ -84,7 +84,7 @@
             this.vitNX2_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vitNX2_Button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vitNX2_Button2.ForeColor = System.Drawing.Color.Black;
-            this.vitNX2_Button2.Location = new System.Drawing.Point(198, 143);
+            this.vitNX2_Button2.Location = new System.Drawing.Point(131, 144);
             this.vitNX2_Button2.Name = "vitNX2_Button2";
             this.vitNX2_Button2.Size = new System.Drawing.Size(139, 45);
             this.vitNX2_Button2.TabIndex = 10;
