@@ -56,6 +56,7 @@
     <Compile Include="Functions\Common\PowerControl.cs" />
     <Compile Include="Functions\Common\SettingsEditor32.cs" />
     <Compile Include="Functions\Common\Data.cs" />
+    <Compile Include="UI\Console\ProgressBar\Type2.cs" />
     <Compile Include="UI\OtherControls\FontAwesome.cs" />
     <Compile Include="Functions\Windows\WindowSAndControls.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
@@ -269,7 +270,7 @@
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\OtherControls\Notification\NotifySettings.cs" />
-    <Compile Include="UI\Console\ProgressBar.cs" />
+    <Compile Include="UI\Console\ProgressBar\Type1.cs" />
     <Compile Include="UI\Console\Text.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -2,9 +2,12 @@
 using System.Text;
 using System.Threading;
 
-namespace VitNX.UI.Console
+namespace VitNX.UI.Console.ProgressBar
 {
-    public class ProgressBar : IDisposable, IProgress<double>
+    /// <summary>
+    /// Console ProgressBar type 1.
+    /// </summary>
+    public class Type1 : IDisposable, IProgress<double>
     {
         private const int blockCount = 10;
         private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);
@@ -18,7 +21,7 @@ namespace VitNX.UI.Console
         private int animationIndex = 0;
         private ConsoleColor pb = new ConsoleColor();
 
-        public ProgressBar()
+        public Type1()
         {
             timer = new Timer(TimerHandler);
             if (!System.Console.IsOutputRedirected)
