@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['185',"VitNX.Functions.Windows.Controllers Namespace","topic_00000000000000A5.html"],['287',"VolumeControl Class","topic_00000000000000A9.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['179',"VitNX.Functions.Windows.Apps Namespace","topic_00000000000000A0.html"],['185',"Processes Class","topic_00000000000000A1.html"],['186',"Methods","topic_00000000000000A1_methods--.html"],['193',"Kill Method","topic_00000000000000A9.html"]];

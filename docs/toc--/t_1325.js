@@ -1,1 +1,1 @@
-c['1325']=[['1326',"StackWith(this Bitmap, Bitmap) Method","topic_0000000000000829.html",0],['1327',"StackWith(this Bitmap, Properties) Method","topic_0000000000000828.html",0]];
+c['1325']=[['1326',"GetImage(Properties) Method","topic_000000000000051E.html",0],['1327',"GetImage(Type, Properties) Method","topic_000000000000051D.html",0],['1328',"GetImage(string, Properties) Method","topic_000000000000051C.html",0]];

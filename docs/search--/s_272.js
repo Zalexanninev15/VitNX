@@ -1,1 +1,1 @@
-search_result['272']=["topic_00000000000000A6_methods--.html","TaskBarProgressBar Methods",""];
+search_result['272']=["topic_00000000000000A9.html","Processes.Kill Method","Kills the process."];

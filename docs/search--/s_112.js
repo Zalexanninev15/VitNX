@@ -1,1 +1,1 @@
-search_result['112']=["topic_0000000000000048.html","Windows.GetWindowsVersion Method","Gets the Windows version."];
+search_result['112']=["topic_000000000000004D.html","VitNX.Functions.Common.Information Namespace",""];

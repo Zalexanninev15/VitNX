@@ -1,1 +1,1 @@
-search_result['1738']=["topic_00000000000004C3.html","DockResizeFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];
+search_result['1738']=["topic_00000000000004C5.html","VitNX_ToolStripRenderer.OnRenderDropDownButtonBackground Method","Raises the RenderDropDownButtonBackground event."];

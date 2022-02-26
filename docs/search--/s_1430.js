@@ -1,1 +1,1 @@
-search_result['1430']=["topic_00000000000003F7_attached_props--.html","VitNX_Title Attached Properties",""];
+search_result['1430']=["topic_00000000000003FB.html","VitNX_SectionPanel.OnEnter Method","Raises the Enter event."];

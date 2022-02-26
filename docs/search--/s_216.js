@@ -1,1 +1,1 @@
-search_result['216']=["topic_0000000000000082.html","DataFromSites.DownloadString Method","Downloads the string from site/server."];
+search_result['216']=["topic_0000000000000086.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];

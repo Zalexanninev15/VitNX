@@ -1,1 +1,1 @@
-search_result['141']=["topic_000000000000005A_attached_props--.html","Disk Attached Properties",""];
+search_result['141']=["topic_0000000000000060.html","Cpu.Characteristics Method","Gets all characteristics."];

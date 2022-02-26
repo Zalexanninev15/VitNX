@@ -1,1 +1,1 @@
-search_result['1584']=["topic_000000000000045A.html","VitNX_DockRegion Class",""];
+search_result['1584']=["topic_0000000000000455.html","VitNX_DockGroup.SetVisibleContent Method",""];

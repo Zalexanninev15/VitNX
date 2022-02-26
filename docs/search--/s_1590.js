@@ -1,1 +1,1 @@
-search_result['1590']=["topic_000000000000045B.html","VitNX_DockRegion Constructor",""];
+search_result['1590']=["topic_000000000000045B.html","VitNX_DockGroup.Redraw Method",""];

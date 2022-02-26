@@ -1,1 +1,1 @@
-search_result['1385']=["topic_00000000000003E2_events--.html","VitNX_ScrollView Events",""];
+search_result['1385']=["topic_00000000000003DB.html","VitNX_ScrollBar.OnPaint Method","Raises the Paint event."];

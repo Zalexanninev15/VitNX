@@ -1,1 +1,1 @@
-search_result['94']=["topic_000000000000003B.html","FileSystem.CopyFolder Method","Copies the folder."];
+search_result['94']=["topic_000000000000003B.html","FileSystem.GetItemsListInFolder Method","Gets the items list in folder."];

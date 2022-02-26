@@ -1,1 +1,1 @@
-search_result['40']=["topic_0000000000000019.html","Text.FixDeEncoding Method","Fixes the de-encoding."];
+search_result['40']=["topic_0000000000000019.html","Text.ReplacerMonster Method","Replacers the monster."];

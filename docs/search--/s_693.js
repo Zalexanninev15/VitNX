@@ -1,1 +1,1 @@
-search_result['693']=["topic_00000000000001C2_props--.html","SWP Properties",""];
+search_result['693']=["topic_00000000000001BF.html","Constants Class","The constants for imported functions."];

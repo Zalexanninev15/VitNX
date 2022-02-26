@@ -1,1 +1,1 @@
-search_result['1204']=["topic_000000000000036A.html","VitNX_ComboBox.OnLostFocus Method","Raises the LostFocus event."];
+search_result['1204']=["topic_0000000000000367.html","VitNX_ButtonStyle Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['169']=["topic_000000000000006A_methods--.html","Motherboard Methods",""];
+search_result['169']=["topic_000000000000006D.html","Monitor.CaptureScreen Method","Captures the screen."];

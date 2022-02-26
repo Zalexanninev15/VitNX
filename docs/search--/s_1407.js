@@ -1,1 +1,1 @@
-search_result['1407']=["topic_00000000000003EE_events--.html","VitNX_Separator Events",""];
+search_result['1407']=["topic_00000000000003EC.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];

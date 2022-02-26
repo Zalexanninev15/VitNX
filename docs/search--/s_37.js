@@ -1,1 +1,1 @@
-search_result['37']=["topic_0000000000000016.html","GenerateGuid Field","Generate the GUID."];
+search_result['37']=["topic_0000000000000016.html","Text.DateAsMonth Method","Converts the date to month."];

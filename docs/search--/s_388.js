@@ -1,1 +1,1 @@
-search_result['388']=["topic_00000000000000D9_methods--.html","DISPLAYCONFIG_TARGET_MODE Methods",""];
+search_result['388']=["topic_00000000000000DA_vars--.html","DISPLAYCONFIG_PATH_INFO Fields",""];

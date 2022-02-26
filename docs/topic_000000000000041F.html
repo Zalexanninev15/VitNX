@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_TreeView.CanMoveNodes Method</title>
+	<title>VitNX_TreeView.OnMouseMove Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_TreeView.CanMoveNodes Method</h1>
+		<h1 class="title">VitNX_TreeView.OnMouseMove Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
 
 
 
@@ -105,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overridable Function CanMoveNodes( _&nbsp;<br />   ByVal <i>dragNodes</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>(Of <a target="_top" href="topic_00000000000003FC.html" onclick="this.target='';return true;">VitNX_TreeNode</a>), _&nbsp;<br />   ByVal <i>dropNode</i> As <a target="_top" href="topic_00000000000003FC.html" onclick="this.target='';return true;">VitNX_TreeNode</a>, _&nbsp;<br />   Optional ByVal <i>isMoving</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> = false _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -175,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected virtual <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CanMoveNodes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_00000000000003FC.html" onclick="this.target='';return true;">VitNX_TreeNode</a>&gt; <i>dragNodes</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000003FC.html" onclick="this.target='';return true;">VitNX_TreeNode</a> <i>dropNode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>isMoving</i> = false&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,52 +152,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="dragNodes" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dragNodes
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_00000000000003FC.html" onclick="this.target='';return true;">VitNX_TreeNode</a>&gt; 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="dropNode" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dropNode
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000003FC.html" onclick="this.target='';return true;">VitNX_TreeNode</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="isMoving" class="parameterList">
-	<dt>
-		<span class="parameter">
-			isMoving
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	</dd>
-</dl>
-<p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
 </p>
 
 <p />
-
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	
 
 
 
@@ -310,45 +241,39 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected virtual bool CanMoveNodes(List&lt;VitNX_TreeNode&gt; dragNodes, VitNX_TreeNode dropNode, bool isMoving = false)
+protected override void OnMouseMove(MouseEventArgs e)
         {
-            if (dropNode == null)
-                return false;
-
-            foreach (var node in dragNodes)
+            if (_provisionalDragging)
             {
-                if (node == dropNode)
+                if (OffsetMousePosition != _dragPos)
                 {
-                    if (isMoving)
-                        VitNX_MessageBox.ShowError($&quot;Cannot move {node.Text}. The destination folder is the same as the source folder.&quot;, Application.ProductName);
-
-                    return false;
-                }
-
-                if (node.ParentNode != null &amp;&amp; node.ParentNode == dropNode)
-                {
-                    if (isMoving)
-                        VitNX_MessageBox.ShowError($&quot;Cannot move {node.Text}. The destination folder is the same as the source folder.&quot;, Application.ProductName);
-
-                    return false;
-                }
-
-                var parentNode = dropNode.ParentNode;
-                while (parentNode != null)
-                {
-                    if (node == parentNode)
-                    {
-                        if (isMoving)
-                            VitNX_MessageBox.ShowError($&quot;Cannot move {node.Text}. The destination folder is a subfolder of the source folder.&quot;, Application.ProductName);
-
-                        return false;
-                    }
-
-                    parentNode = parentNode.ParentNode;
+                    StartDrag();
+                    HandleDrag();
+                    return;
                 }
             }
 
-            return true;
+            if (IsDragging)
+            {
+                if (_dropNode != null)
+                {
+                    var rect = GetNodeFullRowArea(_dropNode);
+                    if (!rect.Contains(OffsetMousePosition))
+                    {
+                        _dropNode = null;
+                        Invalidate();
+                    }
+                }
+            }
+
+            CheckHover();
+
+            if (IsDragging)
+            {
+                HandleDrag();
+            }
+
+            base.OnMouseMove(e);
         }
 					</pre>			
 				</div>
@@ -411,11 +336,11 @@ protected virtual bool CanMoveNodes(List&lt;VitNX_TreeNode&gt; dragNodes, VitNX_
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000407.html">VitNX_TreeView Class</a><br />
+			<a href="topic_0000000000000419.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			

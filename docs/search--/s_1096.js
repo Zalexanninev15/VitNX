@@ -1,1 +1,1 @@
-search_result['1096']=["topic_000000000000032A_props--.html","Text Properties",""];
+search_result['1096']=["topic_000000000000032C.html","WindowS.WindowToLowerRightCorner Method","Sets the window to the lower right corner."];

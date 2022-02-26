@@ -1,1 +1,1 @@
-c['1214']=[['1215',"ControlScrollFilter Class","topic_00000000000004BB.html",1],['1218',"DockContentDragFilter Class","topic_00000000000004BD.html",1],['1223',"DockResizeFilter Class","topic_00000000000004C1.html",1]];
+c['1214']=[['1215',"Methods","topic_00000000000004B7_methods--.html",1]];

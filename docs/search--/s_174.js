@@ -1,1 +1,1 @@
-search_result['174']=["topic_000000000000006C_attached_props--.html","ComPort Attached Properties",""];
+search_result['174']=["topic_0000000000000072.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];

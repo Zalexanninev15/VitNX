@@ -1,1 +1,1 @@
-search_result['1596']=["topic_0000000000000461.html","VitNX_DockRegion.OnPaint Method","Raises the Paint event."];
+search_result['1596']=["topic_000000000000045E_methods--.html","VitNX_DockPanel Methods",""];

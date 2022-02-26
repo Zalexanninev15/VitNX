@@ -162,7 +162,7 @@
     <add key="VBdocman_SupportedNetCore"><![CDATA[]]></add>
     <add key="VBdocman_customVar3"><![CDATA[]]></add>
     <add key="VBdocman_unbreakSourceLines"><![CDATA[0]]></add>
-    <add key="VBdocman_supportedNetFramework"><![CDATA[4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8]]></add>
+    <add key="VBdocman_supportedNetFramework"><![CDATA[4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8]]></add>
     <add key="VBdocman_pageFooterText"><![CDATA[VitNX on <see href="https://github.com/Zalexanninev15/VitNX">GitHub</see>]]></add>
     <add key="VBdocman_comConstant"><![CDATA[-1]]></add>
     <add key="VBdocman_supportedOthers"><![CDATA[]]></add>
@@ -206,7 +206,7 @@
     </topics>
   </topic>
 </topics>]]></add>
-    <add key="VBdocman_generateVbSyntax"><![CDATA[-1]]></add>
+    <add key="VBdocman_generateVbSyntax"><![CDATA[0]]></add>
     <add key="VBdocman_generateFsharpSyntax"><![CDATA[0]]></add>
     <add key="VBdocman_comEventDecl"><![CDATA[-1]]></add>
     <add key="VBdocman_GenerateReportFile"><![CDATA[0]]></add>
@@ -222,5 +222,13 @@
     <add key="VBdocman_comModules_Icons...MenuIcons.Designer.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Icons...DropdownIcons.Designer.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Icons...DockIcons.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Config...Colors.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Extensions...BitmapExtensions.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Extensions...IEnumerableExtensions.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Forms...VitNX_Dialog.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Forms...VitNX_MessageBox.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV2...VitNX2_MessageBox...VitNX2_MessageBox_Form.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV2...VitNX2_TextBox.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...OtherControls...Notification...NotificationForm.Designer.cs"><![CDATA[Off]]></add>
   </appSettings>
 </configuration>

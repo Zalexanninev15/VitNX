@@ -1,1 +1,1 @@
-search_result['1097']=["topic_000000000000032A_vars--.html","Text Fields",""];
+search_result['1097']=["topic_000000000000032D.html","WindowS.SetWindowsTenAndHighStyleForWinFormTitleToDark Method","Applying a native dark window title for the application if it runs on Windows 10 or higher.."];

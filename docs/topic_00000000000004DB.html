@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_Button.OnPaint Method</title>
+	<title>VitNX_ProgressBarRounded.Dispose Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_Button.OnPaint Method</h1>
+		<h1 class="title">VitNX_ProgressBarRounded.Dispose Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004D4.html">VitNX.UI.ControlsV2</a>
+<a href="topic_00000000000004D3.html">VitNX.UI.ControlsV1</a>
 
 
 
@@ -89,8 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.buttonbase.onpaint">OnPaint</a> event.</summary-info>
-
 
 
 
@@ -106,44 +104,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>pevent</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pevent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">new public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Dispose()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,23 +149,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="pevent" class="parameterList">
-	<dt>
-		<span class="parameter">
-			pevent
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -281,41 +224,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs pevent)
+public new void Dispose()
  {
-     base.OnPaint(pevent);
-     Rectangle rectSurface = ClientRectangle;
-     Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
-     int smoothSize = 2;
-     if (borderSize &gt; 0)
-         smoothSize = borderSize;
-     if (borderRadius &gt; 2)
-     {
-         using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
-         using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-         using (Pen penSurface = new Pen(Parent.BackColor, smoothSize))
-         using (Pen penBorder = new Pen(borderColor, borderSize))
-         {
-             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-             Region = new Region(pathSurface);
-             pevent.Graphics.DrawPath(penSurface, pathSurface);
-             if (borderSize &gt;= 1)
-                 pevent.Graphics.DrawPath(penBorder, pathBorder);
-         }
-     }
-     else
-     {
-         pevent.Graphics.SmoothingMode = SmoothingMode.None;
-         Region = new Region(rectSurface);
-         if (borderSize &gt;= 1)
-         {
-             using (Pen penBorder = new Pen(borderColor, borderSize))
-             {
-                 penBorder.Alignment = PenAlignment.Inset;
-                 pevent.Graphics.DrawRectangle(penBorder, 0, 0, Width - 1, Height - 1);
-             }
-         }
-     }
+     _textColourBrush.Dispose();
+     _progressColourBrush.Dispose();
+     base.Dispose();
  }
 					</pre>			
 				</div>
@@ -378,11 +291,11 @@ protected override void OnPaint(PaintEventArgs pevent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004D9.html">VitNX2_Button Class</a><br />
+			<a href="topic_00000000000004D8.html">VitNX_ProgressBarRounded Class</a><br />
 
 
 
-<a href="topic_00000000000004D4.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000004D3.html">VitNX.UI.ControlsV1 Namespace</a><br />
 
 
 			

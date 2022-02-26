@@ -1,1 +1,1 @@
-search_result['515']=["topic_0000000000000128.html","Import.GetCurrentThreadId Method",""];
+search_result['515']=["topic_000000000000011D.html","Import.CreateCompatibleDC Method",""];

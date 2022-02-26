@@ -1,1 +1,1 @@
-search_result['1966']=["topic_000000000000084D.html","Warning Field",""];
+search_result['1966']=["topic_000000000000084A.html","Manager.Alert (String, NotificationType, Color, Image) Method","/// Display a new custom notification on the screen.\r\n\t\t///"];

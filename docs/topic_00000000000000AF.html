@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>STATask.Run&lt;TResult&gt; Method</title>
+	<title>Installed.GetList Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">STATask.Run&lt;TResult&gt; Method</h1>
+		<h1 class="title">Installed.GetList Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-
+        <summary-info>Gets the list.</summary-info>
 
 
 
@@ -105,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function Run(Of  _&nbsp;<br />   <i>TResult</i>)( _&nbsp;<br />   ByVal <i>function</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1">Func</a>(Of TResult) _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1">Task</a>(Of TResult)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -175,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TResult&gt; Run&lt;TResult&gt;(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1">Func</a>&lt;TResult&gt; <i>function</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetList()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -188,45 +150,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
-<h4 class="subHeading">
-	Type Parameters</h4><dl paramName="TResult" class="parameterList">
-	<dt>
-		<span class="parameter">
-			
-			TResult
-		</span>
-	</dt>
-	<dd>
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
-<p />
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="function" class="parameterList">
-	<dt>
-		<span class="parameter">
-			function
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-1">Func</a>&lt;TResult&gt; 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TResult&gt; 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
 	
-
 
 
 
@@ -300,17 +232,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Task&lt;TResult&gt; Run&lt;TResult&gt;(Func&lt;TResult&gt; function)
+public static string GetList()
  {
-     var tcs = new TaskCompletionSource&lt;TResult&gt;();
-     var thread = new Thread(() =&gt;
+     string toText = &quot;Installed apps:&quot;;
+     ManagementObjectSearcher searcher = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_Product&quot;);
+     ManagementObjectCollection information = searcher.Get();
+     foreach (ManagementObject app in information)
      {
-         try { tcs.SetResult(function()); }
-         catch (Exception e) { tcs.SetException(e); }
-     });
-     thread.SetApartmentState(ApartmentState.STA);
-     thread.Start();
-     return tcs.Task;
+         string toTextText = &quot;&quot;;
+         try
+         {
+             toTextText = GetPath(Convert.ToString(app[&quot;Name&quot;]));
+             if (toTextText == &quot;&quot;)
+                 toTextText = GetPath(Convert.ToString(app[&quot;IdentifyingNumber&quot;]));
+         }
+         catch { }
+         toText += ($&quot;\nName: {app[&quot;Name&quot;]} ({app[&quot;Caption&quot;]})&quot; +
+         $&quot;\nVersion: {app[&quot;Version&quot;]}&quot; +
+         $&quot;\nAuthor: {app[&quot;Vendor&quot;]}&quot; +
+         $&quot;\nInstall date: {app[&quot;InstallDate&quot;]}&quot; +
+         $&quot;\nInstall path: {toTextText}&quot;);
+     }
+     return toText;
  }
 					</pre>			
 				</div>
@@ -373,11 +316,11 @@ public static Task&lt;TResult&gt; Run&lt;TResult&gt;(Func&lt;TResult&gt; functio
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AE.html">STATask Class</a><br />
+			<a href="topic_00000000000000AE.html">Installed Class</a><br />
 
 
 
-<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			

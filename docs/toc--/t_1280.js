@@ -1,1 +1,1 @@
-c['1280']=[['1281',"Dispose Method","topic_0000000000000501_overloads--.html",1],['1283',"OnLoad Method","topic_00000000000004FF.html",0],['1284',"OnPaint Method","topic_0000000000000500.html",0],['1285',"OnResize Method","topic_00000000000004FE.html",0]];
+c['1280']=[['1281',"squaredWindowOnWin11 Field","topic_00000000000004F8.html",0]];

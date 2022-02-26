@@ -1,1 +1,1 @@
-search_result['116']=["topic_000000000000004C.html","Windows.GetWindowsProductNameFromREG Method","Gets the Windows product name from the Windows Registry."];
+search_result['116']=["topic_000000000000004E_methods--.html","Windows Methods",""];

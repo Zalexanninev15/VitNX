@@ -1,1 +1,1 @@
-search_result['579']=["topic_0000000000000163.html","Import.SetGraphicsMode Method",""];
+search_result['579']=["topic_000000000000015A.html","Import.MaskBlt Method",""];

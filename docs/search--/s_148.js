@@ -1,1 +1,1 @@
-search_result['148']=["topic_000000000000005D.html","Disk.GetAll Method","Gets the all (logical)."];
+search_result['148']=["topic_0000000000000063_props--.html","Gpu Properties",""];

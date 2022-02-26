@@ -1,1 +1,1 @@
-search_result['1726']=["topic_00000000000004BD_props--.html","DockContentDragFilter Properties",""];
+search_result['1726']=["topic_00000000000004BE.html","VitNX_MenuRenderer.OnRenderArrow Method","Raises the RenderArrow event."];

@@ -1,1 +1,1 @@
-c['1335']=[['1336',"Methods","topic_0000000000000831_methods--.html",1],['1342',"Fields","topic_0000000000000831_vars--.html",1]];
+c['1335']=[['1336',"AsIcon(this Properties) Method","topic_000000000000083A.html",0],['1337',"AsIcon(this Type, Properties) Method","topic_0000000000000839.html",0]];

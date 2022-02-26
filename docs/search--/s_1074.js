@@ -1,1 +1,1 @@
-search_result['1074']=["topic_000000000000031E_props--.html","Controls Properties",""];
+search_result['1074']=["topic_00000000000002F1.html","DISPLAYCONFIG_MODE_INFO_TYPE Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['1734']=["topic_00000000000004C1_methods--.html","DockResizeFilter Methods",""];
+search_result['1734']=["topic_00000000000004C1.html","VitNX_ToolStripRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

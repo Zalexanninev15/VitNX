@@ -1,1 +1,1 @@
-search_result['1678']=["topic_000000000000049B.html","VitNX_MessageBox.ShowInfo Method",""];
+search_result['1678']=["topic_0000000000000497.html","VitNX_DialogButton Enumeration",""];

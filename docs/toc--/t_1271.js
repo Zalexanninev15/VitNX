@@ -1,1 +1,1 @@
-c['1271']=[['1272',"OnPaint Method","topic_00000000000004F8.html",0],['1273',"OnResize Method","topic_00000000000004F7.html",0]];
+c['1271']=[['1272',"VitNX2_MessageBox_Form Constructor","topic_00000000000004FA_overloads--.html",1],['1278',"Methods","topic_00000000000004F7_methods--.html",1],['1280',"Fields","topic_00000000000004F7_vars--.html",1]];

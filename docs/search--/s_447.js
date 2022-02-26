@@ -1,1 +1,1 @@
-search_result['447']=["topic_00000000000000F0_props--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Properties",""];
+search_result['447']=["topic_00000000000000F4_methods--.html","DISPLAYCONFIG_MODE_INFO Methods",""];

@@ -1,1 +1,1 @@
-search_result['1648']=["topic_0000000000000486.html","VitNX_Dialog.Dispose Method","/// Clean up any resources being used.\r\n        ///"];
+search_result['1648']=["topic_0000000000000482_attached_props--.html","VitNX_ToolWindow Attached Properties",""];

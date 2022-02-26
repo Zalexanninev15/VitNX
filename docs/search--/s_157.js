@@ -1,1 +1,1 @@
-search_result['157']=["topic_0000000000000061.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];
+search_result['157']=["topic_0000000000000066.html","Disk.WindowsDisk Method","Gets Windows Disk characteristics."];

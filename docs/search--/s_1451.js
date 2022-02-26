@@ -1,1 +1,1 @@
-search_result['1451']=["topic_00000000000003FE.html","ItemsRemoved Event",""];
+search_result['1451']=["topic_0000000000000406.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

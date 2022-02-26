@@ -1,1 +1,1 @@
-search_result['521']=["topic_000000000000012E.html","Import.GetIconInfo Method",""];
+search_result['521']=["topic_0000000000000123.html","Import.DeleteDC Method",""];

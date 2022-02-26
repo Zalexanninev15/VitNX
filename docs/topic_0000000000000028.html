@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>EncrypterAndDecrypter.DecryptQryParam Method</title>
+	<title>EncryptAndDecrypt.XOR_Both Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">EncrypterAndDecrypter.DecryptQryParam Method</h1>
+		<h1 class="title">EncryptAndDecrypt.XOR_Both Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Decrypts the text with qry param.</summary-info>
-
+        <summary-info>XOR method (encrypt and decrypt).</summary-info>
 
 
 
@@ -106,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function DecryptQryParam( _&nbsp;<br />   ByVal <i>input</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> DecryptQryParam(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> XOR_Both(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>key</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="input" class="parameterList">
+	Parameters</h4><dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			input
+			text
 		</span>
 	</dt>
 	<dd>
@@ -202,7 +163,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The input. 
+	The text. 
+</p>
+<dl paramName="key" class="parameterList">
+	<dt>
+		<span class="parameter">
+			key
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	The key. 
 </p>
 
 <p />
@@ -214,7 +188,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		A string. 
 	</p>
 	
-
 
 
 
@@ -288,31 +261,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string DecryptQryParam(string input)
+public static string XOR_Both(string text, int key)
  {
-     input = input.Replace(&quot;~&quot;, &quot;+&quot;).Replace(&quot;^&quot;, &quot;/&quot;);
-     RijndaelManaged RijndaelCipher = new RijndaelManaged();
-     string DecryptedData = null;
-     try
+     string newText = string.Empty;
+     for (int i = 0; i &lt; text.Length; i++)
      {
-         byte[] EncryptedData = Convert.FromBase64String(input);
-         byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
-         PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
-         ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32),
-             SecretKey.GetBytes(16));
-         MemoryStream memoryStream = new MemoryStream(EncryptedData);
-         CryptoStream cryptoStream = new CryptoStream(memoryStream,
-             Decryptor,
-             CryptoStreamMode.Read);
-         byte[] PlainText = new byte[(EncryptedData.Length)];
-         int DecryptedCount = cryptoStream.Read(PlainText, 0, PlainText.Length);
-         memoryStream.Close();
-         cryptoStream.Close();
-         DecryptedData = Encoding.Unicode.GetString(PlainText, 0,
-             DecryptedCount);
+         int charValue = Convert.ToInt32(text[i]);
+         charValue ^= key;
+         newText += char.ConvertFromUtf32(charValue);
      }
-     catch { DecryptedData = input; }
-     return DecryptedData;
+     return newText;
  }
 					</pre>			
 				</div>
@@ -375,7 +333,7 @@ public static string DecryptQryParam(string input)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000023.html">EncrypterAndDecrypter Class</a><br />
+			<a href="topic_0000000000000027.html">EncryptAndDecrypt Class</a><br />
 
 
 

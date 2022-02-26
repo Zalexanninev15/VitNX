@@ -1,1 +1,1 @@
-search_result['396']=["topic_00000000000000DB_props--.html","POINTL Properties",""];
+search_result['396']=["topic_00000000000000DE_props--.html","DISPLAYCONFIG_2DREGION Properties",""];

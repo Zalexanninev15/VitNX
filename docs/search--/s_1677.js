@@ -1,1 +1,1 @@
-search_result['1677']=["topic_000000000000049A_overloads--.html","VitNX_MessageBox Constructor",""];
+search_result['1677']=["topic_0000000000000496.html","VitNX_Dialog.OnLoad Method","Raises the Load event."];

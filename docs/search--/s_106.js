@@ -1,1 +1,1 @@
-search_result['106']=["topic_0000000000000043_props--.html","Windows Properties",""];
+search_result['106']=["topic_0000000000000047.html","FileSystem.IsPeExe Method","Is this a PE file."];

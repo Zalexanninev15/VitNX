@@ -1,1 +1,1 @@
-search_result['303']=["topic_00000000000000B1_methods--.html","Keyboard Methods",""];
+search_result['303']=["topic_00000000000000B9.html","NewFolderDialog Class","Work with the folder dialog, Windows Vista+."];

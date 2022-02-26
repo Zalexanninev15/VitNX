@@ -1,1 +1,1 @@
-c['122']=[['123',"GetFirmwareType Method","topic_000000000000006B.html",0]];
+c['122']=[['123',"GetHostName Method","topic_000000000000007B.html",0],['124',"GetLocalIPv4 Method","topic_000000000000007D.html",0],['125',"GetLocalIPv6 Method","topic_000000000000007C.html",0],['126',"GetMacAddress Method","topic_000000000000007F.html",0],['127',"GetPublicIP Method","topic_000000000000007E.html",0],['128',"IsHaveInternet Method","topic_0000000000000084.html",0]];

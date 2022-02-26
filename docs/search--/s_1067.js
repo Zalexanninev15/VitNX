@@ -1,1 +1,1 @@
-search_result['1067']=["topic_000000000000031B.html","WindowS.WindowToLowerRightCorner Method","Sets the window to the lower right corner."];
+search_result['1067']=["topic_00000000000002B9.html","SpecialWindowHandles Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['242']=["topic_0000000000000095.html","Processes Class","Work with processes."];
+search_result['242']=["topic_000000000000009A.html","SendDataToSites Class","The send data to sites."];

@@ -1,1 +1,1 @@
-search_result['1740']=["topic_00000000000004C5.html","VitNX_ProgressBar Class",""];
+search_result['1740']=["topic_00000000000004C7.html","VitNX_ToolStripRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

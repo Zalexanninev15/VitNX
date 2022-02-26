@@ -1,1 +1,1 @@
-search_result['362']=["topic_00000000000000CC.html","targetInfo Field",""];
+search_result['362']=["topic_00000000000000CF.html","modeInfoIdx Field",""];

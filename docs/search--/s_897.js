@@ -1,1 +1,1 @@
-search_result['897']=["topic_000000000000023C_attached_props--.html","RECT Attached Properties",""];
+search_result['897']=["topic_0000000000000238_methods--.html","PAINTSTRUCT Methods",""];

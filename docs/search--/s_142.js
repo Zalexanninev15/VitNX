@@ -1,1 +1,1 @@
-search_result['142']=["topic_000000000000005A_events--.html","Disk Events",""];
+search_result['142']=["topic_0000000000000061.html","Cpu.GetArchitecture Method","Gets the architecture."];

@@ -1,1 +1,1 @@
-search_result['896']=["topic_000000000000023C.html","RECT Structure",""];
+search_result['896']=["topic_0000000000000238_events--.html","PAINTSTRUCT Events",""];

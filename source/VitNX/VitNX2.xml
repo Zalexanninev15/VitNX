@@ -97,6 +97,86 @@ A bool.</returns>
       <param name="text">
 The text.</param>
     </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.NumberAsPercentD(System.Double)">
+      <summary>
+Gets the number as percent (double).</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.NumberAsPercentI(System.Int32)">
+      <summary>
+Gets the number as percent (int32).</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ConvertNumberToHexD(System.Double)">
+      <summary>
+Converts the number to HEX (double).</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ConvertNumberToHexI(System.Int32)">
+      <summary>
+Converts the number to HEX (int32).</summary>
+      <returns>
+A string.</returns>
+      <param name="number">
+The number.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.DateAsShortDate(System.DateTime)">
+      <summary>
+Converts the date to short date.</summary>
+      <returns>
+A string.</returns>
+      <param name="dt">
+The DateTime.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.DateAsLongDate(System.DateTime)">
+      <summary>
+Converts the date to long date.</summary>
+      <returns>
+A string.</returns>
+      <param name="dt">
+The DateTime.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.DateAsShortTime(System.DateTime)">
+      <summary>
+Converts the date to short time.</summary>
+      <returns>
+A string.</returns>
+      <param name="dt">
+The DateTime.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.DateAsLongTime(System.DateTime)">
+      <summary>
+Converts the date to long time.</summary>
+      <returns>
+A string.</returns>
+      <param name="dt">
+The DateTime.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.DateAsMonth(System.DateTime)">
+      <summary>
+Converts the date to month.</summary>
+      <returns>
+A string.</returns>
+      <param name="dt">
+The DateTime.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.DateAsYear(System.DateTime)">
+      <summary>
+Converts the date to year.</summary>
+      <returns>
+A string.</returns>
+      <param name="dt">
+The DateTime.</param>
+    </member>
     <member name="M:VitNX.Functions.Common.Data.Text.ContainsNumbersLatters(System.String)">
       <summary>
 Contains the numbers latters.</summary>
@@ -195,6 +275,14 @@ A string.</returns>
       <param name="number">
 The number.</param>
     </member>
+    <member name="M:VitNX.Functions.Common.Data.Text.ConvertListToString(System.Collections.Generic.List{System.String})">
+      <summary>
+Converts the list to string (space is used as separator).</summary>
+      <returns>
+A string.</returns>
+      <param name="list">
+The list.</param>
+    </member>
     <member name="M:VitNX.Functions.Common.Data.Text.FixDeEncoding(System.String)">
       <summary>
 Fixes the de-encoding.</summary>
@@ -235,11 +323,19 @@ The key.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.MD5_Encrypt(System.String)">
       <summary>
-Encrypt by MD5.</summary>
+Encrypt text by MD5.</summary>
       <returns>
 A string.</returns>
       <param name="text">
-The text.</param>
+Your text.</param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SHA1_Encrypt(System.String)">
+      <summary>
+Encrypt text by SHA1.</summary>
+      <returns>
+A string.</returns>
+      <param name="text">
+Tour text.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Data.EncryptAndDecrypt.SimpleEncrypt(System.String,System.String)">
       <summary>
@@ -327,39 +423,39 @@ The input.</param>
     </member>
     <member name="T:VitNX.Functions.Common.Data.CompressAndDecompress">
       <summary>
-Compress and decompress the text or byte[].</summary>
+Compress and decompress the text or byte[]. Examples: https://gist.github.com/Zalexanninev15/cbd4dde903095ca7a5e53c1fc6c42807</summary>
     </member>
     <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.GetBytes(System.String)">
       <summary>
-Gets the bytes. Example: CompressAndDecompress.GetBytes(input)</summary>
+Gets the bytes. Example: Data.CompressAndDecompress.GetBytes(input)</summary>
       <returns>
 An array of byte.</returns>
       <param name="input">
-</param>
+The string.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.BytesToString(System.Byte[])">
       <summary>
-Bytes the to string. Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));</summary>
+Bytes the to string. Example: string output = Data.CompressAndDecompress.BytesToString(Data.CompressAndDecompress.DecompressBytes(compressed));</summary>
       <returns>
 A string.</returns>
       <param name="input">
-</param>
+The bytes.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.CompressBytes(System.Byte[])">
       <summary>
-Compresses the bytes. Example: string output = Encoding.UTF8.GetString(CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input)));</summary>
+Compresses the bytes. Example: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));</summary>
       <returns>
 An array of byte.</returns>
       <param name="input">
-</param>
+The bytes.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Data.CompressAndDecompress.DecompressBytes(System.Byte[])">
       <summary>
-Decompresses the bytes. Example: CompressAndDecompress.DecompressBytes(compressed)</summary>
+Decompresses the bytes. Example: Data.CompressAndDecompress.DecompressBytes(compressed)</summary>
       <returns>
 An array of byte.</returns>
       <param name="input">
-</param>
+The bytes.</param>
     </member>
     <member name="T:VitNX.Functions.Common.FileSystem">
       <summary>
@@ -409,15 +505,7 @@ The text.</param>
       <param name="targetFile">
 The target file.</param>
     </member>
-    <member name="M:VitNX.Functions.Common.FileSystem.GetMD5FromFile_Method1(System.String)">
-      <summary>
-Gets the MD5 from file.</summary>
-      <returns>
-A string.</returns>
-      <param name="targetFile">
-The target file.</param>
-    </member>
-    <member name="M:VitNX.Functions.Common.FileSystem.GetMD5FromFile_Method2(System.String)">
+    <member name="M:VitNX.Functions.Common.FileSystem.GetFileMD5(System.String)">
       <summary>
 Gets the MD5 from file.</summary>
       <returns>
@@ -663,10 +751,6 @@ Gets Windows Disk characteristics.</summary>
       <returns>
 An array of string.</returns>
     </member>
-    <member name="M:VitNX.Functions.Common.Information.Disk.SetCWindowsSize">
-      <summary>
-Set (get) values for Disk's characteristics (size of Windows).</summary>
-    </member>
     <member name="M:VitNX.Functions.Common.Information.Disk.GetAll">
       <summary>
 Gets the all (logical).</summary>
@@ -783,9 +867,55 @@ Gets all characteristics.</summary>
       <returns>
 An array of string.</returns>
     </member>
-    <member name="M:VitNX.Functions.Common.Information.Ram.Set">
+    <member name="T:VitNX.Functions.Common.Information.Internet">
       <summary>
-Sets (gets) values for RAM's characteristics.</summary>
+Work with informations of Internet (PC).</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Internet.GetHostName">
+      <summary>
+Gets the host name (name of PC, Windows System).</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Internet.GetLocalIPv6">
+      <summary>
+Gets the local IPv6 (obsolete, but work).</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Internet.GetLocalIPv4">
+      <summary>
+Gets the local IPv4 (obsolete, but work).</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Internet.GetPublicIP">
+      <summary>
+Gets the public IP of PC.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Internet.GetMacAddress">
+      <summary>
+Gets the MAC address.</summary>
+      <returns>
+A string.</returns>
+    </member>
+    <member name="T:VitNX.Functions.Common.Information.Internet.INTERNET_STATUS">
+      <summary>
+Internet status (int32) for IsHaveInternet function</summary>
+    </member>
+    <member name="F:VitNX.Functions.Common.Information.Internet.INTERNET_STATUS.UNKNOWN_PROBLEM">
+    </member>
+    <member name="F:VitNX.Functions.Common.Information.Internet.INTERNET_STATUS.UNCONNECTED">
+    </member>
+    <member name="F:VitNX.Functions.Common.Information.Internet.INTERNET_STATUS.CONNECTED">
+    </member>
+    <member name="M:VitNX.Functions.Common.Information.Internet.IsHaveInternet(System.String)">
+      <summary>
+Are the have internet.</summary>
+      <returns>
+An INTERNET_STATUS.</returns>
+      <param name="ipAddressOrDomainForPing">
+The ip address or domain for ping.</param>
     </member>
     <member name="T:VitNX.Functions.Common.PowerControl">
       <summary>
@@ -875,23 +1005,25 @@ The section.</param>
       <summary>
 Work with data from sites.</summary>
     </member>
-    <member name="M:VitNX.Functions.Common.Web.DataFromSites.DownloadString(System.String)">
+    <member name="M:VitNX.Functions.Common.Web.DataFromSites.DownloadString(System.String,System.String)">
       <summary>
 Downloads the string from site/server.</summary>
       <returns>
 A string.</returns>
       <param name="url">
 The url.</param>
+      <param name="ifError">
+Text is returned if no string can be retrieved</param>
     </member>
     <member name="M:VitNX.Functions.Common.Web.DataFromSites.GetHeaderAndContent(System.String,System.String)">
       <summary>
-Gets the header and content of site.</summary>
+Gets the status header and content of site.</summary>
       <returns>
-An array of string.</returns>
+An array of string (Header, Content).</returns>
       <param name="url">
 The url.</param>
-      <param name="useragent">
-The useragent.</param>
+      <param name="userAgent">
+The UserAgent.</param>
     </member>
     <member name="M:VitNX.Functions.Common.Web.DataFromSites.GetGeo(System.String)">
       <summary>
@@ -909,54 +1041,6 @@ A bool.</returns>
       <param name="botToken">
 The bot token.</param>
     </member>
-    <member name="T:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS">
-    </member>
-    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.UNKNOWN_PROBLEM">
-    </member>
-    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.UNCONNECTED">
-    </member>
-    <member name="F:VitNX.Functions.Common.Web.DataFromSites.INTERNET_STATUS.CONNECTED">
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.DataFromSites.IsHaveInternet">
-      <summary>
-Are yout have the internet connection on PC.</summary>
-      <returns>
-An int.</returns>
-    </member>
-    <member name="T:VitNX.Functions.Common.Web.Config">
-      <summary>
-Work with config of PC.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.GetHostName">
-      <summary>
-Gets the host name (name of PC, Windows System).</summary>
-      <returns>
-A string.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.GetLocalIPv6">
-      <summary>
-Gets the local IPv6 (obsolete, but work).</summary>
-      <returns>
-A string.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.GetLocalIPv4">
-      <summary>
-Gets the local IPv4 (obsolete, but work).</summary>
-      <returns>
-A string.</returns>
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.GetPublicIP">
-      <summary>
-Gets the public IP of PC.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.DefaultGateway">
-      <summary>
-Get DefaultGateway of NetworkInterface in IPAddress.</summary>
-    </member>
-    <member name="M:VitNX.Functions.Common.Web.Config.UseProtocols">
-      <summary>
-Activate all security protocols for all network functions to work (HTTPS).</summary>
-    </member>
     <member name="T:VitNX.Functions.Common.Web.SendDataToSites">
       <summary>
 The send data to sites.</summary>
@@ -966,6 +1050,32 @@ The send data to sites.</summary>
 </param>
       <param name="options">
 </param>
+    </member>
+    <member name="M:VitNX.Functions.Common.Web.SendDataToSites.FileUploader(System.String,System.Collections.Specialized.NameValueCollection,System.String,System.Action{System.String,System.Int32},System.Action{System.String})">
+      <summary>
+Starts the uploading. Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a</summary>
+      <param name="url">
+The url.</param>
+      <param name="values">
+The values.</param>
+      <param name="filePath">
+The file path.</param>
+      <param name="progress">
+The progress.</param>
+      <param name="completed">
+The completed.</param>
+    </member>
+    <member name="T:VitNX.Functions.Common.Web.Config">
+      <summary>
+The configs for normal work with sites and Internet.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Web.Config.UseProtocols">
+      <summary>
+Activate all security protocols for all network functions to work (HTTPS). Example: ServicePointManager.SecurityProtocol = VitNX.Functions.Common.Web.Config.UseProtocols();</summary>
+    </member>
+    <member name="M:VitNX.Functions.Common.Web.Config.DefaultGateway">
+      <summary>
+Activate DefaultGateway of NetworkInterface in IPAddress.</summary>
     </member>
     <member name="N:VitNX.Functions.Windows.Apps">
     </member>
@@ -987,11 +1097,23 @@ A list of string.</returns>
     </member>
     <member name="M:VitNX.Functions.Windows.Apps.Processes.Run(System.String,System.String)">
       <summary>
-Launch a third-party applications.</summary>
+Launch a third-party apps.</summary>
       <param name="targetFile">
 The target file.</param>
       <param name="arguments">
 The arguments.</param>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Apps.Processes.RunAW(System.String,System.String,System.Boolean,System.Boolean)">
+      <summary>
+Launch a third-party apps with options.</summary>
+      <param name="targetFile">
+The target file.</param>
+      <param name="arguments">
+The arguments.</param>
+      <param name="showWindow">
+Show window of this app</param>
+      <param name="waitMe">
+Wait this process/app</param>
     </member>
     <member name="M:VitNX.Functions.Windows.Apps.Processes.OpenLink(System.String)">
       <summary>
@@ -1108,6 +1230,8 @@ The value.</param>
 The max.</param>
     </member>
     <member name="T:VitNX.Functions.Windows.Controllers.VolumeControl">
+      <summary>
+The volume control.</summary>
     </member>
     <member name="M:VitNX.Functions.Windows.Controllers.VolumeControl.Set(System.Single)">
       <summary>
@@ -1121,19 +1245,37 @@ Gets the current total sound volume.</summary>
       <returns>
 A float.</returns>
     </member>
+    <member name="T:VitNX.Functions.Windows.Controllers.NewFolderDialog">
+      <summary>
+Work with the folder dialog, Windows Vista+.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.NewFolderDialog.Show">
+      <summary>
+Shows the folder dialog.</summary>
+      <returns>
+A bool.</returns>
+    </member>
+    <member name="M:VitNX.Functions.Windows.Controllers.NewFolderDialog.Show(System.IntPtr)">
+      <summary>
+Are shows the folder dialog.</summary>
+      <returns>
+A bool.</returns>
+      <param name="hWndOwner">
+The h wnd owner.</param>
+    </member>
     <member name="T:VitNX.Functions.Windows.Controllers.GetClipboardText">
       <summary>
 Get clipboard text.</summary>
     </member>
     <member name="M:VitNX.Functions.Windows.Controllers.GetClipboardText.GetText">
       <summary>
-Gets the text.</summary>
+Gets the text from clipboard.</summary>
       <returns>
 A string.</returns>
     </member>
     <member name="T:VitNX.Functions.Windows.Controllers.STATask">
       <summary>
-Set clipboard text.</summary>
+Sets text to clipboard.</summary>
     </member>
     <member name="M:VitNX.Functions.Windows.Controllers.STATask.Run``1(System.Func{``0})">
       <param name="function">
@@ -3423,17 +3565,23 @@ The enums for imported functions.</summary>
     </member>
     <member name="T:VitNX.Functions.Windows.WindowSAndControls.WindowS">
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MinimizeAllWindows">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MinimizeAll">
       <summary>
 Minimizes the all windows.</summary>
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MaximizeAllWindows">
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.MaximizeAll">
       <summary>
 Maximizes the all windows.</summary>
     </member>
     <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.HideConsoleWindow">
       <summary>
 Hides the console window.</summary>
+    </member>
+    <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.ShowAsTopMost(System.IntPtr)">
+      <summary>
+Shows the window as TopMost.</summary>
+      <param name="Handler">
+The handler.</param>
     </member>
     <member name="M:VitNX.Functions.Windows.WindowSAndControls.WindowS.WindowToLowerRightCorner(System.IntPtr)">
       <summary>
@@ -3455,10 +3603,6 @@ The handler.</param>
     </member>
     <member name="T:VitNX.Functions.Windows.WindowSAndControls.Controls">
     </member>
-    <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.RemoveFocus">
-      <summary>
-Removing the focus from the element/control from which the function is called.</summary>
-    </member>
     <member name="M:VitNX.Functions.Windows.WindowSAndControls.Controls.VolumeOnFocus(System.Boolean)">
       <summary>
 Enable/disable sound (nasty) when focusing on an item/control..</summary>
@@ -3473,35 +3617,51 @@ The handle.</param>
       <param name="themeMode">
 The theme mode.</param>
     </member>
-    <member name="N:VitNX.UI.Console">
+    <member name="N:VitNX.UI.Console.ProgressBar">
     </member>
-    <member name="T:VitNX.UI.Console.ProgressBar">
+    <member name="T:VitNX.UI.Console.ProgressBar.Type1">
+      <summary>
+Console ProgressBar type 1.</summary>
     </member>
-    <member name="M:VitNX.UI.Console.ProgressBar.#ctor">
+    <member name="M:VitNX.UI.Console.ProgressBar.Type1.#ctor">
     </member>
-    <member name="M:VitNX.UI.Console.ProgressBar.Report(System.Double)">
+    <member name="M:VitNX.UI.Console.ProgressBar.Type1.Report(System.Double)">
       <param name="value">
 </param>
     </member>
-    <member name="M:VitNX.UI.Console.ProgressBar.SetColor(System.ConsoleColor)">
+    <member name="M:VitNX.UI.Console.ProgressBar.Type1.SetColor(System.ConsoleColor)">
       <summary>
 Sets the color.</summary>
       <param name="consoleColor">
 The console color.</param>
     </member>
-    <member name="M:VitNX.UI.Console.ProgressBar.SetText(System.String)">
+    <member name="M:VitNX.UI.Console.ProgressBar.Type1.SetText(System.String)">
       <summary>
 Sets the text.</summary>
       <param name="work1">
 The text.</param>
     </member>
-    <member name="M:VitNX.UI.Console.ProgressBar.NotUsed(System.Boolean)">
+    <member name="M:VitNX.UI.Console.ProgressBar.Type1.NotUsed(System.Boolean)">
       <summary>
 Stop this task or not use console progressbar.</summary>
       <param name="stopper">
 The bool value.</param>
     </member>
-    <member name="M:VitNX.UI.Console.ProgressBar.Dispose">
+    <member name="M:VitNX.UI.Console.ProgressBar.Type1.Dispose">
+    </member>
+    <member name="T:VitNX.UI.Console.ProgressBar.Type2">
+      <summary>
+Console ProgressBar type 2.</summary>
+    </member>
+    <member name="M:VitNX.UI.Console.ProgressBar.Type2.PrintProgressToConsole(System.Double,System.String)">
+      <summary>
+Prints the progress in console.</summary>
+      <param name="progressPercentage">
+The progress percentage.</param>
+      <param name="textWithEvent">
+Add text in console with event.</param>
+    </member>
+    <member name="N:VitNX.UI.Console">
     </member>
     <member name="T:VitNX.UI.Console.Text">
       <summary>
@@ -3552,8 +3712,6 @@ The background color.</param>
 </param>
     </member>
     <member name="N:VitNX.UI.ControlsV1.BasedOnDarkUI.Config">
-    </member>
-    <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Colors">
     </member>
     <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Config.Constsants">
     </member>
@@ -4589,12 +4747,6 @@ The background color.</param>
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_Dialog.Dispose(System.Boolean)">
-      <summary>
-/// Clean up any resources being used. ///</summary>
-      <param name="disposing">
-true if managed resources should be disposed; otherwise, false.</param>
-    </member>
     <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton">
     </member>
     <member name="F:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_DialogButton.Ok">
@@ -4702,12 +4854,6 @@ true if managed resources should be disposed; otherwise, false.</param>
     <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.OnLoad(System.EventArgs)">
       <param name="e">
 </param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBox.Dispose(System.Boolean)">
-      <summary>
-/// Clean up any resources being used. ///</summary>
-      <param name="disposing">
-true if managed resources should be disposed; otherwise, false.</param>
     </member>
     <member name="T:VitNX.UI.ControlsV1.BasedOnDarkUI.Forms.VitNX_MessageBoxIcon">
     </member>
@@ -5031,12 +5177,6 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="defaultButton">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.Dispose(System.Boolean)">
-      <summary>
-Clean up any resources being used.</summary>
-      <param name="disposing">
-true if managed resources should be disposed; otherwise, false.</param>
-    </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_Panel">
     </member>
     <member name="M:VitNX.UI.ControlsV2.VitNX2_Panel.#ctor">
@@ -5084,12 +5224,6 @@ true if managed resources should be disposed; otherwise, false.</param>
     <member name="M:VitNX.UI.ControlsV2.VitNX2_TextBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_TextBox.Dispose(System.Boolean)">
-      <summary>
-Clean up any resources being used.</summary>
-      <param name="disposing">
-true if managed resources should be disposed; otherwise, false.</param>
     </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_ToogleButton">
     </member>
@@ -6763,24 +6897,6 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="fontProperties">
 </param>
     </member>
-    <member name="T:VitNX.UI.OtherControls.NewFolderDialog">
-      <summary>
-Work with the folder dialog, Windows Vista+.</summary>
-    </member>
-    <member name="M:VitNX.UI.OtherControls.NewFolderDialog.Show">
-      <summary>
-Shows the folder dialog.</summary>
-      <returns>
-A bool.</returns>
-    </member>
-    <member name="M:VitNX.UI.OtherControls.NewFolderDialog.Show(System.IntPtr)">
-      <summary>
-Are shows the folder dialog.</summary>
-      <returns>
-A bool.</returns>
-      <param name="hWndOwner">
-The h wnd owner.</param>
-    </member>
     <member name="T:VitNX.UI.OtherControls.Manager">
       <summary>
 The settings manager of notification.</summary>
@@ -6934,12 +7050,6 @@ Pause time in milliseconds.</param>
 </param>
     </member>
     <member name="M:VitNX.UI.OtherControls.NotificationForm.ChangePosition">
-    </member>
-    <member name="M:VitNX.UI.OtherControls.NotificationForm.Dispose(System.Boolean)">
-      <summary>
-Clean up any resources being used.</summary>
-      <param name="disposing">
-true if managed resources should be disposed; otherwise, false.</param>
     </member>
     <member name="T:VitNX.UI.OtherControls.NotifySettings">
       <summary>

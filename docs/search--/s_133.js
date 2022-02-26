@@ -1,1 +1,1 @@
-search_result['133']=["topic_0000000000000058.html","Gpu Class","Work with informations of GPU(s)."];
+search_result['133']=["topic_000000000000005D.html","Windows.GetWindowsSerialKey Method","Gets Windows the serial key."];

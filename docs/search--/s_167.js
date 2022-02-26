@@ -1,1 +1,1 @@
-search_result['167']=["topic_000000000000006A_attached_props--.html","Motherboard Attached Properties",""];
+search_result['167']=["topic_000000000000006B.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

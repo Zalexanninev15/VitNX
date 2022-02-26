@@ -1,1 +1,1 @@
-search_result['1426']=["topic_00000000000003F5_props--.html","VitNX_TextBox Properties",""];
+search_result['1426']=["topic_00000000000003F9_methods--.html","VitNX_SectionPanel Methods",""];
