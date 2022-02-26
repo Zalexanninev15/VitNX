@@ -54,7 +54,7 @@ namespace VitNX.Functions.Windows.Apps
         }
 
         /// <summary>
-        /// Launch a third-party applications.
+        /// Launch a third-party apps.
         /// </summary>
         /// <param name="targetFile">The target file.</param>
         /// <param name="arguments">The arguments.</param>
@@ -67,10 +67,39 @@ namespace VitNX.Functions.Windows.Apps
                 {
                     FileName = targetFile,
                     Arguments = arguments,
-                    //Verb = "open"
                 }
             };
             start.Start();
+        }
+
+        /// <summary>
+        /// Launch a third-party apps with options.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <param name="showWindow">Show window of this app</param>
+        /// <param name="waitMe">Wait this process/app</param>
+        public static void RunAW(string targetFile,
+            string arguments = "",
+            bool showWindow = true,
+            bool waitMe = true)
+        {
+            ProcessWindowStyle app = ProcessWindowStyle.Normal;
+            if (!showWindow)
+                app = ProcessWindowStyle.Hidden;
+            var start = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = targetFile,
+                    Arguments = arguments,
+                    CreateNoWindow = !showWindow,
+                    WindowStyle = app,
+                }
+            };
+            start.Start();
+            if (waitMe)
+                start.WaitForExit();
         }
 
         /// <summary>
@@ -107,14 +136,13 @@ namespace VitNX.Functions.Windows.Apps
                     Arguments = arguments,
                     CreateNoWindow = true,
                     UseShellExecute = false,
-                    //Verb = "open",
                     WindowStyle = ProcessWindowStyle.Hidden,
                     RedirectStandardOutput = true,
                     StandardOutputEncoding = desiredEncoding
                 }
             };
-            start.WaitForExit();
             start.Start();
+            start.WaitForExit();
             return start.StandardOutput.ReadToEnd();
         }
 

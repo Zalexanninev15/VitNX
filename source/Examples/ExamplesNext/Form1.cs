@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using VitNX.Functions.Windows.Apps;
+
 namespace ExamplesNext
 {
     public partial class Form1 : Form
@@ -24,6 +26,12 @@ namespace ExamplesNext
         {
             System.IO.File.WriteAllLines(VitNX.Functions.Common.FileSystem.FileNameGenerator("CPU", "txt"),
                 VitNX.Functions.Common.Information.Cpu.Characteristics());
+        }
+
+        private void vitNX2_Button3_Click(object sender, EventArgs e)
+        {
+            Processes.RunAW("dism", "/Online /enable-feature /FeatureName:\"DirectPlay\" /NoRestart");
+            Processes.RunAW("dism", "/Online /enable-feature /FeatureName:\"DirectPlay\" /NoRestart /all");
         }
     }
 }
