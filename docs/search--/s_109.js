@@ -1,1 +1,1 @@
-search_result['109']=["topic_0000000000000045.html","Windows.GetCurrentUsername Method","Gets the current user (name)."];
+search_result['109']=["topic_000000000000004A.html","FileSystem.SaveTextDialog Method","Saves the text dialog."];

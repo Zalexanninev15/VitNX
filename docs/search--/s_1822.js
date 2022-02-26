@@ -1,1 +1,1 @@
-search_result['1822']=["topic_00000000000004EF.html","VitNX2_MessageBox_Form(String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Constructor",""];
+search_result['1822']=["topic_00000000000004F1.html","VitNX2_MessageBox.Show (String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Method",""];

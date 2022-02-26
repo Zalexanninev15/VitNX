@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ProgressBar.Dispose Method</title>
+	<title>WindowS.MaximizeAll Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ProgressBar.Dispose Method</h1>
+		<h1 class="title">WindowS.MaximizeAll Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000322.html">VitNX.UI.Console</a>
+<a href="topic_0000000000000326.html">VitNX.Functions.Windows.WindowSAndControls</a>
 
 
 
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary-info>
-
+        <summary-info>Maximizes the all windows.</summary-info>
 
 
 
@@ -106,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub Dispose() Implements  _&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose">IDisposable.Dispose</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Dispose()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> MaximizeAll()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,11 +151,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-
-
-	<h4 class="subHeading">
-		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose">IDisposable.Dispose</a>
-<br />
 
 
 
@@ -269,13 +225,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void Dispose()
+public static void MaximizeAll()
  {
-     lock (timer)
-     {
-         disposed = true;
-         UpdateText(string.Empty);
-     }
+     IntPtr lHwnd = Import.FindWindow(&quot;Shell_TrayWnd&quot;, null);
+     Import.SendMessage(lHwnd, 0x111,
+         (IntPtr)416,
+         IntPtr.Zero);
  }
 					</pre>			
 				</div>
@@ -338,11 +293,11 @@ public void Dispose()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000323.html">ProgressBar Class</a><br />
+			<a href="topic_0000000000000327.html">WindowS Class</a><br />
 
 
 
-<a href="topic_0000000000000322.html">VitNX.UI.Console Namespace</a><br />
+<a href="topic_0000000000000326.html">VitNX.Functions.Windows.WindowSAndControls Namespace</a><br />
 
 
 			

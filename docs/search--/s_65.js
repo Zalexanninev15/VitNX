@@ -1,1 +1,1 @@
-search_result['65']=["topic_0000000000000028.html","EncrypterAndDecrypter.DecryptQryParam Method","Decrypts the text with qry param."];
+search_result['65']=["topic_000000000000002D.html","EncryptAndDecrypt.SimpleEncryptAsByte Method","Simples the encrypt as byte."];

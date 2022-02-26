@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Text.FixDeEncoding Method</title>
+	<title>Text.ReplacerMonster Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Text.FixDeEncoding Method</h1>
+		<h1 class="title">Text.ReplacerMonster Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Fixes the de-encoding.</summary-info>
-
+        <summary-info>Replacers the monster.</summary-info>
 
 
 
@@ -106,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function FixDeEncoding( _&nbsp;<br />   ByVal <i>text</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> FixDeEncoding(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> ReplacerMonster(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; <i>forReplace</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; <i>toReplace</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>countOfSpacesWith_forReplace</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -204,6 +165,45 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	The text. 
 </p>
+<dl paramName="forReplace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			forReplace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+	</dd>
+</dl>
+<p>
+	The for replace. 
+</p>
+<dl paramName="toReplace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			toReplace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+	</dd>
+</dl>
+<p>
+	The to replace. 
+</p>
+<dl paramName="countOfSpacesWith_forReplace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			countOfSpacesWith_forReplace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	The count of spaces with forReplace. From 0 to 2. 
+</p>
 
 <p />
 
@@ -214,7 +214,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		A string. 
 	</p>
 	
-
 
 
 
@@ -288,10 +287,33 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string FixDeEncoding(string text)
+public static string ReplacerMonster(string text, List&lt;string&gt; forReplace, List&lt;string&gt; toReplace, int countOfSpacesWith_forReplace)
  {
-     byte[] bytes = Encoding.Default.GetBytes(text);
-     return Encoding.UTF8.GetString(bytes);
+     for (int i = 0; i &lt; forReplace.Count; i++)
+     {
+         switch (countOfSpacesWith_forReplace)
+         {
+             case 0:
+                 {
+                     if (text.Contains($&quot;{forReplace[i]}&quot;))
+                         text = text.Replace(forReplace[i], toReplace[i]);
+                     break;
+                 }
+             case 1:
+                 {
+                     if (text.Contains($&quot; {forReplace[i]}&quot;))
+                         text = text.Replace(forReplace[i], toReplace[i]);
+                     break;
+                 }
+             case 2:
+                 {
+                     if (text.Contains($&quot; {forReplace[i]} &quot;))
+                         text = text.Replace(forReplace[i], toReplace[i]);
+                     break;
+                 }
+         }
+     }
+     return text;
  }
 					</pre>			
 				</div>

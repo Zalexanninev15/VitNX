@@ -1,1 +1,1 @@
-search_result['360']=["topic_00000000000000CA_vars--.html","DISPLAYCONFIG_PATH_INFO Fields",""];
+search_result['360']=["topic_00000000000000CD.html","adapterId Field",""];

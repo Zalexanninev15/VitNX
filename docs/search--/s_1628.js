@@ -1,1 +1,1 @@
-search_result['1628']=["topic_0000000000000476.html","VitNX_ToolWindow.OnPaint Method","Raises the Paint event."];
+search_result['1628']=["topic_0000000000000474_attached_props--.html","VitNX_DockSplitter Attached Properties",""];

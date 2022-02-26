@@ -1,1 +1,1 @@
-search_result['544']=["topic_0000000000000145.html","Import.IntersectClipRect Method",""];
+search_result['544']=["topic_0000000000000139.html","Import.GetDC Method",""];

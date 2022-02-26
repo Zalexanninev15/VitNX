@@ -1,1 +1,1 @@
-c['791']=[['792',"Dispose Method","topic_00000000000004CC_overloads--.html",1],['794',"OnPaint Method","topic_00000000000004CB.html",0]];
+c['791']=[['792',"Writeln Method","topic_000000000000033E.html",0]];

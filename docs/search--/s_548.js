@@ -1,1 +1,1 @@
-search_result['548']=["topic_0000000000000147_overloads--.html","Import.InvalidateRect Method",""];
+search_result['548']=["topic_000000000000013D.html","Import.GetGraphicsMode Method",""];

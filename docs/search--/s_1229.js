@@ -1,1 +1,1 @@
-search_result['1229']=["topic_000000000000037E.html","VitNX_DropdownItem(String) Constructor",""];
+search_result['1229']=["topic_0000000000000378.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];

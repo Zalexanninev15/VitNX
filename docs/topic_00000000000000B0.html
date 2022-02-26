@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>STATask.Run Method</title>
+	<title>Installed.GetPath Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">STATask.Run Method</h1>
+		<h1 class="title">Installed.GetPath Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-
+        <summary-info>Gets the path of application from the Windows Registry.</summary-info>
 
 
 
@@ -105,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function Run( _&nbsp;<br />   ByVal <i>action</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action">Action</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task">Task</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -175,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task">Task</a> Run(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action">Action</a> <i>action</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetPath(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>applicationName</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,27 +152,29 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="action" class="parameterList">
+	Parameters</h4><dl paramName="applicationName" class="parameterList">
 	<dt>
 		<span class="parameter">
-			action
+			applicationName
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action">Action</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The application name. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task">Task</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
 	
-
 
 
 
@@ -284,21 +248,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Task Run(Action action)
+public static string GetPath(string applicationName)
  {
-     var tcs = new TaskCompletionSource&lt;object&gt;();
-     var thread = new Thread(() =&gt;
-     {
-         try
-         {
-             action();
-             tcs.SetResult(null);
-         }
-         catch (Exception e) { tcs.SetException(e); }
-     });
-     thread.SetApartmentState(ApartmentState.STA);
-     thread.Start();
-     return tcs.Task;
+     var installPath = FindAppPath(@&quot;SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall&quot;, applicationName);
+     if (installPath == &quot;&quot;)
+         installPath = FindAppPath(@&quot;SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall&quot;, applicationName);
+     if (installPath == &quot;&quot;)
+         installPath = FindAppPath(@&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall&quot;, applicationName);
+     return installPath;
  }
 					</pre>			
 				</div>
@@ -361,11 +318,11 @@ public static Task Run(Action action)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AE.html">STATask Class</a><br />
+			<a href="topic_00000000000000AE.html">Installed Class</a><br />
 
 
 
-<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['613']=["topic_0000000000000182.html","Import.WindowFromPoint (POINT) Method",""];
+search_result['613']=["topic_0000000000000179.html","Import.SetTextAlign Method",""];

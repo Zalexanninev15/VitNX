@@ -1,1 +1,1 @@
-search_result['594']=["topic_0000000000000171.html","Import.SetWindowRgn Method",""];
+search_result['594']=["topic_0000000000000167.html","Import.Rectangle Method",""];

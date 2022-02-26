@@ -1,1 +1,1 @@
-search_result['318']=["topic_00000000000000B9.html","LUID Structure",""];
+search_result['318']=["topic_00000000000000BC_vars--.html","GetClipboardText Fields",""];

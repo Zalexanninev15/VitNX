@@ -1,1 +1,1 @@
-search_result['1536']=["topic_0000000000000438_methods--.html","VitNX_DockContent Methods",""];
+search_result['1536']=["topic_0000000000000438_attached_props--.html","DockGroupState Attached Properties",""];

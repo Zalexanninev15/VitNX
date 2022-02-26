@@ -1,1 +1,1 @@
-c['146']=[['147',"Config Class","topic_000000000000008B.html",1],['155',"DataFromSites Class","topic_0000000000000081.html",1],['163',"SendDataToSites Class","topic_0000000000000092.html",1]];
+c['146']=[['147',"Methods","topic_000000000000004E_methods--.html",1]];

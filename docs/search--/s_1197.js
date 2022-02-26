@@ -1,1 +1,1 @@
-search_result['1197']=["topic_0000000000000364_vars--.html","VitNX_ComboBox Fields",""];
+search_result['1197']=["topic_0000000000000360.html","VitNX_Button.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

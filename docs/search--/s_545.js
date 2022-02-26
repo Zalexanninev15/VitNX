@@ -1,1 +1,1 @@
-search_result['545']=["topic_0000000000000146.html","Import.InvalidateRect (IntPtr, ref RECT, Boolean) Method",""];
+search_result['545']=["topic_000000000000013A.html","Import.GetDeviceCaps Method",""];

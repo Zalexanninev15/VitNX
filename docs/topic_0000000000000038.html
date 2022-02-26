@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FileSystem.CleanRecycleBin Method</title>
+	<title>CompressAndDecompress.CompressBytes Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FileSystem.CleanRecycleBin Method</h1>
+		<h1 class="title">CompressAndDecompress.CompressBytes Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
 
 
 
@@ -89,8 +89,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Cleans the Recycle Bin.</summary-info>
-
+        <summary-info>Compresses the bytes.
+Example: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));</summary-info>
 
 
 
@@ -106,44 +106,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Sub CleanRecycleBin()</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +138,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CleanRecycleBin()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] CompressBytes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,8 +152,30 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="input" class="parameterList">
+	<dt>
+		<span class="parameter">
+			input
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	</dd>
+</dl>
+<p>
+	The bytes. 
+</p>
 
+<p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+		<p>
+		An array of byte. 
+	</p>
+	
 
 
 
@@ -265,11 +249,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void CleanRecycleBin()
+public static byte[] CompressBytes(byte[] input)
  {
-     Windows.Win32.Import.SHEmptyRecycleBin(IntPtr.Zero, null,
-     Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOSOUND |
-     Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION);
+     MemoryStream output = new MemoryStream();
+     GZipStream gzip = new GZipStream(output, CompressionMode.Compress, true);
+     gzip.Write(input, 0, input.Length);
+     gzip.Close();
+     return output.ToArray();
  }
 					</pre>			
 				</div>
@@ -332,11 +318,11 @@ public static void CleanRecycleBin()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000002E.html">FileSystem Class</a><br />
+			<a href="topic_0000000000000035.html">CompressAndDecompress Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
 
 
 			

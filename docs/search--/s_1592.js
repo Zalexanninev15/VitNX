@@ -1,1 +1,1 @@
-search_result['1592']=["topic_000000000000045D.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];
+search_result['1592']=["topic_000000000000045D.html","VitNX_DockGroup.OnPaintBackground Method","Paints the background of the control."];

@@ -1,1 +1,1 @@
-search_result['208']=["topic_000000000000007F.html","IniSettings32.KeyExists Method","Is key exist."];
+search_result['208']=["topic_0000000000000080.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];

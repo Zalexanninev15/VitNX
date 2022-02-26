@@ -1,1 +1,1 @@
-search_result['1759']=["topic_00000000000004CC_overloads--.html","VitNX_ProgressBarRounded.Dispose Method",""];
+search_result['1759']=["topic_00000000000004D0.html","DockResizeFilter Class",""];

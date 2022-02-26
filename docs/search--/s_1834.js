@@ -1,1 +1,1 @@
-search_result['1834']=["topic_00000000000004F4.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];
+search_result['1834']=["topic_00000000000004F7.html","VitNX2_MessageBox_Form Class",""];

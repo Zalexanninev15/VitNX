@@ -1,1 +1,1 @@
-search_result['1115']=["topic_0000000000000334.html","ObservableList\u0026lt;T\u0026gt;.Remove Method",""];
+search_result['1115']=["topic_0000000000000335.html","Type1.Report Method",""];

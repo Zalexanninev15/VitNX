@@ -1,1 +1,1 @@
-search_result['1877']=["topic_0000000000000506_methods--.html","FontAwesome4 Methods",""];
+search_result['1877']=["topic_0000000000000508_overloads--.html","VitNX2_Tab.WndProc Method","This member overrides WndProc."];

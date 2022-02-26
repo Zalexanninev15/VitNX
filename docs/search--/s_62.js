@@ -1,1 +1,1 @@
-search_result['62']=["topic_0000000000000025.html","EncrypterAndDecrypter.Decrypt Method","Decrypts the text."];
+search_result['62']=["topic_000000000000002A.html","EncryptAndDecrypt.SHA1_Encrypt Method","Encrypt text by SHA1."];

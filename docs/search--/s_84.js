@@ -1,1 +1,1 @@
-search_result['84']=["topic_0000000000000031.html","FileSystem.DeleteFileForever Method","Deletes the file forever."];
+search_result['84']=["topic_0000000000000036.html","CompressAndDecompress.GetBytes Method","Gets the bytes.\r\nExample: Data.CompressAndDecompress.GetBytes(input)"];

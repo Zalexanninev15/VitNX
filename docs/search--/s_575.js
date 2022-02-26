@@ -1,1 +1,1 @@
-search_result['575']=["topic_000000000000015F.html","Import.SetBkMode Method",""];
+search_result['575']=["topic_0000000000000157.html","Import.InvalidateRect (IntPtr, IntPtr, Boolean) Method",""];

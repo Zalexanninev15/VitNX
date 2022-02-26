@@ -1,1 +1,1 @@
-search_result['172']=["topic_000000000000006B.html","Motherboard.GetFirmwareType Method","Gets the firmware type."];
+search_result['172']=["topic_0000000000000070.html","Monitor.CaptureWindow Method","Captures the window."];

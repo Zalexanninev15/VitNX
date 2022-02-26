@@ -1,1 +1,1 @@
-search_result['1915']=["topic_000000000000082B.html","FontAwesomeExtensions.AsImage (Properties) Method",""];
+search_result['1915']=["topic_000000000000051A.html","FontAwesome4.GetIcon (Type, Properties) Method",""];

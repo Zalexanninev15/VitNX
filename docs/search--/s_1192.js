@@ -1,1 +1,1 @@
-search_result['1192']=["topic_0000000000000364.html","VitNX_ComboBox Class",""];
+search_result['1192']=["topic_000000000000035B.html","VitNX_Button.OnCreateControl Method","Raises the CreateControl method."];

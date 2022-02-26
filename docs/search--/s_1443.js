@@ -1,1 +1,1 @@
-search_result['1443']=["topic_00000000000003FB.html","VitNX_ToolStrip Constructor",""];
+search_result['1443']=["topic_0000000000000403.html","VitNX_Separator.OnPaintBackground Method","Paints the background of the control."];

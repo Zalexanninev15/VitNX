@@ -1,1 +1,1 @@
-search_result['250']=["topic_0000000000000098.html","Processes.Run Method","Launch a third-party applications."];
+search_result['250']=["topic_000000000000009D.html","Config Class","The configs for normal work with sites and Internet."];

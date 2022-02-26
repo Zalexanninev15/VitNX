@@ -1,1 +1,1 @@
-search_result['33']=["topic_0000000000000012.html","Text.ContainsSpaces Method","Contains the spaces."];
+search_result['33']=["topic_0000000000000012.html","Text.DateAsShortDate Method","Converts the date to short date."];

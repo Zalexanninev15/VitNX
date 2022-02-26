@@ -1,1 +1,1 @@
-search_result['222']=["topic_000000000000008B.html","Config Class","Work with config of PC."];
+search_result['222']=["topic_000000000000008D_methods--.html","IniSettings32 Methods",""];

@@ -1,1 +1,1 @@
-search_result['1956']=["topic_0000000000000843.html","NotificationType Enumeration","/// Type of notification displayed.\r\n    ///"];
+search_result['1956']=["topic_0000000000000841.html","Images Field","/// Images used in standard types of notifications.\r\n\t\t///"];

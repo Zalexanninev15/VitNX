@@ -1,1 +1,1 @@
-search_result['1116']=["topic_0000000000000334_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Remove Method",""];
+search_result['1116']=["topic_0000000000000336.html","Type1.SetColor Method","Sets the color."];

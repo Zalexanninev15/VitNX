@@ -1,1 +1,1 @@
-search_result['1206']=["topic_000000000000036C.html","VitNX_ComboBox.OnTextUpdate Method","Raises the TextUpdate event."];
+search_result['1206']=["topic_000000000000036A_attached_props--.html","VitNX_CheckBox Attached Properties",""];

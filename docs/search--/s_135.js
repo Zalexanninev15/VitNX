@@ -1,1 +1,1 @@
-search_result['135']=["topic_0000000000000058_events--.html","Gpu Events",""];
+search_result['135']=["topic_000000000000005F.html","Cpu Class","Work with informations of CPU."];

@@ -1,1 +1,1 @@
-search_result['1144']=["topic_0000000000000341.html","ToolWindowHeaderSize Field",""];
+search_result['1144']=["topic_0000000000000343.html","ObservableList\u0026lt;T\u0026gt;.Dispose  Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

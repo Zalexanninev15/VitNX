@@ -1,1 +1,1 @@
-search_result['1216']=["topic_0000000000000376_methods--.html","VitNX_ContextMenu Methods",""];
+search_result['1216']=["topic_0000000000000370.html","VitNX_CheckBox.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

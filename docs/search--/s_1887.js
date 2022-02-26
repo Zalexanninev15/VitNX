@@ -1,1 +1,1 @@
-search_result['1887']=["topic_0000000000000509.html","Properties.Get Method",""];
+search_result['1887']=["topic_000000000000050D.html","VitNX2_TextBox.OnLoad Method","Raises the Load event."];

@@ -1,1 +1,1 @@
-search_result['1431']=["topic_00000000000003F7_events--.html","VitNX_Title Events",""];
+search_result['1431']=["topic_00000000000003FC.html","VitNX_SectionPanel.OnLeave Method","Raises the Leave event."];

@@ -1,1 +1,1 @@
-search_result['186']=["topic_000000000000006F.html","Ram.Characteristics Method","Gets all characteristics."];
+search_result['186']=["topic_0000000000000076_methods--.html","ComPort Methods",""];

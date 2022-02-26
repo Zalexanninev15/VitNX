@@ -1,1 +1,1 @@
-search_result['366']=["topic_00000000000000CE_events--.html","DISPLAYCONFIG_2DREGION Events",""];
+search_result['366']=["topic_00000000000000D1_events--.html","DISPLAYCONFIG_PATH_TARGET_INFO Events",""];

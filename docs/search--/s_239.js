@@ -1,1 +1,1 @@
-search_result['239']=["topic_0000000000000092_vars--.html","SendDataToSites Fields",""];
+search_result['239']=["topic_0000000000000097.html","DataFromSites.GetHeaderAndContent Method","Gets the status header and content of site."];

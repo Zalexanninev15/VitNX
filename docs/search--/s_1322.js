@@ -1,1 +1,1 @@
-search_result['1322']=["topic_00000000000003B2.html","VitNX_RadioButton Class",""];
+search_result['1322']=["topic_00000000000003B2.html","VitNX_ListView.SelectItems (IEnumerable\u0026lt;Int32\u0026gt;) Method",""];

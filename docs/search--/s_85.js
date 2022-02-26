@@ -1,1 +1,1 @@
-search_result['85']=["topic_0000000000000032.html","FileSystem.DeleteFileToRecycleBin Method","Deletes the file to Recycle Bin."];
+search_result['85']=["topic_0000000000000037.html","CompressAndDecompress.BytesToString Method","Bytes the to string.\r\nExample: string output = Data.CompressAndDecompress.BytesToString(Data.CompressAndDecompress.DecompressBytes(compressed));"];

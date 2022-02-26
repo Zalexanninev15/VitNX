@@ -1,1 +1,1 @@
-search_result['1697']=["topic_00000000000004AE.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];
+search_result['1697']=["topic_00000000000004A6.html","VitNX_MessageBox(String, String, VitNX_MessageBoxIcon, VitNX_DialogButton) Constructor",""];

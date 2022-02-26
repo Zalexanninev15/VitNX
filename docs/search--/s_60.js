@@ -1,1 +1,1 @@
-search_result['60']=["topic_0000000000000023_vars--.html","EncrypterAndDecrypter Fields",""];
+search_result['60']=["topic_0000000000000028.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];

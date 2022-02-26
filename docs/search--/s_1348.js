@@ -1,1 +1,1 @@
-search_result['1348']=["topic_00000000000003C2.html","VitNX_ScrollBar.OnMouseMove Method","Raises the MouseMove event."];
+search_result['1348']=["topic_00000000000003C0.html","VitNX_NumericUpDown.OnGotFocus Method","Raises the GotFocus event."];

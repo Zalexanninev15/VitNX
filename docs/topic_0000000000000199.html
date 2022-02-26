@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetImmersiveUserColorSetPreference Method</title>
+	<title>Import.GetPrivateProfileString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetImmersiveUserColorSetPreference Method</h1>
+		<h1 class="title">Import.GetPrivateProfileString Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -99,50 +99,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
-
 <div class="section_container">
 	<div id="syntaxSection" class="section">	
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)&gt; _&nbsp;<br />Public Shared Function GetImmersiveUserColorSetPreference( _&nbsp;<br />   ByVal <i>bForceCheckRegistry</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a>, _&nbsp;<br />   ByVal <i>bSkipCheckOnFail</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">Integer</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -175,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetImmersiveUserColorSetPreference(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bForceCheckRegistry</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bSkipCheckOnFail</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32&quot;,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetPrivateProfileString(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Section</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Default</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>RetVal</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>Size</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>FilePath</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,27 +152,79 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="bForceCheckRegistry" class="parameterList">
+	Parameters</h4><dl paramName="Section" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bForceCheckRegistry
+			Section
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="bSkipCheckOnFail" class="parameterList">
+<dl paramName="Key" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bSkipCheckOnFail
+			Key
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="Default" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Default
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="RetVal" class="parameterList">
+	<dt>
+		<span class="parameter">
+			RetVal
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="Size" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Size
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="FilePath" class="parameterList">
+	<dt>
+		<span class="parameter">
+			FilePath
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
@@ -223,7 +237,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		Return Value</h4>
 	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
-
 
 
 
@@ -297,9 +310,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]
- public static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry,
-     bool bSkipCheckOnFail);
+[DllImport(&quot;kernel32&quot;,
+     CharSet = CharSet.Unicode)]
+ public static extern int GetPrivateProfileString(string Section,
+     string Key,
+     string Default,
+     StringBuilder RetVal,
+     int Size,
+     string FilePath);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -361,11 +379,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000FD.html">Import Class</a><br />
+			<a href="topic_000000000000010D.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			

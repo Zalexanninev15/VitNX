@@ -1,1 +1,1 @@
-search_result['231']=["topic_000000000000008F.html","Config.GetPublicIP Method","Gets the public IP of PC."];
+search_result['231']=["topic_0000000000000094.html","VitNX.Functions.Common.Web Namespace",""];
