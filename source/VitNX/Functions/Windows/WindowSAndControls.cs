@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,7 +14,7 @@ namespace VitNX.Functions.Windows.WindowSAndControls
         /// <summary>
         /// Minimizes the all windows.
         /// </summary>
-        public static void MinimizeAllWindows()
+        public static void MinimizeAll()
         {
             IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
             Import.SendMessage(lHwnd, 0x111,
@@ -24,7 +25,7 @@ namespace VitNX.Functions.Windows.WindowSAndControls
         /// <summary>
         /// Maximizes the all windows.
         /// </summary>
-        public static void MaximizeAllWindows()
+        public static void MaximizeAll()
         {
             IntPtr lHwnd = Import.FindWindow("Shell_TrayWnd", null);
             Import.SendMessage(lHwnd, 0x111,
@@ -39,6 +40,19 @@ namespace VitNX.Functions.Windows.WindowSAndControls
         {
             IntPtr handle = Import.GetConsoleWindow();
             Import.ShowWindow(handle, 0);
+        }
+
+        /// <summary>
+        /// Shows the window as TopMost.
+        /// </summary>
+        /// <param name="Handler">The handler.</param>
+        public static void ShowAsTopMost(IntPtr Handler)
+        {
+            Import.SetWindowPos(Handler,
+               new IntPtr((int)WindowPosFlags.HWND_TOPMOST),
+               0, 0, 0, 0,
+               (int)WindowPosFlags.SWP_NOMOVE |
+               (int)WindowPosFlags.SWP_NOSIZE);
         }
 
         /// <summary>
@@ -98,11 +112,6 @@ namespace VitNX.Functions.Windows.WindowSAndControls
 
     public class Controls
     {
-        /// <summary>
-        /// Removing the focus from the element/control from which the function is called.
-        /// </summary>
-        public static void RemoveFocus() => Import.SetFocus(IntPtr.Zero);
-
         private static uint SavedVolumeLevel;
         private static bool VolumeLevelSaved = false;
 
