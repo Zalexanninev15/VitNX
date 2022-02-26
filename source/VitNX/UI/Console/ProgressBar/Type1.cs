@@ -77,8 +77,8 @@ namespace VitNX.UI.Console.ProgressBar
                     int progressBlockCount = (int)(currentProgress * blockCount);
                     int percent = (int)(currentProgress * 100);
                     string text = string.Format(work + ": [{0}{1}] {2,3}% {3}",
-                        new string('▰', progressBlockCount),
-                        new string('-', blockCount - progressBlockCount),
+                        new string('=', progressBlockCount),
+                        new string(' ', blockCount - progressBlockCount),
                         percent, animation[animationIndex++ % animation.Length]);
                     UpdateText(text);
                     ResetTimer();
