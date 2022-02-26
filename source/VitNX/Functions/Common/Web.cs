@@ -18,6 +18,7 @@ namespace VitNX.Functions.Common.Web
         /// Downloads the string from site/server.
         /// </summary>
         /// <param name="url">The url.</param>
+        /// <param name="ifError">Text is returned if no string can be retrieved</param>
         /// <returns>A string.</returns>
         public static string DownloadString(string url, string ifError = "404")
         {
