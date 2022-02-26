@@ -14,7 +14,6 @@ using System.Windows.Forms;
 
 using VitNX.Functions.Windows.Apps;
 using VitNX.Functions.Windows.Win32;
-using System.Linq;
 
 namespace VitNX.Functions.Common.Information
 {
@@ -610,27 +609,6 @@ namespace VitNX.Functions.Common.Information
         }
 
         /// <summary>
-        /// Get DefaultGateway of NetworkInterface in IPAddress.
-        /// </summary>
-        public static IPAddress DefaultGateway() => NetworkInterface
-        .GetAllNetworkInterfaces()
-        .Where(n => n.OperationalStatus == OperationalStatus.Up)
-        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
-        .Select(g => g?.Address).FirstOrDefault(a => a != null);
-
-        /// <summary>
-        /// Activate all security protocols for all network functions to work (HTTPS).
-        /// </summary>
-        ///
-        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
-        SecurityProtocolType.Tls11 |
-        SecurityProtocolType.Tls;
-
-        // Code for .NET Framework 4.8+
-        // SecurityProtocolType.Tls13
-
-        /// <summary>
         /// Gets the MAC address.
         /// </summary>
         /// <returns>A string.</returns>
@@ -663,11 +641,11 @@ namespace VitNX.Functions.Common.Information
         /// <summary>
         /// Internet status (int32) for IsHaveInternet function
         /// </summary>
-        public enum INTERNET_STATUS : int
+        public enum INTERNET_STATUS
         {
-            UNKNOWN_PROBLEM = -1,
-            UNCONNECTED = 0,
-            CONNECTED = 1
+            UNKNOWN_PROBLEM,
+            UNCONNECTED,
+            CONNECTED
         }
 
         /// <summary>

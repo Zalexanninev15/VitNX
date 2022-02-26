@@ -2,7 +2,9 @@
 using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 
 namespace VitNX.Functions.Common.Web
@@ -17,7 +19,7 @@ namespace VitNX.Functions.Common.Web
         /// </summary>
         /// <param name="url">The url.</param>
         /// <returns>A string.</returns>
-        public static string DownloadString(string url)
+        public static string DownloadString(string url, string ifError = "404")
         {
             try
             {
@@ -27,7 +29,7 @@ namespace VitNX.Functions.Common.Web
                     return Data.Text.FixDeEncoding(client.DownloadString(url));
                 }
             }
-            catch (Exception ex) { return ex.Message; }
+            catch { return ifError; }
         }
 
         /// <summary>
@@ -216,5 +218,33 @@ namespace VitNX.Functions.Common.Web
             }
             catch (Exception e) { completed(e.ToString()); }
         }
+    }
+
+    /// <summary>
+    /// The configs for normal work with sites and Internet.
+    /// </summary>
+    public class Config
+    {
+        /// <summary>
+        /// Activate all security protocols for all network functions to work (HTTPS).
+        /// Example: ServicePointManager.SecurityProtocol = VitNX.Functions.Common.Web.Config.UseProtocols();
+        /// </summary>
+        ///
+        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
+        SecurityProtocolType.Tls11 |
+        SecurityProtocolType.Tls;
+
+        // Code for .NET Framework 4.8+
+        // SecurityProtocolType.Tls13
+
+        /// <summary>
+        /// Activate DefaultGateway of NetworkInterface in IPAddress.
+        /// </summary>
+        public static IPAddress DefaultGateway() => NetworkInterface
+        .GetAllNetworkInterfaces()
+        .Where(n => n.OperationalStatus == OperationalStatus.Up)
+        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
+        .Select(g => g?.Address).FirstOrDefault(a => a != null);
     }
 }
