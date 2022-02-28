@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CompressAndDecompress.GetBytes Method</title>
+	<title>EncryptAndDecrypt.SHA1_Encrypt Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CompressAndDecompress.GetBytes Method</h1>
+		<h1 class="title">EncryptAndDecrypt.SHA1_Encrypt Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,9 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the bytes.
-Example: CompressAndDecompress.GetBytes(input)</summary-info>
-
+        <summary-info>Encrypt text by SHA1.</summary-info>
 
 
 
@@ -107,44 +105,6 @@ Example: CompressAndDecompress.GetBytes(input)</summary-info>
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetBytes( _&nbsp;<br />   ByVal <i>input</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">Byte</a>()</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -177,7 +137,7 @@ Example: CompressAndDecompress.GetBytes(input)</summary-info>
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] GetBytes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SHA1_Encrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -192,10 +152,10 @@ Example: CompressAndDecompress.GetBytes(input)</summary-info>
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="input" class="parameterList">
+	Parameters</h4><dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			input
+			text
 		</span>
 	</dt>
 	<dd>
@@ -203,19 +163,18 @@ Example: CompressAndDecompress.GetBytes(input)</summary-info>
 	</dd>
 </dl>
 <p>
-	 
+	Tour text. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		An array of byte. 
+		A string. 
 	</p>
 	
-
 
 
 
@@ -289,9 +248,16 @@ Example: CompressAndDecompress.GetBytes(input)</summary-info>
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static byte[] GetBytes(string input)
+public string SHA1_Encrypt(string text)
  {
-     return Encoding.UTF8.GetBytes(input);
+     using (SHA1Managed sha1 = new SHA1Managed())
+     {
+         var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(text));
+         var sb = new StringBuilder(hash.Length * 2);
+         foreach (byte b in hash)
+             sb.Append(b.ToString(&quot;X2&quot;));
+         return sb.ToString();
+     }
  }
 					</pre>			
 				</div>
@@ -354,7 +320,7 @@ public static byte[] GetBytes(string input)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000029.html">CompressAndDecompress Class</a><br />
+			<a href="topic_0000000000000027.html">EncryptAndDecrypt Class</a><br />
 
 
 

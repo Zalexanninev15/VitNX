@@ -1,1 +1,1 @@
-search_result['1069']=["topic_000000000000031D.html","WindowS.SetWindowsElevenStyleForWinForm Method","Applying Windows 11 roundings to a window(s)."];
+search_result['1069']=["topic_00000000000002C2.html","DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY Enumeration",""];

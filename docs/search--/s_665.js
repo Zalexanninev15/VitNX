@@ -1,1 +1,1 @@
-search_result['665']=["topic_00000000000001AF.html","Constants Class","The constants for imported functions."];
+search_result['665']=["topic_00000000000001A8.html","Import.GetImmersiveColorTypeFromName Method",""];

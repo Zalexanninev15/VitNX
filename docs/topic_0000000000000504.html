@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_ToogleButton.OnPaint Method</title>
+	<title>VitNX2_PictureBox Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_ToogleButton.OnPaint Method</h1>
+		<h1 class="title">VitNX2_PictureBox Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004D4.html">VitNX.UI.ControlsV2</a>
+<a href="topic_00000000000004E3.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -89,8 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.buttonbase.onpaint">OnPaint</a> event.</summary-info>
-
 
 
 
@@ -106,44 +104,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnPaint( _&nbsp;<br />   ByVal <i>pevent</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> _&nbsp;<br />)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pevent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX2_PictureBox()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,23 +149,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="pevent" class="parameterList">
-	<dt>
-		<span class="parameter">
-			pevent
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -281,32 +224,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs pevent)
+public VitNX2_PictureBox()
  {
-     int toggleSize = Height - 5;
-     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-     pevent.Graphics.Clear(Parent.BackColor);
-     if (Checked)
-     {
-         if (solidStyle)
-             pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
-         else
-             pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
-         pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor),
-             new Rectangle(Width - Height + 1, 2, toggleSize,
-             toggleSize));
-     }
-     else
-     {
-         if (solidStyle)
-             pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
-         else
-             pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
-         pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
-             new Rectangle(2, 2,
-             toggleSize,
-             toggleSize));
-     }
+     Size = new Size(100, 100);
+     SizeMode = PictureBoxSizeMode.StretchImage;
  }
 					</pre>			
 				</div>
@@ -369,11 +290,11 @@ protected override void OnPaint(PaintEventArgs pevent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000502.html">VitNX2_ToogleButton Class</a><br />
+			<a href="topic_0000000000000503.html">VitNX2_PictureBox Class</a><br />
 
 
 
-<a href="topic_00000000000004D4.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000004E3.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			

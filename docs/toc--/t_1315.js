@@ -1,0 +1,1 @@
+c['1315']=[['1316',"Properties Class","topic_0000000000000514.html",1],['1320',"Type Enumeration","topic_0000000000000520.html",0],['1321',"Methods","topic_0000000000000513_methods--.html",1]];

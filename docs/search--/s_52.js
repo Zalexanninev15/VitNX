@@ -1,1 +1,1 @@
-search_result['52']=["topic_0000000000000020.html","EncryptAndDecrypt.SimpleDecrypt Method","Simples the decrypt."];
+search_result['52']=["topic_0000000000000025.html","Text.IsValidCardNumber Method","Are the valid card number."];

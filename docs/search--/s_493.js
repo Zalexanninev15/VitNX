@@ -1,1 +1,1 @@
-search_result['493']=["topic_0000000000000113.html","Import.DeleteDC Method",""];
+search_result['493']=["topic_000000000000010C.html","VitNX.Functions.Windows.Win32 Namespace",""];

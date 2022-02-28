@@ -1,1 +1,1 @@
-search_result['385']=["topic_00000000000000D9.html","DISPLAYCONFIG_TARGET_MODE Structure",""];
+search_result['385']=["topic_00000000000000DA_events--.html","DISPLAYCONFIG_PATH_INFO Events",""];

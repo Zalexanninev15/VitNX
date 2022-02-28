@@ -1,1 +1,1 @@
-search_result['42']=["topic_000000000000001B.html","Text.SizeSuffix Method","Gives a suffix to the file size for output."];
+search_result['42']=["topic_000000000000001B.html","Text.ContainsSymbols Method","Contains the symbols."];

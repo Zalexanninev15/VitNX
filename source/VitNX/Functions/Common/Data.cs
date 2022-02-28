@@ -76,6 +76,77 @@ namespace VitNX.Functions.Common.Data
         public static bool ContainsOnlyLatters(string text) => text.All(char.IsLetter);
 
         /// <summary>
+        /// Gets the number as percent (double).
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>A string.</returns>
+        public static string NumberAsPercentD(double number) => string.Format("{0:P}", number);
+
+        /// <summary>
+        /// Gets the number as percent (int32).
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>A string.</returns>
+        public static string NumberAsPercentI(int number) => string.Format("{0:P}", number);
+
+        /// <summary>
+        /// Converts the number to HEX (double).
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>A string.</returns>
+        public static string ConvertNumberToHexD(double number) => string.Format("{0:X}", number);
+
+        /// <summary>
+        /// Converts the number to HEX (int32).
+        /// </summary>
+        /// <param name="number">The number.</param>
+        /// <returns>A string.</returns>
+        public static string ConvertNumberToHexI(int number) => string.Format("{0:X}", number);
+
+
+        /// <summary>
+        /// Converts the date to short date.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>A string.</returns>
+        public static string DateAsShortDate(DateTime dt) => string.Format("{0:d}", dt);
+
+        /// <summary>
+        /// Converts the date to long date.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>A string.</returns>
+        public static string DateAsLongDate(DateTime dt) => string.Format("{0:D}", dt);
+
+        /// <summary>
+        /// Converts the date to short time.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>A string.</returns>
+        public static string DateAsShortTime(DateTime dt) => string.Format("{0:t}", dt);
+
+        /// <summary>
+        /// Converts the date to long time.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>A string.</returns>
+        public static string DateAsLongTime(DateTime dt) => string.Format("{0:T}", dt);
+
+        /// <summary>
+        /// Converts the date to month.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>A string.</returns>
+        public static string DateAsMonth(DateTime dt) => string.Format("{0:M}", dt);
+
+        /// <summary>
+        /// Converts the date to year.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>A string.</returns>
+        public static string DateAsYear(DateTime dt) => string.Format("{0:Y}", dt);
+
+        /// <summary>
         /// Contains the numbers latters.
         /// </summary>
         /// <param name="text">The text.</param>
@@ -207,6 +278,20 @@ namespace VitNX.Functions.Common.Data
         }
 
         /// <summary>
+        /// Converts the list to string (space is used as separator).
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <returns>A string.</returns>
+        public static string ConvertListToString(List<string> list)
+        {
+            var data = list;
+            var builder = new StringBuilder();
+            foreach (var word in data)
+                builder.Append(word).Append(" ");
+            return builder.ToString();
+        }
+
+        /// <summary>
         /// Fixes the de-encoding.
         /// </summary>
         /// <param name="text">The text.</param>
@@ -291,9 +376,9 @@ namespace VitNX.Functions.Common.Data
         }
 
         /// <summary>
-        /// Encrypt by MD5.
+        /// Encrypt text by MD5.
         /// </summary>
-        /// <param name="text">The text.</param>
+        /// <param name="text">Your text.</param>
         /// <returns>A string.</returns>
         public static string MD5_Encrypt(string text)
         {
@@ -301,8 +386,25 @@ namespace VitNX.Functions.Common.Data
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(text));
             StringBuilder sBuilder = new StringBuilder();
             for (int i = 0; i <= data.Length - 1; i++)
-                sBuilder.Append(data[i].ToString("x2"));
+                sBuilder.Append(data[i].ToString("X2"));
             return sBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Encrypt text by SHA1.
+        /// </summary>
+        /// <param name="text">Tour text.</param>
+        /// <returns>A string.</returns>
+        public string SHA1_Encrypt(string text)
+        {
+            using (SHA1Managed sha1 = new SHA1Managed())
+            {
+                var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(text));
+                var sb = new StringBuilder(hash.Length * 2);
+                foreach (byte b in hash)
+                    sb.Append(b.ToString("X2"));
+                return sb.ToString();
+            }
         }
 
         /// <summary>
@@ -522,25 +624,15 @@ namespace VitNX.Functions.Common.Data
 
     /// <summary>
     /// Compress and decompress the text or byte[].
+    /// Examples: https://gist.github.com/Zalexanninev15/cbd4dde903095ca7a5e53c1fc6c42807
     /// </summary>
     public class CompressAndDecompress
     {
-        /* Example:
-         *
-         * Compress
-         * byte[] compressed = CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input));
-         * string output = Encoding.UTF8.GetString(compressed);
-         *
-         * Decompress
-         * string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));
-         *
-         */
-
         /// <summary>
         /// Gets the bytes.
-        /// Example: CompressAndDecompress.GetBytes(input)
+        /// Example: Data.CompressAndDecompress.GetBytes(input)
         /// </summary>
-        /// <param name="str">The str.</param>
+        /// <param name="input">The string.</param>
         /// <returns>An array of byte.</returns>
         public static byte[] GetBytes(string input)
         {
@@ -549,9 +641,9 @@ namespace VitNX.Functions.Common.Data
 
         /// <summary>
         /// Bytes the to string.
-        /// Example: string output = CompressAndDecompress.BytesToString(CompressAndDecompress.DecompressBytes(compressed));
+        /// Example: string output = Data.CompressAndDecompress.BytesToString(Data.CompressAndDecompress.DecompressBytes(compressed));
         /// </summary>
-        /// <param name="bytes">The bytes.</param>
+        /// <param name="input">The bytes.</param>
         /// <returns>A string.</returns>
         public static string BytesToString(byte[] input)
         {
@@ -560,9 +652,9 @@ namespace VitNX.Functions.Common.Data
 
         /// <summary>
         /// Compresses the bytes.
-        /// Example: string output = Encoding.UTF8.GetString(CompressAndDecompress.CompressBytes(CompressAndDecompress.GetBytes(input)));
+        /// Example: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));
         /// </summary>
-        /// <param name="bytes">The bytes.</param>
+        /// <param name="input">The bytes.</param>
         /// <returns>An array of byte.</returns>
         public static byte[] CompressBytes(byte[] input)
         {
@@ -575,9 +667,9 @@ namespace VitNX.Functions.Common.Data
 
         /// <summary>
         /// Decompresses the bytes.
-        /// Example: CompressAndDecompress.DecompressBytes(compressed)
+        /// Example: Data.CompressAndDecompress.DecompressBytes(compressed)
         /// </summary>
-        /// <param name="bytes">The bytes.</param>
+        /// <param name="input">The bytes.</param>
         /// <returns>An array of byte.</returns>
         public static byte[] DecompressBytes(byte[] input)
         {

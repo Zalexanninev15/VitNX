@@ -1,1 +1,1 @@
-search_result['158']=["topic_0000000000000062.html","Monitor.CaptureScreenToMemoryStream Method","Captures the screen to memory stream."];
+search_result['158']=["topic_0000000000000067.html","Disk.GetAll Method","Gets the all (logical)."];

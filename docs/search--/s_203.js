@@ -1,1 +1,1 @@
-search_result['203']=["topic_000000000000007A.html","IniSettings32.Initialize Method","Initializing the configuration INI file."];
+search_result['203']=["topic_000000000000007B.html","Internet.GetHostName Method","Gets the host name (name of PC, Windows System)."];

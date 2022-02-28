@@ -1,1 +1,1 @@
-search_result['171']=["topic_000000000000006A_vars--.html","Motherboard Fields",""];
+search_result['171']=["topic_000000000000006F.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];

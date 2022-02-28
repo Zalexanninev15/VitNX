@@ -1,1 +1,1 @@
-search_result['1336']=["topic_00000000000003BB.html","VitNX_RadioButton.OnPaint Method","Raises the OnPaint event."];
+search_result['1336']=["topic_00000000000003B9.html","VitNX_NumericUpDown Class",""];

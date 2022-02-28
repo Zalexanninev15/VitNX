@@ -1,1 +1,1 @@
-c['780']=[['781',"Writeln Method","topic_000000000000032B.html",0]];
+c['780']=[['781',"Methods","topic_0000000000000327_methods--.html",1]];

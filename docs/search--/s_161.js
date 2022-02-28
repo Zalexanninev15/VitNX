@@ -1,1 +1,1 @@
-search_result['161']=["topic_0000000000000065.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];
+search_result['161']=["topic_000000000000006A.html","Monitor Class","Work with informations of Monitor(s)."];

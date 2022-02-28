@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Management;
+using System.Net.NetworkInformation;
+using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -277,7 +279,7 @@ namespace VitNX.Functions.Common.Information
         /// <summary>
         /// Set (get) values for Disk's characteristics (size of Windows).
         /// </summary>
-        public static long[] SetCWindowsSize()
+        private static long[] SetCWindowsSize()
         {
             long[] rt = new long[2];
             DriveInfo driveInfo = new DriveInfo(@"C:\Windows");
@@ -532,7 +534,7 @@ namespace VitNX.Functions.Common.Information
         /// <summary>
         /// Sets (gets) values for RAM's characteristics.
         /// </summary>
-        public static string Set()
+        private static string Set()
         {
             string toRAM = "";
             ManagementObjectSearcher myRamObject = new ManagementObjectSearcher("select * from Win32_PhysicalMemory");
@@ -562,6 +564,108 @@ namespace VitNX.Functions.Common.Information
             toRAM += Convert.ToString((int)new Microsoft.VisualBasic.Devices.ComputerInfo()
                 .AvailableVirtualMemory / 1000000) + "/";
             return toRAM;
+        }
+    }
+
+    /// <summary>
+    /// Work with informations of Internet (PC).
+    /// </summary>
+    public class Internet
+    {
+        /// <summary>
+        /// Gets the host name (name of PC, Windows System).
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetHostName() => Dns.GetHostName();
+
+        /// <summary>
+        /// Gets the local IPv6 (obsolete, but work).
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetLocalIPv6() => Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+
+        /// <summary>
+        /// Gets the local IPv4 (obsolete, but work).
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetLocalIPv4() => Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
+
+        /// <summary>
+        /// Gets the public IP of PC.
+        /// </summary>
+        public static string GetPublicIP()
+        {
+            string PublicIP = "localhost";
+            using (WebClient client = new WebClient())
+            {
+                try { PublicIP = client.DownloadString("https://icanhazip.com"); }
+                catch { PublicIP = client.DownloadString("https://checkip.amazonaws.com"); }
+                if (PublicIP == "" || PublicIP == "0.0.0.0" || PublicIP == "localhost")
+                {
+                    try { PublicIP = client.DownloadString("https://checkip.amazonaws.com"); } catch { PublicIP = "0.0.0.0"; }
+                }
+            }
+            return PublicIP.Trim();
+        }
+
+        /// <summary>
+        /// Gets the MAC address.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string GetMacAddress()
+        {
+            string macaddr = "";
+            IPGlobalProperties computerProperties = IPGlobalProperties.GetIPGlobalProperties();
+            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+            if (nics == null || nics.Length < 1)
+                return "0";
+            foreach (NetworkInterface adapter in nics)
+            {
+                IPInterfaceProperties properties = adapter.GetIPProperties();
+                if (adapter.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || adapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                {
+                    PhysicalAddress address = adapter.GetPhysicalAddress();
+                    byte[] bytes = address.GetAddressBytes();
+                    for (int i = 0; i < bytes.Length; i++)
+                    {
+                        macaddr += bytes[i].ToString("X2");
+                        if (i != bytes.Length - 1)
+                            macaddr += "-";
+                    }
+                }
+                break;
+            }
+            return macaddr;
+        }
+
+        /// <summary>
+        /// Internet status (int32) for IsHaveInternet function
+        /// </summary>
+        public enum INTERNET_STATUS
+        {
+            UNKNOWN_PROBLEM,
+            UNCONNECTED,
+            CONNECTED
+        }
+
+        /// <summary>
+        /// Are the have internet.
+        /// </summary>
+        /// <param name="ipAddressOrDomainForPing">The ip address or domain for ping.</param>
+        /// <returns>An INTERNET_STATUS.</returns>
+        public static INTERNET_STATUS IsHaveInternet(string ipAddressOrDomainForPing = "google.com")
+        {
+            try
+            {
+                Ping ping = new Ping();
+                PingReply pingReply = null;
+                pingReply = ping.Send(ipAddressOrDomainForPing);
+                if (pingReply.Status == IPStatus.Success)
+                    return INTERNET_STATUS.CONNECTED;
+                else
+                    return INTERNET_STATUS.UNCONNECTED;
+            }
+            catch { return INTERNET_STATUS.UNKNOWN_PROBLEM; }
         }
     }
 }

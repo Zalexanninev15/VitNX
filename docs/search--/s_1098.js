@@ -1,1 +1,1 @@
-search_result['1098']=["topic_000000000000032B.html","Text.Writeln Method","Writeln text with the colors."];
+search_result['1098']=["topic_000000000000032E.html","WindowS.SetWindowsElevenStyleForWinForm Method","Applying Windows 11 roundings to a window(s)."];

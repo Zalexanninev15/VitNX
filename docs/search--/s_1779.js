@@ -1,1 +1,1 @@
-search_result['1779']=["topic_00000000000004DC.html","VitNX2_Button.OnHandleCreated Method","Raises the HandleCreated event."];
+search_result['1779']=["topic_00000000000004D8_attached_props--.html","VitNX_ProgressBarRounded Attached Properties",""];

@@ -42,6 +42,7 @@
             this.helloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.приветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.您好ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vitNX2_Button3 = new VitNX.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_Tab1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vitNX2_PictureBox1)).BeginInit();
@@ -62,6 +63,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.vitNX2_Button3);
             this.tabPage1.Controls.Add(this.vitNX2_Button2);
             this.tabPage1.Controls.Add(this.vitNX2_TextBox1);
             this.tabPage1.Controls.Add(this.vitNX2_PictureBox1);
@@ -84,7 +86,7 @@
             this.vitNX2_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vitNX2_Button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vitNX2_Button2.ForeColor = System.Drawing.Color.Black;
-            this.vitNX2_Button2.Location = new System.Drawing.Point(198, 143);
+            this.vitNX2_Button2.Location = new System.Drawing.Point(131, 144);
             this.vitNX2_Button2.Name = "vitNX2_Button2";
             this.vitNX2_Button2.Size = new System.Drawing.Size(139, 45);
             this.vitNX2_Button2.TabIndex = 10;
@@ -229,6 +231,26 @@
             this.您好ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.您好ToolStripMenuItem.Text = "您好";
             // 
+            // vitNX2_Button3
+            // 
+            this.vitNX2_Button3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.vitNX2_Button3.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.vitNX2_Button3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vitNX2_Button3.BorderRadius = 3;
+            this.vitNX2_Button3.BorderSize = 1;
+            this.vitNX2_Button3.FlatAppearance.BorderSize = 0;
+            this.vitNX2_Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vitNX2_Button3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vitNX2_Button3.ForeColor = System.Drawing.Color.Black;
+            this.vitNX2_Button3.Location = new System.Drawing.Point(276, 144);
+            this.vitNX2_Button3.Name = "vitNX2_Button3";
+            this.vitNX2_Button3.Size = new System.Drawing.Size(139, 45);
+            this.vitNX2_Button3.TabIndex = 10;
+            this.vitNX2_Button3.Text = "Enable Directplay";
+            this.vitNX2_Button3.TextColor = System.Drawing.Color.Black;
+            this.vitNX2_Button3.UseVisualStyleBackColor = false;
+            this.vitNX2_Button3.Click += new System.EventHandler(this.vitNX2_Button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +285,7 @@
         private VitNX.UI.ControlsV2.VitNX2_Button vitNX2_Button1;
         private VitNX.UI.ControlsV2.VitNX2_Panel vitNX2_Panel2;
         private VitNX.UI.ControlsV2.VitNX2_Button vitNX2_Button2;
+        private VitNX.UI.ControlsV2.VitNX2_Button vitNX2_Button3;
     }
 }
 

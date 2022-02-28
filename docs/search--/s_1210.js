@@ -1,1 +1,1 @@
-search_result['1210']=["topic_0000000000000370.html","VitNX_ComboBox.OnPaint Method","Raises the Paint event."];
+search_result['1210']=["topic_000000000000036A_vars--.html","VitNX_CheckBox Fields",""];

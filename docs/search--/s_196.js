@@ -1,1 +1,1 @@
-search_result['196']=["topic_0000000000000078.html","PowerControl.Monitor Method","The power of monitor."];
+search_result['196']=["topic_0000000000000079.html","Ram.Characteristics Method","Gets all characteristics."];

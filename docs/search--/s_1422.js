@@ -1,1 +1,1 @@
-search_result['1422']=["topic_00000000000003F5.html","VitNX_TextBox Class",""];
+search_result['1422']=["topic_00000000000003F8.html","VitNX_ScrollView.OnPaintBackground Method","Paints the background of the control."];

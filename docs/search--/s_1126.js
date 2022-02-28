@@ -1,1 +1,1 @@
-search_result['1126']=["topic_0000000000000339.html","Colors Class",""];
+search_result['1126']=["topic_000000000000033B.html","Type2.PrintProgressToConsole Method","Prints the progress in console."];

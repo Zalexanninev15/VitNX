@@ -1,1 +1,1 @@
-search_result['1298']=["topic_00000000000003A4.html","VitNX_ListView.PaintContent Method",""];
+search_result['1298']=["topic_00000000000003A6.html","VitNX_Label.OnSizeChanged Method","Raises the SizeChanged event."];

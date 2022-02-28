@@ -1,1 +1,1 @@
-search_result['1853']=["topic_00000000000004FB_attached_props--.html","VitNX2_TextBox Attached Properties",""];
+search_result['1853']=["topic_00000000000004FF_attached_props--.html","VitNX2_Panel Attached Properties",""];

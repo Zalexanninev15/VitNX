@@ -1,1 +1,1 @@
-search_result['1055']=["topic_000000000000030B.html","E_ROLE Enumeration",""];
+search_result['1055']=["topic_00000000000002A0.html","HWND Class",""];

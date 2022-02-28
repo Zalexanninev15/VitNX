@@ -1,1 +1,1 @@
-search_result['269']=["topic_00000000000000A6.html","TaskBarProgressBar Class","Work with progressbar on taskbar."];
+search_result['269']=["topic_00000000000000A6.html","Processes.OpenLink Method","Opens the link of site."];

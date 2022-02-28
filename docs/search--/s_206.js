@@ -1,1 +1,1 @@
-search_result['206']=["topic_000000000000007D.html","IniSettings32.DeleteKey Method","Deletes the key in section."];
+search_result['206']=["topic_000000000000007E.html","Internet.GetPublicIP Method","Gets the public IP of PC."];

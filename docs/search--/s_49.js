@@ -1,1 +1,1 @@
-search_result['49']=["topic_000000000000001D.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];
+search_result['49']=["topic_0000000000000022.html","Text.RandomNums Method","Randoms the nums."];

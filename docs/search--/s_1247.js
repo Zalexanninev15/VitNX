@@ -1,1 +1,1 @@
-search_result['1247']=["topic_0000000000000389.html","VitNX_DropdownList.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1247']=["topic_0000000000000388_props--.html","VitNX_ContextMenu Properties",""];

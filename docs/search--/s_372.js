@@ -1,1 +1,1 @@
-search_result['372']=["topic_00000000000000D1.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Structure",""];
+search_result['372']=["topic_00000000000000D4.html","modeInfoIdx Field",""];

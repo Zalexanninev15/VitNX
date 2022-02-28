@@ -1,1 +1,1 @@
-search_result['87']=["topic_0000000000000034.html","FileSystem.WriteTextToFileUTF8 Method","Writes the text to file UTF-8."];
+search_result['87']=["topic_0000000000000039.html","CompressAndDecompress.DecompressBytes Method","Decompresses the bytes.\r\nExample: Data.CompressAndDecompress.DecompressBytes(compressed)"];

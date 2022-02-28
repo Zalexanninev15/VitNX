@@ -1,1 +1,1 @@
-search_result['1153']=["topic_0000000000000345_vars--.html","ScrollValueEventArgs Fields",""];
+search_result['1153']=["topic_0000000000000348.html","ObservableList\u0026lt;T\u0026gt;.Clear Method",""];

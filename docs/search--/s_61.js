@@ -1,1 +1,1 @@
-search_result['61']=["topic_0000000000000024.html","EncrypterAndDecrypter.SetPassword Method","Sets the password."];
+search_result['61']=["topic_0000000000000029.html","EncryptAndDecrypt.MD5_Encrypt Method","Encrypt text by MD5."];

@@ -1,1 +1,1 @@
-search_result['394']=["topic_00000000000000DB_events--.html","POINTL Events",""];
+search_result['394']=["topic_00000000000000DE_events--.html","DISPLAYCONFIG_2DREGION Events",""];

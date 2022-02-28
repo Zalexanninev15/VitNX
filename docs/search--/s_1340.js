@@ -1,1 +1,1 @@
-search_result['1340']=["topic_00000000000003BC_methods--.html","VitNX_ScrollBar Methods",""];
+search_result['1340']=["topic_00000000000003B9_props--.html","VitNX_NumericUpDown Properties",""];

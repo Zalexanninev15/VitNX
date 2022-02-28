@@ -1,1 +1,1 @@
-search_result['1105']=["topic_000000000000032D_vars--.html","ObservableList\u0026lt;T\u0026gt; Fields",""];
+search_result['1105']=["topic_0000000000000330.html","Controls.VolumeOnFocus Method","Enable/disable sound (nasty) when focusing on an item/control.."];

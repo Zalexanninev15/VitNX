@@ -1,1 +1,1 @@
-search_result['524']=["topic_0000000000000131.html","Import.GetMapMode Method",""];
+search_result['524']=["topic_0000000000000126.html","Import.DrawEdge Method",""];

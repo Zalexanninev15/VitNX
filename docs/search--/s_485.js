@@ -1,1 +1,1 @@
-search_result['485']=["topic_000000000000010B.html","Import.CreateBrushIndirect Method",""];
+search_result['485']=["topic_0000000000000109.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];

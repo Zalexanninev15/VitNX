@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['91',"VitNX.Functions.Common.Information Namespace","topic_0000000000000042.html"],['110',"Monitor Class","topic_0000000000000060.html"],['111',"Methods","topic_0000000000000060_methods--.html"],['112',"CaptureScreen Method","topic_0000000000000063.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['102',"VitNX.Functions.Common.Information Namespace","topic_000000000000004D.html"],['117',"Gpu Class","topic_0000000000000063.html"]];

@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['813',"VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace","topic_0000000000000338.html"],['815',"Constsants Class","topic_000000000000033A.html"],['816',"Fields","topic_000000000000033A_vars--.html"],['817',"ArrowButtonSize Field","topic_000000000000033D.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['789',"VitNX.UI.Console Namespace","topic_000000000000033C.html"],['790',"Text Class","topic_000000000000033D.html"]];

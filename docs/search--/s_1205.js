@@ -1,1 +1,1 @@
-search_result['1205']=["topic_000000000000036B.html","VitNX_ComboBox.OnTextChanged Method","Raises the TextChanged event."];
+search_result['1205']=["topic_000000000000036A.html","VitNX_CheckBox Class",""];

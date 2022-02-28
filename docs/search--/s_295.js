@@ -1,1 +1,1 @@
-search_result['295']=["topic_00000000000000AE_methods--.html","STATask Methods",""];
+search_result['295']=["topic_00000000000000B6.html","VolumeControl Class","The volume control."];

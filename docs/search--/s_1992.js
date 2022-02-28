@@ -1,1 +1,1 @@
-search_result['1992']=["topic_000000000000085E.html","NotificationForm.Dispose Method","Clean up any resources being used."];
+search_result['1992']=["topic_000000000000085E.html","NotificationPosition Enumeration","/// Место отображения уведомлений на экране.\r\n    ///"];

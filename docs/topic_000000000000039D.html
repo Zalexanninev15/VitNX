@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ListView.OnKeyDown Method</title>
+	<title>VitNX_DropdownList.OnKeyDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ListView.OnKeyDown Method</h1>
+		<h1 class="title">VitNX_DropdownList.OnKeyDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
 
 
 
@@ -100,50 +100,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
-
 <div class="section_container">
 	<div id="syntaxSection" class="section">	
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnKeyDown( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> _&nbsp;<br />)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -206,7 +167,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </p>
 
 <p />
-
 
 
 
@@ -285,45 +245,8 @@ protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
 
-            if (Items.Count == 0)
-                return;
-
-            if (e.KeyCode != Keys.Down &amp;&amp; e.KeyCode != Keys.Up)
-                return;
-
-            if (MultiSelect &amp;&amp; ModifierKeys == Keys.Shift)
-            {
-                if (e.KeyCode == Keys.Up)
-                {
-                    if (_anchoredItemEnd - 1 &gt;= 0)
-                    {
-                        SelectAnchoredRange(_anchoredItemEnd - 1);
-                        EnsureVisible();
-                    }
-                }
-                else if (e.KeyCode == Keys.Down)
-                {
-                    if (_anchoredItemEnd + 1 &lt;= Items.Count - 1)
-                    {
-                        SelectAnchoredRange(_anchoredItemEnd + 1);
-                    }
-                }
-            }
-            else
-            {
-                if (e.KeyCode == Keys.Up)
-                {
-                    if (_anchoredItemEnd - 1 &gt;= 0)
-                        SelectItem(_anchoredItemEnd - 1);
-                }
-                else if (e.KeyCode == Keys.Down)
-                {
-                    if (_anchoredItemEnd + 1 &lt;= Items.Count - 1)
-                        SelectItem(_anchoredItemEnd + 1);
-                }
-            }
-
-            EnsureVisible();
+            if (e.KeyCode == Keys.Space)
+                ShowMenu();
         }
 					</pre>			
 				</div>
@@ -386,11 +309,11 @@ protected override void OnKeyDown(KeyEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000399.html">VitNX_ListView Class</a><br />
+			<a href="topic_0000000000000392.html">VitNX_DropdownList Class</a><br />
 
 
 
-<a href="topic_0000000000000344.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
 
 
 			

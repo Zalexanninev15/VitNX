@@ -1,1 +1,1 @@
-search_result['226']=["topic_000000000000008B_props--.html","Config Properties",""];
+search_result['226']=["topic_000000000000008F.html","IniSettings32.Read Method","Reads value of key from section."];

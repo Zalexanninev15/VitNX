@@ -1,1 +1,1 @@
-search_result['1434']=["topic_00000000000003F7_vars--.html","VitNX_Title Fields",""];
+search_result['1434']=["topic_00000000000003FF.html","VitNX_SectionPanel.OnPaintBackground Method","Paints the background of the control."];

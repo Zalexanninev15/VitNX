@@ -1,1 +1,1 @@
-search_result['151']=["topic_0000000000000060.html","Monitor Class","Work with informations of Monitor(s)."];
+search_result['151']=["topic_0000000000000065.html","Disk Class","Work with informations of Disk(s)."];

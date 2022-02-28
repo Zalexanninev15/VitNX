@@ -1,1 +1,1 @@
-c['1238']=[['1239',"Methods","topic_00000000000004DD_methods--.html",1]];
+c['1238']=[['1239',"DockContentDragFilter Constructor","topic_00000000000004CD.html",0],['1240',"Methods","topic_00000000000004CC_methods--.html",1]];

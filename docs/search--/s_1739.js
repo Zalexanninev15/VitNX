@@ -1,1 +1,1 @@
-search_result['1739']=["topic_00000000000004C4.html","VitNX.UI.ControlsV1 Namespace",""];
+search_result['1739']=["topic_00000000000004C6.html","VitNX_ToolStripRenderer.OnRenderGrip Method","Raises the RenderGrip event."];

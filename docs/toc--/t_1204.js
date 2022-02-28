@@ -1,1 +1,1 @@
-c['1204']=[['1205',"Methods","topic_00000000000004B1_methods--.html",1]];
+c['1204']=[['1205',"OnHandleCreated Method","topic_00000000000004A4.html",0],['1206',"OnLoad Method","topic_00000000000004AF.html",0],['1207',"ShowError Method","topic_00000000000004AD.html",0],['1208',"ShowInfo Method","topic_00000000000004AB.html",0],['1209',"ShowQuestion Method","topic_00000000000004AE.html",0],['1210',"ShowWarning Method","topic_00000000000004AC.html",0]];

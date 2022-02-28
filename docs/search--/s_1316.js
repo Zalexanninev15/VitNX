@@ -1,1 +1,1 @@
-search_result['1316']=["topic_00000000000003AC.html","VitNX_NumericUpDown.OnMouseEnter Method","Raises the MouseEnter event."];
+search_result['1316']=["topic_00000000000003AC.html","SelectedIndicesChanged Event",""];

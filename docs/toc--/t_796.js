@@ -1,1 +1,1 @@
-c['796']=[['797',"ObservableList\u003cT\u003e Class","topic_000000000000032D.html",1],['811',"ObservableListModified\u003cT\u003e Class","topic_0000000000000336.html",1]];
+c['796']=[['797',"Dispose Method","topic_0000000000000339.html",0],['798',"NotUsed Method","topic_0000000000000338.html",0],['799',"Report Method","topic_0000000000000335.html",0],['800',"SetColor Method","topic_0000000000000336.html",0],['801',"SetText Method","topic_0000000000000337.html",0]];

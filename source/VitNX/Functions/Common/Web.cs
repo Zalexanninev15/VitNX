@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -16,8 +18,9 @@ namespace VitNX.Functions.Common.Web
         /// Downloads the string from site/server.
         /// </summary>
         /// <param name="url">The url.</param>
+        /// <param name="ifError">Text is returned if no string can be retrieved</param>
         /// <returns>A string.</returns>
-        public static string DownloadString(string url)
+        public static string DownloadString(string url, string ifError = "404")
         {
             try
             {
@@ -27,16 +30,16 @@ namespace VitNX.Functions.Common.Web
                     return Data.Text.FixDeEncoding(client.DownloadString(url));
                 }
             }
-            catch (Exception ex) { return ex.Message; }
+            catch { return ifError; }
         }
 
         /// <summary>
-        /// Gets the header and content of site.
+        /// Gets the status header and content of site.
         /// </summary>
         /// <param name="url">The url.</param>
-        /// <param name="useragent">The useragent.</param>
-        /// <returns>An array of string.</returns>
-        public static string[] GetHeaderAndContent(string url, string useragent)
+        /// <param name="userAgent">The UserAgent.</param>
+        /// <returns>An array of string (Header, Content).</returns>
+        public static string[] GetHeaderAndContent(string url, string userAgent)
         {
             string[] data = { "Header", "Content" };
             HttpWebRequest wReq;
@@ -45,7 +48,7 @@ namespace VitNX.Functions.Common.Web
             wReq = (HttpWebRequest)WebRequest.Create(url);
             wReq.KeepAlive = false;
             wReq.Referer = url;
-            wReq.UserAgent = useragent;
+            wReq.UserAgent = userAgent;
             wResp = (HttpWebResponse)wReq.GetResponse();
             data[0] = wResp.Headers.ToString();
             rStream = wResp.GetResponseStream();
@@ -90,98 +93,6 @@ namespace VitNX.Functions.Common.Web
             }
             catch { return false; }
         }
-
-        public enum INTERNET_STATUS : int
-        {
-            UNKNOWN_PROBLEM = -1,
-            UNCONNECTED = 0,
-            CONNECTED = 1
-        }
-
-        /// <summary>
-        /// Are yout have the internet connection on PC.
-        /// </summary>
-        /// <returns>An int.</returns>
-        public static INTERNET_STATUS IsHaveInternet()
-        {
-            try
-            {
-                Ping ping = new Ping();
-                PingReply pingReply = null;
-                pingReply = ping.Send("google.com");
-                if (pingReply.Status == IPStatus.Success)
-                    return INTERNET_STATUS.CONNECTED;
-                else
-                    return INTERNET_STATUS.UNCONNECTED;
-            }
-            catch { return INTERNET_STATUS.UNKNOWN_PROBLEM; }
-        }
-    }
-
-    /// <summary>
-    /// Work with config of PC.
-    /// </summary>
-    public class Config
-    {
-        /// <summary>
-        /// Gets the host name (name of PC, Windows System).
-        /// </summary>
-        /// <returns>A string.</returns>
-        public static string GetHostName() => Dns.GetHostName();
-
-        /// <summary>
-        /// Gets the local IPv6 (obsolete, but work).
-        /// </summary>
-        /// <returns>A string.</returns>
-        public static string GetLocalIPv6() => Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
-
-        /// <summary>
-        /// Gets the local IPv4 (obsolete, but work).
-        /// </summary>
-        /// <returns>A string.</returns>
-        public static string GetLocalIPv4() => Dns.GetHostByName(Dns.GetHostName()).AddressList[1].ToString();
-
-        /// <summary>
-        /// Gets the public IP of PC.
-        /// </summary>
-        public static string GetPublicIP()
-        {
-            string PublicIP = "localhost";
-            using (WebClient client = new WebClient())
-            {
-                try { PublicIP = client.DownloadString("https://icanhazip.com"); }
-                catch { PublicIP = client.DownloadString("https://checkip.amazonaws.com"); }
-                if (PublicIP == "" || PublicIP == "0.0.0.0" || PublicIP == "localhost")
-                {
-                    try { PublicIP = client.DownloadString("https://checkip.amazonaws.com"); } catch { PublicIP = "0.0.0.0"; }
-                }
-            }
-            return PublicIP.Trim();
-        }
-
-        /// <summary>
-        /// Get DefaultGateway of NetworkInterface in IPAddress.
-        /// </summary>
-        public static IPAddress DefaultGateway() => NetworkInterface
-        .GetAllNetworkInterfaces()
-        .Where(n => n.OperationalStatus == OperationalStatus.Up)
-        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
-        .Select(g => g?.Address).FirstOrDefault(a => a != null);
-
-        /// <summary>
-        /// Activate all security protocols for all network functions to work (HTTPS).
-        /// </summary>
-        ///
-        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
-        SecurityProtocolType.Tls11 |
-        SecurityProtocolType.Tls;
-
-        // Code for .NET Framework 4.8+
-        // public static SecurityProtocolType UseProtocols = SecurityProtocolType.Tls13 |
-        // SecurityProtocolType.Tls12 |
-        // SecurityProtocolType.Tls11 |
-        // SecurityProtocolType.Tls;
     }
 
     /// <summary>
@@ -225,5 +136,116 @@ namespace VitNX.Functions.Common.Web
             }
             catch (Exception ex) { return ex.Message; }
         }
+
+        /// <summary>
+        /// Starts the uploading.
+        /// Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a
+        /// </summary>
+        /// <param name="url">The url.</param>
+        /// <param name="values">The values.</param>
+        /// <param name="filePath">The file path.</param>
+        /// <param name="progress">The progress.</param>
+        /// <param name="completed">The completed.</param>
+        public static void FileUploader(string url,
+            NameValueCollection values,
+            string filePath,
+            Action<string, int> progress,
+            Action<string> completed)
+        {
+            var fileStream = File.OpenRead(filePath);
+            var fileName = Path.GetFileName(filePath);
+            var ms = new MemoryStream();
+            fileStream.CopyTo(ms);
+            ms.Position = 0;
+            try
+            {
+                const string contentType = "application/octet-stream";
+                var request = WebRequest.Create(url);
+                request.Method = "POST";
+                var boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x", NumberFormatInfo.InvariantInfo);
+                request.ContentType = "multipart/form-data; boundary=" + boundary;
+                boundary = "--" + boundary;
+                var dataStream = new MemoryStream();
+                byte[] buffer;
+                foreach (string name in values.Keys)
+                {
+                    buffer = Encoding.ASCII.GetBytes(boundary + Environment.NewLine);
+                    dataStream.Write(buffer, 0, buffer.Length);
+                    buffer = Encoding.ASCII.GetBytes(string.Format("Content-Disposition: form-data; name=\"{0}\"{1}{1}",
+                        name, Environment.NewLine));
+                    dataStream.Write(buffer, 0, buffer.Length);
+                    buffer = Encoding.UTF8.GetBytes(values[name] + Environment.NewLine);
+                    dataStream.Write(buffer, 0, buffer.Length);
+                }
+                buffer = Encoding.ASCII.GetBytes(boundary + Environment.NewLine);
+                dataStream.Write(buffer, 0, buffer.Length);
+                buffer = Encoding.UTF8.GetBytes($"Content-Disposition: form-data; name=\"file\"; filename=\"{fileName}\"{Environment.NewLine}");
+                dataStream.Write(buffer, 0, buffer.Length);
+                buffer = Encoding.ASCII.GetBytes(string.Format("Content-Type: {0}{1}{1}",
+                    contentType,
+                    Environment.NewLine));
+                dataStream.Write(buffer, 0, buffer.Length);
+                ms.CopyTo(dataStream);
+                buffer = Encoding.ASCII.GetBytes(Environment.NewLine);
+                dataStream.Write(buffer, 0, buffer.Length);
+                buffer = Encoding.ASCII.GetBytes(boundary + "--");
+                dataStream.Write(buffer, 0, buffer.Length);
+                dataStream.Position = 0;
+                request.ContentLength = dataStream.Length;
+                var requestStream = request.GetRequestStream();
+                var size = dataStream.Length;
+                const int chunkSize = 64 * 1024;
+                buffer = new byte[chunkSize];
+                long bytesSent = 0;
+                int readBytes;
+                while ((readBytes = dataStream.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    requestStream.Write(buffer, 0, readBytes);
+                    bytesSent += readBytes;
+                    var status = "Uploading... " + bytesSent / 1024 + "KB of " + size / 1024 + "KB";
+                    var percentage = Convert.ToInt32(100 * bytesSent / size);
+                    progress(status, percentage);
+                }
+                using (var response = request.GetResponse())
+                using (var responseStream = response.GetResponseStream())
+                using (var stream = new MemoryStream())
+                {
+                    responseStream.CopyTo(stream);
+                    var result = Encoding.Default.GetString(stream.ToArray());
+                    completed(result == string.Empty
+                        ? "failed:" + result
+                        : "ok:" + result);
+                }
+            }
+            catch (Exception e) { completed(e.ToString()); }
+        }
+    }
+
+    /// <summary>
+    /// The configs for normal work with sites and Internet.
+    /// </summary>
+    public class Config
+    {
+        /// <summary>
+        /// Activate all security protocols for all network functions to work (HTTPS).
+        /// Example: ServicePointManager.SecurityProtocol = VitNX.Functions.Common.Web.Config.UseProtocols();
+        /// </summary>
+        ///
+        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
+        SecurityProtocolType.Tls11 |
+        SecurityProtocolType.Tls;
+
+        // Code for .NET Framework 4.8+
+        // SecurityProtocolType.Tls13
+
+        /// <summary>
+        /// Activate DefaultGateway of NetworkInterface in IPAddress.
+        /// </summary>
+        public static IPAddress DefaultGateway() => NetworkInterface
+        .GetAllNetworkInterfaces()
+        .Where(n => n.OperationalStatus == OperationalStatus.Up)
+        .Where(n => n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+        .SelectMany(n => n.GetIPProperties()?.GatewayAddresses)
+        .Select(g => g?.Address).FirstOrDefault(a => a != null);
     }
 }

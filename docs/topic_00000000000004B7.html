@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolStripRenderer.OnRenderGrip Method</title>
+	<title>VitNX_MenuRenderer Class</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolStripRenderer.OnRenderGrip Method</h1>
+		<h1 class="title">VitNX_MenuRenderer Class</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004A7.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers</a>
+<a href="topic_00000000000004B6.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers</a>
 
 
 
@@ -89,8 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendergrip">RenderGrip</a> event.</summary-info>
-
 
 
 
@@ -106,44 +104,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnRenderGrip( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripgriprendereventargs">ToolStripGripRenderEventArgs</a> _&nbsp;<br />)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderGrip(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripgriprendereventargs">ToolStripGripRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public class VitNX_MenuRenderer : <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -188,24 +148,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 		
 	</div>
-
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripgriprendereventargs">ToolStripGripRenderEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripgriprendereventargs">ToolStripGripRenderEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -221,6 +163,1642 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Methods</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="MethodsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawarrow">DrawArrow(ToolStripArrowRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws an arrow on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawbuttonbackground">DrawButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripbutton">ToolStripButton</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawdropdownbuttonbackground">DrawDropDownButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripdropdownbutton">ToolStripDropDownButton</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawgrip">DrawGrip(ToolStripGripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws a move handle on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawimagemargin">DrawImageMargin(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the space around an image on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawitembackground">DrawItemBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawitemcheck">DrawItemCheck(ToolStripItemImageRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws an image on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> that indicates the item is in a selected state.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawitemimage">DrawItemImage(ToolStripItemImageRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws an image on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawitemtext">DrawItemText(ToolStripItemTextRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws text on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawlabelbackground">DrawLabelBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriplabel">ToolStripLabel</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawmenuitembackground">DrawMenuItemBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripmenuitem">ToolStripMenuItem</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawoverflowbuttonbackground">DrawOverflowButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for an overflow button.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawseparator">DrawSeparator(ToolStripSeparatorRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripseparator">ToolStripSeparator</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawsplitbutton">DrawSplitButton(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripsplitbutton">ToolStripSplitButton</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawstatusstripsizinggrip">DrawStatusStripSizingGrip(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws a sizing grip.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawtoolstripbackground">DrawToolStripBackground(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawtoolstripborder">DrawToolStripBorder(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the border for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawtoolstripcontentpanelbackground">DrawToolStripContentPanelBackground(ToolStripContentPanelRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background of the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripcontentpanel">ToolStripContentPanel</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawtoolstrippanelbackground">DrawToolStripPanelBackground(ToolStripPanelRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background of the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrippanel">ToolStripPanel</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.drawtoolstripstatuslabelbackground">DrawToolStripStatusLabelBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the background of the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripstatuslabel">ToolStripStatusLabel</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.equals">Equals(Object)</a>
+
+	</td>
+	<td>
+
+Determines whether the specified <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a> is equal to the current <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.finalize">Finalize</a>
+
+	</td>
+	<td>
+
+Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.gethashcode">GetHashCode</a>
+
+	</td>
+	<td>
+
+Serves as a hash function for a particular type.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.gettype">GetType</a>
+
+	</td>
+	<td>
+
+Gets the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> of the current instance.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004B8.html">Initialize(ToolStrip)</a>
+
+	</td>
+	<td>
+
+When overridden in a derived class, provides for custom initialization of the given <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a>.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+ 	<img alt="Internal protected (Protected Friend) method" title="Internal protected (Protected Friend) method" src="msdn2019/protmethod.png"></img>
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.initializecontentpanel">InitializeContentPanel(ToolStripContentPanel)</a>
+
+	</td>
+	<td>
+
+Initializes the specified <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripcontentpanel">ToolStripContentPanel</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004B9.html">InitializeItem(ToolStripItem)</a>
+
+	</td>
+	<td>
+
+When overridden in a derived class, provides for custom initialization of the given <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+ 	<img alt="Internal protected (Protected Friend) method" title="Internal protected (Protected Friend) method" src="msdn2019/protmethod.png"></img>
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.initializepanel">InitializePanel(ToolStripPanel)</a>
+
+	</td>
+	<td>
+
+Initializes the specified <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrippanel">ToolStripPanel</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.memberwiseclone">MemberwiseClone</a>
+
+	</td>
+	<td>
+
+Creates a shallow copy of the current <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004BE.html">OnRenderArrow(ToolStripArrowRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderarrow">RenderArrow</a> event.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderbuttonbackground">OnRenderButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderbuttonbackground">RenderButtonBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderdropdownbuttonbackground">OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderdropdownbuttonbackground">RenderDropDownButtonBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendergrip">OnRenderGrip(ToolStripGripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendergrip">RenderGrip</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004BB.html">OnRenderImageMargin(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Draws the item background.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderitembackground">OnRenderItemBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripsystemrenderer.onrenderitembackground">OnRenderItemBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004BC.html">OnRenderItemCheck(ToolStripItemImageRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemcheck">RenderItemCheck</a> event.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderitemimage">OnRenderItemImage(ToolStripItemImageRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemimage">RenderItemImage</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderitemtext">OnRenderItemText(ToolStripItemTextRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemtext">RenderItemText</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderlabelbackground">OnRenderLabelBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderlabelbackground">RenderLabelBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004BF.html">OnRenderMenuItemBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendermenuitembackground">RenderMenuItemBackground</a> event.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderoverflowbuttonbackground">OnRenderOverflowButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderoverflowbuttonbackground">RenderOverflowButtonBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004BD.html">OnRenderSeparator(ToolStripSeparatorRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderseparator">RenderSeparator</a> event.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendersplitbuttonbackground">OnRenderSplitButtonBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendersplitbuttonbackground">OnRenderSplitButtonBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrenderstatusstripsizinggrip">OnRenderStatusStripSizingGrip(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderstatusstripsizinggrip">RenderStatusStripSizingGrip</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a href="topic_00000000000004BA.html">OnRenderToolStripBackground(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripbackground">RenderToolStripBackground</a> event.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendertoolstripborder">OnRenderToolStripBorder(ToolStripRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripborder">RenderToolStripBorder</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendertoolstripcontentpanelbackground">OnRenderToolStripContentPanelBackground(ToolStripContentPanelRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripcontentpanelbackground">RenderToolStripContentPanelBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendertoolstrippanelbackground">OnRenderToolStripPanelBackground(ToolStripPanelRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstrippanelbackground">RenderToolStripPanelBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
+
+    
+	  
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.onrendertoolstripstatuslabelbackground">OnRenderToolStripStatusLabelBackground(ToolStripItemRenderEventArgs)</a>
+
+	</td>
+	<td>
+
+Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripstatuslabelbackground">RenderToolStripStatusLabelBackground</a> event.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+inheritedMember 
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+
+    
+	</td>
+	<td>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.tostring">ToString</a>
+
+	</td>
+	<td>
+
+Returns a string that represents the current object.
+(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
+
+	</td>
+</tr>
+
+
+
+
+
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,62 +1821,531 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <div class="section_container">
 	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Source code</a></span>
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Events</a></span>
 		<div>&nbsp;</div>
 	</div>
 
-	<div id="sourceCodeSection" class="section">	
+	<div id="EventsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
 
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCorner">
-				</div>
-				<div class="codeSnippetTab csFirstTab csNaTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csActiveTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csNaTab csLastTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
+	<tr class="
+		inheritedMember 
 	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnRenderGrip(ToolStripGripRenderEventArgs e)
-        {
-            if (e.GripStyle == ToolStripGripStyle.Hidden)
-                return;
-            var g = e.Graphics;
-            using (var img = MenuIcons.grip.SetColor(Colors.LightBorder))
-                g.DrawImageUnscaled(img, new Point(e.AffectedBounds.Left, e.AffectedBounds.Top));
-        }
-					</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderarrow">RenderArrow</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when an arrow on a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderbuttonbackground">RenderButtonBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripbutton">ToolStripButton</a> is rendered
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderdropdownbuttonbackground">RenderDropDownButtonBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripdropdownbutton">ToolStripDropDownButton</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendergrip">RenderGrip</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the move handle for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderimagemargin">RenderImageMargin</a>
+
+	  </td>
+	  <td>
+	
+	Draws the margin between an image and its container.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitembackground">RenderItemBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemcheck">RenderItemCheck</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the image for a selected <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemimage">RenderItemImage</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the image for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemtext">RenderItemText</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the text for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderlabelbackground">RenderLabelBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriplabel">ToolStripLabel</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendermenuitembackground">RenderMenuItemBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripmenuitem">ToolStripMenuItem</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderoverflowbuttonbackground">RenderOverflowButtonBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for an overflow button is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderseparator">RenderSeparator</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripseparator">ToolStripSeparator</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendersplitbuttonbackground">RenderSplitButtonBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripsplitbutton">ToolStripSplitButton</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderstatusstripsizinggrip">RenderStatusStripSizingGrip</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the display style changes.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripbackground">RenderToolStripBackground</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the background for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripborder">RenderToolStripBorder</a>
+
+	  </td>
+	  <td>
+	
+	Occurs when the border for a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a> is rendered.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripcontentpanelbackground">RenderToolStripContentPanelBackground</a>
+
+	  </td>
+	  <td>
+	
+	Draws the background of a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripcontentpanel">ToolStripContentPanel</a>.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstrippanelbackground">RenderToolStripPanelBackground</a>
+
+	  </td>
+	  <td>
+	
+	Draws the background of a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrippanel">ToolStripPanel</a>.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+	<tr class="
+		inheritedMember 
+	
+	
+	">
+	  <td>
+    <img alt="Public event" title="Public event" src="msdn2019/pubevent.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripstatuslabelbackground">RenderToolStripStatusLabelBackground</a>
+
+	  </td>
+	  <td>
+	
+	Draws the background of a <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripstatuslabel">ToolStripStatusLabel</a>.
+		(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">ToolStripRenderer</a>).
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
 
 	</div>					
 </div>
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Inheritance Hierarchy</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+<div id="inheritanceHierarchySection" class="section">
+
+<div style="padding-left:0em;"><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">System.Object</a>
+</div>
+
+<div style="padding-left:1em;"><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer">System.Windows.Forms.ToolStripRenderer</a>
+</div>
+
+
+
+<div style="padding-left:2em;">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_MenuRenderer</div>
+
+<div style="padding-left:3em;"><a href="topic_00000000000004C0.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers.VitNX_ToolStripRenderer</a>
+</div>
+
+
+				
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -342,6 +2389,7 @@ protected override void OnRenderGrip(ToolStripGripRenderEventArgs e)
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -350,14 +2398,10 @@ protected override void OnRenderGrip(ToolStripGripRenderEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004B1.html">VitNX_ToolStripRenderer Class</a><br />
+	<a href="topic_00000000000004B6.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace</a><br />
 
 
-
-<a href="topic_00000000000004A7.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					

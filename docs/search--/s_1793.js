@@ -1,1 +1,1 @@
-search_result['1793']=["topic_00000000000004E1_overloads--.html","VitNX2_MessageBox.Show Method",""];
+search_result['1793']=["topic_00000000000004E4_methods--.html","Helper Methods",""];

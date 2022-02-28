@@ -1,1 +1,1 @@
-search_result['334']=["topic_00000000000000BF.html","modeInfoIdx Field",""];
+search_result['334']=["topic_00000000000000C2.html","Keyboard.ShowVirtualKeyboard Method","Shows the virtual keyboard."];

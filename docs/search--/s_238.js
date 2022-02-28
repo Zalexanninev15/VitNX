@@ -1,1 +1,1 @@
-search_result['238']=["topic_0000000000000092_props--.html","SendDataToSites Properties",""];
+search_result['238']=["topic_0000000000000096.html","DataFromSites.DownloadString Method","Downloads the string from site/server."];

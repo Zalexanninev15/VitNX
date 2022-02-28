@@ -1,1 +1,1 @@
-c['352']=[['353',"dwExtraInfo Field","topic_00000000000001E3.html",0],['354',"flags Field","topic_00000000000001E1.html",0],['355',"scanCode Field","topic_00000000000001E0.html",0],['356',"time Field","topic_00000000000001E2.html",0],['357',"vkCode Field","topic_00000000000001DF.html",0]];
+c['352']=[['353',"Fields","topic_00000000000002A0_vars--.html",1]];

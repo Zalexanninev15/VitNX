@@ -1,1 +1,1 @@
-search_result['43']=["topic_000000000000001C.html","EncryptAndDecrypt Class","Encrypt and decrypt the text or byte[]."];
+search_result['43']=["topic_000000000000001C.html","Text.ContainsSpaces Method","Contains the spaces."];

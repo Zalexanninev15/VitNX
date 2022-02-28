@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter.UpdateOverlay Method</title>
+	<title>VitNX_DockPanel.RemoveContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter.UpdateOverlay Method</h1>
+		<h1 class="title">VitNX_DockPanel.RemoveContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000423.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_0000000000000435.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
 
 
 
@@ -99,50 +99,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
-
 <div class="section_container">
 	<div id="syntaxSection" class="section">	
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Sub UpdateOverlay( _&nbsp;<br />   ByVal <i>difference</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> _&nbsp;<br />)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -175,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> UpdateOverlay(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> <i>difference</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RemoveContent(&nbsp;<br />   <a target="_top" href="topic_000000000000044A.html" onclick="this.target='';return true;">VitNX_DockContent</a> <i>dockContent</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="difference" class="parameterList">
+	Parameters</h4><dl paramName="dockContent" class="parameterList">
 	<dt>
 		<span class="parameter">
-			difference
+			dockContent
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> 
+		<a target="_top" href="topic_000000000000044A.html" onclick="this.target='';return true;">VitNX_DockContent</a> 
 	</dd>
 </dl>
 <p>
@@ -205,7 +166,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </p>
 
 <p />
-
 
 
 
@@ -280,49 +240,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void UpdateOverlay(Point difference)
+public void RemoveContent(VitNX_DockContent dockContent)
         {
-            var bounds = new Rectangle(Bounds.Location,
-         Bounds.Size);
-            switch (_splitterType)
-            {
-                case VitNX_SplitterType.Left:
-                    var leftX = Math.Max(bounds.Location.X - difference.X,
-                        _minimum);
-                    if (_maximum != 0 &amp;&amp; leftX &gt; _maximum)
-                        leftX = _maximum;
-                    bounds.Location = new Point(leftX,
-                        bounds.Location.Y);
-                    break;
- 
-         case VitNX_SplitterType.Right:
-                    var rightX = Math.Max(bounds.Location.X - difference.X,
-                 _minimum);
-                    if (_maximum != 0 &amp;&amp; rightX &gt; _maximum)
-                        rightX = _maximum;
-                    bounds.Location = new Point(rightX,
-                 bounds.Location.Y);
-                    break;
- 
-         case VitNX_SplitterType.Top:
-                    var topY = Math.Max(bounds.Location.Y - difference.Y,
-                        _minimum);
-                    if (_maximum != 0 &amp;&amp; topY &gt; _maximum)
-                        topY = _maximum;
-                    bounds.Location = new Point(bounds.Location.X,
-                 topY);
-                    break;
- 
-         case VitNX_SplitterType.Bottom:
-                    var bottomY = Math.Max(bounds.Location.Y - difference.Y,
-                 _minimum);
-                    if (_maximum != 0 &amp;&amp; bottomY &gt; _maximum)
-                        topY = _maximum;
-                    bounds.Location = new Point(bounds.Location.X,
-                 bottomY);
-                    break;
-            }
-            _overlayForm.Bounds = bounds;
+            if (!_contents.Contains(dockContent))
+                return;
+            dockContent.DockPanel = null;
+            _contents.Remove(dockContent);
+            var region = _regions[dockContent.DockArea];
+            region.RemoveContent(dockContent);
+            if (ContentRemoved != null)
+                ContentRemoved(this, new DockContentEventArgs(dockContent));
         }
 					</pre>			
 				</div>
@@ -385,11 +312,11 @@ public void UpdateOverlay(Point difference)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000462.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_000000000000045E.html">VitNX_DockPanel Class</a><br />
 
 
 
-<a href="topic_0000000000000423.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_0000000000000435.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
 
 
 			

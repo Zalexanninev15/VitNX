@@ -1,1 +1,1 @@
-search_result['486']=["topic_000000000000010C.html","Import.CreateCompatibleBitmap Method",""];
+search_result['486']=["topic_000000000000010A.html","WorkWithSystem Class","Work with system."];

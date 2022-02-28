@@ -1,1 +1,1 @@
-search_result['422']=["topic_00000000000000E5.html","infoType Field",""];
+search_result['422']=["topic_00000000000000EB_events--.html","POINTL Events",""];

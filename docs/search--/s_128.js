@@ -1,1 +1,1 @@
-search_result['128']=["topic_0000000000000054_props--.html","Cpu Properties",""];
+search_result['128']=["topic_0000000000000058.html","Windows.GetWindowsDisplayVersionFromREG Method","Gets the Windows displayed version from the Windows Registry."];

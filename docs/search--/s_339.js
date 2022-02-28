@@ -1,1 +1,1 @@
-search_result['339']=["topic_00000000000000C1_methods--.html","DISPLAYCONFIG_PATH_TARGET_INFO Methods",""];
+search_result['339']=["topic_00000000000000C7.html","Monitor Class","Work with monitor."];

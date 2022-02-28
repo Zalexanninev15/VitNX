@@ -1,1 +1,1 @@
-search_result['1724']=["topic_00000000000004BD_events--.html","DockContentDragFilter Events",""];
+search_result['1724']=["topic_00000000000004BC.html","VitNX_MenuRenderer.OnRenderItemCheck Method","Raises the RenderItemCheck event."];
