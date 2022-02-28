@@ -1,1 +1,1 @@
-search_result['75']=["topic_000000000000002D.html","CompressAndDecompress.DecompressBytes Method","Decompresses the bytes.\r\nExample: CompressAndDecompress.DecompressBytes(compressed)"];
+search_result['75']=["topic_0000000000000032.html","EncrypterAndDecrypter.Encrypt Method","Encrypts the text."];

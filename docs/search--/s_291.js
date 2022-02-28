@@ -1,1 +1,1 @@
-search_result['291']=["topic_00000000000000AD.html","GetClipboardText.GetText Method","Gets the text."];
+search_result['291']=["topic_00000000000000B3_props--.html","TaskBarProgressBar Properties",""];

@@ -1,1 +1,1 @@
-search_result['1425']=["topic_00000000000003F5_methods--.html","VitNX_TextBox Methods",""];
+search_result['1425']=["topic_00000000000003F9_events--.html","VitNX_SectionPanel Events",""];

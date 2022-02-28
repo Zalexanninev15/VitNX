@@ -1,1 +1,1 @@
-search_result['1075']=["topic_000000000000031E_vars--.html","Controls Fields",""];
+search_result['1075']=["topic_00000000000002F5.html","DISPLAYCONFIG_DEVICE_INFO_TYPE Enumeration",""];

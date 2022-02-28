@@ -1,1 +1,1 @@
-search_result['1811']=["topic_00000000000004E8_vars--.html","VitNX2_MessageBox_Form Fields",""];
+search_result['1811']=["topic_00000000000004EC_methods--.html","VitNX2_MessageBox Methods",""];

@@ -1,1 +1,1 @@
-search_result['1722']=["topic_00000000000004BD.html","DockContentDragFilter Class",""];
+search_result['1722']=["topic_00000000000004BA.html","VitNX_MenuRenderer.OnRenderToolStripBackground Method","Raises the RenderToolStripBackground event."];

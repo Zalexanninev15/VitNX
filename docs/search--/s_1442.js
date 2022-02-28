@@ -1,1 +1,1 @@
-search_result['1442']=["topic_00000000000003FA_vars--.html","VitNX_ToolStrip Fields",""];
+search_result['1442']=["topic_0000000000000402.html","VitNX_Separator.OnPaint Method","Raises the Paint event."];

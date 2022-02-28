@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Keyboard Class</title>
+	<title>Installed.FindAppPath Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Keyboard Class</h1>
+		<h1 class="title">Installed.FindAppPath Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
 
 
 
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Control the keyboard.</summary-info>
-
+        <summary-info>Finds the application path.</summary-info>
 
 
 
@@ -106,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Class Keyboard</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public class Keyboard</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> FindAppPath(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>regKeyPath</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>applicationName</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,7 +151,43 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="regKeyPath" class="parameterList">
+	<dt>
+		<span class="parameter">
+			regKeyPath
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The key path. 
+</p>
+<dl paramName="applicationName" class="parameterList">
+	<dt>
+		<span class="parameter">
+			applicationName
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The application name. 
+</p>
 
+<p />
+
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -214,439 +211,78 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+
+
+
+
+
+
+
+
+
+
 <div class="section_container">
 	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Methods</a></span>
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Source code</a></span>
 		<div>&nbsp;</div>
 	</div>
 
-	<div id="MethodsSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-
-
-
-
-	<tr class="
-inheritedMember 
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-
-    
-	</td>
-	<td>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.equals">Equals(Object)</a>
-
-	</td>
-	<td>
-
-Determines whether the specified <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a> is equal to the current <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>.
-(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-inheritedMember 
-
-
-">
-	<td>
-   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
-
-    
-	  
-
-
-    
-	</td>
-	<td>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.finalize">Finalize</a>
-
-	</td>
-	<td>
-
-Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
-(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-inheritedMember 
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-
-    
-	</td>
-	<td>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.gethashcode">GetHashCode</a>
-
-	</td>
-	<td>
-
-Serves as a hash function for a particular type.
-(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-inheritedMember 
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-
-    
-	</td>
-	<td>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.gettype">GetType</a>
-
-	</td>
-	<td>
-
-Gets the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> of the current instance.
-(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000B3.html">HideVirtualKeyboard()</a>
-
-	</td>
-	<td>
-
-Hides the virtual keyboard.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000B4.html">KeyDown(Keys)</a>
-
-	</td>
-	<td>
-
-Sets the KeyDown.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000B5.html">KeyUp(Keys)</a>
-
-	</td>
-	<td>
-
-Sets the KeyUp.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-inheritedMember 
-
-
-">
-	<td>
-   <img alt="Protected method" title="Protected method" src="msdn2019/protmethod.png"></img>
-
-    
-	  
-
-
-    
-	</td>
-	<td>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.memberwiseclone">MemberwiseClone</a>
-
-	</td>
-	<td>
-
-Creates a shallow copy of the current <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>.
-(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000B2.html">ShowVirtualKeyboard()</a>
-
-	</td>
-	<td>
-
-Shows the virtual keyboard.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-inheritedMember 
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-
-    
-	</td>
-	<td>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object.tostring">ToString</a>
-
-	</td>
-	<td>
-
-Returns a string that represents the current object.
-(inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000B6.html">WindowsKeyboardEventsAPI(KEYBOARD_PRESETS)</a>
-
-	</td>
-	<td>
-
-The keyboard events of Windows.
-
-	</td>
-</tr>
-
-
-
-
-
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
+	<div id="sourceCodeSection" class="section">	
+
+		<div class="codeSnippetContainer">		
+			<div class="codeSnippetTabs">
+				<div class="codeSnippetTabLeftCorner">
+				</div>
+				<div class="codeSnippetTab csFirstTab csNaTab codeVB">
+					<a>VB</a>
+				</div>
+				<div class="codeSnippetTab csActiveTab codeCsharp">
+					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
+				</div>
+				<div class="codeSnippetTab csNaTab codeFsharp">
+					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
+				</div>
+				<div class="codeSnippetTab csNaTab codeCpp">
+					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
+				</div>
+				<div class="codeSnippetTab csNaTab csLastTab codeJScript">
+					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
+				</div>
+				<div class="codeSnippetTabRightCorner">
+				</div>
+				<div style="clear:both;">
+				</div>
+			</div>
+	
+			<div class="codeSnippetCodeCollection">
+				<div class="codeSnippetToolbar">
+					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
+				</div>
+				
+				<div class="codeSnippetCode codeCsharp">
+					<pre xml:space="preserve" class="brush: csharp">
+public static string FindAppPath(string regKeyPath, string applicationName)
+ {
+     var uninstall = Registry.LocalMachine.OpenSubKey(regKeyPath);
+     foreach (var productSubKey in uninstall.GetSubKeyNames())
+     {
+         var product = uninstall.OpenSubKey(productSubKey);
+         var displayName = product.GetValue(&quot;DisplayName&quot;);
+         if (Convert.ToString(displayName) != &quot;&quot; &amp;&amp; Convert.ToString(displayName).Contains(applicationName))
+             return product.GetValue(&quot;InstallLocation&quot;).ToString();
+     }
+     return null;
+ }
+					</pre>			
+				</div>
+				<div class="codeSnippetCode codeNA">
+					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
+				</div>
+			</div>
+		</div>
 
 	</div>					
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-<!-- Classes -->
-
-<!-- Classes End -->
-
-<!-- Standard Modules -->
-
-<!-- Standard Modules End -->
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Inheritance Hierarchy</a></span>
-		<div>&nbsp;</div>
-	</div>
-
-<div id="inheritanceHierarchySection" class="section">
-
-<div style="padding-left:0em;"><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">System.Object</a>
-</div>
-
-
-
-<div style="padding-left:1em;">VitNX.Functions.Windows.Controllers.Keyboard</div>
-
-				
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -690,7 +326,6 @@ The keyboard events of Windows.
 	</div>					
 </div>
 
-
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -699,10 +334,14 @@ The keyboard events of Windows.
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_00000000000000A5.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+			<a href="topic_00000000000000AE.html">Installed Class</a><br />
 
 
-	
+
+<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+
+
+			
 
 		</div>
 	</div>					

@@ -1,1 +1,1 @@
-search_result['1325']=["topic_00000000000003B2_methods--.html","VitNX_RadioButton Methods",""];
+search_result['1325']=["topic_00000000000003B4.html","VitNX_ListView.SelectItems (Int32, Int32) Method",""];

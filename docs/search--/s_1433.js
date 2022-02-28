@@ -1,1 +1,1 @@
-search_result['1433']=["topic_00000000000003F7_props--.html","VitNX_Title Properties",""];
+search_result['1433']=["topic_00000000000003FE.html","VitNX_SectionPanel.OnPaint Method","Raises the Paint event."];

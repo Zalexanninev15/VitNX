@@ -1,1 +1,1 @@
-search_result['607']=["topic_000000000000017D.html","Import.ValidateRect (IntPtr, ref RECT) Method",""];
+search_result['607']=["topic_0000000000000173.html","Import.SetGraphicsMode Method",""];

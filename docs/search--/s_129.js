@@ -1,1 +1,1 @@
-search_result['129']=["topic_0000000000000054_vars--.html","Cpu Fields",""];
+search_result['129']=["topic_0000000000000059.html","Windows.GetWindowsReleaseIdFromREG Method","Gets the windows release id from the Windows Registry."];

@@ -1,1 +1,1 @@
-search_result['230']=["topic_000000000000008E.html","Config.GetLocalIPv4 Method","Gets the local IPv4 (obsolete, but work)."];
+search_result['230']=["topic_0000000000000093.html","IniSettings32.KeyExists Method","Is key exist."];

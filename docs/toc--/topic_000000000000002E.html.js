@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000860.html"],['4',"VitNX.Functions.Common Namespace","topic_0000000000000000.html"],['12',"FileSystem Class","topic_000000000000002E.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['45',"VitNX.Functions.Common.Data Namespace","topic_0000000000000007.html"],['52',"EncryptAndDecrypt Class","topic_0000000000000027.html"],['53',"Methods","topic_0000000000000027_methods--.html"],['57',"SimpleDecryptAsByte Method","topic_000000000000002E.html"]];

@@ -1,1 +1,1 @@
-search_result['1274']=["topic_0000000000000395_vars--.html","VitNX_ListItem Fields",""];
+search_result['1274']=["topic_0000000000000398.html","VitNX_DropdownList.OnMouseUp Method","Raises the MouseUp event."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_MenuRenderer.OnRenderSeparator Method</title>
+	<title>VitNX_MessageBox.ShowQuestion Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_MenuRenderer.OnRenderSeparator Method</h1>
+		<h1 class="title">VitNX_MessageBox.ShowQuestion Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004A7.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers</a>
+<a href="topic_000000000000048A.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms</a>
 
 
 
@@ -89,8 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderseparator">RenderSeparator</a> event.</summary-info>
-
 
 
 
@@ -106,44 +104,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Protected Overrides Sub OnRenderSeparator( _&nbsp;<br />   ByVal <i>e</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripseparatorrendereventargs">ToolStripSeparatorRenderEventArgs</a> _&nbsp;<br />)</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderSeparator(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripseparatorrendereventargs">ToolStripSeparatorRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> ShowQuestion(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000497.html" onclick="this.target='';return true;">VitNX_DialogButton</a> <i>buttons</i> = VitNX_DialogButton.YesNo&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,23 +151,52 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="message" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			message
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripseparatorrendereventargs">ToolStripSeparatorRenderEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripseparatorrendereventargs">ToolStripSeparatorRenderEventArgs</a> that contains the event data. 
+	 
+</p>
+<dl paramName="caption" class="parameterList">
+	<dt>
+		<span class="parameter">
+			caption
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="buttons" class="parameterList">
+	<dt>
+		<span class="parameter">
+			buttons
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000497.html" onclick="this.target='';return true;">VitNX_DialogButton</a> 
+	</dd>
+</dl>
+<p>
+	 
 </p>
 
 <p />
 
-
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
+	
 
 
 
@@ -281,12 +270,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
+public static DialogResult ShowQuestion(string message,
+     string caption,
+            VitNX_DialogButton buttons = VitNX_DialogButton.YesNo)
         {
-            var g = e.Graphics;
-            var rect = new Rectangle(1, 3, e.Item.Width, 1);
-            using (var b = new SolidBrush(Colors.LightBorder))
-                g.FillRectangle(b, rect);
+            return ShowDialog(message,
+                caption,
+                VitNX_MessageBoxIcon.Question,
+                buttons);
         }
 					</pre>			
 				</div>
@@ -349,11 +340,11 @@ protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004A8.html">VitNX_MenuRenderer Class</a><br />
+			<a href="topic_00000000000004A3.html">VitNX_MessageBox Class</a><br />
 
 
 
-<a href="topic_00000000000004A7.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace</a><br />
+<a href="topic_000000000000048A.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms Namespace</a><br />
 
 
 			

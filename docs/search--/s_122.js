@@ -1,1 +1,1 @@
-search_result['122']=["topic_0000000000000052.html","Windows.GetWindowsSerialKey Method","Gets Windows the serial key."];
+search_result['122']=["topic_0000000000000052.html","Windows.Is64bit Method","Windows is x64 (64-bit)."];

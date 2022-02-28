@@ -1,1 +1,1 @@
-search_result['189']=["topic_0000000000000071_attached_props--.html","PowerControl Attached Properties",""];
+search_result['189']=["topic_0000000000000077.html","ComPort.GetAllDevices Method","Gets all COM ports (devices)."];

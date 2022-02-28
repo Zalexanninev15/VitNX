@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>KEYBOARD_PRESETS Enumeration</title>
+	<title>SetWindowPosFlags Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">KEYBOARD_PRESETS Enumeration</h1>
+		<h1 class="title">SetWindowPosFlags Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32</a>
 
 
 
@@ -90,6 +90,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
        
        
 
+        <p>This enumeration has a   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/System.FlagsAttribute">FlagsAttribute</a> attribute that allows a bitwise combination of its member values.</p>
 
 
 
@@ -134,7 +135,151 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    HIDE_OR_SHOW_ALL_WINDOWS
+	    SWP_ASYNCWINDOWPOS
+	  </td>
+	  <td>
+	    16384
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_DEFERERASE
+	  </td>
+	  <td>
+	    8192
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_DRAWFRAME
+	  </td>
+	  <td>
+	    32
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_FRAMECHANGED
+	  </td>
+	  <td>
+	    32
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_HIDEWINDOW
+	  </td>
+	  <td>
+	    128
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOACTIVATE
+	  </td>
+	  <td>
+	    16
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOCOPYBITS
+	  </td>
+	  <td>
+	    256
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOMOVE
+	  </td>
+	  <td>
+	    2
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOOWNERZORDER
+	  </td>
+	  <td>
+	    512
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOREDRAW
+	  </td>
+	  <td>
+	    8
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOREPOSITION
+	  </td>
+	  <td>
+	    512
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOSENDCHANGING
+	  </td>
+	  <td>
+	    1024
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SWP_NOSIZE
 	  </td>
 	  <td>
 	    1
@@ -146,10 +291,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    HIDE_THIS_WINDOW
+	    SWP_NOZORDER
 	  </td>
 	  <td>
-	    0
+	    4
 	  </td>
 	  <td>
 		 
@@ -158,10 +303,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    SHOW_ALL_WINDOWS
+	    SWP_SHOWWINDOW
 	  </td>
 	  <td>
-	    2
+	    64
 	  </td>
 	  <td>
 		 
@@ -243,11 +388,24 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum KEYBOARD_PRESETS : int
+[Flags]
+ public enum SetWindowPosFlags : uint
  {
-     HIDE_THIS_WINDOW = 0,
-     HIDE_OR_SHOW_ALL_WINDOWS = 1,
-     SHOW_ALL_WINDOWS = 2
+     SWP_ASYNCWINDOWPOS = 0x4000,
+     SWP_DEFERERASE = 0x2000,
+     SWP_DRAWFRAME = 0x0020,
+     SWP_FRAMECHANGED = 0x0020,
+     SWP_HIDEWINDOW = 0x0080,
+     SWP_NOACTIVATE = 0x0010,
+     SWP_NOCOPYBITS = 0x0100,
+     SWP_NOMOVE = 0x0002,
+     SWP_NOOWNERZORDER = 0x0200,
+     SWP_NOREDRAW = 0x0008,
+     SWP_NOREPOSITION = 0x0200,
+     SWP_NOSENDCHANGING = 0x0400,
+     SWP_NOSIZE = 0x0001,
+     SWP_NOZORDER = 0x0004,
+     SWP_SHOWWINDOW = 0x0040
  }
 					</pre>			
 				</div>
@@ -270,11 +428,11 @@ public enum KEYBOARD_PRESETS : int
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000001D2.html">Enums Class</a><br />
+			<a href="topic_00000000000001E2.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000FC.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
 
 
 			

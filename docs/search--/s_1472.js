@@ -1,1 +1,1 @@
-search_result['1472']=["topic_000000000000040C.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];
+search_result['1472']=["topic_000000000000040C_vars--.html","VitNX_ToolStrip Fields",""];

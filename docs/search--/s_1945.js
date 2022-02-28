@@ -1,1 +1,1 @@
-search_result['1945']=["topic_000000000000083A.html","onClose Field",""];
+search_result['1945']=["topic_000000000000083B.html","Manager Class","The settings manager of notification."];

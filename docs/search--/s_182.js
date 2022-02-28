@@ -1,1 +1,1 @@
-search_result['182']=["topic_000000000000006E_events--.html","Ram Events",""];
+search_result['182']=["topic_0000000000000075.html","Motherboard.GetFirmwareType Method","Gets the firmware type."];

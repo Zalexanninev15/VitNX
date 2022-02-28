@@ -106,20 +106,7 @@ namespace VitNX.Functions.Common
         /// </summary>
         /// <param name="targetFile">The target file.</param>
         /// <returns>A string.</returns>
-        public static string GetMD5FromFile_Method1(string targetFile)
-        {
-            string text = "Text file not found";
-            using (StreamReader sr = File.OpenText(targetFile))
-                text = sr.ReadToEnd();
-            return text;
-        }
-
-        /// <summary>
-        /// Gets the MD5 from file.
-        /// </summary>
-        /// <param name="targetFile">The target file.</param>
-        /// <returns>A string.</returns>
-        public static string GetMD5FromFile_Method2(string targetFile)
+        public static string GetFileMD5(string targetFile)
         {
             using (var md5 = System.Security.Cryptography.MD5.Create())
             {

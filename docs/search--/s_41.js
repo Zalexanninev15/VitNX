@@ -1,1 +1,1 @@
-search_result['41']=["topic_000000000000001A.html","Text.IsValidCardNumber Method","Are the valid card number."];
+search_result['41']=["topic_000000000000001A.html","Text.ContainsOnlyNumbers Method","Contains the only numbers."];

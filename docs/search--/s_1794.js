@@ -1,1 +1,1 @@
-search_result['1794']=["topic_00000000000004E2.html","VitNX2_MessageBox.Show (String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Method",""];
+search_result['1794']=["topic_00000000000004E4_props--.html","Helper Properties",""];

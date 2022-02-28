@@ -1,1 +1,1 @@
-search_result['1571']=["topic_000000000000044F.html","ContentRemoved Event",""];
+search_result['1571']=["topic_000000000000044D.html","VitNX_DockContent.Close Method",""];

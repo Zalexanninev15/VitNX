@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Processes.GetListWithInformation Method</title>
+	<title>DataFromSites.DownloadString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Processes.GetListWithInformation Method</h1>
+		<h1 class="title">DataFromSites.DownloadString Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_0000000000000094.html">VitNX.Functions.Common.Web</a>
 
 
 
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the list of all processes with information.</summary-info>
-
+        <summary-info>Downloads the string from site/server.</summary-info>
 
 
 
@@ -106,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetListWithInformation() As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetListWithInformation()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> DownloadString(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>url</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>ifError</i> = &quot;404&quot;&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -190,6 +151,35 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="url" class="parameterList">
+	<dt>
+		<span class="parameter">
+			url
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The url. 
+</p>
+<dl paramName="ifError" class="parameterList">
+	<dt>
+		<span class="parameter">
+			ifError
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	Text is returned if no string can be retrieved 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
@@ -198,7 +188,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		A string. 
 	</p>
 	
-
 
 
 
@@ -272,25 +261,17 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetListWithInformation()
+public static string DownloadString(string url, string ifError = &quot;404&quot;)
  {
-     string procList = &quot;All processes:&quot;;
-     foreach (Process process in Process.GetProcesses())
+     try
      {
-         var procSize = &quot;0x0&quot;;
-         try
+         using (WebClient client = new WebClient())
          {
-             var counter = new PerformanceCounter(&quot;Process&quot;, &quot;Working Set - Private&quot;, process.ProcessName);
-             procSize = Convert.ToString(counter.RawValue / 1048576);
+             client.Proxy = null;
+             return Data.Text.FixDeEncoding(client.DownloadString(url));
          }
-         catch { }
-         if (procSize != &quot;0x0&quot; &amp;&amp; procSize != &quot;0&quot;)
-             procList += $&quot;\n\nName: {process.ProcessName}.exe&quot; +
-                 $&quot;\nID: {process.Id}&quot; +
-                 $&quot;\nUsed memory: {procSize} МБ&quot; +
-                 $&quot;\nTitle &amp; Handle: \&quot;{process.MainWindowTitle}\&quot; &amp; {process.MainWindowHandle}&quot;;
      }
-     return procList;
+     catch { return ifError; }
  }
 					</pre>			
 				</div>
@@ -353,11 +334,11 @@ public static string GetListWithInformation()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000095.html">Processes Class</a><br />
+			<a href="topic_0000000000000095.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_0000000000000094.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_0000000000000094.html">VitNX.Functions.Common.Web Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['150']=["topic_000000000000005F.html","Disk.GetTotalSpace Method","Gets the total space."];
+search_result['150']=["topic_0000000000000064.html","Gpu.Characteristics Method","Gets all characteristics."];

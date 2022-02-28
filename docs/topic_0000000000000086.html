@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>INTERNET_STATUS Enumeration</title>
+	<title>SYSTEM_POWER_CONTROL Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">INTERNET_STATUS Enumeration</h1>
+		<h1 class="title">SYSTEM_POWER_CONTROL Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000080.html">VitNX.Functions.Common.Web</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Options for control the power of computer.</summary-info>
 
 
 
@@ -134,10 +135,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    CONNECTED
+	    SYSTEM_LOCK
 	  </td>
 	  <td>
-	    1
+	    3
 	  </td>
 	  <td>
 		 
@@ -146,7 +147,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    UNCONNECTED
+	    SYSTEM_LOGOFF
 	  </td>
 	  <td>
 	    0
@@ -158,10 +159,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    UNKNOWN_PROBLEM
+	    SYSTEM_REBOOT
 	  </td>
 	  <td>
-	    -1
+	    2
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SYSTEM_SHUTDOWN
+	  </td>
+	  <td>
+	    1
 	  </td>
 	  <td>
 		 
@@ -243,11 +256,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum INTERNET_STATUS : int
+public enum SYSTEM_POWER_CONTROL
  {
-     UNKNOWN_PROBLEM = -1,
-     UNCONNECTED = 0,
-     CONNECTED = 1
+     SYSTEM_LOGOFF,
+     SYSTEM_SHUTDOWN,
+     SYSTEM_REBOOT,
+     SYSTEM_LOCK
  }
 					</pre>			
 				</div>
@@ -270,11 +284,11 @@ public enum INTERNET_STATUS : int
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000081.html">DataFromSites Class</a><br />
+			<a href="topic_0000000000000085.html">PowerControl Class</a><br />
 
 
 
-<a href="topic_0000000000000080.html">VitNX.Functions.Common.Web Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
 
 
 			

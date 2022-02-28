@@ -1,1 +1,1 @@
-search_result['209']=["topic_0000000000000080.html","VitNX.Functions.Common.Web Namespace",""];
+search_result['209']=["topic_0000000000000084.html","Internet.IsHaveInternet Method","Are the have internet."];

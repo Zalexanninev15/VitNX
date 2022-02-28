@@ -1,1 +1,1 @@
-search_result['1285']=["topic_0000000000000399_vars--.html","VitNX_ListView Fields",""];
+search_result['1285']=["topic_000000000000039F_props--.html","VitNX_GroupBox Properties",""];

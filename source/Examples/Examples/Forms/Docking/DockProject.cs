@@ -43,7 +43,7 @@ namespace Example
 
         private void vitNXButton2_Click(object sender, EventArgs e)
         {
-            var dialog = new VitNX.UI.OtherControls.NewFolderDialog
+            var dialog = new VitNX.Functions.Windows.Controllers.NewFolderDialog
             {
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
                 Title = "Select Folder"

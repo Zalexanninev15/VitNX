@@ -1,1 +1,1 @@
-search_result['1586']=["topic_000000000000045A_events--.html","VitNX_DockRegion Events",""];
+search_result['1586']=["topic_0000000000000457.html","VitNX_DockGroup.OnMouseMove Method","Raises the MouseMove event."];

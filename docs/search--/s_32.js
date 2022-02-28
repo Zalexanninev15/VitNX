@@ -1,1 +1,1 @@
-search_result['32']=["topic_0000000000000011.html","Text.ContainsSymbols Method","Contains the symbols."];
+search_result['32']=["topic_0000000000000011.html","Text.ConvertNumberToHexI Method","Converts the number to HEX (int32)."];

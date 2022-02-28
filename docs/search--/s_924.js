@@ -1,1 +1,1 @@
-search_result['924']=["topic_0000000000000249_vars--.html","SCROLLINFO Fields",""];
+search_result['924']=["topic_000000000000024C.html","RECT Structure",""];

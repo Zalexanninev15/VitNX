@@ -1,1 +1,1 @@
-search_result['1725']=["topic_00000000000004BD_methods--.html","DockContentDragFilter Methods",""];
+search_result['1725']=["topic_00000000000004BD.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

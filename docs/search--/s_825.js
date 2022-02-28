@@ -1,1 +1,1 @@
-search_result['825']=["topic_000000000000020B_methods--.html","MSG Methods",""];
+search_result['825']=["topic_000000000000020C_vars--.html","MINMAXINFO Fields",""];

@@ -1,1 +1,1 @@
-search_result['899']=["topic_000000000000023C_methods--.html","RECT Methods",""];
+search_result['899']=["topic_0000000000000238_vars--.html","PAINTSTRUCT Fields",""];

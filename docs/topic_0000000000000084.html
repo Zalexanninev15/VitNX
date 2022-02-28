@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DataFromSites.GetGeo Method</title>
+	<title>Internet.IsHaveInternet Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DataFromSites.GetGeo Method</h1>
+		<h1 class="title">Internet.IsHaveInternet Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000080.html">VitNX.Functions.Common.Web</a>
+<a href="topic_000000000000004D.html">VitNX.Functions.Common.Information</a>
 
 
 
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the geolocation of PC.</summary-info>
-
+        <summary-info>Are the have internet.</summary-info>
 
 
 
@@ -106,44 +105,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function GetGeo( _&nbsp;<br />   ByVal <i>ip</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a> _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -176,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetGeo(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>ip</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="topic_0000000000000080.html" onclick="this.target='';return true;">INTERNET_STATUS</a> IsHaveInternet(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>ipAddressOrDomainForPing</i> = &quot;google.com&quot;&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -191,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="ip" class="parameterList">
+	Parameters</h4><dl paramName="ipAddressOrDomainForPing" class="parameterList">
 	<dt>
 		<span class="parameter">
-			ip
+			ipAddressOrDomainForPing
 		</span>
 	</dt>
 	<dd>
@@ -202,19 +163,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The ip. 
+	The ip address or domain for ping. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="topic_0000000000000080.html" onclick="this.target='';return true;">INTERNET_STATUS</a> 
 		<p>
-		A string. 
+		An INTERNET_STATUS. 
 	</p>
 	
-
 
 
 
@@ -288,14 +248,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetGeo(string ip)
+public static INTERNET_STATUS IsHaveInternet(string ipAddressOrDomainForPing = &quot;google.com&quot;)
  {
      try
      {
-         using (WebClient client = new WebClient())
-             return client.DownloadString($&quot;https://ipinfo.io/{ip}/json&quot;);
+         Ping ping = new Ping();
+         PingReply pingReply = null;
+         pingReply = ping.Send(ipAddressOrDomainForPing);
+         if (pingReply.Status == IPStatus.Success)
+             return INTERNET_STATUS.CONNECTED;
+         else
+             return INTERNET_STATUS.UNCONNECTED;
      }
-     catch (Exception ex) { return ex.Message; }
+     catch { return INTERNET_STATUS.UNKNOWN_PROBLEM; }
  }
 					</pre>			
 				</div>
@@ -358,11 +323,11 @@ public static string GetGeo(string ip)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000081.html">DataFromSites Class</a><br />
+			<a href="topic_000000000000007A.html">Internet Class</a><br />
 
 
 
-<a href="topic_0000000000000080.html">VitNX.Functions.Common.Web Namespace</a><br />
+<a href="topic_000000000000004D.html">VitNX.Functions.Common.Information Namespace</a><br />
 
 
 			

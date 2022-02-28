@@ -1,1 +1,1 @@
-c['166']=[['167',"Installed Class","topic_00000000000000A1.html",1],['172',"Processes Class","topic_0000000000000095.html",1]];
+c['166']=[['167',"DefaultGateway Method","topic_000000000000009F.html",0],['168',"UseProtocols Method","topic_000000000000009E.html",0]];

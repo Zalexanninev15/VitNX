@@ -1,1 +1,1 @@
-search_result['1622']=["topic_0000000000000470_vars--.html","VitNX_ToolWindow Fields",""];
+search_result['1622']=["topic_000000000000046F.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];

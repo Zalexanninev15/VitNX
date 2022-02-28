@@ -1,1 +1,1 @@
-search_result['98']=["topic_000000000000003F.html","FileSystem.SaveTextDialog Method","Saves the text dialog."];
+search_result['98']=["topic_000000000000003F.html","FileSystem.DeleteFolderToRecycleBin Method","Deletes the folder to Recycle Bin."];

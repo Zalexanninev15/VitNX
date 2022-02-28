@@ -1,1 +1,1 @@
-search_result['160']=["topic_0000000000000064.html","Monitor.CaptureWindowToFile Method","Captures the window to file."];
+search_result['160']=["topic_0000000000000069.html","Disk.GetTotalSpace Method","Gets the total space."];

@@ -1,1 +1,1 @@
-search_result['1762']=["topic_00000000000004D5.html","Helper Class",""];
+search_result['1762']=["topic_00000000000004D0_methods--.html","DockResizeFilter Methods",""];

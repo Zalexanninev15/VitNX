@@ -1,1 +1,1 @@
-search_result['104']=["topic_0000000000000043_events--.html","Windows Events",""];
+search_result['104']=["topic_0000000000000045.html","FileSystem.CreateShortcut Method","Creates the shortcut."];

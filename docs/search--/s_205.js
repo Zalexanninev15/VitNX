@@ -1,1 +1,1 @@
-search_result['205']=["topic_000000000000007C.html","IniSettings32.Write Method","Writes the value to key in section."];
+search_result['205']=["topic_000000000000007D.html","Internet.GetLocalIPv4 Method","Gets the local IPv4 (obsolete, but work)."];

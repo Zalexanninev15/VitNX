@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CompressAndDecompress.DecompressBytes Method</title>
+	<title>EncryptAndDecrypt.SimpleEncryptAsByte Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CompressAndDecompress.DecompressBytes Method</h1>
+		<h1 class="title">EncryptAndDecrypt.SimpleEncryptAsByte Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,9 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Decompresses the bytes.
-Example: CompressAndDecompress.DecompressBytes(compressed)</summary-info>
-
+        <summary-info>Simples the encrypt as byte.</summary-info>
 
 
 
@@ -107,44 +105,6 @@ Example: CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 	
 	
 	<div id="syntaxCodeBlocks">
-		<div class="codeSnippetContainer">		
-			<div class="codeSnippetTabs">
-				<div class="codeSnippetTabLeftCornerActive">
-				</div>
-				<div class="codeSnippetTab csFirstTab csActiveTab codeVB">
-					<a>VB</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Csharp');">C#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeFsharp">
-					<a href="javascript: CodeSnippet_SetLanguage('Fsharp');">F#</a>
-				</div>
-				<div class="codeSnippetTab csNaTab codeCpp">
-					<a href="javascript: CodeSnippet_SetLanguage('Cpp');">C++</a>
-				</div>
-				<div class="codeSnippetTab csLastTab csNaTab codeJScript">
-					<a href="javascript: CodeSnippet_SetLanguage('JScript');">JScript</a>
-				</div>
-				<div class="codeSnippetTabRightCorner">
-				</div>
-				<div style="clear:both;">
-				</div>
-			</div>
-	
-			<div class="codeSnippetCodeCollection">
-				<div class="codeSnippetToolbar">
-					<a title="Copy to clipboard." href="javascript:void(0)" onclick="CopyCode(this);">Copy</a>
-				</div>
-				
-				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Shared Function DecompressBytes( _&nbsp;<br />   ByVal <i>input</i> As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">Byte</a>() _&nbsp;<br />) As <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">Byte</a>()</pre>			
-				</div>
-				<div class="codeSnippetCode codeNA">
-					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
-				</div>
-			</div>
-		</div>
 		
 		<div class="codeSnippetContainer">
 			<div class="codeSnippetTabs">
@@ -177,7 +137,7 @@ Example: CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] DecompressBytes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>input</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] SimpleEncryptAsByte(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>input</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>password</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -203,7 +163,20 @@ Example: CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 	</dd>
 </dl>
 <p>
-	 
+	The input. 
+</p>
+<dl paramName="password" class="parameterList">
+	<dt>
+		<span class="parameter">
+			password
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The password. 
 </p>
 
 <p />
@@ -215,7 +188,6 @@ Example: CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 		An array of byte. 
 	</p>
 	
-
 
 
 
@@ -289,22 +261,17 @@ Example: CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static byte[] DecompressBytes(byte[] input)
+public static byte[] SimpleEncryptAsByte(byte[] input, string password)
  {
-     MemoryStream memory = new MemoryStream();
-     memory.Write(input, 0, input.Length);
-     memory.Position = 0;
-     GZipStream gzip = new GZipStream(memory, CompressionMode.Decompress, true);
-     MemoryStream output = new MemoryStream();
-     byte[] buff = new byte[64];
-     int read = gzip.Read(buff, 0, buff.Length);
-     while (read &gt; 0)
+     try
      {
-         output.Write(buff, 0, read);
-         read = gzip.Read(buff, 0, buff.Length);
+         TripleDESCryptoServiceProvider service = new TripleDESCryptoServiceProvider();
+         MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+         byte[] key = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+         byte[] iv = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+         return Transform(input, service.CreateEncryptor(key, iv));
      }
-     gzip.Close();
-     return output.ToArray();
+     catch { return new byte[0]; }
  }
 					</pre>			
 				</div>
@@ -367,7 +334,7 @@ public static byte[] DecompressBytes(byte[] input)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000029.html">CompressAndDecompress Class</a><br />
+			<a href="topic_0000000000000027.html">EncryptAndDecrypt Class</a><br />
 
 
 

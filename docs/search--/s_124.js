@@ -1,1 +1,1 @@
-search_result['124']=["topic_0000000000000054.html","Cpu Class","Work with informations of CPU."];
+search_result['124']=["topic_0000000000000054.html","Windows.GetWindowsVersionFromREG Method","Gets the Windows version from the Windows Registry."];

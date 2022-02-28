@@ -1,1 +1,1 @@
-search_result['217']=["topic_0000000000000083.html","DataFromSites.GetHeaderAndContent Method","Gets the header and content of site."];
+search_result['217']=["topic_000000000000008B.html","PowerControl.Computer Method","The power of computer."];

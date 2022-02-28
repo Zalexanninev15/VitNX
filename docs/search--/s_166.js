@@ -1,1 +1,1 @@
-search_result['166']=["topic_000000000000006A.html","Motherboard Class","Work with informations of Motherboard."];
+search_result['166']=["topic_000000000000006A_vars--.html","Monitor Fields",""];
