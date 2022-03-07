@@ -1,5 +1,5 @@
-﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
+﻿using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
 
 namespace Example
 {
@@ -31,8 +31,8 @@ namespace Example
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstLayers = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView();
-            this.cmbList = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_DropdownList();
+            this.lstLayers = new VitNX.UI.ControlsV1.Controls.VitNX_ListView();
+            this.cmbList = new VitNX.UI.ControlsV1.Controls.VitNX_DropdownList();
             this.SuspendLayout();
             // 
             // lstLayers

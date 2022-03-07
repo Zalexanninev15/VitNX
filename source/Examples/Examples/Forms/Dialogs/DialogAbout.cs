@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
+using VitNX.UI.ControlsV1.Forms;
 
 namespace Example
 {

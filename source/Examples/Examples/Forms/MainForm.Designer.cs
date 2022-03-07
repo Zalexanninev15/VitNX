@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.mnuMain = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_MenuStrip();
+            this.mnuMain = new VitNX.UI.ControlsV1.Controls.VitNX_MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNewFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,14 +58,14 @@
             this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolMain = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ToolStrip();
+            this.toolMain = new VitNX.UI.ControlsV1.Controls.VitNX_ToolStrip();
             this.btnNewFile = new System.Windows.Forms.ToolStripButton();
-            this.stripMain = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_StatusStrip();
+            this.stripMain = new VitNX.UI.ControlsV1.Controls.VitNX_StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DockPanel = new VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel();
-            this.VitNX_Separator1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Separator();
+            this.DockPanel = new VitNX.UI.ControlsV1.Docking.VitNX_DockPanel();
+            this.VitNX_Separator1 = new VitNX.UI.ControlsV1.Controls.VitNX_Separator();
             this.mnuMain.SuspendLayout();
             this.toolMain.SuspendLayout();
             this.stripMain.SuspendLayout();
@@ -475,9 +475,9 @@
 
         #endregion
 
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_MenuStrip mnuMain;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ToolStrip toolMain;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_StatusStrip stripMain;
+        private VitNX.UI.ControlsV1.Controls.VitNX_MenuStrip mnuMain;
+        private VitNX.UI.ControlsV1.Controls.VitNX_ToolStrip toolMain;
+        private VitNX.UI.ControlsV1.Controls.VitNX_StatusStrip stripMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
@@ -492,13 +492,13 @@
         private System.Windows.Forms.ToolStripButton btnNewFile;
         private System.Windows.Forms.ToolStripMenuItem mnuNewFile;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockPanel DockPanel;
+        private VitNX.UI.ControlsV1.Docking.VitNX_DockPanel DockPanel;
         private System.Windows.Forms.ToolStripMenuItem mnuProject;
         private System.Windows.Forms.ToolStripMenuItem mnuProperties;
         private System.Windows.Forms.ToolStripMenuItem mnuConsole;
         private System.Windows.Forms.ToolStripMenuItem mnuLayers;
         private System.Windows.Forms.ToolStripMenuItem mnuHistory;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Separator VitNX_Separator1;
+        private VitNX.UI.ControlsV1.Controls.VitNX_Separator VitNX_Separator1;
         private System.Windows.Forms.ToolStripMenuItem checkableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkableWithIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

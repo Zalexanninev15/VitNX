@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using VitNX.Functions.Windows.Apps;
+using VitNX.Functions.AppsAndProcesses;
 
 namespace ExamplesNext
 {
@@ -24,8 +24,8 @@ namespace ExamplesNext
 
         private void vitNX2_Button2_Click(object sender, EventArgs e)
         {
-            System.IO.File.WriteAllLines(VitNX.Functions.Common.FileSystem.FileNameGenerator("CPU", "txt"),
-                VitNX.Functions.Common.Information.Cpu.Characteristics());
+            System.IO.File.WriteAllLines(VitNX.Functions.FileSystem.FileNameGenerator("CPU", "txt"),
+                VitNX.Functions.Information.Cpu.Characteristics());
         }
 
         private void vitNX2_Button3_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.vitNX2_Button1 = new VitNX.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_Panel2 = new VitNX.UI.ControlsV2.VitNX2_Panel();
-            this.vitNX_ContextMenu1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContextMenu();
+            this.vitNX_ContextMenu1 = new VitNX.UI.ControlsV1.Controls.VitNX_ContextMenu();
             this.helloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.приветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.您好ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -272,7 +272,7 @@
         }
 
         #endregion
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ContextMenu vitNX_ContextMenu1;
+        private VitNX.UI.ControlsV1.Controls.VitNX_ContextMenu vitNX_ContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem helloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem приветToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 您好ToolStripMenuItem;
