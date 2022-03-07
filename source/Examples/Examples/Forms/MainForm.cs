@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-using VitNX.Functions.Windows.Controllers;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Win32;
+using VitNX.Functions.WinControllers;
+using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV1.Forms;
+using VitNX.UI.ControlsV1.Win32;
 
-using static VitNX.Functions.Windows.Win32.Enums;
+using static VitNX.Functions.Win32.Enums;
 
 namespace Example
 {

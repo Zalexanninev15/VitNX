@@ -1,4 +1,4 @@
-﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+﻿using VitNX.UI.ControlsV1.Controls;
 
 namespace Example
 {
@@ -32,9 +32,9 @@ namespace Example
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblVersion = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label();
-            this.VitNX_Label1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label();
-            this.lblHeader = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Label();
+            this.lblVersion = new VitNX.UI.ControlsV1.Controls.VitNX_Label();
+            this.VitNX_Label1 = new VitNX.UI.ControlsV1.Controls.VitNX_Label();
+            this.lblHeader = new VitNX.UI.ControlsV1.Controls.VitNX_Label();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 

@@ -1,5 +1,5 @@
-﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
+﻿using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Forms;
 
 namespace Example
 {

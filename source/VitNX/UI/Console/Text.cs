@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-using VitNX.Functions.Common;
+using VitNX.Functions;
 
 namespace VitNX.UI.Console
 {
