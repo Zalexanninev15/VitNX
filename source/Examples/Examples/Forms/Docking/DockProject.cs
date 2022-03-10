@@ -49,7 +49,7 @@ namespace Example
                 Title = "Select Folder"
             };
             if (dialog.Show())
-                VitNX_MessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example");
+                VitNX_MessageBox.ShowInformation("This folder is selected: " + dialog.FileName, "VitNX UI - Example");
         }
     }
 }

@@ -306,7 +306,7 @@
             this.mnuProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuProject.Image = global::Example.Icons.application_16x;
             this.mnuProject.Name = "mnuProject";
-            this.mnuProject.Size = new System.Drawing.Size(157, 22);
+            this.mnuProject.Size = new System.Drawing.Size(180, 22);
             this.mnuProject.Text = "&Project Explorer";
             // 
             // mnuProperties
@@ -314,7 +314,7 @@
             this.mnuProperties.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuProperties.Image = global::Example.Icons.properties_16xLG;
             this.mnuProperties.Name = "mnuProperties";
-            this.mnuProperties.Size = new System.Drawing.Size(157, 22);
+            this.mnuProperties.Size = new System.Drawing.Size(180, 22);
             this.mnuProperties.Text = "P&roperties";
             // 
             // mnuConsole
@@ -322,7 +322,7 @@
             this.mnuConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuConsole.Image = global::Example.Icons.Console;
             this.mnuConsole.Name = "mnuConsole";
-            this.mnuConsole.Size = new System.Drawing.Size(157, 22);
+            this.mnuConsole.Size = new System.Drawing.Size(180, 22);
             this.mnuConsole.Text = "&Console";
             // 
             // mnuLayers
@@ -330,7 +330,7 @@
             this.mnuLayers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuLayers.Image = global::Example.Icons.Collection_16xLG;
             this.mnuLayers.Name = "mnuLayers";
-            this.mnuLayers.Size = new System.Drawing.Size(157, 22);
+            this.mnuLayers.Size = new System.Drawing.Size(180, 22);
             this.mnuLayers.Text = "&Layers";
             // 
             // mnuHistory
@@ -338,7 +338,7 @@
             this.mnuHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuHistory.Image = ((System.Drawing.Image)(resources.GetObject("mnuHistory.Image")));
             this.mnuHistory.Name = "mnuHistory";
-            this.mnuHistory.Size = new System.Drawing.Size(157, 22);
+            this.mnuHistory.Size = new System.Drawing.Size(180, 22);
             this.mnuHistory.Text = "&History";
             // 
             // mnuHelp
@@ -356,8 +356,9 @@
             this.mnuAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuAbout.Image = global::Example.Icons.StatusAnnotations_Information_16xLG_color;
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(140, 22);
+            this.mnuAbout.Size = new System.Drawing.Size(180, 22);
             this.mnuAbout.Text = "&About VitNX";
+            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
             // toolMain
             // 

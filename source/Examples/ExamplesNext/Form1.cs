@@ -24,7 +24,7 @@ namespace ExamplesNext
 
         private void vitNX2_Button2_Click(object sender, EventArgs e)
         {
-            System.IO.File.WriteAllLines(VitNX.Functions.FileSystem.FileNameGenerator("CPU", "txt"),
+            System.IO.File.WriteAllLines(VitNX.Functions.FileSystem.File.NameGenerator("CPU", "txt"),
                 VitNX.Functions.Information.Cpu.Characteristics());
         }
 

@@ -76,8 +76,15 @@ namespace VitNX.UI.ControlsV1.Forms
                   VitNX_DialogButton.Ok)
         { }
 
-        public static DialogResult ShowInfo(string message,
-            string caption,
+        /// <summary>
+        /// Shows the information MessageBox.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="caption">The caption.</param>
+        /// <param name="buttons">The buttons.</param>
+        /// <returns>A DialogResult.</returns>
+        public static DialogResult ShowInformation(string message,
+            string caption = "Information",
             VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
         {
             return ShowDialog(message,
@@ -86,8 +93,15 @@ namespace VitNX.UI.ControlsV1.Forms
                 buttons);
         }
 
+        /// <summary>
+        /// Shows the warning MessageBox.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="caption">The caption.</param>
+        /// <param name="buttons">The buttons.</param>
+        /// <returns>A DialogResult.</returns>
         public static DialogResult ShowWarning(string message,
-            string caption,
+            string caption = "Warning",
             VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
         {
             return ShowDialog(message,
@@ -96,8 +110,15 @@ namespace VitNX.UI.ControlsV1.Forms
                 buttons);
         }
 
+        /// <summary>
+        /// Shows the error MessageBox.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="caption">The caption.</param>
+        /// <param name="buttons">The buttons.</param>
+        /// <returns>A DialogResult.</returns>
         public static DialogResult ShowError(string message,
-            string caption,
+            string caption = "Error",
             VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
         {
             return ShowDialog(message,
@@ -107,7 +128,7 @@ namespace VitNX.UI.ControlsV1.Forms
         }
 
         public static DialogResult ShowQuestion(string message,
-            string caption,
+            string caption = "Question",
             VitNX_DialogButton buttons = VitNX_DialogButton.YesNo)
         {
             return ShowDialog(message,
