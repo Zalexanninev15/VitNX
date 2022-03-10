@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Text;
 
 namespace VitNX.Functions
 {
@@ -56,22 +55,6 @@ namespace VitNX.Functions
             index |= (color.G > 64) ? 2 : 0;
             index |= (color.B > 64) ? 1 : 0;
             return (ConsoleColor)index;
-        }
-
-        /// <summary>
-        /// Loads the custom font from file.
-        /// </summary>
-        /// <param name="targetFile">The target file.</param>
-        /// <param name="size">The size.</param>
-        /// <param name="fontStyle">The font style.</param>
-        /// <returns>A Font.</returns>
-        public static Font LoadCustomFontFromFile(string targetFile,
-            float size = 16,
-            FontStyle fontStyle = FontStyle.Regular)
-        {
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile(targetFile);
-            return new Font(pfc.Families[0], size, fontStyle);
         }
     }
 }

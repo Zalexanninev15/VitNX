@@ -34,6 +34,49 @@ namespace VitNX.Functions.Web
         }
 
         /// <summary>
+        /// Downloads the file with support of download resume.
+        /// </summary>
+        /// <param name="sourceFileUrl">The source file url.</param>
+        /// <param name="targetFile">The target file.</param>
+        public static void DownloadFileWithSupportOfResume(string sourceFileUrl,
+            string targetFile)
+        {
+            long iFileSize = 0;
+            int iBufferSize = 1024;
+            iBufferSize *= 1000;
+            long iExistLen = 0;
+            FileStream saveFileStream;
+            if (File.Exists(targetFile))
+            {
+                FileInfo fINfo = new FileInfo(targetFile);
+                iExistLen = fINfo.Length;
+            }
+            if (iExistLen > 0)
+                saveFileStream = new FileStream(targetFile,
+                  FileMode.Append,
+                  FileAccess.Write,
+                  FileShare.ReadWrite);
+            else
+                saveFileStream = new FileStream(targetFile,
+                  FileMode.Create,
+                  FileAccess.Write,
+                  FileShare.ReadWrite);
+            HttpWebRequest hwRq;
+            HttpWebResponse hwRes;
+            hwRq = (HttpWebRequest)WebRequest.Create(sourceFileUrl);
+            hwRq.AddRange((int)iExistLen);
+            Stream smRespStream;
+            hwRes = (HttpWebResponse)hwRq.GetResponse();
+            smRespStream = hwRes.GetResponseStream();
+            iFileSize = hwRes.ContentLength;
+            int iByteSize;
+            byte[] downBuffer = new byte[iBufferSize];
+            while ((iByteSize = smRespStream.Read(downBuffer, 0, downBuffer.Length)) > 0)
+                saveFileStream.Write(downBuffer, 0, iByteSize);
+            saveFileStream.Close();
+        }
+
+        /// <summary>
         /// Gets the status header and content of site.
         /// </summary>
         /// <param name="url">The url.</param>

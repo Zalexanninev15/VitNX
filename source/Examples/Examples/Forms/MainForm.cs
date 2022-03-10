@@ -160,9 +160,9 @@ namespace Example
         {
             DialogResult a = VitNX_MessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
             if (a == DialogResult.Yes)
-                VitNX_MessageBox.ShowInfo("Your choice is Yes", "VitNX UI - Example");
+                VitNX_MessageBox.ShowInformation("Your choice is Yes", "VitNX UI - Example");
             if (a == DialogResult.No)
-                VitNX_MessageBox.ShowInfo("Your choice is No", "VitNX UI - Example");
+                VitNX_MessageBox.ShowInformation("Your choice is No", "VitNX UI - Example");
         }
 
         private void SetTaskBarProgressBar_Click(object sender, EventArgs e)
@@ -224,6 +224,11 @@ namespace Example
                     return window;
             }
             return null;
+        }
+
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
