@@ -1,1 +1,1 @@
-search_result['500']=["topic_000000000000010E.html","Import.AdjustWindowRectEx Method",""];
+search_result['500']=["topic_0000000000000169.html","Constants Class","The constants for imported functions."];

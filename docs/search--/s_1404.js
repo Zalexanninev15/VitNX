@@ -1,1 +1,1 @@
-search_result['1404']=["topic_00000000000003E9.html","VitNX_ScrollBase.OnCreateControl Method","Raises the CreateControl method."];
+search_result['1404']=["topic_00000000000003DF.html","VitNX_ScrollBar.UpdateScrollBar Method",""];

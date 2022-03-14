@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DISPLAYCONFIG_VIDEO_SIGNAL_INFO Structure</title>
+	<title>Import.GetCurrentThemeName Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DISPLAYCONFIG_VIDEO_SIGNAL_INFO Structure</h1>
+		<h1 class="title">Import.GetCurrentThemeName Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B2.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetCurrentThemeName(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszThemeFileName</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwMaxNameChars</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszColorBuff</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cchMaxColorChars</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszSizeBuff</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cchMaxSizeChars</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,92 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="pszThemeFileName" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pszThemeFileName
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwMaxNameChars" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwMaxNameChars
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pszColorBuff" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pszColorBuff
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cchMaxColorChars" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cchMaxColorChars
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pszSizeBuff" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pszSizeBuff
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cchMaxSizeChars" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cchMaxSizeChars
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
+
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -165,190 +252,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
-
-
-
-
-
-
-
-
-  
-
-<!-- Classes -->
-
-<!-- Classes End -->
-
-<!-- Standard Modules -->
-
-<!-- Standard Modules End -->
-
-  
-
-
-
-
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
-		<div>&nbsp;</div>
-	</div>
-
-	<div id="FieldsSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E5.html">activeSize</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E3.html">hSyncFreq</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E2.html">pixelRate</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E8.html">scanLineOrdering</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E6.html">totalSize</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E4.html">vSyncFreq</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000000E7.html">videoStandard</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
-
-	</div>					
-</div>
 
 
 
@@ -407,17 +310,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[StructLayout(LayoutKind.Sequential)]
- public struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
- {
-     public ulong pixelRate;
-     public DISPLAYCONFIG_RATIONAL hSyncFreq;
-     public DISPLAYCONFIG_RATIONAL vSyncFreq;
-     public DISPLAYCONFIG_2DREGION activeSize;
-     public DISPLAYCONFIG_2DREGION totalSize;
-     public uint videoStandard;
-     public Enums.DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
- }
+[DllImport(&quot;uxtheme.dll&quot;,
+     CharSet = CharSet.Unicode)]
+ public static extern int GetCurrentThemeName(StringBuilder pszThemeFileName,
+     int dwMaxNameChars,
+     StringBuilder pszColorBuff,
+     int cchMaxColorChars,
+     StringBuilder pszSizeBuff,
+     int cchMaxSizeChars);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -471,7 +371,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>					
 </div>
 
-
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -480,10 +379,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_00000000000000B2.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+			<a href="topic_00000000000000B7.html">Import Class</a><br />
 
 
-	
+
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
+
+
+			
 
 		</div>
 	</div>					

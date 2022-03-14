@@ -1,1 +1,1 @@
-search_result['1907']=["topic_0000000000000514_methods--.html","Properties Methods",""];
+search_result['1907']=["topic_0000000000000513_overloads--.html","VitNX2_Tab.WndProc Method","This member overrides WndProc."];

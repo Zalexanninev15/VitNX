@@ -1,1 +1,1 @@
-search_result['183']=["topic_0000000000000076.html","ComPort Class","Work with informations of COM port."];
+search_result['183']=["topic_0000000000000076.html","Cpu.GetArchitecture Method","Gets the architecture."];

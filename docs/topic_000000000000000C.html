@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SizeSuffixes Field</title>
+	<title>Processes.OnlyOne Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SizeSuffixes Field</h1>
+		<h1 class="title">Processes.OnlyOne Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.AppsAndProcesses</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Possible size suffixes.</summary-info>
+        <summary-info>You only have 1 copy of the application running.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] SizeSuffixes</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> OnlyOne(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> <i>currentProcess</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>currentExeAssemblyLocation</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +151,42 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="currentProcess" class="parameterList">
+	<dt>
+		<span class="parameter">
+			currentProcess
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> 
+	</dd>
+</dl>
+<p>
+	The current process. 
+</p>
+<dl paramName="currentExeAssemblyLocation" class="parameterList">
+	<dt>
+		<span class="parameter">
+			currentExeAssemblyLocation
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The current exe assembly location. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> 
+		<p>
+		A Process. 
+	</p>
 	
 
 
@@ -229,7 +261,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static readonly string[] SizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;, &quot;PB&quot;, &quot;EB&quot;, &quot;ZB&quot;, &quot;YB&quot; };
+public static Process OnlyOne(Process currentProcess, string currentExeAssemblyLocation)
+ {
+     currentExeAssemblyLocation = currentExeAssemblyLocation.Replace(&quot;/&quot;, &quot;\\&quot;);
+     Process[] pr = Process.GetProcessesByName(currentProcess.ProcessName);
+     foreach (Process i in pr)
+     {
+         if (i.Id != currentProcess.Id)
+         {
+             if (currentExeAssemblyLocation == currentProcess.MainModule.FileName)
+                 return i;
+         }
+     }
+     return null;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -291,11 +336,11 @@ public static readonly string[] SizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quo
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000000B.html">Text Class</a><br />
+			<a href="topic_0000000000000001.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.AppsAndProcesses Namespace</a><br />
 
 
 			
@@ -317,3 +362,4 @@ public static readonly string[] SizeSuffixes = { &quot;Bytes&quot;, &quot;KB&quo
     </div>
   </body>
 </html>
+

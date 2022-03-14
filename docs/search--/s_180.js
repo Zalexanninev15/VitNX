@@ -1,1 +1,1 @@
-search_result['180']=["topic_0000000000000074_props--.html","Motherboard Properties",""];
+search_result['180']=["topic_0000000000000074_props--.html","Cpu Properties",""];

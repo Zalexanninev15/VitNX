@@ -1,1 +1,1 @@
-search_result['277']=["topic_00000000000000AE.html","Installed Class","Work with installed applications."];
+search_result['277']=["topic_00000000000000AA_props--.html","DataFromSites Properties",""];

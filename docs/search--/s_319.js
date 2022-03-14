@@ -1,1 +1,1 @@
-search_result['319']=["topic_00000000000000BD.html","GetClipboardText.GetText Method","Gets the text from clipboard."];
+search_result['319']=["topic_00000000000000C4.html","Import.CreateBitmap Method",""];

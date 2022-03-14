@@ -1,1 +1,1 @@
-search_result['260']=["topic_00000000000000A1_attached_props--.html","Processes Attached Properties",""];
+search_result['260']=["topic_00000000000000A2.html","IniSettings32 Class","Work with INI config files with Windows System functions."];

@@ -1,1 +1,1 @@
-search_result['246']=["topic_000000000000009A_props--.html","SendDataToSites Properties",""];
+search_result['246']=["topic_0000000000000092.html","Internet.GetLocalIPv4 Method","Gets the local IPv4 (obsolete, but work)."];

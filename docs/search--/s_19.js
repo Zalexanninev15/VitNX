@@ -1,1 +1,1 @@
-search_result['19']=["topic_0000000000000009.html","NumericalTextConverter.Convert Method","Converts the value(s)."];
+search_result['19']=["topic_000000000000000E.html","Installed Class","Work with installed applications."];

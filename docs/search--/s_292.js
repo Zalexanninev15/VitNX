@@ -1,1 +1,1 @@
-search_result['292']=["topic_00000000000000B3_vars--.html","TaskBarProgressBar Fields",""];
+search_result['292']=["topic_00000000000000B3.html","Config Class","The configs for normal work with sites and Internet."];

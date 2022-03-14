@@ -1,1 +1,1 @@
-search_result['1242']=["topic_0000000000000384.html","VitNX_ContentAlignment Enumeration",""];
+search_result['1242']=["topic_000000000000037B.html","VitNX_ComboBox Class",""];

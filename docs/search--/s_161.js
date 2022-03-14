@@ -1,1 +1,1 @@
-search_result['161']=["topic_000000000000006A.html","Monitor Class","Work with informations of Monitor(s)."];
+search_result['161']=["topic_0000000000000065.html","Windows.GetCurrentUsername Method","Gets the current user (name)."];

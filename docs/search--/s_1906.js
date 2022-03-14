@@ -1,1 +1,1 @@
-search_result['1906']=["topic_0000000000000514_events--.html","Properties Events",""];
+search_result['1906']=["topic_0000000000000513.html","VitNX2_Tab.WndProc Method","This member overrides WndProc."];

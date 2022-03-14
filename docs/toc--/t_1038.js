@@ -1,1 +1,1 @@
-c['1038']=[['1039',"VitNX_Title Constructor","topic_000000000000040A.html",0],['1040',"Methods","topic_0000000000000409_methods--.html",1]];
+c['1038']=[['1039',"VitNX_TreeNode() Constructor","topic_000000000000041A.html",0],['1040',"VitNX_TreeNode(string) Constructor","topic_000000000000041B.html",0]];

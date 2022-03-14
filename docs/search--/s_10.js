@@ -1,1 +1,1 @@
-search_result['10']=["topic_0000000000000005.html","CShap.ConvertColorToConsoleColor Method","Converts the color to color for console."];
+search_result['10']=["topic_0000000000000005.html","Processes.RunAW Method","Launch a third-party apps with options."];

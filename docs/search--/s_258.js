@@ -1,1 +1,1 @@
-search_result['258']=["topic_00000000000000A0.html","VitNX.Functions.Windows.Apps Namespace",""];
+search_result['258']=["topic_00000000000000A0.html","PowerControl.Computer Method","The power of computer."];

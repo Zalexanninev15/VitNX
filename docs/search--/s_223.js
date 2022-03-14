@@ -1,1 +1,1 @@
-search_result['223']=["topic_000000000000008D_props--.html","IniSettings32 Properties",""];
+search_result['223']=["topic_000000000000008A.html","Motherboard.GetFirmwareType Method","Gets the firmware type."];

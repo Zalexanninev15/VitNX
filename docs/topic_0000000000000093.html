@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>IniSettings32.KeyExists Method</title>
+	<title>Internet.GetPublicIP Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">IniSettings32.KeyExists Method</h1>
+		<h1 class="title">Internet.GetPublicIP Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Is key exist.</summary-info>
+        <summary-info>Gets the public IP of PC.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> KeyExists(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>section</i> = null&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetPublicIP()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,42 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="key" class="parameterList">
-	<dt>
-		<span class="parameter">
-			key
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The key. 
-</p>
-<dl paramName="section" class="parameterList">
-	<dt>
-		<span class="parameter">
-			section
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The section. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		A bool. 
-	</p>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	
 
 
@@ -261,10 +229,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool KeyExists(string key,
-     string section = null)
+public static string GetPublicIP()
  {
-     return Read(key, section).Length &gt; 0;
+     string PublicIP = &quot;localhost&quot;;
+     using (WebClient client = new WebClient())
+     {
+         try { PublicIP = client.DownloadString(&quot;https://icanhazip.com&quot;); }
+         catch { PublicIP = client.DownloadString(&quot;https://checkip.amazonaws.com&quot;); }
+         if (PublicIP == &quot;&quot; || PublicIP == &quot;0.0.0.0&quot; || PublicIP == &quot;localhost&quot;)
+         {
+             try { PublicIP = client.DownloadString(&quot;https://checkip.amazonaws.com&quot;); } catch { PublicIP = &quot;0.0.0.0&quot;; }
+         }
+     }
+     return PublicIP.Trim();
  }
 					</pre>			
 				</div>
@@ -327,11 +304,11 @@ public static bool KeyExists(string key,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000008D.html">IniSettings32 Class</a><br />
+			<a href="topic_000000000000008F.html">Internet Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

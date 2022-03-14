@@ -1,1 +1,1 @@
-search_result['1994']=["topic_0000000000000862_attached_props--.html","NotificationForm Attached Properties",""];
+search_result['1994']=["topic_0000000000000854.html","Manager.Alert (String, NotificationType) Method","/// Display a new standard type notification on the screen.\r\n\t\t///"];

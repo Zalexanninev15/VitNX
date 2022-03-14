@@ -1,1 +1,1 @@
-search_result['211']=["topic_0000000000000085_attached_props--.html","PowerControl Attached Properties",""];
+search_result['211']=["topic_0000000000000083.html","Monitor.CaptureWindowToFile Method","Captures the window to file."];

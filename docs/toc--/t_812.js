@@ -1,1 +1,1 @@
-c['812']=[['813',"VitNX_ProgressBarRounded Constructor","topic_00000000000004D9.html",0],['814',"Methods","topic_00000000000004D8_methods--.html",1]];
+c['812']=[['813',"Methods","topic_0000000000000344_methods--.html",1],['823',"Events","topic_0000000000000344_events--.html",1]];

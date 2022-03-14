@@ -1,1 +1,1 @@
-search_result['78']=["topic_0000000000000035.html","CompressAndDecompress Class","Compress and decompress the text or byte[].\r\nExamples: https://gist.github.com/Zalexanninev15/cbd4dde903095ca7a5e53c1fc6c42807"];
+search_result['78']=["topic_0000000000000035.html","Text.FixDeEncoding Method","Fixes the de-encoding."];

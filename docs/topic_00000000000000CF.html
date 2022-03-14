@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>modeInfoIdx Field</title>
+	<title>Import.DispatchMessage Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">modeInfoIdx Field</h1>
+		<h1 class="title">Import.DispatchMessage Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B2.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> modeInfoIdx</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> DispatchMessage(&nbsp;<br />   ref <a target="_top" href="topic_00000000000001C5.html" onclick="this.target='';return true;">MSG</a> <i>msg</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,10 +151,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="msg" class="parameterList">
+	<dt>
+		<span class="parameter">
+			msg
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001C5.html" onclick="this.target='';return true;">MSG</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -228,7 +245,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public uint modeInfoIdx;
+[return: MarshalAs(UnmanagedType.Bool)]
+ [DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool DispatchMessage(ref MSG msg);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -290,11 +310,11 @@ public uint modeInfoIdx;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000CC.html">DISPLAYCONFIG_PATH_SOURCE_INFO Structure</a><br />
+			<a href="topic_00000000000000B7.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000B2.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -316,3 +336,4 @@ public uint modeInfoIdx;
     </div>
   </body>
 </html>
+

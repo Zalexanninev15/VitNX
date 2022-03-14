@@ -1,1 +1,1 @@
-search_result['1119']=["topic_0000000000000339.html","Type1.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];
+search_result['1119']=["topic_0000000000000334.html","Controls.VolumeOnFocus Method","Enable/disable sound (nasty) when focusing on an item/control.."];

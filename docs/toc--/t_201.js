@@ -1,1 +1,1 @@
-c['201']=[['202',"GetText Method","topic_00000000000000BD.html",0]];
+c['201']=[['202',"Methods","topic_00000000000000B0_methods--.html",1]];

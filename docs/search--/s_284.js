@@ -1,1 +1,1 @@
-search_result['284']=["topic_00000000000000B0.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];
+search_result['284']=["topic_00000000000000B0.html","SendDataToSites Class","The send data to sites."];

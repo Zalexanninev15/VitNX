@@ -358,7 +358,6 @@
             this.mnuAbout.Name = "mnuAbout";
             this.mnuAbout.Size = new System.Drawing.Size(180, 22);
             this.mnuAbout.Text = "&About VitNX";
-            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
             // toolMain
             // 

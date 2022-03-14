@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FileSystem.CleanRecycleBin Method</title>
+	<title>EncrypterAndDecrypter.Encrypt Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FileSystem.CleanRecycleBin Method</h1>
+		<h1 class="title">EncrypterAndDecrypter.Encrypt Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Cleans the Recycle Bin.</summary-info>
+        <summary-info>Encrypts the text.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CleanRecycleBin()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> Encrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,7 +151,30 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="input" class="parameterList">
+	<dt>
+		<span class="parameter">
+			input
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
+<p />
+
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -225,11 +248,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void CleanRecycleBin()
+public static string Encrypt(string input)
  {
-     Windows.Win32.Import.SHEmptyRecycleBin(IntPtr.Zero, null,
-     Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOSOUND |
-     Windows.Win32.Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION);
+     RijndaelManaged RijndaelCipher = new RijndaelManaged();
+     byte[] PlainText = Encoding.Unicode.GetBytes(input);
+     byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+     PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+     ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32),
+         SecretKey.GetBytes(16));
+     MemoryStream memoryStream = new MemoryStream();
+     CryptoStream cryptoStream = new CryptoStream(memoryStream,
+         Encryptor,
+         CryptoStreamMode.Write);
+     cryptoStream.Write(PlainText, 0, PlainText.Length);
+     cryptoStream.FlushFinalBlock();
+     byte[] CipherBytes = memoryStream.ToArray();
+     memoryStream.Close();
+     cryptoStream.Close();
+     string EncryptedData = Convert.ToBase64String(CipherBytes);
+     return EncryptedData;
  }
 					</pre>			
 				</div>
@@ -292,11 +329,11 @@ public static void CleanRecycleBin()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000003A.html">FileSystem Class</a><br />
+			<a href="topic_0000000000000040.html">EncrypterAndDecrypter Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

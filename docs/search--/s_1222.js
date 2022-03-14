@@ -1,1 +1,1 @@
-search_result['1222']=["topic_0000000000000376.html","VitNX_ComboBox Class",""];
+search_result['1222']=["topic_000000000000036A.html","VitNX_Button.NotifyDefault Method","Notifies the Button whether it is the default button so that it can adjust its appearance accordingly."];

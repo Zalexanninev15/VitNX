@@ -1,1 +1,1 @@
-search_result['94']=["topic_000000000000003B.html","FileSystem.GetItemsListInFolder Method","Gets the items list in folder."];
+search_result['94']=["topic_0000000000000040.html","EncrypterAndDecrypter Class","Encrypter and decrypter for text."];

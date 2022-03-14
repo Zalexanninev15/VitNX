@@ -1,1 +1,1 @@
-search_result['257']=["topic_000000000000009F.html","Config.DefaultGateway Method","Activate DefaultGateway of NetworkInterface in IPAddress."];
+search_result['257']=["topic_000000000000009B.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];

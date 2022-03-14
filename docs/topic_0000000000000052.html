@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.Is64bit Method</title>
+	<title>File.DeleteForever Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.Is64bit Method</h1>
+		<h1 class="title">File.DeleteForever Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000004D.html">VitNX.Functions.Common.Information</a>
+<a href="topic_000000000000004B.html">VitNX.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Windows is x64 (64-bit).</summary-info>
+        <summary-info>Deletes the file forever.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> Is64bit()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteForever(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,14 +151,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="targetFile" class="parameterList">
+	<dt>
+		<span class="parameter">
+			targetFile
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The target file. 
+</p>
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		A bool. 
-	</p>
-	
+<p />
+
 
 
 
@@ -232,7 +241,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool Is64bit() =&gt; Environment.Is64BitOperatingSystem;
+public static void DeleteForever(string targetFile)
+ {
+     System.IO.File.Delete(targetFile);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -294,11 +306,11 @@ public static bool Is64bit() =&gt; Environment.Is64BitOperatingSystem;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000004E.html">Windows Class</a><br />
+			<a href="topic_0000000000000051.html">File Class</a><br />
 
 
 
-<a href="topic_000000000000004D.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_000000000000004B.html">VitNX.Functions.FileSystem Namespace</a><br />
 
 
 			

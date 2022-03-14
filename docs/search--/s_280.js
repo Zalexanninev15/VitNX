@@ -1,1 +1,1 @@
-search_result['280']=["topic_00000000000000AE_methods--.html","Installed Methods",""];
+search_result['280']=["topic_00000000000000AC.html","DataFromSites.DownloadFileWithSupportOfResume Method","Downloads the file with support of download resume."];

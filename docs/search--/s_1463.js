@@ -1,1 +1,1 @@
-search_result['1463']=["topic_0000000000000409_props--.html","VitNX_Title Properties",""];
+search_result['1463']=["topic_0000000000000408.html","VitNX_Separator.OnPaintBackground Method","Paints the background of the control."];

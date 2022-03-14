@@ -1,1 +1,1 @@
-search_result['588']=["topic_0000000000000162.html","Import.PatBlt Method",""];
+search_result['588']=["topic_000000000000019E.html","LOGBRUSH Structure",""];

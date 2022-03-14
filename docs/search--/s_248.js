@@ -1,1 +1,1 @@
-search_result['248']=["topic_000000000000009B.html","SendDataToSites.Post Method",""];
+search_result['248']=["topic_0000000000000094.html","Internet.GetMacAddress Method","Gets the MAC address."];

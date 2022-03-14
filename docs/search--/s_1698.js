@@ -1,1 +1,1 @@
-search_result['1698']=["topic_00000000000004A6_overloads--.html","VitNX_MessageBox Constructor",""];
+search_result['1698']=["topic_000000000000049D.html","VitNX_Dialog.Dispose Method","/// Clean up any resources being used.\r\n        ///"];

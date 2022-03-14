@@ -1,1 +1,1 @@
-search_result['259']=["topic_00000000000000A1.html","Processes Class","Work with processes."];
+search_result['259']=["topic_00000000000000A1.html","PowerControl.Monitor Method","The power of monitor."];

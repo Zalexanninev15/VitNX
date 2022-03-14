@@ -1,1 +1,1 @@
-c['1293']=[['1294',"WndProc Method","topic_0000000000000508_overloads--.html",1]];
+c['1293']=[['1294',"VitNX2_ProgressBarRoundedType1 Constructor","topic_0000000000000504.html",0],['1295',"Methods","topic_0000000000000503_methods--.html",1]];

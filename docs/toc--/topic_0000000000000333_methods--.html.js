@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['793',"VitNX.UI.Console.ProgressBar Namespace","topic_0000000000000332.html"],['794',"Type1 Class","topic_0000000000000333.html"],['796',"Methods","topic_0000000000000333_methods--.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['781',"VitNX.Functions.WindowAndControls Namespace","topic_000000000000032A.html"],['782',"Controls Class","topic_0000000000000333.html"],['783',"Methods","topic_0000000000000333_methods--.html"]];

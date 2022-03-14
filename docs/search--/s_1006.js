@@ -1,1 +1,1 @@
-search_result['1006']=["topic_0000000000000280.html","tmCharSet Field",""];
+search_result['1006']=["topic_00000000000002FF.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Structure",""];

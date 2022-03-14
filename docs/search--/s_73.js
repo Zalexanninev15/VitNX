@@ -1,1 +1,1 @@
-search_result['73']=["topic_0000000000000030.html","EncrypterAndDecrypter.SetPassword Method","Sets the password."];
+search_result['73']=["topic_0000000000000030.html","Text.ListRemoveStringsFromList Method","Lists the remove strings from list."];

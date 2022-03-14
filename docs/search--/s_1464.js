@@ -1,1 +1,1 @@
-search_result['1464']=["topic_0000000000000409_vars--.html","VitNX_Title Fields",""];
+search_result['1464']=["topic_0000000000000409.html","VitNX_StatusStrip Class",""];

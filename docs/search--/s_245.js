@@ -1,1 +1,1 @@
-search_result['245']=["topic_000000000000009A_methods--.html","SendDataToSites Methods",""];
+search_result['245']=["topic_0000000000000091.html","Internet.GetLocalIPv6 Method","Gets the local IPv6 (obsolete, but work)."];

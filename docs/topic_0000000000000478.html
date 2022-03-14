@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter.UpdateOverlay Method</title>
+	<title>VitNX_DockRegion.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter.UpdateOverlay Method</h1>
+		<h1 class="title">VitNX_DockRegion.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000435.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking</a>
+<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> UpdateOverlay(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> <i>difference</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="difference" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			difference
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -240,49 +241,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void UpdateOverlay(Point difference)
+protected override void OnPaint(PaintEventArgs e)
         {
-            var bounds = new Rectangle(Bounds.Location,
-         Bounds.Size);
-            switch (_splitterType)
+            var g = e.Graphics;
+            if (!Visible)
+                return;
+            using (var b = new SolidBrush(Colors.GreyBackground))
+                g.FillRectangle(b, ClientRectangle);
+            using (var p = new Pen(Colors.VitNXBorder))
             {
-                case VitNX_SplitterType.Left:
-                    var leftX = Math.Max(bounds.Location.X - difference.X,
-                        _minimum);
-                    if (_maximum != 0 &amp;&amp; leftX &gt; _maximum)
-                        leftX = _maximum;
-                    bounds.Location = new Point(leftX,
-                        bounds.Location.Y);
-                    break;
- 
-         case VitNX_SplitterType.Right:
-                    var rightX = Math.Max(bounds.Location.X - difference.X,
-                 _minimum);
-                    if (_maximum != 0 &amp;&amp; rightX &gt; _maximum)
-                        rightX = _maximum;
-                    bounds.Location = new Point(rightX,
-                 bounds.Location.Y);
-                    break;
- 
-         case VitNX_SplitterType.Top:
-                    var topY = Math.Max(bounds.Location.Y - difference.Y,
-                        _minimum);
-                    if (_maximum != 0 &amp;&amp; topY &gt; _maximum)
-                        topY = _maximum;
-                    bounds.Location = new Point(bounds.Location.X,
-                 topY);
-                    break;
- 
-         case VitNX_SplitterType.Bottom:
-                    var bottomY = Math.Max(bounds.Location.Y - difference.Y,
-                 _minimum);
-                    if (_maximum != 0 &amp;&amp; bottomY &gt; _maximum)
-                        topY = _maximum;
-                    bounds.Location = new Point(bounds.Location.X,
-                 bottomY);
-                    break;
+                if (DockArea == VitNX_DockArea.Document)
+                    g.DrawLine(p, ClientRectangle.Left, 0,
+                 ClientRectangle.Right, 0);
+                if (DockArea == VitNX_DockArea.Right)
+                    g.DrawLine(p, ClientRectangle.Left, 0,
+                 ClientRectangle.Left,
+                 ClientRectangle.Height);
+                if (DockArea == VitNX_DockArea.Left)
+                    g.DrawLine(p, ClientRectangle.Right - 1, 0,
+                        ClientRectangle.Right - 1,
+                 ClientRectangle.Height);
             }
-            _overlayForm.Bounds = bounds;
         }
 					</pre>			
 				</div>
@@ -345,11 +324,11 @@ public void UpdateOverlay(Point difference)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000474.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_0000000000000471.html">VitNX_DockRegion Class</a><br />
 
 
 
-<a href="topic_0000000000000435.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace</a><br />
+<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			

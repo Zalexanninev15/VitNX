@@ -1,1 +1,1 @@
-search_result['1898']=["topic_0000000000000513.html","FontAwesome4 Class",""];
+search_result['1898']=["topic_0000000000000510.html","VitNX2_ProgressBarRoundedType2.OnSizeChanged Method","Raises the SizeChanged event."];

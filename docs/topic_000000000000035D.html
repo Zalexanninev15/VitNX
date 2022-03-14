@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Button.OnMouseDown Method</title>
+	<title>ScrollValueEventArgs Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Button.OnMouseDown Method</h1>
+		<h1 class="title">ScrollValueEventArgs Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmousedown">OnMouseDown</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public ScrollValueEventArgs(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>value</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="value" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			value
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -241,12 +240,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseDown(MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-            if (!ClientRectangle.Contains(e.Location)) { return; }
-            SetButtonState(VitNX_ControlState.Pressed);
-        }
+public ScrollValueEventArgs(int value)
+ {
+     Value = value;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -308,11 +305,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000359.html">VitNX_Button Class</a><br />
+			<a href="topic_000000000000035C.html">ScrollValueEventArgs Class</a><br />
 
 
 
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

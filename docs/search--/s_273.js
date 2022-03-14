@@ -1,1 +1,1 @@
-search_result['273']=["topic_00000000000000AA.html","Processes.IsAdministratorYourApp Method","Whether your application has administrator rights."];
+search_result['273']=["topic_00000000000000AA.html","DataFromSites Class","Work with data from sites."];

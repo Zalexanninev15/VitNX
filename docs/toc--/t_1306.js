@@ -1,1 +1,1 @@
-c['1306']=[['1307',"OnPaint Method","topic_0000000000000511.html",0]];
+c['1306']=[['1307',"WndProc(ref Message) Method","topic_0000000000000513.html",0]];

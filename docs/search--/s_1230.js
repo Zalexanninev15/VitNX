@@ -1,1 +1,1 @@
-search_result['1230']=["topic_0000000000000378_overloads--.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];
+search_result['1230']=["topic_000000000000036F_vars--.html","VitNX_CheckBox Fields",""];

@@ -1,1 +1,1 @@
-search_result['231']=["topic_0000000000000094.html","VitNX.Functions.Common.Web Namespace",""];
+search_result['231']=["topic_000000000000008D.html","Ram Class","Work with informations of RAM."];

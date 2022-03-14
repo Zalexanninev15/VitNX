@@ -1,1 +1,1 @@
-search_result['1055']=["topic_00000000000002A0.html","HWND Class",""];
+search_result['1055']=["topic_0000000000000312_vars--.html","DISPLAYCONFIG_MODE_INFO Fields",""];

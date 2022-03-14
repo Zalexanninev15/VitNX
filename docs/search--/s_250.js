@@ -1,1 +1,1 @@
-search_result['250']=["topic_000000000000009D.html","Config Class","The configs for normal work with sites and Internet."];
+search_result['250']=["topic_0000000000000099.html","Internet.IsHaveInternet Method","Are the have internet."];

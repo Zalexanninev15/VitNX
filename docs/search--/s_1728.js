@@ -1,1 +1,1 @@
-search_result['1728']=["topic_00000000000004C0.html","VitNX_ToolStripRenderer Class",""];
+search_result['1728']=["topic_00000000000004B2.html","VitNX_MessageBox.ShowInformation Method","Shows the information MessageBox."];

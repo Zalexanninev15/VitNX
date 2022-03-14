@@ -1,1 +1,1 @@
-search_result['1472']=["topic_000000000000040C_vars--.html","VitNX_ToolStrip Fields",""];
+search_result['1472']=["topic_000000000000040C.html","VitNX_TextBox Class",""];

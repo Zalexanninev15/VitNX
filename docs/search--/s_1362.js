@@ -1,1 +1,1 @@
-search_result['1362']=["topic_00000000000003C9.html","VitNX_RadioButton.OnMouseLeave Method","Raises the OnMouseLeave event."];
+search_result['1362']=["topic_00000000000003BF.html","VitNX_NumericUpDown Constructor",""];

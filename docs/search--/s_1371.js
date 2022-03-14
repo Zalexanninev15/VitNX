@@ -1,1 +1,1 @@
-search_result['1371']=["topic_00000000000003CE_props--.html","VitNX_ScrollBar Properties",""];
+search_result['1371']=["topic_00000000000003C8.html","VitNX_NumericUpDown.OnPaint Method","Raises the Paint event."];

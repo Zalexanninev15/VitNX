@@ -1,1 +1,1 @@
-c['166']=[['167',"DefaultGateway Method","topic_000000000000009F.html",0],['168',"UseProtocols Method","topic_000000000000009E.html",0]];
+c['166']=[['167',"GetFirmwareType Method","topic_000000000000008A.html",0]];

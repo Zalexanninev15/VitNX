@@ -1,1 +1,1 @@
-search_result['1632']=["topic_0000000000000474_vars--.html","VitNX_DockSplitter Fields",""];
+search_result['1632']=["topic_000000000000046F.html","VitNX_DockPanel.GetDockPanelState Method",""];

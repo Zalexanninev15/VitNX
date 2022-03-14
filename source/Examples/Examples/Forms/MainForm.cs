@@ -184,9 +184,11 @@ namespace Example
                     case "Indeterminate":
                         TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate);
                         break;
+
                     case "NoProgress":
                         TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress);
                         break;
+
                     case "Error":
                         {
                             TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);
@@ -224,11 +226,6 @@ namespace Example
                     return window;
             }
             return null;
-        }
-
-        private void mnuAbout_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
