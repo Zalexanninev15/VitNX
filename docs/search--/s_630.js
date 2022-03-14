@@ -1,1 +1,1 @@
-search_result['630']=["topic_0000000000000189.html","Import.TranslateMessage Method",""];
+search_result['630']=["topic_00000000000001B6_methods--.html","MINMAXINFO Methods",""];

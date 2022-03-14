@@ -1,1 +1,1 @@
-search_result['1787']=["topic_00000000000004DB_overloads--.html","VitNX_ProgressBarRounded.Dispose Method",""];
+search_result['1787']=["topic_00000000000004D9.html","DockResizeFilter Constructor",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolStripRenderer.OnRenderToolStripBackground Method</title>
+	<title>VitNX_MenuRenderer.OnRenderToolStripBackground Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolStripRenderer.OnRenderToolStripBackground Method</h1>
+		<h1 class="title">VitNX_MenuRenderer.OnRenderToolStripBackground Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004B6.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers</a>
+<a href="topic_00000000000004BE.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
@@ -243,16 +243,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 					<pre xml:space="preserve" class="brush: csharp">
 protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
-            base.OnRenderToolStripBackground(e);
             var g = e.Graphics;
-            if (e.ToolStrip.GetType() == typeof(ToolStripOverflow))
-            {
-                using (var p = new Pen(Colors.GreyBackground))
-                {
-                    var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - 1, e.AffectedBounds.Height - 1);
-                    g.DrawRectangle(p, rect);
-                }
-            }
+            using (var b = new SolidBrush(Colors.GreyBackground))
+                g.FillRectangle(b, e.AffectedBounds);
         }
 					</pre>			
 				</div>
@@ -315,11 +308,11 @@ protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004C0.html">VitNX_ToolStripRenderer Class</a><br />
+			<a href="topic_00000000000004BF.html">VitNX_MenuRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000004B6.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Renderers Namespace</a><br />
+<a href="topic_00000000000004BE.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			

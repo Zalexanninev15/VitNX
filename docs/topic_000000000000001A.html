@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Text.ContainsOnlyNumbers Method</title>
+	<title>NumericalTextConverter.Convert Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Text.ContainsOnlyNumbers Method</h1>
+		<h1 class="title">NumericalTextConverter.Convert Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
+<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Contains the only numbers.</summary-info>
+        <summary-info>Converts the value(s).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ContainsOnlyNumbers(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> Convert(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] <i>values</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> <i>targetType</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>parameter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> <i>culture</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,29 +152,72 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="text" class="parameterList">
+	Parameters</h4><dl paramName="values" class="parameterList">
 	<dt>
 		<span class="parameter">
-			text
+			values
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] 
 	</dd>
 </dl>
 <p>
-	The text. 
+	The values. 
+</p>
+<dl paramName="targetType" class="parameterList">
+	<dt>
+		<span class="parameter">
+			targetType
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> 
+	</dd>
+</dl>
+<p>
+	The target type. 
+</p>
+<dl paramName="parameter" class="parameterList">
+	<dt>
+		<span class="parameter">
+			parameter
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
+	</dd>
+</dl>
+<p>
+	The parameter. 
+</p>
+<dl paramName="culture" class="parameterList">
+	<dt>
+		<span class="parameter">
+			culture
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> 
+	</dd>
+</dl>
+<p>
+	The culture. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
 		<p>
-		A bool. 
+		An object. 
 	</p>
 	
+
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.imultivalueconverter.convert">IMultiValueConverter.Convert</a>
+<br />
 
 
 
@@ -248,7 +291,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool ContainsOnlyNumbers(string text) =&gt; text.All(char.IsDigit);
+public object Convert(object[] values,
+     Type targetType,
+     object parameter,
+     CultureInfo culture)
+ {
+     string rType = &quot;&quot;;
+     if (values.Count() == 2)
+     {
+         try
+         {
+             var ValueText = (string)values[0] ?? &quot;&quot;;
+             var UnitText = (string)values[1] ?? &quot;&quot;;
+             if (ValueText.Trim() != string.Empty)
+                 rType = $&quot;{ValueText.Trim()} {UnitText.Trim()}&quot;;
+         }
+         catch { }
+     }
+     return rType;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -310,11 +371,11 @@ public static bool ContainsOnlyNumbers(string text) =&gt; text.All(char.IsDigit)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000000B.html">Text Class</a><br />
+			<a href="topic_0000000000000019.html">NumericalTextConverter Class</a><br />
 
 
 
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
+<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

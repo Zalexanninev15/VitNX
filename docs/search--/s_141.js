@@ -1,1 +1,1 @@
-search_result['141']=["topic_0000000000000060.html","Cpu.Characteristics Method","Gets all characteristics."];
+search_result['141']=["topic_000000000000005B.html","File.CreateShortcut Method","Creates the shortcut."];

@@ -1,1 +1,1 @@
-search_result['1117']=["topic_0000000000000337.html","Type1.SetText Method","Sets the text."];
+search_result['1117']=["topic_0000000000000333_props--.html","Controls Properties",""];

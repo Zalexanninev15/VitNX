@@ -1,1 +1,1 @@
-search_result['1223']=["topic_0000000000000376_attached_props--.html","VitNX_ComboBox Attached Properties",""];
+search_result['1223']=["topic_000000000000036B.html","VitNX_Button.OnPaint Method","Raises the OnPaint event."];

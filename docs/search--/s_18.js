@@ -1,1 +1,1 @@
-search_result['18']=["topic_0000000000000008_vars--.html","NumericalTextConverter Fields",""];
+search_result['18']=["topic_000000000000000D.html","Processes.CheckDebugger Method","Checks the debugger for your app."];

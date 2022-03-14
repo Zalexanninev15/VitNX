@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Installed.FindAppPath Method</title>
+	<title>SendDataToSites.Post Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Installed.FindAppPath Method</h1>
+		<h1 class="title">SendDataToSites.Post Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_00000000000000A9.html">VitNX.Functions.Web</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Finds the application path.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> FindAppPath(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>regKeyPath</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>applicationName</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> Post(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>url</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>options</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="regKeyPath" class="parameterList">
+	Parameters</h4><dl paramName="url" class="parameterList">
 	<dt>
 		<span class="parameter">
-			regKeyPath
+			url
 		</span>
 	</dt>
 	<dd>
@@ -163,12 +162,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The key path. 
+	 
 </p>
-<dl paramName="applicationName" class="parameterList">
+<dl paramName="options" class="parameterList">
 	<dt>
 		<span class="parameter">
-			applicationName
+			options
 		</span>
 	</dt>
 	<dd>
@@ -176,7 +175,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The application name. 
+	 
 </p>
 
 <p />
@@ -184,9 +183,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<h4 class="subHeading">
 		Return Value</h4>
 	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
 	
 
 
@@ -261,17 +257,34 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string FindAppPath(string regKeyPath, string applicationName)
+public static string Post(string url, string options)
  {
-     var uninstall = Registry.LocalMachine.OpenSubKey(regKeyPath);
-     foreach (var productSubKey in uninstall.GetSubKeyNames())
+     try
      {
-         var product = uninstall.OpenSubKey(productSubKey);
-         var displayName = product.GetValue(&quot;DisplayName&quot;);
-         if (Convert.ToString(displayName) != &quot;&quot; &amp;&amp; Convert.ToString(displayName).Contains(applicationName))
-             return product.GetValue(&quot;InstallLocation&quot;).ToString();
+         WebRequest req = WebRequest.Create(url);
+         req.Method = &quot;POST&quot;;
+         req.Timeout = 100000;
+         req.ContentType = &quot;application/x-www-form-urlencoded&quot;;
+         byte[] sentData = Encoding.UTF8.GetBytes(options);
+         req.ContentLength = sentData.Length;
+         Stream sendStream = req.GetRequestStream();
+         sendStream.Write(sentData, 0, sentData.Length);
+         sendStream.Close();
+         WebResponse res = req.GetResponse();
+         Stream ReceiveStream = res.GetResponseStream();
+         StreamReader sr = new StreamReader(ReceiveStream, Encoding.UTF8);
+         char[] read = new char[256];
+         int count = sr.Read(read, 0, 256);
+         string Out = string.Empty;
+         while (count &gt; 0)
+         {
+             string str = new string(read, 0, count);
+             Out += str;
+             count = sr.Read(read, 0, 256);
+         }
+         return Out;
      }
-     return null;
+     catch (Exception ex) { return ex.Message; }
  }
 					</pre>			
 				</div>
@@ -334,11 +347,11 @@ public static string FindAppPath(string regKeyPath, string applicationName)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AE.html">Installed Class</a><br />
+			<a href="topic_00000000000000B0.html">SendDataToSites Class</a><br />
 
 
 
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_00000000000000A9.html">VitNX.Functions.Web Namespace</a><br />
 
 
 			

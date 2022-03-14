@@ -1,1 +1,1 @@
-search_result['1452']=["topic_0000000000000407.html","VitNX_TextBox Class",""];
+search_result['1452']=["topic_0000000000000402.html","VitNX_SectionPanel.OnMouseDown Method","Raises the MouseDown event."];

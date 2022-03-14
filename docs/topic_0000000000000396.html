@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DropdownList.OnMouseMove Method</title>
+	<title>VitNX_DropdownItem(String, Bitmap) Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DropdownList.OnMouseMove Method</h1>
+		<h1 class="title">VitNX_DropdownItem(String, Bitmap) Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX_DropdownItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> <i>icon</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +151,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			text
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	 
+</p>
+<dl paramName="icon" class="parameterList">
+	<dt>
+		<span class="parameter">
+			icon
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> 
+	</dd>
+</dl>
+<p>
+	 
 </p>
 
 <p />
@@ -241,22 +253,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-
-            if (e.Button == MouseButtons.Left)
-            {
-                if (ClientRectangle.Contains(e.Location))
-                    SetControlState(VitNX_ControlState.Pressed);
-                else
-                    SetControlState(VitNX_ControlState.Hover);
-            }
-            else
-            {
-                SetControlState(VitNX_ControlState.Hover);
-            }
-        }
+public VitNX_DropdownItem(string text, Bitmap icon)
+     : this(text)
+ {
+     Icon = icon;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -318,11 +319,11 @@ protected override void OnMouseMove(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000392.html">VitNX_DropdownList Class</a><br />
+			<a href="topic_0000000000000393.html">VitNX_DropdownItem Class</a><br />
 
 
 
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

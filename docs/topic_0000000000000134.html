@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetCapture Method</title>
+	<title>Import.UpdateLayeredWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetCapture Method</h1>
+		<h1 class="title">Import.UpdateLayeredWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> GetCapture()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> UpdateLayeredWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcDst</i>,&nbsp;<br />   ref <a target="_top" href="topic_00000000000001F3.html" onclick="this.target='';return true;">POINT</a> <i>pptDst</i>,&nbsp;<br />   ref <a target="_top" href="topic_000000000000020B.html" onclick="this.target='';return true;">SIZE</a> <i>psize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcSrc</i>,&nbsp;<br />   ref <a target="_top" href="topic_00000000000001F3.html" onclick="this.target='';return true;">POINT</a> <i>pprSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>crKey</i>,&nbsp;<br />   ref <a target="_top" href="topic_000000000000018D.html" onclick="this.target='';return true;">BLENDFUNCTION</a> <i>pblend</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwFlags</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,10 +151,130 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hwnd
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hdcDst" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hdcDst
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pptDst" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pptDst
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001F3.html" onclick="this.target='';return true;">POINT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="psize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			psize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_000000000000020B.html" onclick="this.target='';return true;">SIZE</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hdcSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hdcSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pprSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pprSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001F3.html" onclick="this.target='';return true;">POINT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="crKey" class="parameterList">
+	<dt>
+		<span class="parameter">
+			crKey
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pblend" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pblend
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_000000000000018D.html" onclick="this.target='';return true;">BLENDFUNCTION</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwFlags" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwFlags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -228,8 +349,17 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;)]
- public static extern IntPtr GetCapture();
+[DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool UpdateLayeredWindow(IntPtr hwnd,
+     IntPtr hdcDst,
+     ref POINT pptDst,
+     ref SIZE psize,
+     IntPtr hdcSrc,
+     ref POINT pprSrc,
+     int crKey,
+     ref BLENDFUNCTION pblend,
+     int dwFlags);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -291,11 +421,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000010D.html">Import Class</a><br />
+			<a href="topic_00000000000000B7.html">Import Class</a><br />
 
 
 
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			

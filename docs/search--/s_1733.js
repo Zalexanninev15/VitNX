@@ -1,1 +1,1 @@
-search_result['1733']=["topic_00000000000004C0_vars--.html","VitNX_ToolStripRenderer Fields",""];
+search_result['1733']=["topic_00000000000004B7.html","VitNX_MessageBox.Dispose Method","/// Clean up any resources being used.\r\n        ///"];

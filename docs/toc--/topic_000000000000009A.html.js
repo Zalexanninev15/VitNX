@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['164',"VitNX.Functions.Common.Web Namespace","topic_0000000000000094.html"],['175',"SendDataToSites Class","topic_000000000000009A.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['4',"VitNX.Functions Namespace","topic_0000000000000012.html"],['19',"PowerControl Class","topic_000000000000009A.html"]];

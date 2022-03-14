@@ -1,1 +1,1 @@
-search_result['81']=["topic_0000000000000035_methods--.html","CompressAndDecompress Methods",""];
+search_result['81']=["topic_0000000000000038.html","EncryptAndDecrypt Class","Encrypt and decrypt the text or byte[]."];

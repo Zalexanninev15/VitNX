@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CShap.ConvertColorToConsoleColor Method</title>
+	<title>Processes.RunAW Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CShap.ConvertColorToConsoleColor Method</h1>
+		<h1 class="title">Processes.RunAW Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.AppsAndProcesses</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Converts the color to color for console.</summary-info>
+        <summary-info>Launch a third-party apps with options.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> ConvertColorToConsoleColor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> <i>color</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RunAW(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>arguments</i> = &quot;&quot;,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>showWindow</i> = true,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>waitMe</i> = true&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,26 +152,61 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="color" class="parameterList">
+	Parameters</h4><dl paramName="targetFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			color
+			targetFile
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The color. 
+	The target file. 
+</p>
+<dl paramName="arguments" class="parameterList">
+	<dt>
+		<span class="parameter">
+			arguments
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The arguments. 
+</p>
+<dl paramName="showWindow" class="parameterList">
+	<dt>
+		<span class="parameter">
+			showWindow
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	Show window of this app 
+</p>
+<dl paramName="waitMe" class="parameterList">
+	<dt>
+		<span class="parameter">
+			waitMe
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	Wait this process/app 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> 
-	
 
 
 
@@ -245,13 +280,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static ConsoleColor ConvertColorToConsoleColor(Color color)
+public static void RunAW(string targetFile,
+     string arguments = &quot;&quot;,
+     bool showWindow = true,
+     bool waitMe = true)
  {
-     int index = (color.R &gt; 128 | color.G &gt; 128 | color.B &gt; 128) ? 8 : 0;
-     index |= (color.R &gt; 64) ? 4 : 0;
-     index |= (color.G &gt; 64) ? 2 : 0;
-     index |= (color.B &gt; 64) ? 1 : 0;
-     return (ConsoleColor)index;
+     ProcessWindowStyle app = ProcessWindowStyle.Normal;
+     if (!showWindow)
+         app = ProcessWindowStyle.Hidden;
+     var start = new Process
+     {
+         StartInfo = new ProcessStartInfo
+         {
+             FileName = targetFile,
+             Arguments = arguments,
+             CreateNoWindow = !showWindow,
+             WindowStyle = app,
+         }
+     };
+     start.Start();
+     if (waitMe)
+         start.WaitForExit();
  }
 					</pre>			
 				</div>
@@ -314,11 +363,11 @@ public static ConsoleColor ConvertColorToConsoleColor(Color color)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000001.html">CShap Class</a><br />
+			<a href="topic_0000000000000001.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.AppsAndProcesses Namespace</a><br />
 
 
 			

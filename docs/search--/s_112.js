@@ -1,1 +1,1 @@
-search_result['112']=["topic_000000000000004D.html","VitNX.Functions.Common.Information Namespace",""];
+search_result['112']=["topic_0000000000000048.html","CompressAndDecompress.BytesToString Method","Bytes the to string.\r\nExample: string output = Data.CompressAndDecompress.BytesToString(Data.CompressAndDecompress.DecompressBytes(compressed));"];

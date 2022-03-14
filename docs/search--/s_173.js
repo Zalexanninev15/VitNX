@@ -1,1 +1,1 @@
-search_result['173']=["topic_0000000000000071.html","Monitor.GetResolution2 Method","Gets the resolution (method 2)."];
+search_result['173']=["topic_0000000000000071.html","Windows.WindowsUseLightThemeForApps Method","Windows use light theme for apps from the Windows Registry, for Windows 10+."];

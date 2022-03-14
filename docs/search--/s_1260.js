@@ -1,1 +1,1 @@
-search_result['1260']=["topic_0000000000000390_overloads--.html","VitNX_DropdownItem Constructor",""];
+search_result['1260']=["topic_0000000000000387.html","VitNX_ComboBox.OnPaint Method","Raises the Paint event."];

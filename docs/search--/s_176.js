@@ -1,1 +1,1 @@
-search_result['176']=["topic_0000000000000074.html","Motherboard Class","Work with informations of Motherboard."];
+search_result['176']=["topic_0000000000000074.html","Cpu Class","Work with informations of CPU."];

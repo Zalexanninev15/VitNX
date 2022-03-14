@@ -1,1 +1,1 @@
-search_result['1763']=["topic_00000000000004D0_props--.html","DockResizeFilter Properties",""];
+search_result['1763']=["topic_00000000000004D0.html","VitNX_ToolStripRenderer.OnRenderItemImage Method","Raises the RenderItemImage event."];

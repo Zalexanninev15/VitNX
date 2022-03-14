@@ -1,1 +1,1 @@
-search_result['77']=["topic_0000000000000034.html","EncrypterAndDecrypter.DecryptQryParam Method","Decrypts the text with qry param."];
+search_result['77']=["topic_0000000000000034.html","Text.ConvertListToString Method","Converts the list to string (space is used as separator)."];

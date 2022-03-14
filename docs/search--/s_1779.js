@@ -1,1 +1,1 @@
-search_result['1779']=["topic_00000000000004D8_attached_props--.html","VitNX_ProgressBarRounded Attached Properties",""];
+search_result['1779']=["topic_00000000000004D6.html","DockContentDragFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

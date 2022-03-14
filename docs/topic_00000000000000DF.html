@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>cx Field</title>
+	<title>Import.GetClientRect Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">cx Field</h1>
+		<h1 class="title">Import.GetClientRect Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B2.html">VitNX.Functions.Windows.Controllers</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> cx</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> GetClientRect(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_00000000000001F6.html" onclick="this.target='';return true;">RECT</a> <i>lpRect</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,10 +150,39 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hWnd
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001F6.html" onclick="this.target='';return true;">RECT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -228,7 +257,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public uint cx;
+[DllImport(&quot;user32.dll&quot;)]
+ public static extern bool GetClientRect(IntPtr hWnd,
+     ref RECT lpRect);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -290,11 +321,11 @@ public uint cx;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000DE.html">DISPLAYCONFIG_2DREGION Structure</a><br />
+			<a href="topic_00000000000000B7.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000B2.html">VitNX.Functions.Windows.Controllers Namespace</a><br />
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -316,3 +347,4 @@ public uint cx;
     </div>
   </body>
 </html>
+

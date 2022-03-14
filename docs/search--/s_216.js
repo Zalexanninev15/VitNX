@@ -1,1 +1,1 @@
-search_result['216']=["topic_0000000000000086.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];
+search_result['216']=["topic_0000000000000088.html","Monitor.GetAll Method","Gets the all."];

@@ -1,1 +1,1 @@
-search_result['287']=["topic_00000000000000B3.html","TaskBarProgressBar Class","Work with progressbar on taskbar."];
+search_result['287']=["topic_00000000000000B0_methods--.html","SendDataToSites Methods",""];

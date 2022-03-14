@@ -1,1 +1,1 @@
-search_result['39']=["topic_0000000000000018.html","Text.ContainsNumbersLatters Method","Contains the numbers latters."];
+search_result['39']=["topic_0000000000000018.html","VitNX.Functions.Data Namespace",""];

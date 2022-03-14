@@ -1,1 +1,1 @@
-search_result['962']=["topic_0000000000000261_events--.html","SIZE Events",""];
+search_result['962']=["topic_00000000000002EA_events--.html","DISPLAYCONFIG_PATH_SOURCE_INFO Events",""];

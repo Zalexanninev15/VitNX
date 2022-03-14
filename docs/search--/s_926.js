@@ -1,1 +1,1 @@
-search_result['926']=["topic_000000000000024C_events--.html","RECT Events",""];
+search_result['926']=["topic_00000000000002DC.html","STATask Class","Sets text to clipboard."];

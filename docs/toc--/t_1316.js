@@ -1,1 +1,1 @@
-c['1316']=[['1317',"Properties Constructor","topic_0000000000000515.html",0],['1318',"Methods","topic_0000000000000514_methods--.html",1]];
+c['1316']=[['1317',"VitNX2_ToogleButton Constructor","topic_000000000000051B.html",0],['1318',"Methods","topic_000000000000051A_methods--.html",1]];

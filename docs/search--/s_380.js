@@ -1,1 +1,1 @@
-search_result['380']=["topic_00000000000000D7_vars--.html","DISPLAYCONFIG_RATIONAL Fields",""];
+search_result['380']=["topic_0000000000000100.html","Import.InvalidateRect (IntPtr, ref RECT, Boolean) Method",""];

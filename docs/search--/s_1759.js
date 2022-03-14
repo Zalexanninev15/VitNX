@@ -1,1 +1,1 @@
-search_result['1759']=["topic_00000000000004D0.html","DockResizeFilter Class",""];
+search_result['1759']=["topic_00000000000004CC.html","VitNX_ToolStripRenderer.OnRenderButtonBackground Method","Raises the RenderButtonBackground event."];

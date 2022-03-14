@@ -1,1 +1,1 @@
-search_result['1760']=["topic_00000000000004D0_attached_props--.html","DockResizeFilter Attached Properties",""];
+search_result['1760']=["topic_00000000000004CD.html","VitNX_ToolStripRenderer.OnRenderDropDownButtonBackground Method","Raises the RenderDropDownButtonBackground event."];

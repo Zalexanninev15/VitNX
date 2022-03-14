@@ -1,1 +1,1 @@
-search_result['1161']=["topic_000000000000034B.html","VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace",""];
+search_result['1161']=["topic_0000000000000348_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];

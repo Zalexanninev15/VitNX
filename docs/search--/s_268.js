@@ -1,1 +1,1 @@
-search_result['268']=["topic_00000000000000A5.html","Processes.RunAW Method","Launch a third-party apps with options."];
+search_result['268']=["topic_00000000000000A5.html","IniSettings32.Write Method","Writes the value to key in section."];

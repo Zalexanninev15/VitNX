@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['313',"VitNX.Functions.Windows.Win32 Namespace","topic_000000000000010C.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['205',"VitNX.Functions.Win32 Namespace","topic_00000000000000B6.html"],['480',"Import Class","topic_00000000000000B7.html"],['482',"Methods","topic_00000000000000B7_methods--.html"],['593',"PatBlt Method","topic_000000000000010C.html"]];

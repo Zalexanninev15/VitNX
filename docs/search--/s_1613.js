@@ -1,1 +1,1 @@
-search_result['1613']=["topic_000000000000046B.html","VitNX_DockPanel.RestoreDockPanelState Method",""];
+search_result['1613']=["topic_0000000000000463.html","VitNX_DockPanel Class",""];

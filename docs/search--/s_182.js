@@ -1,1 +1,1 @@
-search_result['182']=["topic_0000000000000075.html","Motherboard.GetFirmwareType Method","Gets the firmware type."];
+search_result['182']=["topic_0000000000000075.html","Cpu.Characteristics Method","Gets all characteristics."];

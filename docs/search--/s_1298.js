@@ -1,1 +1,1 @@
-search_result['1298']=["topic_00000000000003A6.html","VitNX_Label.OnSizeChanged Method","Raises the SizeChanged event."];
+search_result['1298']=["topic_00000000000003A1.html","VitNX_DropdownList.OnLostFocus Method","Raises the LostFocus event."];

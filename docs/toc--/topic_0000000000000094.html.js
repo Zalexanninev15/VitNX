@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['164',"VitNX.Functions.Common.Web Namespace","topic_0000000000000094.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['127',"VitNX.Functions.Information Namespace","topic_0000000000000062.html"],['145',"Internet Class","topic_000000000000008F.html"],['147',"Methods","topic_000000000000008F_methods--.html"],['151',"GetMacAddress Method","topic_0000000000000094.html"]];

@@ -1,1 +1,1 @@
-search_result['878']=["topic_0000000000000228_vars--.html","NONCLIENTMETRICS Fields",""];
+search_result['878']=["topic_0000000000000286.html","DISPLAYCONFIG_ROTATION Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['57']=["topic_0000000000000027_methods--.html","EncryptAndDecrypt Methods",""];
+search_result['57']=["topic_0000000000000020.html","Text.NumberAsPercentI Method","Gets the number as percent (int32)."];

@@ -1,1 +1,1 @@
-search_result['254']=["topic_000000000000009D_props--.html","Config Properties",""];
+search_result['254']=["topic_000000000000009A_methods--.html","PowerControl Methods",""];

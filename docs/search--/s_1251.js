@@ -1,1 +1,1 @@
-search_result['1251']=["topic_000000000000038E.html","VitNX_DropdownItem Class",""];
+search_result['1251']=["topic_000000000000037E.html","VitNX_ComboBox.OnTabStopChanged Method","Raises the TabStopChanged event."];

@@ -1,1 +1,1 @@
-search_result['249']=["topic_000000000000009C.html","SendDataToSites.FileUploader Method","Starts the uploading.\r\nExample:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a"];
+search_result['249']=["topic_0000000000000095.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];

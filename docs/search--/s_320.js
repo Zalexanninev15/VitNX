@@ -1,1 +1,1 @@
-search_result['320']=["topic_00000000000000BE.html","STATask Class","Sets text to clipboard."];
+search_result['320']=["topic_00000000000000C5.html","Import.CreateBrushIndirect Method",""];

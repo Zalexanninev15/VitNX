@@ -1,1 +1,1 @@
-search_result['1501']=["topic_000000000000041D.html","VitNX_TreeView Constructor",""];
+search_result['1501']=["topic_0000000000000415.html","ItemsRemoved Event",""];

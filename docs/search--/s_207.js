@@ -1,1 +1,1 @@
-search_result['207']=["topic_000000000000007F.html","Internet.GetMacAddress Method","Gets the MAC address."];
+search_result['207']=["topic_000000000000007F_vars--.html","Monitor Fields",""];

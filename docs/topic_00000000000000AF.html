@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Installed.GetList Method</title>
+	<title>DataFromSites.IsValidTelegramBotToken Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Installed.GetList Method</h1>
+		<h1 class="title">DataFromSites.IsValidTelegramBotToken Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_00000000000000A9.html">VitNX.Functions.Web</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the list.</summary-info>
+        <summary-info>Are the valid telegram bot token.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetList()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsValidTelegramBotToken(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>botToken</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,12 +151,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="botToken" class="parameterList">
+	<dt>
+		<span class="parameter">
+			botToken
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The bot token. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 		<p>
-		A string. 
+		A bool. 
 	</p>
 	
 
@@ -232,28 +248,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetList()
+public static bool IsValidTelegramBotToken(string botToken)
  {
-     string toText = &quot;Installed apps:&quot;;
-     ManagementObjectSearcher searcher = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_Product&quot;);
-     ManagementObjectCollection information = searcher.Get();
-     foreach (ManagementObject app in information)
+     try
      {
-         string toTextText = &quot;&quot;;
-         try
-         {
-             toTextText = GetPath(Convert.ToString(app[&quot;Name&quot;]));
-             if (toTextText == &quot;&quot;)
-                 toTextText = GetPath(Convert.ToString(app[&quot;IdentifyingNumber&quot;]));
-         }
-         catch { }
-         toText += ($&quot;\nName: {app[&quot;Name&quot;]} ({app[&quot;Caption&quot;]})&quot; +
-         $&quot;\nVersion: {app[&quot;Version&quot;]}&quot; +
-         $&quot;\nAuthor: {app[&quot;Vendor&quot;]}&quot; +
-         $&quot;\nInstall date: {app[&quot;InstallDate&quot;]}&quot; +
-         $&quot;\nInstall path: {toTextText}&quot;);
+         using (WebClient client = new WebClient())
+             return !client.DownloadString(new Uri($&quot;https://api.telegram.org/bot{botToken}/getMe&quot;)).Contains(&quot;error_code&quot;);
      }
-     return toText;
+     catch { return false; }
  }
 					</pre>			
 				</div>
@@ -316,11 +318,11 @@ public static string GetList()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AE.html">Installed Class</a><br />
+			<a href="topic_00000000000000AA.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_00000000000000A9.html">VitNX.Functions.Web Namespace</a><br />
 
 
 			

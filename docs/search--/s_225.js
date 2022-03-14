@@ -1,1 +1,1 @@
-search_result['225']=["topic_000000000000008E.html","IniSettings32.Initialize Method","Initializing the configuration INI file."];
+search_result['225']=["topic_000000000000008B_attached_props--.html","ComPort Attached Properties",""];

@@ -1,1 +1,1 @@
-search_result['29']=["topic_000000000000000E.html","Text.NumberAsPercentD Method","Gets the number as percent (double)."];
+search_result['29']=["topic_0000000000000013.html","CShap Class","Work with C#."];

@@ -1,1 +1,1 @@
-search_result['224']=["topic_000000000000008D_vars--.html","IniSettings32 Fields",""];
+search_result['224']=["topic_000000000000008B.html","ComPort Class","Work with informations of COM port."];

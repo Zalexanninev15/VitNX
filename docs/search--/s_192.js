@@ -1,1 +1,1 @@
-search_result['192']=["topic_0000000000000078_events--.html","Ram Events",""];
+search_result['192']=["topic_000000000000007A.html","Disk Class","Work with informations of Disk(s)."];

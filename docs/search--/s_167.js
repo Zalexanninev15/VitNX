@@ -1,1 +1,1 @@
-search_result['167']=["topic_000000000000006B.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];
+search_result['167']=["topic_000000000000006B.html","Windows.GetWindowsCurrentBuildNumberFromREG Method","Gets the Windows current build number from the Windows Registry."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ProgressBarRounded.OnPaint Method</title>
+	<title>DockResizeFilter.PreFilterMessage Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ProgressBarRounded.OnPaint Method</h1>
+		<h1 class="title">DockResizeFilter.PreFilterMessage Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004D3.html">VitNX.UI.ControlsV1</a>
+<a href="topic_00000000000004D1.html">VitNX.UI.ControlsV1.Win32</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
+        <summary-info>Filters out a message before it is dispatched.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PreFilterMessage(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,22 +152,33 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="m" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			m
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
+	The message to be dispatched. You cannot modify this message. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<p>
+		true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control. 
+	</p>
+	
+
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a>
+<br />
 
 
 
@@ -241,15 +252,55 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs e)
- {
-     // 0, 0, Width, Height, [x], [x] ; x - degree of roundness of the control (set depending on the size of the control on the form), recommended = 4
-     IntPtr hrgn = Functions.Windows.Win32.Import.CreateRoundRectRgn(0, 0, Width, Height, 7, 7);
-     Region = Region.FromHrgn(hrgn);
-     Graphics g = e.Graphics;
-     DrawProgressBar(g);
-     DrawStringIfNeeded(g);
- }
+public bool PreFilterMessage(ref Message m)
+        {
+            if (!(m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSEMOVE ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDOWN ||
+           m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP ||
+           m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONDOWN ||
+           m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONUP ||
+           m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
+                return false;
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP)
+            {
+                if (_isDragging)
+                {
+                    StopDrag();
+                    return true;
+                }
+            }
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP &amp;&amp;
+         !_isDragging)
+                return false;
+            if (_isDragging)
+                Cursor.Current = _activeSplitter.ResizeCursor;
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSEMOVE &amp;&amp;
+                !_isDragging &amp;&amp;
+                _dockPanel.MouseButtonState !=
+                MouseButtons.None)
+                return false;
+            var control = Control.FromHandle(m.HWnd);
+            if (control == null)
+                return false;
+            if (!(control == _dockPanel || _dockPanel.Contains(control)))
+                return false;
+            CheckCursor();
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDOWN)
+            {
+                var hotSplitter = HotSplitter();
+                if (hotSplitter != null)
+                {
+                    StartDrag(hotSplitter);
+                    return true;
+                }
+            }
+            if (HotSplitter() != null)
+                return true;
+            if (_isDragging)
+                return true;
+            return false;
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -311,11 +362,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004D8.html">VitNX_ProgressBarRounded Class</a><br />
+			<a href="topic_00000000000004D8.html">DockResizeFilter Class</a><br />
 
 
 
-<a href="topic_00000000000004D3.html">VitNX.UI.ControlsV1 Namespace</a><br />
+<a href="topic_00000000000004D1.html">VitNX.UI.ControlsV1.Win32 Namespace</a><br />
 
 
 			

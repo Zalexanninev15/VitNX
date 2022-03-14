@@ -1,1 +1,1 @@
-search_result['548']=["topic_000000000000013D.html","Import.GetGraphicsMode Method",""];
+search_result['548']=["topic_000000000000018C_methods--.html","Enums Methods",""];

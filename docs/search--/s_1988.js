@@ -1,1 +1,1 @@
-search_result['1988']=["topic_000000000000085A.html","Error Field",""];
+search_result['1988']=["topic_000000000000084E.html","PositionType Field","/// Notification display location on the screen.\r\n\t\t///"];

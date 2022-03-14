@@ -1,1 +1,1 @@
-search_result['1145']=["topic_0000000000000343_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];
+search_result['1145']=["topic_0000000000000341_methods--.html","Text Methods",""];

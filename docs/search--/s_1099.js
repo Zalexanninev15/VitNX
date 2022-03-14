@@ -1,1 +1,1 @@
-search_result['1099']=["topic_000000000000032F.html","Controls Class",""];
+search_result['1099']=["topic_000000000000032A.html","VitNX.Functions.WindowAndControls Namespace",""];

@@ -1,1 +1,1 @@
-search_result['105']=["topic_0000000000000046.html","FileSystem.CopyFolder Method","Copies the folder."];
+search_result['105']=["topic_0000000000000046.html","CompressAndDecompress Class","Compress and decompress the text or byte[].\r\nExamples: https://gist.github.com/Zalexanninev15/cbd4dde903095ca7a5e53c1fc6c42807"];

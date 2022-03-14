@@ -1,1 +1,1 @@
-search_result['1368']=["topic_00000000000003CE_attached_props--.html","VitNX_ScrollBar Attached Properties",""];
+search_result['1368']=["topic_00000000000003C5.html","VitNX_NumericUpDown.OnGotFocus Method","Raises the GotFocus event."];

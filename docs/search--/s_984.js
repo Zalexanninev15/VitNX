@@ -1,1 +1,1 @@
-search_result['984']=["topic_000000000000026C_methods--.html","TEXTMETRIC Methods",""];
+search_result['984']=["topic_00000000000002F5_methods--.html","DISPLAYCONFIG_RATIONAL Methods",""];

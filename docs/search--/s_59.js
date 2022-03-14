@@ -1,1 +1,1 @@
-search_result['59']=["topic_0000000000000027_vars--.html","EncryptAndDecrypt Fields",""];
+search_result['59']=["topic_0000000000000022.html","Text.ConvertNumberToHexI Method","Converts the number to HEX (int32)."];

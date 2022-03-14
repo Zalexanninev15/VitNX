@@ -1,5 +1,5 @@
-﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
+﻿using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Forms;
 
 namespace Example
 {
@@ -31,7 +31,7 @@ namespace Example
             btnDialog.Click += delegate { VitNX_MessageBox.ShowError("This is a Error", "VitNX UI - Example"); };
             btnMessageBox.Click += delegate
             {
-                VitNX_MessageBox.ShowInfo("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.",
+                VitNX_MessageBox.ShowInformation("This is some information, except it is much bigger, so there we go. I wonder how this is going to go. I hope it resizes properly. It probably will.",
                     "VitNX UI - Example");
             };
         }

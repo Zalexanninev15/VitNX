@@ -1,1 +1,1 @@
-search_result['237']=["topic_0000000000000095_vars--.html","DataFromSites Fields",""];
+search_result['237']=["topic_000000000000008E.html","Ram.Characteristics Method","Gets all characteristics."];

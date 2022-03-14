@@ -1,1 +1,1 @@
-search_result['1732']=["topic_00000000000004C0_props--.html","VitNX_ToolStripRenderer Properties",""];
+search_result['1732']=["topic_00000000000004B6.html","VitNX_MessageBox.OnLoad Method","Raises the Load event."];

@@ -1,1 +1,1 @@
-search_result['212']=["topic_0000000000000085_events--.html","PowerControl Events",""];
+search_result['212']=["topic_0000000000000084.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];

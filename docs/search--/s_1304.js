@@ -1,1 +1,1 @@
-search_result['1304']=["topic_00000000000003A7_vars--.html","VitNX_ListItem Fields",""];
+search_result['1304']=["topic_00000000000003A4_methods--.html","VitNX_GroupBox Methods",""];

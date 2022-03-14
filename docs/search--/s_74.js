@@ -1,1 +1,1 @@
-search_result['74']=["topic_0000000000000031.html","EncrypterAndDecrypter.Decrypt Method","Decrypts the text."];
+search_result['74']=["topic_0000000000000031.html","GenerateGuid Field","Generate the GUID."];

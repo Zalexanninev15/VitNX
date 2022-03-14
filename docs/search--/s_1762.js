@@ -1,1 +1,1 @@
-search_result['1762']=["topic_00000000000004D0_methods--.html","DockResizeFilter Methods",""];
+search_result['1762']=["topic_00000000000004CF.html","VitNX_ToolStripRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

@@ -214,6 +214,9 @@
     <add key="VBdocman_rootNamespaceText"><![CDATA[]]></add>
     <add key="VBdocman_comModulesSaveExcluded"><![CDATA[-1]]></add>
     <add key="VBdocman_fileNamingConvention"><![CDATA[1]]></add>
+    <add key="VBdocman_comModules_UI...OtherControls...Notification...NotificationForm.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV2...VitNX2_TextBox.Designer.cs"><![CDATA[Off]]></add>
+    <add key="VBdocman_comModules_UI...ControlsV2...VitNX2_MessageBox...VitNX2_MessageBox_Form.Designer.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Properties...Resources.Designer.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Properties...AssemblyInfo.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Icons...TreeViewIcons.Designer.cs"><![CDATA[Off]]></add>
@@ -222,13 +225,5 @@
     <add key="VBdocman_comModules_Icons...MenuIcons.Designer.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Icons...DropdownIcons.Designer.cs"><![CDATA[Off]]></add>
     <add key="VBdocman_comModules_Icons...DockIcons.Designer.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Config...Colors.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Extensions...BitmapExtensions.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Extensions...IEnumerableExtensions.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Forms...VitNX_Dialog.Designer.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV1...BasedOnDarkUI...Forms...VitNX_MessageBox.Designer.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV2...VitNX2_MessageBox...VitNX2_MessageBox_Form.Designer.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...ControlsV2...VitNX2_TextBox.Designer.cs"><![CDATA[Off]]></add>
-    <add key="VBdocman_comModules_UI...OtherControls...Notification...NotificationForm.Designer.cs"><![CDATA[Off]]></add>
   </appSettings>
 </configuration>

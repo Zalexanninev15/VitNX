@@ -1,1 +1,1 @@
-search_result['228']=["topic_0000000000000091.html","IniSettings32.DeleteKey Method","Deletes the key in section."];
+search_result['228']=["topic_000000000000008B_props--.html","ComPort Properties",""];

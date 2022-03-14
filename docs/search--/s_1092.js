@@ -1,1 +1,1 @@
-search_result['1092']=["topic_0000000000000328.html","WindowS.MinimizeAll Method","Minimizes the all windows."];
+search_result['1092']=["topic_0000000000000328.html","WorkWithSystem Class","Work with system."];

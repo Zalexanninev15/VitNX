@@ -1,0 +1,1 @@
+c['1169']=[['1170',"VitNX_Dialog Class","topic_0000000000000491.html",1],['1185',"VitNX_Form Class","topic_00000000000004A6.html",1],['1190',"VitNX_MessageBox Class","topic_00000000000004AA.html",1],['1206',"VitNX_DialogButton Enumeration","topic_000000000000049E.html",0],['1207',"VitNX_MessageBoxIcon Enumeration","topic_00000000000004B8.html",0]];

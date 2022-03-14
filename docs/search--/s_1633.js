@@ -1,1 +1,1 @@
-search_result['1633']=["topic_0000000000000475.html","VitNX_DockSplitter Constructor",""];
+search_result['1633']=["topic_0000000000000470.html","VitNX_DockPanel.RestoreDockPanelState Method",""];

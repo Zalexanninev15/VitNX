@@ -1,1 +1,1 @@
-search_result['1771']=["topic_00000000000004D4_methods--.html","VitNX_ProgressBar Methods",""];
+search_result['1771']=["topic_00000000000004D3.html","ControlScrollFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

@@ -1,1 +1,1 @@
-search_result['1218']=["topic_0000000000000372.html","VitNX_CheckBox.OnLostFocus Method","Raises the OnLostFocus event."];
+search_result['1218']=["topic_0000000000000366.html","VitNX_Button.OnGotFocus Method","Raises the GotFocus event."];

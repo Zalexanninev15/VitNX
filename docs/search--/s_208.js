@@ -1,1 +1,1 @@
-search_result['208']=["topic_0000000000000080.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];
+search_result['208']=["topic_0000000000000080.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

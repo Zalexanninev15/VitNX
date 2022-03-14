@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Monitor.GetAll Method</title>
+	<title>Windows.GetWindowsAccentColor Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Monitor.GetAll Method</h1>
+		<h1 class="title">Windows.GetWindowsAccentColor Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000004D.html">VitNX.Functions.Common.Information</a>
+<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the all.</summary-info>
+        <summary-info>Gets the Windows accent color.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; GetAll()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> GetWindowsAccentColor()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -154,9 +154,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
 		<p>
-		A list of string. 
+		A Color. 
 	</p>
 	
 
@@ -232,21 +232,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static List&lt;string&gt; GetAll()
+public static Color GetWindowsAccentColor()
  {
-     List&lt;string&gt; screensall = new List&lt;string&gt;();
-     Screen[] allScreens = Screen.AllScreens;
-     foreach (var screen in allScreens)
-     {
-         string screenString = string.Empty;
-         screenString =
-             screen.DeviceName.Replace(&quot;\\&quot;, &quot;&quot;).Replace(&quot;.&quot;, &quot;&quot;) + &quot;;&quot; +
-             screen.Bounds.Width + &quot;|&quot; + screen.Bounds.Height + &quot;;&quot; +
-             Functions.Windows.Controllers.Monitor.FriendlyName(screen) + &quot;;&quot; +
-             screen.Primary.ToString();
-         screensall.Add(screenString);
-     }
-     return screensall;
+     var userColorSet = Import.GetImmersiveUserColorSetPreference(false, false);
+     var colorType = Import.GetImmersiveColorTypeFromName(System.Runtime.InteropServices.Marshal.StringToHGlobalUni(&quot;ImmersiveStartSelectionBackground&quot;));
+     var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
+         colorType,
+         false, 0);
+     return CShap.ConvertDWordColorToRGB(colorSetEx);
  }
 					</pre>			
 				</div>
@@ -309,11 +302,11 @@ public static List&lt;string&gt; GetAll()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000006A.html">Monitor Class</a><br />
+			<a href="topic_0000000000000063.html">Windows Class</a><br />
 
 
 
-<a href="topic_000000000000004D.html">VitNX.Functions.Common.Information Namespace</a><br />
+<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

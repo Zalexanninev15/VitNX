@@ -1,1 +1,1 @@
-search_result['1424']=["topic_00000000000003F9_attached_props--.html","VitNX_SectionPanel Attached Properties",""];
+search_result['1424']=["topic_00000000000003EE.html","VitNX_ScrollBase.OnCreateControl Method","Raises the CreateControl method."];

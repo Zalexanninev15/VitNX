@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ObservableListModified&lt;T&gt; Constructor</title>
+	<title>ObservableList&lt;T&gt;.AddRange Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ObservableListModified&lt;T&gt; Constructor</h1>
+		<h1 class="title">ObservableList&lt;T&gt;.AddRange Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000033F.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Collections</a>
+<a href="topic_0000000000000343.html">VitNX.UI.ControlsV1</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public ObservableListModified(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt; <i>items</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">new public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> AddRange(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt; <i>collection</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="items" class="parameterList">
+	Parameters</h4><dl paramName="collection" class="parameterList">
 	<dt>
 		<span class="parameter">
-			items
+			collection
 		</span>
 	</dt>
 	<dd>
@@ -240,9 +240,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public ObservableListModified(IEnumerable&lt;T&gt; items)
+public new void AddRange(IEnumerable&lt;T&gt; collection)
  {
-     Items = items;
+     var list = collection.ToList();
+     base.AddRange(list);
+     if (ItemsAdded != null)
+         ItemsAdded(this, new ObservableListModified&lt;T&gt;(list));
  }
 					</pre>			
 				</div>
@@ -305,11 +308,11 @@ public ObservableListModified(IEnumerable&lt;T&gt; items)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000349.html">ObservableListModified&lt;T&gt; Class</a><br />
+			<a href="topic_0000000000000344.html">ObservableList&lt;T&gt; Class</a><br />
 
 
 
-<a href="topic_000000000000033F.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Collections Namespace</a><br />
+<a href="topic_0000000000000343.html">VitNX.UI.ControlsV1 Namespace</a><br />
 
 
 			

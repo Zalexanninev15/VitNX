@@ -1,1 +1,1 @@
-search_result['189']=["topic_0000000000000077.html","ComPort.GetAllDevices Method","Gets all COM ports (devices)."];
+search_result['189']=["topic_0000000000000078_props--.html","Gpu Properties",""];
