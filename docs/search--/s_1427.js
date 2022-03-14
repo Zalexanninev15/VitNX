@@ -1,1 +1,1 @@
-search_result['1427']=["topic_00000000000003F9_props--.html","VitNX_SectionPanel Properties",""];
+search_result['1427']=["topic_00000000000003F1.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];

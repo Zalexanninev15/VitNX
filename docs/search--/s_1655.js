@@ -1,1 +1,1 @@
-search_result['1655']=["topic_0000000000000485.html","VitNX_ToolWindow.OnMouseMove Method","Raises the MouseMove event."];
+search_result['1655']=["topic_000000000000047C.html","VitNX_DockSplitter.HideOverlay Method",""];

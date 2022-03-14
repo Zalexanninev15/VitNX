@@ -1,1 +1,1 @@
-search_result['204']=["topic_000000000000007C.html","Internet.GetLocalIPv6 Method","Gets the local IPv6 (obsolete, but work)."];
+search_result['204']=["topic_000000000000007F_events--.html","Monitor Events",""];

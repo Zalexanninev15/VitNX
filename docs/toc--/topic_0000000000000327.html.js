@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['775',"VitNX.Functions.Windows.WindowSAndControls Namespace","topic_0000000000000326.html"],['780',"WindowS Class","topic_0000000000000327.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['667',"VitNX.Functions.WinControllers Namespace","topic_00000000000002D0.html"],['678',"Monitor Class","topic_00000000000002E5.html"],['757',"Methods","topic_00000000000002E5_methods--.html"],['758',"FriendlyName Method","topic_0000000000000327.html"]];

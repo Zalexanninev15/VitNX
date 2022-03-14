@@ -34,7 +34,7 @@ namespace Example
         {
             this.components = new System.ComponentModel.Container();
             this.treeProject = new VitNX.UI.ControlsV1.Controls.VitNX_TreeView();
-            this.vitNXProgressBarStyle21 = new VitNX2_ProgressBarRounded();
+            this.vitNXProgressBarStyle21 = new VitNX2_ProgressBarRoundedType1();
             this.vitNXButton1 = new VitNX.UI.ControlsV1.Controls.VitNX_Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.vitNXProgressBar1 = new VitNX2_ProgressBar();
@@ -126,7 +126,7 @@ namespace Example
         #endregion
 
         private VitNX_TreeView treeProject;
-        private VitNX2_ProgressBarRounded vitNXProgressBarStyle21;
+        private VitNX2_ProgressBarRoundedType1 vitNXProgressBarStyle21;
         private VitNX_Button vitNXButton1;
         private System.Windows.Forms.Timer timer1;
         private VitNX2_ProgressBar vitNXProgressBar1;

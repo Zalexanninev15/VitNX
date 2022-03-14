@@ -1,1 +1,1 @@
-search_result['1589']=["topic_000000000000045A.html","VitNX_DockGroup.OnMouseLeave Method","Raises the MouseLeave event."];
+search_result['1589']=["topic_0000000000000450.html","DockTextChanged Event",""];

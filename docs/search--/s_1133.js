@@ -1,1 +1,1 @@
-search_result['1133']=["topic_000000000000033D_vars--.html","Text Fields",""];
+search_result['1133']=["topic_000000000000033D.html","Type1.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>EncryptAndDecrypt.XOR_Both Method</title>
+	<title>Text.DateAsYear Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">EncryptAndDecrypt.XOR_Both Method</h1>
+		<h1 class="title">Text.DateAsYear Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
+<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>XOR method (encrypt and decrypt).</summary-info>
+        <summary-info>Converts the date to year.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> XOR_Both(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>key</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> DateAsYear(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a> <i>dt</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,31 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="text" class="parameterList">
+	Parameters</h4><dl paramName="dt" class="parameterList">
 	<dt>
 		<span class="parameter">
-			text
+			dt
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a> 
 	</dd>
 </dl>
 <p>
-	The text. 
-</p>
-<dl paramName="key" class="parameterList">
-	<dt>
-		<span class="parameter">
-			key
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	The key. 
+	The DateTime. 
 </p>
 
 <p />
@@ -261,17 +248,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string XOR_Both(string text, int key)
- {
-     string newText = string.Empty;
-     for (int i = 0; i &lt; text.Length; i++)
-     {
-         int charValue = Convert.ToInt32(text[i]);
-         charValue ^= key;
-         newText += char.ConvertFromUtf32(charValue);
-     }
-     return newText;
- }
+public static string DateAsYear(DateTime dt) =&gt; string.Format(&quot;{0:Y}&quot;, dt);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -333,11 +310,11 @@ public static string XOR_Both(string text, int key)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000027.html">EncryptAndDecrypt Class</a><br />
+			<a href="topic_000000000000001C.html">Text Class</a><br />
 
 
 
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
+<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

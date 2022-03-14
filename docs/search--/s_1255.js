@@ -1,1 +1,1 @@
-search_result['1255']=["topic_000000000000038E_props--.html","VitNX_DropdownItem Properties",""];
+search_result['1255']=["topic_0000000000000382.html","VitNX_ComboBox.OnTextChanged Method","Raises the TextChanged event."];

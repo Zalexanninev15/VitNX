@@ -1,1 +1,1 @@
-search_result['1748']=["topic_00000000000004CA_vars--.html","ControlScrollFilter Fields",""];
+search_result['1748']=["topic_00000000000004C6.html","VitNX_MenuRenderer.OnRenderArrow Method","Raises the RenderArrow event."];

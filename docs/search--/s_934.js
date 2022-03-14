@@ -1,1 +1,1 @@
-search_result['934']=["topic_0000000000000251.html","SCROLLBARINFO Structure",""];
+search_result['934']=["topic_00000000000002DF.html","Keyboard Class","Control the keyboard."];

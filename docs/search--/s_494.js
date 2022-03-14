@@ -1,1 +1,1 @@
-search_result['494']=["topic_000000000000010D.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];
+search_result['494']=["topic_0000000000000165.html","Import.LockWorkStation Method",""];

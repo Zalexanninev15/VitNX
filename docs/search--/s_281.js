@@ -1,1 +1,1 @@
-search_result['281']=["topic_00000000000000AE_props--.html","Installed Properties",""];
+search_result['281']=["topic_00000000000000AD.html","DataFromSites.GetHeaderAndContent Method","Gets the status header and content of site."];

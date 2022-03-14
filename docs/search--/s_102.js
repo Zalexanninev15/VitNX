@@ -1,1 +1,1 @@
-search_result['102']=["topic_0000000000000043.html","FileSystem.CleanRecycleBin Method","Cleans the Recycle Bin."];
+search_result['102']=["topic_0000000000000043.html","EncrypterAndDecrypter.Encrypt Method","Encrypts the text."];

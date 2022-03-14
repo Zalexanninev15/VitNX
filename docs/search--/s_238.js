@@ -1,1 +1,1 @@
-search_result['238']=["topic_0000000000000096.html","DataFromSites.DownloadString Method","Downloads the string from site/server."];
+search_result['238']=["topic_000000000000008F.html","Internet Class","Work with informations of Internet (PC)."];

@@ -1,1 +1,1 @@
-search_result['1785']=["topic_00000000000004DA.html","VitNX_ProgressBarRounded.OnPaint Method","Raises the Paint event."];
+search_result['1785']=["topic_00000000000004D8_props--.html","DockResizeFilter Properties",""];

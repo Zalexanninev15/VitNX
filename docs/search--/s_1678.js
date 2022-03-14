@@ -1,1 +1,1 @@
-search_result['1678']=["topic_0000000000000497.html","VitNX_DialogButton Enumeration",""];
+search_result['1678']=["topic_000000000000048D.html","VitNX_ToolWindow.OnPaint Method","Raises the Paint event."];

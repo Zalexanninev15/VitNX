@@ -1,1 +1,1 @@
-search_result['88']=["topic_000000000000003A.html","FileSystem Class","Work with the file system."];
+search_result['88']=["topic_000000000000003A.html","EncryptAndDecrypt.MD5_Encrypt Method","Encrypt text by MD5."];

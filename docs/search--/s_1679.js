@@ -1,1 +1,1 @@
-search_result['1679']=["topic_000000000000049F.html","VitNX_Form Class",""];
+search_result['1679']=["topic_000000000000048E.html","VitNX_ToolWindow.OnPaintBackground Method","Paints the background of the control."];

@@ -1,1 +1,1 @@
-search_result['1106']=["topic_0000000000000331.html","Controls.SetNativeThemeForControls Method","Sets the native Windows System theme for controls."];
+search_result['1106']=["topic_000000000000032C.html","Window.MinimizeAll Method","Minimizes the all windows."];

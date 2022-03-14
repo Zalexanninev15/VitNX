@@ -1,1 +1,1 @@
-search_result['1772']=["topic_00000000000004D4_props--.html","VitNX_ProgressBar Properties",""];
+search_result['1772']=["topic_00000000000004D4.html","DockContentDragFilter Class",""];

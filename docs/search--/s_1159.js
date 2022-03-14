@@ -1,1 +1,1 @@
-search_result['1159']=["topic_0000000000000349_vars--.html","ObservableListModified\u0026lt;T\u0026gt; Fields",""];
+search_result['1159']=["topic_0000000000000347_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

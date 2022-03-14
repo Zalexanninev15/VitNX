@@ -1,1 +1,1 @@
-search_result['1297']=["topic_00000000000003A5.html","VitNX_Label.OnFontChanged Method",""];
+search_result['1297']=["topic_00000000000003A0.html","VitNX_DropdownList.OnGotFocus Method","Raises the GotFocus event."];

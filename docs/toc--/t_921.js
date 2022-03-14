@@ -1,1 +1,1 @@
-c['921']=[['922',"VitNX_Label Constructor","topic_00000000000003A3.html",0],['923',"Methods","topic_00000000000003A2_methods--.html",1]];
+c['921']=[['922',"VitNX_ListItem() Constructor","topic_00000000000003AE.html",0],['923',"VitNX_ListItem(string) Constructor","topic_00000000000003AF.html",0]];

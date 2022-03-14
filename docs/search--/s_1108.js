@@ -1,1 +1,1 @@
-search_result['1108']=["topic_0000000000000333.html","Type1 Class","Console ProgressBar type 1."];
+search_result['1108']=["topic_000000000000032E.html","Window.HideConsoleWindow Method","Hides the console window."];

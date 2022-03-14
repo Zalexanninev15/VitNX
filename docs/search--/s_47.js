@@ -1,1 +1,1 @@
-search_result['47']=["topic_0000000000000020.html","GenerateGuid Field","Generate the GUID."];
+search_result['47']=["topic_000000000000001B.html","NumericalTextConverter.ConvertBack Method","Converts back the value(s)."];

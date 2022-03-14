@@ -1,1 +1,1 @@
-search_result['1629']=["topic_0000000000000474_events--.html","VitNX_DockSplitter Events",""];
+search_result['1629']=["topic_000000000000046C.html","VitNX_DockPanel.ContainsContent Method",""];

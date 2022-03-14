@@ -1,1 +1,1 @@
-search_result['1782']=["topic_00000000000004D8_props--.html","VitNX_ProgressBarRounded Properties",""];
+search_result['1782']=["topic_00000000000004D8_attached_props--.html","DockResizeFilter Attached Properties",""];

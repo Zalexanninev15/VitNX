@@ -1,1 +1,1 @@
-search_result['1110']=["topic_0000000000000333_events--.html","Type1 Events",""];
+search_result['1110']=["topic_0000000000000330.html","Window.WindowToLowerRightCorner Method","Sets the window to the lower right corner."];

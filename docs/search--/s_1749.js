@@ -1,1 +1,1 @@
-search_result['1749']=["topic_00000000000004CB.html","ControlScrollFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];
+search_result['1749']=["topic_00000000000004C7.html","VitNX_MenuRenderer.OnRenderMenuItemBackground Method","Raises the RenderMenuItemBackground event."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>WindowS.SetWindowsElevenStyleForWinForm Method</title>
+	<title>Window.HideConsoleWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">WindowS.SetWindowsElevenStyleForWinForm Method</h1>
+		<h1 class="title">Window.HideConsoleWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000326.html">VitNX.Functions.Windows.WindowSAndControls</a>
+<a href="topic_000000000000032A.html">VitNX.Functions.WindowAndControls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Applying Windows 11 roundings to a window(s).</summary-info>
+        <summary-info>Hides the console window.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetWindowsElevenStyleForWinForm(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> HideConsoleWindow()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,22 +151,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="Handler" class="parameterList">
-	<dt>
-		<span class="parameter">
-			Handler
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	The handler. 
-</p>
-
-<p />
 
 
 
@@ -241,13 +225,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
+public static void HideConsoleWindow()
  {
-     var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
-     var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-     Import.DwmSetWindowAttribute(Handler,
-         attribute,
-         new[] { Convert.ToInt32(preference) }, sizeof(uint));
+     IntPtr handle = Import.GetConsoleWindow();
+     Import.ShowWindow(handle, 0);
  }
 					</pre>			
 				</div>
@@ -310,11 +291,11 @@ public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000327.html">WindowS Class</a><br />
+			<a href="topic_000000000000032B.html">Window Class</a><br />
 
 
 
-<a href="topic_0000000000000326.html">VitNX.Functions.Windows.WindowSAndControls Namespace</a><br />
+<a href="topic_000000000000032A.html">VitNX.Functions.WindowAndControls Namespace</a><br />
 
 
 			

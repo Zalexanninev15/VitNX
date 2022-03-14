@@ -1,1 +1,1 @@
-c['1105']=[['1106',"VitNX_DockContent Constructor","topic_000000000000044C.html",0],['1107',"Methods","topic_000000000000044A_methods--.html",1],['1110',"Events","topic_000000000000044A_events--.html",1]];
+c['1105']=[['1106',"VitNX_DockGroup Constructor","topic_0000000000000455.html",0],['1107',"Methods","topic_0000000000000454_methods--.html",1]];

@@ -1,1 +1,1 @@
-search_result['40']=["topic_0000000000000019.html","Text.ReplacerMonster Method","Replacers the monster."];
+search_result['40']=["topic_0000000000000019.html","NumericalTextConverter Class","The numerical text converter."];

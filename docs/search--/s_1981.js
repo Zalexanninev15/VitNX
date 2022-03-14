@@ -1,1 +1,1 @@
-search_result['1981']=["topic_0000000000000858.html","Images Class",""];
+search_result['1981']=["topic_0000000000000847.html","TimerInterval Field","/// Delay between changes in notification transparency.\r\n\t\t///"];

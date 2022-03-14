@@ -1,1 +1,1 @@
-search_result['1968']=["topic_000000000000084B.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];
+search_result['1968']=["topic_0000000000000842_overloads--.html","FontAwesomeExtensions.AsImage Method",""];

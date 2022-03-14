@@ -1,1 +1,1 @@
-search_result['1131']=["topic_000000000000033D_methods--.html","Text Methods",""];
+search_result['1131']=["topic_000000000000033B.html","Type1.SetText Method","Sets the text."];

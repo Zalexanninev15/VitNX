@@ -1,1 +1,1 @@
-c['808']=[['809',"Dispose Method","topic_00000000000004D7_overloads--.html",1],['811',"OnPaint Method","topic_00000000000004D6.html",0]];
+c['808']=[['809',"Methods","topic_000000000000033E_methods--.html",1]];

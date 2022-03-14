@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Helper.VitNX2_TextBoxesFocus Method</title>
+	<title>VitNX2_MessageBox.Show (String) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Helper.VitNX2_TextBoxesFocus Method</h1>
+		<h1 class="title">VitNX2_MessageBox.Show (String) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004E3.html">VitNX.UI.ControlsV2</a>
+<a href="topic_00000000000004DB.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> VitNX2_TextBoxesFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>enter</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> Show(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="enter" class="parameterList">
+	Parameters</h4><dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			enter
+			text
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
@@ -169,7 +169,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
 	
 
 
@@ -244,12 +244,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static int VitNX2_TextBoxesFocus(bool enter)
+public static DialogResult Show(string text)
  {
-     if (enter)
-         return 2;
-     else
-         return 1;
+     DialogResult result;
+     using (var msgForm = new VitNX2_MessageBox_Form(text))
+         result = msgForm.ShowDialog();
+     return result;
  }
 					</pre>			
 				</div>
@@ -312,11 +312,11 @@ public static int VitNX2_TextBoxesFocus(bool enter)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004E4.html">Helper Class</a><br />
+			<a href="topic_00000000000004E4.html">VitNX2_MessageBox Class</a><br />
 
 
 
-<a href="topic_00000000000004E3.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000004DB.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['26']=["topic_000000000000000B_vars--.html","Text Fields",""];
+search_result['26']=["topic_0000000000000010.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];

@@ -1,1 +1,1 @@
-search_result['670']=["topic_00000000000001AD.html","Import.DisplayConfigGetDeviceInfo Method",""];
+search_result['670']=["topic_00000000000001CD.html","NCCALCSIZE_PARAMS Structure",""];

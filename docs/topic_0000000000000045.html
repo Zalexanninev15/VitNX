@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FileSystem.CreateShortcut Method</title>
+	<title>EncrypterAndDecrypter.DecryptQryParam Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FileSystem.CreateShortcut Method</h1>
+		<h1 class="title">EncrypterAndDecrypter.DecryptQryParam Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000000.html">VitNX.Functions.Common</a>
+<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Creates the shortcut.</summary-info>
+        <summary-info>Decrypts the text with qry param.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CreateShortcut(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>shortcut</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>nameExe</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> DecryptQryParam(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="shortcut" class="parameterList">
+	Parameters</h4><dl paramName="input" class="parameterList">
 	<dt>
 		<span class="parameter">
-			shortcut
+			input
 		</span>
 	</dt>
 	<dd>
@@ -163,37 +163,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The shortcut. 
-</p>
-<dl paramName="targetFile" class="parameterList">
-	<dt>
-		<span class="parameter">
-			targetFile
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The target file. 
-</p>
-<dl paramName="nameExe" class="parameterList">
-	<dt>
-		<span class="parameter">
-			nameExe
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The name exe. 
+	The input. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -267,15 +248,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void CreateShortcut(string shortcut,
-     string targetFile,
-     string nameExe)
+public static string DecryptQryParam(string input)
  {
-     IWshRuntimeLibrary.WshShell wshShell = new IWshRuntimeLibrary.WshShell();
-     IWshRuntimeLibrary.IWshShortcut Shortcut = (IWshRuntimeLibrary.IWshShortcut)wshShell.CreateShortcut(shortcut);
-     Shortcut.TargetPath = targetFile;
-     Shortcut.WorkingDirectory = targetFile.Replace(@&quot;\&quot; + nameExe, &quot;&quot;).Replace(&quot;.exe&quot;, &quot;&quot;);
-     Shortcut.Save();
+     input = input.Replace(&quot;~&quot;, &quot;+&quot;).Replace(&quot;^&quot;, &quot;/&quot;);
+     RijndaelManaged RijndaelCipher = new RijndaelManaged();
+     string DecryptedData = null;
+     try
+     {
+         byte[] EncryptedData = Convert.FromBase64String(input);
+         byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+         PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+         ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32),
+             SecretKey.GetBytes(16));
+         MemoryStream memoryStream = new MemoryStream(EncryptedData);
+         CryptoStream cryptoStream = new CryptoStream(memoryStream,
+             Decryptor,
+             CryptoStreamMode.Read);
+         byte[] PlainText = new byte[(EncryptedData.Length)];
+         int DecryptedCount = cryptoStream.Read(PlainText, 0, PlainText.Length);
+         memoryStream.Close();
+         cryptoStream.Close();
+         DecryptedData = Encoding.Unicode.GetString(PlainText, 0,
+             DecryptedCount);
+     }
+     catch { DecryptedData = input; }
+     return DecryptedData;
  }
 					</pre>			
 				</div>
@@ -338,11 +335,11 @@ public static void CreateShortcut(string shortcut,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000003A.html">FileSystem Class</a><br />
+			<a href="topic_0000000000000040.html">EncrypterAndDecrypter Class</a><br />
 
 
 
-<a href="topic_0000000000000000.html">VitNX.Functions.Common Namespace</a><br />
+<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

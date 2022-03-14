@@ -1,1 +1,1 @@
-search_result['168']=["topic_000000000000006C.html","Monitor.CaptureScreenToMemoryStream Method","Captures the screen to memory stream."];
+search_result['168']=["topic_000000000000006C.html","Windows.GetWindowsProductNameFromREG Method","Gets the Windows product name from the Windows Registry."];

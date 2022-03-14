@@ -1,1 +1,1 @@
-search_result['1527']=["topic_0000000000000435.html","VitNX.UI.ControlsV1.BasedOnDarkUI.Docking Namespace",""];
+search_result['1527']=["topic_0000000000000428.html","VitNX_TreeView.OnMouseDoubleClick Method","Raises the MouseDoubleClick event."];

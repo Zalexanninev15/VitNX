@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.UpdateWindow Method</title>
+	<title>ASYNCWINDOWPOS Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.UpdateWindow Method</h1>
+		<h1 class="title">ASYNCWINDOWPOS Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> UpdateWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ASYNCWINDOWPOS</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,26 +150,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="hwnd" class="parameterList">
-	<dt>
-		<span class="parameter">
-			hwnd
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -245,10 +228,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[return: MarshalAs(UnmanagedType.Bool)]
- [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern bool UpdateWindow(IntPtr hwnd);
+public static readonly int
+ NOSIZE = 0x0001,
+ NOMOVE = 0x0002,
+ NOZORDER = 0x0004,
+ NOREDRAW = 0x0008,
+ NOACTIVATE = 0x0010,
+ DRAWFRAME = 0x0020,
+ FRAMECHANGED = 0x0020,
+ SHOWWINDOW = 0x0040,
+ HIDEWINDOW = 0x0080,
+ NOCOPYBITS = 0x0100,
+ NOOWNERZORDER = 0x0200,
+ NOREPOSITION = 0x0200,
+ NOSENDCHANGING = 0x0400,
+ DEFERERASE = 0x2000,
+ ASYNCWINDOWPOS = 0x4000;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -310,11 +305,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000010D.html">Import Class</a><br />
+			<a href="topic_000000000000017C.html">SWP Class</a><br />
 
 
 
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -336,4 +331,3 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
     </div>
   </body>
 </html>
-

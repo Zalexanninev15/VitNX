@@ -1,1 +1,1 @@
-c['718']=[['719',"SendMessage(IntPtr, int, IntPtr, IntPtr) Method","topic_000000000000016B.html",0],['720',"SendMessage(IntPtr, UInt32, IntPtr, IntPtr) Method","topic_00000000000001BD.html",0]];
+c['718']=[['719',"Denominator Field","topic_00000000000002F7.html",0],['720',"Numerator Field","topic_00000000000002F6.html",0]];

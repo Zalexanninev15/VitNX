@@ -1,1 +1,1 @@
-search_result['38']=["topic_0000000000000017.html","Text.DateAsYear Method","Converts the date to year."];
+search_result['38']=["topic_0000000000000017.html","CShap.ConvertColorToConsoleColor Method","Converts the color to color for console."];

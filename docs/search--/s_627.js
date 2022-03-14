@@ -1,1 +1,1 @@
-search_result['627']=["topic_0000000000000186.html","Import.SystemParametersInfo Method",""];
+search_result['627']=["topic_00000000000001B6.html","MINMAXINFO Structure",""];

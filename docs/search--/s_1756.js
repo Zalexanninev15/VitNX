@@ -1,1 +1,1 @@
-search_result['1756']=["topic_00000000000004CD.html","DockContentDragFilter Constructor",""];
+search_result['1756']=["topic_00000000000004C9.html","VitNX_ToolStripRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

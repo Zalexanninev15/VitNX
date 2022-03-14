@@ -1,1 +1,1 @@
-search_result['215']=["topic_0000000000000085_vars--.html","PowerControl Fields",""];
+search_result['215']=["topic_0000000000000087.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];

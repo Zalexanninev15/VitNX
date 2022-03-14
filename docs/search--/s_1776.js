@@ -1,1 +1,1 @@
-search_result['1776']=["topic_00000000000004D7.html","VitNX_ProgressBar.Dispose Method",""];
+search_result['1776']=["topic_00000000000004D4_props--.html","DockContentDragFilter Properties",""];

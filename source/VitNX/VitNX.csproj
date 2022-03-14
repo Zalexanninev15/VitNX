@@ -57,6 +57,9 @@
     <Compile Include="Functions\SettingsEditor32.cs" />
     <Compile Include="Functions\Data.cs" />
     <Compile Include="UI\Console\ProgressBar\Type2.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_ProgressBarRoundedType2.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\OtherControls\FontAwesome.cs" />
     <Compile Include="Functions\WindowAndControls.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
@@ -127,7 +130,7 @@
     <Compile Include="UI\ControlsV2\VitNX2_ProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_ProgressBar_Rounded.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_ProgressBar_RoundedType1.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\ControlsV1\Controls\ScrollValueEventArgs.cs" />
@@ -288,7 +291,7 @@
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar_Rounded.resx">
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar_RoundedType1.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_Dialog.resx" />

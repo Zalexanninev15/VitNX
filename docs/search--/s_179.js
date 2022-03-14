@@ -1,1 +1,1 @@
-search_result['179']=["topic_0000000000000074_methods--.html","Motherboard Methods",""];
+search_result['179']=["topic_0000000000000074_methods--.html","Cpu Methods",""];

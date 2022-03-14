@@ -1,1 +1,1 @@
-search_result['283']=["topic_00000000000000AF.html","Installed.GetList Method","Gets the list."];
+search_result['283']=["topic_00000000000000AF.html","DataFromSites.IsValidTelegramBotToken Method","Are the valid telegram bot token."];

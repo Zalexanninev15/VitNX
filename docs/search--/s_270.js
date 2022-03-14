@@ -1,1 +1,1 @@
-search_result['270']=["topic_00000000000000A7.html","Processes.Execute Method","Execute a third-party applications with the result of that application (useful when running console applications)."];
+search_result['270']=["topic_00000000000000A7.html","IniSettings32.DeleteSection Method","Deletes the section."];

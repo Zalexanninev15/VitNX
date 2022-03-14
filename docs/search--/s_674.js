@@ -1,1 +1,1 @@
-search_result['674']=["topic_00000000000001B0.html","Import.GetWindowDC Method",""];
+search_result['674']=["topic_00000000000001CD_props--.html","NCCALCSIZE_PARAMS Properties",""];

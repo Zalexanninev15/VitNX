@@ -1,1 +1,1 @@
-search_result['1347']=["topic_00000000000003BF.html","VitNX_NumericUpDown.OnMouseLeave Method","Raises the MouseLeave event."];
+search_result['1347']=["topic_00000000000003BA.html","VitNX_ListView.EnsureVisible Method",""];

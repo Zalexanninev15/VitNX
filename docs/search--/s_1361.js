@@ -1,1 +1,1 @@
-search_result['1361']=["topic_00000000000003C8.html","VitNX_RadioButton.OnMouseUp Method","Raises the MouseUp event."];
+search_result['1361']=["topic_00000000000003BE_vars--.html","VitNX_NumericUpDown Fields",""];

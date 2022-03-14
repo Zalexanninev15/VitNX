@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['313',"VitNX.Functions.Windows.Win32 Namespace","topic_000000000000010C.html"],['351',"Enums Class","topic_00000000000001E2.html"],['570',"DISPLAYCONFIG_ROTATION Enumeration","topic_00000000000002DC.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['667',"VitNX.Functions.WinControllers Namespace","topic_00000000000002D0.html"],['766',"STATask Class","topic_00000000000002DC.html"]];

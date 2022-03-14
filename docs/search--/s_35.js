@@ -1,1 +1,1 @@
-search_result['35']=["topic_0000000000000014.html","Text.DateAsShortTime Method","Converts the date to short time."];
+search_result['35']=["topic_0000000000000014.html","CShap.CleanMemory Method","Cleans the memory."];

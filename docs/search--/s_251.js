@@ -1,1 +1,1 @@
-search_result['251']=["topic_000000000000009D_attached_props--.html","Config Attached Properties",""];
+search_result['251']=["topic_000000000000009A.html","PowerControl Class","Work with the power control."];

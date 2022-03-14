@@ -1,1 +1,1 @@
-search_result['1450']=["topic_0000000000000405.html","VitNX_StatusStrip Constructor",""];
+search_result['1450']=["topic_0000000000000400.html","VitNX_SectionPanel.OnEnter Method","Raises the Enter event."];

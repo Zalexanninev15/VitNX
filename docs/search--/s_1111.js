@@ -1,1 +1,1 @@
-search_result['1111']=["topic_0000000000000333_methods--.html","Type1 Methods",""];
+search_result['1111']=["topic_0000000000000331.html","Window.SetWindowsTenAndHighStyleForWinFormTitleToDark Method","Applying a native dark window title for the application if it runs on Windows 10 or higher.."];

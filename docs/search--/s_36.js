@@ -1,1 +1,1 @@
-search_result['36']=["topic_0000000000000015.html","Text.DateAsLongTime Method","Converts the date to long time."];
+search_result['36']=["topic_0000000000000015.html","CShap.PlaySound Method","Plays the error/successes sound."];

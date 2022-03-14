@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Title.OnPaint Method</title>
+	<title>VitNX_StatusStrip.OnPaintBackground Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Title.OnPaint Method</h1>
+		<h1 class="title">VitNX_StatusStrip.OnPaintBackground Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Paints the background of the control.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaintBackground(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -162,7 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains information about the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.statusstrip">StatusStrip</a> to paint. 
 </p>
 
 <p />
@@ -240,23 +241,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs e)
+protected override void OnPaintBackground(PaintEventArgs e)
         {
             var g = e.Graphics;
-            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
-            var textSize = g.MeasureString(Text, Font);
-
-            using (var b = new SolidBrush(Colors.LightText))
+            using (var b = new SolidBrush(Colors.GreyBackground))
             {
-                g.DrawString(Text, Font, b, new PointF(-2, 0));
+                g.FillRectangle(b, ClientRectangle);
             }
 
-            using (var p = new Pen(Colors.GreyHighlight))
+            using (var p = new Pen(Colors.VitNXBorder))
             {
-                var p1 = new PointF(textSize.Width + 5, textSize.Height / 2);
-                var p2 = new PointF(rect.Width, textSize.Height / 2);
-                g.DrawLine(p, p1, p2);
+                g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
+            }
+
+            using (var p = new Pen(Colors.LightBorder))
+            {
+                g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
             }
         }
 					</pre>			
@@ -320,11 +321,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000409.html">VitNX_Title Class</a><br />
+			<a href="topic_0000000000000409.html">VitNX_StatusStrip Class</a><br />
 
 
 
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['379']=["topic_00000000000000D7_props--.html","DISPLAYCONFIG_RATIONAL Properties",""];
+search_result['379']=["topic_00000000000000FF.html","Import.IntersectClipRect Method",""];

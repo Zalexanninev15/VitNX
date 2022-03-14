@@ -1,1 +1,1 @@
-search_result['170']=["topic_000000000000006E.html","Monitor.CaptureWindowToFile Method","Captures the window to file."];
+search_result['170']=["topic_000000000000006E.html","Windows.GetWindowsReleaseIdFromREG Method","Gets the windows release id from the Windows Registry."];

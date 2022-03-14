@@ -1,1 +1,1 @@
-search_result['1730']=["topic_00000000000004C0_events--.html","VitNX_ToolStripRenderer Events",""];
+search_result['1730']=["topic_00000000000004B4.html","VitNX_MessageBox.ShowError Method","Shows the error MessageBox."];

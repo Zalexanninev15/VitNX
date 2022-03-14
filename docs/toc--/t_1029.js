@@ -1,1 +1,1 @@
-c['1029']=[['1030',"OnPaint Method","topic_0000000000000402.html",0],['1031',"OnPaintBackground Method","topic_0000000000000403.html",0]];
+c['1029']=[['1030',"VitNX_TextBox Constructor","topic_000000000000040D.html",0]];

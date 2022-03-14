@@ -1,1 +1,1 @@
-search_result['42']=["topic_000000000000001B.html","Text.ContainsSymbols Method","Contains the symbols."];
+search_result['42']=["topic_0000000000000019_events--.html","NumericalTextConverter Events",""];

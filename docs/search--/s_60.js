@@ -1,1 +1,1 @@
-search_result['60']=["topic_0000000000000028.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];
+search_result['60']=["topic_0000000000000023.html","Text.DateAsShortDate Method","Converts the date to short date."];
