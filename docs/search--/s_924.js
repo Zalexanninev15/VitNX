@@ -1,1 +1,1 @@
-search_result['924']=["topic_000000000000024C.html","RECT Structure",""];
+search_result['924']=["topic_00000000000002DA_vars--.html","GetClipboardText Fields",""];

@@ -1,1 +1,1 @@
-search_result['230']=["topic_0000000000000093.html","IniSettings32.KeyExists Method","Is key exist."];
+search_result['230']=["topic_000000000000008C.html","ComPort.GetAllDevices Method","Gets all COM ports (devices)."];

@@ -1,1 +1,1 @@
-search_result['1742']=["topic_00000000000004C9.html","VitNX.UI.ControlsV1.BasedOnDarkUI.Win32 Namespace",""];
+search_result['1742']=["topic_00000000000004C0.html","VitNX_MenuRenderer.Initialize Method","When overridden in a derived class, provides for custom initialization of the given ToolStrip."];

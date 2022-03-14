@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CompressAndDecompress.DecompressBytes Method</title>
+	<title>EncryptAndDecrypt.XOR_Both Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CompressAndDecompress.DecompressBytes Method</h1>
+		<h1 class="title">EncryptAndDecrypt.XOR_Both Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
+<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Decompresses the bytes.
-Example: Data.CompressAndDecompress.DecompressBytes(compressed)</summary-info>
+        <summary-info>XOR method (encrypt and decrypt).</summary-info>
 
 
 
@@ -138,7 +137,7 @@ Example: Data.CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] DecompressBytes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>input</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> XOR_Both(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>key</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,27 +152,40 @@ Example: Data.CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="input" class="parameterList">
+	Parameters</h4><dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			input
+			text
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The bytes. 
+	The text. 
+</p>
+<dl paramName="key" class="parameterList">
+	<dt>
+		<span class="parameter">
+			key
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	The key. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		An array of byte. 
+		A string. 
 	</p>
 	
 
@@ -249,22 +261,16 @@ Example: Data.CompressAndDecompress.DecompressBytes(compressed)</summary-info>
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static byte[] DecompressBytes(byte[] input)
+public static string XOR_Both(string text, int key)
  {
-     MemoryStream memory = new MemoryStream();
-     memory.Write(input, 0, input.Length);
-     memory.Position = 0;
-     GZipStream gzip = new GZipStream(memory, CompressionMode.Decompress, true);
-     MemoryStream output = new MemoryStream();
-     byte[] buff = new byte[64];
-     int read = gzip.Read(buff, 0, buff.Length);
-     while (read &gt; 0)
+     string newText = string.Empty;
+     for (int i = 0; i &lt; text.Length; i++)
      {
-         output.Write(buff, 0, read);
-         read = gzip.Read(buff, 0, buff.Length);
+         int charValue = Convert.ToInt32(text[i]);
+         charValue ^= key;
+         newText += char.ConvertFromUtf32(charValue);
      }
-     gzip.Close();
-     return output.ToArray();
+     return newText;
  }
 					</pre>			
 				</div>
@@ -327,11 +333,11 @@ public static byte[] DecompressBytes(byte[] input)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000035.html">CompressAndDecompress Class</a><br />
+			<a href="topic_0000000000000038.html">EncryptAndDecrypt Class</a><br />
 
 
 
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
+<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

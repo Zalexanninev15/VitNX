@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['102',"VitNX.Functions.Common.Information Namespace","topic_000000000000004D.html"],['111',"Disk Class","topic_0000000000000065.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['127',"VitNX.Functions.Information Namespace","topic_0000000000000062.html"],['171',"Windows Class","topic_0000000000000063.html"],['172',"Methods","topic_0000000000000063_methods--.html"],['174',"GetCurrentUsername Method","topic_0000000000000065.html"]];

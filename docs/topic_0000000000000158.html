@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.KillTimer Method</title>
+	<title>Import.SetWindowPos (IntPtr, IntPtr, Int32, Int32, Int32, Int32, SetWindowPosFlags) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.KillTimer Method</h1>
+		<h1 class="title">Import.SetWindowPos (IntPtr, IntPtr, Int32, Int32, Int32, Int32, SetWindowPosFlags) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> KillTimer(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>nIDEvent</i>&nbsp;<br />)</pre>			
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> SetWindowPos(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWndInsertAfter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>x</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>y</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cx</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cy</i>,&nbsp;<br />   <a target="_top" href="topic_000000000000024F.html" onclick="this.target='';return true;">SetWindowPosFlags</a> <i>uFlags</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -165,14 +165,79 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="nIDEvent" class="parameterList">
+<dl paramName="hWndInsertAfter" class="parameterList">
 	<dt>
 		<span class="parameter">
-			nIDEvent
+			hWndInsertAfter
 		</span>
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="x" class="parameterList">
+	<dt>
+		<span class="parameter">
+			x
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="y" class="parameterList">
+	<dt>
+		<span class="parameter">
+			y
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cx" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cx
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cy" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cy
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="uFlags" class="parameterList">
+	<dt>
+		<span class="parameter">
+			uFlags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_000000000000024F.html" onclick="this.target='';return true;">SetWindowPosFlags</a> 
 	</dd>
 </dl>
 <p>
@@ -183,7 +248,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -259,9 +324,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern IntPtr KillTimer(IntPtr hWnd,
-     IntPtr nIDEvent);
+     SetLastError = true)]
+ public static extern bool SetWindowPos(IntPtr hWnd,
+     IntPtr hWndInsertAfter,
+     int x,
+     int y,
+     int cx,
+     int cy,
+     SetWindowPosFlags uFlags);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -323,11 +393,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000010D.html">Import Class</a><br />
+			<a href="topic_00000000000000B7.html">Import Class</a><br />
 
 
 
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			

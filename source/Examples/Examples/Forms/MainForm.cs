@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-using VitNX.Functions.Windows.Controllers;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Win32;
+using VitNX.Functions.WinControllers;
+using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV1.Forms;
+using VitNX.UI.ControlsV1.Win32;
 
-using static VitNX.Functions.Windows.Win32.Enums;
+using static VitNX.Functions.Win32.Enums;
 
 namespace Example
 {
@@ -160,9 +160,9 @@ namespace Example
         {
             DialogResult a = VitNX_MessageBox.ShowQuestion("This is a question", "VitNX UI - Example");
             if (a == DialogResult.Yes)
-                VitNX_MessageBox.ShowInfo("Your choice is Yes", "VitNX UI - Example");
+                VitNX_MessageBox.ShowInformation("Your choice is Yes", "VitNX UI - Example");
             if (a == DialogResult.No)
-                VitNX_MessageBox.ShowInfo("Your choice is No", "VitNX UI - Example");
+                VitNX_MessageBox.ShowInformation("Your choice is No", "VitNX UI - Example");
         }
 
         private void SetTaskBarProgressBar_Click(object sender, EventArgs e)
@@ -184,9 +184,11 @@ namespace Example
                     case "Indeterminate":
                         TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate);
                         break;
+
                     case "NoProgress":
                         TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress);
                         break;
+
                     case "Error":
                         {
                             TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);

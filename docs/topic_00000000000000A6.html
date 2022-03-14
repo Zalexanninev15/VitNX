@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Processes.OpenLink Method</title>
+	<title>IniSettings32.DeleteKey Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Processes.OpenLink Method</h1>
+		<h1 class="title">IniSettings32.DeleteKey Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_0000000000000012.html">VitNX.Functions</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Opens the link of site.</summary-info>
+        <summary-info>Deletes the key in section.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> OpenLink(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>link</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteKey(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>section</i> = null&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="link" class="parameterList">
+	Parameters</h4><dl paramName="key" class="parameterList">
 	<dt>
 		<span class="parameter">
-			link
+			key
 		</span>
 	</dt>
 	<dd>
@@ -163,18 +163,24 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The link. 
+	The key. 
+</p>
+<dl paramName="section" class="parameterList">
+	<dt>
+		<span class="parameter">
+			section
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The section. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		A bool. 
-	</p>
-	
 
 
 
@@ -248,14 +254,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool OpenLink(string link)
+public static void DeleteKey(string key,
+     string section = null)
  {
-     try
-     {
-         Process.Start(link);
-         return true;
-     }
-     catch { return false; }
+     Write(key, null, section ?? defValue);
  }
 					</pre>			
 				</div>
@@ -318,11 +320,11 @@ public static bool OpenLink(string link)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A1.html">Processes Class</a><br />
+			<a href="topic_00000000000000A2.html">IniSettings32 Class</a><br />
 
 
 
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_0000000000000012.html">VitNX.Functions Namespace</a><br />
 
 
 			

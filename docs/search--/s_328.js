@@ -1,1 +1,1 @@
-search_result['328']=["topic_00000000000000C1.html","Keyboard Class","Control the keyboard."];
+search_result['328']=["topic_00000000000000CD.html","Import.DeleteDC Method",""];

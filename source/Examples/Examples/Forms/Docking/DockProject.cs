@@ -1,8 +1,8 @@
 ﻿using System;
 
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Forms;
+using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV1.Forms;
 
 namespace Example
 {
@@ -43,13 +43,13 @@ namespace Example
 
         private void vitNXButton2_Click(object sender, EventArgs e)
         {
-            var dialog = new VitNX.Functions.Windows.Controllers.NewFolderDialog
+            var dialog = new VitNX.Functions.WinControllers.NewFolderDialog
             {
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
                 Title = "Select Folder"
             };
             if (dialog.Show())
-                VitNX_MessageBox.ShowInfo("This folder is selected: " + dialog.FileName, "VitNX UI - Example");
+                VitNX_MessageBox.ShowInformation("This folder is selected: " + dialog.FileName, "VitNX UI - Example");
         }
     }
 }

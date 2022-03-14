@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using VitNX.Functions.Windows.Win32;
+using VitNX.Functions.Win32;
 
 namespace VitNX.UI.ControlsV2
 {

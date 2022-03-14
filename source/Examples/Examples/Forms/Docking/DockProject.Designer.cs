@@ -1,6 +1,6 @@
-﻿using VitNX.UI.ControlsV1;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
-using VitNX.UI.ControlsV1.BasedOnDarkUI.Docking;
+﻿using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV2;
 
 namespace Example
 {
@@ -33,12 +33,12 @@ namespace Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.treeProject = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView();
-            this.vitNXProgressBarStyle21 = new VitNX.UI.ControlsV1.VitNX_ProgressBarRounded();
-            this.vitNXButton1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button();
+            this.treeProject = new VitNX.UI.ControlsV1.Controls.VitNX_TreeView();
+            this.vitNXProgressBarStyle21 = new VitNX2_ProgressBarRoundedType1();
+            this.vitNXButton1 = new VitNX.UI.ControlsV1.Controls.VitNX_Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.vitNXProgressBar1 = new VitNX.UI.ControlsV1.VitNX_ProgressBar();
-            this.vitNXButton2 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button();
+            this.vitNXProgressBar1 = new VitNX2_ProgressBar();
+            this.vitNXButton2 = new VitNX.UI.ControlsV1.Controls.VitNX_Button();
             this.SuspendLayout();
             // 
             // treeProject
@@ -64,7 +64,7 @@ namespace Example
             this.vitNXProgressBarStyle21.TabIndex = 1;
             this.vitNXProgressBarStyle21.TextColor = System.Drawing.Color.Black;
             this.vitNXProgressBarStyle21.TextFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.vitNXProgressBarStyle21.VisualMode = VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.Percentage;
+            this.vitNXProgressBarStyle21.VisualMode = VitNX2_ProgressBarDisplayMode.Percentage;
             // 
             // vitNXButton1
             // 
@@ -91,7 +91,7 @@ namespace Example
             this.vitNXProgressBar1.TabIndex = 3;
             this.vitNXProgressBar1.TextColor = System.Drawing.Color.Black;
             this.vitNXProgressBar1.TextFont = new System.Drawing.Font("Arial", 12F);
-            this.vitNXProgressBar1.VisualMode = VitNX.UI.ControlsV1.VitNX_ProgressBarDisplayMode.Percentage;
+            this.vitNXProgressBar1.VisualMode = VitNX2_ProgressBarDisplayMode.Percentage;
             // 
             // vitNXButton2
             // 
@@ -126,10 +126,10 @@ namespace Example
         #endregion
 
         private VitNX_TreeView treeProject;
-        private VitNX_ProgressBarRounded vitNXProgressBarStyle21;
+        private VitNX2_ProgressBarRoundedType1 vitNXProgressBarStyle21;
         private VitNX_Button vitNXButton1;
         private System.Windows.Forms.Timer timer1;
-        private VitNX_ProgressBar vitNXProgressBar1;
+        private VitNX2_ProgressBar vitNXProgressBar1;
         private VitNX_Button vitNXButton2;
     }
 }

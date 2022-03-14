@@ -1,1 +1,1 @@
-search_result['925']=["topic_000000000000024C_attached_props--.html","RECT Attached Properties",""];
+search_result['925']=["topic_00000000000002DB.html","GetClipboardText.GetText Method","Gets the text from clipboard."];

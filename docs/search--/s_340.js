@@ -1,1 +1,1 @@
-search_result['340']=["topic_00000000000000C7_attached_props--.html","Monitor Attached Properties",""];
+search_result['340']=["topic_00000000000000D9.html","Import.ExcludeClipRect Method",""];

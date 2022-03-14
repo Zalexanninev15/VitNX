@@ -1,1 +1,1 @@
-search_result['113']=["topic_000000000000004E.html","Windows Class","Work with informations of Windows System."];
+search_result['113']=["topic_0000000000000049.html","CompressAndDecompress.CompressBytes Method","Compresses the bytes.\r\nExample: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));"];

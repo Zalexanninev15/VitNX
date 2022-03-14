@@ -1,1 +1,1 @@
-search_result['364']=["topic_00000000000000D1.html","DISPLAYCONFIG_PATH_TARGET_INFO Structure",""];
+search_result['364']=["topic_00000000000000F0.html","Import.GetSysColor Method",""];

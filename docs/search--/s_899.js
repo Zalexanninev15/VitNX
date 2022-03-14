@@ -1,1 +1,1 @@
-search_result['899']=["topic_0000000000000238_vars--.html","PAINTSTRUCT Fields",""];
+search_result['899']=["topic_00000000000002D2.html","TaskBarProgressBar.SetState Method","Sets the state."];

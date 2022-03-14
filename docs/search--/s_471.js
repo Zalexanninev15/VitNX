@@ -1,1 +1,1 @@
-search_result['471']=["topic_0000000000000100.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Structure",""];
+search_result['471']=["topic_0000000000000151.html","Import.GetImmersiveColorFromColorSetEx Method",""];

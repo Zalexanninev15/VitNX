@@ -1,1 +1,1 @@
-search_result['84']=["topic_0000000000000036.html","CompressAndDecompress.GetBytes Method","Gets the bytes.\r\nExample: Data.CompressAndDecompress.GetBytes(input)"];
+search_result['84']=["topic_0000000000000038_methods--.html","EncryptAndDecrypt Methods",""];

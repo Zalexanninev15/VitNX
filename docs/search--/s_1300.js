@@ -1,1 +1,1 @@
-search_result['1300']=["topic_00000000000003A7_attached_props--.html","VitNX_ListItem Attached Properties",""];
+search_result['1300']=["topic_00000000000003A3.html","VitNX_DropdownList.OnPaint Method","Raises the Paint event."];

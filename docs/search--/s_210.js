@@ -1,1 +1,1 @@
-search_result['210']=["topic_0000000000000085.html","PowerControl Class","Work with the power control."];
+search_result['210']=["topic_0000000000000082.html","Monitor.CaptureScreen Method","Captures the screen."];

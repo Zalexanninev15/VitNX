@@ -1,1 +1,1 @@
-search_result['58']=["topic_0000000000000027_props--.html","EncryptAndDecrypt Properties",""];
+search_result['58']=["topic_0000000000000021.html","Text.ConvertNumberToHexD Method","Converts the number to HEX (double)."];

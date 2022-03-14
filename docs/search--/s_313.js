@@ -1,1 +1,1 @@
-search_result['313']=["topic_00000000000000BC.html","GetClipboardText Class","Get clipboard text."];
+search_result['313']=["topic_00000000000000BE.html","Import.ChildWindowFromPoint Method",""];

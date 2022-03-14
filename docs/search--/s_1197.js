@@ -1,1 +1,1 @@
-search_result['1197']=["topic_0000000000000360.html","VitNX_Button.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];
+search_result['1197']=["topic_000000000000035B.html","VitNX.UI.ControlsV1.Controls Namespace",""];

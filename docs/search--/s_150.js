@@ -1,1 +1,1 @@
-search_result['150']=["topic_0000000000000064.html","Gpu.Characteristics Method","Gets all characteristics."];
+search_result['150']=["topic_0000000000000060_props--.html","Other Properties",""];

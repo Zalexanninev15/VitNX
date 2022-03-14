@@ -1,1 +1,1 @@
-search_result['1342']=["topic_00000000000003BA.html","VitNX_NumericUpDown Constructor",""];
+search_result['1342']=["topic_00000000000003B7.html","VitNX_ListView.SelectItems (IEnumerable\u0026lt;Int32\u0026gt;) Method",""];

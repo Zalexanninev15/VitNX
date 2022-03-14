@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['102',"VitNX.Functions.Common.Information Namespace","topic_000000000000004D.html"],['103',"ComPort Class","topic_0000000000000076.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['127',"VitNX.Functions.Information Namespace","topic_0000000000000062.html"],['131',"Cpu Class","topic_0000000000000074.html"],['132',"Methods","topic_0000000000000074_methods--.html"],['134',"GetArchitecture Method","topic_0000000000000076.html"]];

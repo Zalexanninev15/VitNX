@@ -1,1 +1,1 @@
-search_result['52']=["topic_0000000000000025.html","Text.IsValidCardNumber Method","Are the valid card number."];
+search_result['52']=["topic_000000000000001C_props--.html","Text Properties",""];

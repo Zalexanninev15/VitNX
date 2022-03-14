@@ -1,1 +1,1 @@
-search_result['213']=["topic_0000000000000085_methods--.html","PowerControl Methods",""];
+search_result['213']=["topic_0000000000000085.html","Monitor.CaptureWindow Method","Captures the window."];

@@ -1,1 +1,1 @@
-search_result['15']=["topic_0000000000000008_events--.html","NumericalTextConverter Events",""];
+search_result['15']=["topic_000000000000000A.html","Processes.IsAdministratorYourApp Method","Whether your application has administrator rights."];

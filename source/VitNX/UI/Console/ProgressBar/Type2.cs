@@ -7,9 +7,9 @@ namespace VitNX.UI.Console.ProgressBar
     /// </summary>
     public static class Type2
     {
-        const char progressChar = '-';
-        const int progressBarSpacing = 11;
-        const int maxProgressChars = 10;
+        private const char progressChar = '-';
+        private const int progressBarSpacing = 11;
+        private const int maxProgressChars = 10;
 
         /// <summary>
         /// Prints the progress in console.

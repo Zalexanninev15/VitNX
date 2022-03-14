@@ -1,1 +1,1 @@
-search_result['1648']=["topic_0000000000000482_attached_props--.html","VitNX_ToolWindow Attached Properties",""];
+search_result['1648']=["topic_0000000000000479_attached_props--.html","VitNX_DockSplitter Attached Properties",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_TreeNode.EnsureVisible Method</title>
+	<title>NodeCollapsed Event</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_TreeNode.EnsureVisible Method</h1>
+		<h1 class="title">NodeCollapsed Event</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a> NodeCollapsed</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -224,16 +224,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void EnsureVisible()
-        {
-            var parent = ParentNode;
-
-            while (parent != null)
-            {
-                parent.Expanded = true;
-                parent = parent.ParentNode;
-            }
-        }
+public event EventHandler NodeCollapsed;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -295,11 +286,11 @@ public void EnsureVisible()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000040E.html">VitNX_TreeNode Class</a><br />
+			<a href="topic_0000000000000413.html">VitNX_TreeNode Class</a><br />
 
 
 
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -321,4 +312,3 @@ public void EnsureVisible()
     </div>
   </body>
 </html>
-

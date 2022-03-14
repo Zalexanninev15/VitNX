@@ -1,1 +1,1 @@
-search_result['56']=["topic_0000000000000027_events--.html","EncryptAndDecrypt Events",""];
+search_result['56']=["topic_000000000000001F.html","Text.NumberAsPercentD Method","Gets the number as percent (double)."];

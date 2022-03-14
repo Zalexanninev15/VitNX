@@ -1,1 +1,1 @@
-search_result['71']=["topic_000000000000002F_props--.html","EncrypterAndDecrypter Properties",""];
+search_result['71']=["topic_000000000000002E.html","Text.ListContainsString Method","Lists the contains string."];

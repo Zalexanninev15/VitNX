@@ -1,1 +1,1 @@
-search_result['202']=["topic_000000000000007A_vars--.html","Internet Fields",""];
+search_result['202']=["topic_000000000000007F.html","Monitor Class","Work with informations of Monitor(s)."];

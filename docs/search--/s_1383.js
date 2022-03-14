@@ -1,1 +1,1 @@
-search_result['1383']=["topic_00000000000003D9.html","VitNX_ScrollBar.ScrollByPhysical Method",""];
+search_result['1383']=["topic_00000000000003CF.html","VitNX_RadioButton.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

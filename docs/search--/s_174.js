@@ -1,1 +1,1 @@
-search_result['174']=["topic_0000000000000072.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];
+search_result['174']=["topic_0000000000000072.html","Windows.GetWindowsSerialKey Method","Gets Windows the serial key."];

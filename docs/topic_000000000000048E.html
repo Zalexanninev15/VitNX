@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>btnCancel Field</title>
+	<title>VitNX_ToolWindow.OnPaintBackground Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">btnCancel Field</h1>
+		<h1 class="title">VitNX_ToolWindow.OnPaintBackground Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000048A.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms</a>
+<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Paints the background of the control.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected <a target="_top" href="topic_0000000000000359.html" onclick="this.target='';return true;">VitNX_Button</a> btnCancel</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaintBackground(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,11 +151,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+	</dd>
+</dl>
+<p>
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="topic_0000000000000359.html" onclick="this.target='';return true;">VitNX_Button</a> 
-	
+<p />
+
 
 
 
@@ -228,7 +241,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected VitNX_Button btnCancel;
+protected override void OnPaintBackground(PaintEventArgs e)
+        {
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -290,11 +305,11 @@ protected VitNX_Button btnCancel;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000048B.html">VitNX_Dialog Class</a><br />
+			<a href="topic_0000000000000487.html">VitNX_ToolWindow Class</a><br />
 
 
 
-<a href="topic_000000000000048A.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Forms Namespace</a><br />
+<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -316,3 +331,4 @@ protected VitNX_Button btnCancel;
     </div>
   </body>
 </html>
+

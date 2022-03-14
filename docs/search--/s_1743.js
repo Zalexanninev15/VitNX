@@ -1,1 +1,1 @@
-search_result['1743']=["topic_00000000000004CA.html","ControlScrollFilter Class",""];
+search_result['1743']=["topic_00000000000004C1.html","VitNX_MenuRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

@@ -1,1 +1,1 @@
-search_result['72']=["topic_000000000000002F_vars--.html","EncrypterAndDecrypter Fields",""];
+search_result['72']=["topic_000000000000002F.html","Text.ListAddStringsToList Method","Lists the add strings to list."];

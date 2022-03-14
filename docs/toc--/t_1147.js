@@ -1,1 +1,1 @@
-c['1147']=[['1148',"GetContents Method","topic_000000000000046E.html",0],['1149',"OnCreateControl Method","topic_000000000000046F.html",0],['1150',"OnLayout Method","topic_0000000000000471.html",0],['1151',"OnPaint Method","topic_0000000000000473.html",0],['1152',"OnResize Method","topic_0000000000000470.html",0],['1153',"Redraw Method","topic_0000000000000472.html",0]];
+c['1147']=[['1148',"VitNX_DockSplitter Constructor","topic_000000000000047A.html",0],['1149',"Methods","topic_0000000000000479_methods--.html",1]];

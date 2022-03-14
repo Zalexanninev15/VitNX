@@ -1,1 +1,1 @@
-search_result['1231']=["topic_0000000000000379.html","VitNX_ComboBox.OnTabStopChanged Method","Raises the TabStopChanged event."];
+search_result['1231']=["topic_0000000000000370.html","VitNX_CheckBox Constructor",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Text.SizeSuffix Method</title>
+	<title>Text.DateAsLongTime Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Text.SizeSuffix Method</h1>
+		<h1 class="title">Text.DateAsLongTime Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
+<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gives a suffix to the file size for output.</summary-info>
+        <summary-info>Converts the date to long time.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SizeSuffix(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> <i>value</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> DateAsLongTime(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a> <i>dt</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="value" class="parameterList">
+	Parameters</h4><dl paramName="dt" class="parameterList">
 	<dt>
 		<span class="parameter">
-			value
+			dt
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a> 
 	</dd>
 </dl>
 <p>
-	The value. 
+	The DateTime. 
 </p>
 
 <p />
@@ -248,16 +248,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string SizeSuffix(long value)
- {
-     if (value &lt; 0)
-         return &quot;-&quot; + SizeSuffix(-value);
-     if (value == 0)
-         return &quot;0.0 bytes&quot;;
-     int mag = (int)Math.Log(value, 1024);
-     decimal adjustedSize = (decimal)value / (1L &lt;&lt; (mag * 10));
-     return string.Format(&quot;{0:n1} {1}&quot;, adjustedSize, SizeSuffixes[mag]);
- }
+public static string DateAsLongTime(DateTime dt) =&gt; string.Format(&quot;{0:T}&quot;, dt);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -319,11 +310,11 @@ public static string SizeSuffix(long value)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000000B.html">Text Class</a><br />
+			<a href="topic_000000000000001C.html">Text Class</a><br />
 
 
 
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
+<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

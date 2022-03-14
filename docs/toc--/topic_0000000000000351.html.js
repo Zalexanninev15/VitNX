@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000869.html"],['836',"VitNX.UI.ControlsV1.BasedOnDarkUI.Config Namespace","topic_000000000000034B.html"],['837',"Constsants Class","topic_000000000000034C.html"],['838',"Fields","topic_000000000000034C_vars--.html"],['840',"CheckBoxSize Field","topic_0000000000000351.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_0000000000000874.html"],['828',"VitNX.UI.ControlsV1.Config Namespace","topic_000000000000034F.html"],['830',"Constsants Class","topic_0000000000000351.html"]];

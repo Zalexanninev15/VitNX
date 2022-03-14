@@ -1,1 +1,1 @@
-search_result['1650']=["topic_0000000000000482_methods--.html","VitNX_ToolWindow Methods",""];
+search_result['1650']=["topic_0000000000000479_methods--.html","VitNX_DockSplitter Methods",""];

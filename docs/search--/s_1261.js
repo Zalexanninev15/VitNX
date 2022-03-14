@@ -1,1 +1,1 @@
-search_result['1261']=["topic_0000000000000391.html","VitNX_DropdownItem(String, Bitmap) Constructor",""];
+search_result['1261']=["topic_0000000000000388.html","VitNX_ComboBox.OnDrawItem Method","Raises the DrawItem event."];

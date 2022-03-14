@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Processes.CheckDebugger Method</title>
+	<title>DataFromSites.GetHeaderAndContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Processes.CheckDebugger Method</h1>
+		<h1 class="title">DataFromSites.GetHeaderAndContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps</a>
+<a href="topic_00000000000000A9.html">VitNX.Functions.Web</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Checks the debugger for your app.</summary-info>
+        <summary-info>Gets the status header and content of site.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CheckDebugger(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> <i>currentProcess</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] GetHeaderAndContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>url</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>userAgent</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,27 +152,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="currentProcess" class="parameterList">
+	Parameters</h4><dl paramName="url" class="parameterList">
 	<dt>
 		<span class="parameter">
-			currentProcess
+			url
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The current process. 
+	The url. 
+</p>
+<dl paramName="userAgent" class="parameterList">
+	<dt>
+		<span class="parameter">
+			userAgent
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The UserAgent. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
 		<p>
-		A bool. 
+		An array of string (Header, Content). 
 	</p>
 	
 
@@ -248,16 +261,29 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool CheckDebugger(Process currentProcess)
+public static string[] GetHeaderAndContent(string url, string userAgent)
  {
-     bool isDebuggerPresent = false;
-     try
+     string[] data = { &quot;Header&quot;, &quot;Content&quot; };
+     HttpWebRequest wReq;
+     HttpWebResponse wResp;
+     Stream rStream;
+     wReq = (HttpWebRequest)WebRequest.Create(url);
+     wReq.KeepAlive = false;
+     wReq.Referer = url;
+     wReq.UserAgent = userAgent;
+     wResp = (HttpWebResponse)wReq.GetResponse();
+     data[0] = wResp.Headers.ToString();
+     rStream = wResp.GetResponseStream();
+     int bufCount = 0;
+     byte[] byteBuf = new byte[1024];
+     do
      {
-         Import.CheckRemoteDebuggerPresent(currentProcess.Handle, ref
-             isDebuggerPresent);
-         return isDebuggerPresent;
+         bufCount = rStream.Read(byteBuf, 0, byteBuf.Length);
+         if (bufCount != 0)
+             data[1] += Encoding.ASCII.GetString(byteBuf, 0, bufCount);
      }
-     catch { return isDebuggerPresent; }
+     while (bufCount &gt; 0);
+     return data;
  }
 					</pre>			
 				</div>
@@ -320,11 +346,11 @@ public static bool CheckDebugger(Process currentProcess)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A1.html">Processes Class</a><br />
+			<a href="topic_00000000000000AA.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_00000000000000A0.html">VitNX.Functions.Windows.Apps Namespace</a><br />
+<a href="topic_00000000000000A9.html">VitNX.Functions.Web Namespace</a><br />
 
 
 			

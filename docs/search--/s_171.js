@@ -1,1 +1,1 @@
-search_result['171']=["topic_000000000000006F.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];
+search_result['171']=["topic_000000000000006F.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];

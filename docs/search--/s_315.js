@@ -1,1 +1,1 @@
-search_result['315']=["topic_00000000000000BC_events--.html","GetClipboardText Events",""];
+search_result['315']=["topic_00000000000000C0.html","Import.CloseHandle Method",""];

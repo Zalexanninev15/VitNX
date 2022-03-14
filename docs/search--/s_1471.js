@@ -1,1 +1,1 @@
-search_result['1471']=["topic_000000000000040C_props--.html","VitNX_ToolStrip Properties",""];
+search_result['1471']=["topic_000000000000040B.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

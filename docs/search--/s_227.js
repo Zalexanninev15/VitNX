@@ -1,1 +1,1 @@
-search_result['227']=["topic_0000000000000090.html","IniSettings32.Write Method","Writes the value to key in section."];
+search_result['227']=["topic_000000000000008B_methods--.html","ComPort Methods",""];

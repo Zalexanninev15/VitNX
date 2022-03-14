@@ -1,0 +1,1 @@
+c['132']=[['133',"Characteristics Method","topic_0000000000000075.html",0],['134',"GetArchitecture Method","topic_0000000000000076.html",0],['135',"GetClockSpeed Method","topic_0000000000000077.html",0]];

@@ -1,1 +1,1 @@
-search_result['1726']=["topic_00000000000004BE.html","VitNX_MenuRenderer.OnRenderArrow Method","Raises the RenderArrow event."];
+search_result['1726']=["topic_00000000000004B1.html","VitNX_MessageBox(String, String, VitNX_MessageBoxIcon) Constructor",""];

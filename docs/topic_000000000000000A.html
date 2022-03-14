@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>NumericalTextConverter.ConvertBack Method</title>
+	<title>Processes.IsAdministratorYourApp Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">NumericalTextConverter.ConvertBack Method</h1>
+		<h1 class="title">Processes.IsAdministratorYourApp Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data</a>
+<a href="topic_0000000000000000.html">VitNX.Functions.AppsAndProcesses</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Converts back the value(s).</summary-info>
+        <summary-info>Whether your application has administrator rights.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] ConvertBack(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>value</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a>[] <i>targetTypes</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>parameter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> <i>culture</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsAdministratorYourApp()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,73 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="value" class="parameterList">
-	<dt>
-		<span class="parameter">
-			value
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
-	</dd>
-</dl>
-<p>
-	The value. 
-</p>
-<dl paramName="targetTypes" class="parameterList">
-	<dt>
-		<span class="parameter">
-			targetTypes
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a>[] 
-	</dd>
-</dl>
-<p>
-	The target types. 
-</p>
-<dl paramName="parameter" class="parameterList">
-	<dt>
-		<span class="parameter">
-			parameter
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
-	</dd>
-</dl>
-<p>
-	The parameter. 
-</p>
-<dl paramName="culture" class="parameterList">
-	<dt>
-		<span class="parameter">
-			culture
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> 
-	</dd>
-</dl>
-<p>
-	The culture. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 		<p>
-		An array of object. 
+		A bool. 
 	</p>
 	
-
-	<h4 class="subHeading">
-		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.imultivalueconverter.convertback">IMultiValueConverter.ConvertBack</a>
-<br />
 
 
 
@@ -291,10 +232,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public object[] ConvertBack(
-     object value, Type[] targetTypes, object parameter, CultureInfo culture)
+public static bool IsAdministratorYourApp()
  {
-     throw new NotSupportedException();
+     return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
  }
 					</pre>			
 				</div>
@@ -357,11 +297,11 @@ public object[] ConvertBack(
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000008.html">NumericalTextConverter Class</a><br />
+			<a href="topic_0000000000000001.html">Processes Class</a><br />
 
 
 
-<a href="topic_0000000000000007.html">VitNX.Functions.Common.Data Namespace</a><br />
+<a href="topic_0000000000000000.html">VitNX.Functions.AppsAndProcesses Namespace</a><br />
 
 
 			

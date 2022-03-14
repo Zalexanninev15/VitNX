@@ -1,1 +1,1 @@
-search_result['1899']=["topic_0000000000000513_attached_props--.html","FontAwesome4 Attached Properties",""];
+search_result['1899']=["topic_0000000000000511.html","VitNX2_ProgressBarRoundedType2.Animate Method","Starts the animation of filling the progress bar"];

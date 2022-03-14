@@ -1,1 +1,1 @@
-search_result['1998']=["topic_0000000000000862_vars--.html","NotificationForm Fields",""];
+search_result['1998']=["topic_0000000000000856.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];

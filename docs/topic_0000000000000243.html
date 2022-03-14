@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>reserved3 Field</title>
+	<title>XFORM Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">reserved3 Field</h1>
+		<h1 class="title">XFORM Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32</a>
+<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> reserved3</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct XFORM</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,11 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
 
 
 
@@ -170,6 +165,171 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000248.html">eDx</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000249.html">eDy</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000244.html">eM11</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000245.html">eM12</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000246.html">eM21</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000247.html">eM22</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -228,7 +388,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public int reserved3;
+[StructLayout(LayoutKind.Sequential)]
+ public struct XFORM
+ {
+     public float eM11;
+     public float eM12;
+     public float eM21;
+     public float eM22;
+     public float eDx;
+     public float eDy;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -282,6 +451,7 @@ public int reserved3;
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -290,14 +460,10 @@ public int reserved3;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000238.html">PAINTSTRUCT Structure</a><br />
+	<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
-
-<a href="topic_000000000000010C.html">VitNX.Functions.Windows.Win32 Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					
@@ -316,3 +482,4 @@ public int reserved3;
     </div>
   </body>
 </html>
+

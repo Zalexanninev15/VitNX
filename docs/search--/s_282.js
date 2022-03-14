@@ -1,1 +1,1 @@
-search_result['282']=["topic_00000000000000AE_vars--.html","Installed Fields",""];
+search_result['282']=["topic_00000000000000AE.html","DataFromSites.GetGeo Method","Gets the geolocation of PC."];

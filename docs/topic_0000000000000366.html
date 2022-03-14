@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Button.OnPaint Method</title>
+	<title>VitNX_Button.OnGotFocus Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Button.OnPaint Method</h1>
+		<h1 class="title">VitNX_Button.OnGotFocus Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls</a>
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.buttonbase.onpaint">OnPaint</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.gotfocus">GotFocus</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnGotFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -159,11 +159,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -241,103 +241,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs e)
-        {
-            var g = e.Graphics;
-            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
-            var textColor = Colors.LightText;
-            var borderColor = Colors.GreySelection;
-            var fillColor = _isDefault ? Colors.VitNXBlueBackground : Colors.LightBackground;
-            if (Enabled)
-            {
-                if (ButtonStyle == VitNX_ButtonStyle.Normal)
-                {
-                    if (Focused &amp;&amp; TabStop) { borderColor = Colors.BlueHighlight; }
-                    switch (ButtonState)
-                    {
-                        case VitNX_ControlState.Hover:
-                            fillColor = _isDefault ? Colors.BlueBackground : Colors.LighterBackground;
-                            break;
- 
-                 case VitNX_ControlState.Pressed:
-                            fillColor = _isDefault ? Colors.VitNXBackground : Colors.VitNXBackground;
-                            break;
-                    }
-                }
-                else if (ButtonStyle == VitNX_ButtonStyle.Flat)
-                {
-                    switch (ButtonState)
-                    {
-                        case VitNX_ControlState.Normal:
-                            fillColor = Colors.GreyBackground;
-                            break;
- 
-                 case VitNX_ControlState.Hover:
-                            fillColor = Colors.MediumBackground;
-                            break;
- 
-                 case VitNX_ControlState.Pressed:
-                            fillColor = Colors.VitNXBackground;
-                            break;
-                    }
-                }
-            }
-            else
-            {
-                textColor = Colors.DisabledText;
-                fillColor = Colors.VitNXGreySelection;
-            }
-            using (var b = new SolidBrush(fillColor)) { g.FillRectangle(b, rect); }
-            if (ButtonStyle == VitNX_ButtonStyle.Normal)
-            {
-                using (var p = new Pen(borderColor, 1))
-                {
-                    var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
-                    g.DrawRectangle(p, modRect);
-                }
-            }
-            var textOffsetX = 0;
-            var textOffsetY = 0;
-            if (Image != null)
-            {
-                var stringSize = g.MeasureString(Text, Font, rect.Size);
-                var x = (ClientSize.Width / 2) - (Image.Size.Width / 2);
-                var y = (ClientSize.Height / 2) - (Image.Size.Height / 2);
-                switch (TextImageRelation)
-                {
-                    case TextImageRelation.ImageAboveText:
-                        textOffsetY = (Image.Size.Height / 2) + (ImagePadding / 2);
-                        y = y - ((int)(stringSize.Height / 2) + (ImagePadding / 2));
-                        break;
- 
-             case TextImageRelation.TextAboveImage:
-                        textOffsetY = ((Image.Size.Height / 2) + (ImagePadding / 2)) * -1;
-                        y = y + ((int)(stringSize.Height / 2) + (ImagePadding / 2));
-                        break;
- 
-             case TextImageRelation.ImageBeforeText:
-                        textOffsetX = Image.Size.Width + (ImagePadding * 2);
-                        x = ImagePadding;
-                        break;
- 
-             case TextImageRelation.TextBeforeImage:
-                        x = x + (int)stringSize.Width;
-                        break;
-                }
-                g.DrawImageUnscaled(Image, x, y);
-            }
-            using (var b = new SolidBrush(textColor))
-            {
-                var modRect = new Rectangle(rect.Left + textOffsetX + Padding.Left, rect.Top + textOffsetY + Padding.Top, rect.Width - Padding.Horizontal, rect.Height - Padding.Vertical);
-                var stringFormat = new StringFormat
-                {
-                    LineAlignment = StringAlignment.Center,
-                    Alignment = StringAlignment.Center,
-                    Trimming = StringTrimming.EllipsisCharacter
-                };
-                g.DrawString(Text, Font, b, modRect, stringFormat);
-            }
-        }
+protected override void OnGotFocus(EventArgs e)
+ { base.OnGotFocus(e); Invalidate(); }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -399,11 +304,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000359.html">VitNX_Button Class</a><br />
+			<a href="topic_000000000000035E.html">VitNX_Button Class</a><br />
 
 
 
-<a href="topic_0000000000000356.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Controls Namespace</a><br />
+<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-c['826']=[['827',"Dispose(bool) Method","topic_0000000000000344.html",0],['828',"Dispose() Method","topic_0000000000000343.html",0]];
+c['826']=[['827',"ObservableListModified\u003cT\u003e Constructor","topic_000000000000034E.html",0]];

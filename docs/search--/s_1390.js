@@ -1,1 +1,1 @@
-search_result['1390']=["topic_00000000000003DC_props--.html","VitNX_ScrollBase Properties",""];
+search_result['1390']=["topic_00000000000003D3_methods--.html","VitNX_ScrollBar Methods",""];

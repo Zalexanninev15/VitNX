@@ -1,1 +1,1 @@
-search_result['62']=["topic_000000000000002A.html","EncryptAndDecrypt.SHA1_Encrypt Method","Encrypt text by SHA1."];
+search_result['62']=["topic_0000000000000025.html","Text.DateAsShortTime Method","Converts the date to short time."];

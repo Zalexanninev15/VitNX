@@ -1,1 +1,1 @@
-search_result['1375']=["topic_00000000000003D1.html","VitNX_ScrollBar.OnResize Method","Raises the Resize event."];
+search_result['1375']=["topic_00000000000003C9_methods--.html","VitNX_RadioButton Methods",""];

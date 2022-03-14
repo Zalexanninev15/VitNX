@@ -1,1 +1,1 @@
-c['1098']=[['1099',"DockPanelState Constructor","topic_000000000000043F.html",0]];
+c['1098']=[['1099',"VitNX_DockContent Constructor","topic_0000000000000451.html",0],['1100',"Methods","topic_000000000000044F_methods--.html",1],['1103',"Events","topic_000000000000044F_events--.html",1]];

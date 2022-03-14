@@ -1,1 +1,1 @@
-search_result['46']=["topic_000000000000001F.html","Text.ListRemoveStringsFromList Method","Lists the remove strings from list."];
+search_result['46']=["topic_000000000000001A.html","NumericalTextConverter.Convert Method","Converts the value(s)."];

@@ -1,1 +1,1 @@
-search_result['1781']=["topic_00000000000004D8_methods--.html","VitNX_ProgressBarRounded Methods",""];
+search_result['1781']=["topic_00000000000004D8.html","DockResizeFilter Class",""];

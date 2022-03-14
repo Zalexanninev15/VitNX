@@ -1,1 +1,1 @@
-search_result['43']=["topic_000000000000001C.html","Text.ContainsSpaces Method","Contains the spaces."];
+search_result['43']=["topic_0000000000000019_methods--.html","NumericalTextConverter Methods",""];

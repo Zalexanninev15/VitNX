@@ -1,1 +1,1 @@
-search_result['1142']=["topic_0000000000000341.html","ItemsAdded Event",""];
+search_result['1142']=["topic_0000000000000341.html","Text Class","The tools for work with console UI."];

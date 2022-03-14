@@ -1,4 +1,4 @@
-﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+﻿using VitNX.UI.ControlsV1.Controls;
 
 namespace Example
 {
@@ -36,21 +36,21 @@ namespace Example
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogControls));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlTreeView = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel();
-            this.treeTest = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_TreeView();
-            this.pnlListView = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel();
-            this.lstTest = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView();
-            this.pnlMessageBox = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel();
+            this.pnlTreeView = new VitNX.UI.ControlsV1.Controls.VitNX_SectionPanel();
+            this.treeTest = new VitNX.UI.ControlsV1.Controls.VitNX_TreeView();
+            this.pnlListView = new VitNX.UI.ControlsV1.Controls.VitNX_SectionPanel();
+            this.lstTest = new VitNX.UI.ControlsV1.Controls.VitNX_ListView();
+            this.pnlMessageBox = new VitNX.UI.ControlsV1.Controls.VitNX_SectionPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.VitNX_GroupBox1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_GroupBox();
-            this.VitNX_RadioButton4 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_RadioButton();
-            this.VitNX_CheckBox3 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_CheckBox();
+            this.VitNX_GroupBox1 = new VitNX.UI.ControlsV1.Controls.VitNX_GroupBox();
+            this.VitNX_RadioButton4 = new VitNX.UI.ControlsV1.Controls.VitNX_RadioButton();
+            this.VitNX_CheckBox3 = new VitNX.UI.ControlsV1.Controls.VitNX_CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.VitNX_ComboBox1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ComboBox();
-            this.VitNX_Title4 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title();
+            this.VitNX_ComboBox1 = new VitNX.UI.ControlsV1.Controls.VitNX_ComboBox();
+            this.VitNX_Title4 = new VitNX.UI.ControlsV1.Controls.VitNX_Title();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.VitNX_NumericUpDown1 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_NumericUpDown();
-            this.VitNX_Title5 = new VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Title();
+            this.VitNX_NumericUpDown1 = new VitNX.UI.ControlsV1.Controls.VitNX_NumericUpDown();
+            this.VitNX_Title5 = new VitNX.UI.ControlsV1.Controls.VitNX_Title();
             this.panel5 = new System.Windows.Forms.Panel();
             this.VitNX_RadioButton3 = new VitNX_RadioButton();
             this.VitNX_RadioButton2 = new VitNX_RadioButton();
@@ -468,17 +468,17 @@ namespace Example
 
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TableLayoutPanel tblMain;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel pnlTreeView;
+        private VitNX.UI.ControlsV1.Controls.VitNX_SectionPanel pnlTreeView;
         private VitNX_TreeView treeTest;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel pnlListView;
+        private VitNX.UI.ControlsV1.Controls.VitNX_SectionPanel pnlListView;
         private VitNX_ListView lstTest;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_SectionPanel pnlMessageBox;
+        private VitNX.UI.ControlsV1.Controls.VitNX_SectionPanel pnlMessageBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button btnDialog;
+        private VitNX.UI.ControlsV1.Controls.VitNX_Button btnDialog;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_Button btnMessageBox;
+        private VitNX.UI.ControlsV1.Controls.VitNX_Button btnMessageBox;
         private VitNX_CheckBox VitNX_CheckBox2;
         private VitNX_CheckBox VitNX_CheckBox1;
         private System.Windows.Forms.Panel panel5;

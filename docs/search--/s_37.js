@@ -1,1 +1,1 @@
-search_result['37']=["topic_0000000000000016.html","Text.DateAsMonth Method","Converts the date to month."];
+search_result['37']=["topic_0000000000000016.html","CShap.ConvertDWordColorToRGB Method","Converts the DWord color to RGB."];

@@ -1,4 +1,4 @@
-﻿using VitNX.UI.ControlsV1.BasedOnDarkUI.Controls;
+﻿using VitNX.UI.ControlsV1.Controls;
 
 namespace Example
 {
@@ -16,9 +16,7 @@ namespace Example
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
@@ -48,7 +46,7 @@ namespace Example
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lstConsole);
-            this.DefaultDockArea = VitNX.UI.ControlsV1.BasedOnDarkUI.Docking.VitNX_DockArea.Bottom;
+            this.DefaultDockArea = VitNX.UI.ControlsV1.Docking.VitNX_DockArea.Bottom;
             this.DockText = "Console";
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = global::Example.Icons.Console;
@@ -61,6 +59,6 @@ namespace Example
 
         #endregion
 
-        private VitNX.UI.ControlsV1.BasedOnDarkUI.Controls.VitNX_ListView lstConsole;
+        private VitNX.UI.ControlsV1.Controls.VitNX_ListView lstConsole;
     }
 }

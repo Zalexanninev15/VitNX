@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>ControlScrollFilter.PreFilterMessage Method</title>
+	<title>VitNX_ToolStripRenderer.OnRenderToolStripBorder Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">ControlScrollFilter.PreFilterMessage Method</h1>
+		<h1 class="title">VitNX_ToolStripRenderer.OnRenderToolStripBorder Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004C9.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32</a>
+<a href="topic_00000000000004BE.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Filters out a message before it is dispatched.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripborder">RenderToolStripBorder</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PreFilterMessage(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderToolStripBorder(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,33 +152,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="m" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			m
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	The message to be dispatched. You cannot modify this message. 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> that contains the event data. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control. 
-	</p>
-	
-
-	<h4 class="subHeading">
-		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a>
-<br />
 
 
 
@@ -252,22 +241,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public bool PreFilterMessage(ref Message m)
- {
-     switch (m.Msg)
-     {
-         case (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEWHEEL:
-         case (int)Functions.Windows.Win32.Enums.WINDOW_MESSAGE.MOUSEHWHEEL:
-             var hControlUnderMouse = Functions.Windows.Win32.Import.WindowFromPoint(new Point((int)m.LParam));
-             if (hControlUnderMouse == m.HWnd) { return false; }
-             Functions.Windows.Win32.Import.SendMessage(hControlUnderMouse,
-                 (uint)m.Msg,
-                 m.WParam,
-                 m.LParam);
-             return true;
-     }
-     return false;
- }
+protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+        {
+            if (e.ToolStrip.GetType() != typeof(ToolStrip))
+                base.OnRenderToolStripBorder(e);
+        }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -329,11 +307,11 @@ public bool PreFilterMessage(ref Message m)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004CA.html">ControlScrollFilter Class</a><br />
+			<a href="topic_00000000000004C8.html">VitNX_ToolStripRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000004C9.html">VitNX.UI.ControlsV1.BasedOnDarkUI.Win32 Namespace</a><br />
+<a href="topic_00000000000004BE.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			

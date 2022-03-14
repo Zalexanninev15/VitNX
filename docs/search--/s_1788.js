@@ -1,1 +1,1 @@
-search_result['1788']=["topic_00000000000004DC.html","VitNX_ProgressBarDisplayMode Enumeration",""];
+search_result['1788']=["topic_00000000000004DA.html","DockResizeFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

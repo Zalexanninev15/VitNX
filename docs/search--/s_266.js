@@ -1,1 +1,1 @@
-search_result['266']=["topic_00000000000000A3.html","Processes.GetList Method","Gets the list of all processes."];
+search_result['266']=["topic_00000000000000A3.html","IniSettings32.Initialize Method","Initializing the configuration INI file."];
