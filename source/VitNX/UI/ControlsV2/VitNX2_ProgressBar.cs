@@ -3,16 +3,18 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
+using static VitNX.UI.ControlsV2.Helper;
+
 namespace VitNX.UI.ControlsV2
 {
     public class VitNX2_ProgressBar : ProgressBar
     {
-        [Description("Font of the text on ProgressBar"), Category("Additional Options")]
+        [Description("Font of the text on ProgressBar"), Category("Appearance")]
         public Font TextFont { get; set; } = new Font(FontFamily.GenericSerif, 11, FontStyle.Bold);
 
         private SolidBrush _textColourBrush = (SolidBrush)Brushes.Black;
 
-        [Category("Additional Options")]
+        [Category("Appearance")]
         public Color TextColor
         {
             get { return _textColourBrush.Color; }
@@ -25,7 +27,7 @@ namespace VitNX.UI.ControlsV2
 
         private SolidBrush _progressColourBrush = (SolidBrush)Brushes.DodgerBlue;
 
-        [Category("Additional Options"),
+        [Category("Appearance"),
             Browsable(true),
             EditorBrowsable(EditorBrowsableState.Always)]
         public Color ProgressColor
@@ -40,7 +42,7 @@ namespace VitNX.UI.ControlsV2
 
         private VitNX2_ProgressBarDisplayMode _visualMode = VitNX2_ProgressBarDisplayMode.CurrProgress;
 
-        [Category("Additional Options"), Browsable(true)]
+        [Category("Appearance"), Browsable(true)]
         public VitNX2_ProgressBarDisplayMode VisualMode
         {
             get { return _visualMode; }
@@ -54,7 +56,7 @@ namespace VitNX.UI.ControlsV2
         private string _text = string.Empty;
 
         [Description("If it's empty, % will be shown"),
-            Category("Additional Options"),
+            Category("Appearance"),
             Browsable(true),
             EditorBrowsable(EditorBrowsableState.Always)]
         public string CustomText

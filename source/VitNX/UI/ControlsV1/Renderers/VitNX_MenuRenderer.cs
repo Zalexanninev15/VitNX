@@ -33,7 +33,8 @@ namespace VitNX.UI.ControlsV1.Renderers
         protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            var rect = new Rectangle(0, 0, e.ToolStrip.Width - 1,
+            var rect = new Rectangle(0, 0,
+                e.ToolStrip.Width - 1,
                 e.ToolStrip.Height - 1);
             using (var p = new Pen(Colors.LightBorder))
                 g.DrawRectangle(p, rect);
@@ -44,8 +45,8 @@ namespace VitNX.UI.ControlsV1.Renderers
             var g = e.Graphics;
             var rect = new Rectangle(e.ImageRectangle.Left - 2,
                 e.ImageRectangle.Top - 2,
-                                         e.ImageRectangle.Width + 4,
-                                         e.ImageRectangle.Height + 4);
+                e.ImageRectangle.Width + 4,
+                e.ImageRectangle.Height + 4);
             using (var b = new SolidBrush(Colors.LightBorder))
                 g.FillRectangle(b, rect);
             using (var p = new Pen(Colors.BlueHighlight))
@@ -61,7 +62,8 @@ namespace VitNX.UI.ControlsV1.Renderers
                 e.Item.Image == null)
             {
                 g.DrawImageUnscaled(MenuIcons.tick,
-                    new Point(e.ImageRectangle.Left, e.ImageRectangle.Top));
+                    new Point(e.ImageRectangle.Left,
+                    e.ImageRectangle.Top));
             }
         }
 

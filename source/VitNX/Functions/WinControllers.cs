@@ -677,6 +677,7 @@ namespace VitNX.Functions.WinControllers
         }
     }
 
+#pragma warning disable CS1591
     /// <summary>
     /// Work with monitor.
     /// </summary>
@@ -706,11 +707,11 @@ namespace VitNX.Functions.WinControllers
             public LUID adapterId;
             public uint id;
             public uint modeInfoIdx;
-            private Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
-            private Enums.DISPLAYCONFIG_ROTATION rotation;
-            private Enums.DISPLAYCONFIG_SCALING scaling;
+            private DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
+            private DISPLAYCONFIG_ROTATION rotation;
+            private DISPLAYCONFIG_SCALING scaling;
             private DISPLAYCONFIG_RATIONAL refreshRate;
-            private Enums.DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
+            private DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
             public bool targetAvailable;
             public uint statusFlags;
         }
@@ -746,7 +747,7 @@ namespace VitNX.Functions.WinControllers
             public DISPLAYCONFIG_2DREGION activeSize;
             public DISPLAYCONFIG_2DREGION totalSize;
             public uint videoStandard;
-            public Enums.DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
+            public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -767,7 +768,7 @@ namespace VitNX.Functions.WinControllers
         {
             public uint width;
             public uint height;
-            public Enums.DISPLAYCONFIG_PIXELFORMAT pixelFormat;
+            public DISPLAYCONFIG_PIXELFORMAT pixelFormat;
             public POINTL position;
         }
 
@@ -784,7 +785,7 @@ namespace VitNX.Functions.WinControllers
         [StructLayout(LayoutKind.Sequential)]
         public struct DISPLAYCONFIG_MODE_INFO
         {
-            public Enums.DISPLAYCONFIG_MODE_INFO_TYPE infoType;
+            public DISPLAYCONFIG_MODE_INFO_TYPE infoType;
             public uint id;
             public LUID adapterId;
             public DISPLAYCONFIG_MODE_INFO_UNION modeInfo;
@@ -799,26 +800,29 @@ namespace VitNX.Functions.WinControllers
         [StructLayout(LayoutKind.Sequential)]
         public struct DISPLAYCONFIG_DEVICE_INFO_HEADER
         {
-            public Enums.DISPLAYCONFIG_DEVICE_INFO_TYPE type;
+            public DISPLAYCONFIG_DEVICE_INFO_TYPE type;
             public uint size;
             public LUID adapterId;
             public uint id;
         }
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Unicode)]
         public struct DISPLAYCONFIG_TARGET_DEVICE_NAME
         {
             public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
             public DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS flags;
-            public Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
+            public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
             public ushort edidManufactureId;
             public ushort edidProductCodeId;
             public uint connectorInstance;
 
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 64)]
             public string monitorFriendlyDeviceName;
 
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 128)]
             public string monitorDevicePath;
         }
 
@@ -832,7 +836,7 @@ namespace VitNX.Functions.WinControllers
                     size = (uint)Marshal.SizeOf(typeof (DISPLAYCONFIG_TARGET_DEVICE_NAME)),
                     adapterId = adapterId,
                     id = targetId,
-                    type = Enums.DISPLAYCONFIG_DEVICE_INFO_TYPE.
+                    type = DISPLAYCONFIG_DEVICE_INFO_TYPE.
                     DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_NAME
                 }
             };
@@ -845,7 +849,7 @@ namespace VitNX.Functions.WinControllers
         private static IEnumerable<string> GetAllMonitorsFriendlyNames()
         {
             uint pathCount, modeCount;
-            var error = Import.GetDisplayConfigBufferSizes(Enums.QUERY_DEVICE_CONFIG_FLAGS.
+            var error = Import.GetDisplayConfigBufferSizes(QUERY_DEVICE_CONFIG_FLAGS.
                 QDC_ONLY_ACTIVE_PATHS,
                 out pathCount,
                 out modeCount);
@@ -853,7 +857,7 @@ namespace VitNX.Functions.WinControllers
                 throw new Win32Exception(error);
             var displayPaths = new DISPLAYCONFIG_PATH_INFO[pathCount];
             var displayModes = new DISPLAYCONFIG_MODE_INFO[modeCount];
-            error = Import.QueryDisplayConfig(Enums.QUERY_DEVICE_CONFIG_FLAGS.
+            error = Import.QueryDisplayConfig(QUERY_DEVICE_CONFIG_FLAGS.
                 QDC_ONLY_ACTIVE_PATHS,
                 ref pathCount,
                 displayPaths,
@@ -863,11 +867,12 @@ namespace VitNX.Functions.WinControllers
             if (error != ERROR_SUCCESS)
                 throw new Win32Exception(error);
             for (var i = 0; i < modeCount; i++)
-                if (displayModes[i].infoType == Enums.DISPLAYCONFIG_MODE_INFO_TYPE.
+                if (displayModes[i].infoType == DISPLAYCONFIG_MODE_INFO_TYPE.
                     DISPLAYCONFIG_MODE_INFO_TYPE_TARGET)
                     yield return MonitorFriendlyName(displayModes[i].adapterId,
                         displayModes[i].id);
         }
+#pragma warning restore CS1591
 
         /// <summary>
         /// Friendly name of monitor(s).

@@ -25,7 +25,8 @@ namespace VitNX.UI.ControlsV1.Extensions
             Color oldColor,
             Color newColor)
         {
-            var newBitmap = new Bitmap(bitmap.Width, bitmap.Height);
+            var newBitmap = new Bitmap(bitmap.Width,
+                bitmap.Height);
             for (int i = 0; i < bitmap.Width; i++)
             {
                 for (int j = 0; j < bitmap.Height; j++)

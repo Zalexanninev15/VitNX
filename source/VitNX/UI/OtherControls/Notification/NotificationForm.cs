@@ -251,20 +251,24 @@ namespace VitNX.UI.OtherControls
             {
                 Timer timer = new Timer();
                 timer.Tag = (manager.InvertAdding && Location.Y != Height + 5)
-                    || (!manager.InvertAdding && Location.Y != Monitor.WorkingArea().Height - Height - 5) ? Height - 1 : 0;
+                    || (!manager.InvertAdding &&
+                    Location.Y != Monitor.WorkingArea().Height - Height - 5)
+                    ? Height - 1 : 0;
                 timer.Interval = 1;
                 timer.Tick += ((se, evu) =>
                 {
                     if ((int)timer.Tag > 0)
                     {
-                        Location = new Point(Location.X, Location.Y - (manager.InvertAdding ? 6 : -6));
+                        Location = new Point(Location.X,
+                            Location.Y - (manager.InvertAdding ? 6 : -6));
                         timer.Tag = (int)timer.Tag - 6;
                     }
                     else
                         timer.Stop();
                 });
                 if ((int)timer.Tag != 0)
-                    Location = new Point(Location.X, Location.Y - (manager.InvertAdding ? 6 : -6));
+                    Location = new Point(Location.X,
+                        Location.Y - (manager.InvertAdding ? 6 : -6));
                 timer.Start();
             }
         }
