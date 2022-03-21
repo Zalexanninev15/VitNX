@@ -1,0 +1,1 @@
+c['1145']=[['1146',"GetContents Method","topic_0000000000000473.html",0],['1147',"OnCreateControl Method","topic_0000000000000474.html",0],['1148',"OnLayout Method","topic_0000000000000476.html",0],['1149',"OnPaint Method","topic_0000000000000478.html",0],['1150',"OnResize Method","topic_0000000000000475.html",0],['1151',"Redraw Method","topic_0000000000000477.html",0]];

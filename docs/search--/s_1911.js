@@ -1,1 +1,1 @@
-search_result['1911']=["topic_0000000000000514_methods--.html","VitNX2_TextBox Methods",""];
+search_result['1911']=["topic_0000000000000526_methods--.html","VitNX2_MessageBoxType2 Methods",""];

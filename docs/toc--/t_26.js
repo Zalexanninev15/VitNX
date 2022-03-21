@@ -1,1 +1,1 @@
-c['26']=[['27',"FindAppPath Method","topic_0000000000000011.html",0],['28',"GetList Method","topic_000000000000000F.html",0],['29',"GetPath Method","topic_0000000000000010.html",0]];
+c['26']=[['27',"Computer Method","topic_00000000000000A0.html",0],['28',"Monitor Method","topic_00000000000000A1.html",0]];

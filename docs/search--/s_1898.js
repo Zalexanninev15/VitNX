@@ -1,1 +1,1 @@
-search_result['1898']=["topic_0000000000000510.html","VitNX2_ProgressBarRoundedType2.OnSizeChanged Method","Raises the SizeChanged event."];
+search_result['1898']=["topic_0000000000000521.html","VitNX2_MessageBoxType1_Form(String, String) Constructor",""];

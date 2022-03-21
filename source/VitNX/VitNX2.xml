@@ -511,7 +511,7 @@ Decrypts the text.</summary>
       <returns>
 A string.</returns>
       <param name="input">
-</param>
+The text to be decrypted.</param>
     </member>
     <member name="M:VitNX.Functions.Data.EncrypterAndDecrypter.Encrypt(System.String)">
       <summary>
@@ -5031,6 +5031,20 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="e">
 </param>
     </member>
+    <member name="T:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode.NoText">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode.Percentage">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode.CurrProgress">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode.CustomText">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode.TextAndPercentage">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.Helper.VitNX2_ProgressBarDisplayMode.TextAndCurrProgress">
+    </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_Button">
     </member>
     <member name="M:VitNX.UI.ControlsV2.VitNX2_Button.#ctor">
@@ -5043,117 +5057,153 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX.UI.ControlsV2.VitNX2_MessageBox">
+    <member name="T:VitNX.UI.ControlsV2.CheckBox_Custom">
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.String)">
-      <param name="text">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.String,System.String)">
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-      <param name="buttons">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-      <param name="buttons">
-</param>
-      <param name="icon">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-      <param name="buttons">
-</param>
-      <param name="icon">
-</param>
-      <param name="defaultButton">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.Windows.Forms.IWin32Window,System.String)">
-      <param name="owner">
-</param>
-      <param name="text">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String)">
-      <param name="owner">
-</param>
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
-      <param name="owner">
-</param>
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-      <param name="buttons">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
-      <param name="owner">
-</param>
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-      <param name="buttons">
-</param>
-      <param name="icon">
-</param>
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
-      <param name="owner">
-</param>
-      <param name="text">
-</param>
-      <param name="caption">
-</param>
-      <param name="buttons">
-</param>
-      <param name="icon">
-</param>
-      <param name="defaultButton">
-</param>
-    </member>
-    <member name="T:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.squaredWindowOnWin11">
-    </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnTextChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String)">
+    <member name="E:VitNX.UI.ControlsV2.CheckBox_Custom.CheckedChanged">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnClick(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnResize(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnMouseEnter(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnMouseLeave(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.#ctor">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.CheckBox_Custom.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.CheckBox_Custom.CheckedChangedEventHandler">
+      <param name="sender">
+</param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.CheckBox_Custom._Options">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.CheckBox_Custom._Options.Style1">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.CheckBox_Custom._Options.Style2">
+    </member>
+    <member name="N:VitNX.UI.ControlsV2.UiKit">
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.UiKit.FlatColors">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.FlatColors.Flat">
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.UiKit.FormSkin">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.FormSkin.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.FormSkin.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.FormSkin.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.FormSkin.OnCreateControl">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.FormSkin.#ctor">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.FormSkin.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.FormSkin.TextLight">
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.UiKit.Helpers">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.Helpers.RoundRec(System.Drawing.Rectangle,System.Int32)">
+      <param name="Rectangle">
+</param>
+      <param name="Curve">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.Helpers.RoundRect(System.Single,System.Single,System.Single,System.Single,System.Double,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <param name="x">
+</param>
+      <param name="y">
+</param>
+      <param name="w">
+</param>
+      <param name="h">
+</param>
+      <param name="r">
+</param>
+      <param name="TL">
+</param>
+      <param name="TR">
+</param>
+      <param name="BR">
+</param>
+      <param name="BL">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.Helpers.DrawArrow(System.Int32,System.Int32,System.Boolean)">
+      <param name="x">
+</param>
+      <param name="y">
+</param>
+      <param name="flip">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.UiKit.Helpers.GetColors(System.Windows.Forms.Control)">
+      <param name="control">
+</param>
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.Helpers.FlatColor">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.Helpers.NearSF">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.Helpers.CenterSF">
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.UiKit.MouseState">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.MouseState.None">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.MouseState.Over">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.MouseState.Down">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.UiKit.MouseState.Block">
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.String)">
       <param name="text">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String)">
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.String,System.String)">
       <param name="text">
 </param>
       <param name="caption">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
       <param name="text">
 </param>
       <param name="caption">
@@ -5161,7 +5211,7 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="buttons">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
       <param name="text">
 </param>
       <param name="caption">
@@ -5171,7 +5221,7 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="icon">
 </param>
     </member>
-    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBox_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
       <param name="text">
 </param>
       <param name="caption">
@@ -5181,6 +5231,132 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="icon">
 </param>
       <param name="defaultButton">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.Windows.Forms.IWin32Window,System.String)">
+      <param name="owner">
+</param>
+      <param name="text">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.Windows.Forms.IWin32Window,System.String,System.String)">
+      <param name="owner">
+</param>
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+      <param name="owner">
+</param>
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+      <param name="owner">
+</param>
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+      <param name="icon">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
+      <param name="owner">
+</param>
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+      <param name="icon">
+</param>
+      <param name="defaultButton">
+</param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form">
+    </member>
+    <member name="F:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.squaredWindowOnWin11">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.OnPaint(System.Windows.Forms.PaintEventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.#ctor(System.String)">
+      <param name="text">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.#ctor(System.String,System.String)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+      <param name="icon">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.#ctor(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
+      <param name="text">
+</param>
+      <param name="caption">
+</param>
+      <param name="buttons">
+</param>
+      <param name="icon">
+</param>
+      <param name="defaultButton">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType1_Form.Dispose(System.Boolean)">
+      <summary>
+Clean up any resources being used.</summary>
+      <param name="disposing">
+true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.VitNX2_MessageBoxType2">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType2.#ctor">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_MessageBoxType2.Dispose(System.Boolean)">
+      <summary>
+Disposes resources used by the form.</summary>
+      <param name="disposing">
+true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:VitNX2_RichTextBox">
+    </member>
+    <member name="M:VitNX2_RichTextBox.#ctor">
+    </member>
+    <member name="M:VitNX2_RichTextBox.OnGotFocus(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX2_RichTextBox.OnEnter(System.EventArgs)">
+      <param name="e">
 </param>
     </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_Panel">
@@ -5227,20 +5403,6 @@ true if managed resources should be disposed; otherwise, false.</param>
     </member>
     <member name="M:VitNX.UI.ControlsV2.VitNX2_ProgressBarRoundedType1.Dispose">
     </member>
-    <member name="T:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode.NoText">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode.Percentage">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode.CurrProgress">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode.CustomText">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode.TextAndPercentage">
-    </member>
-    <member name="F:VitNX.UI.ControlsV2.VitNX2_ProgressBarDisplayMode.TextAndCurrProgress">
-    </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_ProgressBarRoundedType2">
     </member>
     <member name="M:VitNX.UI.ControlsV2.VitNX2_ProgressBarRoundedType2.#ctor">
@@ -5252,6 +5414,18 @@ true if managed resources should be disposed; otherwise, false.</param>
     <member name="M:VitNX.UI.ControlsV2.VitNX2_ProgressBarRoundedType2.Animate">
       <summary>
 Starts the animation of filling the progress bar</summary>
+    </member>
+    <member name="T:VitNX.UI.ControlsV2.VitNX2_RichTextBox">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_RichTextBox.#ctor">
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_RichTextBox.OnGotFocus(System.EventArgs)">
+      <param name="e">
+</param>
+    </member>
+    <member name="M:VitNX.UI.ControlsV2.VitNX2_RichTextBox.OnEnter(System.EventArgs)">
+      <param name="e">
+</param>
     </member>
     <member name="T:VitNX.UI.ControlsV2.VitNX2_Tab">
     </member>

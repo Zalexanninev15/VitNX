@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_MessageBox.Show (String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Method</title>
+	<title>VitNX2_Button.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_MessageBox.Show (String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Method</h1>
+		<h1 class="title">VitNX2_Button.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.buttonbase.onpaint">OnPaint</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> Show(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> <i>buttons</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> <i>icon</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxdefaultbutton">MessageBoxDefaultButton</a> <i>defaultButton</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pevent</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,78 +152,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="text" class="parameterList">
+	Parameters</h4><dl paramName="pevent" class="parameterList">
 	<dt>
 		<span class="parameter">
-			text
+			pevent
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="caption" class="parameterList">
-	<dt>
-		<span class="parameter">
-			caption
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="buttons" class="parameterList">
-	<dt>
-		<span class="parameter">
-			buttons
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="icon" class="parameterList">
-	<dt>
-		<span class="parameter">
-			icon
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="defaultButton" class="parameterList">
-	<dt>
-		<span class="parameter">
-			defaultButton
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxdefaultbutton">MessageBoxDefaultButton</a> 
-	</dd>
-</dl>
-<p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
-	
 
 
 
@@ -296,20 +241,41 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static DialogResult Show(string text,
-     string caption,
-     MessageBoxButtons buttons,
-     MessageBoxIcon icon,
-     MessageBoxDefaultButton defaultButton)
+protected override void OnPaint(PaintEventArgs pevent)
  {
-     DialogResult result;
-     using (var msgForm = new VitNX2_MessageBox_Form(text,
-         caption,
-         buttons,
-         icon,
-         defaultButton))
-         result = msgForm.ShowDialog();
-     return result;
+     base.OnPaint(pevent);
+     Rectangle rectSurface = ClientRectangle;
+     Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
+     int smoothSize = 2;
+     if (borderSize &gt; 0)
+         smoothSize = borderSize;
+     if (borderRadius &gt; 2)
+     {
+         using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
+         using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
+         using (Pen penSurface = new Pen(Parent.BackColor, smoothSize))
+         using (Pen penBorder = new Pen(borderColor, borderSize))
+         {
+             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+             Region = new Region(pathSurface);
+             pevent.Graphics.DrawPath(penSurface, pathSurface);
+             if (borderSize &gt;= 1)
+                 pevent.Graphics.DrawPath(penBorder, pathBorder);
+         }
+     }
+     else
+     {
+         pevent.Graphics.SmoothingMode = SmoothingMode.None;
+         Region = new Region(rectSurface);
+         if (borderSize &gt;= 1)
+         {
+             using (Pen penBorder = new Pen(borderColor, borderSize))
+             {
+                 penBorder.Alignment = PenAlignment.Inset;
+                 pevent.Graphics.DrawRectangle(penBorder, 0, 0, Width - 1, Height - 1);
+             }
+         }
+     }
  }
 					</pre>			
 				</div>
@@ -372,7 +338,7 @@ public static DialogResult Show(string text,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004E4.html">VitNX2_MessageBox Class</a><br />
+			<a href="topic_00000000000004E7.html">VitNX2_Button Class</a><br />
 
 
 

@@ -1,1 +1,0 @@
-c['19']=[['20',"SYSTEM_POWER_CONTROL Enumeration","topic_000000000000009B.html",0],['21',"Methods","topic_000000000000009A_methods--.html",1]];

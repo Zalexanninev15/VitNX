@@ -1,1 +1,1 @@
-search_result['1820']=["topic_00000000000004E8.html","VitNX2_MessageBox.Show (String, String, MessageBoxButtons, MessageBoxIcon) Method",""];
+search_result['1820']=["topic_00000000000004F1.html","CheckBox_Custom.OnMouseUp Method","Raises the MouseUp event."];

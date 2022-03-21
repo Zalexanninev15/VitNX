@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Properties Constructor</title>
+	<title>VitNX2_MessageBoxType1_Form(String) Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Properties Constructor</h1>
+		<h1 class="title">VitNX2_MessageBoxType1_Form(String) Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000051D.html">VitNX.UI.OtherControls</a>
+<a href="topic_00000000000004DB.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public Properties(&nbsp;<br />   <a target="_top" href="topic_000000000000052B.html" onclick="this.target='';return true;">Type</a> <i>type</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX2_MessageBoxType1_Form(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="type" class="parameterList">
+	Parameters</h4><dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			type
+			text
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_000000000000052B.html" onclick="this.target='';return true;">Type</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
@@ -240,15 +240,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Properties(Type type)
+public VitNX2_MessageBoxType1_Form(string text)
  {
-     Size = Default.Size;
-     Location = Default.Location;
-     ForeColor = Default.ForeColor;
-     BackColor = Default.BackColor;
-     BorderColor = Default.BorderColor;
-     ShowBorder = Default.ShowBorder;
-     Type = type;
+     InitializeComponent();
+     InitializeItems();
+     PrimaryColor = primaryColor;
+     labelMessage.Text = text;
+     labelCaption.Text = &quot;&quot;;
+     SetFormSize();
  }
 					</pre>			
 				</div>
@@ -311,11 +310,11 @@ public Properties(Type type)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000051F.html">Properties Class</a><br />
+			<a href="topic_000000000000051D.html">VitNX2_MessageBoxType1_Form Class</a><br />
 
 
 
-<a href="topic_000000000000051D.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000004DB.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			

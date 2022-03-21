@@ -1,1 +1,1 @@
-search_result['1923']=["topic_000000000000051A_props--.html","VitNX2_ToogleButton Properties",""];
+search_result['1923']=["topic_000000000000052A.html","VitNX2_RichTextBox Constructor",""];

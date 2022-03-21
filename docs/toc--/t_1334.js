@@ -1,1 +1,1 @@
-c['1334']=[['1335',"GetIcon Method","topic_0000000000000525_overloads--.html",1],['1338',"GetImage Method","topic_0000000000000527_overloads--.html",1],['1342',"Initialize Method","topic_0000000000000522.html",0],['1343',"ParseType Method","topic_000000000000052A.html",0],['1344',"SetDefaultProperties Method","topic_0000000000000524.html",0],['1345',"SetDownloadLink Method","topic_0000000000000523.html",0]];
+c['1334']=[['1335',"OnEnter Method","topic_0000000000000544.html",0],['1336',"OnGotFocus Method","topic_0000000000000543.html",0]];

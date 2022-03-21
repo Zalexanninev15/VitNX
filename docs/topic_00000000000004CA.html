@@ -249,7 +249,10 @@ protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
             {
                 using (var p = new Pen(Colors.GreyBackground))
                 {
-                    var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - 1, e.AffectedBounds.Height - 1);
+                    var rect = new Rectangle(e.AffectedBounds.Left,
+                 e.AffectedBounds.Top,
+                        e.AffectedBounds.Width - 1,
+                        e.AffectedBounds.Height - 1);
                     g.DrawRectangle(p, rect);
                 }
             }

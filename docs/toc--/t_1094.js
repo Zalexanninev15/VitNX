@@ -1,1 +1,1 @@
-c['1094']=[['1095',"DockRegionState() Constructor","topic_0000000000000446.html",0],['1096',"DockRegionState(VitNX_DockArea) Constructor","topic_0000000000000447.html",0],['1097',"DockRegionState(VitNX_DockArea, Size) Constructor","topic_0000000000000448.html",0]];
+c['1094']=[['1095',"DockGroupState Constructor","topic_000000000000043E.html",0]];

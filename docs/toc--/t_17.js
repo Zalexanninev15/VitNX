@@ -1,0 +1,1 @@
+c['17']=[['18',"DeleteKey Method","topic_00000000000000A6.html",0],['19',"DeleteSection Method","topic_00000000000000A7.html",0],['20',"Initialize Method","topic_00000000000000A3.html",0],['21',"KeyExists Method","topic_00000000000000A8.html",0],['22',"Read Method","topic_00000000000000A4.html",0],['23',"Write Method","topic_00000000000000A5.html",0]];
