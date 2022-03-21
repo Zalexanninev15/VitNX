@@ -29,7 +29,10 @@ namespace VitNX.UI.ControlsV1.Controls
 
         public VitNX_ComboBox() : base()
         {
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.ResizeRedraw |
+                ControlStyles.UserPaint,
+                true);
             DrawMode = DrawMode.OwnerDrawVariable;
             base.FlatStyle = FlatStyle.Flat;
             base.DropDownStyle = ComboBoxStyle.DropDownList;

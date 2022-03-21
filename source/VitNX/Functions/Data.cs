@@ -508,7 +508,7 @@ namespace VitNX.Functions.Data
         /// <summary>
         /// Decrypts the text.
         /// </summary>
-        /// <param name="TextToBeDecrypted">The text to be decrypted.</param>
+        /// <param name="input">The text to be decrypted.</param>
         /// <returns>A string.</returns>
         public static string Decrypt(string input)
         {

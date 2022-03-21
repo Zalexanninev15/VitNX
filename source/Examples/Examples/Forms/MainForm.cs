@@ -203,7 +203,8 @@ namespace Example
                         }
                 }
             }
-            else { VitNX_MessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example"); }
+            else
+                VitNX_MessageBox.ShowError("You need to enter from 0 to 100!", "VitNX UI - Example");
         }
 
         private void SerializeDockPanel(string path)

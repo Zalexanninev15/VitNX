@@ -24,5 +24,15 @@ namespace VitNX.UI.ControlsV2
             VitNX2_Button temp = sender as VitNX2_Button;
             temp.BorderColor = Color.FromArgb(45, 50, 65);
         }
+
+        public enum VitNX2_ProgressBarDisplayMode
+        {
+            NoText,
+            Percentage,
+            CurrProgress,
+            CustomText,
+            TextAndPercentage,
+            TextAndCurrProgress
+        }
     }
 }
