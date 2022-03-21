@@ -34,7 +34,10 @@ namespace VitNX.UI.ControlsV1.Renderers
             {
                 using (var p = new Pen(Colors.GreyBackground))
                 {
-                    var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - 1, e.AffectedBounds.Height - 1);
+                    var rect = new Rectangle(e.AffectedBounds.Left,
+                        e.AffectedBounds.Top,
+                        e.AffectedBounds.Width - 1,
+                        e.AffectedBounds.Height - 1);
                     g.DrawRectangle(p, rect);
                 }
             }
@@ -49,7 +52,9 @@ namespace VitNX.UI.ControlsV1.Renderers
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
             var g = e.Graphics;
-            var rect = new Rectangle(0, 1, e.Item.Width, e.Item.Height - 2);
+            var rect = new Rectangle(0, 1,
+                e.Item.Width,
+                e.Item.Height - 2);
             if (e.Item.Selected || e.Item.Pressed)
             {
                 using (var b = new SolidBrush(Colors.GreySelection))
@@ -65,7 +70,10 @@ namespace VitNX.UI.ControlsV1.Renderers
                 }
                 if (castItem.Checked && castItem.Selected)
                 {
-                    var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+                    var modRect = new Rectangle(rect.Left,
+                        rect.Top,
+                        rect.Width - 1,
+                        rect.Height - 1);
                     using (var p = new Pen(Colors.GreyHighlight))
                         g.DrawRectangle(p, modRect);
                 }
@@ -90,7 +98,8 @@ namespace VitNX.UI.ControlsV1.Renderers
                 return;
             var g = e.Graphics;
             using (var img = MenuIcons.grip.SetColor(Colors.LightBorder))
-                g.DrawImageUnscaled(img, new Point(e.AffectedBounds.Left, e.AffectedBounds.Top));
+                g.DrawImageUnscaled(img, new Point(e.AffectedBounds.Left,
+                    e.AffectedBounds.Top));
         }
 
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)

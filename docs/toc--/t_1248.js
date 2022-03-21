@@ -1,1 +1,1 @@
-c['1248']=[['1249',"VitNX2_Button Constructor","topic_00000000000004E1.html",0],['1250',"Methods","topic_00000000000004E0_methods--.html",1]];
+c['1248']=[['1249',"CheckedChangedEventHandler Delegate","topic_00000000000004F6.html",0],['1250',"_Options Enumeration","topic_00000000000004F7.html",0],['1251',"CheckBox_Custom Constructor","topic_00000000000004F4.html",0],['1252',"Methods","topic_00000000000004EB_methods--.html",1],['1261',"Events","topic_00000000000004EB_events--.html",1]];

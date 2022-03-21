@@ -1,1 +1,1 @@
-search_result['1868']=["topic_00000000000004FD.html","VitNX2_PictureBox.OnResize Method","Raises the Resize event."];
+search_result['1868']=["topic_0000000000000513.html","VitNX2_MessageBoxType1.Show (String) Method",""];

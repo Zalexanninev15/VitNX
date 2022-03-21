@@ -1,1 +1,1 @@
-search_result['1906']=["topic_0000000000000513.html","VitNX2_Tab.WndProc Method","This member overrides WndProc."];
+search_result['1906']=["topic_0000000000000525.html","VitNX2_MessageBoxType1_Form.Dispose Method","Clean up any resources being used."];

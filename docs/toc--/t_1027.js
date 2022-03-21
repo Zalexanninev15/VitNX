@@ -1,1 +1,1 @@
-c['1027']=[['1028',"OnPaintBackground Method","topic_000000000000040B.html",0]];
+c['1027']=[['1028',"OnPaint Method","topic_0000000000000407.html",0],['1029',"OnPaintBackground Method","topic_0000000000000408.html",0]];

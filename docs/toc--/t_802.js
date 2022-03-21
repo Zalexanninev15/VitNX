@@ -1,1 +1,1 @@
-c['802']=[['803',"Dispose Method","topic_000000000000033D.html",0],['804',"NotUsed Method","topic_000000000000033C.html",0],['805',"Report Method","topic_0000000000000339.html",0],['806',"SetColor Method","topic_000000000000033A.html",0],['807',"SetText Method","topic_000000000000033B.html",0]];
+c['802']=[['803',"Writeln Method","topic_0000000000000342.html",0]];

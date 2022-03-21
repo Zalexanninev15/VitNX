@@ -5,7 +5,8 @@ namespace VitNX.UI.ControlsV1.Extensions
 {
     internal static class IEnumerableExtensions
     {
-        internal static bool IsLast<T>(this IEnumerable<T> items, T item)
+        internal static bool IsLast<T>(this IEnumerable<T> items,
+            T item)
         {
             var last = items.LastOrDefault();
             if (last == null)
@@ -13,7 +14,8 @@ namespace VitNX.UI.ControlsV1.Extensions
             return item.Equals(last);
         }
 
-        internal static bool IsFirst<T>(this IEnumerable<T> items, T item)
+        internal static bool IsFirst<T>(this IEnumerable<T> items,
+            T item)
         {
             var first = items.FirstOrDefault();
             if (first == null)
@@ -21,7 +23,8 @@ namespace VitNX.UI.ControlsV1.Extensions
             return item.Equals(first);
         }
 
-        internal static bool IsFirstOrLast<T>(this IEnumerable<T> items, T item)
+        internal static bool IsFirstOrLast<T>(this IEnumerable<T> items,
+            T item)
         {
             return items.IsFirst(item) || items.IsLast(item);
         }

@@ -1,1 +1,1 @@
-c['1310']=[['1311',"OnLoad Method","topic_0000000000000518.html",0],['1312',"OnPaint Method","topic_0000000000000519.html",0],['1313',"OnResize Method","topic_0000000000000517.html",0]];
+c['1310']=[['1311',"VitNX2_PictureBox Constructor","topic_0000000000000532.html",0],['1312',"Methods","topic_0000000000000531_methods--.html",1]];

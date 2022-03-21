@@ -1,1 +1,0 @@
-c['166']=[['167',"GetFirmwareType Method","topic_000000000000008A.html",0]];

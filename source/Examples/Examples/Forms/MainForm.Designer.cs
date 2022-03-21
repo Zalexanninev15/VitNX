@@ -48,8 +48,6 @@
             this.SetTaskBarProgressBar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.FolderSelectDialogItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProject = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProperties = new System.Windows.Forms.ToolStripMenuItem();
@@ -178,9 +176,7 @@
             this.toolStripSeparator3,
             this.SetTaskBarProgressBar,
             this.toolStripTextBox1,
-            this.toolStripComboBox1,
-            this.toolStripSeparator4,
-            this.FolderSelectDialogItem});
+            this.toolStripComboBox1});
             this.mnuTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuTools.Name = "mnuTools";
             this.mnuTools.Size = new System.Drawing.Size(46, 20);
@@ -274,19 +270,6 @@
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             this.toolStripComboBox1.Text = "Type";
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(246, 6);
-            // 
-            // FolderSelectDialogItem
-            // 
-            this.FolderSelectDialogItem.Name = "FolderSelectDialogItem";
-            this.FolderSelectDialogItem.Size = new System.Drawing.Size(249, 22);
-            // 
             // mnuWindow
             // 
             this.mnuWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -356,7 +339,7 @@
             this.mnuAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuAbout.Image = global::Example.Icons.StatusAnnotations_Information_16xLG_color;
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(180, 22);
+            this.mnuAbout.Size = new System.Drawing.Size(140, 22);
             this.mnuAbout.Text = "&About VitNX";
             // 
             // toolMain
@@ -510,8 +493,6 @@
         private System.Windows.Forms.ToolStripMenuItem SetTaskBarProgressBar;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem FolderSelectDialogItem;
     }
 }
 

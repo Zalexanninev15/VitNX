@@ -1,1 +1,1 @@
-search_result['1998']=["topic_0000000000000856.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];
+search_result['1998']=["topic_000000000000054A.html","VitNX2_TextBox.OnResize Method",""];

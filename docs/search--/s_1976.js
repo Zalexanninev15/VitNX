@@ -1,1 +1,1 @@
-search_result['1976']=["topic_0000000000000846_attached_props--.html","Manager Attached Properties",""];
+search_result['1976']=["topic_0000000000000541_methods--.html","VitNX2_RichTextBox Methods",""];

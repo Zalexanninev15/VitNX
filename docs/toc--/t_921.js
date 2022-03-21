@@ -1,1 +1,1 @@
-c['921']=[['922',"VitNX_ListItem() Constructor","topic_00000000000003AE.html",0],['923',"VitNX_ListItem(string) Constructor","topic_00000000000003AF.html",0]];
+c['921']=[['922',"OnFontChanged Method","topic_00000000000003AA.html",0],['923',"OnSizeChanged Method","topic_00000000000003AB.html",0],['924',"OnTextChanged Method","topic_00000000000003A9.html",0]];

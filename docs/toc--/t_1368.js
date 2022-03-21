@@ -1,0 +1,1 @@
+c['1368']=[['1369',"DrawArrow Method","topic_0000000000000508.html",0],['1370',"GetColors Method","topic_0000000000000509.html",0],['1371',"RoundRec Method","topic_0000000000000506.html",0],['1372',"RoundRect Method","topic_0000000000000507.html",0]];

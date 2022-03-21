@@ -1,1 +1,1 @@
-search_result['1934']=["topic_000000000000051F.html","Properties Class",""];
+search_result['1934']=["topic_0000000000000530.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];

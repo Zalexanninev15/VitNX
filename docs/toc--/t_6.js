@@ -1,1 +1,1 @@
-c['6']=[['7',"CleanMemory Method","topic_0000000000000014.html",0],['8',"ConvertColorToConsoleColor Method","topic_0000000000000017.html",0],['9',"ConvertDWordColorToRGB Method","topic_0000000000000016.html",0],['10',"PlaySound Method","topic_0000000000000015.html",0]];
+c['6']=[['7',"OnEnter Method","topic_000000000000052C.html",0],['8',"OnGotFocus Method","topic_000000000000052B.html",0]];

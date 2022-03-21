@@ -2,6 +2,8 @@
 using VitNX.UI.ControlsV1.Docking;
 using VitNX.UI.ControlsV2;
 
+using static VitNX.UI.ControlsV2.Helper;
+
 namespace Example
 {
     partial class DockProject

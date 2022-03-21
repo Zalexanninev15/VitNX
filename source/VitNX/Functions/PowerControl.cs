@@ -16,6 +16,7 @@ namespace VitNX.Functions
         /// </summary>
         public enum SYSTEM_POWER_CONTROL
         {
+#pragma warning disable CS1591
             SYSTEM_LOGOFF,
             SYSTEM_SHUTDOWN,
             SYSTEM_REBOOT,
