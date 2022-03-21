@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['1247',"VitNX.UI.ControlsV2 Namespace","topic_00000000000004DB.html"],['1315',"VitNX2_ProgressBar Class","topic_0000000000000535.html"],['1317',"Methods","topic_0000000000000535_methods--.html"],['1318',"Dispose Method","topic_0000000000000538_overloads--.html"]];

@@ -1,0 +1,1 @@
+c['1359']=[['1360',"OnCreateControl Method","topic_0000000000000501.html",0],['1361',"OnMouseDown Method","topic_00000000000004FE.html",0],['1362',"OnMouseMove Method","topic_0000000000000500.html",0],['1363',"OnMouseUp Method","topic_00000000000004FF.html",0],['1364',"OnPaint Method","topic_0000000000000503.html",0]];

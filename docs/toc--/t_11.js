@@ -1,1 +1,1 @@
-c['11']=[['12',"Methods","topic_00000000000000A2_methods--.html",1]];
+c['11']=[['12',"CleanMemory Method","topic_0000000000000014.html",0],['13',"ConvertColorToConsoleColor Method","topic_0000000000000017.html",0],['14',"ConvertDWordColorToRGB Method","topic_0000000000000016.html",0],['15',"PlaySound Method","topic_0000000000000015.html",0]];

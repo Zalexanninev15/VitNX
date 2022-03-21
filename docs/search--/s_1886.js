@@ -1,1 +1,1 @@
-search_result['1886']=["topic_0000000000000504.html","VitNX2_ProgressBarRoundedType1 Constructor",""];
+search_result['1886']=["topic_000000000000051C.html","VitNX2_MessageBoxType1.Show (IWin32Window, String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Method",""];

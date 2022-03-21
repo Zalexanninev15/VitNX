@@ -1,1 +1,1 @@
-c['4']=[['5',"CShap Class","topic_0000000000000013.html",1],['11',"IniSettings32 Class","topic_00000000000000A2.html",1],['19',"PowerControl Class","topic_000000000000009A.html",1]];
+c['4']=[['5',"VitNX2_RichTextBox Class","topic_0000000000000529.html",1]];

@@ -1,1 +1,1 @@
-c['24']=[['25',"Installed Class","topic_000000000000000E.html",1],['30',"Processes Class","topic_0000000000000001.html",1]];
+c['24']=[['25',"SYSTEM_POWER_CONTROL Enumeration","topic_000000000000009B.html",0],['26',"Methods","topic_000000000000009A_methods--.html",1]];

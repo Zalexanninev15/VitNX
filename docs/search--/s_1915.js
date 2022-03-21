@@ -1,1 +1,1 @@
-search_result['1915']=["topic_0000000000000516.html","VitNX2_TextBox Constructor",""];
+search_result['1915']=["topic_0000000000000528.html","VitNX2_MessageBoxType2.Dispose Method","Disposes resources used by the form."];

@@ -1,1 +1,1 @@
-c['826']=[['827',"ObservableListModified\u003cT\u003e Constructor","topic_000000000000034E.html",0]];
+c['826']=[['827',"Remove(T) Method","topic_000000000000034B.html",0]];

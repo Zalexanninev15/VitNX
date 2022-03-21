@@ -1,1 +1,1 @@
-c['195']=[['196',"DownloadFileWithSupportOfResume Method","topic_00000000000000AC.html",0],['197',"DownloadString Method","topic_00000000000000AB.html",0],['198',"GetGeo Method","topic_00000000000000AE.html",0],['199',"GetHeaderAndContent Method","topic_00000000000000AD.html",0],['200',"IsValidTelegramBotToken Method","topic_00000000000000AF.html",0]];
+c['195']=[['196',"Methods","topic_00000000000000B3_methods--.html",1]];

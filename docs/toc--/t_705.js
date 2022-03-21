@@ -1,1 +1,1 @@
-c['705']=[['706',"adapterId Field","topic_00000000000002EB.html",0],['707',"id Field","topic_00000000000002EC.html",0],['708',"modeInfoIdx Field","topic_00000000000002ED.html",0],['709',"statusFlags Field","topic_00000000000002EE.html",0]];
+c['705']=[['706',"flags Field","topic_00000000000002FB.html",0],['707',"sourceInfo Field","topic_00000000000002F9.html",0],['708',"targetInfo Field","topic_00000000000002FA.html",0]];
