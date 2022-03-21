@@ -4,45 +4,31 @@ namespace VitNX.UI.ControlsV1.Docking
 {
     internal class DockDropArea
     {
-        #region Property Region
-
         internal VitNX_DockPanel DockPanel { get; private set; }
-
         internal Rectangle DropArea { get; private set; }
-
         internal Rectangle HighlightArea { get; private set; }
-
         internal VitNX_DockRegion DockRegion { get; private set; }
-
         internal VitNX_DockGroup DockGroup { get; private set; }
-
         internal DockInsertType InsertType { get; private set; }
 
-        #endregion Property Region
-
-        #region Constructor Region
-
-        internal DockDropArea(VitNX_DockPanel dockPanel, VitNX_DockRegion region)
+        internal DockDropArea(VitNX_DockPanel dockPanel,
+            VitNX_DockRegion region)
         {
             DockPanel = dockPanel;
             DockRegion = region;
             InsertType = DockInsertType.None;
-
             BuildAreas();
         }
 
-        internal DockDropArea(VitNX_DockPanel dockPanel, VitNX_DockGroup group, DockInsertType insertType)
+        internal DockDropArea(VitNX_DockPanel dockPanel,
+            VitNX_DockGroup group,
+            DockInsertType insertType)
         {
             DockPanel = dockPanel;
             DockGroup = group;
             InsertType = insertType;
-
             BuildAreas();
         }
-
-        #endregion Constructor Region
-
-        #region Method Region
 
         internal void BuildAreas()
         {
@@ -57,7 +43,6 @@ namespace VitNX.UI.ControlsV1.Docking
             switch (DockRegion.DockArea)
             {
                 case VitNX_DockArea.Left:
-
                     var leftRect = new Rectangle
                     {
                         X = DockPanel.PointToScreen(Point.Empty).X,
@@ -65,14 +50,11 @@ namespace VitNX.UI.ControlsV1.Docking
                         Width = 50,
                         Height = DockPanel.Height
                     };
-
                     DropArea = leftRect;
                     HighlightArea = leftRect;
-
                     break;
 
                 case VitNX_DockArea.Right:
-
                     var rightRect = new Rectangle
                     {
                         X = DockPanel.PointToScreen(Point.Empty).X + DockPanel.Width - 50,
@@ -83,25 +65,18 @@ namespace VitNX.UI.ControlsV1.Docking
 
                     DropArea = rightRect;
                     HighlightArea = rightRect;
-
                     break;
 
                 case VitNX_DockArea.Bottom:
-
                     var x = DockPanel.PointToScreen(Point.Empty).X;
                     var width = DockPanel.Width;
-
                     if (DockPanel.Regions[VitNX_DockArea.Left].Visible)
                     {
                         x += DockPanel.Regions[VitNX_DockArea.Left].Width;
                         width -= DockPanel.Regions[VitNX_DockArea.Left].Width;
                     }
-
                     if (DockPanel.Regions[VitNX_DockArea.Right].Visible)
-                    {
                         width -= DockPanel.Regions[VitNX_DockArea.Right].Width;
-                    }
-
                     var bottomRect = new Rectangle
                     {
                         X = x,
@@ -109,10 +84,8 @@ namespace VitNX.UI.ControlsV1.Docking
                         Width = width,
                         Height = 50
                     };
-
                     DropArea = bottomRect;
                     HighlightArea = bottomRect;
-
                     break;
             }
         }
@@ -129,16 +102,13 @@ namespace VitNX.UI.ControlsV1.Docking
                         Width = DockGroup.Width,
                         Height = DockGroup.Height
                     };
-
                     DropArea = dropRect;
                     HighlightArea = dropRect;
-
                     break;
 
                 case DockInsertType.Before:
                     var beforeDropWidth = DockGroup.Width;
                     var beforeDropHeight = DockGroup.Height;
-
                     switch (DockGroup.DockArea)
                     {
                         case VitNX_DockArea.Left:
@@ -150,7 +120,6 @@ namespace VitNX.UI.ControlsV1.Docking
                             beforeDropWidth = DockGroup.Width / 4;
                             break;
                     }
-
                     var beforeDropRect = new Rectangle
                     {
                         X = DockGroup.PointToScreen(Point.Empty).X,
@@ -158,10 +127,8 @@ namespace VitNX.UI.ControlsV1.Docking
                         Width = beforeDropWidth,
                         Height = beforeDropHeight
                     };
-
                     DropArea = beforeDropRect;
                     HighlightArea = beforeDropRect;
-
                     break;
 
                 case DockInsertType.After:
@@ -169,7 +136,6 @@ namespace VitNX.UI.ControlsV1.Docking
                     var afterDropY = DockGroup.PointToScreen(Point.Empty).Y;
                     var afterDropWidth = DockGroup.Width;
                     var afterDropHeight = DockGroup.Height;
-
                     switch (DockGroup.DockArea)
                     {
                         case VitNX_DockArea.Left:
@@ -183,7 +149,6 @@ namespace VitNX.UI.ControlsV1.Docking
                             afterDropX = DockGroup.PointToScreen(Point.Empty).X + DockGroup.Width - afterDropWidth;
                             break;
                     }
-
                     var afterDropRect = new Rectangle
                     {
                         X = afterDropX,
@@ -191,14 +156,10 @@ namespace VitNX.UI.ControlsV1.Docking
                         Width = afterDropWidth,
                         Height = afterDropHeight
                     };
-
                     DropArea = afterDropRect;
                     HighlightArea = afterDropRect;
-
                     break;
             }
         }
-
-        #endregion Method Region
     }
 }

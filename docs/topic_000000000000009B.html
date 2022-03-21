@@ -256,13 +256,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum SYSTEM_POWER_CONTROL
- {
-     SYSTEM_LOGOFF,
-     SYSTEM_SHUTDOWN,
-     SYSTEM_REBOOT,
-     SYSTEM_LOCK
- }
+        public enum SYSTEM_POWER_CONTROL
+         {
+ #pragma warning disable CS1591
+             SYSTEM_LOGOFF,
+             SYSTEM_SHUTDOWN,
+             SYSTEM_REBOOT,
+             SYSTEM_LOCK
+         }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

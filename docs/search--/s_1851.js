@@ -1,1 +1,1 @@
-search_result['1851']=["topic_00000000000004F6_overloads--.html","VitNX2_MessageBox_Form Constructor",""];
+search_result['1851']=["topic_0000000000000505_methods--.html","Helpers Methods",""];

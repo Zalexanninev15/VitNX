@@ -246,8 +246,8 @@ protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
             var g = e.Graphics;
             var rect = new Rectangle(e.ImageRectangle.Left - 2,
                 e.ImageRectangle.Top - 2,
-                                         e.ImageRectangle.Width + 4,
-                                  e.ImageRectangle.Height + 4);
+         e.ImageRectangle.Width + 4,
+                e.ImageRectangle.Height + 4);
             using (var b = new SolidBrush(Colors.LightBorder))
                 g.FillRectangle(b, rect);
             using (var p = new Pen(Colors.BlueHighlight))
@@ -263,7 +263,8 @@ protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
                 e.Item.Image == null)
             {
                 g.DrawImageUnscaled(MenuIcons.tick,
-                    new Point(e.ImageRectangle.Left, e.ImageRectangle.Top));
+                    new Point(e.ImageRectangle.Left,
+             e.ImageRectangle.Top));
             }
         }
 					</pre>			

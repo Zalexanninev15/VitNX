@@ -1,1 +1,1 @@
-search_result['1908']=["topic_0000000000000514.html","VitNX2_TextBox Class",""];
+search_result['1908']=["topic_0000000000000526.html","VitNX2_MessageBoxType2 Class",""];

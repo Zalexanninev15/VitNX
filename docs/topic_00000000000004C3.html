@@ -244,7 +244,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            var rect = new Rectangle(0, 0, e.ToolStrip.Width - 1,
+            var rect = new Rectangle(0, 0,
+                e.ToolStrip.Width - 1,
                 e.ToolStrip.Height - 1);
             using (var p = new Pen(Colors.LightBorder))
                 g.DrawRectangle(p, rect);

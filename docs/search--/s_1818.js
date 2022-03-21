@@ -1,1 +1,1 @@
-search_result['1818']=["topic_00000000000004E7.html","VitNX2_MessageBox.Show (String, String, MessageBoxButtons) Method",""];
+search_result['1818']=["topic_00000000000004EF.html","CheckBox_Custom.OnResize Method","Raises the Resize event."];

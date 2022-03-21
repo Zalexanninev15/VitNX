@@ -1,1 +1,0 @@
-c['718']=[['719',"Denominator Field","topic_00000000000002F7.html",0],['720',"Numerator Field","topic_00000000000002F6.html",0]];

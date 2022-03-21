@@ -1,1 +1,1 @@
-search_result['1878']=["topic_0000000000000502.html","VitNX2_ProgressBar.Dispose Method",""];
+search_result['1878']=["topic_0000000000000518.html","VitNX2_MessageBoxType1.Show (IWin32Window, String) Method",""];

@@ -1,1 +1,1 @@
-search_result['1917']=["topic_0000000000000518.html","VitNX2_TextBox.OnLoad Method","Raises the Load event."];
+search_result['1917']=["topic_0000000000000529.html","VitNX2_RichTextBox Class",""];

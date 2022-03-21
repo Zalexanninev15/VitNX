@@ -1,1 +1,1 @@
-c['1025']=[['1026',"VitNX_StatusStrip Constructor","topic_000000000000040A.html",0],['1027',"Methods","topic_0000000000000409_methods--.html",1]];
+c['1025']=[['1026',"VitNX_Separator Constructor","topic_0000000000000406.html",0],['1027',"Methods","topic_0000000000000405_methods--.html",1]];

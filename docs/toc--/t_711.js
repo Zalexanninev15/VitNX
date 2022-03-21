@@ -1,1 +1,0 @@
-c['711']=[['712',"adapterId Field","topic_00000000000002F0.html",0],['713',"id Field","topic_00000000000002F1.html",0],['714',"modeInfoIdx Field","topic_00000000000002F2.html",0],['715',"statusFlags Field","topic_00000000000002F4.html",0],['716',"targetAvailable Field","topic_00000000000002F3.html",0]];

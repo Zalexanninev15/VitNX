@@ -1,1 +1,1 @@
-c['147']=[['148',"GetHostName Method","topic_0000000000000090.html",0],['149',"GetLocalIPv4 Method","topic_0000000000000092.html",0],['150',"GetLocalIPv6 Method","topic_0000000000000091.html",0],['151',"GetMacAddress Method","topic_0000000000000094.html",0],['152',"GetPublicIP Method","topic_0000000000000093.html",0],['153',"IsHaveInternet Method","topic_0000000000000099.html",0]];
+c['147']=[['148',"Methods","topic_0000000000000078_methods--.html",1]];
