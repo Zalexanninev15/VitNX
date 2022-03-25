@@ -512,7 +512,8 @@ namespace VitNX.Functions.WinControllers
             public WindowWrapper(IntPtr handle)
             { _handle = handle; }
 
-            public IntPtr Handle { get { return _handle; } }
+            public IntPtr Handle
+            { get { return _handle; } }
         }
     }
 
@@ -679,6 +680,7 @@ namespace VitNX.Functions.WinControllers
     }
 
 #pragma warning disable CS1591
+
     /// <summary>
     /// Work with monitor.
     /// </summary>
@@ -873,6 +875,7 @@ namespace VitNX.Functions.WinControllers
                     yield return MonitorFriendlyName(displayModes[i].adapterId,
                         displayModes[i].id);
         }
+
 #pragma warning restore CS1591
 
         /// <summary>

@@ -5,7 +5,6 @@ using System.Drawing.Text;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.Windows.Shapes;
 
 using VitNX.Functions.Win32;
 

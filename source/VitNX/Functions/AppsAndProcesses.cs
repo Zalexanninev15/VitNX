@@ -163,7 +163,7 @@ namespace VitNX.Functions.AppsAndProcesses
         /// <summary>
         /// Kills the process.
         /// </summary>
-        /// <param name="processNameWithExe">The process name with exe.</param>
+        /// <param name="processNameWithExe">The process name with .exe.</param>
         public static void Kill(string processNameWithExe)
         {
             var start = new Process
@@ -177,6 +177,23 @@ namespace VitNX.Functions.AppsAndProcesses
                 }
             };
             start.Start();
+        }
+
+        /// <summary>
+        /// Kills the process (C# native).
+        /// </summary>
+        /// <param name="processNameWithExe">The process name with .exe.</param>
+        public static void KillNative(string processNameWithExe)
+        {
+            Process[] runningProcesses = Process.GetProcesses();
+            foreach (Process process in runningProcesses)
+            {
+                foreach (ProcessModule module in process.Modules)
+                {
+                    if (module.FileName.Equals(processNameWithExe))
+                        process.Kill();
+                }
+            }
         }
 
         /// <summary>
@@ -196,7 +213,9 @@ namespace VitNX.Functions.AppsAndProcesses
         public static bool IsOneYourApp(string applicationTitle)
         {
             bool createdNew;
-            Mutex currentApp = new Mutex(true, applicationTitle, out createdNew);
+            Mutex currentApp = new Mutex(true,
+                applicationTitle,
+                out createdNew);
             return createdNew;
         }
 
