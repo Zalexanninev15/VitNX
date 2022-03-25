@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace VitNX.Functions.Data
+namespace VitNX3.Functions.Data
 {
     /// <summary>
     /// Work with text.

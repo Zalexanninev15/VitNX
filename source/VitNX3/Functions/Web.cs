@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 
-namespace VitNX.Functions.Web
+namespace VitNX3.Functions.Web
 {
     /// <summary>
     /// Work with data from sites.
@@ -144,6 +144,7 @@ namespace VitNX.Functions.Web
     public class SendDataToSites
     {
 #pragma warning disable CS1570
+
         /// <summary>
         /// Using POST request to send text data.
         ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");
@@ -205,9 +206,7 @@ namespace VitNX.Functions.Web
             try
             {
                 const string contentType = "application/octet-stream";
-#pragma warning disable SYSLIB0014 // Тип или член устарел
                 var request = WebRequest.Create(url);
-#pragma warning restore SYSLIB0014 // Тип или член устарел
                 request.Method = "POST";
                 var boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x", NumberFormatInfo.InvariantInfo);
                 request.ContentType = "multipart/form-data; boundary=" + boundary;
@@ -275,10 +274,10 @@ namespace VitNX.Functions.Web
     {
         /// <summary>
         /// Activate all security protocols for all network functions to work (HTTPS).
-        /// Example: ServicePointManager.SecurityProtocol = VitNX.Functions.Web.Config.UseProtocols();
+        /// Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();
         /// </summary>
         ///
-        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls13 | 
+        public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls13 |
             SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;

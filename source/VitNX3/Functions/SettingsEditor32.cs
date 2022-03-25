@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Text;
 
-using VitNX.Functions.Win32;
+using VitNX3.Functions.Win32;
 
-namespace VitNX.Functions
+namespace VitNX3.Functions
 {
     /// <summary>
     /// Work with INI config files with Windows System functions.

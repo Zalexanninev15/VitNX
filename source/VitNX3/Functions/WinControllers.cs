@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-using VitNX.Functions.AppsAndProcesses;
-using VitNX.Functions.Win32;
+using VitNX3.Functions.AppsAndProcesses;
+using VitNX3.Functions.Win32;
 
-using static VitNX.Functions.Win32.Enums;
+using static VitNX3.Functions.Win32.Enums;
 
-namespace VitNX.Functions.WinControllers
+namespace VitNX3.Functions.WinControllers
 {
     /// <summary>
     /// Work with progressbar on taskbar.
@@ -263,7 +263,7 @@ namespace VitNX.Functions.WinControllers
         /// Sets the current total sound volume.
         /// </summary>
         /// <param name="level">The level.</param>
-        public void Set(float level)
+        public static void Set(float level)
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
             IMMDevice speakers = null;
@@ -289,7 +289,7 @@ namespace VitNX.Functions.WinControllers
         /// Gets the current total sound volume.
         /// </summary>
         /// <returns>A float.</returns>
-        public float Get()
+        public static float Get()
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
             IMMDevice speakers = null;
@@ -387,6 +387,7 @@ namespace VitNX.Functions.WinControllers
     }
 
 #pragma warning disable CS1591
+
     /// <summary>
     /// Work with monitor.
     /// </summary>
@@ -581,21 +582,20 @@ namespace VitNX.Functions.WinControllers
                     yield return MonitorFriendlyName(displayModes[i].adapterId,
                         displayModes[i].id);
         }
-#pragma warning restore CS1591
+    }
 
+    /// <summary>
+    /// Work with system.
+    /// </summary>
+    public static class WorkWithSystem
+    {
         /// <summary>
-        /// Work with system.
+        /// Installs the INF driver file into the Windows System.
         /// </summary>
-        public static class WorkWithSystem
+        /// <param name="pathToInf">The path to INF driver file.</param>
+        public static void InstallInfDriver(string pathToInf)
         {
-            /// <summary>
-            /// Installs the INF driver file into the Windows System.
-            /// </summary>
-            /// <param name="pathToInf">The path to INF driver file.</param>
-            public static void InstallInfDriver(string pathToInf)
-            {
-                Import.InstallHinfSection(IntPtr.Zero, IntPtr.Zero, pathToInf, 0);
-            }
+            Import.InstallHinfSection(IntPtr.Zero, IntPtr.Zero, pathToInf, 0);
         }
     }
 }
