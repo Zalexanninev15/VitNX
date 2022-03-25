@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 using VitNX3.Functions.Win32;
 
@@ -68,29 +69,17 @@ namespace VitNX3.Functions.WindowAndControls
         /// Applying Windows 11 roundings to a window(s).
         /// </summary>
         /// <param name="Handler">The handler.</param>
-        public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
+        /// <param name="windowWidth">The width of window</param>
+        /// <param name="windowHeight">The height of window</param>
+        public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowWidth, int windowHeight)
         {
             var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
             var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
             Import.DwmSetWindowAttribute(Handler,
                 attribute,
                 new[] { Convert.ToInt32(preference) }, sizeof(uint));
+            return Region.FromHrgn(Import.CreateRoundRectRgn(0, 0, windowWidth, windowHeight, 15, 15));
         }
-
-        //public static async Task WindowNormalStartAnimationAsync(double Opacity)
-        //{
-        //    for (Opacity = 0; Opacity < 1; Opacity += 0.05)
-        //        await Task.Delay(10);
-        //}
-
-        //public static void WindowNormalExitAnimation(double Opacity)
-        //{
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        Thread.Sleep(20);
-        //        Opacity = Opacity - 0.05;
-        //    }
-        //}
     }
 
     public class Controls
