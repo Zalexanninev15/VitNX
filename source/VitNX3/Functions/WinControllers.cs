@@ -263,7 +263,7 @@ namespace VitNX3.Functions.WinControllers
         /// Sets the current total sound volume.
         /// </summary>
         /// <param name="level">The level.</param>
-        public static void Set(float level)
+        public void Set(float level)
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
             IMMDevice speakers = null;
@@ -289,7 +289,7 @@ namespace VitNX3.Functions.WinControllers
         /// Gets the current total sound volume.
         /// </summary>
         /// <returns>A float.</returns>
-        public static float Get()
+        public float Get()
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
             IMMDevice speakers = null;
