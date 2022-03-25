@@ -144,6 +144,7 @@ namespace VitNX.Functions.Web
     public class SendDataToSites
     {
 #pragma warning disable CS1570
+
         /// <summary>
         /// Using POST request to send text data.
         ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");

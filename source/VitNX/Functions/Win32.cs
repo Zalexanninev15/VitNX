@@ -15,7 +15,6 @@ namespace VitNX.Functions.Win32
     /// </summary>
     public class Import
     {
-
         [DllImport("user32.dll")]
         public static extern bool AdjustWindowRectEx(ref RECT lpRect,
             int dwStyle,
