@@ -25,18 +25,10 @@ namespace VitNX.Functions.AppsAndProcesses
             string procList = "All processes:";
             foreach (Process process in Process.GetProcesses())
             {
-                var procSize = "0x0";
-                try
-                {
-                    var counter = new PerformanceCounter("Process", "Working Set - Private", process.ProcessName);
-                    procSize = Convert.ToString(counter.RawValue / 1048576);
-                }
-                catch { }
-                if (procSize != "0x0" && procSize != "0")
-                    procList += $"\n\nName: {process.ProcessName}.exe" +
+                procList += $"\n\nName: {process.ProcessName}.exe" +
                         $"\nID: {process.Id}" +
-                        $"\nUsed memory: {procSize} МБ" +
-                        $"\nTitle & Handle: \"{process.MainWindowTitle}\" & {process.MainWindowHandle}";
+                        $"\nTitle: \"{process.MainWindowTitle}\"" +
+                        $"\nHandle: {process.MainWindowHandle}";
             }
             return procList;
         }
@@ -286,7 +278,7 @@ namespace VitNX.Functions.AppsAndProcesses
                 $"\nVersion: {app["Version"]}" +
                 $"\nAuthor: {app["Vendor"]}" +
                 $"\nInstall date: {app["InstallDate"]}" +
-                $"\nInstall path: {toTextText}");
+                $"\nInstall path: {toTextText}\n");
             }
             return toText;
         }

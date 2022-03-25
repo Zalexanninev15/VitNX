@@ -91,7 +91,7 @@ namespace VitNX3.Functions.FileSystem
         /// <param name="targetFolder">The target folder.</param>
         public static void DeleteForever(string targetFolder)
         {
-            Directory.Delete(targetFolder);
+            Directory.Delete(targetFolder, true);
         }
 
         /// <summary>
@@ -134,12 +134,12 @@ namespace VitNX3.Functions.FileSystem
         }
 
         /// <summary>
-        /// Writes the text to file as UTF-8.
+        /// Writes the text to file as UTF-8 to temp folder.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="targetFile">The target file.</param>
         /// <returns>An array of string (File name and File path).</returns>
-        public static string[] WriteTextAsUTF8(string text,
+        public static string[] WriteTextAsUTF8_ToTemp(string text,
             string targetFile)
         {
             string fileName = NameGenerator(targetFile, "txt");
