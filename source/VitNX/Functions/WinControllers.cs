@@ -266,7 +266,7 @@ namespace VitNX.Functions.WinControllers
         /// Sets the current total sound volume.
         /// </summary>
         /// <param name="level">The level.</param>
-        public void Set(float level)
+        public static void Set(float level)
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
             IMMDevice speakers = null;
@@ -292,7 +292,7 @@ namespace VitNX.Functions.WinControllers
         /// Gets the current total sound volume.
         /// </summary>
         /// <returns>A float.</returns>
-        public float Get()
+        public static float Get()
         {
             IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
             IMMDevice speakers = null;
@@ -398,7 +398,11 @@ namespace VitNX.Functions.WinControllers
             string title)
         {
             var folderBrowserDialog = new FolderBrowserDialog
-            { Description = title, SelectedPath = initialDirectory, ShowNewFolderButton = false };
+            {
+                Description = title,
+                SelectedPath = initialDirectory,
+                ShowNewFolderButton = false
+            };
             var dialogResult = new ShowDialogResult();
             if (folderBrowserDialog.ShowDialog(new WindowWrapper(ownerHandle)) == DialogResult.OK)
             {
@@ -508,10 +512,7 @@ namespace VitNX.Functions.WinControllers
             public WindowWrapper(IntPtr handle)
             { _handle = handle; }
 
-            public IntPtr Handle
-            {
-                get { return _handle; }
-            }
+            public IntPtr Handle { get { return _handle; } }
         }
     }
 
@@ -625,7 +626,7 @@ namespace VitNX.Functions.WinControllers
         public static void KeyDown(Keys vKey)
         {
             Import.keybd_event((byte)vKey, 0,
-                (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
+                (int)KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
         }
 
         /// <summary>
@@ -635,19 +636,19 @@ namespace VitNX.Functions.WinControllers
         public static void KeyUp(Keys vKey)
         {
             Import.keybd_event((byte)vKey, 0,
-                (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY |
-                (int)Enums.KEYEVENTF.KEYEVENTF_KEYUP, 0);
+                (int)KEYEVENTF.KEYEVENTF_EXTENDEDKEY |
+                (int)KEYEVENTF.KEYEVENTF_KEYUP, 0);
         }
 
         /// <summary>
         /// The keyboard events of Windows.
         /// </summary>
         /// <param name="status">The status.</param>
-        public static void WindowsKeyboardEventsAPI(Enums.KEYBOARD_PRESETS status)
+        public static void WindowsKeyboardEventsAPI(KEYBOARD_PRESETS status)
         {
             switch (status)
             {
-                case Enums.KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS:
+                case KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.D);
@@ -655,7 +656,7 @@ namespace VitNX.Functions.WinControllers
                         KeyUp(Keys.D);
                         break;
                     }
-                case Enums.KEYBOARD_PRESETS.HIDE_THIS_WINDOW:
+                case KEYBOARD_PRESETS.HIDE_THIS_WINDOW:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.M);
@@ -663,7 +664,7 @@ namespace VitNX.Functions.WinControllers
                         KeyUp(Keys.M);
                         break;
                     }
-                case Enums.KEYBOARD_PRESETS.SHOW_ALL_WINDOWS:
+                case KEYBOARD_PRESETS.SHOW_ALL_WINDOWS:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.LShiftKey);
