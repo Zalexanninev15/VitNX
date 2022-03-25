@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace VitNX.Functions
+namespace VitNX3.Functions
 {
     /// <summary>
     /// Work with C#.

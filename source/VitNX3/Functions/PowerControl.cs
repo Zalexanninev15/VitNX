@@ -1,7 +1,7 @@
-﻿using VitNX.Functions.AppsAndProcesses;
-using VitNX.Functions.Win32;
+﻿using VitNX3.Functions.AppsAndProcesses;
+using VitNX3.Functions.Win32;
 
-namespace VitNX.Functions
+namespace VitNX3.Functions
 {
     /// <summary>
     /// Work with the power control.

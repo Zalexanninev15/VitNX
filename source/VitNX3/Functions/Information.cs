@@ -11,9 +11,9 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
 
-using VitNX.Functions.Win32;
+using VitNX3.Functions.Win32;
 
-namespace VitNX.Functions.Information
+namespace VitNX3.Functions.Information
 {
     /// <summary>
     /// Work with informations of Windows System.
@@ -559,8 +559,7 @@ namespace VitNX.Functions.Information
             foreach (NetworkInterface adapter in nics)
             {
                 IPInterfaceProperties properties = adapter.GetIPProperties();
-                if (adapter.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || 
-                    adapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                if (adapter.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || adapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
                 {
                     PhysicalAddress address = adapter.GetPhysicalAddress();
                     byte[] bytes = address.GetAddressBytes();

@@ -1,10 +1,10 @@
 ﻿using System;
 
-using VitNX.Functions.Win32;
+using VitNX3.Functions.Win32;
 
-using static VitNX.Functions.Win32.Enums;
+using static VitNX3.Functions.Win32.Enums;
 
-namespace VitNX.Functions.WindowAndControls
+namespace VitNX3.Functions.WindowAndControls
 {
     public class Window
     {
@@ -76,6 +76,21 @@ namespace VitNX.Functions.WindowAndControls
                 attribute,
                 new[] { Convert.ToInt32(preference) }, sizeof(uint));
         }
+
+        //public static async Task WindowNormalStartAnimationAsync(double Opacity)
+        //{
+        //    for (Opacity = 0; Opacity < 1; Opacity += 0.05)
+        //        await Task.Delay(10);
+        //}
+
+        //public static void WindowNormalExitAnimation(double Opacity)
+        //{
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Thread.Sleep(20);
+        //        Opacity = Opacity - 0.05;
+        //    }
+        //}
     }
 
     public class Controls

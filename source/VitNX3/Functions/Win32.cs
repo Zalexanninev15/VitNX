@@ -3,11 +3,11 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
-using VitNX.Functions.WinControllers;
+using VitNX3.Functions.WinControllers;
 
-using static VitNX.Functions.Win32.Enums;
+using static VitNX3.Functions.Win32.Enums;
 
-namespace VitNX.Functions.Win32
+namespace VitNX3.Functions.Win32
 {
     /// <summary>
     /// Import the Windows System functions from native DLL.
@@ -15,7 +15,6 @@ namespace VitNX.Functions.Win32
     /// </summary>
     public class Import
     {
-
         [DllImport("user32.dll")]
         public static extern bool AdjustWindowRectEx(ref RECT lpRect,
             int dwStyle,

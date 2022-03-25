@@ -281,9 +281,6 @@ namespace VitNX.Functions.Web
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;
 
-        // Code for .NET Framework 4.8+
-        // SecurityProtocolType.Tls13
-
         /// <summary>
         /// Activate DefaultGateway of NetworkInterface in IPAddress.
         /// </summary>
