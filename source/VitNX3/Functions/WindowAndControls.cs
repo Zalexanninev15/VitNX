@@ -49,10 +49,10 @@ namespace VitNX3.Functions.WindowAndControls
         public static void ShowAsTopMost(IntPtr Handler)
         {
             Import.SetWindowPos(Handler,
-               new IntPtr((int)WindowPosFlags.HWND_TOPMOST),
+               new IntPtr((int)WINDOW_POS_FLAGS.HWND_TOPMOST),
                0, 0, 0, 0,
-               (int)WindowPosFlags.SWP_NOMOVE |
-               (int)WindowPosFlags.SWP_NOSIZE);
+               (int)WINDOW_POS_FLAGS.SWP_NOMOVE |
+               (int)WINDOW_POS_FLAGS.SWP_NOSIZE);
         }
 
         /// <summary>
@@ -61,8 +61,12 @@ namespace VitNX3.Functions.WindowAndControls
         /// <param name="Handler">The handler.</param>
         public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
         {
-            if (Import.DwmSetWindowAttribute(Handler, 19, new[] { 1 }, 4) != 0)
-                Import.DwmSetWindowAttribute(Handler, 20, new[] { 1 }, 4);
+            if (Import.DwmSetWindowAttribute(Handler,
+                DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
+                new[] { 1 }, 4) != 0)
+                Import.DwmSetWindowAttribute(Handler,
+                    DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE_NOT,
+                    new[] { 1 }, 4);
         }
 
         /// <summary>
@@ -73,52 +77,54 @@ namespace VitNX3.Functions.WindowAndControls
         /// <param name="windowHeight">The height of window</param>
         public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowWidth, int windowHeight)
         {
-            var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
-            var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
             Import.DwmSetWindowAttribute(Handler,
-                attribute,
-                new[] { Convert.ToInt32(preference) }, sizeof(uint));
-            return Region.FromHrgn(Import.CreateRoundRectRgn(0, 0, windowWidth, windowHeight, 15, 15));
+                DWM_GET_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE,
+                new[] { Convert.ToInt32(DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND) },
+                sizeof(uint));
+            return Region.FromHrgn(Import.CreateRoundRectRgn(0, 0,
+                windowWidth,
+                windowHeight,
+                15, 15));
+        }
+    }
+}
+
+public class Controls
+{
+    private static uint SavedVolumeLevel;
+    private static bool VolumeLevelSaved = false;
+
+    /// <summary>
+    /// Enable/disable sound (nasty) when focusing on an item/control..
+    /// </summary>
+    /// <param name="off">If true, off.</param>
+    public static void VolumeOnFocus(bool off = true)
+    {
+        if (off)
+        {
+            Import.WaveOutGetVolume(IntPtr.Zero,
+                out SavedVolumeLevel);
+            VolumeLevelSaved = true;
+            Import.WaveOutSetVolume(IntPtr.Zero, 0);
+        }
+        else
+        {
+            if (VolumeLevelSaved)
+            {
+                Import.WaveOutSetVolume(IntPtr.Zero,
+                    SavedVolumeLevel);
+                VolumeLevelSaved = true;
+            }
         }
     }
 
-    public class Controls
+    /// <summary>
+    /// Sets the native Windows System theme for controls.
+    /// </summary>
+    /// <param name="handle">The handle.</param>
+    /// <param name="themeMode">The theme mode.</param>
+    public static void SetNativeThemeForControls(IntPtr handle, string themeMode = "DarkMode_Explorer")
     {
-        private static uint SavedVolumeLevel;
-        private static bool VolumeLevelSaved = false;
-
-        /// <summary>
-        /// Enable/disable sound (nasty) when focusing on an item/control..
-        /// </summary>
-        /// <param name="off">If true, off.</param>
-        public static void VolumeOnFocus(bool off = true)
-        {
-            if (off)
-            {
-                Import.WaveOutGetVolume(IntPtr.Zero,
-                    out SavedVolumeLevel);
-                VolumeLevelSaved = true;
-                Import.WaveOutSetVolume(IntPtr.Zero, 0);
-            }
-            else
-            {
-                if (VolumeLevelSaved)
-                {
-                    Import.WaveOutSetVolume(IntPtr.Zero,
-                        SavedVolumeLevel);
-                    VolumeLevelSaved = true;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the native Windows System theme for controls.
-        /// </summary>
-        /// <param name="handle">The handle.</param>
-        /// <param name="themeMode">The theme mode.</param>
-        public static void SetNativeThemeForControls(IntPtr handle, string themeMode = "DarkMode_Explorer")
-        {
-            Import.SetWindowTheme(handle, themeMode, null);
-        }
+        Import.SetWindowTheme(handle, themeMode, null);
     }
 }
