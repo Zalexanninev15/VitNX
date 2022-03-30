@@ -1,1 +1,1 @@
-search_result['1807']=["topic_00000000000004E9.html","VitNX2_Button.OnPaint Method","Raises the OnPaint event."];
+search_result['1807']=["topic_00000000000004F0_methods--.html","VitNX2_Button Methods",""];

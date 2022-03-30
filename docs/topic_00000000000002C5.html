@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>E_ROLE Enumeration</title>
+	<title>SHERB_RECYCLE Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">E_ROLE Enumeration</h1>
+		<h1 class="title">SHERB_RECYCLE Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
 
 
 
@@ -134,46 +134,34 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    E_ROLE_enum_count
-	  </td>
-	  <td>
-	    3
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    eCommunications
-	  </td>
-	  <td>
-	    2
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    eConsole
-	  </td>
-	  <td>
-	    0
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    eMultimedia
+	    SHERB_NOCONFIRMATION
 	  </td>
 	  <td>
 	    1
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SHERB_NOPROGRESSUI
+	  </td>
+	  <td>
+	    1
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    SHERB_NOSOUND
+	  </td>
+	  <td>
+	    4
 	  </td>
 	  <td>
 		 
@@ -255,12 +243,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum E_ROLE
+public enum SHERB_RECYCLE : int
  {
-     eConsole,
-     eMultimedia,
-     eCommunications,
-     E_ROLE_enum_count
+     SHERB_NOCONFIRMATION = 0x00000001,
+     SHERB_NOPROGRESSUI = 0x00000001,
+     SHERB_NOSOUND = 0x00000004
  }
 					</pre>			
 				</div>
@@ -283,11 +270,11 @@ public enum E_ROLE
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000018C.html">Enums Class</a><br />
+			<a href="topic_000000000000018F.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			

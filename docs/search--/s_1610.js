@@ -1,1 +1,1 @@
-search_result['1610']=["topic_0000000000000460.html","VitNX_DockGroup.Redraw Method",""];
+search_result['1610']=["topic_0000000000000465.html","VitNX_DockGroup.OnMouseMove Method","Raises the MouseMove event."];

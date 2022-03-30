@@ -1,1 +1,1 @@
-search_result['882']=["topic_000000000000029F.html","DISPLAYCONFIG_DEVICE_INFO_TYPE Enumeration",""];
+search_result['882']=["topic_000000000000028F.html","DISPLAYCONFIG_ROTATION Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['1866']=["topic_0000000000000512_props--.html","VitNX2_MessageBoxType1 Properties",""];
+search_result['1866']=["topic_000000000000051B.html","VitNX2_MessageBoxType1 Class",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FlatColor Field</title>
+	<title>FormSkin.OnCreateControl Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FlatColor Field</h1>
+		<h1 class="title">FormSkin.OnCreateControl Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004FA.html">VitNX.UI.ControlsV2.UiKit</a>
+<a href="topic_0000000000000503.html">VitNX.UI.ControlsV2.UiKit</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> FlatColor</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnCreateControl()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +151,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
-	
 
 
 
@@ -228,7 +224,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Color FlatColor = Color.FromArgb(66, 144, 213);
+protected override void OnCreateControl()
+ {
+     OnCreateControl();
+     ParentForm.FormBorderStyle = FormBorderStyle.None;
+     ParentForm.AllowTransparency = false;
+     ParentForm.TransparencyKey = Color.Fuchsia;
+     ParentForm.FindForm().StartPosition = FormStartPosition.CenterScreen;
+     Dock = DockStyle.Fill;
+     Invalidate();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -290,11 +295,11 @@ public static Color FlatColor = Color.FromArgb(66, 144, 213);
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000505.html">Helpers Class</a><br />
+			<a href="topic_0000000000000506.html">FormSkin Class</a><br />
 
 
 
-<a href="topic_00000000000004FA.html">VitNX.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_0000000000000503.html">VitNX.UI.ControlsV2.UiKit Namespace</a><br />
 
 
 			
@@ -316,3 +321,4 @@ public static Color FlatColor = Color.FromArgb(66, 144, 213);
     </div>
   </body>
 </html>
+

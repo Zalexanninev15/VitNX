@@ -1,1 +1,1 @@
-search_result['1906']=["topic_0000000000000525.html","VitNX2_MessageBoxType1_Form.Dispose Method","Clean up any resources being used."];
+search_result['1906']=["topic_000000000000052C.html","VitNX2_MessageBoxType1_Form(String, String, MessageBoxButtons, MessageBoxIcon) Constructor",""];

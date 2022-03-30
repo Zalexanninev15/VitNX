@@ -1,1 +1,1 @@
-search_result['175']=["topic_0000000000000073.html","Windows.GetWindowsAccentColor Method","Gets the Windows accent color."];
+search_result['175']=["topic_0000000000000073.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];

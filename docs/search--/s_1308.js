@@ -1,1 +1,1 @@
-search_result['1308']=["topic_00000000000003A6.html","VitNX_GroupBox.OnPaint Method",""];
+search_result['1308']=["topic_00000000000003AD_methods--.html","VitNX_GroupBox Methods",""];

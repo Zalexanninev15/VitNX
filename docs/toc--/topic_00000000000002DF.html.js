@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['672',"VitNX.Functions.WinControllers Namespace","topic_00000000000002D0.html"],['676',"Keyboard Class","topic_00000000000002DF.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['676',"VitNX.Functions.WinControllers Namespace","topic_00000000000002D9.html"],['783',"VolumeControl Class","topic_00000000000002DD.html"],['784',"Methods","topic_00000000000002DD_methods--.html"],['785',"Get Method","topic_00000000000002DF.html"]];

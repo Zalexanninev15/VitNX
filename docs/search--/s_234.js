@@ -1,1 +1,1 @@
-search_result['234']=["topic_000000000000008D_methods--.html","Ram Methods",""];
+search_result['234']=["topic_0000000000000090.html","ComPort.GetAllDevices Method","Gets all COM ports (devices)."];

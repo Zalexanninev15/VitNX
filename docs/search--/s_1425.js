@@ -1,1 +1,1 @@
-search_result['1425']=["topic_00000000000003EF.html","VitNX_ScrollBase.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1425']=["topic_00000000000003F4.html","VitNX_ScrollBase.StopDrag Method",""];

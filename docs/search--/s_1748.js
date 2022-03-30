@@ -1,1 +1,1 @@
-search_result['1748']=["topic_00000000000004C6.html","VitNX_MenuRenderer.OnRenderArrow Method","Raises the RenderArrow event."];
+search_result['1748']=["topic_00000000000004CB.html","VitNX_MenuRenderer.OnRenderToolStripBackground Method","Raises the RenderToolStripBackground event."];

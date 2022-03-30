@@ -1,1 +1,1 @@
-search_result['929']=["topic_00000000000002DC_methods--.html","STATask Methods",""];
+search_result['929']=["topic_00000000000002E4.html","GetClipboardText.GetText Method","Gets the text from clipboard."];

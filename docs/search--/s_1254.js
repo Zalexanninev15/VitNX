@@ -1,1 +1,1 @@
-search_result['1254']=["topic_0000000000000381.html","VitNX_ComboBox.OnLostFocus Method","Raises the LostFocus event."];
+search_result['1254']=["topic_0000000000000386_overloads--.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];

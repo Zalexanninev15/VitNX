@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['132',"VitNX.Functions.Information Namespace","topic_0000000000000062.html"],['170',"Motherboard Class","topic_0000000000000089.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['136',"VitNX.Functions.Information Namespace","topic_0000000000000066.html"],['163',"Monitor Class","topic_0000000000000083.html"],['164',"Methods","topic_0000000000000083_methods--.html"],['168',"CaptureWindow Method","topic_0000000000000089.html"]];

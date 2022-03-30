@@ -1,1 +1,1 @@
-search_result['302']=["topic_00000000000000B7_attached_props--.html","Import Attached Properties",""];
+search_result['302']=["topic_00000000000000B8.html","Config.UseProtocols Method","Activate all security protocols for all network functions to work (HTTPS).\r\nExample: ServicePointManager.SecurityProtocol = VitNX.Functions.Web.Config.UseProtocols();"];

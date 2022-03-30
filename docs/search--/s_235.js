@@ -1,1 +1,1 @@
-search_result['235']=["topic_000000000000008D_props--.html","Ram Properties",""];
+search_result['235']=["topic_0000000000000091.html","Ram Class","Work with informations of RAM."];

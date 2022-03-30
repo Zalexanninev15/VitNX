@@ -1,1 +1,1 @@
-c['784']=[['785',"InstallInfDriver Method","topic_0000000000000329.html",0]];
+c['784']=[['785',"Get Method","topic_00000000000002DF.html",0],['786',"Set Method","topic_00000000000002DE.html",0]];

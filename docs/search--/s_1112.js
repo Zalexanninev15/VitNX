@@ -1,1 +1,1 @@
-search_result['1112']=["topic_0000000000000332.html","Window.SetWindowsElevenStyleForWinForm Method","Applying Windows 11 roundings to a window(s)."];
+search_result['1112']=["topic_0000000000000337.html","Window.HideConsoleWindow Method","Hides the console window."];

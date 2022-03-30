@@ -1,1 +1,1 @@
-search_result['418']=["topic_0000000000000121.html","Import.SetParent Method",""];
+search_result['418']=["topic_0000000000000121.html","Import.SetGraphicsMode Method",""];

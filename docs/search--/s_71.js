@@ -1,1 +1,1 @@
-search_result['71']=["topic_000000000000002E.html","Text.ListContainsString Method","Lists the contains string."];
+search_result['71']=["topic_000000000000002E.html","Text.ContainsSpaces Method","Contains the spaces."];

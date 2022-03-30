@@ -1,1 +1,1 @@
-search_result['298']=["topic_00000000000000B4.html","Config.UseProtocols Method","Activate all security protocols for all network functions to work (HTTPS).\r\nExample: ServicePointManager.SecurityProtocol = VitNX.Functions.Web.Config.UseProtocols();"];
+search_result['298']=["topic_00000000000000B7_events--.html","Config Events",""];

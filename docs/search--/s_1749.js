@@ -1,1 +1,1 @@
-search_result['1749']=["topic_00000000000004C7.html","VitNX_MenuRenderer.OnRenderMenuItemBackground Method","Raises the RenderMenuItemBackground event."];
+search_result['1749']=["topic_00000000000004CC.html","VitNX_MenuRenderer.OnRenderImageMargin Method","Draws the item background."];

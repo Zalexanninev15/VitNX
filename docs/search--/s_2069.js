@@ -1,1 +1,1 @@
-search_result['2069']=["topic_0000000000000880.html","InvertAdding Field","/// If true, the notifications are displayed from top to bottom on the screen.\r\n\t\t///"];
+search_result['2069']=["topic_0000000000000885.html","MaxCount Field","/// Maximum number of notifications on the screen.\r\n\t\t///"];

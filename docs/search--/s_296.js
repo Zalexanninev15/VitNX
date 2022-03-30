@@ -1,1 +1,1 @@
-search_result['296']=["topic_00000000000000B3_props--.html","Config Properties",""];
+search_result['296']=["topic_00000000000000B7.html","Config Class","The configs for normal work with sites and Internet."];

@@ -1,1 +1,1 @@
-search_result['1334']=["topic_00000000000003B0_props--.html","VitNX_ListView Properties",""];
+search_result['1334']=["topic_00000000000003B9.html","VitNX_ListView Class",""];

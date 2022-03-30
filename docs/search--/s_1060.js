@@ -1,1 +1,1 @@
-search_result['1060']=["topic_0000000000000317.html","DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS Structure",""];
+search_result['1060']=["topic_000000000000031C.html","infoType Field",""];

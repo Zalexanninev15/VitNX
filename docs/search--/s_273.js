@@ -1,1 +1,1 @@
-search_result['273']=["topic_00000000000000AA.html","DataFromSites Class","Work with data from sites."];
+search_result['273']=["topic_00000000000000AA.html","IniSettings32.DeleteKey Method","Deletes the key in section."];

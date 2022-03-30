@@ -1,1 +1,1 @@
-search_result['1765']=["topic_00000000000004D2.html","ControlScrollFilter Class",""];
+search_result['1765']=["topic_00000000000004D7.html","VitNX_ToolStripRenderer.OnRenderGrip Method","Raises the RenderGrip event."];

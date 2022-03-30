@@ -1,1 +1,1 @@
-c['1143']=[['1144',"VitNX_DockRegion Constructor","topic_0000000000000472.html",0],['1145',"Methods","topic_0000000000000471_methods--.html",1]];
+c['1143']=[['1144',"ActiveContentChanged Event","topic_000000000000046D.html",0],['1145',"ContentAdded Event","topic_000000000000046E.html",0],['1146',"ContentRemoved Event","topic_000000000000046F.html",0]];

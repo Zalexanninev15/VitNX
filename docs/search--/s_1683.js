@@ -1,1 +1,1 @@
-search_result['1683']=["topic_0000000000000491_events--.html","VitNX_Dialog Events",""];
+search_result['1683']=["topic_0000000000000497.html","VitNX_ToolWindow.OnPaintBackground Method","Paints the background of the control."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>EncryptAndDecrypt.SimpleEncrypt Method</title>
+	<title>EncryptAndDecrypt.SHA1_Encrypt Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">EncryptAndDecrypt.SimpleEncrypt Method</h1>
+		<h1 class="title">EncryptAndDecrypt.SHA1_Encrypt Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
+<a href="topic_0000000000000019.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Simples the encrypt.</summary-info>
+        <summary-info>Encrypt text by SHA1.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SimpleEncrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>password</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> SHA1_Encrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -163,20 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The text. 
-</p>
-<dl paramName="password" class="parameterList">
-	<dt>
-		<span class="parameter">
-			password
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The password. 
+	Tour text. 
 </p>
 
 <p />
@@ -261,11 +248,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string SimpleEncrypt(string text, string password)
+public string SHA1_Encrypt(string text)
  {
-     byte[] input = Encoding.UTF8.GetBytes(text);
-     byte[] output = SimpleEncryptAsByte(input, password);
-     return Convert.ToBase64String(output);
+     using (SHA1Managed sha1 = new SHA1Managed())
+     {
+         var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(text));
+         var sb = new StringBuilder(hash.Length * 2);
+         foreach (byte b in hash)
+             sb.Append(b.ToString(&quot;X2&quot;));
+         return sb.ToString();
+     }
  }
 					</pre>			
 				</div>
@@ -328,11 +320,11 @@ public static string SimpleEncrypt(string text, string password)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000038.html">EncryptAndDecrypt Class</a><br />
+			<a href="topic_0000000000000039.html">EncryptAndDecrypt Class</a><br />
 
 
 
-<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
+<a href="topic_0000000000000019.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

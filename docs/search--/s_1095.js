@@ -1,1 +1,1 @@
-search_result['1095']=["topic_0000000000000328_methods--.html","WorkWithSystem Methods",""];
+search_result['1095']=["topic_0000000000000330.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];

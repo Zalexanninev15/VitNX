@@ -1,1 +1,1 @@
-search_result['597']=["topic_00000000000001A2.html","LOGFONT Structure",""];
+search_result['597']=["topic_00000000000001A7_vars--.html","LOGBRUSH Fields",""];

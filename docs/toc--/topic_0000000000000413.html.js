@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['846',"VitNX.UI.ControlsV1.Controls Namespace","topic_000000000000035B.html"],['1042',"VitNX_TreeNode Class","topic_0000000000000413.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['850',"VitNX.UI.ControlsV1.Controls Namespace","topic_0000000000000364.html"],['1034',"VitNX_StatusStrip Class","topic_0000000000000412.html"],['1035',"VitNX_StatusStrip Constructor","topic_0000000000000413.html"]];

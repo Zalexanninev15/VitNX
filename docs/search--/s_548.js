@@ -1,1 +1,1 @@
-search_result['548']=["topic_000000000000018C_methods--.html","Enums Methods",""];
+search_result['548']=["topic_000000000000018F.html","Enums Class","The enums for imported functions."];

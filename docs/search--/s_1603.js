@@ -1,1 +1,1 @@
-search_result['1603']=["topic_0000000000000459.html","VitNX_DockGroup.EnsureVisible Method",""];
+search_result['1603']=["topic_000000000000045E.html","VitNX_DockGroup Constructor",""];

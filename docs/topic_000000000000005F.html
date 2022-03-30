@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>File.LoadCustomFont Method</title>
+	<title>File.CreateShortcut Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">File.LoadCustomFont Method</h1>
+		<h1 class="title">File.CreateShortcut Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000004B.html">VitNX.Functions.FileSystem</a>
+<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Loads the custom font from file.</summary-info>
+        <summary-info>Creates the shortcut.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> LoadCustomFont(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> <i>size</i> = 16,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> <i>fontStyle</i> = FontStyle.Regular&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CreateShortcut(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>shortcut</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>nameExe</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="sourceFile" class="parameterList">
+	Parameters</h4><dl paramName="shortcut" class="parameterList">
 	<dt>
 		<span class="parameter">
-			sourceFile
+			shortcut
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The shortcut. 
+</p>
+<dl paramName="targetFile" class="parameterList">
+	<dt>
+		<span class="parameter">
+			targetFile
 		</span>
 	</dt>
 	<dd>
@@ -165,42 +178,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	The target file. 
 </p>
-<dl paramName="size" class="parameterList">
+<dl paramName="nameExe" class="parameterList">
 	<dt>
 		<span class="parameter">
-			size
+			nameExe
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The size. 
-</p>
-<dl paramName="fontStyle" class="parameterList">
-	<dt>
-		<span class="parameter">
-			fontStyle
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> 
-	</dd>
-</dl>
-<p>
-	The font style. 
+	The name exe. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> 
-		<p>
-		A Font. 
-	</p>
-	
 
 
 
@@ -274,13 +267,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Font LoadCustomFont(string sourceFile,
-     float size = 16,
-     FontStyle fontStyle = FontStyle.Regular)
+public static void CreateShortcut(string shortcut,
+     string targetFile,
+     string nameExe)
  {
-     PrivateFontCollection pfc = new PrivateFontCollection();
-     pfc.AddFontFile(sourceFile);
-     return new Font(pfc.Families[0], size, fontStyle);
+     IWshRuntimeLibrary.WshShell wshShell = new IWshRuntimeLibrary.WshShell();
+     IWshRuntimeLibrary.IWshShortcut Shortcut = (IWshRuntimeLibrary.IWshShortcut)wshShell.CreateShortcut(shortcut);
+     Shortcut.TargetPath = targetFile;
+     Shortcut.WorkingDirectory = targetFile.Replace(@&quot;\&quot; + nameExe, &quot;&quot;).Remove(targetFile.Length - 4, targetFile.Length);
+     Shortcut.Save();
  }
 					</pre>			
 				</div>
@@ -343,11 +338,11 @@ public static Font LoadCustomFont(string sourceFile,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000051.html">File Class</a><br />
+			<a href="topic_0000000000000054.html">File Class</a><br />
 
 
 
-<a href="topic_000000000000004B.html">VitNX.Functions.FileSystem Namespace</a><br />
+<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem Namespace</a><br />
 
 
 			

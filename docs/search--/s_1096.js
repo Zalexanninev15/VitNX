@@ -1,1 +1,1 @@
-search_result['1096']=["topic_0000000000000328_props--.html","WorkWithSystem Properties",""];
+search_result['1096']=["topic_0000000000000331.html","WorkWithSystem Class","Work with system."];

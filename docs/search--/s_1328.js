@@ -1,1 +1,1 @@
-search_result['1328']=["topic_00000000000003AF.html","VitNX_ListItem(String) Constructor",""];
+search_result['1328']=["topic_00000000000003B5_vars--.html","VitNX_ListItem Fields",""];

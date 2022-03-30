@@ -1,1 +1,1 @@
-c['1017']=[['1018',"VitNX_SectionPanel Constructor","topic_00000000000003FF.html",0],['1019',"Methods","topic_00000000000003FE_methods--.html",1]];
+c['1017']=[['1018',"OnPaint Method","topic_0000000000000405.html",0],['1019',"OnPaintBackground Method","topic_0000000000000406.html",0],['1020',"PaintContent Method","topic_0000000000000404.html",0]];

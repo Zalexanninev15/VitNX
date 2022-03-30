@@ -1,1 +1,1 @@
-search_result['1792']=["topic_00000000000004DC_events--.html","Helper Events",""];
+search_result['1792']=["topic_00000000000004E3.html","DockResizeFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

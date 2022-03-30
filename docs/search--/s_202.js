@@ -1,1 +1,1 @@
-search_result['202']=["topic_000000000000007F.html","Monitor Class","Work with informations of Monitor(s)."];
+search_result['202']=["topic_000000000000007F.html","Disk.WindowsDisk Method","Gets Windows Disk characteristics."];

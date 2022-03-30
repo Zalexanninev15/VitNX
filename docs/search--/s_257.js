@@ -1,1 +1,1 @@
-search_result['257']=["topic_000000000000009B.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];
+search_result['257']=["topic_000000000000009E_events--.html","PowerControl Events",""];

@@ -1,1 +1,1 @@
-search_result['2084']=["topic_0000000000000891_attached_props--.html","Colors Attached Properties",""];
+search_result['2084']=["topic_0000000000000892.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];

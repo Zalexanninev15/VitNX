@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>GetClipboardText.GetText Method</title>
+	<title>TaskBarProgressBar.SetState Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">GetClipboardText.GetText Method</h1>
+		<h1 class="title">TaskBarProgressBar.SetState Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002D0.html">VitNX.Functions.WinControllers</a>
+<a href="topic_00000000000002D9.html">VitNX.Functions.WinControllers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the text from clipboard.</summary-info>
+        <summary-info>Sets the state.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetText()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetState(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>windowHandle</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000002D3.html" onclick="this.target='';return true;">TASKBAR_STATES</a> <i>taskbarState</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,14 +151,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="windowHandle" class="parameterList">
+	<dt>
+		<span class="parameter">
+			windowHandle
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	The window handle. 
+</p>
+<dl paramName="taskbarState" class="parameterList">
+	<dt>
+		<span class="parameter">
+			taskbarState
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000002D3.html" onclick="this.target='';return true;">TASKBAR_STATES</a> 
+	</dd>
+</dl>
+<p>
+	The taskbar state. 
+</p>
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
-	
+<p />
+
 
 
 
@@ -232,14 +254,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetText()
+public static void SetState(IntPtr windowHandle,
+     TASKBAR_STATES taskbarState)
  {
-     GetClipboardText instance = new GetClipboardText();
-     Thread staThread = new Thread(instance._GetTexter);
-     staThread.SetApartmentState(ApartmentState.STA);
-     staThread.Start();
-     staThread.Join();
-     return instance._GetText;
+     if (taskbarSupported)
+         taskbarInstance.SetProgressState(windowHandle, taskbarState);
  }
 					</pre>			
 				</div>
@@ -302,11 +321,11 @@ public static string GetText()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000002DA.html">GetClipboardText Class</a><br />
+			<a href="topic_00000000000002DA.html">TaskBarProgressBar Class</a><br />
 
 
 
-<a href="topic_00000000000002D0.html">VitNX.Functions.WinControllers Namespace</a><br />
+<a href="topic_00000000000002D9.html">VitNX.Functions.WinControllers Namespace</a><br />
 
 
 			

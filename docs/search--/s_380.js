@@ -1,1 +1,1 @@
-search_result['380']=["topic_0000000000000100.html","Import.InvalidateRect (IntPtr, ref RECT, Boolean) Method",""];
+search_result['380']=["topic_0000000000000100.html","Import.GetWindowPlacement Method",""];

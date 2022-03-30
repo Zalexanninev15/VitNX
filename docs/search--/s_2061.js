@@ -1,1 +1,1 @@
-search_result['2061']=["topic_0000000000000879_props--.html","Manager Properties",""];
+search_result['2061']=["topic_0000000000000882.html","Manager Class","The settings manager of notification."];

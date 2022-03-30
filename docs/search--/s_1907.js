@@ -1,1 +1,1 @@
-search_result['1907']=["topic_0000000000000525_overloads--.html","VitNX2_MessageBoxType1_Form.Dispose Method","Clean up any resources being used."];
+search_result['1907']=["topic_000000000000052C_overloads--.html","VitNX2_MessageBoxType1_Form Constructor",""];

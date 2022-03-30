@@ -1,1 +1,1 @@
-search_result['475']=["topic_0000000000000155.html","Import.GetDisplayConfigBufferSizes Method",""];
+search_result['475']=["topic_0000000000000155.html","Import.GetImmersiveColorFromColorSetEx Method",""];

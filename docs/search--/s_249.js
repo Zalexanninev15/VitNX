@@ -1,1 +1,1 @@
-search_result['249']=["topic_0000000000000095.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];
+search_result['249']=["topic_0000000000000095.html","Internet.GetLocalIPv6 Method","Gets the local IPv6 (obsolete, but work)."];

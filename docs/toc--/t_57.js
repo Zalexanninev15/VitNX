@@ -1,1 +1,1 @@
-c['57']=[['58',"MD5_Encrypt Method","topic_000000000000003A.html",0],['59',"SHA1_Encrypt Method","topic_000000000000003B.html",0],['60',"SimpleDecrypt Method","topic_000000000000003D.html",0],['61',"SimpleDecryptAsByte Method","topic_000000000000003F.html",0],['62',"SimpleEncrypt Method","topic_000000000000003C.html",0],['63',"SimpleEncryptAsByte Method","topic_000000000000003E.html",0],['64',"XOR_Both Method","topic_0000000000000039.html",0]];
+c['57']=[['58',"Methods","topic_0000000000000039_methods--.html",1]];

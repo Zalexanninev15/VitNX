@@ -1,1 +1,1 @@
-search_result['2082']=["topic_000000000000088B.html","NotificationType Enumeration","/// Type of notification displayed.\r\n    ///"];
+search_result['2082']=["topic_0000000000000891.html","Manager.Alert (String, NotificationType, Color, Image) Method","/// Display a new custom notification on the screen.\r\n\t\t///"];

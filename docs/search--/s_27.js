@@ -1,1 +1,1 @@
-search_result['27']=["topic_0000000000000011.html","Installed.FindAppPath Method","Finds the application path."];
+search_result['27']=["topic_0000000000000011.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];

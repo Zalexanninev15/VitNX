@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CShap.ConvertColorToConsoleColor Method</title>
+	<title>CShap.ConvertDWordColorToRGB Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CShap.ConvertColorToConsoleColor Method</h1>
+		<h1 class="title">CShap.ConvertDWordColorToRGB Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000012.html">VitNX.Functions</a>
+<a href="topic_0000000000000013.html">VitNX.Functions</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Converts the color to color for console.</summary-info>
+        <summary-info>Converts the DWord color to RGB.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> ConvertColorToConsoleColor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> <i>color</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> ConvertDWordColorToRGB(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>color</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -159,18 +159,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
-	The color. 
+	Color as unit. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
+		<p>
+		A Color. 
+	</p>
 	
 
 
@@ -245,13 +248,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static ConsoleColor ConvertColorToConsoleColor(Color color)
+public static Color ConvertDWordColorToRGB(uint color)
  {
-     int index = (color.R &gt; 128 | color.G &gt; 128 | color.B &gt; 128) ? 8 : 0;
-     index |= (color.R &gt; 64) ? 4 : 0;
-     index |= (color.G &gt; 64) ? 2 : 0;
-     index |= (color.B &gt; 64) ? 1 : 0;
-     return (ConsoleColor)index;
+     byte redColor = (byte)((0x000000FF &amp; color) &gt;&gt; 0);
+     byte greenColor = (byte)((0x0000FF00 &amp; color) &gt;&gt; 8);
+     byte blueColor = (byte)((0x00FF0000 &amp; color) &gt;&gt; 16);
+     return Color.FromArgb(redColor, greenColor, blueColor);
  }
 					</pre>			
 				</div>
@@ -314,11 +316,11 @@ public static ConsoleColor ConvertColorToConsoleColor(Color color)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000013.html">CShap Class</a><br />
+			<a href="topic_0000000000000014.html">CShap Class</a><br />
 
 
 
-<a href="topic_0000000000000012.html">VitNX.Functions Namespace</a><br />
+<a href="topic_0000000000000013.html">VitNX.Functions Namespace</a><br />
 
 
 			

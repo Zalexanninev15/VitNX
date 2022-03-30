@@ -1,1 +1,1 @@
-c['51']=[['52',"BytesToString Method","topic_0000000000000048.html",0],['53',"CompressBytes Method","topic_0000000000000049.html",0],['54',"DecompressBytes Method","topic_000000000000004A.html",0],['55',"GetBytes Method","topic_0000000000000047.html",0]];
+c['51']=[['52',"Methods","topic_0000000000000047_methods--.html",1]];

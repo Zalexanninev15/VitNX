@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetWindowsStartupFolderPath Method</title>
+	<title>Windows.GetWindowsCurrentBuildNumberFromREG Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetWindowsStartupFolderPath Method</h1>
+		<h1 class="title">Windows.GetWindowsCurrentBuildNumberFromREG Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
+<a href="topic_0000000000000066.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the Windows startup folder path.</summary-info>
+        <summary-info>Gets the Windows current build number from the Windows Registry.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsStartupFolderPath()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsCurrentBuildNumberFromREG()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -232,7 +232,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetWindowsStartupFolderPath() =&gt; Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+public static string GetWindowsCurrentBuildNumberFromREG() =&gt; (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;,
+     &quot;CurrentBuildNumber&quot;, &quot;&quot;);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -294,11 +295,11 @@ public static string GetWindowsStartupFolderPath() =&gt; Environment.GetFolderPa
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000063.html">Windows Class</a><br />
+			<a href="topic_0000000000000067.html">Windows Class</a><br />
 
 
 
-<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000066.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

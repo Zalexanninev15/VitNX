@@ -1,1 +1,1 @@
-search_result['1026']=["topic_0000000000000309.html","POINTL Structure",""];
+search_result['1026']=["topic_0000000000000310_methods--.html","DISPLAYCONFIG_TARGET_MODE Methods",""];

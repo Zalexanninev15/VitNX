@@ -1,1 +1,1 @@
-search_result['476']=["topic_0000000000000156.html","Import.QueryDisplayConfig Method",""];
+search_result['476']=["topic_0000000000000156.html","Import.GetImmersiveColorTypeFromName Method",""];

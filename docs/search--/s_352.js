@@ -1,1 +1,1 @@
-search_result['352']=["topic_00000000000000E4.html","Import.GetDeviceCaps Method",""];
+search_result['352']=["topic_00000000000000E4.html","Import.GetClipBox Method",""];

@@ -1,1 +1,1 @@
-search_result['258']=["topic_00000000000000A0.html","PowerControl.Computer Method","The power of computer."];
+search_result['258']=["topic_000000000000009E_methods--.html","PowerControl Methods",""];

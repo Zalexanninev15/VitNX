@@ -1,1 +1,1 @@
-search_result['905']=["topic_00000000000002D4_props--.html","VolumeControl Properties",""];
+search_result['905']=["topic_00000000000002DD.html","VolumeControl Class","The volume control."];

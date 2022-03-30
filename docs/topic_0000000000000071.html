@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.WindowsUseLightThemeForApps Method</title>
+	<title>Windows.GetWindowsDisplayVersionFromREG Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.WindowsUseLightThemeForApps Method</h1>
+		<h1 class="title">Windows.GetWindowsDisplayVersionFromREG Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
+<a href="topic_0000000000000066.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Windows use light theme for apps from the Windows Registry, for Windows 10+.</summary-info>
+        <summary-info>Gets the Windows displayed version from the Windows Registry.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> WindowsUseLightThemeForApps()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsDisplayVersionFromREG()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -154,9 +154,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		A bool. 
+		A string. 
 	</p>
 	
 
@@ -232,8 +232,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool WindowsUseLightThemeForApps() =&gt; (int)Registry.GetValue(@&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize&quot;,
-     &quot;AppsUseLightTheme&quot;, &quot;1&quot;) == 1 ? true : false;
+public static string GetWindowsDisplayVersionFromREG() =&gt; (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;,
+     &quot;DisplayVersion&quot;, &quot;&quot;);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -295,11 +295,11 @@ public static bool WindowsUseLightThemeForApps() =&gt; (int)Registry.GetValue(@&
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000063.html">Windows Class</a><br />
+			<a href="topic_0000000000000067.html">Windows Class</a><br />
 
 
 
-<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000066.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

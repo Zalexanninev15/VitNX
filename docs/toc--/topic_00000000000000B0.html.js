@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['194',"VitNX.Functions.Web Namespace","topic_00000000000000A9.html"],['206',"SendDataToSites Class","topic_00000000000000B0.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['198',"VitNX.Functions.Web Namespace","topic_00000000000000AD.html"],['203',"DataFromSites Class","topic_00000000000000AE.html"],['204',"Methods","topic_00000000000000AE_methods--.html"],['205',"DownloadFileWithSupportOfResume Method","topic_00000000000000B0.html"]];

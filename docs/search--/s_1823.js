@@ -1,1 +1,1 @@
-search_result['1823']=["topic_00000000000004F4.html","CheckBox_Custom Constructor",""];
+search_result['1823']=["topic_00000000000004F9.html","CheckBox_Custom.OnMouseDown Method","Raises the MouseDown event."];

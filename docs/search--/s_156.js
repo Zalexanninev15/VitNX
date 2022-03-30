@@ -1,1 +1,1 @@
-search_result['156']=["topic_0000000000000063_events--.html","Windows Events",""];
+search_result['156']=["topic_0000000000000065.html","Other.CleanRecycleBin Method","Cleans the Recycle Bin."];

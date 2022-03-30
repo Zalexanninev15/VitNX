@@ -1,1 +1,1 @@
-search_result['1604']=["topic_000000000000045A.html","VitNX_DockGroup.SetVisibleContent Method",""];
+search_result['1604']=["topic_000000000000045F.html","VitNX_DockGroup.AddContent Method",""];

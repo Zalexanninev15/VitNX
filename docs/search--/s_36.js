@@ -1,1 +1,1 @@
-search_result['36']=["topic_0000000000000015.html","CShap.PlaySound Method","Plays the error/successes sound."];
+search_result['36']=["topic_0000000000000015.html","CShap.CleanMemory Method","Cleans the memory."];

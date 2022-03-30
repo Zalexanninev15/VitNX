@@ -1,1 +1,1 @@
-search_result['1249']=["topic_000000000000037D.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];
+search_result['1249']=["topic_0000000000000384_methods--.html","VitNX_ComboBox Methods",""];

@@ -1,1 +1,1 @@
-search_result['540']=["topic_0000000000000187.html","NOOWNERZORDER Field",""];
+search_result['540']=["topic_0000000000000187.html","SHOWWINDOW Field",""];

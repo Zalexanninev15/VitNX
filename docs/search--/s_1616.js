@@ -1,1 +1,1 @@
-search_result['1616']=["topic_0000000000000463_methods--.html","VitNX_DockPanel Methods",""];
+search_result['1616']=["topic_000000000000046B.html","VitNX_DockGroup.OnPaintBackground Method","Paints the background of the control."];

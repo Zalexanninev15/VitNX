@@ -1,1 +1,1 @@
-search_result['838']=["topic_000000000000023B_attached_props--.html","WINDOWPOS Attached Properties",""];
+search_result['838']=["topic_0000000000000241.html","ptMinPosition Field",""];

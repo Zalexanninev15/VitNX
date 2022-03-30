@@ -1,1 +1,1 @@
-search_result['1747']=["topic_00000000000004C5.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];
+search_result['1747']=["topic_00000000000004CA.html","VitNX_MenuRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

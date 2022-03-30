@@ -1,1 +1,1 @@
-search_result['250']=["topic_0000000000000099.html","Internet.IsHaveInternet Method","Are the have internet."];
+search_result['250']=["topic_0000000000000096.html","Internet.GetLocalIPv4 Method","Gets the local IPv4 (obsolete, but work)."];

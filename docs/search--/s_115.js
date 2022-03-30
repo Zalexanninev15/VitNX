@@ -1,1 +1,1 @@
-search_result['115']=["topic_000000000000004B.html","VitNX.Functions.FileSystem Namespace",""];
+search_result['115']=["topic_000000000000004B.html","CompressAndDecompress.DecompressBytes Method","Decompresses the bytes.\r\nExample: Data.CompressAndDecompress.DecompressBytes(compressed)"];

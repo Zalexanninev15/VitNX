@@ -1,1 +1,1 @@
-search_result['283']=["topic_00000000000000AF.html","DataFromSites.IsValidTelegramBotToken Method","Are the valid telegram bot token."];
+search_result['283']=["topic_00000000000000AF.html","DataFromSites.DownloadString Method","Downloads the string from site/server."];

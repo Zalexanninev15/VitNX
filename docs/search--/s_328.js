@@ -1,1 +1,1 @@
-search_result['328']=["topic_00000000000000CD.html","Import.DeleteDC Method",""];
+search_result['328']=["topic_00000000000000CD.html","Import.CreatePatternBrush Method",""];

@@ -1,1 +1,1 @@
-search_result['285']=["topic_00000000000000B0_attached_props--.html","SendDataToSites Attached Properties",""];
+search_result['285']=["topic_00000000000000B1.html","DataFromSites.GetHeaderAndContent Method","Gets the status header and content of site."];
