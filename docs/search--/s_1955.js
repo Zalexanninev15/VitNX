@@ -1,1 +1,1 @@
-search_result['1955']=["topic_0000000000000539_attached_props--.html","VitNX2_ProgressBarRoundedType1 Attached Properties",""];
+search_result['1955']=["topic_0000000000000540.html","VitNX2_ProgressBar.OnPaint Method","Raises the Paint event."];

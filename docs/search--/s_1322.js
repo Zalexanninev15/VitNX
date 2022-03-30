@@ -1,1 +1,1 @@
-search_result['1322']=["topic_00000000000003AC_methods--.html","VitNX_ListItem Methods",""];
+search_result['1322']=["topic_00000000000003B4.html","VitNX_Label.OnSizeChanged Method","Raises the SizeChanged event."];

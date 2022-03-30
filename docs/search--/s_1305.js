@@ -1,1 +1,1 @@
-search_result['1305']=["topic_00000000000003A4_props--.html","VitNX_GroupBox Properties",""];
+search_result['1305']=["topic_00000000000003AD.html","VitNX_GroupBox Class",""];

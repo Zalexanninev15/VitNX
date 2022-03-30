@@ -1,1 +1,1 @@
-search_result['1930']=["topic_000000000000052D_props--.html","VitNX2_Panel Properties",""];
+search_result['1930']=["topic_0000000000000536.html","VitNX2_Panel Class",""];

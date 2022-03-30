@@ -1,1 +1,1 @@
-search_result['305']=["topic_00000000000000B7_props--.html","Import Properties",""];
+search_result['305']=["topic_00000000000000BB.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];

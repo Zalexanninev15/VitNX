@@ -1,1 +1,1 @@
-search_result['1462']=["topic_0000000000000407.html","VitNX_Separator.OnPaint Method","Raises the Paint event."];
+search_result['1462']=["topic_000000000000040E_methods--.html","VitNX_Separator Methods",""];

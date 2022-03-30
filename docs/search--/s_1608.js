@@ -1,1 +1,1 @@
-search_result['1608']=["topic_000000000000045E.html","VitNX_DockGroup.OnMouseUp Method","Raises the MouseUp event."];
+search_result['1608']=["topic_0000000000000463.html","VitNX_DockGroup.SetVisibleContent Method",""];

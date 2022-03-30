@@ -1,1 +1,1 @@
-search_result['1737']=["topic_00000000000004BF_attached_props--.html","VitNX_MenuRenderer Attached Properties",""];
+search_result['1737']=["topic_00000000000004C0.html","VitNX_MessageBox.Dispose Method","Clean up any resources being used."];

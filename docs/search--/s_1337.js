@@ -1,1 +1,1 @@
-search_result['1337']=["topic_00000000000003B2.html","VitNX_ListView Constructor",""];
+search_result['1337']=["topic_00000000000003B9_methods--.html","VitNX_ListView Methods",""];

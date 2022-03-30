@@ -1,1 +1,1 @@
-search_result['2079']=["topic_0000000000000888_overloads--.html","Manager.Alert Method","/// Display a new custom notification on the screen.\r\n\t\t///"];
+search_result['2079']=["topic_000000000000088F.html","HasHighlighting Field","/// If true, the notification button will be highlighted when you hover the mouse over it.\r\n\t\t///"];

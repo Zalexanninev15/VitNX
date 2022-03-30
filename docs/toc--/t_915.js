@@ -1,1 +1,0 @@
-c['915']=[['916',"VitNX_GroupBox Constructor","topic_00000000000003A5.html",0],['917',"Methods","topic_00000000000003A4_methods--.html",1]];

@@ -1,1 +1,1 @@
-search_result['1089']=["topic_0000000000000325.html","monitorFriendlyDeviceName Field",""];
+search_result['1089']=["topic_000000000000032A.html","outputTechnology Field",""];

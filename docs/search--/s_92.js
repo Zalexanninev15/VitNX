@@ -1,1 +1,1 @@
-search_result['92']=["topic_000000000000003E.html","EncryptAndDecrypt.SimpleEncryptAsByte Method","Simples the encrypt as byte."];
+search_result['92']=["topic_000000000000003E.html","EncryptAndDecrypt.SimpleDecrypt Method","Simples the decrypt."];

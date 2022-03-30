@@ -1,1 +1,1 @@
-search_result['1671']=["topic_0000000000000487_props--.html","VitNX_ToolWindow Properties",""];
+search_result['1671']=["topic_0000000000000490.html","VitNX_ToolWindow Class",""];

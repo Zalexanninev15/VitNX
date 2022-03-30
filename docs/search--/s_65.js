@@ -1,1 +1,1 @@
-search_result['65']=["topic_0000000000000028.html","Text.DateAsYear Method","Converts the date to year."];
+search_result['65']=["topic_0000000000000028.html","Text.DateAsMonth Method","Converts the date to month."];

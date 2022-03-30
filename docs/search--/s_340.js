@@ -1,1 +1,1 @@
-search_result['340']=["topic_00000000000000D9.html","Import.ExcludeClipRect Method",""];
+search_result['340']=["topic_00000000000000D9.html","Import.DrawThemeEdge Method",""];

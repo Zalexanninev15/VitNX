@@ -1,1 +1,1 @@
-search_result['1160']=["topic_0000000000000348.html","ObservableList\u0026lt;T\u0026gt;.Dispose (Boolean) Method",""];
+search_result['1160']=["topic_000000000000034E.html","ItemsAdded Event",""];

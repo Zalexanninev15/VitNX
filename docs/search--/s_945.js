@@ -1,1 +1,1 @@
-search_result['945']=["topic_00000000000002E5.html","Monitor Class","Work with monitor."];
+search_result['945']=["topic_00000000000002EA.html","Keyboard.HideVirtualKeyboard Method","Hides the virtual keyboard."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_Panel Constructor</title>
+	<title>VitNX2_MessageBoxType1_Form.Dispose Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_Panel Constructor</h1>
+		<h1 class="title">VitNX2_MessageBoxType1_Form.Dispose Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004DB.html">VitNX.UI.ControlsV2</a>
+<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Clean up any resources being used.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX2_Panel()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Dispose(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>disposing</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="disposing" class="parameterList">
+	<dt>
+		<span class="parameter">
+			disposing
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	true if managed resources should be disposed; otherwise, false. 
+</p>
+
+<p />
 
 
 
@@ -224,12 +241,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX2_Panel()
+protected override void Dispose(bool disposing)
  {
-     Size = new Size(150, 40);
-     BackColor = Color.MediumSlateBlue;
-     ForeColor = Color.White;
-     Resize += new EventHandler(Button_Resize);
+     if (disposing &amp;&amp; (components != null))
+     {
+         components.Dispose();
+     }
+     base.Dispose(disposing);
  }
 					</pre>			
 				</div>
@@ -292,11 +310,11 @@ public VitNX2_Panel()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000052D.html">VitNX2_Panel Class</a><br />
+			<a href="topic_0000000000000526.html">VitNX2_MessageBoxType1_Form Class</a><br />
 
 
 
-<a href="topic_00000000000004DB.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2 Namespace</a><br />
 
 
 			

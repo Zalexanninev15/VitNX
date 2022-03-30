@@ -1,1 +1,1 @@
-search_result['1091']=["topic_0000000000000327.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];
+search_result['1091']=["topic_000000000000032C.html","edidProductCodeId Field",""];

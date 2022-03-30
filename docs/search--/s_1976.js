@@ -1,1 +1,1 @@
-search_result['1976']=["topic_0000000000000541_methods--.html","VitNX2_RichTextBox Methods",""];
+search_result['1976']=["topic_0000000000000549.html","VitNX2_ProgressBarRoundedType2.Animate Method","Starts the animation of filling the progress bar"];

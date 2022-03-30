@@ -1,1 +1,1 @@
-search_result['1651']=["topic_0000000000000479_props--.html","VitNX_DockSplitter Properties",""];
+search_result['1651']=["topic_0000000000000482.html","VitNX_DockSplitter Class",""];

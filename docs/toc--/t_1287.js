@@ -1,1 +1,0 @@
-c['1287']=[['1288',"VitNX2_MessageBoxType1_Form Constructor","topic_0000000000000520_overloads--.html",1],['1294',"Methods","topic_000000000000051D_methods--.html",1],['1298',"Fields","topic_000000000000051D_vars--.html",1]];

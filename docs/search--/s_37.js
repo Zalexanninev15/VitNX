@@ -1,1 +1,1 @@
-search_result['37']=["topic_0000000000000016.html","CShap.ConvertDWordColorToRGB Method","Converts the DWord color to RGB."];
+search_result['37']=["topic_0000000000000016.html","CShap.PlaySound Method","Plays the error/successes sound."];

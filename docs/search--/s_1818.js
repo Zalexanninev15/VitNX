@@ -1,1 +1,1 @@
-search_result['1818']=["topic_00000000000004EF.html","CheckBox_Custom.OnResize Method","Raises the Resize event."];
+search_result['1818']=["topic_00000000000004F4_vars--.html","CheckBox_Custom Fields",""];

@@ -1,1 +1,1 @@
-search_result['1734']=["topic_00000000000004B8.html","VitNX_MessageBoxIcon Enumeration",""];
+search_result['1734']=["topic_00000000000004BD.html","VitNX_MessageBox.ShowError Method","Shows the error MessageBox."];

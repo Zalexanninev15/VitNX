@@ -1,1 +1,1 @@
-search_result['1124']=["topic_0000000000000337_events--.html","Type1 Events",""];
+search_result['1124']=["topic_000000000000033E.html","Controls.SetNativeThemeForControls Method","Sets the native Windows System theme for controls."];

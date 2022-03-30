@@ -1,1 +1,1 @@
-search_result['344']=["topic_00000000000000DC.html","Import.GetActiveWindow Method",""];
+search_result['344']=["topic_00000000000000DD.html","Import.ExcludeClipRect Method",""];

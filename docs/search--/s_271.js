@@ -1,1 +1,1 @@
-search_result['271']=["topic_00000000000000A8.html","IniSettings32.KeyExists Method","Is key exist."];
+search_result['271']=["topic_00000000000000A8.html","IniSettings32.Read Method","Reads value of key from section."];

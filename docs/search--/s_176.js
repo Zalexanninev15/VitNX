@@ -1,1 +1,1 @@
-search_result['176']=["topic_0000000000000074.html","Cpu Class","Work with informations of CPU."];
+search_result['176']=["topic_0000000000000074.html","Windows.WindowsUseLightThemeInSystem Method","Windows use light theme in system from the Windows Registry, for Windows 10+."];

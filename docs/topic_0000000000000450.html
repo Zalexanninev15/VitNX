@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockTextChanged Event</title>
+	<title>DockRegionState(VitNX_DockArea) Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockTextChanged Event</h1>
+		<h1 class="title">DockRegionState(VitNX_DockArea) Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a> DockTextChanged</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public DockRegionState(&nbsp;<br />   <a target="_top" href="topic_0000000000000452.html" onclick="this.target='';return true;">VitNX_DockArea</a> <i>area</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +150,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="area" class="parameterList">
+	<dt>
+		<span class="parameter">
+			area
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000452.html" onclick="this.target='';return true;">VitNX_DockArea</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 
 
@@ -224,7 +240,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public event EventHandler DockTextChanged;
+public DockRegionState(VitNX_DockArea area) : this()
+ {
+     Area = area;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -286,11 +305,11 @@ public event EventHandler DockTextChanged;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000044F.html">VitNX_DockContent Class</a><br />
+			<a href="topic_000000000000044E.html">DockRegionState Class</a><br />
 
 
 
-<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -312,3 +331,4 @@ public event EventHandler DockTextChanged;
     </div>
   </body>
 </html>
+

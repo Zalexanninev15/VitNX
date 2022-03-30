@@ -1,1 +1,1 @@
-search_result['1180']=["topic_0000000000000350_props--.html","Colors Properties",""];
+search_result['1180']=["topic_0000000000000359.html","Colors Class",""];

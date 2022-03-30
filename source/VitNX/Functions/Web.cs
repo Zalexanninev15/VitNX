@@ -144,6 +144,7 @@ namespace VitNX.Functions.Web
     public class SendDataToSites
     {
 #pragma warning disable CS1570
+
         /// <summary>
         /// Using POST request to send text data.
         ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");
@@ -279,9 +280,6 @@ namespace VitNX.Functions.Web
         public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;
-
-        // Code for .NET Framework 4.8+
-        // SecurityProtocolType.Tls13
 
         /// <summary>
         /// Activate DefaultGateway of NetworkInterface in IPAddress.

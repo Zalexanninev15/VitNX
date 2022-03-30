@@ -1,1 +1,1 @@
-search_result['425']=["topic_0000000000000128.html","Import.SetWindowLong Method",""];
+search_result['425']=["topic_0000000000000128.html","Import.SetTextColor Method",""];

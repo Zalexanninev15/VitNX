@@ -1,1 +1,1 @@
-search_result['1141']=["topic_0000000000000340.html","VitNX.UI.Console Namespace",""];
+search_result['1141']=["topic_0000000000000347_methods--.html","Type2 Methods",""];

@@ -1,1 +1,1 @@
-search_result['1258']=["topic_0000000000000385.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];
+search_result['1258']=["topic_000000000000038A.html","VitNX_ComboBox.OnLostFocus Method","Raises the LostFocus event."];

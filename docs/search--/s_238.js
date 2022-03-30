@@ -1,1 +1,1 @@
-search_result['238']=["topic_000000000000008F.html","Internet Class","Work with informations of Internet (PC)."];
+search_result['238']=["topic_0000000000000091_methods--.html","Ram Methods",""];

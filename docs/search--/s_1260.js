@@ -1,1 +1,1 @@
-search_result['1260']=["topic_0000000000000387.html","VitNX_ComboBox.OnPaint Method","Raises the Paint event."];
+search_result['1260']=["topic_000000000000038C.html","VitNX_ComboBox.OnTextUpdate Method","Raises the TextUpdate event."];

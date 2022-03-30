@@ -1,1 +1,1 @@
-search_result['259']=["topic_00000000000000A1.html","PowerControl.Monitor Method","The power of monitor."];
+search_result['259']=["topic_000000000000009E_props--.html","PowerControl Properties",""];

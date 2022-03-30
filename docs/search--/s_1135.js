@@ -1,1 +1,1 @@
-search_result['1135']=["topic_000000000000033E_attached_props--.html","Type2 Attached Properties",""];
+search_result['1135']=["topic_0000000000000344.html","Type1.SetText Method","Sets the text."];

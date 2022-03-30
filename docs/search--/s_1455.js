@@ -1,1 +1,1 @@
-search_result['1455']=["topic_0000000000000405.html","VitNX_Separator Class",""];
+search_result['1455']=["topic_000000000000040A.html","VitNX_SectionPanel.OnLeave Method","Raises the Leave event."];

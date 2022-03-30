@@ -1,1 +1,1 @@
-search_result['1760']=["topic_00000000000004CD.html","VitNX_ToolStripRenderer.OnRenderDropDownButtonBackground Method","Raises the RenderDropDownButtonBackground event."];
+search_result['1760']=["topic_00000000000004D2.html","VitNX_ToolStripRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

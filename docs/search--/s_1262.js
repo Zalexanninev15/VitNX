@@ -1,1 +1,1 @@
-search_result['1262']=["topic_0000000000000389.html","VitNX_ContentAlignment Enumeration",""];
+search_result['1262']=["topic_000000000000038E.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];

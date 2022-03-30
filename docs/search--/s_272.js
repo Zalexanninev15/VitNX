@@ -1,1 +1,1 @@
-search_result['272']=["topic_00000000000000A9.html","VitNX.Functions.Web Namespace",""];
+search_result['272']=["topic_00000000000000A9.html","IniSettings32.Write Method","Writes the value to key in section."];

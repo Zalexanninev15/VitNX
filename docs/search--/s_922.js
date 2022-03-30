@@ -1,1 +1,1 @@
-search_result['922']=["topic_00000000000002DA_methods--.html","GetClipboardText Methods",""];
+search_result['922']=["topic_00000000000002E2_overloads--.html","NewFolderDialog.Show Method","Are shows the folder dialog."];

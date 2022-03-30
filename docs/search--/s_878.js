@@ -1,1 +1,1 @@
-search_result['878']=["topic_0000000000000286.html","DISPLAYCONFIG_ROTATION Enumeration",""];
+search_result['878']=["topic_000000000000026C.html","SpecialWindowHandles Enumeration",""];

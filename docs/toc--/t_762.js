@@ -1,1 +1,1 @@
-c['762']=[['763',"FriendlyName Method","topic_0000000000000327.html",0]];
+c['762']=[['763',"HighPart Field","topic_00000000000002F2.html",0],['764',"LowPart Field","topic_00000000000002F1.html",0]];

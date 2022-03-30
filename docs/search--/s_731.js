@@ -1,1 +1,1 @@
-search_result['731']=["topic_00000000000001F6.html","RECT Structure",""];
+search_result['731']=["topic_00000000000001FC_props--.html","POINT Properties",""];

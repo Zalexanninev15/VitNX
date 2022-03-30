@@ -1,1 +1,1 @@
-search_result['1824']=["topic_00000000000004F5.html","CheckBox_Custom.OnPaint Method","Raises the Paint event."];
+search_result['1824']=["topic_00000000000004FA.html","CheckBox_Custom.OnMouseUp Method","Raises the MouseUp event."];

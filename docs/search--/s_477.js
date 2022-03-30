@@ -1,1 +1,1 @@
-search_result['477']=["topic_0000000000000157.html","Import.DisplayConfigGetDeviceInfo Method",""];
+search_result['477']=["topic_0000000000000157.html","Import.GetImmersiveUserColorSetPreference Method",""];

@@ -1,1 +1,1 @@
-search_result['77']=["topic_0000000000000034.html","Text.ConvertListToString Method","Converts the list to string (space is used as separator)."];
+search_result['77']=["topic_0000000000000034.html","Text.RandomNums Method","Randoms the nums."];

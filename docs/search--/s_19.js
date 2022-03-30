@@ -1,1 +1,1 @@
-search_result['19']=["topic_000000000000000E.html","Installed Class","Work with installed applications."];
+search_result['19']=["topic_000000000000000E.html","Processes.CheckDebugger Method","Checks the debugger for your app."];

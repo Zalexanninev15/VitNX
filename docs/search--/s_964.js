@@ -1,1 +1,1 @@
-search_result['964']=["topic_00000000000002EA_props--.html","DISPLAYCONFIG_PATH_SOURCE_INFO Properties",""];
+search_result['964']=["topic_00000000000002F3.html","DISPLAYCONFIG_PATH_SOURCE_INFO Structure",""];

@@ -1,1 +1,1 @@
-search_result['395']=["topic_000000000000010C.html","Import.PatBlt Method",""];
+search_result['395']=["topic_000000000000010C.html","Import.OffsetViewportOrgEx Method",""];

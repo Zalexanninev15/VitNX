@@ -1,1 +1,1 @@
-search_result['364']=["topic_00000000000000F0.html","Import.GetSysColor Method",""];
+search_result['364']=["topic_00000000000000F0.html","Import.GetMessage Method",""];

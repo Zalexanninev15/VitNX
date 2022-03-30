@@ -1,1 +1,1 @@
-search_result['1659']=["topic_0000000000000480.html","VitNX_Document Class",""];
+search_result['1659']=["topic_0000000000000485.html","VitNX_DockSplitter.HideOverlay Method",""];

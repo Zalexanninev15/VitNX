@@ -122,5 +122,6 @@
     <add key="VBdocman_Example"><![CDATA[default]]></add>
     <add key="VBdocman_ExamplesNext"><![CDATA[default]]></add>
     <add key="VBdocman_VitNX"><![CDATA[default]]></add>
+    <add key="VBdocman_VitNX3"><![CDATA[default]]></add>
   </appSettings>
 </configuration>

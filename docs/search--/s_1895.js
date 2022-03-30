@@ -1,1 +1,1 @@
-search_result['1895']=["topic_000000000000051F.html","VitNX2_MessageBoxType1_Form.OnPaint Method",""];
+search_result['1895']=["topic_0000000000000526_methods--.html","VitNX2_MessageBoxType1_Form Methods",""];

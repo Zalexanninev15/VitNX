@@ -1,1 +1,1 @@
-search_result['184']=["topic_0000000000000077.html","Cpu.GetClockSpeed Method","Gets the clock speed."];
+search_result['184']=["topic_0000000000000078_props--.html","Cpu Properties",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolStripRenderer.OnRenderToolStripBackground Method</title>
+	<title>VitNX_MenuRenderer.InitializeItem Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolStripRenderer.OnRenderToolStripBackground Method</h1>
+		<h1 class="title">VitNX_MenuRenderer.InitializeItem Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004BE.html">VitNX.UI.ControlsV1.Renderers</a>
+<a href="topic_00000000000004C7.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripbackground">RenderToolStripBackground</a> event.</summary-info>
+        <summary-info>When overridden in a derived class, provides for custom initialization of the given <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderToolStripBackground(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InitializeItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> <i>item</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="item" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			item
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> that contains the event data. 
+	The <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> to be initialized. 
 </p>
 
 <p />
@@ -241,22 +241,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
-        {
-            base.OnRenderToolStripBackground(e);
-            var g = e.Graphics;
-            if (e.ToolStrip.GetType() == typeof(ToolStripOverflow))
-            {
-                using (var p = new Pen(Colors.GreyBackground))
-                {
-                    var rect = new Rectangle(e.AffectedBounds.Left,
-                 e.AffectedBounds.Top,
-                        e.AffectedBounds.Width - 1,
-                        e.AffectedBounds.Height - 1);
-                    g.DrawRectangle(p, rect);
-                }
-            }
-        }
+protected override void InitializeItem(ToolStripItem item)
+ {
+     base.InitializeItem(item);
+     item.BackColor = Colors.GreyBackground;
+     item.ForeColor = Colors.LightText;
+     if (item.GetType() == typeof(ToolStripSeparator))
+         item.Margin = new Padding(0, 0, 0, 1);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -318,11 +310,11 @@ protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004C8.html">VitNX_ToolStripRenderer Class</a><br />
+			<a href="topic_00000000000004C8.html">VitNX_MenuRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000004BE.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
+<a href="topic_00000000000004C7.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			

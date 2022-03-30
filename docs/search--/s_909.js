@@ -1,1 +1,1 @@
-search_result['909']=["topic_00000000000002D7.html","NewFolderDialog Class","Work with the folder dialog, Windows Vista+."];
+search_result['909']=["topic_00000000000002DD_props--.html","VolumeControl Properties",""];

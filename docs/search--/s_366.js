@@ -1,1 +1,1 @@
-search_result['366']=["topic_00000000000000F2.html","Import.GetTextExtentExPoint Method",""];
+search_result['366']=["topic_00000000000000F2.html","Import.GetScrollBarInfo Method",""];

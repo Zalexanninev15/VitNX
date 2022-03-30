@@ -1,1 +1,1 @@
-search_result['269']=["topic_00000000000000A6.html","IniSettings32.DeleteKey Method","Deletes the key in section."];
+search_result['269']=["topic_00000000000000A6_vars--.html","IniSettings32 Fields",""];

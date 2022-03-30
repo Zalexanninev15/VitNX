@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter.HideOverlay Method</title>
+	<title>VitNX_DockRegion.GetContents Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter.HideOverlay Method</h1>
+		<h1 class="title">VitNX_DockRegion.GetContents Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> HideOverlay()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_0000000000000458.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; GetContents()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,6 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_0000000000000458.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; 
+	
 
 
 
@@ -224,10 +228,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void HideOverlay()
-        {
-            _overlayForm.Visible = false;
-        }
+public List&lt;VitNX_DockContent&gt; GetContents()
+ {
+     var result = new List&lt;VitNX_DockContent&gt;();
+     foreach (var group in _groups)
+         result.AddRange(group.GetContents());
+     return result;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -289,11 +296,11 @@ public void HideOverlay()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000479.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_000000000000047A.html">VitNX_DockRegion Class</a><br />
 
 
 
-<a href="topic_000000000000043A.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			

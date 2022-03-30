@@ -1,1 +1,1 @@
-c['1446']=[['1447',"showAlert(string, NotificationType, Color, Image, Manager) Method","topic_00000000000008A4.html",0],['1448',"showAlert(string, NotificationType, Manager) Method","topic_00000000000008A3.html",0]];
+c['1446']=[['1447',"NotificationForm Constructor","topic_00000000000008AA.html",0],['1448',"Methods","topic_00000000000008A9_methods--.html",1],['1453',"Fields","topic_00000000000008A9_vars--.html",1]];

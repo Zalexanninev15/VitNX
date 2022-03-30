@@ -1,1 +1,1 @@
-search_result['15']=["topic_000000000000000A.html","Processes.IsAdministratorYourApp Method","Whether your application has administrator rights."];
+search_result['15']=["topic_000000000000000A.html","Processes.KillNative Method","Kills the process (C# native)."];

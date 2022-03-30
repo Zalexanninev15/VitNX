@@ -1,1 +1,1 @@
-search_result['324']=["topic_00000000000000C9.html","Import.CreatePatternBrush Method",""];
+search_result['324']=["topic_00000000000000C9.html","Import.CreateBrushIndirect Method",""];

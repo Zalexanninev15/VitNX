@@ -1,1 +1,1 @@
-search_result['1751']=["topic_00000000000004C8_attached_props--.html","VitNX_ToolStripRenderer Attached Properties",""];
+search_result['1751']=["topic_00000000000004CE.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

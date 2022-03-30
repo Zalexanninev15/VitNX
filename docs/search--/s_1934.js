@@ -1,1 +1,1 @@
-search_result['1934']=["topic_0000000000000530.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];
+search_result['1934']=["topic_0000000000000536_props--.html","VitNX2_Panel Properties",""];

@@ -1,1 +1,1 @@
-search_result['405']=["topic_0000000000000115.html","Import.SendMessage (IntPtr, Int32, IntPtr, IntPtr) Method",""];
+search_result['405']=["topic_0000000000000115.html","Import.Rectangle Method",""];

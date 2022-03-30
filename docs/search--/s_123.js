@@ -1,1 +1,1 @@
-search_result['123']=["topic_000000000000004E.html","Folder.GetSize Method","Gets the folder size."];
+search_result['123']=["topic_000000000000004E.html","Folder.GetItemsList Method","Gets the items list in folder."];

@@ -1,1 +1,1 @@
-search_result['1522']=["topic_0000000000000423.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];
+search_result['1522']=["topic_0000000000000428.html","SelectedNodesChanged Event",""];

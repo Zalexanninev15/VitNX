@@ -1,1 +1,1 @@
-search_result['1369']=["topic_00000000000003C6.html","VitNX_NumericUpDown.OnLostFocus Method","Raises the LostFocus event."];
+search_result['1369']=["topic_00000000000003CB.html","VitNX_NumericUpDown.OnMouseUp Method","Raises the MouseUp event."];

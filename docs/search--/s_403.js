@@ -1,1 +1,1 @@
-search_result['403']=["topic_0000000000000113.html","Import.SelectClipRgn Method",""];
+search_result['403']=["topic_0000000000000113.html","Import.PrintWindow Method",""];

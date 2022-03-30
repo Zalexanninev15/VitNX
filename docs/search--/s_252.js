@@ -1,1 +1,1 @@
-search_result['252']=["topic_000000000000009A_attached_props--.html","PowerControl Attached Properties",""];
+search_result['252']=["topic_0000000000000098.html","Internet.GetMacAddress Method","Gets the MAC address."];

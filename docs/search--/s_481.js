@@ -1,1 +1,1 @@
-search_result['481']=["topic_000000000000015A.html","Import.GetWindowDC Method",""];
+search_result['481']=["topic_000000000000015B.html","Import.DisplayConfigGetDeviceInfo Method",""];

@@ -1,1 +1,1 @@
-search_result['1013']=["topic_0000000000000301.html","hSyncFreq Field",""];
+search_result['1013']=["topic_0000000000000308_methods--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Methods",""];

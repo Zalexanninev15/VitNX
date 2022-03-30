@@ -1,1 +1,1 @@
-search_result['2067']=["topic_000000000000087E.html","Colors Field","/// The colors of the standard notification types.\r\n        ///"];
+search_result['2067']=["topic_0000000000000883.html","TimerInterval Field","/// Delay between changes in notification transparency.\r\n\t\t///"];
