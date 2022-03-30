@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Installed.GetPath Method</title>
+	<title>Installed.GetList Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Installed.GetPath Method</h1>
+		<h1 class="title">Installed.GetList Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the path of application from the Windows Registry.</summary-info>
+        <summary-info>Gets the list.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetPath(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>applicationName</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetList()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,22 +151,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="applicationName" class="parameterList">
-	<dt>
-		<span class="parameter">
-			applicationName
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The application name. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
@@ -248,14 +232,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetPath(string applicationName)
+public static string GetList()
  {
-     var installPath = FindAppPath(@&quot;SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall&quot;, applicationName);
-     if (installPath == &quot;&quot;)
-         installPath = FindAppPath(@&quot;SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall&quot;, applicationName);
-     if (installPath == &quot;&quot;)
-         installPath = FindAppPath(@&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall&quot;, applicationName);
-     return installPath;
+     string toText = &quot;Installed apps:&quot;;
+     ManagementObjectSearcher searcher = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_Product&quot;);
+     ManagementObjectCollection information = searcher.Get();
+     foreach (ManagementObject app in information)
+     {
+         string toTextText = &quot;&quot;;
+         try
+         {
+             toTextText = GetPath(Convert.ToString(app[&quot;Name&quot;]));
+             if (toTextText == &quot;&quot;)
+                 toTextText = GetPath(Convert.ToString(app[&quot;IdentifyingNumber&quot;]));
+         }
+         catch { }
+         toText += ($&quot;\nName: {app[&quot;Name&quot;]} ({app[&quot;Caption&quot;]})&quot; +
+         $&quot;\nVersion: {app[&quot;Version&quot;]}&quot; +
+         $&quot;\nAuthor: {app[&quot;Vendor&quot;]}&quot; +
+         $&quot;\nInstall date: {app[&quot;InstallDate&quot;]}&quot; +
+         $&quot;\nInstall path: {toTextText}\n&quot;);
+     }
+     return toText;
  }
 					</pre>			
 				</div>
@@ -318,7 +316,7 @@ public static string GetPath(string applicationName)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000000E.html">Installed Class</a><br />
+			<a href="topic_000000000000000F.html">Installed Class</a><br />
 
 
 

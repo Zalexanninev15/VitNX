@@ -1,1 +1,1 @@
-search_result['1130']=["topic_000000000000033A.html","Type1.SetColor Method","Sets the color."];
+search_result['1130']=["topic_0000000000000340_props--.html","Type1 Properties",""];

@@ -1,1 +1,1 @@
-search_result['1454']=["topic_0000000000000404.html","VitNX_SectionPanel.OnPaintBackground Method","Paints the background of the control."];
+search_result['1454']=["topic_0000000000000409.html","VitNX_SectionPanel.OnEnter Method","Raises the Enter event."];

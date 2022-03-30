@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SHERB_RECYCLE Enumeration</title>
+	<title>DWM_WINDOW_CORNER_PREFERENCE Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SHERB_RECYCLE Enumeration</h1>
+		<h1 class="title">DWM_WINDOW_CORNER_PREFERENCE Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
 
 
 
@@ -134,7 +134,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    SHERB_NOCONFIRMATION
+	    DWMWCP_DEFAULT
+	  </td>
+	  <td>
+	    0
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    DWMWCP_DONOTROUND
 	  </td>
 	  <td>
 	    1
@@ -146,10 +158,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    SHERB_NOPROGRESSUI
+	    DWMWCP_ROUND
 	  </td>
 	  <td>
-	    1
+	    2
 	  </td>
 	  <td>
 		 
@@ -158,10 +170,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    SHERB_NOSOUND
+	    DWMWCP_ROUNDSMALL
 	  </td>
 	  <td>
-	    4
+	    3
 	  </td>
 	  <td>
 		 
@@ -243,11 +255,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public enum SHERB_RECYCLE : int
+public enum DWM_WINDOW_CORNER_PREFERENCE : int
  {
-     SHERB_NOCONFIRMATION = 0x00000001,
-     SHERB_NOPROGRESSUI = 0x00000001,
-     SHERB_NOSOUND = 0x00000004
+     DWMWCP_DEFAULT = 0,
+     DWMWCP_DONOTROUND = 1,
+     DWMWCP_ROUND = 2,
+     DWMWCP_ROUNDSMALL = 3
  }
 					</pre>			
 				</div>
@@ -270,11 +283,11 @@ public enum SHERB_RECYCLE : int
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000018C.html">Enums Class</a><br />
+			<a href="topic_000000000000018F.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 			

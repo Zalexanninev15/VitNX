@@ -73,7 +73,13 @@ The target file.</param>
       <summary>
 Kills the process.</summary>
       <param name="processNameWithExe">
-The process name with exe.</param>
+The process name with .exe.</param>
+    </member>
+    <member name="M:VitNX.Functions.AppsAndProcesses.Processes.KillNative(System.String)">
+      <summary>
+Kills the process (C# native).</summary>
+      <param name="processNameWithExe">
+The process name with .exe.</param>
     </member>
     <member name="M:VitNX.Functions.AppsAndProcesses.Processes.IsAdministratorYourApp">
       <summary>
@@ -611,6 +617,18 @@ The source folder.</param>
       <param name="targetFolder">
 The target folder.</param>
     </member>
+    <member name="M:VitNX.Functions.FileSystem.Folder.DeleteForever(System.String)">
+      <summary>
+Deletes the file forever.</summary>
+      <param name="targetFolder">
+The target folder.</param>
+    </member>
+    <member name="M:VitNX.Functions.FileSystem.Folder.DeleteToRecycleBin(System.String)">
+      <summary>
+Deletes the file to Recycle Bin.</summary>
+      <param name="targetFolder">
+The target folder.</param>
+    </member>
     <member name="T:VitNX.Functions.FileSystem.File">
       <summary>
 Work with the files.</summary>
@@ -627,9 +645,9 @@ Deletes the file to Recycle Bin.</summary>
       <param name="targetFile">
 The target file.</param>
     </member>
-    <member name="M:VitNX.Functions.FileSystem.File.WriteTextAsUTF8(System.String,System.String)">
+    <member name="M:VitNX.Functions.FileSystem.File.WriteTextAsUTF8_ToTemp(System.String,System.String)">
       <summary>
-Writes the text to file as UTF-8.</summary>
+Writes the text to file as UTF-8 to temp folder.</summary>
       <returns>
 An array of string (File name and File path).</returns>
       <param name="text">
@@ -654,6 +672,14 @@ A string.</returns>
 The tag.</param>
       <param name="fileExtension">
 The file extension.</param>
+    </member>
+    <member name="M:VitNX.Functions.FileSystem.File.GetText(System.String)">
+      <summary>
+Gets the text from file.</summary>
+      <returns>
+A string.</returns>
+      <param name="targetFile">
+The target file.</param>
     </member>
     <member name="M:VitNX.Functions.FileSystem.File.IsPeExe(System.String)">
       <summary>
@@ -2361,7 +2387,7 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="pMarInset">
 </param>
     </member>
-    <member name="M:VitNX.Functions.Win32.Import.DwmSetWindowAttribute(System.IntPtr,System.Int32,System.Int32[],System.UInt32)">
+    <member name="M:VitNX.Functions.Win32.Import.DwmSetWindowAttribute(System.IntPtr,VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE,System.Int32[],System.UInt32)">
       <param name="hWnd">
 </param>
       <param name="attribute">
@@ -2471,7 +2497,7 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="deviceName">
 </param>
     </member>
-    <member name="M:VitNX.Functions.Win32.Import.SetWindowPos(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,VitNX.Functions.Win32.Enums.SetWindowPosFlags)">
+    <member name="M:VitNX.Functions.Win32.Import.SetWindowPos(System.IntPtr,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS)">
       <param name="hWnd">
 </param>
       <param name="hWndInsertAfter">
@@ -2601,8 +2627,6 @@ The constants for imported functions.</summary>
     </member>
     <member name="F:VitNX.Functions.Win32.Constants.SC_MONITORPOWER">
     </member>
-    <member name="F:VitNX.Functions.Win32.Constants.DWMWA_WINDOW_CORNER_PREFERENCE">
-    </member>
     <member name="F:VitNX.Functions.Win32.Constants.HWND_TOPMOST">
     </member>
     <member name="F:VitNX.Functions.Win32.Constants.HWND_NOTOPMOST">
@@ -2660,6 +2684,18 @@ The constants for imported functions.</summary>
     <member name="T:VitNX.Functions.Win32.Enums">
       <summary>
 The enums for imported functions.</summary>
+    </member>
+    <member name="T:VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE">
+    </member>
+    <member name="F:VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE_NOT">
+    </member>
+    <member name="F:VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE">
+    </member>
+    <member name="F:VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE">
+    </member>
+    <member name="F:VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE">
+    </member>
+    <member name="F:VitNX.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE.DWMWA_MICA_EFFECT">
     </member>
     <member name="T:VitNX.Functions.Win32.Enums.BLENDFUNCTION">
     </member>
@@ -3053,37 +3089,37 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX.Functions.Win32.Enums.HWND.Bottom">
     </member>
-    <member name="T:VitNX.Functions.Win32.Enums.SetWindowPosFlags">
+    <member name="T:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_ASYNCWINDOWPOS">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_ASYNCWINDOWPOS">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_DEFERERASE">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_DEFERERASE">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_DRAWFRAME">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_DRAWFRAME">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_FRAMECHANGED">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_FRAMECHANGED">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_HIDEWINDOW">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_HIDEWINDOW">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOACTIVATE">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOACTIVATE">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOCOPYBITS">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOCOPYBITS">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOMOVE">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOMOVE">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOOWNERZORDER">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOOWNERZORDER">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOREDRAW">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOREDRAW">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOREPOSITION">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOREPOSITION">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOSENDCHANGING">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOSENDCHANGING">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOSIZE">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOSIZE">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_NOZORDER">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NOZORDER">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.SetWindowPosFlags.SWP_SHOWWINDOW">
+    <member name="F:VitNX.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_SHOWWINDOW">
     </member>
     <member name="T:VitNX.Functions.Win32.Enums.KEYBOARD_PRESETS">
     </member>
@@ -3229,13 +3265,13 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX.Functions.Win32.Enums.DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32">
     </member>
-    <member name="T:VitNX.Functions.Win32.Enums.WindowPosFlags">
+    <member name="T:VitNX.Functions.Win32.Enums.WINDOW_POS_FLAGS">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.WindowPosFlags.HWND_TOPMOST">
+    <member name="F:VitNX.Functions.Win32.Enums.WINDOW_POS_FLAGS.HWND_TOPMOST">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.WindowPosFlags.SWP_NOMOVE">
+    <member name="F:VitNX.Functions.Win32.Enums.WINDOW_POS_FLAGS.SWP_NOMOVE">
     </member>
-    <member name="F:VitNX.Functions.Win32.Enums.WindowPosFlags.SWP_NOSIZE">
+    <member name="F:VitNX.Functions.Win32.Enums.WINDOW_POS_FLAGS.SWP_NOSIZE">
     </member>
     <member name="T:VitNX.Functions.Win32.Enums.KEYEVENTF">
     </member>
@@ -3611,11 +3647,15 @@ Applying a native dark window title for the application if it runs on Windows 10
       <param name="Handler">
 The handler.</param>
     </member>
-    <member name="M:VitNX.Functions.WindowAndControls.Window.SetWindowsElevenStyleForWinForm(System.IntPtr)">
+    <member name="M:VitNX.Functions.WindowAndControls.Window.SetWindowsElevenStyleForWinForm(System.IntPtr,System.Int32,System.Int32)">
       <summary>
 Applying Windows 11 roundings to a window(s).</summary>
       <param name="Handler">
 The handler.</param>
+      <param name="windowWidth">
+The width of window</param>
+      <param name="windowHeight">
+The height of window</param>
     </member>
     <member name="T:VitNX.Functions.WindowAndControls.Controls">
     </member>
@@ -4767,7 +4807,7 @@ The background color.</param>
     </member>
     <member name="M:VitNX.UI.ControlsV1.Forms.VitNX_Dialog.Dispose(System.Boolean)">
       <summary>
-/// Clean up any resources being used. ///</summary>
+Clean up any resources being used.</summary>
       <param name="disposing">
 true if managed resources should be disposed; otherwise, false.</param>
     </member>
@@ -4893,7 +4933,7 @@ The buttons.</param>
     </member>
     <member name="M:VitNX.UI.ControlsV1.Forms.VitNX_MessageBox.Dispose(System.Boolean)">
       <summary>
-/// Clean up any resources being used. ///</summary>
+Clean up any resources being used.</summary>
       <param name="disposing">
 true if managed resources should be disposed; otherwise, false.</param>
     </member>

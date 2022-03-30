@@ -1,1 +1,1 @@
-search_result['1263']=["topic_000000000000038D.html","VitNX_ContextMenu Class",""];
+search_result['1263']=["topic_000000000000038F.html","VitNX_ComboBox.OnResize Method","Raises the Resize event."];

@@ -1,1 +1,1 @@
-search_result['76']=["topic_0000000000000033.html","Text.RandomNums Method","Randoms the nums."];
+search_result['76']=["topic_0000000000000033.html","Text.RandomChars Method","Randoms the chars."];

@@ -1,1 +1,1 @@
-search_result['1152']=["topic_0000000000000344_events--.html","ObservableList\u0026lt;T\u0026gt; Events",""];
+search_result['1152']=["topic_000000000000034B.html","Text.Writeln Method","Writeln text with the colors."];

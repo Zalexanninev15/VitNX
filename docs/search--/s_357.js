@@ -1,1 +1,1 @@
-search_result['357']=["topic_00000000000000E9.html","Import.GetLastError Method",""];
+search_result['357']=["topic_00000000000000E9.html","Import.GetFocus Method",""];

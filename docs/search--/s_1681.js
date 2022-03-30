@@ -1,1 +1,1 @@
-search_result['1681']=["topic_0000000000000491.html","VitNX_Dialog Class",""];
+search_result['1681']=["topic_0000000000000495.html","VitNX_ToolWindow.OnMouseUp Method","Raises the MouseUp event."];

@@ -1,1 +1,1 @@
-search_result['220']=["topic_0000000000000089_methods--.html","Motherboard Methods",""];
+search_result['220']=["topic_000000000000008C.html","Monitor.GetAll Method","Gets the all."];

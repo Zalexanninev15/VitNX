@@ -1,1 +1,1 @@
-search_result['930']=["topic_00000000000002DC_props--.html","STATask Properties",""];
+search_result['930']=["topic_00000000000002E5.html","STATask Class","Sets text to clipboard."];

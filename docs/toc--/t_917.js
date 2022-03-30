@@ -1,1 +1,1 @@
-c['917']=[['918',"OnPaint Method","topic_00000000000003A6.html",0]];
+c['917']=[['918',"SelectedItemChanged Event","topic_00000000000003A1.html",0]];

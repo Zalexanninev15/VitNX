@@ -1,1 +1,1 @@
-search_result['1475']=["topic_000000000000040C_methods--.html","VitNX_TextBox Methods",""];
+search_result['1475']=["topic_0000000000000414.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

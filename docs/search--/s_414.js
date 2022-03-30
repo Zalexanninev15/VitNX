@@ -1,1 +1,1 @@
-search_result['414']=["topic_000000000000011D.html","Import.SetGraphicsMode Method",""];
+search_result['414']=["topic_000000000000011D.html","Import.SetBkMode Method",""];

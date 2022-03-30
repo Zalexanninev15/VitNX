@@ -1,1 +1,1 @@
-search_result['323']=["topic_00000000000000C8.html","Import.CreateFontIndirect Method",""];
+search_result['323']=["topic_00000000000000C8.html","Import.CreateBitmap Method",""];

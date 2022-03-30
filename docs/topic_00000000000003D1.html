@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_RadioButton.OnLostFocus Method</title>
+	<title>VitNX_NumericUpDown.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_RadioButton.OnLostFocus Method</h1>
+		<h1 class="title">VitNX_NumericUpDown.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.buttonbase.onlostfocus">OnLostFocus</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnLostFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -159,11 +159,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a>  that contains the event data. 
 </p>
 
 <p />
@@ -241,19 +241,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnLostFocus(EventArgs e)
-        {
-            base.OnLostFocus(e);
-
-            _spacePressed = false;
-
-            var location = Cursor.Position;
-
-            if (!ClientRectangle.Contains(location))
-                SetControlState(VitNX_ControlState.Normal);
-            else
-                SetControlState(VitNX_ControlState.Hover);
-        }
+protected override void OnPaint(PaintEventArgs e)
+ {
+     base.OnPaint(e);
+     var g = e.Graphics;
+     var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
+     var borderColor = Colors.GreySelection;
+     if (Focused &amp;&amp; TabStop) { borderColor = Colors.BlueHighlight; }
+     using (var p = new Pen(borderColor, 1)) { var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1); g.DrawRectangle(p, modRect); }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -315,11 +311,11 @@ protected override void OnLostFocus(EventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003C9.html">VitNX_RadioButton Class</a><br />
+			<a href="topic_00000000000003C7.html">VitNX_NumericUpDown Class</a><br />
 
 
 
-<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

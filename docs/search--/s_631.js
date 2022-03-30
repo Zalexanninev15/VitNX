@@ -1,1 +1,1 @@
-search_result['631']=["topic_00000000000001B6_props--.html","MINMAXINFO Properties",""];
+search_result['631']=["topic_00000000000001BF.html","MINMAXINFO Structure",""];

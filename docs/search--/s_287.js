@@ -1,1 +1,1 @@
-search_result['287']=["topic_00000000000000B0_methods--.html","SendDataToSites Methods",""];
+search_result['287']=["topic_00000000000000B3.html","DataFromSites.IsValidTelegramBotToken Method","Are the valid telegram bot token."];

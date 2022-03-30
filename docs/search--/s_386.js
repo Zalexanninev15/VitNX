@@ -1,1 +1,1 @@
-search_result['386']=["topic_0000000000000104.html","Import.MaskBlt Method",""];
+search_result['386']=["topic_0000000000000105.html","Import.InvalidateRect (IntPtr, IntPtr, Boolean) Method",""];

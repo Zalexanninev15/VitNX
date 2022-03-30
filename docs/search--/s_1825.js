@@ -1,1 +1,1 @@
-search_result['1825']=["topic_00000000000004F6.html","CheckedChangedEventHandler Delegate",""];
+search_result['1825']=["topic_00000000000004FB.html","CheckBox_Custom.OnMouseEnter Method","Raises the MouseEnter event."];

@@ -1,1 +1,1 @@
-search_result['1701']=["topic_00000000000004A6_attached_props--.html","VitNX_Form Attached Properties",""];
+search_result['1701']=["topic_00000000000004A5.html","VitNX_Dialog.OnLoad Method","Raises the Load event."];

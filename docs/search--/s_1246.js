@@ -1,1 +1,1 @@
-search_result['1246']=["topic_000000000000037B_props--.html","VitNX_ComboBox Properties",""];
+search_result['1246']=["topic_0000000000000384.html","VitNX_ComboBox Class",""];

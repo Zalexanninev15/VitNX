@@ -1,1 +1,1 @@
-search_result['925']=["topic_00000000000002DB.html","GetClipboardText.GetText Method","Gets the text from clipboard."];
+search_result['925']=["topic_00000000000002E3_events--.html","GetClipboardText Events",""];

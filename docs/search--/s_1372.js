@@ -1,1 +1,1 @@
-search_result['1372']=["topic_00000000000003C9.html","VitNX_RadioButton Class",""];
+search_result['1372']=["topic_00000000000003CE.html","VitNX_NumericUpDown.OnGotFocus Method","Raises the GotFocus event."];

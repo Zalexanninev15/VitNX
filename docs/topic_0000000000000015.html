@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CShap.PlaySound Method</title>
+	<title>CShap.CleanMemory Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CShap.PlaySound Method</h1>
+		<h1 class="title">CShap.CleanMemory Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000012.html">VitNX.Functions</a>
+<a href="topic_0000000000000013.html">VitNX.Functions</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Plays the error/successes sound.</summary-info>
+        <summary-info>Cleans the memory.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> PlaySound()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CleanMemory()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -225,10 +225,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void PlaySound()
+public static void CleanMemory()
  {
-     Console.Beep(3000, 30);
-     Console.Beep(1000, 30);
+     try
+     {
+         GC.Collect();
+         GC.WaitForPendingFinalizers();
+     }
+     catch { }
  }
 					</pre>			
 				</div>
@@ -291,11 +295,11 @@ public static void PlaySound()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000013.html">CShap Class</a><br />
+			<a href="topic_0000000000000014.html">CShap Class</a><br />
 
 
 
-<a href="topic_0000000000000012.html">VitNX.Functions Namespace</a><br />
+<a href="topic_0000000000000013.html">VitNX.Functions Namespace</a><br />
 
 
 			

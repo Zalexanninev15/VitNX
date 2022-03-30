@@ -1,1 +1,1 @@
-search_result['1526']=["topic_0000000000000427.html","VitNX_TreeView.OnMouseUp Method","Raises the MouseUp event."];
+search_result['1526']=["topic_000000000000042C.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];

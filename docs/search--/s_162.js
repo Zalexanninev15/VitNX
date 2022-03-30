@@ -1,1 +1,1 @@
-search_result['162']=["topic_0000000000000066.html","Windows.GetLocalTime Method","Gets locals the time."];
+search_result['162']=["topic_0000000000000067_props--.html","Windows Properties",""];

@@ -1,1 +1,1 @@
-search_result['145']=["topic_000000000000005F.html","File.LoadCustomFont Method","Loads the custom font from file."];
+search_result['145']=["topic_000000000000005F.html","File.CreateShortcut Method","Creates the shortcut."];

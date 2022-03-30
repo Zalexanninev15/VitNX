@@ -1,1 +1,1 @@
-search_result['68']=["topic_000000000000002B.html","Text.ContainsOnlyNumbers Method","Contains the only numbers."];
+search_result['68']=["topic_000000000000002B.html","Text.ReplacerMonster Method","Replacers the monster."];

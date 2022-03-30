@@ -1,1 +1,1 @@
-search_result['1852']=["topic_0000000000000505_props--.html","Helpers Properties",""];
+search_result['1852']=["topic_000000000000050E.html","Helpers Class",""];

@@ -1,1 +1,1 @@
-c['1046']=[['1047',"EnsureVisible Method","topic_000000000000041D.html",0],['1048',"IsNodeAncestor Method","topic_0000000000000419.html",0],['1049',"Remove Method","topic_000000000000041C.html",0]];
+c['1046']=[['1047',"VitNX_TreeNode Constructor","topic_0000000000000423_overloads--.html",1],['1050',"Methods","topic_000000000000041C_methods--.html",1],['1054',"Events","topic_000000000000041C_events--.html",1]];

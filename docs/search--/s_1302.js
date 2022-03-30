@@ -1,1 +1,1 @@
-search_result['1302']=["topic_00000000000003A4_attached_props--.html","VitNX_GroupBox Attached Properties",""];
+search_result['1302']=["topic_00000000000003AA.html","VitNX_DropdownList.OnLostFocus Method","Raises the LostFocus event."];

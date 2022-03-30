@@ -1,1 +1,1 @@
-search_result['611']=["topic_00000000000001AB.html","lfCharSet Field",""];
+search_result['611']=["topic_00000000000001B0.html","lfWeight Field",""];

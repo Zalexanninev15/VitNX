@@ -1,1 +1,1 @@
-search_result['1753']=["topic_00000000000004C8_methods--.html","VitNX_ToolStripRenderer Methods",""];
+search_result['1753']=["topic_00000000000004D0.html","VitNX_MenuRenderer.OnRenderMenuItemBackground Method","Raises the RenderMenuItemBackground event."];

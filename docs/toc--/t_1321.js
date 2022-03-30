@@ -1,1 +1,1 @@
-c['1321']=[['1322',"VitNX2_ProgressBarRoundedType1 Constructor","topic_000000000000053A.html",0],['1323',"Methods","topic_0000000000000539_methods--.html",1]];
+c['1321']=[['1322',"Dispose Method","topic_0000000000000541_overloads--.html",1],['1324',"OnPaint Method","topic_0000000000000540.html",0]];

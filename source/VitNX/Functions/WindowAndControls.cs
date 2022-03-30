@@ -50,10 +50,10 @@ namespace VitNX.Functions.WindowAndControls
         public static void ShowAsTopMost(IntPtr Handler)
         {
             Import.SetWindowPos(Handler,
-               new IntPtr((int)WindowPosFlags.HWND_TOPMOST),
+               new IntPtr((int)WINDOW_POS_FLAGS.HWND_TOPMOST),
                0, 0, 0, 0,
-               (int)WindowPosFlags.SWP_NOMOVE |
-               (int)WindowPosFlags.SWP_NOSIZE);
+               (int)WINDOW_POS_FLAGS.SWP_NOMOVE |
+               (int)WINDOW_POS_FLAGS.SWP_NOSIZE);
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace VitNX.Functions.WindowAndControls
                 screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
             Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
                 pt.X, pt.Y, 0, 0,
-                SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOSIZE |
-                SetWindowPosFlags.SWP_SHOWWINDOW);
+                SET_WINDOW_POS_FLAGS.SWP_NOZORDER | SET_WINDOW_POS_FLAGS.SWP_NOSIZE |
+                SET_WINDOW_POS_FLAGS.SWP_SHOWWINDOW);
         }
 
         /// <summary>
@@ -78,37 +78,31 @@ namespace VitNX.Functions.WindowAndControls
         /// <param name="Handler">The handler.</param>
         public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
         {
-            if (Import.DwmSetWindowAttribute(Handler, 19, new[] { 1 }, 4) != 0)
-                Import.DwmSetWindowAttribute(Handler, 20, new[] { 1 }, 4);
+            if (Import.DwmSetWindowAttribute(Handler,
+                DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
+                new[] { 1 }, 4) != 0)
+                Import.DwmSetWindowAttribute(Handler,
+                    DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE_NOT,
+                    new[] { 1 }, 4);
         }
 
         /// <summary>
         /// Applying Windows 11 roundings to a window(s).
         /// </summary>
         /// <param name="Handler">The handler.</param>
-        public static void SetWindowsElevenStyleForWinForm(IntPtr Handler)
+        /// <param name="windowWidth">The width of window</param>
+        /// <param name="windowHeight">The height of window</param>
+        public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowWidth, int windowHeight)
         {
-            var attribute = Constants.DWMWA_WINDOW_CORNER_PREFERENCE;
-            var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
             Import.DwmSetWindowAttribute(Handler,
-                attribute,
-                new[] { Convert.ToInt32(preference) }, sizeof(uint));
+                DWM_GET_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE,
+                new[] { Convert.ToInt32(DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND) },
+                sizeof(uint));
+            return Region.FromHrgn(Import.CreateRoundRectRgn(0, 0,
+                windowWidth,
+                windowHeight,
+                15, 15));
         }
-
-        //public static async Task WindowNormalStartAnimationAsync(double Opacity)
-        //{
-        //    for (Opacity = 0; Opacity < 1; Opacity += 0.05)
-        //        await Task.Delay(10);
-        //}
-
-        //public static void WindowNormalExitAnimation(double Opacity)
-        //{
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        Thread.Sleep(20);
-        //        Opacity = Opacity - 0.05;
-        //    }
-        //}
     }
 
     public class Controls

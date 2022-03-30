@@ -1,1 +1,1 @@
-search_result['908']=["topic_00000000000002D6.html","VolumeControl.Get Method","Gets the current total sound volume."];
+search_result['908']=["topic_00000000000002DD_methods--.html","VolumeControl Methods",""];

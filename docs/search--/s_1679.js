@@ -1,1 +1,1 @@
-search_result['1679']=["topic_000000000000048E.html","VitNX_ToolWindow.OnPaintBackground Method","Paints the background of the control."];
+search_result['1679']=["topic_0000000000000493.html","VitNX_ToolWindow.OnMouseMove Method","Raises the MouseMove event."];

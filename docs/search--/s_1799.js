@@ -1,1 +1,1 @@
-search_result['1799']=["topic_00000000000004E0.html","VitNX2_ProgressBarDisplayMode Enumeration",""];
+search_result['1799']=["topic_00000000000004E5_vars--.html","Helper Fields",""];

@@ -8,6 +8,8 @@ using System.Windows.Forms;
 
 using VitNX.Functions.Win32;
 
+using Path = System.IO.Path;
+
 namespace VitNX.Functions.FileSystem
 {
     /// <summary>
@@ -83,6 +85,26 @@ namespace VitNX.Functions.FileSystem
             Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder,
                 targetFolder);
         }
+
+        /// <summary>
+        /// Deletes the file forever.
+        /// </summary>
+        /// <param name="targetFolder">The target folder.</param>
+        public static void DeleteForever(string targetFolder)
+        {
+            Directory.Delete(targetFolder, true);
+        }
+
+        /// <summary>
+        /// Deletes the file to Recycle Bin.
+        /// </summary>
+        /// <param name="targetFolder">The target folder.</param>
+        public static void DeleteToRecycleBin(string targetFolder)
+        {
+            Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(targetFolder,
+                Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
+                Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
+        }
     }
 
     /// <summary>
@@ -96,6 +118,7 @@ namespace VitNX.Functions.FileSystem
         /// <param name="targetFile">The target file.</param>
         public static void DeleteForever(string targetFile)
         {
+            System.IO.File.SetAttributes(targetFile, FileAttributes.Normal);
             System.IO.File.Delete(targetFile);
         }
 
@@ -112,12 +135,12 @@ namespace VitNX.Functions.FileSystem
         }
 
         /// <summary>
-        /// Writes the text to file as UTF-8.
+        /// Writes the text to file as UTF-8 to temp folder.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="targetFile">The target file.</param>
         /// <returns>An array of string (File name and File path).</returns>
-        public static string[] WriteTextAsUTF8(string text,
+        public static string[] WriteTextAsUTF8_ToTemp(string text,
             string targetFile)
         {
             string fileName = NameGenerator(targetFile, "txt");
@@ -166,6 +189,19 @@ namespace VitNX.Functions.FileSystem
                 Guid.NewGuid(),
                 fileExtension);
             return fileName;
+        }
+
+        /// <summary>
+        /// Gets the text from file.
+        /// </summary>
+        /// <param name="targetFile">The target file.</param>
+        /// <returns>A string.</returns>
+        public static string GetText(string targetFile)
+        {
+            string text = "Text file not found";
+            using (StreamReader sr = System.IO.File.OpenText(targetFile))
+                text = sr.ReadToEnd();
+            return text;
         }
 
         /// <summary>

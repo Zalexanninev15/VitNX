@@ -1,1 +1,1 @@
-search_result['923']=["topic_00000000000002DA_props--.html","GetClipboardText Properties",""];
+search_result['923']=["topic_00000000000002E3.html","GetClipboardText Class","Get clipboard text."];

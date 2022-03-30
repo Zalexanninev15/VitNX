@@ -1,1 +1,1 @@
-search_result['347']=["topic_00000000000000DF.html","Import.GetClientRect Method",""];
+search_result['347']=["topic_00000000000000DF.html","Import.FindWindowEx Method",""];

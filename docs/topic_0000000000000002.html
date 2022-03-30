@@ -237,18 +237,10 @@ public static string GetListWithInformation()
      string procList = &quot;All processes:&quot;;
      foreach (Process process in Process.GetProcesses())
      {
-         var procSize = &quot;0x0&quot;;
-         try
-         {
-             var counter = new PerformanceCounter(&quot;Process&quot;, &quot;Working Set - Private&quot;, process.ProcessName);
-             procSize = Convert.ToString(counter.RawValue / 1048576);
-         }
-         catch { }
-         if (procSize != &quot;0x0&quot; &amp;&amp; procSize != &quot;0&quot;)
-             procList += $&quot;\n\nName: {process.ProcessName}.exe&quot; +
+         procList += $&quot;\n\nName: {process.ProcessName}.exe&quot; +
                  $&quot;\nID: {process.Id}&quot; +
-                 $&quot;\nUsed memory: {procSize} МБ&quot; +
-                 $&quot;\nTitle &amp; Handle: \&quot;{process.MainWindowTitle}\&quot; &amp; {process.MainWindowHandle}&quot;;
+                 $&quot;\nTitle: \&quot;{process.MainWindowTitle}\&quot;&quot; +
+                 $&quot;\nHandle: {process.MainWindowHandle}&quot;;
      }
      return procList;
  }

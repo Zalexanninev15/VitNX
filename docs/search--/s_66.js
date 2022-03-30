@@ -1,1 +1,1 @@
-search_result['66']=["topic_0000000000000029.html","Text.ContainsNumbersLatters Method","Contains the numbers latters."];
+search_result['66']=["topic_0000000000000029.html","Text.DateAsYear Method","Converts the date to year."];

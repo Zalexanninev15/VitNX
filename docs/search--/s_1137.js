@@ -1,1 +1,1 @@
-search_result['1137']=["topic_000000000000033E_methods--.html","Type2 Methods",""];
+search_result['1137']=["topic_0000000000000346.html","Type1.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

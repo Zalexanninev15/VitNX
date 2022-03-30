@@ -1,1 +1,1 @@
-search_result['135']=["topic_0000000000000055.html","File.GetMD5 Method","Gets the MD5 from file."];
+search_result['135']=["topic_0000000000000055.html","File.DeleteForever Method","Deletes the file forever."];

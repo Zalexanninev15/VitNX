@@ -1,1 +1,1 @@
-search_result['1394']=["topic_00000000000003D5.html","VitNX_ScrollBar Constructor",""];
+search_result['1394']=["topic_00000000000003DC_methods--.html","VitNX_ScrollBar Methods",""];

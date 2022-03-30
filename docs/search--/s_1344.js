@@ -1,1 +1,1 @@
-search_result['1344']=["topic_00000000000003B8.html","VitNX_ListView.ToggleItem Method",""];
+search_result['1344']=["topic_00000000000003BE.html","VitNX_ListView.GetItemIndex Method",""];

@@ -1,1 +1,1 @@
-search_result['1116']=["topic_0000000000000333_methods--.html","Controls Methods",""];
+search_result['1116']=["topic_000000000000033B.html","Window.SetWindowsElevenStyleForWinForm Method","Applying Windows 11 roundings to a window(s)."];

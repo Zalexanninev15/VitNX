@@ -1,1 +1,1 @@
-c['1353']=[['1354',"FlatColors Class","topic_00000000000004FB.html",1],['1357',"FormSkin Class","topic_00000000000004FD.html",1],['1367',"Helpers Class","topic_0000000000000505.html",1],['1377',"MouseState Enumeration","topic_000000000000050D.html",0]];
+c['1353']=[['1354',"VitNX2_ToogleButton Constructor","topic_0000000000000557.html",0],['1355',"Methods","topic_0000000000000556_methods--.html",1]];

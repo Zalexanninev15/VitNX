@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>EncrypterAndDecrypter.EncryptQryParam Method</title>
+	<title>EncrypterAndDecrypter.Encrypt Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">EncrypterAndDecrypter.EncryptQryParam Method</h1>
+		<h1 class="title">EncrypterAndDecrypter.Encrypt Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000018.html">VitNX.Functions.Data</a>
+<a href="topic_0000000000000019.html">VitNX.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Encrypts the text with qry param.</summary-info>
+        <summary-info>Encrypts the text.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> EncryptQryParam(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> Encrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -163,7 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The input. 
+	 
 </p>
 
 <p />
@@ -248,7 +248,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string EncryptQryParam(string input)
+public static string Encrypt(string input)
  {
      RijndaelManaged RijndaelCipher = new RijndaelManaged();
      byte[] PlainText = Encoding.Unicode.GetBytes(input);
@@ -266,7 +266,7 @@ public static string EncryptQryParam(string input)
      memoryStream.Close();
      cryptoStream.Close();
      string EncryptedData = Convert.ToBase64String(CipherBytes);
-     return EncryptedData.Replace(&quot;+&quot;, &quot;~&quot;).Replace(&quot;/&quot;, &quot;^&quot;);
+     return EncryptedData;
  }
 					</pre>			
 				</div>
@@ -329,11 +329,11 @@ public static string EncryptQryParam(string input)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000040.html">EncrypterAndDecrypter Class</a><br />
+			<a href="topic_0000000000000041.html">EncrypterAndDecrypter Class</a><br />
 
 
 
-<a href="topic_0000000000000018.html">VitNX.Functions.Data Namespace</a><br />
+<a href="topic_0000000000000019.html">VitNX.Functions.Data Namespace</a><br />
 
 
 			

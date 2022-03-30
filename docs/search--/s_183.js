@@ -1,1 +1,1 @@
-search_result['183']=["topic_0000000000000076.html","Cpu.GetArchitecture Method","Gets the architecture."];
+search_result['183']=["topic_0000000000000078_methods--.html","Cpu Methods",""];

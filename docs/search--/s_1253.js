@@ -1,1 +1,1 @@
-search_result['1253']=["topic_0000000000000380.html","VitNX_ComboBox.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1253']=["topic_0000000000000386.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];

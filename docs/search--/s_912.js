@@ -1,1 +1,1 @@
-search_result['912']=["topic_00000000000002D7_methods--.html","NewFolderDialog Methods",""];
+search_result['912']=["topic_00000000000002DF.html","VolumeControl.Get Method","Gets the current total sound volume."];

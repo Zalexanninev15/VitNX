@@ -1,1 +1,1 @@
-search_result['376']=["topic_00000000000000FC.html","Import.GetWindowPlacement Method",""];
+search_result['376']=["topic_00000000000000FC.html","Import.GetThemeSysFont Method",""];

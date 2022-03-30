@@ -1,1 +1,1 @@
-search_result['1374']=["topic_00000000000003C9_events--.html","VitNX_RadioButton Events",""];
+search_result['1374']=["topic_00000000000003D0.html","VitNX_NumericUpDown.OnTextBoxLostFocus Method","Raises the LostFocus event."];

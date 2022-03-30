@@ -1,1 +1,1 @@
-search_result['185']=["topic_0000000000000078.html","Gpu Class","Work with informations of GPU(s)."];
+search_result['185']=["topic_0000000000000078_vars--.html","Cpu Fields",""];

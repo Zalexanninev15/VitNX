@@ -1,1 +1,1 @@
-search_result['1046']=["topic_000000000000030F_props--.html","DISPLAYCONFIG_MODE_INFO_UNION Properties",""];
+search_result['1046']=["topic_0000000000000318.html","DISPLAYCONFIG_MODE_INFO_UNION Structure",""];

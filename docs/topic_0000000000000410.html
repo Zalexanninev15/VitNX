@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Title.OnPaint Method</title>
+	<title>VitNX_Separator.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Title.OnPaint Method</h1>
+		<h1 class="title">VitNX_Separator.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -241,24 +242,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 protected override void OnPaint(PaintEventArgs e)
-        {
-            var g = e.Graphics;
-            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
-
-            var textSize = g.MeasureString(Text, Font);
-
-            using (var b = new SolidBrush(Colors.LightText))
-            {
-                g.DrawString(Text, Font, b, new PointF(-2, 0));
-            }
-
-            using (var p = new Pen(Colors.GreyHighlight))
-            {
-                var p1 = new PointF(textSize.Width + 5, textSize.Height / 2);
-                var p2 = new PointF(rect.Width, textSize.Height / 2);
-                g.DrawLine(p, p1, p2);
-            }
-        }
+ {
+     var g = e.Graphics;
+ 
+     using (var p = new Pen(Colors.VitNXBorder))
+     {
+         g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
+     }
+ 
+     using (var p = new Pen(Colors.LightBorder))
+     {
+         g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
+     }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -320,11 +316,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000040E.html">VitNX_Title Class</a><br />
+			<a href="topic_000000000000040E.html">VitNX_Separator Class</a><br />
 
 
 
-<a href="topic_000000000000035B.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

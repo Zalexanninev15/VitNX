@@ -1,1 +1,1 @@
-search_result['277']=["topic_00000000000000AA_props--.html","DataFromSites Properties",""];
+search_result['277']=["topic_00000000000000AE.html","DataFromSites Class","Work with data from sites."];

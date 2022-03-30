@@ -1,1 +1,1 @@
-search_result['1715']=["topic_00000000000004AB.html","VitNX_MessageBox.OnHandleCreated Method",""];
+search_result['1715']=["topic_00000000000004B3_events--.html","VitNX_MessageBox Events",""];

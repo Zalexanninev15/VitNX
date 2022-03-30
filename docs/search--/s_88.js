@@ -1,1 +1,1 @@
-search_result['88']=["topic_000000000000003A.html","EncryptAndDecrypt.MD5_Encrypt Method","Encrypt text by MD5."];
+search_result['88']=["topic_000000000000003A.html","EncryptAndDecrypt.XOR_Both Method","XOR method (encrypt and decrypt)."];

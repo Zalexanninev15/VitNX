@@ -1,1 +1,1 @@
-search_result['1728']=["topic_00000000000004B2.html","VitNX_MessageBox.ShowInformation Method","Shows the information MessageBox."];
+search_result['1728']=["topic_00000000000004B9.html","VitNX_MessageBox(String, String, VitNX_DialogButton) Constructor",""];

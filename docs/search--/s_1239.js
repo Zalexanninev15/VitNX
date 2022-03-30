@@ -1,1 +1,1 @@
-search_result['1239']=["topic_0000000000000378.html","VitNX_CheckBox.OnKeyDown Method",""];
+search_result['1239']=["topic_000000000000037D.html","VitNX_CheckBox.OnMouseLeave Method","Raises the OnMouseLeave event."];

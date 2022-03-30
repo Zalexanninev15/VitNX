@@ -1,1 +1,1 @@
-search_result['1347']=["topic_00000000000003BA.html","VitNX_ListView.EnsureVisible Method",""];
+search_result['1347']=["topic_00000000000003C0_overloads--.html","VitNX_ListView.SelectItems Method",""];

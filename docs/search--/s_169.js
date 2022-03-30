@@ -1,1 +1,1 @@
-search_result['169']=["topic_000000000000006D.html","Windows.GetWindowsDisplayVersionFromREG Method","Gets the Windows displayed version from the Windows Registry."];
+search_result['169']=["topic_000000000000006D.html","Windows.GetWindowsVersionFromREG Method","Gets the Windows version from the Windows Registry."];

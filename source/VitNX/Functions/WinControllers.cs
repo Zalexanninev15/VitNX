@@ -398,7 +398,11 @@ namespace VitNX.Functions.WinControllers
             string title)
         {
             var folderBrowserDialog = new FolderBrowserDialog
-            { Description = title, SelectedPath = initialDirectory, ShowNewFolderButton = false };
+            {
+                Description = title,
+                SelectedPath = initialDirectory,
+                ShowNewFolderButton = false
+            };
             var dialogResult = new ShowDialogResult();
             if (folderBrowserDialog.ShowDialog(new WindowWrapper(ownerHandle)) == DialogResult.OK)
             {
@@ -509,9 +513,7 @@ namespace VitNX.Functions.WinControllers
             { _handle = handle; }
 
             public IntPtr Handle
-            {
-                get { return _handle; }
-            }
+            { get { return _handle; } }
         }
     }
 
@@ -625,7 +627,7 @@ namespace VitNX.Functions.WinControllers
         public static void KeyDown(Keys vKey)
         {
             Import.keybd_event((byte)vKey, 0,
-                (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
+                (int)KEYEVENTF.KEYEVENTF_EXTENDEDKEY, 0);
         }
 
         /// <summary>
@@ -635,19 +637,19 @@ namespace VitNX.Functions.WinControllers
         public static void KeyUp(Keys vKey)
         {
             Import.keybd_event((byte)vKey, 0,
-                (int)Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY |
-                (int)Enums.KEYEVENTF.KEYEVENTF_KEYUP, 0);
+                (int)KEYEVENTF.KEYEVENTF_EXTENDEDKEY |
+                (int)KEYEVENTF.KEYEVENTF_KEYUP, 0);
         }
 
         /// <summary>
         /// The keyboard events of Windows.
         /// </summary>
         /// <param name="status">The status.</param>
-        public static void WindowsKeyboardEventsAPI(Enums.KEYBOARD_PRESETS status)
+        public static void WindowsKeyboardEventsAPI(KEYBOARD_PRESETS status)
         {
             switch (status)
             {
-                case Enums.KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS:
+                case KEYBOARD_PRESETS.HIDE_OR_SHOW_ALL_WINDOWS:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.D);
@@ -655,7 +657,7 @@ namespace VitNX.Functions.WinControllers
                         KeyUp(Keys.D);
                         break;
                     }
-                case Enums.KEYBOARD_PRESETS.HIDE_THIS_WINDOW:
+                case KEYBOARD_PRESETS.HIDE_THIS_WINDOW:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.M);
@@ -663,7 +665,7 @@ namespace VitNX.Functions.WinControllers
                         KeyUp(Keys.M);
                         break;
                     }
-                case Enums.KEYBOARD_PRESETS.SHOW_ALL_WINDOWS:
+                case KEYBOARD_PRESETS.SHOW_ALL_WINDOWS:
                     {
                         KeyDown(Keys.LWin);
                         KeyDown(Keys.LShiftKey);
@@ -678,6 +680,7 @@ namespace VitNX.Functions.WinControllers
     }
 
 #pragma warning disable CS1591
+
     /// <summary>
     /// Work with monitor.
     /// </summary>
@@ -826,6 +829,14 @@ namespace VitNX.Functions.WinControllers
             public string monitorDevicePath;
         }
 
+#pragma warning restore CS1591
+
+        /// <summary>
+        /// Monitors the friendly name.
+        /// </summary>
+        /// <param name="adapterId">The adapter id.</param>
+        /// <param name="targetId">The target id.</param>
+        /// <returns>A string.</returns>
         private static string MonitorFriendlyName(LUID adapterId,
             uint targetId)
         {
@@ -846,6 +857,10 @@ namespace VitNX.Functions.WinControllers
             return deviceName.monitorFriendlyDeviceName;
         }
 
+        /// <summary>
+        /// Gets the all monitors friendly names.
+        /// </summary>
+        /// <returns>A list of string.</returns>
         private static IEnumerable<string> GetAllMonitorsFriendlyNames()
         {
             uint pathCount, modeCount;
@@ -872,7 +887,6 @@ namespace VitNX.Functions.WinControllers
                     yield return MonitorFriendlyName(displayModes[i].adapterId,
                         displayModes[i].id);
         }
-#pragma warning restore CS1591
 
         /// <summary>
         /// Friendly name of monitor(s).

@@ -1,1 +1,1 @@
-search_result['288']=["topic_00000000000000B0_props--.html","SendDataToSites Properties",""];
+search_result['288']=["topic_00000000000000B4.html","SendDataToSites Class","The send data to sites."];
