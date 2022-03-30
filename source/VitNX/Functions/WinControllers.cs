@@ -830,6 +830,7 @@ namespace VitNX.Functions.WinControllers
         }
 
 #pragma warning restore CS1591
+
         /// <summary>
         /// Monitors the friendly name.
         /// </summary>

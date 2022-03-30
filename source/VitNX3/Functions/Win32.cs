@@ -716,18 +716,21 @@ namespace VitNX3.Functions.Win32
             int cY,
             uint uFlags);
 
-        [DllImport("ntdll.dll", SetLastError = true)]
-        static extern int NtQueryTimerResolution(out int MinimumResolution,
+        [DllImport("ntdll.dll",
+            SetLastError = true)]
+        private static extern int NtQueryTimerResolution(out int MinimumResolution,
         out int MaximumResolution,
         out int CurrentResolution);
 
-        [DllImport("ntdll.dll", SetLastError = true)]
-        static extern int NtSetTimerResolution(int DesiredResolution,
+        [DllImport("ntdll.dll",
+            SetLastError = true)]
+        private static extern int NtSetTimerResolution(int DesiredResolution,
             bool SetResolution,
             out int CurrentResolution);
 
-        [DllImport("ntdll.dll", SetLastError = true)]
-        static unsafe extern int NtDelayExecution(bool alertable,
+        [DllImport("ntdll.dll",
+            SetLastError = true)]
+        private static extern unsafe int NtDelayExecution(bool alertable,
             long* delayInterval);
 
         [DllImport("user32.dll")]
