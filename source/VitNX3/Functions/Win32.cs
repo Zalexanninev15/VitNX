@@ -898,7 +898,7 @@ namespace VitNX3.Functions.Win32
         [DllImport("dwmapi.dll",
             SetLastError = true)]
         public static extern int DwmSetWindowAttribute(IntPtr hWnd,
-            int attribute,
+            DWM_GET_WINDOW_ATTRIBUTE attribute,
             int[] attrValue,
             uint cbAttribute);
 
@@ -976,7 +976,7 @@ namespace VitNX3.Functions.Win32
             int y,
             int cx,
             int cy,
-            SetWindowPosFlags uFlags);
+            SET_WINDOW_POS_FLAGS uFlags);
 
         [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
@@ -1078,7 +1078,6 @@ namespace VitNX3.Functions.Win32
         public const int STD_OUTPUT_HANDLE = -11;
         public const int MOUSEEVENTF_MOVE = 0x0001;
         public const int SC_MONITORPOWER = 0xF170;
-        public const int DWMWA_WINDOW_CORNER_PREFERENCE = 33;
         public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         public static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
         public static readonly IntPtr HWND_TOP = new IntPtr(0);
@@ -1117,6 +1116,15 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Enums
     {
+        public enum DWM_GET_WINDOW_ATTRIBUTE : uint
+        {
+            DWMWA_USE_IMMERSIVE_DARK_MODE_NOT = 19,
+            DWMWA_USE_IMMERSIVE_DARK_MODE = 20,
+            DWMWA_WINDOW_CORNER_PREFERENCE = 33,
+            DWMWA_SYSTEMBACKDROP_TYPE = 38,
+            DWMWA_MICA_EFFECT = 1029,
+        }
+
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct BLENDFUNCTION
         {
@@ -1142,8 +1150,8 @@ namespace VitNX3.Functions.Win32
         public struct ICONINFO
         {
             private bool fIcon;
-            private Int32 xHotspot;
-            private Int32 yHotspot;
+            private int xHotspot;
+            private int yHotspot;
             private IntPtr hbmMask;
             private IntPtr hbmColor;
         }
@@ -1441,7 +1449,7 @@ namespace VitNX3.Functions.Win32
         }
 
         [Flags]
-        public enum SetWindowPosFlags : uint
+        public enum SET_WINDOW_POS_FLAGS : uint
         {
             SWP_ASYNCWINDOWPOS = 0x4000,
             SWP_DEFERERASE = 0x2000,
@@ -1808,7 +1816,7 @@ namespace VitNX3.Functions.Win32
             HSHELL_WINDOWREPLACED = 13
         }
 
-        public enum WindowPosFlags : int
+        public enum WINDOW_POS_FLAGS : int
         {
             HWND_TOPMOST = -1,
             SWP_NOMOVE = 0x0002,

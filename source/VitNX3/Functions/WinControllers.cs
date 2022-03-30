@@ -536,6 +536,13 @@ namespace VitNX3.Functions.WinControllers
             public string monitorDevicePath;
         }
 
+#pragma warning restore CS1591
+        /// <summary>
+        /// Monitors the friendly name.
+        /// </summary>
+        /// <param name="adapterId">The adapter id.</param>
+        /// <param name="targetId">The target id.</param>
+        /// <returns>A string.</returns>
         private static string MonitorFriendlyName(LUID adapterId,
             uint targetId)
         {
@@ -556,6 +563,10 @@ namespace VitNX3.Functions.WinControllers
             return deviceName.monitorFriendlyDeviceName;
         }
 
+        /// <summary>
+        /// Gets the all monitors friendly names.
+        /// </summary>
+        /// <returns>A list of string.</returns>
         private static IEnumerable<string> GetAllMonitorsFriendlyNames()
         {
             uint pathCount, modeCount;
