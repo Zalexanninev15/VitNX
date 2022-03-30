@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Motherboard.GetFirmwareType Method</title>
+	<title>Monitor.GetResolution2 Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Motherboard.GetFirmwareType Method</h1>
+		<h1 class="title">Monitor.GetResolution2 Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
+<a href="topic_0000000000000066.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the firmware type.</summary-info>
+        <summary-info>Gets the resolution (method 2).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetFirmwareType()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetResolution2()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -232,10 +232,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetFirmwareType()
+public static string GetResolution2()
  {
-     return AppsAndProcesses.Processes.Execute(&quot;cmd&quot;,
-         &quot;/C echo %firmware_type%&quot;);
+     string size = string.Empty;
+     Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);
+     IntPtr desktop = graphics.GetHdc();
+     int monitorHeight = Import.GetDeviceCaps(desktop, 6);
+     int monitorWidth = Import.GetDeviceCaps(desktop, 4);
+     size = $&quot;{Math.Sqrt(Math.Pow(monitorHeight, 2) + Math.Pow(monitorWidth, 2)) / 25,4:#,##0.00}&quot;;
+     return size;
  }
 					</pre>			
 				</div>
@@ -298,11 +303,11 @@ public static string GetFirmwareType()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000089.html">Motherboard Class</a><br />
+			<a href="topic_0000000000000083.html">Monitor Class</a><br />
 
 
 
-<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000066.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['172']=["topic_0000000000000070.html","Windows.WindowsUseLightThemeInSystem Method","Windows use light theme in system from the Windows Registry, for Windows 10+."];
+search_result['172']=["topic_0000000000000070.html","Windows.GetWindowsProductNameFromREG Method","Gets the Windows product name from the Windows Registry."];

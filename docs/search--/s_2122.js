@@ -1,1 +1,1 @@
-search_result['2122']=["topic_00000000000008A6_props--.html","NotifySettings Properties",""];
+search_result['2122']=["topic_00000000000008AF.html","NotifySettings Class","The notify settings."];

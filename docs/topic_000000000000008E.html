@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Ram.Characteristics Method</title>
+	<title>Motherboard.GetFirmwareType Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Ram.Characteristics Method</h1>
+		<h1 class="title">Motherboard.GetFirmwareType Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
+<a href="topic_0000000000000066.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets all characteristics.</summary-info>
+        <summary-info>Gets the firmware type.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] Characteristics()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetFirmwareType()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -154,9 +154,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		An array of string. 
+		A string. 
 	</p>
 	
 
@@ -232,7 +232,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string[] Characteristics() =&gt; Set().Split('/');
+public static string GetFirmwareType()
+ {
+     return AppsAndProcesses.Processes.Execute(&quot;cmd&quot;,
+         &quot;/C echo %firmware_type%&quot;);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -294,11 +298,11 @@ public static string[] Characteristics() =&gt; Set().Split('/');
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000008D.html">Ram Class</a><br />
+			<a href="topic_000000000000008D.html">Motherboard Class</a><br />
 
 
 
-<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000066.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DISPLAYCONFIG_PATH_SOURCE_INFO Structure</title>
+	<title>Keyboard.HideVirtualKeyboard Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DISPLAYCONFIG_PATH_SOURCE_INFO Structure</h1>
+		<h1 class="title">Keyboard.HideVirtualKeyboard Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002D0.html">VitNX.Functions.WinControllers</a>
+<a href="topic_00000000000002D9.html">VitNX.Functions.WinControllers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Hides the virtual keyboard.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct DISPLAYCONFIG_PATH_SOURCE_INFO</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> HideVirtualKeyboard()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,6 +152,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<p>
+		A bool. 
+	</p>
+	
+
 
 
 
@@ -165,133 +174,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
-
-
-
-
-
-
-
-
-  
-
-<!-- Classes -->
-
-<!-- Classes End -->
-
-<!-- Standard Modules -->
-
-<!-- Standard Modules End -->
-
-  
-
-
-
-
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
-		<div>&nbsp;</div>
-	</div>
-
-	<div id="FieldsSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000002EB.html">adapterId</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000002EC.html">id</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000002ED.html">modeInfoIdx</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000002EE.html">statusFlags</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
-
-	</div>					
-</div>
 
 
 
@@ -350,13 +232,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[StructLayout(LayoutKind.Sequential)]
- public struct DISPLAYCONFIG_PATH_SOURCE_INFO
+public static bool HideVirtualKeyboard()
  {
-     public LUID adapterId;
-     public uint id;
-     public uint modeInfoIdx;
-     public uint statusFlags;
+     Processes.Kill(&quot;osk.exe&quot;);
+     List&lt;string&gt; processes = Processes.GetList();
+     foreach (string process in processes)
+         return process == &quot;osk&quot; ? false : true;
+     return false;
  }
 					</pre>			
 				</div>
@@ -411,7 +293,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>					
 </div>
 
-
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -420,10 +301,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_00000000000002D0.html">VitNX.Functions.WinControllers Namespace</a><br />
+			<a href="topic_00000000000002E8.html">Keyboard Class</a><br />
 
 
-	
+
+<a href="topic_00000000000002D9.html">VitNX.Functions.WinControllers Namespace</a><br />
+
+
+			
 
 		</div>
 	</div>					

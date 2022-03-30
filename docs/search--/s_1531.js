@@ -1,1 +1,1 @@
-search_result['1531']=["topic_000000000000042C.html","VitNX_TreeView.SelectNodes (VitNX_TreeNode, VitNX_TreeNode) Method",""];
+search_result['1531']=["topic_0000000000000431.html","VitNX_TreeView.OnMouseDoubleClick Method","Raises the MouseDoubleClick event."];

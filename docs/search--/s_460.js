@@ -1,1 +1,1 @@
-search_result['460']=["topic_0000000000000147.html","Import.GetModuleHandle Method",""];
+search_result['460']=["topic_0000000000000147.html","Import.GetPrivateProfileString Method",""];

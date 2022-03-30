@@ -1,1 +1,1 @@
-search_result['1596']=["topic_0000000000000454_methods--.html","VitNX_DockGroup Methods",""];
+search_result['1596']=["topic_000000000000045C.html","VitNX_DockContent.OnEnter Method","Raises the Enter event."];

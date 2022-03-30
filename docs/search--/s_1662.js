@@ -1,1 +1,1 @@
-search_result['1662']=["topic_0000000000000480_methods--.html","VitNX_Document Methods",""];
+search_result['1662']=["topic_0000000000000488.html","VitNX_DockSplitter.UpdateBounds Method",""];

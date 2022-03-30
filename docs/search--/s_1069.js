@@ -1,1 +1,1 @@
-search_result['1069']=["topic_0000000000000319_events--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Events",""];
+search_result['1069']=["topic_0000000000000320_vars--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS Fields",""];

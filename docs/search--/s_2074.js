@@ -1,1 +1,1 @@
-search_result['2074']=["topic_0000000000000885.html","MaxTextWidth Field",""];
+search_result['2074']=["topic_000000000000088A.html","PositionType Field","/// Notification display location on the screen.\r\n\t\t///"];

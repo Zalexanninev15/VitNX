@@ -1,1 +1,1 @@
-search_result['55']=["topic_000000000000001E.html","Text.ContainsOnlyLatters Method","Contains the only latters."];
+search_result['55']=["topic_000000000000001E.html","SizeSuffixes Field","Possible size suffixes."];

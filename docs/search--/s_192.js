@@ -1,1 +1,1 @@
-search_result['192']=["topic_000000000000007A.html","Disk Class","Work with informations of Disk(s)."];
+search_result['192']=["topic_000000000000007C_methods--.html","Gpu Methods",""];

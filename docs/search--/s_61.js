@@ -1,1 +1,1 @@
-search_result['61']=["topic_0000000000000024.html","Text.DateAsLongDate Method","Converts the date to long date."];
+search_result['61']=["topic_0000000000000024.html","Text.DateAsShortDate Method","Converts the date to short date."];

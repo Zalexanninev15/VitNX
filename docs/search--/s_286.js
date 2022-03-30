@@ -1,1 +1,1 @@
-search_result['286']=["topic_00000000000000B0_events--.html","SendDataToSites Events",""];
+search_result['286']=["topic_00000000000000B2.html","DataFromSites.GetGeo Method","Gets the geolocation of PC."];

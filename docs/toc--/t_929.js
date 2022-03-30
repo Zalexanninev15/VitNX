@@ -1,1 +1,1 @@
-c['929']=[['930',"TextChanged Event","topic_00000000000003AD.html",0]];
+c['929']=[['930',"VitNX_ListItem Constructor","topic_00000000000003B7_overloads--.html",1],['933',"Events","topic_00000000000003B5_events--.html",1]];

@@ -1,1 +1,1 @@
-search_result['1410']=["topic_00000000000003E1_props--.html","VitNX_ScrollBase Properties",""];
+search_result['1410']=["topic_00000000000003EA.html","VitNX_ScrollBase Class",""];

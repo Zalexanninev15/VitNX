@@ -1,1 +1,1 @@
-search_result['1126']=["topic_0000000000000337_props--.html","Type1 Properties",""];
+search_result['1126']=["topic_0000000000000340.html","Type1 Class","Console ProgressBar type 1."];

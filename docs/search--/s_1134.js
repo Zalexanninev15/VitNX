@@ -1,1 +1,1 @@
-search_result['1134']=["topic_000000000000033E.html","Type2 Class","Console ProgressBar type 2."];
+search_result['1134']=["topic_0000000000000343.html","Type1.SetColor Method","Sets the color."];

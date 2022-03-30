@@ -1,1 +1,1 @@
-search_result['921']=["topic_00000000000002DA_events--.html","GetClipboardText Events",""];
+search_result['921']=["topic_00000000000002E2.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];

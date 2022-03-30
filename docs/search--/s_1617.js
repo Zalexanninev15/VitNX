@@ -1,1 +1,1 @@
-search_result['1617']=["topic_0000000000000463_props--.html","VitNX_DockPanel Properties",""];
+search_result['1617']=["topic_000000000000046C.html","VitNX_DockPanel Class",""];

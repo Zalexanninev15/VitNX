@@ -1,1 +1,1 @@
-search_result['353']=["topic_00000000000000E5.html","Import.GetFocus Method",""];
+search_result['353']=["topic_00000000000000E5.html","Import.GetCurrentThemeName Method",""];

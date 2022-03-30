@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['132',"VitNX.Functions.Information Namespace","topic_0000000000000062.html"],['141',"Disk Class","topic_000000000000007A.html"],['142',"Methods","topic_000000000000007A_methods--.html"],['145',"GetTotalSpace Method","topic_000000000000007E.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['136',"VitNX.Functions.Information Namespace","topic_0000000000000066.html"],['145',"Disk Class","topic_000000000000007E.html"]];

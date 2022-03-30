@@ -1,1 +1,1 @@
-search_result['312']=["topic_00000000000000BD.html","Import.CancelDC Method",""];
+search_result['312']=["topic_00000000000000BD.html","Import.AlphaBlend Method",""];

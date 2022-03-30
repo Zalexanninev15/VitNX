@@ -1,1 +1,1 @@
-search_result['1992']=["topic_0000000000000547_events--.html","VitNX2_TextBox Events",""];
+search_result['1992']=["topic_000000000000054F.html","VitNX2_Tab.WndProc Method","This member overrides WndProc."];

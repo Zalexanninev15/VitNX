@@ -1,1 +1,1 @@
-search_result['254']=["topic_000000000000009A_methods--.html","PowerControl Methods",""];
+search_result['254']=["topic_000000000000009D.html","Internet.IsHaveInternet Method","Are the have internet."];

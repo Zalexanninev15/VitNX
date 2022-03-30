@@ -1,1 +1,1 @@
-search_result['1457']=["topic_0000000000000405_events--.html","VitNX_Separator Events",""];
+search_result['1457']=["topic_000000000000040C.html","VitNX_SectionPanel.OnPaint Method","Raises the Paint event."];

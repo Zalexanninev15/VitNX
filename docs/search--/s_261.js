@@ -1,1 +1,1 @@
-search_result['261']=["topic_00000000000000A2_attached_props--.html","IniSettings32 Attached Properties",""];
+search_result['261']=["topic_000000000000009F.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];

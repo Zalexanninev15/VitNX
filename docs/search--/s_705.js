@@ -1,1 +1,1 @@
-search_result['705']=["topic_00000000000001E2_props--.html","PAINTSTRUCT Properties",""];
+search_result['705']=["topic_00000000000001EB.html","PAINTSTRUCT Structure",""];

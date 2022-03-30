@@ -1,1 +1,1 @@
-search_result['182']=["topic_0000000000000075.html","Cpu.Characteristics Method","Gets all characteristics."];
+search_result['182']=["topic_0000000000000078_events--.html","Cpu Events",""];

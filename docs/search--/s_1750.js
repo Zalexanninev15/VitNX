@@ -1,1 +1,1 @@
-search_result['1750']=["topic_00000000000004C8.html","VitNX_ToolStripRenderer Class",""];
+search_result['1750']=["topic_00000000000004CD.html","VitNX_MenuRenderer.OnRenderItemCheck Method","Raises the RenderItemCheck event."];

@@ -1,1 +1,1 @@
-search_result['372']=["topic_00000000000000F8.html","Import.GetThemeSysFont Method",""];
+search_result['372']=["topic_00000000000000F8.html","Import.GetTextMetrics Method",""];

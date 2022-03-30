@@ -1,1 +1,1 @@
-search_result['322']=["topic_00000000000000C7.html","Import.CreateCompatibleDC Method",""];
+search_result['322']=["topic_00000000000000C7.html","Import.CombineRgn Method",""];

@@ -1,1 +1,1 @@
-search_result['140']=["topic_000000000000005A.html","File.CreateBackup Method","Creates the file backup."];
+search_result['140']=["topic_000000000000005A.html","File.GetText Method","Gets the text from file."];

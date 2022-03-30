@@ -1,1 +1,1 @@
-search_result['1244']=["topic_000000000000037B_events--.html","VitNX_ComboBox Events",""];
+search_result['1244']=["topic_0000000000000382.html","VitNX_CheckBox.OnKeyUp Method","Raises the OnKeyUp event."];

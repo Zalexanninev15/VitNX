@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['210',"VitNX.Functions.Win32 Namespace","topic_00000000000000B6.html"],['248',"Enums Class","topic_000000000000018C.html"],['474',"E_ROLE Enumeration","topic_00000000000002C5.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['214',"VitNX.Functions.Win32 Namespace","topic_00000000000000BA.html"],['251',"Enums Class","topic_000000000000018F.html"],['484',"SHERB_RECYCLE Enumeration","topic_00000000000002C5.html"]];

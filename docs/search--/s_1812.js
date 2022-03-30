@@ -1,1 +1,1 @@
-search_result['1812']=["topic_00000000000004EB_methods--.html","CheckBox_Custom Methods",""];
+search_result['1812']=["topic_00000000000004F3.html","VitNX2_Button.OnHandleCreated Method","Raises the HandleCreated event."];

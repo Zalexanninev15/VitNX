@@ -1,1 +1,1 @@
-search_result['920']=["topic_00000000000002DA_attached_props--.html","GetClipboardText Attached Properties",""];
+search_result['920']=["topic_00000000000002E1_overloads--.html","NewFolderDialog.Show Method","Shows the folder dialog."];

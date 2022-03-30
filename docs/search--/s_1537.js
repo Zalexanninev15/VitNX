@@ -1,1 +1,1 @@
-search_result['1537']=["topic_0000000000000430.html","VitNX_TreeView.EnsureVisible Method",""];
+search_result['1537']=["topic_0000000000000436.html","VitNX_TreeView.SelectNodes (List\u0026lt;VitNX_TreeNode\u0026gt;, Boolean) Method",""];

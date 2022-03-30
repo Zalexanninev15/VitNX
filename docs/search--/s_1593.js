@@ -1,1 +1,1 @@
-search_result['1593']=["topic_0000000000000454.html","VitNX_DockGroup Class",""];
+search_result['1593']=["topic_0000000000000459.html","DockTextChanged Event",""];

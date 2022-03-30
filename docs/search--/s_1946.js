@@ -1,1 +1,1 @@
-search_result['1946']=["topic_0000000000000535_events--.html","VitNX2_ProgressBar Events",""];
+search_result['1946']=["topic_000000000000053C.html","VitNX2_PictureBox.OnResize Method","Raises the Resize event."];

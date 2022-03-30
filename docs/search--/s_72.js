@@ -1,1 +1,1 @@
-search_result['72']=["topic_000000000000002F.html","Text.ListAddStringsToList Method","Lists the add strings to list."];
+search_result['72']=["topic_000000000000002F.html","Text.ListContainsString Method","Lists the contains string."];

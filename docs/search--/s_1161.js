@@ -1,1 +1,1 @@
-search_result['1161']=["topic_0000000000000348_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];
+search_result['1161']=["topic_000000000000034F.html","ItemsRemoved Event",""];

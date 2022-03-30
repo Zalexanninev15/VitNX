@@ -1,1 +1,1 @@
-search_result['2057']=["topic_0000000000000879.html","Manager Class","The settings manager of notification."];
+search_result['2057']=["topic_0000000000000880.html","FontAwesomeExtensions.AsIcon (Type, Properties) Method",""];

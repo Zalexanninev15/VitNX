@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Cpu.GetArchitecture Method</title>
+	<title>Windows.GetWindowsSerialKey Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Cpu.GetArchitecture Method</h1>
+		<h1 class="title">Windows.GetWindowsSerialKey Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000062.html">VitNX.Functions.Information</a>
+<a href="topic_0000000000000066.html">VitNX.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the architecture.</summary-info>
+        <summary-info>Gets Windows the serial key.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetArchitecture()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsSerialKey()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -232,24 +232,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetArchitecture()
+public static string GetWindowsSerialKey()
  {
-     string result = string.Empty;
-     switch (typeof(string).Assembly.GetName().ProcessorArchitecture)
-     {
-         case ProcessorArchitecture.X86:
-             result = &quot;x86&quot;;
-             break;
- 
-         case ProcessorArchitecture.Amd64:
-             result = &quot;x64&quot;;
-             break;
- 
-         case ProcessorArchitecture.Arm:
-             result = &quot;ARM&quot;;
-             break;
-     }
-     return result;
+     ManagementObjectSearcher searcher112 = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_OperatingSystem&quot;);
+     ManagementObjectCollection information112 = searcher112.Get();
+     foreach (ManagementObject obj112 in information112)
+         return Convert.ToString(obj112[&quot;SerialNumber&quot;]);
+     return &quot;S-E-R-I-A-L_K-E-Y&quot;;
  }
 					</pre>			
 				</div>
@@ -312,11 +301,11 @@ public static string GetArchitecture()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000074.html">Cpu Class</a><br />
+			<a href="topic_0000000000000067.html">Windows Class</a><br />
 
 
 
-<a href="topic_0000000000000062.html">VitNX.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000066.html">VitNX.Functions.Information Namespace</a><br />
 
 
 			

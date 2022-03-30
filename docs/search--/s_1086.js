@@ -1,1 +1,1 @@
-search_result['1086']=["topic_0000000000000322.html","edidManufactureId Field",""];
+search_result['1086']=["topic_0000000000000327_vars--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Fields",""];

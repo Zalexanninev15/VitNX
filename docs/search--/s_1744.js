@@ -1,1 +1,1 @@
-search_result['1744']=["topic_00000000000004C2.html","VitNX_MenuRenderer.OnRenderToolStripBackground Method","Raises the RenderToolStripBackground event."];
+search_result['1744']=["topic_00000000000004C8_props--.html","VitNX_MenuRenderer Properties",""];

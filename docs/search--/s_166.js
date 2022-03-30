@@ -1,1 +1,1 @@
-search_result['166']=["topic_000000000000006A.html","Windows.GetWindowsEditionIDFromREG Method","Gets the Windows edition from the Windows Registry."];
+search_result['166']=["topic_000000000000006A.html","Windows.GetLocalTime Method","Gets locals the time."];

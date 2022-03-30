@@ -1,1 +1,1 @@
-search_result['980']=["topic_00000000000002F4.html","statusFlags Field",""];
+search_result['980']=["topic_00000000000002F9.html","adapterId Field",""];

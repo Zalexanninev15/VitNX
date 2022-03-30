@@ -1,1 +1,1 @@
-search_result['1216']=["topic_0000000000000364.html","VitNX_Button.OnMouseLeave Method",""];
+search_result['1216']=["topic_0000000000000369.html","VitNX_Button.OnCreateControl Method","Raises the CreateControl method."];

@@ -1,1 +1,1 @@
-search_result['326']=["topic_00000000000000CB.html","Import.CreateRectRgnIndirect Method",""];
+search_result['326']=["topic_00000000000000CB.html","Import.CreateCompatibleDC Method",""];

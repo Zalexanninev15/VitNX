@@ -1,1 +1,1 @@
-search_result['69']=["topic_000000000000002C.html","Text.ContainsSymbols Method","Contains the symbols."];
+search_result['69']=["topic_000000000000002C.html","Text.ContainsOnlyNumbers Method","Contains the only numbers."];

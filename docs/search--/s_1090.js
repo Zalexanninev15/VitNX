@@ -1,1 +1,1 @@
-search_result['1090']=["topic_0000000000000326.html","monitorDevicePath Field",""];
+search_result['1090']=["topic_000000000000032B.html","edidManufactureId Field",""];

@@ -1,1 +1,1 @@
-search_result['1136']=["topic_000000000000033E_events--.html","Type2 Events",""];
+search_result['1136']=["topic_0000000000000345.html","Type1.NotUsed Method","Stop this task or not use console progressbar."];

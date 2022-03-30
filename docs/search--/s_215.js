@@ -1,1 +1,1 @@
-search_result['215']=["topic_0000000000000087.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];
+search_result['215']=["topic_0000000000000087.html","Monitor.CaptureWindowToFile Method","Captures the window to file."];

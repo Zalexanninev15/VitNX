@@ -1,1 +1,1 @@
-search_result['2043']=["topic_0000000000000872_props--.html","FontAwesomeExtensions Properties",""];
+search_result['2043']=["topic_000000000000087B.html","FontAwesomeExtensions Class",""];

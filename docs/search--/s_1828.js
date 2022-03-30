@@ -1,1 +1,1 @@
-search_result['1828']=["topic_00000000000004FB.html","FlatColors Class",""];
+search_result['1828']=["topic_00000000000004FE.html","CheckBox_Custom.OnPaint Method","Raises the Paint event."];

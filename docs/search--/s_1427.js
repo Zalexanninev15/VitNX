@@ -1,1 +1,1 @@
-search_result['1427']=["topic_00000000000003F1.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];
+search_result['1427']=["topic_00000000000003F6.html","VitNX_ScrollBase.RectangleToView Method",""];

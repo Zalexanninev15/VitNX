@@ -1,1 +1,1 @@
-search_result['228']=["topic_000000000000008B_props--.html","ComPort Properties",""];
+search_result['228']=["topic_000000000000008F.html","ComPort Class","Work with informations of COM port."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Type1.SetText Method</title>
+	<title>Window.SetWindowsElevenStyleForWinForm Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Type1.SetText Method</h1>
+		<h1 class="title">Window.SetWindowsElevenStyleForWinForm Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000336.html">VitNX.UI.Console.ProgressBar</a>
+<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Sets the text.</summary-info>
+        <summary-info>Applying Windows 11 roundings to a window(s).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetText(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>work1</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.region">Region</a> SetWindowsElevenStyleForWinForm(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>windowWidth</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>windowHeight</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,22 +152,52 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="work1" class="parameterList">
+	Parameters</h4><dl paramName="Handler" class="parameterList">
 	<dt>
 		<span class="parameter">
-			work1
+			Handler
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	The text. 
+	The handler. 
+</p>
+<dl paramName="windowWidth" class="parameterList">
+	<dt>
+		<span class="parameter">
+			windowWidth
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	The width of window 
+</p>
+<dl paramName="windowHeight" class="parameterList">
+	<dt>
+		<span class="parameter">
+			windowHeight
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	The height of window 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.region">Region</a> 
+	
 
 
 
@@ -241,9 +271,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void SetText(string work1)
+public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowWidth, int windowHeight)
  {
-     work = work1;
+     Import.DwmSetWindowAttribute(Handler,
+         DWM_GET_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE,
+         new[] { Convert.ToInt32(DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND) },
+         sizeof(uint));
+     return Region.FromHrgn(Import.CreateRoundRectRgn(0, 0,
+         windowWidth,
+         windowHeight,
+         15, 15));
  }
 					</pre>			
 				</div>
@@ -306,11 +343,11 @@ public void SetText(string work1)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000337.html">Type1 Class</a><br />
+			<a href="topic_0000000000000334.html">Window Class</a><br />
 
 
 
-<a href="topic_0000000000000336.html">VitNX.UI.Console.ProgressBar Namespace</a><br />
+<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls Namespace</a><br />
 
 
 			

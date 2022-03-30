@@ -1,1 +1,1 @@
-search_result['1217']=["topic_0000000000000365.html","VitNX_Button.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];
+search_result['1217']=["topic_000000000000036A.html","VitNX_Button.OnMouseMove Method","Raises the OnMouseMove event."];

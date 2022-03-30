@@ -1,1 +1,1 @@
-search_result['1510']=["topic_000000000000041C.html","VitNX_TreeNode.Remove Method",""];
+search_result['1510']=["topic_0000000000000423.html","VitNX_TreeNode Constructor",""];

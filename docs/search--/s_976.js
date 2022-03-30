@@ -1,1 +1,1 @@
-search_result['976']=["topic_00000000000002F0.html","adapterId Field",""];
+search_result['976']=["topic_00000000000002F8_events--.html","DISPLAYCONFIG_PATH_TARGET_INFO Events",""];

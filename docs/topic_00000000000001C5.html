@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>MSG Structure</title>
+	<title>MOUSEHOOKSTRUCT Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">MSG Structure</h1>
+		<h1 class="title">MOUSEHOOKSTRUCT Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B6.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct MSG</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct MOUSEHOOKSTRUCT</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -218,7 +218,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_00000000000001C6.html">hwnd</a>
+	    <a href="topic_00000000000001CA.html">dwExtraInfo</a>
 	  </td>
 	  <td>
 	
@@ -237,7 +237,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_00000000000001C9.html">lParam</a>
+	    <a href="topic_00000000000001C8.html">hWnd</a>
 	  </td>
 	  <td>
 	
@@ -256,7 +256,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_00000000000001C7.html">message</a>
+	    <a href="topic_00000000000001C6.html">pt_x</a>
 	  </td>
 	  <td>
 	
@@ -275,7 +275,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_00000000000001CB.html">pt_x</a>
+	    <a href="topic_00000000000001C7.html">pt_y</a>
 	  </td>
 	  <td>
 	
@@ -294,45 +294,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_00000000000001CC.html">pt_y</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000001CA.html">time</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_00000000000001C8.html">wParam</a>
+	    <a href="topic_00000000000001C9.html">wHitTestCode</a>
 	  </td>
 	  <td>
 	
@@ -408,15 +370,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [StructLayout(LayoutKind.Sequential)]
- public struct MSG
+ public struct MOUSEHOOKSTRUCT
  {
-     public IntPtr hwnd;
-     public int message;
-     public IntPtr wParam;
-     public IntPtr lParam;
-     public int time;
      public int pt_x;
      public int pt_y;
+     public IntPtr hWnd;
+     public int wHitTestCode;
+     public int dwExtraInfo;
  }
 					</pre>			
 				</div>
@@ -480,7 +440,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_00000000000000B6.html">VitNX.Functions.Win32 Namespace</a><br />
+	<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
 
 
 	

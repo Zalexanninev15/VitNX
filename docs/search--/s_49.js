@@ -1,1 +1,1 @@
-search_result['49']=["topic_000000000000001C_attached_props--.html","Text Attached Properties",""];
+search_result['49']=["topic_000000000000001D.html","Text Class","Work with text."];

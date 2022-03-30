@@ -1,1 +1,1 @@
-search_result['2080']=["topic_0000000000000889.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];
+search_result['2080']=["topic_0000000000000890.html","Manager.Alert (String, NotificationType) Method","/// Display a new standard type notification on the screen.\r\n\t\t///"];

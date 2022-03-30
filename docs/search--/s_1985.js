@@ -1,1 +1,1 @@
-search_result['1985']=["topic_0000000000000545_methods--.html","VitNX2_Tab Methods",""];
+search_result['1985']=["topic_000000000000054D.html","VitNX2_RichTextBox.OnEnter Method","Raises the Enter event."];

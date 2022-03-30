@@ -1,1 +1,1 @@
-search_result['319']=["topic_00000000000000C4.html","Import.CreateBitmap Method",""];
+search_result['319']=["topic_00000000000000C4.html","Import.CloseHandle Method",""];

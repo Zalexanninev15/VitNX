@@ -1,1 +1,1 @@
-search_result['592']=["topic_000000000000019E_props--.html","LOGBRUSH Properties",""];
+search_result['592']=["topic_00000000000001A7.html","LOGBRUSH Structure",""];

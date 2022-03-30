@@ -1,1 +1,1 @@
-search_result['299']=["topic_00000000000000B5.html","Config.DefaultGateway Method","Activate DefaultGateway of NetworkInterface in IPAddress."];
+search_result['299']=["topic_00000000000000B7_methods--.html","Config Methods",""];

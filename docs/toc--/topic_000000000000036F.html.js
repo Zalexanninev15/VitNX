@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008A7.html"],['846',"VitNX.UI.ControlsV1.Controls Namespace","topic_000000000000035B.html"],['864',"VitNX_CheckBox Class","topic_000000000000036F.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['850',"VitNX.UI.ControlsV1.Controls Namespace","topic_0000000000000364.html"],['853',"VitNX_Button Class","topic_0000000000000367.html"],['855',"Methods","topic_0000000000000367_methods--.html"],['858',"OnGotFocus Method","topic_000000000000036F.html"]];

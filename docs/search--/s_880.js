@@ -1,1 +1,1 @@
-search_result['880']=["topic_0000000000000294.html","DISPLAYCONFIG_PIXELFORMAT Enumeration",""];
+search_result['880']=["topic_0000000000000275.html","DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY Enumeration",""];

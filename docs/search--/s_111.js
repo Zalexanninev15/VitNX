@@ -1,1 +1,1 @@
-search_result['111']=["topic_0000000000000047.html","CompressAndDecompress.GetBytes Method","Gets the bytes.\r\nExample: Data.CompressAndDecompress.GetBytes(input)"];
+search_result['111']=["topic_0000000000000047_vars--.html","CompressAndDecompress Fields",""];

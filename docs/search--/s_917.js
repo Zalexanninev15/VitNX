@@ -1,1 +1,1 @@
-search_result['917']=["topic_00000000000002D9.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];
+search_result['917']=["topic_00000000000002E0_props--.html","NewFolderDialog Properties",""];

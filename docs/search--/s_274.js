@@ -1,1 +1,1 @@
-search_result['274']=["topic_00000000000000AA_attached_props--.html","DataFromSites Attached Properties",""];
+search_result['274']=["topic_00000000000000AB.html","IniSettings32.DeleteSection Method","Deletes the section."];

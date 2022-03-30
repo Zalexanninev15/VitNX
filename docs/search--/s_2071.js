@@ -1,1 +1,1 @@
-search_result['2071']=["topic_0000000000000882.html","onClose Field",""];
+search_result['2071']=["topic_0000000000000887.html","Colors Field","/// The colors of the standard notification types.\r\n        ///"];

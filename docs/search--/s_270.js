@@ -1,1 +1,1 @@
-search_result['270']=["topic_00000000000000A7.html","IniSettings32.DeleteSection Method","Deletes the section."];
+search_result['270']=["topic_00000000000000A7.html","IniSettings32.Initialize Method","Initializing the configuration INI file."];

@@ -1,1 +1,1 @@
-search_result['1313']=["topic_00000000000003A7_props--.html","VitNX_Label Properties",""];
+search_result['1313']=["topic_00000000000003B0.html","VitNX_Label Class",""];

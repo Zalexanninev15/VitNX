@@ -1,1 +1,1 @@
-search_result['325']=["topic_00000000000000CA.html","Import.CreateRectRgn Method",""];
+search_result['325']=["topic_00000000000000CA.html","Import.CreateCompatibleBitmap Method",""];

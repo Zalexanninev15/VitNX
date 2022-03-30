@@ -1,1 +1,1 @@
-search_result['301']=["topic_00000000000000B7.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];
+search_result['301']=["topic_00000000000000B7_vars--.html","Config Fields",""];

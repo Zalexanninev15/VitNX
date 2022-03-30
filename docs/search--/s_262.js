@@ -1,1 +1,1 @@
-search_result['262']=["topic_00000000000000A2_events--.html","IniSettings32 Events",""];
+search_result['262']=["topic_00000000000000A4.html","PowerControl.Computer Method","The power of computer."];

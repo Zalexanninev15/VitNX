@@ -1,1 +1,1 @@
-search_result['1131']=["topic_000000000000033B.html","Type1.SetText Method","Sets the text."];
+search_result['1131']=["topic_0000000000000340_vars--.html","Type1 Fields",""];

@@ -1,1 +1,1 @@
-search_result['1652']=["topic_0000000000000479_vars--.html","VitNX_DockSplitter Fields",""];
+search_result['1652']=["topic_0000000000000482_attached_props--.html","VitNX_DockSplitter Attached Properties",""];

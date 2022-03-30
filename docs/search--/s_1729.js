@@ -1,1 +1,1 @@
-search_result['1729']=["topic_00000000000004B3.html","VitNX_MessageBox.ShowWarning Method","Shows the warning MessageBox."];
+search_result['1729']=["topic_00000000000004B9_overloads--.html","VitNX_MessageBox Constructor",""];

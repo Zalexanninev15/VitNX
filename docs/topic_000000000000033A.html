@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Type1.SetColor Method</title>
+	<title>Window.SetWindowsTenAndHighStyleForWinFormTitleToDark Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Type1.SetColor Method</h1>
+		<h1 class="title">Window.SetWindowsTenAndHighStyleForWinFormTitleToDark Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000336.html">VitNX.UI.Console.ProgressBar</a>
+<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Sets the color.</summary-info>
+        <summary-info>Applying a native dark window title for the application if it runs on Windows 10 or higher..</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetColor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> <i>consoleColor</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetWindowsTenAndHighStyleForWinFormTitleToDark(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="consoleColor" class="parameterList">
+	Parameters</h4><dl paramName="Handler" class="parameterList">
 	<dt>
 		<span class="parameter">
-			consoleColor
+			Handler
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor">ConsoleColor</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	The console color. 
+	The handler. 
 </p>
 
 <p />
@@ -241,9 +241,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void SetColor(ConsoleColor consoleColor)
+public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
  {
-     pb = consoleColor;
+     if (Import.DwmSetWindowAttribute(Handler,
+         DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
+         new[] { 1 }, 4) != 0)
+         Import.DwmSetWindowAttribute(Handler,
+             DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE_NOT,
+             new[] { 1 }, 4);
  }
 					</pre>			
 				</div>
@@ -306,11 +311,11 @@ public void SetColor(ConsoleColor consoleColor)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000337.html">Type1 Class</a><br />
+			<a href="topic_0000000000000334.html">Window Class</a><br />
 
 
 
-<a href="topic_0000000000000336.html">VitNX.UI.Console.ProgressBar Namespace</a><br />
+<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls Namespace</a><br />
 
 
 			

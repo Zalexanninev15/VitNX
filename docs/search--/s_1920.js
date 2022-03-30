@@ -1,1 +1,1 @@
-search_result['1920']=["topic_0000000000000529_methods--.html","VitNX2_RichTextBox Methods",""];
+search_result['1920']=["topic_0000000000000531_overloads--.html","VitNX2_MessageBoxType2.Dispose Method","Disposes resources used by the form."];

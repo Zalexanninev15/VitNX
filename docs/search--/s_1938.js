@@ -1,1 +1,1 @@
-search_result['1938']=["topic_0000000000000531_methods--.html","VitNX2_PictureBox Methods",""];
+search_result['1938']=["topic_0000000000000539.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];

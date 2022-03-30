@@ -1,1 +1,1 @@
-search_result['1025']=["topic_0000000000000308.html","targetVideoSignalInfo Field",""];
+search_result['1025']=["topic_0000000000000310_events--.html","DISPLAYCONFIG_TARGET_MODE Events",""];

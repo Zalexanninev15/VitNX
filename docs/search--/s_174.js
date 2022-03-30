@@ -1,1 +1,1 @@
-search_result['174']=["topic_0000000000000072.html","Windows.GetWindowsSerialKey Method","Gets Windows the serial key."];
+search_result['174']=["topic_0000000000000072.html","Windows.GetWindowsReleaseIdFromREG Method","Gets the windows release id from the Windows Registry."];
