@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="Functions\CShap.cs" />
     <Compile Include="Functions\PowerControl.cs" />
-    <Compile Include="Functions\SettingsEditor32.cs" />
+    <Compile Include="Functions\SettingsAndLog.cs" />
     <Compile Include="Functions\Data.cs" />
     <Compile Include="UI\ControlsV2\VitNX2_CheckBox.cs">
       <SubType>Component</SubType>

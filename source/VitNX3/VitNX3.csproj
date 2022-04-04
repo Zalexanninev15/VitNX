@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
     <Copyright>Zalexanninev15</Copyright>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Version>3</Version>
+    <Version>3.0.1</Version>
     <AssemblyVersion>3</AssemblyVersion>
     <FileVersion>3</FileVersion>
     <PackageIcon>logo.png</PackageIcon>

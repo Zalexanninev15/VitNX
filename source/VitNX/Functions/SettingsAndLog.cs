@@ -1,14 +1,15 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 
 using VitNX.Functions.Win32;
 
-namespace VitNX.Functions
+namespace VitNX.Functions.SettingsAndLog
 {
     /// <summary>
-    /// Work with INI config files with Windows System functions.
+    /// Work with INI config file, based on Windows System functions.
     /// </summary>
-    public class IniSettings32
+    public class Ini
     {
         private static string path;
         private static string defValue = "TEST_VitNX";
@@ -79,6 +80,36 @@ namespace VitNX.Functions
             string section = null)
         {
             return Read(key, section).Length > 0;
+        }
+    }
+
+    /// <summary>
+    /// Write text to log file.
+    /// </summary>
+    public class Log
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Log"/> class.
+        /// </summary>
+        public Log()
+        {
+
+        }
+
+        /// <summary>
+        /// Writes log to the log file.
+        /// </summary>
+        /// <param name="targetFile">Write log text to the file.</param>
+        /// <param name="logText">Sets the log text.</param>
+        public void Write(string targetFile, string logText)
+        {
+            DateTime currtime = DateTime.Now;
+            using (StreamWriter file = new StreamWriter(targetFile, true))
+            {
+                string tmptxt = string.Format("{0:yyMMdd hh:mm:ss} {1}", currtime, logText);
+                file.WriteLine(tmptxt);
+                file.Close();
+            }
         }
     }
 }
