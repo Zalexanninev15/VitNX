@@ -108,7 +108,7 @@ namespace VitNX.Functions.SettingsAndLog
             DateTime currtime = DateTime.Now;
             using (StreamWriter file = new StreamWriter(logFile, true))
             {
-                string tmptxt = string.Format("{0:yyMMdd hh:mm:ss} {1}", currtime, logText);
+                string tmptxt = string.Format("{0:ddMMyy hh:mm:ss} {1}", currtime, logText);
                 file.WriteLine(tmptxt);
                 file.Close();
             }
