@@ -88,23 +88,25 @@ namespace VitNX3.Functions.SettingsAndLog
     /// </summary>
     public class Log
     {
+        private string logFile = "";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Log"/> class.
         /// </summary>
-        public Log()
+        /// <param name="targetFile">The target file.</param>
+        public Log(string targetFile)
         {
-
+            logFile = targetFile;
         }
 
         /// <summary>
         /// Writes log to the log file.
         /// </summary>
-        /// <param name="targetFile">Write log text to the file.</param>
         /// <param name="logText">Sets the log text.</param>
-        public void Write(string targetFile, string logText)
+        public void Write(string logText)
         {
             DateTime currtime = DateTime.Now;
-            using (StreamWriter file = new StreamWriter(targetFile, true))
+            using (StreamWriter file = new StreamWriter(logFile, true))
             {
                 string tmptxt = string.Format("{0:yyMMdd hh:mm:ss} {1}", currtime, logText);
                 file.WriteLine(tmptxt);
