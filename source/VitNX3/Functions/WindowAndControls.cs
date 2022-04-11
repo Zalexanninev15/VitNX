@@ -49,10 +49,10 @@ namespace VitNX3.Functions.WindowAndControls
         public static void ShowAsTopMost(IntPtr Handler)
         {
             Import.SetWindowPos(Handler,
-               new IntPtr((int)WINDOW_POS_FLAGS.HWND_TOPMOST),
+               new IntPtr((int)HWND.HWND_TOPMOST),
                0, 0, 0, 0,
-               (int)WINDOW_POS_FLAGS.SWP_NOMOVE |
-               (int)WINDOW_POS_FLAGS.SWP_NOSIZE);
+               (int)SET_WINDOW_POS_FLAGS.SWP_IGNORE_MOVE |
+               (int)SET_WINDOW_POS_FLAGS.SWP_IGNORE_RESIZE);
         }
 
         /// <summary>
