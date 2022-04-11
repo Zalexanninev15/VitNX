@@ -36,6 +36,72 @@ namespace VitNX3.Functions.Win32
             int nHeightSrc,
             BLENDFUNCTION blendFunction);
 
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr GetSystemMenu(IntPtr hWnd,
+            bool bRevert);
+
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("user32.dll")]
+        public static extern bool TranslateMessage([In] ref MSG lpMsg);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
+        public static extern bool GetMenuItemInfo(IntPtr hMenu,
+            uint uItem,
+            bool fByPosition,
+            [In, Out] Constants.MENU_ITEM_INFO lpmii);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
+        public static extern bool InsertMenuItem(IntPtr hMenu,
+            uint uItem,
+            bool fByPosition, [In]
+        Constants.MENU_ITEM_INFO lpmii);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto,
+            SetLastError = true)]
+        public static extern bool SetMenuItemInfo(IntPtr hMenu,
+            uint uItem,
+            bool fByPosition,
+            [In] Constants.MENU_ITEM_INFO lpmii);
+
+        [DllImport("user32.dll",
+            SetLastError = true)]
+        public static extern bool RemoveMenu(IntPtr hMenu,
+            uint uItem,
+            bool fByPosition);
+
+        [DllImport("user32.dll",
+            SetLastError = true)]
+        public static extern int GetMenuItemCount(IntPtr hMenu);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr SetWinEventHook(uint eventMin,
+            uint eventMax,
+            IntPtr hmodWinEventProc,
+            WinEventDelegate lpfnWinEventProc,
+            uint idProcess,
+            uint idThread,
+            uint dwFlags);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool UnhookWinEvent(IntPtr hWinEventHook);
+
+        public delegate void WinEventDelegate(IntPtr hWinEventHook,
+            uint eventType,
+            IntPtr hwnd,
+            int idObject,
+            int idChild,
+            uint dwEventThread,
+            uint dwmsEventTime);
+
+        [DllImport("user32.dll",
+            SetLastError = true)]
+        public static extern bool GetWindowInfo(IntPtr hwnd, ref WINDOW_INFO pwi);
+
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32.dll",
             SetLastError = true)]
@@ -778,11 +844,6 @@ namespace VitNX3.Functions.Win32
             CharSet = CharSet.Auto)]
         public static extern bool TrackMouseEvent(ref TRACKMOUSEEVENT lpEventTrack);
 
-        [return: MarshalAs(UnmanagedType.Bool)]
-        [DllImport("user32.dll",
-            CharSet = CharSet.Auto)]
-        public static extern bool TranslateMessage(ref MSG msg);
-
         [DllImport("user32.dll",
             CharSet = CharSet.Auto)]
         public static extern bool UpdateLayeredWindow(IntPtr hwnd,
@@ -1106,25 +1167,26 @@ namespace VitNX3.Functions.Win32
         public const int WM_ACTIVATEAPP = 0x001C;
         public const int WH_KEYBOARD_LL = 13;
         public const int SRCCOPY = 0x00CC0020;
+        public const uint MFT_STRING = 0x00000000;
+        public const uint MFS_CHECKED = 0x00000008;
+        public const uint MFS_UNCHECKED = 0x00000000;
 
-        public static class SWP
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public class MENU_ITEM_INFO
         {
-            public static readonly int
-            NOSIZE = 0x0001,
-            NOMOVE = 0x0002,
-            NOZORDER = 0x0004,
-            NOREDRAW = 0x0008,
-            NOACTIVATE = 0x0010,
-            DRAWFRAME = 0x0020,
-            FRAMECHANGED = 0x0020,
-            SHOWWINDOW = 0x0040,
-            HIDEWINDOW = 0x0080,
-            NOCOPYBITS = 0x0100,
-            NOOWNERZORDER = 0x0200,
-            NOREPOSITION = 0x0200,
-            NOSENDCHANGING = 0x0400,
-            DEFERERASE = 0x2000,
-            ASYNCWINDOWPOS = 0x4000;
+            public MENU_ITEM_INFO() { }
+
+            public int cbSize = Marshal.SizeOf(typeof(MENU_ITEM_INFO));
+            public uint fType;
+            public uint fState;
+            public uint wID;
+            public IntPtr hSubMenu;
+            public IntPtr hbmpChecked;
+            public IntPtr hbmpUnchecked;
+            public IntPtr dwItemData;
+            public string dwTypeData = null;
+            public uint cch;
+            public IntPtr hbmpItem;
         }
     }
 
@@ -1157,6 +1219,21 @@ namespace VitNX3.Functions.Win32
             public int dwSize;
             public int dwFlags;
             public RECT rcClip;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct WINDOW_INFO
+        {
+            public uint cbSize;
+            public RECT rcWindow;
+            public RECT rcClient;
+            public uint dwStyle;
+            public uint dwExStyle;
+            public uint dwWindowStatus;
+            public uint cxWindowBorders;
+            public uint cyWindowBorders;
+            public ushort atomWindowType;
+            public ushort wCreatorVersion;
         }
 
         public delegate bool EnumThreadWindowsCallBack(IntPtr hWnd, IntPtr lParam);
@@ -1403,6 +1480,13 @@ namespace VitNX3.Functions.Win32
             TS_DRAW
         }
 
+        public enum EVENTS : uint
+        {
+            EVENT_OBJECT_INVOKED = 0x8013,
+            EVENT_OBJECT_FOCUS = 0x8005,
+            WINEVENT_OUTOFCONTEXT = 0
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         public struct TRACKMOUSEEVENT
         {
@@ -1459,30 +1543,30 @@ namespace VitNX3.Functions.Win32
         public static class HWND
         {
             public static IntPtr
-            NoTopMost = new IntPtr(-2),
-            TopMost = new IntPtr(-1),
-            Top = new IntPtr(0),
-            Bottom = new IntPtr(1);
+            HWND_NO_TOPMOST = new IntPtr(-2),
+            HWND_TOPMOST = new IntPtr(-1),
+            HWND_TOP = new IntPtr(0),
+            HWND_BOTTOM = new IntPtr(1);
         }
 
         [Flags]
         public enum SET_WINDOW_POS_FLAGS : uint
         {
-            SWP_ASYNCWINDOWPOS = 0x4000,
-            SWP_DEFERERASE = 0x2000,
-            SWP_DRAWFRAME = 0x0020,
-            SWP_FRAMECHANGED = 0x0020,
-            SWP_HIDEWINDOW = 0x0080,
-            SWP_NOACTIVATE = 0x0010,
-            SWP_NOCOPYBITS = 0x0100,
-            SWP_NOMOVE = 0x0002,
-            SWP_NOOWNERZORDER = 0x0200,
-            SWP_NOREDRAW = 0x0008,
-            SWP_NOREPOSITION = 0x0200,
-            SWP_NOSENDCHANGING = 0x0400,
-            SWP_NOSIZE = 0x0001,
-            SWP_NOZORDER = 0x0004,
-            SWP_SHOWWINDOW = 0x0040
+            SWP_ASYNCHRONOUS_WINDOW_POS = 0x4000,
+            SWP_DEFER_ERASE = 0x2000,
+            SWP_DRAW_FRAME = 0x0020,
+            SWP_FRAME_CHANGED = 0x0020,
+            SWP_HIDE_WINDOW = 0x0080,
+            SWP_DO_NOT_ACTIVATE = 0x0010,
+            SWP_DO_NOT_COPY_BITS = 0x0100,
+            SWP_IGNORE_MOVE = 0x0002,
+            SWP_DO_NOT_CHANGE_OWNER_ZORDER = 0x0200,
+            SWP_DO_NOT_REDRAW = 0x0008,
+            SWP_DO_NOT_REPOSITION = 0x0200,
+            SWP_DO_NOT_SEND_CHANGING_EVENT = 0x0400,
+            SWP_IGNORE_RESIZE = 0x0001,
+            SWP_NO_ZORDER = 0x0004,
+            SWP_SHOW_WINDOW = 0x0040
         }
 
         public enum KEYBOARD_PRESETS : int
@@ -1498,6 +1582,20 @@ namespace VitNX3.Functions.Win32
             HWND_BOTTOM = 1,
             HWND_TOPMOST = -1,
             HWND_NOTOPMOST = -2
+        }
+
+        [Flags]
+        public enum MIIM
+        {
+            BITMAP = 0x00000080,
+            CHECKMARKS = 0x00000008,
+            DATA = 0x00000020,
+            FTYPE = 0x00000100,
+            ID = 0x00000002,
+            STATE = 0x00000001,
+            STRING = 0x00000040,
+            SUBMENU = 0x00000004,
+            TYPE = 0x00000010
         }
 
         public enum QUERY_DEVICE_CONFIG_FLAGS : uint
@@ -1831,13 +1929,6 @@ namespace VitNX3.Functions.Win32
             HSHELL_WINDOWDESTROYED = 2,
             HSHELL_WINDOWACTIVATED = 4,
             HSHELL_WINDOWREPLACED = 13
-        }
-
-        public enum WINDOW_POS_FLAGS : int
-        {
-            HWND_TOPMOST = -1,
-            SWP_NOMOVE = 0x0002,
-            SWP_NOSIZE = 0x0001
         }
 
         public enum KEYEVENTF : int

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using VitNX.Functions.Win32;
@@ -50,10 +51,10 @@ namespace VitNX.Functions.WindowAndControls
         public static void ShowAsTopMost(IntPtr Handler)
         {
             Import.SetWindowPos(Handler,
-               new IntPtr((int)WINDOW_POS_FLAGS.HWND_TOPMOST),
+               new IntPtr((int)HWND.HWND_TOPMOST),
                0, 0, 0, 0,
-               (int)WINDOW_POS_FLAGS.SWP_NOMOVE |
-               (int)WINDOW_POS_FLAGS.SWP_NOSIZE);
+               (int)SET_WINDOW_POS_FLAGS.SWP_IGNORE_MOVE |
+               (int)SET_WINDOW_POS_FLAGS.SWP_IGNORE_RESIZE);
         }
 
         /// <summary>
@@ -68,8 +69,8 @@ namespace VitNX.Functions.WindowAndControls
                 screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
             Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
                 pt.X, pt.Y, 0, 0,
-                SET_WINDOW_POS_FLAGS.SWP_NOZORDER | SET_WINDOW_POS_FLAGS.SWP_NOSIZE |
-                SET_WINDOW_POS_FLAGS.SWP_SHOWWINDOW);
+                SET_WINDOW_POS_FLAGS.SWP_NO_ZORDER | SET_WINDOW_POS_FLAGS.SWP_IGNORE_RESIZE |
+                SET_WINDOW_POS_FLAGS.SWP_SHOW_WINDOW);
         }
 
         /// <summary>
