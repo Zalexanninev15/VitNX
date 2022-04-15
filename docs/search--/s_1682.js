@@ -1,1 +1,1 @@
-search_result['1682']=["topic_0000000000000496.html","VitNX_ToolWindow.OnPaint Method","Raises the Paint event."];
+search_result['1682']=["topic_00000000000004A0.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];

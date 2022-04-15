@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F19472F5-8C44-4C51-A8A0-B9DE5F555255}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VitNX3</RootNamespace>
+    <AssemblyName>VitNX3</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SonarQubeExclude>True</SonarQubeExclude>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\VitNX3.xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\VitNX3.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Functions\CShap.cs" />
+    <Compile Include="Functions\PowerControl.cs" />
+    <Compile Include="Functions\SettingsAndLog.cs" />
+    <Compile Include="Functions\Data.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Console\ProgressBar\Type2.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.Designer.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_ProgressBarRoundedType2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\OtherControls\FontAwesome.cs" />
+    <Compile Include="Functions\WindowAndControls.cs" />
+    <Compile Include="Icons\DockIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DockIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\DropdownIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DropdownIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\MenuIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\MessageBoxIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageBoxIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\ScrollIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrollIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\TreeViewIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TreeViewIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Collections\ObservableList.cs" />
+    <Compile Include="UI\ControlsV1\Collections\ObservableListModified.cs" />
+    <Compile Include="UI\ControlsV1\Config\Colors.cs" />
+    <Compile Include="UI\ControlsV1\Config\Consts.cs" />
+    <Compile Include="UI\ControlsV2\Helper.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_TextBox.Designer.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.Designer.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_Tab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_ToogleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_ProgressBar_RoundedType1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\ScrollValueEventArgs.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ButtonStyle.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ContentAlignment.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ControlState.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_DropdownItem.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_DropdownList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ListItem.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ScrollBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ScrollOrientation.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ScrollView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_SectionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_StatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_Title.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Controls\VitNX_TreeNode.cs" />
+    <Compile Include="UI\ControlsV1\Controls\VitNX_TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Docking\DockContentEventArgs.cs" />
+    <Compile Include="UI\ControlsV1\Docking\DockDropArea.cs" />
+    <Compile Include="UI\ControlsV1\Docking\DockDropCollection.cs" />
+    <Compile Include="UI\ControlsV1\Docking\DockGroupState.cs" />
+    <Compile Include="UI\ControlsV1\Docking\DockPanelState.cs" />
+    <Compile Include="UI\ControlsV1\Docking\DockRegionState.cs" />
+    <Compile Include="UI\ControlsV1\Docking\DockInsertType.cs" />
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockArea.cs" />
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockRegion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockSplitter.cs" />
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockTab.cs" />
+    <Compile Include="UI\ControlsV1\Docking\VitNX_DockTabArea.cs" />
+    <Compile Include="UI\ControlsV1\Docking\VitNX_Document.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Docking\VitNX_SplitterType.cs" />
+    <Compile Include="UI\ControlsV1\Docking\VitNX_ToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Extensions\BitmapExtensions.cs" />
+    <Compile Include="UI\ControlsV1\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="UI\ControlsV1\Forms\VitNX_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Forms\VitNX_Dialog.Designer.cs" />
+    <Compile Include="UI\ControlsV1\Forms\VitNX_DialogButton.cs" />
+    <Compile Include="UI\ControlsV1\Forms\VitNX_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Forms\VitNX_MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV1\Forms\VitNX_MessageBox.Designer.cs" />
+    <Compile Include="UI\ControlsV1\Forms\VitNX_MessageBoxIcon.cs" />
+    <Compile Include="UI\ControlsV1\Forms\VitNX_TranslucentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\Information.cs" />
+    <Compile Include="Functions\FileSystem.cs" />
+    <Compile Include="Functions\AppsAndProcesses.cs" />
+    <Compile Include="Functions\Web.cs" />
+    <Compile Include="Functions\Win32.cs" />
+    <Compile Include="Functions\WinControllers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ControlsV1\Renderers\VitNX_MenuRenderer.cs" />
+    <Compile Include="UI\ControlsV1\Renderers\VitNX_ToolStripRenderer.cs" />
+    <Compile Include="UI\ControlsV1\Win32\ControlScrollFilter.cs" />
+    <Compile Include="UI\ControlsV1\Win32\DockResizeFilter.cs" />
+    <Compile Include="UI\ControlsV1\Win32\DockContentDragFilter.cs" />
+    <Compile Include="UI\OtherControls\Notification\nManager.cs" />
+    <Compile Include="UI\OtherControls\Notification\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OtherControls\Notification\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OtherControls\Notification\NotifySettings.cs" />
+    <Compile Include="UI\Console\ProgressBar\Type1.cs" />
+    <Compile Include="UI\Console\Text.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_Form.resx">
+      <DependentUpon>VitNX_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_TranslucentForm.resx">
+      <DependentUpon>VitNX_TranslucentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.resx" />
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_TextBox.resx" />
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.resx" />
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar_RoundedType1.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_Dialog.resx" />
+    <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_MessageBox.resx" />
+    <EmbeddedResource Include="Icons\DockIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DockIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\DropdownIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>DropdownIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\MenuIcons.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>MenuIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\MessageBoxIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>MessageBoxIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\ScrollIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>ScrollIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\TreeViewIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OtherControls\Notification\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow_hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow_standard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\node_closed_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\node_closed_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\node_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\node_open_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active-inactive-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive-close-selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tw_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tw_close_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tw_active_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tw_active_close_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow_small_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow_small_hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrollbar_arrow_small_standard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\News.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infoN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\successN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warningN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UI\ControlsV3\soon.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

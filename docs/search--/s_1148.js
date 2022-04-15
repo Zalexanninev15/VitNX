@@ -1,1 +1,1 @@
-search_result['1148']=["topic_000000000000034A_events--.html","Text Events",""];
+search_result['1148']=["topic_000000000000035A.html","Window.HideConsoleWindow Method","Hides the console window."];

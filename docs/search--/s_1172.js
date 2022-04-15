@@ -1,1 +1,1 @@
-search_result['1172']=["topic_0000000000000356.html","ObservableListModified\u0026lt;T\u0026gt; Class",""];
+search_result['1172']=["topic_0000000000000368.html","Type1.NotUsed Method","Stop this task or not use console progressbar."];

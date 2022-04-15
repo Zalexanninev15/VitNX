@@ -1,1 +1,1 @@
-search_result['304']=["topic_00000000000000BA.html","VitNX.Functions.Win32 Namespace",""];
+search_result['304']=["topic_00000000000000BA.html","SendDataToSites.FileUploader Method","Starts the uploading.\r\nExample:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a"];

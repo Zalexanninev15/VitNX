@@ -1,1 +1,1 @@
-search_result['1502']=["topic_000000000000041C_props--.html","VitNX_TreeNode Properties",""];
+search_result['1502']=["topic_0000000000000433.html","VitNX_Separator.OnPaint Method","Raises the Paint event."];

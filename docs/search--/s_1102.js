@@ -1,1 +1,1 @@
-search_result['1102']=["topic_0000000000000332.html","WorkWithSystem.InstallInfDriver Method","Installs the INF driver file into the Windows System."];
+search_result['1102']=["topic_0000000000000343_events--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS Events",""];

@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockContentDragFilter.StartDrag Method</title>
+	<title>VitNX_MessageBox.ShowError Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,21 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockContentDragFilter.StartDrag Method</h1>
+		<h1 class="title">VitNX_MessageBox.ShowError Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004DA.html">VitNX.UI.ControlsV1.Win32</a>
+<a href="topic_00000000000004BC.html">VitNX.UI.ControlsV1.Forms</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
+        <summary-info>Shows the error MessageBox.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> StartDrag(&nbsp;<br />   <a target="_top" href="topic_0000000000000458.html" onclick="this.target='';return true;">VitNX_DockContent</a> <i>content</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> ShowError(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i> = &quot;Error&quot;,&nbsp;<br />   <a target="_top" href="topic_00000000000004CA.html" onclick="this.target='';return true;">VitNX_DialogButton</a> <i>buttons</i> = VitNX_DialogButton.Ok&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,22 +152,55 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="content" class="parameterList">
+	Parameters</h4><dl paramName="message" class="parameterList">
 	<dt>
 		<span class="parameter">
-			content
+			message
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000458.html" onclick="this.target='';return true;">VitNX_DockContent</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The message. 
+</p>
+<dl paramName="caption" class="parameterList">
+	<dt>
+		<span class="parameter">
+			caption
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The caption. 
+</p>
+<dl paramName="buttons" class="parameterList">
+	<dt>
+		<span class="parameter">
+			buttons
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000004CA.html" onclick="this.target='';return true;">VitNX_DialogButton</a> 
+	</dd>
+</dl>
+<p>
+	The buttons. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
+		<p>
+		A DialogResult. 
+	</p>
+	
 
 
 
@@ -240,32 +274,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void StartDrag(VitNX_DockContent content)
+public static DialogResult ShowError(string message,
+     string caption = &quot;Error&quot;,
+     VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
  {
-     _regionDropAreas = new Dictionary&lt;VitNX_DockRegion,
-         DockDropArea&gt;();
-     _groupDropAreas = new Dictionary&lt;VitNX_DockGroup,
-         DockDropCollection&gt;();
-     foreach (var region in _dockPanel.Regions.Values)
-     {
-         if (region.DockArea == VitNX_DockArea.Document)
-             continue;
-         if (region.Visible)
-         {
-             foreach (var group in region.Groups)
-             {
-                 var collection = new DockDropCollection(_dockPanel, group);
-                 _groupDropAreas.Add(group, collection);
-             }
-         }
-         else
-         {
-             var area = new DockDropArea(_dockPanel, region);
-             _regionDropAreas.Add(region, area);
-         }
-     }
-     _dragContent = content;
-     _isDragging = true;
+     return ShowDialog(message,
+         caption,
+         VitNX_MessageBoxIcon.Error,
+         buttons);
  }
 					</pre>			
 				</div>
@@ -285,6 +301,7 @@ public void StartDrag(VitNX_DockContent content)
 
   
 
+  
 
 
 
@@ -306,6 +323,7 @@ public void StartDrag(VitNX_DockContent content)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -328,11 +346,11 @@ public void StartDrag(VitNX_DockContent content)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004DD.html">DockContentDragFilter Class</a><br />
+			<a href="topic_00000000000004D6.html">VitNX_MessageBox Class</a><br />
 
 
 
-<a href="topic_00000000000004DA.html">VitNX.UI.ControlsV1.Win32 Namespace</a><br />
+<a href="topic_00000000000004BC.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
 
 
 			
@@ -350,7 +368,11 @@ public void StartDrag(VitNX_DockContent content)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-search_result['1672']=["topic_0000000000000490_attached_props--.html","VitNX_ToolWindow Attached Properties",""];
+search_result['1672']=["topic_000000000000049B.html","VitNX_DockPanel.GetDockPanelState Method",""];

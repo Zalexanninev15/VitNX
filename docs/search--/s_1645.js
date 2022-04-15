@@ -1,1 +1,1 @@
-search_result['1645']=["topic_000000000000047C.html","VitNX_DockRegion.GetContents Method",""];
+search_result['1645']=["topic_0000000000000487.html","VitNX_DockGroup.OnResize Method","Fires the event indicating that the panel has been resized. Inheriting controls should use this in favor of actually listening to the event, but should still call base.onResize to ensure that the even..."];

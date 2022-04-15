@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_MessageBox(String, String, VitNX_MessageBoxIcon, VitNX_DialogButton) Constructor</title>
+	<title>VitNX_ToolWindow.OnMouseMove Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,21 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_MessageBox(String, String, VitNX_MessageBoxIcon, VitNX_DialogButton) Constructor</h1>
+		<h1 class="title">VitNX_ToolWindow.OnMouseMove Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000499.html">VitNX.UI.ControlsV1.Forms</a>
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX_MessageBox(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>title</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000004C1.html" onclick="this.target='';return true;">VitNX_MessageBoxIcon</a> <i>icon</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000004A7.html" onclick="this.target='';return true;">VitNX_DialogButton</a> <i>buttons</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,57 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="message" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			message
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="title" class="parameterList">
-	<dt>
-		<span class="parameter">
-			title
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="icon" class="parameterList">
-	<dt>
-		<span class="parameter">
-			icon
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000004C1.html" onclick="this.target='';return true;">VitNX_MessageBoxIcon</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="buttons" class="parameterList">
-	<dt>
-		<span class="parameter">
-			buttons
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000004A7.html" onclick="this.target='';return true;">VitNX_DialogButton</a> 
-	</dd>
-</dl>
-<p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -279,16 +241,30 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX_MessageBox(string message,
-     string title,
-     VitNX_MessageBoxIcon icon,
-     VitNX_DialogButton buttons)
-     : this()
+protected override void OnMouseMove(MouseEventArgs e)
  {
-     Text = title;
-     _message = message;
-     DialogButtons = buttons;
-     SetIcon(icon);
+     base.OnMouseMove(e);
+     if (_closeButtonRect.Contains(e.Location) || _closeButtonPressed)
+     {
+         if (!_closeButtonHot)
+         {
+             _closeButtonHot = true;
+             Invalidate();
+         }
+     }
+     else
+     {
+         if (_closeButtonHot)
+         {
+             _closeButtonHot = false;
+             Invalidate();
+         }
+         if (_shouldDrag)
+         {
+             DockPanel.DragContent(this);
+             return;
+         }
+     }
  }
 					</pre>			
 				</div>
@@ -308,6 +284,7 @@ public VitNX_MessageBox(string message,
 
   
 
+  
 
 
 
@@ -329,6 +306,7 @@ public VitNX_MessageBox(string message,
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -351,11 +329,11 @@ public VitNX_MessageBox(string message,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004B3.html">VitNX_MessageBox Class</a><br />
+			<a href="topic_00000000000004B3.html">VitNX_ToolWindow Class</a><br />
 
 
 
-<a href="topic_0000000000000499.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -373,7 +351,11 @@ public VitNX_MessageBox(string message,
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

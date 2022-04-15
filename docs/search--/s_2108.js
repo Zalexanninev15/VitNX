@@ -1,1 +1,1 @@
-search_result['2108']=["topic_00000000000008A5.html","NotificationPosition Enumeration","/// Место отображения уведомлений на экране.\r\n    ///"];
+search_result['2108']=["topic_00000000000008AD.html","Images Field","/// Images used in standard types of notifications.\r\n\t\t///"];

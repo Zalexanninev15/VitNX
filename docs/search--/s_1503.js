@@ -1,1 +1,1 @@
-search_result['1503']=["topic_000000000000041C_vars--.html","VitNX_TreeNode Fields",""];
+search_result['1503']=["topic_0000000000000434.html","VitNX_Separator.OnPaintBackground Method","Paints the background of the control."];

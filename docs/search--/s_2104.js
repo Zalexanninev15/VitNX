@@ -1,1 +1,1 @@
-search_result['2104']=["topic_00000000000008A1.html","Error Field",""];
+search_result['2104']=["topic_00000000000008A9.html","WaitingTime Field","/// Notification time in a static state with 100% transparency.\r\n\t\t///"];

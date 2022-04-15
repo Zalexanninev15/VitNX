@@ -1,1 +1,1 @@
-search_result['1783']=["topic_00000000000004DF.html","DockContentDragFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];
+search_result['1783']=["topic_00000000000004EF.html","VitNX_MenuRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

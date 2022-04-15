@@ -1,1 +1,1 @@
-search_result['732']=["topic_00000000000001FC_vars--.html","POINT Fields",""];
+search_result['732']=["topic_00000000000001FC.html","iSmCaptionWidth Field",""];

@@ -1,1 +1,1 @@
-search_result['1674']=["topic_0000000000000490_methods--.html","VitNX_ToolWindow Methods",""];
+search_result['1674']=["topic_000000000000049D.html","VitNX_DockRegion Class",""];

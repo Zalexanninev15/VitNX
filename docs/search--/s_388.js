@@ -1,1 +1,1 @@
-search_result['388']=["topic_0000000000000106.html","Import.KillTimer Method",""];
+search_result['388']=["topic_0000000000000103.html","Import.GetSysColor Method",""];

@@ -1,1 +1,1 @@
-c['708']=[['709',"Fields","topic_0000000000000301_vars--.html",1]];
+c['708']=[['709',"INTERNET_STATUS Enumeration","topic_0000000000000099.html",0],['710',"Methods","topic_0000000000000093_methods--.html",1]];

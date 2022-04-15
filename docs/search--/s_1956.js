@@ -1,1 +1,1 @@
-search_result['1956']=["topic_0000000000000541.html","VitNX2_ProgressBar.Dispose Method",""];
+search_result['1956']=["topic_0000000000000556_overloads--.html","VitNX2_MessageBoxType2.Dispose Method","Disposes resources used by the form."];

@@ -1,1 +1,1 @@
-search_result['1629']=["topic_0000000000000472.html","VitNX_DockPanel.AddContent (VitNX_DockContent, VitNX_DockGroup) Method",""];
+search_result['1629']=["topic_000000000000047C.html","DockTextChanged Event",""];

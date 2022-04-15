@@ -1,1 +1,1 @@
-search_result['279']=["topic_00000000000000AE_events--.html","DataFromSites Events",""];
+search_result['279']=["topic_00000000000000AE_events--.html","Log Events",""];

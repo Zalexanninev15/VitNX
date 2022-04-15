@@ -1,1 +1,1 @@
-search_result['1627']=["topic_0000000000000471.html","VitNX_DockPanel.AddContent (VitNX_DockContent) Method",""];
+search_result['1627']=["topic_000000000000047B_props--.html","VitNX_DockContent Properties",""];

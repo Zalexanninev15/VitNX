@@ -1,1 +1,1 @@
-search_result['1738']=["topic_00000000000004C1.html","VitNX_MessageBoxIcon Enumeration",""];
+search_result['1738']=["topic_00000000000004C9.html","VitNX_Dialog.Dispose Method","Clean up any resources being used."];

@@ -1,1 +1,1 @@
-search_result['933']=["topic_00000000000002E5_methods--.html","STATask Methods",""];
+search_result['933']=["topic_00000000000002FD.html","TaskBarProgressBar Class","Work with progressbar on taskbar."];

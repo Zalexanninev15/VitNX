@@ -1,1 +1,1 @@
-search_result['546']=["topic_000000000000018D.html","DEFERERASE Field",""];
+search_result['546']=["topic_000000000000018D.html","MFT_STRING Field",""];

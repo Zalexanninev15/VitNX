@@ -1,1 +1,1 @@
-search_result['314']=["topic_00000000000000BF.html","Import.BeginPaint Method",""];
+search_result['314']=["topic_00000000000000BF.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];

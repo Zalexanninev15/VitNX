@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>NotificationForm.showAlert (String, NotificationType, Color, Image, Manager) Method</title>
+	<title>Images Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,21 +74,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">NotificationForm.showAlert (String, NotificationType, Color, Image, Manager) Method</h1>
+		<h1 class="title">Images Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000559.html">VitNX.UI.OtherControls</a>
+<a href="topic_000000000000057E.html">VitNX3.UI.OtherControls</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
+        <summary-info>/// Images used in standard types of notifications.
+		///</summary-info>
 
 
 
@@ -136,7 +138,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> showAlert(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>msg</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000894.html" onclick="this.target='';return true;">NotificationType</a> <i>type</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> <i>color</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> <i>picture</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000882.html" onclick="this.target='';return true;">Manager</a> <i>notify</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">new public <a target="_top" href="topic_00000000000008C4.html" onclick="this.target='';return true;">Images</a> Images</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,75 +152,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="msg" class="parameterList">
-	<dt>
-		<span class="parameter">
-			msg
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="type" class="parameterList">
-	<dt>
-		<span class="parameter">
-			type
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000894.html" onclick="this.target='';return true;">NotificationType</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="color" class="parameterList">
-	<dt>
-		<span class="parameter">
-			color
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="picture" class="parameterList">
-	<dt>
-		<span class="parameter">
-			picture
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="notify" class="parameterList">
-	<dt>
-		<span class="parameter">
-			notify
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000882.html" onclick="this.target='';return true;">Manager</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="topic_00000000000008C4.html" onclick="this.target='';return true;">Images</a> 
+	
 
 
 
@@ -292,16 +230,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void showAlert(string msg,
-     NotificationType type,
-     Color color,
-     Image picture,
-     Manager notify)
- {
-     pictureBox1.Image = picture;
-     BackColor = color;
-     showAlert(msg, type, notify);
- }
+public Images Images = new Images();
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -320,6 +249,7 @@ public void showAlert(string msg,
 
   
 
+  
 
 
 
@@ -341,6 +271,7 @@ public void showAlert(string msg,
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -363,11 +294,11 @@ public void showAlert(string msg,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000008A9.html">NotificationForm Class</a><br />
+			<a href="topic_00000000000008A7.html">Manager Class</a><br />
 
 
 
-<a href="topic_0000000000000559.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_000000000000057E.html">VitNX3.UI.OtherControls Namespace</a><br />
 
 
 			
@@ -385,8 +316,11 @@ public void showAlert(string msg,
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
-

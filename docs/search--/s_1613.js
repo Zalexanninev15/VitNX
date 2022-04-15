@@ -1,1 +1,1 @@
-search_result['1613']=["topic_0000000000000468.html","VitNX_DockGroup.OnMouseLeave Method","Raises the MouseLeave event."];
+search_result['1613']=["topic_0000000000000471_methods--.html","DockRegionState Methods",""];

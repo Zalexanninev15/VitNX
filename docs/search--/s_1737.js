@@ -1,1 +1,1 @@
-search_result['1737']=["topic_00000000000004C0.html","VitNX_MessageBox.Dispose Method","Clean up any resources being used."];
+search_result['1737']=["topic_00000000000004C8.html","VitNX_Dialog.OnLoad Method","Raises the Load event."];

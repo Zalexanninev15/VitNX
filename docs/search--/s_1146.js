@@ -1,1 +1,1 @@
-search_result['1146']=["topic_000000000000034A.html","Text Class","The tools for work with console UI."];
+search_result['1146']=["topic_0000000000000358.html","Window.MinimizeAll Method","Minimizes the all windows."];

@@ -1,1 +1,1 @@
-search_result['1438']=["topic_0000000000000402_attached_props--.html","VitNX_ScrollView Attached Properties",""];
+search_result['1438']=["topic_0000000000000405.html","VitNX_ScrollBar.OnMouseMove Method","Raises the MouseMove event."];

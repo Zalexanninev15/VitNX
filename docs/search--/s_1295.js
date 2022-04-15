@@ -1,1 +1,1 @@
-search_result['1295']=["topic_00000000000003A3.html","VitNX_DropdownList.OnResize Method","Raises the Resize event."];
+search_result['1295']=["topic_00000000000003AE.html","VitNX_ComboBox.OnTextChanged Method","Raises the TextChanged event."];

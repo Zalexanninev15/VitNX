@@ -1,1 +1,1 @@
-search_result['1365']=["topic_00000000000003C7_vars--.html","VitNX_NumericUpDown Fields",""];
+search_result['1365']=["topic_00000000000003D9.html","TextChanged Event",""];

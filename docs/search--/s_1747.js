@@ -1,1 +1,1 @@
-search_result['1747']=["topic_00000000000004CA.html","VitNX_MenuRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];
+search_result['1747']=["topic_00000000000004D4.html","VitNX_Form Constructor",""];

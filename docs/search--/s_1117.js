@@ -1,1 +1,1 @@
-search_result['1117']=["topic_000000000000033C.html","Controls Class",""];
+search_result['1117']=["topic_000000000000034A.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Structure",""];

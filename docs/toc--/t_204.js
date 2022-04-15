@@ -1,1 +1,1 @@
-c['204']=[['205',"DownloadFileWithSupportOfResume Method","topic_00000000000000B0.html",0],['206',"DownloadString Method","topic_00000000000000AF.html",0],['207',"GetGeo Method","topic_00000000000000B2.html",0],['208',"GetHeaderAndContent Method","topic_00000000000000B1.html",0],['209',"IsValidTelegramBotToken Method","topic_00000000000000B3.html",0]];
+c['204']=[['205',"VitNX_ScrollView Constructor","topic_0000000000000426.html",0],['206',"Methods","topic_0000000000000425_methods--.html",1]];

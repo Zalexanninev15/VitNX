@@ -1,1 +1,1 @@
-c['57']=[['58',"Methods","topic_0000000000000039_methods--.html",1]];
+c['57']=[['58',"VitNX_CheckBox Constructor","topic_000000000000039C.html",0],['59',"Methods","topic_000000000000039B_methods--.html",1]];

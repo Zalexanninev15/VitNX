@@ -1,1 +1,1 @@
-search_result['370']=["topic_00000000000000F6.html","Import.GetTextExtentExPoint Method",""];
+search_result['370']=["topic_00000000000000F1.html","Import.GetCapture Method",""];

@@ -1,1 +1,1 @@
-search_result['379']=["topic_00000000000000FF.html","Import.GetWindowLong Method",""];
+search_result['379']=["topic_00000000000000FA.html","Import.GetGraphicsMode Method",""];

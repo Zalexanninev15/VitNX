@@ -1,1 +1,1 @@
-search_result['1588']=["topic_0000000000000458_attached_props--.html","VitNX_DockContent Attached Properties",""];
+search_result['1588']=["topic_0000000000000467.html","DockContentEventArgs Class",""];

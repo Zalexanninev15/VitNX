@@ -1,1 +1,1 @@
-search_result['276']=["topic_00000000000000AD.html","VitNX.Functions.Web Namespace",""];
+search_result['276']=["topic_00000000000000AD.html","Ini.KeyExists Method","Is key exist."];

@@ -1,1 +1,1 @@
-search_result['2115']=["topic_00000000000008AA.html","NotificationForm Constructor",""];
+search_result['2115']=["topic_00000000000008B4.html","HasHighlighting Field","/// If true, the notification button will be highlighted when you hover the mouse over it.\r\n\t\t///"];

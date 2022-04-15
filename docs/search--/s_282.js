@@ -1,1 +1,1 @@
-search_result['282']=["topic_00000000000000AE_vars--.html","DataFromSites Fields",""];
+search_result['282']=["topic_00000000000000AE_vars--.html","Log Fields",""];

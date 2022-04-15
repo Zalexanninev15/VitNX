@@ -1,1 +1,1 @@
-search_result['1683']=["topic_0000000000000497.html","VitNX_ToolWindow.OnPaintBackground Method","Paints the background of the control."];
+search_result['1683']=["topic_00000000000004A1.html","VitNX_DockRegion.OnResize Method","Fires the event indicating that the panel has been resized. Inheriting controls should use this in favor of actually listening to the event, but should still call base.onResize to ensure that the even..."];

@@ -1,1 +1,1 @@
-search_result['1488']=["topic_0000000000000417_vars--.html","VitNX_Title Fields",""];
+search_result['1488']=["topic_000000000000042A_vars--.html","VitNX_SectionPanel Fields",""];

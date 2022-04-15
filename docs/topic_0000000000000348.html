@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Type2.PrintProgressToConsole Method</title>
+	<title>adapterId Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Type2.PrintProgressToConsole Method</h1>
+		<h1 class="title">adapterId Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000033F.html">VitNX.UI.Console.ProgressBar</a>
+<a href="topic_00000000000002FC.html">VitNX3.Functions.WinControllers</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Prints the progress in console.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> PrintProgressToConsole(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">double</a> <i>progressPercentage</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>textWithEvent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="topic_0000000000000313.html" onclick="this.target='';return true;">LUID</a> adapterId</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,36 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="progressPercentage" class="parameterList">
-	<dt>
-		<span class="parameter">
-			progressPercentage
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.double">double</a> 
-	</dd>
-</dl>
-<p>
-	The progress percentage. 
-</p>
-<dl paramName="textWithEvent" class="parameterList">
-	<dt>
-		<span class="parameter">
-			textWithEvent
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	Add text in console with event. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="topic_0000000000000313.html" onclick="this.target='';return true;">LUID</a> 
+	
 
 
 
@@ -254,17 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void PrintProgressToConsole(double progressPercentage, string textWithEvent)
- {
-     int progressCharsToPrint = (int)progressPercentage / maxProgressChars;
-     StringBuilder sb = new StringBuilder();
-     sb.Append($&quot;{textWithEvent}: &quot;);
-     AddProgressBar(ref sb, progressCharsToPrint);
-     AddSpacingToString(ref sb, progressCharsToPrint);
-     AddProgressValue(ref sb, progressPercentage);
-     string progressString = sb.ToString();
-     PrintProgressStringToConsole(progressString);
- }
+public LUID adapterId;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -283,6 +247,7 @@ public static void PrintProgressToConsole(double progressPercentage, string text
 
   
 
+  
 
 
 
@@ -304,6 +269,7 @@ public static void PrintProgressToConsole(double progressPercentage, string text
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -326,11 +292,11 @@ public static void PrintProgressToConsole(double progressPercentage, string text
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000347.html">Type2 Class</a><br />
+			<a href="topic_0000000000000345.html">DISPLAYCONFIG_DEVICE_INFO_HEADER Structure</a><br />
 
 
 
-<a href="topic_000000000000033F.html">VitNX.UI.Console.ProgressBar Namespace</a><br />
+<a href="topic_00000000000002FC.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 			
@@ -348,8 +314,11 @@ public static void PrintProgressToConsole(double progressPercentage, string text
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
-

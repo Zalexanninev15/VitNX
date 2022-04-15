@@ -1,1 +1,1 @@
-search_result['270']=["topic_00000000000000A7.html","IniSettings32.Initialize Method","Initializing the configuration INI file."];
+search_result['270']=["topic_00000000000000A7_vars--.html","Ini Fields",""];

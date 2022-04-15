@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolWindow Constructor</title>
+	<title>ContentAdded Event</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolWindow Constructor</h1>
+		<h1 class="title">ContentAdded Event</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX_ToolWindow()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a target="_top" href="topic_0000000000000467.html" onclick="this.target='';return true;">DockContentEventArgs</a>&gt; ContentAdded</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -224,16 +224,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX_ToolWindow()
- {
-     SetStyle(ControlStyles.OptimizedDoubleBuffer |
-              ControlStyles.ResizeRedraw |
-              ControlStyles.UserPaint, true);
-     BackColor = Colors.GreyBackground;
-     base.Padding = new Padding(0,
-         Constsants.ToolWindowHeaderSize, 0, 0);
-     UpdateCloseButton();
- }
+public event EventHandler&lt;DockContentEventArgs&gt; ContentAdded;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -252,6 +243,7 @@ public VitNX_ToolWindow()
 
   
 
+  
 
 
 
@@ -273,6 +265,7 @@ public VitNX_ToolWindow()
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -295,11 +288,11 @@ public VitNX_ToolWindow()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000490.html">VitNX_ToolWindow Class</a><br />
+			<a href="topic_000000000000048F.html">VitNX_DockPanel Class</a><br />
 
 
 
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -317,8 +310,11 @@ public VitNX_ToolWindow()
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
-

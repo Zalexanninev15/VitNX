@@ -1,1 +1,1 @@
-search_result['1171']=["topic_0000000000000355.html","ObservableList\u0026lt;T\u0026gt;.Clear Method",""];
+search_result['1171']=["topic_0000000000000367.html","Type1.SetText Method","Sets the text."];

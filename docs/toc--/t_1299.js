@@ -1,1 +1,1 @@
-c['1299']=[['1300',"Dispose(bool) Method","topic_000000000000052E.html",0]];
+c['1299']=[['1300',"flags Field","topic_0000000000000327.html",0],['1301',"sourceInfo Field","topic_0000000000000325.html",0],['1302',"targetInfo Field","topic_0000000000000326.html",0]];

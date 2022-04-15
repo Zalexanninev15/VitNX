@@ -1,1 +1,1 @@
-c['771']=[['772',"Show Method","topic_00000000000002E1_overloads--.html",1]];
+c['771']=[['772',"DownloadFileWithSupportOfResume Method","topic_00000000000000B4.html",0],['773',"DownloadString Method","topic_00000000000000B3.html",0],['774',"GetGeo Method","topic_00000000000000B6.html",0],['775',"GetHeaderAndContent Method","topic_00000000000000B5.html",0],['776',"IsValidTelegramBotToken Method","topic_00000000000000B7.html",0]];

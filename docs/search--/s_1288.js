@@ -1,1 +1,1 @@
-search_result['1288']=["topic_00000000000003A0_attached_props--.html","VitNX_DropdownList Attached Properties",""];
+search_result['1288']=["topic_00000000000003A8.html","VitNX_ComboBox Constructor",""];

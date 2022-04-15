@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_MenuRenderer.Initialize Method</title>
+	<title>VitNX_Dialog.Dispose Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_MenuRenderer.Initialize Method</h1>
+		<h1 class="title">VitNX_Dialog.Dispose Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004C7.html">VitNX.UI.ControlsV1.Renderers</a>
+<a href="topic_00000000000004BC.html">VitNX.UI.ControlsV1.Forms</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>When overridden in a derived class, provides for custom initialization of the given <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a>.</summary-info>
+        <summary-info>Clean up any resources being used.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Initialize(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a> <i>toolStrip</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Dispose(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>disposing</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="toolStrip" class="parameterList">
+	Parameters</h4><dl paramName="disposing" class="parameterList">
 	<dt>
 		<span class="parameter">
-			toolStrip
+			disposing
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	</dd>
 </dl>
 <p>
-	The <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstrip">ToolStrip</a> to be initialized. 
+	true if managed resources should be disposed; otherwise, false. 
 </p>
 
 <p />
@@ -241,11 +241,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void Initialize(ToolStrip toolStrip)
+protected override void Dispose(bool disposing)
  {
-     base.Initialize(toolStrip);
-     toolStrip.BackColor = Colors.GreyBackground;
-     toolStrip.ForeColor = Colors.LightText;
+     if (disposing &amp;&amp; (components != null))
+     {
+         components.Dispose();
+     }
+     base.Dispose(disposing);
  }
 					</pre>			
 				</div>
@@ -265,6 +267,7 @@ protected override void Initialize(ToolStrip toolStrip)
 
   
 
+  
 
 
 
@@ -286,6 +289,7 @@ protected override void Initialize(ToolStrip toolStrip)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -308,11 +312,11 @@ protected override void Initialize(ToolStrip toolStrip)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004C8.html">VitNX_MenuRenderer Class</a><br />
+			<a href="topic_00000000000004BD.html">VitNX_Dialog Class</a><br />
 
 
 
-<a href="topic_00000000000004C7.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
+<a href="topic_00000000000004BC.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
 
 
 			
@@ -330,7 +334,11 @@ protected override void Initialize(ToolStrip toolStrip)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

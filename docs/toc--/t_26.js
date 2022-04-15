@@ -1,1 +1,1 @@
-c['26']=[['27',"Computer Method","topic_00000000000000A4.html",0],['28',"Monitor Method","topic_00000000000000A5.html",0]];
+c['26']=[['27',"Colors Class","topic_000000000000037C.html",0],['28',"Constsants Class","topic_000000000000037D.html",1]];

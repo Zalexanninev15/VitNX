@@ -1,1 +1,1 @@
-search_result['2021']=["topic_000000000000055B_attached_props--.html","Properties Attached Properties",""];
+search_result['2021']=["topic_0000000000000572.html","VitNX2_RichTextBox.OnEnter Method","Raises the Enter event."];

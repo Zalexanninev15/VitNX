@@ -1,1 +1,1 @@
-search_result['2122']=["topic_00000000000008AF.html","NotifySettings Class","The notify settings."];
+search_result['2122']=["topic_00000000000008B9.html","NotificationType Enumeration","/// Type of notification displayed.\r\n    ///"];

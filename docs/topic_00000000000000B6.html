@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SendDataToSites.FileUploader Method</title>
+	<title>DataFromSites.GetGeo Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,23 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SendDataToSites.FileUploader Method</h1>
+		<h1 class="title">DataFromSites.GetGeo Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000AD.html">VitNX.Functions.Web</a>
+<a href="topic_00000000000000B1.html">VitNX3.Functions.Web</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Starts the uploading.
-Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a</summary-info>
+        <summary-info>Gets the geolocation of PC.</summary-info>
 
 
 
@@ -138,7 +137,7 @@ Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a<
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> FileUploader(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>url</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.specialized.namevaluecollection">NameValueCollection</a> <i>values</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>filePath</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action-2">Action</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>, <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a>&gt; <i>progress</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action-1">Action</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; <i>completed</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetGeo(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>ip</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,10 +152,10 @@ Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a<
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="url" class="parameterList">
+	Parameters</h4><dl paramName="ip" class="parameterList">
 	<dt>
 		<span class="parameter">
-			url
+			ip
 		</span>
 	</dt>
 	<dd>
@@ -164,63 +163,18 @@ Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a<
 	</dd>
 </dl>
 <p>
-	The url. 
-</p>
-<dl paramName="values" class="parameterList">
-	<dt>
-		<span class="parameter">
-			values
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.specialized.namevaluecollection">NameValueCollection</a> 
-	</dd>
-</dl>
-<p>
-	The values. 
-</p>
-<dl paramName="filePath" class="parameterList">
-	<dt>
-		<span class="parameter">
-			filePath
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The file path. 
-</p>
-<dl paramName="progress" class="parameterList">
-	<dt>
-		<span class="parameter">
-			progress
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action-2">Action</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>, <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a>&gt; 
-	</dd>
-</dl>
-<p>
-	The progress. 
-</p>
-<dl paramName="completed" class="parameterList">
-	<dt>
-		<span class="parameter">
-			completed
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.action-1">Action</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
-	</dd>
-</dl>
-<p>
-	The completed. 
+	The ip. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -294,78 +248,14 @@ Example:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a<
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void FileUploader(string url,
-     NameValueCollection values,
-     string filePath,
-     Action&lt;string, int&gt; progress,
-     Action&lt;string&gt; completed)
+public static string GetGeo(string ip)
  {
-     var fileStream = File.OpenRead(filePath);
-     var fileName = Path.GetFileName(filePath);
-     var ms = new MemoryStream();
-     fileStream.CopyTo(ms);
-     ms.Position = 0;
      try
      {
-         const string contentType = &quot;application/octet-stream&quot;;
-         var request = WebRequest.Create(url);
-         request.Method = &quot;POST&quot;;
-         var boundary = &quot;---------------------------&quot; + DateTime.Now.Ticks.ToString(&quot;x&quot;, NumberFormatInfo.InvariantInfo);
-         request.ContentType = &quot;multipart/form-data; boundary=&quot; + boundary;
-         boundary = &quot;--&quot; + boundary;
-         var dataStream = new MemoryStream();
-         byte[] buffer;
-         foreach (string name in values.Keys)
-         {
-             buffer = Encoding.ASCII.GetBytes(boundary + Environment.NewLine);
-             dataStream.Write(buffer, 0, buffer.Length);
-             buffer = Encoding.ASCII.GetBytes(string.Format(&quot;Content-Disposition: form-data; name=\&quot;{0}\&quot;{1}{1}&quot;,
-                 name, Environment.NewLine));
-             dataStream.Write(buffer, 0, buffer.Length);
-             buffer = Encoding.UTF8.GetBytes(values[name] + Environment.NewLine);
-             dataStream.Write(buffer, 0, buffer.Length);
-         }
-         buffer = Encoding.ASCII.GetBytes(boundary + Environment.NewLine);
-         dataStream.Write(buffer, 0, buffer.Length);
-         buffer = Encoding.UTF8.GetBytes($&quot;Content-Disposition: form-data; name=\&quot;file\&quot;; filename=\&quot;{fileName}\&quot;{Environment.NewLine}&quot;);
-         dataStream.Write(buffer, 0, buffer.Length);
-         buffer = Encoding.ASCII.GetBytes(string.Format(&quot;Content-Type: {0}{1}{1}&quot;,
-             contentType,
-             Environment.NewLine));
-         dataStream.Write(buffer, 0, buffer.Length);
-         ms.CopyTo(dataStream);
-         buffer = Encoding.ASCII.GetBytes(Environment.NewLine);
-         dataStream.Write(buffer, 0, buffer.Length);
-         buffer = Encoding.ASCII.GetBytes(boundary + &quot;--&quot;);
-         dataStream.Write(buffer, 0, buffer.Length);
-         dataStream.Position = 0;
-         request.ContentLength = dataStream.Length;
-         var requestStream = request.GetRequestStream();
-         var size = dataStream.Length;
-         const int chunkSize = 64 * 1024;
-         buffer = new byte[chunkSize];
-         long bytesSent = 0;
-         int readBytes;
-         while ((readBytes = dataStream.Read(buffer, 0, buffer.Length)) &gt; 0)
-         {
-             requestStream.Write(buffer, 0, readBytes);
-             bytesSent += readBytes;
-             var status = &quot;Uploading... &quot; + bytesSent / 1024 + &quot;KB of &quot; + size / 1024 + &quot;KB&quot;;
-             var percentage = Convert.ToInt32(100 * bytesSent / size);
-             progress(status, percentage);
-         }
-         using (var response = request.GetResponse())
-         using (var responseStream = response.GetResponseStream())
-         using (var stream = new MemoryStream())
-         {
-             responseStream.CopyTo(stream);
-             var result = Encoding.Default.GetString(stream.ToArray());
-             completed(result == string.Empty
-                 ? &quot;failed:&quot; + result
-                 : &quot;ok:&quot; + result);
-         }
+         using (WebClient client = new WebClient())
+             return client.DownloadString($&quot;https://ipinfo.io/{ip}/json&quot;);
      }
-     catch (Exception e) { completed(e.ToString()); }
+     catch (Exception ex) { return ex.Message; }
  }
 					</pre>			
 				</div>
@@ -385,6 +275,7 @@ public static void FileUploader(string url,
 
   
 
+  
 
 
 
@@ -406,6 +297,7 @@ public static void FileUploader(string url,
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -428,11 +320,11 @@ public static void FileUploader(string url,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000B4.html">SendDataToSites Class</a><br />
+			<a href="topic_00000000000000B2.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_00000000000000AD.html">VitNX.Functions.Web Namespace</a><br />
+<a href="topic_00000000000000B1.html">VitNX3.Functions.Web Namespace</a><br />
 
 
 			
@@ -450,7 +342,11 @@ public static void FileUploader(string url,
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-search_result['1188']=["topic_000000000000035A_events--.html","Constsants Events",""];
+search_result['1188']=["topic_000000000000036E.html","Text.Writeln Method","Writeln text with the colors."];

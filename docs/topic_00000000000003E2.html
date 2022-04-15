@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ScrollBar.OnMouseMove Method</title>
+	<title>VitNX_ListView.SelectItem Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ScrollBar.OnMouseMove Method</h1>
+		<h1 class="title">VitNX_ListView.SelectItem Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SelectItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>index</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +151,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="index" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			index
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	 
 </p>
 
 <p />
@@ -241,55 +240,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseMove(MouseEventArgs e)
+public void SelectItem(int index)
  {
-     base.OnMouseMove(e);
-     if (!_isScrolling)
-     {
-         var thumbHot = _thumbArea.Contains(e.Location);
-         if (_thumbHot != thumbHot)
-         {
-             _thumbHot = thumbHot;
-             Invalidate();
-         }
-         var upArrowHot = _upArrowArea.Contains(e.Location);
-         if (_upArrowHot != upArrowHot)
-         {
-             _upArrowHot = upArrowHot;
-             Invalidate();
-         }
-         var downArrowHot = _downArrowArea.Contains(e.Location);
-         if (_downArrowHot != downArrowHot)
-         {
-             _downArrowHot = downArrowHot;
-             Invalidate();
-         }
-     }
-     if (_isScrolling)
-     {
-         if (e.Button != MouseButtons.Left)
-         {
-             OnMouseUp(null);
-             return;
-         }
-         var difference = new Point(e.Location.X - _initialContact.X, e.Location.Y - _initialContact.Y);
-         if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-         {
-             var thumbPos = (_initialValue - _trackArea.Top);
-             var newPosition = thumbPos + difference.Y;
-             ScrollToPhysical(newPosition);
-         }
-         else
-         {
-             if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
-             {
-                 var thumbPos = (_initialValue - _trackArea.Left);
-                 var newPosition = thumbPos + difference.X;
-                 ScrollToPhysical(newPosition);
-             }
-         }
-         UpdateScrollBar();
-     }
+     if (index &lt; 0 || index &gt; Items.Count - 1)
+         throw new IndexOutOfRangeException($&quot;Value '{index}' is outside of valid range.&quot;);
+ 
+     _selectedIndices.Clear();
+     _selectedIndices.Add(index);
+ 
+     if (SelectedIndicesChanged != null)
+         SelectedIndicesChanged(this, null);
+ 
+     _anchoredItemStart = index;
+     _anchoredItemEnd = index;
+ 
+     Invalidate();
  }
 					</pre>			
 				</div>
@@ -309,6 +274,7 @@ protected override void OnMouseMove(MouseEventArgs e)
 
   
 
+  
 
 
 
@@ -330,6 +296,7 @@ protected override void OnMouseMove(MouseEventArgs e)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -352,11 +319,11 @@ protected override void OnMouseMove(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003DC.html">VitNX_ScrollBar Class</a><br />
+			<a href="topic_00000000000003DC.html">VitNX_ListView Class</a><br />
 
 
 
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -374,7 +341,11 @@ protected override void OnMouseMove(MouseEventArgs e)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

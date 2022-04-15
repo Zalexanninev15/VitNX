@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DISPLAYCONFIG_MODE_INFO Structure</title>
+	<title>DISPLAYCONFIG_PATH_TARGET_INFO Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DISPLAYCONFIG_MODE_INFO Structure</h1>
+		<h1 class="title">DISPLAYCONFIG_PATH_TARGET_INFO Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000002D9.html">VitNX.Functions.WinControllers</a>
+<a href="topic_00000000000002FC.html">VitNX3.Functions.WinControllers</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct DISPLAYCONFIG_MODE_INFO</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct DISPLAYCONFIG_PATH_TARGET_INFO</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -218,7 +218,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_000000000000031E.html">adapterId</a>
+	    <a href="topic_000000000000031C.html">adapterId</a>
 	  </td>
 	  <td>
 	
@@ -256,7 +256,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_000000000000031C.html">infoType</a>
+	    <a href="topic_000000000000031E.html">modeInfoIdx</a>
 	  </td>
 	  <td>
 	
@@ -275,7 +275,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_000000000000031F.html">modeInfo</a>
+	    <a href="topic_0000000000000320.html">statusFlags</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_000000000000031F.html">targetAvailable</a>
 	  </td>
 	  <td>
 	
@@ -351,12 +370,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [StructLayout(LayoutKind.Sequential)]
- public struct DISPLAYCONFIG_MODE_INFO
+ public struct DISPLAYCONFIG_PATH_TARGET_INFO
  {
-     public DISPLAYCONFIG_MODE_INFO_TYPE infoType;
-     public uint id;
      public LUID adapterId;
-     public DISPLAYCONFIG_MODE_INFO_UNION modeInfo;
+     public uint id;
+     public uint modeInfoIdx;
+     private DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
+     private DISPLAYCONFIG_ROTATION rotation;
+     private DISPLAYCONFIG_SCALING scaling;
+     private DISPLAYCONFIG_RATIONAL refreshRate;
+     private DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
+     public bool targetAvailable;
+     public uint statusFlags;
  }
 					</pre>			
 				</div>
@@ -376,6 +401,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
   
 
+  
 
 
 
@@ -397,6 +423,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -420,7 +447,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_00000000000002D9.html">VitNX.Functions.WinControllers Namespace</a><br />
+	<a href="topic_00000000000002FC.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 	
@@ -438,7 +465,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>btnOk Field</title>
+	<title>VitNX_DockPanel.RestoreDockPanelState Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">btnOk Field</h1>
+		<h1 class="title">VitNX_DockPanel.RestoreDockPanelState Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000499.html">VitNX.UI.ControlsV1.Forms</a>
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected <a target="_top" href="topic_0000000000000367.html" onclick="this.target='';return true;">VitNX_Button</a> btnOk</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RestoreDockPanelState(&nbsp;<br />   <a target="_top" href="topic_000000000000046F.html" onclick="this.target='';return true;">DockPanelState</a> <i>state</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-2">Func</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>, <a target="_top" href="topic_000000000000047B.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; <i>getContentBySerializationKey</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,11 +150,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="state" class="parameterList">
+	<dt>
+		<span class="parameter">
+			state
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_000000000000046F.html" onclick="this.target='';return true;">DockPanelState</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="getContentBySerializationKey" class="parameterList">
+	<dt>
+		<span class="parameter">
+			getContentBySerializationKey
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.func-2">Func</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>, <a target="_top" href="topic_000000000000047B.html" onclick="this.target='';return true;">VitNX_DockContent</a>&gt; 
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="topic_0000000000000367.html" onclick="this.target='';return true;">VitNX_Button</a> 
-	
+<p />
+
 
 
 
@@ -228,7 +253,48 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected VitNX_Button btnOk;
+public void RestoreDockPanelState(DockPanelState state,
+     Func&lt;string, VitNX_DockContent&gt; getContentBySerializationKey)
+ {
+     foreach (var region in state.Regions)
+     {
+         switch (region.Area)
+         {
+             case VitNX_DockArea.Left:
+                 _regions[VitNX_DockArea.Left].Size = region.Size;
+                 break;
+ 
+             case VitNX_DockArea.Right:
+                 _regions[VitNX_DockArea.Right].Size = region.Size;
+                 break;
+ 
+             case VitNX_DockArea.Bottom:
+                 _regions[VitNX_DockArea.Bottom].Size = region.Size;
+                 break;
+         }
+         foreach (var group in region.Groups)
+         {
+             VitNX_DockContent previousContent = null;
+             VitNX_DockContent visibleContent = null;
+             foreach (var contentKey in group.Contents)
+             {
+                 var content = getContentBySerializationKey(contentKey);
+                 if (content == null)
+                     continue;
+                 content.DockArea = region.Area;
+                 if (previousContent == null)
+                     AddContent(content);
+                 else
+                     AddContent(content, previousContent.DockGroup);
+                 previousContent = content;
+                 if (group.VisibleContent == contentKey)
+                     visibleContent = content;
+             }
+             if (visibleContent != null)
+                 visibleContent.Select();
+         }
+     }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -247,6 +313,7 @@ protected VitNX_Button btnOk;
 
   
 
+  
 
 
 
@@ -268,6 +335,7 @@ protected VitNX_Button btnOk;
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -290,11 +358,11 @@ protected VitNX_Button btnOk;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000049A.html">VitNX_Dialog Class</a><br />
+			<a href="topic_000000000000048F.html">VitNX_DockPanel Class</a><br />
 
 
 
-<a href="topic_0000000000000499.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -312,7 +380,12 @@ protected VitNX_Button btnOk;
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
+

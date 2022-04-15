@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['367',"VitNX.UI.ControlsV1.Forms Namespace","topic_00000000000004BC.html"],['388',"VitNX_MessageBox Class","topic_00000000000004D6.html"],['389',"VitNX_MessageBox Constructor","topic_00000000000004D8_overloads--.html"]];

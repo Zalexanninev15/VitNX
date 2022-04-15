@@ -1,1 +1,1 @@
-search_result['985']=["topic_00000000000002FE.html","DISPLAYCONFIG_RATIONAL Structure",""];
+search_result['985']=["topic_0000000000000311.html","Monitor Class","Work with monitor."];

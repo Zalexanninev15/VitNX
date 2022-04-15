@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter.HideOverlay Method</title>
+	<title>VitNX_DockGroup.EnsureVisible Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter.HideOverlay Method</h1>
+		<h1 class="title">VitNX_DockGroup.EnsureVisible Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> HideOverlay()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -224,9 +224,34 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void HideOverlay()
+public void EnsureVisible()
  {
-     _overlayForm.Visible = false;
+     if (DockArea != VitNX_DockArea.Document)
+         return;
+     if (VisibleContent == null)
+         return;
+     var width = ClientRectangle.Width - Padding.Horizontal - _tabArea.DropdownRectangle.Width;
+     var offsetArea = new Rectangle(Padding.Left, 0, width, 0);
+     var tab = _tabs[VisibleContent];
+     if (tab.ClientRectangle.IsEmpty)
+         return;
+     if (RectangleToTabArea(tab.ClientRectangle).Left &lt; offsetArea.Left)
+         _tabArea.Offset = tab.ClientRectangle.Left;
+     else if (RectangleToTabArea(tab.ClientRectangle).Right &gt; offsetArea.Right)
+         _tabArea.Offset = tab.ClientRectangle.Right - width;
+     if (_tabArea.TotalTabSize &lt; offsetArea.Width)
+         _tabArea.Offset = 0;
+     if (_tabArea.TotalTabSize &gt; offsetArea.Width)
+     {
+         var orderedContent = _contents.OrderBy(x =&gt; x.Order);
+         var lastTab = _tabs[orderedContent.Last()];
+         if (lastTab != null)
+         {
+             if (RectangleToTabArea(lastTab.ClientRectangle).Right &lt; offsetArea.Right)
+                 _tabArea.Offset = lastTab.ClientRectangle.Right - width;
+         }
+     }
+     Invalidate();
  }
 					</pre>			
 				</div>
@@ -246,6 +271,7 @@ public void HideOverlay()
 
   
 
+  
 
 
 
@@ -267,6 +293,7 @@ public void HideOverlay()
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -289,11 +316,11 @@ public void HideOverlay()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000482.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_0000000000000480.html">VitNX_DockGroup Class</a><br />
 
 
 
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -311,7 +338,11 @@ public void HideOverlay()
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

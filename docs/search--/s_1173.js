@@ -1,1 +1,1 @@
-search_result['1173']=["topic_0000000000000356_attached_props--.html","ObservableListModified\u0026lt;T\u0026gt; Attached Properties",""];
+search_result['1173']=["topic_0000000000000369.html","Type1.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

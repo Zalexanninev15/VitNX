@@ -29,6 +29,7 @@ A full description of all classes, functions and other object can be found in th
 
 ## Used in
 
+* Shark Remote (VitNX version 3.0)
 * [Jetpack Downgrader](https://github.com/Zalexanninev15/Jetpack-Downgrader) (VitNX Version 1.1.3-PreFinalBeta)
 
 ## Build

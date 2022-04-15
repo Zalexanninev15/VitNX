@@ -1,1 +1,1 @@
-search_result['1724']=["topic_00000000000004B7.html","VitNX_MessageBox(String) Constructor",""];
+search_result['1724']=["topic_00000000000004BD_methods--.html","VitNX_Dialog Methods",""];

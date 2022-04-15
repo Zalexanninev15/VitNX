@@ -1,1 +1,1 @@
-search_result['1611']=["topic_0000000000000466.html","VitNX_DockGroup.OnMouseDown Method","Raises the MouseDown event."];
+search_result['1611']=["topic_0000000000000471_attached_props--.html","DockRegionState Attached Properties",""];
