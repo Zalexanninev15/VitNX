@@ -1,1 +1,1 @@
-search_result['1687']=["topic_000000000000049A_events--.html","VitNX_Dialog Events",""];
+search_result['1687']=["topic_00000000000004A5.html","VitNX_DockSplitter Class",""];

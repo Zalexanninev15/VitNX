@@ -1,1 +1,1 @@
-search_result['2107']=["topic_00000000000008A4.html","Cancel Field",""];
+search_result['2107']=["topic_00000000000008AC.html","Colors Field","/// The colors of the standard notification types.\r\n        ///"];

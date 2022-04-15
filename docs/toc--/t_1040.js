@@ -1,1 +1,0 @@
-c['1040']=[['1041',"VitNX_Title Constructor","topic_0000000000000418.html",0],['1042',"Methods","topic_0000000000000417_methods--.html",1]];

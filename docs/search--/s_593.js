@@ -1,1 +1,1 @@
-search_result['593']=["topic_00000000000001A7_attached_props--.html","LOGBRUSH Attached Properties",""];
+search_result['593']=["topic_00000000000001AD.html","WINDOW_INFO Structure",""];

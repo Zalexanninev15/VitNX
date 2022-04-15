@@ -1,1 +1,1 @@
-search_result['740']=["topic_00000000000001FF_vars--.html","RECT Fields",""];
+search_result['740']=["topic_0000000000000204.html","PAINTSTRUCT Structure",""];

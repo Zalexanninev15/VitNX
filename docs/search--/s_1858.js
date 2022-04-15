@@ -1,1 +1,1 @@
-search_result['1858']=["topic_000000000000050F.html","Helpers.RoundRec Method",""];
+search_result['1858']=["topic_000000000000051D.html","CheckBox_Custom.OnResize Method","Raises the Resize event."];

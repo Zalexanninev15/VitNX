@@ -1,1 +1,1 @@
-search_result['880']=["topic_0000000000000275.html","DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY Enumeration",""];
+search_result['880']=["topic_0000000000000261_methods--.html","WINDOWPOS Methods",""];

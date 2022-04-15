@@ -1,1 +1,1 @@
-c['680']=[['681',"Methods","topic_00000000000002E8_methods--.html",1]];
+c['680']=[['681',"Copy Method","topic_0000000000000051.html",0],['682',"DeleteForever Method","topic_0000000000000052.html",0],['683',"DeleteToRecycleBin Method","topic_0000000000000053.html",0],['684',"GetItemsList Method","topic_000000000000004E.html",0],['685',"GetSize Method","topic_000000000000004F.html",0],['686',"Zip Method","topic_0000000000000050.html",0]];

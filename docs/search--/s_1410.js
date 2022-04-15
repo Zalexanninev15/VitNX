@@ -1,1 +1,1 @@
-search_result['1410']=["topic_00000000000003EA.html","VitNX_ScrollBase Class",""];
+search_result['1410']=["topic_00000000000003F3.html","VitNX_NumericUpDown.OnTextBoxLostFocus Method","Raises the LostFocus event."];

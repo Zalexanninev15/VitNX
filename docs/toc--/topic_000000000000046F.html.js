@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['1095',"VitNX.UI.ControlsV1.Docking Namespace","topic_0000000000000443.html"],['1130',"VitNX_DockPanel Class","topic_000000000000046C.html"],['1143',"Events","topic_000000000000046C_events--.html"],['1146',"ContentRemoved Event","topic_000000000000046F.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['284',"VitNX.UI.ControlsV1.Docking Namespace","topic_0000000000000466.html"],['289',"DockPanelState Class","topic_000000000000046F.html"]];

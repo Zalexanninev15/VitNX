@@ -1,1 +1,1 @@
-search_result['1356']=["topic_00000000000003C5_methods--.html","VitNX_MenuStrip Methods",""];
+search_result['1356']=["topic_00000000000003D5.html","VitNX_Label.OnTextChanged Method",""];

@@ -1,1 +1,1 @@
-search_result['1132']=["topic_0000000000000341.html","Type1 Constructor",""];
+search_result['1132']=["topic_0000000000000354.html","WorkWithSystem Class","Work with system."];

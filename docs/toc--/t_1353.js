@@ -1,1 +1,0 @@
-c['1353']=[['1354',"VitNX2_ToogleButton Constructor","topic_0000000000000557.html",0],['1355',"Methods","topic_0000000000000556_methods--.html",1]];

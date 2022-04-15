@@ -1,1 +1,1 @@
-search_result['1013']=["topic_0000000000000308_methods--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Methods",""];
+search_result['1013']=["topic_000000000000031B_methods--.html","DISPLAYCONFIG_PATH_TARGET_INFO Methods",""];

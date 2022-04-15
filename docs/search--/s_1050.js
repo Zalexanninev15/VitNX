@@ -1,1 +1,1 @@
-search_result['1050']=["topic_0000000000000318_props--.html","DISPLAYCONFIG_MODE_INFO_UNION Properties",""];
+search_result['1050']=["topic_000000000000032B_props--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Properties",""];

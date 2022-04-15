@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetWindowPos (IntPtr, IntPtr, Int32, Int32, Int32, Int32, SET_WINDOW_POS_FLAGS) Method</title>
+	<title>Import.DwmExtendFrameIntoClientArea Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetWindowPos (IntPtr, IntPtr, Int32, Int32, Int32, Int32, SET_WINDOW_POS_FLAGS) Method</h1>
+		<h1 class="title">Import.DwmExtendFrameIntoClientArea Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000BE.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> SetWindowPos(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWndInsertAfter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>x</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>y</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cx</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cy</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000258.html" onclick="this.target='';return true;">SET_WINDOW_POS_FLAGS</a> <i>uFlags</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;dwmapi.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DwmExtendFrameIntoClientArea(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_00000000000001D3.html" onclick="this.target='';return true;">MARGINS</a> <i>pMarInset</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -165,79 +164,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="hWndInsertAfter" class="parameterList">
+<dl paramName="pMarInset" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWndInsertAfter
+			pMarInset
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="x" class="parameterList">
-	<dt>
-		<span class="parameter">
-			x
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="y" class="parameterList">
-	<dt>
-		<span class="parameter">
-			y
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="cx" class="parameterList">
-	<dt>
-		<span class="parameter">
-			cx
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="cy" class="parameterList">
-	<dt>
-		<span class="parameter">
-			cy
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="uFlags" class="parameterList">
-	<dt>
-		<span class="parameter">
-			uFlags
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000258.html" onclick="this.target='';return true;">SET_WINDOW_POS_FLAGS</a> 
+		<a target="_top" href="topic_00000000000001D3.html" onclick="this.target='';return true;">MARGINS</a> 
 	</dd>
 </dl>
 <p>
@@ -248,7 +182,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -323,15 +257,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;,
-     SetLastError = true)]
- public static extern bool SetWindowPos(IntPtr hWnd,
-     IntPtr hWndInsertAfter,
-     int x,
-     int y,
-     int cx,
-     int cy,
-     SET_WINDOW_POS_FLAGS uFlags);
+[DllImport(&quot;dwmapi.dll&quot;)]
+ public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd,
+     ref MARGINS pMarInset);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -350,6 +278,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
   
 
+  
 
 
 
@@ -371,6 +300,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -393,11 +323,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000BB.html">Import Class</a><br />
+			<a href="topic_00000000000000BF.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000BE.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -415,7 +345,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

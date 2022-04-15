@@ -1,1 +1,1 @@
-search_result['332']=["topic_00000000000000D1.html","Import.DeleteDC Method",""];
+search_result['332']=["topic_00000000000000CC.html","Import.GetWindowInfo Method",""];

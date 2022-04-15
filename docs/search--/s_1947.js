@@ -1,1 +1,1 @@
-search_result['1947']=["topic_000000000000053D.html","VitNX2_PictureBox.OnPaint Method","Raises the Paint event."];
+search_result['1947']=["topic_0000000000000553_overloads--.html","VitNX2_MessageBoxType1_Form.Dispose Method","Clean up any resources being used."];

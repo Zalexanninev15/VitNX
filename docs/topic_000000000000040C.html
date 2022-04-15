@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_SectionPanel.OnPaint Method</title>
+	<title>VitNX_ScrollBar.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_SectionPanel.OnPaint Method</h1>
+		<h1 class="title">VitNX_ScrollBar.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -244,59 +244,46 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 protected override void OnPaint(PaintEventArgs e)
  {
      var g = e.Graphics;
-     var rect = ClientRectangle;
+     var upIcon = _upArrowHot ? ScrollIcons.scrollbar_arrow_hot : ScrollIcons.scrollbar_arrow_standard;
  
-     // Fill body
-     using (var b = new SolidBrush(Colors.GreyBackground))
+     if (_upArrowClicked)
+         upIcon = ScrollIcons.scrollbar_arrow_clicked;
+ 
+     if (!Enabled)
+         upIcon = ScrollIcons.scrollbar_arrow_disabled;
+ 
+     if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
+         upIcon.RotateFlip(RotateFlipType.RotateNoneFlipY);
+     else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+         upIcon.RotateFlip(RotateFlipType.Rotate90FlipNone);
+ 
+     g.DrawImageUnscaled(upIcon,
+                         _upArrowArea.Left + (_upArrowArea.Width / 2) - (upIcon.Width / 2),
+                         _upArrowArea.Top + (_upArrowArea.Height / 2) - (upIcon.Height / 2));
+ 
+     var downIcon = _downArrowHot ? ScrollIcons.scrollbar_arrow_hot : ScrollIcons.scrollbar_arrow_standard;
+ 
+     if (_downArrowClicked)
+         downIcon = ScrollIcons.scrollbar_arrow_clicked;
+ 
+     if (!Enabled)
+         downIcon = ScrollIcons.scrollbar_arrow_disabled;
+ 
+     if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
+         downIcon.RotateFlip(RotateFlipType.Rotate270FlipNone);
+ 
+     g.DrawImageUnscaled(downIcon,
+                         _downArrowArea.Left + (_downArrowArea.Width / 2) - (downIcon.Width / 2),
+                         _downArrowArea.Top + (_downArrowArea.Height / 2) - (downIcon.Height / 2));
+     if (Enabled)
      {
-         g.FillRectangle(b, rect);
-     }
+         var scrollColor = _thumbHot ? Colors.GreyHighlight : Colors.GreySelection;
  
-     // Draw header
-     var bgColor = ContainsFocus ? Colors.BlueBackground : Colors.HeaderBackground;
-     var VitNXColor = ContainsFocus ? Colors.VitNXBlueBorder : Colors.VitNXBorder;
-     var lightColor = ContainsFocus ? Colors.LightBlueBorder : Colors.LightBorder;
+         if (_isScrolling)
+             scrollColor = Colors.ActiveControl;
  
-     using (var b = new SolidBrush(bgColor))
-     {
-         var bgRect = new Rectangle(0, 0, rect.Width, 25);
-         g.FillRectangle(b, bgRect);
-     }
- 
-     using (var p = new Pen(VitNXColor))
-     {
-         g.DrawLine(p, rect.Left, 0, rect.Right, 0);
-         g.DrawLine(p, rect.Left, 25 - 1, rect.Right, 25 - 1);
-     }
- 
-     using (var p = new Pen(lightColor))
-     {
-         g.DrawLine(p, rect.Left, 1, rect.Right, 1);
-     }
- 
-     var xOffset = 3;
- 
-     using (var b = new SolidBrush(Colors.LightText))
-     {
-         var textRect = new Rectangle(xOffset, 0, rect.Width - 4 - xOffset, 25);
- 
-         var format = new StringFormat
-         {
-             Alignment = StringAlignment.Near,
-             LineAlignment = StringAlignment.Center,
-             FormatFlags = StringFormatFlags.NoWrap,
-             Trimming = StringTrimming.EllipsisCharacter
-         };
- 
-         g.DrawString(SectionHeader, Font, b, textRect, format);
-     }
- 
-     // Draw border
-     using (var p = new Pen(Colors.VitNXBorder, 1))
-     {
-         var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
- 
-         g.DrawRectangle(p, modRect);
+         using (var b = new SolidBrush(scrollColor))
+             g.FillRectangle(b, _thumbArea);
      }
  }
 					</pre>			
@@ -317,6 +304,7 @@ protected override void OnPaint(PaintEventArgs e)
 
   
 
+  
 
 
 
@@ -338,6 +326,7 @@ protected override void OnPaint(PaintEventArgs e)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -360,11 +349,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000407.html">VitNX_SectionPanel Class</a><br />
+			<a href="topic_00000000000003FF.html">VitNX_ScrollBar Class</a><br />
 
 
 
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -382,7 +371,11 @@ protected override void OnPaint(PaintEventArgs e)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

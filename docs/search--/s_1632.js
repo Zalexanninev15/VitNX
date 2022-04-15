@@ -1,1 +1,1 @@
-search_result['1632']=["topic_0000000000000474.html","VitNX_DockPanel.RemoveContent Method",""];
+search_result['1632']=["topic_000000000000047F.html","VitNX_DockContent.OnEnter Method","Raises the Enter event."];

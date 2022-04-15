@@ -1,1 +1,1 @@
-search_result['1596']=["topic_000000000000045C.html","VitNX_DockContent.OnEnter Method","Raises the Enter event."];
+search_result['1596']=["topic_0000000000000469_attached_props--.html","DockGroupState Attached Properties",""];

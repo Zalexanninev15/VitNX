@@ -1,1 +1,1 @@
-search_result['1029']=["topic_0000000000000311.html","targetVideoSignalInfo Field",""];
+search_result['1029']=["topic_0000000000000324.html","DISPLAYCONFIG_PATH_INFO Structure",""];

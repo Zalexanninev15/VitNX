@@ -1,1 +1,1 @@
-search_result['1280']=["topic_000000000000039C_vars--.html","VitNX_DropdownItem Fields",""];
+search_result['1280']=["topic_00000000000003A5.html","VitNX_CheckBox.OnKeyUp Method","Raises the OnKeyUp event."];

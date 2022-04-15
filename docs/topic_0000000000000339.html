@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Window.WindowToLowerRightCorner Method</title>
+	<title>pixelFormat Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Window.WindowToLowerRightCorner Method</h1>
+		<h1 class="title">pixelFormat Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls</a>
+<a href="topic_00000000000002FC.html">VitNX3.Functions.WinControllers</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Sets the window to the lower right corner.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> WindowToLowerRightCorner(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="topic_00000000000002C4.html" onclick="this.target='';return true;">DISPLAYCONFIG_PIXELFORMAT</a> pixelFormat</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="Handler" class="parameterList">
-	<dt>
-		<span class="parameter">
-			Handler
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	The handler. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="topic_00000000000002C4.html" onclick="this.target='';return true;">DISPLAYCONFIG_PIXELFORMAT</a> 
+	
 
 
 
@@ -241,17 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void WindowToLowerRightCorner(IntPtr Handler)
- {
-     Import.GetWindowRect(Handler, out RECT rct);
-     Rectangle screen = Screen.FromHandle(Handler).Bounds;
-     Point pt = new Point(screen.Left + screen.Width / 2 - (rct.Right - rct.Left) / 2,
-         screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
-     Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
-         pt.X, pt.Y, 0, 0,
-         SET_WINDOW_POS_FLAGS.SWP_NOZORDER | SET_WINDOW_POS_FLAGS.SWP_NOSIZE |
-         SET_WINDOW_POS_FLAGS.SWP_SHOWWINDOW);
- }
+public DISPLAYCONFIG_PIXELFORMAT pixelFormat;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -270,6 +247,7 @@ public static void WindowToLowerRightCorner(IntPtr Handler)
 
   
 
+  
 
 
 
@@ -291,6 +269,7 @@ public static void WindowToLowerRightCorner(IntPtr Handler)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -313,11 +292,11 @@ public static void WindowToLowerRightCorner(IntPtr Handler)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000334.html">Window Class</a><br />
+			<a href="topic_0000000000000336.html">DISPLAYCONFIG_SOURCE_MODE Structure</a><br />
 
 
 
-<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls Namespace</a><br />
+<a href="topic_00000000000002FC.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 			
@@ -335,8 +314,11 @@ public static void WindowToLowerRightCorner(IntPtr Handler)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
-

@@ -1,1 +1,1 @@
-search_result['941']=["topic_00000000000002E8_methods--.html","Keyboard Methods",""];
+search_result['941']=["topic_0000000000000300.html","VolumeControl Class","The volume control."];

@@ -1,1 +1,1 @@
-search_result['1331']=["topic_00000000000003B7_overloads--.html","VitNX_ListItem Constructor",""];
+search_result['1331']=["topic_00000000000003C6.html","VitNX_DropdownList.OnResize Method","Raises the Resize event."];

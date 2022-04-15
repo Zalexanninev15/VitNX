@@ -1,1 +1,1 @@
-c['9']=[['10',"CShap Class","topic_0000000000000014.html",1],['16',"IniSettings32 Class","topic_00000000000000A6.html",1],['24',"PowerControl Class","topic_000000000000009E.html",1]];
+c['9']=[['10',"ObservableList\u003cT\u003e Class","topic_0000000000000370.html",1],['24',"ObservableListModified\u003cT\u003e Class","topic_0000000000000379.html",1]];

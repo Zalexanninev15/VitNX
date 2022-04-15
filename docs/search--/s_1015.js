@@ -1,1 +1,1 @@
-search_result['1015']=["topic_0000000000000308_vars--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Fields",""];
+search_result['1015']=["topic_000000000000031B_vars--.html","DISPLAYCONFIG_PATH_TARGET_INFO Fields",""];

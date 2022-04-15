@@ -1,1 +1,1 @@
-search_result['1969']=["topic_0000000000000546_attached_props--.html","VitNX2_ProgressBarRoundedType2 Attached Properties",""];
+search_result['1969']=["topic_000000000000055B_methods--.html","VitNX2_Panel Methods",""];

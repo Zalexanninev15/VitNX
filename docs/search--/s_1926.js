@@ -1,1 +1,1 @@
-search_result['1926']=["topic_0000000000000532_vars--.html","VitNX2_RichTextBox Fields",""];
+search_result['1926']=["topic_000000000000054A.html","VitNX2_MessageBoxType1.Show (IWin32Window, String, String, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton) Method",""];

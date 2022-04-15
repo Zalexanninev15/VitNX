@@ -1,1 +1,1 @@
-search_result['1787']=["topic_00000000000004E1_events--.html","DockResizeFilter Events",""];
+search_result['1787']=["topic_00000000000004F3.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

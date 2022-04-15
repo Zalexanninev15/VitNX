@@ -1,1 +1,1 @@
-c['766']=[['767',"FriendlyName Method","topic_0000000000000330.html",0]];
+c['766']=[['767',"Methods","topic_00000000000000BB_methods--.html",1]];

@@ -1,1 +1,0 @@
-c['1415']=[['1416',"StackWith(this Bitmap, Bitmap) Method","topic_000000000000087D.html",0],['1417',"StackWith(this Bitmap, Properties) Method","topic_000000000000087C.html",0]];

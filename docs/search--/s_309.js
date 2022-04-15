@@ -1,1 +1,1 @@
-search_result['309']=["topic_00000000000000BB_props--.html","Import Properties",""];
+search_result['309']=["topic_00000000000000BB_props--.html","Config Properties",""];

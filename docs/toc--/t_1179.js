@@ -1,1 +1,1 @@
-c['1179']=[['1180',"VitNX_Dialog Constructor","topic_00000000000004A4.html",0],['1181',"Methods","topic_000000000000049A_methods--.html",1],['1185',"Fields","topic_000000000000049A_vars--.html",1]];
+c['1179']=[['1180',"MessageBeep(int) Method","topic_0000000000000118.html",0],['1181',"MessageBeep(UInt32) Method","topic_000000000000017A.html",0]];

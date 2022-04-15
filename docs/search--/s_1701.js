@@ -1,1 +1,1 @@
-search_result['1701']=["topic_00000000000004A5.html","VitNX_Dialog.OnLoad Method","Raises the Load event."];
+search_result['1701']=["topic_00000000000004AC_events--.html","VitNX_Document Events",""];

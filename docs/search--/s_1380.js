@@ -1,1 +1,1 @@
-search_result['1380']=["topic_00000000000003D2_props--.html","VitNX_RadioButton Properties",""];
+search_result['1380']=["topic_00000000000003E1.html","VitNX_ListView.GetItemIndex Method",""];

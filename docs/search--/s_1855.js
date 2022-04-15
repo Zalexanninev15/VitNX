@@ -1,1 +1,1 @@
-search_result['1855']=["topic_000000000000050E_methods--.html","Helpers Methods",""];
+search_result['1855']=["topic_000000000000051A.html","CheckBox_Custom.OnTextChanged Method","Raises the TextChanged event."];

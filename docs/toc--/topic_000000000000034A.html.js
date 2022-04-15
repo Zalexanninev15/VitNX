@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['804',"VitNX.UI.Console Namespace","topic_0000000000000349.html"],['805',"Text Class","topic_000000000000034A.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['1266',"VitNX3.Functions.WinControllers Namespace","topic_00000000000002FC.html"],['1277',"Monitor Class","topic_0000000000000311.html"],['1326',"DISPLAYCONFIG_TARGET_DEVICE_NAME Structure","topic_000000000000034A.html"]];

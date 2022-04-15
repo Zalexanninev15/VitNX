@@ -1,1 +1,1 @@
-search_result['1828']=["topic_00000000000004FE.html","CheckBox_Custom.OnPaint Method","Raises the Paint event."];
+search_result['1828']=["topic_0000000000000508.html","DockResizeFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

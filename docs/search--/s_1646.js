@@ -1,1 +1,1 @@
-search_result['1646']=["topic_000000000000047D.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];
+search_result['1646']=["topic_0000000000000488.html","VitNX_DockGroup.OnMouseMove Method","Raises the MouseMove event."];

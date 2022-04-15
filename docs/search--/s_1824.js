@@ -1,1 +1,1 @@
-search_result['1824']=["topic_00000000000004FA.html","CheckBox_Custom.OnMouseUp Method","Raises the MouseUp event."];
+search_result['1824']=["topic_0000000000000506_methods--.html","DockResizeFilter Methods",""];

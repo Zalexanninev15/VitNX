@@ -1,1 +1,1 @@
-search_result['1702']=["topic_00000000000004A6.html","VitNX_Dialog.Dispose Method","Clean up any resources being used."];
+search_result['1702']=["topic_00000000000004AC_methods--.html","VitNX_Document Methods",""];

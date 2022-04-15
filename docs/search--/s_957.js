@@ -1,1 +1,1 @@
-search_result['957']=["topic_00000000000002F0_attached_props--.html","LUID Attached Properties",""];
+search_result['957']=["topic_0000000000000305.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];

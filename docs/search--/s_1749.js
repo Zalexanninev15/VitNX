@@ -1,1 +1,1 @@
-search_result['1749']=["topic_00000000000004CC.html","VitNX_MenuRenderer.OnRenderImageMargin Method","Draws the item background."];
+search_result['1749']=["topic_00000000000004D6.html","VitNX_MessageBox Class",""];

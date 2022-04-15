@@ -1,1 +1,1 @@
-c['1427']=[['1428',"Alert(string, NotificationType) Method","topic_0000000000000890.html",0],['1429',"Alert(string, NotificationType, Color, Image) Method","topic_0000000000000891.html",0]];
+c['1427']=[['1428',"GetImage(Properties) Method","topic_000000000000058A.html",0],['1429',"GetImage(Type, Properties) Method","topic_0000000000000589.html",0],['1430',"GetImage(string, Properties) Method","topic_0000000000000588.html",0]];

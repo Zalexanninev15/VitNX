@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter.UpdateOverlay Method</title>
+	<title>VitNX_DockGroup.SetVisibleContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter.UpdateOverlay Method</h1>
+		<h1 class="title">VitNX_DockGroup.SetVisibleContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> UpdateOverlay(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> <i>difference</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetVisibleContent(&nbsp;<br />   <a target="_top" href="topic_000000000000047B.html" onclick="this.target='';return true;">VitNX_DockContent</a> <i>content</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="difference" class="parameterList">
+	Parameters</h4><dl paramName="content" class="parameterList">
 	<dt>
 		<span class="parameter">
-			difference
+			content
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> 
+		<a target="_top" href="topic_000000000000047B.html" onclick="this.target='';return true;">VitNX_DockContent</a> 
 	</dd>
 </dl>
 <p>
@@ -240,49 +240,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void UpdateOverlay(Point difference)
+public void SetVisibleContent(VitNX_DockContent content)
  {
-     var bounds = new Rectangle(Bounds.Location,
-         Bounds.Size);
-     switch (_splitterType)
+     if (!_contents.Contains(content))
+         return;
+     if (VisibleContent != content)
      {
-         case VitNX_SplitterType.Left:
-             var leftX = Math.Max(bounds.Location.X - difference.X,
-                 _minimum);
-             if (_maximum != 0 &amp;&amp; leftX &gt; _maximum)
-                 leftX = _maximum;
-             bounds.Location = new Point(leftX,
-                 bounds.Location.Y);
-             break;
- 
-         case VitNX_SplitterType.Right:
-             var rightX = Math.Max(bounds.Location.X - difference.X,
-                 _minimum);
-             if (_maximum != 0 &amp;&amp; rightX &gt; _maximum)
-                 rightX = _maximum;
-             bounds.Location = new Point(rightX,
-                 bounds.Location.Y);
-             break;
- 
-         case VitNX_SplitterType.Top:
-             var topY = Math.Max(bounds.Location.Y - difference.Y,
-                 _minimum);
-             if (_maximum != 0 &amp;&amp; topY &gt; _maximum)
-                 topY = _maximum;
-             bounds.Location = new Point(bounds.Location.X,
-                 topY);
-             break;
- 
-         case VitNX_SplitterType.Bottom:
-             var bottomY = Math.Max(bounds.Location.Y - difference.Y,
-                 _minimum);
-             if (_maximum != 0 &amp;&amp; bottomY &gt; _maximum)
-                 topY = _maximum;
-             bounds.Location = new Point(bounds.Location.X,
-                 bottomY);
-             break;
+         VisibleContent = content;
+         content.Visible = true;
+         foreach (var otherContent in _contents)
+         {
+             if (otherContent != content)
+                 otherContent.Visible = false;
+         }
+         Invalidate();
      }
-     _overlayForm.Bounds = bounds;
  }
 					</pre>			
 				</div>
@@ -302,6 +274,7 @@ public void UpdateOverlay(Point difference)
 
   
 
+  
 
 
 
@@ -323,6 +296,7 @@ public void UpdateOverlay(Point difference)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -345,11 +319,11 @@ public void UpdateOverlay(Point difference)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000482.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_0000000000000480.html">VitNX_DockGroup Class</a><br />
 
 
 
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000000466.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -367,7 +341,11 @@ public void UpdateOverlay(Point difference)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

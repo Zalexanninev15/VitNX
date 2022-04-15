@@ -1,0 +1,1 @@
+c['1069']=[['1070',"LowLevelKeyboardProcDelegate Delegate","topic_0000000000000157.html",0],['1071',"WinEventDelegate Delegate","topic_00000000000000CB.html",0],['1072',"Methods","topic_00000000000000BF_methods--.html",1]];

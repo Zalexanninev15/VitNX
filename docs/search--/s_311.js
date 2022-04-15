@@ -1,1 +1,1 @@
-search_result['311']=["topic_00000000000000BC.html","Import.AdjustWindowRectEx Method",""];
+search_result['311']=["topic_00000000000000BC.html","Config.UseProtocols Method","Activate all security protocols for all network functions to work (HTTPS).\r\nExample: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();"];

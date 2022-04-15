@@ -1,1 +1,1 @@
-search_result['1435']=["topic_00000000000003FE.html","VitNX_ScrollBase.OnPreviewKeyDown Method","Raises the PreviewKeyDown event."];
+search_result['1435']=["topic_0000000000000402.html","VitNX_ScrollBar.OnResize Method","Raises the Resize event."];

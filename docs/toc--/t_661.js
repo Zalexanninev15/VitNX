@@ -1,1 +1,1 @@
-c['661']=[['662',"ValidateRect(IntPtr, IntPtr) Method","topic_000000000000013A.html",0],['663',"ValidateRect(IntPtr, ref RECT) Method","topic_000000000000013B.html",0]];
+c['661']=[['662',"File Class","topic_0000000000000054.html",1],['679',"Folder Class","topic_000000000000004D.html",1],['687',"Other Class","topic_0000000000000064.html",1]];

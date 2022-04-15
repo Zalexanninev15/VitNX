@@ -1,1 +1,1 @@
-search_result['1974']=["topic_0000000000000547.html","VitNX2_ProgressBarRoundedType2 Constructor",""];
+search_result['1974']=["topic_000000000000055E.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];

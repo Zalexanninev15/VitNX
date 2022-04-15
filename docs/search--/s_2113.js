@@ -1,1 +1,1 @@
-search_result['2113']=["topic_00000000000008A9_props--.html","NotificationForm Properties",""];
+search_result['2113']=["topic_00000000000008B2.html","EnableOffset Field","/// Offset of notifications after closing the previous one.\r\n\t\t///"];

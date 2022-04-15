@@ -1,1 +1,1 @@
-search_result['1799']=["topic_00000000000004E5_vars--.html","Helper Fields",""];
+search_result['1799']=["topic_00000000000004FA.html","VitNX_ToolStripRenderer.OnRenderButtonBackground Method","Raises the RenderButtonBackground event."];

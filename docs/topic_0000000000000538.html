@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_Panel.OnPaint Method</title>
+	<title>FlatColor Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_Panel.OnPaint Method</h1>
+		<h1 class="title">FlatColor Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2</a>
+<a href="topic_0000000000000528.html">VitNX2.UI.ControlsV2.UiKit</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>pevent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> FlatColor</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="pevent" class="parameterList">
-	<dt>
-		<span class="parameter">
-			pevent
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
+	
 
 
 
@@ -241,42 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs pevent)
- {
-     base.OnPaint(pevent);
-     Rectangle rectSurface = ClientRectangle;
-     Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
-     int smoothSize = 2;
-     if (borderSize &gt; 0)
-         smoothSize = borderSize;
-     if (borderRadius &gt; 2)
-     {
-         using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
-         using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-         using (Pen penSurface = new Pen(Parent.BackColor, smoothSize))
-         using (Pen penBorder = new Pen(borderColor, borderSize))
-         {
-             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-             Region = new Region(pathSurface);
-             pevent.Graphics.DrawPath(penSurface, pathSurface);
-             if (borderSize &gt;= 1)
-                 pevent.Graphics.DrawPath(penBorder, pathBorder);
-         }
-     }
-     else
-     {
-         pevent.Graphics.SmoothingMode = SmoothingMode.None;
-         Region = new Region(rectSurface);
-         if (borderSize &gt;= 1)
-         {
-             using (Pen penBorder = new Pen(borderColor, borderSize))
-             {
-                 penBorder.Alignment = PenAlignment.Inset;
-                 pevent.Graphics.DrawRectangle(penBorder, 0, 0, Width - 1, Height - 1);
-             }
-         }
-     }
- }
+public static Color FlatColor = Color.FromArgb(66, 144, 213);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -295,6 +247,7 @@ protected override void OnPaint(PaintEventArgs pevent)
 
   
 
+  
 
 
 
@@ -316,6 +269,7 @@ protected override void OnPaint(PaintEventArgs pevent)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -338,11 +292,11 @@ protected override void OnPaint(PaintEventArgs pevent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000536.html">VitNX2_Panel Class</a><br />
+			<a href="topic_0000000000000533.html">Helpers Class</a><br />
 
 
 
-<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_0000000000000528.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
 
 
 			
@@ -360,8 +314,11 @@ protected override void OnPaint(PaintEventArgs pevent)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
-

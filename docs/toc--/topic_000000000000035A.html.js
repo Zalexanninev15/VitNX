@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['837',"VitNX.UI.ControlsV1.Config Namespace","topic_0000000000000358.html"],['839',"Constsants Class","topic_000000000000035A.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['1380',"VitNX3.Functions.WindowAndControls Namespace","topic_0000000000000356.html"],['1385',"Window Class","topic_0000000000000357.html"],['1386',"Methods","topic_0000000000000357_methods--.html"],['1387',"HideConsoleWindow Method","topic_000000000000035A.html"]];

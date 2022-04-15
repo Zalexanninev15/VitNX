@@ -1,1 +1,1 @@
-c['1395']=[['1396',"GetIcon Method","topic_0000000000000561_overloads--.html",1],['1399',"GetImage Method","topic_0000000000000563_overloads--.html",1],['1403',"Initialize Method","topic_000000000000055E.html",0],['1404',"ParseType Method","topic_0000000000000566.html",0],['1405',"SetDefaultProperties Method","topic_0000000000000560.html",0],['1406',"SetDownloadLink Method","topic_000000000000055F.html",0]];
+c['1395']=[['1396',"Methods","topic_000000000000036D_methods--.html",1]];

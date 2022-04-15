@@ -1,1 +1,1 @@
-search_result['959']=["topic_00000000000002F0_methods--.html","LUID Methods",""];
+search_result['959']=["topic_0000000000000306.html","GetClipboardText Class","Get clipboard text."];

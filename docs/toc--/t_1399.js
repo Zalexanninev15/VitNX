@@ -1,1 +1,1 @@
-c['1399']=[['1400',"GetImage(Properties) Method","topic_0000000000000565.html",0],['1401',"GetImage(Type, Properties) Method","topic_0000000000000564.html",0],['1402',"GetImage(string, Properties) Method","topic_0000000000000563.html",0]];
+c['1399']=[['1400',"Type1 Constructor","topic_0000000000000364.html",0],['1401',"Methods","topic_0000000000000363_methods--.html",1]];

@@ -1,1 +1,1 @@
-search_result['1860']=["topic_0000000000000511.html","Helpers.DrawArrow Method",""];
+search_result['1860']=["topic_000000000000051F.html","CheckBox_Custom.OnMouseUp Method","Raises the MouseUp event."];

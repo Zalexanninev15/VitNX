@@ -1,1 +1,1 @@
-search_result['1358']=["topic_00000000000003C5_vars--.html","VitNX_MenuStrip Fields",""];
+search_result['1358']=["topic_00000000000003D7.html","VitNX_Label.OnSizeChanged Method","Raises the SizeChanged event."];

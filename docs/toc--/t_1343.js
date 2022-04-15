@@ -1,1 +1,1 @@
-c['1343']=[['1344',"WndProc(ref Message) Method","topic_000000000000054F.html",0]];
+c['1343']=[['1344',"activeSize Field","topic_000000000000032F.html",0],['1345',"hSyncFreq Field","topic_000000000000032D.html",0],['1346',"pixelRate Field","topic_000000000000032C.html",0],['1347',"scanLineOrdering Field","topic_0000000000000332.html",0],['1348',"totalSize Field","topic_0000000000000330.html",0],['1349',"vSyncFreq Field","topic_000000000000032E.html",0],['1350',"videoStandard Field","topic_0000000000000331.html",0]];

@@ -1,1 +1,1 @@
-search_result['1960']=["topic_0000000000000542_events--.html","VitNX2_ProgressBarRoundedType1 Events",""];
+search_result['1960']=["topic_0000000000000557_methods--.html","VitNX2_RichTextBox Methods",""];

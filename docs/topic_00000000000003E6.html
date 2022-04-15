@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ScrollBar.ScrollBy Method</title>
+	<title>VitNX_ListView.EnsureVisible Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ScrollBar.ScrollBy Method</h1>
+		<h1 class="title">VitNX_ListView.EnsureVisible Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ScrollBy(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>offset</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,22 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="offset" class="parameterList">
-	<dt>
-		<span class="parameter">
-			offset
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -240,10 +224,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void ScrollBy(int offset)
+public void EnsureVisible()
  {
-     var newValue = Value + offset;
-     ScrollTo(newValue);
+     if (SelectedIndices.Count == 0)
+         return;
+ 
+     var itemTop = -1;
+ 
+     if (!MultiSelect)
+         itemTop = SelectedIndices[0] * ItemHeight;
+     else
+         itemTop = _anchoredItemEnd * ItemHeight;
+ 
+     var itemBottom = itemTop + ItemHeight;
+ 
+     if (itemTop &lt; Viewport.Top)
+         VScrollTo(itemTop);
+ 
+     if (itemBottom &gt; Viewport.Bottom)
+         VScrollTo((itemBottom - Viewport.Height));
  }
 					</pre>			
 				</div>
@@ -263,6 +262,7 @@ public void ScrollBy(int offset)
 
   
 
+  
 
 
 
@@ -284,6 +284,7 @@ public void ScrollBy(int offset)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -306,11 +307,11 @@ public void ScrollBy(int offset)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000003DC.html">VitNX_ScrollBar Class</a><br />
+			<a href="topic_00000000000003DC.html">VitNX_ListView Class</a><br />
 
 
 
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -328,7 +329,11 @@ public void ScrollBy(int offset)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

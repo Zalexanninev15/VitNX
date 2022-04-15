@@ -1,1 +1,1 @@
-search_result['1156']=["topic_000000000000034D_events--.html","ObservableList\u0026lt;T\u0026gt; Events",""];
+search_result['1156']=["topic_000000000000035F_methods--.html","Controls Methods",""];

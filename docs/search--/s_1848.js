@@ -1,1 +1,1 @@
-search_result['1848']=["topic_000000000000050A.html","FormSkin.OnCreateControl Method",""];
+search_result['1848']=["topic_0000000000000518.html","VitNX2_Button.OnHandleCreated Method","Raises the HandleCreated event."];

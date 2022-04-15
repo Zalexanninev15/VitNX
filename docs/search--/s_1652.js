@@ -1,1 +1,1 @@
-search_result['1652']=["topic_0000000000000482_attached_props--.html","VitNX_DockSplitter Attached Properties",""];
+search_result['1652']=["topic_000000000000048E.html","VitNX_DockGroup.OnPaintBackground Method","Paints the background of the control."];

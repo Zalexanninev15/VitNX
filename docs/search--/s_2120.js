@@ -1,1 +1,1 @@
-search_result['2120']=["topic_00000000000008AD_overloads--.html","NotificationForm.showAlert Method",""];
+search_result['2120']=["topic_00000000000008B7.html","Manager.CloseAll Method","/// Close all notifications on the screen.\r\n\t\t///"];

@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['198',"VitNX.Functions.Web Namespace","topic_00000000000000AD.html"],['199',"Config Class","topic_00000000000000B7.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['765',"VitNX3.Functions.Web Namespace","topic_00000000000000B1.html"],['770',"DataFromSites Class","topic_00000000000000B2.html"],['771',"Methods","topic_00000000000000B2_methods--.html"],['776',"IsValidTelegramBotToken Method","topic_00000000000000B7.html"]];

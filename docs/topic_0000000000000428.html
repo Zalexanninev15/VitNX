@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SelectedNodesChanged Event</title>
+	<title>VitNX_ScrollView.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,21 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SelectedNodesChanged Event</h1>
+		<h1 class="title">VitNX_ScrollView.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a> SelectedNodesChanged</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+	</dd>
+</dl>
+<p>
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
+</p>
+
+<p />
 
 
 
@@ -224,7 +241,35 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public event EventHandler SelectedNodesChanged;
+protected override void OnPaint(PaintEventArgs e)
+ {
+     var g = e.Graphics;
+ 
+     // Draw background
+     using (var b = new SolidBrush(BackColor))
+     {
+         g.FillRectangle(b, ClientRectangle);
+     }
+ 
+     // Offset the graphics based on the viewport, render the control contents, then reset it.
+     g.TranslateTransform(Viewport.Left * -1, Viewport.Top * -1);
+ 
+     PaintContent(g);
+ 
+     g.TranslateTransform(Viewport.Left, Viewport.Top);
+ 
+     // Draw the bit where the scrollbars meet
+     if (_vScrollBar.Visible &amp;&amp; _hScrollBar.Visible)
+     {
+         using (var b = new SolidBrush(BackColor))
+         {
+             var rect = new Rectangle(_hScrollBar.Right, _vScrollBar.Bottom, _vScrollBar.Width,
+                                      _hScrollBar.Height);
+ 
+             g.FillRectangle(b, rect);
+         }
+     }
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -243,6 +288,7 @@ public event EventHandler SelectedNodesChanged;
 
   
 
+  
 
 
 
@@ -264,6 +310,7 @@ public event EventHandler SelectedNodesChanged;
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -286,11 +333,11 @@ public event EventHandler SelectedNodesChanged;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000427.html">VitNX_TreeView Class</a><br />
+			<a href="topic_0000000000000425.html">VitNX_ScrollView Class</a><br />
 
 
 
-<a href="topic_0000000000000364.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -308,7 +355,12 @@ public event EventHandler SelectedNodesChanged;
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>
+

@@ -1,1 +1,1 @@
-search_result['1340']=["topic_00000000000003BA.html","SelectedIndicesChanged Event",""];
+search_result['1340']=["topic_00000000000003CF.html","VitNX_DropdownList.OnPaint Method","Raises the Paint event."];

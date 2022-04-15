@@ -1,1 +1,1 @@
-search_result['1262']=["topic_000000000000038E.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];
+search_result['1262']=["topic_0000000000000396.html","VitNX_Button.NotifyDefault Method","Notifies the Button whether it is the default button so that it can adjust its appearance accordingly."];

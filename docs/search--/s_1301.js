@@ -1,1 +1,1 @@
-search_result['1301']=["topic_00000000000003A9.html","VitNX_DropdownList.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1301']=["topic_00000000000003B4.html","VitNX_ComboBox.OnDrawItem Method","Raises the DrawItem event."];

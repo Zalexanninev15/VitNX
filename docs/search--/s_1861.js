@@ -1,1 +1,1 @@
-search_result['1861']=["topic_0000000000000512.html","Helpers.GetColors Method",""];
+search_result['1861']=["topic_0000000000000520.html","CheckBox_Custom.OnMouseEnter Method","Raises the MouseEnter event."];

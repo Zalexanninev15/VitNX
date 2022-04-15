@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CheckBox_Custom.OnPaint Method</title>
+	<title>VitNX_ToolStripRenderer.OnRenderItemImage Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CheckBox_Custom.OnPaint Method</h1>
+		<h1 class="title">VitNX_ToolStripRenderer.OnRenderItemImage Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2</a>
+<a href="topic_00000000000004EC.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemimage">RenderItemImage</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderItemImage(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -159,11 +159,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -241,101 +241,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs e)
+protected override void OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
  {
-     UpdateColors();
-     Bitmap bitmap = new Bitmap(Width, Height);
-     Graphics graphics = Graphics.FromImage(bitmap);
-     W = Width - 1;
-     H = Height - 1;
-     Rectangle rect = new Rectangle(0, 2,
-         Height - 5,
-         Height - 5);
-     Graphics graphics2 = graphics;
-     graphics2.SmoothingMode = SmoothingMode.HighQuality;
-     graphics2.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-     graphics2.Clear(BackColor);
-     _Options o = O;
-     if (o != _Options.Style1)
-     {
-         if (o == _Options.Style2)
-         {
-             graphics2.FillRectangle(new SolidBrush(_BaseColor), rect);
-             MouseState state = State;
-             if (state != MouseState.Over)
-             {
-                 if (state == MouseState.Down)
-                 {
-                     graphics2.DrawRectangle(new Pen(_BorderColor), rect);
-                     graphics2.FillRectangle(new SolidBrush(Color.FromArgb(118, 213, 170)), rect);
-                 }
-             }
-             else
-             {
-                 graphics2.DrawRectangle(new Pen(_BorderColor), rect);
-                 graphics2.FillRectangle(new SolidBrush(Color.FromArgb(118, 213, 170)), rect);
-             }
-             if (Checked)
-             {
-                 graphics2.DrawString(&quot;ü&quot;,
-      new Font(&quot;Wingdings&quot;, 18f),
-      new SolidBrush(_BorderColor),
-      new Rectangle(5, 7, H - 9, H - 9),
-      Helpers.CenterSF);
-             }
-             if (!Enabled)
-             {
-                 graphics2.FillRectangle(new SolidBrush(Color.FromArgb(54, 58, 61)),
-                     rect);
-                 graphics2.DrawString(Text, Font,
-                     new SolidBrush(Color.FromArgb(47, 110, 165)),
-                     new Rectangle(20, 2, W, H),
-                     Helpers.NearSF);
-             }
-             graphics2.DrawString(Text, Font,
-                 new SolidBrush(_TextColor),
-                 new Rectangle(20, 2, W, H),
-                 Helpers.NearSF);
-         }
-     }
+     var g = e.Graphics;
+     if (e.Image == null)
+         return;
+     if (e.Item.Enabled)
+         g.DrawImageUnscaled(e.Image, new Point(e.ImageRectangle.Left,
+             e.ImageRectangle.Top));
      else
-     {
-         graphics2.FillRectangle(new SolidBrush(_BaseColor), rect);
-         MouseState state = State;
-         if (state != MouseState.Over)
-         {
-             if (state == MouseState.Down)
-                 graphics2.DrawRectangle(new Pen(_BorderColor), rect);
-         }
-         else
-             graphics2.DrawRectangle(new Pen(_BorderColor), rect);
-         if (Checked)
-         {
-             graphics2.DrawString(&quot;ü&quot;,
-  new Font(&quot;Wingdings&quot;, 18f),
-  new SolidBrush(_BorderColor),
-  new Rectangle(5, 7, H - 9, H - 9),
-  Helpers.CenterSF);
-         }
-         if (!Enabled)
-         {
-             graphics2.FillRectangle(new SolidBrush(Color.FromArgb(54, 58, 61)), rect);
-             graphics2.DrawString(Text,
-                 Font,
-                 new SolidBrush(Color.FromArgb(140, 142, 143)),
-                 new Rectangle(20, 2, W, H),
-                 Helpers.NearSF);
-         }
-         graphics2.DrawString(Text, Font,
-             new SolidBrush(_TextColor),
-             new Rectangle(20, 2, W, H),
-             Helpers.NearSF);
-     }
-     OnPaint(e);
-     graphics.Dispose();
-     e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-     e.Graphics.DrawImageUnscaled(bitmap, 0, 0);
-     bitmap.Dispose();
+         ControlPaint.DrawImageDisabled(g, e.Image,
+             e.ImageRectangle.Left,
+             e.ImageRectangle.Top,
+             Color.Transparent);
  }
 					</pre>			
 				</div>
@@ -355,6 +273,7 @@ protected override void OnPaint(PaintEventArgs e)
 
   
 
+  
 
 
 
@@ -376,6 +295,7 @@ protected override void OnPaint(PaintEventArgs e)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -398,11 +318,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004F4.html">CheckBox_Custom Class</a><br />
+			<a href="topic_00000000000004F6.html">VitNX_ToolStripRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000004EC.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			
@@ -420,7 +340,11 @@ protected override void OnPaint(PaintEventArgs e)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-search_result['403']=["topic_0000000000000113.html","Import.PrintWindow Method",""];
+search_result['403']=["topic_0000000000000112.html","Import.IntersectClipRect Method",""];

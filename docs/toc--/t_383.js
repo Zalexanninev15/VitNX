@@ -1,1 +1,1 @@
-c['383']=[['384',"cbSize Field","topic_0000000000000205.html",0],['385',"dxyLineButton Field","topic_0000000000000207.html",0],['386',"rcScrollBar Field","topic_0000000000000206.html",0],['387',"reserved Field","topic_000000000000020A.html",0],['388',"rgstate Field","topic_000000000000020B.html",0],['389',"xyThumbBottom Field","topic_0000000000000209.html",0],['390',"xyThumbTop Field","topic_0000000000000208.html",0]];
+c['383']=[['384',"VitNX_Form Constructor","topic_00000000000004D4.html",0],['385',"Methods","topic_00000000000004D2_methods--.html",1]];

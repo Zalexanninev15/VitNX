@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockGroup.AddContent Method</title>
+	<title>VitNX_TreeView.StartDrag Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockGroup.AddContent Method</h1>
+		<h1 class="title">VitNX_TreeView.StartDrag Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> AddContent(&nbsp;<br />   <a target="_top" href="topic_0000000000000458.html" onclick="this.target='';return true;">VitNX_DockContent</a> <i>dockContent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> StartDrag()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,22 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="dockContent" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dockContent
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000458.html" onclick="this.target='';return true;">VitNX_DockContent</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -240,38 +224,34 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void AddContent(VitNX_DockContent dockContent)
+protected override void StartDrag()
  {
-     dockContent.DockGroup = this;
-     dockContent.Dock = DockStyle.Fill;
-     dockContent.Order = 0;
-     if (_contents.Count &gt; 0)
+     if (!AllowMoveNodes)
      {
-         var order = -1;
-         foreach (var otherContent in _contents)
-         {
-             if (otherContent.Order &gt;= order)
-                 order = otherContent.Order + 1;
-         }
-         dockContent.Order = order;
+         _provisionalDragging = false;
+         return;
      }
-     _contents.Add(dockContent);
-     Controls.Add(dockContent);
-     dockContent.DockTextChanged += DockContent_DockTextChanged;
-     _tabs.Add(dockContent, new VitNX_DockTab(dockContent));
-     if (VisibleContent == null)
+ 
+     // Create initial list of nodes to drag
+     _dragNodes = new List&lt;VitNX_TreeNode&gt;();
+     foreach (var node in SelectedNodes)
+         _dragNodes.Add(node);
+ 
+     // Clear out any nodes with a parent that is being dragged
+     foreach (var node in _dragNodes.ToList())
      {
-         dockContent.Visible = true;
-         VisibleContent = dockContent;
+         if (node.ParentNode == null)
+             continue;
+ 
+         if (_dragNodes.Contains(node.ParentNode))
+             _dragNodes.Remove(node);
      }
-     else
-         dockContent.Visible = false;
-     var menuItem = new ToolStripMenuItem(dockContent.DockText);
-     menuItem.Tag = dockContent;
-     menuItem.Click += TabMenuItem_Select;
-     menuItem.Image = dockContent.Icon;
-     _tabArea.AddMenuItem(menuItem);
-     UpdateTabArea();
+ 
+     _provisionalDragging = false;
+ 
+     Cursor = Cursors.SizeAll;
+ 
+     base.StartDrag();
  }
 					</pre>			
 				</div>
@@ -291,6 +271,7 @@ public void AddContent(VitNX_DockContent dockContent)
 
   
 
+  
 
 
 
@@ -312,6 +293,7 @@ public void AddContent(VitNX_DockContent dockContent)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -334,11 +316,11 @@ public void AddContent(VitNX_DockContent dockContent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000045D.html">VitNX_DockGroup Class</a><br />
+			<a href="topic_000000000000044A.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_0000000000000443.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000000387.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -356,7 +338,11 @@ public void AddContent(VitNX_DockContent dockContent)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

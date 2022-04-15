@@ -1,1 +1,1 @@
-search_result['1344']=["topic_00000000000003BE.html","VitNX_ListView.GetItemIndex Method",""];
+search_result['1344']=["topic_00000000000003D0_methods--.html","VitNX_GroupBox Methods",""];

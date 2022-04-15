@@ -1,1 +1,1 @@
-search_result['596']=["topic_00000000000001A7_props--.html","LOGBRUSH Properties",""];
+search_result['596']=["topic_00000000000001AD_methods--.html","WINDOW_INFO Methods",""];

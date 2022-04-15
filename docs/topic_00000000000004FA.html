@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CheckBox_Custom.OnMouseUp Method</title>
+	<title>VitNX_ToolStripRenderer.OnRenderButtonBackground Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CheckBox_Custom.OnMouseUp Method</h1>
+		<h1 class="title">VitNX_ToolStripRenderer.OnRenderButtonBackground Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2</a>
+<a href="topic_00000000000004EC.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mouseup">MouseUp</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderbuttonbackground">RenderButtonBackground</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseUp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderButtonBackground(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemrendereventargs">ToolStripItemRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -159,11 +159,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemrendereventargs">ToolStripItemRenderEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -241,11 +241,35 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseUp(MouseEventArgs e)
+protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
  {
-     OnMouseUp(e);
-     State = MouseState.Over;
-     Invalidate();
+     var g = e.Graphics;
+     var rect = new Rectangle(0, 1,
+         e.Item.Width,
+         e.Item.Height - 2);
+     if (e.Item.Selected || e.Item.Pressed)
+     {
+         using (var b = new SolidBrush(Colors.GreySelection))
+             g.FillRectangle(b, rect);
+     }
+     if (e.Item.GetType() == typeof(ToolStripButton))
+     {
+         var castItem = (ToolStripButton)e.Item;
+         if (castItem.Checked)
+         {
+             using (var b = new SolidBrush(Colors.GreySelection))
+                 g.FillRectangle(b, rect);
+         }
+         if (castItem.Checked &amp;&amp; castItem.Selected)
+         {
+             var modRect = new Rectangle(rect.Left,
+                 rect.Top,
+                 rect.Width - 1,
+                 rect.Height - 1);
+             using (var p = new Pen(Colors.GreyHighlight))
+                 g.DrawRectangle(p, modRect);
+         }
+     }
  }
 					</pre>			
 				</div>
@@ -265,6 +289,7 @@ protected override void OnMouseUp(MouseEventArgs e)
 
   
 
+  
 
 
 
@@ -286,6 +311,7 @@ protected override void OnMouseUp(MouseEventArgs e)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -308,11 +334,11 @@ protected override void OnMouseUp(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000004F4.html">CheckBox_Custom Class</a><br />
+			<a href="topic_00000000000004F6.html">VitNX_ToolStripRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000004E4.html">VitNX.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000004EC.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			
@@ -330,7 +356,11 @@ protected override void OnMouseUp(MouseEventArgs e)
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

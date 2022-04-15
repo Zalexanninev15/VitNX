@@ -1,1 +1,1 @@
-search_result['1886']=["topic_0000000000000523.html","VitNX2_MessageBoxType1.Show (IWin32Window, String, String, MessageBoxButtons) Method",""];
+search_result['1886']=["topic_0000000000000531.html","FormSkin.OnPaint Method","Raises the Paint event."];

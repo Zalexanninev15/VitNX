@@ -1,1 +1,1 @@
-search_result['1222']=["topic_000000000000036F.html","VitNX_Button.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1222']=["topic_000000000000037D.html","Constsants Class",""];

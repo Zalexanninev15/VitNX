@@ -1,1 +1,1 @@
-search_result['534']=["topic_0000000000000181.html","NOMOVE Field",""];
+search_result['534']=["topic_0000000000000181.html","SC_MONITORPOWER Field",""];

@@ -1,1 +1,1 @@
-c['604']=[['605',"PostMessage(IntPtr, UInt32, UInt32, UInt32) Method","topic_0000000000000166.html",0],['606',"PostMessage(IntPtr, int, UInt32, UInt32) Method","topic_0000000000000112.html",0]];
+c['604']=[['605',"CompressAndDecompress Class","topic_0000000000000047.html",1],['611',"EncryptAndDecrypt Class","topic_0000000000000039.html",1],['620',"EncrypterAndDecrypter Class","topic_0000000000000041.html",1],['627',"NumericalTextConverter Class","topic_000000000000001A.html",1],['631',"Text Class","topic_000000000000001D.html",1]];

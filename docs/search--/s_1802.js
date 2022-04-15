@@ -1,1 +1,1 @@
-search_result['1802']=["topic_00000000000004E8.html","Helper.VitNX2_Button_MouseEnter Method",""];
+search_result['1802']=["topic_00000000000004FD.html","VitNX_ToolStripRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];

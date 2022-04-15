@@ -1,1 +1,1 @@
-search_result['1121']=["topic_000000000000033C_props--.html","Controls Properties",""];
+search_result['1121']=["topic_000000000000034A_props--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Properties",""];

@@ -1,1 +1,1 @@
-search_result['1537']=["topic_0000000000000436.html","VitNX_TreeView.SelectNodes (List\u0026lt;VitNX_TreeNode\u0026gt;, Boolean) Method",""];
+search_result['1537']=["topic_000000000000043F_methods--.html","VitNX_TreeNode Methods",""];

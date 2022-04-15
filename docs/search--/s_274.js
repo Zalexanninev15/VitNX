@@ -1,1 +1,1 @@
-search_result['274']=["topic_00000000000000AB.html","IniSettings32.DeleteSection Method","Deletes the section."];
+search_result['274']=["topic_00000000000000AB.html","Ini.DeleteKey Method","Deletes the key in section."];

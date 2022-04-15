@@ -1,1 +1,1 @@
-search_result['1406']=["topic_00000000000003E6.html","VitNX_ScrollBar.ScrollBy Method",""];
+search_result['1406']=["topic_00000000000003EF.html","VitNX_NumericUpDown.OnMouseEnter Method","Raises the MouseEnter event."];

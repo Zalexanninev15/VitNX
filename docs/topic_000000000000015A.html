@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.QueryDisplayConfig Method</title>
+	<title>Import.CallNextHookEx Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.QueryDisplayConfig Method</h1>
+		<h1 class="title">Import.CallNextHookEx Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000BE.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> QueryDisplayConfig(&nbsp;<br />   <a target="_top" href="topic_0000000000000271.html" onclick="this.target='';return true;">QUERY_DEVICE_CONFIG_FLAGS</a> <i>flags</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>numPathArrayElements</i>,&nbsp;<br />   [Out()]&nbsp;<br />   <a target="_top" href="topic_0000000000000301.html" onclick="this.target='';return true;">DISPLAYCONFIG_PATH_INFO</a>[] <i>PathInfoArray</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>numModeInfoArrayElements</i>,&nbsp;<br />   [Out()]&nbsp;<br />   <a target="_top" href="topic_000000000000031B.html" onclick="this.target='';return true;">DISPLAYCONFIG_MODE_INFO</a>[] <i>ModeInfoArray</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>currentTopologyId</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> CallNextHookEx(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hhk</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nCode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>wParam</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lParam</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,75 +152,49 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="flags" class="parameterList">
+	Parameters</h4><dl paramName="hhk" class="parameterList">
 	<dt>
 		<span class="parameter">
-			flags
+			hhk
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000271.html" onclick="this.target='';return true;">QUERY_DEVICE_CONFIG_FLAGS</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="numPathArrayElements" class="parameterList">
+<dl paramName="nCode" class="parameterList">
 	<dt>
 		<span class="parameter">
-			numPathArrayElements
+			nCode
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="PathInfoArray" class="parameterList">
+<dl paramName="wParam" class="parameterList">
 	<dt>
 		<span class="parameter">
-			PathInfoArray
+			wParam
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000301.html" onclick="this.target='';return true;">DISPLAYCONFIG_PATH_INFO</a>[] 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="numModeInfoArrayElements" class="parameterList">
+<dl paramName="lParam" class="parameterList">
 	<dt>
 		<span class="parameter">
-			numModeInfoArrayElements
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="ModeInfoArray" class="parameterList">
-	<dt>
-		<span class="parameter">
-			ModeInfoArray
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_000000000000031B.html" onclick="this.target='';return true;">DISPLAYCONFIG_MODE_INFO</a>[] 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="currentTopologyId" class="parameterList">
-	<dt>
-		<span class="parameter">
-			currentTopologyId
+			lParam
 		</span>
 	</dt>
 	<dd>
@@ -234,7 +209,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	
 
 
@@ -309,13 +284,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;)]
- public static extern int QueryDisplayConfig(QUERY_DEVICE_CONFIG_FLAGS flags,
-     ref uint numPathArrayElements,
-     [Out] Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
-     ref uint numModeInfoArrayElements,
-     [Out] Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
-     IntPtr currentTopologyId);
+[DllImport(&quot;user32.dll&quot;,
+     SetLastError = true)]
+ public static extern IntPtr CallNextHookEx(
+     IntPtr hhk,
+     int nCode, IntPtr wParam, IntPtr lParam);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -334,6 +307,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
   
 
+  
 
 
 
@@ -355,6 +329,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -377,11 +352,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000BB.html">Import Class</a><br />
+			<a href="topic_00000000000000BF.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000BE.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -399,7 +374,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-
+      <div id="footer">
+	   <div id="footer-container">
+      	<p><span style="color: #FF0000;">Generated with unregistered version of <a target="_top" href="http://www.helixoft.com/vsdocman/overview.html">VSdocman</a></span>&nbsp;<br />Your own footer text will only be shown in registered version.</p>
+      </div>
+    </div>
     </div>
   </body>
 </html>

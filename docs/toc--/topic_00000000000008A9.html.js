@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['1382',"VitNX.UI.OtherControls Namespace","topic_0000000000000559.html"],['1446',"NotificationForm Class","topic_00000000000008A9.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['1410',"VitNX3.UI.OtherControls Namespace","topic_000000000000057E.html"],['1453',"Manager Class","topic_00000000000008A7.html"],['1460',"Fields","topic_00000000000008A7_vars--.html"],['1471',"WaitingTime Field","topic_00000000000008A9.html"]];

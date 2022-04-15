@@ -1,1 +1,1 @@
-search_result['1797']=["topic_00000000000004E5_methods--.html","Helper Methods",""];
+search_result['1797']=["topic_00000000000004F8.html","VitNX_ToolStripRenderer.OnRenderToolStripBackground Method","Raises the RenderToolStripBackground event."];

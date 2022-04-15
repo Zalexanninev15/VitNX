@@ -1,1 +1,1 @@
-search_result['980']=["topic_00000000000002F9.html","adapterId Field",""];
+search_result['980']=["topic_000000000000030C.html","Keyboard.ShowVirtualKeyboard Method","Shows the virtual keyboard."];

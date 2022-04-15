@@ -1,1 +1,1 @@
-search_result['399']=["topic_0000000000000110.html","Import.PatBlt Method",""];
+search_result['399']=["topic_000000000000010E.html","Import.GetWindowLong Method",""];

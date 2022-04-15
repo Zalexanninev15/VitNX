@@ -1,1 +1,1 @@
-search_result['960']=["topic_00000000000002F0_props--.html","LUID Properties",""];
+search_result['960']=["topic_0000000000000306_attached_props--.html","GetClipboardText Attached Properties",""];

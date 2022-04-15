@@ -1,1 +1,1 @@
-search_result['312']=["topic_00000000000000BD.html","Import.AlphaBlend Method",""];
+search_result['312']=["topic_00000000000000BD.html","Config.DefaultGateway Method","Activate DefaultGateway of NetworkInterface in IPAddress."];

@@ -1,1 +1,1 @@
-search_result['948']=["topic_00000000000002ED.html","Keyboard.WindowsKeyboardEventsAPI Method","The keyboard events of Windows."];
+search_result['948']=["topic_0000000000000302.html","VolumeControl.Get Method","Gets the current total sound volume."];

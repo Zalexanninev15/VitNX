@@ -1,1 +1,0 @@
-c['1345']=[['1346',"VitNX2_TextBox Constructor","topic_0000000000000552.html",0],['1347',"Methods","topic_0000000000000550_methods--.html",1],['1351',"Events","topic_0000000000000550_events--.html",1]];
