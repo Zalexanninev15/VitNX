@@ -1,1 +1,0 @@
-search_result['252']=["topic_0000000000000098.html","Internet.GetMacAddress Method","Gets the MAC address."];

@@ -1,1 +1,0 @@
-search_result['1100']=["topic_0000000000000343.html","DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS Structure",""];

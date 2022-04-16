@@ -1,1 +1,0 @@
-search_result['876']=["topic_0000000000000260.html","rcNormalPosition Field",""];

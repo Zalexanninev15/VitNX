@@ -1,1 +1,0 @@
-search_result['274']=["topic_00000000000000AB.html","Ini.DeleteKey Method","Deletes the key in section."];

@@ -6,6 +6,9 @@ using System.Text;
 using VitNX3.Functions.WinControllers;
 
 using static VitNX3.Functions.Win32.Enums;
+using static VitNX3.Functions.Win32.Constants;
+using System.Security;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VitNX3.Functions.Win32
 {
@@ -20,6 +23,43 @@ namespace VitNX3.Functions.Win32
             int dwStyle,
             bool bMenu,
             int dwExStyle);
+
+        [DllImport("kernel32.dll",
+            EntryPoint = "GetSystemFirmwareTable",
+            SetLastError = true,
+            ThrowOnUnmappableChar = true)]
+        public static extern uint GetSystemFirmwareTable(FirmwareTableType FirmwareTableProviderSignature,
+        uint FirmwareTableID,
+        IntPtr pFirmwareTableBuffer,
+        uint BufferSize);
+
+        [DllImport("kernel32.dll",
+            EntryPoint = "EnumSystemFirmwareTables",
+            SetLastError = true)]
+        public static extern uint EnumSystemFirmwareTables(
+        FirmwareTableType FirmwareTableProviderSignature,
+        IntPtr pFirmwareTableEnuM_BUffer,
+        uint BufferSize);
+
+        [DllImport("kernel32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern uint GetFirmwareEnvironmentVariableA(string lpName,
+            string lpGuid,
+            IntPtr pBuffer,
+            uint nSize);
+
+        [DllImport("kernel32.dll",
+            EntryPoint = "SetFirmwareEnvironmentVariable",
+            SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetFirmwareEnvironmentVariable([In][MarshalAs(UnmanagedType.LPTStr)] string lpName,
+        [In][MarshalAs(UnmanagedType.LPTStr)] string lpGuid,
+        [In] IntPtr pBuffer,
+        uint nSize);
 
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("msimg32.dll",
@@ -36,7 +76,8 @@ namespace VitNX3.Functions.Win32
             int nHeightSrc,
             BLENDFUNCTION blendFunction);
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll",
+            SetLastError = true)]
         public static extern IntPtr GetSystemMenu(IntPtr hWnd,
             bool bRevert);
 
@@ -50,7 +91,7 @@ namespace VitNX3.Functions.Win32
         public static extern bool GetMenuItemInfo(IntPtr hMenu,
             uint uItem,
             bool fByPosition,
-            [In, Out] Constants.MENU_ITEM_INFO lpmii);
+            [In, Out] MENU_ITEM_INFO lpmii);
 
         [DllImport("user32.dll",
             CharSet = CharSet.Auto,
@@ -58,7 +99,7 @@ namespace VitNX3.Functions.Win32
         public static extern bool InsertMenuItem(IntPtr hMenu,
             uint uItem,
             bool fByPosition, [In]
-        Constants.MENU_ITEM_INFO lpmii);
+           MENU_ITEM_INFO lpmii);
 
         [DllImport("user32.dll",
             CharSet = CharSet.Auto,
@@ -66,7 +107,7 @@ namespace VitNX3.Functions.Win32
         public static extern bool SetMenuItemInfo(IntPtr hMenu,
             uint uItem,
             bool fByPosition,
-            [In] Constants.MENU_ITEM_INFO lpmii);
+            [In] MENU_ITEM_INFO lpmii);
 
         [DllImport("user32.dll",
             SetLastError = true)]
@@ -89,6 +130,19 @@ namespace VitNX3.Functions.Win32
 
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool UnhookWinEvent(IntPtr hWinEventHook);
+
+        [SecurityCritical, DllImport("shell32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern int Shell_NotifyIcon(int message,
+            NOTIFY_ICON_DATA pnid);
+
+        [DllImport("kernel32.dll",
+            EntryPoint = "CopyMemory",
+            SetLastError = false,
+            CharSet = CharSet.Auto)]
+        public static extern void CopyMemory(IntPtr dest,
+            IntPtr src,
+            uint count);
 
         public delegate void WinEventDelegate(IntPtr hWinEventHook,
             uint eventType,
@@ -198,8 +252,16 @@ namespace VitNX3.Functions.Win32
         [DllImport("gdi32.dll")]
         public static extern bool DeleteDC(IntPtr hDC);
 
-        [DllImport("gdi32.dll")]
-        public static extern int DeleteObject(IntPtr hObject);
+        [DllImport("gdiplus.dll",
+            CharSet = CharSet.Auto)]
+        public static extern int GdipCreateHICONFromBitmap(HandleRef nativeBitmap,
+            out IntPtr hicon);
+
+        [DllImport("gdi32.dll",
+            EntryPoint = "DeleteObject",
+            CharSet = CharSet.Auto)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool DeleteObject([In] IntPtr hObject);
 
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32.dll",
@@ -459,7 +521,7 @@ namespace VitNX3.Functions.Win32
             int iPartId,
             int iStateId,
             ref RECT prc,
-            THEMESIZE eSize,
+            THEME_SIZE eSize,
             ref SIZE psz);
 
         [DllImport("uxtheme.dll",
@@ -980,6 +1042,12 @@ namespace VitNX3.Functions.Win32
             int[] attrValue,
             uint cbAttribute);
 
+        [DllImport("dwmapi.dll",
+            EntryPoint = "#127",
+            PreserveSig = false,
+            CharSet = CharSet.Unicode)]
+        public static extern void DwmGetColorizationParameters(out DWM_COLORIZATION_PARAMS dwParameters);
+
         [DllImport("dwmapi.dll")]
         public static extern int DwmIsCompositionEnabled(ref int pfEnabled);
 
@@ -996,6 +1064,13 @@ namespace VitNX3.Functions.Win32
             int nBottomRect,
             int nWidthEllipse,
             int nHeightEllipse);
+
+        public delegate bool EnumThreadWindowsCallBack(IntPtr hWnd,
+        IntPtr lParam);
+
+        public delegate IntPtr HookProc(int nCode,
+            IntPtr wParam,
+            IntPtr lParam);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -1170,13 +1245,14 @@ namespace VitNX3.Functions.Win32
         public const uint MFT_STRING = 0x00000000;
         public const uint MFS_CHECKED = 0x00000008;
         public const uint MFS_UNCHECKED = 0x00000000;
+        public const int ERROR_INVALID_FUNCTION = 1;
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Auto)]
         public class MENU_ITEM_INFO
         {
             public MENU_ITEM_INFO()
             { }
-
             public int cbSize = Marshal.SizeOf(typeof(MENU_ITEM_INFO));
             public uint fType;
             public uint fState;
@@ -1188,6 +1264,30 @@ namespace VitNX3.Functions.Win32
             public string dwTypeData = null;
             public uint cch;
             public IntPtr hbmpItem;
+        }
+
+        [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Auto)]
+        public class NOTIFY_ICON_DATA
+        {
+            public int cbSize = Marshal.SizeOf(typeof(NOTIFY_ICON_DATA));
+            public IntPtr hWnd;
+            public int uID;
+            public int uCallbackMessage;
+            public IntPtr hIcon;
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 0x80)]
+            public string szTip;
+            public int dwState;
+            public int dwStateMask;
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 0x100)]
+            public string szInfo;
+            public int uTimeoutOrVersion;
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 0x40)]
+            public string szInfoTitle;
+            public int dwInfoFlags;
         }
     }
 
@@ -1205,6 +1305,62 @@ namespace VitNX3.Functions.Win32
             DWMWA_MICA_EFFECT = 1029,
         }
 
+        [StructLayout(LayoutKind.Sequential,
+            Pack = 8,
+            CharSet = CharSet.Unicode)]
+        public struct THUMBBUTTON
+        {
+            public const int THBN_CLICKED = 0x1800;
+            public THB dwMask;
+            public uint iId;
+            public uint iBitmap;
+            public IntPtr hIcon;
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 260)]
+            public string szTip;
+            public THBF dwFlags;
+        }
+
+        [Flags]
+        public enum STPF
+        {
+            NONE = 0x00000000,
+            USE_APP_THUMBNAIL_ALWAYS = 0x00000001,
+            USE_APP_THUMBNAIL_WHEN_ACTIVE = 0x00000002,
+            USE_APP_PEEK_ALWAYS = 0x00000004,
+            USE_APP_PEEK_WHEN_ACTIVE = 0x00000008,
+        }
+
+        [Flags]
+        public enum THB : uint
+        {
+            BITMAP = 0x0001,
+            ICON = 0x0002,
+            TOOLTIP = 0x0004,
+            FLAGS = 0x0008,
+        }
+
+        [Flags]
+        public enum THBF : uint
+        {
+            ENABLED = 0x0000,
+            DISABLED = 0x0001,
+            DISMISSON_CLICK = 0x0002,
+            NO_BACKGROUND = 0x0004,
+            HIDDEN = 0x0008,
+            NO_INTERACTIVE = 0x0010,
+        }
+
+        [Flags]
+        public enum DWM_SBT : uint
+        {
+            DWMSBT_AUTO = 0,
+            DWMSBT_DISABLE = 1,
+            DWMSBT_MAINWINDOW = 2,
+            DWMSBT_TRANSIENTWINDOW = 3,
+            DWMSBT_TABBEDWINDOW = 4
+        }
+
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct BLENDFUNCTION
         {
@@ -1212,6 +1368,17 @@ namespace VitNX3.Functions.Win32
             public byte BlendFlags;
             public byte SourceConstantAlpha;
             public byte AlphaFormat;
+        }
+
+        public struct DWM_COLORIZATION_PARAMS
+        {
+            public uint clrColor;
+            public uint clrAfterGlow;
+            public uint nIntensity;
+            public uint clrAfterGlowBalance;
+            public uint clrBlurBalance;
+            public uint clrGlassReflectionIntensity;
+            public bool fOpaque;
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -1236,10 +1403,6 @@ namespace VitNX3.Functions.Win32
             public ushort atomWindowType;
             public ushort wCreatorVersion;
         }
-
-        public delegate bool EnumThreadWindowsCallBack(IntPtr hWnd, IntPtr lParam);
-
-        internal delegate IntPtr HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
         [StructLayout(LayoutKind.Sequential)]
         public struct ICONINFO
@@ -1269,7 +1432,8 @@ namespace VitNX3.Functions.Win32
             public uint lbHatch;
         }
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Unicode)]
         public struct LOGFONT
         {
             public int lfHeight;
@@ -1286,7 +1450,8 @@ namespace VitNX3.Functions.Win32
             public byte lfQuality;
             public byte lfPitchAndFamily;
 
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x20)]
+            [MarshalAs(UnmanagedType.ByValTStr,
+                SizeConst = 0x20)]
             public string lfFaceName;
         }
 
@@ -1347,7 +1512,8 @@ namespace VitNX3.Functions.Win32
             public IntPtr lppos;
         }
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Unicode)]
         public struct NONCLIENTMETRICS
         {
             public int cbSize;
@@ -1365,6 +1531,25 @@ namespace VitNX3.Functions.Win32
             public LOGFONT lfMenuFont;
             public LOGFONT lfStatusFont;
             public LOGFONT lfMessageFont;
+        }
+
+        [Flags]
+        public enum DWM_WINDOW_ATTRIBUTE : uint
+        {
+            DWMWA_ALLOW_NC_PAINT = 4,
+            DWMWA_CAPTION_BUTTON_BOUNDS = 5,
+            DWMWA_FORCE_ICONIC_REPRESENTATION = 7,
+            DWMWA_CLOAK = 13,
+            DWMWA_CLOAKED = 14,
+            DWMWA_FREEZE_REPRESENTATION = 15,
+            DWMWA_USE_IMMERSIVE_DARK_MODE = 20,
+            DWMWA_WINDOW_CORNER_PREFERENCE = 33,
+            DWMWA_BORDER_COLOR = 34,
+            DWMWA_CAPTION_COLOR = 35,
+            DWMWA_TEXT_COLOR = 36,
+            DWMWA_VISIBLE_FRAME_BORDER_THICKNESS = 37,
+            DWMWA_SYSTEMBACKDROP_TYPE = 38,
+            DWMWA_MICA_EFFECT = 1029
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -1414,7 +1599,8 @@ namespace VitNX3.Functions.Win32
             public int xyThumbBottom;
             public int reserved;
 
-            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
+            [MarshalAs(UnmanagedType.ByValArray,
+                SizeConst = 6)]
             public int[] rgstate;
         }
 
@@ -1449,7 +1635,8 @@ namespace VitNX3.Functions.Win32
             public IntPtr iString;
         }
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Unicode)]
         public struct TEXTMETRIC
         {
             public int tmHeight;
@@ -1474,13 +1661,15 @@ namespace VitNX3.Functions.Win32
             public byte tmCharSet;
         }
 
-        public enum THEMESIZE
+        [Flags]
+        public enum THEME_SIZE
         {
             TS_MIN,
             TS_TRUE,
             TS_DRAW
         }
 
+        [Flags]
         public enum EVENTS : uint
         {
             EVENT_OBJECT_INVOKED = 0x8013,
@@ -1570,6 +1759,7 @@ namespace VitNX3.Functions.Win32
             SWP_SHOW_WINDOW = 0x0040
         }
 
+        [Flags]
         public enum KEYBOARD_PRESETS : int
         {
             HIDE_THIS_WINDOW = 0,
@@ -1577,6 +1767,7 @@ namespace VitNX3.Functions.Win32
             SHOW_ALL_WINDOWS = 2
         }
 
+        [Flags]
         public enum SpecialWindowHandles
         {
             HWND_TOP = 0,
@@ -1599,6 +1790,7 @@ namespace VitNX3.Functions.Win32
             TYPE = 0x00000010
         }
 
+        [Flags]
         public enum QUERY_DEVICE_CONFIG_FLAGS : uint
         {
             QDC_ALL_PATHS = 0x00000001,
@@ -1606,6 +1798,14 @@ namespace VitNX3.Functions.Win32
             QDC_DATABASE_CURRENT = 0x00000004
         }
 
+        [Flags]
+        public enum PV_ATTRIBUTE
+        {
+            Disable = 0x00,
+            Enable = 0x01
+        }
+
+        [Flags]
         public enum DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY : uint
         {
             DISPLAYCONFIG_OUTPUT_TECHNOLOGY_OTHER = 0xFFFFFFFF,
@@ -1628,16 +1828,18 @@ namespace VitNX3.Functions.Win32
             DISPLAYCONFIG_OUTPUT_TECHNOLOGY_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [Flags]
         public enum DISPLAYCONFIG_SCANLINE_ORDERING : uint
         {
             DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED = 0,
             DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE = 1,
             DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED = 2,
-            DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST = 2,
-            DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST = 3,
+            DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPER_FIELD_FIRST = 2,
+            DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWER_FIELD_FIRST = 3,
             DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [Flags]
         public enum DISPLAYCONFIG_ROTATION : uint
         {
             DISPLAYCONFIG_ROTATION_IDENTITY = 1,
@@ -1647,17 +1849,19 @@ namespace VitNX3.Functions.Win32
             DISPLAYCONFIG_ROTATION_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [Flags]
         public enum DISPLAYCONFIG_SCALING : uint
         {
             DISPLAYCONFIG_SCALING_IDENTITY = 1,
             DISPLAYCONFIG_SCALING_CENTERED = 2,
             DISPLAYCONFIG_SCALING_STRETCHED = 3,
-            DISPLAYCONFIG_SCALING_ASPECTRATIOCENTEREDMAX = 4,
+            DISPLAYCONFIG_SCALING_ASPECT_RATIO_CENTERED_MAX = 4,
             DISPLAYCONFIG_SCALING_CUSTOM = 5,
             DISPLAYCONFIG_SCALING_PREFERRED = 128,
             DISPLAYCONFIG_SCALING_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [Flags]
         public enum DISPLAYCONFIG_PIXELFORMAT : uint
         {
             DISPLAYCONFIG_PIXELFORMAT_8BPP = 1,
@@ -1668,6 +1872,7 @@ namespace VitNX3.Functions.Win32
             DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [Flags]
         public enum DISPLAYCONFIG_MODE_INFO_TYPE : uint
         {
             DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE = 1,
@@ -1675,6 +1880,7 @@ namespace VitNX3.Functions.Win32
             DISPLAYCONFIG_MODE_INFO_TYPE_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [Flags]
         public enum DISPLAYCONFIG_DEVICE_INFO_TYPE : uint
         {
             DISPLAYCONFIG_DEVICE_INFO_GET_SOURCE_NAME = 1,
@@ -1686,7 +1892,8 @@ namespace VitNX3.Functions.Win32
             DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32 = 0xFFFFFFFF
         }
 
-        internal enum WINDOW_MESSAGE : uint
+        [Flags]
+        public enum WINDOW_MESSAGE : uint
         {
             NULL = 0x0000,
             CREATE = 0x0001,
@@ -1694,145 +1901,145 @@ namespace VitNX3.Functions.Win32
             MOVE = 0x0003,
             SIZE = 0x0005,
             ACTIVATE = 0x0006,
-            SETFOCUS = 0x0007,
-            KILLFOCUS = 0x0008,
+            SET_FOCUS = 0x0007,
+            KILL_FOCUS = 0x0008,
             ENABLE = 0x000A,
-            SETREDRAW = 0x000B,
-            SETTEXT = 0x000C,
-            GETTEXT = 0x000D,
-            GETTEXTLENGTH = 0x000E,
+            SET_REDRAW = 0x000B,
+            SET_TEXT = 0x000C,
+            GET_TEXT = 0x000D,
+            GET_TEXT_LENGTH = 0x000E,
             PAINT = 0x000F,
             CLOSE = 0x0010,
-            QUERYENDSESSION = 0x0011,
-            QUERYOPEN = 0x0013,
-            ENDSESSION = 0x0016,
+            QUERY_END_SESSION = 0x0011,
+            QUERY_OPEN = 0x0013,
+            END_SESSION = 0x0016,
             QUIT = 0x0012,
-            ERASEBKGND = 0x0014,
-            SYSCOLORCHANGE = 0x0015,
-            SHOWWINDOW = 0x0018,
-            WININICHANGE = 0x001A,
-            SETTINGCHANGE = WININICHANGE,
-            DEVMODECHANGE = 0x001B,
-            ACTIVATEAPP = 0x001C,
-            FONTCHANGE = 0x001D,
-            TIMECHANGE = 0x001E,
-            CANCELMODE = 0x001F,
-            SETCURSOR = 0x0020,
-            MOUSEACTIVATE = 0x0021,
-            CHILDACTIVATE = 0x0022,
-            QUEUESYNC = 0x0023,
-            GETMINMAXINFO = 0x0024,
-            PAINTICON = 0x0026,
-            ICONERASEBKGND = 0x0027,
-            NEXTDLGCTL = 0x0028,
-            SPOOLERSTATUS = 0x002A,
-            DRAWITEM = 0x002B,
-            MEASUREITEM = 0x002C,
-            DELETEITEM = 0x002D,
-            VKEYTOITEM = 0x002E,
-            CHARTOITEM = 0x002F,
-            SETFONT = 0x0030,
-            GETFONT = 0x0031,
-            SETHOTKEY = 0x0032,
-            GETHOTKEY = 0x0033,
-            QUERYDRAGICON = 0x0037,
-            COMPAREITEM = 0x0039,
-            GETOBJECT = 0x003D,
+            ERASE_BKGND = 0x0014,
+            SYS_COLOR_CHANGE = 0x0015,
+            SHOW_WINDOW = 0x0018,
+            WIN_IN_CHANGE = 0x001A,
+            SET_TING_CHANGE = WIN_IN_CHANGE,
+            DEV_MODE_CHANGE = 0x001B,
+            ACTIVATE_APP = 0x001C,
+            FONT_CHANGE = 0x001D,
+            TIME_CHANGE = 0x001E,
+            CANCEL_MODE = 0x001F,
+            SET_CURSOR = 0x0020,
+            MOUSE_ACTIVATE = 0x0021,
+            CHILD_ACTIVATE = 0x0022,
+            QUEUE_SYNC = 0x0023,
+            GET_MIN_MAX_INFO = 0x0024,
+            PAINT_ICON = 0x0026,
+            ICON_ERASE_BKGND = 0x0027,
+            NEXT_DLGCTL = 0x0028,
+            SPOOLER_STATUS = 0x002A,
+            DRAW_ITEM = 0x002B,
+            MEASURE_ITEM = 0x002C,
+            DELETE_ITEM = 0x002D,
+            V_KEY_TO_ITEM = 0x002E,
+            CHAR_TO_ITEM = 0x002F,
+            SET_FONT = 0x0030,
+            GET_FONT = 0x0031,
+            SET_HOTKEY = 0x0032,
+            GET_HOTKEY = 0x0033,
+            QUERY_DRAG_ICON = 0x0037,
+            COMPARE_ITEM = 0x0039,
+            GET_OBJECT = 0x003D,
             COMPACTING = 0x0041,
-            COMMNOTIFY = 0x0044,
-            WINDOWPOSCHANGING = 0x0046,
-            WINDOWPOSCHANGED = 0x0047,
+            COMM_NOTIFY = 0x0044,
+            WINDOW_POS_CHANGING = 0x0046,
+            WINDOW_POS_CHANGED = 0x0047,
             POWER = 0x0048,
-            COPYDATA = 0x004A,
-            CANCELJOURNAL = 0x004B,
+            COPY_DATA = 0x004A,
+            CANCEL_JOURNAL = 0x004B,
             NOTIFY = 0x004E,
-            INPUTLANGCHANGEREQUEST = 0x0050,
-            INPUTLANGCHANGE = 0x0051,
-            TCARD = 0x0052,
+            INPUT_LANG_CHANGE_REQUEST = 0x0050,
+            INPUT_LANG_CHANGE = 0x0051,
+            T_CARD = 0x0052,
             HELP = 0x0053,
-            USERCHANGED = 0x0054,
-            NOTIFYFORMAT = 0x0055,
-            CONTEXTMENU = 0x007B,
-            STYLECHANGING = 0x007C,
-            STYLECHANGED = 0x007D,
-            DISPLAYCHANGE = 0x007E,
-            GETICON = 0x007F,
-            SETICON = 0x0080,
-            NCCREATE = 0x0081,
-            NCDESTROY = 0x0082,
-            NCCALCSIZE = 0x0083,
-            NCHITTEST = 0x0084,
-            NCPAINT = 0x0085,
-            NCACTIVATE = 0x0086,
-            GETDLGCODE = 0x0087,
-            SYNCPAINT = 0x0088,
-            NCMOUSEMOVE = 0x00A0,
-            NCLBUTTONDOWN = 0x00A1,
-            NCLBUTTONUP = 0x00A2,
-            NCLBUTTONDBLCLK = 0x00A3,
-            NCRBUTTONDOWN = 0x00A4,
-            NCRBUTTONUP = 0x00A5,
-            NCRBUTTONDBLCLK = 0x00A6,
-            NCMBUTTONDOWN = 0x00A7,
-            NCMBUTTONUP = 0x00A8,
-            NCMBUTTONDBLCLK = 0x00A9,
-            NCXBUTTONDOWN = 0x00AB,
-            NCXBUTTONUP = 0x00AC,
-            NCXBUTTONDBLCLK = 0x00AD,
+            USER_CHANGED = 0x0054,
+            NOTIFY_FORMAT = 0x0055,
+            CONTEX_TMENU = 0x007B,
+            STYLE_CHANGING = 0x007C,
+            STYLE_CHANGED = 0x007D,
+            DISPLAY_CHANGE = 0x007E,
+            GET_ICON = 0x007F,
+            SET_ICON = 0x0080,
+            NC_CREATE = 0x0081,
+            NC_DESTROY = 0x0082,
+            NC_CALC_SIZE = 0x0083,
+            NC_HIT_TEST = 0x0084,
+            NC_PAINT = 0x0085,
+            NC_ACTIVATE = 0x0086,
+            GET_DLG_CODE = 0x0087,
+            SYNC_PAINT = 0x0088,
+            NC_MOUSE_MOVE = 0x00A0,
+            NCL_BUTTON_DOWN = 0x00A1,
+            NCL_BUTTON_UP = 0x00A2,
+            NCL_BUTTON_DBL_CLK = 0x00A3,
+            NCR_BUTTON_DOWN = 0x00A4,
+            NCR_BUTTON_UP = 0x00A5,
+            NCR_BUTTON_DBL_CLK = 0x00A6,
+            NCM_BUTTON_DOWN = 0x00A7,
+            NCM_BUTTON_UP = 0x00A8,
+            NCM_BUTTON_DBL_CLK = 0x00A9,
+            NCX_BUTTON_DOWN = 0x00AB,
+            NCX_BUTTON_UP = 0x00AC,
+            NCX_BUTTON_DBL_CLK = 0x00AD,
             INPUT_DEVICE_CHANGE = 0x00FE,
             INPUT = 0x00FF,
-            KEYFIRST = 0x0100,
-            KEYDOWN = 0x0100,
-            KEYUP = 0x0101,
+            KEY_FIRST = 0x0100,
+            KEY_DOWN = 0x0100,
+            KEY_UP = 0x0101,
             CHAR = 0x0102,
-            DEADCHAR = 0x0103,
-            SYSKEYDOWN = 0x0104,
-            SYSKEYUP = 0x0105,
-            SYSCHAR = 0x0106,
-            SYSDEADCHAR = 0x0107,
+            DEAD_CHAR = 0x0103,
+            SYS_KEY_DOWN = 0x0104,
+            SYS_KEY_UP = 0x0105,
+            SYS_CHAR = 0x0106,
+            SYS_DEAD_CHAR = 0x0107,
             UNICHAR = 0x0109,
             KEYLAST = 0x0109,
-            IME_STARTCOMPOSITION = 0x010D,
-            IME_ENDCOMPOSITION = 0x010E,
+            IME_START_COMPOSITION = 0x010D,
+            IME_END_COMPOSITION = 0x010E,
             IME_COMPOSITION = 0x010F,
             IME_KEYLAST = 0x010F,
-            INITDIALOG = 0x0110,
+            INIT_DIALOG = 0x0110,
             COMMAND = 0x0111,
-            SYSCOMMAND = 0x0112,
+            SYS_COMMAND = 0x0112,
             TIMER = 0x0113,
-            HSCROLL = 0x0114,
-            VSCROLL = 0x0115,
-            INITMENU = 0x0116,
-            INITMENUPOPUP = 0x0117,
-            MENUSELECT = 0x011F,
-            MENUCHAR = 0x0120,
-            ENTERIDLE = 0x0121,
-            MENURBUTTONUP = 0x0122,
-            MENUDRAG = 0x0123,
-            MENUGETOBJECT = 0x0124,
-            UNINITMENUPOPUP = 0x0125,
-            MENUCOMMAND = 0x0126,
-            CHANGEUISTATE = 0x0127,
-            UPDATEUISTATE = 0x0128,
-            QUERYUISTATE = 0x0129,
-            CTLCOLORMSGBOX = 0x0132,
-            CTLCOLOREDIT = 0x0133,
-            CTLCOLORLISTBOX = 0x0134,
-            CTLCOLORBTN = 0x0135,
-            CTLCOLORDLG = 0x0136,
-            CTLCOLORSCROLLBAR = 0x0137,
-            CTLCOLORSTATIC = 0x0138,
-            MOUSEFIRST = 0x0200,
-            MOUSEMOVE = 0x0200,
-            LBUTTONDOWN = 0x0201,
-            LBUTTONUP = 0x0202,
-            LBUTTONDBLCLK = 0x0203,
-            RBUTTONDOWN = 0x0204,
-            RBUTTONUP = 0x0205,
-            RBUTTONDBLCLK = 0x0206,
-            MBUTTONDOWN = 0x0207,
-            MBUTTONUP = 0x0208,
-            MBUTTONDBLCLK = 0x0209,
+            H_SCROLL = 0x0114,
+            V_SCROLL = 0x0115,
+            INIT_MENU = 0x0116,
+            INIT_MENU_POPUP = 0x0117,
+            MENU_SELECT = 0x011F,
+            MENU_CHAR = 0x0120,
+            ENTER_IDLE = 0x0121,
+            MENU_R_BUTTON_UP = 0x0122,
+            MENU_DRAG = 0x0123,
+            MENU_GET_OBJECT = 0x0124,
+            UNINIT_MENU_POPUP = 0x0125,
+            MENU_COMMAND = 0x0126,
+            CHANGE_UI_STATE = 0x0127,
+            UPDATE_UI_STATE = 0x0128,
+            QUERY_UI_STATE = 0x0129,
+            CTL_COLOR_MSGBOX = 0x0132,
+            CTL_COLOR_EDIT = 0x0133,
+            CTL_COLOR_LISTBOX = 0x0134,
+            CTL_COLOR_BTN = 0x0135,
+            CTL_COLOR_DLG = 0x0136,
+            CTL_COLOR_SCROLLBAR = 0x0137,
+            CTL_COLOR_STATIC = 0x0138,
+            MOUSE_FIRST = 0x0200,
+            MOUSE_MOVE = 0x0200,
+            L_BUTTON_DOWN = 0x0201,
+            L_BUTTON_UP = 0x0202,
+            L_BUTTON_DBL_CLK = 0x0203,
+            R_BUTTON_DOWN = 0x0204,
+            R_BUTTON_UP = 0x0205,
+            R_BUTTON_DBL_CLK = 0x0206,
+            M_BUTTON_DOWN = 0x0207,
+            M_BUTTON_UP = 0x0208,
+            M_BUTTON_DBL_CLK = 0x0209,
             MOUSEWHEEL = 0x020A,
             XBUTTONDOWN = 0x020B,
             XBUTTONUP = 0x020C,
@@ -1872,11 +2079,11 @@ namespace VitNX3.Functions.Win32
             IME_REQUEST = 0x0288,
             IME_KEYDOWN = 0x0290,
             IME_KEYUP = 0x0291,
-            MOUSEHOVER = 0x02A1,
-            MOUSELEAVE = 0x02A3,
-            NCMOUSEHOVER = 0x02A0,
-            NCMOUSELEAVE = 0x02A2,
-            WTSSESSION_CHANGE = 0x02B1,
+            MOUSE_HOVER = 0x02A1,
+            MOUSE_LEAVE = 0x02A3,
+            NC_MOUSE_HOVER = 0x02A0,
+            NC_MOUSE_LEAVE = 0x02A2,
+            WTS_SESSION_CHANGE = 0x02B1,
             TABLET_FIRST = 0x02c0,
             TABLET_LAST = 0x02df,
             CUT = 0x0300,
@@ -1884,60 +2091,70 @@ namespace VitNX3.Functions.Win32
             PASTE = 0x0302,
             CLEAR = 0x0303,
             UNDO = 0x0304,
-            RENDERFORMAT = 0x0305,
-            RENDERALLFORMATS = 0x0306,
-            DESTROYCLIPBOARD = 0x0307,
-            DRAWCLIPBOARD = 0x0308,
-            PAINTCLIPBOARD = 0x0309,
-            VSCROLLCLIPBOARD = 0x030A,
-            SIZECLIPBOARD = 0x030B,
-            ASKCBFORMATNAME = 0x030C,
-            CHANGECBCHAIN = 0x030D,
-            HSCROLLCLIPBOARD = 0x030E,
-            QUERYNEWPALETTE = 0x030F,
-            PALETTEISCHANGING = 0x0310,
-            PALETTECHANGED = 0x0311,
+            RENDER_FORMAT = 0x0305,
+            RENDER_ALL_FORMATS = 0x0306,
+            DESTROY_CLIPBOARD = 0x0307,
+            DRAW_CLIPBOARD = 0x0308,
+            PAINT_CLIPBOARD = 0x0309,
+            V_SCROLL_CLIPBOARD = 0x030A,
+            SIZE_CLIPBOARD = 0x030B,
+            ASK_CB_FORMATNAME = 0x030C,
+            CHANGE_CB_CHAIN = 0x030D,
+            HS_CROLL_CLIPBOARD = 0x030E,
+            QUERY_NEW_PALETTE = 0x030F,
+            PALETREIS_CHANGING = 0x0310,
+            PALERTE_CHANGED = 0x0311,
             HOTKEY = 0x0312,
             PRINT = 0x0317,
-            PRINTCLIENT = 0x0318,
-            APPCOMMAND = 0x0319,
-            THEMECHANGED = 0x031A,
-            CLIPBOARDUPDATE = 0x031D,
-            DWMCOMPOSITIONCHANGED = 0x031E,
-            DWMNCRENDERINGCHANGED = 0x031F,
-            DWMCOLORIZATIONCOLORCHANGED = 0x0320,
-            DWMWINDOWMAXIMIZEDCHANGE = 0x0321,
-            GETTITLEBARINFOEX = 0x033F,
-            HANDHELDFIRST = 0x0358,
-            HANDHELDLAST = 0x035F,
-            AFXFIRST = 0x0360,
-            AFXLAST = 0x037F,
-            PENWINFIRST = 0x0380,
-            PENWINLAST = 0x038F,
+            PRINT_CLIENT = 0x0318,
+            APP_COMMAND = 0x0319,
+            THEME_CHANGED = 0x031A,
+            CLIPBOARD_UPDATE = 0x031D,
+            DWM_COMPOSITION_CHANGED = 0x031E,
+            DWM_NCR_CHANGED = 0x031F,
+            DWM_COLORIZATION_COLOR_CHANGED = 0x0320,
+            DWM_WINDOW_MAXIMIZED_CHANGE = 0x0321,
+            GET_TITLE_BAR_INFO_EX = 0x033F,
+            HANDHELD_FIRST = 0x0358,
+            HANDHELD_LAST = 0x035F,
+            AFX_FIRST = 0x0360,
+            AFX_LAST = 0x037F,
+            PEN_WIN_FIRST = 0x0380,
+            PEN_WIN_LAST = 0x038F,
             APP = 0x8000,
             USER = 0x0400,
             CPL_LAUNCH = USER + 0x1000,
             CPL_LAUNCHED = USER + 0x1001,
-            SYSTIMER = 0x118,
-            HSHELL_ACCESSIBILITYSTATE = 11,
-            HSHELL_ACTIVATESHELLWINDOW = 3,
-            HSHELL_APPCOMMAND = 12,
-            HSHELL_GETMINRECT = 5,
+            SYS_TIMER = 0x118,
+            HSHELL_ACCESS_IBILITY_STATE = 11,
+            HSHELL_ACTIVATE_SHELL_WINDOW = 3,
+            HSHELL_APP_COMMAND = 12,
+            HSHELL_GET_MIN_RECT = 5,
             HSHELL_LANGUAGE = 8,
             HSHELL_REDRAW = 6,
             HSHELL_TASKMAN = 7,
-            HSHELL_WINDOWCREATED = 1,
-            HSHELL_WINDOWDESTROYED = 2,
-            HSHELL_WINDOWACTIVATED = 4,
-            HSHELL_WINDOWREPLACED = 13
+            HSHELL_WINDOW_CREATED = 1,
+            HSHELL_WINDOW_DESTROYED = 2,
+            HSHELL_WINDOW_ACTIVATED = 4,
+            HSHELL_WINDOW_REPLACED = 13
         }
 
+        [Flags]
+        public enum FirmwareTableType : uint
+        {
+            Acpi = 0x41435049,
+            Firm = 0x4649524D,
+            Rsmb = 0x52534D42,
+        }
+
+        [Flags]
         public enum KEYEVENTF : int
         {
             KEYEVENTF_EXTENDEDKEY = 1,
             KEYEVENTF_KEYUP = 2
         }
 
+        [Flags]
         public enum EXECUTION_STATE : uint
         {
             ES_AWAYMODE_REQUIRED = 0x00000040,
@@ -1946,6 +2163,7 @@ namespace VitNX3.Functions.Win32
             ES_SYSTEM_REQUIRED = 0x00000001
         }
 
+        [Flags]
         public enum DWM_WINDOW_CORNER_PREFERENCE : int
         {
             DWMWCP_DEFAULT = 0,
@@ -1954,6 +2172,7 @@ namespace VitNX3.Functions.Win32
             DWMWCP_ROUNDSMALL = 3
         }
 
+        [Flags]
         public enum PROCESS_DPI_AWARENESS : int
         {
             PROCESS_DPI_UNAWARE = 0,
@@ -1961,13 +2180,31 @@ namespace VitNX3.Functions.Win32
             PROCESS_PER_MONITOR_DPI_Aware = 2
         }
 
-        public enum SHERB_RECYCLE : int
+        [Flags]
+        public enum HResult : uint
         {
-            SHERB_NOCONFIRMATION = 0x00000001,
-            SHERB_NOPROGRESSUI = 0x00000001,
-            SHERB_NOSOUND = 0x00000004
+            S_OK = 0x00000000,
+            E_ABORT = 0x80004004,
+            E_ACCESS_DENIED = 0x80070005,
+            E_FAIL = 0x80004005,
+            E_HANDLE = 0x80070006,
+            E_INVALID_ARG = 0x80070057,
+            E_NO_INTERFACE = 0x80004002,
+            E_NO_TIMPL = 0x80004001,
+            E_OUT_OF_MEMORY = 0x8007000E,
+            E_POINTER = 0x80004003,
+            E_UNEXPECTED = 0x8000FFFF,
         }
 
+        [Flags]
+        public enum SHERB_RECYCLE : int
+        {
+            SHERB_NO_CONFIRMATION = 0x00000001,
+            SHERB_NO_PROGRESS_UI = 0x00000001,
+            SHERB_NO_SOUND = 0x00000004
+        }
+
+        [Flags]
         public enum E_DATA_FLOW
         {
             eRender,
@@ -1976,6 +2213,7 @@ namespace VitNX3.Functions.Win32
             E_DATA_FLOW_enum_count
         }
 
+        [Flags]
         public enum E_ROLE
         {
             eConsole,
@@ -1984,6 +2222,7 @@ namespace VitNX3.Functions.Win32
             E_ROLE_enum_count
         }
 
+        [Flags]
         public enum TASKBAR_STATES : int
         {
             NoProgress = 0,

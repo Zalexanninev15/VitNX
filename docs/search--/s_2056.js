@@ -1,1 +1,0 @@
-search_result['2056']=["topic_0000000000000580.html","Properties Class",""];

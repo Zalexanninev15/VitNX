@@ -1,1 +1,0 @@
-search_result['205']=["topic_0000000000000082.html","Disk.GetTotalSpace Method","Gets the total space."];

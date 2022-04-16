@@ -1,1 +1,0 @@
-search_result['1000']=["topic_0000000000000316.html","DISPLAYCONFIG_PATH_SOURCE_INFO Structure",""];

@@ -1,1 +1,0 @@
-search_result['1511']=["topic_0000000000000437.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

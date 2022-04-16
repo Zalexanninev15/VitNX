@@ -1,1 +1,0 @@
-search_result['272']=["topic_00000000000000A9.html","Ini.Read Method","Reads value of key from section."];

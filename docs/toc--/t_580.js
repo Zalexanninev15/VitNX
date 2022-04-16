@@ -1,1 +1,0 @@
-c['580']=[['581',"Computer Method","topic_00000000000000A4.html",0],['582',"Monitor Method","topic_00000000000000A5.html",0]];

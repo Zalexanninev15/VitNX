@@ -1,1 +1,0 @@
-search_result['1188']=["topic_000000000000036E.html","Text.Writeln Method","Writeln text with the colors."];

@@ -1,1 +1,0 @@
-search_result['1146']=["topic_0000000000000358.html","Window.MinimizeAll Method","Minimizes the all windows."];

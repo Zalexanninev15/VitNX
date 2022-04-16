@@ -1,1 +1,0 @@
-search_result['235']=["topic_0000000000000091.html","Ram Class","Work with informations of RAM."];

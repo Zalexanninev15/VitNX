@@ -1,1 +1,0 @@
-search_result['1174']=["topic_000000000000036A.html","Type2 Class","Console ProgressBar type 2."];

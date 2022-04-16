@@ -1,1 +1,0 @@
-search_result['78']=["topic_0000000000000035.html","Text.ConvertListToString Method","Converts the list to string (space is used as separator)."];

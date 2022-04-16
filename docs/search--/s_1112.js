@@ -1,1 +1,0 @@
-search_result['1112']=["topic_0000000000000345_vars--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Fields",""];

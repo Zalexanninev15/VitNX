@@ -1,1 +1,0 @@
-search_result['770']=["topic_0000000000000218.html","RECT Structure",""];

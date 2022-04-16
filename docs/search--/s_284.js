@@ -1,1 +1,0 @@
-search_result['284']=["topic_00000000000000B0.html","Log.Write Method","Writes log to the log file."];

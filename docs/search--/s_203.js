@@ -1,1 +1,0 @@
-search_result['203']=["topic_0000000000000080.html","Disk.GetAll Method","Gets the all (logical)."];

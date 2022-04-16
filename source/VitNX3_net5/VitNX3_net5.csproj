@@ -17,7 +17,7 @@
     <FileVersion>3.2</FileVersion>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language</Description>
+    <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5</Description>
     <Company>Zalexanninev15</Company>
     <PackageId>VitNX</PackageId>
     <Authors>Zalexanninev15</Authors>

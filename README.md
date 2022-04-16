@@ -15,7 +15,7 @@
 
 ## Description
 
-Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5+ and .NET 5+
+Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5 and .NET 5
 
 ## Features
 
@@ -25,11 +25,11 @@ Many indispensable functions and controls (WinForms) for fast and easy applicati
 
 ## Documentation
 
-A full description of all classes, functions and other object can be found in the generated [documentation](zalexanninev15.github.io/vitnx). There are also actual [examples](https://github.com/Zalexanninev15/VitNX/tree/main/source/Examples), but they use only the smallest functionality of the library (mostly implemented UI)
+A full description of all classes, functions and other object can be found in the generated [documentation](zalexanninev15.github.io/vitnx). There are also actual [examples](https://github.com/Zalexanninev15/VitNX/tree/main/source/Examples_netframework45) (.NET Framework 4.5), but they use only the smallest functionality of the library (mostly implemented UI)
 
 ## Used in
 
-* Shark Remote (VitNX version 3.0)
+* [Shark Remote (RU)](https://t.me/wit_releases/36) (Alpha) (VitNX version 3.0)
 * [Jetpack Downgrader](https://github.com/Zalexanninev15/Jetpack-Downgrader) (VitNX Version 1.1.3-PreFinalBeta)
 
 ## Build

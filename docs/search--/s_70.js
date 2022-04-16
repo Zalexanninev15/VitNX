@@ -1,1 +1,0 @@
-search_result['70']=["topic_000000000000002D.html","Text.ContainsSymbols Method","Contains the symbols."];

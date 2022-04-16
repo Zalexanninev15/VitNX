@@ -1,1 +1,0 @@
-search_result['73']=["topic_0000000000000030.html","Text.ListAddStringsToList Method","Lists the add strings to list."];

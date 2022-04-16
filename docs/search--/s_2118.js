@@ -1,1 +1,0 @@
-search_result['2118']=["topic_00000000000008B6.html","Manager.Alert (String, NotificationType, Color, Image) Method","/// Display a new custom notification on the screen.\r\n\t\t///"];

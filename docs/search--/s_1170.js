@@ -1,1 +1,0 @@
-search_result['1170']=["topic_0000000000000366.html","Type1.SetColor Method","Sets the color."];

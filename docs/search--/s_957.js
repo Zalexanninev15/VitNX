@@ -1,1 +1,0 @@
-search_result['957']=["topic_0000000000000305.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];

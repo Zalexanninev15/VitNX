@@ -1,1 +1,0 @@
-search_result['1182']=["topic_000000000000036D.html","Text Class","The tools for work with console UI."];
