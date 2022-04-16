@@ -1,1 +1,0 @@
-search_result['283']=["topic_00000000000000AF.html","Log Constructor","Initializes a new instance of the Log class."];

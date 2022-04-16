@@ -1,1 +1,0 @@
-search_result['965']=["topic_0000000000000307.html","GetClipboardText.GetText Method","Gets the text from clipboard."];

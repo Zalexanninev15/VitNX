@@ -1,1 +1,0 @@
-search_result['168']=["topic_000000000000006C.html","Windows.GetWindowsVersion Method","Gets the Windows version."];

@@ -1,1 +1,0 @@
-search_result['1974']=["topic_000000000000055E.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];

@@ -1,1 +1,0 @@
-search_result['186']=["topic_0000000000000079.html","Cpu.Characteristics Method","Gets all characteristics."];

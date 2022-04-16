@@ -1,1 +1,0 @@
-search_result['95']=["topic_0000000000000041.html","EncrypterAndDecrypter Class","Encrypter and decrypter for text."];

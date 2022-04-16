@@ -1,1 +1,0 @@
-search_result['1830']=["topic_000000000000050A.html","Helper Class",""];

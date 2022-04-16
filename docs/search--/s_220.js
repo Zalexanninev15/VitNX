@@ -1,1 +1,0 @@
-search_result['220']=["topic_000000000000008C.html","Monitor.GetAll Method","Gets the all."];

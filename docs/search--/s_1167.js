@@ -1,1 +1,0 @@
-search_result['1167']=["topic_0000000000000363_vars--.html","Type1 Fields",""];

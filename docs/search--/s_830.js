@@ -1,1 +1,0 @@
-search_result['830']=["topic_0000000000000238_methods--.html","TEXTMETRIC Methods",""];

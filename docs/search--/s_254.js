@@ -1,1 +1,0 @@
-search_result['254']=["topic_000000000000009D.html","Internet.IsHaveInternet Method","Are the have internet."];

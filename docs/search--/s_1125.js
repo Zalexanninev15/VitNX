@@ -1,1 +1,0 @@
-search_result['1125']=["topic_000000000000034D.html","outputTechnology Field",""];

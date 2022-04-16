@@ -1,1 +1,0 @@
-search_result['58']=["topic_0000000000000021.html","Text.NumberAsPercentI Method","Gets the number as percent (int32)."];

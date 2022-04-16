@@ -1,1 +1,0 @@
-search_result['1122']=["topic_000000000000034A_vars--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Fields",""];

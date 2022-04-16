@@ -1,1 +1,0 @@
-search_result['305']=["topic_00000000000000BB.html","Config Class","The configs for normal work with sites and Internet."];

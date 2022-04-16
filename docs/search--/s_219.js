@@ -1,1 +1,0 @@
-search_result['219']=["topic_000000000000008B.html","Monitor.GetResolution Method","Gets the resolution (method 1)."];

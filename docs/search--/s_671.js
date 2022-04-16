@@ -1,1 +1,0 @@
-search_result['671']=["topic_00000000000001D8_vars--.html","MINMAXINFO Fields",""];

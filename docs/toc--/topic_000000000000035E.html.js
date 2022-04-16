@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['1380',"VitNX3.Functions.WindowAndControls Namespace","topic_0000000000000356.html"],['1385',"Window Class","topic_0000000000000357.html"],['1386',"Methods","topic_0000000000000357_methods--.html"],['1390',"SetWindowsElevenStyleForWinForm Method","topic_000000000000035E.html"]];

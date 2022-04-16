@@ -1,1 +1,0 @@
-search_result['90']=["topic_000000000000003C.html","EncryptAndDecrypt.SHA1_Encrypt Method","Encrypt text by SHA1."];

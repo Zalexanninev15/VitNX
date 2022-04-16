@@ -1,1 +1,0 @@
-search_result['923']=["topic_00000000000002CF.html","DISPLAYCONFIG_DEVICE_INFO_TYPE Enumeration",""];

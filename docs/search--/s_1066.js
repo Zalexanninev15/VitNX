@@ -1,1 +1,0 @@
-search_result['1066']=["topic_0000000000000335.html","POINTL Structure",""];

@@ -1,1 +1,0 @@
-search_result['1098']=["topic_0000000000000341.html","adapterId Field",""];

@@ -1,1 +1,0 @@
-search_result['28']=["topic_0000000000000012.html","Installed.FindAppPath Method","Finds the application path."];

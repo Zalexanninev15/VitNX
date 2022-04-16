@@ -1,1 +1,0 @@
-search_result['286']=["topic_00000000000000B2.html","DataFromSites Class","Work with data from sites."];

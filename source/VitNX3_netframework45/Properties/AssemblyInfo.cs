@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("VitNX3")]
-[assembly: AssemblyDescription("Controls for WinForms and a ton of necessary features for fast and easy C# application development (.NET Framework 4.5+)")]
+[assembly: AssemblyDescription("Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zalexanninev15")]
 [assembly: AssemblyProduct("VitNX")]
@@ -11,5 +11,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("f19472f5-8c44-4c51-a8a0-b9de5f555255")]
-[assembly: AssemblyVersion("3.2.0.0")]
-[assembly: AssemblyFileVersion("3.2.0.0")] 
+[assembly: AssemblyVersion("3.2.1.0")]
+[assembly: AssemblyFileVersion("3.2.1.0")] 

@@ -1,1 +1,0 @@
-search_result['39']=["topic_0000000000000018.html","CShap.ConvertColorToConsoleColor Method","Converts the color to color for console."];

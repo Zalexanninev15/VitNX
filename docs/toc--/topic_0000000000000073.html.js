@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000008D5.html"],['690',"VitNX3.Functions.Information Namespace","topic_0000000000000066.html"],['734',"Windows Class","topic_0000000000000067.html"],['735',"Methods","topic_0000000000000067_methods--.html"],['746',"GetWindowsStartupFolderPath Method","topic_0000000000000073.html"]];
