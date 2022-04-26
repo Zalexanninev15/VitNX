@@ -1,1 +1,0 @@
-c['898']=[['899',"CleanMemory Method","topic_000000000000001C.html",0],['900',"ConvertColorToConsoleColor Method","topic_000000000000001F.html",0],['901',"ConvertDWordColorToRGB Method","topic_000000000000001E.html",0],['902',"PlaySound Method","topic_000000000000001D.html",0]];

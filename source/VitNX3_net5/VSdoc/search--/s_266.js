@@ -1,1 +1,0 @@
-search_result['266']=["topic_00000000000000A5.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];

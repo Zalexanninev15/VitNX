@@ -1,1 +1,0 @@
-search_result['140']=["topic_000000000000005B.html","File.WriteTextAsUTF8_ToTemp Method","Writes the text to file as UTF-8 to temp folder."];

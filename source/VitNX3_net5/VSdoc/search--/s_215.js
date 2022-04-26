@@ -1,1 +1,0 @@
-search_result['215']=["topic_0000000000000088.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

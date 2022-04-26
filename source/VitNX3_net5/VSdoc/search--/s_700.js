@@ -1,1 +1,0 @@
-search_result['700']=["topic_0000000000000214.html","ERROR_BAD_DEV_TYPE Field",""];

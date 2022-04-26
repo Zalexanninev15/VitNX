@@ -1,1 +1,0 @@
-search_result['5499']=["topic_000000000000140B.html","FontAwesome4.Instance Property","Work with font.\r\nExample:\r\n settings.Image = FontAwesome4.Instance.GetImage(new FontAwesome4.Properties(FontAwesome4.Type.ArrowCircleODown)\r\n{\r\n    SetFontFileSaveLocation = \"font.ttf\",\r\n    ForeColor..."];

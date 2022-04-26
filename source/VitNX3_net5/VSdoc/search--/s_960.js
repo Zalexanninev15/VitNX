@@ -1,1 +1,0 @@
-search_result['960']=["topic_0000000000000318.html","ERROR_DEVICE_NOT_CONNECTED Field",""];

@@ -1,1 +1,0 @@
-search_result['148']=["topic_0000000000000063.html","File.CreateShortcut Method","Creates the shortcut."];

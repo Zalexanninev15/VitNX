@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['1085',"VitNX3.Functions.Win32 Namespace","topic_00000000000000C4.html"],['1086',"Constants Class","topic_00000000000001A9.html"],['4118',"Fields","topic_00000000000001A9_vars--.html"],['4125',"HWND_NOTOPMOST Field","topic_00000000000001B1.html"]];

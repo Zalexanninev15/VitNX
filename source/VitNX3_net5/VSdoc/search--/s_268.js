@@ -1,1 +1,0 @@
-search_result['268']=["topic_00000000000000AB.html","PowerControl.Monitor Method","The power of monitor."];

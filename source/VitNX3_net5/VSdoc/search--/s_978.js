@@ -1,1 +1,0 @@
-search_result['978']=["topic_000000000000032A.html","ERROR_BAD_PROVIDER Field",""];

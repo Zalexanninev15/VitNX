@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['993',"VitNX3.Functions.Information Namespace","topic_000000000000006A.html"],['1008',"Gpu Class","topic_0000000000000080.html"],['1009',"Methods","topic_0000000000000080_methods--.html"]];

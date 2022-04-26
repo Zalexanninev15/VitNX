@@ -1,1 +1,0 @@
-search_result['2000']=["topic_0000000000000728.html","ERROR_DS_INVALID_GROUP_TYPE Field",""];

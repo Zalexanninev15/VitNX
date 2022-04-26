@@ -1,1 +1,0 @@
-search_result['59']=["topic_0000000000000023.html","Text.ContainsOnlyLatters Method","Contains the only latters."];

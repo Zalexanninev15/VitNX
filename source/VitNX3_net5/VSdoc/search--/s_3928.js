@@ -1,1 +1,0 @@
-search_result['3928']=["topic_0000000000000E88.html","xyThumbBottom Field",""];

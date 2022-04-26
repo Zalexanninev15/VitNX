@@ -1,1 +1,0 @@
-search_result['71']=["topic_000000000000002F.html","Text.ReplacerMonster Method","Replacers the monster."];
