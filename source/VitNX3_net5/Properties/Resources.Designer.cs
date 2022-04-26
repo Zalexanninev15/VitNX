@@ -1,9 +1,9 @@
 ﻿namespace VitNX3.Properties
 {
+
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-
     internal class Resources
     {
 
@@ -23,7 +23,7 @@
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VitNX3.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VitNX3_net5.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -43,15 +43,6 @@
             }
         }
 
-        internal static System.Drawing.Bitmap cancelN
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("cancelN", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
         internal static System.Drawing.Bitmap Error1
         {
             get
@@ -61,29 +52,11 @@
             }
         }
 
-        internal static System.Drawing.Bitmap errorN
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("errorN", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
         internal static System.Drawing.Bitmap Help
         {
             get
             {
                 object obj = ResourceManager.GetObject("Help", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        internal static System.Drawing.Bitmap infoN
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("infoN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -124,29 +97,11 @@
             }
         }
 
-        internal static System.Drawing.Bitmap successN
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("successN", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
         internal static System.Drawing.Bitmap Warning1
         {
             get
             {
                 object obj = ResourceManager.GetObject("Warning1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        internal static System.Drawing.Bitmap warningN
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("warningN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
