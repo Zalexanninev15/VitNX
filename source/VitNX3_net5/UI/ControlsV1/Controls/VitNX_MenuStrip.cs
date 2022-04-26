@@ -7,6 +7,9 @@ namespace VitNX.UI.ControlsV1.Controls
     public class VitNX_MenuStrip : MenuStrip
     {
         public VitNX_MenuStrip()
-        { Renderer = new VitNX_MenuRenderer(); Padding = new Padding(3, 2, 0, 2); }
+        {
+            Renderer = new VitNX_MenuRenderer();
+            Padding = new Padding(3, 2, 0, 2);
+        }
     }
 }

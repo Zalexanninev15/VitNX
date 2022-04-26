@@ -1,0 +1,1 @@
+search_result['274']=["topic_00000000000000A7.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];

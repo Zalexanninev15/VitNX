@@ -1,0 +1,1 @@
+search_result['1068']=["topic_000000000000037F.html","lfCharSet Field",""];

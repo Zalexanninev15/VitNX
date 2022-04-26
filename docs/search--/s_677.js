@@ -1,0 +1,1 @@
+search_result['677']=["topic_00000000000001F7.html","ERROR_SAM_INIT_FAILURE Field","Security Accounts Manager initialization failed because of the following error: %1.\r\nError Status: 0x%2. Click OK to shut down the system and reboot into Safe Mode. Check the event log for detailed in..."];

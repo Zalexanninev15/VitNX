@@ -1,12 +1,49 @@
 ﻿using System;
 using System.Drawing;
 
-namespace VitNX3.Functions
+using VitNX3.Functions.Win32;
+
+namespace VitNX3.Functions.CSharp
 {
     /// <summary>
-    /// Work with C#.
+    /// The performance counter.
+    /// Usage example: https://gist.github.com/Zalexanninev15/7f439beecb411f3e7b11d56acdb0bf21
     /// </summary>
-    public class CShap
+    public class PerformanceCounter
+    {
+        protected long m_i64Frequency;
+        protected long m_i64Start;
+
+        public PerformanceCounter()
+        {
+            Import.QueryPerformanceFrequency(ref m_i64Frequency);
+            m_i64Start = 0;
+        }
+
+        /// <summary>
+        /// Start measure.
+        /// </summary>
+        public void Start()
+        {
+            Import.QueryPerformanceCounter(ref m_i64Start);
+        }
+
+        /// <summary>
+        /// Result interval in seconds.
+        /// </summary>
+        /// <returns>A double.</returns>
+        public double End()
+        {
+            long i64End = 0;
+            Import.QueryPerformanceCounter(ref i64End);
+            return (i64End - m_i64Start) / (double)m_i64Frequency;
+        }
+    }
+
+    /// <summary>
+    /// Work with C# (others functions).
+    /// </summary>
+    public class Others
     {
         /// <summary>
         /// Cleans the memory.

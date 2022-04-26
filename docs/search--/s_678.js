@@ -1,0 +1,1 @@
+search_result['678']=["topic_00000000000001F8.html","ERROR_DS_INIT_FAILURE_CONSOLE Field","Directory Services could not start because of the following error: %1.\r\nError Status: 0x%2. Please click OK to shutdown the system. You can use the recovery console to diagnose the system further."];

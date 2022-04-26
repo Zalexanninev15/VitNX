@@ -1,0 +1,1 @@
+search_result['670']=["topic_00000000000001F0.html","FRS_ERR_PARENT_AUTHENTICATION Field","The file replication service cannot satisfy the request because authenticated RPC is not available on the domain controller.\r\nThe event log may have more information."];

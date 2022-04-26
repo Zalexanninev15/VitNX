@@ -1,0 +1,1 @@
+search_result['1795']=["topic_00000000000006A7.html","VitNX_Label.OnSizeChanged Method","Raises the SizeChanged event."];

@@ -388,8 +388,8 @@ namespace VitNX3.Functions.FileSystem
         public static void CleanRecycleBin()
         {
             Import.SHEmptyRecycleBin(IntPtr.Zero, null,
-            Enums.SHERB_RECYCLE.SHERB_NOSOUND |
-            Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION);
+            Enums.SHERB_RECYCLE.SHERB_NO_SOUND |
+            Enums.SHERB_RECYCLE.SHERB_NO_CONFIRMATION);
         }
     }
 }

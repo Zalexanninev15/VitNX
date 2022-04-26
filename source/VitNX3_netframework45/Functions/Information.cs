@@ -139,7 +139,7 @@ namespace VitNX3.Functions.Information
             var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
                 colorType,
                 false, 0);
-            return CShap.ConvertDWordColorToRGB(colorSetEx);
+            return CSharp.Others.ConvertDWordColorToRGB(colorSetEx);
         }
     }
 

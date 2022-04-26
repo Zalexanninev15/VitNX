@@ -1,0 +1,1 @@
+search_result['657']=["topic_00000000000001E3.html","ERROR_CTX_GRAPHICS_INVALID Field","The application attempted to enable DOS graphics mode.\r\nDOS graphics mode is not supported."];

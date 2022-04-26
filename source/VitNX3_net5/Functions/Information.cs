@@ -10,6 +10,7 @@ using System.Management;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using VitNX3.Functions.Win32;
@@ -138,7 +139,7 @@ namespace VitNX3.Functions.Information
             var colorSetEx = Import.GetImmersiveColorFromColorSetEx((uint)userColorSet,
                 colorType,
                 false, 0);
-            return CShap.ConvertDWordColorToRGB(colorSetEx);
+            return CSharp.Others.ConvertDWordColorToRGB(colorSetEx);
         }
     }
 
@@ -494,7 +495,17 @@ namespace VitNX3.Functions.Information
     public class Motherboard
     {
         /// <summary>
-        /// Gets the firmware type.
+        /// Gets the firmware type (Native). Are the UEFI mode (UEFI) or Legacy (BIOS).
+        /// </summary>
+        /// <returns>A bool.</returns>
+        public static bool IsUefiMode()
+        {
+            Import.GetFirmwareEnvironmentVariableA("", "{00000000-0000-0000-0000-000000000000}", IntPtr.Zero, 0);
+            return Marshal.GetLastWin32Error() == Constants.ERROR_INVALID_FUNCTION ? false : true;
+        }
+
+        /// <summary>
+        /// Gets the firmware type (Cmd).
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetFirmwareType()

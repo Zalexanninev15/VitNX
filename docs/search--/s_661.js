@@ -1,0 +1,1 @@
+search_result['661']=["topic_00000000000001E7.html","ERROR_CTX_CLIENT_LICENSE_IN_USE Field","Your request to connect to this Terminal Server has been rejected. Your Terminal Server client license number is currently being used by another user.\r\nPlease call your system administrator to obtain ..."];

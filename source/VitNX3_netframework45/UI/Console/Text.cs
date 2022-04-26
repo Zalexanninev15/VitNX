@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-using VitNX3.Functions;
+using VitNX3.Functions.CSharp;
 
 namespace VitNX3.UI.Console
 {
@@ -19,8 +19,8 @@ namespace VitNX3.UI.Console
             Color textColor,
             Color backgroundColor)
         {
-            System.Console.ForegroundColor = CShap.ConvertColorToConsoleColor(textColor);
-            System.Console.BackgroundColor = CShap.ConvertColorToConsoleColor(backgroundColor);
+            System.Console.ForegroundColor = Others.ConvertColorToConsoleColor(textColor);
+            System.Console.BackgroundColor = Others.ConvertColorToConsoleColor(backgroundColor);
             System.Console.WriteLine(text);
             System.Console.ResetColor();
         }
