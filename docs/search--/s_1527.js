@@ -1,0 +1,1 @@
+search_result['1527']=["topic_000000000000060E.html","DISPLAYCONFIG_MODE_INFO Structure",""];

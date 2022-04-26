@@ -1,0 +1,1 @@
+search_result['699']=["topic_0000000000000208.html","CRYPT_E_OSS_ERROR Field","OSS Certificate encode/decode error code base\r\n\r\nSee asn1code.h for a definition of the OSS runtime errors. The OSS\r\nerror values are offset by CRYPT_E_OSS_ERROR."];

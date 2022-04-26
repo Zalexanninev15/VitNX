@@ -1,0 +1,1 @@
+search_result['662']=["topic_00000000000001E8.html","ERROR_CTX_CLIENT_LICENSE_NOT_SET Field","Your request to connect to this Terminal Server has been rejected. Your Terminal Server client license number has not been entered for this copy of the Terminal Server client.\r\nPlease contact your sys..."];

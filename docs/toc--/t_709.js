@@ -1,0 +1,1 @@
+c['709']=[['710',"GetAll Method","topic_0000000000000086.html",0],['711',"GetTotalFreeSpace Method","topic_0000000000000087.html",0],['712',"GetTotalSpace Method","topic_0000000000000088.html",0],['713',"WindowsDisk Method","topic_0000000000000085.html",0]];

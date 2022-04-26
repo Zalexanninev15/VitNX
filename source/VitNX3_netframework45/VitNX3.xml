@@ -141,21 +141,41 @@ The key path.</param>
       <param name="applicationName">
 The application name.</param>
     </member>
-    <member name="N:VitNX3.Functions">
+    <member name="N:VitNX3.Functions.CSharp">
     </member>
-    <member name="T:VitNX3.Functions.CShap">
+    <member name="T:VitNX3.Functions.CSharp.PerformanceCounter">
       <summary>
-Work with C#.</summary>
+The performance counter. Usage example: https://gist.github.com/Zalexanninev15/7f439beecb411f3e7b11d56acdb0bf21</summary>
     </member>
-    <member name="M:VitNX3.Functions.CShap.CleanMemory">
+    <member name="F:VitNX3.Functions.CSharp.PerformanceCounter.m_i64Frequency">
+    </member>
+    <member name="F:VitNX3.Functions.CSharp.PerformanceCounter.m_i64Start">
+    </member>
+    <member name="M:VitNX3.Functions.CSharp.PerformanceCounter.#ctor">
+    </member>
+    <member name="M:VitNX3.Functions.CSharp.PerformanceCounter.Start">
+      <summary>
+Start measure.</summary>
+    </member>
+    <member name="M:VitNX3.Functions.CSharp.PerformanceCounter.End">
+      <summary>
+Result interval in seconds.</summary>
+      <returns>
+A double.</returns>
+    </member>
+    <member name="T:VitNX3.Functions.CSharp.Others">
+      <summary>
+Work with C# (others functions).</summary>
+    </member>
+    <member name="M:VitNX3.Functions.CSharp.Others.CleanMemory">
       <summary>
 Cleans the memory.</summary>
     </member>
-    <member name="M:VitNX3.Functions.CShap.PlaySound">
+    <member name="M:VitNX3.Functions.CSharp.Others.PlaySound">
       <summary>
 Plays the error/successes sound.</summary>
     </member>
-    <member name="M:VitNX3.Functions.CShap.ConvertDWordColorToRGB(System.UInt32)">
+    <member name="M:VitNX3.Functions.CSharp.Others.ConvertDWordColorToRGB(System.UInt32)">
       <summary>
 Converts the DWord color to RGB.</summary>
       <returns>
@@ -163,7 +183,7 @@ A Color.</returns>
       <param name="color">
 Color as unit.</param>
     </member>
-    <member name="M:VitNX3.Functions.CShap.ConvertColorToConsoleColor(System.Drawing.Color)">
+    <member name="M:VitNX3.Functions.CSharp.Others.ConvertColorToConsoleColor(System.Drawing.Color)">
       <summary>
 Converts the color to color for console.</summary>
       <param name="color">
@@ -1003,9 +1023,15 @@ A list of string.</returns>
       <summary>
 Work with informations of Motherboard.</summary>
     </member>
+    <member name="M:VitNX3.Functions.Information.Motherboard.IsUefiMode">
+      <summary>
+Gets the firmware type (Native). Are the UEFI mode (UEFI) or Legacy (BIOS).</summary>
+      <returns>
+A bool.</returns>
+    </member>
     <member name="M:VitNX3.Functions.Information.Motherboard.GetFirmwareType">
       <summary>
-Gets the firmware type.</summary>
+Gets the firmware type (Cmd).</summary>
       <returns>
 A string.</returns>
     </member>
@@ -1078,6 +1104,8 @@ Are the have internet.</summary>
 An INTERNET_STATUS.</returns>
       <param name="ipAddressOrDomainForPing">
 The ip address or domain for ping.</param>
+    </member>
+    <member name="N:VitNX3.Functions">
     </member>
     <member name="T:VitNX3.Functions.PowerControl">
       <summary>
@@ -1271,6 +1299,130 @@ Activate DefaultGateway of NetworkInterface in IPAddress.</summary>
       <summary>
 Import the Windows System functions from native DLL. About functions: https://www.pinvoke.net</summary>
     </member>
+    <member name="M:VitNX3.Functions.Win32.Import.InitiateSystemShutdown(System.String,System.String,System.Int32,System.Boolean,System.Boolean)">
+      <param name="lpMachinename">
+</param>
+      <param name="lpMessage">
+</param>
+      <param name="dwTimeout">
+</param>
+      <param name="bForceAppsClosed">
+</param>
+      <param name="bRebootAfterShutdown">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetLastError">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.FormatMessage(System.UInt32,System.IntPtr,System.UInt32,System.UInt32,System.Text.StringBuilder,System.UInt32,System.IntPtr)">
+      <param name="Flags">
+</param>
+      <param name="Source">
+</param>
+      <param name="MessageID">
+</param>
+      <param name="LanguageID">
+</param>
+      <param name="Buffer">
+</param>
+      <param name="Size">
+</param>
+      <param name="Args">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.LogonUser(System.String,System.String,System.String,System.Int32,System.Int32,System.IntPtr@)">
+      <param name="lpszUserName">
+</param>
+      <param name="lpszDomain">
+</param>
+      <param name="lpszPassword">
+</param>
+      <param name="dwLogonType">
+</param>
+      <param name="dwLogonProvider">
+</param>
+      <param name="phToken">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.DuplicateToken(System.IntPtr,System.Int32,System.IntPtr@)">
+      <param name="hToken">
+</param>
+      <param name="impersonationLevel">
+</param>
+      <param name="hNewToken">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.RevertToSelf">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetCursorPos(VitNX3.Functions.Win32.Enums.POINT@)">
+      <param name="lpPoint">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SetWindowCompositionAttribute(System.IntPtr,VitNX3.Functions.Win32.Enums.WINCOMPATTRDATA@)">
+      <param name="hWnd">
+</param>
+      <param name="data">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SetForegroundWindow(System.Runtime.InteropServices.HandleRef)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetSystemMetrics(System.Int32)">
+      <param name="nIndex">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.PostMessage(System.Runtime.InteropServices.HandleRef,VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE,System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="msg">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.ShutdownBlockReasonCreate(System.IntPtr,System.String)">
+      <param name="hWnd">
+</param>
+      <param name="reason">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetModuleHandle(System.String)">
+      <param name="lpModuleName">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.RtlSetProcessIsCritical(System.UInt32,System.UInt32,System.UInt32)">
+      <param name="v1">
+</param>
+      <param name="v2">
+</param>
+      <param name="v3">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.ShutdownBlockReasonDestroy(System.IntPtr)">
+      <param name="hWnd">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SetProcessShutdownParameters(System.UInt32,System.UInt32)">
+      <param name="dwLevel">
+</param>
+      <param name="dwFlags">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.DefWindowProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="msg">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.RegisterWindowMessage(System.String)">
+      <param name="lpString">
+</param>
+    </member>
     <member name="M:VitNX3.Functions.Win32.Import.AdjustWindowRectEx(VitNX3.Functions.Win32.Enums.RECT@,System.Int32,System.Boolean,System.Int32)">
       <param name="lpRect">
 </param>
@@ -1279,6 +1431,80 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="bMenu">
 </param>
       <param name="dwExStyle">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetVolumeNameForVolumeMountPoint(System.String,System.Text.StringBuilder,System.Int32)">
+      <param name="lpszVolumeMountPoint">
+</param>
+      <param name="lpszVolumeName">
+</param>
+      <param name="cchBufferLength">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetSystemFirmwareTable(VitNX3.Functions.Win32.Enums.FirmwareTableType,System.UInt32,System.IntPtr,System.UInt32)">
+      <param name="FirmwareTableProviderSignature">
+</param>
+      <param name="FirmwareTableID">
+</param>
+      <param name="pFirmwareTableBuffer">
+</param>
+      <param name="BufferSize">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.EnumSystemFirmwareTables(VitNX3.Functions.Win32.Enums.FirmwareTableType,System.IntPtr,System.UInt32)">
+      <param name="FirmwareTableProviderSignature">
+</param>
+      <param name="pFirmwareTableEnuM_BUffer">
+</param>
+      <param name="BufferSize">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.AllocConsole">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetFirmwareEnvironmentVariableA(System.String,System.String,System.IntPtr,System.UInt32)">
+      <param name="lpName">
+</param>
+      <param name="lpGuid">
+</param>
+      <param name="pBuffer">
+</param>
+      <param name="nSize">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.DeviceIoControl(System.IntPtr,System.UInt32,System.IntPtr,System.UInt32,System.IntPtr,System.UInt32,System.UInt32@,System.IntPtr)">
+      <param name="hDevice">
+</param>
+      <param name="dwIoControlCode">
+</param>
+      <param name="lpInBuffer">
+</param>
+      <param name="nInBufferSize">
+</param>
+      <param name="lpOutBuffer">
+</param>
+      <param name="nOutBufferSize">
+</param>
+      <param name="lpBytesReturned">
+</param>
+      <param name="lpOverlapped">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.QueryPerformanceCounter(System.Int64@)">
+      <param name="nPfCt">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.QueryPerformanceFrequency(System.Int64@)">
+      <param name="nPfFreq">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SetFirmwareEnvironmentVariable(System.String,System.String,System.IntPtr,System.UInt32)">
+      <param name="lpName">
+</param>
+      <param name="lpGuid">
+</param>
+      <param name="pBuffer">
+</param>
+      <param name="nSize">
 </param>
     </member>
     <member name="M:VitNX3.Functions.Win32.Import.AlphaBlend(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,VitNX3.Functions.Win32.Enums.BLENDFUNCTION)">
@@ -1375,6 +1601,20 @@ Import the Windows System functions from native DLL. About functions: https://ww
     </member>
     <member name="M:VitNX3.Functions.Win32.Import.UnhookWinEvent(System.IntPtr)">
       <param name="hWinEventHook">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.Shell_NotifyIcon(System.Int32,VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA)">
+      <param name="message">
+</param>
+      <param name="pnid">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.CopyMemory(System.IntPtr,System.IntPtr,System.UInt32)">
+      <param name="dest">
+</param>
+      <param name="src">
+</param>
+      <param name="count">
 </param>
     </member>
     <member name="T:VitNX3.Functions.Win32.Import.WinEventDelegate">
@@ -1519,6 +1759,12 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="hDC">
 </param>
     </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GdipCreateHICONFromBitmap(System.Runtime.InteropServices.HandleRef,System.IntPtr@)">
+      <param name="nativeBitmap">
+</param>
+      <param name="hicon">
+</param>
+    </member>
     <member name="M:VitNX3.Functions.Win32.Import.DeleteObject(System.IntPtr)">
       <param name="hObject">
 </param>
@@ -1617,7 +1863,7 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="lpPaint">
 </param>
     </member>
-    <member name="M:VitNX3.Functions.Win32.Import.EnumThreadWindows(System.UInt32,VitNX3.Functions.Win32.Enums.EnumThreadWindowsCallBack,System.IntPtr)">
+    <member name="M:VitNX3.Functions.Win32.Import.EnumThreadWindows(System.UInt32,VitNX3.Functions.Win32.Import.EnumThreadWindowsCallBack,System.IntPtr)">
       <param name="dwThreadId">
 </param>
       <param name="lpfn">
@@ -1714,8 +1960,6 @@ Import the Windows System functions from native DLL. About functions: https://ww
 </param>
       <param name="iconInfo">
 </param>
-    </member>
-    <member name="M:VitNX3.Functions.Win32.Import.GetLastError">
     </member>
     <member name="M:VitNX3.Functions.Win32.Import.GetLayout(System.IntPtr)">
       <param name="hdc">
@@ -1825,7 +2069,7 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="piVal">
 </param>
     </member>
-    <member name="M:VitNX3.Functions.Win32.Import.GetThemePartSize(System.IntPtr,System.IntPtr,System.Int32,System.Int32,VitNX3.Functions.Win32.Enums.RECT@,VitNX3.Functions.Win32.Enums.THEMESIZE,VitNX3.Functions.Win32.Enums.SIZE@)">
+    <member name="M:VitNX3.Functions.Win32.Import.GetThemePartSize(System.IntPtr,System.IntPtr,System.Int32,System.Int32,VitNX3.Functions.Win32.Enums.RECT@,VitNX3.Functions.Win32.Enums.THEME_SIZE,VitNX3.Functions.Win32.Enums.SIZE@)">
       <param name="hTheme">
 </param>
       <param name="hdc">
@@ -2505,6 +2749,10 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="cbAttribute">
 </param>
     </member>
+    <member name="M:VitNX3.Functions.Win32.Import.DwmGetColorizationParameters(VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS@)">
+      <param name="dwParameters">
+</param>
+    </member>
     <member name="M:VitNX3.Functions.Win32.Import.DwmIsCompositionEnabled(System.Int32@)">
       <param name="pfEnabled">
 </param>
@@ -2527,6 +2775,20 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="nWidthEllipse">
 </param>
       <param name="nHeightEllipse">
+</param>
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Import.EnumThreadWindowsCallBack">
+      <param name="hWnd">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Import.HookProc">
+      <param name="nCode">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
 </param>
     </member>
     <member name="M:VitNX3.Functions.Win32.Import.GetWindowRect(System.IntPtr,VitNX3.Functions.Win32.Enums.RECT@)">
@@ -2763,6 +3025,14 @@ The constants for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Constants.MFS_UNCHECKED">
     </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ERROR_INVALID_FUNCTION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.WM_QUERY_END_SESSION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.WM_END_SESSION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.SHUTDOWN_NO_RETRY">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Constants.MENU_ITEM_INFO">
     </member>
     <member name="M:VitNX3.Functions.Win32.Constants.MENU_ITEM_INFO.#ctor">
@@ -2789,9 +3059,769 @@ The constants for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Constants.MENU_ITEM_INFO.hbmpItem">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.cbSize">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.hWnd">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.uID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.uCallbackMessage">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.hIcon">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.szTip">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.dwState">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.dwStateMask">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.szInfo">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.uTimeoutOrVersion">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.szInfoTitle">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.NOTIFY_ICON_DATA.dwInfoFlags">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Constants.ResultWin32">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Constants.ResultWin32.GetErrorName(System.Int32)">
+      <param name="result">
+</param>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_WRONG_DISK">
+      <summary>
+The wrong diskette is in the drive. Insert %2 (Volume Serial Number: %3) into drive %1.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_BAD_EXE_FORMAT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_UNRECOGNIZED_VOLUME">
+      <summary>
+The volume does not contain a recognized file system. Please make sure that all required file system drivers are loaded and that the volume is not corrupted.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CANNOT_DETECT_PROCESS_ABORT">
+      <summary>
+This service runs in the same process as the service control manager. Therefore, the service control manager cannot take action if this service's process terminates unexpectedly.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_MORE_WRITES">
+      <summary>
+A serial I/O operation was completed by another write to the serial port. (The IOCTL_SERIAL_XOFF_COUNTER reached zero.)</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_COUNTER_TIMEOUT">
+      <summary>
+A serial I/O operation completed because the timeout period expired. (The IOCTL_SERIAL_XOFF_COUNTER did not reach zero.)</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_NOT_LOGGED_ON">
+      <summary>
+The operation being requested was not performed because the user has not logged on to the network. The specified service does not exist.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_PKINIT_FAILURE">
+      <summary>
+The kerberos protocol encountered an error while validating the KDC certificate during smartcard logon.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_SMARTCARD_SUBSYSTEM_FAILURE">
+      <summary>
+The kerberos protocol encountered an error while attempting to utilize the smartcard subsystem.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_LICENSE_QUOTA_EXCEEDED">
+      <summary>
+The service being accessed is licensed for a particular number of connections. No more connections can be made to the service at this time because there are already as many connections as the service can accept.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_PATCH_TARGET_NOT_FOUND">
+      <summary>
+The upgrade patch cannot be installed by the Windows Installer service because the program to be upgraded may be missing, or the upgrade patch may update a different version of the program. Verify that the program to be upgraded exists on your computer an d that you have the correct upgrade patch.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_GRAPHICS_INVALID">
+      <summary>
+The application attempted to enable DOS graphics mode. DOS graphics mode is not supported.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_LOGON_DISABLED">
+      <summary>
+Your interactive logon privilege has been disabled. Please contact your administrator.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_NOT_CONSOLE">
+      <summary>
+The requested operation can be performed only on the system console. This is most often the result of a driver or system DLL requiring direct console access.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_SHADOW_INVALID">
+      <summary>
+The requested session cannot be controlled remotely. This may be because the session is disconnected or does not currently have a user logged on.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_CLIENT_LICENSE_IN_USE">
+      <summary>
+Your request to connect to this Terminal Server has been rejected. Your Terminal Server client license number is currently being used by another user. Please call your system administrator to obtain a unique license number.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_CLIENT_LICENSE_NOT_SET">
+      <summary>
+Your request to connect to this Terminal Server has been rejected. Your Terminal Server client license number has not been entered for this copy of the Terminal Server client. Please contact your system administrator.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_CTX_LICENSE_NOT_AVAILABLE">
+      <summary>
+The system has reached its licensed logon limit. Please try again later.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_INTERNAL_API">
+      <summary>
+The file replication service API terminated the request. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_INTERNAL">
+      <summary>
+The file replication service terminated the request. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_SERVICE_COMM">
+      <summary>
+The file replication service cannot be contacted. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_INSUFFICIENT_PRIV">
+      <summary>
+The file replication service cannot satisfy the request because the user has insufficient privileges. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_AUTHENTICATION">
+      <summary>
+The file replication service cannot satisfy the request because authenticated RPC is not available. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_PARENT_INSUFFICIENT_PRIV">
+      <summary>
+The file replication service cannot satisfy the request because the user has insufficient privileges on the domain controller. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_PARENT_AUTHENTICATION">
+      <summary>
+The file replication service cannot satisfy the request because authenticated RPC is not available on the domain controller. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_CHILD_TO_PARENT_COMM">
+      <summary>
+The file replication service cannot communicate with the file replication service on the domain controller. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_PARENT_TO_CHILD_COMM">
+      <summary>
+The file replication service on the domain controller cannot communicate with the file replication service on this computer. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_SYSVOL_POPULATE">
+      <summary>
+The file replication service cannot populate the system volume because of an internal error. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_SYSVOL_POPULATE_TIMEOUT">
+      <summary>
+The file replication service cannot populate the system volume because of an internal timeout. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.FRS_ERR_SYSVOL_DEMOTE">
+      <summary>
+The file replication service cannot stop replicating the system volume because of an internal error. The event log may have more information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_DS_SAM_INIT_FAILURE">
+      <summary>
+Security Accounts Manager initialization failed because of the following error: %1. Error Status: 0x%2. Click OK to shut down the system and reboot into Directory Services Restore Mode. Check the event log for detailed information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_SAM_INIT_FAILURE">
+      <summary>
+Security Accounts Manager initialization failed because of the following error: %1. Error Status: 0x%2. Click OK to shut down the system and reboot into Safe Mode. Check the event log for detailed information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_DS_INIT_FAILURE_CONSOLE">
+      <summary>
+Directory Services could not start because of the following error: %1. Error Status: 0x%2. Please click OK to shutdown the system. You can use the recovery console to diagnose the system further.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_DS_SAM_INIT_FAILURE_CONSOLE">
+      <summary>
+Security Accounts Manager initialization failed because of the following error: %1. Error Status: 0x%2. Please click OK to shutdown the system. You can use the recovery console to diagnose the system further.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_DS_DIFFERENT_REPL_EPOCHS">
+      <summary>
+The directory service cannot perform the requested operation because the servers involved are of different replication epochs (which is usually related to a domain rename that is in progress).</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_DS_DRS_EXTENSIONS_CHANGED">
+      <summary>
+The directory service binding must be renegotiated due to a change in the server extensions information.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_SXS_FILE_HASH_MISMATCH">
+      <summary>
+A component's file does not match the verification information present in the component manifest.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_IPSEC_IKE_NEG_STATUS_BEGIN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultWin32.ERROR_IPSEC_IKE_NEG_STATUS_END">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Constants.ResultCom">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_E_CLERKNOTFOUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_E_CLERKEXISTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_E_RECOVERYINPROGRESS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_E_TRANSACTIONCLOSED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_E_INVALIDLSN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_E_REPLAYREQUEST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.XACT_S_DEFECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SEC_E_NO_KERB_KEY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.CRYPT_E_OSS_ERROR">
+      <summary>
+OSS Certificate encode/decode error code base See asn1code.h for a definition of the OSS runtime errors. The OSS error values are offset by CRYPT_E_OSS_ERROR.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.CRYPT_E_ASN1_ERROR">
+      <summary>
+ASN1 Certificate encode/decode error code base. The ASN1 error values are offset by CRYPT_E_ASN1_ERROR.</summary>
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_CLASS_MISMATCH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DUPLICATE_FOUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_DRIVER_SELECTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_KEY_DOES_NOT_EXIST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_DEVINST_NAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_CLASS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVINST_ALREADY_EXISTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVINFO_NOT_REGISTERED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_REG_PROPERTY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_INF">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_SUCH_DEVINST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_CANT_LOAD_CLASS_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_CLASS_INSTALLER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DI_DO_DEFAULT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DI_NOFILECOPY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_HWPROFILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_DEVICE_SELECTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVINFO_LIST_LOCKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVINFO_DATA_LOCKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DI_BAD_PATH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_CLASSINSTALL_PARAMS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_FILEQUEUE_LOCKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_BAD_SERVICE_INSTALLSECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_CLASS_DRIVER_LIST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_ASSOCIATED_SERVICE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_DEFAULT_DEVICE_INTERFACE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVICE_INTERFACE_ACTIVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVICE_INTERFACE_REMOVED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_BAD_INTERFACE_INSTALLSECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_SUCH_INTERFACE_CLASS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_REFERENCE_STRING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_MACHINENAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_REMOTE_COMM_FAILURE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_MACHINE_UNAVAILABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_CONFIGMGR_SERVICES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_PROPPAGE_PROVIDER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_SUCH_DEVICE_INTERFACE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DI_POSTPROCESSING_REQUIRED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_COINSTALLER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_COMPAT_DRIVERS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_DEVICE_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_INF_LOGCONFIG">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DI_DONT_INSTALL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_FILTER_DRIVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NON_WINDOWS_NT_DRIVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NON_WINDOWS_DRIVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NO_CATALOG_FOR_OEM_INF">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DEVINSTALL_QUEUE_NONNATIVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_NOT_DISABLEABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_CANT_REMOVE_DEVINST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INVALID_TARGET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_DRIVER_NONNATIVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_IN_WOW64">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_SET_SYSTEM_RESTORE_POINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_INCORRECTLY_COPIED_INF">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_SCE_DISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SPAPI_E_ERROR_NOT_INSTALLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_F_INTERNAL_ERROR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_CANCELLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INVALID_HANDLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INVALID_PARAMETER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INVALID_TARGET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_MEMORY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_F_WAITED_TOO_Int32">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INSUFFICIENT_BUFFER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_UNKNOWN_READER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_TIMEOUT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_SHARING_VIOLATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_SMARTCARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_UNKNOWN_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_CANT_DISPOSE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_PROTO_MISMATCH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NOT_READY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INVALID_VALUE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_SYSTEM_CANCELLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_F_COMM_ERROR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_F_UNKNOWN_ERROR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INVALID_ATR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NOT_TRANSACTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_READER_UNAVAILABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_P_SHUTDOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_PCI_TOO_SMALL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_READER_UNSUPPORTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_DUPLICATE_READER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_CARD_UNSUPPORTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_SERVICE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_SERVICE_STOPPED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_UNEXPECTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_ICC_INSTALLATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_ICC_CREATEORDER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_UNSUPPORTED_FEATURE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_DIR_NOT_FOUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_FILE_NOT_FOUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_DIR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_FILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_ACCESS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_WRITE_TOO_MANY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_BAD_SEEK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_INVALID_CHV">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_UNKNOWN_RES_MNG">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_SUCH_CERTIFICATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_CERTIFICATE_UNAVAILABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_READERS_AVAILABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_COMM_DATA_LOST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_NO_KEY_CONTAINER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_E_SERVER_TOO_BUSY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_UNSUPPORTED_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_UNRESPONSIVE_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_UNPOWERED_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_RESET_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_REMOVED_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_SECURITY_VIOLATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_WRONG_CHV">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_CHV_BLOCKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_EOF">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_CANCELLED_BY_USER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.SCARD_W_CARD_NOT_AUTHENTICATED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_OBJECTERRORS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_OBJECTINVALID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_KEYMISSING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_ALREADYINSTALLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APP_FILE_WRITEFAIL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APP_FILE_READFAIL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APP_FILE_VERSION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_BADPATH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APPLICATIONEXISTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_ROLEEXISTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CANTCOPYFILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_NOUSER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_INVALIDUSERIDS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_NOREGISTRYCLSID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_BADREGISTRYPROGID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_AUTHENTICATIONLEVEL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_USERPASSWDNOTVALID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CLSIDORIIDMISMATCH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REMOTEINTERFACE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_DLLREGISTERSERVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_NOSERVERSHARE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_DLLLOADFAILED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_BADREGISTRYLIBID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APPDIRNOTFOUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGISTRARFAILED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_DOESNOTEXIST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_LOADDLLFAIL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_GETCLASSOBJ">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_CLASSNOTAVAIL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_BADTLB">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_NOTINSTALLABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_NOTCHANGEABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_NOTDELETEABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_SESSION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMP_MOVE_LOCKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMP_MOVE_BAD_DEST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGISTERTLB">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_SYSTEMAPP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPFILE_NOREGISTRAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COREQCOMPINSTALLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_SERVICENOTINSTALLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PROPERTYSAVEFAILED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_OBJECTEXISTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMPONENTEXISTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGFILE_CORRUPT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PROPERTY_OVERFLOW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_NOTINREGISTRY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_OBJECTNOTPOOLABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APPLID_MATCHES_CLSID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_ROLE_DOES_NOT_EXIST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_START_APP_NEEDS_COMPONENTS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REQUIRES_DIFFERENT_PLATFORM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAN_NOT_EXPORT_APP_PROXY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAN_NOT_START_APP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAN_NOT_EXPORT_SYS_APP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CANT_SUBSCRIBE_TO_COMPONENT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_EVENTCLASS_CANT_BE_SUBSCRIBER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_LIB_APP_PROXY_INCOMPATIBLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_BASE_PARTITION_ONLY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_START_APP_DISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_DUPLICATE_PARTITION_NAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_INVALID_PARTITION_NAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_PARTITION_IN_USE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_FILE_PARTITION_DUPLICATE_FILES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_IMPORTED_COMPONENTS_NOT_ALLOWED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_AMBIGUOUS_APPLICATION_NAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_AMBIGUOUS_PARTITION_NAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGDB_NOTINITIALIZED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGDB_NOTOPEN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGDB_SYSTEMERR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGDB_ALREADYRUNNING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_MIG_VERSIONNOTSUPPORTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_MIG_SCHEMANOTFOUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_BITNESSMISMATCH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_UNACCEPTABLEBITNESS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_WRONGAPPBITNESS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_PAUSE_RESUME_NOT_SUPPORTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CAT_SERVERFAULT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_APPLICATION_NOT_QUEUED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_NO_QUEUEABLE_INTERFACES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_QUEUING_SERVICE_NOT_AVAILABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_NO_IPERSISTSTREAM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_BAD_MESSAGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_UNAUTHENTICATED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMQC_E_UNTRUSTED_ENQUEUER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.MSDTC_E_DUPLICATE_RESOURCE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_OBJECT_PARENT_MISSING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_OBJECT_DOES_NOT_EXIST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_APP_NOT_RUNNING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_INVALID_PARTITION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_SVCAPP_NOT_POOLABLE_OR_RECYCLABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_USER_IN_SET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CANTRECYCLELIBRARYAPPS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CANTRECYCLESERVICEAPPS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PROCESSALREADYRECYCLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PAUSEDPROCESSMAYNOTBERECYCLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CANTMAKEINPROCSERVICE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PROGIDINUSEBYCLSID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_DEFAULT_PARTITION_NOT_IN_SET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_RECYCLEDPROCESSMAYNOTBEPAUSED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PARTITION_ACCESSDENIED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PARTITION_MSI_ONLY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_LEGACYCOMPS_NOT_ALLOWED_IN_1_0_FORMAT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_LEGACYCOMPS_NOT_ALLOWED_IN_NONBASE_PARTITIONS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMP_MOVE_SOURCE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMP_MOVE_DEST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_COMP_MOVE_PRIVATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_BASEPARTITION_REQUIRED_IN_SET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_CANNOT_ALIAS_EVENTCLASS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PRIVATE_ACCESSDENIED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_SAFERINVALID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_REGISTRY_ACCESSDENIED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.COMADMIN_E_PARTITIONS_DISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Constants.ResultCom.NS_E_FILE_OPEN_FAILED">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Constants.ResultCom.Succeeded(System.Int32)">
+      <param name="result">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Constants.ResultCom.Failed(System.Int32)">
+      <param name="result">
+</param>
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums">
       <summary>
 The enums for imported functions.</summary>
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.ACCENT_POLICY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_POLICY.AccentState">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_POLICY.AccentFlags">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_POLICY.GradientColor">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_POLICY.AnimationId">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.WINCOMPATTRDATA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINCOMPATTRDATA.Attribute">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINCOMPATTRDATA.Data">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINCOMPATTRDATA.SizeOfData">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_UNDEFINED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_NCRENDERING_ENABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_NCRENDERING_POLICY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_TRANSITIONS_FORCEDISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_ALLOW_NCPAINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_CAPTION_BUTTON_BOUNDS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_NONCLIENT_RTL_LAYOUT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_FORCE_ICONIC_REPRESENTATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_EXTENDED_FRAME_BOUNDS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_HAS_ICONIC_BITMAP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_THEME_ATTRIBUTES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_N_CRENDERING_EXILED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_N_CADORNMENT_INFO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_EXCLUDED_FROM_LIVEPREVIEW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_VIDEO_OVERLAY_ACTIVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_FORCE_ACTIVE_WINDOW_APPEARANCE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_DISALLOW_PEEK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_CLOAK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_CLOAKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_ACCENT_POLICY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_FREEZE_REPRESENTATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_EVER_UNCLOAKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_VISUAL_OWNER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_HOLOGRAPHIC">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_EXCLUDED_FROM_DDA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_PASSIVE_UPDATE_MODE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_USE_DARK_MODE_COLORS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_CORNER_STYLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_PART_COLOR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_DISABLE_MOVESIZE_FEEDBACK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_COMPATTR.WCA_LAST">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE">
     </member>
@@ -2805,6 +3835,84 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DWM_GET_WINDOW_ATTRIBUTE.DWMWA_MICA_EFFECT">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.ACCENT_STATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_STATE.ACCENT_DISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_STATE.ACCENT_ENABLE_GRADIENT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_STATE.ACCENT_ENABLE_TRANSPARENTGRADIENT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_STATE.ACCENT_ENABLE_BLURBEHIND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_STATE.ACCENT_ENABLE_ACRYLICBLURBEHIND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.ACCENT_STATE.ACCENT_INVALID_STATE">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.THUMBBUTTON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.THBN_CLICKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.dwMask">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.iId">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.iBitmap">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.hIcon">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.szTip">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.dwFlags">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.STPF">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.STPF.NONE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.STPF.USE_APP_THUMBNAIL_ALWAYS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.STPF.USE_APP_THUMBNAIL_WHEN_ACTIVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.STPF.USE_APP_PEEK_ALWAYS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.STPF.USE_APP_PEEK_WHEN_ACTIVE">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.THB">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THB.BITMAP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THB.ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THB.TOOLTIP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THB.FLAGS">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.THBF">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THBF.ENABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THBF.DISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THBF.DISMISSON_CLICK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THBF.NO_BACKGROUND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THBF.HIDDEN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.THBF.NO_INTERACTIVE">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.DWM_SBT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_SBT.DWMSBT_AUTO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_SBT.DWMSBT_DISABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_SBT.DWMSBT_MAINWINDOW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_SBT.DWMSBT_TRANSIENTWINDOW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_SBT.DWMSBT_TABBEDWINDOW">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums.BLENDFUNCTION">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.BLENDFUNCTION.BlendOp">
@@ -2814,6 +3922,22 @@ The enums for imported functions.</summary>
     <member name="F:VitNX3.Functions.Win32.Enums.BLENDFUNCTION.SourceConstantAlpha">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.BLENDFUNCTION.AlphaFormat">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.clrColor">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.clrAfterGlow">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.nIntensity">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.clrAfterGlowBalance">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.clrBlurBalance">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.clrGlassReflectionIntensity">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_COLORIZATION_PARAMS.fOpaque">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.DTBGOPTS">
     </member>
@@ -2845,11 +3969,15 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_INFO.wCreatorVersion">
     </member>
-    <member name="T:VitNX3.Functions.Win32.Enums.EnumThreadWindowsCallBack">
-      <param name="hWnd">
-</param>
-      <param name="lParam">
-</param>
+    <member name="T:VitNX3.Functions.Win32.Enums.WINDOW_STYLES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_STYLES.MAXIMIZEBOX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_STYLES.MINIMIZEBOX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_STYLES.SIZEBOX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_STYLES.SYS_MENU">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.ICONINFO">
     </member>
@@ -3001,6 +4129,36 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.NONCLIENTMETRICS.lfMessageFont">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_ALLOW_NC_PAINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_CAPTION_BUTTON_BOUNDS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_FORCE_ICONIC_REPRESENTATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_CLOAK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_CLOAKED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_FREEZE_REPRESENTATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_BORDER_COLOR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_CAPTION_COLOR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_TEXT_COLOR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_VISIBLE_FRAME_BORDER_THICKNESS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.DWM_WINDOW_ATTRIBUTE.DWMWA_MICA_EFFECT">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums.PAINTSTRUCT">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.PAINTSTRUCT.hdc">
@@ -3147,13 +4305,13 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.TEXTMETRIC.tmCharSet">
     </member>
-    <member name="T:VitNX3.Functions.Win32.Enums.THEMESIZE">
+    <member name="T:VitNX3.Functions.Win32.Enums.THEME_SIZE">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.THEMESIZE.TS_MIN">
+    <member name="F:VitNX3.Functions.Win32.Enums.THEME_SIZE.TS_MIN">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.THEMESIZE.TS_TRUE">
+    <member name="F:VitNX3.Functions.Win32.Enums.THEME_SIZE.TS_TRUE">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.THEMESIZE.TS_DRAW">
+    <member name="F:VitNX3.Functions.Win32.Enums.THEME_SIZE.TS_DRAW">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.EVENTS">
     </member>
@@ -3305,6 +4463,12 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.QUERY_DEVICE_CONFIG_FLAGS.QDC_DATABASE_CURRENT">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.PV_ATTRIBUTE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.PV_ATTRIBUTE.Disable">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.PV_ATTRIBUTE.Enable">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_OTHER">
@@ -3351,9 +4515,9 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST">
+    <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPER_FIELD_FIRST">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST">
+    <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWER_FIELD_FIRST">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32">
     </member>
@@ -3377,13 +4541,31 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_STRETCHED">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_ASPECTRATIOCENTEREDMAX">
+    <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_ASPECT_RATIO_CENTERED_MAX">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_CUSTOM">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_PREFERRED">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_FORCE_UINT32">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.NET_RESOURCE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.dwScope">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.dwType">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.dwDisplayType">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.dwUsage">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.lpLocalName">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.lpRemoteName">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.lpComment">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.NET_RESOURCE.lpProvider">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_PIXELFORMAT">
     </member>
@@ -3423,6 +4605,500 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NULL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CREATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DESTROY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SIZE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ACTIVATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_FOCUS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.KILL_FOCUS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ENABLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_REDRAW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_TEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_TEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_TEXT_LENGTH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PAINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CLOSE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUERY_END_SESSION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUERY_OPEN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.END_SESSION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUIT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ERASE_BKGND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_COLOR_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SHOW_WINDOW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.WIN_IN_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_TING_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DEV_MODE_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ACTIVATE_APP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.FONT_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.TIME_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CANCEL_MODE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_CURSOR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_ACTIVATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CHILD_ACTIVATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUEUE_SYNC">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_MIN_MAX_INFO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PAINT_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ICON_ERASE_BKGND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NEXT_DLGCTL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SPOOLER_STATUS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DRAW_ITEM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MEASURE_ITEM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DELETE_ITEM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.V_KEY_TO_ITEM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CHAR_TO_ITEM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_FONT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_FONT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_HOTKEY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_HOTKEY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUERY_DRAG_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.COMPARE_ITEM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_OBJECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.COMPACTING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.COMM_NOTIFY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.WINDOW_POS_CHANGING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.WINDOW_POS_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.POWER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.COPY_DATA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CANCEL_JOURNAL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NOTIFY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INPUT_LANG_CHANGE_REQUEST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INPUT_LANG_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.T_CARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HELP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.USER_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NOTIFY_FORMAT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CONTEX_TMENU">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.STYLE_CHANGING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.STYLE_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DISPLAY_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SET_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_CREATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_DESTROY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_CALC_SIZE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_HIT_TEST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_PAINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_ACTIVATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_DLG_CODE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYNC_PAINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_MOUSE_MOVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCL_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCL_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCL_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCR_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCR_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCR_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCM_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCM_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCM_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCX_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCX_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NCX_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INPUT_DEVICE_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INPUT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.KEY_FIRST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.KEY_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.KEY_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DEAD_CHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_KEY_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_KEY_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_CHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_DEAD_CHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.UNICHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.KEYLAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_START_COMPOSITION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_END_COMPOSITION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_COMPOSITION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_KEYLAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INIT_DIALOG">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.COMMAND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_COMMAND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.TIMER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.H_SCROLL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.V_SCROLL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INIT_MENU">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.INIT_MENU_POPUP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MENU_SELECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MENU_CHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ENTER_IDLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MENU_R_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MENU_DRAG">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MENU_GET_OBJECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.UNINIT_MENU_POPUP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MENU_COMMAND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CHANGE_UI_STATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.UPDATE_UI_STATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUERY_UI_STATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_MSGBOX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_EDIT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_LISTBOX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_BTN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_DLG">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_SCROLLBAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CTL_COLOR_STATIC">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_FIRST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_MOVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.L_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.L_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.L_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.R_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.R_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.R_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.M_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.M_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.M_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_WHEEL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.X_BUTTON_DOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.X_BUTTON_UP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.X_BUTTON_DBL_CLK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_H_WHEEL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_LAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PARENT_NOTIFY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ENTER_MENU_LOOP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.EXIT_MENU_LOOP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NEXT_MENU">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SIZING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CAPTURE_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOVING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.POWER_BROADCAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DEVICE_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_CREATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_DESTROY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_ACTIVATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_RESTORE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_NEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_MAXIMIZE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_TILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_CASCADE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_ICON_ARRANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_GET_ACTIVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_SET_MENU">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ENTER_SIZE_MOVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.EXIT_SIZE_MOVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DROP_FILES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MDI_REFRESH_MENU">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_SETCONTEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_NOTIFY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_CONTROL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_COMPOSITIONFULL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_SELECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_CHAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_REQUEST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_KEYDOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.IME_KEYUP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_HOVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.MOUSE_LEAVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_MOUSE_HOVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.NC_MOUSE_LEAVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.WTS_SESSION_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.TABLET_FIRST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.TABLET_LAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CUT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.COPY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PASTE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CLEAR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.UNDO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.RENDER_FORMAT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.RENDER_ALL_FORMATS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DESTROY_CLIPBOARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DRAW_CLIPBOARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PAINT_CLIPBOARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.V_SCROLL_CLIPBOARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SIZE_CLIPBOARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.ASK_CB_FORMATNAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CHANGE_CB_CHAIN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HS_CROLL_CLIPBOARD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.QUERY_NEW_PALETTE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PALETREIS_CHANGING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PALERTE_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HOTKEY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PRINT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PRINT_CLIENT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.APP_COMMAND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.THEME_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CLIPBOARD_UPDATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DWM_COMPOSITION_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DWM_NCR_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DWM_COLORIZATION_COLOR_CHANGED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.DWM_WINDOW_MAXIMIZED_CHANGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.GET_TITLE_BAR_INFO_EX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HANDHELD_FIRST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HANDHELD_LAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.AFX_FIRST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.AFX_LAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PEN_WIN_FIRST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.PEN_WIN_LAST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.APP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.USER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CPL_LAUNCH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.CPL_LAUNCHED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.SYS_TIMER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_ACCESS_IBILITY_STATE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_ACTIVATE_SHELL_WINDOW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_APP_COMMAND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_GET_MIN_RECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_LANGUAGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_REDRAW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_TASKMAN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_WINDOW_CREATED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_WINDOW_DESTROYED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_WINDOW_ACTIVATED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.WINDOW_MESSAGE.HSHELL_WINDOW_REPLACED">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.FirmwareTableType">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.FirmwareTableType.Acpi">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.FirmwareTableType.Firm">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.FirmwareTableType.Rsmb">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums.KEYEVENTF">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.KEYEVENTF.KEYEVENTF_EXTENDEDKEY">
@@ -3457,13 +5133,37 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.PROCESS_DPI_AWARENESS.PROCESS_PER_MONITOR_DPI_Aware">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.HResult">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.S_OK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_ABORT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_ACCESS_DENIED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_FAIL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_HANDLE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_INVALID_ARG">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_NO_INTERFACE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_NO_TIMPL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_OUT_OF_MEMORY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_POINTER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.HResult.E_UNEXPECTED">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE.SHERB_NOCONFIRMATION">
+    <member name="F:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE.SHERB_NO_CONFIRMATION">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE.SHERB_NOPROGRESSUI">
+    <member name="F:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE.SHERB_NO_PROGRESS_UI">
     </member>
-    <member name="F:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE.SHERB_NOSOUND">
+    <member name="F:VitNX3.Functions.Win32.Enums.SHERB_RECYCLE.SHERB_NO_SOUND">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.E_DATA_FLOW">
     </member>

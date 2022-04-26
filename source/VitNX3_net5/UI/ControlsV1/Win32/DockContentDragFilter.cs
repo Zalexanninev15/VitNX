@@ -32,20 +32,20 @@ namespace VitNX.UI.ControlsV1.Win32
         {
             if (!_isDragging)
                 return false;
-            if (!(m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSEMOVE ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDOWN ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONDOWN ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONUP ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
+            if (!(m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSE_MOVE ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DOWN ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DBL_CLK ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_DOWN ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_UP ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_DBL_CLK))
                 return false;
-            if (m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSEMOVE)
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSE_MOVE)
             {
                 HandleDrag();
                 return false;
             }
-            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP)
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP)
             {
                 if (_targetRegion != null)
                 {

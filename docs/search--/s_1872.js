@@ -1,0 +1,1 @@
+search_result['1872']=["topic_00000000000006D2.html","VitNX_ScrollBar.OnResize Method","Raises the Resize event."];

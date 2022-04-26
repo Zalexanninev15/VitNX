@@ -1,0 +1,1 @@
+c['1652']=[['1653',"ValidateRect(IntPtr, IntPtr) Method","topic_000000000000016D.html",0],['1654',"ValidateRect(IntPtr, ref RECT) Method","topic_000000000000016E.html",0]];

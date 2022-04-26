@@ -1,0 +1,1 @@
+c['1800']=[['1801',"Type1 Constructor","topic_0000000000000634.html",0],['1802',"Methods","topic_0000000000000633_methods--.html",1]];

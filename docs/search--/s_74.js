@@ -1,0 +1,1 @@
+search_result['74']=["topic_000000000000002C.html","Text.DateAsShortTime Method","Converts the date to short time."];

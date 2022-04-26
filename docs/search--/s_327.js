@@ -1,0 +1,1 @@
+search_result['327']=["topic_00000000000000C7.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];

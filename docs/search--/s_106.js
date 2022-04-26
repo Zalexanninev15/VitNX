@@ -1,0 +1,1 @@
+search_result['106']=["topic_0000000000000047.html","EncrypterAndDecrypter Class","Encrypter and decrypter for text."];

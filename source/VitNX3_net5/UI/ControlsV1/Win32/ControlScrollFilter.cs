@@ -11,8 +11,8 @@ namespace VitNX.UI.ControlsV1.Win32
         {
             switch (m.Msg)
             {
-                case (int)Enums.WINDOW_MESSAGE.MOUSEWHEEL:
-                case (int)Enums.WINDOW_MESSAGE.MOUSEHWHEEL:
+                case (int)Enums.WINDOW_MESSAGE.MOUSE_WHEEL:
+                case (int)Enums.WINDOW_MESSAGE.MOUSE_H_WHEEL:
                     var hControlUnderMouse = Import.WindowFromPoint(new Point((int)m.LParam));
                     if (hControlUnderMouse == m.HWnd) { return false; }
                     Import.SendMessage(hControlUnderMouse,

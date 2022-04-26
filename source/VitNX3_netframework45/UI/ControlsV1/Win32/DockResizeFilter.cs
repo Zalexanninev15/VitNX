@@ -26,15 +26,15 @@ namespace VitNX.UI.ControlsV1.Win32
 
         public bool PreFilterMessage(ref Message m)
         {
-            if (!(m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSEMOVE ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDOWN ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDBLCLK ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONDOWN ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONUP ||
-                  m.Msg == (int)Enums.WINDOW_MESSAGE.RBUTTONDBLCLK))
+            if (!(m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSE_MOVE ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DOWN ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DBL_CLK ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_DOWN ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_UP ||
+                  m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_DBL_CLK))
                 return false;
-            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP)
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP)
             {
                 if (_isDragging)
                 {
@@ -42,12 +42,12 @@ namespace VitNX.UI.ControlsV1.Win32
                     return true;
                 }
             }
-            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONUP &&
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP &&
                 !_isDragging)
                 return false;
             if (_isDragging)
                 Cursor.Current = _activeSplitter.ResizeCursor;
-            if (m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSEMOVE &&
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSE_MOVE &&
                 !_isDragging &&
                 _dockPanel.MouseButtonState !=
                 MouseButtons.None)
@@ -58,7 +58,7 @@ namespace VitNX.UI.ControlsV1.Win32
             if (!(control == _dockPanel || _dockPanel.Contains(control)))
                 return false;
             CheckCursor();
-            if (m.Msg == (int)Enums.WINDOW_MESSAGE.LBUTTONDOWN)
+            if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DOWN)
             {
                 var hotSplitter = HotSplitter();
                 if (hotSplitter != null)

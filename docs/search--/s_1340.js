@@ -1,0 +1,1 @@
+search_result['1340']=["topic_0000000000000480.html","DISPLAYCONFIG_SCALING Enumeration",""];

@@ -1,0 +1,1 @@
+search_result['285']=["topic_00000000000000B1.html","Ini.Read Method","Reads value of key from section."];

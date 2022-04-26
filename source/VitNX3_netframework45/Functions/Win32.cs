@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Text;
 
-using VitNX3.Functions.WinControllers;
-
-using static VitNX3.Functions.Win32.Enums;
 using static VitNX3.Functions.Win32.Constants;
-using System.Security;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static VitNX3.Functions.Win32.Enums;
+
+using Monitor = VitNX3.Functions.WinControllers.Monitor;
 
 namespace VitNX3.Functions.Win32
 {
@@ -18,11 +18,113 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Import
     {
+        [DllImport("advapi32.dll")]
+        public static extern bool InitiateSystemShutdown(string lpMachinename,
+   string lpMessage,
+    int dwTimeout,
+    bool bForceAppsClosed,
+    bool bRebootAfterShutdown);
+
+        [DllImport("kernel32.dll")]
+        public static extern uint GetLastError();
+
+        [DllImport("kernel32.dll")]
+        public static extern uint FormatMessage(uint Flags,
+            IntPtr Source,
+            uint MessageID,
+            uint LanguageID,
+            StringBuilder Buffer,
+            uint Size,
+            IntPtr Args);
+
+        [DllImport("advapi32.dll")]
+        public static extern int LogonUser(string lpszUserName,
+            string lpszDomain,
+            string lpszPassword,
+            int dwLogonType,
+            int dwLogonProvider,
+            ref IntPtr phToken);
+
+        [DllImport("advapi32.dll",
+            SetLastError = true)]
+        public static extern int DuplicateToken(IntPtr hToken,
+            int impersonationLevel,
+            ref IntPtr hNewToken);
+
+        [DllImport("advapi32.dll",
+            SetLastError = true)]
+        public static extern bool RevertToSelf();
+
+        [DllImport("user32.dll",
+            SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetCursorPos(out POINT lpPoint);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern int SetWindowCompositionAttribute(IntPtr hWnd,
+            ref WINCOMPATTRDATA data);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern bool SetForegroundWindow(HandleRef hWnd);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern int GetSystemMetrics(int nIndex);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern bool PostMessage(HandleRef hWnd,
+            WINDOW_MESSAGE msg,
+            IntPtr wParam,
+            IntPtr lParam);
+
+        [DllImport("user32.dll",
+            SetLastError = true)]
+        public static extern bool ShutdownBlockReasonCreate(IntPtr hWnd,
+            [MarshalAs(UnmanagedType.LPWStr)]
+        string reason);
+
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        [DllImport("ntdll.dll",
+            SetLastError = true)]
+        public static extern void RtlSetProcessIsCritical(uint v1,
+            uint v2,
+            uint v3);
+
+        [DllImport("user32.dll",
+            SetLastError = true)]
+        public static extern bool ShutdownBlockReasonDestroy(IntPtr hWnd);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool SetProcessShutdownParameters(uint dwLevel,
+            uint dwFlags);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern IntPtr DefWindowProc(IntPtr hWnd,
+            int msg,
+            IntPtr wParam,
+            IntPtr lParam);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Auto)]
+        public static extern int RegisterWindowMessage(string lpString);
+
         [DllImport("user32.dll")]
         public static extern bool AdjustWindowRectEx(ref RECT lpRect,
             int dwStyle,
             bool bMenu,
             int dwExStyle);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern bool GetVolumeNameForVolumeMountPoint(string lpszVolumeMountPoint,
+                [Out] StringBuilder lpszVolumeName,
+                int cchBufferLength);
 
         [DllImport("kernel32.dll",
             EntryPoint = "GetSystemFirmwareTable",
@@ -36,8 +138,7 @@ namespace VitNX3.Functions.Win32
         [DllImport("kernel32.dll",
             EntryPoint = "EnumSystemFirmwareTables",
             SetLastError = true)]
-        public static extern uint EnumSystemFirmwareTables(
-        FirmwareTableType FirmwareTableProviderSignature,
+        public static extern uint EnumSystemFirmwareTables(FirmwareTableType FirmwareTableProviderSignature,
         IntPtr pFirmwareTableEnuM_BUffer,
         uint BufferSize);
 
@@ -51,6 +152,22 @@ namespace VitNX3.Functions.Win32
             string lpGuid,
             IntPtr pBuffer,
             uint nSize);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern bool DeviceIoControl(IntPtr hDevice,
+        uint dwIoControlCode,
+        IntPtr lpInBuffer,
+        uint nInBufferSize,
+        IntPtr lpOutBuffer,
+        uint nOutBufferSize,
+        out uint lpBytesReturned,
+        IntPtr lpOverlapped);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool QueryPerformanceCounter(ref long nPfCt);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool QueryPerformanceFrequency(ref long nPfFreq);
 
         [DllImport("kernel32.dll",
             EntryPoint = "SetFirmwareEnvironmentVariable",
@@ -154,7 +271,8 @@ namespace VitNX3.Functions.Win32
 
         [DllImport("user32.dll",
             SetLastError = true)]
-        public static extern bool GetWindowInfo(IntPtr hwnd, ref WINDOW_INFO pwi);
+        public static extern bool GetWindowInfo(IntPtr hwnd,
+            ref WINDOW_INFO pwi);
 
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32.dll",
@@ -432,10 +550,19 @@ namespace VitNX3.Functions.Win32
             ref ICONINFO iconInfo);
 
         [DllImport("user32.dll")]
-        private static extern long GetKeyboardLayoutName(StringBuilder pwszKLID);
+        public static extern long GetKeyboardLayoutName(StringBuilder pwszKLID);
 
-        [DllImport("kernel32.dll")]
-        public static extern int GetLastError();
+        [DllImport("mpr.dll")]
+        private static extern uint WNetAddConnection3(IntPtr hwndOwner,
+            ref NET_RESOURCE lpNetResource,
+            string lpPassword,
+            string lpUserName,
+            uint dwFlags);
+
+        [DllImport("mpr.dll")]
+        private static extern uint WNetCancelConnection2(string lpName,
+            uint dwFlags,
+            uint fForce);
 
         [DllImport("gdi32.dll")]
         public static extern uint GetLayout(IntPtr hdc);
@@ -1246,6 +1373,9 @@ namespace VitNX3.Functions.Win32
         public const uint MFS_CHECKED = 0x00000008;
         public const uint MFS_UNCHECKED = 0x00000000;
         public const int ERROR_INVALID_FUNCTION = 1;
+        public const int WM_QUERY_END_SESSION = 0x0011;
+        public const int WM_END_SESSION = 0x0016;
+        public const uint SHUTDOWN_NO_RETRY = 0x00000001;
 
         [StructLayout(LayoutKind.Sequential,
             CharSet = CharSet.Auto)]
@@ -1253,6 +1383,7 @@ namespace VitNX3.Functions.Win32
         {
             public MENU_ITEM_INFO()
             { }
+
             public int cbSize = Marshal.SizeOf(typeof(MENU_ITEM_INFO));
             public uint fType;
             public uint fState;
@@ -1275,19 +1406,3265 @@ namespace VitNX3.Functions.Win32
             public int uID;
             public int uCallbackMessage;
             public IntPtr hIcon;
+
             [MarshalAs(UnmanagedType.ByValTStr,
                 SizeConst = 0x80)]
             public string szTip;
+
             public int dwState;
             public int dwStateMask;
+
             [MarshalAs(UnmanagedType.ByValTStr,
                 SizeConst = 0x100)]
             public string szInfo;
+
             public int uTimeoutOrVersion;
+
             [MarshalAs(UnmanagedType.ByValTStr,
                 SizeConst = 0x40)]
             public string szInfoTitle;
+
             public int dwInfoFlags;
+        }
+
+        public class ResultWin32
+        {
+            public static string GetErrorName(int result)
+            {
+                FieldInfo[] fields = typeof(ResultWin32).GetFields();
+                foreach (FieldInfo fi in fields)
+                    if ((int)fi.GetValue(null) == result)
+                        return fi.Name;
+                return string.Empty;
+            }
+
+            private const int ERROR_SUCCESS = 0;
+            private const int ERROR_INVALID_FUNCTION = 1;
+            private const int ERROR_FILE_NOT_FOUND = 2;
+            private const int ERROR_PATH_NOT_FOUND = 3;
+            private const int ERROR_TOO_MANY_OPEN_FILES = 4;
+            private const int ERROR_ACCESS_DENIED = 5;
+            private const int ERROR_INVALID_HANDLE = 6;
+            private const int ERROR_ARENA_TRASHED = 7;
+            private const int ERROR_NOT_ENOUGH_MEMORY = 8;
+            private const int ERROR_INVALID_BLOCK = 9;
+            private const int ERROR_BAD_ENVIRONMENT = 10;
+            private const int ERROR_BAD_FORMAT = 11;
+            private const int ERROR_INVALID_ACCESS = 12;
+            private const int ERROR_INVALID_DATA = 13;
+            private const int ERROR_OUTOFMEMORY = 14;
+            private const int ERROR_INVALID_DRIVE = 15;
+            private const int ERROR_CURRENT_DIRECTORY = 16;
+            private const int ERROR_NOT_SAME_DEVICE = 17;
+            private const int ERROR_NO_MORE_FILES = 18;
+            private const int ERROR_WRITE_PROTECT = 19;
+            private const int ERROR_BAD_UNIT = 20;
+            private const int ERROR_NOT_READY = 21;
+            private const int ERROR_BAD_COMMAND = 22;
+            private const int ERROR_CRC = 23;
+            private const int ERROR_BAD_LENGTH = 24;
+            private const int ERROR_SEEK = 25;
+            private const int ERROR_NOT_DOS_DISK = 26;
+            private const int ERROR_SECTOR_NOT_FOUND = 27;
+            private const int ERROR_OUT_OF_PAPER = 28;
+            private const int ERROR_WRITE_FAULT = 29;
+            private const int ERROR_READ_FAULT = 30;
+            private const int ERROR_GEN_FAILURE = 31;
+            private const int ERROR_SHARING_VIOLATION = 32;
+            private const int ERROR_LOCK_VIOLATION = 33;
+
+            /// <summary>
+            /// The wrong diskette is in the drive.
+            /// Insert %2 (Volume Serial Number: %3) into drive %1.
+            /// </summary>
+            public const int ERROR_WRONG_DISK = 34;
+
+            private const int ERROR_SHARING_BUFFER_EXCEEDED = 36;
+            private const int ERROR_HANDLE_EOF = 38;
+            private const int ERROR_HANDLE_DISK_FULL = 39;
+            private const int ERROR_NOT_SUPPORTED = 50;
+            private const int ERROR_REM_NOT_LIST = 51;
+            private const int ERROR_DUP_NAME = 52;
+            private const int ERROR_BAD_NETPATH = 53;
+            private const int ERROR_NETWORK_BUSY = 54;
+            private const int ERROR_DEV_NOT_EXIST = 55;
+            private const int ERROR_TOO_MANY_CMDS = 56;
+            private const int ERROR_ADAP_HDW_ERR = 57;
+            private const int ERROR_BAD_NET_RESP = 58;
+            private const int ERROR_UNEXP_NET_ERR = 59;
+            private const int ERROR_BAD_REM_ADAP = 60;
+            private const int ERROR_PRINTQ_FULL = 61;
+            private const int ERROR_NO_SPOOL_SPACE = 62;
+            private const int ERROR_PRINT_CANCELLED = 63;
+            private const int ERROR_NETNAME_DELETED = 64;
+            private const int ERROR_NETWORK_ACCESS_DENIED = 65;
+            private const int ERROR_BAD_DEV_TYPE = 66;
+            private const int ERROR_BAD_NET_NAME = 67;
+            private const int ERROR_TOO_MANY_NAMES = 68;
+            private const int ERROR_TOO_MANY_SESS = 69;
+            private const int ERROR_SHARING_PAUSED = 70;
+            private const int ERROR_REQ_NOT_ACCEP = 71;
+            private const int ERROR_REDIR_PAUSED = 72;
+            private const int ERROR_FILE_EXISTS = 80;
+            private const int ERROR_CANNOT_MAKE = 82;
+            private const int ERROR_FAIL_I24 = 83;
+            private const int ERROR_OUT_OF_STRUCTURES = 84;
+            private const int ERROR_ALREADY_ASSIGNED = 85;
+            private const int ERROR_INVALID_PASSWORD = 86;
+            private const int ERROR_INVALID_PARAMETER = 87;
+            private const int ERROR_NET_WRITE_FAULT = 88;
+            private const int ERROR_NO_PROC_SLOTS = 89;
+            private const int ERROR_TOO_MANY_SEMAPHORES = 100;
+            private const int ERROR_EXCL_SEM_ALREADY_OWNED = 101;
+            private const int ERROR_SEM_IS_SET = 102;
+            private const int ERROR_TOO_MANY_SEM_REQUESTS = 103;
+            private const int ERROR_INVALID_AT_INTERRUPT_TIME = 104;
+            private const int ERROR_SEM_OWNER_DIED = 105;
+            private const int ERROR_SEM_USER_LIMIT = 106;
+            private const int ERROR_DISK_CHANGE = 107;
+            private const int ERROR_DRIVE_LOCKED = 108;
+            private const int ERROR_BROKEN_PIPE = 109;
+            private const int ERROR_OPEN_FAILED = 110;
+            private const int ERROR_BUFFER_OVERFLOW = 111;
+            private const int ERROR_DISK_FULL = 112;
+            private const int ERROR_NO_MORE_SEARCH_HANDLES = 113;
+            private const int ERROR_INVALID_TARGET_HANDLE = 114;
+            private const int ERROR_INVALID_CATEGORY = 117;
+            private const int ERROR_INVALID_VERIFY_SWITCH = 118;
+            private const int ERROR_BAD_DRIVER_LEVEL = 119;
+            private const int ERROR_CALL_NOT_IMPLEMENTED = 120;
+            private const int ERROR_SEM_TIMEOUT = 121;
+            private const int ERROR_INSUFFICIENT_BUFFER = 122;
+            private const int ERROR_INVALID_NAME = 123;
+            private const int ERROR_INVALID_LEVEL = 124;
+            private const int ERROR_NO_VOLUME_LABEL = 125;
+            private const int ERROR_MOD_NOT_FOUND = 126;
+            private const int ERROR_PROC_NOT_FOUND = 127;
+            private const int ERROR_WAIT_NO_CHILDREN = 128;
+            private const int ERROR_CHILD_NOT_COMPLETE = 129;
+            private const int ERROR_DIRECT_ACCESS_HANDLE = 130;
+            private const int ERROR_NEGATIVE_SEEK = 131;
+            private const int ERROR_SEEK_ON_DEVICE = 132;
+            private const int ERROR_IS_JOIN_TARGET = 133;
+            private const int ERROR_IS_JOINED = 134;
+            private const int ERROR_IS_SUBSTED = 135;
+            private const int ERROR_NOT_JOINED = 136;
+            private const int ERROR_NOT_SUBSTED = 137;
+            private const int ERROR_JOIN_TO_JOIN = 138;
+            private const int ERROR_SUBST_TO_SUBST = 139;
+            private const int ERROR_JOIN_TO_SUBST = 140;
+            private const int ERROR_SUBST_TO_JOIN = 141;
+            private const int ERROR_BUSY_DRIVE = 142;
+            private const int ERROR_SAME_DRIVE = 143;
+            private const int ERROR_DIR_NOT_ROOT = 144;
+            private const int ERROR_DIR_NOT_EMPTY = 145;
+            private const int ERROR_IS_SUBST_PATH = 146;
+            private const int ERROR_IS_JOIN_PATH = 147;
+            private const int ERROR_PATH_BUSY = 148;
+            private const int ERROR_IS_SUBST_TARGET = 149;
+            private const int ERROR_SYSTEM_TRACE = 150;
+            private const int ERROR_INVALID_EVENT_COUNT = 151;
+            private const int ERROR_TOO_MANY_MUXWAITERS = 152;
+            private const int ERROR_INVALID_LIST_FORMAT = 153;
+            private const int ERROR_LABEL_TOO_Int32 = 154;
+            private const int ERROR_TOO_MANY_TCBS = 155;
+            private const int ERROR_SIGNAL_REFUSED = 156;
+            private const int ERROR_DISCARDED = 157;
+            private const int ERROR_NOT_LOCKED = 158;
+            private const int ERROR_BAD_THREADID_ADDR = 159;
+            private const int ERROR_BAD_ARGUMENTS = 160;
+            private const int ERROR_BAD_PATHNAME = 161;
+            private const int ERROR_SIGNAL_PENDING = 162;
+            private const int ERROR_MAX_THRDS_REACHED = 164;
+            private const int ERROR_LOCK_FAILED = 167;
+            private const int ERROR_BUSY = 170;
+            private const int ERROR_CANCEL_VIOLATION = 173;
+            private const int ERROR_ATOMIC_LOCKS_NOT_SUPPORTED = 174;
+            private const int ERROR_INVALID_SEGMENT_NUMBER = 180;
+            private const int ERROR_INVALID_ORDINAL = 182;
+            private const int ERROR_ALREADY_EXISTS = 183;
+            private const int ERROR_INVALID_FLAG_NUMBER = 186;
+            private const int ERROR_SEM_NOT_FOUND = 187;
+            private const int ERROR_INVALID_STARTING_CODESEG = 188;
+            private const int ERROR_INVALID_STACKSEG = 189;
+            private const int ERROR_INVALID_MODULETYPE = 190;
+            private const int ERROR_INVALID_EXE_SIGNATURE = 191;
+            private const int ERROR_EXE_MARKED_INVALID = 192;
+            /// <summary>
+            /// %1 is not a valid Win32 application.
+
+            /// </summary>
+            public const int ERROR_BAD_EXE_FORMAT = 193;
+
+            private const int ERROR_ITERATED_DATA_EXCEEDS_64k = 194;
+            private const int ERROR_INVALID_MINALLOCSIZE = 195;
+            private const int ERROR_DYNLINK_FROM_INVALID_RING = 196;
+            private const int ERROR_IOPL_NOT_ENABLED = 197;
+            private const int ERROR_INVALID_SEGDPL = 198;
+            private const int ERROR_AUTODATASEG_EXCEEDS_64k = 199;
+            private const int ERROR_RING2SEG_MUST_BE_MOVABLE = 200;
+            private const int ERROR_RELOC_CHAIN_XEEDS_SEGLIM = 201;
+            private const int ERROR_INFLOOP_IN_RELOC_CHAIN = 202;
+            private const int ERROR_ENVVAR_NOT_FOUND = 203;
+            private const int ERROR_NO_SIGNAL_SENT = 205;
+            private const int ERROR_FILENAME_EXCED_RANGE = 206;
+            private const int ERROR_RING2_STACK_IN_USE = 207;
+            private const int ERROR_META_EXPANSION_TOO_Int32 = 208;
+            private const int ERROR_INVALID_SIGNAL_NUMBER = 209;
+            private const int ERROR_THREAD_1_INACTIVE = 210;
+            private const int ERROR_LOCKED = 212;
+            private const int ERROR_TOO_MANY_MODULES = 214;
+            private const int ERROR_NESTING_NOT_ALLOWED = 215;
+            private const int ERROR_EXE_MACHINE_TYPE_MISMATCH = 216;
+            private const int ERROR_EXE_CANNOT_MODIFY_SIGNED_BINARY = 217;
+            private const int ERROR_EXE_CANNOT_MODIFY_STRONG_SIGNED_BINARY = 218;
+            private const int ERROR_BAD_PIPE = 230;
+            private const int ERROR_PIPE_BUSY = 231;
+            private const int ERROR_NO_DATA = 232;
+            private const int ERROR_PIPE_NOT_CONNECTED = 233;
+            private const int ERROR_MORE_DATA = 234;
+            private const int ERROR_VC_DISCONNECTED = 240;
+            private const int ERROR_INVALID_EA_NAME = 254;
+            private const int ERROR_EA_LIST_INCONSISTENT = 255;
+            private const int WAIT_TIMEOUT = 258;
+            private const int ERROR_NO_MORE_ITEMS = 259;
+            private const int ERROR_CANNOT_COPY = 266;
+            private const int ERROR_DIRECTORY = 267;
+            private const int ERROR_EAS_DIDNT_FIT = 275;
+            private const int ERROR_EA_FILE_CORRUPT = 276;
+            private const int ERROR_EA_TABLE_FULL = 277;
+            private const int ERROR_INVALID_EA_HANDLE = 278;
+            private const int ERROR_EAS_NOT_SUPPORTED = 282;
+            private const int ERROR_NOT_OWNER = 288;
+            private const int ERROR_TOO_MANY_POSTS = 298;
+            private const int ERROR_PARTIAL_COPY = 299;
+            private const int ERROR_OPLOCK_NOT_GRANTED = 300;
+            private const int ERROR_INVALID_OPLOCK_PROTOCOL = 301;
+            private const int ERROR_DISK_TOO_FRAGMENTED = 302;
+            private const int ERROR_DELETE_PENDING = 303;
+            private const int ERROR_MR_MID_NOT_FOUND = 317;
+            private const int ERROR_SCOPE_NOT_FOUND = 318;
+            private const int ERROR_INVALID_ADDRESS = 487;
+            private const int ERROR_ARITHMETIC_OVERFLOW = 534;
+            private const int ERROR_PIPE_CONNECTED = 535;
+            private const int ERROR_PIPE_LISTENING = 536;
+            private const int ERROR_EA_ACCESS_DENIED = 994;
+            private const int ERROR_OPERATION_ABORTED = 995;
+            private const int ERROR_IO_INCOMPLETE = 996;
+            private const int ERROR_IO_PENDING = 997;
+            private const int ERROR_NOACCESS = 998;
+            private const int ERROR_SWAPERROR = 999;
+            private const int ERROR_STACK_OVERFLOW = 1001;
+            private const int ERROR_INVALID_MESSAGE = 1002;
+            private const int ERROR_CAN_NOT_COMPLETE = 1003;
+            private const int ERROR_INVALID_FLAGS = 1004;
+
+            /// <summary>
+            /// The volume does not contain a recognized file system.
+            /// Please make sure that all required file system drivers are loaded and that the volume is not corrupted.
+            /// </summary>
+            public const int ERROR_UNRECOGNIZED_VOLUME = 1005;
+
+            private const int ERROR_FILE_INVALID = 1006;
+            private const int ERROR_FULLSCREEN_MODE = 1007;
+            private const int ERROR_NO_TOKEN = 1008;
+            private const int ERROR_BADDB = 1009;
+            private const int ERROR_BADKEY = 1010;
+            private const int ERROR_CANTOPEN = 1011;
+            private const int ERROR_CANTREAD = 1012;
+            private const int ERROR_CANTWRITE = 1013;
+            private const int ERROR_REGISTRY_RECOVERED = 1014;
+            private const int ERROR_REGISTRY_CORRUPT = 1015;
+            private const int ERROR_REGISTRY_IO_FAILED = 1016;
+            private const int ERROR_NOT_REGISTRY_FILE = 1017;
+            private const int ERROR_KEY_DELETED = 1018;
+            private const int ERROR_NO_LOG_SPACE = 1019;
+            private const int ERROR_KEY_HAS_CHILDREN = 1020;
+            private const int ERROR_CHILD_MUST_BE_VOLATILE = 1021;
+            private const int ERROR_NOTIFY_ENUM_DIR = 1022;
+            private const int ERROR_DEPENDENT_SERVICES_RUNNING = 1051;
+            private const int ERROR_INVALID_SERVICE_CONTROL = 1052;
+            private const int ERROR_SERVICE_REQUEST_TIMEOUT = 1053;
+            private const int ERROR_SERVICE_NO_THREAD = 1054;
+            private const int ERROR_SERVICE_DATABASE_LOCKED = 1055;
+            private const int ERROR_SERVICE_ALREADY_RUNNING = 1056;
+            private const int ERROR_INVALID_SERVICE_ACCOUNT = 1057;
+            private const int ERROR_SERVICE_DISABLED = 1058;
+            private const int ERROR_CIRCULAR_DEPENDENCY = 1059;
+            private const int ERROR_SERVICE_DOES_NOT_EXIST = 1060;
+            private const int ERROR_SERVICE_CANNOT_ACCEPT_CTRL = 1061;
+            private const int ERROR_SERVICE_NOT_ACTIVE = 1062;
+            private const int ERROR_FAILED_SERVICE_CONTROLLER_CONNECT = 1063;
+            private const int ERROR_EXCEPTION_IN_SERVICE = 1064;
+            private const int ERROR_DATABASE_DOES_NOT_EXIST = 1065;
+            private const int ERROR_SERVICE_SPECIFIC_ERROR = 1066;
+            private const int ERROR_PROCESS_ABORTED = 1067;
+            private const int ERROR_SERVICE_DEPENDENCY_FAIL = 1068;
+            private const int ERROR_SERVICE_LOGON_FAILED = 1069;
+            private const int ERROR_SERVICE_START_HANG = 1070;
+            private const int ERROR_INVALID_SERVICE_LOCK = 1071;
+            private const int ERROR_SERVICE_MARKED_FOR_DELETE = 1072;
+            private const int ERROR_SERVICE_EXISTS = 1073;
+            private const int ERROR_ALREADY_RUNNING_LKG = 1074;
+            private const int ERROR_SERVICE_DEPENDENCY_DELETED = 1075;
+            private const int ERROR_BOOT_ALREADY_ACCEPTED = 1076;
+            private const int ERROR_SERVICE_NEVER_STARTED = 1077;
+            private const int ERROR_DUPLICATE_SERVICE_NAME = 1078;
+            private const int ERROR_DIFFERENT_SERVICE_ACCOUNT = 1079;
+            private const int ERROR_CANNOT_DETECT_DRIVER_FAILURE = 1080;
+
+            /// <summary>
+            /// This service runs in the same process as the service control manager.
+            /// Therefore, the service control manager cannot take action if this service's process terminates unexpectedly.
+            /// </summary>
+            public const int ERROR_CANNOT_DETECT_PROCESS_ABORT = 1081;
+
+            private const int ERROR_NO_RECOVERY_PROGRAM = 1082;
+            private const int ERROR_SERVICE_NOT_IN_EXE = 1083;
+            private const int ERROR_NOT_SAFEBOOT_SERVICE = 1084;
+            private const int ERROR_END_OF_MEDIA = 1100;
+            private const int ERROR_FILEMARK_DETECTED = 1101;
+            private const int ERROR_BEGINNING_OF_MEDIA = 1102;
+            private const int ERROR_SETMARK_DETECTED = 1103;
+            private const int ERROR_NO_DATA_DETECTED = 1104;
+            private const int ERROR_PARTITION_FAILURE = 1105;
+            private const int ERROR_INVALID_BLOCK_LENGTH = 1106;
+            private const int ERROR_DEVICE_NOT_PARTITIONED = 1107;
+            private const int ERROR_UNABLE_TO_LOCK_MEDIA = 1108;
+            private const int ERROR_UNABLE_TO_UNLOAD_MEDIA = 1109;
+            private const int ERROR_MEDIA_CHANGED = 1110;
+            private const int ERROR_BUS_RESET = 1111;
+            private const int ERROR_NO_MEDIA_IN_DRIVE = 1112;
+            private const int ERROR_NO_UNICODE_TRANSLATION = 1113;
+            private const int ERROR_DLL_INIT_FAILED = 1114;
+            private const int ERROR_SHUTDOWN_IN_PROGRESS = 1115;
+            private const int ERROR_NO_SHUTDOWN_IN_PROGRESS = 1116;
+            private const int ERROR_IO_DEVICE = 1117;
+            private const int ERROR_SERIAL_NO_DEVICE = 1118;
+            private const int ERROR_IRQ_BUSY = 1119;
+
+            /// <summary>
+            /// A serial I/O operation was completed by another write to the serial port.
+            /// (The IOCTL_SERIAL_XOFF_COUNTER reached zero.)
+            /// </summary>
+            public const int ERROR_MORE_WRITES = 1120;
+
+            /// <summary>
+            /// A serial I/O operation completed because the timeout period expired.
+            /// (The IOCTL_SERIAL_XOFF_COUNTER did not reach zero.)
+            /// </summary>
+            public const int ERROR_COUNTER_TIMEOUT = 1121;
+
+            private const int ERROR_FLOPPY_ID_MARK_NOT_FOUND = 1122;
+            private const int ERROR_FLOPPY_WRONG_CYLINDER = 1123;
+            private const int ERROR_FLOPPY_UNKNOWN_ERROR = 1124;
+            private const int ERROR_FLOPPY_BAD_REGISTERS = 1125;
+            private const int ERROR_DISK_RECALIBRATE_FAILED = 1126;
+            private const int ERROR_DISK_OPERATION_FAILED = 1127;
+            private const int ERROR_DISK_RESET_FAILED = 1128;
+            private const int ERROR_EOM_OVERFLOW = 1129;
+            private const int ERROR_NOT_ENOUGH_SERVER_MEMORY = 1130;
+            private const int ERROR_POSSIBLE_DEADLOCK = 1131;
+            private const int ERROR_MAPPED_ALIGNMENT = 1132;
+            private const int ERROR_SET_POWER_STATE_VETOED = 1140;
+            private const int ERROR_SET_POWER_STATE_FAILED = 1141;
+            private const int ERROR_TOO_MANY_LINKS = 1142;
+            private const int ERROR_OLD_WIN_VERSION = 1150;
+            private const int ERROR_APP_WRONG_OS = 1151;
+            private const int ERROR_SINGLE_INSTANCE_APP = 1152;
+            private const int ERROR_RMODE_APP = 1153;
+            private const int ERROR_INVALID_DLL = 1154;
+            private const int ERROR_NO_ASSOCIATION = 1155;
+            private const int ERROR_DDE_FAIL = 1156;
+            private const int ERROR_DLL_NOT_FOUND = 1157;
+            private const int ERROR_NO_MORE_USER_HANDLES = 1158;
+            private const int ERROR_MESSAGE_SYNC_ONLY = 1159;
+            private const int ERROR_SOURCE_ELEMENT_EMPTY = 1160;
+            private const int ERROR_DESTINATION_ELEMENT_FULL = 1161;
+            private const int ERROR_ILLEGAL_ELEMENT_ADDRESS = 1162;
+            private const int ERROR_MAGAZINE_NOT_PRESENT = 1163;
+            private const int ERROR_DEVICE_REINITIALIZATION_NEEDED = 1164;
+            private const int ERROR_DEVICE_REQUIRES_CLEANING = 1165;
+            private const int ERROR_DEVICE_DOOR_OPEN = 1166;
+            private const int ERROR_DEVICE_NOT_CONNECTED = 1167;
+            private const int ERROR_NOT_FOUND = 1168;
+            private const int ERROR_NO_MATCH = 1169;
+            private const int ERROR_SET_NOT_FOUND = 1170;
+            private const int ERROR_POINT_NOT_FOUND = 1171;
+            private const int ERROR_NO_TRACKING_SERVICE = 1172;
+            private const int ERROR_NO_VOLUME_ID = 1173;
+            private const int ERROR_UNABLE_TO_REMOVE_REPLACED = 1175;
+            private const int ERROR_UNABLE_TO_MOVE_REPLACEMENT = 1176;
+            private const int ERROR_UNABLE_TO_MOVE_REPLACEMENT_2 = 1177;
+            private const int ERROR_JOURNAL_DELETE_IN_PROGRESS = 1178;
+            private const int ERROR_JOURNAL_NOT_ACTIVE = 1179;
+            private const int ERROR_POTENTIAL_FILE_FOUND = 1180;
+            private const int ERROR_JOURNAL_ENTRY_DELETED = 1181;
+            private const int ERROR_BAD_DEVICE = 1200;
+            private const int ERROR_CONNECTION_UNAVAIL = 1201;
+            private const int ERROR_DEVICE_ALREADY_REMEMBERED = 1202;
+            private const int ERROR_NO_NET_OR_BAD_PATH = 1203;
+            private const int ERROR_BAD_PROVIDER = 1204;
+            private const int ERROR_CANNOT_OPEN_PROFILE = 1205;
+            private const int ERROR_BAD_PROFILE = 1206;
+            private const int ERROR_NOT_CONTAINER = 1207;
+            private const int ERROR_EXTENDED_ERROR = 1208;
+            private const int ERROR_INVALID_GROUPNAME = 1209;
+            private const int ERROR_INVALID_COMPUTERNAME = 1210;
+            private const int ERROR_INVALID_EVENTNAME = 1211;
+            private const int ERROR_INVALID_DOMAINNAME = 1212;
+            private const int ERROR_INVALID_SERVICENAME = 1213;
+            private const int ERROR_INVALID_NETNAME = 1214;
+            private const int ERROR_INVALID_SHARENAME = 1215;
+            private const int ERROR_INVALID_PASSUInt16NAME = 1216;
+            private const int ERROR_INVALID_MESSAGENAME = 1217;
+            private const int ERROR_INVALID_MESSAGEDEST = 1218;
+            private const int ERROR_SESSION_CREDENTIAL_CONFLICT = 1219;
+            private const int ERROR_REMOTE_SESSION_LIMIT_EXCEEDED = 1220;
+            private const int ERROR_DUP_DOMAINNAME = 1221;
+            private const int ERROR_NO_NETWORK = 1222;
+            private const int ERROR_CANCELLED = 1223;
+            private const int ERROR_USER_MAPPED_FILE = 1224;
+            private const int ERROR_CONNECTION_REFUSED = 1225;
+            private const int ERROR_GRACEFUL_DISCONNECT = 1226;
+            private const int ERROR_ADDRESS_ALREADY_ASSOCIATED = 1227;
+            private const int ERROR_ADDRESS_NOT_ASSOCIATED = 1228;
+            private const int ERROR_CONNECTION_INVALID = 1229;
+            private const int ERROR_CONNECTION_ACTIVE = 1230;
+            private const int ERROR_NETWORK_UNREACHABLE = 1231;
+            private const int ERROR_HOST_UNREACHABLE = 1232;
+            private const int ERROR_PROTOCOL_UNREACHABLE = 1233;
+            private const int ERROR_PORT_UNREACHABLE = 1234;
+            private const int ERROR_REQUEST_ABORTED = 1235;
+            private const int ERROR_CONNECTION_ABORTED = 1236;
+            private const int ERROR_RETRY = 1237;
+            private const int ERROR_CONNECTION_COUNT_LIMIT = 1238;
+            private const int ERROR_LOGIN_TIME_RESTRICTION = 1239;
+            private const int ERROR_LOGIN_WKSTA_RESTRICTION = 1240;
+            private const int ERROR_INCORRECT_ADDRESS = 1241;
+            private const int ERROR_ALREADY_REGISTERED = 1242;
+            private const int ERROR_SERVICE_NOT_FOUND = 1243;
+            private const int ERROR_NOT_AUTHENTICATED = 1244;
+
+            /// <summary>
+            /// The operation being requested was not performed because the user has not logged on to the network.
+            /// The specified service does not exist.
+            /// </summary>
+            public const int ERROR_NOT_LOGGED_ON = 1245;
+
+            private const int ERROR_CONTINUE = 1246;
+            private const int ERROR_ALREADY_INITIALIZED = 1247;
+            private const int ERROR_NO_MORE_DEVICES = 1248;
+            private const int ERROR_NO_SUCH_SITE = 1249;
+            private const int ERROR_DOMAIN_CONTROLLER_EXISTS = 1250;
+            private const int ERROR_ONLY_IF_CONNECTED = 1251;
+            private const int ERROR_OVERRIDE_NOCHANGES = 1252;
+            private const int ERROR_BAD_USER_PROFILE = 1253;
+            private const int ERROR_NOT_SUPPORTED_ON_SBS = 1254;
+            private const int ERROR_SERVER_SHUTDOWN_IN_PROGRESS = 1255;
+            private const int ERROR_HOST_DOWN = 1256;
+            private const int ERROR_NON_ACCOUNT_SID = 1257;
+            private const int ERROR_NON_DOMAIN_SID = 1258;
+            private const int ERROR_APPHELP_BLOCK = 1259;
+            private const int ERROR_ACCESS_DISABLED_BY_POLICY = 1260;
+            private const int ERROR_REG_NAT_CONSUMPTION = 1261;
+            private const int ERROR_CSCSHARE_OFFLINE = 1262;
+
+            /// <summary>
+            /// The kerberos protocol encountered an error while validating the
+            /// KDC certificate during smartcard logon.
+            /// </summary>
+            public const int ERROR_PKINIT_FAILURE = 1263;
+
+            /// <summary>
+            /// The kerberos protocol encountered an error while attempting to utilize
+            /// the smartcard subsystem.
+            /// </summary>
+            public const int ERROR_SMARTCARD_SUBSYSTEM_FAILURE = 1264;
+
+            private const int ERROR_DOWNGRADE_DETECTED = 1265;
+            private const int ERROR_MACHINE_LOCKED = 1271;
+            private const int ERROR_CALLBACK_SUPPLIED_INVALID_DATA = 1273;
+            private const int ERROR_SYNC_FOREGROUND_REFRESH_REQUIRED = 1274;
+            private const int ERROR_DRIVER_BLOCKED = 1275;
+            private const int ERROR_INVALID_IMPORT_OF_NON_DLL = 1276;
+            private const int ERROR_ACCESS_DISABLED_WEBBLADE = 1277;
+            private const int ERROR_ACCESS_DISABLED_WEBBLADE_TAMPER = 1278;
+            private const int ERROR_RECOVERY_FAILURE = 1279;
+            private const int ERROR_ALREADY_FIBER = 1280;
+            private const int ERROR_ALREADY_THREAD = 1281;
+            private const int ERROR_STACK_BUFFER_OVERRUN = 1282;
+            private const int ERROR_PARAMETER_QUOTA_EXCEEDED = 1283;
+            private const int ERROR_DEBUGGER_INACTIVE = 1284;
+            private const int ERROR_DELAY_LOAD_FAILED = 1285;
+            private const int ERROR_VDM_DISALLOWED = 1286;
+            private const int ERROR_NOT_ALL_ASSIGNED = 1300;
+            private const int ERROR_SOME_NOT_MAPPED = 1301;
+            private const int ERROR_NO_QUOTAS_FOR_ACCOUNT = 1302;
+            private const int ERROR_LOCAL_USER_SESSION_KEY = 1303;
+            private const int ERROR_NULL_LM_PASSUInt16 = 1304;
+            private const int ERROR_UNKNOWN_REVISION = 1305;
+            private const int ERROR_REVISION_MISMATCH = 1306;
+            private const int ERROR_INVALID_OWNER = 1307;
+            private const int ERROR_INVALID_PRIMARY_GROUP = 1308;
+            private const int ERROR_NO_IMPERSONATION_TOKEN = 1309;
+            private const int ERROR_CANT_DISABLE_MANDATORY = 1310;
+            private const int ERROR_NO_LOGON_SERVERS = 1311;
+            private const int ERROR_NO_SUCH_LOGON_SESSION = 1312;
+            private const int ERROR_NO_SUCH_PRIVILEGE = 1313;
+            private const int ERROR_PRIVILEGE_NOT_HELD = 1314;
+            private const int ERROR_INVALID_ACCOUNT_NAME = 1315;
+            private const int ERROR_USER_EXISTS = 1316;
+            private const int ERROR_NO_SUCH_USER = 1317;
+            private const int ERROR_GROUP_EXISTS = 1318;
+            private const int ERROR_NO_SUCH_GROUP = 1319;
+            private const int ERROR_MEMBER_IN_GROUP = 1320;
+            private const int ERROR_MEMBER_NOT_IN_GROUP = 1321;
+            private const int ERROR_LAST_ADMIN = 1322;
+            private const int ERROR_WRONG_PASSWORD = 1323;
+            private const int ERROR_ILL_FORMED_PASSWORD = 1324;
+            private const int ERROR_PASSWORD_RESTRICTION = 1325;
+            private const int ERROR_LOGON_FAILURE = 1326;
+            private const int ERROR_ACCOUNT_RESTRICTION = 1327;
+            private const int ERROR_INVALID_LOGON_HOURS = 1328;
+            private const int ERROR_INVALID_WORKSTATION = 1329;
+            private const int ERROR_PASSUInt16_EXPIRED = 1330;
+            private const int ERROR_ACCOUNT_DISABLED = 1331;
+            private const int ERROR_NONE_MAPPED = 1332;
+            private const int ERROR_TOO_MANY_LUIDS_REQUESTED = 1333;
+            private const int ERROR_LUIDS_EXHAUSTED = 1334;
+            private const int ERROR_INVALID_SUB_AUTHORITY = 1335;
+            private const int ERROR_INVALID_ACL = 1336;
+            private const int ERROR_INVALID_SID = 1337;
+            private const int ERROR_INVALID_SECURITY_DESCR = 1338;
+            private const int ERROR_BAD_INHERITANCE_ACL = 1340;
+            private const int ERROR_SERVER_DISABLED = 1341;
+            private const int ERROR_SERVER_NOT_DISABLED = 1342;
+            private const int ERROR_INVALID_ID_AUTHORITY = 1343;
+            private const int ERROR_ALLOTTED_SPACE_EXCEEDED = 1344;
+            private const int ERROR_INVALID_GROUP_ATTRIBUTES = 1345;
+            private const int ERROR_BAD_IMPERSONATION_LEVEL = 1346;
+            private const int ERROR_CANT_OPEN_ANONYMOUS = 1347;
+            private const int ERROR_BAD_VALIDATION_CLASS = 1348;
+            private const int ERROR_BAD_TOKEN_TYPE = 1349;
+            private const int ERROR_NO_SECURITY_ON_OBJECT = 1350;
+            private const int ERROR_CANT_ACCESS_DOMAIN_INFO = 1351;
+            private const int ERROR_INVALID_SERVER_STATE = 1352;
+            private const int ERROR_INVALID_DOMAIN_STATE = 1353;
+            private const int ERROR_INVALID_DOMAIN_ROLE = 1354;
+            private const int ERROR_NO_SUCH_DOMAIN = 1355;
+            private const int ERROR_DOMAIN_EXISTS = 1356;
+            private const int ERROR_DOMAIN_LIMIT_EXCEEDED = 1357;
+            private const int ERROR_INTERNAL_DB_CORRUPTION = 1358;
+            private const int ERROR_INTERNAL_ERROR = 1359;
+            private const int ERROR_GENERIC_NOT_MAPPED = 1360;
+            private const int ERROR_BAD_DESCRIPTOR_FORMAT = 1361;
+            private const int ERROR_NOT_LOGON_PROCESS = 1362;
+            private const int ERROR_LOGON_SESSION_EXISTS = 1363;
+            private const int ERROR_NO_SUCH_PACKAGE = 1364;
+            private const int ERROR_BAD_LOGON_SESSION_STATE = 1365;
+            private const int ERROR_LOGON_SESSION_COLLISION = 1366;
+            private const int ERROR_INVALID_LOGON_TYPE = 1367;
+            private const int ERROR_CANNOT_IMPERSONATE = 1368;
+            private const int ERROR_RXACT_INVALID_STATE = 1369;
+            private const int ERROR_RXACT_COMMIT_FAILURE = 1370;
+            private const int ERROR_SPECIAL_ACCOUNT = 1371;
+            private const int ERROR_SPECIAL_GROUP = 1372;
+            private const int ERROR_SPECIAL_USER = 1373;
+            private const int ERROR_MEMBERS_PRIMARY_GROUP = 1374;
+            private const int ERROR_TOKEN_ALREADY_IN_USE = 1375;
+            private const int ERROR_NO_SUCH_ALIAS = 1376;
+            private const int ERROR_MEMBER_NOT_IN_ALIAS = 1377;
+            private const int ERROR_MEMBER_IN_ALIAS = 1378;
+            private const int ERROR_ALIAS_EXISTS = 1379;
+            private const int ERROR_LOGON_NOT_GRANTED = 1380;
+            private const int ERROR_TOO_MANY_SECRETS = 1381;
+            private const int ERROR_SECRET_TOO_Int32 = 1382;
+            private const int ERROR_INTERNAL_DB_ERROR = 1383;
+            private const int ERROR_TOO_MANY_CONTEXT_IDS = 1384;
+            private const int ERROR_LOGON_TYPE_NOT_GRANTED = 1385;
+            private const int ERROR_NT_CROSS_ENCRYPTION_REQUIRED = 1386;
+            private const int ERROR_NO_SUCH_MEMBER = 1387;
+            private const int ERROR_INVALID_MEMBER = 1388;
+            private const int ERROR_TOO_MANY_SIDS = 1389;
+            private const int ERROR_LM_CROSS_ENCRYPTION_REQUIRED = 1390;
+            private const int ERROR_NO_INHERITANCE = 1391;
+            private const int ERROR_FILE_CORRUPT = 1392;
+            private const int ERROR_DISK_CORRUPT = 1393;
+            private const int ERROR_NO_USER_SESSION_KEY = 1394;
+
+            /// <summary>
+            /// The service being accessed is licensed for a particular number of connections.
+            /// No more connections can be made to the service at this time because there are already as many connections as the service can accept.
+            /// </summary>
+            public const int ERROR_LICENSE_QUOTA_EXCEEDED = 1395;
+
+            private const int ERROR_WRONG_TARGET_NAME = 1396;
+            private const int ERROR_MUTUAL_AUTH_FAILED = 1397;
+            private const int ERROR_TIME_SKEW = 1398;
+            private const int ERROR_CURRENT_DOMAIN_NOT_ALLOWED = 1399;
+            private const int ERROR_INVALID_WINDOW_HANDLE = 1400;
+            private const int ERROR_INVALID_MENU_HANDLE = 1401;
+            private const int ERROR_INVALID_CURSOR_HANDLE = 1402;
+            private const int ERROR_INVALID_ACCEL_HANDLE = 1403;
+            private const int ERROR_INVALID_HOOK_HANDLE = 1404;
+            private const int ERROR_INVALID_DWP_HANDLE = 1405;
+            private const int ERROR_TLW_WITH_WSCHILD = 1406;
+            private const int ERROR_CANNOT_FIND_WND_CLASS = 1407;
+            private const int ERROR_WINDOW_OF_OTHER_THREAD = 1408;
+            private const int ERROR_HOTKEY_ALREADY_REGISTERED = 1409;
+            private const int ERROR_CLASS_ALREADY_EXISTS = 1410;
+            private const int ERROR_CLASS_DOES_NOT_EXIST = 1411;
+            private const int ERROR_CLASS_HAS_WINDOWS = 1412;
+            private const int ERROR_INVALID_INDEX = 1413;
+            private const int ERROR_INVALID_ICON_HANDLE = 1414;
+            private const int ERROR_PRIVATE_DIALOG_INDEX = 1415;
+            private const int ERROR_LISTBOX_ID_NOT_FOUND = 1416;
+            private const int ERROR_NO_WILDCARD_CHARACTERS = 1417;
+            private const int ERROR_CLIPBOARD_NOT_OPEN = 1418;
+            private const int ERROR_HOTKEY_NOT_REGISTERED = 1419;
+            private const int ERROR_WINDOW_NOT_DIALOG = 1420;
+            private const int ERROR_CONTROL_ID_NOT_FOUND = 1421;
+            private const int ERROR_INVALID_COMBOBOX_MESSAGE = 1422;
+            private const int ERROR_WINDOW_NOT_COMBOBOX = 1423;
+            private const int ERROR_INVALID_EDIT_HEIGHT = 1424;
+            private const int ERROR_DC_NOT_FOUND = 1425;
+            private const int ERROR_INVALID_HOOK_FILTER = 1426;
+            private const int ERROR_INVALID_FILTER_PROC = 1427;
+            private const int ERROR_HOOK_NEEDS_HMOD = 1428;
+            private const int ERROR_GLOBAL_ONLY_HOOK = 1429;
+            private const int ERROR_JOURNAL_HOOK_SET = 1430;
+            private const int ERROR_HOOK_NOT_INSTALLED = 1431;
+            private const int ERROR_INVALID_LB_MESSAGE = 1432;
+            private const int ERROR_SETCOUNT_ON_BAD_LB = 1433;
+            private const int ERROR_LB_WITHOUT_TABSTOPS = 1434;
+            private const int ERROR_DESTROY_OBJECT_OF_OTHER_THREAD = 1435;
+            private const int ERROR_CHILD_WINDOW_MENU = 1436;
+            private const int ERROR_NO_SYSTEM_MENU = 1437;
+            private const int ERROR_INVALID_MSGBOX_STYLE = 1438;
+            private const int ERROR_INVALID_SPI_VALUE = 1439;
+            private const int ERROR_SCREEN_ALREADY_LOCKED = 1440;
+            private const int ERROR_HWNDS_HAVE_DIFF_PARENT = 1441;
+            private const int ERROR_NOT_CHILD_WINDOW = 1442;
+            private const int ERROR_INVALID_GW_COMMAND = 1443;
+            private const int ERROR_INVALID_THREAD_ID = 1444;
+            private const int ERROR_NON_MDICHILD_WINDOW = 1445;
+            private const int ERROR_POPUP_ALREADY_ACTIVE = 1446;
+            private const int ERROR_NO_SCROLLBARS = 1447;
+            private const int ERROR_INVALID_SCROLLBAR_RANGE = 1448;
+            private const int ERROR_INVALID_SHOWWIN_COMMAND = 1449;
+            private const int ERROR_NO_SYSTEM_RESOURCES = 1450;
+            private const int ERROR_NONPAGED_SYSTEM_RESOURCES = 1451;
+            private const int ERROR_PAGED_SYSTEM_RESOURCES = 1452;
+            private const int ERROR_WORKING_SET_QUOTA = 1453;
+            private const int ERROR_PAGEFILE_QUOTA = 1454;
+            private const int ERROR_COMMITMENT_LIMIT = 1455;
+            private const int ERROR_MENU_ITEM_NOT_FOUND = 1456;
+            private const int ERROR_INVALID_KEYBOARD_HANDLE = 1457;
+            private const int ERROR_HOOK_TYPE_NOT_ALLOWED = 1458;
+            private const int ERROR_REQUIRES_INTERACTIVE_WINDOWSTATION = 1459;
+            private const int ERROR_TIMEOUT = 1460;
+            private const int ERROR_INVALID_MONITOR_HANDLE = 1461;
+            private const int ERROR_EVENTLOG_FILE_CORRUPT = 1500;
+            private const int ERROR_EVENTLOG_CANT_START = 1501;
+            private const int ERROR_LOG_FILE_FULL = 1502;
+            private const int ERROR_EVENTLOG_FILE_CHANGED = 1503;
+            private const int ERROR_INSTALL_SERVICE_FAILURE = 1601;
+            private const int ERROR_INSTALL_USEREXIT = 1602;
+            private const int ERROR_INSTALL_FAILURE = 1603;
+            private const int ERROR_INSTALL_SUSPEND = 1604;
+            private const int ERROR_UNKNOWN_PRODUCT = 1605;
+            private const int ERROR_UNKNOWN_FEATURE = 1606;
+            private const int ERROR_UNKNOWN_COMPONENT = 1607;
+            private const int ERROR_UNKNOWN_PROPERTY = 1608;
+            private const int ERROR_INVALID_HANDLE_STATE = 1609;
+            private const int ERROR_BAD_CONFIGURATION = 1610;
+            private const int ERROR_INDEX_ABSENT = 1611;
+            private const int ERROR_INSTALL_SOURCE_ABSENT = 1612;
+            private const int ERROR_INSTALL_PACKAGE_VERSION = 1613;
+            private const int ERROR_PRODUCT_UNINSTALLED = 1614;
+            private const int ERROR_BAD_QUERY_SYNTAX = 1615;
+            private const int ERROR_INVALID_FIELD = 1616;
+            private const int ERROR_DEVICE_REMOVED = 1617;
+            private const int ERROR_INSTALL_ALREADY_RUNNING = 1618;
+            private const int ERROR_INSTALL_PACKAGE_OPEN_FAILED = 1619;
+            private const int ERROR_INSTALL_PACKAGE_INVALID = 1620;
+            private const int ERROR_INSTALL_UI_FAILURE = 1621;
+            private const int ERROR_INSTALL_LOG_FAILURE = 1622;
+            private const int ERROR_INSTALL_LANGUAGE_UNSUPPORTED = 1623;
+            private const int ERROR_INSTALL_TRANSFORM_FAILURE = 1624;
+            private const int ERROR_INSTALL_PACKAGE_REJECTED = 1625;
+            private const int ERROR_FUNCTION_NOT_CALLED = 1626;
+            private const int ERROR_FUNCTION_FAILED = 1627;
+            private const int ERROR_INVALID_TABLE = 1628;
+            private const int ERROR_DATATYPE_MISMATCH = 1629;
+            private const int ERROR_UNSUPPORTED_TYPE = 1630;
+            private const int ERROR_CREATE_FAILED = 1631;
+            private const int ERROR_INSTALL_TEMP_UNWRITABLE = 1632;
+            private const int ERROR_INSTALL_PLATFORM_UNSUPPORTED = 1633;
+            private const int ERROR_INSTALL_NOTUSED = 1634;
+            private const int ERROR_PATCH_PACKAGE_OPEN_FAILED = 1635;
+            private const int ERROR_PATCH_PACKAGE_INVALID = 1636;
+            private const int ERROR_PATCH_PACKAGE_UNSUPPORTED = 1637;
+            private const int ERROR_PRODUCT_VERSION = 1638;
+            private const int ERROR_INVALID_COMMAND_LINE = 1639;
+            private const int ERROR_INSTALL_REMOTE_DISALLOWED = 1640;
+            private const int ERROR_SUCCESS_REBOOT_INITIATED = 1641;
+
+            /// <summary>
+            /// The upgrade patch cannot be installed by the Windows Installer service because the program to be upgraded may be missing, or the upgrade patch may update a different version of the program. Verify that the program to be upgraded exists on your computer an
+            /// d that you have the correct upgrade patch.
+            /// </summary>
+            public const int ERROR_PATCH_TARGET_NOT_FOUND = 1642;
+
+            private const int ERROR_PATCH_PACKAGE_REJECTED = 1643;
+            private const int ERROR_INSTALL_TRANSFORM_REJECTED = 1644;
+            private const int ERROR_INSTALL_REMOTE_PROHIBITED = 1645;
+            private const int RPC_S_INVALID_STRING_BINDING = 1700;
+            private const int RPC_S_WRONG_KIND_OF_BINDING = 1701;
+            private const int RPC_S_INVALID_BINDING = 1702;
+            private const int RPC_S_PROTSEQ_NOT_SUPPORTED = 1703;
+            private const int RPC_S_INVALID_RPC_PROTSEQ = 1704;
+            private const int RPC_S_INVALID_STRING_UUID = 1705;
+            private const int RPC_S_INVALID_ENDPOINT_FORMAT = 1706;
+            private const int RPC_S_INVALID_NET_ADDR = 1707;
+            private const int RPC_S_NO_ENDPOINT_FOUND = 1708;
+            private const int RPC_S_INVALID_TIMEOUT = 1709;
+            private const int RPC_S_OBJECT_NOT_FOUND = 1710;
+            private const int RPC_S_ALREADY_REGISTERED = 1711;
+            private const int RPC_S_TYPE_ALREADY_REGISTERED = 1712;
+            private const int RPC_S_ALREADY_LISTENING = 1713;
+            private const int RPC_S_NO_PROTSEQS_REGISTERED = 1714;
+            private const int RPC_S_NOT_LISTENING = 1715;
+            private const int RPC_S_UNKNOWN_MGR_TYPE = 1716;
+            private const int RPC_S_UNKNOWN_IF = 1717;
+            private const int RPC_S_NO_BINDINGS = 1718;
+            private const int RPC_S_NO_PROTSEQS = 1719;
+            private const int RPC_S_CANT_CREATE_ENDPOINT = 1720;
+            private const int RPC_S_OUT_OF_RESOURCES = 1721;
+            private const int RPC_S_SERVER_UNAVAILABLE = 1722;
+            private const int RPC_S_SERVER_TOO_BUSY = 1723;
+            private const int RPC_S_INVALID_NETWORK_OPTIONS = 1724;
+            private const int RPC_S_NO_CALL_ACTIVE = 1725;
+            private const int RPC_S_CALL_FAILED = 1726;
+            private const int RPC_S_CALL_FAILED_DNE = 1727;
+            private const int RPC_S_PROTOCOL_ERROR = 1728;
+            private const int RPC_S_UNSUPPORTED_TRANS_SYN = 1730;
+            private const int RPC_S_UNSUPPORTED_TYPE = 1732;
+            private const int RPC_S_INVALID_TAG = 1733;
+            private const int RPC_S_INVALID_BOUND = 1734;
+            private const int RPC_S_NO_ENTRY_NAME = 1735;
+            private const int RPC_S_INVALID_NAME_SYNTAX = 1736;
+            private const int RPC_S_UNSUPPORTED_NAME_SYNTAX = 1737;
+            private const int RPC_S_UUID_NO_ADDRESS = 1739;
+            private const int RPC_S_DUPLICATE_ENDPOINT = 1740;
+            private const int RPC_S_UNKNOWN_AUTHN_TYPE = 1741;
+            private const int RPC_S_MAX_CALLS_TOO_SMALL = 1742;
+            private const int RPC_S_STRING_TOO_Int32 = 1743;
+            private const int RPC_S_PROTSEQ_NOT_FOUND = 1744;
+            private const int RPC_S_PROCNUM_OUT_OF_RANGE = 1745;
+            private const int RPC_S_BINDING_HAS_NO_AUTH = 1746;
+            private const int RPC_S_UNKNOWN_AUTHN_SERVICE = 1747;
+            private const int RPC_S_UNKNOWN_AUTHN_LEVEL = 1748;
+            private const int RPC_S_INVALID_AUTH_IDENTITY = 1749;
+            private const int RPC_S_UNKNOWN_AUTHZ_SERVICE = 1750;
+            private const int EPT_S_INVALID_ENTRY = 1751;
+            private const int EPT_S_CANT_PERFORM_OP = 1752;
+            private const int EPT_S_NOT_REGISTERED = 1753;
+            private const int RPC_S_NOTHING_TO_EXPORT = 1754;
+            private const int RPC_S_INCOMPLETE_NAME = 1755;
+            private const int RPC_S_INVALID_VERS_OPTION = 1756;
+            private const int RPC_S_NO_MORE_MEMBERS = 1757;
+            private const int RPC_S_NOT_ALL_OBJS_UNEXPORTED = 1758;
+            private const int RPC_S_INTERFACE_NOT_FOUND = 1759;
+            private const int RPC_S_ENTRY_ALREADY_EXISTS = 1760;
+            private const int RPC_S_ENTRY_NOT_FOUND = 1761;
+            private const int RPC_S_NAME_SERVICE_UNAVAILABLE = 1762;
+            private const int RPC_S_INVALID_NAF_ID = 1763;
+            private const int RPC_S_CANNOT_SUPPORT = 1764;
+            private const int RPC_S_NO_CONTEXT_AVAILABLE = 1765;
+            private const int RPC_S_INTERNAL_ERROR = 1766;
+            private const int RPC_S_ZERO_DIVIDE = 1767;
+            private const int RPC_S_ADDRESS_ERROR = 1768;
+            private const int RPC_S_FP_DIV_ZERO = 1769;
+            private const int RPC_S_FP_UNDERFLOW = 1770;
+            private const int RPC_S_FP_OVERFLOW = 1771;
+            private const int RPC_X_NO_MORE_ENTRIES = 1772;
+            private const int RPC_X_SS_CHAR_TRANS_OPEN_FAIL = 1773;
+            private const int RPC_X_SS_CHAR_TRANS_Int16_FILE = 1774;
+            private const int RPC_X_SS_IN_NULL_CONTEXT = 1775;
+            private const int RPC_X_SS_CONTEXT_DAMAGED = 1777;
+            private const int RPC_X_SS_HANDLES_MISMATCH = 1778;
+            private const int RPC_X_SS_CANNOT_GET_CALL_HANDLE = 1779;
+            private const int RPC_X_NULL_REF_POINTER = 1780;
+            private const int RPC_X_ENUM_VALUE_OUT_OF_RANGE = 1781;
+            private const int RPC_X_BYTE_COUNT_TOO_SMALL = 1782;
+            private const int RPC_X_BAD_STUB_DATA = 1783;
+            private const int ERROR_INVALID_USER_BUFFER = 1784;
+            private const int ERROR_UNRECOGNIZED_MEDIA = 1785;
+            private const int ERROR_NO_TRUST_LSA_SECRET = 1786;
+            private const int ERROR_NO_TRUST_SAM_ACCOUNT = 1787;
+            private const int ERROR_TRUSTED_DOMAIN_FAILURE = 1788;
+            private const int ERROR_TRUSTED_RELATIONSHIP_FAILURE = 1789;
+            private const int ERROR_TRUST_FAILURE = 1790;
+            private const int RPC_S_CALL_IN_PROGRESS = 1791;
+            private const int ERROR_NETLOGON_NOT_STARTED = 1792;
+            private const int ERROR_ACCOUNT_EXPIRED = 1793;
+            private const int ERROR_REDIRECTOR_HAS_OPEN_HANDLES = 1794;
+            private const int ERROR_PRINTER_DRIVER_ALREADY_INSTALLED = 1795;
+            private const int ERROR_UNKNOWN_PORT = 1796;
+            private const int ERROR_UNKNOWN_PRINTER_DRIVER = 1797;
+            private const int ERROR_UNKNOWN_PRINTPROCESSOR = 1798;
+            private const int ERROR_INVALID_SEPARATOR_FILE = 1799;
+            private const int ERROR_INVALID_PRIORITY = 1800;
+            private const int ERROR_INVALID_PRINTER_NAME = 1801;
+            private const int ERROR_PRINTER_ALREADY_EXISTS = 1802;
+            private const int ERROR_INVALID_PRINTER_COMMAND = 1803;
+            private const int ERROR_INVALID_DATATYPE = 1804;
+            private const int ERROR_INVALID_ENVIRONMENT = 1805;
+            private const int RPC_S_NO_MORE_BINDINGS = 1806;
+            private const int ERROR_NOLOGON_INTERDOMAIN_TRUST_ACCOUNT = 1807;
+            private const int ERROR_NOLOGON_WORKSTATION_TRUST_ACCOUNT = 1808;
+            private const int ERROR_NOLOGON_SERVER_TRUST_ACCOUNT = 1809;
+            private const int ERROR_DOMAIN_TRUST_INCONSISTENT = 1810;
+            private const int ERROR_SERVER_HAS_OPEN_HANDLES = 1811;
+            private const int ERROR_RESOURCE_DATA_NOT_FOUND = 1812;
+            private const int ERROR_RESOURCE_TYPE_NOT_FOUND = 1813;
+            private const int ERROR_RESOURCE_NAME_NOT_FOUND = 1814;
+            private const int ERROR_RESOURCE_LANG_NOT_FOUND = 1815;
+            private const int ERROR_NOT_ENOUGH_QUOTA = 1816;
+            private const int RPC_S_NO_INTERFACES = 1817;
+            private const int RPC_S_CALL_CANCELLED = 1818;
+            private const int RPC_S_BINDING_INCOMPLETE = 1819;
+            private const int RPC_S_COMM_FAILURE = 1820;
+            private const int RPC_S_UNSUPPORTED_AUTHN_LEVEL = 1821;
+            private const int RPC_S_NO_PRINC_NAME = 1822;
+            private const int RPC_S_NOT_RPC_ERROR = 1823;
+            private const int RPC_S_UUID_LOCAL_ONLY = 1824;
+            private const int RPC_S_SEC_PKG_ERROR = 1825;
+            private const int RPC_S_NOT_CANCELLED = 1826;
+            private const int RPC_X_INVALID_ES_ACTION = 1827;
+            private const int RPC_X_WRONG_ES_VERSION = 1828;
+            private const int RPC_X_WRONG_STUB_VERSION = 1829;
+            private const int RPC_X_INVALID_PIPE_OBJECT = 1830;
+            private const int RPC_X_WRONG_PIPE_ORDER = 1831;
+            private const int RPC_X_WRONG_PIPE_VERSION = 1832;
+            private const int RPC_S_GROUP_MEMBER_NOT_FOUND = 1898;
+            private const int EPT_S_CANT_CREATE = 1899;
+            private const int RPC_S_INVALID_OBJECT = 1900;
+            private const int ERROR_INVALID_TIME = 1901;
+            private const int ERROR_INVALID_FORM_NAME = 1902;
+            private const int ERROR_INVALID_FORM_SIZE = 1903;
+            private const int ERROR_ALREADY_WAITING = 1904;
+            private const int ERROR_PRINTER_DELETED = 1905;
+            private const int ERROR_INVALID_PRINTER_STATE = 1906;
+            private const int ERROR_PASSUInt16_MUST_CHANGE = 1907;
+            private const int ERROR_DOMAIN_CONTROLLER_NOT_FOUND = 1908;
+            private const int ERROR_ACCOUNT_LOCKED_OUT = 1909;
+            private const int OR_INVALID_OXID = 1910;
+            private const int OR_INVALID_OID = 1911;
+            private const int OR_INVALID_SET = 1912;
+            private const int RPC_S_SEND_INCOMPLETE = 1913;
+            private const int RPC_S_INVALID_ASYNC_HANDLE = 1914;
+            private const int RPC_S_INVALID_ASYNC_CALL = 1915;
+            private const int RPC_X_PIPE_CLOSED = 1916;
+            private const int RPC_X_PIPE_DISCIPLINE_ERROR = 1917;
+            private const int RPC_X_PIPE_EMPTY = 1918;
+            private const int ERROR_NO_SITENAME = 1919;
+            private const int ERROR_CANT_ACCESS_FILE = 1920;
+            private const int ERROR_CANT_RESOLVE_FILENAME = 1921;
+            private const int RPC_S_ENTRY_TYPE_MISMATCH = 1922;
+            private const int RPC_S_NOT_ALL_OBJS_EXPORTED = 1923;
+            private const int RPC_S_INTERFACE_NOT_EXPORTED = 1924;
+            private const int RPC_S_PROFILE_NOT_ADDED = 1925;
+            private const int RPC_S_PRF_ELT_NOT_ADDED = 1926;
+            private const int RPC_S_PRF_ELT_NOT_REMOVED = 1927;
+            private const int RPC_S_GRP_ELT_NOT_ADDED = 1928;
+            private const int RPC_S_GRP_ELT_NOT_REMOVED = 1929;
+            private const int ERROR_KM_DRIVER_BLOCKED = 1930;
+            private const int ERROR_CONTEXT_EXPIRED = 1931;
+            private const int ERROR_PER_USER_TRUST_QUOTA_EXCEEDED = 1932;
+            private const int ERROR_ALL_USER_TRUST_QUOTA_EXCEEDED = 1933;
+            private const int ERROR_USER_DELETE_TRUST_QUOTA_EXCEEDED = 1934;
+            private const int ERROR_AUTHENTICATION_FIREWALL_FAILED = 1935;
+            private const int ERROR_REMOTE_PRINT_CONNECTIONS_BLOCKED = 1936;
+            private const int ERROR_INVALID_PIXEL_FORMAT = 2000;
+            private const int ERROR_BAD_DRIVER = 2001;
+            private const int ERROR_INVALID_WINDOW_STYLE = 2002;
+            private const int ERROR_METAFILE_NOT_SUPPORTED = 2003;
+            private const int ERROR_TRANSFORM_NOT_SUPPORTED = 2004;
+            private const int ERROR_CLIPPING_NOT_SUPPORTED = 2005;
+            private const int ERROR_INVALID_CMM = 2010;
+            private const int ERROR_INVALID_PROFILE = 2011;
+            private const int ERROR_TAG_NOT_FOUND = 2012;
+            private const int ERROR_TAG_NOT_PRESENT = 2013;
+            private const int ERROR_DUPLICATE_TAG = 2014;
+            private const int ERROR_PROFILE_NOT_ASSOCIATED_WITH_DEVICE = 2015;
+            private const int ERROR_PROFILE_NOT_FOUND = 2016;
+            private const int ERROR_INVALID_COLORSPACE = 2017;
+            private const int ERROR_ICM_NOT_ENABLED = 2018;
+            private const int ERROR_DELETING_ICM_XFORM = 2019;
+            private const int ERROR_INVALID_TRANSFORM = 2020;
+            private const int ERROR_COLORSPACE_MISMATCH = 2021;
+            private const int ERROR_INVALID_COLORINDEX = 2022;
+            private const int ERROR_CONNECTED_OTHER_PASSUInt16 = 2108;
+            private const int ERROR_CONNECTED_OTHER_PASSUInt16_DEFAULT = 2109;
+            private const int ERROR_BAD_USERNAME = 2202;
+            private const int ERROR_NOT_CONNECTED = 2250;
+            private const int ERROR_OPEN_FILES = 2401;
+            private const int ERROR_ACTIVE_CONNECTIONS = 2402;
+            private const int ERROR_DEVICE_IN_USE = 2404;
+            private const int ERROR_UNKNOWN_PRINT_MONITOR = 3000;
+            private const int ERROR_PRINTER_DRIVER_IN_USE = 3001;
+            private const int ERROR_SPOOL_FILE_NOT_FOUND = 3002;
+            private const int ERROR_SPL_NO_STARTDOC = 3003;
+            private const int ERROR_SPL_NO_ADDJOB = 3004;
+            private const int ERROR_PRINT_PROCESSOR_ALREADY_INSTALLED = 3005;
+            private const int ERROR_PRINT_MONITOR_ALREADY_INSTALLED = 3006;
+            private const int ERROR_INVALID_PRINT_MONITOR = 3007;
+            private const int ERROR_PRINT_MONITOR_IN_USE = 3008;
+            private const int ERROR_PRINTER_HAS_JOBS_QUEUED = 3009;
+            private const int ERROR_SUCCESS_REBOOT_REQUIRED = 3010;
+            private const int ERROR_SUCCESS_RESTART_REQUIRED = 3011;
+            private const int ERROR_PRINTER_NOT_FOUND = 3012;
+            private const int ERROR_PRINTER_DRIVER_WARNED = 3013;
+            private const int ERROR_PRINTER_DRIVER_BLOCKED = 3014;
+            private const int ERROR_WINS_INTERNAL = 4000;
+            private const int ERROR_CAN_NOT_DEL_LOCAL_WINS = 4001;
+            private const int ERROR_STATIC_INIT = 4002;
+            private const int ERROR_INC_BACKUP = 4003;
+            private const int ERROR_FULL_BACKUP = 4004;
+            private const int ERROR_REC_NON_EXISTENT = 4005;
+            private const int ERROR_RPL_NOT_ALLOWED = 4006;
+            private const int ERROR_DHCP_ADDRESS_CONFLICT = 4100;
+            private const int ERROR_WMI_GUID_NOT_FOUND = 4200;
+            private const int ERROR_WMI_INSTANCE_NOT_FOUND = 4201;
+            private const int ERROR_WMI_ITEMID_NOT_FOUND = 4202;
+            private const int ERROR_WMI_TRY_AGAIN = 4203;
+            private const int ERROR_WMI_DP_NOT_FOUND = 4204;
+            private const int ERROR_WMI_UNRESOLVED_INSTANCE_REF = 4205;
+            private const int ERROR_WMI_ALREADY_ENABLED = 4206;
+            private const int ERROR_WMI_GUID_DISCONNECTED = 4207;
+            private const int ERROR_WMI_SERVER_UNAVAILABLE = 4208;
+            private const int ERROR_WMI_DP_FAILED = 4209;
+            private const int ERROR_WMI_INVALID_MOF = 4210;
+            private const int ERROR_WMI_INVALID_REGINFO = 4211;
+            private const int ERROR_WMI_ALREADY_DISABLED = 4212;
+            private const int ERROR_WMI_READ_ONLY = 4213;
+            private const int ERROR_WMI_SET_FAILURE = 4214;
+            private const int ERROR_INVALID_MEDIA = 4300;
+            private const int ERROR_INVALID_LIBRARY = 4301;
+            private const int ERROR_INVALID_MEDIA_POOL = 4302;
+            private const int ERROR_DRIVE_MEDIA_MISMATCH = 4303;
+            private const int ERROR_MEDIA_OFFLINE = 4304;
+            private const int ERROR_LIBRARY_OFFLINE = 4305;
+            private const int ERROR_EMPTY = 4306;
+            private const int ERROR_NOT_EMPTY = 4307;
+            private const int ERROR_MEDIA_UNAVAILABLE = 4308;
+            private const int ERROR_RESOURCE_DISABLED = 4309;
+            private const int ERROR_INVALID_CLEANER = 4310;
+            private const int ERROR_UNABLE_TO_CLEAN = 4311;
+            private const int ERROR_OBJECT_NOT_FOUND = 4312;
+            private const int ERROR_DATABASE_FAILURE = 4313;
+            private const int ERROR_DATABASE_FULL = 4314;
+            private const int ERROR_MEDIA_INCOMPATIBLE = 4315;
+            private const int ERROR_RESOURCE_NOT_PRESENT = 4316;
+            private const int ERROR_INVALID_OPERATION = 4317;
+            private const int ERROR_MEDIA_NOT_AVAILABLE = 4318;
+            private const int ERROR_DEVICE_NOT_AVAILABLE = 4319;
+            private const int ERROR_REQUEST_REFUSED = 4320;
+            private const int ERROR_INVALID_DRIVE_OBJECT = 4321;
+            private const int ERROR_LIBRARY_FULL = 4322;
+            private const int ERROR_MEDIUM_NOT_ACCESSIBLE = 4323;
+            private const int ERROR_UNABLE_TO_LOAD_MEDIUM = 4324;
+            private const int ERROR_UNABLE_TO_INVENTORY_DRIVE = 4325;
+            private const int ERROR_UNABLE_TO_INVENTORY_SLOT = 4326;
+            private const int ERROR_UNABLE_TO_INVENTORY_TRANSPORT = 4327;
+            private const int ERROR_TRANSPORT_FULL = 4328;
+            private const int ERROR_CONTROLLING_IEPORT = 4329;
+            private const int ERROR_UNABLE_TO_EJECT_MOUNTED_MEDIA = 4330;
+            private const int ERROR_CLEANER_SLOT_SET = 4331;
+            private const int ERROR_CLEANER_SLOT_NOT_SET = 4332;
+            private const int ERROR_CLEANER_CARTRIDGE_SPENT = 4333;
+            private const int ERROR_UNEXPECTED_OMID = 4334;
+            private const int ERROR_CANT_DELETE_LAST_ITEM = 4335;
+            private const int ERROR_MESSAGE_EXCEEDS_MAX_SIZE = 4336;
+            private const int ERROR_VOLUME_CONTAINS_SYS_FILES = 4337;
+            private const int ERROR_INDIGENOUS_TYPE = 4338;
+            private const int ERROR_NO_SUPPORTING_DRIVES = 4339;
+            private const int ERROR_CLEANER_CARTRIDGE_INSTALLED = 4340;
+            private const int ERROR_FILE_OFFLINE = 4350;
+            private const int ERROR_REMOTE_STORAGE_NOT_ACTIVE = 4351;
+            private const int ERROR_REMOTE_STORAGE_MEDIA_ERROR = 4352;
+            private const int ERROR_NOT_A_REPARSE_POINT = 4390;
+            private const int ERROR_REPARSE_ATTRIBUTE_CONFLICT = 4391;
+            private const int ERROR_INVALID_REPARSE_DATA = 4392;
+            private const int ERROR_REPARSE_TAG_INVALID = 4393;
+            private const int ERROR_REPARSE_TAG_MISMATCH = 4394;
+            private const int ERROR_VOLUME_NOT_SIS_ENABLED = 4500;
+            private const int ERROR_DEPENDENT_RESOURCE_EXISTS = 5001;
+            private const int ERROR_DEPENDENCY_NOT_FOUND = 5002;
+            private const int ERROR_DEPENDENCY_ALREADY_EXISTS = 5003;
+            private const int ERROR_RESOURCE_NOT_ONLINE = 5004;
+            private const int ERROR_HOST_NODE_NOT_AVAILABLE = 5005;
+            private const int ERROR_RESOURCE_NOT_AVAILABLE = 5006;
+            private const int ERROR_RESOURCE_NOT_FOUND = 5007;
+            private const int ERROR_SHUTDOWN_CLUSTER = 5008;
+            private const int ERROR_CANT_EVICT_ACTIVE_NODE = 5009;
+            private const int ERROR_OBJECT_ALREADY_EXISTS = 5010;
+            private const int ERROR_OBJECT_IN_LIST = 5011;
+            private const int ERROR_GROUP_NOT_AVAILABLE = 5012;
+            private const int ERROR_GROUP_NOT_FOUND = 5013;
+            private const int ERROR_GROUP_NOT_ONLINE = 5014;
+            private const int ERROR_HOST_NODE_NOT_RESOURCE_OWNER = 5015;
+            private const int ERROR_HOST_NODE_NOT_GROUP_OWNER = 5016;
+            private const int ERROR_RESMON_CREATE_FAILED = 5017;
+            private const int ERROR_RESMON_ONLINE_FAILED = 5018;
+            private const int ERROR_RESOURCE_ONLINE = 5019;
+            private const int ERROR_QUORUM_RESOURCE = 5020;
+            private const int ERROR_NOT_QUORUM_CAPABLE = 5021;
+            private const int ERROR_CLUSTER_SHUTTING_DOWN = 5022;
+            private const int ERROR_INVALID_STATE = 5023;
+            private const int ERROR_RESOURCE_PROPERTIES_STORED = 5024;
+            private const int ERROR_NOT_QUORUM_CLASS = 5025;
+            private const int ERROR_CORE_RESOURCE = 5026;
+            private const int ERROR_QUORUM_RESOURCE_ONLINE_FAILED = 5027;
+            private const int ERROR_QUORUMLOG_OPEN_FAILED = 5028;
+            private const int ERROR_CLUSTERLOG_CORRUPT = 5029;
+            private const int ERROR_CLUSTERLOG_RECORD_EXCEEDS_MAXSIZE = 5030;
+            private const int ERROR_CLUSTERLOG_EXCEEDS_MAXSIZE = 5031;
+            private const int ERROR_CLUSTERLOG_CHKPOINT_NOT_FOUND = 5032;
+            private const int ERROR_CLUSTERLOG_NOT_ENOUGH_SPACE = 5033;
+            private const int ERROR_QUORUM_OWNER_ALIVE = 5034;
+            private const int ERROR_NETWORK_NOT_AVAILABLE = 5035;
+            private const int ERROR_NODE_NOT_AVAILABLE = 5036;
+            private const int ERROR_ALL_NODES_NOT_AVAILABLE = 5037;
+            private const int ERROR_RESOURCE_FAILED = 5038;
+            private const int ERROR_CLUSTER_INVALID_NODE = 5039;
+            private const int ERROR_CLUSTER_NODE_EXISTS = 5040;
+            private const int ERROR_CLUSTER_JOIN_IN_PROGRESS = 5041;
+            private const int ERROR_CLUSTER_NODE_NOT_FOUND = 5042;
+            private const int ERROR_CLUSTER_LOCAL_NODE_NOT_FOUND = 5043;
+            private const int ERROR_CLUSTER_NETWORK_EXISTS = 5044;
+            private const int ERROR_CLUSTER_NETWORK_NOT_FOUND = 5045;
+            private const int ERROR_CLUSTER_NETINTERFACE_EXISTS = 5046;
+            private const int ERROR_CLUSTER_NETINTERFACE_NOT_FOUND = 5047;
+            private const int ERROR_CLUSTER_INVALID_REQUEST = 5048;
+            private const int ERROR_CLUSTER_INVALID_NETWORK_PROVIDER = 5049;
+            private const int ERROR_CLUSTER_NODE_DOWN = 5050;
+            private const int ERROR_CLUSTER_NODE_UNREACHABLE = 5051;
+            private const int ERROR_CLUSTER_NODE_NOT_MEMBER = 5052;
+            private const int ERROR_CLUSTER_JOIN_NOT_IN_PROGRESS = 5053;
+            private const int ERROR_CLUSTER_INVALID_NETWORK = 5054;
+            private const int ERROR_CLUSTER_NODE_UP = 5056;
+            private const int ERROR_CLUSTER_IPADDR_IN_USE = 5057;
+            private const int ERROR_CLUSTER_NODE_NOT_PAUSED = 5058;
+            private const int ERROR_CLUSTER_NO_SECURITY_CONTEXT = 5059;
+            private const int ERROR_CLUSTER_NETWORK_NOT_INTERNAL = 5060;
+            private const int ERROR_CLUSTER_NODE_ALREADY_UP = 5061;
+            private const int ERROR_CLUSTER_NODE_ALREADY_DOWN = 5062;
+            private const int ERROR_CLUSTER_NETWORK_ALREADY_ONLINE = 5063;
+            private const int ERROR_CLUSTER_NETWORK_ALREADY_OFFLINE = 5064;
+            private const int ERROR_CLUSTER_NODE_ALREADY_MEMBER = 5065;
+            private const int ERROR_CLUSTER_LAST_INTERNAL_NETWORK = 5066;
+            private const int ERROR_CLUSTER_NETWORK_HAS_DEPENDENTS = 5067;
+            private const int ERROR_INVALID_OPERATION_ON_QUORUM = 5068;
+            private const int ERROR_DEPENDENCY_NOT_ALLOWED = 5069;
+            private const int ERROR_CLUSTER_NODE_PAUSED = 5070;
+            private const int ERROR_NODE_CANT_HOST_RESOURCE = 5071;
+            private const int ERROR_CLUSTER_NODE_NOT_READY = 5072;
+            private const int ERROR_CLUSTER_NODE_SHUTTING_DOWN = 5073;
+            private const int ERROR_CLUSTER_JOIN_ABORTED = 5074;
+            private const int ERROR_CLUSTER_INCOMPATIBLE_VERSIONS = 5075;
+            private const int ERROR_CLUSTER_MAXNUM_OF_RESOURCES_EXCEEDED = 5076;
+            private const int ERROR_CLUSTER_SYSTEM_CONFIG_CHANGED = 5077;
+            private const int ERROR_CLUSTER_RESOURCE_TYPE_NOT_FOUND = 5078;
+            private const int ERROR_CLUSTER_RESTYPE_NOT_SUPPORTED = 5079;
+            private const int ERROR_CLUSTER_RESNAME_NOT_FOUND = 5080;
+            private const int ERROR_CLUSTER_NO_RPC_PACKAGES_REGISTERED = 5081;
+            private const int ERROR_CLUSTER_OWNER_NOT_IN_PREFLIST = 5082;
+            private const int ERROR_CLUSTER_DATABASE_SEQMISMATCH = 5083;
+            private const int ERROR_RESMON_INVALID_STATE = 5084;
+            private const int ERROR_CLUSTER_GUM_NOT_LOCKER = 5085;
+            private const int ERROR_QUORUM_DISK_NOT_FOUND = 5086;
+            private const int ERROR_DATABASE_BACKUP_CORRUPT = 5087;
+            private const int ERROR_CLUSTER_NODE_ALREADY_HAS_DFS_ROOT = 5088;
+            private const int ERROR_RESOURCE_PROPERTY_UNCHANGEABLE = 5089;
+            private const int ERROR_CLUSTER_MEMBERSHIP_INVALID_STATE = 5890;
+            private const int ERROR_CLUSTER_QUORUMLOG_NOT_FOUND = 5891;
+            private const int ERROR_CLUSTER_MEMBERSHIP_HALT = 5892;
+            private const int ERROR_CLUSTER_INSTANCE_ID_MISMATCH = 5893;
+            private const int ERROR_CLUSTER_NETWORK_NOT_FOUND_FOR_IP = 5894;
+            private const int ERROR_CLUSTER_PROPERTY_DATA_TYPE_MISMATCH = 5895;
+            private const int ERROR_CLUSTER_EVICT_WITHOUT_CLEANUP = 5896;
+            private const int ERROR_CLUSTER_PARAMETER_MISMATCH = 5897;
+            private const int ERROR_NODE_CANNOT_BE_CLUSTERED = 5898;
+            private const int ERROR_CLUSTER_WRONG_OS_VERSION = 5899;
+            private const int ERROR_CLUSTER_CANT_CREATE_DUP_CLUSTER_NAME = 5900;
+            private const int ERROR_CLUSCFG_ALREADY_COMMITTED = 5901;
+            private const int ERROR_CLUSCFG_ROLLBACK_FAILED = 5902;
+            private const int ERROR_CLUSCFG_SYSTEM_DISK_DRIVE_LETTER_CONFLICT = 5903;
+            private const int ERROR_CLUSTER_OLD_VERSION = 5904;
+            private const int ERROR_CLUSTER_MISMATCHED_COMPUTER_ACCT_NAME = 5905;
+            private const int ERROR_ENCRYPTION_FAILED = 6000;
+            private const int ERROR_DECRYPTION_FAILED = 6001;
+            private const int ERROR_FILE_ENCRYPTED = 6002;
+            private const int ERROR_NO_RECOVERY_POLICY = 6003;
+            private const int ERROR_NO_EFS = 6004;
+            private const int ERROR_WRONG_EFS = 6005;
+            private const int ERROR_NO_USER_KEYS = 6006;
+            private const int ERROR_FILE_NOT_ENCRYPTED = 6007;
+            private const int ERROR_NOT_EXPORT_FORMAT = 6008;
+            private const int ERROR_FILE_READ_ONLY = 6009;
+            private const int ERROR_DIR_EFS_DISALLOWED = 6010;
+            private const int ERROR_EFS_SERVER_NOT_TRUSTED = 6011;
+            private const int ERROR_BAD_RECOVERY_POLICY = 6012;
+            private const int ERROR_EFS_ALG_BLOB_TOO_BIG = 6013;
+            private const int ERROR_VOLUME_NOT_SUPPORT_EFS = 6014;
+            private const int ERROR_EFS_DISABLED = 6015;
+            private const int ERROR_EFS_VERSION_NOT_SUPPORT = 6016;
+            private const int ERROR_NO_BROWSER_SERVERS_FOUND = 6118;
+            private const int SCHED_E_SERVICE_NOT_LOCALSYSTEM = 6200;
+            private const int ERROR_CTX_WINSTATION_NAME_INVALID = 7001;
+            private const int ERROR_CTX_INVALID_PD = 7002;
+            private const int ERROR_CTX_PD_NOT_FOUND = 7003;
+            private const int ERROR_CTX_WD_NOT_FOUND = 7004;
+            private const int ERROR_CTX_CANNOT_MAKE_EVENTLOG_ENTRY = 7005;
+            private const int ERROR_CTX_SERVICE_NAME_COLLISION = 7006;
+            private const int ERROR_CTX_CLOSE_PENDING = 7007;
+            private const int ERROR_CTX_NO_OUTBUF = 7008;
+            private const int ERROR_CTX_MODEM_INF_NOT_FOUND = 7009;
+            private const int ERROR_CTX_INVALID_MODEMNAME = 7010;
+            private const int ERROR_CTX_MODEM_RESPONSE_ERROR = 7011;
+            private const int ERROR_CTX_MODEM_RESPONSE_TIMEOUT = 7012;
+            private const int ERROR_CTX_MODEM_RESPONSE_NO_CARRIER = 7013;
+            private const int ERROR_CTX_MODEM_RESPONSE_NO_DIALTONE = 7014;
+            private const int ERROR_CTX_MODEM_RESPONSE_BUSY = 7015;
+            private const int ERROR_CTX_MODEM_RESPONSE_VOICE = 7016;
+            private const int ERROR_CTX_TD_ERROR = 7017;
+            private const int ERROR_CTX_WINSTATION_NOT_FOUND = 7022;
+            private const int ERROR_CTX_WINSTATION_ALREADY_EXISTS = 7023;
+            private const int ERROR_CTX_WINSTATION_BUSY = 7024;
+            private const int ERROR_CTX_BAD_VIDEO_MODE = 7025;
+
+            /// <summary>
+            /// The application attempted to enable DOS graphics mode.
+            /// DOS graphics mode is not supported.
+            /// </summary>
+            public const int ERROR_CTX_GRAPHICS_INVALID = 7035;
+
+            /// <summary>
+            /// Your interactive logon privilege has been disabled.
+            /// Please contact your administrator.
+            /// </summary>
+            public const int ERROR_CTX_LOGON_DISABLED = 7037;
+
+            /// <summary>
+            /// The requested operation can be performed only on the system console.
+            /// This is most often the result of a driver or system DLL requiring direct console access.
+            /// </summary>
+            public const int ERROR_CTX_NOT_CONSOLE = 7038;
+
+            private const int ERROR_CTX_CLIENT_QUERY_TIMEOUT = 7040;
+            private const int ERROR_CTX_CONSOLE_DISCONNECT = 7041;
+            private const int ERROR_CTX_CONSOLE_CONNECT = 7042;
+            private const int ERROR_CTX_SHADOW_DENIED = 7044;
+            private const int ERROR_CTX_WINSTATION_ACCESS_DENIED = 7045;
+            private const int ERROR_CTX_INVALID_WD = 7049;
+
+            /// <summary>
+            /// The requested session cannot be controlled remotely.
+            /// This may be because the session is disconnected or does not currently have a user logged on.
+            /// </summary>
+            public const int ERROR_CTX_SHADOW_INVALID = 7050;
+
+            private const int ERROR_CTX_SHADOW_DISABLED = 7051;
+
+            /// <summary>
+            /// Your request to connect to this Terminal Server has been rejected. Your Terminal Server client license number is currently being used by another user.
+            /// Please call your system administrator to obtain a unique license number.
+            /// </summary>
+            public const int ERROR_CTX_CLIENT_LICENSE_IN_USE = 7052;
+
+            /// <summary>
+            /// Your request to connect to this Terminal Server has been rejected. Your Terminal Server client license number has not been entered for this copy of the Terminal Server client.
+            /// Please contact your system administrator.
+            /// </summary>
+            public const int ERROR_CTX_CLIENT_LICENSE_NOT_SET = 7053;
+
+            /// <summary>
+            /// The system has reached its licensed logon limit.
+            /// Please try again later.
+            /// </summary>
+            public const int ERROR_CTX_LICENSE_NOT_AVAILABLE = 7054;
+
+            private const int ERROR_CTX_LICENSE_CLIENT_INVALID = 7055;
+            private const int ERROR_CTX_LICENSE_EXPIRED = 7056;
+            private const int ERROR_CTX_SHADOW_NOT_RUNNING = 7057;
+            private const int ERROR_CTX_SHADOW_ENDED_BY_MODE_CHANGE = 7058;
+            private const int ERROR_ACTIVATION_COUNT_EXCEEDED = 7059;
+            private const int FRS_ERR_INVALID_API_SEQUENCE = 8001;
+            private const int FRS_ERR_STARTING_SERVICE = 8002;
+            private const int FRS_ERR_STOPPING_SERVICE = 8003;
+
+            /// <summary>
+            /// The file replication service API terminated the request.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_INTERNAL_API = 8004;
+
+            /// <summary>
+            /// The file replication service terminated the request.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_INTERNAL = 8005;
+
+            /// <summary>
+            /// The file replication service cannot be contacted.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_SERVICE_COMM = 8006;
+
+            /// <summary>
+            /// The file replication service cannot satisfy the request because the user has insufficient privileges.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_INSUFFICIENT_PRIV = 8007;
+
+            /// <summary>
+            /// The file replication service cannot satisfy the request because authenticated RPC is not available.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_AUTHENTICATION = 8008;
+
+            /// <summary>
+            /// The file replication service cannot satisfy the request because the user has insufficient privileges on the domain controller.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_PARENT_INSUFFICIENT_PRIV = 8009;
+
+            /// <summary>
+            /// The file replication service cannot satisfy the request because authenticated RPC is not available on the domain controller.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_PARENT_AUTHENTICATION = 8010;
+
+            /// <summary>
+            /// The file replication service cannot communicate with the file replication service on the domain controller.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_CHILD_TO_PARENT_COMM = 8011;
+
+            /// <summary>
+            /// The file replication service on the domain controller cannot communicate with the file replication service on this computer.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_PARENT_TO_CHILD_COMM = 8012;
+
+            /// <summary>
+            /// The file replication service cannot populate the system volume because of an internal error.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_SYSVOL_POPULATE = 8013;
+
+            /// <summary>
+            /// The file replication service cannot populate the system volume because of an internal timeout.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_SYSVOL_POPULATE_TIMEOUT = 8014;
+
+            private const int FRS_ERR_SYSVOL_IS_BUSY = 8015;
+
+            /// <summary>
+            /// The file replication service cannot stop replicating the system volume because of an internal error.
+            /// The event log may have more information.
+            /// </summary>
+            public const int FRS_ERR_SYSVOL_DEMOTE = 8016;
+
+            private const int FRS_ERR_INVALID_SERVICE_PARAMETER = 8017;
+            private const int ERROR_DS_NOT_INSTALLED = 8200;
+            private const int ERROR_DS_MEMBERSHIP_EVALUATED_LOCALLY = 8201;
+            private const int ERROR_DS_NO_ATTRIBUTE_OR_VALUE = 8202;
+            private const int ERROR_DS_INVALID_ATTRIBUTE_SYNTAX = 8203;
+            private const int ERROR_DS_ATTRIBUTE_TYPE_UNDEFINED = 8204;
+            private const int ERROR_DS_ATTRIBUTE_OR_VALUE_EXISTS = 8205;
+            private const int ERROR_DS_BUSY = 8206;
+            private const int ERROR_DS_UNAVAILABLE = 8207;
+            private const int ERROR_DS_NO_RIDS_ALLOCATED = 8208;
+            private const int ERROR_DS_NO_MORE_RIDS = 8209;
+            private const int ERROR_DS_INCORRECT_ROLE_OWNER = 8210;
+            private const int ERROR_DS_RIDMGR_INIT_ERROR = 8211;
+            private const int ERROR_DS_OBJ_CLASS_VIOLATION = 8212;
+            private const int ERROR_DS_CANT_ON_NON_LEAF = 8213;
+            private const int ERROR_DS_CANT_ON_RDN = 8214;
+            private const int ERROR_DS_CANT_MOD_OBJ_CLASS = 8215;
+            private const int ERROR_DS_CROSS_DOM_MOVE_ERROR = 8216;
+            private const int ERROR_DS_GC_NOT_AVAILABLE = 8217;
+            private const int ERROR_SHARED_POLICY = 8218;
+            private const int ERROR_POLICY_OBJECT_NOT_FOUND = 8219;
+            private const int ERROR_POLICY_ONLY_IN_DS = 8220;
+            private const int ERROR_PROMOTION_ACTIVE = 8221;
+            private const int ERROR_NO_PROMOTION_ACTIVE = 8222;
+            private const int ERROR_DS_OPERATIONS_ERROR = 8224;
+            private const int ERROR_DS_PROTOCOL_ERROR = 8225;
+            private const int ERROR_DS_TIMELIMIT_EXCEEDED = 8226;
+            private const int ERROR_DS_SIZELIMIT_EXCEEDED = 8227;
+            private const int ERROR_DS_ADMIN_LIMIT_EXCEEDED = 8228;
+            private const int ERROR_DS_COMPARE_FALSE = 8229;
+            private const int ERROR_DS_COMPARE_TRUE = 8230;
+            private const int ERROR_DS_AUTH_METHOD_NOT_SUPPORTED = 8231;
+            private const int ERROR_DS_STRONG_AUTH_REQUIRED = 8232;
+            private const int ERROR_DS_INAPPROPRIATE_AUTH = 8233;
+            private const int ERROR_DS_AUTH_UNKNOWN = 8234;
+            private const int ERROR_DS_REFERRAL = 8235;
+            private const int ERROR_DS_UNAVAILABLE_CRIT_EXTENSION = 8236;
+            private const int ERROR_DS_CONFIDENTIALITY_REQUIRED = 8237;
+            private const int ERROR_DS_INAPPROPRIATE_MATCHING = 8238;
+            private const int ERROR_DS_CONSTRAINT_VIOLATION = 8239;
+            private const int ERROR_DS_NO_SUCH_OBJECT = 8240;
+            private const int ERROR_DS_ALIAS_PROBLEM = 8241;
+            private const int ERROR_DS_INVALID_DN_SYNTAX = 8242;
+            private const int ERROR_DS_IS_LEAF = 8243;
+            private const int ERROR_DS_ALIAS_DEREF_PROBLEM = 8244;
+            private const int ERROR_DS_UNWILLING_TO_PERFORM = 8245;
+            private const int ERROR_DS_LOOP_DETECT = 8246;
+            private const int ERROR_DS_NAMING_VIOLATION = 8247;
+            private const int ERROR_DS_OBJECT_RESULTS_TOO_LARGE = 8248;
+            private const int ERROR_DS_AFFECTS_MULTIPLE_DSAS = 8249;
+            private const int ERROR_DS_SERVER_DOWN = 8250;
+            private const int ERROR_DS_LOCAL_ERROR = 8251;
+            private const int ERROR_DS_ENCODING_ERROR = 8252;
+            private const int ERROR_DS_DECODING_ERROR = 8253;
+            private const int ERROR_DS_FILTER_UNKNOWN = 8254;
+            private const int ERROR_DS_PARAM_ERROR = 8255;
+            private const int ERROR_DS_NOT_SUPPORTED = 8256;
+            private const int ERROR_DS_NO_RESULTS_RETURNED = 8257;
+            private const int ERROR_DS_CONTROL_NOT_FOUND = 8258;
+            private const int ERROR_DS_CLIENT_LOOP = 8259;
+            private const int ERROR_DS_REFERRAL_LIMIT_EXCEEDED = 8260;
+            private const int ERROR_DS_SORT_CONTROL_MISSING = 8261;
+            private const int ERROR_DS_OFFSET_RANGE_ERROR = 8262;
+            private const int ERROR_DS_ROOT_MUST_BE_NC = 8301;
+            private const int ERROR_DS_ADD_REPLICA_INHIBITED = 8302;
+            private const int ERROR_DS_ATT_NOT_DEF_IN_SCHEMA = 8303;
+            private const int ERROR_DS_MAX_OBJ_SIZE_EXCEEDED = 8304;
+            private const int ERROR_DS_OBJ_STRING_NAME_EXISTS = 8305;
+            private const int ERROR_DS_NO_RDN_DEFINED_IN_SCHEMA = 8306;
+            private const int ERROR_DS_RDN_DOESNT_MATCH_SCHEMA = 8307;
+            private const int ERROR_DS_NO_REQUESTED_ATTS_FOUND = 8308;
+            private const int ERROR_DS_USER_BUFFER_TO_SMALL = 8309;
+            private const int ERROR_DS_ATT_IS_NOT_ON_OBJ = 8310;
+            private const int ERROR_DS_ILLEGAL_MOD_OPERATION = 8311;
+            private const int ERROR_DS_OBJ_TOO_LARGE = 8312;
+            private const int ERROR_DS_BAD_INSTANCE_TYPE = 8313;
+            private const int ERROR_DS_MASTERDSA_REQUIRED = 8314;
+            private const int ERROR_DS_OBJECT_CLASS_REQUIRED = 8315;
+            private const int ERROR_DS_MISSING_REQUIRED_ATT = 8316;
+            private const int ERROR_DS_ATT_NOT_DEF_FOR_CLASS = 8317;
+            private const int ERROR_DS_ATT_ALREADY_EXISTS = 8318;
+            private const int ERROR_DS_CANT_ADD_ATT_VALUES = 8320;
+            private const int ERROR_DS_SINGLE_VALUE_CONSTRAINT = 8321;
+            private const int ERROR_DS_RANGE_CONSTRAINT = 8322;
+            private const int ERROR_DS_ATT_VAL_ALREADY_EXISTS = 8323;
+            private const int ERROR_DS_CANT_REM_MISSING_ATT = 8324;
+            private const int ERROR_DS_CANT_REM_MISSING_ATT_VAL = 8325;
+            private const int ERROR_DS_ROOT_CANT_BE_SUBREF = 8326;
+            private const int ERROR_DS_NO_CHAINING = 8327;
+            private const int ERROR_DS_NO_CHAINED_EVAL = 8328;
+            private const int ERROR_DS_NO_PARENT_OBJECT = 8329;
+            private const int ERROR_DS_PARENT_IS_AN_ALIAS = 8330;
+            private const int ERROR_DS_CANT_MIX_MASTER_AND_REPS = 8331;
+            private const int ERROR_DS_CHILDREN_EXIST = 8332;
+            private const int ERROR_DS_OBJ_NOT_FOUND = 8333;
+            private const int ERROR_DS_ALIASED_OBJ_MISSING = 8334;
+            private const int ERROR_DS_BAD_NAME_SYNTAX = 8335;
+            private const int ERROR_DS_ALIAS_POINTS_TO_ALIAS = 8336;
+            private const int ERROR_DS_CANT_DEREF_ALIAS = 8337;
+            private const int ERROR_DS_OUT_OF_SCOPE = 8338;
+            private const int ERROR_DS_OBJECT_BEING_REMOVED = 8339;
+            private const int ERROR_DS_CANT_DELETE_DSA_OBJ = 8340;
+            private const int ERROR_DS_GENERIC_ERROR = 8341;
+            private const int ERROR_DS_DSA_MUST_BE_INT_MASTER = 8342;
+            private const int ERROR_DS_CLASS_NOT_DSA = 8343;
+            private const int ERROR_DS_INSUFF_ACCESS_RIGHTS = 8344;
+            private const int ERROR_DS_ILLEGAL_SUPERIOR = 8345;
+            private const int ERROR_DS_ATTRIBUTE_OWNED_BY_SAM = 8346;
+            private const int ERROR_DS_NAME_TOO_MANY_PARTS = 8347;
+            private const int ERROR_DS_NAME_TOO_Int32 = 8348;
+            private const int ERROR_DS_NAME_VALUE_TOO_Int32 = 8349;
+            private const int ERROR_DS_NAME_UNPARSEABLE = 8350;
+            private const int ERROR_DS_NAME_TYPE_UNKNOWN = 8351;
+            private const int ERROR_DS_NOT_AN_OBJECT = 8352;
+            private const int ERROR_DS_SEC_DESC_TOO_Int16 = 8353;
+            private const int ERROR_DS_SEC_DESC_INVALID = 8354;
+            private const int ERROR_DS_NO_DELETED_NAME = 8355;
+            private const int ERROR_DS_SUBREF_MUST_HAVE_PARENT = 8356;
+            private const int ERROR_DS_NCNAME_MUST_BE_NC = 8357;
+            private const int ERROR_DS_CANT_ADD_SYSTEM_ONLY = 8358;
+            private const int ERROR_DS_CLASS_MUST_BE_CONCRETE = 8359;
+            private const int ERROR_DS_INVALID_DMD = 8360;
+            private const int ERROR_DS_OBJ_GUID_EXISTS = 8361;
+            private const int ERROR_DS_NOT_ON_BACKLINK = 8362;
+            private const int ERROR_DS_NO_CROSSREF_FOR_NC = 8363;
+            private const int ERROR_DS_SHUTTING_DOWN = 8364;
+            private const int ERROR_DS_UNKNOWN_OPERATION = 8365;
+            private const int ERROR_DS_INVALID_ROLE_OWNER = 8366;
+            private const int ERROR_DS_COULDNT_CONTACT_FSMO = 8367;
+            private const int ERROR_DS_CROSS_NC_DN_RENAME = 8368;
+            private const int ERROR_DS_CANT_MOD_SYSTEM_ONLY = 8369;
+            private const int ERROR_DS_REPLICATOR_ONLY = 8370;
+            private const int ERROR_DS_OBJ_CLASS_NOT_DEFINED = 8371;
+            private const int ERROR_DS_OBJ_CLASS_NOT_SUBCLASS = 8372;
+            private const int ERROR_DS_NAME_REFERENCE_INVALID = 8373;
+            private const int ERROR_DS_CROSS_REF_EXISTS = 8374;
+            private const int ERROR_DS_CANT_DEL_MASTER_CROSSREF = 8375;
+            private const int ERROR_DS_SUBTREE_NOTIFY_NOT_NC_HEAD = 8376;
+            private const int ERROR_DS_NOTIFY_FILTER_TOO_COMPLEX = 8377;
+            private const int ERROR_DS_DUP_RDN = 8378;
+            private const int ERROR_DS_DUP_OID = 8379;
+            private const int ERROR_DS_DUP_MAPI_ID = 8380;
+            private const int ERROR_DS_DUP_SCHEMA_ID_GUID = 8381;
+            private const int ERROR_DS_DUP_LDAP_DISPLAY_NAME = 8382;
+            private const int ERROR_DS_SEMANTIC_ATT_TEST = 8383;
+            private const int ERROR_DS_SYNTAX_MISMATCH = 8384;
+            private const int ERROR_DS_EXISTS_IN_MUST_HAVE = 8385;
+            private const int ERROR_DS_EXISTS_IN_MAY_HAVE = 8386;
+            private const int ERROR_DS_NONEXISTENT_MAY_HAVE = 8387;
+            private const int ERROR_DS_NONEXISTENT_MUST_HAVE = 8388;
+            private const int ERROR_DS_AUX_CLS_TEST_FAIL = 8389;
+            private const int ERROR_DS_NONEXISTENT_POSS_SUP = 8390;
+            private const int ERROR_DS_SUB_CLS_TEST_FAIL = 8391;
+            private const int ERROR_DS_BAD_RDN_ATT_ID_SYNTAX = 8392;
+            private const int ERROR_DS_EXISTS_IN_AUX_CLS = 8393;
+            private const int ERROR_DS_EXISTS_IN_SUB_CLS = 8394;
+            private const int ERROR_DS_EXISTS_IN_POSS_SUP = 8395;
+            private const int ERROR_DS_RECALCSCHEMA_FAILED = 8396;
+            private const int ERROR_DS_TREE_DELETE_NOT_FINISHED = 8397;
+            private const int ERROR_DS_CANT_DELETE = 8398;
+            private const int ERROR_DS_ATT_SCHEMA_REQ_ID = 8399;
+            private const int ERROR_DS_BAD_ATT_SCHEMA_SYNTAX = 8400;
+            private const int ERROR_DS_CANT_CACHE_ATT = 8401;
+            private const int ERROR_DS_CANT_CACHE_CLASS = 8402;
+            private const int ERROR_DS_CANT_REMOVE_ATT_CACHE = 8403;
+            private const int ERROR_DS_CANT_REMOVE_CLASS_CACHE = 8404;
+            private const int ERROR_DS_CANT_RETRIEVE_DN = 8405;
+            private const int ERROR_DS_MISSING_SUPREF = 8406;
+            private const int ERROR_DS_CANT_RETRIEVE_INSTANCE = 8407;
+            private const int ERROR_DS_CODE_INCONSISTENCY = 8408;
+            private const int ERROR_DS_DATABASE_ERROR = 8409;
+            private const int ERROR_DS_GOVERNSID_MISSING = 8410;
+            private const int ERROR_DS_MISSING_EXPECTED_ATT = 8411;
+            private const int ERROR_DS_NCNAME_MISSING_CR_REF = 8412;
+            private const int ERROR_DS_SECURITY_CHECKING_ERROR = 8413;
+            private const int ERROR_DS_SCHEMA_NOT_LOADED = 8414;
+            private const int ERROR_DS_SCHEMA_ALLOC_FAILED = 8415;
+            private const int ERROR_DS_ATT_SCHEMA_REQ_SYNTAX = 8416;
+            private const int ERROR_DS_GCVERIFY_ERROR = 8417;
+            private const int ERROR_DS_DRA_SCHEMA_MISMATCH = 8418;
+            private const int ERROR_DS_CANT_FIND_DSA_OBJ = 8419;
+            private const int ERROR_DS_CANT_FIND_EXPECTED_NC = 8420;
+            private const int ERROR_DS_CANT_FIND_NC_IN_CACHE = 8421;
+            private const int ERROR_DS_CANT_RETRIEVE_CHILD = 8422;
+            private const int ERROR_DS_SECURITY_ILLEGAL_MODIFY = 8423;
+            private const int ERROR_DS_CANT_REPLACE_HIDDEN_REC = 8424;
+            private const int ERROR_DS_BAD_HIERARCHY_FILE = 8425;
+            private const int ERROR_DS_BUILD_HIERARCHY_TABLE_FAILED = 8426;
+            private const int ERROR_DS_CONFIG_PARAM_MISSING = 8427;
+            private const int ERROR_DS_COUNTING_AB_INDICES_FAILED = 8428;
+            private const int ERROR_DS_HIERARCHY_TABLE_MALLOC_FAILED = 8429;
+            private const int ERROR_DS_INTERNAL_FAILURE = 8430;
+            private const int ERROR_DS_UNKNOWN_ERROR = 8431;
+            private const int ERROR_DS_ROOT_REQUIRES_CLASS_TOP = 8432;
+            private const int ERROR_DS_REFUSING_FSMO_ROLES = 8433;
+            private const int ERROR_DS_MISSING_FSMO_SETTINGS = 8434;
+            private const int ERROR_DS_UNABLE_TO_SURRENDER_ROLES = 8435;
+            private const int ERROR_DS_DRA_GENERIC = 8436;
+            private const int ERROR_DS_DRA_INVALID_PARAMETER = 8437;
+            private const int ERROR_DS_DRA_BUSY = 8438;
+            private const int ERROR_DS_DRA_BAD_DN = 8439;
+            private const int ERROR_DS_DRA_BAD_NC = 8440;
+            private const int ERROR_DS_DRA_DN_EXISTS = 8441;
+            private const int ERROR_DS_DRA_INTERNAL_ERROR = 8442;
+            private const int ERROR_DS_DRA_INCONSISTENT_DIT = 8443;
+            private const int ERROR_DS_DRA_CONNECTION_FAILED = 8444;
+            private const int ERROR_DS_DRA_BAD_INSTANCE_TYPE = 8445;
+            private const int ERROR_DS_DRA_OUT_OF_MEM = 8446;
+            private const int ERROR_DS_DRA_MAIL_PROBLEM = 8447;
+            private const int ERROR_DS_DRA_REF_ALREADY_EXISTS = 8448;
+            private const int ERROR_DS_DRA_REF_NOT_FOUND = 8449;
+            private const int ERROR_DS_DRA_OBJ_IS_REP_SOURCE = 8450;
+            private const int ERROR_DS_DRA_DB_ERROR = 8451;
+            private const int ERROR_DS_DRA_NO_REPLICA = 8452;
+            private const int ERROR_DS_DRA_ACCESS_DENIED = 8453;
+            private const int ERROR_DS_DRA_NOT_SUPPORTED = 8454;
+            private const int ERROR_DS_DRA_RPC_CANCELLED = 8455;
+            private const int ERROR_DS_DRA_SOURCE_DISABLED = 8456;
+            private const int ERROR_DS_DRA_SINK_DISABLED = 8457;
+            private const int ERROR_DS_DRA_NAME_COLLISION = 8458;
+            private const int ERROR_DS_DRA_SOURCE_REINSTALLED = 8459;
+            private const int ERROR_DS_DRA_MISSING_PARENT = 8460;
+            private const int ERROR_DS_DRA_PREEMPTED = 8461;
+            private const int ERROR_DS_DRA_ABANDON_SYNC = 8462;
+            private const int ERROR_DS_DRA_SHUTDOWN = 8463;
+            private const int ERROR_DS_DRA_INCOMPATIBLE_PARTIAL_SET = 8464;
+            private const int ERROR_DS_DRA_SOURCE_IS_PARTIAL_REPLICA = 8465;
+            private const int ERROR_DS_DRA_EXTN_CONNECTION_FAILED = 8466;
+            private const int ERROR_DS_INSTALL_SCHEMA_MISMATCH = 8467;
+            private const int ERROR_DS_DUP_LINK_ID = 8468;
+            private const int ERROR_DS_NAME_ERROR_RESOLVING = 8469;
+            private const int ERROR_DS_NAME_ERROR_NOT_FOUND = 8470;
+            private const int ERROR_DS_NAME_ERROR_NOT_UNIQUE = 8471;
+            private const int ERROR_DS_NAME_ERROR_NO_MAPPING = 8472;
+            private const int ERROR_DS_NAME_ERROR_DOMAIN_ONLY = 8473;
+            private const int ERROR_DS_NAME_ERROR_NO_SYNTACTICAL_MAPPING = 8474;
+            private const int ERROR_DS_CONSTRUCTED_ATT_MOD = 8475;
+            private const int ERROR_DS_WRONG_OM_OBJ_CLASS = 8476;
+            private const int ERROR_DS_DRA_REPL_PENDING = 8477;
+            private const int ERROR_DS_DS_REQUIRED = 8478;
+            private const int ERROR_DS_INVALID_LDAP_DISPLAY_NAME = 8479;
+            private const int ERROR_DS_NON_BASE_SEARCH = 8480;
+            private const int ERROR_DS_CANT_RETRIEVE_ATTS = 8481;
+            private const int ERROR_DS_BACKLINK_WITHOUT_LINK = 8482;
+            private const int ERROR_DS_EPOCH_MISMATCH = 8483;
+            private const int ERROR_DS_SRC_NAME_MISMATCH = 8484;
+            private const int ERROR_DS_SRC_AND_DST_NC_IDENTICAL = 8485;
+            private const int ERROR_DS_DST_NC_MISMATCH = 8486;
+            private const int ERROR_DS_NOT_AUTHORITIVE_FOR_DST_NC = 8487;
+            private const int ERROR_DS_SRC_GUID_MISMATCH = 8488;
+            private const int ERROR_DS_CANT_MOVE_DELETED_OBJECT = 8489;
+            private const int ERROR_DS_PDC_OPERATION_IN_PROGRESS = 8490;
+            private const int ERROR_DS_CROSS_DOMAIN_CLEANUP_REQD = 8491;
+            private const int ERROR_DS_ILLEGAL_XDOM_MOVE_OPERATION = 8492;
+            private const int ERROR_DS_CANT_WITH_ACCT_GROUP_MEMBERSHPS = 8493;
+            private const int ERROR_DS_NC_MUST_HAVE_NC_PARENT = 8494;
+            private const int ERROR_DS_CR_IMPOSSIBLE_TO_VALIDATE = 8495;
+            private const int ERROR_DS_DST_DOMAIN_NOT_NATIVE = 8496;
+            private const int ERROR_DS_MISSING_INFRASTRUCTURE_CONTAINER = 8497;
+            private const int ERROR_DS_CANT_MOVE_ACCOUNT_GROUP = 8498;
+            private const int ERROR_DS_CANT_MOVE_RESOURCE_GROUP = 8499;
+            private const int ERROR_DS_INVALID_SEARCH_FLAG = 8500;
+            private const int ERROR_DS_NO_TREE_DELETE_ABOVE_NC = 8501;
+            private const int ERROR_DS_COULDNT_LOCK_TREE_FOR_DELETE = 8502;
+            private const int ERROR_DS_COULDNT_IDENTIFY_OBJECTS_FOR_TREE_DELETE = 8503;
+
+            /// <summary>
+            /// Security Accounts Manager initialization failed because of the following error: %1.
+            /// Error Status: 0x%2. Click OK to shut down the system and reboot into Directory Services Restore Mode. Check the event log for detailed information.
+            /// </summary>
+            public const int ERROR_DS_SAM_INIT_FAILURE = 8504;
+
+            private const int ERROR_DS_SENSITIVE_GROUP_VIOLATION = 8505;
+            private const int ERROR_DS_CANT_MOD_PRIMARYGROUPID = 8506;
+            private const int ERROR_DS_ILLEGAL_BASE_SCHEMA_MOD = 8507;
+            private const int ERROR_DS_NONSAFE_SCHEMA_CHANGE = 8508;
+            private const int ERROR_DS_SCHEMA_UPDATE_DISALLOWED = 8509;
+            private const int ERROR_DS_CANT_CREATE_UNDER_SCHEMA = 8510;
+            private const int ERROR_DS_INSTALL_NO_SRC_SCH_VERSION = 8511;
+            private const int ERROR_DS_INSTALL_NO_SCH_VERSION_IN_INIFILE = 8512;
+            private const int ERROR_DS_INVALID_GROUP_TYPE = 8513;
+            private const int ERROR_DS_NO_NEST_GLOBALGROUP_IN_MIXEDDOMAIN = 8514;
+            private const int ERROR_DS_NO_NEST_LOCALGROUP_IN_MIXEDDOMAIN = 8515;
+            private const int ERROR_DS_GLOBAL_CANT_HAVE_LOCAL_MEMBER = 8516;
+            private const int ERROR_DS_GLOBAL_CANT_HAVE_UNIVERSAL_MEMBER = 8517;
+            private const int ERROR_DS_UNIVERSAL_CANT_HAVE_LOCAL_MEMBER = 8518;
+            private const int ERROR_DS_GLOBAL_CANT_HAVE_CROSSDOMAIN_MEMBER = 8519;
+            private const int ERROR_DS_LOCAL_CANT_HAVE_CROSSDOMAIN_LOCAL_MEMBER = 8520;
+            private const int ERROR_DS_HAVE_PRIMARY_MEMBERS = 8521;
+            private const int ERROR_DS_STRING_SD_CONVERSION_FAILED = 8522;
+            private const int ERROR_DS_NAMING_MASTER_GC = 8523;
+            private const int ERROR_DS_DNS_LOOKUP_FAILURE = 8524;
+            private const int ERROR_DS_COULDNT_UPDATE_SPNS = 8525;
+            private const int ERROR_DS_CANT_RETRIEVE_SD = 8526;
+            private const int ERROR_DS_KEY_NOT_UNIQUE = 8527;
+            private const int ERROR_DS_WRONG_LINKED_ATT_SYNTAX = 8528;
+            private const int ERROR_DS_SAM_NEED_BOOTKEY_PASSUInt16 = 8529;
+            private const int ERROR_DS_SAM_NEED_BOOTKEY_FLOPPY = 8530;
+            private const int ERROR_DS_CANT_START = 8531;
+            private const int ERROR_DS_INIT_FAILURE = 8532;
+            private const int ERROR_DS_NO_PKT_PRIVACY_ON_CONNECTION = 8533;
+            private const int ERROR_DS_SOURCE_DOMAIN_IN_FOREST = 8534;
+            private const int ERROR_DS_DESTINATION_DOMAIN_NOT_IN_FOREST = 8535;
+            private const int ERROR_DS_DESTINATION_AUDITING_NOT_ENABLED = 8536;
+            private const int ERROR_DS_CANT_FIND_DC_FOR_SRC_DOMAIN = 8537;
+            private const int ERROR_DS_SRC_OBJ_NOT_GROUP_OR_USER = 8538;
+            private const int ERROR_DS_SRC_SID_EXISTS_IN_FOREST = 8539;
+            private const int ERROR_DS_SRC_AND_DST_OBJECT_CLASS_MISMATCH = 8540;
+
+            /// <summary>
+            /// Security Accounts Manager initialization failed because of the following error: %1.
+            /// Error Status: 0x%2. Click OK to shut down the system and reboot into Safe Mode. Check the event log for detailed information.
+            /// </summary>
+            public const int ERROR_SAM_INIT_FAILURE = 8541;
+
+            private const int ERROR_DS_DRA_SCHEMA_INFO_SHIP = 8542;
+            private const int ERROR_DS_DRA_SCHEMA_CONFLICT = 8543;
+            private const int ERROR_DS_DRA_EARLIER_SCHEMA_CONFLICT = 8544;
+            private const int ERROR_DS_DRA_OBJ_NC_MISMATCH = 8545;
+            private const int ERROR_DS_NC_STILL_HAS_DSAS = 8546;
+            private const int ERROR_DS_GC_REQUIRED = 8547;
+            private const int ERROR_DS_LOCAL_MEMBER_OF_LOCAL_ONLY = 8548;
+            private const int ERROR_DS_NO_FPO_IN_UNIVERSAL_GROUPS = 8549;
+            private const int ERROR_DS_CANT_ADD_TO_GC = 8550;
+            private const int ERROR_DS_NO_CHECKPOINT_WITH_PDC = 8551;
+            private const int ERROR_DS_SOURCE_AUDITING_NOT_ENABLED = 8552;
+            private const int ERROR_DS_CANT_CREATE_IN_NONDOMAIN_NC = 8553;
+            private const int ERROR_DS_INVALID_NAME_FOR_SPN = 8554;
+            private const int ERROR_DS_FILTER_USES_CONTRUCTED_ATTRS = 8555;
+            private const int ERROR_DS_UNICODEPWD_NOT_IN_QUOTES = 8556;
+            private const int ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = 8557;
+            private const int ERROR_DS_MUST_BE_RUN_ON_DST_DC = 8558;
+            private const int ERROR_DS_SRC_DC_MUST_BE_SP4_OR_GREATER = 8559;
+            private const int ERROR_DS_CANT_TREE_DELETE_CRITICAL_OBJ = 8560;
+
+            /// <summary>
+            /// Directory Services could not start because of the following error: %1.
+            /// Error Status: 0x%2. Please click OK to shutdown the system. You can use the recovery console to diagnose the system further.
+            /// </summary>
+            public const int ERROR_DS_INIT_FAILURE_CONSOLE = 8561;
+
+            /// <summary>
+            /// Security Accounts Manager initialization failed because of the following error: %1.
+            /// Error Status: 0x%2. Please click OK to shutdown the system. You can use the recovery console to diagnose the system further.
+            /// </summary>
+            public const int ERROR_DS_SAM_INIT_FAILURE_CONSOLE = 8562;
+
+            private const int ERROR_DS_FOREST_VERSION_TOO_HIGH = 8563;
+            private const int ERROR_DS_DOMAIN_VERSION_TOO_HIGH = 8564;
+            private const int ERROR_DS_FOREST_VERSION_TOO_LOW = 8565;
+            private const int ERROR_DS_DOMAIN_VERSION_TOO_LOW = 8566;
+            private const int ERROR_DS_INCOMPATIBLE_VERSION = 8567;
+            private const int ERROR_DS_LOW_DSA_VERSION = 8568;
+            private const int ERROR_DS_NO_BEHAVIOR_VERSION_IN_MIXEDDOMAIN = 8569;
+            private const int ERROR_DS_NOT_SUPPORTED_SORT_ORDER = 8570;
+            private const int ERROR_DS_NAME_NOT_UNIQUE = 8571;
+            private const int ERROR_DS_MACHINE_ACCOUNT_CREATED_PRENT4 = 8572;
+            private const int ERROR_DS_OUT_OF_VERSION_STORE = 8573;
+            private const int ERROR_DS_INCOMPATIBLE_CONTROLS_USED = 8574;
+            private const int ERROR_DS_NO_REF_DOMAIN = 8575;
+            private const int ERROR_DS_RESERVED_LINK_ID = 8576;
+            private const int ERROR_DS_LINK_ID_NOT_AVAILABLE = 8577;
+            private const int ERROR_DS_AG_CANT_HAVE_UNIVERSAL_MEMBER = 8578;
+            private const int ERROR_DS_MODIFYDN_DISALLOWED_BY_INSTANCE_TYPE = 8579;
+            private const int ERROR_DS_NO_OBJECT_MOVE_IN_SCHEMA_NC = 8580;
+            private const int ERROR_DS_MODIFYDN_DISALLOWED_BY_FLAG = 8581;
+            private const int ERROR_DS_MODIFYDN_WRONG_GRANDPARENT = 8582;
+            private const int ERROR_DS_NAME_ERROR_TRUST_REFERRAL = 8583;
+            private const int ERROR_NOT_SUPPORTED_ON_STANDARD_SERVER = 8584;
+            private const int ERROR_DS_CANT_ACCESS_REMOTE_PART_OF_AD = 8585;
+            private const int ERROR_DS_CR_IMPOSSIBLE_TO_VALIDATE_V2 = 8586;
+            private const int ERROR_DS_THREAD_LIMIT_EXCEEDED = 8587;
+            private const int ERROR_DS_NOT_CLOSEST = 8588;
+            private const int ERROR_DS_CANT_DERIVE_SPN_WITHOUT_SERVER_REF = 8589;
+            private const int ERROR_DS_SINGLE_USER_MODE_FAILED = 8590;
+            private const int ERROR_DS_NTDSCRIPT_SYNTAX_ERROR = 8591;
+            private const int ERROR_DS_NTDSCRIPT_PROCESS_ERROR = 8592;
+
+            /// <summary>
+            /// The directory service cannot perform the requested operation because the servers
+            /// involved are of different replication epochs (which is usually related to a
+            /// domain rename that is in progress).
+            /// </summary>
+            public const int ERROR_DS_DIFFERENT_REPL_EPOCHS = 8593;
+
+            /// <summary>
+            /// The directory service binding must be renegotiated due to a change in the server
+            /// extensions information.
+            /// </summary>
+            public const int ERROR_DS_DRS_EXTENSIONS_CHANGED = 8594;
+
+            private const int ERROR_DS_REPLICA_SET_CHANGE_NOT_ALLOWED_ON_DISABLED_CR = 8595;
+            private const int ERROR_DS_NO_MSDS_INTID = 8596;
+            private const int ERROR_DS_DUP_MSDS_INTID = 8597;
+            private const int ERROR_DS_EXISTS_IN_RDNATTID = 8598;
+            private const int ERROR_DS_AUTHORIZATION_FAILED = 8599;
+            private const int ERROR_DS_INVALID_SCRIPT = 8600;
+            private const int ERROR_DS_REMOTE_CROSSREF_OP_FAILED = 8601;
+            private const int ERROR_DS_CROSS_REF_BUSY = 8602;
+            private const int ERROR_DS_CANT_DERIVE_SPN_FOR_DELETED_DOMAIN = 8603;
+            private const int ERROR_DS_CANT_DEMOTE_WITH_WRITEABLE_NC = 8604;
+            private const int ERROR_DS_DUPLICATE_ID_FOUND = 8605;
+            private const int ERROR_DS_INSUFFICIENT_ATTR_TO_CREATE_OBJECT = 8606;
+            private const int ERROR_DS_GROUP_CONVERSION_ERROR = 8607;
+            private const int ERROR_DS_CANT_MOVE_APP_BASIC_GROUP = 8608;
+            private const int ERROR_DS_CANT_MOVE_APP_QUERY_GROUP = 8609;
+            private const int ERROR_DS_ROLE_NOT_VERIFIED = 8610;
+            private const int ERROR_DS_WKO_CONTAINER_CANNOT_BE_SPECIAL = 8611;
+            private const int ERROR_DS_DOMAIN_RENAME_IN_PROGRESS = 8612;
+            private const int ERROR_DS_EXISTING_AD_CHILD_NC = 8613;
+            private const int ERROR_DS_REPL_LIFETIME_EXCEEDED = 8614;
+            private const int ERROR_DS_DISALLOWED_IN_SYSTEM_CONTAINER = 8615;
+            private const int ERROR_DS_LDAP_SEND_QUEUE_FULL = 8616;
+            private const int DNS_ERROR_RESPONSE_CODES_BASE = 9000;
+            private const int DNS_ERROR_RCODE_FORMAT_ERROR = 9001;
+            private const int DNS_ERROR_RCODE_SERVER_FAILURE = 9002;
+            private const int DNS_ERROR_RCODE_NAME_ERROR = 9003;
+            private const int DNS_ERROR_RCODE_NOT_IMPLEMENTED = 9004;
+            private const int DNS_ERROR_RCODE_REFUSED = 9005;
+            private const int DNS_ERROR_RCODE_YXDOMAIN = 9006;
+            private const int DNS_ERROR_RCODE_YXRRSET = 9007;
+            private const int DNS_ERROR_RCODE_NXRRSET = 9008;
+            private const int DNS_ERROR_RCODE_NOTAUTH = 9009;
+            private const int DNS_ERROR_RCODE_NOTZONE = 9010;
+            private const int DNS_ERROR_RCODE_BADSIG = 9016;
+            private const int DNS_ERROR_RCODE_BADKEY = 9017;
+            private const int DNS_ERROR_RCODE_BADTIME = 9018;
+            private const int DNS_ERROR_PACKET_FMT_BASE = 9500;
+            private const int DNS_INFO_NO_RECORDS = 9501;
+            private const int DNS_ERROR_BAD_PACKET = 9502;
+            private const int DNS_ERROR_NO_PACKET = 9503;
+            private const int DNS_ERROR_RCODE = 9504;
+            private const int DNS_ERROR_UNSECURE_PACKET = 9505;
+            private const int DNS_ERROR_NO_MEMORY = ERROR_OUTOFMEMORY;
+            private const int DNS_ERROR_INVALID_NAME = ERROR_INVALID_NAME;
+            private const int DNS_ERROR_INVALID_DATA = ERROR_INVALID_DATA;
+            private const int DNS_ERROR_GENERAL_API_BASE = 9550;
+            private const int DNS_ERROR_INVALID_TYPE = 9551;
+            private const int DNS_ERROR_INVALID_IP_ADDRESS = 9552;
+            private const int DNS_ERROR_INVALID_PROPERTY = 9553;
+            private const int DNS_ERROR_TRY_AGAIN_LATER = 9554;
+            private const int DNS_ERROR_NOT_UNIQUE = 9555;
+            private const int DNS_ERROR_NON_RFC_NAME = 9556;
+            private const int DNS_STATUS_FQDN = 9557;
+            private const int DNS_STATUS_DOTTED_NAME = 9558;
+            private const int DNS_STATUS_SINGLE_PART_NAME = 9559;
+            private const int DNS_ERROR_INVALID_NAME_CHAR = 9560;
+            private const int DNS_ERROR_NUMERIC_NAME = 9561;
+            private const int DNS_ERROR_NOT_ALLOWED_ON_ROOT_SERVER = 9562;
+            private const int DNS_ERROR_NOT_ALLOWED_UNDER_DELEGATION = 9563;
+            private const int DNS_ERROR_CANNOT_FIND_ROOT_HINTS = 9564;
+            private const int DNS_ERROR_INCONSISTENT_ROOT_HINTS = 9565;
+            private const int DNS_ERROR_ZONE_BASE = 9600;
+            private const int DNS_ERROR_ZONE_DOES_NOT_EXIST = 9601;
+            private const int DNS_ERROR_NO_ZONE_INFO = 9602;
+            private const int DNS_ERROR_INVALID_ZONE_OPERATION = 9603;
+            private const int DNS_ERROR_ZONE_CONFIGURATION_ERROR = 9604;
+            private const int DNS_ERROR_ZONE_HAS_NO_SOA_RECORD = 9605;
+            private const int DNS_ERROR_ZONE_HAS_NO_NS_RECORDS = 9606;
+            private const int DNS_ERROR_ZONE_LOCKED = 9607;
+            private const int DNS_ERROR_ZONE_CREATION_FAILED = 9608;
+            private const int DNS_ERROR_ZONE_ALREADY_EXISTS = 9609;
+            private const int DNS_ERROR_AUTOZONE_ALREADY_EXISTS = 9610;
+            private const int DNS_ERROR_INVALID_ZONE_TYPE = 9611;
+            private const int DNS_ERROR_SECONDARY_REQUIRES_MASTER_IP = 9612;
+            private const int DNS_ERROR_ZONE_NOT_SECONDARY = 9613;
+            private const int DNS_ERROR_NEED_SECONDARY_ADDRESSES = 9614;
+            private const int DNS_ERROR_WINS_INIT_FAILED = 9615;
+            private const int DNS_ERROR_NEED_WINS_SERVERS = 9616;
+            private const int DNS_ERROR_NBSTAT_INIT_FAILED = 9617;
+            private const int DNS_ERROR_SOA_DELETE_INVALID = 9618;
+            private const int DNS_ERROR_FORWARDER_ALREADY_EXISTS = 9619;
+            private const int DNS_ERROR_ZONE_REQUIRES_MASTER_IP = 9620;
+            private const int DNS_ERROR_ZONE_IS_SHUTDOWN = 9621;
+            private const int DNS_ERROR_DATAFILE_BASE = 9650;
+            private const int DNS_ERROR_PRIMARY_REQUIRES_DATAFILE = 9651;
+            private const int DNS_ERROR_INVALID_DATAFILE_NAME = 9652;
+            private const int DNS_ERROR_DATAFILE_OPEN_FAILURE = 9653;
+            private const int DNS_ERROR_FILE_WRITEBACK_FAILED = 9654;
+            private const int DNS_ERROR_DATAFILE_PARSING = 9655;
+            private const int DNS_ERROR_DATABASE_BASE = 9700;
+            private const int DNS_ERROR_RECORD_DOES_NOT_EXIST = 9701;
+            private const int DNS_ERROR_RECORD_FORMAT = 9702;
+            private const int DNS_ERROR_NODE_CREATION_FAILED = 9703;
+            private const int DNS_ERROR_UNKNOWN_RECORD_TYPE = 9704;
+            private const int DNS_ERROR_RECORD_TIMED_OUT = 9705;
+            private const int DNS_ERROR_NAME_NOT_IN_ZONE = 9706;
+            private const int DNS_ERROR_CNAME_LOOP = 9707;
+            private const int DNS_ERROR_NODE_IS_CNAME = 9708;
+            private const int DNS_ERROR_CNAME_COLLISION = 9709;
+            private const int DNS_ERROR_RECORD_ONLY_AT_ZONE_ROOT = 9710;
+            private const int DNS_ERROR_RECORD_ALREADY_EXISTS = 9711;
+            private const int DNS_ERROR_SECONDARY_DATA = 9712;
+            private const int DNS_ERROR_NO_CREATE_CACHE_DATA = 9713;
+            private const int DNS_ERROR_NAME_DOES_NOT_EXIST = 9714;
+            private const int DNS_WARNING_PTR_CREATE_FAILED = 9715;
+            private const int DNS_WARNING_DOMAIN_UNDELETED = 9716;
+            private const int DNS_ERROR_DS_UNAVAILABLE = 9717;
+            private const int DNS_ERROR_DS_ZONE_ALREADY_EXISTS = 9718;
+            private const int DNS_ERROR_NO_BOOTFILE_IF_DS_ZONE = 9719;
+            private const int DNS_ERROR_OPERATION_BASE = 9750;
+            private const int DNS_INFO_AXFR_COMPLETE = 9751;
+            private const int DNS_ERROR_AXFR = 9752;
+            private const int DNS_INFO_ADDED_LOCAL_WINS = 9753;
+            private const int DNS_ERROR_SECURE_BASE = 9800;
+            private const int DNS_STATUS_CONTINUE_NEEDED = 9801;
+            private const int DNS_ERROR_SETUP_BASE = 9850;
+            private const int DNS_ERROR_NO_TCPIP = 9851;
+            private const int DNS_ERROR_NO_DNS_SERVERS = 9852;
+            private const int DNS_ERROR_DP_BASE = 9900;
+            private const int DNS_ERROR_DP_DOES_NOT_EXIST = 9901;
+            private const int DNS_ERROR_DP_ALREADY_EXISTS = 9902;
+            private const int DNS_ERROR_DP_NOT_ENLISTED = 9903;
+            private const int DNS_ERROR_DP_ALREADY_ENLISTED = 9904;
+            private const int DNS_ERROR_DP_NOT_AVAILABLE = 9905;
+            private const int WSABASEERR = 10000;
+            private const int WSAEINTR = 10004;
+            private const int WSAEBADF = 10009;
+            private const int WSAEACCES = 10013;
+            private const int WSAEFAULT = 10014;
+            private const int WSAEINVAL = 10022;
+            private const int WSAEMFILE = 10024;
+            private const int WSAEWOULDBLOCK = 10035;
+            private const int WSAEINPROGRESS = 10036;
+            private const int WSAEALREADY = 10037;
+            private const int WSAENOTSOCK = 10038;
+            private const int WSAEDESTADDRREQ = 10039;
+            private const int WSAEMSGSIZE = 10040;
+            private const int WSAEPROTOTYPE = 10041;
+            private const int WSAENOPROTOOPT = 10042;
+            private const int WSAEPROTONOSUPPORT = 10043;
+            private const int WSAESOCKTNOSUPPORT = 10044;
+            private const int WSAEOPNOTSUPP = 10045;
+            private const int WSAEPFNOSUPPORT = 10046;
+            private const int WSAEAFNOSUPPORT = 10047;
+            private const int WSAEADDRINUSE = 10048;
+            private const int WSAEADDRNOTAVAIL = 10049;
+            private const int WSAENETDOWN = 10050;
+            private const int WSAENETUNREACH = 10051;
+            private const int WSAENETRESET = 10052;
+            private const int WSAECONNABORTED = 10053;
+            private const int WSAECONNRESET = 10054;
+            private const int WSAENOBUFS = 10055;
+            private const int WSAEISCONN = 10056;
+            private const int WSAENOTCONN = 10057;
+            private const int WSAESHUTDOWN = 10058;
+            private const int WSAETOOMANYREFS = 10059;
+            private const int WSAETIMEDOUT = 10060;
+            private const int WSAECONNREFUSED = 10061;
+            private const int WSAELOOP = 10062;
+            private const int WSAENAMETOOInt32 = 10063;
+            private const int WSAEHOSTDOWN = 10064;
+            private const int WSAEHOSTUNREACH = 10065;
+            private const int WSAENOTEMPTY = 10066;
+            private const int WSAEPROCLIM = 10067;
+            private const int WSAEUSERS = 10068;
+            private const int WSAEDQUOT = 10069;
+            private const int WSAESTALE = 10070;
+            private const int WSAEREMOTE = 10071;
+            private const int WSASYSNOTREADY = 10091;
+            private const int WSAVERNOTSUPPORTED = 10092;
+            private const int WSANOTINITIALISED = 10093;
+            private const int WSAEDISCON = 10101;
+            private const int WSAENOMORE = 10102;
+            private const int WSAECANCELLED = 10103;
+            private const int WSAEINVALIDPROCTABLE = 10104;
+            private const int WSAEINVALIDPROVIDER = 10105;
+            private const int WSAEPROVIDERFAILEDINIT = 10106;
+            private const int WSASYSCALLFAILURE = 10107;
+            private const int WSASERVICE_NOT_FOUND = 10108;
+            private const int WSATYPE_NOT_FOUND = 10109;
+            private const int WSA_E_NO_MORE = 10110;
+            private const int WSA_E_CANCELLED = 10111;
+            private const int WSAEREFUSED = 10112;
+            private const int WSAHOST_NOT_FOUND = 11001;
+            private const int WSATRY_AGAIN = 11002;
+            private const int WSANO_RECOVERY = 11003;
+            private const int WSANO_DATA = 11004;
+            private const int WSA_QOS_RECEIVERS = 11005;
+            private const int WSA_QOS_SENDERS = 11006;
+            private const int WSA_QOS_NO_SENDERS = 11007;
+            private const int WSA_QOS_NO_RECEIVERS = 11008;
+            private const int WSA_QOS_REQUEST_CONFIRMED = 11009;
+            private const int WSA_QOS_ADMISSION_FAILURE = 11010;
+            private const int WSA_QOS_POLICY_FAILURE = 11011;
+            private const int WSA_QOS_BAD_STYLE = 11012;
+            private const int WSA_QOS_BAD_OBJECT = 11013;
+            private const int WSA_QOS_TRAFFIC_CTRL_ERROR = 11014;
+            private const int WSA_QOS_GENERIC_ERROR = 11015;
+            private const int WSA_QOS_ESERVICETYPE = 11016;
+            private const int WSA_QOS_EFLOWSPEC = 11017;
+            private const int WSA_QOS_EPROVSPECBUF = 11018;
+            private const int WSA_QOS_EFILTERSTYLE = 11019;
+            private const int WSA_QOS_EFILTERTYPE = 11020;
+            private const int WSA_QOS_EFILTERCOUNT = 11021;
+            private const int WSA_QOS_EOBJLENGTH = 11022;
+            private const int WSA_QOS_EFLOWCOUNT = 11023;
+            private const int WSA_QOS_EUNKOWNPSOBJ = 11024;
+            private const int WSA_QOS_EPOLICYOBJ = 11025;
+            private const int WSA_QOS_EFLOWDESC = 11026;
+            private const int WSA_QOS_EPSFLOWSPEC = 11027;
+            private const int WSA_QOS_EPSFILTERSPEC = 11028;
+            private const int WSA_QOS_ESDMODEOBJ = 11029;
+            private const int WSA_QOS_ESHAPERATEOBJ = 11030;
+            private const int WSA_QOS_RESERVED_PETYPE = 11031;
+            private const int ERROR_SXS_SECTION_NOT_FOUND = 14000;
+            private const int ERROR_SXS_CANT_GEN_ACTCTX = 14001;
+            private const int ERROR_SXS_INVALID_ACTCTXDATA_FORMAT = 14002;
+            private const int ERROR_SXS_ASSEMBLY_NOT_FOUND = 14003;
+            private const int ERROR_SXS_MANIFEST_FORMAT_ERROR = 14004;
+            private const int ERROR_SXS_MANIFEST_PARSE_ERROR = 14005;
+            private const int ERROR_SXS_ACTIVATION_CONTEXT_DISABLED = 14006;
+            private const int ERROR_SXS_KEY_NOT_FOUND = 14007;
+            private const int ERROR_SXS_VERSION_CONFLICT = 14008;
+            private const int ERROR_SXS_WRONG_SECTION_TYPE = 14009;
+            private const int ERROR_SXS_THREAD_QUERIES_DISABLED = 14010;
+            private const int ERROR_SXS_PROCESS_DEFAULT_ALREADY_SET = 14011;
+            private const int ERROR_SXS_UNKNOWN_ENCODING_GROUP = 14012;
+            private const int ERROR_SXS_UNKNOWN_ENCODING = 14013;
+            private const int ERROR_SXS_INVALID_XML_NAMESPACE_URI = 14014;
+            private const int ERROR_SXS_ROOT_MANIFEST_DEPENDENCY_NOT_INSTALLED = 14015;
+            private const int ERROR_SXS_LEAF_MANIFEST_DEPENDENCY_NOT_INSTALLED = 14016;
+            private const int ERROR_SXS_INVALID_ASSEMBLY_IDENTITY_ATTRIBUTE = 14017;
+            private const int ERROR_SXS_MANIFEST_MISSING_REQUIRED_DEFAULT_NAMESPACE = 14018;
+            private const int ERROR_SXS_MANIFEST_INVALID_REQUIRED_DEFAULT_NAMESPACE = 14019;
+            private const int ERROR_SXS_PRIVATE_MANIFEST_CROSS_PATH_WITH_REPARSE_POINT = 14020;
+            private const int ERROR_SXS_DUPLICATE_DLL_NAME = 14021;
+            private const int ERROR_SXS_DUPLICATE_WINDOWCLASS_NAME = 14022;
+            private const int ERROR_SXS_DUPLICATE_CLSID = 14023;
+            private const int ERROR_SXS_DUPLICATE_IID = 14024;
+            private const int ERROR_SXS_DUPLICATE_TLBID = 14025;
+            private const int ERROR_SXS_DUPLICATE_PROGID = 14026;
+            private const int ERROR_SXS_DUPLICATE_ASSEMBLY_NAME = 14027;
+
+            /// <summary>
+            /// A component's file does not match the verification information present in the
+            /// component manifest.
+            /// </summary>
+            public const int ERROR_SXS_FILE_HASH_MISMATCH = 14028;
+
+            private const int ERROR_SXS_POLICY_PARSE_ERROR = 14029;
+            private const int ERROR_SXS_XML_E_MISSINGQUOTE = 14030;
+            private const int ERROR_SXS_XML_E_COMMENTSYNTAX = 14031;
+            private const int ERROR_SXS_XML_E_BADSTARTNAMECHAR = 14032;
+            private const int ERROR_SXS_XML_E_BADNAMECHAR = 14033;
+            private const int ERROR_SXS_XML_E_BADCHARINSTRING = 14034;
+            private const int ERROR_SXS_XML_E_XMLDECLSYNTAX = 14035;
+            private const int ERROR_SXS_XML_E_BADCHARDATA = 14036;
+            private const int ERROR_SXS_XML_E_MISSINGWHITESPACE = 14037;
+            private const int ERROR_SXS_XML_E_EXPECTINGTAGEND = 14038;
+            private const int ERROR_SXS_XML_E_MISSINGSEMICOLON = 14039;
+            private const int ERROR_SXS_XML_E_UNBALANCEDPAREN = 14040;
+            private const int ERROR_SXS_XML_E_INTERNALERROR = 14041;
+            private const int ERROR_SXS_XML_E_UNEXPECTED_WHITESPACE = 14042;
+            private const int ERROR_SXS_XML_E_INCOMPLETE_ENCODING = 14043;
+            private const int ERROR_SXS_XML_E_MISSING_PAREN = 14044;
+            private const int ERROR_SXS_XML_E_EXPECTINGCLOSEQUOTE = 14045;
+            private const int ERROR_SXS_XML_E_MULTIPLE_COLONS = 14046;
+            private const int ERROR_SXS_XML_E_INVALID_DECIMAL = 14047;
+            private const int ERROR_SXS_XML_E_INVALID_HEXIDECIMAL = 14048;
+            private const int ERROR_SXS_XML_E_INVALID_UNICODE = 14049;
+            private const int ERROR_SXS_XML_E_WHITESPACEORQUESTIONMARK = 14050;
+            private const int ERROR_SXS_XML_E_UNEXPECTEDENDTAG = 14051;
+            private const int ERROR_SXS_XML_E_UNCLOSEDTAG = 14052;
+            private const int ERROR_SXS_XML_E_DUPLICATEATTRIBUTE = 14053;
+            private const int ERROR_SXS_XML_E_MULTIPLEROOTS = 14054;
+            private const int ERROR_SXS_XML_E_INVALIDATROOTLEVEL = 14055;
+            private const int ERROR_SXS_XML_E_BADXMLDECL = 14056;
+            private const int ERROR_SXS_XML_E_MISSINGROOT = 14057;
+            private const int ERROR_SXS_XML_E_UNEXPECTEDEOF = 14058;
+            private const int ERROR_SXS_XML_E_BADPEREFINSUBSET = 14059;
+            private const int ERROR_SXS_XML_E_UNCLOSEDSTARTTAG = 14060;
+            private const int ERROR_SXS_XML_E_UNCLOSEDENDTAG = 14061;
+            private const int ERROR_SXS_XML_E_UNCLOSEDSTRING = 14062;
+            private const int ERROR_SXS_XML_E_UNCLOSEDCOMMENT = 14063;
+            private const int ERROR_SXS_XML_E_UNCLOSEDDECL = 14064;
+            private const int ERROR_SXS_XML_E_UNCLOSEDCDATA = 14065;
+            private const int ERROR_SXS_XML_E_RESERVEDNAMESPACE = 14066;
+            private const int ERROR_SXS_XML_E_INVALIDENCODING = 14067;
+            private const int ERROR_SXS_XML_E_INVALIDSWITCH = 14068;
+            private const int ERROR_SXS_XML_E_BADXMLCASE = 14069;
+            private const int ERROR_SXS_XML_E_INVALID_STANDALONE = 14070;
+            private const int ERROR_SXS_XML_E_UNEXPECTED_STANDALONE = 14071;
+            private const int ERROR_SXS_XML_E_INVALID_VERSION = 14072;
+            private const int ERROR_SXS_XML_E_MISSINGEQUALS = 14073;
+            private const int ERROR_SXS_PROTECTION_RECOVERY_FAILED = 14074;
+            private const int ERROR_SXS_PROTECTION_PUBLIC_KEY_TOO_Int16 = 14075;
+            private const int ERROR_SXS_PROTECTION_CATALOG_NOT_VALID = 14076;
+            private const int ERROR_SXS_UNTRANSLATABLE_HRESULT = 14077;
+            private const int ERROR_SXS_PROTECTION_CATALOG_FILE_MISSING = 14078;
+            private const int ERROR_SXS_MISSING_ASSEMBLY_IDENTITY_ATTRIBUTE = 14079;
+            private const int ERROR_SXS_INVALID_ASSEMBLY_IDENTITY_ATTRIBUTE_NAME = 14080;
+            private const int ERROR_IPSEC_QM_POLICY_EXISTS = 13000;
+            private const int ERROR_IPSEC_QM_POLICY_NOT_FOUND = 13001;
+            private const int ERROR_IPSEC_QM_POLICY_IN_USE = 13002;
+            private const int ERROR_IPSEC_MM_POLICY_EXISTS = 13003;
+            private const int ERROR_IPSEC_MM_POLICY_NOT_FOUND = 13004;
+            private const int ERROR_IPSEC_MM_POLICY_IN_USE = 13005;
+            private const int ERROR_IPSEC_MM_FILTER_EXISTS = 13006;
+            private const int ERROR_IPSEC_MM_FILTER_NOT_FOUND = 13007;
+            private const int ERROR_IPSEC_TRANSPORT_FILTER_EXISTS = 13008;
+            private const int ERROR_IPSEC_TRANSPORT_FILTER_NOT_FOUND = 13009;
+            private const int ERROR_IPSEC_MM_AUTH_EXISTS = 13010;
+            private const int ERROR_IPSEC_MM_AUTH_NOT_FOUND = 13011;
+            private const int ERROR_IPSEC_MM_AUTH_IN_USE = 13012;
+            private const int ERROR_IPSEC_DEFAULT_MM_POLICY_NOT_FOUND = 13013;
+            private const int ERROR_IPSEC_DEFAULT_MM_AUTH_NOT_FOUND = 13014;
+            private const int ERROR_IPSEC_DEFAULT_QM_POLICY_NOT_FOUND = 13015;
+            private const int ERROR_IPSEC_TUNNEL_FILTER_EXISTS = 13016;
+            private const int ERROR_IPSEC_TUNNEL_FILTER_NOT_FOUND = 13017;
+            private const int ERROR_IPSEC_MM_FILTER_PENDING_DELETION = 13018;
+            private const int ERROR_IPSEC_TRANSPORT_FILTER_PENDING_DELETION = 13019;
+            private const int ERROR_IPSEC_TUNNEL_FILTER_PENDING_DELETION = 13020;
+            private const int ERROR_IPSEC_MM_POLICY_PENDING_DELETION = 13021;
+            private const int ERROR_IPSEC_MM_AUTH_PENDING_DELETION = 13022;
+            private const int ERROR_IPSEC_QM_POLICY_PENDING_DELETION = 13023;
+            private const int WARNING_IPSEC_MM_POLICY_PRUNED = 13024;
+            private const int WARNING_IPSEC_QM_POLICY_PRUNED = 13025;
+            public const int ERROR_IPSEC_IKE_NEG_STATUS_BEGIN = 13800;
+            private const int ERROR_IPSEC_IKE_AUTH_FAIL = 13801;
+            private const int ERROR_IPSEC_IKE_ATTRIB_FAIL = 13802;
+            private const int ERROR_IPSEC_IKE_NEGOTIATION_PENDING = 13803;
+            private const int ERROR_IPSEC_IKE_GENERAL_PROCESSING_ERROR = 13804;
+            private const int ERROR_IPSEC_IKE_TIMED_OUT = 13805;
+            private const int ERROR_IPSEC_IKE_NO_CERT = 13806;
+            private const int ERROR_IPSEC_IKE_SA_DELETED = 13807;
+            private const int ERROR_IPSEC_IKE_SA_REAPED = 13808;
+            private const int ERROR_IPSEC_IKE_MM_ACQUIRE_DROP = 13809;
+            private const int ERROR_IPSEC_IKE_QM_ACQUIRE_DROP = 13810;
+            private const int ERROR_IPSEC_IKE_QUEUE_DROP_MM = 13811;
+            private const int ERROR_IPSEC_IKE_QUEUE_DROP_NO_MM = 13812;
+            private const int ERROR_IPSEC_IKE_DROP_NO_RESPONSE = 13813;
+            private const int ERROR_IPSEC_IKE_MM_DELAY_DROP = 13814;
+            private const int ERROR_IPSEC_IKE_QM_DELAY_DROP = 13815;
+            private const int ERROR_IPSEC_IKE_ERROR = 13816;
+            private const int ERROR_IPSEC_IKE_CRL_FAILED = 13817;
+            private const int ERROR_IPSEC_IKE_INVALID_KEY_USAGE = 13818;
+            private const int ERROR_IPSEC_IKE_INVALID_CERT_TYPE = 13819;
+            private const int ERROR_IPSEC_IKE_NO_PRIVATE_KEY = 13820;
+            private const int ERROR_IPSEC_IKE_DH_FAIL = 13822;
+            private const int ERROR_IPSEC_IKE_INVALID_HEADER = 13824;
+            private const int ERROR_IPSEC_IKE_NO_POLICY = 13825;
+            private const int ERROR_IPSEC_IKE_INVALID_SIGNATURE = 13826;
+            private const int ERROR_IPSEC_IKE_KERBEROS_ERROR = 13827;
+            private const int ERROR_IPSEC_IKE_NO_PUBLIC_KEY = 13828;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR = 13829;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_SA = 13830;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_PROP = 13831;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_TRANS = 13832;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_KE = 13833;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_ID = 13834;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_CERT = 13835;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_CERT_REQ = 13836;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_HASH = 13837;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_SIG = 13838;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_NONCE = 13839;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_NOTIFY = 13840;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_DELETE = 13841;
+            private const int ERROR_IPSEC_IKE_PROCESS_ERR_VENDOR = 13842;
+            private const int ERROR_IPSEC_IKE_INVALID_PAYLOAD = 13843;
+            private const int ERROR_IPSEC_IKE_LOAD_SOFT_SA = 13844;
+            private const int ERROR_IPSEC_IKE_SOFT_SA_TORN_DOWN = 13845;
+            private const int ERROR_IPSEC_IKE_INVALID_COOKIE = 13846;
+            private const int ERROR_IPSEC_IKE_NO_PEER_CERT = 13847;
+            private const int ERROR_IPSEC_IKE_PEER_CRL_FAILED = 13848;
+            private const int ERROR_IPSEC_IKE_POLICY_CHANGE = 13849;
+            private const int ERROR_IPSEC_IKE_NO_MM_POLICY = 13850;
+            private const int ERROR_IPSEC_IKE_NOTCBPRIV = 13851;
+            private const int ERROR_IPSEC_IKE_SECLOADFAIL = 13852;
+            private const int ERROR_IPSEC_IKE_FAILSSPINIT = 13853;
+            private const int ERROR_IPSEC_IKE_FAILQUERYSSP = 13854;
+            private const int ERROR_IPSEC_IKE_SRVACQFAIL = 13855;
+            private const int ERROR_IPSEC_IKE_SRVQUERYCRED = 13856;
+            private const int ERROR_IPSEC_IKE_GETSPIFAIL = 13857;
+            private const int ERROR_IPSEC_IKE_INVALID_FILTER = 13858;
+            private const int ERROR_IPSEC_IKE_OUT_OF_MEMORY = 13859;
+            private const int ERROR_IPSEC_IKE_ADD_UPDATE_KEY_FAILED = 13860;
+            private const int ERROR_IPSEC_IKE_INVALID_POLICY = 13861;
+            private const int ERROR_IPSEC_IKE_UNKNOWN_DOI = 13862;
+            private const int ERROR_IPSEC_IKE_INVALID_SITUATION = 13863;
+            private const int ERROR_IPSEC_IKE_DH_FAILURE = 13864;
+            private const int ERROR_IPSEC_IKE_INVALID_GROUP = 13865;
+            private const int ERROR_IPSEC_IKE_ENCRYPT = 13866;
+            private const int ERROR_IPSEC_IKE_DECRYPT = 13867;
+            private const int ERROR_IPSEC_IKE_POLICY_MATCH = 13868;
+            private const int ERROR_IPSEC_IKE_UNSUPPORTED_ID = 13869;
+            private const int ERROR_IPSEC_IKE_INVALID_HASH = 13870;
+            private const int ERROR_IPSEC_IKE_INVALID_HASH_ALG = 13871;
+            private const int ERROR_IPSEC_IKE_INVALID_HASH_SIZE = 13872;
+            private const int ERROR_IPSEC_IKE_INVALID_ENCRYPT_ALG = 13873;
+            private const int ERROR_IPSEC_IKE_INVALID_AUTH_ALG = 13874;
+            private const int ERROR_IPSEC_IKE_INVALID_SIG = 13875;
+            private const int ERROR_IPSEC_IKE_LOAD_FAILED = 13876;
+            private const int ERROR_IPSEC_IKE_RPC_DELETE = 13877;
+            private const int ERROR_IPSEC_IKE_BENIGN_REINIT = 13878;
+            private const int ERROR_IPSEC_IKE_INVALID_RESPONDER_LIFETIME_NOTIFY = 13879;
+            private const int ERROR_IPSEC_IKE_INVALID_CERT_KEYLEN = 13881;
+            private const int ERROR_IPSEC_IKE_MM_LIMIT = 13882;
+            private const int ERROR_IPSEC_IKE_NEGOTIATION_DISABLED = 13883;
+            public const int ERROR_IPSEC_IKE_NEG_STATUS_END = 13884;
+        }
+
+        public class ResultCom
+        {
+            private const int E_NOTIMPL = (int)(0x80000001 - 0x100000000);
+            private const int E_OUTOFMEMORY = (int)(0x80000002 - 0x100000000);
+            private const int E_INVALIDARG = (int)(0x80000003 - 0x100000000);
+            private const int E_NOINTERFACE = (int)(0x80000004 - 0x100000000);
+            private const int E_POINTER = (int)(0x80000005 - 0x100000000);
+            private const int E_HANDLE = (int)(0x80000006 - 0x100000000);
+            private const int E_ABORT = (int)(0x80000007 - 0x100000000);
+            private const int E_FAIL = (int)(0x80000008 - 0x100000000);
+            private const int E_ACCESSDENIED = (int)(0x80000009 - 0x100000000);
+            private const int E_PENDING = (int)(0x8000000A - 0x100000000);
+            private const int CO_E_INIT_TLS = (int)(0x80004006 - 0x100000000);
+            private const int CO_E_INIT_SHARED_ALLOCATOR = (int)(0x80004007 - 0x100000000);
+            private const int CO_E_INIT_MEMORY_ALLOCATOR = (int)(0x80004008 - 0x100000000);
+            private const int CO_E_INIT_CLASS_CACHE = (int)(0x80004009 - 0x100000000);
+            private const int CO_E_INIT_RPC_CHANNEL = (int)(0x8000400A - 0x100000000);
+            private const int CO_E_INIT_TLS_SET_CHANNEL_CONTROL = (int)(0x8000400B - 0x100000000);
+            private const int CO_E_INIT_TLS_CHANNEL_CONTROL = (int)(0x8000400C - 0x100000000);
+            private const int CO_E_INIT_UNACCEPTED_USER_ALLOCATOR = (int)(0x8000400D - 0x100000000);
+            private const int CO_E_INIT_SCM_MUTEX_EXISTS = (int)(0x8000400E - 0x100000000);
+            private const int CO_E_INIT_SCM_FILE_MAPPING_EXISTS = (int)(0x8000400F - 0x100000000);
+            private const int CO_E_INIT_SCM_MAP_VIEW_OF_FILE = (int)(0x80004010 - 0x100000000);
+            private const int CO_E_INIT_SCM_EXEC_FAILURE = (int)(0x80004011 - 0x100000000);
+            private const int CO_E_INIT_ONLY_SINGLE_THREADED = (int)(0x80004012 - 0x100000000);
+            private const int CO_E_CANT_REMOTE = (int)(0x80004013 - 0x100000000);
+            private const int CO_E_BAD_SERVER_NAME = (int)(0x80004014 - 0x100000000);
+            private const int CO_E_WRONG_SERVER_IDENTITY = (int)(0x80004015 - 0x100000000);
+            private const int CO_E_OLE1DDE_DISABLED = (int)(0x80004016 - 0x100000000);
+            private const int CO_E_RUNAS_SYNTAX = (int)(0x80004017 - 0x100000000);
+            private const int CO_E_CREATEPROCESS_FAILURE = (int)(0x80004018 - 0x100000000);
+            private const int CO_E_RUNAS_CREATEPROCESS_FAILURE = (int)(0x80004019 - 0x100000000);
+            private const int CO_E_RUNAS_LOGON_FAILURE = (int)(0x8000401A - 0x100000000);
+            private const int CO_E_LAUNCH_PERMSSION_DENIED = (int)(0x8000401B - 0x100000000);
+            private const int CO_E_START_SERVICE_FAILURE = (int)(0x8000401C - 0x100000000);
+            private const int CO_E_REMOTE_COMMUNICATION_FAILURE = (int)(0x8000401D - 0x100000000);
+            private const int CO_E_SERVER_START_TIMEOUT = (int)(0x8000401E - 0x100000000);
+            private const int CO_E_CLSREG_INCONSISTENT = (int)(0x8000401F - 0x100000000);
+            private const int CO_E_IIDREG_INCONSISTENT = (int)(0x80004020 - 0x100000000);
+            private const int CO_E_NOT_SUPPORTED = (int)(0x80004021 - 0x100000000);
+            private const int CO_E_RELOAD_DLL = (int)(0x80004022 - 0x100000000);
+            private const int CO_E_MSI_ERROR = (int)(0x80004023 - 0x100000000);
+            private const int CO_E_ATTEMPT_TO_CREATE_OUTSIDE_CLIENT_CONTEXT = (int)(0x80004024 - 0x100000000);
+            private const int CO_E_SERVER_PAUSED = (int)(0x80004025 - 0x100000000);
+            private const int CO_E_SERVER_NOT_PAUSED = (int)(0x80004026 - 0x100000000);
+            private const int CO_E_CLASS_DISABLED = (int)(0x80004027 - 0x100000000);
+            private const int CO_E_CLRNOTAVAILABLE = (int)(0x80004028 - 0x100000000);
+            private const int CO_E_ASYNC_WORK_REJECTED = (int)(0x80004029 - 0x100000000);
+            private const int CO_E_SERVER_INIT_TIMEOUT = (int)(0x8000402A - 0x100000000);
+            private const int CO_E_NO_SECCTX_IN_ACTIVATE = (int)(0x8000402B - 0x100000000);
+            private const int CO_E_TRACKER_CONFIG = (int)(0x80004030 - 0x100000000);
+            private const int CO_E_THREADPOOL_CONFIG = (int)(0x80004031 - 0x100000000);
+            private const int CO_E_SXS_CONFIG = (int)(0x80004032 - 0x100000000);
+            private const int CO_E_MALFORMED_SPN = (int)(0x80004033 - 0x100000000);
+            private const int S_OK = 0x00000000;
+            private const int S_FALSE = 0x00000001;
+            private const int OLE_E_FIRST = (int)(0x80040000 - 0x100000000);
+            private const int OLE_E_LAST = (int)(0x800400FF - 0x100000000);
+            private const int OLE_S_FIRST = 0x00040000;
+            private const int OLE_S_LAST = 0x000400FF;
+            private const int OLE_E_OLEVERB = (int)(0x80040000 - 0x100000000);
+            private const int OLE_E_ADVF = (int)(0x80040001 - 0x100000000);
+            private const int OLE_E_ENUM_NOMORE = (int)(0x80040002 - 0x100000000);
+            private const int OLE_E_ADVISENOTSUPPORTED = (int)(0x80040003 - 0x100000000);
+            private const int OLE_E_NOCONNECTION = (int)(0x80040004 - 0x100000000);
+            private const int OLE_E_NOTRUNNING = (int)(0x80040005 - 0x100000000);
+            private const int OLE_E_NOCACHE = (int)(0x80040006 - 0x100000000);
+            private const int OLE_E_BLANK = (int)(0x80040007 - 0x100000000);
+            private const int OLE_E_CLASSDIFF = (int)(0x80040008 - 0x100000000);
+            private const int OLE_E_CANT_GETMONIKER = (int)(0x80040009 - 0x100000000);
+            private const int OLE_E_CANT_BINDTOSOURCE = (int)(0x8004000A - 0x100000000);
+            private const int OLE_E_STATIC = (int)(0x8004000B - 0x100000000);
+            private const int OLE_E_PROMPTSAVECANCELLED = (int)(0x8004000C - 0x100000000);
+            private const int OLE_E_INVALIDRECT = (int)(0x8004000D - 0x100000000);
+            private const int OLE_E_WRONGCOMPOBJ = (int)(0x8004000E - 0x100000000);
+            private const int OLE_E_INVALIDHWND = (int)(0x8004000F - 0x100000000);
+            private const int OLE_E_NOT_INPLACEACTIVE = (int)(0x80040010 - 0x100000000);
+            private const int OLE_E_CANTCONVERT = (int)(0x80040011 - 0x100000000);
+            private const int OLE_E_NOSTORAGE = (int)(0x80040012 - 0x100000000);
+            private const int DV_E_FORMATETC = (int)(0x80040064 - 0x100000000);
+            private const int DV_E_DVTARGETDEVICE = (int)(0x80040065 - 0x100000000);
+            private const int DV_E_STGMEDIUM = (int)(0x80040066 - 0x100000000);
+            private const int DV_E_STATDATA = (int)(0x80040067 - 0x100000000);
+            private const int DV_E_LINDEX = (int)(0x80040068 - 0x100000000);
+            private const int DV_E_TYMED = (int)(0x80040069 - 0x100000000);
+            private const int DV_E_CLIPFORMAT = (int)(0x8004006A - 0x100000000);
+            private const int DV_E_DVASPECT = (int)(0x8004006B - 0x100000000);
+            private const int DV_E_DVTARGETDEVICE_SIZE = (int)(0x8004006C - 0x100000000);
+            private const int DV_E_NOIVIEWOBJECT = (int)(0x8004006D - 0x100000000);
+            private const int DRAGDROP_E_FIRST = (int)(0x80040100 - 0x100000000);
+            private const int DRAGDROP_E_LAST = (int)(0x8004010F - 0x100000000);
+            private const int DRAGDROP_S_FIRST = 0x00040100;
+            private const int DRAGDROP_S_LAST = 0x0004010F;
+            private const int DRAGDROP_E_NOTREGISTERED = (int)(0x80040100 - 0x100000000);
+            private const int DRAGDROP_E_ALREADYREGISTERED = (int)(0x80040101 - 0x100000000);
+            private const int DRAGDROP_E_INVALIDHWND = (int)(0x80040102 - 0x100000000);
+            private const int CLASSFACTORY_E_FIRST = (int)(0x80040110 - 0x100000000);
+            private const int CLASSFACTORY_E_LAST = (int)(0x8004011F - 0x100000000);
+            private const int CLASSFACTORY_S_FIRST = 0x00040110;
+            private const int CLASSFACTORY_S_LAST = 0x0004011F;
+            private const int CLASS_E_NOAGGREGATION = (int)(0x80040110 - 0x100000000);
+            private const int CLASS_E_CLASSNOTAVAILABLE = (int)(0x80040111 - 0x100000000);
+            private const int CLASS_E_NOTLICENSED = (int)(0x80040112 - 0x100000000);
+            private const int MARSHAL_E_FIRST = (int)(0x80040120 - 0x100000000);
+            private const int MARSHAL_E_LAST = (int)(0x8004012F - 0x100000000);
+            private const int MARSHAL_S_FIRST = 0x00040120;
+            private const int MARSHAL_S_LAST = 0x0004012F;
+            private const int DATA_E_FIRST = (int)(0x80040130 - 0x100000000);
+            private const int DATA_E_LAST = (int)(0x8004013F - 0x100000000);
+            private const int DATA_S_FIRST = 0x00040130;
+            private const int DATA_S_LAST = 0x0004013F;
+            private const int VIEW_E_FIRST = (int)(0x80040140 - 0x100000000);
+            private const int VIEW_E_LAST = (int)(0x8004014F - 0x100000000);
+            private const int VIEW_S_FIRST = 0x00040140;
+            private const int VIEW_S_LAST = 0x0004014F;
+            private const int VIEW_E_DRAW = (int)(0x80040140 - 0x100000000);
+            private const int REGDB_E_FIRST = (int)(0x80040150 - 0x100000000);
+            private const int REGDB_E_LAST = (int)(0x8004015F - 0x100000000);
+            private const int REGDB_S_FIRST = 0x00040150;
+            private const int REGDB_S_LAST = 0x0004015F;
+            private const int REGDB_E_READREGDB = (int)(0x80040150 - 0x100000000);
+            private const int REGDB_E_WRITEREGDB = (int)(0x80040151 - 0x100000000);
+            private const int REGDB_E_KEYMISSING = (int)(0x80040152 - 0x100000000);
+            private const int REGDB_E_INVALIDVALUE = (int)(0x80040153 - 0x100000000);
+            private const int REGDB_E_CLASSNOTREG = (int)(0x80040154 - 0x100000000);
+            private const int REGDB_E_IIDNOTREG = (int)(0x80040155 - 0x100000000);
+            private const int REGDB_E_BADTHREADINGMODEL = (int)(0x80040156 - 0x100000000);
+            private const int CAT_E_FIRST = (int)(0x80040160 - 0x100000000);
+            private const int CAT_E_LAST = (int)(0x80040161 - 0x100000000);
+            private const int CAT_E_CATIDNOEXIST = (int)(0x80040160 - 0x100000000);
+            private const int CAT_E_NODESCRIPTION = (int)(0x80040161 - 0x100000000);
+            private const int CS_E_FIRST = (int)(0x80040164 - 0x100000000);
+            private const int CS_E_LAST = (int)(0x8004016F - 0x100000000);
+            private const int CS_E_PACKAGE_NOTFOUND = (int)(0x80040164 - 0x100000000);
+            private const int CS_E_NOT_DELETABLE = (int)(0x80040165 - 0x100000000);
+            private const int CS_E_CLASS_NOTFOUND = (int)(0x80040166 - 0x100000000);
+            private const int CS_E_INVALID_VERSION = (int)(0x80040167 - 0x100000000);
+            private const int CS_E_NO_CLASSSTORE = (int)(0x80040168 - 0x100000000);
+            private const int CS_E_OBJECT_NOTFOUND = (int)(0x80040169 - 0x100000000);
+            private const int CS_E_OBJECT_ALREADY_EXISTS = (int)(0x8004016A - 0x100000000);
+            private const int CS_E_INVALID_PATH = (int)(0x8004016B - 0x100000000);
+            private const int CS_E_NETWORK_ERROR = (int)(0x8004016C - 0x100000000);
+            private const int CS_E_ADMIN_LIMIT_EXCEEDED = (int)(0x8004016D - 0x100000000);
+            private const int CS_E_SCHEMA_MISMATCH = (int)(0x8004016E - 0x100000000);
+            private const int CS_E_INTERNAL_ERROR = (int)(0x8004016F - 0x100000000);
+            private const int CACHE_E_FIRST = (int)(0x80040170 - 0x100000000);
+            private const int CACHE_E_LAST = (int)(0x8004017F - 0x100000000);
+            private const int CACHE_S_FIRST = 0x00040170;
+            private const int CACHE_S_LAST = 0x0004017F;
+            private const int CACHE_E_NOCACHE_UPDATED = (int)(0x80040170 - 0x100000000);
+            private const int OLEOBJ_E_FIRST = (int)(0x80040180 - 0x100000000);
+            private const int OLEOBJ_E_LAST = (int)(0x8004018F - 0x100000000);
+            private const int OLEOBJ_S_FIRST = 0x00040180;
+            private const int OLEOBJ_S_LAST = 0x0004018F;
+            private const int OLEOBJ_E_NOVERBS = (int)(0x80040180 - 0x100000000);
+            private const int OLEOBJ_E_INVALIDVERB = (int)(0x80040181 - 0x100000000);
+            private const int CLIENTSITE_E_FIRST = (int)(0x80040190 - 0x100000000);
+            private const int CLIENTSITE_E_LAST = (int)(0x8004019F - 0x100000000);
+            private const int CLIENTSITE_S_FIRST = 0x00040190;
+            private const int CLIENTSITE_S_LAST = 0x0004019F;
+            private const int INPLACE_E_NOTUNDOABLE = (int)(0x800401A0 - 0x100000000);
+            private const int INPLACE_E_NOTOOLSPACE = (int)(0x800401A1 - 0x100000000);
+            private const int INPLACE_E_FIRST = (int)(0x800401A0 - 0x100000000);
+            private const int INPLACE_E_LAST = (int)(0x800401AF - 0x100000000);
+            private const int INPLACE_S_FIRST = 0x000401A0;
+            private const int INPLACE_S_LAST = 0x000401AF;
+            private const int ENUM_E_FIRST = (int)(0x800401B0 - 0x100000000);
+            private const int ENUM_E_LAST = (int)(0x800401BF - 0x100000000);
+            private const int ENUM_S_FIRST = 0x000401B0;
+            private const int ENUM_S_LAST = 0x000401BF;
+            private const int CONVERT10_E_FIRST = (int)(0x800401C0 - 0x100000000);
+            private const int CONVERT10_E_LAST = (int)(0x800401CF - 0x100000000);
+            private const int CONVERT10_S_FIRST = 0x000401C0;
+            private const int CONVERT10_S_LAST = 0x000401CF;
+            private const int CONVERT10_E_OLESTREAM_GET = (int)(0x800401C0 - 0x100000000);
+            private const int CONVERT10_E_OLESTREAM_PUT = (int)(0x800401C1 - 0x100000000);
+            private const int CONVERT10_E_OLESTREAM_FMT = (int)(0x800401C2 - 0x100000000);
+            private const int CONVERT10_E_OLESTREAM_BITMAP_TO_DIB = (int)(0x800401C3 - 0x100000000);
+            private const int CONVERT10_E_STG_FMT = (int)(0x800401C4 - 0x100000000);
+            private const int CONVERT10_E_STG_NO_STD_STREAM = (int)(0x800401C5 - 0x100000000);
+            private const int CONVERT10_E_STG_DIB_TO_BITMAP = (int)(0x800401C6 - 0x100000000);
+            private const int CLIPBRD_E_FIRST = (int)(0x800401D0 - 0x100000000);
+            private const int CLIPBRD_E_LAST = (int)(0x800401DF - 0x100000000);
+            private const int CLIPBRD_S_FIRST = 0x000401D0;
+            private const int CLIPBRD_S_LAST = 0x000401DF;
+            private const int CLIPBRD_E_CANT_OPEN = (int)(0x800401D0 - 0x100000000);
+            private const int CLIPBRD_E_CANT_EMPTY = (int)(0x800401D1 - 0x100000000);
+            private const int CLIPBRD_E_CANT_SET = (int)(0x800401D2 - 0x100000000);
+            private const int CLIPBRD_E_BAD_DATA = (int)(0x800401D3 - 0x100000000);
+            private const int CLIPBRD_E_CANT_CLOSE = (int)(0x800401D4 - 0x100000000);
+            private const int MK_E_FIRST = (int)(0x800401E0 - 0x100000000);
+            private const int MK_E_LAST = (int)(0x800401EF - 0x100000000);
+            private const int MK_S_FIRST = 0x000401E0;
+            private const int MK_S_LAST = 0x000401EF;
+            private const int MK_E_CONNECTMANUALLY = (int)(0x800401E0 - 0x100000000);
+            private const int MK_E_EXCEEDEDDEADLINE = (int)(0x800401E1 - 0x100000000);
+            private const int MK_E_NEEDGENERIC = (int)(0x800401E2 - 0x100000000);
+            private const int MK_E_UNAVAILABLE = (int)(0x800401E3 - 0x100000000);
+            private const int MK_E_SYNTAX = (int)(0x800401E4 - 0x100000000);
+            private const int MK_E_NOOBJECT = (int)(0x800401E5 - 0x100000000);
+            private const int MK_E_INVALIDEXTENSION = (int)(0x800401E6 - 0x100000000);
+            private const int MK_E_INTERMEDIATEINTERFACENOTSUPPORTED = (int)(0x800401E7 - 0x100000000);
+            private const int MK_E_NOTBINDABLE = (int)(0x800401E8 - 0x100000000);
+            private const int MK_E_NOTBOUND = (int)(0x800401E9 - 0x100000000);
+            private const int MK_E_CANTOPENFILE = (int)(0x800401EA - 0x100000000);
+            private const int MK_E_MUSTBOTHERUSER = (int)(0x800401EB - 0x100000000);
+            private const int MK_E_NOINVERSE = (int)(0x800401EC - 0x100000000);
+            private const int MK_E_NOSTORAGE = (int)(0x800401ED - 0x100000000);
+            private const int MK_E_NOPREFIX = (int)(0x800401EE - 0x100000000);
+            private const int MK_E_ENUMERATION_FAILED = (int)(0x800401EF - 0x100000000);
+            private const int CO_E_FIRST = (int)(0x800401F0 - 0x100000000);
+            private const int CO_E_LAST = (int)(0x800401FF - 0x100000000);
+            private const int CO_S_FIRST = 0x000401F0;
+            private const int CO_S_LAST = 0x000401FF;
+            private const int CO_E_NOTINITIALIZED = (int)(0x800401F0 - 0x100000000);
+            private const int CO_E_ALREADYINITIALIZED = (int)(0x800401F1 - 0x100000000);
+            private const int CO_E_CANTDETERMINECLASS = (int)(0x800401F2 - 0x100000000);
+            private const int CO_E_CLASSSTRING = (int)(0x800401F3 - 0x100000000);
+            private const int CO_E_IIDSTRING = (int)(0x800401F4 - 0x100000000);
+            private const int CO_E_APPNOTFOUND = (int)(0x800401F5 - 0x100000000);
+            private const int CO_E_APPSINGLEUSE = (int)(0x800401F6 - 0x100000000);
+            private const int CO_E_ERRORINAPP = (int)(0x800401F7 - 0x100000000);
+            private const int CO_E_DLLNOTFOUND = (int)(0x800401F8 - 0x100000000);
+            private const int CO_E_ERRORINDLL = (int)(0x800401F9 - 0x100000000);
+            private const int CO_E_WRONGOSFORAPP = (int)(0x800401FA - 0x100000000);
+            private const int CO_E_OBJNOTREG = (int)(0x800401FB - 0x100000000);
+            private const int CO_E_OBJISREG = (int)(0x800401FC - 0x100000000);
+            private const int CO_E_OBJNOTCONNECTED = (int)(0x800401FD - 0x100000000);
+            private const int CO_E_APPDIDNTREG = (int)(0x800401FE - 0x100000000);
+            private const int CO_E_RELEASED = (int)(0x800401FF - 0x100000000);
+            private const int EVENT_E_FIRST = (int)(0x80040200 - 0x100000000);
+            private const int EVENT_E_LAST = (int)(0x8004021F - 0x100000000);
+            private const int EVENT_S_FIRST = 0x00040200;
+            private const int EVENT_S_LAST = 0x0004021F;
+            private const int EVENT_S_SOME_SUBSCRIBERS_FAILED = 0x00040200;
+            private const int EVENT_E_ALL_SUBSCRIBERS_FAILED = (int)(0x80040201 - 0x100000000);
+            private const int EVENT_S_NOSUBSCRIBERS = 0x00040202;
+            private const int EVENT_E_QUERYSYNTAX = (int)(0x80040203 - 0x100000000);
+            private const int EVENT_E_QUERYFIELD = (int)(0x80040204 - 0x100000000);
+            private const int EVENT_E_INTERNALEXCEPTION = (int)(0x80040205 - 0x100000000);
+            private const int EVENT_E_INTERNALERROR = (int)(0x80040206 - 0x100000000);
+            private const int EVENT_E_INVALID_PER_USER_SID = (int)(0x80040207 - 0x100000000);
+            private const int EVENT_E_USER_EXCEPTION = (int)(0x80040208 - 0x100000000);
+            private const int EVENT_E_TOO_MANY_METHODS = (int)(0x80040209 - 0x100000000);
+            private const int EVENT_E_MISSING_EVENTCLASS = (int)(0x8004020A - 0x100000000);
+            private const int EVENT_E_NOT_ALL_REMOVED = (int)(0x8004020B - 0x100000000);
+            private const int EVENT_E_COMPLUS_NOT_INSTALLED = (int)(0x8004020C - 0x100000000);
+            private const int EVENT_E_CANT_MODIFY_OR_DELETE_UNCONFIGURED_OBJECT = (int)(0x8004020D - 0x100000000);
+            private const int EVENT_E_CANT_MODIFY_OR_DELETE_CONFIGURED_OBJECT = (int)(0x8004020E - 0x100000000);
+            private const int EVENT_E_INVALID_EVENT_CLASS_PARTITION = (int)(0x8004020F - 0x100000000);
+            private const int EVENT_E_PER_USER_SID_NOT_LOGGED_ON = (int)(0x80040210 - 0x100000000);
+            private const int XACT_E_FIRST = (int)(0x8004D000 - 0x100000000);
+            private const int XACT_E_LAST = (int)(0x8004D029 - 0x100000000);
+            private const int XACT_S_FIRST = 0x0004D000;
+            private const int XACT_S_LAST = 0x0004D010;
+            private const int XACT_E_ALREADYOTHERSINGLEPHASE = (int)(0x8004D000 - 0x100000000);
+            private const int XACT_E_CANTRETAIN = (int)(0x8004D001 - 0x100000000);
+            private const int XACT_E_COMMITFAILED = (int)(0x8004D002 - 0x100000000);
+            private const int XACT_E_COMMITPREVENTED = (int)(0x8004D003 - 0x100000000);
+            private const int XACT_E_HEURISTICABORT = (int)(0x8004D004 - 0x100000000);
+            private const int XACT_E_HEURISTICCOMMIT = (int)(0x8004D005 - 0x100000000);
+            private const int XACT_E_HEURISTICDAMAGE = (int)(0x8004D006 - 0x100000000);
+            private const int XACT_E_HEURISTICDANGER = (int)(0x8004D007 - 0x100000000);
+            private const int XACT_E_ISOLATIONLEVEL = (int)(0x8004D008 - 0x100000000);
+            private const int XACT_E_NOASYNC = (int)(0x8004D009 - 0x100000000);
+            private const int XACT_E_NOENLIST = (int)(0x8004D00A - 0x100000000);
+            private const int XACT_E_NOISORETAIN = (int)(0x8004D00B - 0x100000000);
+            private const int XACT_E_NORESOURCE = (int)(0x8004D00C - 0x100000000);
+            private const int XACT_E_NOTCURRENT = (int)(0x8004D00D - 0x100000000);
+            private const int XACT_E_NOTRANSACTION = (int)(0x8004D00E - 0x100000000);
+            private const int XACT_E_NOTSUPPORTED = (int)(0x8004D00F - 0x100000000);
+            private const int XACT_E_UNKNOWNRMGRID = (int)(0x8004D010 - 0x100000000);
+            private const int XACT_E_WRONGSTATE = (int)(0x8004D011 - 0x100000000);
+            private const int XACT_E_WRONGUOW = (int)(0x8004D012 - 0x100000000);
+            private const int XACT_E_XTIONEXISTS = (int)(0x8004D013 - 0x100000000);
+            private const int XACT_E_NOIMPORTOBJECT = (int)(0x8004D014 - 0x100000000);
+            private const int XACT_E_INVALIDCOOKIE = (int)(0x8004D015 - 0x100000000);
+            private const int XACT_E_INDOUBT = (int)(0x8004D016 - 0x100000000);
+            private const int XACT_E_NOTIMEOUT = (int)(0x8004D017 - 0x100000000);
+            private const int XACT_E_ALREADYINPROGRESS = (int)(0x8004D018 - 0x100000000);
+            private const int XACT_E_ABORTED = (int)(0x8004D019 - 0x100000000);
+            private const int XACT_E_LOGFULL = (int)(0x8004D01A - 0x100000000);
+            private const int XACT_E_TMNOTAVAILABLE = (int)(0x8004D01B - 0x100000000);
+            private const int XACT_E_CONNECTION_DOWN = (int)(0x8004D01C - 0x100000000);
+            private const int XACT_E_CONNECTION_DENIED = (int)(0x8004D01D - 0x100000000);
+            private const int XACT_E_REENLISTTIMEOUT = (int)(0x8004D01E - 0x100000000);
+            private const int XACT_E_TIP_CONNECT_FAILED = (int)(0x8004D01F - 0x100000000);
+            private const int XACT_E_TIP_PROTOCOL_ERROR = (int)(0x8004D020 - 0x100000000);
+            private const int XACT_E_TIP_PULL_FAILED = (int)(0x8004D021 - 0x100000000);
+            private const int XACT_E_DEST_TMNOTAVAILABLE = (int)(0x8004D022 - 0x100000000);
+            private const int XACT_E_TIP_DISABLED = (int)(0x8004D023 - 0x100000000);
+            private const int XACT_E_NETWORK_TX_DISABLED = (int)(0x8004D024 - 0x100000000);
+            private const int XACT_E_PARTNER_NETWORK_TX_DISABLED = (int)(0x8004D025 - 0x100000000);
+            private const int XACT_E_XA_TX_DISABLED = (int)(0x8004D026 - 0x100000000);
+            private const int XACT_E_UNABLE_TO_READ_DTC_CONFIG = (int)(0x8004D027 - 0x100000000);
+            private const int XACT_E_UNABLE_TO_LOAD_DTC_PROXY = (int)(0x8004D028 - 0x100000000);
+            private const int XACT_E_ABORTING = (int)(0x8004D029 - 0x100000000);
+            public const int XACT_E_CLERKNOTFOUND = (int)(0x8004D080 - 0x100000000);
+            public const int XACT_E_CLERKEXISTS = (int)(0x8004D081 - 0x100000000);
+            public const int XACT_E_RECOVERYINPROGRESS = (int)(0x8004D082 - 0x100000000);
+            public const int XACT_E_TRANSACTIONCLOSED = (int)(0x8004D083 - 0x100000000);
+            public const int XACT_E_INVALIDLSN = (int)(0x8004D084 - 0x100000000);
+            public const int XACT_E_REPLAYREQUEST = (int)(0x8004D085 - 0x100000000);
+            private const int XACT_S_ASYNC = 0x0004D000;
+            public const int XACT_S_DEFECT = 0x0004D001;
+            private const int XACT_S_READONLY = 0x0004D002;
+            private const int XACT_S_SOMENORETAIN = 0x0004D003;
+            private const int XACT_S_OKINFORM = 0x0004D004;
+            private const int XACT_S_MADECHANGESCONTENT = 0x0004D005;
+            private const int XACT_S_MADECHANGESINFORM = 0x0004D006;
+            private const int XACT_S_ALLNORETAIN = 0x0004D007;
+            private const int XACT_S_ABORTING = 0x0004D008;
+            private const int XACT_S_SINGLEPHASE = 0x0004D009;
+            private const int XACT_S_LOCALLY_OK = 0x0004D00A;
+            private const int XACT_S_LASTRESOURCEMANAGER = 0x0004D010;
+            private const int CONTEXT_E_FIRST = (int)(0x8004E000 - 0x100000000);
+            private const int CONTEXT_E_LAST = (int)(0x8004E02F - 0x100000000);
+            private const int CONTEXT_S_FIRST = 0x0004E000;
+            private const int CONTEXT_S_LAST = 0x0004E02F;
+            private const int CONTEXT_E_ABORTED = (int)(0x8004E002 - 0x100000000);
+            private const int CONTEXT_E_ABORTING = (int)(0x8004E003 - 0x100000000);
+            private const int CONTEXT_E_NOCONTEXT = (int)(0x8004E004 - 0x100000000);
+            private const int CONTEXT_E_WOULD_DEADLOCK = (int)(0x8004E005 - 0x100000000);
+            private const int CONTEXT_E_SYNCH_TIMEOUT = (int)(0x8004E006 - 0x100000000);
+            private const int CONTEXT_E_OLDREF = (int)(0x8004E007 - 0x100000000);
+            private const int CONTEXT_E_ROLENOTFOUND = (int)(0x8004E00C - 0x100000000);
+            private const int CONTEXT_E_TMNOTAVAILABLE = (int)(0x8004E00F - 0x100000000);
+            private const int CO_E_ACTIVATIONFAILED = (int)(0x8004E021 - 0x100000000);
+            private const int CO_E_ACTIVATIONFAILED_EVENTLOGGED = (int)(0x8004E022 - 0x100000000);
+            private const int CO_E_ACTIVATIONFAILED_CATALOGERROR = (int)(0x8004E023 - 0x100000000);
+            private const int CO_E_ACTIVATIONFAILED_TIMEOUT = (int)(0x8004E024 - 0x100000000);
+            private const int CO_E_INITIALIZATIONFAILED = (int)(0x8004E025 - 0x100000000);
+            private const int CONTEXT_E_NOJIT = (int)(0x8004E026 - 0x100000000);
+            private const int CONTEXT_E_NOTRANSACTION = (int)(0x8004E027 - 0x100000000);
+            private const int CO_E_THREADINGMODEL_CHANGED = (int)(0x8004E028 - 0x100000000);
+            private const int CO_E_NOIISINTRINSICS = (int)(0x8004E029 - 0x100000000);
+            private const int CO_E_NOCOOKIES = (int)(0x8004E02A - 0x100000000);
+            private const int CO_E_DBERROR = (int)(0x8004E02B - 0x100000000);
+            private const int CO_E_NOTPOOLED = (int)(0x8004E02C - 0x100000000);
+            private const int CO_E_NOTCONSTRUCTED = (int)(0x8004E02D - 0x100000000);
+            private const int CO_E_NOSYNCHRONIZATION = (int)(0x8004E02E - 0x100000000);
+            private const int CO_E_ISOLEVELMISMATCH = (int)(0x8004E02F - 0x100000000);
+            private const int OLE_S_USEREG = 0x00040000;
+            private const int OLE_S_STATIC = 0x00040001;
+            private const int OLE_S_MAC_CLIPFORMAT = 0x00040002;
+            private const int DRAGDROP_S_DROP = 0x00040100;
+            private const int DRAGDROP_S_CANCEL = 0x00040101;
+            private const int DRAGDROP_S_USEDEFAULTCURSORS = 0x00040102;
+            private const int DATA_S_SAMEFORMATETC = 0x00040130;
+            private const int VIEW_S_ALREADY_FROZEN = 0x00040140;
+            private const int CACHE_S_FORMATETC_NOTSUPPORTED = 0x00040170;
+            private const int CACHE_S_SAMECACHE = 0x00040171;
+            private const int CACHE_S_SOMECACHES_NOTUPDATED = 0x00040172;
+            private const int OLEOBJ_S_INVALIDVERB = 0x00040180;
+            private const int OLEOBJ_S_CANNOT_DOVERB_NOW = 0x00040181;
+            private const int OLEOBJ_S_INVALIDHWND = 0x00040182;
+            private const int INPLACE_S_TRUNCATED = 0x000401A0;
+            private const int CONVERT10_S_NO_PRESENTATION = 0x000401C0;
+            private const int MK_S_REDUCED_TO_SELF = 0x000401E2;
+            private const int MK_S_ME = 0x000401E4;
+            private const int MK_S_HIM = 0x000401E5;
+            private const int MK_S_US = 0x000401E6;
+            private const int MK_S_MONIKERALREADYREGISTERED = 0x000401E7;
+            private const int SCHED_S_TASK_READY = 0x00041300;
+            private const int SCHED_S_TASK_RUNNING = 0x00041301;
+            private const int SCHED_S_TASK_DISABLED = 0x00041302;
+            private const int SCHED_S_TASK_HAS_NOT_RUN = 0x00041303;
+            private const int SCHED_S_TASK_NO_MORE_RUNS = 0x00041304;
+            private const int SCHED_S_TASK_NOT_SCHEDULED = 0x00041305;
+            private const int SCHED_S_TASK_TERMINATED = 0x00041306;
+            private const int SCHED_S_TASK_NO_VALID_TRIGGERS = 0x00041307;
+            private const int SCHED_S_EVENT_TRIGGER = 0x00041308;
+            private const int SCHED_E_TRIGGER_NOT_FOUND = (int)(0x80041309 - 0x100000000);
+            private const int SCHED_E_TASK_NOT_READY = (int)(0x8004130A - 0x100000000);
+            private const int SCHED_E_TASK_NOT_RUNNING = (int)(0x8004130B - 0x100000000);
+            private const int SCHED_E_SERVICE_NOT_INSTALLED = (int)(0x8004130C - 0x100000000);
+            private const int SCHED_E_CANNOT_OPEN_TASK = (int)(0x8004130D - 0x100000000);
+            private const int SCHED_E_INVALID_TASK = (int)(0x8004130E - 0x100000000);
+            private const int SCHED_E_ACCOUNT_INFORMATION_NOT_SET = (int)(0x8004130F - 0x100000000);
+            private const int SCHED_E_ACCOUNT_NAME_NOT_FOUND = (int)(0x80041310 - 0x100000000);
+            private const int SCHED_E_ACCOUNT_DBASE_CORRUPT = (int)(0x80041311 - 0x100000000);
+            private const int SCHED_E_NO_SECURITY_SERVICES = (int)(0x80041312 - 0x100000000);
+            private const int SCHED_E_UNKNOWN_OBJECT_VERSION = (int)(0x80041313 - 0x100000000);
+            private const int SCHED_E_UNSUPPORTED_ACCOUNT_OPTION = (int)(0x80041314 - 0x100000000);
+            private const int SCHED_E_SERVICE_NOT_RUNNING = (int)(0x80041315 - 0x100000000);
+            private const int CO_E_CLASS_CREATE_FAILED = (int)(0x80080001 - 0x100000000);
+            private const int CO_E_SCM_ERROR = (int)(0x80080002 - 0x100000000);
+            private const int CO_E_SCM_RPC_FAILURE = (int)(0x80080003 - 0x100000000);
+            private const int CO_E_BAD_PATH = (int)(0x80080004 - 0x100000000);
+            private const int CO_E_SERVER_EXEC_FAILURE = (int)(0x80080005 - 0x100000000);
+            private const int CO_E_OBJSRV_RPC_FAILURE = (int)(0x80080006 - 0x100000000);
+            private const int MK_E_NO_NORMALIZED = (int)(0x80080007 - 0x100000000);
+            private const int CO_E_SERVER_STOPPING = (int)(0x80080008 - 0x100000000);
+            private const int MEM_E_INVALID_ROOT = (int)(0x80080009 - 0x100000000);
+            private const int MEM_E_INVALID_LINK = (int)(0x80080010 - 0x100000000);
+            private const int MEM_E_INVALID_SIZE = (int)(0x80080011 - 0x100000000);
+            private const int CO_S_NOTALLINTERFACES = 0x00080012;
+            private const int CO_S_MACHINENAMENOTFOUND = 0x00080013;
+            private const int DISP_E_UNKNOWNINTERFACE = (int)(0x80020001 - 0x100000000);
+            private const int DISP_E_MEMBERNOTFOUND = (int)(0x80020003 - 0x100000000);
+            private const int DISP_E_PARAMNOTFOUND = (int)(0x80020004 - 0x100000000);
+            private const int DISP_E_TYPEMISMATCH = (int)(0x80020005 - 0x100000000);
+            private const int DISP_E_UNKNOWNNAME = (int)(0x80020006 - 0x100000000);
+            private const int DISP_E_NONAMEDARGS = (int)(0x80020007 - 0x100000000);
+            private const int DISP_E_BADVARTYPE = (int)(0x80020008 - 0x100000000);
+            private const int DISP_E_EXCEPTION = (int)(0x80020009 - 0x100000000);
+            private const int DISP_E_OVERFLOW = (int)(0x8002000A - 0x100000000);
+            private const int DISP_E_BADINDEX = (int)(0x8002000B - 0x100000000);
+            private const int DISP_E_UNKNOWNLCID = (int)(0x8002000C - 0x100000000);
+            private const int DISP_E_ARRAYISLOCKED = (int)(0x8002000D - 0x100000000);
+            private const int DISP_E_BADPARAMCOUNT = (int)(0x8002000E - 0x100000000);
+            private const int DISP_E_PARAMNOTOPTIONAL = (int)(0x8002000F - 0x100000000);
+            private const int DISP_E_BADCALLEE = (int)(0x80020010 - 0x100000000);
+            private const int DISP_E_NOTACOLLECTION = (int)(0x80020011 - 0x100000000);
+            private const int DISP_E_DIVBYZERO = (int)(0x80020012 - 0x100000000);
+            private const int DISP_E_BUFFERTOOSMALL = (int)(0x80020013 - 0x100000000);
+            private const int TYPE_E_BUFFERTOOSMALL = (int)(0x80028016 - 0x100000000);
+            private const int TYPE_E_FIELDNOTFOUND = (int)(0x80028017 - 0x100000000);
+            private const int TYPE_E_INVDATAREAD = (int)(0x80028018 - 0x100000000);
+            private const int TYPE_E_UNSUPFORMAT = (int)(0x80028019 - 0x100000000);
+            private const int TYPE_E_REGISTRYACCESS = (int)(0x8002801C - 0x100000000);
+            private const int TYPE_E_LIBNOTREGISTERED = (int)(0x8002801D - 0x100000000);
+            private const int TYPE_E_UNDEFINEDTYPE = (int)(0x80028027 - 0x100000000);
+            private const int TYPE_E_QUALIFIEDNAMEDISALLOWED = (int)(0x80028028 - 0x100000000);
+            private const int TYPE_E_INVALIDSTATE = (int)(0x80028029 - 0x100000000);
+            private const int TYPE_E_WRONGTYPEKIND = (int)(0x8002802A - 0x100000000);
+            private const int TYPE_E_ELEMENTNOTFOUND = (int)(0x8002802B - 0x100000000);
+            private const int TYPE_E_AMBIGUOUSNAME = (int)(0x8002802C - 0x100000000);
+            private const int TYPE_E_NAMECONFLICT = (int)(0x8002802D - 0x100000000);
+            private const int TYPE_E_UNKNOWNLCID = (int)(0x8002802E - 0x100000000);
+            private const int TYPE_E_DLLFUNCTIONNOTFOUND = (int)(0x8002802F - 0x100000000);
+            private const int TYPE_E_BADMODULEKIND = (int)(0x800288BD - 0x100000000);
+            private const int TYPE_E_SIZETOOBIG = (int)(0x800288C5 - 0x100000000);
+            private const int TYPE_E_DUPLICATEID = (int)(0x800288C6 - 0x100000000);
+            private const int TYPE_E_INVALIDID = (int)(0x800288CF - 0x100000000);
+            private const int TYPE_E_TYPEMISMATCH = (int)(0x80028CA0 - 0x100000000);
+            private const int TYPE_E_OUTOFBOUNDS = (int)(0x80028CA1 - 0x100000000);
+            private const int TYPE_E_IOERROR = (int)(0x80028CA2 - 0x100000000);
+            private const int TYPE_E_CANTCREATETMPFILE = (int)(0x80028CA3 - 0x100000000);
+            private const int TYPE_E_CANTLOADLIBRARY = (int)(0x80029C4A - 0x100000000);
+            private const int TYPE_E_INCONSISTENTPROPFUNCS = (int)(0x80029C83 - 0x100000000);
+            private const int TYPE_E_CIRCULARTYPE = (int)(0x80029C84 - 0x100000000);
+            private const int STG_E_INVALIDFUNCTION = (int)(0x80030001 - 0x100000000);
+            private const int STG_E_FILENOTFOUND = (int)(0x80030002 - 0x100000000);
+            private const int STG_E_PATHNOTFOUND = (int)(0x80030003 - 0x100000000);
+            private const int STG_E_TOOMANYOPENFILES = (int)(0x80030004 - 0x100000000);
+            private const int STG_E_ACCESSDENIED = (int)(0x80030005 - 0x100000000);
+            private const int STG_E_INVALIDHANDLE = (int)(0x80030006 - 0x100000000);
+            private const int STG_E_INSUFFICIENTMEMORY = (int)(0x80030008 - 0x100000000);
+            private const int STG_E_INVALIDPOINTER = (int)(0x80030009 - 0x100000000);
+            private const int STG_E_NOMOREFILES = (int)(0x80030012 - 0x100000000);
+            private const int STG_E_DISKISWRITEPROTECTED = (int)(0x80030013 - 0x100000000);
+            private const int STG_E_SEEKERROR = (int)(0x80030019 - 0x100000000);
+            private const int STG_E_WRITEFAULT = (int)(0x8003001D - 0x100000000);
+            private const int STG_E_READFAULT = (int)(0x8003001E - 0x100000000);
+            private const int STG_E_SHAREVIOLATION = (int)(0x80030020 - 0x100000000);
+            private const int STG_E_LOCKVIOLATION = (int)(0x80030021 - 0x100000000);
+            private const int STG_E_FILEALREADYEXISTS = (int)(0x80030050 - 0x100000000);
+            private const int STG_E_INVALIDPARAMETER = (int)(0x80030057 - 0x100000000);
+            private const int STG_E_MEDIUMFULL = (int)(0x80030070 - 0x100000000);
+            private const int STG_E_PROPSETMISMATCHED = (int)(0x800300F0 - 0x100000000);
+            private const int STG_E_ABNORMALAPIEXIT = (int)(0x800300FA - 0x100000000);
+            private const int STG_E_INVALIDHEADER = (int)(0x800300FB - 0x100000000);
+            private const int STG_E_INVALIDNAME = (int)(0x800300FC - 0x100000000);
+            private const int STG_E_UNKNOWN = (int)(0x800300FD - 0x100000000);
+            private const int STG_E_UNIMPLEMENTEDFUNCTION = (int)(0x800300FE - 0x100000000);
+            private const int STG_E_INVALIDFLAG = (int)(0x800300FF - 0x100000000);
+            private const int STG_E_INUSE = (int)(0x80030100 - 0x100000000);
+            private const int STG_E_NOTCURRENT = (int)(0x80030101 - 0x100000000);
+            private const int STG_E_REVERTED = (int)(0x80030102 - 0x100000000);
+            private const int STG_E_CANTSAVE = (int)(0x80030103 - 0x100000000);
+            private const int STG_E_OLDFORMAT = (int)(0x80030104 - 0x100000000);
+            private const int STG_E_OLDDLL = (int)(0x80030105 - 0x100000000);
+            private const int STG_E_SHAREREQUIRED = (int)(0x80030106 - 0x100000000);
+            private const int STG_E_NOTFILEBASEDSTORAGE = (int)(0x80030107 - 0x100000000);
+            private const int STG_E_EXTANTMARSHALLINGS = (int)(0x80030108 - 0x100000000);
+            private const int STG_E_DOCFILECORRUPT = (int)(0x80030109 - 0x100000000);
+            private const int STG_E_BADBASEADDRESS = (int)(0x80030110 - 0x100000000);
+            private const int STG_E_DOCFILETOOLARGE = (int)(0x80030111 - 0x100000000);
+            private const int STG_E_NOTSIMPLEFORMAT = (int)(0x80030112 - 0x100000000);
+            private const int STG_E_INCOMPLETE = (int)(0x80030201 - 0x100000000);
+            private const int STG_E_TERMINATED = (int)(0x80030202 - 0x100000000);
+            private const int STG_S_CONVERTED = 0x00030200;
+            private const int STG_S_BLOCK = 0x00030201;
+            private const int STG_S_RETRYNOW = 0x00030202;
+            private const int STG_S_MONITORING = 0x00030203;
+            private const int STG_S_MULTIPLEOPENS = 0x00030204;
+            private const int STG_S_CONSOLIDATIONFAILED = 0x00030205;
+            private const int STG_S_CANNOTCONSOLIDATE = 0x00030206;
+            private const int STG_E_STATUS_COPY_PROTECTION_FAILURE = (int)(0x80030305 - 0x100000000);
+            private const int STG_E_CSS_AUTHENTICATION_FAILURE = (int)(0x80030306 - 0x100000000);
+            private const int STG_E_CSS_KEY_NOT_PRESENT = (int)(0x80030307 - 0x100000000);
+            private const int STG_E_CSS_KEY_NOT_ESTABLISHED = (int)(0x80030308 - 0x100000000);
+            private const int STG_E_CSS_SCRAMBLED_SECTOR = (int)(0x80030309 - 0x100000000);
+            private const int STG_E_CSS_REGION_MISMATCH = (int)(0x8003030A - 0x100000000);
+            private const int STG_E_RESETS_EXHAUSTED = (int)(0x8003030B - 0x100000000);
+            private const int RPC_E_CALL_REJECTED = (int)(0x80010001 - 0x100000000);
+            private const int RPC_E_CALL_CANCELED = (int)(0x80010002 - 0x100000000);
+            private const int RPC_E_CANTPOST_INSENDCALL = (int)(0x80010003 - 0x100000000);
+            private const int RPC_E_CANTCALLOUT_INASYNCCALL = (int)(0x80010004 - 0x100000000);
+            private const int RPC_E_CANTCALLOUT_INEXTERNALCALL = (int)(0x80010005 - 0x100000000);
+            private const int RPC_E_CONNECTION_TERMINATED = (int)(0x80010006 - 0x100000000);
+            private const int RPC_E_SERVER_DIED = (int)(0x80010007 - 0x100000000);
+            private const int RPC_E_CLIENT_DIED = (int)(0x80010008 - 0x100000000);
+            private const int RPC_E_INVALID_DATAPACKET = (int)(0x80010009 - 0x100000000);
+            private const int RPC_E_CANTTRANSMIT_CALL = (int)(0x8001000A - 0x100000000);
+            private const int RPC_E_CLIENT_CANTMARSHAL_DATA = (int)(0x8001000B - 0x100000000);
+            private const int RPC_E_CLIENT_CANTUNMARSHAL_DATA = (int)(0x8001000C - 0x100000000);
+            private const int RPC_E_SERVER_CANTMARSHAL_DATA = (int)(0x8001000D - 0x100000000);
+            private const int RPC_E_SERVER_CANTUNMARSHAL_DATA = (int)(0x8001000E - 0x100000000);
+            private const int RPC_E_INVALID_DATA = (int)(0x8001000F - 0x100000000);
+            private const int RPC_E_INVALID_PARAMETER = (int)(0x80010010 - 0x100000000);
+            private const int RPC_E_CANTCALLOUT_AGAIN = (int)(0x80010011 - 0x100000000);
+            private const int RPC_E_SERVER_DIED_DNE = (int)(0x80010012 - 0x100000000);
+            private const int RPC_E_SYS_CALL_FAILED = (int)(0x80010100 - 0x100000000);
+            private const int RPC_E_OUT_OF_RESOURCES = (int)(0x80010101 - 0x100000000);
+            private const int RPC_E_ATTEMPTED_MULTITHREAD = (int)(0x80010102 - 0x100000000);
+            private const int RPC_E_NOT_REGISTERED = (int)(0x80010103 - 0x100000000);
+            private const int RPC_E_FAULT = (int)(0x80010104 - 0x100000000);
+            private const int RPC_E_SERVERFAULT = (int)(0x80010105 - 0x100000000);
+            private const int RPC_E_CHANGED_MODE = (int)(0x80010106 - 0x100000000);
+            private const int RPC_E_INVALIDMETHOD = (int)(0x80010107 - 0x100000000);
+            private const int RPC_E_DISCONNECTED = (int)(0x80010108 - 0x100000000);
+            private const int RPC_E_RETRY = (int)(0x80010109 - 0x100000000);
+            private const int RPC_E_SERVERCALL_RETRYLATER = (int)(0x8001010A - 0x100000000);
+            private const int RPC_E_SERVERCALL_REJECTED = (int)(0x8001010B - 0x100000000);
+            private const int RPC_E_INVALID_CALLDATA = (int)(0x8001010C - 0x100000000);
+            private const int RPC_E_CANTCALLOUT_ININPUTSYNCCALL = (int)(0x8001010D - 0x100000000);
+            private const int RPC_E_WRONG_THREAD = (int)(0x8001010E - 0x100000000);
+            private const int RPC_E_THREAD_NOT_INIT = (int)(0x8001010F - 0x100000000);
+            private const int RPC_E_VERSION_MISMATCH = (int)(0x80010110 - 0x100000000);
+            private const int RPC_E_INVALID_HEADER = (int)(0x80010111 - 0x100000000);
+            private const int RPC_E_INVALID_EXTENSION = (int)(0x80010112 - 0x100000000);
+            private const int RPC_E_INVALID_IPID = (int)(0x80010113 - 0x100000000);
+            private const int RPC_E_INVALID_OBJECT = (int)(0x80010114 - 0x100000000);
+            private const int RPC_S_CALLPENDING = (int)(0x80010115 - 0x100000000);
+            private const int RPC_S_WAITONTIMER = (int)(0x80010116 - 0x100000000);
+            private const int RPC_E_CALL_COMPLETE = (int)(0x80010117 - 0x100000000);
+            private const int RPC_E_UNSECURE_CALL = (int)(0x80010118 - 0x100000000);
+            private const int RPC_E_TOO_LATE = (int)(0x80010119 - 0x100000000);
+            private const int RPC_E_NO_GOOD_SECURITY_PACKAGES = (int)(0x8001011A - 0x100000000);
+            private const int RPC_E_ACCESS_DENIED = (int)(0x8001011B - 0x100000000);
+            private const int RPC_E_REMOTE_DISABLED = (int)(0x8001011C - 0x100000000);
+            private const int RPC_E_INVALID_OBJREF = (int)(0x8001011D - 0x100000000);
+            private const int RPC_E_NO_CONTEXT = (int)(0x8001011E - 0x100000000);
+            private const int RPC_E_TIMEOUT = (int)(0x8001011F - 0x100000000);
+            private const int RPC_E_NO_SYNC = (int)(0x80010120 - 0x100000000);
+            private const int RPC_E_FULLSIC_REQUIRED = (int)(0x80010121 - 0x100000000);
+            private const int RPC_E_INVALID_STD_NAME = (int)(0x80010122 - 0x100000000);
+            private const int CO_E_FAILEDTOIMPERSONATE = (int)(0x80010123 - 0x100000000);
+            private const int CO_E_FAILEDTOGETSECCTX = (int)(0x80010124 - 0x100000000);
+            private const int CO_E_FAILEDTOOPENTHREADTOKEN = (int)(0x80010125 - 0x100000000);
+            private const int CO_E_FAILEDTOGETTOKENINFO = (int)(0x80010126 - 0x100000000);
+            private const int CO_E_TRUSTEEDOESNTMATCHCLIENT = (int)(0x80010127 - 0x100000000);
+            private const int CO_E_FAILEDTOQUERYCLIENTBLANKET = (int)(0x80010128 - 0x100000000);
+            private const int CO_E_FAILEDTOSETDACL = (int)(0x80010129 - 0x100000000);
+            private const int CO_E_ACCESSCHECKFAILED = (int)(0x8001012A - 0x100000000);
+            private const int CO_E_NETACCESSAPIFAILED = (int)(0x8001012B - 0x100000000);
+            private const int CO_E_WRONGTRUSTEENAMESYNTAX = (int)(0x8001012C - 0x100000000);
+            private const int CO_E_INVALIDSID = (int)(0x8001012D - 0x100000000);
+            private const int CO_E_CONVERSIONFAILED = (int)(0x8001012E - 0x100000000);
+            private const int CO_E_NOMATCHINGSIDFOUND = (int)(0x8001012F - 0x100000000);
+            private const int CO_E_LOOKUPACCSIDFAILED = (int)(0x80010130 - 0x100000000);
+            private const int CO_E_NOMATCHINGNAMEFOUND = (int)(0x80010131 - 0x100000000);
+            private const int CO_E_LOOKUPACCNAMEFAILED = (int)(0x80010132 - 0x100000000);
+            private const int CO_E_SETSERLHNDLFAILED = (int)(0x80010133 - 0x100000000);
+            private const int CO_E_FAILEDTOGETWINDIR = (int)(0x80010134 - 0x100000000);
+            private const int CO_E_PATHTOOInt32 = (int)(0x80010135 - 0x100000000);
+            private const int CO_E_FAILEDTOGENUUID = (int)(0x80010136 - 0x100000000);
+            private const int CO_E_FAILEDTOCREATEFILE = (int)(0x80010137 - 0x100000000);
+            private const int CO_E_FAILEDTOCLOSEHANDLE = (int)(0x80010138 - 0x100000000);
+            private const int CO_E_EXCEEDSYSACLLIMIT = (int)(0x80010139 - 0x100000000);
+            private const int CO_E_ACESINWRONGORDER = (int)(0x8001013A - 0x100000000);
+            private const int CO_E_INCOMPATIBLESTREAMVERSION = (int)(0x8001013B - 0x100000000);
+            private const int CO_E_FAILEDTOOPENPROCESSTOKEN = (int)(0x8001013C - 0x100000000);
+            private const int CO_E_DECODEFAILED = (int)(0x8001013D - 0x100000000);
+            private const int CO_E_ACNOTINITIALIZED = (int)(0x8001013F - 0x100000000);
+            private const int CO_E_CANCEL_DISABLED = (int)(0x80010140 - 0x100000000);
+            private const int RPC_E_UNEXPECTED = (int)(0x8001FFFF - 0x100000000);
+            private const int ERROR_AUDITING_DISABLED = (int)(0xC0090001 - 0x100000000);
+            private const int ERROR_ALL_SIDS_FILTERED = (int)(0xC0090002 - 0x100000000);
+            private const int NTE_BAD_UID = (int)(0x80090001 - 0x100000000);
+            private const int NTE_BAD_HASH = (int)(0x80090002 - 0x100000000);
+            private const int NTE_BAD_KEY = (int)(0x80090003 - 0x100000000);
+            private const int NTE_BAD_LEN = (int)(0x80090004 - 0x100000000);
+            private const int NTE_BAD_DATA = (int)(0x80090005 - 0x100000000);
+            private const int NTE_BAD_SIGNATURE = (int)(0x80090006 - 0x100000000);
+            private const int NTE_BAD_VER = (int)(0x80090007 - 0x100000000);
+            private const int NTE_BAD_ALGID = (int)(0x80090008 - 0x100000000);
+            private const int NTE_BAD_FLAGS = (int)(0x80090009 - 0x100000000);
+            private const int NTE_BAD_TYPE = (int)(0x8009000A - 0x100000000);
+            private const int NTE_BAD_KEY_STATE = (int)(0x8009000B - 0x100000000);
+            private const int NTE_BAD_HASH_STATE = (int)(0x8009000C - 0x100000000);
+            private const int NTE_NO_KEY = (int)(0x8009000D - 0x100000000);
+            private const int NTE_NO_MEMORY = (int)(0x8009000E - 0x100000000);
+            private const int NTE_EXISTS = (int)(0x8009000F - 0x100000000);
+            private const int NTE_PERM = (int)(0x80090010 - 0x100000000);
+            private const int NTE_NOT_FOUND = (int)(0x80090011 - 0x100000000);
+            private const int NTE_DOUBLE_ENCRYPT = (int)(0x80090012 - 0x100000000);
+            private const int NTE_BAD_PROVIDER = (int)(0x80090013 - 0x100000000);
+            private const int NTE_BAD_PROV_TYPE = (int)(0x80090014 - 0x100000000);
+            private const int NTE_BAD_PUBLIC_KEY = (int)(0x80090015 - 0x100000000);
+            private const int NTE_BAD_KEYSET = (int)(0x80090016 - 0x100000000);
+            private const int NTE_PROV_TYPE_NOT_DEF = (int)(0x80090017 - 0x100000000);
+            private const int NTE_PROV_TYPE_ENTRY_BAD = (int)(0x80090018 - 0x100000000);
+            private const int NTE_KEYSET_NOT_DEF = (int)(0x80090019 - 0x100000000);
+            private const int NTE_KEYSET_ENTRY_BAD = (int)(0x8009001A - 0x100000000);
+            private const int NTE_PROV_TYPE_NO_MATCH = (int)(0x8009001B - 0x100000000);
+            private const int NTE_SIGNATURE_FILE_BAD = (int)(0x8009001C - 0x100000000);
+            private const int NTE_PROVIDER_DLL_FAIL = (int)(0x8009001D - 0x100000000);
+            private const int NTE_PROV_DLL_NOT_FOUND = (int)(0x8009001E - 0x100000000);
+            private const int NTE_BAD_KEYSET_PARAM = (int)(0x8009001F - 0x100000000);
+            private const int NTE_FAIL = (int)(0x80090020 - 0x100000000);
+            private const int NTE_SYS_ERR = (int)(0x80090021 - 0x100000000);
+            private const int NTE_SILENT_CONTEXT = (int)(0x80090022 - 0x100000000);
+            private const int NTE_TOKEN_KEYSET_STORAGE_FULL = (int)(0x80090023 - 0x100000000);
+            private const int NTE_TEMPORARY_PROFILE = (int)(0x80090024 - 0x100000000);
+            private const int NTE_FIXEDPARAMETER = (int)(0x80090025 - 0x100000000);
+            private const int SEC_E_INSUFFICIENT_MEMORY = (int)(0x80090300 - 0x100000000);
+            private const int SEC_E_INVALID_HANDLE = (int)(0x80090301 - 0x100000000);
+            private const int SEC_E_UNSUPPORTED_FUNCTION = (int)(0x80090302 - 0x100000000);
+            private const int SEC_E_TARGET_UNKNOWN = (int)(0x80090303 - 0x100000000);
+            private const int SEC_E_INTERNAL_ERROR = (int)(0x80090304 - 0x100000000);
+            private const int SEC_E_SECPKG_NOT_FOUND = (int)(0x80090305 - 0x100000000);
+            private const int SEC_E_NOT_OWNER = (int)(0x80090306 - 0x100000000);
+            private const int SEC_E_CANNOT_INSTALL = (int)(0x80090307 - 0x100000000);
+            private const int SEC_E_INVALID_TOKEN = (int)(0x80090308 - 0x100000000);
+            private const int SEC_E_CANNOT_PACK = (int)(0x80090309 - 0x100000000);
+            private const int SEC_E_QOP_NOT_SUPPORTED = (int)(0x8009030A - 0x100000000);
+            private const int SEC_E_NO_IMPERSONATION = (int)(0x8009030B - 0x100000000);
+            private const int SEC_E_LOGON_DENIED = (int)(0x8009030C - 0x100000000);
+            private const int SEC_E_UNKNOWN_CREDENTIALS = (int)(0x8009030D - 0x100000000);
+            private const int SEC_E_NO_CREDENTIALS = (int)(0x8009030E - 0x100000000);
+            private const int SEC_E_MESSAGE_ALTERED = (int)(0x8009030F - 0x100000000);
+            private const int SEC_E_OUT_OF_SEQUENCE = (int)(0x80090310 - 0x100000000);
+            private const int SEC_E_NO_AUTHENTICATING_AUTHORITY = (int)(0x80090311 - 0x100000000);
+            private const int SEC_I_CONTINUE_NEEDED = 0x00090312;
+            private const int SEC_I_COMPLETE_NEEDED = 0x00090313;
+            private const int SEC_I_COMPLETE_AND_CONTINUE = 0x00090314;
+            private const int SEC_I_LOCAL_LOGON = 0x00090315;
+            private const int SEC_E_BAD_PKGID = (int)(0x80090316 - 0x100000000);
+            private const int SEC_E_CONTEXT_EXPIRED = (int)(0x80090317 - 0x100000000);
+            private const int SEC_I_CONTEXT_EXPIRED = 0x00090317;
+            private const int SEC_E_INCOMPLETE_MESSAGE = (int)(0x80090318 - 0x100000000);
+            private const int SEC_E_INCOMPLETE_CREDENTIALS = (int)(0x80090320 - 0x100000000);
+            private const int SEC_E_BUFFER_TOO_SMALL = (int)(0x80090321 - 0x100000000);
+            private const int SEC_I_INCOMPLETE_CREDENTIALS = 0x00090320;
+            private const int SEC_I_RENEGOTIATE = 0x00090321;
+            private const int SEC_E_WRONG_PRINCIPAL = (int)(0x80090322 - 0x100000000);
+            private const int SEC_I_NO_LSA_CONTEXT = 0x00090323;
+            private const int SEC_E_TIME_SKEW = (int)(0x80090324 - 0x100000000);
+            private const int SEC_E_UNTRUSTED_ROOT = (int)(0x80090325 - 0x100000000);
+            private const int SEC_E_ILLEGAL_MESSAGE = (int)(0x80090326 - 0x100000000);
+            private const int SEC_E_CERT_UNKNOWN = (int)(0x80090327 - 0x100000000);
+            private const int SEC_E_CERT_EXPIRED = (int)(0x80090328 - 0x100000000);
+            private const int SEC_E_ENCRYPT_FAILURE = (int)(0x80090329 - 0x100000000);
+            private const int SEC_E_DECRYPT_FAILURE = (int)(0x80090330 - 0x100000000);
+            private const int SEC_E_ALGORITHM_MISMATCH = (int)(0x80090331 - 0x100000000);
+            private const int SEC_E_SECURITY_QOS_FAILED = (int)(0x80090332 - 0x100000000);
+            private const int SEC_E_UNFINISHED_CONTEXT_DELETED = (int)(0x80090333 - 0x100000000);
+            private const int SEC_E_NO_TGT_REPLY = (int)(0x80090334 - 0x100000000);
+            private const int SEC_E_NO_IP_ADDRESSES = (int)(0x80090335 - 0x100000000);
+            private const int SEC_E_WRONG_CREDENTIAL_HANDLE = (int)(0x80090336 - 0x100000000);
+            private const int SEC_E_CRYPTO_SYSTEM_INVALID = (int)(0x80090337 - 0x100000000);
+            private const int SEC_E_MAX_REFERRALS_EXCEEDED = (int)(0x80090338 - 0x100000000);
+            private const int SEC_E_MUST_BE_KDC = (int)(0x80090339 - 0x100000000);
+            private const int SEC_E_STRONG_CRYPTO_NOT_SUPPORTED = (int)(0x8009033A - 0x100000000);
+            private const int SEC_E_TOO_MANY_PRINCIPALS = (int)(0x8009033B - 0x100000000);
+            private const int SEC_E_NO_PA_DATA = (int)(0x8009033C - 0x100000000);
+            private const int SEC_E_PKINIT_NAME_MISMATCH = (int)(0x8009033D - 0x100000000);
+            private const int SEC_E_SMARTCARD_LOGON_REQUIRED = (int)(0x8009033E - 0x100000000);
+            private const int SEC_E_SHUTDOWN_IN_PROGRESS = (int)(0x8009033F - 0x100000000);
+            private const int SEC_E_KDC_INVALID_REQUEST = (int)(0x80090340 - 0x100000000);
+            private const int SEC_E_KDC_UNABLE_TO_REFER = (int)(0x80090341 - 0x100000000);
+            private const int SEC_E_KDC_UNKNOWN_ETYPE = (int)(0x80090342 - 0x100000000);
+            private const int SEC_E_UNSUPPORTED_PREAUTH = (int)(0x80090343 - 0x100000000);
+            private const int SEC_E_DELEGATION_REQUIRED = (int)(0x80090345 - 0x100000000);
+            private const int SEC_E_BAD_BINDINGS = (int)(0x80090346 - 0x100000000);
+            private const int SEC_E_MULTIPLE_ACCOUNTS = (int)(0x80090347 - 0x100000000);
+            public const int SEC_E_NO_KERB_KEY = (int)(0x80090348 - 0x100000000);
+            private const int SEC_E_CERT_WRONG_USAGE = (int)(0x80090349 - 0x100000000);
+            private const int SEC_E_DOWNGRADE_DETECTED = (int)(0x80090350 - 0x100000000);
+            private const int SEC_E_SMARTCARD_CERT_REVOKED = (int)(0x80090351 - 0x100000000);
+            private const int SEC_E_ISSUING_CA_UNTRUSTED = (int)(0x80090352 - 0x100000000);
+            private const int SEC_E_REVOCATION_OFFLINE_C = (int)(0x80090353 - 0x100000000);
+            private const int SEC_E_PKINIT_CLIENT_FAILURE = (int)(0x80090354 - 0x100000000);
+            private const int SEC_E_SMARTCARD_CERT_EXPIRED = (int)(0x80090355 - 0x100000000);
+            private const int SEC_E_NO_S4U_PROT_SUPPORT = (int)(0x80090356 - 0x100000000);
+            private const int SEC_E_CROSSREALM_DELEGATION_FAILURE = (int)(0x80090357 - 0x100000000);
+            private const int SEC_E_NO_SPM = SEC_E_INTERNAL_ERROR;
+            private const int SEC_E_NOT_SUPPORTED = SEC_E_UNSUPPORTED_FUNCTION;
+            private const int CRYPT_E_MSG_ERROR = (int)(0x80091001 - 0x100000000);
+            private const int CRYPT_E_UNKNOWN_ALGO = (int)(0x80091002 - 0x100000000);
+            private const int CRYPT_E_OID_FORMAT = (int)(0x80091003 - 0x100000000);
+            private const int CRYPT_E_INVALID_MSG_TYPE = (int)(0x80091004 - 0x100000000);
+            private const int CRYPT_E_UNEXPECTED_ENCODING = (int)(0x80091005 - 0x100000000);
+            private const int CRYPT_E_AUTH_ATTR_MISSING = (int)(0x80091006 - 0x100000000);
+            private const int CRYPT_E_HASH_VALUE = (int)(0x80091007 - 0x100000000);
+            private const int CRYPT_E_INVALID_INDEX = (int)(0x80091008 - 0x100000000);
+            private const int CRYPT_E_ALREADY_DECRYPTED = (int)(0x80091009 - 0x100000000);
+            private const int CRYPT_E_NOT_DECRYPTED = (int)(0x8009100A - 0x100000000);
+            private const int CRYPT_E_RECIPIENT_NOT_FOUND = (int)(0x8009100B - 0x100000000);
+            private const int CRYPT_E_CONTROL_TYPE = (int)(0x8009100C - 0x100000000);
+            private const int CRYPT_E_ISSUER_SERIALNUMBER = (int)(0x8009100D - 0x100000000);
+            private const int CRYPT_E_SIGNER_NOT_FOUND = (int)(0x8009100E - 0x100000000);
+            private const int CRYPT_E_ATTRIBUTES_MISSING = (int)(0x8009100F - 0x100000000);
+            private const int CRYPT_E_STREAM_MSG_NOT_READY = (int)(0x80091010 - 0x100000000);
+            private const int CRYPT_E_STREAM_INSUFFICIENT_DATA = (int)(0x80091011 - 0x100000000);
+            private const int CRYPT_I_NEW_PROTECTION_REQUIRED = 0x00091012;
+            private const int CRYPT_E_BAD_LEN = (int)(0x80092001 - 0x100000000);
+            private const int CRYPT_E_BAD_ENCODE = (int)(0x80092002 - 0x100000000);
+            private const int CRYPT_E_FILE_ERROR = (int)(0x80092003 - 0x100000000);
+            private const int CRYPT_E_NOT_FOUND = (int)(0x80092004 - 0x100000000);
+            private const int CRYPT_E_EXISTS = (int)(0x80092005 - 0x100000000);
+            private const int CRYPT_E_NO_PROVIDER = (int)(0x80092006 - 0x100000000);
+            private const int CRYPT_E_SELF_SIGNED = (int)(0x80092007 - 0x100000000);
+            private const int CRYPT_E_DELETED_PREV = (int)(0x80092008 - 0x100000000);
+            private const int CRYPT_E_NO_MATCH = (int)(0x80092009 - 0x100000000);
+            private const int CRYPT_E_UNEXPECTED_MSG_TYPE = (int)(0x8009200A - 0x100000000);
+            private const int CRYPT_E_NO_KEY_PROPERTY = (int)(0x8009200B - 0x100000000);
+            private const int CRYPT_E_NO_DECRYPT_CERT = (int)(0x8009200C - 0x100000000);
+            private const int CRYPT_E_BAD_MSG = (int)(0x8009200D - 0x100000000);
+            private const int CRYPT_E_NO_SIGNER = (int)(0x8009200E - 0x100000000);
+            private const int CRYPT_E_PENDING_CLOSE = (int)(0x8009200F - 0x100000000);
+            private const int CRYPT_E_REVOKED = (int)(0x80092010 - 0x100000000);
+            private const int CRYPT_E_NO_REVOCATION_DLL = (int)(0x80092011 - 0x100000000);
+            private const int CRYPT_E_NO_REVOCATION_CHECK = (int)(0x80092012 - 0x100000000);
+            private const int CRYPT_E_REVOCATION_OFFLINE = (int)(0x80092013 - 0x100000000);
+            private const int CRYPT_E_NOT_IN_REVOCATION_DATABASE = (int)(0x80092014 - 0x100000000);
+            private const int CRYPT_E_INVALID_NUMERIC_STRING = (int)(0x80092020 - 0x100000000);
+            private const int CRYPT_E_INVALID_PRINTABLE_STRING = (int)(0x80092021 - 0x100000000);
+            private const int CRYPT_E_INVALID_IA5_STRING = (int)(0x80092022 - 0x100000000);
+            private const int CRYPT_E_INVALID_X500_STRING = (int)(0x80092023 - 0x100000000);
+            private const int CRYPT_E_NOT_CHAR_STRING = (int)(0x80092024 - 0x100000000);
+            private const int CRYPT_E_FILERESIZED = (int)(0x80092025 - 0x100000000);
+            private const int CRYPT_E_SECURITY_SETTINGS = (int)(0x80092026 - 0x100000000);
+            private const int CRYPT_E_NO_VERIFY_USAGE_DLL = (int)(0x80092027 - 0x100000000);
+            private const int CRYPT_E_NO_VERIFY_USAGE_CHECK = (int)(0x80092028 - 0x100000000);
+            private const int CRYPT_E_VERIFY_USAGE_OFFLINE = (int)(0x80092029 - 0x100000000);
+            private const int CRYPT_E_NOT_IN_CTL = (int)(0x8009202A - 0x100000000);
+            private const int CRYPT_E_NO_TRUSTED_SIGNER = (int)(0x8009202B - 0x100000000);
+            private const int CRYPT_E_MISSING_PUBKEY_PARA = (int)(0x8009202C - 0x100000000);
+
+            /// <summary>
+            /// OSS Certificate encode/decode error code base
+            ///
+            /// See asn1code.h for a definition of the OSS runtime errors. The OSS
+            /// error values are offset by CRYPT_E_OSS_ERROR.
+            /// </summary>
+            public const int CRYPT_E_OSS_ERROR = (int)(0x80093000 - 0x100000000);
+
+            private const int OSS_MORE_BUF = (int)(0x80093001 - 0x100000000);
+            private const int OSS_NEGATIVE_UINTEGER = (int)(0x80093002 - 0x100000000);
+            private const int OSS_PDU_RANGE = (int)(0x80093003 - 0x100000000);
+            private const int OSS_MORE_INPUT = (int)(0x80093004 - 0x100000000);
+            private const int OSS_DATA_ERROR = (int)(0x80093005 - 0x100000000);
+            private const int OSS_BAD_ARG = (int)(0x80093006 - 0x100000000);
+            private const int OSS_BAD_VERSION = (int)(0x80093007 - 0x100000000);
+            private const int OSS_OUT_MEMORY = (int)(0x80093008 - 0x100000000);
+            private const int OSS_PDU_MISMATCH = (int)(0x80093009 - 0x100000000);
+            private const int OSS_LIMITED = (int)(0x8009300A - 0x100000000);
+            private const int OSS_BAD_PTR = (int)(0x8009300B - 0x100000000);
+            private const int OSS_BAD_TIME = (int)(0x8009300C - 0x100000000);
+            private const int OSS_INDEFINITE_NOT_SUPPORTED = (int)(0x8009300D - 0x100000000);
+            private const int OSS_MEM_ERROR = (int)(0x8009300E - 0x100000000);
+            private const int OSS_BAD_TABLE = (int)(0x8009300F - 0x100000000);
+            private const int OSS_TOO_Int32 = (int)(0x80093010 - 0x100000000);
+            private const int OSS_CONSTRAINT_VIOLATED = (int)(0x80093011 - 0x100000000);
+            private const int OSS_FATAL_ERROR = (int)(0x80093012 - 0x100000000);
+            private const int OSS_ACCESS_SERIALIZATION_ERROR = (int)(0x80093013 - 0x100000000);
+            private const int OSS_NULL_TBL = (int)(0x80093014 - 0x100000000);
+            private const int OSS_NULL_FCN = (int)(0x80093015 - 0x100000000);
+            private const int OSS_BAD_ENCRULES = (int)(0x80093016 - 0x100000000);
+            private const int OSS_UNAVAIL_ENCRULES = (int)(0x80093017 - 0x100000000);
+            private const int OSS_CANT_OPEN_TRACE_WINDOW = (int)(0x80093018 - 0x100000000);
+            private const int OSS_UNIMPLEMENTED = (int)(0x80093019 - 0x100000000);
+            private const int OSS_OID_DLL_NOT_LINKED = (int)(0x8009301A - 0x100000000);
+            private const int OSS_CANT_OPEN_TRACE_FILE = (int)(0x8009301B - 0x100000000);
+            private const int OSS_TRACE_FILE_ALREADY_OPEN = (int)(0x8009301C - 0x100000000);
+            private const int OSS_TABLE_MISMATCH = (int)(0x8009301D - 0x100000000);
+            private const int OSS_TYPE_NOT_SUPPORTED = (int)(0x8009301E - 0x100000000);
+            private const int OSS_REAL_DLL_NOT_LINKED = (int)(0x8009301F - 0x100000000);
+            private const int OSS_REAL_CODE_NOT_LINKED = (int)(0x80093020 - 0x100000000);
+            private const int OSS_OUT_OF_RANGE = (int)(0x80093021 - 0x100000000);
+            private const int OSS_COPIER_DLL_NOT_LINKED = (int)(0x80093022 - 0x100000000);
+            private const int OSS_CONSTRAINT_DLL_NOT_LINKED = (int)(0x80093023 - 0x100000000);
+            private const int OSS_COMPARATOR_DLL_NOT_LINKED = (int)(0x80093024 - 0x100000000);
+            private const int OSS_COMPARATOR_CODE_NOT_LINKED = (int)(0x80093025 - 0x100000000);
+            private const int OSS_MEM_MGR_DLL_NOT_LINKED = (int)(0x80093026 - 0x100000000);
+            private const int OSS_PDV_DLL_NOT_LINKED = (int)(0x80093027 - 0x100000000);
+            private const int OSS_PDV_CODE_NOT_LINKED = (int)(0x80093028 - 0x100000000);
+            private const int OSS_API_DLL_NOT_LINKED = (int)(0x80093029 - 0x100000000);
+            private const int OSS_BERDER_DLL_NOT_LINKED = (int)(0x8009302A - 0x100000000);
+            private const int OSS_PER_DLL_NOT_LINKED = (int)(0x8009302B - 0x100000000);
+            private const int OSS_OPEN_TYPE_ERROR = (int)(0x8009302C - 0x100000000);
+            private const int OSS_MUTEX_NOT_CREATED = (int)(0x8009302D - 0x100000000);
+            private const int OSS_CANT_CLOSE_TRACE_FILE = (int)(0x8009302E - 0x100000000);
+
+            /// <summary>
+            /// ASN1 Certificate encode/decode error code base.
+            ///
+            /// The ASN1 error values are offset by CRYPT_E_ASN1_ERROR.
+            /// </summary>
+            public const int CRYPT_E_ASN1_ERROR = (int)(0x80093100 - 0x100000000);
+
+            private const int CRYPT_E_ASN1_INTERNAL = (int)(0x80093101 - 0x100000000);
+            private const int CRYPT_E_ASN1_EOD = (int)(0x80093102 - 0x100000000);
+            private const int CRYPT_E_ASN1_CORRUPT = (int)(0x80093103 - 0x100000000);
+            private const int CRYPT_E_ASN1_LARGE = (int)(0x80093104 - 0x100000000);
+            private const int CRYPT_E_ASN1_CONSTRAINT = (int)(0x80093105 - 0x100000000);
+            private const int CRYPT_E_ASN1_MEMORY = (int)(0x80093106 - 0x100000000);
+            private const int CRYPT_E_ASN1_OVERFLOW = (int)(0x80093107 - 0x100000000);
+            private const int CRYPT_E_ASN1_BADPDU = (int)(0x80093108 - 0x100000000);
+            private const int CRYPT_E_ASN1_BADARGS = (int)(0x80093109 - 0x100000000);
+            private const int CRYPT_E_ASN1_BADREAL = (int)(0x8009310A - 0x100000000);
+            private const int CRYPT_E_ASN1_BADTAG = (int)(0x8009310B - 0x100000000);
+            private const int CRYPT_E_ASN1_CHOICE = (int)(0x8009310C - 0x100000000);
+            private const int CRYPT_E_ASN1_RULE = (int)(0x8009310D - 0x100000000);
+            private const int CRYPT_E_ASN1_UTF8 = (int)(0x8009310E - 0x100000000);
+            private const int CRYPT_E_ASN1_PDU_TYPE = (int)(0x80093133 - 0x100000000);
+            private const int CRYPT_E_ASN1_NYI = (int)(0x80093134 - 0x100000000);
+            private const int CRYPT_E_ASN1_EXTENDED = (int)(0x80093201 - 0x100000000);
+            private const int CRYPT_E_ASN1_NOEOD = (int)(0x80093202 - 0x100000000);
+            private const int CERTSRV_E_BAD_REQUESTSUBJECT = (int)(0x80094001 - 0x100000000);
+            private const int CERTSRV_E_NO_REQUEST = (int)(0x80094002 - 0x100000000);
+            private const int CERTSRV_E_BAD_REQUESTSTATUS = (int)(0x80094003 - 0x100000000);
+            private const int CERTSRV_E_PROPERTY_EMPTY = (int)(0x80094004 - 0x100000000);
+            private const int CERTSRV_E_INVALID_CA_CERTIFICATE = (int)(0x80094005 - 0x100000000);
+            private const int CERTSRV_E_SERVER_SUSPENDED = (int)(0x80094006 - 0x100000000);
+            private const int CERTSRV_E_ENCODING_LENGTH = (int)(0x80094007 - 0x100000000);
+            private const int CERTSRV_E_ROLECONFLICT = (int)(0x80094008 - 0x100000000);
+            private const int CERTSRV_E_RESTRICTEDOFFICER = (int)(0x80094009 - 0x100000000);
+            private const int CERTSRV_E_KEY_ARCHIVAL_NOT_CONFIGURED = (int)(0x8009400A - 0x100000000);
+            private const int CERTSRV_E_NO_VALID_KRA = (int)(0x8009400B - 0x100000000);
+            private const int CERTSRV_E_BAD_REQUEST_KEY_ARCHIVAL = (int)(0x8009400C - 0x100000000);
+            private const int CERTSRV_E_NO_CAADMIN_DEFINED = (int)(0x8009400D - 0x100000000);
+            private const int CERTSRV_E_BAD_RENEWAL_CERT_ATTRIBUTE = (int)(0x8009400E - 0x100000000);
+            private const int CERTSRV_E_NO_DB_SESSIONS = (int)(0x8009400F - 0x100000000);
+            private const int CERTSRV_E_ALIGNMENT_FAULT = (int)(0x80094010 - 0x100000000);
+            private const int CERTSRV_E_ENROLL_DENIED = (int)(0x80094011 - 0x100000000);
+            private const int CERTSRV_E_TEMPLATE_DENIED = (int)(0x80094012 - 0x100000000);
+            private const int CERTSRV_E_DOWNLEVEL_DC_SSL_OR_UPGRADE = (int)(0x80094013 - 0x100000000);
+            private const int CERTSRV_E_UNSUPPORTED_CERT_TYPE = (int)(0x80094800 - 0x100000000);
+            private const int CERTSRV_E_NO_CERT_TYPE = (int)(0x80094801 - 0x100000000);
+            private const int CERTSRV_E_TEMPLATE_CONFLICT = (int)(0x80094802 - 0x100000000);
+            private const int CERTSRV_E_SUBJECT_ALT_NAME_REQUIRED = (int)(0x80094803 - 0x100000000);
+            private const int CERTSRV_E_ARCHIVED_KEY_REQUIRED = (int)(0x80094804 - 0x100000000);
+            private const int CERTSRV_E_SMIME_REQUIRED = (int)(0x80094805 - 0x100000000);
+            private const int CERTSRV_E_BAD_RENEWAL_SUBJECT = (int)(0x80094806 - 0x100000000);
+            private const int CERTSRV_E_BAD_TEMPLATE_VERSION = (int)(0x80094807 - 0x100000000);
+            private const int CERTSRV_E_TEMPLATE_POLICY_REQUIRED = (int)(0x80094808 - 0x100000000);
+            private const int CERTSRV_E_SIGNATURE_POLICY_REQUIRED = (int)(0x80094809 - 0x100000000);
+            private const int CERTSRV_E_SIGNATURE_COUNT = (int)(0x8009480A - 0x100000000);
+            private const int CERTSRV_E_SIGNATURE_REJECTED = (int)(0x8009480B - 0x100000000);
+            private const int CERTSRV_E_ISSUANCE_POLICY_REQUIRED = (int)(0x8009480C - 0x100000000);
+            private const int CERTSRV_E_SUBJECT_UPN_REQUIRED = (int)(0x8009480D - 0x100000000);
+            private const int CERTSRV_E_SUBJECT_DIRECTORY_GUID_REQUIRED = (int)(0x8009480E - 0x100000000);
+            private const int CERTSRV_E_SUBJECT_DNS_REQUIRED = (int)(0x8009480F - 0x100000000);
+            private const int CERTSRV_E_ARCHIVED_KEY_UNEXPECTED = (int)(0x80094810 - 0x100000000);
+            private const int CERTSRV_E_KEY_LENGTH = (int)(0x80094811 - 0x100000000);
+            private const int CERTSRV_E_SUBJECT_EMAIL_REQUIRED = (int)(0x80094812 - 0x100000000);
+            private const int CERTSRV_E_UNKNOWN_CERT_TYPE = (int)(0x80094813 - 0x100000000);
+            private const int CERTSRV_E_CERT_TYPE_OVERLAP = (int)(0x80094814 - 0x100000000);
+            private const int XENROLL_E_KEY_NOT_EXPORTABLE = (int)(0x80095000 - 0x100000000);
+            private const int XENROLL_E_CANNOT_ADD_ROOT_CERT = (int)(0x80095001 - 0x100000000);
+            private const int XENROLL_E_RESPONSE_KA_HASH_NOT_FOUND = (int)(0x80095002 - 0x100000000);
+            private const int XENROLL_E_RESPONSE_UNEXPECTED_KA_HASH = (int)(0x80095003 - 0x100000000);
+            private const int XENROLL_E_RESPONSE_KA_HASH_MISMATCH = (int)(0x80095004 - 0x100000000);
+            private const int XENROLL_E_KEYSPEC_SMIME_MISMATCH = (int)(0x80095005 - 0x100000000);
+            private const int TRUST_E_SYSTEM_ERROR = (int)(0x80096001 - 0x100000000);
+            private const int TRUST_E_NO_SIGNER_CERT = (int)(0x80096002 - 0x100000000);
+            private const int TRUST_E_COUNTER_SIGNER = (int)(0x80096003 - 0x100000000);
+            private const int TRUST_E_CERT_SIGNATURE = (int)(0x80096004 - 0x100000000);
+            private const int TRUST_E_TIME_STAMP = (int)(0x80096005 - 0x100000000);
+            private const int TRUST_E_BAD_DIGEST = (int)(0x80096010 - 0x100000000);
+            private const int TRUST_E_BASIC_CONSTRAINTS = (int)(0x80096019 - 0x100000000);
+            private const int TRUST_E_FINANCIAL_CRITERIA = (int)(0x8009601E - 0x100000000);
+            private const int MSSIPOTF_E_OUTOFMEMRANGE = (int)(0x80097001 - 0x100000000);
+            private const int MSSIPOTF_E_CANTGETOBJECT = (int)(0x80097002 - 0x100000000);
+            private const int MSSIPOTF_E_NOHEADTABLE = (int)(0x80097003 - 0x100000000);
+            private const int MSSIPOTF_E_BAD_MAGICNUMBER = (int)(0x80097004 - 0x100000000);
+            private const int MSSIPOTF_E_BAD_OFFSET_TABLE = (int)(0x80097005 - 0x100000000);
+            private const int MSSIPOTF_E_TABLE_TAGORDER = (int)(0x80097006 - 0x100000000);
+            private const int MSSIPOTF_E_TABLE_Int32UInt16 = (int)(0x80097007 - 0x100000000);
+            private const int MSSIPOTF_E_BAD_FIRST_TABLE_PLACEMENT = (int)(0x80097008 - 0x100000000);
+            private const int MSSIPOTF_E_TABLES_OVERLAP = (int)(0x80097009 - 0x100000000);
+            private const int MSSIPOTF_E_TABLE_PADBYTES = (int)(0x8009700A - 0x100000000);
+            private const int MSSIPOTF_E_FILETOOSMALL = (int)(0x8009700B - 0x100000000);
+            private const int MSSIPOTF_E_TABLE_CHECKSUM = (int)(0x8009700C - 0x100000000);
+            private const int MSSIPOTF_E_FILE_CHECKSUM = (int)(0x8009700D - 0x100000000);
+            private const int MSSIPOTF_E_FAILED_POLICY = (int)(0x80097010 - 0x100000000);
+            private const int MSSIPOTF_E_FAILED_HINTS_CHECK = (int)(0x80097011 - 0x100000000);
+            private const int MSSIPOTF_E_NOT_OPENTYPE = (int)(0x80097012 - 0x100000000);
+            private const int MSSIPOTF_E_FILE = (int)(0x80097013 - 0x100000000);
+            private const int MSSIPOTF_E_CRYPT = (int)(0x80097014 - 0x100000000);
+            private const int MSSIPOTF_E_BADVERSION = (int)(0x80097015 - 0x100000000);
+            private const int MSSIPOTF_E_DSIG_STRUCTURE = (int)(0x80097016 - 0x100000000);
+            private const int MSSIPOTF_E_PCONST_CHECK = (int)(0x80097017 - 0x100000000);
+            private const int MSSIPOTF_E_STRUCTURE = (int)(0x80097018 - 0x100000000);
+            private const int NTE_OP_OK = 0;
+            private const int TRUST_E_PROVIDER_UNKNOWN = (int)(0x800B0001 - 0x100000000);
+            private const int TRUST_E_ACTION_UNKNOWN = (int)(0x800B0002 - 0x100000000);
+            private const int TRUST_E_SUBJECT_FORM_UNKNOWN = (int)(0x800B0003 - 0x100000000);
+            private const int TRUST_E_SUBJECT_NOT_TRUSTED = (int)(0x800B0004 - 0x100000000);
+            private const int DIGSIG_E_ENCODE = (int)(0x800B0005 - 0x100000000);
+            private const int DIGSIG_E_DECODE = (int)(0x800B0006 - 0x100000000);
+            private const int DIGSIG_E_EXTENSIBILITY = (int)(0x800B0007 - 0x100000000);
+            private const int DIGSIG_E_CRYPTO = (int)(0x800B0008 - 0x100000000);
+            private const int PERSIST_E_SIZEDEFINITE = (int)(0x800B0009 - 0x100000000);
+            private const int PERSIST_E_SIZEINDEFINITE = (int)(0x800B000A - 0x100000000);
+            private const int PERSIST_E_NOTSELFSIZING = (int)(0x800B000B - 0x100000000);
+            private const int TRUST_E_NOSIGNATURE = (int)(0x800B0100 - 0x100000000);
+            private const int CERT_E_EXPIRED = (int)(0x800B0101 - 0x100000000);
+            private const int CERT_E_VALIDITYPERIODNESTING = (int)(0x800B0102 - 0x100000000);
+            private const int CERT_E_ROLE = (int)(0x800B0103 - 0x100000000);
+            private const int CERT_E_PATHLENCONST = (int)(0x800B0104 - 0x100000000);
+            private const int CERT_E_CRITICAL = (int)(0x800B0105 - 0x100000000);
+            private const int CERT_E_PURPOSE = (int)(0x800B0106 - 0x100000000);
+            private const int CERT_E_ISSUERCHAINING = (int)(0x800B0107 - 0x100000000);
+            private const int CERT_E_MALFORMED = (int)(0x800B0108 - 0x100000000);
+            private const int CERT_E_UNTRUSTEDROOT = (int)(0x800B0109 - 0x100000000);
+            private const int CERT_E_CHAINING = (int)(0x800B010A - 0x100000000);
+            private const int TRUST_E_FAIL = (int)(0x800B010B - 0x100000000);
+            private const int CERT_E_REVOKED = (int)(0x800B010C - 0x100000000);
+            private const int CERT_E_UNTRUSTEDTESTROOT = (int)(0x800B010D - 0x100000000);
+            private const int CERT_E_REVOCATION_FAILURE = (int)(0x800B010E - 0x100000000);
+            private const int CERT_E_CN_NO_MATCH = (int)(0x800B010F - 0x100000000);
+            private const int CERT_E_WRONG_USAGE = (int)(0x800B0110 - 0x100000000);
+            private const int TRUST_E_EXPLICIT_DISTRUST = (int)(0x800B0111 - 0x100000000);
+            private const int CERT_E_UNTRUSTEDCA = (int)(0x800B0112 - 0x100000000);
+            private const int CERT_E_INVALID_POLICY = (int)(0x800B0113 - 0x100000000);
+            private const int CERT_E_INVALID_NAME = (int)(0x800B0114 - 0x100000000);
+            private const int SPAPI_E_EXPECTED_SECTION_NAME = (int)(0x800F0000 - 0x100000000);
+            private const int SPAPI_E_BAD_SECTION_NAME_LINE = (int)(0x800F0001 - 0x100000000);
+            private const int SPAPI_E_SECTION_NAME_TOO_Int32 = (int)(0x800F0002 - 0x100000000);
+            private const int SPAPI_E_GENERAL_SYNTAX = (int)(0x800F0003 - 0x100000000);
+            private const int SPAPI_E_WRONG_INF_STYLE = (int)(0x800F0100 - 0x100000000);
+            private const int SPAPI_E_SECTION_NOT_FOUND = (int)(0x800F0101 - 0x100000000);
+            private const int SPAPI_E_LINE_NOT_FOUND = (int)(0x800F0102 - 0x100000000);
+            private const int SPAPI_E_NO_BACKUP = (int)(0x800F0103 - 0x100000000);
+            private const int SPAPI_E_NO_ASSOCIATED_CLASS = (int)(0x800F0200 - 0x100000000);
+            public const int SPAPI_E_CLASS_MISMATCH = (int)(0x800F0201 - 0x100000000);
+            public const int SPAPI_E_DUPLICATE_FOUND = (int)(0x800F0202 - 0x100000000);
+            public const int SPAPI_E_NO_DRIVER_SELECTED = (int)(0x800F0203 - 0x100000000);
+            public const int SPAPI_E_KEY_DOES_NOT_EXIST = (int)(0x800F0204 - 0x100000000);
+            public const int SPAPI_E_INVALID_DEVINST_NAME = (int)(0x800F0205 - 0x100000000);
+            public const int SPAPI_E_INVALID_CLASS = (int)(0x800F0206 - 0x100000000);
+            public const int SPAPI_E_DEVINST_ALREADY_EXISTS = (int)(0x800F0207 - 0x100000000);
+            public const int SPAPI_E_DEVINFO_NOT_REGISTERED = (int)(0x800F0208 - 0x100000000);
+            public const int SPAPI_E_INVALID_REG_PROPERTY = (int)(0x800F0209 - 0x100000000);
+            public const int SPAPI_E_NO_INF = (int)(0x800F020A - 0x100000000);
+            public const int SPAPI_E_NO_SUCH_DEVINST = (int)(0x800F020B - 0x100000000);
+            public const int SPAPI_E_CANT_LOAD_CLASS_ICON = (int)(0x800F020C - 0x100000000);
+            public const int SPAPI_E_INVALID_CLASS_INSTALLER = (int)(0x800F020D - 0x100000000);
+            public const int SPAPI_E_DI_DO_DEFAULT = (int)(0x800F020E - 0x100000000);
+            public const int SPAPI_E_DI_NOFILECOPY = (int)(0x800F020F - 0x100000000);
+            public const int SPAPI_E_INVALID_HWPROFILE = (int)(0x800F0210 - 0x100000000);
+            public const int SPAPI_E_NO_DEVICE_SELECTED = (int)(0x800F0211 - 0x100000000);
+            public const int SPAPI_E_DEVINFO_LIST_LOCKED = (int)(0x800F0212 - 0x100000000);
+            public const int SPAPI_E_DEVINFO_DATA_LOCKED = (int)(0x800F0213 - 0x100000000);
+            public const int SPAPI_E_DI_BAD_PATH = (int)(0x800F0214 - 0x100000000);
+            public const int SPAPI_E_NO_CLASSINSTALL_PARAMS = (int)(0x800F0215 - 0x100000000);
+            public const int SPAPI_E_FILEQUEUE_LOCKED = (int)(0x800F0216 - 0x100000000);
+            public const int SPAPI_E_BAD_SERVICE_INSTALLSECT = (int)(0x800F0217 - 0x100000000);
+            public const int SPAPI_E_NO_CLASS_DRIVER_LIST = (int)(0x800F0218 - 0x100000000);
+            public const int SPAPI_E_NO_ASSOCIATED_SERVICE = (int)(0x800F0219 - 0x100000000);
+            public const int SPAPI_E_NO_DEFAULT_DEVICE_INTERFACE = (int)(0x800F021A - 0x100000000);
+            public const int SPAPI_E_DEVICE_INTERFACE_ACTIVE = (int)(0x800F021B - 0x100000000);
+            public const int SPAPI_E_DEVICE_INTERFACE_REMOVED = (int)(0x800F021C - 0x100000000);
+            public const int SPAPI_E_BAD_INTERFACE_INSTALLSECT = (int)(0x800F021D - 0x100000000);
+            public const int SPAPI_E_NO_SUCH_INTERFACE_CLASS = (int)(0x800F021E - 0x100000000);
+            public const int SPAPI_E_INVALID_REFERENCE_STRING = (int)(0x800F021F - 0x100000000);
+            public const int SPAPI_E_INVALID_MACHINENAME = (int)(0x800F0220 - 0x100000000);
+            public const int SPAPI_E_REMOTE_COMM_FAILURE = (int)(0x800F0221 - 0x100000000);
+            public const int SPAPI_E_MACHINE_UNAVAILABLE = (int)(0x800F0222 - 0x100000000);
+            public const int SPAPI_E_NO_CONFIGMGR_SERVICES = (int)(0x800F0223 - 0x100000000);
+            public const int SPAPI_E_INVALID_PROPPAGE_PROVIDER = (int)(0x800F0224 - 0x100000000);
+            public const int SPAPI_E_NO_SUCH_DEVICE_INTERFACE = (int)(0x800F0225 - 0x100000000);
+            public const int SPAPI_E_DI_POSTPROCESSING_REQUIRED = (int)(0x800F0226 - 0x100000000);
+            public const int SPAPI_E_INVALID_COINSTALLER = (int)(0x800F0227 - 0x100000000);
+            public const int SPAPI_E_NO_COMPAT_DRIVERS = (int)(0x800F0228 - 0x100000000);
+            public const int SPAPI_E_NO_DEVICE_ICON = (int)(0x800F0229 - 0x100000000);
+            public const int SPAPI_E_INVALID_INF_LOGCONFIG = (int)(0x800F022A - 0x100000000);
+            public const int SPAPI_E_DI_DONT_INSTALL = (int)(0x800F022B - 0x100000000);
+            public const int SPAPI_E_INVALID_FILTER_DRIVER = (int)(0x800F022C - 0x100000000);
+            public const int SPAPI_E_NON_WINDOWS_NT_DRIVER = (int)(0x800F022D - 0x100000000);
+            public const int SPAPI_E_NON_WINDOWS_DRIVER = (int)(0x800F022E - 0x100000000);
+            public const int SPAPI_E_NO_CATALOG_FOR_OEM_INF = (int)(0x800F022F - 0x100000000);
+            public const int SPAPI_E_DEVINSTALL_QUEUE_NONNATIVE = (int)(0x800F0230 - 0x100000000);
+            public const int SPAPI_E_NOT_DISABLEABLE = (int)(0x800F0231 - 0x100000000);
+            public const int SPAPI_E_CANT_REMOVE_DEVINST = (int)(0x800F0232 - 0x100000000);
+            public const int SPAPI_E_INVALID_TARGET = (int)(0x800F0233 - 0x100000000);
+            public const int SPAPI_E_DRIVER_NONNATIVE = (int)(0x800F0234 - 0x100000000);
+            public const int SPAPI_E_IN_WOW64 = (int)(0x800F0235 - 0x100000000);
+            public const int SPAPI_E_SET_SYSTEM_RESTORE_POINT = (int)(0x800F0236 - 0x100000000);
+            public const int SPAPI_E_INCORRECTLY_COPIED_INF = (int)(0x800F0237 - 0x100000000);
+            public const int SPAPI_E_SCE_DISABLED = (int)(0x800F0238 - 0x100000000);
+            public const int SPAPI_E_ERROR_NOT_INSTALLED = (int)(0x800F1000 - 0x100000000);
+            public const int SCARD_F_INTERNAL_ERROR = (int)(0x80100001 - 0x100000000);
+            public const int SCARD_E_CANCELLED = (int)(0x80100002 - 0x100000000);
+            public const int SCARD_E_INVALID_HANDLE = (int)(0x80100003 - 0x100000000);
+            public const int SCARD_E_INVALID_PARAMETER = (int)(0x80100004 - 0x100000000);
+            public const int SCARD_E_INVALID_TARGET = (int)(0x80100005 - 0x100000000);
+            public const int SCARD_E_NO_MEMORY = (int)(0x80100006 - 0x100000000);
+            public const int SCARD_F_WAITED_TOO_Int32 = (int)(0x80100007 - 0x100000000);
+            public const int SCARD_E_INSUFFICIENT_BUFFER = (int)(0x80100008 - 0x100000000);
+            public const int SCARD_E_UNKNOWN_READER = (int)(0x80100009 - 0x100000000);
+            public const int SCARD_E_TIMEOUT = (int)(0x8010000A - 0x100000000);
+            public const int SCARD_E_SHARING_VIOLATION = (int)(0x8010000B - 0x100000000);
+            public const int SCARD_E_NO_SMARTCARD = (int)(0x8010000C - 0x100000000);
+            public const int SCARD_E_UNKNOWN_CARD = (int)(0x8010000D - 0x100000000);
+            public const int SCARD_E_CANT_DISPOSE = (int)(0x8010000E - 0x100000000);
+            public const int SCARD_E_PROTO_MISMATCH = (int)(0x8010000F - 0x100000000);
+            public const int SCARD_E_NOT_READY = (int)(0x80100010 - 0x100000000);
+            public const int SCARD_E_INVALID_VALUE = (int)(0x80100011 - 0x100000000);
+            public const int SCARD_E_SYSTEM_CANCELLED = (int)(0x80100012 - 0x100000000);
+            public const int SCARD_F_COMM_ERROR = (int)(0x80100013 - 0x100000000);
+            public const int SCARD_F_UNKNOWN_ERROR = (int)(0x80100014 - 0x100000000);
+            public const int SCARD_E_INVALID_ATR = (int)(0x80100015 - 0x100000000);
+            public const int SCARD_E_NOT_TRANSACTED = (int)(0x80100016 - 0x100000000);
+            public const int SCARD_E_READER_UNAVAILABLE = (int)(0x80100017 - 0x100000000);
+            public const int SCARD_P_SHUTDOWN = (int)(0x80100018 - 0x100000000);
+            public const int SCARD_E_PCI_TOO_SMALL = (int)(0x80100019 - 0x100000000);
+            public const int SCARD_E_READER_UNSUPPORTED = (int)(0x8010001A - 0x100000000);
+            public const int SCARD_E_DUPLICATE_READER = (int)(0x8010001B - 0x100000000);
+            public const int SCARD_E_CARD_UNSUPPORTED = (int)(0x8010001C - 0x100000000);
+            public const int SCARD_E_NO_SERVICE = (int)(0x8010001D - 0x100000000);
+            public const int SCARD_E_SERVICE_STOPPED = (int)(0x8010001E - 0x100000000);
+            public const int SCARD_E_UNEXPECTED = (int)(0x8010001F - 0x100000000);
+            public const int SCARD_E_ICC_INSTALLATION = (int)(0x80100020 - 0x100000000);
+            public const int SCARD_E_ICC_CREATEORDER = (int)(0x80100021 - 0x100000000);
+            public const int SCARD_E_UNSUPPORTED_FEATURE = (int)(0x80100022 - 0x100000000);
+            public const int SCARD_E_DIR_NOT_FOUND = (int)(0x80100023 - 0x100000000);
+            public const int SCARD_E_FILE_NOT_FOUND = (int)(0x80100024 - 0x100000000);
+            public const int SCARD_E_NO_DIR = (int)(0x80100025 - 0x100000000);
+            public const int SCARD_E_NO_FILE = (int)(0x80100026 - 0x100000000);
+            public const int SCARD_E_NO_ACCESS = (int)(0x80100027 - 0x100000000);
+            public const int SCARD_E_WRITE_TOO_MANY = (int)(0x80100028 - 0x100000000);
+            public const int SCARD_E_BAD_SEEK = (int)(0x80100029 - 0x100000000);
+            public const int SCARD_E_INVALID_CHV = (int)(0x8010002A - 0x100000000);
+            public const int SCARD_E_UNKNOWN_RES_MNG = (int)(0x8010002B - 0x100000000);
+            public const int SCARD_E_NO_SUCH_CERTIFICATE = (int)(0x8010002C - 0x100000000);
+            public const int SCARD_E_CERTIFICATE_UNAVAILABLE = (int)(0x8010002D - 0x100000000);
+            public const int SCARD_E_NO_READERS_AVAILABLE = (int)(0x8010002E - 0x100000000);
+            public const int SCARD_E_COMM_DATA_LOST = (int)(0x8010002F - 0x100000000);
+            public const int SCARD_E_NO_KEY_CONTAINER = (int)(0x80100030 - 0x100000000);
+            public const int SCARD_E_SERVER_TOO_BUSY = (int)(0x80100031 - 0x100000000);
+            public const int SCARD_W_UNSUPPORTED_CARD = (int)(0x80100065 - 0x100000000);
+            public const int SCARD_W_UNRESPONSIVE_CARD = (int)(0x80100066 - 0x100000000);
+            public const int SCARD_W_UNPOWERED_CARD = (int)(0x80100067 - 0x100000000);
+            public const int SCARD_W_RESET_CARD = (int)(0x80100068 - 0x100000000);
+            public const int SCARD_W_REMOVED_CARD = (int)(0x80100069 - 0x100000000);
+            public const int SCARD_W_SECURITY_VIOLATION = (int)(0x8010006A - 0x100000000);
+            public const int SCARD_W_WRONG_CHV = (int)(0x8010006B - 0x100000000);
+            public const int SCARD_W_CHV_BLOCKED = (int)(0x8010006C - 0x100000000);
+            public const int SCARD_W_EOF = (int)(0x8010006D - 0x100000000);
+            public const int SCARD_W_CANCELLED_BY_USER = (int)(0x8010006E - 0x100000000);
+            public const int SCARD_W_CARD_NOT_AUTHENTICATED = (int)(0x8010006F - 0x100000000);
+            public const int COMADMIN_E_OBJECTERRORS = (int)(0x80110401 - 0x100000000);
+            public const int COMADMIN_E_OBJECTINVALID = (int)(0x80110402 - 0x100000000);
+            public const int COMADMIN_E_KEYMISSING = (int)(0x80110403 - 0x100000000);
+            public const int COMADMIN_E_ALREADYINSTALLED = (int)(0x80110404 - 0x100000000);
+            public const int COMADMIN_E_APP_FILE_WRITEFAIL = (int)(0x80110407 - 0x100000000);
+            public const int COMADMIN_E_APP_FILE_READFAIL = (int)(0x80110408 - 0x100000000);
+            public const int COMADMIN_E_APP_FILE_VERSION = (int)(0x80110409 - 0x100000000);
+            public const int COMADMIN_E_BADPATH = (int)(0x8011040A - 0x100000000);
+            public const int COMADMIN_E_APPLICATIONEXISTS = (int)(0x8011040B - 0x100000000);
+            public const int COMADMIN_E_ROLEEXISTS = (int)(0x8011040C - 0x100000000);
+            public const int COMADMIN_E_CANTCOPYFILE = (int)(0x8011040D - 0x100000000);
+            public const int COMADMIN_E_NOUSER = (int)(0x8011040F - 0x100000000);
+            public const int COMADMIN_E_INVALIDUSERIDS = (int)(0x80110410 - 0x100000000);
+            public const int COMADMIN_E_NOREGISTRYCLSID = (int)(0x80110411 - 0x100000000);
+            public const int COMADMIN_E_BADREGISTRYPROGID = (int)(0x80110412 - 0x100000000);
+            public const int COMADMIN_E_AUTHENTICATIONLEVEL = (int)(0x80110413 - 0x100000000);
+            public const int COMADMIN_E_USERPASSWDNOTVALID = (int)(0x80110414 - 0x100000000);
+            public const int COMADMIN_E_CLSIDORIIDMISMATCH = (int)(0x80110418 - 0x100000000);
+            public const int COMADMIN_E_REMOTEINTERFACE = (int)(0x80110419 - 0x100000000);
+            public const int COMADMIN_E_DLLREGISTERSERVER = (int)(0x8011041A - 0x100000000);
+            public const int COMADMIN_E_NOSERVERSHARE = (int)(0x8011041B - 0x100000000);
+            public const int COMADMIN_E_DLLLOADFAILED = (int)(0x8011041D - 0x100000000);
+            public const int COMADMIN_E_BADREGISTRYLIBID = (int)(0x8011041E - 0x100000000);
+            public const int COMADMIN_E_APPDIRNOTFOUND = (int)(0x8011041F - 0x100000000);
+            public const int COMADMIN_E_REGISTRARFAILED = (int)(0x80110423 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_DOESNOTEXIST = (int)(0x80110424 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_LOADDLLFAIL = (int)(0x80110425 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_GETCLASSOBJ = (int)(0x80110426 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_CLASSNOTAVAIL = (int)(0x80110427 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_BADTLB = (int)(0x80110428 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_NOTINSTALLABLE = (int)(0x80110429 - 0x100000000);
+            public const int COMADMIN_E_NOTCHANGEABLE = (int)(0x8011042A - 0x100000000);
+            public const int COMADMIN_E_NOTDELETEABLE = (int)(0x8011042B - 0x100000000);
+            public const int COMADMIN_E_SESSION = (int)(0x8011042C - 0x100000000);
+            public const int COMADMIN_E_COMP_MOVE_LOCKED = (int)(0x8011042D - 0x100000000);
+            public const int COMADMIN_E_COMP_MOVE_BAD_DEST = (int)(0x8011042E - 0x100000000);
+            public const int COMADMIN_E_REGISTERTLB = (int)(0x80110430 - 0x100000000);
+            public const int COMADMIN_E_SYSTEMAPP = (int)(0x80110433 - 0x100000000);
+            public const int COMADMIN_E_COMPFILE_NOREGISTRAR = (int)(0x80110434 - 0x100000000);
+            public const int COMADMIN_E_COREQCOMPINSTALLED = (int)(0x80110435 - 0x100000000);
+            public const int COMADMIN_E_SERVICENOTINSTALLED = (int)(0x80110436 - 0x100000000);
+            public const int COMADMIN_E_PROPERTYSAVEFAILED = (int)(0x80110437 - 0x100000000);
+            public const int COMADMIN_E_OBJECTEXISTS = (int)(0x80110438 - 0x100000000);
+            public const int COMADMIN_E_COMPONENTEXISTS = (int)(0x80110439 - 0x100000000);
+            public const int COMADMIN_E_REGFILE_CORRUPT = (int)(0x8011043B - 0x100000000);
+            public const int COMADMIN_E_PROPERTY_OVERFLOW = (int)(0x8011043C - 0x100000000);
+            public const int COMADMIN_E_NOTINREGISTRY = (int)(0x8011043E - 0x100000000);
+            public const int COMADMIN_E_OBJECTNOTPOOLABLE = (int)(0x8011043F - 0x100000000);
+            public const int COMADMIN_E_APPLID_MATCHES_CLSID = (int)(0x80110446 - 0x100000000);
+            public const int COMADMIN_E_ROLE_DOES_NOT_EXIST = (int)(0x80110447 - 0x100000000);
+            public const int COMADMIN_E_START_APP_NEEDS_COMPONENTS = (int)(0x80110448 - 0x100000000);
+            public const int COMADMIN_E_REQUIRES_DIFFERENT_PLATFORM = (int)(0x80110449 - 0x100000000);
+            public const int COMADMIN_E_CAN_NOT_EXPORT_APP_PROXY = (int)(0x8011044A - 0x100000000);
+            public const int COMADMIN_E_CAN_NOT_START_APP = (int)(0x8011044B - 0x100000000);
+            public const int COMADMIN_E_CAN_NOT_EXPORT_SYS_APP = (int)(0x8011044C - 0x100000000);
+            public const int COMADMIN_E_CANT_SUBSCRIBE_TO_COMPONENT = (int)(0x8011044D - 0x100000000);
+            public const int COMADMIN_E_EVENTCLASS_CANT_BE_SUBSCRIBER = (int)(0x8011044E - 0x100000000);
+            public const int COMADMIN_E_LIB_APP_PROXY_INCOMPATIBLE = (int)(0x8011044F - 0x100000000);
+            public const int COMADMIN_E_BASE_PARTITION_ONLY = (int)(0x80110450 - 0x100000000);
+            public const int COMADMIN_E_START_APP_DISABLED = (int)(0x80110451 - 0x100000000);
+            public const int COMADMIN_E_CAT_DUPLICATE_PARTITION_NAME = (int)(0x80110457 - 0x100000000);
+            public const int COMADMIN_E_CAT_INVALID_PARTITION_NAME = (int)(0x80110458 - 0x100000000);
+            public const int COMADMIN_E_CAT_PARTITION_IN_USE = (int)(0x80110459 - 0x100000000);
+            public const int COMADMIN_E_FILE_PARTITION_DUPLICATE_FILES = (int)(0x8011045A - 0x100000000);
+            public const int COMADMIN_E_CAT_IMPORTED_COMPONENTS_NOT_ALLOWED = (int)(0x8011045B - 0x100000000);
+            public const int COMADMIN_E_AMBIGUOUS_APPLICATION_NAME = (int)(0x8011045C - 0x100000000);
+            public const int COMADMIN_E_AMBIGUOUS_PARTITION_NAME = (int)(0x8011045D - 0x100000000);
+            public const int COMADMIN_E_REGDB_NOTINITIALIZED = (int)(0x80110472 - 0x100000000);
+            public const int COMADMIN_E_REGDB_NOTOPEN = (int)(0x80110473 - 0x100000000);
+            public const int COMADMIN_E_REGDB_SYSTEMERR = (int)(0x80110474 - 0x100000000);
+            public const int COMADMIN_E_REGDB_ALREADYRUNNING = (int)(0x80110475 - 0x100000000);
+            public const int COMADMIN_E_MIG_VERSIONNOTSUPPORTED = (int)(0x80110480 - 0x100000000);
+            public const int COMADMIN_E_MIG_SCHEMANOTFOUND = (int)(0x80110481 - 0x100000000);
+            public const int COMADMIN_E_CAT_BITNESSMISMATCH = (int)(0x80110482 - 0x100000000);
+            public const int COMADMIN_E_CAT_UNACCEPTABLEBITNESS = (int)(0x80110483 - 0x100000000);
+            public const int COMADMIN_E_CAT_WRONGAPPBITNESS = (int)(0x80110484 - 0x100000000);
+            public const int COMADMIN_E_CAT_PAUSE_RESUME_NOT_SUPPORTED = (int)(0x80110485 - 0x100000000);
+            public const int COMADMIN_E_CAT_SERVERFAULT = (int)(0x80110486 - 0x100000000);
+            public const int COMQC_E_APPLICATION_NOT_QUEUED = (int)(0x80110600 - 0x100000000);
+            public const int COMQC_E_NO_QUEUEABLE_INTERFACES = (int)(0x80110601 - 0x100000000);
+            public const int COMQC_E_QUEUING_SERVICE_NOT_AVAILABLE = (int)(0x80110602 - 0x100000000);
+            public const int COMQC_E_NO_IPERSISTSTREAM = (int)(0x80110603 - 0x100000000);
+            public const int COMQC_E_BAD_MESSAGE = (int)(0x80110604 - 0x100000000);
+            public const int COMQC_E_UNAUTHENTICATED = (int)(0x80110605 - 0x100000000);
+            public const int COMQC_E_UNTRUSTED_ENQUEUER = (int)(0x80110606 - 0x100000000);
+            public const int MSDTC_E_DUPLICATE_RESOURCE = (int)(0x80110701 - 0x100000000);
+            public const int COMADMIN_E_OBJECT_PARENT_MISSING = (int)(0x80110808 - 0x100000000);
+            public const int COMADMIN_E_OBJECT_DOES_NOT_EXIST = (int)(0x80110809 - 0x100000000);
+            public const int COMADMIN_E_APP_NOT_RUNNING = (int)(0x8011080A - 0x100000000);
+            public const int COMADMIN_E_INVALID_PARTITION = (int)(0x8011080B - 0x100000000);
+            public const int COMADMIN_E_SVCAPP_NOT_POOLABLE_OR_RECYCLABLE = (int)(0x8011080D - 0x100000000);
+            public const int COMADMIN_E_USER_IN_SET = (int)(0x8011080E - 0x100000000);
+            public const int COMADMIN_E_CANTRECYCLELIBRARYAPPS = (int)(0x8011080F - 0x100000000);
+            public const int COMADMIN_E_CANTRECYCLESERVICEAPPS = (int)(0x80110811 - 0x100000000);
+            public const int COMADMIN_E_PROCESSALREADYRECYCLED = (int)(0x80110812 - 0x100000000);
+            public const int COMADMIN_E_PAUSEDPROCESSMAYNOTBERECYCLED = (int)(0x80110813 - 0x100000000);
+            public const int COMADMIN_E_CANTMAKEINPROCSERVICE = (int)(0x80110814 - 0x100000000);
+            public const int COMADMIN_E_PROGIDINUSEBYCLSID = (int)(0x80110815 - 0x100000000);
+            public const int COMADMIN_E_DEFAULT_PARTITION_NOT_IN_SET = (int)(0x80110816 - 0x100000000);
+            public const int COMADMIN_E_RECYCLEDPROCESSMAYNOTBEPAUSED = (int)(0x80110817 - 0x100000000);
+            public const int COMADMIN_E_PARTITION_ACCESSDENIED = (int)(0x80110818 - 0x100000000);
+            public const int COMADMIN_E_PARTITION_MSI_ONLY = (int)(0x80110819 - 0x100000000);
+            public const int COMADMIN_E_LEGACYCOMPS_NOT_ALLOWED_IN_1_0_FORMAT = (int)(0x8011081A - 0x100000000);
+            public const int COMADMIN_E_LEGACYCOMPS_NOT_ALLOWED_IN_NONBASE_PARTITIONS = (int)(0x8011081B - 0x100000000);
+            public const int COMADMIN_E_COMP_MOVE_SOURCE = (int)(0x8011081C - 0x100000000);
+            public const int COMADMIN_E_COMP_MOVE_DEST = (int)(0x8011081D - 0x100000000);
+            public const int COMADMIN_E_COMP_MOVE_PRIVATE = (int)(0x8011081E - 0x100000000);
+            public const int COMADMIN_E_BASEPARTITION_REQUIRED_IN_SET = (int)(0x8011081F - 0x100000000);
+            public const int COMADMIN_E_CANNOT_ALIAS_EVENTCLASS = (int)(0x80110820 - 0x100000000);
+            public const int COMADMIN_E_PRIVATE_ACCESSDENIED = (int)(0x80110821 - 0x100000000);
+            public const int COMADMIN_E_SAFERINVALID = (int)(0x80110822 - 0x100000000);
+            public const int COMADMIN_E_REGISTRY_ACCESSDENIED = (int)(0x80110823 - 0x100000000);
+            public const int COMADMIN_E_PARTITIONS_DISABLED = (int)(0x80110824 - 0x100000000);
+            public const int NS_E_FILE_OPEN_FAILED = (int)(0xC00D001DL - 0x100000000);
+
+            public static bool Succeeded(int result)
+            {
+                return result >= 0;
+            }
+
+            public static bool Failed(int result)
+            {
+                return result < 0;
+            }
         }
     }
 
@@ -1296,6 +4673,59 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Enums
     {
+        [StructLayout(LayoutKind.Sequential)]
+        public struct ACCENT_POLICY
+        {
+            public ACCENT_STATE AccentState;
+            public uint AccentFlags;
+            public uint GradientColor;
+            public uint AnimationId;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct WINCOMPATTRDATA
+        {
+            public WINDOW_COMPATTR Attribute;
+            public IntPtr Data;
+            public int SizeOfData;
+        }
+
+        [Flags]
+        public enum WINDOW_COMPATTR : int
+        {
+            WCA_UNDEFINED = 0,
+            WCA_NCRENDERING_ENABLED = 1,
+            WCA_NCRENDERING_POLICY = 2,
+            WCA_TRANSITIONS_FORCEDISABLED = 3,
+            WCA_ALLOW_NCPAINT = 4,
+            WCA_CAPTION_BUTTON_BOUNDS = 5,
+            WCA_NONCLIENT_RTL_LAYOUT = 6,
+            WCA_FORCE_ICONIC_REPRESENTATION = 7,
+            WCA_EXTENDED_FRAME_BOUNDS = 8,
+            WCA_HAS_ICONIC_BITMAP = 9,
+            WCA_THEME_ATTRIBUTES = 10,
+            WCA_N_CRENDERING_EXILED = 11,
+            WCA_N_CADORNMENT_INFO = 12,
+            WCA_EXCLUDED_FROM_LIVEPREVIEW = 13,
+            WCA_VIDEO_OVERLAY_ACTIVE = 14,
+            WCA_FORCE_ACTIVE_WINDOW_APPEARANCE = 15,
+            WCA_DISALLOW_PEEK = 16,
+            WCA_CLOAK = 17,
+            WCA_CLOAKED = 18,
+            WCA_ACCENT_POLICY = 19,
+            WCA_FREEZE_REPRESENTATION = 20,
+            WCA_EVER_UNCLOAKED = 21,
+            WCA_VISUAL_OWNER = 22,
+            WCA_HOLOGRAPHIC = 23,
+            WCA_EXCLUDED_FROM_DDA = 24,
+            WCA_PASSIVE_UPDATE_MODE = 25,
+            WCA_USE_DARK_MODE_COLORS = 26,
+            WCA_CORNER_STYLE = 27,
+            WCA_PART_COLOR = 28,
+            WCA_DISABLE_MOVESIZE_FEEDBACK = 29,
+            WCA_LAST = 30
+        }
+
         public enum DWM_GET_WINDOW_ATTRIBUTE : uint
         {
             DWMWA_USE_IMMERSIVE_DARK_MODE_NOT = 19,
@@ -1303,6 +4733,17 @@ namespace VitNX3.Functions.Win32
             DWMWA_WINDOW_CORNER_PREFERENCE = 33,
             DWMWA_SYSTEMBACKDROP_TYPE = 38,
             DWMWA_MICA_EFFECT = 1029,
+        }
+
+        [Flags]
+        public enum ACCENT_STATE
+        {
+            ACCENT_DISABLED = 0,
+            ACCENT_ENABLE_GRADIENT = 1,
+            ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
+            ACCENT_ENABLE_BLURBEHIND = 3,
+            ACCENT_ENABLE_ACRYLICBLURBEHIND = 4,
+            ACCENT_INVALID_STATE = 5
         }
 
         [StructLayout(LayoutKind.Sequential,
@@ -1315,9 +4756,11 @@ namespace VitNX3.Functions.Win32
             public uint iId;
             public uint iBitmap;
             public IntPtr hIcon;
+
             [MarshalAs(UnmanagedType.ByValTStr,
                 SizeConst = 260)]
             public string szTip;
+
             public THBF dwFlags;
         }
 
@@ -1402,6 +4845,15 @@ namespace VitNX3.Functions.Win32
             public uint cyWindowBorders;
             public ushort atomWindowType;
             public ushort wCreatorVersion;
+        }
+
+        [Flags]
+        public enum WINDOW_STYLES : uint
+        {
+            MAXIMIZEBOX = 0x10000,
+            MINIMIZEBOX = 0x20000,
+            SIZEBOX = 0x40000,
+            SYS_MENU = 0x80000
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -1861,6 +5313,19 @@ namespace VitNX3.Functions.Win32
             DISPLAYCONFIG_SCALING_FORCE_UINT32 = 0xFFFFFFFF
         }
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct NET_RESOURCE
+        {
+            public uint dwScope;
+            public uint dwType;
+            public uint dwDisplayType;
+            public uint dwUsage;
+            public string lpLocalName;
+            public string lpRemoteName;
+            public string lpComment;
+            public string lpProvider;
+        }
+
         [Flags]
         public enum DISPLAYCONFIG_PIXELFORMAT : uint
         {
@@ -2040,36 +5505,36 @@ namespace VitNX3.Functions.Win32
             M_BUTTON_DOWN = 0x0207,
             M_BUTTON_UP = 0x0208,
             M_BUTTON_DBL_CLK = 0x0209,
-            MOUSEWHEEL = 0x020A,
-            XBUTTONDOWN = 0x020B,
-            XBUTTONUP = 0x020C,
-            XBUTTONDBLCLK = 0x020D,
-            MOUSEHWHEEL = 0x020E,
-            MOUSELAST = 0x020E,
-            PARENTNOTIFY = 0x0210,
-            ENTERMENULOOP = 0x0211,
-            EXITMENULOOP = 0x0212,
-            NEXTMENU = 0x0213,
+            MOUSE_WHEEL = 0x020A,
+            X_BUTTON_DOWN = 0x020B,
+            X_BUTTON_UP = 0x020C,
+            X_BUTTON_DBL_CLK = 0x020D,
+            MOUSE_H_WHEEL = 0x020E,
+            MOUSE_LAST = 0x020E,
+            PARENT_NOTIFY = 0x0210,
+            ENTER_MENU_LOOP = 0x0211,
+            EXIT_MENU_LOOP = 0x0212,
+            NEXT_MENU = 0x0213,
             SIZING = 0x0214,
-            CAPTURECHANGED = 0x0215,
+            CAPTURE_CHANGED = 0x0215,
             MOVING = 0x0216,
-            POWERBROADCAST = 0x0218,
-            DEVICECHANGE = 0x0219,
-            MDICREATE = 0x0220,
-            MDIDESTROY = 0x0221,
-            MDIACTIVATE = 0x0222,
-            MDIRESTORE = 0x0223,
-            MDINEXT = 0x0224,
-            MDIMAXIMIZE = 0x0225,
-            MDITILE = 0x0226,
-            MDICASCADE = 0x0227,
-            MDIICONARRANGE = 0x0228,
-            MDIGETACTIVE = 0x0229,
-            MDISETMENU = 0x0230,
-            ENTERSIZEMOVE = 0x0231,
-            EXITSIZEMOVE = 0x0232,
-            DROPFILES = 0x0233,
-            MDIREFRESHMENU = 0x0234,
+            POWER_BROADCAST = 0x0218,
+            DEVICE_CHANGE = 0x0219,
+            MDI_CREATE = 0x0220,
+            MDI_DESTROY = 0x0221,
+            MDI_ACTIVATE = 0x0222,
+            MDI_RESTORE = 0x0223,
+            MDI_NEXT = 0x0224,
+            MDI_MAXIMIZE = 0x0225,
+            MDI_TILE = 0x0226,
+            MDI_CASCADE = 0x0227,
+            MDI_ICON_ARRANGE = 0x0228,
+            MDI_GET_ACTIVE = 0x0229,
+            MDI_SET_MENU = 0x0230,
+            ENTER_SIZE_MOVE = 0x0231,
+            EXIT_SIZE_MOVE = 0x0232,
+            DROP_FILES = 0x0233,
+            MDI_REFRESH_MENU = 0x0234,
             IME_SETCONTEXT = 0x0281,
             IME_NOTIFY = 0x0282,
             IME_CONTROL = 0x0283,
