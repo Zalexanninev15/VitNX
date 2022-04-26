@@ -1,1 +1,1 @@
-search_result['1128']=["topic_0000000000000340_events--.html","Type1 Events",""];
+search_result['1128']=["topic_00000000000003BA.html","ERROR_LOGON_SESSION_COLLISION Field",""];

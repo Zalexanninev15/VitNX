@@ -1,1 +1,1 @@
-search_result['266']=["topic_00000000000000A6_events--.html","IniSettings32 Events",""];
+search_result['266']=["topic_00000000000000A4.html","Internet.IsHaveInternet Method","Are the have internet."];

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitNX", "VitNX\VitNX.csproj", "{F19472F5-8C44-4C51-A8A0-B9DE5F555255}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitNX3_netframework45", "VitNX3_netframework45\VitNX3_netframework45.csproj", "{F19472F5-8C44-4C51-A8A0-B9DE5F555255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamplesNext", "Examples\ExamplesNext\ExamplesNext.csproj", "{30F2B7F7-3F85-4154-BA88-A9A127F2DEC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples2_netframework45", "Examples_netframework45\Examples2\Examples2_netframework45.csproj", "{30F2B7F7-3F85-4154-BA88-A9A127F2DEC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Examples\Examples\Example.csproj", "{FA334815-6D78-4E9A-9F4D-6C8A58222A57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples1_netframework45", "Examples_netframework45\Examples1\Examples1_netframework45.csproj", "{FA334815-6D78-4E9A-9F4D-6C8A58222A57}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VitNX3", "VitNX3\VitNX3.csproj", "{E8D17E98-0AC7-4B95-BA32-035AF868820A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VitNX3_net5", "VitNX3_net5\VitNX3_net5.csproj", "{E8D17E98-0AC7-4B95-BA32-035AF868820A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

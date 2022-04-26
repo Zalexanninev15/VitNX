@@ -1,0 +1,1 @@
+c['742']=[['743',"Characteristics Method","topic_0000000000000099.html",0]];

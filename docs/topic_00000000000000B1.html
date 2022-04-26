@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DataFromSites.GetHeaderAndContent Method</title>
+	<title>Ini.Read Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DataFromSites.GetHeaderAndContent Method</h1>
+		<h1 class="title">Ini.Read Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000AD.html">VitNX.Functions.Web</a>
+<a href="topic_00000000000000AE.html">VitNX3.Functions.SettingsAndLog</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Gets the status header and content of site.</summary-info>
+        <summary-info>Reads value of key from section.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] GetHeaderAndContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>url</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>userAgent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> Read(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>section</i> = null&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="url" class="parameterList">
+	Parameters</h4><dl paramName="key" class="parameterList">
 	<dt>
 		<span class="parameter">
-			url
+			key
 		</span>
 	</dt>
 	<dd>
@@ -163,12 +163,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The url. 
+	The key. 
 </p>
-<dl paramName="userAgent" class="parameterList">
+<dl paramName="section" class="parameterList">
 	<dt>
 		<span class="parameter">
-			userAgent
+			section
 		</span>
 	</dt>
 	<dd>
@@ -176,16 +176,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The UserAgent. 
+	The section. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		An array of string (Header, Content). 
+		A string. 
 	</p>
 	
 
@@ -261,29 +261,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string[] GetHeaderAndContent(string url, string userAgent)
+public static string Read(string key,
+     string section = null)
  {
-     string[] data = { &quot;Header&quot;, &quot;Content&quot; };
-     HttpWebRequest wReq;
-     HttpWebResponse wResp;
-     Stream rStream;
-     wReq = (HttpWebRequest)WebRequest.Create(url);
-     wReq.KeepAlive = false;
-     wReq.Referer = url;
-     wReq.UserAgent = userAgent;
-     wResp = (HttpWebResponse)wReq.GetResponse();
-     data[0] = wResp.Headers.ToString();
-     rStream = wResp.GetResponseStream();
-     int bufCount = 0;
-     byte[] byteBuf = new byte[1024];
-     do
-     {
-         bufCount = rStream.Read(byteBuf, 0, byteBuf.Length);
-         if (bufCount != 0)
-             data[1] += Encoding.ASCII.GetString(byteBuf, 0, bufCount);
-     }
-     while (bufCount &gt; 0);
-     return data;
+     var retVal = new StringBuilder(255);
+     Import.GetPrivateProfileString(section ?? defValue, key, &quot;&quot;, retVal, 255, path);
+     return retVal.ToString();
  }
 					</pre>			
 				</div>
@@ -303,6 +286,7 @@ public static string[] GetHeaderAndContent(string url, string userAgent)
 
   
 
+  
 
 
 
@@ -324,6 +308,7 @@ public static string[] GetHeaderAndContent(string url, string userAgent)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -346,11 +331,11 @@ public static string[] GetHeaderAndContent(string url, string userAgent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000AE.html">DataFromSites Class</a><br />
+			<a href="topic_00000000000000AF.html">Ini Class</a><br />
 
 
 
-<a href="topic_00000000000000AD.html">VitNX.Functions.Web Namespace</a><br />
+<a href="topic_00000000000000AE.html">VitNX3.Functions.SettingsAndLog Namespace</a><br />
 
 
 			

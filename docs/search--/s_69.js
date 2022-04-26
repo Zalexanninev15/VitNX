@@ -1,1 +1,1 @@
-search_result['69']=["topic_000000000000002C.html","Text.ContainsOnlyNumbers Method","Contains the only numbers."];
+search_result['69']=["topic_0000000000000027.html","Text.NumberAsPercentI Method","Gets the number as percent (int32)."];

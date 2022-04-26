@@ -1,1 +1,1 @@
-search_result['277']=["topic_00000000000000AE.html","DataFromSites Class","Work with data from sites."];
+search_result['277']=["topic_00000000000000AE.html","VitNX3.Functions.SettingsAndLog Namespace",""];

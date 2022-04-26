@@ -1,1 +1,1 @@
-search_result['241']=["topic_0000000000000092.html","Ram.Characteristics Method","Gets all characteristics."];
+search_result['241']=["topic_0000000000000096_attached_props--.html","ComPort Attached Properties",""];

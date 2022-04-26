@@ -1,1 +1,1 @@
-search_result['44']=["topic_000000000000001A_methods--.html","NumericalTextConverter Methods",""];
+search_result['44']=["topic_000000000000001A_methods--.html","Others Methods",""];

@@ -1,1 +1,1 @@
-c['792']=[['793',"SetNativeThemeForControls Method","topic_000000000000033E.html",0],['794',"VolumeOnFocus Method","topic_000000000000033D.html",0]];
+c['792']=[['793',"MENU_ITEM_INFO Class","topic_00000000000001C4.html",1],['807',"NOTIFY_ICON_DATA Class","topic_00000000000001D1.html",1],['821',"ResultCom Class","topic_000000000000090F.html",1],['1981',"ResultWin32 Class","topic_00000000000001DE.html",1],['3824',"Fields","topic_00000000000001AB_vars--.html",1]];

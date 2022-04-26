@@ -102,7 +102,7 @@
         <type>placeholder</type>
         <is-default>no</is-default>
         <name />
-        <id>f8b3c8a0a9db4c64b64b9cd850de68c4</id>
+        <id>718907e1201b4949bda9a44e8e8efdec</id>
         <comment><![CDATA[vsdocman_escaped_]_]_></comment>
         <namespaces />
         <topics />
@@ -119,9 +119,9 @@
       <add key="VBdocman_comModulesSaveExcluded"><![CDATA[-1]]></add>
       <add key="VBdocman_fileNamingConvention"><![CDATA[1]]></add>
     </SettingsGroup>
-    <add key="VBdocman_Example"><![CDATA[default]]></add>
-    <add key="VBdocman_ExamplesNext"><![CDATA[default]]></add>
-    <add key="VBdocman_VitNX"><![CDATA[default]]></add>
-    <add key="VBdocman_VitNX3"><![CDATA[default]]></add>
+    <add key="VBdocman_Examples1_netframework45"><![CDATA[default]]></add>
+    <add key="VBdocman_Examples2_netframework45"><![CDATA[default]]></add>
+    <add key="VBdocman_VitNX3_net5"><![CDATA[default]]></add>
+    <add key="VBdocman_VitNX3_netframework45"><![CDATA[default]]></add>
   </appSettings>
 </configuration>

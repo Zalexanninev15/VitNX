@@ -1,1 +1,1 @@
-search_result['262']=["topic_00000000000000A4.html","PowerControl.Computer Method","The power of computer."];
+search_result['262']=["topic_000000000000009D.html","Internet.GetLocalIPv4 Method","Gets the local IPv4 (obsolete, but work)."];

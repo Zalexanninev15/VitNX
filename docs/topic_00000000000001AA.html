@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>lbHatch Field</title>
+	<title>Import.MessageBeep (UInt32) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">lbHatch Field</h1>
+		<h1 class="title">Import.MessageBeep (UInt32) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> lbHatch</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> MessageBeep(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>type</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,10 +152,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="type" class="parameterList">
+	<dt>
+		<span class="parameter">
+			type
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -228,7 +246,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public uint lbHatch;
+[DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto,
+     SetLastError = true)]
+ public static extern bool MessageBeep(uint type);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -247,6 +268,7 @@ public uint lbHatch;
 
   
 
+  
 
 
 
@@ -268,6 +290,7 @@ public uint lbHatch;
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -290,11 +313,11 @@ public uint lbHatch;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000001A7.html">LOGBRUSH Structure</a><br />
+			<a href="topic_00000000000000C7.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -316,3 +339,4 @@ public uint lbHatch;
     </div>
   </body>
 </html>
+

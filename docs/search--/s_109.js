@@ -1,1 +1,1 @@
-search_result['109']=["topic_0000000000000047_methods--.html","CompressAndDecompress Methods",""];
+search_result['109']=["topic_0000000000000047_methods--.html","EncrypterAndDecrypter Methods",""];

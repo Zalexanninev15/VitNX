@@ -1,1 +1,1 @@
-search_result['77']=["topic_0000000000000034.html","Text.RandomNums Method","Randoms the nums."];
+search_result['77']=["topic_000000000000002F.html","Text.DateAsYear Method","Converts the date to year."];

@@ -1,1 +1,1 @@
-c['16']=[['17',"Methods","topic_00000000000000A6_methods--.html",1]];
+c['16']=[['17',"Dispose(bool) Method","topic_00000000000010F1.html",0],['18',"Dispose() Method","topic_00000000000010F0.html",0]];

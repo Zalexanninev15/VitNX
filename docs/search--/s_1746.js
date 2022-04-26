@@ -1,1 +1,1 @@
-search_result['1746']=["topic_00000000000004C9.html","VitNX_MenuRenderer.Initialize Method","When overridden in a derived class, provides for custom initialization of the given ToolStrip."];
+search_result['1746']=["topic_0000000000000624.html","ERROR_DS_RIDMGR_INIT_ERROR Field",""];

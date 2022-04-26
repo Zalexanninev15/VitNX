@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>IniSettings32 Class</title>
+	<title>PowerControl Class</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">IniSettings32 Class</h1>
+		<h1 class="title">PowerControl Class</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000013.html">VitNX.Functions</a>
+<a href="topic_00000000000000A5.html">VitNX3.Functions</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Work with INI config files with Windows System functions.</summary-info>
+        <summary-info>Work with the power control.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public class IniSettings32</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public class PowerControl</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -207,41 +207,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
     
 	</td>
 	<td>
-	<a href="topic_00000000000000AA.html">DeleteKey(string, string)</a>
+	<a href="topic_00000000000000AC.html">Computer(SYSTEM_POWER_CONTROL)</a>
 
 	</td>
 	<td>
 
-Deletes the key in section.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000AB.html">DeleteSection(string)</a>
-
-	</td>
-	<td>
-
-Deletes the section.
+The power of computer.
 
 	</td>
 </tr>
@@ -377,64 +348,6 @@ Gets the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/syst
 
 
 	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000A7.html">Initialize(string)</a>
-
-	</td>
-	<td>
-
-Initializing the configuration INI file.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000AC.html">KeyExists(string, string)</a>
-
-	</td>
-	<td>
-
-Is key exist.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
 inheritedMember 
 
 
@@ -479,12 +392,12 @@ Creates a shallow copy of the current <a target="_top" href="https://docs.micros
     
 	</td>
 	<td>
-	<a href="topic_00000000000000A8.html">Read(string, string)</a>
+	<a href="topic_00000000000000AD.html">Monitor(bool)</a>
 
 	</td>
 	<td>
 
-Reads value of key from section.
+The power of monitor.
 
 	</td>
 </tr>
@@ -524,35 +437,6 @@ Returns a string that represents the current object.
 
 
 
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_00000000000000A9.html">Write(string, string, string)</a>
-
-	</td>
-	<td>
-
-Writes the value to key in section.
-
-	</td>
-</tr>
-
-
-
-
-
-
   </table>
 
   <a href="#mainBody">
@@ -561,10 +445,6 @@ Writes the value to key in section.
 
 	</div>					
 </div>
-
-
-
-
 
 
 
@@ -600,6 +480,52 @@ Writes the value to key in section.
 
 
 
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Enumerations</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="EnumerationSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+    <img alt="Public enumeration" title="Public enumeration" src="msdn2019/pubenum.png"></img>
+
+
+    
+	  </td>
+	  <td>
+	    <a href="topic_00000000000000A7.html">SYSTEM_POWER_CONTROL</a>
+	  </td>
+	  <td>
+
+Options for control the power of computer.
+
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -621,7 +547,7 @@ Writes the value to key in section.
 
 
 
-<div style="padding-left:1em;">VitNX.Functions.IniSettings32</div>
+<div style="padding-left:1em;">VitNX3.Functions.PowerControl</div>
 
 				
 </div>
@@ -645,6 +571,7 @@ Writes the value to key in section.
 
   
 
+  
 
 
 
@@ -666,6 +593,7 @@ Writes the value to key in section.
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -689,7 +617,7 @@ Writes the value to key in section.
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_0000000000000013.html">VitNX.Functions Namespace</a><br />
+	<a href="topic_00000000000000A5.html">VitNX3.Functions Namespace</a><br />
 
 
 	

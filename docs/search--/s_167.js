@@ -1,1 +1,1 @@
-search_result['167']=["topic_000000000000006B.html","Windows.Is64bit Method","Windows is x64 (64-bit)."];
+search_result['167']=["topic_000000000000006B.html","Other.CleanRecycleBin Method","Cleans the Recycle Bin."];

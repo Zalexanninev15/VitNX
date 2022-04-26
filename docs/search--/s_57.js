@@ -1,1 +1,1 @@
-search_result['57']=["topic_0000000000000020.html","Text.NumberAsPercentD Method","Gets the number as percent (double)."];
+search_result['57']=["topic_0000000000000020_vars--.html","NumericalTextConverter Fields",""];

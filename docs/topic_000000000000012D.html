@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetWindowOrgEx Method</title>
+	<title>Import.GetTextExtentExPoint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetWindowOrgEx Method</h1>
+		<h1 class="title">Import.GetTextExtentExPoint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> SetWindowOrgEx(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>X</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>Y</i>,&nbsp;<br />   ref <a target="_top" href="topic_00000000000001FC.html" onclick="this.target='';return true;">POINT</a> <i>lpPoint</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;gdi32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> GetTextExtentExPoint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>lpszStr</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cchString</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nMaxExtent</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int16">short</a> <i>lpnFit</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>alpDx</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E95.html" onclick="this.target='';return true;">SIZE</a> <i>lpSize</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -164,10 +165,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="X" class="parameterList">
+<dl paramName="lpszStr" class="parameterList">
 	<dt>
 		<span class="parameter">
-			X
+			lpszStr
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cchString" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cchString
 		</span>
 	</dt>
 	<dd>
@@ -177,10 +191,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="Y" class="parameterList">
+<dl paramName="nMaxExtent" class="parameterList">
 	<dt>
 		<span class="parameter">
-			Y
+			nMaxExtent
 		</span>
 	</dt>
 	<dd>
@@ -190,14 +204,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="lpPoint" class="parameterList">
+<dl paramName="lpnFit" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpPoint
+			lpnFit
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000001FC.html" onclick="this.target='';return true;">POINT</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int16">short</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="alpDx" class="parameterList">
+	<dt>
+		<span class="parameter">
+			alpDx
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000E95.html" onclick="this.target='';return true;">SIZE</a> 
 	</dd>
 </dl>
 <p>
@@ -283,11 +323,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;gdi32.dll&quot;)]
- public static extern bool SetWindowOrgEx(IntPtr hdc,
-     int X,
-     int Y,
-     ref POINT lpPoint);
+[return: MarshalAs(UnmanagedType.Bool)]
+ [DllImport(&quot;gdi32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool GetTextExtentExPoint(IntPtr hdc,
+     string lpszStr,
+     int cchString,
+     int nMaxExtent,
+     ref short lpnFit,
+     IntPtr alpDx,
+     ref SIZE lpSize);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -306,6 +351,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
   
 
+  
 
 
 
@@ -327,6 +373,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -349,11 +396,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000BB.html">Import Class</a><br />
+			<a href="topic_00000000000000C7.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

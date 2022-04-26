@@ -1,1 +1,1 @@
-search_result['278']=["topic_00000000000000AE_attached_props--.html","DataFromSites Attached Properties",""];
+search_result['278']=["topic_00000000000000AF.html","Ini Class","Work with INI config file, based on Windows System functions."];

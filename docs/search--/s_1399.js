@@ -1,1 +1,1 @@
-search_result['1399']=["topic_00000000000003DF.html","VitNX_ScrollBar.OnResize Method","Raises the Resize event."];
+search_result['1399']=["topic_00000000000004C9.html","RPC_X_INVALID_PIPE_OBJECT Field",""];

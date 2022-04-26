@@ -1,1 +1,1 @@
-search_result['76']=["topic_0000000000000033.html","Text.RandomChars Method","Randoms the chars."];
+search_result['76']=["topic_000000000000002E.html","Text.DateAsMonth Method","Converts the date to month."];

@@ -1,1 +1,1 @@
-search_result['41']=["topic_000000000000001A.html","NumericalTextConverter Class","The numerical text converter."];
+search_result['41']=["topic_000000000000001A.html","Others Class","Work with C# (others functions)."];

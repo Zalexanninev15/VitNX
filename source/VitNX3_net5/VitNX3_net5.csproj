@@ -1,0 +1,286 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+	<UseWindowsForms>true</UseWindowsForms>
+    <DebugType>none</DebugType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SignAssembly>False</SignAssembly>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/Zalexanninev15/VitNX</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
+    <Copyright>Zalexanninev15</Copyright>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Version>3.3</Version>
+    <AssemblyVersion>3.3</AssemblyVersion>
+    <FileVersion>3.3</FileVersion>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5</Description>
+    <Company>Zalexanninev15</Company>
+    <PackageId>VitNX</PackageId>
+    <Authors>Zalexanninev15</Authors>
+    <Product>VitNX</Product>
+    <PackageTags>windows, functions, api, controls</PackageTags>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>False</EnableNETAnalyzers>
+    <AnalysisLevel>none</AnalysisLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UI\ControlsV3\soon.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>f935dc20-1cf0-11d0-adb9-00c04fd58a0b</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="UI\ControlsV3\soon.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DK.WshRuntime" Version="4.1.3.201115164" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="6.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+    <PackageReference Include="System.Management" Version="6.0.0" />
+    <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Icons\DockIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DockIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Icons\DropdownIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DropdownIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Icons\MenuIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MenuIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Icons\MessageBoxIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MessageBoxIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Icons\ScrollIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ScrollIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Icons\TreeViewIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TreeViewIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_DropdownList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ScrollBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ScrollView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_SectionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_StatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_Title.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Controls\VitNX_TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Docking\VitNX_DockContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Docking\VitNX_DockGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Docking\VitNX_DockPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Docking\VitNX_DockRegion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Docking\VitNX_Document.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Docking\VitNX_ToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Forms\VitNX_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Forms\VitNX_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Forms\VitNX_MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV1\Forms\VitNX_TranslucentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_ProgressBarRoundedType2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_ProgressBar_RoundedType1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_Tab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\ControlsV2\VitNX2_ToogleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Icons\DockIcons.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>DockIcons.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Icons\DropdownIcons.resx">
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>DropdownIcons.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Icons\MenuIcons.resx">
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>MenuIcons.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Icons\MessageBoxIcons.resx">
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>MessageBoxIcons.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Icons\ScrollIcons.resx">
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>ScrollIcons.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Icons\TreeViewIcons.resx">
+      <CustomToolNamespace>VitNX</CustomToolNamespace>
+      <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UI\ControlsV2\VitNX2_ProgressBar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UI\ControlsV2\VitNX2_ProgressBar_RoundedType1.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

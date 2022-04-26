@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.AdjustWindowRectEx Method</title>
+	<title>DataFromSites.DownloadFileWithSupportOfResume Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,21 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.AdjustWindowRectEx Method</h1>
+		<h1 class="title">DataFromSites.DownloadFileWithSupportOfResume Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32</a>
+<a href="topic_00000000000000B9.html">VitNX3.Functions.Web</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
+        <summary-info>Downloads the file with support of download resume.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> AdjustWindowRectEx(&nbsp;<br />   ref <a target="_top" href="topic_00000000000001FF.html" onclick="this.target='';return true;">RECT</a> <i>lpRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwStyle</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bMenu</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwExStyle</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DownloadFileWithSupportOfResume(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFileUrl</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,65 +152,35 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="lpRect" class="parameterList">
+	Parameters</h4><dl paramName="sourceFileUrl" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpRect
+			sourceFileUrl
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000001FF.html" onclick="this.target='';return true;">RECT</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The source file url. 
 </p>
-<dl paramName="dwStyle" class="parameterList">
+<dl paramName="targetFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwStyle
+			targetFile
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="bMenu" class="parameterList">
-	<dt>
-		<span class="parameter">
-			bMenu
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwExStyle" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwExStyle
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
+	The target file. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	
 
 
 
@@ -283,11 +254,43 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;)]
- public static extern bool AdjustWindowRectEx(ref RECT lpRect,
-     int dwStyle,
-     bool bMenu,
-     int dwExStyle);
+public static void DownloadFileWithSupportOfResume(string sourceFileUrl,
+     string targetFile)
+ {
+     long iFileSize = 0;
+     int iBufferSize = 1024;
+     iBufferSize *= 1000;
+     long iExistLen = 0;
+     FileStream saveFileStream;
+     if (File.Exists(targetFile))
+     {
+         FileInfo fINfo = new FileInfo(targetFile);
+         iExistLen = fINfo.Length;
+     }
+     if (iExistLen &gt; 0)
+         saveFileStream = new FileStream(targetFile,
+           FileMode.Append,
+           FileAccess.Write,
+           FileShare.ReadWrite);
+     else
+         saveFileStream = new FileStream(targetFile,
+           FileMode.Create,
+           FileAccess.Write,
+           FileShare.ReadWrite);
+     HttpWebRequest hwRq;
+     HttpWebResponse hwRes;
+     hwRq = (HttpWebRequest)WebRequest.Create(sourceFileUrl);
+     hwRq.AddRange((int)iExistLen);
+     Stream smRespStream;
+     hwRes = (HttpWebResponse)hwRq.GetResponse();
+     smRespStream = hwRes.GetResponseStream();
+     iFileSize = hwRes.ContentLength;
+     int iByteSize;
+     byte[] downBuffer = new byte[iBufferSize];
+     while ((iByteSize = smRespStream.Read(downBuffer, 0, downBuffer.Length)) &gt; 0)
+         saveFileStream.Write(downBuffer, 0, iByteSize);
+     saveFileStream.Close();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -306,6 +309,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
   
 
+  
 
 
 
@@ -327,6 +331,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -349,11 +354,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000BB.html">Import Class</a><br />
+			<a href="topic_00000000000000BA.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_00000000000000BA.html">VitNX.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000B9.html">VitNX3.Functions.Web Namespace</a><br />
 
 
 			

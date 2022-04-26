@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Text.NumberAsPercentI Method</title>
+	<title>NumericalTextConverter.Convert Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Text.NumberAsPercentI Method</h1>
+		<h1 class="title">NumericalTextConverter.Convert Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000019.html">VitNX.Functions.Data</a>
+<a href="topic_000000000000001F.html">VitNX3.Functions.Data</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Gets the number as percent (int32).</summary-info>
+        <summary-info>Converts the value(s).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> NumberAsPercentI(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>number</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> Convert(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] <i>values</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> <i>targetType</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>parameter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> <i>culture</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,29 +152,72 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="number" class="parameterList">
+	Parameters</h4><dl paramName="values" class="parameterList">
 	<dt>
 		<span class="parameter">
-			number
+			values
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a>[] 
 	</dd>
 </dl>
 <p>
-	The number. 
+	The values. 
+</p>
+<dl paramName="targetType" class="parameterList">
+	<dt>
+		<span class="parameter">
+			targetType
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.type">Type</a> 
+	</dd>
+</dl>
+<p>
+	The target type. 
+</p>
+<dl paramName="parameter" class="parameterList">
+	<dt>
+		<span class="parameter">
+			parameter
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
+	</dd>
+</dl>
+<p>
+	The parameter. 
+</p>
+<dl paramName="culture" class="parameterList">
+	<dt>
+		<span class="parameter">
+			culture
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo">CultureInfo</a> 
+	</dd>
+</dl>
+<p>
+	The culture. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
 		<p>
-		A string. 
+		An object. 
 	</p>
 	
+
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.imultivalueconverter.convert">IMultiValueConverter.Convert</a>
+<br />
 
 
 
@@ -248,7 +291,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string NumberAsPercentI(int number) =&gt; string.Format(&quot;{0:P}&quot;, number);
+public object Convert(object[] values,
+     Type targetType,
+     object parameter,
+     CultureInfo culture)
+ {
+     string rType = &quot;&quot;;
+     if (values.Count() == 2)
+     {
+         try
+         {
+             var ValueText = (string)values[0] ?? &quot;&quot;;
+             var UnitText = (string)values[1] ?? &quot;&quot;;
+             if (ValueText.Trim() != string.Empty)
+                 rType = $&quot;{ValueText.Trim()} {UnitText.Trim()}&quot;;
+         }
+         catch { }
+     }
+     return rType;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -267,6 +328,7 @@ public static string NumberAsPercentI(int number) =&gt; string.Format(&quot;{0:P
 
   
 
+  
 
 
 
@@ -288,6 +350,7 @@ public static string NumberAsPercentI(int number) =&gt; string.Format(&quot;{0:P
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -310,11 +373,11 @@ public static string NumberAsPercentI(int number) =&gt; string.Format(&quot;{0:P
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000001D.html">Text Class</a><br />
+			<a href="topic_0000000000000020.html">NumericalTextConverter Class</a><br />
 
 
 
-<a href="topic_0000000000000019.html">VitNX.Functions.Data Namespace</a><br />
+<a href="topic_000000000000001F.html">VitNX3.Functions.Data Namespace</a><br />
 
 
 			

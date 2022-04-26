@@ -1,1 +1,1 @@
-search_result['67']=["topic_000000000000002A.html","Text.ContainsNumbersLatters Method","Contains the numbers latters."];
+search_result['67']=["topic_0000000000000025.html","Text.ContainsOnlyLatters Method","Contains the only latters."];

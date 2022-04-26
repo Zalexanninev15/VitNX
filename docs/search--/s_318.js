@@ -1,1 +1,1 @@
-search_result['318']=["topic_00000000000000C3.html","Import.ClientToScreen Method",""];
+search_result['318']=["topic_00000000000000C3.html","Config Class","The configs for normal work with sites and Internet."];

@@ -1,1 +1,1 @@
-search_result['261']=["topic_000000000000009F.html","SYSTEM_POWER_CONTROL Enumeration","Options for control the power of computer."];
+search_result['261']=["topic_000000000000009C.html","Internet.GetLocalIPv6 Method","Gets the local IPv6 (obsolete, but work)."];

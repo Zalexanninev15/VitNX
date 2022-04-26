@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>File.LoadCustomFont Method</title>
+	<title>File.SaveTextDialog Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">File.LoadCustomFont Method</h1>
+		<h1 class="title">File.SaveTextDialog Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem</a>
+<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Loads the custom font from file.</summary-info>
+        <summary-info>Saves the text dialog.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> LoadCustomFont(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> <i>size</i> = 16,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> <i>fontStyle</i> = FontStyle.Regular&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SaveTextDialog(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>fileExtension</i> = &quot;*.txt&quot;,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>filter</i> = &quot;Text files|*.txt&quot;,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i> = &quot;Hi!&quot;&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="sourceFile" class="parameterList">
+	Parameters</h4><dl paramName="fileExtension" class="parameterList">
 	<dt>
 		<span class="parameter">
-			sourceFile
+			fileExtension
 		</span>
 	</dt>
 	<dd>
@@ -163,44 +163,37 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The target file. 
+	The file extension. 
 </p>
-<dl paramName="size" class="parameterList">
+<dl paramName="filter" class="parameterList">
 	<dt>
 		<span class="parameter">
-			size
+			filter
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The size. 
+	The filter. 
 </p>
-<dl paramName="fontStyle" class="parameterList">
+<dl paramName="text" class="parameterList">
 	<dt>
 		<span class="parameter">
-			fontStyle
+			text
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	The font style. 
+	The text. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> 
-		<p>
-		A Font. 
-	</p>
-	
 
 
 
@@ -274,13 +267,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Font LoadCustomFont(string sourceFile,
-     float size = 16,
-     FontStyle fontStyle = FontStyle.Regular)
+public static void SaveTextDialog(string fileExtension = &quot;*.txt&quot;,
+     string filter = &quot;Text files|*.txt&quot;,
+     string text = &quot;Hi!&quot;)
  {
-     PrivateFontCollection pfc = new PrivateFontCollection();
-     pfc.AddFontFile(sourceFile);
-     return new Font(pfc.Families[0], size, fontStyle);
+     SaveFileDialog saveFile1 = new SaveFileDialog();
+     saveFile1.DefaultExt = fileExtension;
+     saveFile1.Filter = filter;
+     if (saveFile1.ShowDialog() == DialogResult.OK &amp;&amp; saveFile1.FileName.Length &gt; 0)
+     {
+         using (StreamWriter sw = new StreamWriter(saveFile1.FileName, true))
+         {
+             sw.WriteLine(text);
+             sw.Close();
+         }
+     }
  }
 					</pre>			
 				</div>
@@ -300,6 +301,7 @@ public static Font LoadCustomFont(string sourceFile,
 
   
 
+  
 
 
 
@@ -321,6 +323,7 @@ public static Font LoadCustomFont(string sourceFile,
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -343,11 +346,11 @@ public static Font LoadCustomFont(string sourceFile,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000054.html">File Class</a><br />
+			<a href="topic_000000000000005A.html">File Class</a><br />
 
 
 
-<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

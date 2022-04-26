@@ -1,1 +1,1 @@
-search_result['236']=["topic_0000000000000091_attached_props--.html","Ram Attached Properties",""];
+search_result['236']=["topic_0000000000000093_props--.html","Motherboard Properties",""];

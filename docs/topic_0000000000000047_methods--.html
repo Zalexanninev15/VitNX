@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CompressAndDecompress Methods</title>
+	<title>EncrypterAndDecrypter Methods</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -75,11 +75,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CompressAndDecompress Methods</h1>
+		<h1 class="title">EncrypterAndDecrypter Methods</h1>
         <p />
         <p>
           The following tables list the members exposed by the  
-              <a href="topic_0000000000000047.html">CompressAndDecompress</a>
+              <a href="topic_0000000000000047.html">EncrypterAndDecrypter</a>
              type.
         </p>
 
@@ -120,43 +120,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
     
 	</td>
 	<td>
-	<a href="topic_0000000000000049.html">BytesToString(byte[])</a>
+	<a href="topic_0000000000000049.html">Decrypt(string)</a>
 
 	</td>
 	<td>
 
-Bytes the to string.
-Example: string output = Data.CompressAndDecompress.BytesToString(Data.CompressAndDecompress.DecompressBytes(compressed));
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000004A.html">CompressBytes(byte[])</a>
-
-	</td>
-	<td>
-
-Compresses the bytes.
-Example: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));
+Decrypts the text.
 
 	</td>
 </tr>
@@ -180,13 +149,70 @@ Example: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.Comp
     
 	</td>
 	<td>
-	<a href="topic_000000000000004B.html">DecompressBytes(byte[])</a>
+	<a href="topic_000000000000004C.html">DecryptQryParam(string)</a>
 
 	</td>
 	<td>
 
-Decompresses the bytes.
-Example: Data.CompressAndDecompress.DecompressBytes(compressed)
+Decrypts the text with qry param.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000004A.html">Encrypt(string)</a>
+
+	</td>
+	<td>
+
+Encrypts the text.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000004B.html">EncryptQryParam(string)</a>
+
+	</td>
+	<td>
+
+Encrypts the text with qry param.
 
 	</td>
 </tr>
@@ -250,36 +276,6 @@ inheritedMember
 
 Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000048.html">GetBytes(string)</a>
-
-	</td>
-	<td>
-
-Gets the bytes.
-Example: Data.CompressAndDecompress.GetBytes(input)
 
 	</td>
 </tr>
@@ -385,6 +381,35 @@ Creates a shallow copy of the current <a target="_top" href="https://docs.micros
 
 
 	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_0000000000000048.html">SetPassword(string)</a>
+
+	</td>
+	<td>
+
+Sets the password.
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
 inheritedMember 
 
 
@@ -442,6 +467,7 @@ Returns a string that represents the current object.
 
 
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -450,8 +476,8 @@ Returns a string that represents the current object.
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000047.html">CompressAndDecompress Class</a><br />
-	<a href="topic_0000000000000019.html">VitNX.Functions.Data Namespace</a><br />
+			<a href="topic_0000000000000047.html">EncrypterAndDecrypter Class</a><br />
+	<a href="topic_000000000000001F.html">VitNX3.Functions.Data Namespace</a><br />
 
 
 			

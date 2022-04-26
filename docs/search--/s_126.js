@@ -1,1 +1,1 @@
-search_result['126']=["topic_0000000000000051.html","Folder.Copy Method","Copies the folder."];
+search_result['126']=["topic_0000000000000051.html","CompressAndDecompress.DecompressBytes Method","Decompresses the bytes.\r\nExample: Data.CompressAndDecompress.DecompressBytes(compressed)"];

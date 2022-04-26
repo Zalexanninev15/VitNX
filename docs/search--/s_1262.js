@@ -1,1 +1,1 @@
-search_result['1262']=["topic_000000000000038E.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];
+search_result['1262']=["topic_0000000000000440.html","ERROR_PATCH_PACKAGE_OPEN_FAILED Field",""];

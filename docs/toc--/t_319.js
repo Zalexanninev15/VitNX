@@ -1,1 +1,1 @@
-c['319']=[['320',"MOUSEHOOKSTRUCT Field","topic_00000000000001CC.html",0],['321',"mouseData Field","topic_00000000000001CD.html",0]];
+c['319']=[['320',"VitNX_DockPanel Constructor","topic_0000000000001210.html",0],['321',"Methods","topic_000000000000120C_methods--.html",1],['332',"Events","topic_000000000000120C_events--.html",1]];

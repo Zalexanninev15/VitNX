@@ -1,1 +1,1 @@
-search_result['324']=["topic_00000000000000C9.html","Import.CreateBrushIndirect Method",""];
+search_result['324']=["topic_00000000000000C4.html","Config.UseProtocols Method","Activate all security protocols for all network functions to work (HTTPS).\r\nExample: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();"];

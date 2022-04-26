@@ -1,1 +1,1 @@
-search_result['187']=["topic_000000000000007A.html","Cpu.GetArchitecture Method","Gets the architecture."];
+search_result['187']=["topic_000000000000007A.html","Windows.WindowsUseLightThemeInSystem Method","Windows use light theme in system from the Windows Registry, for Windows 10+."];

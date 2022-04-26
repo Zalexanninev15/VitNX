@@ -1,1 +1,1 @@
-search_result['264']=["topic_00000000000000A6.html","IniSettings32 Class","Work with INI config files with Windows System functions."];
+search_result['264']=["topic_000000000000009F.html","Internet.GetMacAddress Method","Gets the MAC address."];

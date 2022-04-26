@@ -1,1 +1,1 @@
-c['771']=[['772',"Show Method","topic_00000000000002E1_overloads--.html",1]];
+c['771']=[['772',"Log Constructor","topic_00000000000000B7.html",0],['773',"Methods","topic_00000000000000B6_methods--.html",1]];

@@ -1,1 +1,1 @@
-c['709']=[['710',"flags Field","topic_0000000000000304.html",0],['711',"sourceInfo Field","topic_0000000000000302.html",0],['712',"targetInfo Field","topic_0000000000000303.html",0]];
+c['709']=[['710',"GetAll Method","topic_0000000000000086.html",0],['711',"GetTotalFreeSpace Method","topic_0000000000000087.html",0],['712',"GetTotalSpace Method","topic_0000000000000088.html",0],['713',"WindowsDisk Method","topic_0000000000000085.html",0]];

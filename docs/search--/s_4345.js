@@ -1,0 +1,1 @@
+search_result['4345']=["topic_00000000000010E3.html","Type1.SetColor Method","Sets the color."];

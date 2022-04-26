@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Window.SetWindowsElevenStyleForWinForm Method</title>
+	<title>ERROR_SESSION_CREDENTIAL_CONFLICT Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Window.SetWindowsElevenStyleForWinForm Method</h1>
+		<h1 class="title">ERROR_SESSION_CREDENTIAL_CONFLICT Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Applying Windows 11 roundings to a window(s).</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.region">Region</a> SetWindowsElevenStyleForWinForm(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>windowWidth</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>windowHeight</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ERROR_SESSION_CREDENTIAL_CONFLICT = 1219</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,52 +150,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="Handler" class="parameterList">
-	<dt>
-		<span class="parameter">
-			Handler
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	The handler. 
-</p>
-<dl paramName="windowWidth" class="parameterList">
-	<dt>
-		<span class="parameter">
-			windowWidth
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	The width of window 
-</p>
-<dl paramName="windowHeight" class="parameterList">
-	<dt>
-		<span class="parameter">
-			windowHeight
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	The height of window 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.region">Region</a> 
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -271,17 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowWidth, int windowHeight)
- {
-     Import.DwmSetWindowAttribute(Handler,
-         DWM_GET_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE,
-         new[] { Convert.ToInt32(DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND) },
-         sizeof(uint));
-     return Region.FromHrgn(Import.CreateRoundRectRgn(0, 0,
-         windowWidth,
-         windowHeight,
-         15, 15));
- }
+public const int ERROR_SESSION_CREDENTIAL_CONFLICT = 1219;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -300,6 +247,7 @@ public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowW
 
   
 
+  
 
 
 
@@ -321,6 +269,7 @@ public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowW
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -343,11 +292,11 @@ public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowW
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000334.html">Window Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_0000000000000333.html">VitNX.Functions.WindowAndControls Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -369,4 +318,3 @@ public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler, int windowW
     </div>
   </body>
 </html>
-

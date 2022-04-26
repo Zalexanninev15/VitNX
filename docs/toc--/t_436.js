@@ -1,1 +1,1 @@
-c['436']=[['437',"cbSize Field","topic_0000000000000239.html",0],['438',"dwFlags Field","topic_000000000000023A.html",0],['439',"dwHoverTime Field","topic_000000000000023C.html",0],['440',"hwndTrack Field","topic_000000000000023B.html",0]];
+c['436']=[['437',"DockResizeFilter Constructor","topic_0000000000001284.html",0],['438',"Methods","topic_0000000000001283_methods--.html",1]];

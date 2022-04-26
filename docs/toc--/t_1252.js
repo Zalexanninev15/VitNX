@@ -1,1 +1,0 @@
-c['1252']=[['1253',"CheckedChangedEventHandler Delegate","topic_00000000000004FF.html",0],['1254',"_Options Enumeration","topic_0000000000000500.html",0],['1255',"CheckBox_Custom Constructor","topic_00000000000004FD.html",0],['1256',"Methods","topic_00000000000004F4_methods--.html",1],['1265',"Events","topic_00000000000004F4_events--.html",1]];

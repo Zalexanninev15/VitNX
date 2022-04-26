@@ -1,1 +1,1 @@
-search_result['78']=["topic_0000000000000035.html","Text.ConvertListToString Method","Converts the list to string (space is used as separator)."];
+search_result['78']=["topic_0000000000000030.html","Text.ContainsNumbersLatters Method","Contains the numbers latters."];

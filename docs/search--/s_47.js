@@ -1,1 +1,1 @@
-search_result['47']=["topic_000000000000001B.html","NumericalTextConverter.Convert Method","Converts the value(s)."];
+search_result['47']=["topic_000000000000001B.html","Others.CleanMemory Method","Cleans the memory."];

@@ -1,1 +1,1 @@
-search_result['190']=["topic_000000000000007C_attached_props--.html","Gpu Attached Properties",""];
+search_result['190']=["topic_000000000000007D.html","Windows.GetWindowsAccentColor Method","Gets the Windows accent color."];
