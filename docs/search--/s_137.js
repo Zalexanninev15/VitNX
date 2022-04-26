@@ -1,1 +1,1 @@
-search_result['137']=["topic_0000000000000057.html","File.WriteTextAsUTF8_ToTemp Method","Writes the text to file as UTF-8 to temp folder."];
+search_result['137']=["topic_0000000000000057.html","Folder.Copy Method","Copies the folder."];

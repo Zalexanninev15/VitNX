@@ -1,1 +1,1 @@
-search_result['70']=["topic_000000000000002D.html","Text.ContainsSymbols Method","Contains the symbols."];
+search_result['70']=["topic_0000000000000028.html","Text.ConvertNumberToHexD Method","Converts the number to HEX (double)."];

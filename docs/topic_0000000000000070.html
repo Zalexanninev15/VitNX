@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetWindowsProductNameFromREG Method</title>
+	<title>Windows.GetLocalTime Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetWindowsProductNameFromREG Method</h1>
+		<h1 class="title">Windows.GetLocalTime Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000066.html">VitNX.Functions.Information</a>
+<a href="topic_000000000000006C.html">VitNX3.Functions.Information</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Gets the Windows product name from the Windows Registry.</summary-info>
+        <summary-info>Gets locals the time.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsProductNameFromREG()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a> GetLocalTime()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -154,9 +154,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a> 
 		<p>
-		A string. 
+		A DateTime. 
 	</p>
 	
 
@@ -232,8 +232,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetWindowsProductNameFromREG() =&gt; (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;,
-     &quot;ProductName&quot;, &quot;&quot;);
+public static DateTime GetLocalTime() =&gt; new Microsoft.VisualBasic.Devices.Clock().LocalTime;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -252,6 +251,7 @@ public static string GetWindowsProductNameFromREG() =&gt; (string)Registry.GetVa
 
   
 
+  
 
 
 
@@ -273,6 +273,7 @@ public static string GetWindowsProductNameFromREG() =&gt; (string)Registry.GetVa
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -295,11 +296,11 @@ public static string GetWindowsProductNameFromREG() =&gt; (string)Registry.GetVa
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000067.html">Windows Class</a><br />
+			<a href="topic_000000000000006D.html">Windows Class</a><br />
 
 
 
-<a href="topic_0000000000000066.html">VitNX.Functions.Information Namespace</a><br />
+<a href="topic_000000000000006C.html">VitNX3.Functions.Information Namespace</a><br />
 
 
 			

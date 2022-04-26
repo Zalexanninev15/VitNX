@@ -1,1 +1,1 @@
-search_result['307']=["topic_00000000000000BB_events--.html","Import Events",""];
+search_result['307']=["topic_00000000000000BD.html","DataFromSites.GetHeaderAndContent Method","Gets the status header and content of site."];

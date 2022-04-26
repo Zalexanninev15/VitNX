@@ -1,1 +1,1 @@
-search_result['317']=["topic_00000000000000C2.html","Import.ChildWindowFromPoint Method",""];
+search_result['317']=["topic_00000000000000C2.html","SendDataToSites.FileUploader Method","Starts the uploading.\r\nExample:https://gist.github.com/Zalexanninev15/13df3d870ee9951b65081212cde9863a"];

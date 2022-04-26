@@ -1,1 +1,1 @@
-search_result['164']=["topic_0000000000000068.html","Windows.GetComputerName Method","Gets the name of PC."];
+search_result['164']=["topic_000000000000006A_methods--.html","Other Methods",""];

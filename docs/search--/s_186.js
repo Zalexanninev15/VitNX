@@ -1,1 +1,1 @@
-search_result['186']=["topic_0000000000000079.html","Cpu.Characteristics Method","Gets all characteristics."];
+search_result['186']=["topic_0000000000000079.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Folder Methods</title>
+	<title>CompressAndDecompress Methods</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -75,11 +75,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Folder Methods</h1>
+		<h1 class="title">CompressAndDecompress Methods</h1>
         <p />
         <p>
           The following tables list the members exposed by the  
-              <a href="topic_000000000000004D.html">Folder</a>
+              <a href="topic_000000000000004D.html">CompressAndDecompress</a>
              type.
         </p>
 
@@ -120,41 +120,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
     
 	</td>
 	<td>
-	<a href="topic_0000000000000051.html">Copy(string, string)</a>
+	<a href="topic_000000000000004F.html">BytesToString(byte[])</a>
 
 	</td>
 	<td>
 
-Copies the folder.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000052.html">DeleteForever(string)</a>
-
-	</td>
-	<td>
-
-Deletes the file forever.
+Bytes the to string.
+Example: string output = Data.CompressAndDecompress.BytesToString(Data.CompressAndDecompress.DecompressBytes(compressed));
 
 	</td>
 </tr>
@@ -178,12 +150,43 @@ Deletes the file forever.
     
 	</td>
 	<td>
-	<a href="topic_0000000000000053.html">DeleteToRecycleBin(string)</a>
+	<a href="topic_0000000000000050.html">CompressBytes(byte[])</a>
 
 	</td>
 	<td>
 
-Deletes the file to Recycle Bin.
+Compresses the bytes.
+Example: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_0000000000000051.html">DecompressBytes(byte[])</a>
+
+	</td>
+	<td>
+
+Decompresses the bytes.
+Example: Data.CompressAndDecompress.DecompressBytes(compressed)
 
 	</td>
 </tr>
@@ -259,6 +262,36 @@ Allows an object to try to free resources and perform other cleanup operations b
 
 
 	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
+
+	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000004E.html">GetBytes(string)</a>
+
+	</td>
+	<td>
+
+Gets the bytes.
+Example: Data.CompressAndDecompress.GetBytes(input)
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
 inheritedMember 
 
 
@@ -277,64 +310,6 @@ inheritedMember
 
 Serves as a hash function for a particular type.
 (inherited from <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a>).
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000004E.html">GetItemsList(string)</a>
-
-	</td>
-	<td>
-
-Gets the items list in folder.
-
-	</td>
-</tr>
-
-
-
-
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000004F.html">GetSize(DirectoryInfo)</a>
-
-	</td>
-	<td>
-
-Gets the folder size.
 
 	</td>
 </tr>
@@ -437,35 +412,6 @@ Returns a string that represents the current object.
 
 
 
-
-
-	<tr class="
-
-
-">
-	<td>
-<img alt="Public method" title="Public method" src="msdn2019/pubmethod.png"></img>
-
-	<img alt="Static" title="Static" src="msdn2019/static.png"></img>
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000050.html">Zip(string, string)</a>
-
-	</td>
-	<td>
-
-Zips the folder.
-
-	</td>
-</tr>
-
-
-
-
-
-
   </table>
 
   <a href="#mainBody">
@@ -496,8 +442,6 @@ Zips the folder.
 
 
 
-
-
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -506,8 +450,8 @@ Zips the folder.
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000004D.html">Folder Class</a><br />
-	<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem Namespace</a><br />
+			<a href="topic_000000000000004D.html">CompressAndDecompress Class</a><br />
+	<a href="topic_000000000000001F.html">VitNX3.Functions.Data Namespace</a><br />
 
 
 			

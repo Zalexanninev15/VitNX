@@ -1,1 +1,1 @@
-search_result['305']=["topic_00000000000000BB.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];
+search_result['305']=["topic_00000000000000BB.html","DataFromSites.DownloadString Method","Downloads the string from site/server."];

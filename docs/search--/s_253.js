@@ -1,1 +1,1 @@
-search_result['253']=["topic_0000000000000099.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];
+search_result['253']=["topic_0000000000000099.html","Ram.Characteristics Method","Gets all characteristics."];

@@ -1,1 +1,1 @@
-search_result['1000']=["topic_0000000000000303.html","targetInfo Field",""];
+search_result['1000']=["topic_000000000000033A.html","ERROR_INVALID_MESSAGEDEST Field",""];

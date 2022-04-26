@@ -1,1 +1,1 @@
-search_result['49']=["topic_000000000000001D.html","Text Class","Work with text."];
+search_result['49']=["topic_000000000000001D.html","Others.ConvertDWordColorToRGB Method","Converts the DWord color to RGB."];

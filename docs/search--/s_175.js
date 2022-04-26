@@ -1,1 +1,1 @@
-search_result['175']=["topic_0000000000000073.html","Windows.GetWindowsStartupFolderPath Method","Gets the Windows startup folder path."];
+search_result['175']=["topic_000000000000006E.html","Windows.GetComputerName Method","Gets the name of PC."];

@@ -1,1 +1,1 @@
-search_result['1080']=["topic_0000000000000326.html","id Field",""];
+search_result['1080']=["topic_000000000000038A.html","ERROR_NO_SUCH_USER Field",""];

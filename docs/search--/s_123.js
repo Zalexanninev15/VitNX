@@ -1,1 +1,1 @@
-search_result['123']=["topic_000000000000004E.html","Folder.GetItemsList Method","Gets the items list in folder."];
+search_result['123']=["topic_000000000000004E.html","CompressAndDecompress.GetBytes Method","Gets the bytes.\r\nExample: Data.CompressAndDecompress.GetBytes(input)"];

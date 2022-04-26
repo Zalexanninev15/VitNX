@@ -1,0 +1,1 @@
+search_result['4737']=["topic_00000000000011CC.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];

@@ -1,1 +1,1 @@
-search_result['227']=["topic_000000000000008E.html","Motherboard.GetFirmwareType Method","Gets the firmware type."];
+search_result['227']=["topic_000000000000008E.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];

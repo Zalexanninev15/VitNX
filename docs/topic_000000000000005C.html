@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>File.Unzip Method</title>
+	<title>File.DeleteToRecycleBin Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,22 +74,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">File.Unzip Method</h1>
+		<h1 class="title">File.DeleteToRecycleBin Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem</a>
+<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
        
        
-        <summary-info>Unzip the zip file.</summary-info>
+        <summary-info>Deletes the file to Recycle Bin.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Unzip(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>zipFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFolder</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteToRecycleBin(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="zipFile" class="parameterList">
+	Parameters</h4><dl paramName="targetFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			zipFile
+			targetFile
 		</span>
 	</dt>
 	<dd>
@@ -163,20 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The zip file. 
-</p>
-<dl paramName="targetFolder" class="parameterList">
-	<dt>
-		<span class="parameter">
-			targetFolder
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The target folder. 
+	The target file. 
 </p>
 
 <p />
@@ -254,15 +241,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Unzip(string zipFile,
-     string targetFolder)
+public static void DeleteToRecycleBin(string targetFile)
  {
-     if (!Directory.Exists(targetFolder))
-         Directory.CreateDirectory(targetFolder);
-     dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID(&quot;Shell.Application&quot;));
-     dynamic compressedFolderContents = shellApplication.NameSpace(zipFile).Items;
-     dynamic destinationFolder = shellApplication.NameSpace(targetFolder);
-     destinationFolder.CopyHere(compressedFolderContents);
+     System.IO.File.SetAttributes(targetFile, FileAttributes.Normal);
+     Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,
+         Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
+         Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
  }
 					</pre>			
 				</div>
@@ -282,6 +266,7 @@ public static void Unzip(string zipFile,
 
   
 
+  
 
 
 
@@ -303,6 +288,7 @@ public static void Unzip(string zipFile,
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -325,11 +311,11 @@ public static void Unzip(string zipFile,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000054.html">File Class</a><br />
+			<a href="topic_000000000000005A.html">File Class</a><br />
 
 
 
-<a href="topic_000000000000004C.html">VitNX.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['199']=["topic_000000000000007E_methods--.html","Disk Methods",""];
+search_result['199']=["topic_0000000000000081.html","Cpu.GetClockSpeed Method","Gets the clock speed."];

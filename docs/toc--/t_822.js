@@ -1,1 +1,1 @@
-c['822']=[['823',"Add Method","topic_0000000000000352_overloads--.html",1],['825',"AddRange Method","topic_0000000000000353.html",0],['826',"Clear Method","topic_0000000000000355.html",0],['827',"Dispose Method","topic_0000000000000350_overloads--.html",1],['830',"Remove Method","topic_0000000000000354_overloads--.html",1]];
+c['822']=[['823',"Failed Method","topic_0000000000000D94.html",0],['824',"Succeeded Method","topic_0000000000000D93.html",0]];

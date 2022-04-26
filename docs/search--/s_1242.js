@@ -1,1 +1,1 @@
-search_result['1242']=["topic_0000000000000380.html","VitNX_CheckBox.OnLostFocus Method","Raises the OnLostFocus event."];
+search_result['1242']=["topic_000000000000042C.html","ERROR_BAD_QUERY_SYNTAX Field",""];

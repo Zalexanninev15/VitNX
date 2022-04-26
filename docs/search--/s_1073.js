@@ -1,1 +1,1 @@
-search_result['1073']=["topic_0000000000000322_events--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Events",""];
+search_result['1073']=["topic_0000000000000383.html","ERROR_CANT_DISABLE_MANDATORY Field",""];

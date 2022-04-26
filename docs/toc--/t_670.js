@@ -1,1 +1,1 @@
-c['670']=[['671',"WindowFromPoint(Point) Method","topic_0000000000000154.html",0],['672',"WindowFromPoint(POINT) Method","topic_0000000000000140.html",0]];
+c['670']=[['671',"File Class","topic_000000000000005A.html",1],['688',"Folder Class","topic_0000000000000053.html",1],['696',"Other Class","topic_000000000000006A.html",1]];

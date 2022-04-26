@@ -1,1 +1,1 @@
-search_result['200']=["topic_000000000000007E_props--.html","Disk Properties",""];
+search_result['200']=["topic_0000000000000082.html","Gpu Class","Work with informations of GPU(s)."];

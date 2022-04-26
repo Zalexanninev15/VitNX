@@ -1,1 +1,1 @@
-search_result['1388']=["topic_00000000000003D9.html","VitNX_RadioButton.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1388']=["topic_00000000000004BE.html","RPC_S_BINDING_INCOMPLETE Field",""];

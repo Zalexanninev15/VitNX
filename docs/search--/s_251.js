@@ -1,1 +1,1 @@
-search_result['251']=["topic_0000000000000097.html","Internet.GetPublicIP Method","Gets the public IP of PC."];
+search_result['251']=["topic_0000000000000098_props--.html","Ram Properties",""];

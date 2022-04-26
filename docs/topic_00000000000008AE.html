@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>NotificationForm.ChangePosition Method</title>
+	<title>ERROR_IPSEC_MM_AUTH_NOT_FOUND Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">NotificationForm.ChangePosition Method</h1>
+		<h1 class="title">ERROR_IPSEC_MM_AUTH_NOT_FOUND Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000559.html">VitNX.UI.OtherControls</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ChangePosition()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ERROR_IPSEC_MM_AUTH_NOT_FOUND = 13011</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,6 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -224,33 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void ChangePosition()
- {
-     if (manager.InvertAdding ? Location.Y &gt; Height + 5 : Location.Y &lt; Monitor.WorkingArea().Height - Height - 5)
-     {
-         Timer timer = new Timer();
-         timer.Tag = (manager.InvertAdding &amp;&amp; Location.Y != Height + 5)
-             || (!manager.InvertAdding &amp;&amp;
-             Location.Y != Monitor.WorkingArea().Height - Height - 5)
-             ? Height - 1 : 0;
-         timer.Interval = 1;
-         timer.Tick += ((se, evu) =&gt;
-         {
-             if ((int)timer.Tag &gt; 0)
-             {
-                 Location = new Point(Location.X,
-                     Location.Y - (manager.InvertAdding ? 6 : -6));
-                 timer.Tag = (int)timer.Tag - 6;
-             }
-             else
-                 timer.Stop();
-         });
-         if ((int)timer.Tag != 0)
-             Location = new Point(Location.X,
-                 Location.Y - (manager.InvertAdding ? 6 : -6));
-         timer.Start();
-     }
- }
+public const int ERROR_IPSEC_MM_AUTH_NOT_FOUND = 13011;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -269,6 +247,7 @@ public void ChangePosition()
 
   
 
+  
 
 
 
@@ -290,6 +269,7 @@ public void ChangePosition()
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -312,11 +292,11 @@ public void ChangePosition()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000008A9.html">NotificationForm Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_0000000000000559.html">VitNX.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -338,4 +318,3 @@ public void ChangePosition()
     </div>
   </body>
 </html>
-

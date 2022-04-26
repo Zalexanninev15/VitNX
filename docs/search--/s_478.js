@@ -1,1 +1,1 @@
-search_result['478']=["topic_0000000000000158.html","Import.BitBlt Method",""];
+search_result['478']=["topic_0000000000000151.html","Import.SendMessage (IntPtr, Int32, IntPtr, IntPtr) Method",""];

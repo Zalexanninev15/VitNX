@@ -1,1 +1,1 @@
-search_result['73']=["topic_0000000000000030.html","Text.ListAddStringsToList Method","Lists the add strings to list."];
+search_result['73']=["topic_000000000000002B.html","Text.DateAsLongDate Method","Converts the date to long date."];

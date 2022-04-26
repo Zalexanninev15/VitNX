@@ -1,1 +1,1 @@
-search_result['171']=["topic_000000000000006F.html","Windows.GetWindowsCurrentBuildNumberFromREG Method","Gets the Windows current build number from the Windows Registry."];
+search_result['171']=["topic_000000000000006D_events--.html","Windows Events",""];

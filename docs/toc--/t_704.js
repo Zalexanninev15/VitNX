@@ -1,1 +1,1 @@
-c['704']=[['705',"Fields","topic_0000000000000318_vars--.html",1]];
+c['704']=[['705',"Characteristics Method","topic_000000000000007F.html",0],['706',"GetArchitecture Method","topic_0000000000000080.html",0],['707',"GetClockSpeed Method","topic_0000000000000081.html",0]];

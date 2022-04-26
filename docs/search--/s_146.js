@@ -1,1 +1,1 @@
-search_result['146']=["topic_0000000000000060.html","File.Print Method","Prints the file."];
+search_result['146']=["topic_000000000000005B.html","File.DeleteForever Method","Deletes the file forever."];

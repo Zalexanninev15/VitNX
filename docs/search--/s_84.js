@@ -1,1 +1,1 @@
-search_result['84']=["topic_0000000000000039_events--.html","EncryptAndDecrypt Events",""];
+search_result['84']=["topic_0000000000000036.html","Text.ListAddStringsToList Method","Lists the add strings to list."];

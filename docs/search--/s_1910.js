@@ -1,1 +1,1 @@
-search_result['1910']=["topic_000000000000052E.html","VitNX2_MessageBoxType1_Form.Dispose Method","Clean up any resources being used."];
+search_result['1910']=["topic_00000000000006C8.html","ERROR_DS_SCHEMA_ALLOC_FAILED Field",""];

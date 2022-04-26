@@ -1,1 +1,1 @@
-search_result['240']=["topic_0000000000000091_vars--.html","Ram Fields",""];
+search_result['240']=["topic_0000000000000096.html","ComPort Class","Work with informations of COM port."];

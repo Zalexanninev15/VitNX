@@ -1,1 +1,1 @@
-search_result['296']=["topic_00000000000000B7.html","Config Class","The configs for normal work with sites and Internet."];
+search_result['296']=["topic_00000000000000B7.html","Log Constructor","Initializes a new instance of the Log class."];

@@ -1,1 +1,1 @@
-search_result['297']=["topic_00000000000000B7_attached_props--.html","Config Attached Properties",""];
+search_result['297']=["topic_00000000000000B8.html","Log.Write Method","Writes log to the log file."];

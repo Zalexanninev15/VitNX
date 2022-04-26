@@ -1,1 +1,1 @@
-search_result['213']=["topic_0000000000000085.html","Monitor.CaptureScreenToMemoryStream Method","Captures the screen to memory stream."];
+search_result['213']=["topic_0000000000000085.html","Disk.WindowsDisk Method","Gets Windows Disk characteristics."];

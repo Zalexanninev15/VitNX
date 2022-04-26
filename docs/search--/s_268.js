@@ -1,1 +1,1 @@
-search_result['268']=["topic_00000000000000A6_props--.html","IniSettings32 Properties",""];
+search_result['268']=["topic_00000000000000A6.html","PowerControl Class","Work with the power control."];

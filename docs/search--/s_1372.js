@@ -1,1 +1,1 @@
-search_result['1372']=["topic_00000000000003CE.html","VitNX_NumericUpDown.OnGotFocus Method","Raises the GotFocus event."];
+search_result['1372']=["topic_00000000000004AE.html","ERROR_INVALID_PRINTER_COMMAND Field",""];

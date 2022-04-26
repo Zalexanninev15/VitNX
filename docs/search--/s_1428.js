@@ -1,1 +1,1 @@
-search_result['1428']=["topic_00000000000003F7.html","VitNX_ScrollBase.OnCreateControl Method","Raises the CreateControl method."];
+search_result['1428']=["topic_00000000000004E6.html","RPC_S_INTERFACE_NOT_EXPORTED Field",""];

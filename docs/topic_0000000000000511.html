@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Helpers.DrawArrow Method</title>
+	<title>ERROR_SPL_NO_ADDJOB Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -38,7 +38,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	  </div>
 	</div>
   	<div id="header-top-container2">
-    <div id="runningHeaderText">VitNX Documentation</div>
+    <div id="runningHeaderText">VitNX3 Documentation</div>
    
     <div id="search-bar-container">
      <form id="search-bar" action="search--.html">
@@ -74,16 +74,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Helpers.DrawArrow Method</h1>
+		<h1 class="title">ERROR_SPL_NO_ADDJOB Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000503.html">VitNX.UI.ControlsV2.UiKit</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
 
-        <br />Assembly: VitNX2 (in VitNX2.dll)
+        <br />Assembly: VitNX3 (in VitNX3.dll)
 
 		</div>
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d.graphicspath">GraphicsPath</a> DrawArrow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>x</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>y</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>flip</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ERROR_SPL_NO_ADDJOB = 3004</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,52 +150,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="x" class="parameterList">
-	<dt>
-		<span class="parameter">
-			x
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="y" class="parameterList">
-	<dt>
-		<span class="parameter">
-			y
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="flip" class="parameterList">
-	<dt>
-		<span class="parameter">
-			flip
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d.graphicspath">GraphicsPath</a> 
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -270,30 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static GraphicsPath DrawArrow(int x, int y, bool flip)
- {
-     GraphicsPath graphicsPath = new GraphicsPath();
-     int num = 12;
-     int num2 = 6;
-     if (flip)
-     {
-         graphicsPath.AddLine(x + 1, y,
-             x + num + 1, y);
-         graphicsPath.AddLine(x + num, y,
-             x + num2,
-             y + num2 - 1);
-     }
-     else
-     {
-         graphicsPath.AddLine(x, y + num2,
-             x + num, y + num2);
-         graphicsPath.AddLine(x + num,
-             y + num2,
-             x + num2, y);
-     }
-     graphicsPath.CloseFigure();
-     return graphicsPath;
- }
+public const int ERROR_SPL_NO_ADDJOB = 3004;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -312,6 +247,7 @@ public static GraphicsPath DrawArrow(int x, int y, bool flip)
 
   
 
+  
 
 
 
@@ -333,6 +269,7 @@ public static GraphicsPath DrawArrow(int x, int y, bool flip)
 	<div id="frameworksSection" class="section">	
   <h4 class="subHeading">.NET Framework</h4>Supported in: 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8<br />
 
+  <h4 class="subHeading">.NET Core</h4>Supported in: 5.0+, 6.0+<br />
 
 
 
@@ -355,11 +292,11 @@ public static GraphicsPath DrawArrow(int x, int y, bool flip)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000050E.html">Helpers Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_0000000000000503.html">VitNX.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -381,4 +318,3 @@ public static GraphicsPath DrawArrow(int x, int y, bool flip)
     </div>
   </body>
 </html>
-

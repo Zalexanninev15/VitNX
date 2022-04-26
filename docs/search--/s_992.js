@@ -1,1 +1,1 @@
-search_result['992']=["topic_0000000000000300.html","Denominator Field",""];
+search_result['992']=["topic_0000000000000332.html","ERROR_INVALID_COMPUTERNAME Field",""];

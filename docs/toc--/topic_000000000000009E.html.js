@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX Documentation","topic_00000000000008B0.html"],['9',"VitNX.Functions Namespace","topic_0000000000000013.html"],['24',"PowerControl Class","topic_000000000000009E.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001652.html"],['699',"VitNX3.Functions.Information Namespace","topic_000000000000006C.html"],['717',"Internet Class","topic_000000000000009A.html"],['719',"Methods","topic_000000000000009A_methods--.html"],['724',"GetPublicIP Method","topic_000000000000009E.html"]];

@@ -1,1 +1,1 @@
-search_result['504']=["topic_000000000000016D.html","Constants Class","The constants for imported functions."];
+search_result['504']=["topic_0000000000000168.html","Import.NtQueryTimerResolution Method",""];

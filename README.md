@@ -8,6 +8,8 @@
 [![](https://img.shields.io/badge/written_on-CSharp-239120.svg?logo=csharp)](https://github.com/Zalexanninev15/VitNX)
 [![](https://img.shields.io/github/v/release/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/releases/latest)
 [![](https://img.shields.io/github/downloads/Zalexanninev15/VitNX/total.svg)](https://github.com/Zalexanninev15/VitNX/releases)
+[![](https://img.shields.io/nuget/v/VitNX?logo=nuget)](https://www.nuget.org/packages/VitNX)
+[![](https://img.shields.io/nuget/dt/VitNX?logo=nuget)](https://www.nuget.org/packages/VitNX)
 [![](https://img.shields.io/github/last-commit/Zalexanninev15/VitNX/main.svg)](https://github.com/Zalexanninev15/VitNX/commits/main)
 [![](https://img.shields.io/github/stars/Zalexanninev15/VitNX.svg)](https://github.com/Zalexanninev15/VitNX/stargazers)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -15,7 +17,7 @@
 
 ## Description
 
-Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5+ and .NET 5+
+Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5 and .NET 5
 
 ## Features
 
@@ -25,10 +27,11 @@ Many indispensable functions and controls (WinForms) for fast and easy applicati
 
 ## Documentation
 
-A full description of all classes, functions and other object can be found in the generated [documentation](https://zalexanninev15.github.io/VitNX/). There are also actual [examples](https://github.com/Zalexanninev15/VitNX/tree/main/source/Examples), but they use only the smallest functionality of the library (mostly implemented UI)
+A full description of all classes, functions and other object can be found in the generated [documentation](zalexanninev15.github.io/vitnx). There are also actual [examples](https://github.com/Zalexanninev15/VitNX/tree/main/source/Examples_netframework45) (.NET Framework 4.5), but they use only the smallest functionality of the library (mostly implemented UI)
 
 ## Used in
 
+* [Shark Remote (RU)](https://t.me/wit_releases/36) (Alpha) (VitNX version 3.0)
 * [Jetpack Downgrader](https://github.com/Zalexanninev15/Jetpack-Downgrader) (VitNX Version 1.1.3-PreFinalBeta)
 
 ## Build

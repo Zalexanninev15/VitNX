@@ -1,1 +1,1 @@
-search_result['1071']=["topic_0000000000000322.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Structure",""];
+search_result['1071']=["topic_0000000000000381.html","ERROR_INVALID_PRIMARY_GROUP Field",""];

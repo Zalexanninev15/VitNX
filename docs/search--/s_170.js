@@ -1,1 +1,1 @@
-search_result['170']=["topic_000000000000006E.html","Windows.GetWindowsEditionIDFromREG Method","Gets the Windows edition from the Windows Registry."];
+search_result['170']=["topic_000000000000006D_attached_props--.html","Windows Attached Properties",""];

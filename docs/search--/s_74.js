@@ -1,1 +1,1 @@
-search_result['74']=["topic_0000000000000031.html","Text.ListRemoveStringsFromList Method","Lists the remove strings from list."];
+search_result['74']=["topic_000000000000002C.html","Text.DateAsShortTime Method","Converts the date to short time."];

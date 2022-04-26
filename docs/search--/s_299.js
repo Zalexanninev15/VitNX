@@ -1,1 +1,1 @@
-search_result['299']=["topic_00000000000000B7_methods--.html","Config Methods",""];
+search_result['299']=["topic_00000000000000BA.html","DataFromSites Class","Work with data from sites."];
