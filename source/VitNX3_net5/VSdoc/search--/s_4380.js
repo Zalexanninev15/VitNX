@@ -1,0 +1,1 @@
+search_result['4380']=["topic_00000000000010F7_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

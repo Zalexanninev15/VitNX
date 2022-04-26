@@ -1,0 +1,1 @@
+search_result['168']=["topic_000000000000006D.html","Windows.GetCurrentUsername Method","Gets the current user (name)."];

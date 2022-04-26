@@ -1,0 +1,1 @@
+search_result['232']=["topic_0000000000000094.html","ComPort Class","Work with informations of COM port."];

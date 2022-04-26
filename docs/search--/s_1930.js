@@ -1,1 +1,1 @@
-search_result['1930']=["topic_00000000000006FF.html","VitNX_SectionPanel.OnPaint Method","Raises the Paint event."];
+search_result['1930']=["topic_00000000000006DC.html","ERROR_DS_UNABLE_TO_SURRENDER_ROLES Field",""];

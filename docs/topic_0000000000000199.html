@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetThreadExecutionState Method</title>
+	<title>Import.DisplayConfigGetDeviceInfo Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetThreadExecutionState Method</h1>
+		<h1 class="title">Import.DisplayConfigGetDeviceInfo Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,9 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;,
-            CharSet = CharSet.Auto,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="topic_000000000000059E.html" onclick="this.target='';return true;">EXECUTION_STATE</a> SetThreadExecutionState(&nbsp;<br />   <a target="_top" href="topic_000000000000059E.html" onclick="this.target='';return true;">EXECUTION_STATE</a> <i>esFlags</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DisplayConfigGetDeviceInfo(&nbsp;<br />   ref <a target="_top" href="topic_00000000000010C7.html" onclick="this.target='';return true;">DISPLAYCONFIG_TARGET_DEVICE_NAME</a> <i>deviceName</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="esFlags" class="parameterList">
+	Parameters</h4><dl paramName="deviceName" class="parameterList">
 	<dt>
 		<span class="parameter">
-			esFlags
+			deviceName
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_000000000000059E.html" onclick="this.target='';return true;">EXECUTION_STATE</a> 
+		<a target="_top" href="topic_00000000000010C7.html" onclick="this.target='';return true;">DISPLAYCONFIG_TARGET_DEVICE_NAME</a> 
 	</dd>
 </dl>
 <p>
@@ -171,7 +169,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="topic_000000000000059E.html" onclick="this.target='';return true;">EXECUTION_STATE</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -246,10 +244,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;kernel32.dll&quot;,
-     CharSet = CharSet.Auto,
-     SetLastError = true)]
- public static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
+[DllImport(&quot;user32.dll&quot;)]
+ public static extern int DisplayConfigGetDeviceInfo(ref Monitor.
+     DISPLAYCONFIG_TARGET_DEVICE_NAME deviceName);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -335,7 +332,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

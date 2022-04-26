@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_MessageBoxType1.Show (IWin32Window, String, String, MessageBoxButtons) Method</title>
+	<title>WSAETIMEDOUT Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_MessageBoxType1.Show (IWin32Window, String, String, MessageBoxButtons) Method</h1>
+		<h1 class="title">WSAETIMEDOUT Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000007D9.html">VitNX2.UI.ControlsV2</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> Show(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.iwin32window">IWin32Window</a> <i>owner</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> <i>buttons</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> WSAETIMEDOUT = 10060</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,65 +150,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="owner" class="parameterList">
-	<dt>
-		<span class="parameter">
-			owner
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.iwin32window">IWin32Window</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="text" class="parameterList">
-	<dt>
-		<span class="parameter">
-			text
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="caption" class="parameterList">
-	<dt>
-		<span class="parameter">
-			caption
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="buttons" class="parameterList">
-	<dt>
-		<span class="parameter">
-			buttons
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -283,16 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static DialogResult Show(IWin32Window owner,
-     string text,
-     string caption,
-     MessageBoxButtons buttons)
- {
-     DialogResult result;
-     using (var msgForm = new VitNX2_MessageBoxType1_Form(text, caption, buttons))
-         result = msgForm.ShowDialog(owner);
-     return result;
- }
+public const int WSAETIMEDOUT = 10060;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -356,11 +292,11 @@ public static DialogResult Show(IWin32Window owner,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000810.html">VitNX2_MessageBoxType1 Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_00000000000007D9.html">VitNX2.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -378,8 +314,7 @@ public static DialogResult Show(IWin32Window owner,
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>
-

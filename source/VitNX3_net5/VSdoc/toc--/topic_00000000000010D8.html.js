@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['4814',"VitNX3.Functions.WindowAndControls Namespace","topic_00000000000010D4.html"],['4819',"Window Class","topic_00000000000010D5.html"],['4820',"Methods","topic_00000000000010D5_methods--.html"],['4821',"HideConsoleWindow Method","topic_00000000000010D8.html"]];

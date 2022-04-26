@@ -1,0 +1,1 @@
+search_result['107']=["topic_0000000000000049.html","EncrypterAndDecrypter.EncryptQryParam Method","Encrypts the text with qry param."];

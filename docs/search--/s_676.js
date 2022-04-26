@@ -1,1 +1,1 @@
-search_result['676']=["topic_00000000000001F6.html","ERROR_DS_SAM_INIT_FAILURE Field","Security Accounts Manager initialization failed because of the following error: %1.\r\nError Status: 0x%2. Click OK to shut down the system and reboot into Directory Services Restore Mode. Check the eve..."];
+search_result['676']=["topic_00000000000001F6.html","ERROR_BAD_COMMAND Field",""];

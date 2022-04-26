@@ -1,0 +1,1 @@
+c['724']=[['725',"VitNX2_MessageBoxType2 Constructor","topic_000000000000135D.html",0],['726',"Properties","topic_000000000000135B_props--.html",1],['728',"Methods","topic_000000000000135B_methods--.html",1]];

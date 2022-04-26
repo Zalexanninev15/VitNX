@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_TextBox.OnPaint Method</title>
+	<title>WSA_QOS_EUNKOWNPSOBJ Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_TextBox.OnPaint Method</h1>
+		<h1 class="title">WSA_QOS_EUNKOWNPSOBJ Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000007D9.html">VitNX2.UI.ControlsV2</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> WSA_QOS_EUNKOWNPSOBJ = 11024</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -241,55 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnPaint(PaintEventArgs e)
- {
-     base.OnPaint(e);
-     Graphics graph = e.Graphics;
-     if (borderRadius &gt; 1)
-     {
-         var rectBorderSmooth = ClientRectangle;
-         var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);
-         int smoothSize = borderSize &gt; 0 ? borderSize : 1;
-         using (GraphicsPath pathBorderSmooth = GetFigurePath(rectBorderSmooth, borderRadius))
-         using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-         using (Pen penBorderSmooth = new Pen(Parent.BackColor, smoothSize))
-         using (Pen penBorder = new Pen(borderColor, borderSize))
-         {
-             Region = new Region(pathBorderSmooth);
-             if (borderRadius &gt; 15)
-                 SetTextBoxRoundedRegion();
-             graph.SmoothingMode = SmoothingMode.AntiAlias;
-             penBorder.Alignment = PenAlignment.Center;
-             if (isFocused)
-                 penBorder.Color = borderFocusColor;
-             if (underlinedStyle)
-             {
-                 graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                 graph.SmoothingMode = SmoothingMode.None;
-                 graph.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);
-             }
-             else
-             {
-                 graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                 graph.DrawPath(penBorder, pathBorder);
-             }
-         }
-     }
-     else
-     {
-         using (Pen penBorder = new Pen(borderColor, borderSize))
-         {
-             Region = new Region(ClientRectangle);
-             penBorder.Alignment = PenAlignment.Inset;
-             if (isFocused)
-                 penBorder.Color = borderFocusColor;
-             if (underlinedStyle)
-                 graph.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);
-             else
-                 graph.DrawRectangle(penBorder, 0, 0, Width - 0.5F, Height - 0.5F);
-         }
-     }
- }
+public const int WSA_QOS_EUNKOWNPSOBJ = 11024;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -353,11 +292,11 @@ protected override void OnPaint(PaintEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000845.html">VitNX2_TextBox Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_00000000000007D9.html">VitNX2.UI.ControlsV2 Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -375,8 +314,7 @@ protected override void OnPaint(PaintEventArgs e)
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>
-

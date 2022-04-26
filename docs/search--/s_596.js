@@ -1,1 +1,1 @@
-search_result['596']=["topic_00000000000001B5.html","MFT_STRING Field",""];
+search_result['596']=["topic_00000000000001B5.html","HWND_BOTTOM Field",""];

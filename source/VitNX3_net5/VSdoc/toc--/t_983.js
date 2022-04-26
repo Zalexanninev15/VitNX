@@ -1,0 +1,1 @@
+c['983']=[['984',"Copy Method","topic_0000000000000055.html",0],['985',"DeleteForever Method","topic_0000000000000056.html",0],['986',"DeleteToRecycleBin Method","topic_0000000000000057.html",0],['987',"GetItemsList Method","topic_0000000000000052.html",0],['988',"GetSize Method","topic_0000000000000053.html",0],['989',"Zip Method","topic_0000000000000054.html",0]];

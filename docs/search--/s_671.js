@@ -1,1 +1,1 @@
-search_result['671']=["topic_00000000000001F1.html","FRS_ERR_CHILD_TO_PARENT_COMM Field","The file replication service cannot communicate with the file replication service on the domain controller.\r\nThe event log may have more information."];
+search_result['671']=["topic_00000000000001F1.html","ERROR_NOT_SAME_DEVICE Field",""];

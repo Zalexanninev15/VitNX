@@ -1,1 +1,1 @@
-search_result['825']=["topic_0000000000000286.html","COMADMIN_E_BADPATH Field",""];
+search_result['825']=["topic_000000000000028B.html","ERROR_NO_DATA Field",""];

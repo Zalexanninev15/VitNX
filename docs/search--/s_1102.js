@@ -1,1 +1,1 @@
-search_result['1102']=["topic_0000000000000392.html","pt_y Field",""];
+search_result['1102']=["topic_00000000000003A0.html","ERROR_BAD_INHERITANCE_ACL Field",""];

@@ -1,0 +1,1 @@
+search_result['4134']=["topic_0000000000001083.html","GetClipboardText Class","Get clipboard text."];

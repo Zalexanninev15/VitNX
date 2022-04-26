@@ -1,1 +1,1 @@
-search_result['702']=["topic_000000000000020B.html","SPAPI_E_DUPLICATE_FOUND Field",""];
+search_result['702']=["topic_0000000000000210.html","ERROR_BAD_REM_ADAP Field",""];

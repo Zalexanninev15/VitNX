@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockGroup.EnsureVisible Method</title>
+	<title>ERROR_DS_UNICODEPWD_NOT_IN_QUOTES Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockGroup.EnsureVisible Method</h1>
+		<h1 class="title">ERROR_DS_UNICODEPWD_NOT_IN_QUOTES Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000736.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> EnsureVisible()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ERROR_DS_UNICODEPWD_NOT_IN_QUOTES = 8556</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,6 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -224,35 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void EnsureVisible()
- {
-     if (DockArea != VitNX_DockArea.Document)
-         return;
-     if (VisibleContent == null)
-         return;
-     var width = ClientRectangle.Width - Padding.Horizontal - _tabArea.DropdownRectangle.Width;
-     var offsetArea = new Rectangle(Padding.Left, 0, width, 0);
-     var tab = _tabs[VisibleContent];
-     if (tab.ClientRectangle.IsEmpty)
-         return;
-     if (RectangleToTabArea(tab.ClientRectangle).Left &lt; offsetArea.Left)
-         _tabArea.Offset = tab.ClientRectangle.Left;
-     else if (RectangleToTabArea(tab.ClientRectangle).Right &gt; offsetArea.Right)
-         _tabArea.Offset = tab.ClientRectangle.Right - width;
-     if (_tabArea.TotalTabSize &lt; offsetArea.Width)
-         _tabArea.Offset = 0;
-     if (_tabArea.TotalTabSize &gt; offsetArea.Width)
-     {
-         var orderedContent = _contents.OrderBy(x =&gt; x.Order);
-         var lastTab = _tabs[orderedContent.Last()];
-         if (lastTab != null)
-         {
-             if (RectangleToTabArea(lastTab.ClientRectangle).Right &lt; offsetArea.Right)
-                 _tabArea.Offset = lastTab.ClientRectangle.Right - width;
-         }
-     }
-     Invalidate();
- }
+public const int ERROR_DS_UNICODEPWD_NOT_IN_QUOTES = 8556;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -316,11 +292,11 @@ public void EnsureVisible()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000750.html">VitNX_DockGroup Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_0000000000000736.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -338,8 +314,7 @@ public void EnsureVisible()
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>
-

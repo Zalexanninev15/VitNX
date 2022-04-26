@@ -1,0 +1,1 @@
+search_result['267']=["topic_00000000000000AA.html","PowerControl.Computer Method","The power of computer."];

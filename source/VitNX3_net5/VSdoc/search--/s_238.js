@@ -1,0 +1,1 @@
+search_result['238']=["topic_0000000000000095.html","ComPort.GetAllDevices Method","Gets all COM ports (devices)."];

@@ -1,0 +1,1 @@
+search_result['70']=["topic_000000000000002E.html","Text.ContainsNumbersLatters Method","Contains the numbers latters."];

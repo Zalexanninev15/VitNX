@@ -1,1 +1,1 @@
-search_result['933']=["topic_00000000000002F2.html","ResultCom.Failed Method",""];
+search_result['933']=["topic_00000000000002F7.html","ERROR_SERIAL_NO_DEVICE Field",""];

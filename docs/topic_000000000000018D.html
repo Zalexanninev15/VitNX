@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetImmersiveUserColorSetPreference Method</title>
+	<title>Import.CheckRemoteDebuggerPresent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetImmersiveUserColorSetPreference Method</h1>
+		<h1 class="title">Import.CheckRemoteDebuggerPresent Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetImmersiveUserColorSetPreference(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bForceCheckRegistry</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bSkipCheckOnFail</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;,
+            SetLastError = true,
+            ExactSpelling = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CheckRemoteDebuggerPresent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hProcess</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>isDebuggerPresent</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +153,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="bForceCheckRegistry" class="parameterList">
+	Parameters</h4><dl paramName="hProcess" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bForceCheckRegistry
+			hProcess
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="bSkipCheckOnFail" class="parameterList">
+<dl paramName="isDebuggerPresent" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bSkipCheckOnFail
+			isDebuggerPresent
 		</span>
 	</dt>
 	<dd>
@@ -182,7 +184,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -257,9 +259,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]
- public static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry,
-     bool bSkipCheckOnFail);
+[DllImport(&quot;kernel32.dll&quot;,
+     SetLastError = true,
+     ExactSpelling = true)]
+ public static extern bool CheckRemoteDebuggerPresent(IntPtr hProcess,
+     ref bool isDebuggerPresent);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -345,7 +349,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

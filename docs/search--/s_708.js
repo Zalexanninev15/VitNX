@@ -1,1 +1,1 @@
-search_result['708']=["topic_0000000000000211.html","SPAPI_E_DEVINFO_NOT_REGISTERED Field",""];
+search_result['708']=["topic_0000000000000216.html","ERROR_BAD_DEV_TYPE Field",""];

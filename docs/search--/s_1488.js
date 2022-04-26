@@ -1,1 +1,1 @@
-search_result['1488']=["topic_00000000000005FB_vars--.html","DISPLAYCONFIG_VIDEO_SIGNAL_INFO Fields",""];
+search_result['1488']=["topic_0000000000000522.html","ERROR_RPL_NOT_ALLOWED Field",""];

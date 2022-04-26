@@ -1,0 +1,1 @@
+search_result['4318']=["topic_00000000000010D8.html","Window.HideConsoleWindow Method","Hides the console window."];

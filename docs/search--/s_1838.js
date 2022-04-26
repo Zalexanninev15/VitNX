@@ -1,1 +1,1 @@
-search_result['1838']=["topic_00000000000006BA_vars--.html","VitNX_NumericUpDown Fields",""];
+search_result['1838']=["topic_0000000000000680.html","ERROR_DS_CLASS_NOT_DSA Field",""];

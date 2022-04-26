@@ -1,1 +1,1 @@
-search_result['527']=["topic_000000000000017C.html","LowLevelKeyboardProcDelegate Delegate",""];
+search_result['527']=["topic_000000000000017C.html","Import.GetConsoleWindow Method",""];

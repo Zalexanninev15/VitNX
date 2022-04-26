@@ -1,1 +1,1 @@
-c['388']=[['389',"VitNX_MessageBox Constructor","topic_00000000000007A8_overloads--.html",1],['396',"Methods","topic_00000000000007A6_methods--.html",1]];
+c['388']=[['389',"VitNX_MessageBox Constructor","topic_0000000000001255_overloads--.html",1],['396',"Methods","topic_0000000000001253_methods--.html",1]];

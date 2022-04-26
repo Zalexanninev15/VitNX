@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FormSkin.OnCreateControl Method</title>
+	<title>WSAEWOULDBLOCK Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FormSkin.OnCreateControl Method</h1>
+		<h1 class="title">WSAEWOULDBLOCK Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000007F8.html">VitNX2.UI.ControlsV2.UiKit</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnCreateControl()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> WSAEWOULDBLOCK = 10035</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,6 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -224,16 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnCreateControl()
- {
-     OnCreateControl();
-     ParentForm.FormBorderStyle = FormBorderStyle.None;
-     ParentForm.AllowTransparency = false;
-     ParentForm.TransparencyKey = Color.Fuchsia;
-     ParentForm.FindForm().StartPosition = FormStartPosition.CenterScreen;
-     Dock = DockStyle.Fill;
-     Invalidate();
- }
+public const int WSAEWOULDBLOCK = 10035;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -297,11 +292,11 @@ protected override void OnCreateControl()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000007FB.html">FormSkin Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_00000000000007F8.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -319,8 +314,7 @@ protected override void OnCreateControl()
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>
-

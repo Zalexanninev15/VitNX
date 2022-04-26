@@ -1,1 +1,1 @@
-search_result['2207']=["topic_00000000000007B0.html","VitNX_MessageBox.ShowError Method","Shows the error MessageBox."];
+search_result['2207']=["topic_00000000000007F1.html","DNS_ERROR_NO_DNS_SERVERS Field",""];

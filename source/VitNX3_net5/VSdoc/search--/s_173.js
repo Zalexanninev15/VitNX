@@ -1,0 +1,1 @@
+search_result['173']=["topic_0000000000000072.html","Windows.GetWindowsEditionIDFromREG Method","Gets the Windows edition from the Windows Registry."];

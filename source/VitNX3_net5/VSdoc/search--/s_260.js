@@ -1,0 +1,1 @@
+search_result['260']=["topic_00000000000000A4.html","PowerControl Class","Work with the power control."];

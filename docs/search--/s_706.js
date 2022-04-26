@@ -1,1 +1,1 @@
-search_result['706']=["topic_000000000000020F.html","SPAPI_E_INVALID_CLASS Field",""];
+search_result['706']=["topic_0000000000000214.html","ERROR_NETNAME_DELETED Field",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.DwmSetWindowAttribute Method</title>
+	<title>Import.GetPrivateProfileString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.DwmSetWindowAttribute Method</h1>
+		<h1 class="title">Import.GetPrivateProfileString Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;dwmapi.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DwmSetWindowAttribute(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="topic_000000000000031D.html" onclick="this.target='';return true;">DWM_GET_WINDOW_ATTRIBUTE</a> <i>attribute</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a>[] <i>attrValue</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>cbAttribute</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32&quot;,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetPrivateProfileString(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Section</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Default</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>RetVal</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>Size</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>FilePath</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,53 +152,79 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	Parameters</h4><dl paramName="Section" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWnd
+			Section
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="attribute" class="parameterList">
+<dl paramName="Key" class="parameterList">
 	<dt>
 		<span class="parameter">
-			attribute
+			Key
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_000000000000031D.html" onclick="this.target='';return true;">DWM_GET_WINDOW_ATTRIBUTE</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="attrValue" class="parameterList">
+<dl paramName="Default" class="parameterList">
 	<dt>
 		<span class="parameter">
-			attrValue
+			Default
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a>[] 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="cbAttribute" class="parameterList">
+<dl paramName="RetVal" class="parameterList">
 	<dt>
 		<span class="parameter">
-			cbAttribute
+			RetVal
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="Size" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Size
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="FilePath" class="parameterList">
+	<dt>
+		<span class="parameter">
+			FilePath
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
@@ -284,12 +310,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;dwmapi.dll&quot;,
-     SetLastError = true)]
- public static extern int DwmSetWindowAttribute(IntPtr hWnd,
-     DWM_GET_WINDOW_ATTRIBUTE attribute,
-     int[] attrValue,
-     uint cbAttribute);
+[DllImport(&quot;kernel32&quot;,
+     CharSet = CharSet.Unicode)]
+ public static extern int GetPrivateProfileString(string Section,
+     string Key,
+     string Default,
+     StringBuilder RetVal,
+     int Size,
+     string FilePath);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -375,7 +403,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

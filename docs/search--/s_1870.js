@@ -1,1 +1,1 @@
-search_result['1870']=["topic_00000000000006D0.html","ValueChanged Event",""];
+search_result['1870']=["topic_00000000000006A0.html","ERROR_DS_CANT_DEL_MASTER_CROSSREF Field",""];

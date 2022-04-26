@@ -1,1 +1,0 @@
-c['1672']=[['1673',"HideVirtualKeyboard Method","topic_00000000000005DD.html",0],['1674',"KeyDown Method","topic_00000000000005DE.html",0],['1675',"KeyUp Method","topic_00000000000005DF.html",0],['1676',"ShowVirtualKeyboard Method","topic_00000000000005DC.html",0],['1677',"WindowsKeyboardEventsAPI Method","topic_00000000000005E0.html",0]];

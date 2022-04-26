@@ -1,1 +1,0 @@
-c['1781']=[['1782',"Controls Class","topic_000000000000062F.html",1],['1786',"Window Class","topic_0000000000000627.html",1]];

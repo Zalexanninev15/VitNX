@@ -1,1 +1,1 @@
-search_result['771']=["topic_0000000000000250.html","SCARD_E_CANT_DISPOSE Field",""];
+search_result['771']=["topic_0000000000000255.html","ERROR_IS_SUBST_TARGET Field",""];

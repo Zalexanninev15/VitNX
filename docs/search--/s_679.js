@@ -1,1 +1,1 @@
-search_result['679']=["topic_00000000000001F9.html","ERROR_DS_SAM_INIT_FAILURE_CONSOLE Field","Security Accounts Manager initialization failed because of the following error: %1.\r\nError Status: 0x%2. Please click OK to shutdown the system. You can use the recovery console to diagnose the system..."];
+search_result['679']=["topic_00000000000001F9.html","ERROR_SEEK Field",""];

@@ -1,1 +1,1 @@
-search_result['436']=["topic_000000000000012B.html","Import.GetTextExtentPoint32 Method",""];
+search_result['436']=["topic_000000000000012B.html","Import.GetSysColor Method",""];

@@ -1,0 +1,1 @@
+search_result['182']=["topic_000000000000007B.html","Windows.GetWindowsAccentColor Method","Gets the Windows accent color."];

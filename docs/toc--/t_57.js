@@ -1,1 +1,1 @@
-c['57']=[['58',"VitNX_CheckBox Constructor","topic_000000000000066C.html",0],['59',"Methods","topic_000000000000066B_methods--.html",1]];
+c['57']=[['58',"VitNX_CheckBox Constructor","topic_0000000000001119.html",0],['59',"Methods","topic_0000000000001118_methods--.html",1]];
