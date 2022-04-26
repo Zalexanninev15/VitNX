@@ -1,1 +1,0 @@
-c['563']=[['564',"VitNX_ToolWindow Constructor","topic_00000000000012EA.html",0],['565',"Properties","topic_00000000000012E8_props--.html",1],['567',"Methods","topic_00000000000012E8_methods--.html",1]];

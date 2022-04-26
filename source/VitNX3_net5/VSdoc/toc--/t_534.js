@@ -1,1 +1,0 @@
-c['534']=[['535',"VitNX_DockRegion Constructor","topic_00000000000012D0.html",0],['536',"Properties","topic_00000000000012CB_props--.html",1],['541',"Methods","topic_00000000000012CB_methods--.html",1]];

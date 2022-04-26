@@ -1,1 +1,0 @@
-search_result['298']=["topic_00000000000000BA.html","DataFromSites.DownloadFileWithSupportOfResume Method","Downloads the file with support of download resume."];

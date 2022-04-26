@@ -1,1 +1,0 @@
-search_result['27']=["topic_0000000000000012.html","Installed.GetPath Method","Gets the path of application from the Windows Registry."];

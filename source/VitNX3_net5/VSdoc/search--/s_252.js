@@ -1,1 +1,0 @@
-search_result['252']=["topic_0000000000000099.html","Internet.GetHostName Method","Gets the host name (name of PC, Windows System)."];

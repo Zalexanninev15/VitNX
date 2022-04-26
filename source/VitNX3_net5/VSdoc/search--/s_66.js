@@ -1,1 +1,0 @@
-search_result['66']=["topic_000000000000002A.html","Text.DateAsShortTime Method","Converts the date to short time."];

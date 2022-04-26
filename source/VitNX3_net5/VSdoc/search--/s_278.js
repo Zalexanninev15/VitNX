@@ -1,1 +1,0 @@
-search_result['278']=["topic_00000000000000B0.html","Ini.Write Method","Writes the value to key in section."];

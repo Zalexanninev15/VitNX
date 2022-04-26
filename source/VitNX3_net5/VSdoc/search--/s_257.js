@@ -1,1 +1,0 @@
-search_result['257']=["topic_000000000000009E.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];

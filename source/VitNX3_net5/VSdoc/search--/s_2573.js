@@ -1,1 +1,0 @@
-search_result['2573']=["topic_0000000000000960.html","DV_E_TYMED Field",""];

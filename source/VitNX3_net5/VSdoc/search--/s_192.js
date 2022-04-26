@@ -1,1 +1,0 @@
-search_result['192']=["topic_0000000000000080.html","Gpu Class","Work with informations of GPU(s)."];

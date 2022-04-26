@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['66',"VitNX.UI.ControlsV1.Controls Namespace","topic_0000000000001121.html"],['249',"VitNX_RadioButton Class","topic_00000000000011CA.html"],['267',"Methods","topic_00000000000011CA_methods--.html"],['268',"OnGotFocus Method","topic_00000000000011E0.html"]];

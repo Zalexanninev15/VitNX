@@ -1,1 +1,0 @@
-search_result['68']=["topic_000000000000002C.html","Text.DateAsMonth Method","Converts the date to month."];

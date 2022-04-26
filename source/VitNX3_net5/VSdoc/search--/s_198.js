@@ -1,1 +1,0 @@
-search_result['198']=["topic_0000000000000081.html","Gpu.Characteristics Method","Gets all characteristics."];

@@ -1,1 +1,0 @@
-search_result['218']=["topic_000000000000008B.html","Monitor.CaptureWindowToFile Method","Captures the window to file."];

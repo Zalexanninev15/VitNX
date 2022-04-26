@@ -1,1 +1,0 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['66',"VitNX.UI.ControlsV1.Controls Namespace","topic_0000000000001121.html"],['232',"VitNX_MenuStrip Class","topic_00000000000011BB.html"],['233',"VitNX_MenuStrip Constructor","topic_00000000000011BC.html"]];

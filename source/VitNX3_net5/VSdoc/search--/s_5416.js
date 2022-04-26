@@ -1,1 +1,0 @@
-search_result['5416']=["topic_00000000000013D6.html","VitNX2_ProgressBarRoundedType2.Animate Method","Starts the animation of filling the progress bar"];

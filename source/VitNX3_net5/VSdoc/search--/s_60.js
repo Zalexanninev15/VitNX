@@ -1,1 +1,0 @@
-search_result['60']=["topic_0000000000000024.html","Text.NumberAsPercentD Method","Gets the number as percent (double)."];

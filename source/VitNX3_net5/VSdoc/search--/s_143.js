@@ -1,1 +1,0 @@
-search_result['143']=["topic_000000000000005E.html","File.GetText Method","Gets the text from file."];

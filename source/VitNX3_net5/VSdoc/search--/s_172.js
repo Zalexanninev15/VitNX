@@ -1,1 +1,0 @@
-search_result['172']=["topic_0000000000000071.html","Windows.GetWindowsVersionFromREG Method","Gets the Windows version from the Windows Registry."];

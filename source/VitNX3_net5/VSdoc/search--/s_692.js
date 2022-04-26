@@ -1,1 +1,0 @@
-search_result['692']=["topic_000000000000020C.html","ERROR_BAD_NET_RESP Field",""];

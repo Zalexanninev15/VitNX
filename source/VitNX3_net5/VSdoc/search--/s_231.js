@@ -1,1 +1,0 @@
-search_result['231']=["topic_0000000000000093.html","Motherboard.GetFirmwareType Method","Gets the firmware type (Cmd)."];
