@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['993',"VitNX3.Functions.Information Namespace","topic_000000000000006A.html"],['997',"Cpu Class","topic_000000000000007C.html"],['998',"Methods","topic_000000000000007C_methods--.html"],['1001',"GetClockSpeed Method","topic_000000000000007F.html"]];

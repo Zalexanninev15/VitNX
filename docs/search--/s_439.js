@@ -1,1 +1,1 @@
-search_result['439']=["topic_000000000000012E.html","Import.GetThemeMetric Method",""];
+search_result['439']=["topic_000000000000012E.html","Import.GetTextExtentPoint32 Method",""];

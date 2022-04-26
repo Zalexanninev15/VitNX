@@ -1,0 +1,1 @@
+search_result['300']=["topic_00000000000000BC.html","DataFromSites.GetGeo Method","Gets the geolocation of PC."];

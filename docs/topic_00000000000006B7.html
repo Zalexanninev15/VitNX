@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ListView.PaintContent Method</title>
+	<title>ERROR_DS_CANT_DELETE Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ListView.PaintContent Method</h1>
+		<h1 class="title">ERROR_DS_CANT_DELETE Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000657.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> PaintContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> <i>g</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> ERROR_DS_CANT_DELETE = 8398</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,23 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="g" class="parameterList">
-	<dt>
-		<span class="parameter">
-			g
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics">Graphics</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -240,65 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void PaintContent(Graphics g)
- {
-     var range = ItemIndexesInView().ToList();
- 
-     if (range.Count == 0)
-         return;
- 
-     var top = range.Min();
-     var bottom = range.Max();
- 
-     for (var i = top; i &lt;= bottom; i++)
-     {
-         var width = Math.Max(ContentSize.Width, Viewport.Width);
-         var rect = new Rectangle(0, i * ItemHeight, width, ItemHeight);
- 
-         // Background
-         var odd = i % 2 != 0;
-         var bgColor = !odd ? Colors.HeaderBackground : Colors.GreyBackground;
- 
-         if (SelectedIndices.Count &gt; 0 &amp;&amp; SelectedIndices.Contains(i))
-             bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;
- 
-         using (var b = new SolidBrush(bgColor))
-         {
-             g.FillRectangle(b, rect);
-         }
- 
-         // DEBUG: Border
-         /*using (var p = new Pen(Colors.VitNXBorder))
-         {
-             g.DrawLine(p, new Point(rect.Left, rect.Bottom - 1), new Point(rect.Right, rect.Bottom - 1));
-         }*/
- 
-         // Icon
-         if (ShowIcons &amp;&amp; Items[i].Icon != null)
-         {
-             g.DrawImageUnscaled(Items[i].Icon, new Point(rect.Left + 5, rect.Top + (rect.Height / 2) - (_iconSize / 2)));
-         }
- 
-         // Text
-         using (var b = new SolidBrush(Items[i].TextColor))
-         {
-             var stringFormat = new StringFormat
-             {
-                 Alignment = StringAlignment.Near,
-                 LineAlignment = StringAlignment.Center
-             };
- 
-             var modFont = new Font(Font, Items[i].FontStyle);
- 
-             var modRect = new Rectangle(rect.Left + 2, rect.Top, rect.Width, rect.Height);
- 
-             if (ShowIcons)
-                 modRect.X += _iconSize + 8;
- 
-             g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);
-         }
-     }
- }
+public const int ERROR_DS_CANT_DELETE = 8398;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -362,11 +292,11 @@ protected override void PaintContent(Graphics g)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000006AC.html">VitNX_ListView Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_0000000000000657.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -384,8 +314,7 @@ protected override void PaintContent(Graphics g)
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>
-

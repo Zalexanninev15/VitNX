@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetProcessDpiAwareness Method</title>
+	<title>Import.QueryDisplayConfig Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetProcessDpiAwareness Method</h1>
+		<h1 class="title">Import.QueryDisplayConfig Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;shcore.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> SetProcessDpiAwareness(&nbsp;<br />   <a target="_top" href="topic_00000000000005A8.html" onclick="this.target='';return true;">PROCESS_DPI_AWARENESS</a> <i>PROCESS_DPI_UNAWARE</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> QueryDisplayConfig(&nbsp;<br />   <a target="_top" href="topic_0000000000000F06.html" onclick="this.target='';return true;">QUERY_DEVICE_CONFIG_FLAGS</a> <i>flags</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>numPathArrayElements</i>,&nbsp;<br />   [Out()]&nbsp;<br />   <a target="_top" href="topic_00000000000010A1.html" onclick="this.target='';return true;">DISPLAYCONFIG_PATH_INFO</a>[] <i>PathInfoArray</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>numModeInfoArrayElements</i>,&nbsp;<br />   [Out()]&nbsp;<br />   <a target="_top" href="topic_00000000000010BB.html" onclick="this.target='';return true;">DISPLAYCONFIG_MODE_INFO</a>[] <i>ModeInfoArray</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>currentTopologyId</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,14 +151,79 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="PROCESS_DPI_UNAWARE" class="parameterList">
+	Parameters</h4><dl paramName="flags" class="parameterList">
 	<dt>
 		<span class="parameter">
-			PROCESS_DPI_UNAWARE
+			flags
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000005A8.html" onclick="this.target='';return true;">PROCESS_DPI_AWARENESS</a> 
+		<a target="_top" href="topic_0000000000000F06.html" onclick="this.target='';return true;">QUERY_DEVICE_CONFIG_FLAGS</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="numPathArrayElements" class="parameterList">
+	<dt>
+		<span class="parameter">
+			numPathArrayElements
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="PathInfoArray" class="parameterList">
+	<dt>
+		<span class="parameter">
+			PathInfoArray
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000010A1.html" onclick="this.target='';return true;">DISPLAYCONFIG_PATH_INFO</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="numModeInfoArrayElements" class="parameterList">
+	<dt>
+		<span class="parameter">
+			numModeInfoArrayElements
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="ModeInfoArray" class="parameterList">
+	<dt>
+		<span class="parameter">
+			ModeInfoArray
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000010BB.html" onclick="this.target='';return true;">DISPLAYCONFIG_MODE_INFO</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="currentTopologyId" class="parameterList">
+	<dt>
+		<span class="parameter">
+			currentTopologyId
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -245,9 +309,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;shcore.dll&quot;,
-     SetLastError = true)]
- public static extern int SetProcessDpiAwareness(PROCESS_DPI_AWARENESS PROCESS_DPI_UNAWARE);
+[DllImport(&quot;user32.dll&quot;)]
+ public static extern int QueryDisplayConfig(QUERY_DEVICE_CONFIG_FLAGS flags,
+     ref uint numPathArrayElements,
+     [Out] Monitor.DISPLAYCONFIG_PATH_INFO[] PathInfoArray,
+     ref uint numModeInfoArrayElements,
+     [Out] Monitor.DISPLAYCONFIG_MODE_INFO[] ModeInfoArray,
+     IntPtr currentTopologyId);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -333,7 +401,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

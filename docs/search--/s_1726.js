@@ -1,1 +1,1 @@
-search_result['1726']=["topic_0000000000000679.html","VitNX_ComboBox.Dispose Method","Releases the unmanaged resources used by the ComboBox and optionally releases the managed resources."];
+search_result['1726']=["topic_0000000000000610.html","FRS_ERR_PARENT_INSUFFICIENT_PRIV Field",""];

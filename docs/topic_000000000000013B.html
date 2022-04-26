@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.MapVirtualKey Method</title>
+	<title>Import.InvalidateRect (IntPtr, ref RECT, Boolean) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.MapVirtualKey Method</h1>
+		<h1 class="title">Import.InvalidateRect (IntPtr, ref RECT, Boolean) Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -137,8 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> MapVirtualKey(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>uCode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>uMapType</i>&nbsp;<br />)</pre>			
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> InvalidateRect(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E80.html" onclick="this.target='';return true;">RECT</a> <i>lpRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bErase</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,27 +152,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="uCode" class="parameterList">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			uCode
+			hWnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="uMapType" class="parameterList">
+<dl paramName="lpRect" class="parameterList">
 	<dt>
 		<span class="parameter">
-			uMapType
+			lpRect
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="topic_0000000000000E80.html" onclick="this.target='';return true;">RECT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="bErase" class="parameterList">
+	<dt>
+		<span class="parameter">
+			bErase
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	</dd>
 </dl>
 <p>
@@ -184,7 +196,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -260,10 +272,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto,
-     SetLastError = true)]
- public static extern int MapVirtualKey(int uCode,
-     int uMapType);
+     CharSet = CharSet.Auto)]
+ public static extern bool InvalidateRect(IntPtr hWnd,
+     ref RECT lpRect,
+     bool bErase);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -349,7 +361,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-search_result['1994']=["topic_000000000000071A_vars--.html","VitNX_TreeView Fields",""];
+search_result['1994']=["topic_000000000000071C.html","ERROR_DS_CANT_MOVE_RESOURCE_GROUP Field",""];

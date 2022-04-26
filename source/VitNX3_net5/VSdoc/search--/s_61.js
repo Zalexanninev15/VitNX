@@ -1,0 +1,1 @@
+search_result['61']=["topic_0000000000000025.html","Text.NumberAsPercentI Method","Gets the number as percent (int32)."];

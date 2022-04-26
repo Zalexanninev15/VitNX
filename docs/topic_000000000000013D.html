@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.MessageBeep (Int32) Method</title>
+	<title>Import.KillTimer Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.MessageBeep (Int32) Method</h1>
+		<h1 class="title">Import.KillTimer Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -137,8 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto,
-            ExactSpelling = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> MessageBeep(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>type</i>&nbsp;<br />)</pre>			
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> KillTimer(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>nIDEvent</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,14 +152,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="type" class="parameterList">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			type
+			hWnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nIDEvent" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nIDEvent
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -171,7 +183,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	
 
 
@@ -247,9 +259,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto,
-     ExactSpelling = true)]
- public static extern bool MessageBeep(int type);
+     CharSet = CharSet.Auto)]
+ public static extern IntPtr KillTimer(IntPtr hWnd,
+     IntPtr nIDEvent);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -335,7 +347,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

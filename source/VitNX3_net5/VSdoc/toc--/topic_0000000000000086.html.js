@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3_net5 Reference","topic_0000000000001730.html"],['993',"VitNX3.Functions.Information Namespace","topic_000000000000006A.html"],['1002',"Disk Class","topic_0000000000000082.html"],['1003',"Methods","topic_0000000000000082_methods--.html"],['1006',"GetTotalSpace Method","topic_0000000000000086.html"]];

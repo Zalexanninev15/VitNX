@@ -1,1 +1,1 @@
-search_result['519']=["topic_0000000000000174.html","Import.GetConsoleWindow Method",""];
+search_result['519']=["topic_0000000000000176.html","Import.ValidateRect (IntPtr, ref RECT) Method",""];

@@ -1,0 +1,1 @@
+search_result['96']=["topic_0000000000000043.html","EncryptAndDecrypt.SimpleEncryptAsByte Method","Simples the encrypt as byte."];

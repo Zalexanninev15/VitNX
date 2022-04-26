@@ -1,1 +1,1 @@
-search_result['1734']=["topic_0000000000000680.html","VitNX_ComboBox.OnSelectedValueChanged Method","Raises the SelectedValueChanged event."];
+search_result['1734']=["topic_0000000000000618.html","FRS_ERR_INVALID_SERVICE_PARAMETER Field",""];

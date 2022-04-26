@@ -1,1 +1,1 @@
-search_result['562']=["topic_000000000000019B.html","Import.SHEmptyRecycleBin Method",""];
+search_result['562']=["topic_000000000000019C.html","Import.GetWindowDC Method",""];

@@ -1,1 +1,1 @@
-search_result['1948']=["topic_0000000000000707.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];
+search_result['1948']=["topic_00000000000006EE.html","ERROR_DS_DRA_ACCESS_DENIED Field",""];

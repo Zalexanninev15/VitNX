@@ -1,0 +1,1 @@
+search_result['971']=["topic_0000000000000323.html","ERROR_JOURNAL_NOT_ACTIVE Field",""];

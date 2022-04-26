@@ -1,0 +1,1 @@
+c['4690']=[['4691',"WindowFromPoint(Point) Method","topic_0000000000000190.html",0],['4692',"WindowFromPoint(POINT) Method","topic_0000000000000179.html",0]];

@@ -1,1 +1,1 @@
-search_result['996']=["topic_0000000000000351.html","clrAfterGlow Field",""];
+search_result['996']=["topic_0000000000000336.html","ERROR_INVALID_NETNAME Field",""];

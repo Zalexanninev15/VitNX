@@ -1,1 +1,1 @@
-search_result['979']=["topic_000000000000034A.html","BLENDFUNCTION Structure",""];
+search_result['979']=["topic_0000000000000325.html","ERROR_JOURNAL_NOT_ACTIVE Field",""];

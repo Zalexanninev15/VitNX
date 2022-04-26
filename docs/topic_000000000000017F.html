@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.CallNextHookEx Method</title>
+	<title>Import.InstallHinfSection Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.CallNextHookEx Method</h1>
+		<h1 class="title">Import.InstallHinfSection Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> CallNextHookEx(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hhk</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nCode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>wParam</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lParam</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;Setupapi.dll&quot;, EntryPoint = &quot;InstallHinfSection&quot;,
+            CallingConvention = CallingConvention.StdCall,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InstallHinfSection(&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>ModuleHandle</i>,&nbsp;<br />   [In()]&nbsp;<br />[MarshalAs(UnmanagedType.LPWStr)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>CmdLineBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nCmdShow</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +153,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hhk" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hhk
+			hwnd
 		</span>
 	</dt>
 	<dd>
@@ -165,10 +166,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="nCode" class="parameterList">
+<dl paramName="ModuleHandle" class="parameterList">
 	<dt>
 		<span class="parameter">
-			nCode
+			ModuleHandle
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="CmdLineBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			CmdLineBuffer
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nCmdShow" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nCmdShow
 		</span>
 	</dt>
 	<dd>
@@ -178,39 +205,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="wParam" class="parameterList">
-	<dt>
-		<span class="parameter">
-			wParam
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="lParam" class="parameterList">
-	<dt>
-		<span class="parameter">
-			lParam
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	
 
 
 
@@ -284,11 +281,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;,
-     SetLastError = true)]
- public static extern IntPtr CallNextHookEx(
-     IntPtr hhk,
-     int nCode, IntPtr wParam, IntPtr lParam);
+[DllImport(&quot;Setupapi.dll&quot;, EntryPoint = &quot;InstallHinfSection&quot;,
+     CallingConvention = CallingConvention.StdCall,
+     CharSet = CharSet.Unicode)]
+ public static extern void InstallHinfSection([In] IntPtr hwnd,
+ [In] IntPtr ModuleHandle,
+ [In, MarshalAs(UnmanagedType.LPWStr)] string CmdLineBuffer,
+ int nCmdShow);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -374,7 +373,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>

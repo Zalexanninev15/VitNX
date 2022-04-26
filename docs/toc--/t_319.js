@@ -1,1 +1,1 @@
-c['319']=[['320',"VitNX_DockPanel Constructor","topic_0000000000000763.html",0],['321',"Methods","topic_000000000000075F_methods--.html",1],['332',"Events","topic_000000000000075F_events--.html",1]];
+c['319']=[['320',"VitNX_DockPanel Constructor","topic_0000000000001210.html",0],['321',"Methods","topic_000000000000120C_methods--.html",1],['332',"Events","topic_000000000000120C_events--.html",1]];

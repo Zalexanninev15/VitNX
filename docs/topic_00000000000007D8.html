@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockResizeFilter.PreFilterMessage Method</title>
+	<title>DNS_ERROR_NODE_CREATION_FAILED Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockResizeFilter.PreFilterMessage Method</h1>
+		<h1 class="title">DNS_ERROR_NODE_CREATION_FAILED Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000007CF.html">VitNX.UI.ControlsV1.Win32</a>
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Filters out a message before it is dispatched.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PreFilterMessage(&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> <i>m</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DNS_ERROR_NODE_CREATION_FAILED = 9703</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,34 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="m" class="parameterList">
-	<dt>
-		<span class="parameter">
-			m
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.message">Message</a> 
-	</dd>
-</dl>
-<p>
-	The message to be dispatched. You cannot modify this message. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control. 
-	</p>
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
-
-	<h4 class="subHeading">
-		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.imessagefilter.prefiltermessage">IMessageFilter.PreFilterMessage</a>
-<br />
 
 
 
@@ -252,55 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public bool PreFilterMessage(ref Message m)
- {
-     if (!(m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSE_MOVE ||
-           m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DOWN ||
-           m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP ||
-           m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DBL_CLK ||
-           m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_DOWN ||
-           m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_UP ||
-           m.Msg == (int)Enums.WINDOW_MESSAGE.R_BUTTON_DBL_CLK))
-         return false;
-     if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP)
-     {
-         if (_isDragging)
-         {
-             StopDrag();
-             return true;
-         }
-     }
-     if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_UP &amp;&amp;
-         !_isDragging)
-         return false;
-     if (_isDragging)
-         Cursor.Current = _activeSplitter.ResizeCursor;
-     if (m.Msg == (int)Enums.WINDOW_MESSAGE.MOUSE_MOVE &amp;&amp;
-         !_isDragging &amp;&amp;
-         _dockPanel.MouseButtonState !=
-         MouseButtons.None)
-         return false;
-     var control = Control.FromHandle(m.HWnd);
-     if (control == null)
-         return false;
-     if (!(control == _dockPanel || _dockPanel.Contains(control)))
-         return false;
-     CheckCursor();
-     if (m.Msg == (int)Enums.WINDOW_MESSAGE.L_BUTTON_DOWN)
-     {
-         var hotSplitter = HotSplitter();
-         if (hotSplitter != null)
-         {
-             StartDrag(hotSplitter);
-             return true;
-         }
-     }
-     if (HotSplitter() != null)
-         return true;
-     if (_isDragging)
-         return true;
-     return false;
- }
+public const int DNS_ERROR_NODE_CREATION_FAILED = 9703;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -364,11 +292,11 @@ public bool PreFilterMessage(ref Message m)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000007D6.html">DockResizeFilter Class</a><br />
+			<a href="topic_00000000000001DE.html">ResultWin32 Class</a><br />
 
 
 
-<a href="topic_00000000000007CF.html">VitNX.UI.ControlsV1.Win32 Namespace</a><br />
+<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -386,8 +314,7 @@ public bool PreFilterMessage(ref Message m)
 			</div>
 
 			</div>
-      
+
     </div>
   </body>
 </html>
-

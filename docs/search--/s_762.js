@@ -1,1 +1,1 @@
-search_result['762']=["topic_0000000000000247.html","SCARD_E_INVALID_TARGET Field",""];
+search_result['762']=["topic_000000000000024C.html","ERROR_JOIN_TO_SUBST Field",""];

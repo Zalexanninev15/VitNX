@@ -1,1 +1,1 @@
-search_result['504']=["topic_0000000000000168.html","Import.SystemParametersInfo Method",""];
+search_result['504']=["topic_0000000000000168.html","Import.NtQueryTimerResolution Method",""];

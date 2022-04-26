@@ -1,1 +1,1 @@
-search_result['573']=["topic_00000000000001A3.html","Constants Class","The constants for imported functions."];
+search_result['573']=["topic_00000000000001A5.html","Import.ReleaseCapture Method",""];

@@ -1,0 +1,1 @@
+c['755']=[['756',"CustomText Property","topic_00000000000013C1.html",0],['757',"ProgressColor Property","topic_00000000000013BF.html",0],['758',"TextColor Property","topic_00000000000013BE.html",0],['759',"TextFont Property","topic_00000000000013BD.html",0],['760',"VisualMode Property","topic_00000000000013C0.html",0]];

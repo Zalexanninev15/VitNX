@@ -1,1 +1,1 @@
-search_result['2327']=["topic_0000000000000803_events--.html","Helpers Events",""];
+search_result['2327']=["topic_0000000000000869.html","ERROR_SXS_DUPLICATE_CLSID Field",""];

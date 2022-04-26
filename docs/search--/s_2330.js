@@ -1,1 +1,1 @@
-search_result['2330']=["topic_0000000000000803_vars--.html","Helpers Fields",""];
+search_result['2330']=["topic_000000000000086C.html","ERROR_SXS_DUPLICATE_PROGID Field",""];

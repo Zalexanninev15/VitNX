@@ -1,0 +1,1 @@
+c['484']=[['485',"VitNX_DockGroup Constructor","topic_00000000000012A6.html",0],['486',"Properties","topic_000000000000129F_props--.html",1],['493',"Methods","topic_000000000000129F_methods--.html",1]];

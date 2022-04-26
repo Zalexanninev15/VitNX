@@ -1,0 +1,1 @@
+c['1032']=[['1033',"GetFirmwareType Method","topic_0000000000000093.html",0],['1034',"IsUefiMode Method","topic_0000000000000092.html",0]];

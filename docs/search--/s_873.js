@@ -1,1 +1,1 @@
-search_result['873']=["topic_00000000000002B6.html","COMADMIN_E_CANT_SUBSCRIBE_TO_COMPONENT Field",""];
+search_result['873']=["topic_00000000000002BB.html","ERROR_REGISTRY_CORRUPT Field",""];

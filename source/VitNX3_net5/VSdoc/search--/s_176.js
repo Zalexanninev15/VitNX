@@ -1,0 +1,1 @@
+search_result['176']=["topic_0000000000000075.html","Windows.GetWindowsDisplayVersionFromREG Method","Gets the Windows displayed version from the Windows Registry."];

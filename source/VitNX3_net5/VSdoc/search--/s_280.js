@@ -1,0 +1,1 @@
+search_result['280']=["topic_00000000000000B2.html","Ini.DeleteSection Method","Deletes the section."];

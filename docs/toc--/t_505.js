@@ -1,1 +1,1 @@
-c['505']=[['506',"OnPaint Method","topic_0000000000000832.html",0],['507',"OnResize Method","topic_0000000000000831.html",0]];
+c['505']=[['506',"OnPaint Method","topic_00000000000012DF.html",0],['507',"OnResize Method","topic_00000000000012DE.html",0]];

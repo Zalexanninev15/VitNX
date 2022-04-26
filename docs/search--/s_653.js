@@ -1,1 +1,1 @@
-search_result['653']=["topic_00000000000001DF.html","ERROR_PKINIT_FAILURE Field","The kerberos protocol encountered an error while validating the\r\nKDC certificate during smartcard logon."];
+search_result['653']=["topic_00000000000001DF.html","ResultWin32.GetErrorName Method",""];

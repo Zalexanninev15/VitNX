@@ -1,1 +1,1 @@
-search_result['550']=["topic_0000000000000191.html","Import.DisplayConfigGetDeviceInfo Method",""];
+search_result['550']=["topic_0000000000000192.html","Import.WindowFromPoint (Point) Method",""];

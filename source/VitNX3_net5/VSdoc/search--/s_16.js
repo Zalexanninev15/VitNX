@@ -1,0 +1,1 @@
+search_result['16']=["topic_000000000000000C.html","Processes.IsAdministratorYourApp Method","Whether your application has administrator rights."];

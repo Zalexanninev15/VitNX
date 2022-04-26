@@ -1,0 +1,1 @@
+search_result['255']=["topic_000000000000009C.html","Internet.GetPublicIP Method","Gets the public IP of PC."];

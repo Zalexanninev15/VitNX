@@ -1,1 +1,1 @@
-search_result['841']=["topic_0000000000000296.html","COMADMIN_E_APPDIRNOTFOUND Field",""];
+search_result['841']=["topic_000000000000029B.html","ERROR_TOO_MANY_POSTS Field",""];

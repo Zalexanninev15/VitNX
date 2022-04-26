@@ -1,0 +1,1 @@
+search_result['253']=["topic_000000000000009A.html","Internet.GetLocalIPv6 Method","Gets the local IPv6 (obsolete, but work)."];

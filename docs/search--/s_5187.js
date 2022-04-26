@@ -1,0 +1,1 @@
+search_result['5187']=["topic_00000000000012EB.html","VitNX2_ProgressBarRoundedType2.Animate Method","Starts the animation of filling the progress bar"];

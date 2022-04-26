@@ -1,0 +1,1 @@
+search_result['258']=["topic_00000000000000A2.html","Internet.IsHaveInternet Method","Are the have internet."];

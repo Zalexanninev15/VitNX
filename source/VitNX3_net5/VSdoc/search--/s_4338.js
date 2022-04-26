@@ -1,0 +1,1 @@
+search_result['4338']=["topic_00000000000010E2.html","MenuIcons.ResourceManager Property","Возвращает кэшированный экземпляр ResourceManager, использованный этим классом."];

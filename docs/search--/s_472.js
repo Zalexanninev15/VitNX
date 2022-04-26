@@ -1,1 +1,1 @@
-search_result['472']=["topic_000000000000014B.html","Import.SelectClipRgn Method",""];
+search_result['472']=["topic_000000000000014B.html","Import.PrintWindow Method",""];

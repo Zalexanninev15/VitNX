@@ -1,1 +1,1 @@
-search_result['431']=["topic_0000000000000126.html","Import.GetScrollBarInfo Method",""];
+search_result['431']=["topic_0000000000000126.html","Import.GetMapMode Method",""];

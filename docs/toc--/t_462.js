@@ -1,1 +1,1 @@
-c['462']=[['463',"VitNX2_Button Constructor","topic_00000000000007E6.html",0],['464',"Methods","topic_00000000000007E5_methods--.html",1]];
+c['462']=[['463',"VitNX2_Button Constructor","topic_0000000000001293.html",0],['464',"Methods","topic_0000000000001292_methods--.html",1]];

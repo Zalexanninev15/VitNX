@@ -1,1 +1,1 @@
-search_result['694']=["topic_0000000000000203.html","XACT_E_TRANSACTIONCLOSED Field",""];
+search_result['694']=["topic_0000000000000208.html","ERROR_DUP_NAME Field",""];
