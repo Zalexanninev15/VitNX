@@ -93,7 +93,7 @@ namespace VitNX2.UI.ControlsV2
             Invalidate();
         }
 
-        public CheckBox_Custom()
+        public VitNX2_CheckBox()
         {
             SetStyle(ControlStyles.UserPaint |
                 ControlStyles.ResizeRedraw |
