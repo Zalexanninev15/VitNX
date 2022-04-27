@@ -51,19 +51,17 @@
             this.windowTitle.Controls.Add(this.titleExit);
             this.windowTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.windowTitle.Location = new System.Drawing.Point(2, 2);
-            this.windowTitle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.windowTitle.Name = "windowTitle";
-            this.windowTitle.Size = new System.Drawing.Size(404, 35);
+            this.windowTitle.Size = new System.Drawing.Size(346, 30);
             this.windowTitle.TabIndex = 0;
             this.windowTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.windowTitle_MouseDown);
             // 
             // labelCaption
             // 
             this.labelCaption.AutoSize = true;
-            this.labelCaption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCaption.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelCaption.ForeColor = System.Drawing.Color.White;
-            this.labelCaption.Location = new System.Drawing.Point(10, 9);
-            this.labelCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCaption.Location = new System.Drawing.Point(9, 8);
             this.labelCaption.Name = "labelCaption";
             this.labelCaption.Size = new System.Drawing.Size(81, 17);
             this.labelCaption.TabIndex = 4;
@@ -72,12 +70,12 @@
             // titleExit
             // 
             this.titleExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.titleExit.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.titleExit.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.titleExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(185)))), ((int)(((byte)(191)))));
-            this.titleExit.Location = new System.Drawing.Point(374, 0);
-            this.titleExit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.titleExit.Location = new System.Drawing.Point(320, 0);
+            this.titleExit.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.titleExit.Name = "titleExit";
-            this.titleExit.Size = new System.Drawing.Size(30, 35);
+            this.titleExit.Size = new System.Drawing.Size(26, 30);
             this.titleExit.TabIndex = 3;
             this.titleExit.Text = "X";
             this.titleExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,10 +90,9 @@
             this.panelButtons.Controls.Add(this.button2);
             this.panelButtons.Controls.Add(this.button1);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(2, 136);
-            this.panelButtons.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelButtons.Location = new System.Drawing.Point(2, 117);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(404, 63);
+            this.panelButtons.Size = new System.Drawing.Size(346, 55);
             this.panelButtons.TabIndex = 1;
             // 
             // button3
@@ -111,12 +108,11 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(267, 14);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button3.Location = new System.Drawing.Point(229, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 30);
+            this.button3.Size = new System.Drawing.Size(100, 26);
             this.button3.TabIndex = 2;
             this.button3.TabStop = false;
             this.button3.Text = "button3";
@@ -136,12 +132,11 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(143, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button2.Location = new System.Drawing.Point(123, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 30);
+            this.button2.Size = new System.Drawing.Size(100, 26);
             this.button2.TabIndex = 1;
             this.button2.TabStop = false;
             this.button2.Text = "button2";
@@ -161,12 +156,11 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(19, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Location = new System.Drawing.Point(16, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 30);
+            this.button1.Size = new System.Drawing.Size(100, 26);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
             this.button1.Text = "button1";
@@ -179,25 +173,23 @@
             this.panelBody.Controls.Add(this.labelMessage);
             this.panelBody.Controls.Add(this.pictureBoxIcon);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBody.Location = new System.Drawing.Point(2, 37);
-            this.panelBody.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelBody.Location = new System.Drawing.Point(2, 32);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Padding = new System.Windows.Forms.Padding(12, 12, 0, 0);
-            this.panelBody.Size = new System.Drawing.Size(404, 99);
+            this.panelBody.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.panelBody.Size = new System.Drawing.Size(346, 85);
             this.panelBody.TabIndex = 2;
             // 
             // labelMessage
             // 
             this.labelMessage.AutoSize = true;
             this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMessage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMessage.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.labelMessage.Location = new System.Drawing.Point(75, 12);
-            this.labelMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMessage.MaximumSize = new System.Drawing.Size(700, 0);
+            this.labelMessage.Location = new System.Drawing.Point(64, 10);
+            this.labelMessage.MaximumSize = new System.Drawing.Size(600, 0);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Padding = new System.Windows.Forms.Padding(6, 6, 12, 17);
-            this.labelMessage.Size = new System.Drawing.Size(107, 40);
+            this.labelMessage.Padding = new System.Windows.Forms.Padding(5, 5, 10, 15);
+            this.labelMessage.Size = new System.Drawing.Size(104, 37);
             this.labelMessage.TabIndex = 1;
             this.labelMessage.Text = "labelMessage";
             this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,26 +198,24 @@
             // 
             this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxIcon.Image = global::VitNX3.Properties.Resources.News;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(12, 12);
-            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(10, 10);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(63, 87);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(54, 75);
             this.pictureBoxIcon.TabIndex = 0;
             this.pictureBoxIcon.TabStop = false;
             // 
-            // VitNX2_MessageBox_Form
+            // VitNX2_MessageBoxType1_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(408, 201);
+            this.ClientSize = new System.Drawing.Size(350, 174);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.windowTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(406, 167);
-            this.Name = "VitNX2_MessageBox_Form";
-            this.Opacity = 0.96D;
+            this.MinimumSize = new System.Drawing.Size(350, 149);
+            this.Name = "VitNX2_MessageBoxType1_Form";
+            this.Opacity = 0.98D;
             this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
