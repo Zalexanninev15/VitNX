@@ -10,7 +10,7 @@ using VitNX2.UI.ControlsV2.UiKit;
 namespace VitNX2.UI.ControlsV2
 {
     [DefaultEvent("CheckedChanged")]
-    public class CheckBox_Custom : Control
+    public class VitNX2_CheckBox : Control
     {
         protected override void OnTextChanged(EventArgs e)
         {
