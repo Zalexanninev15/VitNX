@@ -1,1 +1,1 @@
-search_result['5283']=["topic_000000000000162A.html","Images Field","/// Images used in standard types of notifications.\r\n\t\t///"];
+search_result['5283']=["topic_000000000000162A.html","InvertAdding Field","If true, the notifications are displayed from top to bottom on the screen."];

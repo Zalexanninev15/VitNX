@@ -1,1 +1,1 @@
-c['4535']=[['4536',"Type1 Constructor","topic_00000000000010E1.html",0],['4537',"Methods","topic_00000000000010E0_methods--.html",1]];
+c['4535']=[['4536',"Dispose Method","topic_00000000000010E6.html",0],['4537',"NotUsed Method","topic_00000000000010E5.html",0],['4538',"Report Method","topic_00000000000010E2.html",0],['4539',"SetColor Method","topic_00000000000010E3.html",0],['4540',"SetText Method","topic_00000000000010E4.html",0]];

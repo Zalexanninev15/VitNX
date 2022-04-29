@@ -1,1 +1,1 @@
-search_result['5271']=["topic_0000000000001623_overloads--.html","FontAwesomeExtensions.AsIcon Method",""];
+search_result['5271']=["topic_0000000000001623.html","Manager Class","The settings manager of notification."];

@@ -1,1 +1,1 @@
-search_result['5318']=["topic_0000000000001646.html","Cancel Field",""];
+search_result['5318']=["topic_0000000000001646.html","NotificationPosition Enumeration","Место отображения уведомлений на экране."];

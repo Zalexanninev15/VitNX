@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VitNX3
+namespace VitNX
 {
     using System;
 

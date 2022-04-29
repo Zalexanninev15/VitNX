@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VitNX3
-{
+namespace VitNX {
     using System;
-
-
+    
+    
     /// <summary>
     ///   Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
     /// </summary>
@@ -23,143 +22,119 @@ namespace VitNX3
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ScrollIcons
-    {
-
+    internal class ScrollIcons {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ScrollIcons()
-        {
+        internal ScrollIcons() {
         }
-
+        
         /// <summary>
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if (object.ReferenceEquals(resourceMan, null))
-                {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VitNX3_net5.Icons.ScrollIcons", typeof(ScrollIcons).Assembly);
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VitNX3.Icons.ScrollIcons", typeof(ScrollIcons).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Перезаписывает свойство CurrentUICulture текущего потока для всех
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_clicked
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_clicked {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_clicked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_disabled
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_disabled {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_hot
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_hot {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_hot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_small_clicked
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_small_clicked {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_small_clicked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_small_hot
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_small_hot {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_small_hot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_small_standard
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_small_standard {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_small_standard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap scrollbar_arrow_standard
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap scrollbar_arrow_standard {
+            get {
                 object obj = ResourceManager.GetObject("scrollbar_arrow_standard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }

@@ -1,1 +1,0 @@
-c['4219']=[['4220',"FindWindow(StringBuilder, StringBuilder) Method","topic_0000000000000113.html",0],['4221',"FindWindow(string, string) Method","topic_000000000000019E.html",0]];

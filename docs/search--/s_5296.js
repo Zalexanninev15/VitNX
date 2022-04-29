@@ -1,1 +1,1 @@
-search_result['5296']=["topic_0000000000001635.html","Manager.StopTimer Method","/// Stop all application events for the allotted time.\r\n\t\t///"];
+search_result['5296']=["topic_0000000000001635.html","NotificationType Enumeration","Type of notification displayed."];

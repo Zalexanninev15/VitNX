@@ -1,1 +1,1 @@
-search_result['5288']=["topic_000000000000162F.html","EnableOffset Field","/// Offset of notifications after closing the previous one.\r\n\t\t///"];
+search_result['5288']=["topic_000000000000162F.html","MaxTextWidth Field",""];
