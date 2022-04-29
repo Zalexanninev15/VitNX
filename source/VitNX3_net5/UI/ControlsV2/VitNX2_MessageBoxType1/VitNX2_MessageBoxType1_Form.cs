@@ -9,7 +9,7 @@ namespace VitNX2.UI.ControlsV2
     public partial class VitNX2_MessageBoxType1_Form : Form
     {
         private Color primaryColor = Color.FromArgb(21, 29, 38);
-        private int borderSize = 1;
+        private int borderSize = 2;
 
         public Color PrimaryColor
         {
