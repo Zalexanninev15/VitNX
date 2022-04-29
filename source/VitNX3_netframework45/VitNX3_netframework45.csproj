@@ -68,16 +68,18 @@
     <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.Designer.cs">
       <DependentUpon>VitNX2_MessageBoxType1_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_RichTextBox.cs">
-      <SubType>Component</SubType>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.Designer.cs">
+      <DependentUpon>VitNX2_MessageBoxType2_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_RichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.cs">
-      <SubType>Form</SubType>
+    <Compile Include="UI\ControlsV2\VitNX2_RichTextBox.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.Designer.cs" />
     <Compile Include="UI\ControlsV2\VitNX2_ProgressBarRoundedType2.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -304,7 +306,9 @@
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.resx">
       <DependentUpon>VitNX2_MessageBoxType1_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.resx" />
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.resx">
+      <DependentUpon>VitNX2_MessageBoxType2_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_TextBox.resx" />
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar.resx">
       <SubType>Designer</SubType>

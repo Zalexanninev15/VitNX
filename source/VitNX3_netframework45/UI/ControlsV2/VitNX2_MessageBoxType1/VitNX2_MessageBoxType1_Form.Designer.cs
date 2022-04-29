@@ -217,6 +217,8 @@
             this.Name = "VitNX2_MessageBoxType1_Form";
             this.Opacity = 0.98D;
             this.Padding = new System.Windows.Forms.Padding(2);
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.windowTitle.ResumeLayout(false);
