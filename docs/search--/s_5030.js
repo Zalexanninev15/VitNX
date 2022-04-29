@@ -1,1 +1,1 @@
-search_result['5030']=["topic_0000000000001297.html","CheckBox_Custom.OnTextChanged Method","Raises the TextChanged event."];
+search_result['5030']=["topic_0000000000001297.html","VitNX2_CheckBox.OnTextChanged Method","Raises the TextChanged event."];

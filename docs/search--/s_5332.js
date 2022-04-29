@@ -1,1 +1,1 @@
-search_result['5332']=["topic_0000000000001650.html","NotificationForm.ChangePosition Method",""];
+search_result['5332']=["topic_0000000000001650.html","NotifySettings Class","The notify settings."];

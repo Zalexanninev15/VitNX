@@ -1,1 +1,1 @@
-search_result['5247']=["topic_0000000000001305_overloads--.html","FontAwesome4.GetImage Method",""];
+search_result['5247']=["topic_0000000000001305.html","FontAwesome4.GetImage (Type, Properties) Method",""];

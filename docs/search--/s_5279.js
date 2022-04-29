@@ -1,1 +1,1 @@
-search_result['5279']=["topic_0000000000001626.html","WaitingTime Field","/// Notification time in a static state with 100% transparency.\r\n\t\t///"];
+search_result['5279']=["topic_0000000000001626.html","MaxCount Field","Maximum number of notifications on the screen."];

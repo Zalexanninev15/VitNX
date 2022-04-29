@@ -1,1 +1,1 @@
-search_result['5294']=["topic_0000000000001633_overloads--.html","Manager.Alert Method","/// Display a new custom notification on the screen.\r\n\t\t///"];
+search_result['5294']=["topic_0000000000001633.html","Manager.CloseAll Method","Close all notifications on the screen."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FontAwesome4.Initialize Method</title>
+	<title>FontAwesome4.SetDownloadLink Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FontAwesome4.Initialize Method</h1>
+		<h1 class="title">FontAwesome4.SetDownloadLink Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012FB.html">VitNX3.UI.OtherControls</a>
+<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Initialize()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetDownloadLink(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>link</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +150,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="link" class="parameterList">
+	<dt>
+		<span class="parameter">
+			link
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 
 
@@ -224,10 +240,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Initialize()
+public static void SetDownloadLink(string link)
  {
-     if (_instance == null)
-         _instance = new FontAwesome4();
+     _downloadLink = link;
  }
 					</pre>			
 				</div>
@@ -292,11 +307,11 @@ public static void Initialize()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012FC.html">FontAwesome4 Class</a><br />
+			<a href="topic_00000000000012FB.html">FontAwesome4 Class</a><br />
 
 
 
-<a href="topic_00000000000012FB.html">VitNX3.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-c['4514']=[['4515',"InstallInfDriver Method","topic_00000000000010D2.html",0]];
+c['4514']=[['4515',"Controls Class","topic_00000000000010DC.html",1],['4519',"Window Class","topic_00000000000010D4.html",1]];

@@ -1,1 +1,1 @@
-c['530']=[['531',"Methods","topic_00000000000012F0_methods--.html",1]];
+c['530']=[['531',"WndProc(ref Message) Method","topic_00000000000012F0.html",0]];

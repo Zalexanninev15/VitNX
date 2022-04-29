@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>NotificationForm.showAlert (String, NotificationType, Color, Image, Manager) Method</title>
+	<title>NotificationForm.ChangePosition Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">NotificationForm.showAlert (String, NotificationType, Color, Image, Manager) Method</h1>
+		<h1 class="title">NotificationForm.ChangePosition Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012FB.html">VitNX3.UI.OtherControls</a>
+<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> showAlert(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>msg</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000001636.html" onclick="this.target='';return true;">NotificationType</a> <i>type</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> <i>color</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> <i>picture</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000001624.html" onclick="this.target='';return true;">Manager</a> <i>notify</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ChangePosition()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,74 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="msg" class="parameterList">
-	<dt>
-		<span class="parameter">
-			msg
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="type" class="parameterList">
-	<dt>
-		<span class="parameter">
-			type
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000001636.html" onclick="this.target='';return true;">NotificationType</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="color" class="parameterList">
-	<dt>
-		<span class="parameter">
-			color
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="picture" class="parameterList">
-	<dt>
-		<span class="parameter">
-			picture
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.image">Image</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="notify" class="parameterList">
-	<dt>
-		<span class="parameter">
-			notify
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000001624.html" onclick="this.target='';return true;">Manager</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -292,15 +224,32 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void showAlert(string msg,
-     NotificationType type,
-     Color color,
-     Image picture,
-     Manager notify)
+public void ChangePosition()
  {
-     pictureBox1.Image = picture;
-     BackColor = color;
-     showAlert(msg, type, notify);
+     if (manager.InvertAdding ? Location.Y &gt; Height + 5 : Location.Y &lt; Monitor.WorkingArea().Height - Height - 5)
+     {
+         Timer timer = new Timer();
+         timer.Tag = (manager.InvertAdding &amp;&amp; Location.Y != Height + 5)
+             || (!manager.InvertAdding &amp;&amp;
+             Location.Y != Monitor.WorkingArea().Height - Height - 5)
+             ? Height - 1 : 0;
+         timer.Interval = 1;
+         timer.Tick += ((se, evu) =&gt;
+         {
+             if ((int)timer.Tag &gt; 0)
+             {
+                 Location = new Point(Location.X,
+                     Location.Y - (manager.InvertAdding ? 6 : -6));
+                 timer.Tag = (int)timer.Tag - 6;
+             }
+             else
+                 timer.Stop();
+         });
+         if ((int)timer.Tag != 0)
+             Location = new Point(Location.X,
+                 Location.Y - (manager.InvertAdding ? 6 : -6));
+         timer.Start();
+     }
  }
 					</pre>			
 				</div>
@@ -365,11 +314,11 @@ public void showAlert(string msg,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000164B.html">NotificationForm Class</a><br />
+			<a href="topic_000000000000164A.html">NotificationForm Class</a><br />
 
 
 
-<a href="topic_00000000000012FB.html">VitNX3.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls Namespace</a><br />
 
 
 			

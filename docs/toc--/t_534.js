@@ -1,1 +1,1 @@
-c['534']=[['535',"VitNX2_TextBox Constructor","topic_00000000000012F4.html",0],['536',"Methods","topic_00000000000012F2_methods--.html",1],['540',"Events","topic_00000000000012F2_events--.html",1]];
+c['534']=[['535',"OnLoad Method","topic_00000000000012F5.html",0],['536',"OnPaint Method","topic_00000000000012F6.html",0],['537',"OnResize Method","topic_00000000000012F4.html",0]];
