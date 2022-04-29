@@ -1,1 +1,1 @@
-c['598']=[['599',"Others Class","topic_000000000000001A.html",1],['605',"PerformanceCounter Class","topic_0000000000000014.html",1]];
+c['598']=[['599',"CleanMemory Method","topic_000000000000001B.html",0],['600',"ConvertColorToConsoleColor Method","topic_000000000000001E.html",0],['601',"ConvertDWordColorToRGB Method","topic_000000000000001D.html",0],['602',"PlaySound Method","topic_000000000000001C.html",0]];

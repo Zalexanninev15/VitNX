@@ -1,1 +1,1 @@
-search_result['5027']=["topic_0000000000001296_methods--.html","CheckBox_Custom Methods",""];
+search_result['5027']=["topic_0000000000001296_methods--.html","VitNX2_CheckBox Methods",""];

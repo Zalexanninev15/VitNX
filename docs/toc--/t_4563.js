@@ -1,1 +1,0 @@
-c['4563']=[['4564',"GetImage(Properties) Method","topic_0000000000001307.html",0],['4565',"GetImage(Type, Properties) Method","topic_0000000000001306.html",0],['4566',"GetImage(string, Properties) Method","topic_0000000000001305.html",0]];

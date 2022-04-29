@@ -1,1 +1,1 @@
-c['498']=[['499',"VitNX2_Panel Constructor","topic_00000000000012D9.html",0],['500',"Methods","topic_00000000000012D8_methods--.html",1]];
+c['498']=[['499',"OnHandleCreated Method","topic_00000000000012DA.html",0],['500',"OnPaint Method","topic_00000000000012D9.html",0]];

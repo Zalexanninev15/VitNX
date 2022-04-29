@@ -1,1 +1,0 @@
-c['1981']=[['1982',"Methods","topic_00000000000001DE_methods--.html",1],['1984',"Fields","topic_00000000000001DE_vars--.html",1]];

@@ -1,1 +1,1 @@
-c['701']=[['702',"GetAllDevices Method","topic_0000000000000097.html",0]];
+c['701']=[['702',"Methods","topic_000000000000007E_methods--.html",1]];

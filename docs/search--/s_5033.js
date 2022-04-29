@@ -1,1 +1,1 @@
-search_result['5033']=["topic_000000000000129A.html","CheckBox_Custom.OnResize Method","Raises the Resize event."];
+search_result['5033']=["topic_000000000000129A.html","VitNX2_CheckBox.OnResize Method","Raises the Resize event."];

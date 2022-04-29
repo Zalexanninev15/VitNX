@@ -1,1 +1,1 @@
-c['577']=[['578',"Installed Class","topic_000000000000000F.html",1],['583',"Processes Class","topic_0000000000000001.html",1]];
+c['577']=[['578',"FindAppPath Method","topic_0000000000000012.html",0],['579',"GetList Method","topic_0000000000000010.html",0],['580',"GetPath Method","topic_0000000000000011.html",0]];

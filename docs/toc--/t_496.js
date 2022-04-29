@@ -1,1 +1,1 @@
-c['496']=[['497',"Dispose(bool) Method","topic_00000000000012D3.html",0]];
+c['496']=[['497',"VitNX2_Panel Constructor","topic_00000000000012D8.html",0],['498',"Methods","topic_00000000000012D7_methods--.html",1]];

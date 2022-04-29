@@ -1,1 +1,1 @@
-c['480']=[['481',"VitNX2_MessageBoxType1_Form Constructor","topic_00000000000012CB_overloads--.html",1],['487',"Methods","topic_00000000000012C8_methods--.html",1],['491',"Fields","topic_00000000000012C8_vars--.html",1]];
+c['480']=[['481',"VitNX2_MessageBoxType1_Form Constructor","topic_00000000000012CA_overloads--.html",1],['487',"Methods","topic_00000000000012C8_methods--.html",1]];

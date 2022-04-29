@@ -1,1 +1,1 @@
-c['503']=[['504',"VitNX2_PictureBox Constructor","topic_00000000000012DD.html",0],['505',"Methods","topic_00000000000012DC_methods--.html",1]];
+c['503']=[['504',"OnPaint Method","topic_00000000000012DE.html",0],['505',"OnResize Method","topic_00000000000012DD.html",0]];

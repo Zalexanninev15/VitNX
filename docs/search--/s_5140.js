@@ -1,1 +1,1 @@
-search_result['5140']=["topic_00000000000012D7.html","VitNX2_RichTextBox.OnEnter Method","Raises the Enter event."];
+search_result['5140']=["topic_00000000000012D7.html","VitNX2_Panel Class",""];

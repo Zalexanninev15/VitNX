@@ -1,1 +1,0 @@
-c['738']=[['739',"GetFirmwareType Method","topic_0000000000000095.html",0],['740',"IsUefiMode Method","topic_0000000000000094.html",0]];

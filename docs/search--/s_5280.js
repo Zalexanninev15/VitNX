@@ -1,1 +1,1 @@
-search_result['5280']=["topic_0000000000001627.html","MaxCount Field","/// Maximum number of notifications on the screen.\r\n\t\t///"];
+search_result['5280']=["topic_0000000000001627.html","Font Field","Notification text font."];

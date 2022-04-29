@@ -1,1 +1,1 @@
-c['572']=[['573',"SYSTEM_POWER_CONTROL Enumeration","topic_00000000000000A7.html",0],['574',"Methods","topic_00000000000000A6_methods--.html",1]];
+c['572']=[['573',"Computer Method","topic_00000000000000AC.html",0],['574',"Monitor Method","topic_00000000000000AD.html",0]];

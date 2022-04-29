@@ -1,1 +1,1 @@
-c['4589']=[['4590',"Methods","topic_0000000000001624_methods--.html",1],['4596',"Fields","topic_0000000000001624_vars--.html",1]];
+c['4589']=[['4590',"Alert(string, NotificationType) Method","topic_0000000000001631.html",0],['4591',"Alert(string, NotificationType, Color, Image) Method","topic_0000000000001632.html",0]];

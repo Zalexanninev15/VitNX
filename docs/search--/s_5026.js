@@ -1,1 +1,1 @@
-search_result['5026']=["topic_0000000000001296_events--.html","CheckBox_Custom Events",""];
+search_result['5026']=["topic_0000000000001296_events--.html","VitNX2_CheckBox Events",""];

@@ -12391,53 +12391,53 @@ true if managed resources should be disposed; otherwise, false.</param>
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX2.UI.ControlsV2.CheckBox_Custom">
+    <member name="T:VitNX2.UI.ControlsV2.VitNX2_CheckBox">
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnTextChanged(System.EventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnTextChanged(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="E:VitNX2.UI.ControlsV2.CheckBox_Custom.CheckedChanged">
+    <member name="E:VitNX2.UI.ControlsV2.VitNX2_CheckBox.CheckedChanged">
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnClick(System.EventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnClick(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnResize(System.EventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnResize(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnMouseEnter(System.EventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnMouseEnter(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnMouseLeave(System.EventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnMouseLeave(System.EventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.#ctor">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.#ctor">
     </member>
-    <member name="M:VitNX2.UI.ControlsV2.CheckBox_Custom.OnPaint(System.Windows.Forms.PaintEventArgs)">
+    <member name="M:VitNX2.UI.ControlsV2.VitNX2_CheckBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
 </param>
     </member>
-    <member name="T:VitNX2.UI.ControlsV2.CheckBox_Custom.CheckedChangedEventHandler">
+    <member name="T:VitNX2.UI.ControlsV2.VitNX2_CheckBox.CheckedChangedEventHandler">
       <param name="sender">
 </param>
     </member>
-    <member name="T:VitNX2.UI.ControlsV2.CheckBox_Custom._Options">
+    <member name="T:VitNX2.UI.ControlsV2.VitNX2_CheckBox._Options">
     </member>
-    <member name="F:VitNX2.UI.ControlsV2.CheckBox_Custom._Options.Style1">
+    <member name="F:VitNX2.UI.ControlsV2.VitNX2_CheckBox._Options.Style1">
     </member>
-    <member name="F:VitNX2.UI.ControlsV2.CheckBox_Custom._Options.Style2">
+    <member name="F:VitNX2.UI.ControlsV2.VitNX2_CheckBox._Options.Style2">
     </member>
     <member name="N:VitNX2.UI.ControlsV2.UiKit">
     </member>
@@ -12618,8 +12618,6 @@ true if managed resources should be disposed; otherwise, false.</param>
 </param>
     </member>
     <member name="T:VitNX2.UI.ControlsV2.VitNX2_MessageBoxType1_Form">
-    </member>
-    <member name="F:VitNX2.UI.ControlsV2.VitNX2_MessageBoxType1_Form.squaredWindowOnWin11">
     </member>
     <member name="M:VitNX2.UI.ControlsV2.VitNX2_MessageBoxType1_Form.OnPaint(System.Windows.Forms.PaintEventArgs)">
       <param name="e">
@@ -14463,35 +14461,35 @@ The settings manager of notification.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.TimerInterval">
       <summary>
-/// Delay between changes in notification transparency. ///</summary>
+Delay between changes in notification transparency.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.WaitingTime">
       <summary>
-/// Notification time in a static state with 100% transparency. ///</summary>
+Notification time in a static state with 100% transparency.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.MaxCount">
       <summary>
-/// Maximum number of notifications on the screen. ///</summary>
+Maximum number of notifications on the screen.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.Font">
       <summary>
-/// Notification text font. ///</summary>
+Notification text font.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.Colors">
       <summary>
-/// The colors of the standard notification types. ///</summary>
+The colors of the standard notification types.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.Images">
       <summary>
-/// Images used in standard types of notifications. ///</summary>
+Images used in standard types of notifications.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.InvertAdding">
       <summary>
-/// If true, the notifications are displayed from top to bottom on the screen. ///</summary>
+If true, the notifications are displayed from top to bottom on the screen.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.PositionType">
       <summary>
-/// Notification display location on the screen. ///</summary>
+Notification display location on the screen.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.onClose">
     </member>
@@ -14499,17 +14497,17 @@ The settings manager of notification.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.EnableOffset">
       <summary>
-/// Offset of notifications after closing the previous one. ///</summary>
+Offset of notifications after closing the previous one.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.MaxTextWidth">
     </member>
     <member name="F:VitNX3.UI.OtherControls.Manager.HasHighlighting">
       <summary>
-/// If true, the notification button will be highlighted when you hover the mouse over it. ///</summary>
+If true, the notification button will be highlighted when you hover the mouse over it.</summary>
     </member>
     <member name="M:VitNX3.UI.OtherControls.Manager.Alert(System.String,VitNX3.UI.OtherControls.NotificationType)">
       <summary>
-/// Display a new standard type notification on the screen. ///</summary>
+Display a new standard type notification on the screen.</summary>
       <param name="message">
 The main message displayed.</param>
       <param name="type">
@@ -14517,7 +14515,7 @@ Notification type.</param>
     </member>
     <member name="M:VitNX3.UI.OtherControls.Manager.Alert(System.String,VitNX3.UI.OtherControls.NotificationType,System.Drawing.Color,System.Drawing.Image)">
       <summary>
-/// Display a new custom notification on the screen. ///</summary>
+Display a new custom notification on the screen.</summary>
       <param name="message">
 Main message displayed.</param>
       <param name="type">
@@ -14529,17 +14527,17 @@ The image displayed on the left.</param>
     </member>
     <member name="M:VitNX3.UI.OtherControls.Manager.CloseAll">
       <summary>
-/// Close all notifications on the screen. ///</summary>
+Close all notifications on the screen.</summary>
     </member>
     <member name="M:VitNX3.UI.OtherControls.Manager.StopTimer(System.Int32)">
       <summary>
-/// Stop all application events for the allotted time. 		///</summary>
+Stop all application events for the allotted time.</summary>
       <param name="Milliseconds">
 Pause time in milliseconds.</param>
     </member>
     <member name="T:VitNX3.UI.OtherControls.NotificationType">
       <summary>
-/// Type of notification displayed. ///</summary>
+Type of notification displayed.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.NotificationType.Success">
     </member>
@@ -14575,7 +14573,7 @@ Pause time in milliseconds.</param>
     </member>
     <member name="T:VitNX3.UI.OtherControls.NotificationPosition">
       <summary>
-/// Место отображения уведомлений на экране. ///</summary>
+Место отображения уведомлений на экране.</summary>
     </member>
     <member name="F:VitNX3.UI.OtherControls.NotificationPosition.Right">
     </member>
