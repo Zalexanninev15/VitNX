@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_ProgressBarRoundedType2 Constructor</title>
+	<title>VitNX2_ProgressBarRoundedType2.OnSizeChanged Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_ProgressBarRoundedType2 Constructor</h1>
+		<h1 class="title">VitNX2_ProgressBarRoundedType2.OnSizeChanged Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.sizechanged">SizeChanged</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX2_ProgressBarRoundedType2()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnSizeChanged(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
+	</dd>
+</dl>
+<p>
+	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
+</p>
+
+<p />
 
 
 
@@ -224,16 +241,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX2_ProgressBarRoundedType2()
+protected override void OnSizeChanged(EventArgs e)
  {
-     DoubleBuffered = true;
-     ProgressBarColor = Color.FromArgb(224, 224, 224);
-     ProgressBackColor = Color.FromArgb(255, 128, 255);
-     ProgressFont = new Font(Font.FontFamily,
-         (int)(Height * 0.7),
-         FontStyle.Bold);
-     ProgressFontColor = Color.Black;
-     Value = 0;
+     base.OnSizeChanged(e);
+     RecreateRegion();
  }
 					</pre>			
 				</div>
@@ -298,7 +309,7 @@ public VitNX2_ProgressBarRoundedType2()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012E8.html">VitNX2_ProgressBarRoundedType2 Class</a><br />
+			<a href="topic_00000000000012E7.html">VitNX2_ProgressBarRoundedType2 Class</a><br />
 
 
 

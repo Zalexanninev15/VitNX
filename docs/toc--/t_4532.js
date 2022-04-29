@@ -1,1 +1,1 @@
-c['4532']=[['4533',"Writeln Method","topic_00000000000010EB.html",0]];
+c['4532']=[['4533',"Type1 Class","topic_00000000000010E0.html",1],['4541',"Type2 Class","topic_00000000000010E7.html",1]];

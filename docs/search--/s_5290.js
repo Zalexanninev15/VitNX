@@ -1,1 +1,1 @@
-search_result['5290']=["topic_0000000000001631.html","HasHighlighting Field","/// If true, the notification button will be highlighted when you hover the mouse over it.\r\n\t\t///"];
+search_result['5290']=["topic_0000000000001631.html","Manager.Alert (String, NotificationType) Method","Display a new standard type notification on the screen."];

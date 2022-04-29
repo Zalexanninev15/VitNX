@@ -1,1 +1,1 @@
-search_result['5289']=["topic_0000000000001630.html","MaxTextWidth Field",""];
+search_result['5289']=["topic_0000000000001630.html","HasHighlighting Field","If true, the notification button will be highlighted when you hover the mouse over it."];

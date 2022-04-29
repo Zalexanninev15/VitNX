@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX2_MessageBoxType1_Form(String, String, MessageBoxButtons) Constructor</title>
+	<title>VitNX2_MessageBoxType1_Form(String, String, MessageBoxButtons, MessageBoxIcon) Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX2_MessageBoxType1_Form(String, String, MessageBoxButtons) Constructor</h1>
+		<h1 class="title">VitNX2_MessageBoxType1_Form(String, String, MessageBoxButtons, MessageBoxIcon) Constructor</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX2_MessageBoxType1_Form(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> <i>buttons</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX2_MessageBoxType1_Form(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> <i>buttons</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> <i>icon</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -185,6 +185,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxbuttons">MessageBoxButtons</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="icon" class="parameterList">
+	<dt>
+		<span class="parameter">
+			icon
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messageboxicon">MessageBoxIcon</a> 
 	</dd>
 </dl>
 <p>
@@ -266,7 +279,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX2_MessageBoxType1_Form(string text, string caption, MessageBoxButtons buttons)
+public VitNX2_MessageBoxType1_Form(string text,
+     string caption,
+     MessageBoxButtons buttons,
+     MessageBoxIcon icon)
  {
      InitializeComponent();
      InitializeItems();
@@ -275,6 +291,7 @@ public VitNX2_MessageBoxType1_Form(string text, string caption, MessageBoxButton
      labelCaption.Text = caption;
      SetFormSize();
      SetButtons(buttons, MessageBoxDefaultButton.Button1);
+     SetIcon(icon);
  }
 					</pre>			
 				</div>

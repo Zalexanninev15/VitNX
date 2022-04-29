@@ -1,1 +1,1 @@
-search_result['5282']=["topic_0000000000001629.html","Colors Field","/// The colors of the standard notification types.\r\n        ///"];
+search_result['5282']=["topic_0000000000001629.html","Images Field","Images used in standard types of notifications."];

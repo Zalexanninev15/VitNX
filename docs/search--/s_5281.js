@@ -1,1 +1,1 @@
-search_result['5281']=["topic_0000000000001628.html","Font Field","/// Notification text font.\r\n\t\t///"];
+search_result['5281']=["topic_0000000000001628.html","Colors Field","The colors of the standard notification types."];

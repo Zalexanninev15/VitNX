@@ -213,7 +213,7 @@
             this.pictureBoxIcon.TabIndex = 0;
             this.pictureBoxIcon.TabStop = false;
             // 
-            // VitNX2_MessageBox_Form
+            // VitNX2_MessageBoxType1_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,9 +224,11 @@
             this.Controls.Add(this.windowTitle);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(406, 167);
-            this.Name = "VitNX2_MessageBox_Form";
-            this.Opacity = 0.96D;
+            this.Name = "VitNX2_MessageBoxType1_Form";
+            this.Opacity = 0.98D;
             this.Padding = new System.Windows.Forms.Padding(2);
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.windowTitle.ResumeLayout(false);

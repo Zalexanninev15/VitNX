@@ -1,1 +1,1 @@
-c['4516']=[['4517',"Controls Class","topic_00000000000010DC.html",1],['4521',"Window Class","topic_00000000000010D4.html",1]];
+c['4516']=[['4517',"SetNativeThemeForControls Method","topic_00000000000010DE.html",0],['4518',"VolumeOnFocus Method","topic_00000000000010DD.html",0]];

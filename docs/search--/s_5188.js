@@ -1,1 +1,1 @@
-search_result['5188']=["topic_00000000000012EC.html","VitNX2_RichTextBox Class",""];
+search_result['5188']=["topic_00000000000012EB_attached_props--.html","VitNX2_RichTextBox Attached Properties",""];

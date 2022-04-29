@@ -1,1 +1,1 @@
-c['532']=[['533',"WndProc(ref Message) Method","topic_00000000000012F1.html",0]];
+c['532']=[['533',"VitNX2_TextBox Constructor","topic_00000000000012F3.html",0],['534',"Methods","topic_00000000000012F1_methods--.html",1],['538',"Events","topic_00000000000012F1_events--.html",1]];

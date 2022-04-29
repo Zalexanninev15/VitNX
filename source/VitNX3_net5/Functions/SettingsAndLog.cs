@@ -12,7 +12,7 @@ namespace VitNX3.Functions.SettingsAndLog
     public class Ini
     {
         private static string path;
-        private static string defValue = "TEST_VitNX";
+        private static string defValue = "VitNX";
 
         /// <summary>
         /// Initializing the configuration INI file.

@@ -1,1 +1,1 @@
-search_result['5032']=["topic_0000000000001299.html","CheckBox_Custom.OnClick Method","Raises the Click event."];
+search_result['5032']=["topic_0000000000001299.html","VitNX2_CheckBox.OnClick Method","Raises the Click event."];

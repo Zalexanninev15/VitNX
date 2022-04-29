@@ -1,1 +1,1 @@
-search_result['5277']=["topic_0000000000001624_vars--.html","Manager Fields",""];
+search_result['5277']=["topic_0000000000001624.html","TimerInterval Field","Delay between changes in notification transparency."];
