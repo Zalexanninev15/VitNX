@@ -185,11 +185,11 @@ namespace VitNX.UI.ControlsV1.Forms
                     break;
 
                 case VitNX_MessageBoxIcon.Shield:
-                    picIcon.Image = VitNX3.Properties.Resources.Shield;
+                    picIcon.Image = VitNX.Properties.Resources.Shield;
                     break;
 
                 case VitNX_MessageBoxIcon.Help:
-                    picIcon.Image = VitNX3.Properties.Resources.Help;
+                    picIcon.Image = VitNX.Properties.Resources.Help;
                     break;
             }
         }
