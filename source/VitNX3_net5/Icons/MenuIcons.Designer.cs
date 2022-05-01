@@ -39,7 +39,7 @@ namespace VitNX {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VitNX3.Icons.MenuIcons", typeof(MenuIcons).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VitNX.Icons.MenuIcons", typeof(MenuIcons).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -56,7 +56,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::VitNX3.Properties.Resources.cancelN;
+            this.button1.Image = global::VitNX.Properties.Resources.cancelN;
             this.button1.Location = new System.Drawing.Point(302, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(38, 38);
@@ -67,7 +67,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::VitNX3.Properties.Resources.successN;
+            this.pictureBox1.Image = global::VitNX.Properties.Resources.successN;
             this.pictureBox1.Location = new System.Drawing.Point(12, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 45);

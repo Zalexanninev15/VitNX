@@ -197,7 +197,7 @@
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxIcon.Image = global::VitNX3.Properties.Resources.News;
+            this.pictureBoxIcon.Image = global::VitNX.Properties.Resources.News;
             this.pictureBoxIcon.Location = new System.Drawing.Point(10, 10);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(54, 75);
