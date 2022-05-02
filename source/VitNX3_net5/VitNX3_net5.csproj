@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0-windows10.0.22000.0</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
 	<UseWindowsForms>true</UseWindowsForms>
     <DebugType>none</DebugType>
@@ -12,23 +12,32 @@
     <PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
     <Copyright>Zalexanninev15</Copyright>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Version>3.3.1</Version>
-    <AssemblyVersion>3.3.1</AssemblyVersion>
-    <FileVersion>3.3.1</FileVersion>
+    <Version>1.3</Version>
+    <AssemblyVersion>1.3</AssemblyVersion>
+    <FileVersion>1.3</FileVersion>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5</Description>
+    <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5+</Description>
     <Company>Zalexanninev15</Company>
-    <PackageId>VitNX</PackageId>
+    <PackageId>VitNX3</PackageId>
     <Authors>Zalexanninev15</Authors>
     <Product>VitNX</Product>
     <PackageTags>windows, functions, api, controls</PackageTags>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <RootNamespace>VitNX3</RootNamespace>
+    <PackageReleaseNotes>Fixed installation</PackageReleaseNotes>
+    <IsPublishable>True</IsPublishable>
     <AssemblyName>VitNX3</AssemblyName>
+    <RootNamespace>VitNX</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Deterministic>True</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>
@@ -67,7 +76,6 @@
     <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="6.0.0" />
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
     <PackageReference Include="System.Management" Version="6.0.0" />
-    <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

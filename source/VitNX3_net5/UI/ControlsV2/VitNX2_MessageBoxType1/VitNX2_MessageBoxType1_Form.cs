@@ -257,31 +257,31 @@ namespace VitNX2.UI.ControlsV2
             {
                 case MessageBoxIcon.Error:
                     {
-                        pictureBoxIcon.Image = VitNX3.Properties.Resources.Error1;
+                        pictureBoxIcon.Image = VitNX.Properties.Resources.Error1;
                         //PrimaryColor = Color.FromArgb(224, 79, 95);
                         break;
                     }
                 case MessageBoxIcon.Information:
                     {
-                        pictureBoxIcon.Image = VitNX3.Properties.Resources.Information;
+                        pictureBoxIcon.Image = VitNX.Properties.Resources.Information;
                         //PrimaryColor = Color.FromArgb(38, 191, 166);
                         break;
                     }
                 case MessageBoxIcon.Question:
                     {
-                        pictureBoxIcon.Image = VitNX3.Properties.Resources.Question1;
+                        pictureBoxIcon.Image = VitNX.Properties.Resources.Question1;
                         //PrimaryColor = Color.FromArgb(10, 119, 232);
                         break;
                     }
                 case MessageBoxIcon.Exclamation:
                     {
-                        pictureBoxIcon.Image = VitNX3.Properties.Resources.Warning1;
+                        pictureBoxIcon.Image = VitNX.Properties.Resources.Warning1;
                         //PrimaryColor = Color.FromArgb(255, 140, 0);
                         break;
                     }
                 case MessageBoxIcon.None:
                     {
-                        pictureBoxIcon.Image = VitNX3.Properties.Resources.News;
+                        pictureBoxIcon.Image = VitNX.Properties.Resources.News;
                         //PrimaryColor = Color.CornflowerBlue;
                         break;
                     }
