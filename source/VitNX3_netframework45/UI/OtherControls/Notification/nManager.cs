@@ -167,11 +167,11 @@ namespace VitNX3.UI.OtherControls
 
     public class Images
     {
-        public Image Success = Properties.Resources.successN;
-        public Image Error = Properties.Resources.errorN;
-        public Image Info = Properties.Resources.infoN;
-        public Image Warning = Properties.Resources.warningN;
-        public Image Cancel = Properties.Resources.cancelN;
+        public Image Success = VitNX.Properties.Resources.successN;
+        public Image Error = VitNX.Properties.Resources.errorN;
+        public Image Info = VitNX.Properties.Resources.infoN;
+        public Image Warning = VitNX.Properties.Resources.warningN;
+        public Image Cancel = VitNX.Properties.Resources.cancelN;
     }
 
     /// <summary>
