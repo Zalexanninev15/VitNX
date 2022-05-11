@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.CreateCompatibleBitmap Method</title>
+	<title>Import.InsertMenuItem Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.CreateCompatibleBitmap Method</h1>
+		<h1 class="title">Import.InsertMenuItem Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> CreateCompatibleBitmap(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hDC</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nWidth</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nHeight</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> InsertMenuItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hMenu</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>uItem</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>fByPosition</i>,&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="topic_00000000000001DA.html" onclick="this.target='';return true;">MENU_ITEM_INFO</a> <i>lpmii</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +153,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hDC" class="parameterList">
+	Parameters</h4><dl paramName="hMenu" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hDC
+			hMenu
 		</span>
 	</dt>
 	<dd>
@@ -164,27 +166,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="nWidth" class="parameterList">
+<dl paramName="uItem" class="parameterList">
 	<dt>
 		<span class="parameter">
-			nWidth
+			uItem
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="nHeight" class="parameterList">
+<dl paramName="fByPosition" class="parameterList">
 	<dt>
 		<span class="parameter">
-			nHeight
+			fByPosition
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpmii" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpmii
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000001DA.html" onclick="this.target='';return true;">MENU_ITEM_INFO</a> 
 	</dd>
 </dl>
 <p>
@@ -195,7 +210,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -270,10 +285,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;gdi32.dll&quot;)]
- public static extern IntPtr CreateCompatibleBitmap(IntPtr hDC,
-     int nWidth,
-     int nHeight);
+[DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto,
+     SetLastError = true)]
+ public static extern bool InsertMenuItem(IntPtr hMenu,
+     uint uItem,
+     bool fByPosition, [In]
+    MENU_ITEM_INFO lpmii);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_NumericUpDown.OnMouseUp Method</title>
+	<title>Window.GetDpiForWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_NumericUpDown.OnMouseUp Method</h1>
+		<h1 class="title">Window.GetDpiForWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001160.html">VitNX3.Functions.WindowAndControls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mouseup">MouseUp</a> event.</summary-info>
+        <summary-info>Gets the DPI for window.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseUp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>mevent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetDpiForWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,22 +152,29 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="mevent" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			mevent
+			hwnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	The hwnd. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<p>
+		An int. 
+	</p>
+	
 
 
 
@@ -241,8 +248,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseUp(MouseEventArgs mevent)
- { _mouseDown = false; Invalidate(); }
+public static int GetDpiForWindow(IntPtr hwnd)
+ {
+     if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) &gt;= 1607 ||
+         Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) &gt;= 16070) &amp;&amp;
+         hwnd != IntPtr.Zero)
+         return GetDpiForWindow(hwnd);
+     else
+         using (Graphics gx = Graphics.FromHwnd(hwnd))
+             return Import.GetDeviceCaps(gx.GetHdc(), 88);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -306,11 +321,11 @@ protected override void OnMouseUp(MouseEventArgs mevent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001167.html">VitNX_NumericUpDown Class</a><br />
+			<a href="topic_0000000000001161.html">Window Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001160.html">VitNX3.Functions.WindowAndControls Namespace</a><br />
 
 
 			

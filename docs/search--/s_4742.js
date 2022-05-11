@@ -1,1 +1,1 @@
-search_result['4742']=["topic_00000000000011D1.html","VitNX_TreeView.OnMouseDoubleClick Method","Raises the MouseDoubleClick event."];
+search_result['4742']=["topic_0000000000001248.html","VitNX_Title Constructor",""];

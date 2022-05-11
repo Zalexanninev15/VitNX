@@ -1,1 +1,1 @@
-search_result['4849']=["topic_000000000000121A.html","VitNX_DockRegion Class",""];
+search_result['4849']=["topic_000000000000128C.html","VitNX_DockContent.OnEnter Method","Raises the Enter event."];

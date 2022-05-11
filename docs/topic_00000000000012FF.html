@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FontAwesome4.Initialize Method</title>
+	<title>VitNX_MenuRenderer.OnRenderItemCheck Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FontAwesome4.Initialize Method</h1>
+		<h1 class="title">VitNX_MenuRenderer.OnRenderItemCheck Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls</a>
+<a href="topic_00000000000012F9.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemcheck">RenderItemCheck</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Initialize()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderItemCheck(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> 
+	</dd>
+</dl>
+<p>
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> that contains the event data. 
+</p>
+
+<p />
 
 
 
@@ -224,10 +241,31 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Initialize()
+protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
  {
-     if (_instance == null)
-         _instance = new FontAwesome4();
+     var g = e.Graphics;
+     var rect = new Rectangle(e.ImageRectangle.Left - 2,
+         e.ImageRectangle.Top - 2,
+         e.ImageRectangle.Width + 4,
+         e.ImageRectangle.Height + 4);
+     using (var b = new SolidBrush(Colors.LightBorder))
+         g.FillRectangle(b, rect);
+     using (var p = new Pen(Colors.BlueHighlight))
+     {
+         var modRect = new Rectangle(rect.Left,
+             rect.Top,
+             rect.Width - 1,
+             rect.Height - 1);
+         g.DrawRectangle(p, modRect);
+     }
+     if (e.Item.ImageIndex == -1 &amp;&amp;
+         string.IsNullOrEmpty(e.Item.ImageKey) &amp;&amp;
+         e.Item.Image == null)
+     {
+         g.DrawImageUnscaled(MenuIcons.tick,
+             new Point(e.ImageRectangle.Left,
+             e.ImageRectangle.Top));
+     }
  }
 					</pre>			
 				</div>
@@ -292,11 +330,11 @@ public static void Initialize()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012FB.html">FontAwesome4 Class</a><br />
+			<a href="topic_00000000000012FA.html">VitNX_MenuRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000012F9.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			

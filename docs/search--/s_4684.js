@@ -1,1 +1,1 @@
-search_result['4684']=["topic_00000000000011B2_vars--.html","VitNX_StatusStrip Fields",""];
+search_result['4684']=["topic_000000000000122A.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];

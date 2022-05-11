@@ -1,1 +1,1 @@
-search_result['1234']=["topic_0000000000000424.html","ERROR_UNKNOWN_COMPONENT Field",""];
+search_result['1234']=["topic_0000000000000421.html","ERROR_NO_SCROLLBARS Field",""];

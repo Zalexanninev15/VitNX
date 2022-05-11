@@ -1,1 +1,1 @@
-search_result['1801']=["topic_000000000000065B.html","ERROR_DS_OBJ_STRING_NAME_EXISTS Field",""];
+search_result['1801']=["topic_0000000000000658.html","ERROR_DS_INVALID_DN_SYNTAX Field",""];

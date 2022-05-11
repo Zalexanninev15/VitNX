@@ -1,1 +1,1 @@
-search_result['5164']=["topic_00000000000012E0.html","VitNX2_ProgressBar Constructor",""];
+search_result['5164']=["topic_0000000000001360.html","VitNX2_MessageBoxType2 Class",""];

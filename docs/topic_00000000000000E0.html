@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.DeviceIoControl Method</title>
+	<title>Import.FormatMessage Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.DeviceIoControl Method</h1>
+		<h1 class="title">Import.FormatMessage Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;, SetLastError = true, CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> DeviceIoControl(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hDevice</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwIoControlCode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lpInBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>nInBufferSize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lpOutBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>nOutBufferSize</i>,&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>lpBytesReturned</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lpOverlapped</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> FormatMessage(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>Flags</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Source</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>MessageID</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>LanguageID</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>Buffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>Size</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Args</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +151,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hDevice" class="parameterList">
+	Parameters</h4><dl paramName="Flags" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hDevice
+			Flags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="Source" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Source
 		</span>
 	</dt>
 	<dd>
@@ -164,10 +177,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="dwIoControlCode" class="parameterList">
+<dl paramName="MessageID" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwIoControlCode
+			MessageID
 		</span>
 	</dt>
 	<dd>
@@ -177,23 +190,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="lpInBuffer" class="parameterList">
+<dl paramName="LanguageID" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpInBuffer
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="nInBufferSize" class="parameterList">
-	<dt>
-		<span class="parameter">
-			nInBufferSize
+			LanguageID
 		</span>
 	</dt>
 	<dd>
@@ -203,36 +203,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="lpOutBuffer" class="parameterList">
+<dl paramName="Buffer" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpOutBuffer
+			Buffer
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="nOutBufferSize" class="parameterList">
+<dl paramName="Size" class="parameterList">
 	<dt>
 		<span class="parameter">
-			nOutBufferSize
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="lpBytesReturned" class="parameterList">
-	<dt>
-		<span class="parameter">
-			lpBytesReturned
+			Size
 		</span>
 	</dt>
 	<dd>
@@ -242,10 +229,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="lpOverlapped" class="parameterList">
+<dl paramName="Args" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpOverlapped
+			Args
 		</span>
 	</dt>
 	<dd>
@@ -260,7 +247,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	
 
 
@@ -335,15 +322,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;kernel32.dll&quot;, SetLastError = true, CharSet = CharSet.Auto)]
- public static extern bool DeviceIoControl(IntPtr hDevice,
- uint dwIoControlCode,
- IntPtr lpInBuffer,
- uint nInBufferSize,
- IntPtr lpOutBuffer,
- uint nOutBufferSize,
- out uint lpBytesReturned,
- IntPtr lpOverlapped);
+[DllImport(&quot;kernel32.dll&quot;)]
+ public static extern uint FormatMessage(uint Flags,
+     IntPtr Source,
+     uint MessageID,
+     uint LanguageID,
+     StringBuilder Buffer,
+     uint Size,
+     IntPtr Args);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

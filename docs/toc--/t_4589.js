@@ -1,1 +1,0 @@
-c['4589']=[['4590',"Alert(string, NotificationType) Method","topic_0000000000001631.html",0],['4591',"Alert(string, NotificationType, Color, Image) Method","topic_0000000000001632.html",0]];

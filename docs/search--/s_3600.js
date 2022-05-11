@@ -1,1 +1,1 @@
-search_result['3600']=["topic_0000000000000D5D.html","COMADMIN_E_CAT_DUPLICATE_PARTITION_NAME Field",""];
+search_result['3600']=["topic_0000000000000D5A.html","COMADMIN_E_COMP_MOVE_BAD_DEST Field",""];

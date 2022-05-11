@@ -1,1 +1,1 @@
-search_result['3952']=["topic_0000000000000E95.html","SIZE Structure",""];
+search_result['3952']=["topic_0000000000000EFA.html","RECT Structure",""];

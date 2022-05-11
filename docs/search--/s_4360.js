@@ -1,1 +1,1 @@
-search_result['4360']=["topic_00000000000010EA_methods--.html","Text Methods",""];
+search_result['4360']=["topic_0000000000001162.html","Window.MinimizeAll Method","Minimizes the all windows."];

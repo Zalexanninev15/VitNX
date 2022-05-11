@@ -1,1 +1,1 @@
-search_result['770']=["topic_0000000000000254.html","ERROR_PATH_BUSY Field",""];
+search_result['770']=["topic_0000000000000251.html","ERROR_INVALID_NAME Field",""];

@@ -1,1 +1,1 @@
-search_result['4330']=["topic_00000000000010DC_events--.html","Controls Events",""];
+search_result['4330']=["topic_0000000000001153.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Structure",""];

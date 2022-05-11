@@ -1,1 +1,1 @@
-search_result['5256']=["topic_000000000000161C_methods--.html","FontAwesomeExtensions Methods",""];
+search_result['5256']=["topic_0000000000001386.html","VitNX2_TextBox.OnPaint Method","Raises the Paint event."];

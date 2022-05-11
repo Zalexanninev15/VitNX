@@ -1,1 +1,1 @@
-search_result['367']=["topic_00000000000000E7.html","Import.GetMenuItemInfo Method",""];
+search_result['367']=["topic_00000000000000E7.html","Import.GetSystemMetrics Method",""];

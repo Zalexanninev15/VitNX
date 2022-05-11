@@ -1,1 +1,1 @@
-search_result['1109']=["topic_00000000000003A7.html","ERROR_CANT_OPEN_ANONYMOUS Field",""];
+search_result['1109']=["topic_00000000000003A4.html","ERROR_MEMBER_NOT_IN_GROUP Field",""];

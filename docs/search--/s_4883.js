@@ -1,1 +1,1 @@
-search_result['4883']=["topic_0000000000001230_attached_props--.html","VitNX_ToolWindow Attached Properties",""];
+search_result['4883']=["topic_00000000000012A2_overloads--.html","VitNX_DockPanel.AddContent Method",""];

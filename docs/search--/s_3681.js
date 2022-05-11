@@ -1,1 +1,1 @@
-search_result['3681']=["topic_0000000000000D9F.html","WINDOW_COMPATTR Enumeration",""];
+search_result['3681']=["topic_0000000000000DAB.html","Enums Class","The enums for imported functions."];

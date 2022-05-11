@@ -1,1 +1,1 @@
-search_result['4561']=["topic_0000000000001162_overloads--.html","VitNX_ListView.SelectItems Method",""];
+search_result['4561']=["topic_00000000000011DD_methods--.html","VitNX_GroupBox Methods",""];

@@ -1,1 +1,1 @@
-search_result['2963']=["topic_0000000000000AE0.html","STG_E_INVALIDFLAG Field",""];
+search_result['2963']=["topic_0000000000000ADD.html","TYPE_E_CIRCULARTYPE Field",""];

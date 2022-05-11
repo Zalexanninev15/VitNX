@@ -1,1 +1,1 @@
-search_result['738']=["topic_0000000000000234.html","ERROR_INVALID_TARGET_HANDLE Field",""];
+search_result['738']=["topic_0000000000000231.html","ERROR_REQ_NOT_ACCEP Field",""];

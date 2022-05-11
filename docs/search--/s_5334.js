@@ -1,1 +1,1 @@
-search_result['5334']=["topic_0000000000001650_events--.html","NotifySettings Events",""];
+search_result['5334']=["topic_00000000000016C2.html","Manager.Alert (String, NotificationType, Color, Image) Method","Display a new custom notification on the screen."];

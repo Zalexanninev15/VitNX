@@ -1,1 +1,1 @@
-search_result['4178']=["topic_0000000000001093_methods--.html","DISPLAYCONFIG_PATH_SOURCE_INFO Methods",""];
+search_result['4178']=["topic_0000000000001110.html","GetClipboardText.GetText Method","Gets the text from clipboard."];

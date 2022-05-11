@@ -1,1 +1,1 @@
-search_result['1815']=["topic_0000000000000669.html","ERROR_DS_CANT_ADD_ATT_VALUES Field",""];
+search_result['1815']=["topic_0000000000000666.html","ERROR_DS_NOT_SUPPORTED Field",""];

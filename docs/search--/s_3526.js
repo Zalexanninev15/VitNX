@@ -1,1 +1,1 @@
-search_result['3526']=["topic_0000000000000D13.html","SCARD_E_COMM_DATA_LOST Field",""];
+search_result['3526']=["topic_0000000000000D10.html","SCARD_E_NOT_TRANSACTED Field",""];

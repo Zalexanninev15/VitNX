@@ -1,1 +1,1 @@
-search_result['1135']=["topic_00000000000003C1.html","ERROR_SPECIAL_USER Field",""];
+search_result['1135']=["topic_00000000000003BE.html","ERROR_BAD_VALIDATION_CLASS Field",""];

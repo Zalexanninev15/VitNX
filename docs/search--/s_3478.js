@@ -1,1 +1,1 @@
-search_result['3478']=["topic_0000000000000CE3.html","SPAPI_E_SCE_DISABLED Field",""];
+search_result['3478']=["topic_0000000000000CE0.html","SPAPI_E_INVALID_REFERENCE_STRING Field",""];

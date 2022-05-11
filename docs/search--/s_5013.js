@@ -1,1 +1,1 @@
-search_result['5013']=["topic_000000000000128A.html","Helper.VitNX2_Button_MouseEnter Method",""];
+search_result['5013']=["topic_0000000000001304.html","VitNX_ToolStripRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

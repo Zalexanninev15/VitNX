@@ -1,1 +1,1 @@
-search_result['465']=["topic_0000000000000145.html","Import.OffsetWindowOrgEx Method",""];
+search_result['465']=["topic_0000000000000145.html","Import.GetTextMetrics Method",""];

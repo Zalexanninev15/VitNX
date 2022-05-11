@@ -1,1 +1,1 @@
-search_result['3564']=["topic_0000000000000D39.html","COMADMIN_E_REGISTRARFAILED Field",""];
+search_result['3564']=["topic_0000000000000D36.html","SCARD_W_CARD_NOT_AUTHENTICATED Field",""];

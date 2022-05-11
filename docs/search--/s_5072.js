@@ -1,1 +1,1 @@
-search_result['5072']=["topic_00000000000012B4.html","Helpers.GetColors Method",""];
+search_result['5072']=["topic_0000000000001327.html","VitNX2_CheckBox.OnTextChanged Method","Raises the TextChanged event."];

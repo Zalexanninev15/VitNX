@@ -1,1 +1,1 @@
-search_result['665']=["topic_00000000000001EB.html","ERROR_BAD_FORMAT Field",""];
+search_result['665']=["topic_00000000000001ED.html","szTip Field",""];

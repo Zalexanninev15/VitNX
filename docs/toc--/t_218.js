@@ -1,1 +1,1 @@
-c['218']=[['219',"VitNX_Separator Constructor","topic_00000000000011AF.html",0],['220',"Methods","topic_00000000000011AE_methods--.html",1]];
+c['218']=[['219',"VitNX_Separator Constructor","topic_000000000000123F.html",0],['220',"Methods","topic_000000000000123E_methods--.html",1]];

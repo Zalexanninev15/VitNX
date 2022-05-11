@@ -1,1 +1,1 @@
-search_result['710']=["topic_0000000000000218.html","ERROR_TOO_MANY_NAMES Field",""];
+search_result['710']=["topic_0000000000000215.html","ERROR_GEN_FAILURE Field",""];

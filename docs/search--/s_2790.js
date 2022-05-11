@@ -1,1 +1,1 @@
-search_result['2790']=["topic_0000000000000A33.html","XACT_E_XA_TX_DISABLED Field",""];
+search_result['2790']=["topic_0000000000000A30.html","XACT_E_NOTCURRENT Field",""];

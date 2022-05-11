@@ -1,1 +1,1 @@
-search_result['1860']=["topic_0000000000000696.html","ERROR_DS_UNKNOWN_OPERATION Field",""];
+search_result['1860']=["topic_0000000000000693.html","ERROR_DS_CANT_DELETE_DSA_OBJ Field",""];

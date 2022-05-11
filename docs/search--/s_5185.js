@@ -1,1 +1,1 @@
-search_result['5185']=["topic_00000000000012E9.html","VitNX2_ProgressBarRoundedType2.OnSizeChanged Method","Raises the SizeChanged event."];
+search_result['5185']=["topic_0000000000001367_methods--.html","VitNX2_Panel Methods",""];

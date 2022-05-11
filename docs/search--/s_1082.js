@@ -1,1 +1,1 @@
-search_result['1082']=["topic_000000000000038C.html","ERROR_NO_SUCH_GROUP Field",""];
+search_result['1082']=["topic_0000000000000389.html","ERROR_ALREADY_THREAD Field",""];

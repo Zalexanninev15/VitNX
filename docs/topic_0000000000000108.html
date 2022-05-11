@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.DispatchMessage Method</title>
+	<title>Import.AnimateWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.DispatchMessage Method</h1>
+		<h1 class="title">Import.AnimateWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> DispatchMessage(&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E40.html" onclick="this.target='';return true;">MSG</a> <i>msg</i>&nbsp;<br />)</pre>			
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> AnimateWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwTime</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwFlags</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,14 +152,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="msg" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			msg
+			hwnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000E40.html" onclick="this.target='';return true;">MSG</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwTime" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwTime
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwFlags" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwFlags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -247,8 +273,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 					<pre xml:space="preserve" class="brush: csharp">
 [return: MarshalAs(UnmanagedType.Bool)]
  [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern bool DispatchMessage(ref MSG msg);
+     SetLastError = true)]
+ public static extern bool AnimateWindow(IntPtr hwnd,
+     int dwTime,
+     int dwFlags);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

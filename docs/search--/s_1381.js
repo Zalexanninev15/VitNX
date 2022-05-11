@@ -1,1 +1,1 @@
-search_result['1381']=["topic_00000000000004B7.html","ERROR_RESOURCE_DATA_NOT_FOUND Field",""];
+search_result['1381']=["topic_00000000000004B4.html","ERROR_NO_TRUST_SAM_ACCOUNT Field",""];

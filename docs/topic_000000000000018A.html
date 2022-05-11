@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.DwmSetWindowAttribute Method</title>
+	<title>Import.UpdateWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.DwmSetWindowAttribute Method</h1>
+		<h1 class="title">Import.UpdateWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;dwmapi.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DwmSetWindowAttribute(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000DBF.html" onclick="this.target='';return true;">DWM_GET_WINDOW_ATTRIBUTE</a> <i>attribute</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a>[] <i>attrValue</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>cbAttribute</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> UpdateWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,53 +152,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWnd
+			hwnd
 		</span>
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="attribute" class="parameterList">
-	<dt>
-		<span class="parameter">
-			attribute
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000DBF.html" onclick="this.target='';return true;">DWM_GET_WINDOW_ATTRIBUTE</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="attrValue" class="parameterList">
-	<dt>
-		<span class="parameter">
-			attrValue
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a>[] 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="cbAttribute" class="parameterList">
-	<dt>
-		<span class="parameter">
-			cbAttribute
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
@@ -209,7 +170,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -284,12 +245,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;dwmapi.dll&quot;,
-     SetLastError = true)]
- public static extern int DwmSetWindowAttribute(IntPtr hWnd,
-     DWM_GET_WINDOW_ATTRIBUTE attribute,
-     int[] attrValue,
-     uint cbAttribute);
+[return: MarshalAs(UnmanagedType.Bool)]
+ [DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool UpdateWindow(IntPtr hwnd);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

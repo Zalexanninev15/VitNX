@@ -1,1 +1,1 @@
-search_result['2948']=["topic_0000000000000AD1.html","STG_E_DISKISWRITEPROTECTED Field",""];
+search_result['2948']=["topic_0000000000000ACE.html","TYPE_E_ELEMENTNOTFOUND Field",""];

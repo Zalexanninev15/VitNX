@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>btnYes Field</title>
+	<title>VitNX_Separator Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">btnYes Field</h1>
+		<h1 class="title">VitNX_Separator Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001239.html">VitNX.UI.ControlsV1.Forms</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected <a target="_top" href="topic_0000000000001107.html" onclick="this.target='';return true;">VitNX_Button</a> btnYes</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX_Separator()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +151,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="topic_0000000000001107.html" onclick="this.target='';return true;">VitNX_Button</a> 
-	
 
 
 
@@ -228,7 +224,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected VitNX_Button btnYes;
+public VitNX_Separator()
+ {
+     SetStyle(ControlStyles.Selectable, false);
+ 
+     Dock = DockStyle.Top;
+     Size = new Size(1, 2);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -292,11 +294,11 @@ protected VitNX_Button btnYes;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000123A.html">VitNX_Dialog Class</a><br />
+			<a href="topic_000000000000123E.html">VitNX_Separator Class</a><br />
 
 
 
-<a href="topic_0000000000001239.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -318,3 +320,4 @@ protected VitNX_Button btnYes;
     </div>
   </body>
 </html>
+

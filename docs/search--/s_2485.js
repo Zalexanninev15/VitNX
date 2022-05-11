@@ -1,1 +1,1 @@
-search_result['2485']=["topic_0000000000000907.html","ERROR_IPSEC_IKE_LOAD_FAILED Field",""];
+search_result['2485']=["topic_0000000000000904.html","ERROR_IPSEC_IKE_NOTCBPRIV Field",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.CloseThemeData Method</title>
+	<title>Import.SetFirmwareEnvironmentVariable Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.CloseThemeData Method</h1>
+		<h1 class="title">Import.SetFirmwareEnvironmentVariable Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;,
-            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> CloseThemeData(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hTheme</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;,
+            EntryPoint = &quot;SetFirmwareEnvironmentVariable&quot;,
+            SetLastError = true)]&nbsp;<br />[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> SetFirmwareEnvironmentVariable(&nbsp;<br />   [In()]&nbsp;<br />[MarshalAs(UnmanagedType.LPTStr)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>lpName</i>,&nbsp;<br />   [In()]&nbsp;<br />[MarshalAs(UnmanagedType.LPTStr)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>lpGuid</i>,&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>pBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>nSize</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,14 +153,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hTheme" class="parameterList">
+	Parameters</h4><dl paramName="lpName" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hTheme
+			lpName
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpGuid" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpGuid
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pBuffer
 		</span>
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
@@ -170,7 +210,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -245,9 +285,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;,
-     CharSet = CharSet.Unicode)]
- public static extern int CloseThemeData(IntPtr hTheme);
+[DllImport(&quot;kernel32.dll&quot;,
+     EntryPoint = &quot;SetFirmwareEnvironmentVariable&quot;,
+     SetLastError = true)]
+ [return: MarshalAs(UnmanagedType.Bool)]
+ public static extern bool SetFirmwareEnvironmentVariable([In][MarshalAs(UnmanagedType.LPTStr)] string lpName,
+ [In][MarshalAs(UnmanagedType.LPTStr)] string lpGuid,
+ [In] IntPtr pBuffer,
+ uint nSize);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

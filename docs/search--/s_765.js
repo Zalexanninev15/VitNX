@@ -1,1 +1,1 @@
-search_result['765']=["topic_000000000000024F.html","ERROR_SAME_DRIVE Field",""];
+search_result['765']=["topic_000000000000024C.html","ERROR_INVALID_VERIFY_SWITCH Field",""];

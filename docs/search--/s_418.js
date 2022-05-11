@@ -1,1 +1,1 @@
-search_result['418']=["topic_0000000000000119.html","Import.GetClipBox Method",""];
+search_result['418']=["topic_0000000000000118.html","Import.CreateRectRgn Method",""];

@@ -1,1 +1,1 @@
-search_result['555']=["topic_0000000000000196.html","Import.BitBlt Method",""];
+search_result['555']=["topic_0000000000000195.html","Import.InstallHinfSection Method",""];

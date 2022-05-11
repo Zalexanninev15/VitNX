@@ -1,1 +1,1 @@
-search_result['5006']=["topic_0000000000001287_attached_props--.html","Helper Attached Properties",""];
+search_result['5006']=["topic_0000000000001302.html","VitNX_MenuRenderer.OnRenderMenuItemBackground Method","Raises the RenderMenuItemBackground event."];

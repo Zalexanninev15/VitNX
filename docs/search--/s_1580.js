@@ -1,1 +1,1 @@
-search_result['1580']=["topic_000000000000057E.html","ERROR_CORE_RESOURCE Field",""];
+search_result['1580']=["topic_000000000000057B.html","ERROR_DEPENDENT_RESOURCE_EXISTS Field",""];

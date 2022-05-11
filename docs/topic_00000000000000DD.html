@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.EnumSystemFirmwareTables Method</title>
+	<title>Import.MediaInfo_Count_Get Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.EnumSystemFirmwareTables Method</h1>
+		<h1 class="title">Import.MediaInfo_Count_Get Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,9 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;,
-            EntryPoint = &quot;EnumSystemFirmwareTables&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> EnumSystemFirmwareTables(&nbsp;<br />   <a target="_top" href="topic_0000000000001044.html" onclick="this.target='';return true;">FirmwareTableType</a> <i>FirmwareTableProviderSignature</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>pFirmwareTableEnuM_BUffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>BufferSize</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;MediaInfo.dll&quot;,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> MediaInfo_Count_Get(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>handle</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000F6D.html" onclick="this.target='';return true;">MEDIAINFOSTREAMKIND</a> <i>streamKind</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>stream</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,23 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="FirmwareTableProviderSignature" class="parameterList">
+	Parameters</h4><dl paramName="handle" class="parameterList">
 	<dt>
 		<span class="parameter">
-			FirmwareTableProviderSignature
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000001044.html" onclick="this.target='';return true;">FirmwareTableType</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="pFirmwareTableEnuM_BUffer" class="parameterList">
-	<dt>
-		<span class="parameter">
-			pFirmwareTableEnuM_BUffer
+			handle
 		</span>
 	</dt>
 	<dd>
@@ -179,14 +165,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="BufferSize" class="parameterList">
+<dl paramName="streamKind" class="parameterList">
 	<dt>
 		<span class="parameter">
-			BufferSize
+			streamKind
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="topic_0000000000000F6D.html" onclick="this.target='';return true;">MEDIAINFOSTREAMKIND</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="stream" class="parameterList">
+	<dt>
+		<span class="parameter">
+			stream
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -197,7 +196,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -272,12 +271,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;kernel32.dll&quot;,
-     EntryPoint = &quot;EnumSystemFirmwareTables&quot;,
-     SetLastError = true)]
- public static extern uint EnumSystemFirmwareTables(FirmwareTableType FirmwareTableProviderSignature,
- IntPtr pFirmwareTableEnuM_BUffer,
- uint BufferSize);
+[DllImport(&quot;MediaInfo.dll&quot;,
+     CharSet = CharSet.Unicode)]
+ public static extern int MediaInfo_Count_Get(IntPtr handle,
+     MEDIAINFOSTREAMKIND streamKind,
+     int stream);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

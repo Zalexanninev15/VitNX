@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_TreeView.SelectNodes (VitNX_TreeNode, VitNX_TreeNode) Method</title>
+	<title>VitNX_DropdownList.OnMouseDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_TreeView.SelectNodes (VitNX_TreeNode, VitNX_TreeNode) Method</h1>
+		<h1 class="title">VitNX_DropdownList.OnMouseDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousedown">MouseDown</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SelectNodes(&nbsp;<br />   <a target="_top" href="topic_00000000000011BC.html" onclick="this.target='';return true;">VitNX_TreeNode</a> <i>startNode</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000011BC.html" onclick="this.target='';return true;">VitNX_TreeNode</a> <i>endNode</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,31 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="startNode" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			startNode
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000011BC.html" onclick="this.target='';return true;">VitNX_TreeNode</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="endNode" class="parameterList">
-	<dt>
-		<span class="parameter">
-			endNode
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000011BC.html" onclick="this.target='';return true;">VitNX_TreeNode</a> 
-	</dd>
-</dl>
-<p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
 </p>
 
 <p />
@@ -253,35 +241,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void SelectNodes(VitNX_TreeNode startNode, VitNX_TreeNode endNode)
+protected override void OnMouseDown(MouseEventArgs e)
  {
-     var nodes = new List&lt;VitNX_TreeNode&gt;();
+     base.OnMouseDown(e);
  
-     if (startNode == endNode)
-         nodes.Add(startNode);
- 
-     if (startNode.VisibleIndex &lt; endNode.VisibleIndex)
-     {
-         var node = startNode;
-         nodes.Add(node);
-         while (node != endNode &amp;&amp; node != null)
-         {
-             node = node.NextVisibleNode;
-             nodes.Add(node);
-         }
-     }
-     else if (startNode.VisibleIndex &gt; endNode.VisibleIndex)
-     {
-         var node = startNode;
-         nodes.Add(node);
-         while (node != endNode &amp;&amp; node != null)
-         {
-             node = node.PrevVisibleNode;
-             nodes.Add(node);
-         }
-     }
- 
-     SelectNodes(nodes, false);
+     ShowMenu();
  }
 					</pre>			
 				</div>
@@ -346,11 +310,11 @@ public void SelectNodes(VitNX_TreeNode startNode, VitNX_TreeNode endNode)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000011C7.html">VitNX_TreeView Class</a><br />
+			<a href="topic_00000000000011D0.html">VitNX_DropdownList Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

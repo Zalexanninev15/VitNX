@@ -1,1 +1,1 @@
-search_result['389']=["topic_00000000000000FD.html","Import.CreateBrushIndirect Method",""];
+search_result['389']=["topic_00000000000000FB.html","Import.GetSystemMenu Method",""];

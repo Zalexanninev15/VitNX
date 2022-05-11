@@ -1,1 +1,1 @@
-search_result['2048']=["topic_0000000000000752.html","ERROR_DS_CANT_CREATE_IN_NONDOMAIN_NC Field",""];
+search_result['2048']=["topic_000000000000074F.html","ERROR_DS_WRONG_LINKED_ATT_SYNTAX Field",""];

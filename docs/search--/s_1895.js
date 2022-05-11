@@ -1,1 +1,1 @@
-search_result['1895']=["topic_00000000000006B9.html","ERROR_DS_BAD_ATT_SCHEMA_SYNTAX Field",""];
+search_result['1895']=["topic_00000000000006B6.html","ERROR_DS_CANT_DEL_MASTER_CROSSREF Field",""];

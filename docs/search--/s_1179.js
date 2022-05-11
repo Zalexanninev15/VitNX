@@ -1,1 +1,1 @@
-search_result['1179']=["topic_00000000000003ED.html","ERROR_NO_WILDCARD_CHARACTERS Field",""];
+search_result['1179']=["topic_00000000000003EA.html","ERROR_FILE_CORRUPT Field",""];

@@ -1,1 +1,1 @@
-search_result['2479']=["topic_0000000000000901.html","ERROR_IPSEC_IKE_INVALID_HASH Field",""];
+search_result['2479']=["topic_00000000000008FE.html","ERROR_IPSEC_IKE_SOFT_SA_TORN_DOWN Field",""];

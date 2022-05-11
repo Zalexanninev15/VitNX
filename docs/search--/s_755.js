@@ -1,1 +1,1 @@
-search_result['755']=["topic_0000000000000245.html","ERROR_IS_JOIN_TARGET Field",""];
+search_result['755']=["topic_0000000000000242.html","ERROR_SEM_USER_LIMIT Field",""];

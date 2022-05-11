@@ -1,1 +1,1 @@
-search_result['1487']=["topic_0000000000000521.html","ERROR_REC_NON_EXISTENT Field",""];
+search_result['1487']=["topic_000000000000051E.html","ERROR_BAD_USERNAME Field",""];

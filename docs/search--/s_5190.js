@@ -1,1 +1,1 @@
-search_result['5190']=["topic_00000000000012EB_methods--.html","VitNX2_RichTextBox Methods",""];
+search_result['5190']=["topic_000000000000136A.html","VitNX2_Panel.OnHandleCreated Method","Raises the HandleCreated event."];

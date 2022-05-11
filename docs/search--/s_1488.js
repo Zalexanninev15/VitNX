@@ -1,1 +1,1 @@
-search_result['1488']=["topic_0000000000000522.html","ERROR_RPL_NOT_ALLOWED Field",""];
+search_result['1488']=["topic_000000000000051F.html","ERROR_NOT_CONNECTED Field",""];

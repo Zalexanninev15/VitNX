@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>SCROLLINFO Structure</title>
+	<title>KBDLLHOOKSTRUCT Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">SCROLLINFO Structure</h1>
+		<h1 class="title">KBDLLHOOKSTRUCT Structure</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct SCROLLINFO</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct KBDLLHOOKSTRUCT</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -218,7 +218,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000E8E.html">cbSize</a>
+	    <a href="topic_0000000000000E92.html">dwExtraInfo</a>
 	  </td>
 	  <td>
 	
@@ -237,7 +237,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000E8F.html">fMask</a>
+	    <a href="topic_0000000000000E90.html">flags</a>
 	  </td>
 	  <td>
 	
@@ -256,7 +256,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000E91.html">nMax</a>
+	    <a href="topic_0000000000000E8F.html">scanCode</a>
 	  </td>
 	  <td>
 	
@@ -275,7 +275,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000E90.html">nMin</a>
+	    <a href="topic_0000000000000E91.html">time</a>
 	  </td>
 	  <td>
 	
@@ -294,45 +294,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	    
 	  </td>
 	  <td>
-	    <a href="topic_0000000000000E92.html">nPage</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_0000000000000E93.html">nPos</a>
-	  </td>
-	  <td>
-	
-	
-	
-		</td>
-	</tr>
-	<tr class="
-	
-	
-	">
-	  <td>
-		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
-	
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_0000000000000E94.html">nTrackPos</a>
+	    <a href="topic_0000000000000E8E.html">vkCode</a>
 	  </td>
 	  <td>
 	
@@ -408,15 +370,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [StructLayout(LayoutKind.Sequential)]
- public struct SCROLLINFO
+ public struct KBDLLHOOKSTRUCT
  {
-     public int cbSize;
-     public int fMask;
-     public int nMin;
-     public int nMax;
-     public int nPage;
-     public int nPos;
-     public int nTrackPos;
+     public int vkCode;
+     public int scanCode;
+     public int flags;
+     public int time;
+     public IntPtr dwExtraInfo;
  }
 					</pre>			
 				</div>

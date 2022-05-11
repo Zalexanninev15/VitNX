@@ -1,1 +1,1 @@
-search_result['4369']=["topic_00000000000010ED_props--.html","ObservableList\u0026lt;T\u0026gt; Properties",""];
+search_result['4369']=["topic_000000000000116B.html","Window.GetDpiForWindow Method","Gets the DPI for window."];

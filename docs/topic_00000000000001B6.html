@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>WM_NCHITTEST Field</title>
+	<title>Import.SetProcessDpiAwareness Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">WM_NCHITTEST Field</h1>
+		<h1 class="title">Import.SetProcessDpiAwareness Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public const <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> WM_NCHITTEST = 132</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;shcore.dll&quot;,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> SetProcessDpiAwareness(&nbsp;<br />   <a target="_top" href="topic_00000000000010E1.html" onclick="this.target='';return true;">PROCESS_DPI_AWARENESS</a> <i>PROCESS_DPI_UNAWARE</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,9 +151,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="PROCESS_DPI_UNAWARE" class="parameterList">
+	<dt>
+		<span class="parameter">
+			PROCESS_DPI_UNAWARE
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000010E1.html" onclick="this.target='';return true;">PROCESS_DPI_AWARENESS</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
+		Return Value</h4>
 	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
@@ -228,7 +245,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public const int WM_NCHITTEST = 0x84;
+[DllImport(&quot;shcore.dll&quot;,
+     SetLastError = true)]
+ public static extern int SetProcessDpiAwareness(PROCESS_DPI_AWARENESS PROCESS_DPI_UNAWARE);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -292,7 +311,7 @@ public const int WM_NCHITTEST = 0x84;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000001AB.html">Constants Class</a><br />
+			<a href="topic_00000000000000C7.html">Import Class</a><br />
 
 
 
@@ -318,3 +337,4 @@ public const int WM_NCHITTEST = 0x84;
     </div>
   </body>
 </html>
+

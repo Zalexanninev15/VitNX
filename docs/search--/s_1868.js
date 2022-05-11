@@ -1,1 +1,1 @@
-search_result['1868']=["topic_000000000000069E.html","ERROR_DS_NAME_REFERENCE_INVALID Field",""];
+search_result['1868']=["topic_000000000000069B.html","ERROR_DS_NAME_TOO_Int32 Field",""];

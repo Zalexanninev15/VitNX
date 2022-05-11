@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DockPanelState Constructor</title>
+	<title>VitNX_ListView.OnKeyDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DockPanelState Constructor</h1>
+		<h1 class="title">VitNX_ListView.OnKeyDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000011E3.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.keydown">KeyDown</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public DockPanelState()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnKeyDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> 
+	</dd>
+</dl>
+<p>
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> that contains the event data. 
+</p>
+
+<p />
 
 
 
@@ -224,9 +241,49 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public DockPanelState()
+protected override void OnKeyDown(KeyEventArgs e)
  {
-     Regions = new List&lt;DockRegionState&gt;();
+     base.OnKeyDown(e);
+ 
+     if (Items.Count == 0)
+         return;
+ 
+     if (e.KeyCode != Keys.Down &amp;&amp; e.KeyCode != Keys.Up)
+         return;
+ 
+     if (MultiSelect &amp;&amp; ModifierKeys == Keys.Shift)
+     {
+         if (e.KeyCode == Keys.Up)
+         {
+             if (_anchoredItemEnd - 1 &gt;= 0)
+             {
+                 SelectAnchoredRange(_anchoredItemEnd - 1);
+                 EnsureVisible();
+             }
+         }
+         else if (e.KeyCode == Keys.Down)
+         {
+             if (_anchoredItemEnd + 1 &lt;= Items.Count - 1)
+             {
+                 SelectAnchoredRange(_anchoredItemEnd + 1);
+             }
+         }
+     }
+     else
+     {
+         if (e.KeyCode == Keys.Up)
+         {
+             if (_anchoredItemEnd - 1 &gt;= 0)
+                 SelectItem(_anchoredItemEnd - 1);
+         }
+         else if (e.KeyCode == Keys.Down)
+         {
+             if (_anchoredItemEnd + 1 &lt;= Items.Count - 1)
+                 SelectItem(_anchoredItemEnd + 1);
+         }
+     }
+ 
+     EnsureVisible();
  }
 					</pre>			
 				</div>
@@ -291,11 +348,11 @@ public DockPanelState()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000011EC.html">DockPanelState Class</a><br />
+			<a href="topic_00000000000011E9.html">VitNX_ListView Class</a><br />
 
 
 
-<a href="topic_00000000000011E3.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

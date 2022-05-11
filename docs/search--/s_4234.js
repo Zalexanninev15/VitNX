@@ -1,1 +1,1 @@
-search_result['4234']=["topic_00000000000010B0.html","DISPLAYCONFIG_TARGET_MODE Structure",""];
+search_result['4234']=["topic_000000000000112A.html","DISPLAYCONFIG_RATIONAL Structure",""];
