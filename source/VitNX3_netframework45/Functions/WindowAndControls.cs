@@ -40,7 +40,16 @@ namespace VitNX3.Functions.WindowAndControls
         public static void HideConsoleWindow()
         {
             IntPtr handle = Import.GetConsoleWindow();
-            Import.ShowWindow(handle, 0);
+            Import.ShowWindow(handle, SW_SH.SW_HIDE);
+        }
+
+        /// <summary>
+        /// Shows the console window.
+        /// </summary>
+        public static void ShowConsoleWindow()
+        {
+            IntPtr handle = Import.GetConsoleWindow();
+            Import.ShowWindow(handle, SW_SH.SW_SHOW);
         }
 
         /// <summary>
@@ -68,7 +77,8 @@ namespace VitNX3.Functions.WindowAndControls
                 screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
             Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
                 pt.X, pt.Y, 0, 0,
-                SET_WINDOW_POS_FLAGS.SWP_NO_ZORDER | SET_WINDOW_POS_FLAGS.SWP_IGNORE_RESIZE |
+                SET_WINDOW_POS_FLAGS.SWP_NO_ZORDER |
+                SET_WINDOW_POS_FLAGS.SWP_IGNORE_RESIZE |
                 SET_WINDOW_POS_FLAGS.SWP_SHOW_WINDOW);
         }
 
@@ -105,6 +115,48 @@ namespace VitNX3.Functions.WindowAndControls
                 windowHeight,
                 15, 15));
         }
+
+        /// <summary>
+        /// Adds the borders for window.
+        /// </summary>
+        /// <param name="hwnd">Handle</param>
+        /// <param name="rc">RECT</param>
+        /// <param name="dpi">DPI</param>
+        public static void AddWindowBorders(IntPtr hwnd,
+            ref RECT rc,
+            int dpi)
+        {
+            uint windowStyle = (uint)Import.GetWindowLong(hwnd, -16);
+            uint windowStyleEx = (uint)Import.GetWindowLong(hwnd, -20);
+            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 1607 ||
+                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 16070)
+                && hwnd != IntPtr.Zero)
+                Import.AdjustWindowRectExForDpi(ref rc,
+                    windowStyle,
+                    false,
+                    windowStyleEx,
+                    (uint)dpi);
+            else
+                Import.AdjustWindowRect(ref rc,
+                    windowStyle,
+                    false);
+        }
+
+        /// <summary>
+        /// Gets the DPI for window.
+        /// </summary>
+        /// <param name="hwnd">The hwnd.</param>
+        /// <returns>An int.</returns>
+        public static int GetDpiForWindow(IntPtr hwnd)
+        {
+            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 1607 ||
+                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 16070) &&
+                hwnd != IntPtr.Zero)
+                return GetDpiForWindow(hwnd);
+            else
+                using (Graphics gx = Graphics.FromHwnd(hwnd))
+                    return Import.GetDeviceCaps(gx.GetHdc(), 88);
+        }
     }
 
     public class Controls
@@ -116,7 +168,7 @@ namespace VitNX3.Functions.WindowAndControls
         /// Enable/disable sound (nasty) when focusing on an item/control..
         /// </summary>
         /// <param name="off">If true, off.</param>
-        public static void VolumeOnFocus(bool off = true)
+        public static void PlayFocusSound(bool off = true)
         {
             if (off)
             {
