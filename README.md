@@ -17,7 +17,7 @@
 
 ## Description
 
-Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5 and .NET 5
+Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET Framework 4.5+ and .NET 5+
 
 ## Features
 
