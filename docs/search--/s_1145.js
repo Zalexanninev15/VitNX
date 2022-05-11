@@ -1,1 +1,1 @@
-search_result['1145']=["topic_00000000000003CB.html","ERROR_INTERNAL_DB_ERROR Field",""];
+search_result['1145']=["topic_00000000000003C8.html","ERROR_INTERNAL_DB_CORRUPTION Field",""];

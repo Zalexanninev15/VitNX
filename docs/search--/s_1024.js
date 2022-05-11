@@ -1,1 +1,1 @@
-search_result['1024']=["topic_0000000000000352.html","ERROR_ALREADY_REGISTERED Field",""];
+search_result['1024']=["topic_000000000000034F.html","ERROR_INVALID_MESSAGENAME Field",""];

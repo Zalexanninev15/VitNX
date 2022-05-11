@@ -1,1 +1,1 @@
-search_result['5180']=["topic_00000000000012E7_events--.html","VitNX2_ProgressBarRoundedType2 Events",""];
+search_result['5180']=["topic_0000000000001365.html","VitNX2_RichTextBox.OnGotFocus Method","Raises the GotFocus event."];

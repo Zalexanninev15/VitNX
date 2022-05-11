@@ -1,1 +1,1 @@
-search_result['867']=["topic_00000000000002B5.html","ERROR_BADDB Field",""];
+search_result['867']=["topic_00000000000002B2.html","ERROR_PARTIAL_COPY Field",""];

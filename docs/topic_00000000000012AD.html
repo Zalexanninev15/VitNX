@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FormSkin Constructor</title>
+	<title>VitNX_DockRegion.OnCreateControl Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FormSkin Constructor</h1>
+		<h1 class="title">VitNX_DockRegion.OnCreateControl Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit</a>
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.createcontrol">CreateControl</a> method.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public FormSkin()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnCreateControl()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -224,16 +225,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public FormSkin()
+protected override void OnCreateControl()
  {
-     MouseDoubleClick += FormSkin_MouseDoubleClick;
-     SetStyle(ControlStyles.UserPaint |
-         ControlStyles.ResizeRedraw |
-         ControlStyles.AllPaintingInWmPaint |
-         ControlStyles.OptimizedDoubleBuffer, true);
-     DoubleBuffered = true;
-     BackColor = Color.White;
-     Font = new Font(&quot;Segoe UI&quot;, 12f);
+     base.OnCreateControl();
+ 
+     _parentForm = FindForm();
+     _parentForm.ResizeEnd += ParentForm_ResizeEnd;
  }
 					</pre>			
 				</div>
@@ -298,11 +295,11 @@ public FormSkin()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012A8.html">FormSkin Class</a><br />
+			<a href="topic_00000000000012AA.html">VitNX_DockRegion Class</a><br />
 
 
 
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			

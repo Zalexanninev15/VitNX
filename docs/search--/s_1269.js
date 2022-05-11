@@ -1,1 +1,1 @@
-search_result['1269']=["topic_0000000000000447.html","ERROR_PATCH_TARGET_NOT_FOUND Field",""];
+search_result['1269']=["topic_0000000000000444.html","ERROR_DEVICE_REMOVED Field",""];

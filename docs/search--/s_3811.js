@@ -1,1 +1,1 @@
-search_result['3811']=["topic_0000000000000E31.html","MINMAXINFO Structure",""];
+search_result['3811']=["topic_0000000000000E93_methods--.html","LOGBRUSH Methods",""];

@@ -1,1 +1,1 @@
-search_result['4899']=["topic_000000000000123A_methods--.html","VitNX_Dialog Methods",""];
+search_result['4899']=["topic_00000000000012AD.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];

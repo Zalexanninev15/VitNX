@@ -1,1 +1,1 @@
-search_result['1568']=["topic_0000000000000572.html","ERROR_GROUP_NOT_ONLINE Field",""];
+search_result['1568']=["topic_000000000000056F.html","ERROR_INDIGENOUS_TYPE Field",""];

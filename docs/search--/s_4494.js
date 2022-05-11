@@ -1,1 +1,1 @@
-search_result['4494']=["topic_000000000000113E.html","VitNX_DropdownItem(String) Constructor",""];
+search_result['4494']=["topic_00000000000011AF.html","VitNX_CheckBox.OnGotFocus Method","Raises the GotFocus event."];

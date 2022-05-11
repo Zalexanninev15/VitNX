@@ -1,1 +1,1 @@
-search_result['4720']=["topic_00000000000011C2.html","VitNX_TreeNode.IsNodeAncestor Method",""];
+search_result['4720']=["topic_0000000000001241.html","VitNX_Separator.OnPaintBackground Method","Paints the background of the control."];

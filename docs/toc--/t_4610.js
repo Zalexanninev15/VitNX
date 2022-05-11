@@ -1,1 +1,1 @@
-c['4610']=[['4611',"ChangePosition Method","topic_000000000000164F.html",0],['4612',"showAlert Method","topic_000000000000164D_overloads--.html",1]];
+c['4610']=[['4611',"AsImage(this Properties) Method","topic_00000000000016B0.html",0],['4612',"AsImage(this Type, Properties) Method","topic_00000000000016AF.html",0]];

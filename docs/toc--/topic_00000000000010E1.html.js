@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001651.html"],['4532',"VitNX3.UI.Console.ProgressBar Namespace","topic_00000000000010DF.html"],['4533',"Type1 Class","topic_00000000000010E0.html"],['4534',"Type1 Constructor","topic_00000000000010E1.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000016E1.html"],['789',"VitNX3.Functions.Win32 Namespace","topic_00000000000000C6.html"],['3847',"Enums Class","topic_0000000000000DAB.html"],['4153',"PROCESS_DPI_AWARENESS Enumeration","topic_00000000000010E1.html"]];

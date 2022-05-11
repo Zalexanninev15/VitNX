@@ -1,1 +1,1 @@
-search_result['725']=["topic_0000000000000227.html","ERROR_EXCL_SEM_ALREADY_OWNED Field",""];
+search_result['725']=["topic_0000000000000224.html","ERROR_BAD_NET_RESP Field",""];

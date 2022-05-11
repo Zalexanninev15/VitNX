@@ -1,1 +1,1 @@
-search_result['2949']=["topic_0000000000000AD2.html","STG_E_SEEKERROR Field",""];
+search_result['2949']=["topic_0000000000000ACF.html","TYPE_E_AMBIGUOUSNAME Field",""];

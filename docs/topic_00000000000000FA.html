@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.CoCreateInstance Method</title>
+	<title>Import.AlphaBlend Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.CoCreateInstance Method</h1>
+		<h1 class="title">Import.AlphaBlend Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,9 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Interface)]&nbsp;<br />[DllImport(&quot;ole32.dll&quot;,
-            ExactSpelling = true,
-            PreserveSig = false)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> CoCreateInstance(&nbsp;<br />   [In()]&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> <i>clsid</i>,&nbsp;<br />   [MarshalAs(UnmanagedType.Interface)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>punkOuter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>context</i>,&nbsp;<br />   [In()]&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> <i>iid</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;msimg32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> AlphaBlend(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nXOriginDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nYOriginDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nWidthDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nHeightDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nXOriginSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nYOriginSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nWidthSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nHeightSrc</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000E05.html" onclick="this.target='';return true;">BLENDFUNCTION</a> <i>blendFunction</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,36 +152,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="clsid" class="parameterList">
+	Parameters</h4><dl paramName="hdcDest" class="parameterList">
 	<dt>
 		<span class="parameter">
-			clsid
+			hdcDest
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="punkOuter" class="parameterList">
+<dl paramName="nXOriginDest" class="parameterList">
 	<dt>
 		<span class="parameter">
-			punkOuter
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="context" class="parameterList">
-	<dt>
-		<span class="parameter">
-			context
+			nXOriginDest
 		</span>
 	</dt>
 	<dd>
@@ -192,14 +178,118 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="iid" class="parameterList">
+<dl paramName="nYOriginDest" class="parameterList">
 	<dt>
 		<span class="parameter">
-			iid
+			nYOriginDest
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nWidthDest" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nWidthDest
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nHeightDest" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nHeightDest
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hdcSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hdcSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nXOriginSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nXOriginSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nYOriginSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nYOriginSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nWidthSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nWidthSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nHeightSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nHeightSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="blendFunction" class="parameterList">
+	<dt>
+		<span class="parameter">
+			blendFunction
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000E05.html" onclick="this.target='';return true;">BLENDFUNCTION</a> 
 	</dd>
 </dl>
 <p>
@@ -210,7 +300,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -285,14 +375,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[return: MarshalAs(UnmanagedType.Interface)]
- [DllImport(&quot;ole32.dll&quot;,
-     ExactSpelling = true,
-     PreserveSig = false)]
- public static extern object CoCreateInstance([In] ref Guid clsid,
-     [MarshalAs(UnmanagedType.Interface)] object punkOuter,
-     int context,
-     [In] ref Guid iid);
+[return: MarshalAs(UnmanagedType.Bool)]
+ [DllImport(&quot;msimg32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool AlphaBlend(IntPtr hdcDest,
+     int nXOriginDest,
+     int nYOriginDest,
+     int nWidthDest,
+     int nHeightDest,
+     IntPtr hdcSrc,
+     int nXOriginSrc,
+     int nYOriginSrc,
+     int nWidthSrc,
+     int nHeightSrc,
+     BLENDFUNCTION blendFunction);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

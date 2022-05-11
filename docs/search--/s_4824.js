@@ -1,1 +1,1 @@
-search_result['4824']=["topic_0000000000001208.html","VitNX_DockGroup.OnMouseLeave Method","Raises the MouseLeave event."];
+search_result['4824']=["topic_000000000000127C_props--.html","DockPanelState Properties",""];

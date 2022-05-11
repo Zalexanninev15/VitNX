@@ -1,1 +1,1 @@
-search_result['2920']=["topic_0000000000000AB5.html","TYPE_E_QUALIFIEDNAMEDISALLOWED Field",""];
+search_result['2920']=["topic_0000000000000AB2.html","DISP_E_UNKNOWNINTERFACE Field",""];

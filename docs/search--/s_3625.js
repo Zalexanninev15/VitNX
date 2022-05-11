@@ -1,1 +1,1 @@
-search_result['3625']=["topic_0000000000000D76.html","MSDTC_E_DUPLICATE_RESOURCE Field",""];
+search_result['3625']=["topic_0000000000000D73.html","COMADMIN_E_CAT_DUPLICATE_PARTITION_NAME Field",""];

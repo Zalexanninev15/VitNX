@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Button.OnMouseMove Method</title>
+	<title>VolumeControl.Set Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Button.OnMouseMove Method</h1>
+		<h1 class="title">VolumeControl.Set Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmousemove">OnMouseMove</a> event.</summary-info>
+        <summary-info>Sets the current total sound volume.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Set(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> <i>level</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="level" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			level
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The level. 
 </p>
 
 <p />
@@ -241,16 +241,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseMove(MouseEventArgs e)
+public void Set(float level)
  {
-     base.OnMouseMove(e);
-     if (_spacePressed) { return; }
-     if (e.Button == MouseButtons.Left)
-     {
-         if (ClientRectangle.Contains(e.Location)) { SetButtonState(VitNX_ControlState.Pressed); }
-         else { SetButtonState(VitNX_ControlState.Hover); }
-     }
-     else { SetButtonState(VitNX_ControlState.Hover); }
+     IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)new MMDeviceEnumerator();
+     IMMDevice speakers = null;
+     IAudioEndpointVolume vol = null;
+     deviceEnumerator.GetDefaultAudioEndpoint(E_DATA_FLOW.eRender,
+         E_ROLE.eMultimedia,
+         out speakers);
+     Guid IID_IAudioEndpointVolume = typeof(IAudioEndpointVolume).GUID;
+     speakers.Activate(ref IID_IAudioEndpointVolume, 0,
+         IntPtr.Zero,
+         out object o);
+     vol = (IAudioEndpointVolume)o;
+     vol.SetMasterVolumeLevelScalar(level, Guid.Empty);
+     if (vol != null)
+         Marshal.ReleaseComObject(vol);
+     if (speakers != null)
+         Marshal.ReleaseComObject(speakers);
+     if (deviceEnumerator != null)
+         Marshal.ReleaseComObject(deviceEnumerator);
  }
 					</pre>			
 				</div>
@@ -315,11 +325,11 @@ protected override void OnMouseMove(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001107.html">VitNX_Button Class</a><br />
+			<a href="topic_0000000000001109.html">VolumeControl Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 			

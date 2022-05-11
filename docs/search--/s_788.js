@@ -1,1 +1,1 @@
-search_result['788']=["topic_0000000000000266.html","ERROR_CANCEL_VIOLATION Field",""];
+search_result['788']=["topic_0000000000000263.html","ERROR_SUBST_TO_JOIN Field",""];

@@ -1,1 +1,1 @@
-search_result['434']=["topic_0000000000000129.html","Import.GetScrollBarInfo Method",""];
+search_result['434']=["topic_0000000000000128.html","Import.ExcludeClipRect Method",""];

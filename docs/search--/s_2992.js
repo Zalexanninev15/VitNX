@@ -1,1 +1,1 @@
-search_result['2992']=["topic_0000000000000AFD.html","STG_E_RESETS_EXHAUSTED Field",""];
+search_result['2992']=["topic_0000000000000AFA.html","STG_E_CANTSAVE Field",""];

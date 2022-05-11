@@ -1,1 +1,1 @@
-search_result['4368']=["topic_00000000000010ED_methods--.html","ObservableList\u0026lt;T\u0026gt; Methods",""];
+search_result['4368']=["topic_000000000000116A.html","Window.AddWindowBorders Method","Adds the borders for window."];

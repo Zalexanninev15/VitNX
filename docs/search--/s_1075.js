@@ -1,1 +1,1 @@
-search_result['1075']=["topic_0000000000000385.html","ERROR_NO_SUCH_LOGON_SESSION Field",""];
+search_result['1075']=["topic_0000000000000382.html","ERROR_SYNC_FOREGROUND_REFRESH_REQUIRED Field",""];

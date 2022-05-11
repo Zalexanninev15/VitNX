@@ -1,1 +1,1 @@
-search_result['1887']=["topic_00000000000006B1.html","ERROR_DS_BAD_RDN_ATT_ID_SYNTAX Field",""];
+search_result['1887']=["topic_00000000000006AE.html","ERROR_DS_COULDNT_CONTACT_FSMO Field",""];

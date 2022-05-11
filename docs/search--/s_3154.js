@@ -1,1 +1,1 @@
-search_result['3154']=["topic_0000000000000B9F.html","SEC_E_ALGORITHM_MISMATCH Field",""];
+search_result['3154']=["topic_0000000000000B9C.html","SEC_E_NO_CREDENTIALS Field",""];

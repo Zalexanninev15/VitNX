@@ -1299,6 +1299,150 @@ Activate DefaultGateway of NetworkInterface in IPAddress.</summary>
       <summary>
 Import the Windows System functions from native DLL. About functions: https://www.pinvoke.net</summary>
     </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SHGetStockIconInfo(VitNX3.Functions.Win32.Enums.SHSTOCKICONID,VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS,VitNX3.Functions.Win32.Enums.SHSTOCKICONINFO@)">
+      <param name="siid">
+</param>
+      <param name="uFlags">
+</param>
+      <param name="info">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.DestroyIcon(System.IntPtr)">
+      <param name="handle">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.AttachConsole(System.Int32)">
+      <param name="dwProcessId">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.FreeConsole">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.LoadLibrary(System.String)">
+      <param name="path">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.ActivateKeyboardLayout(System.IntPtr,System.UInt32)">
+      <param name="hkl">
+</param>
+      <param name="flags">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.FindWindowEx(System.IntPtr,System.IntPtr,System.String,System.String)">
+      <param name="parentHandle">
+</param>
+      <param name="childAfter">
+</param>
+      <param name="lclassName">
+</param>
+      <param name="windowTitle">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.PostMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+      <param name="hWnd">
+</param>
+      <param name="Msg">
+</param>
+      <param name="wParam">
+</param>
+      <param name="lParam">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.AllowSetForegroundWindow(System.Int32)">
+      <param name="dwProcessId">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.GetDpiForWindow(System.IntPtr)">
+      <param name="hwnd">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.AdjustWindowRect(VitNX3.Functions.Win32.Enums.RECT@,System.UInt32,System.Boolean)">
+      <param name="lpRect">
+</param>
+      <param name="dwStyle">
+</param>
+      <param name="bMenu">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.AdjustWindowRectExForDpi(VitNX3.Functions.Win32.Enums.RECT@,System.UInt32,System.Boolean,System.UInt32,System.UInt32)">
+      <param name="lpRect">
+</param>
+      <param name="dwStyle">
+</param>
+      <param name="bMenu">
+</param>
+      <param name="dwExStyle">
+</param>
+      <param name="dpi">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SetWindowLong32(System.IntPtr,System.Int32,System.UInt32)">
+      <param name="hWnd">
+</param>
+      <param name="nIndex">
+</param>
+      <param name="dwNewLong">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.SetWindowLongPtr(System.IntPtr,System.Int32,System.UInt32)">
+      <param name="hWnd">
+</param>
+      <param name="nIndex">
+</param>
+      <param name="dwNewLong">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_New">
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Open(System.IntPtr,System.String)">
+      <param name="handle">
+</param>
+      <param name="path">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Option(System.IntPtr,System.String,System.String)">
+      <param name="handle">
+</param>
+      <param name="option">
+</param>
+      <param name="value">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Inform(System.IntPtr,System.Int32)">
+      <param name="handle">
+</param>
+      <param name="reserved">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Close(System.IntPtr)">
+      <param name="handle">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Delete(System.IntPtr)">
+      <param name="handle">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Get(System.IntPtr,VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND,System.Int32,System.String,VitNX3.Functions.Win32.Enums.MEDIAINFOKIND,VitNX3.Functions.Win32.Enums.MEDIAINFOKIND)">
+      <param name="handle">
+</param>
+      <param name="kind">
+</param>
+      <param name="stream">
+</param>
+      <param name="parameter">
+</param>
+      <param name="infoKind">
+</param>
+      <param name="searchKind">
+</param>
+    </member>
+    <member name="M:VitNX3.Functions.Win32.Import.MediaInfo_Count_Get(System.IntPtr,VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND,System.Int32)">
+      <param name="handle">
+</param>
+      <param name="streamKind">
+</param>
+      <param name="stream">
+</param>
+    </member>
     <member name="M:VitNX3.Functions.Win32.Import.InitiateSystemShutdown(System.String,System.String,System.Int32,System.Boolean,System.Boolean)">
       <param name="lpMachinename">
 </param>
@@ -2599,10 +2743,10 @@ Import the Windows System functions from native DLL. About functions: https://ww
       <param name="hWnd">
 </param>
     </member>
-    <member name="M:VitNX3.Functions.Win32.Import.ShowWindow(System.IntPtr,System.Int32)">
+    <member name="M:VitNX3.Functions.Win32.Import.ShowWindow(System.IntPtr,VitNX3.Functions.Win32.Enums.SW_SH)">
       <param name="hWnd">
 </param>
-      <param name="nCmdShow">
+      <param name="value">
 </param>
     </member>
     <member name="M:VitNX3.Functions.Win32.Import.SystemParametersInfo(System.Int32,System.Int32,System.IntPtr,System.Int32)">
@@ -9279,6 +9423,12 @@ The enums for imported functions.</summary>
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.THUMBBUTTON.dwFlags">
     </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.SW_SH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SW_SH.SW_HIDE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SW_SH.SW_SHOW">
+    </member>
     <member name="T:VitNX3.Functions.Win32.Enums.STPF">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.STPF.NONE">
@@ -9404,6 +9554,200 @@ The enums for imported functions.</summary>
     <member name="F:VitNX3.Functions.Win32.Enums.ICONINFO.hbmMask">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.ICONINFO.hbmColor">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.SHSTOCKICONINFO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONINFO.cbSize">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONINFO.hIcon">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_ICONLOCATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_ICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_SYSICONINDEX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_LINKOVERLAY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_SELECTED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_LARGEICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_SMALLICON">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS.SHGSI_SHELLICONSIZE">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.SHSTOCKICONID">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DOCUMENT_NOT_ASSOCIATED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DOCUMENT_ASSOCIATED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.APPLICATION">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.FOLDER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.FOLDER_OPEN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_525">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_35">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_REMOVE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_FIXED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_NETWORK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_NETWORK_DISABLED">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_CD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_RAM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.WORLD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SERVER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.PRINTER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MY_NETWORK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.FIND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.HELP">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SHARE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.LINK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SLOW_FILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.RECYCLER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.RECYCLER_FULL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_CDAUDIO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.LOCK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.AUTOLIST">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.PRINTER_NET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SERVER_SHARE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.PRINTER_FAX">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.PRINTER_FAX_NET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.PRINTER_FILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.STACK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_SV_CD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.STUFFED_FOLDER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_UNKNOWN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DRIVE_DVD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVD_RAM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVDRW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVDR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVDROM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_CDAUDIO_PLUS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_CDRW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_CDR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_CD_BURN">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_BLANK_CD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_CDROM">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.AUDIO_FILES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.IMAGE_FILES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.VIDEO_FILES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MIXED_FILES">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.FOLDER_BACK">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.FOLDER_FRONT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SHIELD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.WARNING">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.INFO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.ERROR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.KEY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SOFTWARE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.RENAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DELETE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_AUDIO_DVD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_MOVIE_DVD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_ENHANCED_CD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_ENHANCED_DVD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_HD_DVD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_BLURAY">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_VCD">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVDPLUSR">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_DVDPLUSRW">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DESKTOP_PC">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MOBILE_PC">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.USERS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_SMART_MEDIA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.MEDIA_COMPACT_FLASH">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DEVICE_CELLPHONE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DEVICE_CAMERA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DEVICE_VIDEOCAMERA">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.DEVICE_AUDIOPLAYER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.NETWORK_CONNECT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.INTERNET">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.ZIP_FILE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.SHSTOCKICONID.SETTINGS">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.KBDLLHOOKSTRUCT">
     </member>
@@ -9852,6 +10196,42 @@ The enums for imported functions.</summary>
     <member name="F:VitNX3.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_NO_ZORDER">
     </member>
     <member name="F:VitNX3.Functions.Win32.Enums.SET_WINDOW_POS_FLAGS.SWP_SHOW_WINDOW">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.GENERAL">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.VIDEO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.AUDIO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.TEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.OTHER">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.IMAGE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.MENU">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOSTREAMKIND.MAX">
+    </member>
+    <member name="T:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.NAME">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.TEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.MEASURE">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.OPTIONS">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.NAMETEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.MEASURETEXT">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.INFO">
+    </member>
+    <member name="F:VitNX3.Functions.Win32.Enums.MEDIAINFOKIND.HOWTO">
     </member>
     <member name="T:VitNX3.Functions.Win32.Enums.KEYBOARD_PRESETS">
     </member>
@@ -10899,6 +11279,16 @@ Installs the INF driver file into the Windows System.</summary>
       <param name="pathToInf">
 The path to INF driver file.</param>
     </member>
+    <member name="M:VitNX3.Functions.WinControllers.WorkWithSystem.GetIcon(VitNX3.Functions.Win32.Enums.SHSTOCKICONID,VitNX3.Functions.Win32.Enums.SHSTOCKICONFLAGS)">
+      <summary>
+Gets the icon (WinAPI).</summary>
+      <returns>
+An IntPtr.</returns>
+      <param name="identifier">
+The identifier.</param>
+      <param name="flags">
+The flags.</param>
+    </member>
     <member name="N:VitNX3.Functions.WindowAndControls">
     </member>
     <member name="T:VitNX3.Functions.WindowAndControls.Window">
@@ -10914,6 +11304,10 @@ Maximizes the all windows.</summary>
     <member name="M:VitNX3.Functions.WindowAndControls.Window.HideConsoleWindow">
       <summary>
 Hides the console window.</summary>
+    </member>
+    <member name="M:VitNX3.Functions.WindowAndControls.Window.ShowConsoleWindow">
+      <summary>
+Shows the console window.</summary>
     </member>
     <member name="M:VitNX3.Functions.WindowAndControls.Window.ShowAsTopMost(System.IntPtr)">
       <summary>
@@ -10943,9 +11337,27 @@ The width of window</param>
       <param name="windowHeight">
 The height of window</param>
     </member>
+    <member name="M:VitNX3.Functions.WindowAndControls.Window.AddWindowBorders(System.IntPtr,VitNX3.Functions.Win32.Enums.RECT@,System.Int32)">
+      <summary>
+Adds the borders for window.</summary>
+      <param name="hwnd">
+Handle</param>
+      <param name="rc">
+RECT</param>
+      <param name="dpi">
+DPI</param>
+    </member>
+    <member name="M:VitNX3.Functions.WindowAndControls.Window.GetDpiForWindow(System.IntPtr)">
+      <summary>
+Gets the DPI for window.</summary>
+      <returns>
+An int.</returns>
+      <param name="hwnd">
+The hwnd.</param>
+    </member>
     <member name="T:VitNX3.Functions.WindowAndControls.Controls">
     </member>
-    <member name="M:VitNX3.Functions.WindowAndControls.Controls.VolumeOnFocus(System.Boolean)">
+    <member name="M:VitNX3.Functions.WindowAndControls.Controls.PlayFocusSound(System.Boolean)">
       <summary>
 Enable/disable sound (nasty) when focusing on an item/control..</summary>
       <param name="off">

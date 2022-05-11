@@ -1,1 +1,1 @@
-search_result['1133']=["topic_00000000000003BF.html","ERROR_SPECIAL_ACCOUNT Field",""];
+search_result['1133']=["topic_00000000000003BC.html","ERROR_BAD_IMPERSONATION_LEVEL Field",""];

@@ -1,1 +1,1 @@
-search_result['1471']=["topic_0000000000000511.html","ERROR_SPL_NO_ADDJOB Field",""];
+search_result['1471']=["topic_000000000000050E.html","ERROR_CLIPPING_NOT_SUPPORTED Field",""];

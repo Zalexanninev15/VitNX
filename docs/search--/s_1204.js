@@ -1,1 +1,1 @@
-search_result['1204']=["topic_0000000000000406.html","ERROR_NOT_CHILD_WINDOW Field",""];
+search_result['1204']=["topic_0000000000000403.html","ERROR_NO_WILDCARD_CHARACTERS Field",""];

@@ -1,1 +1,1 @@
-search_result['3352']=["topic_0000000000000C65.html","TRUST_E_NO_SIGNER_CERT Field",""];
+search_result['3352']=["topic_0000000000000C62.html","CERTSRV_E_SUBJECT_ALT_NAME_REQUIRED Field",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolStripRenderer.OnRenderButtonBackground Method</title>
+	<title>DockGroupState Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolStripRenderer.OnRenderButtonBackground Method</h1>
+		<h1 class="title">DockGroupState Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001269.html">VitNX.UI.ControlsV1.Renderers</a>
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderbuttonbackground">RenderButtonBackground</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderButtonBackground(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemrendereventargs">ToolStripItemRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public DockGroupState()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,22 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemrendereventargs">ToolStripItemRenderEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprendereventargs">ToolStripRenderEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -241,35 +224,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
+public DockGroupState()
  {
-     var g = e.Graphics;
-     var rect = new Rectangle(0, 1,
-         e.Item.Width,
-         e.Item.Height - 2);
-     if (e.Item.Selected || e.Item.Pressed)
-     {
-         using (var b = new SolidBrush(Colors.GreySelection))
-             g.FillRectangle(b, rect);
-     }
-     if (e.Item.GetType() == typeof(ToolStripButton))
-     {
-         var castItem = (ToolStripButton)e.Item;
-         if (castItem.Checked)
-         {
-             using (var b = new SolidBrush(Colors.GreySelection))
-                 g.FillRectangle(b, rect);
-         }
-         if (castItem.Checked &amp;&amp; castItem.Selected)
-         {
-             var modRect = new Rectangle(rect.Left,
-                 rect.Top,
-                 rect.Width - 1,
-                 rect.Height - 1);
-             using (var p = new Pen(Colors.GreyHighlight))
-                 g.DrawRectangle(p, modRect);
-         }
-     }
+     Contents = new List&lt;string&gt;();
  }
 					</pre>			
 				</div>
@@ -334,11 +291,11 @@ protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001273.html">VitNX_ToolStripRenderer Class</a><br />
+			<a href="topic_0000000000001276.html">DockGroupState Class</a><br />
 
 
 
-<a href="topic_0000000000001269.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			

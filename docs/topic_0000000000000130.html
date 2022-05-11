@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetThemeMargins Method</title>
+	<title>Import.GetCurrentThemeName Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetThemeMargins Method</h1>
+		<h1 class="title">Import.GetCurrentThemeName Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -137,8 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;,
-            CharSet = CharSet.Unicode,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetThemeMargins(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hTheme</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iPartId</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iStateId</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iPropId</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E80.html" onclick="this.target='';return true;">RECT</a> <i>prc</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E2C.html" onclick="this.target='';return true;">MARGINS</a> <i>pMargins</i>&nbsp;<br />)</pre>			
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetCurrentThemeName(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszThemeFileName</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwMaxNameChars</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszColorBuff</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cchMaxColorChars</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszSizeBuff</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cchMaxSizeChars</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,36 +152,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hTheme" class="parameterList">
+	Parameters</h4><dl paramName="pszThemeFileName" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hTheme
+			pszThemeFileName
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="hdc" class="parameterList">
+<dl paramName="dwMaxNameChars" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hdc
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="iPartId" class="parameterList">
-	<dt>
-		<span class="parameter">
-			iPartId
+			dwMaxNameChars
 		</span>
 	</dt>
 	<dd>
@@ -192,10 +178,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="iStateId" class="parameterList">
+<dl paramName="pszColorBuff" class="parameterList">
 	<dt>
 		<span class="parameter">
-			iStateId
+			pszColorBuff
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cchMaxColorChars" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cchMaxColorChars
 		</span>
 	</dt>
 	<dd>
@@ -205,40 +204,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="iPropId" class="parameterList">
+<dl paramName="pszSizeBuff" class="parameterList">
 	<dt>
 		<span class="parameter">
-			iPropId
+			pszSizeBuff
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cchMaxSizeChars" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cchMaxSizeChars
 		</span>
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="prc" class="parameterList">
-	<dt>
-		<span class="parameter">
-			prc
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000E80.html" onclick="this.target='';return true;">RECT</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="pMargins" class="parameterList">
-	<dt>
-		<span class="parameter">
-			pMargins
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000E2C.html" onclick="this.target='';return true;">MARGINS</a> 
 	</dd>
 </dl>
 <p>
@@ -325,14 +311,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;uxtheme.dll&quot;,
-     CharSet = CharSet.Unicode,
-     SetLastError = true)]
- public static extern int GetThemeMargins(IntPtr hTheme,
-     IntPtr hdc,
-     int iPartId, int iStateId,
-     int iPropId,
-     ref RECT prc,
-     ref MARGINS pMargins);
+     CharSet = CharSet.Unicode)]
+ public static extern int GetCurrentThemeName(StringBuilder pszThemeFileName,
+     int dwMaxNameChars,
+     StringBuilder pszColorBuff,
+     int cchMaxColorChars,
+     StringBuilder pszSizeBuff,
+     int cchMaxSizeChars);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

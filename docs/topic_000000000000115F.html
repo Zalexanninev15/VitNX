@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ListView.SelectItem Method</title>
+	<title>WorkWithSystem.GetIcon Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ListView.SelectItem Method</h1>
+		<h1 class="title">WorkWithSystem.GetIcon Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Gets the icon (WinAPI).</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SelectItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>index</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> GetIcon(&nbsp;<br />   <a target="_top" href="topic_0000000000000E38.html" onclick="this.target='';return true;">SHSTOCKICONID</a> <i>identifier</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000E2F.html" onclick="this.target='';return true;">SHSTOCKICONFLAGS</a> <i>flags</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,22 +152,42 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="index" class="parameterList">
+	Parameters</h4><dl paramName="identifier" class="parameterList">
 	<dt>
 		<span class="parameter">
-			index
+			identifier
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="topic_0000000000000E38.html" onclick="this.target='';return true;">SHSTOCKICONID</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The identifier. 
+</p>
+<dl paramName="flags" class="parameterList">
+	<dt>
+		<span class="parameter">
+			flags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000E2F.html" onclick="this.target='';return true;">SHSTOCKICONFLAGS</a> 
+	</dd>
+</dl>
+<p>
+	The flags. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<p>
+		An IntPtr. 
+	</p>
+	
 
 
 
@@ -240,21 +261,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void SelectItem(int index)
+public static IntPtr GetIcon(SHSTOCKICONID identifier,
+     SHSTOCKICONFLAGS flags)
  {
-     if (index &lt; 0 || index &gt; Items.Count - 1)
-         throw new IndexOutOfRangeException($&quot;Value '{index}' is outside of valid range.&quot;);
- 
-     _selectedIndices.Clear();
-     _selectedIndices.Add(index);
- 
-     if (SelectedIndicesChanged != null)
-         SelectedIndicesChanged(this, null);
- 
-     _anchoredItemStart = index;
-     _anchoredItemEnd = index;
- 
-     Invalidate();
+     SHSTOCKICONINFO info = new SHSTOCKICONINFO();
+     info.cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(SHSTOCKICONINFO)));
+     Marshal.ThrowExceptionForHR(Import.SHGetStockIconInfo(identifier,
+         flags,
+         ref info));
+     return info.hIcon;
  }
 					</pre>			
 				</div>
@@ -319,11 +334,11 @@ public void SelectItem(int index)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001159.html">VitNX_ListView Class</a><br />
+			<a href="topic_000000000000115D.html">WorkWithSystem Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 			

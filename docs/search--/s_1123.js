@@ -1,1 +1,1 @@
-search_result['1123']=["topic_00000000000003B5.html","ERROR_BAD_DESCRIPTOR_FORMAT Field",""];
+search_result['1123']=["topic_00000000000003B2.html","ERROR_INVALID_SUB_AUTHORITY Field",""];

@@ -1,1 +1,1 @@
-search_result['4352']=["topic_00000000000010E7_methods--.html","Type2 Methods",""];
+search_result['4352']=["topic_000000000000115F.html","WorkWithSystem.GetIcon Method","Gets the icon (WinAPI)."];

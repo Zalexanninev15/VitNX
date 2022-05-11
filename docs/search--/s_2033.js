@@ -1,1 +1,1 @@
-search_result['2033']=["topic_0000000000000743.html","ERROR_DS_SRC_OBJ_NOT_GROUP_OR_USER Field",""];
+search_result['2033']=["topic_0000000000000740.html","ERROR_DS_INVALID_GROUP_TYPE Field",""];

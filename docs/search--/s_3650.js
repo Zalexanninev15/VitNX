@@ -1,1 +1,1 @@
-search_result['3650']=["topic_0000000000000D8F.html","COMADMIN_E_SAFERINVALID Field",""];
+search_result['3650']=["topic_0000000000000D8C.html","MSDTC_E_DUPLICATE_RESOURCE Field",""];

@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001651.html"],['39',"VitNX.UI.ControlsV1.Controls Namespace","topic_0000000000001104.html"],['141',"VitNX_NumericUpDown Class","topic_0000000000001167.html"],['143',"Methods","topic_0000000000001167_methods--.html"],['145',"OnLostFocus Method","topic_000000000000116F.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000016E1.html"],['4568',"VitNX3.UI.Console.ProgressBar Namespace","topic_000000000000116F.html"]];

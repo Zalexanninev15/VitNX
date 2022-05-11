@@ -1,1 +1,1 @@
-search_result['2060']=["topic_000000000000075E.html","ERROR_DS_FOREST_VERSION_TOO_LOW Field",""];
+search_result['2060']=["topic_000000000000075B.html","ERROR_DS_SRC_AND_DST_OBJECT_CLASS_MISMATCH Field",""];

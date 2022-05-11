@@ -1,1 +1,1 @@
-search_result['1132']=["topic_00000000000003BE.html","ERROR_RXACT_COMMIT_FAILURE Field",""];
+search_result['1132']=["topic_00000000000003BB.html","ERROR_INVALID_GROUP_ATTRIBUTES Field",""];

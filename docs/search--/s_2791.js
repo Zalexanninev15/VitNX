@@ -1,1 +1,1 @@
-search_result['2791']=["topic_0000000000000A34.html","XACT_E_UNABLE_TO_READ_DTC_CONFIG Field",""];
+search_result['2791']=["topic_0000000000000A31.html","XACT_E_NOTRANSACTION Field",""];

@@ -1,1 +1,1 @@
-search_result['4913']=["topic_0000000000001246.html","VitNX_Dialog.Dispose Method","Clean up any resources being used."];
+search_result['4913']=["topic_00000000000012B6.html","VitNX_DockSplitter.UpdateOverlay Method",""];

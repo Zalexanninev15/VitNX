@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GdipCreateHICONFromBitmap Method</title>
+	<title>WinEventDelegate Delegate</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GdipCreateHICONFromBitmap Method</h1>
+		<h1 class="title">WinEventDelegate Delegate</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdiplus.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GdipCreateHICONFromBitmap(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.handleref">HandleRef</a> <i>nativeBitmap</i>,&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hicon</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public delegate <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> WinEventDelegate(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWinEventHook</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>eventType</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>idObject</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>idChild</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwEventThread</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwmsEventTime</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,23 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="nativeBitmap" class="parameterList">
+	Parameters</h4><dl paramName="hWinEventHook" class="parameterList">
 	<dt>
 		<span class="parameter">
-			nativeBitmap
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.handleref">HandleRef</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="hicon" class="parameterList">
-	<dt>
-		<span class="parameter">
-			hicon
+			hWinEventHook
 		</span>
 	</dt>
 	<dd>
@@ -178,13 +164,87 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
+<dl paramName="eventType" class="parameterList">
+	<dt>
+		<span class="parameter">
+			eventType
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hwnd" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hwnd
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="idObject" class="parameterList">
+	<dt>
+		<span class="parameter">
+			idObject
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="idChild" class="parameterList">
+	<dt>
+		<span class="parameter">
+			idChild
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwEventThread" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwEventThread
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwmsEventTime" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwmsEventTime
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
 
 
 
@@ -258,10 +318,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;gdiplus.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern int GdipCreateHICONFromBitmap(HandleRef nativeBitmap,
-     out IntPtr hicon);
+public delegate void WinEventDelegate(IntPtr hWinEventHook,
+     uint eventType,
+     IntPtr hwnd,
+     int idObject,
+     int idChild,
+     uint dwEventThread,
+     uint dwmsEventTime);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -351,4 +414,3 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
     </div>
   </body>
 </html>
-

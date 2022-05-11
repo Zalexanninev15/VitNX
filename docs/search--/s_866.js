@@ -1,1 +1,1 @@
-search_result['866']=["topic_00000000000002B4.html","ERROR_NO_TOKEN Field",""];
+search_result['866']=["topic_00000000000002B1.html","ERROR_TOO_MANY_POSTS Field",""];

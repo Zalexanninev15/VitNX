@@ -1,1 +1,1 @@
-search_result['3638']=["topic_0000000000000D83.html","COMADMIN_E_DEFAULT_PARTITION_NOT_IN_SET Field",""];
+search_result['3638']=["topic_0000000000000D80.html","COMADMIN_E_CAT_BITNESSMISMATCH Field",""];

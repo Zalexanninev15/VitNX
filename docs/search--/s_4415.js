@@ -1,1 +1,1 @@
-search_result['4415']=["topic_0000000000001105_events--.html","ScrollValueEventArgs Events",""];
+search_result['4415']=["topic_0000000000001180.html","ObservableList\u0026lt;T\u0026gt;.Dispose  Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

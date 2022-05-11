@@ -1,1 +1,1 @@
-search_result['1098']=["topic_000000000000039C.html","ERROR_INVALID_SUB_AUTHORITY Field",""];
+search_result['1098']=["topic_0000000000000399.html","ERROR_CANT_DISABLE_MANDATORY Field",""];

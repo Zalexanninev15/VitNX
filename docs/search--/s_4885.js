@@ -1,1 +1,1 @@
-search_result['4885']=["topic_0000000000001230_methods--.html","VitNX_ToolWindow Methods",""];
+search_result['4885']=["topic_00000000000012A4.html","VitNX_DockPanel.RemoveContent Method",""];

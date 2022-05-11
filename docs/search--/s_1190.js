@@ -1,1 +1,1 @@
-search_result['1190']=["topic_00000000000003F8.html","ERROR_HOOK_NEEDS_HMOD Field",""];
+search_result['1190']=["topic_00000000000003F5.html","ERROR_INVALID_ACCEL_HANDLE Field",""];

@@ -1,1 +1,1 @@
-search_result['1317']=["topic_0000000000000477.html","RPC_S_UNKNOWN_AUTHN_SERVICE Field",""];
+search_result['1317']=["topic_0000000000000474.html","RPC_S_NO_PROTSEQS Field",""];

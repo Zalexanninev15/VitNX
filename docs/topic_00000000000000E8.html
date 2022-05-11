@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.InsertMenuItem Method</title>
+	<title>Import.PostMessage (HandleRef, WINDOW_MESSAGE, IntPtr, IntPtr) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.InsertMenuItem Method</h1>
+		<h1 class="title">Import.PostMessage (HandleRef, WINDOW_MESSAGE, IntPtr, IntPtr) Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -137,8 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> InsertMenuItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hMenu</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>uItem</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>fByPosition</i>,&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="topic_00000000000001C4.html" onclick="this.target='';return true;">MENU_ITEM_INFO</a> <i>lpmii</i>&nbsp;<br />)</pre>			
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> PostMessage(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.handleref">HandleRef</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000FDD.html" onclick="this.target='';return true;">WINDOW_MESSAGE</a> <i>msg</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>wParam</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lParam</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,10 +152,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hMenu" class="parameterList">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hMenu
+			hWnd
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.handleref">HandleRef</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="msg" class="parameterList">
+	<dt>
+		<span class="parameter">
+			msg
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000FDD.html" onclick="this.target='';return true;">WINDOW_MESSAGE</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="wParam" class="parameterList">
+	<dt>
+		<span class="parameter">
+			wParam
 		</span>
 	</dt>
 	<dd>
@@ -166,40 +191,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="uItem" class="parameterList">
+<dl paramName="lParam" class="parameterList">
 	<dt>
 		<span class="parameter">
-			uItem
+			lParam
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="fByPosition" class="parameterList">
-	<dt>
-		<span class="parameter">
-			fByPosition
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="lpmii" class="parameterList">
-	<dt>
-		<span class="parameter">
-			lpmii
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000001C4.html" onclick="this.target='';return true;">MENU_ITEM_INFO</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -286,12 +285,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto,
-     SetLastError = true)]
- public static extern bool InsertMenuItem(IntPtr hMenu,
-     uint uItem,
-     bool fByPosition, [In]
-    MENU_ITEM_INFO lpmii);
+     CharSet = CharSet.Auto)]
+ public static extern bool PostMessage(HandleRef hWnd,
+     WINDOW_MESSAGE msg,
+     IntPtr wParam,
+     IntPtr lParam);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

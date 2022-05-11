@@ -1,1 +1,1 @@
-search_result['4495']=["topic_000000000000113E_overloads--.html","VitNX_DropdownItem Constructor",""];
+search_result['4495']=["topic_00000000000011B0.html","VitNX_CheckBox.OnLostFocus Method","Raises the OnLostFocus event."];

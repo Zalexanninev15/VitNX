@@ -1,1 +1,1 @@
-search_result['3455']=["topic_0000000000000CCC.html","SPAPI_E_REMOTE_COMM_FAILURE Field",""];
+search_result['3455']=["topic_0000000000000CC9.html","SPAPI_E_DEVINFO_NOT_REGISTERED Field",""];

@@ -1,1 +1,1 @@
-c['4528']=[['4529',"Text Class","topic_00000000000010EA.html",1]];
+c['4528']=[['4529',"Show() Method","topic_000000000000110D.html",0],['4530',"Show(IntPtr) Method","topic_000000000000110E.html",0]];

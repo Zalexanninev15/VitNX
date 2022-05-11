@@ -1,1 +1,1 @@
-search_result['4390']=["topic_00000000000010F8.html","VitNX.UI.ControlsV1.Config Namespace",""];
+search_result['4390']=["topic_0000000000001176.html","Type1.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

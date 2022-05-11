@@ -1,1 +1,1 @@
-search_result['2353']=["topic_0000000000000883.html","ERROR_SXS_XML_E_INVALID_UNICODE Field",""];
+search_result['2353']=["topic_0000000000000880.html","ERROR_SXS_DUPLICATE_IID Field",""];

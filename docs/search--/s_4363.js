@@ -1,1 +1,1 @@
-search_result['4363']=["topic_00000000000010EB.html","Text.Writeln Method","Writeln text with the colors."];
+search_result['4363']=["topic_0000000000001165.html","Window.ShowConsoleWindow Method","Shows the console window."];

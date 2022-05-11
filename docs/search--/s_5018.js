@@ -1,1 +1,1 @@
-search_result['5018']=["topic_0000000000001292_methods--.html","VitNX2_Button Methods",""];
+search_result['5018']=["topic_0000000000001309.html","VitNX_ToolStripRenderer.OnRenderGrip Method","Raises the RenderGrip event."];

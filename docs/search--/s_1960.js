@@ -1,1 +1,1 @@
-search_result['1960']=["topic_00000000000006FA.html","ERROR_DS_DRA_SOURCE_IS_PARTIAL_REPLICA Field",""];
+search_result['1960']=["topic_00000000000006F7.html","ERROR_DS_DRA_BAD_NC Field",""];

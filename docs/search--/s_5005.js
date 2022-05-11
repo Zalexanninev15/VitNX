@@ -1,1 +1,1 @@
-search_result['5005']=["topic_0000000000001287.html","Helper Class",""];
+search_result['5005']=["topic_0000000000001301.html","VitNX_MenuRenderer.OnRenderArrow Method","Raises the RenderArrow event."];

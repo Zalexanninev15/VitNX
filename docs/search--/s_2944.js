@@ -1,1 +1,1 @@
-search_result['2944']=["topic_0000000000000ACD.html","STG_E_INVALIDHANDLE Field",""];
+search_result['2944']=["topic_0000000000000ACA.html","TYPE_E_UNDEFINEDTYPE Field",""];

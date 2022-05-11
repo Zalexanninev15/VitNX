@@ -1,1 +1,1 @@
-search_result['775']=["topic_0000000000000259.html","ERROR_INVALID_LIST_FORMAT Field",""];
+search_result['775']=["topic_0000000000000256.html","ERROR_WAIT_NO_CHILDREN Field",""];

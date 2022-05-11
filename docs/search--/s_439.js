@@ -1,1 +1,1 @@
-search_result['439']=["topic_000000000000012E.html","Import.GetTextExtentPoint32 Method",""];
+search_result['439']=["topic_000000000000012B.html","Import.GetActiveWindow Method",""];

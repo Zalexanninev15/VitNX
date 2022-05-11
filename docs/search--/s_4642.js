@@ -1,1 +1,1 @@
-search_result['4642']=["topic_000000000000119A.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];
+search_result['4642']=["topic_000000000000120A.html","VitNX_RadioButton.OnLostFocus Method","Raises the OnLostFocus event."];

@@ -1,1 +1,1 @@
-search_result['5077']=["topic_00000000000012BD.html","VitNX2_MessageBoxType1 Class",""];
+search_result['5077']=["topic_000000000000132C.html","VitNX2_CheckBox.OnMouseUp Method","Raises the MouseUp event."];

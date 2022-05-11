@@ -1,1 +1,1 @@
-search_result['1678']=["topic_00000000000005E0.html","ERROR_CTX_WINSTATION_NAME_INVALID Field",""];
+search_result['1678']=["topic_00000000000005DD.html","ERROR_CLUSTER_CANT_CREATE_DUP_CLUSTER_NAME Field",""];
