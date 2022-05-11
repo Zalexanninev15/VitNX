@@ -1,1 +1,1 @@
-search_result['2483']=["topic_0000000000000905.html","ERROR_IPSEC_IKE_INVALID_AUTH_ALG Field",""];
+search_result['2483']=["topic_0000000000000902.html","ERROR_IPSEC_IKE_POLICY_CHANGE Field",""];

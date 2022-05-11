@@ -1,1 +1,1 @@
-search_result['5207']=["topic_00000000000012F1_methods--.html","VitNX2_TextBox Methods",""];
+search_result['5207']=["topic_0000000000001371.html","VitNX2_ProgressBar.OnPaint Method","Raises the Paint event."];

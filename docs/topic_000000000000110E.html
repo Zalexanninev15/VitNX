@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Button.OnMouseCaptureChanged Method</title>
+	<title>NewFolderDialog.Show (IntPtr) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Button.OnMouseCaptureChanged Method</h1>
+		<h1 class="title">NewFolderDialog.Show (IntPtr) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousecapturechanged">MouseCaptureChanged</a> event.</summary-info>
+        <summary-info>Are shows the folder dialog.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseCaptureChanged(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> Show(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWndOwner</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,22 +152,29 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="hWndOwner" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			hWndOwner
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
+	The h wnd owner. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<p>
+		A bool. 
+	</p>
+	
 
 
 
@@ -241,12 +248,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseCaptureChanged(EventArgs e)
+public bool Show(IntPtr hWndOwner)
  {
-     base.OnMouseCaptureChanged(e);
-     if (_spacePressed) { return; }
-     var location = Cursor.Position;
-     if (!ClientRectangle.Contains(location)) { SetButtonState(VitNX_ControlState.Normal); }
+     var result = Environment.OSVersion.Version.Major &gt;= 6 ?
+         ModernDialog.Show(hWndOwner, InitialDirectory, Title) :
+         ShowXpDialog(hWndOwner, InitialDirectory, Title);
+     _fileName = result.FileName;
+     return result.Result;
  }
 					</pre>			
 				</div>
@@ -311,11 +319,11 @@ protected override void OnMouseCaptureChanged(EventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001107.html">VitNX_Button Class</a><br />
+			<a href="topic_000000000000110C.html">NewFolderDialog Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 			

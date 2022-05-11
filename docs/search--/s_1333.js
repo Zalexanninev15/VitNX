@@ -1,1 +1,1 @@
-search_result['1333']=["topic_0000000000000487.html","RPC_S_INVALID_NAF_ID Field",""];
+search_result['1333']=["topic_0000000000000484.html","RPC_S_UNSUPPORTED_NAME_SYNTAX Field",""];

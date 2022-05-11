@@ -1,1 +1,1 @@
-search_result['5336']=["topic_0000000000001650_props--.html","NotifySettings Properties",""];
+search_result['5336']=["topic_00000000000016C3.html","Manager.CloseAll Method","Close all notifications on the screen."];

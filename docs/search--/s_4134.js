@@ -1,1 +1,1 @@
-search_result['4134']=["topic_0000000000001083.html","GetClipboardText Class","Get clipboard text."];
+search_result['4134']=["topic_0000000000000FDD.html","WINDOW_MESSAGE Enumeration",""];

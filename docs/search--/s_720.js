@@ -1,1 +1,1 @@
-search_result['720']=["topic_0000000000000222.html","ERROR_INVALID_PASSWORD Field",""];
+search_result['720']=["topic_000000000000021F.html","ERROR_BAD_NETPATH Field",""];

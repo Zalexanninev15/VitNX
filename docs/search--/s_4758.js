@@ -1,1 +1,1 @@
-search_result['4758']=["topic_00000000000011DF.html","VitNX_TreeView.CanMoveNodes Method",""];
+search_result['4758']=["topic_000000000000124E.html","ItemsRemoved Event",""];

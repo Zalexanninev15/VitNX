@@ -1,1 +1,1 @@
-search_result['5329']=["topic_000000000000164E.html","NotificationForm.showAlert (String, NotificationType, Color, Image, Manager) Method",""];
+search_result['5329']=["topic_00000000000016BE.html","EnableOffset Field","Offset of notifications after closing the previous one."];

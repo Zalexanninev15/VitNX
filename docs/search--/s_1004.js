@@ -1,1 +1,1 @@
-search_result['1004']=["topic_000000000000033E.html","ERROR_NO_NETWORK Field",""];
+search_result['1004']=["topic_000000000000033B.html","ERROR_JOURNAL_NOT_ACTIVE Field",""];

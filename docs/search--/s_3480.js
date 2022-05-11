@@ -1,1 +1,1 @@
-search_result['3480']=["topic_0000000000000CE5.html","SCARD_F_INTERNAL_ERROR Field",""];
+search_result['3480']=["topic_0000000000000CE2.html","SPAPI_E_REMOTE_COMM_FAILURE Field",""];

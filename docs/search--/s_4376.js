@@ -1,1 +1,1 @@
-search_result['4376']=["topic_00000000000010F1_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];
+search_result['4376']=["topic_000000000000116D.html","Controls.PlayFocusSound Method","Enable/disable sound (nasty) when focusing on an item/control.."];

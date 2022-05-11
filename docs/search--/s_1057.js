@@ -1,1 +1,1 @@
-search_result['1057']=["topic_0000000000000373.html","ERROR_ALREADY_THREAD Field",""];
+search_result['1057']=["topic_0000000000000370.html","ERROR_DOMAIN_CONTROLLER_EXISTS Field",""];

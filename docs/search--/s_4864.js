@@ -1,1 +1,1 @@
-search_result['4864']=["topic_0000000000001222_events--.html","VitNX_DockSplitter Events",""];
+search_result['4864']=["topic_0000000000001296.html","VitNX_DockGroup.OnMouseDown Method","Raises the MouseDown event."];

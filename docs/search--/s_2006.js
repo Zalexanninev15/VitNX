@@ -1,1 +1,1 @@
-search_result['2006']=["topic_0000000000000728.html","ERROR_DS_INSTALL_NO_SRC_SCH_VERSION Field",""];
+search_result['2006']=["topic_0000000000000725.html","ERROR_DS_DST_NC_MISMATCH Field",""];

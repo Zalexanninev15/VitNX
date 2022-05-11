@@ -1,1 +1,1 @@
-search_result['5014']=["topic_000000000000128B.html","VitNX2_ProgressBarDisplayMode Enumeration",""];
+search_result['5014']=["topic_0000000000001305.html","VitNX_ToolStripRenderer.OnRenderToolStripBackground Method","Raises the RenderToolStripBackground event."];

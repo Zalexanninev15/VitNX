@@ -1,1 +1,1 @@
-search_result['1984']=["topic_0000000000000712.html","ERROR_DS_CANT_MOVE_DELETED_OBJECT Field",""];
+search_result['1984']=["topic_000000000000070F.html","ERROR_DS_DRA_INCOMPATIBLE_PARTIAL_SET Field",""];

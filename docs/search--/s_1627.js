@@ -1,1 +1,1 @@
-search_result['1627']=["topic_00000000000005AD.html","ERROR_CLUSTER_JOIN_ABORTED Field",""];
+search_result['1627']=["topic_00000000000005AA.html","ERROR_CLUSTER_INVALID_REQUEST Field",""];

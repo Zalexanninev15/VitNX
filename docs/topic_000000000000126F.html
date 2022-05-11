@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_MenuRenderer.OnRenderItemCheck Method</title>
+	<title>VitNX_TreeView.CanMoveNodes Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_MenuRenderer.OnRenderItemCheck Method</h1>
+		<h1 class="title">VitNX_TreeView.CanMoveNodes Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001269.html">VitNX.UI.ControlsV1.Renderers</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstriprenderer.renderitemcheck">RenderItemCheck</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnRenderItemCheck(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected virtual <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CanMoveNodes(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_000000000000124C.html" onclick="this.target='';return true;">VitNX_TreeNode</a>&gt; <i>dragNodes</i>,&nbsp;<br />   <a target="_top" href="topic_000000000000124C.html" onclick="this.target='';return true;">VitNX_TreeNode</a> <i>dropNode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>isMoving</i> = false&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,22 +151,52 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="dragNodes" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			dragNodes
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="topic_000000000000124C.html" onclick="this.target='';return true;">VitNX_TreeNode</a>&gt; 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitemimagerendereventargs">ToolStripItemImageRenderEventArgs</a> that contains the event data. 
+	 
+</p>
+<dl paramName="dropNode" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dropNode
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_000000000000124C.html" onclick="this.target='';return true;">VitNX_TreeNode</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="isMoving" class="parameterList">
+	<dt>
+		<span class="parameter">
+			isMoving
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	</dd>
+</dl>
+<p>
+	 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	
 
 
 
@@ -241,31 +270,45 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
+protected virtual bool CanMoveNodes(List&lt;VitNX_TreeNode&gt; dragNodes, VitNX_TreeNode dropNode, bool isMoving = false)
  {
-     var g = e.Graphics;
-     var rect = new Rectangle(e.ImageRectangle.Left - 2,
-         e.ImageRectangle.Top - 2,
-         e.ImageRectangle.Width + 4,
-         e.ImageRectangle.Height + 4);
-     using (var b = new SolidBrush(Colors.LightBorder))
-         g.FillRectangle(b, rect);
-     using (var p = new Pen(Colors.BlueHighlight))
+     if (dropNode == null)
+         return false;
+ 
+     foreach (var node in dragNodes)
      {
-         var modRect = new Rectangle(rect.Left,
-             rect.Top,
-             rect.Width - 1,
-             rect.Height - 1);
-         g.DrawRectangle(p, modRect);
+         if (node == dropNode)
+         {
+             if (isMoving)
+                 VitNX_MessageBox.ShowError($&quot;Cannot move {node.Text}. The destination folder is the same as the source folder.&quot;, Application.ProductName);
+ 
+             return false;
+         }
+ 
+         if (node.ParentNode != null &amp;&amp; node.ParentNode == dropNode)
+         {
+             if (isMoving)
+                 VitNX_MessageBox.ShowError($&quot;Cannot move {node.Text}. The destination folder is the same as the source folder.&quot;, Application.ProductName);
+ 
+             return false;
+         }
+ 
+         var parentNode = dropNode.ParentNode;
+         while (parentNode != null)
+         {
+             if (node == parentNode)
+             {
+                 if (isMoving)
+                     VitNX_MessageBox.ShowError($&quot;Cannot move {node.Text}. The destination folder is a subfolder of the source folder.&quot;, Application.ProductName);
+ 
+                 return false;
+             }
+ 
+             parentNode = parentNode.ParentNode;
+         }
      }
-     if (e.Item.ImageIndex == -1 &amp;&amp;
-         string.IsNullOrEmpty(e.Item.ImageKey) &amp;&amp;
-         e.Item.Image == null)
-     {
-         g.DrawImageUnscaled(MenuIcons.tick,
-             new Point(e.ImageRectangle.Left,
-             e.ImageRectangle.Top));
-     }
+ 
+     return true;
  }
 					</pre>			
 				</div>
@@ -330,11 +373,11 @@ protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000126A.html">VitNX_MenuRenderer Class</a><br />
+			<a href="topic_0000000000001257.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_0000000000001269.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

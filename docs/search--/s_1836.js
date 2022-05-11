@@ -1,1 +1,1 @@
-search_result['1836']=["topic_000000000000067E.html","ERROR_DS_GENERIC_ERROR Field",""];
+search_result['1836']=["topic_000000000000067B.html","ERROR_DS_OBJECT_CLASS_REQUIRED Field",""];

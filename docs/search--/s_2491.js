@@ -1,1 +1,1 @@
-search_result['2491']=["topic_000000000000090D.html","ERROR_IPSEC_IKE_NEGOTIATION_DISABLED Field",""];
+search_result['2491']=["topic_000000000000090A.html","ERROR_IPSEC_IKE_GETSPIFAIL Field",""];

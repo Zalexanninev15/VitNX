@@ -1,1 +1,1 @@
-search_result['501']=["topic_0000000000000166.html","Import.SetWindowOrgEx Method",""];
+search_result['501']=["topic_0000000000000165.html","Import.SelectClipRgn Method",""];

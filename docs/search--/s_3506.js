@@ -1,1 +1,1 @@
-search_result['3506']=["topic_0000000000000CFF.html","SCARD_E_DUPLICATE_READER Field",""];
+search_result['3506']=["topic_0000000000000CFC.html","SCARD_E_CANCELLED Field",""];

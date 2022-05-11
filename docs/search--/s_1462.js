@@ -1,1 +1,1 @@
-search_result['1462']=["topic_0000000000000508.html","ERROR_BAD_USERNAME Field",""];
+search_result['1462']=["topic_0000000000000505.html","ERROR_ALL_USER_TRUST_QUOTA_EXCEEDED Field",""];

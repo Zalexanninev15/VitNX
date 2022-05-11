@@ -1,1 +1,1 @@
-search_result['5078']=["topic_00000000000012BD_attached_props--.html","VitNX2_MessageBoxType1 Attached Properties",""];
+search_result['5078']=["topic_000000000000132D.html","VitNX2_CheckBox.OnMouseEnter Method","Raises the MouseEnter event."];

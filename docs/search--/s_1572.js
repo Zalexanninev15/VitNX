@@ -1,1 +1,1 @@
-search_result['1572']=["topic_0000000000000576.html","ERROR_RESMON_ONLINE_FAILED Field",""];
+search_result['1572']=["topic_0000000000000573.html","ERROR_REMOTE_STORAGE_NOT_ACTIVE Field",""];

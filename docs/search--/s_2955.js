@@ -1,1 +1,1 @@
-search_result['2955']=["topic_0000000000000AD8.html","STG_E_INVALIDPARAMETER Field",""];
+search_result['2955']=["topic_0000000000000AD5.html","TYPE_E_DUPLICATEID Field",""];

@@ -1,1 +1,1 @@
-search_result['1092']=["topic_0000000000000396.html","ERROR_INVALID_WORKSTATION Field",""];
+search_result['1092']=["topic_0000000000000393.html","ERROR_NULL_LM_PASSUInt16 Field",""];

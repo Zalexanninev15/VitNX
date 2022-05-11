@@ -1,1 +1,1 @@
-search_result['347']=["topic_00000000000000D4.html","Import.GetModuleHandle (String) Method",""];
+search_result['347']=["topic_00000000000000D4.html","Import.SetWindowLong32 Method",""];

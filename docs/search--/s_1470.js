@@ -1,1 +1,1 @@
-search_result['1470']=["topic_0000000000000510.html","ERROR_SPL_NO_STARTDOC Field",""];
+search_result['1470']=["topic_000000000000050D.html","ERROR_TRANSFORM_NOT_SUPPORTED Field",""];

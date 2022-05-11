@@ -1,1 +1,1 @@
-search_result['4170']=["topic_0000000000001090_methods--.html","LUID Methods",""];
+search_result['4170']=["topic_000000000000110E.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];

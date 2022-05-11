@@ -1,1 +1,1 @@
-search_result['2034']=["topic_0000000000000744.html","ERROR_DS_SRC_SID_EXISTS_IN_FOREST Field",""];
+search_result['2034']=["topic_0000000000000741.html","ERROR_DS_NO_NEST_GLOBALGROUP_IN_MIXEDDOMAIN Field",""];

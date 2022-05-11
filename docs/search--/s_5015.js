@@ -1,1 +1,1 @@
-search_result['5015']=["topic_0000000000001292.html","VitNX2_Button Class",""];
+search_result['5015']=["topic_0000000000001306.html","VitNX_ToolStripRenderer.OnRenderToolStripBorder Method","Raises the RenderToolStripBorder event."];

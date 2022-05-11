@@ -1,1 +1,1 @@
-search_result['1913']=["topic_00000000000006CB.html","ERROR_DS_DRA_SCHEMA_MISMATCH Field",""];
+search_result['1913']=["topic_00000000000006C8.html","ERROR_DS_EXISTS_IN_AUX_CLS Field",""];

@@ -1,1 +1,1 @@
-search_result['414']=["topic_0000000000000115.html","Import.GetActiveWindow Method",""];
+search_result['414']=["topic_0000000000000114.html","Import.CreateCompatibleBitmap Method",""];

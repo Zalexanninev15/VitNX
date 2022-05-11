@@ -1,1 +1,1 @@
-search_result['1194']=["topic_00000000000003FC.html","ERROR_INVALID_LB_MESSAGE Field",""];
+search_result['1194']=["topic_00000000000003F9.html","ERROR_CANNOT_FIND_WND_CLASS Field",""];

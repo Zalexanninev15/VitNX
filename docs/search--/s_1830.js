@@ -1,1 +1,1 @@
-search_result['1830']=["topic_0000000000000678.html","ERROR_DS_BAD_NAME_SYNTAX Field",""];
+search_result['1830']=["topic_0000000000000675.html","ERROR_DS_USER_BUFFER_TO_SMALL Field",""];

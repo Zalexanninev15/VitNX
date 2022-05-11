@@ -1,1 +1,1 @@
-search_result['4387']=["topic_00000000000010F6_props--.html","ObservableListModified\u0026lt;T\u0026gt; Properties",""];
+search_result['4387']=["topic_0000000000001173.html","Type1.SetColor Method","Sets the color."];

@@ -1,1 +1,1 @@
-search_result['5000']=["topic_0000000000001283_props--.html","DockResizeFilter Properties",""];
+search_result['5000']=["topic_00000000000012FC.html","VitNX_MenuRenderer.InitializeItem Method","When overridden in a derived class, provides for custom initialization of the given ToolStripItem."];

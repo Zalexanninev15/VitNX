@@ -1,1 +1,1 @@
-search_result['4863']=["topic_0000000000001222_attached_props--.html","VitNX_DockSplitter Attached Properties",""];
+search_result['4863']=["topic_0000000000001295.html","VitNX_DockGroup.OnMouseMove Method","Raises the MouseMove event."];

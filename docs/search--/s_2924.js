@@ -1,1 +1,1 @@
-search_result['2924']=["topic_0000000000000AB9.html","TYPE_E_AMBIGUOUSNAME Field",""];
+search_result['2924']=["topic_0000000000000AB6.html","DISP_E_UNKNOWNNAME Field",""];

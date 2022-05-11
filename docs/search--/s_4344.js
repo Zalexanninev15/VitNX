@@ -1,1 +1,1 @@
-search_result['4344']=["topic_00000000000010E2.html","Type1.Report Method",""];
+search_result['4344']=["topic_000000000000115C.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];

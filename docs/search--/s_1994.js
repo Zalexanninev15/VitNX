@@ -1,1 +1,1 @@
-search_result['1994']=["topic_000000000000071C.html","ERROR_DS_CANT_MOVE_RESOURCE_GROUP Field",""];
+search_result['1994']=["topic_0000000000000719.html","ERROR_DS_NAME_ERROR_NO_SYNTACTICAL_MAPPING Field",""];

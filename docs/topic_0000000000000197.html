@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetDisplayConfigBufferSizes Method</title>
+	<title>Import.WritePrivateProfileString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetDisplayConfigBufferSizes Method</h1>
+		<h1 class="title">Import.WritePrivateProfileString Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetDisplayConfigBufferSizes(&nbsp;<br />   <a target="_top" href="topic_0000000000000F06.html" onclick="this.target='';return true;">QUERY_DEVICE_CONFIG_FLAGS</a> <i>flags</i>,&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>numPathArrayElements</i>,&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>numModeInfoArrayElements</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32&quot;,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> WritePrivateProfileString(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Section</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>Value</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>FilePath</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,40 +152,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="flags" class="parameterList">
+	Parameters</h4><dl paramName="Section" class="parameterList">
 	<dt>
 		<span class="parameter">
-			flags
+			Section
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000F06.html" onclick="this.target='';return true;">QUERY_DEVICE_CONFIG_FLAGS</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="numPathArrayElements" class="parameterList">
+<dl paramName="Key" class="parameterList">
 	<dt>
 		<span class="parameter">
-			numPathArrayElements
+			Key
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="numModeInfoArrayElements" class="parameterList">
+<dl paramName="Value" class="parameterList">
 	<dt>
 		<span class="parameter">
-			numModeInfoArrayElements
+			Value
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="FilePath" class="parameterList">
+	<dt>
+		<span class="parameter">
+			FilePath
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
@@ -195,7 +209,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">long</a> 
 	
 
 
@@ -270,10 +284,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;)]
- public static extern int GetDisplayConfigBufferSizes(QUERY_DEVICE_CONFIG_FLAGS flags,
-     out uint numPathArrayElements,
-     out uint numModeInfoArrayElements);
+[DllImport(&quot;kernel32&quot;,
+     CharSet = CharSet.Unicode)]
+ public static extern long WritePrivateProfileString(string Section,
+     string Key,
+     string Value,
+     string FilePath);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

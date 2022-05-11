@@ -1,1 +1,1 @@
-search_result['4784']=["topic_00000000000011ED.html","DockPanelState Constructor",""];
+search_result['4784']=["topic_0000000000001261.html","VitNX_TreeView.OnMouseDoubleClick Method","Raises the MouseDoubleClick event."];

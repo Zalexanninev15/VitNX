@@ -1,1 +1,1 @@
-search_result['1996']=["topic_000000000000071E.html","ERROR_DS_NO_TREE_DELETE_ABOVE_NC Field",""];
+search_result['1996']=["topic_000000000000071B.html","ERROR_DS_WRONG_OM_OBJ_CLASS Field",""];

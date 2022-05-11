@@ -1,1 +1,1 @@
-c['542']=[['543',"OnPaint Method","topic_00000000000012F9.html",0]];
+c['542']=[['543',"Dispose(bool) Method","topic_0000000000001362.html",0]];

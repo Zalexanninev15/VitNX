@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetImmersiveUserColorSetPreference Method</title>
+	<title>Import.InstallHinfSection Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetImmersiveUserColorSetPreference Method</h1>
+		<h1 class="title">Import.InstallHinfSection Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetImmersiveUserColorSetPreference(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bForceCheckRegistry</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bSkipCheckOnFail</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;Setupapi.dll&quot;, EntryPoint = &quot;InstallHinfSection&quot;,
+            CallingConvention = CallingConvention.StdCall,
+            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InstallHinfSection(&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>ModuleHandle</i>,&nbsp;<br />   [In()]&nbsp;<br />[MarshalAs(UnmanagedType.LPWStr)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>CmdLineBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nCmdShow</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,27 +153,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="bForceCheckRegistry" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bForceCheckRegistry
+			hwnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="bSkipCheckOnFail" class="parameterList">
+<dl paramName="ModuleHandle" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bSkipCheckOnFail
+			ModuleHandle
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="CmdLineBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			CmdLineBuffer
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nCmdShow" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nCmdShow
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -180,10 +208,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
 
 
 
@@ -257,9 +281,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]
- public static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry,
-     bool bSkipCheckOnFail);
+[DllImport(&quot;Setupapi.dll&quot;, EntryPoint = &quot;InstallHinfSection&quot;,
+     CallingConvention = CallingConvention.StdCall,
+     CharSet = CharSet.Unicode)]
+ public static extern void InstallHinfSection([In] IntPtr hwnd,
+ [In] IntPtr ModuleHandle,
+ [In, MarshalAs(UnmanagedType.LPWStr)] string CmdLineBuffer,
+ int nCmdShow);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

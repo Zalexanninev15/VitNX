@@ -1,1 +1,1 @@
-search_result['4954']=["topic_000000000000126A_methods--.html","VitNX_MenuRenderer Methods",""];
+search_result['4954']=["topic_00000000000012D5.html","VitNX_Dialog.OnLoad Method","Raises the Load event."];

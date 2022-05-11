@@ -1,1 +1,1 @@
-search_result['2956']=["topic_0000000000000AD9.html","STG_E_MEDIUMFULL Field",""];
+search_result['2956']=["topic_0000000000000AD6.html","TYPE_E_INVALIDID Field",""];

@@ -1,1 +1,1 @@
-search_result['2916']=["topic_0000000000000AB1.html","TYPE_E_UNSUPFORMAT Field",""];
+search_result['2916']=["topic_0000000000000AAE.html","MEM_E_INVALID_LINK Field",""];

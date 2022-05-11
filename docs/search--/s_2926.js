@@ -1,1 +1,1 @@
-search_result['2926']=["topic_0000000000000ABB.html","TYPE_E_UNKNOWNLCID Field",""];
+search_result['2926']=["topic_0000000000000AB8.html","DISP_E_BADVARTYPE Field",""];

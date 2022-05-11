@@ -1,1 +1,1 @@
-search_result['4944']=["topic_000000000000125C.html","VitNX_MessageBox.ShowWarning Method","Shows the warning MessageBox."];
+search_result['4944']=["topic_00000000000012CB.html","VitNX_Dialog.OnHandleCreated Method",""];

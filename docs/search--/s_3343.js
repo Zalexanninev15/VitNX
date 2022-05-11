@@ -1,1 +1,1 @@
-search_result['3343']=["topic_0000000000000C5C.html","CERTSRV_E_UNKNOWN_CERT_TYPE Field",""];
+search_result['3343']=["topic_0000000000000C59.html","CERTSRV_E_BAD_RENEWAL_CERT_ATTRIBUTE Field",""];

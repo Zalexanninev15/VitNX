@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetAncestor Method</title>
+	<title>Import.CreateFontIndirect Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetAncestor Method</h1>
+		<h1 class="title">Import.CreateFontIndirect Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> GetAncestor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>gaFlags</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> CreateFontIndirect(&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E97.html" onclick="this.target='';return true;">LOGFONT</a> <i>lplf</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,27 +152,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	Parameters</h4><dl paramName="lplf" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWnd
+			lplf
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="gaFlags" class="parameterList">
-	<dt>
-		<span class="parameter">
-			gaFlags
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="topic_0000000000000E97.html" onclick="this.target='';return true;">LOGFONT</a> 
 	</dd>
 </dl>
 <p>
@@ -258,10 +245,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;,
+[DllImport(&quot;gdi32.dll&quot;,
      CharSet = CharSet.Auto)]
- public static extern IntPtr GetAncestor(IntPtr hWnd,
-     uint gaFlags);
+ public static extern IntPtr CreateFontIndirect(ref LOGFONT lplf);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

@@ -1,1 +1,1 @@
-search_result['965']=["topic_0000000000000317.html","ERROR_DEVICE_REINITIALIZATION_NEEDED Field",""];
+search_result['965']=["topic_0000000000000314.html","ERROR_FLOPPY_BAD_REGISTERS Field",""];

@@ -1,1 +1,1 @@
-search_result['892']=["topic_00000000000002CE.html","ERROR_SERVICE_NOT_ACTIVE Field",""];
+search_result['892']=["topic_00000000000002CB.html","ERROR_BADDB Field",""];

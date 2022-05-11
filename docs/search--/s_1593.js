@@ -1,1 +1,1 @@
-search_result['1593']=["topic_000000000000058B.html","ERROR_CLUSTER_INVALID_NODE Field",""];
+search_result['1593']=["topic_0000000000000588.html","ERROR_GROUP_NOT_ONLINE Field",""];

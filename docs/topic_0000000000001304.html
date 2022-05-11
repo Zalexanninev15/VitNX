@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>FontAwesome4.GetImage (String, Properties) Method</title>
+	<title>VitNX_ToolStripRenderer.InitializeItem Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">FontAwesome4.GetImage (String, Properties) Method</h1>
+		<h1 class="title">VitNX_ToolStripRenderer.InitializeItem Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls</a>
+<a href="topic_00000000000012F9.html">VitNX.UI.ControlsV1.Renderers</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>When overridden in a derived class, provides for custom initialization of the given <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a>.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> GetImage(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>name</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000012FC.html" onclick="this.target='';return true;">Properties</a> <i>props</i> = null&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InitializeItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> <i>item</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,39 +152,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="name" class="parameterList">
+	Parameters</h4><dl paramName="item" class="parameterList">
 	<dt>
 		<span class="parameter">
-			name
+			item
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="props" class="parameterList">
-	<dt>
-		<span class="parameter">
-			props
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000012FC.html" onclick="this.target='';return true;">Properties</a> 
-	</dd>
-</dl>
-<p>
-	 
+	The <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem">ToolStripItem</a> to be initialized. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap">Bitmap</a> 
-	
 
 
 
@@ -257,14 +241,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Bitmap GetImage(string name,
-     Properties props = null)
+protected override void InitializeItem(ToolStripItem item)
  {
-     if (props == null)
-         props = Properties.Default;
-     if (props.Type != Type.None)
-         return GetImage(Properties.Get(ParseType(name)));
-     return null;
+     base.InitializeItem(item);
+ 
+     if (item.GetType() == typeof(ToolStripSeparator))
+     {
+         var castItem = (ToolStripSeparator)item;
+         if (!castItem.IsOnDropDown)
+             item.Margin = new Padding(0, 0, 2, 0);
+     }
+ 
+     if (item.GetType() == typeof(ToolStripButton))
+     {
+         item.AutoSize = false;
+         item.Size = new Size(24, 24);
+     }
  }
 					</pre>			
 				</div>
@@ -329,11 +321,11 @@ public Bitmap GetImage(string name,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012FB.html">FontAwesome4 Class</a><br />
+			<a href="topic_0000000000001303.html">VitNX_ToolStripRenderer Class</a><br />
 
 
 
-<a href="topic_00000000000012FA.html">VitNX3.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000012F9.html">VitNX.UI.ControlsV1.Renderers Namespace</a><br />
 
 
 			

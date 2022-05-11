@@ -1,1 +1,1 @@
-search_result['4321']=["topic_00000000000010D5.html","Window.MinimizeAll Method","Minimizes the all windows."];
+search_result['4321']=["topic_000000000000114E_attached_props--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Attached Properties",""];

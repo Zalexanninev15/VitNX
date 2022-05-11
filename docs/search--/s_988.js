@@ -1,1 +1,1 @@
-search_result['988']=["topic_000000000000032E.html","ERROR_BAD_PROFILE Field",""];
+search_result['988']=["topic_000000000000032B.html","ERROR_ILLEGAL_ELEMENT_ADDRESS Field",""];

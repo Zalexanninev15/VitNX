@@ -1,1 +1,1 @@
-search_result['758']=["topic_0000000000000248.html","ERROR_NOT_JOINED Field",""];
+search_result['758']=["topic_0000000000000245.html","ERROR_BROKEN_PIPE Field",""];

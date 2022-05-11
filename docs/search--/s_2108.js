@@ -1,1 +1,1 @@
-search_result['2108']=["topic_000000000000078E.html","ERROR_DS_EXISTING_AD_CHILD_NC Field",""];
+search_result['2108']=["topic_000000000000078B.html","ERROR_DS_NOT_CLOSEST Field",""];

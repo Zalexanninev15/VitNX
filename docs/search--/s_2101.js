@@ -1,1 +1,1 @@
-search_result['2101']=["topic_0000000000000787.html","ERROR_DS_INSUFFICIENT_ATTR_TO_CREATE_OBJECT Field",""];
+search_result['2101']=["topic_0000000000000784.html","ERROR_DS_MODIFYDN_DISALLOWED_BY_FLAG Field",""];

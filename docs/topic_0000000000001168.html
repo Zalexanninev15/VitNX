@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_NumericUpDown Constructor</title>
+	<title>Window.SetWindowsTenAndHighStyleForWinFormTitleToDark Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_NumericUpDown Constructor</h1>
+		<h1 class="title">Window.SetWindowsTenAndHighStyleForWinFormTitleToDark Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001160.html">VitNX3.Functions.WindowAndControls</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Applying a native dark window title for the application if it runs on Windows 10 or higher..</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX_NumericUpDown()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> SetWindowsTenAndHighStyleForWinFormTitleToDark(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>Handler</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,6 +151,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="Handler" class="parameterList">
+	<dt>
+		<span class="parameter">
+			Handler
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	The handler. 
+</p>
+
+<p />
 
 
 
@@ -224,24 +241,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX_NumericUpDown()
+public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
  {
-     SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
-     base.ForeColor = Color.Gainsboro;
-     base.BackColor = Colors.LightBackground;
-     Controls[0].Paint += VitNX_NumericUpDown_Paint;
-     try
-     {
-         Type type = Controls[0].GetType();
-         BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Instance;
-         MethodInfo method = type.GetMethod(&quot;SetStyle&quot;, flags);
-         if (method != null)
-         {
-             object[] param = { ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, true };
-             method.Invoke(Controls[0], param);
-         }
-     }
-     catch (SecurityException) { }
+     if (Import.DwmSetWindowAttribute(Handler,
+         DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
+         new[] { 1 }, 4) != 0)
+         Import.DwmSetWindowAttribute(Handler,
+             DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE_NOT,
+             new[] { 1 }, 4);
  }
 					</pre>			
 				</div>
@@ -306,11 +313,11 @@ public VitNX_NumericUpDown()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001167.html">VitNX_NumericUpDown Class</a><br />
+			<a href="topic_0000000000001161.html">Window Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001160.html">VitNX3.Functions.WindowAndControls Namespace</a><br />
 
 
 			

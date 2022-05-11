@@ -1,1 +1,1 @@
-search_result['1507']=["topic_0000000000000535.html","ERROR_INVALID_MEDIA_POOL Field",""];
+search_result['1507']=["topic_0000000000000532.html","ERROR_WINS_INTERNAL Field",""];

@@ -1,1 +1,1 @@
-search_result['701']=["topic_000000000000020F.html","ERROR_UNEXP_NET_ERR Field",""];
+search_result['701']=["topic_000000000000020C.html","ERROR_BAD_COMMAND Field",""];

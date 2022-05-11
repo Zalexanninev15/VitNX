@@ -1,1 +1,1 @@
-search_result['2140']=["topic_00000000000007AE.html","DNS_ERROR_NOT_UNIQUE Field",""];
+search_result['2140']=["topic_00000000000007AB.html","DNS_ERROR_RCODE_NAME_ERROR Field",""];

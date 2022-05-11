@@ -1,1 +1,1 @@
-search_result['1073']=["topic_0000000000000383.html","ERROR_CANT_DISABLE_MANDATORY Field",""];
+search_result['1073']=["topic_0000000000000380.html","ERROR_MACHINE_LOCKED Field",""];

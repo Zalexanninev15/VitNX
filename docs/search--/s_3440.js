@@ -1,1 +1,1 @@
-search_result['3440']=["topic_0000000000000CBD.html","SPAPI_E_DEVINFO_LIST_LOCKED Field",""];
+search_result['3440']=["topic_0000000000000CBA.html","SPAPI_E_BAD_SECTION_NAME_LINE Field",""];

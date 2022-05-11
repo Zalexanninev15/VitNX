@@ -1,1 +1,1 @@
-search_result['2365']=["topic_000000000000088F.html","ERROR_SXS_XML_E_UNCLOSEDENDTAG Field",""];
+search_result['2365']=["topic_000000000000088C.html","ERROR_SXS_XML_E_BADCHARDATA Field",""];

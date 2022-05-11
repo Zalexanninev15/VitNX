@@ -1,1 +1,1 @@
-search_result['1061']=["topic_0000000000000377.html","ERROR_DELAY_LOAD_FAILED Field",""];
+search_result['1061']=["topic_0000000000000374.html","ERROR_NOT_SUPPORTED_ON_SBS Field",""];

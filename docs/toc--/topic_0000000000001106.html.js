@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001651.html"],['39',"VitNX.UI.ControlsV1.Controls Namespace","topic_0000000000001104.html"],['40',"ScrollValueEventArgs Class","topic_0000000000001105.html"],['41',"ScrollValueEventArgs Constructor","topic_0000000000001106.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000016E1.html"],['4432',"VitNX3.Functions.WinControllers Namespace","topic_0000000000001105.html"],['4535',"TaskBarProgressBar Class","topic_0000000000001106.html"]];

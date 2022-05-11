@@ -1,1 +1,1 @@
-search_result['1152']=["topic_00000000000003D2.html","ERROR_LM_CROSS_ENCRYPTION_REQUIRED Field",""];
+search_result['1152']=["topic_00000000000003CF.html","ERROR_BAD_LOGON_SESSION_STATE Field",""];
