@@ -1,1 +1,1 @@
-search_result['1316']=["topic_0000000000000476.html","RPC_S_BINDING_HAS_NO_AUTH Field",""];
+search_result['1316']=["topic_0000000000000473.html","RPC_S_NO_BINDINGS Field",""];

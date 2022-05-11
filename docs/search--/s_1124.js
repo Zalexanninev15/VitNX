@@ -1,1 +1,1 @@
-search_result['1124']=["topic_00000000000003B6.html","ERROR_NOT_LOGON_PROCESS Field",""];
+search_result['1124']=["topic_00000000000003B3.html","ERROR_INVALID_ACL Field",""];

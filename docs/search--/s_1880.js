@@ -1,1 +1,1 @@
-search_result['1880']=["topic_00000000000006AA.html","ERROR_DS_EXISTS_IN_MUST_HAVE Field",""];
+search_result['1880']=["topic_00000000000006A7.html","ERROR_DS_INVALID_DMD Field",""];

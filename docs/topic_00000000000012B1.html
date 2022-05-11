@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Helpers.RoundRec Method</title>
+	<title>VitNX_DockRegion.OnPaint Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Helpers.RoundRec Method</h1>
+		<h1 class="title">VitNX_DockRegion.OnPaint Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit</a>
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.paint">Paint</a> event.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d.graphicspath">GraphicsPath</a> RoundRec(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.rectangle">Rectangle</a> <i>Rectangle</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>Curve</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnPaint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,39 +152,22 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="Rectangle" class="parameterList">
+	Parameters</h4><dl paramName="e" class="parameterList">
 	<dt>
 		<span class="parameter">
-			Rectangle
+			e
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.rectangle">Rectangle</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> 
 	</dd>
 </dl>
 <p>
-	 
-</p>
-<dl paramName="Curve" class="parameterList">
-	<dt>
-		<span class="parameter">
-			Curve
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
+	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.painteventargs">PaintEventArgs</a> that contains the event data. 
 </p>
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d.graphicspath">GraphicsPath</a> 
-	
 
 
 
@@ -257,28 +241,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static GraphicsPath RoundRec(Rectangle Rectangle, int Curve)
+protected override void OnPaint(PaintEventArgs e)
  {
-     GraphicsPath graphicsPath = new GraphicsPath();
-     int num = Curve * 2;
-     graphicsPath.AddArc(new Rectangle(Rectangle.X, Rectangle.Y,
-         num, num),
-         -180f, 90f);
-     graphicsPath.AddArc(new Rectangle(Rectangle.Width - num + Rectangle.X,
-         Rectangle.Y, num, num),
-         -90f, 90f);
-     graphicsPath.AddArc(new Rectangle(Rectangle.Width - num + Rectangle.X,
-         Rectangle.Height - num + Rectangle.Y,
-         num, num),
-         0f, 90f);
-     graphicsPath.AddArc(new Rectangle(Rectangle.X,
-         Rectangle.Height - num + Rectangle.Y,
-         num, num),
-         90f, 90f);
-     graphicsPath.AddLine(new Point(Rectangle.X,
-         Rectangle.Height - num + Rectangle.Y), new Point(Rectangle.X,
-         Curve + Rectangle.Y));
-     return graphicsPath;
+     var g = e.Graphics;
+     if (!Visible)
+         return;
+     using (var b = new SolidBrush(Colors.GreyBackground))
+         g.FillRectangle(b, ClientRectangle);
+     using (var p = new Pen(Colors.VitNXBorder))
+     {
+         if (DockArea == VitNX_DockArea.Document)
+             g.DrawLine(p, ClientRectangle.Left, 0,
+                 ClientRectangle.Right, 0);
+         if (DockArea == VitNX_DockArea.Right)
+             g.DrawLine(p, ClientRectangle.Left, 0,
+                 ClientRectangle.Left,
+                 ClientRectangle.Height);
+         if (DockArea == VitNX_DockArea.Left)
+             g.DrawLine(p, ClientRectangle.Right - 1, 0,
+                 ClientRectangle.Right - 1,
+                 ClientRectangle.Height);
+     }
  }
 					</pre>			
 				</div>
@@ -343,11 +326,11 @@ public static GraphicsPath RoundRec(Rectangle Rectangle, int Curve)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012B0.html">Helpers Class</a><br />
+			<a href="topic_00000000000012AA.html">VitNX_DockRegion Class</a><br />
 
 
 
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			

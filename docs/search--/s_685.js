@@ -1,1 +1,1 @@
-search_result['685']=["topic_00000000000001FF.html","ERROR_GEN_FAILURE Field",""];
+search_result['685']=["topic_00000000000001FC.html","ERROR_INVALID_HANDLE Field",""];

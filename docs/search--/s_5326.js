@@ -1,1 +1,1 @@
-search_result['5326']=["topic_000000000000164C.html","manager Field",""];
+search_result['5326']=["topic_00000000000016BB.html","PositionType Field","Notification display location on the screen."];

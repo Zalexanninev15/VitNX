@@ -1,1 +1,1 @@
-search_result['2187']=["topic_00000000000007DD.html","DNS_ERROR_NODE_IS_CNAME Field",""];
+search_result['2187']=["topic_00000000000007DA.html","DNS_ERROR_INVALID_ZONE_TYPE Field",""];

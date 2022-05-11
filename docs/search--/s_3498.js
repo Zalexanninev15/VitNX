@@ -1,1 +1,1 @@
-search_result['3498']=["topic_0000000000000CF7.html","SCARD_F_COMM_ERROR Field",""];
+search_result['3498']=["topic_0000000000000CF4.html","SPAPI_E_INVALID_TARGET Field",""];

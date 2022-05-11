@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.DwmExtendFrameIntoClientArea Method</title>
+	<title>Import.UpdateLayeredWindow Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.DwmExtendFrameIntoClientArea Method</h1>
+		<h1 class="title">Import.UpdateLayeredWindow Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;dwmapi.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DwmExtendFrameIntoClientArea(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E2C.html" onclick="this.target='';return true;">MARGINS</a> <i>pMarInset</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> UpdateLayeredWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcDst</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000EF7.html" onclick="this.target='';return true;">POINT</a> <i>pptDst</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000F0F.html" onclick="this.target='';return true;">SIZE</a> <i>psize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdcSrc</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000EF7.html" onclick="this.target='';return true;">POINT</a> <i>pprSrc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>crKey</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000E05.html" onclick="this.target='';return true;">BLENDFUNCTION</a> <i>pblend</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwFlags</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWnd
+			hwnd
 		</span>
 	</dt>
 	<dd>
@@ -164,14 +165,105 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="pMarInset" class="parameterList">
+<dl paramName="hdcDst" class="parameterList">
 	<dt>
 		<span class="parameter">
-			pMarInset
+			hdcDst
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000E2C.html" onclick="this.target='';return true;">MARGINS</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pptDst" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pptDst
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000EF7.html" onclick="this.target='';return true;">POINT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="psize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			psize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000F0F.html" onclick="this.target='';return true;">SIZE</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hdcSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hdcSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pprSrc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pprSrc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000EF7.html" onclick="this.target='';return true;">POINT</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="crKey" class="parameterList">
+	<dt>
+		<span class="parameter">
+			crKey
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pblend" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pblend
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000E05.html" onclick="this.target='';return true;">BLENDFUNCTION</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="dwFlags" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dwFlags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -182,7 +274,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -257,9 +349,17 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;dwmapi.dll&quot;)]
- public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd,
-     ref MARGINS pMarInset);
+[DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Auto)]
+ public static extern bool UpdateLayeredWindow(IntPtr hwnd,
+     IntPtr hdcDst,
+     ref POINT pptDst,
+     ref SIZE psize,
+     IntPtr hdcSrc,
+     ref POINT pprSrc,
+     int crKey,
+     ref BLENDFUNCTION pblend,
+     int dwFlags);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

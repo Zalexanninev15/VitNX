@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockGroup.OnMouseMove Method</title>
+	<title>VitNX_RadioButton.OnMouseDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockGroup.OnMouseMove Method</h1>
+		<h1 class="title">VitNX_RadioButton.OnMouseDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000011E3.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmousedown">OnMouseDown</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -163,7 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	 
 </p>
 
 <p />
@@ -241,81 +241,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseMove(MouseEventArgs e)
+protected override void OnMouseDown(MouseEventArgs e)
  {
-     base.OnMouseMove(e);
-     if (_dragTab != null)
-     {
-         var offsetX = e.Location.X + _tabArea.Offset;
-         if (offsetX &lt; _dragTab.ClientRectangle.Left)
-         {
-             if (_dragTab.DockContent.Order &gt; 0)
-             {
-                 var otherTabs = _tabs.Values.Where(t =&gt; t.DockContent.Order ==
-                 _dragTab.DockContent.Order - 1).ToList();
-                 if (otherTabs.Count == 0)
-                     return;
-                 var otherTab = otherTabs.First();
-                 if (otherTab == null)
-                     return;
-                 var oldIndex = _dragTab.DockContent.Order;
-                 _dragTab.DockContent.Order = oldIndex - 1;
-                 otherTab.DockContent.Order = oldIndex;
-                 BuildTabs();
-                 EnsureVisible();
-                 _tabArea.RebuildMenu();
-                 return;
-             }
-         }
-         else if (offsetX &gt; _dragTab.ClientRectangle.Right)
-         {
-             var maxOrder = _contents.Count;
-             if (_dragTab.DockContent.Order &lt; maxOrder)
-             {
-                 var otherTabs = _tabs.Values.Where(t =&gt; t.DockContent.Order ==
-                 _dragTab.DockContent.Order + 1).ToList();
-                 if (otherTabs.Count == 0)
-                     return;
-                 var otherTab = otherTabs.First();
-                 if (otherTab == null)
-                     return;
-                 var oldIndex = _dragTab.DockContent.Order;
-                 _dragTab.DockContent.Order = oldIndex + 1;
-                 otherTab.DockContent.Order = oldIndex;
-                 BuildTabs();
-                 EnsureVisible();
-                 _tabArea.RebuildMenu();
-                 return;
-             }
-         }
+     base.OnMouseDown(e);
+ 
+     if (!ClientRectangle.Contains(e.Location))
          return;
-     }
-     if (_tabArea.DropdownRectangle.Contains(e.Location))
-     {
-         _tabArea.DropdownHot = true;
-         foreach (var tab in _tabs.Values)
-             tab.Hot = false;
-         Invalidate();
-         return;
-     }
-     _tabArea.DropdownHot = false;
-     foreach (var tab in _tabs.Values)
-     {
-         var rect = RectangleToTabArea(tab.ClientRectangle);
-         var hot = rect.Contains(e.Location);
-         if (tab.Hot != hot)
-         {
-             tab.Hot = hot;
-             Invalidate();
-         }
-         var closeRect = RectangleToTabArea(tab.CloseButtonRectangle);
-         var closeHot = closeRect.Contains(e.Location);
-         if (tab.CloseButtonHot != closeHot)
-         {
-             tab.CloseButtonHot = closeHot;
-             Invalidate();
-         }
-     }
+ 
+     SetControlState(VitNX_ControlState.Pressed);
  }
 					</pre>			
 				</div>
@@ -380,11 +313,11 @@ protected override void OnMouseMove(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000011FD.html">VitNX_DockGroup Class</a><br />
+			<a href="topic_0000000000001202.html">VitNX_RadioButton Class</a><br />
 
 
 
-<a href="topic_00000000000011E3.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

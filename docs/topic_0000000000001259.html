@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_MessageBox(String, String, VitNX_DialogButton) Constructor</title>
+	<title>AfterNodeExpand Event</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_MessageBox(String, String, VitNX_DialogButton) Constructor</h1>
+		<h1 class="title">AfterNodeExpand Event</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001239.html">VitNX.UI.ControlsV1.Forms</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX_MessageBox(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>title</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000001247.html" onclick="this.target='';return true;">VitNX_DialogButton</a> <i>buttons</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public event <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventhandler">EventHandler</a> AfterNodeExpand</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,48 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="message" class="parameterList">
-	<dt>
-		<span class="parameter">
-			message
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="title" class="parameterList">
-	<dt>
-		<span class="parameter">
-			title
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="buttons" class="parameterList">
-	<dt>
-		<span class="parameter">
-			buttons
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000001247.html" onclick="this.target='';return true;">VitNX_DialogButton</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -266,13 +224,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX_MessageBox(string message,
-     string title,
-     VitNX_DialogButton buttons)
-     : this(message, title,
-           VitNX_MessageBoxIcon.None,
-           buttons)
- { }
+public event EventHandler AfterNodeExpand;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -336,11 +288,11 @@ public VitNX_MessageBox(string message,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001253.html">VitNX_MessageBox Class</a><br />
+			<a href="topic_0000000000001257.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_0000000000001239.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			
@@ -362,4 +314,3 @@ public VitNX_MessageBox(string message,
     </div>
   </body>
 </html>
-

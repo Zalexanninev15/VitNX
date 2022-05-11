@@ -1,1 +1,1 @@
-search_result['1879']=["topic_00000000000006A9.html","ERROR_DS_SYNTAX_MISMATCH Field",""];
+search_result['1879']=["topic_00000000000006A6.html","ERROR_DS_CLASS_MUST_BE_CONCRETE Field",""];

@@ -1,1 +1,1 @@
-search_result['4116']=["topic_000000000000107D.html","VolumeControl Class","The volume control."];
+search_result['4116']=["topic_0000000000000FB9.html","DISPLAYCONFIG_SCALING Enumeration",""];

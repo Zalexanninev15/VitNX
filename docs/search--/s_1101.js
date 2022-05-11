@@ -1,1 +1,1 @@
-search_result['1101']=["topic_000000000000039F.html","ERROR_INVALID_SECURITY_DESCR Field",""];
+search_result['1101']=["topic_000000000000039C.html","ERROR_NO_SUCH_PRIVILEGE Field",""];

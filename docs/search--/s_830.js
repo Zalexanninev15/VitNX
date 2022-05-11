@@ -1,1 +1,1 @@
-search_result['830']=["topic_0000000000000290.html","ERROR_EA_LIST_INCONSISTENT Field",""];
+search_result['830']=["topic_000000000000028D.html","ERROR_INVALID_SEGDPL Field",""];

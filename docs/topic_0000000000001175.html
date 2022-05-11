@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_RadioButton.OnMouseDown Method</title>
+	<title>Type1.NotUsed Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_RadioButton.OnMouseDown Method</h1>
+		<h1 class="title">Type1.NotUsed Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_000000000000116F.html">VitNX3.UI.Console.ProgressBar</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmousedown">OnMouseDown</a> event.</summary-info>
+        <summary-info>Stop this task or not use console progressbar.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> NotUsed(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>stopper</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="stopper" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			stopper
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The bool value. 
 </p>
 
 <p />
@@ -241,14 +241,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseDown(MouseEventArgs e)
+public void NotUsed(bool stopper)
  {
-     base.OnMouseDown(e);
- 
-     if (!ClientRectangle.Contains(e.Location))
-         return;
- 
-     SetControlState(VitNX_ControlState.Pressed);
+     workdo = stopper;
  }
 					</pre>			
 				</div>
@@ -313,11 +308,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001172.html">VitNX_RadioButton Class</a><br />
+			<a href="topic_0000000000001170.html">Type1 Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_000000000000116F.html">VitNX3.UI.Console.ProgressBar Namespace</a><br />
 
 
 			

@@ -18,6 +18,116 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Import
     {
+        [DllImport("shell32.dll")]
+        public static extern int SHGetStockIconInfo(SHSTOCKICONID siid,
+            SHSTOCKICONFLAGS uFlags,
+            ref SHSTOCKICONINFO info);
+
+        [DllImport("user32.dll")]
+        public static extern bool DestroyIcon(IntPtr handle);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool AttachConsole(int dwProcessId);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
+
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr LoadLibrary(string path);
+
+        [DllImport("user32.dll")]
+        public static extern uint ActivateKeyboardLayout(IntPtr hkl,
+            uint flags);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Unicode)]
+        public static extern IntPtr FindWindowEx(IntPtr parentHandle,
+            IntPtr childAfter,
+            string lclassName,
+            string windowTitle);
+
+        [DllImport("user32.dll",
+            CharSet = CharSet.Unicode)]
+        public static extern IntPtr PostMessage(IntPtr hWnd,
+            int Msg,
+            IntPtr wParam,
+            IntPtr lParam);
+
+        [DllImport("user32.dll")]
+        public static extern bool AllowSetForegroundWindow(int dwProcessId);
+
+        [DllImport("user32.dll")]
+        public static extern int GetDpiForWindow(IntPtr hwnd);
+
+        [DllImport("user32.dll")]
+        public static extern bool AdjustWindowRect(ref RECT lpRect,
+            uint dwStyle,
+            bool bMenu);
+
+        [DllImport("user32.dll")]
+        public static extern bool AdjustWindowRectExForDpi(ref RECT lpRect,
+            uint dwStyle,
+            bool bMenu,
+            uint dwExStyle,
+            uint dpi);
+
+        [DllImport("user32.dll",
+            EntryPoint = "GetWindowLong")]
+        static extern IntPtr GetWindowLong32(IntPtr hWnd,
+            int nIndex);
+
+        [DllImport("user32.dll")]
+        static extern IntPtr GetWindowLongPtr(IntPtr hWnd,
+            int nIndex);
+
+        [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
+        public static extern IntPtr SetWindowLong32(IntPtr hWnd,
+            int nIndex,
+            uint dwNewLong);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr SetWindowLongPtr(IntPtr hWnd,
+            int nIndex,
+            uint dwNewLong);
+
+        [DllImport("MediaInfo.dll")]
+        public static extern IntPtr MediaInfo_New();
+
+        [DllImport("MediaInfo.dll",
+            CharSet = CharSet.Unicode)]
+        public static extern int MediaInfo_Open(IntPtr handle,
+            string path);
+
+        [DllImport("MediaInfo.dll",
+            CharSet = CharSet.Unicode)]
+        public static extern IntPtr MediaInfo_Option(IntPtr handle,
+            string option,
+            string value);
+
+        [DllImport("MediaInfo.dll")]
+        public static extern IntPtr MediaInfo_Inform(IntPtr handle,
+            int reserved);
+
+        [DllImport("MediaInfo.dll")]
+        public static extern int MediaInfo_Close(IntPtr handle);
+
+        [DllImport("MediaInfo.dll")]
+        public static extern void MediaInfo_Delete(IntPtr handle);
+
+        [DllImport("MediaInfo.dll", CharSet = CharSet.Unicode)]
+        public static extern IntPtr MediaInfo_Get(IntPtr handle,
+            MEDIAINFOSTREAMKIND kind,
+            int stream,
+            string parameter,
+            MEDIAINFOKIND infoKind,
+            MEDIAINFOKIND searchKind);
+
+        [DllImport("MediaInfo.dll",
+            CharSet = CharSet.Unicode)]
+        public static extern int MediaInfo_Count_Get(IntPtr handle,
+            MEDIAINFOSTREAMKIND streamKind,
+            int stream);
+
         [DllImport("advapi32.dll")]
         public static extern bool InitiateSystemShutdown(string lpMachinename,
         string lpMessage,
@@ -1010,7 +1120,7 @@ namespace VitNX3.Functions.Win32
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32.dll")]
         public static extern bool ShowWindow(IntPtr hWnd,
-            int nCmdShow);
+            SW_SH value);
 
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32.dll",
@@ -4540,6 +4650,13 @@ namespace VitNX3.Functions.Win32
         }
 
         [Flags]
+        public enum SW_SH : int
+        {
+            SW_HIDE = 0,
+            SW_SHOW = 5
+        }
+
+        [Flags]
         public enum STPF
         {
             NONE = 0x00000000,
@@ -4639,6 +4756,119 @@ namespace VitNX3.Functions.Win32
             public int yHotspot;
             public IntPtr hbmMask;
             public IntPtr hbmColor;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        public struct SHSTOCKICONINFO
+        {
+            public uint cbSize;
+            public IntPtr hIcon;
+            int iSysImageIndex;
+            int iIcon;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+            string szPath;
+        }
+
+        [Flags]
+        public enum SHSTOCKICONFLAGS : uint
+        {
+            SHGSI_ICONLOCATION = 0,
+            SHGSI_ICON = 0x000000100,
+            SHGSI_SYSICONINDEX = 0x000004000,
+            SHGSI_LINKOVERLAY = 0x000008000,
+            SHGSI_SELECTED = 0x000010000,
+            SHGSI_LARGEICON = 0x000000000,
+            SHGSI_SMALLICON = 0x000000001,
+            SHGSI_SHELLICONSIZE = 0x000000004
+        }
+
+        [Flags]
+        public enum SHSTOCKICONID : uint
+        {
+            DOCUMENT_NOT_ASSOCIATED = 0,
+            DOCUMENT_ASSOCIATED = 1,
+            APPLICATION = 2,
+            FOLDER = 3,
+            FOLDER_OPEN = 4,
+            DRIVE_525 = 5,
+            DRIVE_35 = 6,
+            DRIVE_REMOVE = 7,
+            DRIVE_FIXED = 8,
+            DRIVE_NETWORK = 9,
+            DRIVE_NETWORK_DISABLED = 10,
+            DRIVE_CD = 11,
+            DRIVE_RAM = 12,
+            WORLD = 13,
+            SERVER = 15,
+            PRINTER = 16,
+            MY_NETWORK = 17,
+            FIND = 22,
+            HELP = 23,
+            SHARE = 28,
+            LINK = 29,
+            SLOW_FILE = 30,
+            RECYCLER = 31,
+            RECYCLER_FULL = 32,
+            MEDIA_CDAUDIO = 40,
+            LOCK = 47,
+            AUTOLIST = 49,
+            PRINTER_NET = 50,
+            SERVER_SHARE = 51,
+            PRINTER_FAX = 52,
+            PRINTER_FAX_NET = 53,
+            PRINTER_FILE = 54,
+            STACK = 55,
+            MEDIA_SV_CD = 56,
+            STUFFED_FOLDER = 57,
+            DRIVE_UNKNOWN = 58,
+            DRIVE_DVD = 59,
+            MEDIA_DVD = 60,
+            MEDIA_DVD_RAM = 61,
+            MEDIA_DVDRW = 62,
+            MEDIA_DVDR = 63,
+            MEDIA_DVDROM = 64,
+            MEDIA_CDAUDIO_PLUS = 65,
+            MEDIA_CDRW = 66,
+            MEDIA_CDR = 67,
+            MEDIA_CD_BURN = 68,
+            MEDIA_BLANK_CD = 69,
+            MEDIA_CDROM = 70,
+            AUDIO_FILES = 71,
+            IMAGE_FILES = 72,
+            VIDEO_FILES = 73,
+            MIXED_FILES = 74,
+            FOLDER_BACK = 75,
+            FOLDER_FRONT = 76,
+            SHIELD = 77,
+            WARNING = 78,
+            INFO = 79,
+            ERROR = 80,
+            KEY = 81,
+            SOFTWARE = 82,
+            RENAME = 83,
+            DELETE = 84,
+            MEDIA_AUDIO_DVD = 85,
+            MEDIA_MOVIE_DVD = 86,
+            MEDIA_ENHANCED_CD = 87,
+            MEDIA_ENHANCED_DVD = 88,
+            MEDIA_HD_DVD = 89,
+            MEDIA_BLURAY = 90,
+            MEDIA_VCD = 91,
+            MEDIA_DVDPLUSR = 92,
+            MEDIA_DVDPLUSRW = 93,
+            DESKTOP_PC = 94,
+            MOBILE_PC = 95,
+            USERS = 96,
+            MEDIA_SMART_MEDIA = 97,
+            MEDIA_COMPACT_FLASH = 98,
+            DEVICE_CELLPHONE = 99,
+            DEVICE_CAMERA = 100,
+            DEVICE_VIDEOCAMERA = 101,
+            DEVICE_AUDIOPLAYER = 102,
+            NETWORK_CONNECT = 103,
+            INTERNET = 104,
+            ZIP_FILE = 105,
+            SETTINGS = 106
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -4984,6 +5214,30 @@ namespace VitNX3.Functions.Win32
             SWP_IGNORE_RESIZE = 0x0001,
             SWP_NO_ZORDER = 0x0004,
             SWP_SHOW_WINDOW = 0x0040
+        }
+
+        public enum MEDIAINFOSTREAMKIND
+        {
+            GENERAL,
+            VIDEO,
+            AUDIO,
+            TEXT,
+            OTHER,
+            IMAGE,
+            MENU,
+            MAX,
+        }
+
+        public enum MEDIAINFOKIND
+        {
+            NAME,
+            TEXT,
+            MEASURE,
+            OPTIONS,
+            NAMETEXT,
+            MEASURETEXT,
+            INFO,
+            HOWTO
         }
 
         [Flags]

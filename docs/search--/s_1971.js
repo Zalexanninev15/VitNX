@@ -1,1 +1,1 @@
-search_result['1971']=["topic_0000000000000705.html","ERROR_DS_WRONG_OM_OBJ_CLASS Field",""];
+search_result['1971']=["topic_0000000000000702.html","ERROR_DS_DRA_DB_ERROR Field",""];

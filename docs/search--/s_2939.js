@@ -1,1 +1,1 @@
-search_result['2939']=["topic_0000000000000AC8.html","STG_E_INVALIDFUNCTION Field",""];
+search_result['2939']=["topic_0000000000000AC5.html","TYPE_E_FIELDNOTFOUND Field",""];

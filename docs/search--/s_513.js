@@ -1,1 +1,1 @@
-search_result['513']=["topic_0000000000000171.html","Import.TextOut Method",""];
+search_result['513']=["topic_000000000000016F.html","Import.SetGraphicsMode Method",""];

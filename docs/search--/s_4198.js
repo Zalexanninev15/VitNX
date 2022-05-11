@@ -1,1 +1,1 @@
-search_result['4198']=["topic_000000000000109E_events--.html","DISPLAYCONFIG_RATIONAL Events",""];
+search_result['4198']=["topic_000000000000111A.html","Monitor Class","Work with monitor."];

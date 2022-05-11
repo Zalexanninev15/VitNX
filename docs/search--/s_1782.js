@@ -1,1 +1,1 @@
-search_result['1782']=["topic_0000000000000648.html","ERROR_DS_OBJECT_RESULTS_TOO_LARGE Field",""];
+search_result['1782']=["topic_0000000000000645.html","ERROR_NO_PROMOTION_ACTIVE Field",""];

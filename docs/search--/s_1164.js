@@ -1,1 +1,1 @@
-search_result['1164']=["topic_00000000000003DE.html","ERROR_INVALID_CURSOR_HANDLE Field",""];
+search_result['1164']=["topic_00000000000003DB.html","ERROR_MEMBER_NOT_IN_ALIAS Field",""];

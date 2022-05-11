@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.ChildWindowFromPoint Method</title>
+	<title>Import.DeviceIoControl Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.ChildWindowFromPoint Method</h1>
+		<h1 class="title">Import.DeviceIoControl Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> ChildWindowFromPoint(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWndParent</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000E7D.html" onclick="this.target='';return true;">POINT</a> <i>Point</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;, SetLastError = true, CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> DeviceIoControl(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hDevice</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwIoControlCode</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lpInBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>nInBufferSize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lpOutBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>nOutBufferSize</i>,&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>lpBytesReturned</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lpOverlapped</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWndParent" class="parameterList">
+	Parameters</h4><dl paramName="hDevice" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWndParent
+			hDevice
 		</span>
 	</dt>
 	<dd>
@@ -165,14 +164,92 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="Point" class="parameterList">
+<dl paramName="dwIoControlCode" class="parameterList">
 	<dt>
 		<span class="parameter">
-			Point
+			dwIoControlCode
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000E7D.html" onclick="this.target='';return true;">POINT</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpInBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpInBuffer
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nInBufferSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nInBufferSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpOutBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpOutBuffer
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nOutBufferSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nOutBufferSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpBytesReturned" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpBytesReturned
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpOverlapped" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpOverlapped
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -183,7 +260,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -258,10 +335,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern IntPtr ChildWindowFromPoint(IntPtr hWndParent,
-     POINT Point);
+[DllImport(&quot;kernel32.dll&quot;, SetLastError = true, CharSet = CharSet.Auto)]
+ public static extern bool DeviceIoControl(IntPtr hDevice,
+ uint dwIoControlCode,
+ IntPtr lpInBuffer,
+ uint nInBufferSize,
+ IntPtr lpOutBuffer,
+ uint nOutBufferSize,
+ out uint lpBytesReturned,
+ IntPtr lpOverlapped);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

@@ -1,1 +1,1 @@
-c['322']=[['323',"AddContent(VitNX_DockContent) Method","topic_0000000000001211.html",0],['324',"AddContent(VitNX_DockContent, VitNX_DockGroup) Method","topic_0000000000001212.html",0]];
+c['322']=[['323',"AddContent(VitNX_DockContent) Method","topic_00000000000012A1.html",0],['324',"AddContent(VitNX_DockContent, VitNX_DockGroup) Method","topic_00000000000012A2.html",0]];

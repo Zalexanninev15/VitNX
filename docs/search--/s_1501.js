@@ -1,1 +1,1 @@
-search_result['1501']=["topic_000000000000052F.html","ERROR_WMI_INVALID_REGINFO Field",""];
+search_result['1501']=["topic_000000000000052C.html","ERROR_PRINTER_HAS_JOBS_QUEUED Field",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ScrollBar.ScrollToPhysical Method</title>
+	<title>ObservableList&lt;T&gt;.Clear Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ScrollBar.ScrollToPhysical Method</h1>
+		<h1 class="title">ObservableList&lt;T&gt;.Clear Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_000000000000117C.html">VitNX.UI.ControlsV1</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ScrollToPhysical(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>positionInPixels</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">new public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Clear()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,22 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="positionInPixels" class="parameterList">
-	<dt>
-		<span class="parameter">
-			positionInPixels
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 
 
@@ -240,14 +224,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void ScrollToPhysical(int positionInPixels)
+public new void Clear()
  {
-     var isVert = _scrollOrientation == VitNX_ScrollOrientation.Vertical;
-     var trackAreaSize = isVert ? _trackArea.Height - _thumbArea.Height : _trackArea.Width - _thumbArea.Width;
-     var positionRatio = (float)positionInPixels / (float)trackAreaSize;
-     var viewScrollSize = (Maximum - ViewSize);
-     var newValue = (int)(positionRatio * viewScrollSize);
-     Value = newValue;
+     ObservableListModified&lt;T&gt; removed = new ObservableListModified&lt;T&gt;(this.ToList());
+     base.Clear();
+     if (removed.Items.Count() &gt; 0 &amp;&amp; ItemsRemoved != null)
+         ItemsRemoved(this, removed);
  }
 					</pre>			
 				</div>
@@ -312,11 +294,11 @@ public void ScrollToPhysical(int positionInPixels)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000117C.html">VitNX_ScrollBar Class</a><br />
+			<a href="topic_000000000000117D.html">ObservableList&lt;T&gt; Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_000000000000117C.html">VitNX.UI.ControlsV1 Namespace</a><br />
 
 
 			

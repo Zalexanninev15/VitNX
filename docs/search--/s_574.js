@@ -1,1 +1,1 @@
-search_result['574']=["topic_00000000000001A6.html","Import.ExitWindowsEx Method",""];
+search_result['574']=["topic_00000000000001A7.html","Import.GetWindowRect Method",""];

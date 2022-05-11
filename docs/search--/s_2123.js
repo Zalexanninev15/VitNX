@@ -1,1 +1,1 @@
-search_result['2123']=["topic_000000000000079D.html","DNS_ERROR_RCODE_BADSIG Field",""];
+search_result['2123']=["topic_000000000000079A.html","ERROR_DS_CANT_DERIVE_SPN_FOR_DELETED_DOMAIN Field",""];

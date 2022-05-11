@@ -1,1 +1,1 @@
-search_result['5294']=["topic_0000000000001633.html","Manager.CloseAll Method","Close all notifications on the screen."];
+search_result['5294']=["topic_0000000000001398.html","Type Enumeration",""];

@@ -1,1 +1,1 @@
-search_result['1876']=["topic_00000000000006A6.html","ERROR_DS_DUP_SCHEMA_ID_GUID Field",""];
+search_result['1876']=["topic_00000000000006A3.html","ERROR_DS_SUBREF_MUST_HAVE_PARENT Field",""];

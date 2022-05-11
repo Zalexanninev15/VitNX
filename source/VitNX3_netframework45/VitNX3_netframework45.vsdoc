@@ -153,7 +153,7 @@
     <add key="VBdocman_supportedNetCompactFramework"><![CDATA[]]></add>
     <add key="VBdocman_removeAttributes"><![CDATA[0]]></add>
     <add key="VBdocman_externalFilesFolder"><![CDATA[]]></add>
-    <add key="VBdocman_showFormsSeparate"><![CDATA[0]]></add>
+    <add key="VBdocman_showFormsSeparate"><![CDATA[-1]]></add>
     <add key="VBdocman_generateCsharpSyntax"><![CDATA[-1]]></add>
     <add key="VBdocman_allowMacrosInComments"><![CDATA[0]]></add>
     <add key="VBdocman_linkForExternalNotInFramework"><![CDATA[0]]></add>

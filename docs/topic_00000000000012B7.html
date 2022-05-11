@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>CenterSF Field</title>
+	<title>VitNX_DockSplitter.Move Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">CenterSF Field</h1>
+		<h1 class="title">VitNX_DockSplitter.Move Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit</a>
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">new public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.stringformat">StringFormat</a> CenterSF</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Move(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> <i>difference</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,11 +150,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="difference" class="parameterList">
+	<dt>
+		<span class="parameter">
+			difference
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point">Point</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.stringformat">StringFormat</a> 
-	
+<p />
+
 
 
 
@@ -228,11 +240,28 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static readonly StringFormat CenterSF = new StringFormat
+public void Move(Point difference)
  {
-     Alignment = StringAlignment.Center,
-     LineAlignment = StringAlignment.Center
- };
+     switch (_splitterType)
+     {
+         case VitNX_SplitterType.Left:
+             _control.Width += difference.X;
+             break;
+ 
+         case VitNX_SplitterType.Right:
+             _control.Width -= difference.X;
+             break;
+ 
+         case VitNX_SplitterType.Top:
+             _control.Height += difference.Y;
+             break;
+ 
+         case VitNX_SplitterType.Bottom:
+             _control.Height -= difference.Y;
+             break;
+     }
+     UpdateBounds();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -296,11 +325,11 @@ public static readonly StringFormat CenterSF = new StringFormat
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012B0.html">Helpers Class</a><br />
+			<a href="topic_00000000000012B2.html">VitNX_DockSplitter Class</a><br />
 
 
 
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -322,3 +351,4 @@ public static readonly StringFormat CenterSF = new StringFormat
     </div>
   </body>
 </html>
+

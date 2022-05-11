@@ -1,1 +1,1 @@
-search_result['1105']=["topic_00000000000003A3.html","ERROR_INVALID_ID_AUTHORITY Field",""];
+search_result['1105']=["topic_00000000000003A0.html","ERROR_NO_SUCH_USER Field",""];

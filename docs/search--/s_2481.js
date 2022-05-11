@@ -1,1 +1,1 @@
-search_result['2481']=["topic_0000000000000903.html","ERROR_IPSEC_IKE_INVALID_HASH_SIZE Field",""];
+search_result['2481']=["topic_0000000000000900.html","ERROR_IPSEC_IKE_NO_PEER_CERT Field",""];

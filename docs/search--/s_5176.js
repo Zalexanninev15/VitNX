@@ -1,1 +1,1 @@
-search_result['5176']=["topic_00000000000012E6.html","VitNX2_ProgressBarRoundedType1.Dispose Method",""];
+search_result['5176']=["topic_0000000000001363_methods--.html","VitNX2_RichTextBox Methods",""];

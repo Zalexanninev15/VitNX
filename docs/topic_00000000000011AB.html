@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_SectionPanel.OnMouseDown Method</title>
+	<title>VitNX_CheckBox.OnMouseDown Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_SectionPanel.OnMouseDown Method</h1>
+		<h1 class="title">VitNX_CheckBox.OnMouseDown Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousedown">MouseDown</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmousedown">OnMouseDown</a> event.</summary-info>
 
 
 
@@ -163,7 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	 
 </p>
 
 <p />
@@ -245,8 +245,10 @@ protected override void OnMouseDown(MouseEventArgs e)
  {
      base.OnMouseDown(e);
  
-     if (Controls.Count &gt; 0)
-         Controls[0].Focus();
+     if (!ClientRectangle.Contains(e.Location))
+         return;
+ 
+     SetControlState(VitNX_ControlState.Pressed);
  }
 					</pre>			
 				</div>
@@ -311,11 +313,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000011A7.html">VitNX_SectionPanel Class</a><br />
+			<a href="topic_00000000000011A8.html">VitNX_CheckBox Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['5163']=["topic_00000000000012DF_vars--.html","VitNX2_ProgressBar Fields",""];
+search_result['5163']=["topic_000000000000135F_overloads--.html","VitNX2_MessageBoxType1_Form.Dispose Method","Clean up any resources being used."];

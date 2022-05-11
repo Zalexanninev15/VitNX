@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Helpers.DrawArrow Method</title>
+	<title>VitNX_DockSplitter Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Helpers.DrawArrow Method</h1>
+		<h1 class="title">VitNX_DockSplitter Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit</a>
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d.graphicspath">GraphicsPath</a> DrawArrow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>x</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>y</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>flip</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX_DockSplitter(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> <i>parentControl</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> <i>control</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000012BB.html" onclick="this.target='';return true;">VitNX_SplitterType</a> <i>splitterType</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,40 +151,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="x" class="parameterList">
+	Parameters</h4><dl paramName="parentControl" class="parameterList">
 	<dt>
 		<span class="parameter">
-			x
+			parentControl
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="y" class="parameterList">
+<dl paramName="control" class="parameterList">
 	<dt>
 		<span class="parameter">
-			y
+			control
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="flip" class="parameterList">
+<dl paramName="splitterType" class="parameterList">
 	<dt>
 		<span class="parameter">
-			flip
+			splitterType
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="topic_00000000000012BB.html" onclick="this.target='';return true;">VitNX_SplitterType</a> 
 	</dd>
 </dl>
 <p>
@@ -193,10 +193,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d.graphicspath">GraphicsPath</a> 
-	
 
 
 
@@ -270,29 +266,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static GraphicsPath DrawArrow(int x, int y, bool flip)
+public VitNX_DockSplitter(Control parentControl,
+     Control control,
+     VitNX_SplitterType splitterType)
  {
-     GraphicsPath graphicsPath = new GraphicsPath();
-     int num = 12;
-     int num2 = 6;
-     if (flip)
+     _parentControl = parentControl;
+     _control = control;
+     _splitterType = splitterType;
+     switch (_splitterType)
      {
-         graphicsPath.AddLine(x + 1, y,
-             x + num + 1, y);
-         graphicsPath.AddLine(x + num, y,
-             x + num2,
-             y + num2 - 1);
+         case VitNX_SplitterType.Left:
+         case VitNX_SplitterType.Right:
+             ResizeCursor = Cursors.SizeWE;
+             break;
+ 
+         case VitNX_SplitterType.Top:
+         case VitNX_SplitterType.Bottom:
+             ResizeCursor = Cursors.SizeNS;
+             break;
      }
-     else
-     {
-         graphicsPath.AddLine(x, y + num2,
-             x + num, y + num2);
-         graphicsPath.AddLine(x + num,
-             y + num2,
-             x + num2, y);
-     }
-     graphicsPath.CloseFigure();
-     return graphicsPath;
  }
 					</pre>			
 				</div>
@@ -357,11 +349,11 @@ public static GraphicsPath DrawArrow(int x, int y, bool flip)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012B0.html">Helpers Class</a><br />
+			<a href="topic_00000000000012B2.html">VitNX_DockSplitter Class</a><br />
 
 
 
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			

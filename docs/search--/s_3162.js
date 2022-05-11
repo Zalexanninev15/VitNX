@@ -1,1 +1,1 @@
-search_result['3162']=["topic_0000000000000BA7.html","SEC_E_MUST_BE_KDC Field",""];
+search_result['3162']=["topic_0000000000000BA4.html","SEC_E_BAD_PKGID Field",""];

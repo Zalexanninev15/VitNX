@@ -1,1 +1,1 @@
-search_result['1912']=["topic_00000000000006CA.html","ERROR_DS_GCVERIFY_ERROR Field",""];
+search_result['1912']=["topic_00000000000006C7.html","ERROR_DS_BAD_RDN_ATT_ID_SYNTAX Field",""];

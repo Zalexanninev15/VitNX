@@ -1,1 +1,1 @@
-search_result['5122']=["topic_00000000000012D0.html","VitNX2_MessageBoxType2 Class",""];
+search_result['5122']=["topic_000000000000134D_methods--.html","VitNX2_MessageBoxType1 Methods",""];

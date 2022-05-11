@@ -1,1 +1,1 @@
-search_result['3627']=["topic_0000000000000D78.html","COMADMIN_E_OBJECT_DOES_NOT_EXIST Field",""];
+search_result['3627']=["topic_0000000000000D75.html","COMADMIN_E_CAT_PARTITION_IN_USE Field",""];

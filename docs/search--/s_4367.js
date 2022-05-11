@@ -1,1 +1,1 @@
-search_result['4367']=["topic_00000000000010ED_events--.html","ObservableList\u0026lt;T\u0026gt; Events",""];
+search_result['4367']=["topic_0000000000001169.html","Window.SetWindowsElevenStyleForWinForm Method","Applying Windows 11 roundings to a window(s)."];

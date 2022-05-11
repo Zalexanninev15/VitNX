@@ -1,1 +1,1 @@
-search_result['1565']=["topic_000000000000056F.html","ERROR_OBJECT_IN_LIST Field",""];
+search_result['1565']=["topic_000000000000056C.html","ERROR_CANT_DELETE_LAST_ITEM Field",""];

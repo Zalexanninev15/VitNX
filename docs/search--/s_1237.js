@@ -1,1 +1,1 @@
-search_result['1237']=["topic_0000000000000427.html","ERROR_BAD_CONFIGURATION Field",""];
+search_result['1237']=["topic_0000000000000424.html","ERROR_NO_SYSTEM_RESOURCES Field",""];

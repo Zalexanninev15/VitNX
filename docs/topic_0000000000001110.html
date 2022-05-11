@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_Button.OnLostFocus Method</title>
+	<title>GetClipboardText.GetText Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_Button.OnLostFocus Method</h1>
+		<h1 class="title">GetClipboardText.GetText Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.buttonbase.onlostfocus">OnLostFocus</a> event.</summary-info>
+        <summary-info>Gets the text from clipboard.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnLostFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetText()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
-	</dd>
-</dl>
-<p>
-	An <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> that contains the event data. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -241,13 +232,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnLostFocus(EventArgs e)
+public static string GetText()
  {
-     base.OnLostFocus(e);
-     _spacePressed = false;
-     var location = Cursor.Position;
-     if (!ClientRectangle.Contains(location)) { SetButtonState(VitNX_ControlState.Normal); }
-     else { SetButtonState(VitNX_ControlState.Hover); }
+     GetClipboardText instance = new GetClipboardText();
+     Thread staThread = new Thread(instance._GetTexter);
+     staThread.SetApartmentState(ApartmentState.STA);
+     staThread.Start();
+     staThread.Join();
+     return instance._GetText;
  }
 					</pre>			
 				</div>
@@ -312,11 +304,11 @@ protected override void OnLostFocus(EventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001107.html">VitNX_Button Class</a><br />
+			<a href="topic_000000000000110F.html">GetClipboardText Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
 			

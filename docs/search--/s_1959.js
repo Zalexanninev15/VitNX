@@ -1,1 +1,1 @@
-search_result['1959']=["topic_00000000000006F9.html","ERROR_DS_DRA_INCOMPATIBLE_PARTIAL_SET Field",""];
+search_result['1959']=["topic_00000000000006F6.html","ERROR_DS_DRA_BAD_DN Field",""];

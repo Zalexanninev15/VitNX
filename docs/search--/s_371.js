@@ -1,1 +1,1 @@
-search_result['371']=["topic_00000000000000EB.html","Import.GetMenuItemCount Method",""];
+search_result['371']=["topic_00000000000000EA.html","Import.GetModuleHandle (String) Method",""];

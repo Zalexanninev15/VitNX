@@ -1,1 +1,1 @@
-search_result['581']=["topic_00000000000001AB.html","Constants Class","The constants for imported functions."];
+search_result['581']=["topic_00000000000001AD.html","Import.GetDisplayConfigBufferSizes Method",""];

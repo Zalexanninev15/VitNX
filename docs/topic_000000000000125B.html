@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_MessageBox.ShowInformation Method</title>
+	<title>VitNX_TreeView Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_MessageBox.ShowInformation Method</h1>
+		<h1 class="title">VitNX_TreeView Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001239.html">VitNX.UI.ControlsV1.Forms</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Shows the information MessageBox.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> ShowInformation(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>message</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>caption</i> = &quot;Information&quot;,&nbsp;<br />   <a target="_top" href="topic_0000000000001247.html" onclick="this.target='';return true;">VitNX_DialogButton</a> <i>buttons</i> = VitNX_DialogButton.Ok&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX_TreeView()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,56 +150,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="message" class="parameterList">
-	<dt>
-		<span class="parameter">
-			message
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The message. 
-</p>
-<dl paramName="caption" class="parameterList">
-	<dt>
-		<span class="parameter">
-			caption
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The caption. 
-</p>
-<dl paramName="buttons" class="parameterList">
-	<dt>
-		<span class="parameter">
-			buttons
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000001247.html" onclick="this.target='';return true;">VitNX_DialogButton</a> 
-	</dd>
-</dl>
-<p>
-	The buttons. 
-</p>
 
-<p />
-
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.dialogresult">DialogResult</a> 
-		<p>
-		A DialogResult. 
-	</p>
-	
 
 
 
@@ -274,14 +224,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static DialogResult ShowInformation(string message,
-     string caption = &quot;Information&quot;,
-     VitNX_DialogButton buttons = VitNX_DialogButton.Ok)
+public VitNX_TreeView()
  {
-     return ShowDialog(message,
-         caption,
-         VitNX_MessageBoxIcon.Information,
-         buttons);
+     Nodes = new ObservableList&lt;VitNX_TreeNode&gt;();
+     _selectedNodes = new ObservableCollection&lt;VitNX_TreeNode&gt;();
+     _selectedNodes.CollectionChanged += SelectedNodes_CollectionChanged;
+ 
+     MaxDragChange = _itemHeight;
+ 
+     LoadIcons();
  }
 					</pre>			
 				</div>
@@ -346,11 +297,11 @@ public static DialogResult ShowInformation(string message,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001253.html">VitNX_MessageBox Class</a><br />
+			<a href="topic_0000000000001257.html">VitNX_TreeView Class</a><br />
 
 
 
-<a href="topic_0000000000001239.html">VitNX.UI.ControlsV1.Forms Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

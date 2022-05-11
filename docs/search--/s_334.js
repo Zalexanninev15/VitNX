@@ -1,1 +1,1 @@
-search_result['334']=["topic_00000000000000C9.html","Import.GetLastError Method",""];
+search_result['334']=["topic_00000000000000C9.html","Import.DestroyIcon Method",""];

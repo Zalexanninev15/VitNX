@@ -1,1 +1,1 @@
-search_result['3631']=["topic_0000000000000D7C.html","COMADMIN_E_USER_IN_SET Field",""];
+search_result['3631']=["topic_0000000000000D79.html","COMADMIN_E_AMBIGUOUS_PARTITION_NAME Field",""];

@@ -1,1 +1,1 @@
-search_result['4719']=["topic_00000000000011C1.html","NodeCollapsed Event",""];
+search_result['4719']=["topic_0000000000001240.html","VitNX_Separator.OnPaint Method","Raises the Paint event."];

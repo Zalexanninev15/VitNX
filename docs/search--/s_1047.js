@@ -1,1 +1,1 @@
-search_result['1047']=["topic_0000000000000369.html","ERROR_DOWNGRADE_DETECTED Field",""];
+search_result['1047']=["topic_0000000000000366.html","ERROR_LOGIN_WKSTA_RESTRICTION Field",""];

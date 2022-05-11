@@ -1,1 +1,1 @@
-search_result['1010']=["topic_0000000000000344.html","ERROR_ADDRESS_NOT_ASSOCIATED Field",""];
+search_result['1010']=["topic_0000000000000341.html","ERROR_NO_NET_OR_BAD_PATH Field",""];

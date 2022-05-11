@@ -1,1 +1,1 @@
-search_result['780']=["topic_000000000000025E.html","ERROR_NOT_LOCKED Field",""];
+search_result['780']=["topic_000000000000025B.html","ERROR_IS_JOIN_TARGET Field",""];

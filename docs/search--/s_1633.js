@@ -1,1 +1,1 @@
-search_result['1633']=["topic_00000000000005B3.html","ERROR_CLUSTER_RESNAME_NOT_FOUND Field",""];
+search_result['1633']=["topic_00000000000005B0.html","ERROR_CLUSTER_INVALID_NETWORK Field",""];

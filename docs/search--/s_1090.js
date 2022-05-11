@@ -1,1 +1,1 @@
-search_result['1090']=["topic_0000000000000394.html","ERROR_ACCOUNT_RESTRICTION Field",""];
+search_result['1090']=["topic_0000000000000391.html","ERROR_NO_QUOTAS_FOR_ACCOUNT Field",""];

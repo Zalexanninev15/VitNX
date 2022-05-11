@@ -919,5 +919,22 @@ namespace VitNX3.Functions.WinControllers
         {
             Import.InstallHinfSection(IntPtr.Zero, IntPtr.Zero, pathToInf, 0);
         }
+
+        /// <summary>
+        /// Gets the icon (WinAPI).
+        /// </summary>
+        /// <param name="identifier">The identifier.</param>
+        /// <param name="flags">The flags.</param>
+        /// <returns>An IntPtr.</returns>
+        public static IntPtr GetIcon(SHSTOCKICONID identifier,
+            SHSTOCKICONFLAGS flags)
+        {
+            SHSTOCKICONINFO info = new SHSTOCKICONINFO();
+            info.cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(SHSTOCKICONINFO)));
+            Marshal.ThrowExceptionForHR(Import.SHGetStockIconInfo(identifier,
+                flags,
+                ref info));
+            return info.hIcon;
+        }
     }
 }

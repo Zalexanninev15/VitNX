@@ -1,1 +1,1 @@
-search_result['1181']=["topic_00000000000003EF.html","ERROR_HOTKEY_NOT_REGISTERED Field",""];
+search_result['1181']=["topic_00000000000003EC.html","ERROR_NO_USER_SESSION_KEY Field",""];

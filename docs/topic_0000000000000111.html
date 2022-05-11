@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.EnumThreadWindows Method</title>
+	<title>Import.CombineRgn Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.EnumThreadWindows Method</h1>
+		<h1 class="title">Import.CombineRgn Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> EnumThreadWindows(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwThreadId</i>,&nbsp;<br />   <a target="_top" href="topic_000000000000018F.html" onclick="this.target='';return true;">EnumThreadWindowsCallBack</a> <i>lpfn</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>lParam</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> CombineRgn(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hrgnDest</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hrgnSrc1</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hrgnSrc2</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>fnCombineMode</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,40 +151,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="dwThreadId" class="parameterList">
+	Parameters</h4><dl paramName="hrgnDest" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwThreadId
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="lpfn" class="parameterList">
-	<dt>
-		<span class="parameter">
-			lpfn
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_000000000000018F.html" onclick="this.target='';return true;">EnumThreadWindowsCallBack</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="lParam" class="parameterList">
-	<dt>
-		<span class="parameter">
-			lParam
+			hrgnDest
 		</span>
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hrgnSrc1" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hrgnSrc1
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="hrgnSrc2" class="parameterList">
+	<dt>
+		<span class="parameter">
+			hrgnSrc2
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="fnCombineMode" class="parameterList">
+	<dt>
+		<span class="parameter">
+			fnCombineMode
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -195,7 +208,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	
 
 
@@ -270,10 +283,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;)]
- public static extern bool EnumThreadWindows(uint dwThreadId,
-     EnumThreadWindowsCallBack lpfn,
-     IntPtr lParam);
+[DllImport(&quot;gdi32.dll&quot;)]
+ public static extern int CombineRgn(IntPtr hrgnDest,
+     IntPtr hrgnSrc1,
+     IntPtr hrgnSrc2,
+     int fnCombineMode);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

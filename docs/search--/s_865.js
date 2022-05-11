@@ -1,1 +1,1 @@
-search_result['865']=["topic_00000000000002B3.html","ERROR_FULLSCREEN_MODE Field",""];
+search_result['865']=["topic_00000000000002B0.html","ERROR_NOT_OWNER Field",""];

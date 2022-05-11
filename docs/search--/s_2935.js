@@ -1,1 +1,1 @@
-search_result['2935']=["topic_0000000000000AC4.html","TYPE_E_CANTCREATETMPFILE Field",""];
+search_result['2935']=["topic_0000000000000AC1.html","DISP_E_NOTACOLLECTION Field",""];

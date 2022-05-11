@@ -1,1 +1,1 @@
-search_result['4379']=["topic_00000000000010F3.html","ObservableList\u0026lt;T\u0026gt;.AddRange Method",""];
+search_result['4379']=["topic_0000000000001170.html","Type1 Class","Console ProgressBar type 1."];

@@ -1,1 +1,1 @@
-search_result['3595']=["topic_0000000000000D58.html","COMADMIN_E_CANT_SUBSCRIBE_TO_COMPONENT Field",""];
+search_result['3595']=["topic_0000000000000D55.html","COMADMIN_E_COMPFILE_NOTINSTALLABLE Field",""];

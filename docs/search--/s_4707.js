@@ -1,1 +1,1 @@
-search_result['4707']=["topic_00000000000011BA_vars--.html","VitNX_ToolStrip Fields",""];
+search_result['4707']=["topic_0000000000001239.html","VitNX_SectionPanel.OnEnter Method","Raises the Enter event."];

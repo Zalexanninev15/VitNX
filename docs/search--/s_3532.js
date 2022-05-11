@@ -1,1 +1,1 @@
-search_result['3532']=["topic_0000000000000D19.html","SCARD_W_RESET_CARD Field",""];
+search_result['3532']=["topic_0000000000000D16.html","SCARD_E_CARD_UNSUPPORTED Field",""];

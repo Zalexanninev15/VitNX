@@ -1,1 +1,1 @@
-search_result['447']=["topic_0000000000000136.html","Import.GetWindowLong Method",""];
+search_result['447']=["topic_0000000000000133.html","Import.GetDeviceCaps Method",""];

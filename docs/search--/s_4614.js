@@ -1,1 +1,1 @@
-search_result['4614']=["topic_0000000000001183.html","VitNX_ScrollBar.OnMouseLeave Method","Raises the MouseLeave event."];
+search_result['4614']=["topic_00000000000011F7_attached_props--.html","VitNX_NumericUpDown Attached Properties",""];

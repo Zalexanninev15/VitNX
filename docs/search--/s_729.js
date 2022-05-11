@@ -1,1 +1,1 @@
-search_result['729']=["topic_000000000000022B.html","ERROR_SEM_OWNER_DIED Field",""];
+search_result['729']=["topic_0000000000000228.html","ERROR_NO_SPOOL_SPACE Field",""];

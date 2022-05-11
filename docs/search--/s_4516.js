@@ -1,1 +1,1 @@
-search_result['4516']=["topic_000000000000114D.html","VitNX_GroupBox Class",""];
+search_result['4516']=["topic_00000000000011BF.html","VitNX_ComboBox.OnResize Method","Raises the Resize event."];

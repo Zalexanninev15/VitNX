@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockGroup.OnMouseUp Method</title>
+	<title>VitNX_RadioButton.OnMouseLeave Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockGroup.OnMouseUp Method</h1>
+		<h1 class="title">VitNX_RadioButton.OnMouseLeave Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000011E3.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mouseup">MouseUp</a> event.</summary-info>
+        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.onmouseleave">OnMouseLeave</a> event.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseUp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseLeave(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -159,11 +159,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.eventargs">EventArgs</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	 
 </p>
 
 <p />
@@ -241,22 +241,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseUp(MouseEventArgs e)
+protected override void OnMouseLeave(EventArgs e)
  {
-     base.OnMouseUp(e);
-     _dragTab = null;
-     if (_tabArea.DropdownRectangle.Contains(e.Location))
-     {
-         if (_tabArea.DropdownHot)
-             _tabArea.ShowMenu(this, new Point(_tabArea.DropdownRectangle.Left,
-                 _tabArea.DropdownRectangle.Bottom - 2));
+     base.OnMouseLeave(e);
+ 
+     if (_spacePressed)
          return;
-     }
-     if (_tabArea.ClickedCloseButton == null)
-         return;
-     var closeRect = RectangleToTabArea(_tabArea.ClickedCloseButton.CloseButtonRectangle);
-     if (closeRect.Contains(e.Location))
-         _tabArea.ClickedCloseButton.DockContent.Close();
+ 
+     SetControlState(VitNX_ControlState.Normal);
  }
 					</pre>			
 				</div>
@@ -321,11 +313,11 @@ protected override void OnMouseUp(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000011FD.html">VitNX_DockGroup Class</a><br />
+			<a href="topic_0000000000001202.html">VitNX_RadioButton Class</a><br />
 
 
 
-<a href="topic_00000000000011E3.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
 
 
 			

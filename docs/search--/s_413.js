@@ -1,1 +1,1 @@
-search_result['413']=["topic_0000000000000114.html","Import.FindWindowEx Method",""];
+search_result['413']=["topic_0000000000000113.html","Import.CreateBrushIndirect Method",""];

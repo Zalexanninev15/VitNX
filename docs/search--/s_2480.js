@@ -1,1 +1,1 @@
-search_result['2480']=["topic_0000000000000902.html","ERROR_IPSEC_IKE_INVALID_HASH_ALG Field",""];
+search_result['2480']=["topic_00000000000008FF.html","ERROR_IPSEC_IKE_INVALID_COOKIE Field",""];

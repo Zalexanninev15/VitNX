@@ -1,1 +1,1 @@
-search_result['4827']=["topic_000000000000120B.html","VitNX_DockGroup.OnPaintBackground Method","Paints the background of the control."];
+search_result['4827']=["topic_000000000000127E.html","DockRegionState Class",""];

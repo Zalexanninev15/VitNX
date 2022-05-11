@@ -1,1 +1,1 @@
-search_result['3620']=["topic_0000000000000D71.html","COMQC_E_QUEUING_SERVICE_NOT_AVAILABLE Field",""];
+search_result['3620']=["topic_0000000000000D6E.html","COMADMIN_E_CANT_SUBSCRIBE_TO_COMPONENT Field",""];

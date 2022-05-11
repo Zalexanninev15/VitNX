@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_NumericUpDown.OnMouseDown Method</title>
+	<title>Window.AddWindowBorders Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_NumericUpDown.OnMouseDown Method</h1>
+		<h1 class="title">Window.AddWindowBorders Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001160.html">VitNX3.Functions.WindowAndControls</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousedown">MouseDown</a> event.</summary-info>
+        <summary-info>Adds the borders for window.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> AddWindowBorders(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000EFA.html" onclick="this.target='';return true;">RECT</a> <i>rc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dpi</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,18 +152,44 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
+	Parameters</h4><dl paramName="hwnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			e
+			hwnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
+	Handle 
+</p>
+<dl paramName="rc" class="parameterList">
+	<dt>
+		<span class="parameter">
+			rc
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000EFA.html" onclick="this.target='';return true;">RECT</a> 
+	</dd>
+</dl>
+<p>
+	RECT 
+</p>
+<dl paramName="dpi" class="parameterList">
+	<dt>
+		<span class="parameter">
+			dpi
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	DPI 
 </p>
 
 <p />
@@ -241,8 +267,25 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseDown(MouseEventArgs e)
- { _mouseDown = true; Invalidate(); }
+public static void AddWindowBorders(IntPtr hwnd,
+     ref RECT rc,
+     int dpi)
+ {
+     uint windowStyle = (uint)Import.GetWindowLong(hwnd, -16);
+     uint windowStyleEx = (uint)Import.GetWindowLong(hwnd, -20);
+     if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) &gt;= 1607 ||
+         Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) &gt;= 16070)
+         &amp;&amp; hwnd != IntPtr.Zero)
+         Import.AdjustWindowRectExForDpi(ref rc,
+             windowStyle,
+             false,
+             windowStyleEx,
+             (uint)dpi);
+     else
+         Import.AdjustWindowRect(ref rc,
+             windowStyle,
+             false);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -306,11 +349,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001167.html">VitNX_NumericUpDown Class</a><br />
+			<a href="topic_0000000000001161.html">Window Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_0000000000001160.html">VitNX3.Functions.WindowAndControls Namespace</a><br />
 
 
 			

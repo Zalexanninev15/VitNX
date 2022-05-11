@@ -1,1 +1,1 @@
-search_result['4423']=["topic_0000000000001107_methods--.html","VitNX_Button Methods",""];
+search_result['4423']=["topic_0000000000001184_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Remove Method",""];

@@ -1,1 +1,1 @@
-search_result['1022']=["topic_0000000000000350.html","ERROR_LOGIN_WKSTA_RESTRICTION Field",""];
+search_result['1022']=["topic_000000000000034D.html","ERROR_INVALID_SHARENAME Field",""];

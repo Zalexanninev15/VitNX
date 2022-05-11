@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ScrollBar.OnMouseDown Method</title>
+	<title>ObservableList&lt;T&gt;.Dispose  Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ScrollBar.OnMouseDown Method</h1>
+		<h1 class="title">ObservableList&lt;T&gt;.Dispose  Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_000000000000117C.html">VitNX.UI.ControlsV1</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousedown">MouseDown</a> event.</summary-info>
+        <summary-info>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Dispose()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +151,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
-</p>
 
-<p />
 
+	<h4 class="subHeading">
+		Implements</h4><a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose">IDisposable.Dispose</a>
+<br />
 
 
 
@@ -241,69 +229,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseDown(MouseEventArgs e)
+public void Dispose()
  {
-     base.OnMouseDown(e);
-     if (_thumbArea.Contains(e.Location) &amp;&amp; e.Button == MouseButtons.Left)
-     {
-         _isScrolling = true;
-         _initialContact = e.Location;
-         _initialValue = _scrollOrientation == VitNX_ScrollOrientation.Vertical ? _thumbArea.Top : _thumbArea.Left;
-         Invalidate();
-         return;
-     }
- 
-     if (_upArrowArea.Contains(e.Location) &amp;&amp; e.Button == MouseButtons.Left)
-     {
-         _upArrowClicked = true;
-         _scrollTimer.Enabled = true;
-         Invalidate();
-         return;
-     }
- 
-     if (_downArrowArea.Contains(e.Location) &amp;&amp; e.Button == MouseButtons.Left)
-     {
-         _downArrowClicked = true;
-         _scrollTimer.Enabled = true;
-         Invalidate();
-         return;
-     }
- 
-     if (_trackArea.Contains(e.Location) &amp;&amp; e.Button == MouseButtons.Left)
-     {
-         if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-         {
-             var modRect = new Rectangle(_thumbArea.Left, _trackArea.Top, _thumbArea.Width, _trackArea.Height);
-             if (!modRect.Contains(e.Location))
-                 return;
-         }
-         else if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
-         {
-             var modRect = new Rectangle(_trackArea.Left, _thumbArea.Top, _trackArea.Width, _thumbArea.Height);
-             if (!modRect.Contains(e.Location))
-                 return;
-         }
-         if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-         {
-             var loc = e.Location.Y;
-             loc -= _upArrowArea.Bottom - 1;
-             loc -= _thumbArea.Height / 2;
-             ScrollToPhysical(loc);
-         }
-         else
-         {
-             var loc = e.Location.X;
-             loc -= _upArrowArea.Right - 1;
-             loc -= _thumbArea.Width / 2;
-             ScrollToPhysical(loc);
-         }
-         _isScrolling = true;
-         _initialContact = e.Location;
-         _thumbHot = true;
-         _initialValue = _scrollOrientation == VitNX_ScrollOrientation.Vertical ? _thumbArea.Top : _thumbArea.Left;
-         Invalidate();
-         return;
-     }
+     Dispose(true);
+     GC.SuppressFinalize(this);
  }
 					</pre>			
 				</div>
@@ -368,11 +297,11 @@ protected override void OnMouseDown(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000117C.html">VitNX_ScrollBar Class</a><br />
+			<a href="topic_000000000000117D.html">ObservableList&lt;T&gt; Class</a><br />
 
 
 
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
+<a href="topic_000000000000117C.html">VitNX.UI.ControlsV1 Namespace</a><br />
 
 
 			

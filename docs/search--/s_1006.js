@@ -1,1 +1,1 @@
-search_result['1006']=["topic_0000000000000340.html","ERROR_USER_MAPPED_FILE Field",""];
+search_result['1006']=["topic_000000000000033D.html","ERROR_JOURNAL_ENTRY_DELETED Field",""];

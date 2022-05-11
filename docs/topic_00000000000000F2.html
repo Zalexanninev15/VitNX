@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.AnimateWindow Method</title>
+	<title>Import.GetSystemFirmwareTable Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.AnimateWindow Method</h1>
+		<h1 class="title">Import.GetSystemFirmwareTable Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -136,8 +136,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;user32.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> AnimateWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwTime</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>dwFlags</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;,
+            EntryPoint = &quot;GetSystemFirmwareTable&quot;,
+            SetLastError = true,
+            ThrowOnUnmappableChar = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> GetSystemFirmwareTable(&nbsp;<br />   <a target="_top" href="topic_00000000000010D0.html" onclick="this.target='';return true;">FirmwareTableType</a> <i>FirmwareTableProviderSignature</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>FirmwareTableID</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>pFirmwareTableBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>BufferSize</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +154,36 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hwnd" class="parameterList">
+	Parameters</h4><dl paramName="FirmwareTableProviderSignature" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hwnd
+			FirmwareTableProviderSignature
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_00000000000010D0.html" onclick="this.target='';return true;">FirmwareTableType</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="FirmwareTableID" class="parameterList">
+	<dt>
+		<span class="parameter">
+			FirmwareTableID
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pFirmwareTableBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pFirmwareTableBuffer
 		</span>
 	</dt>
 	<dd>
@@ -165,27 +193,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="dwTime" class="parameterList">
+<dl paramName="BufferSize" class="parameterList">
 	<dt>
 		<span class="parameter">
-			dwTime
+			BufferSize
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwFlags" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwFlags
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
@@ -196,7 +211,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	
 
 
@@ -271,12 +286,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[return: MarshalAs(UnmanagedType.Bool)]
- [DllImport(&quot;user32.dll&quot;,
-     SetLastError = true)]
- public static extern bool AnimateWindow(IntPtr hwnd,
-     int dwTime,
-     int dwFlags);
+[DllImport(&quot;kernel32.dll&quot;,
+     EntryPoint = &quot;GetSystemFirmwareTable&quot;,
+     SetLastError = true,
+     ThrowOnUnmappableChar = true)]
+ public static extern uint GetSystemFirmwareTable(FirmwareTableType FirmwareTableProviderSignature,
+ uint FirmwareTableID,
+ IntPtr pFirmwareTableBuffer,
+ uint BufferSize);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">

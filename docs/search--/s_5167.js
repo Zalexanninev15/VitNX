@@ -1,1 +1,1 @@
-search_result['5167']=["topic_00000000000012E2_overloads--.html","VitNX2_ProgressBar.Dispose Method",""];
+search_result['5167']=["topic_0000000000001360_methods--.html","VitNX2_MessageBoxType2 Methods",""];

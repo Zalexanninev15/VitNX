@@ -1,1 +1,1 @@
-search_result['5332']=["topic_0000000000001650.html","NotifySettings Class","The notify settings."];
+search_result['5332']=["topic_00000000000016C1.html","Manager.Alert (String, NotificationType) Method","Display a new standard type notification on the screen."];

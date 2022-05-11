@@ -1,1 +1,1 @@
-c['345']=[['346',"VitNX_DockSplitter Constructor","topic_0000000000001223.html",0],['347',"Methods","topic_0000000000001222_methods--.html",1]];
+c['345']=[['346',"VitNX_DockSplitter Constructor","topic_00000000000012B3.html",0],['347',"Methods","topic_00000000000012B2_methods--.html",1]];

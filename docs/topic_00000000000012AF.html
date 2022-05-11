@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>TextLight Field</title>
+	<title>VitNX_DockRegion.OnLayout Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">TextLight Field</h1>
+		<h1 class="title">VitNX_DockRegion.OnLayout Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit</a>
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> TextLight</pre>			
+					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnLayout(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.layouteventargs">LayoutEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,11 +150,23 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="e" class="parameterList">
+	<dt>
+		<span class="parameter">
+			e
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.layouteventargs">LayoutEventArgs</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
-	
+<p />
+
 
 
 
@@ -228,7 +240,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Color TextLight = Color.FromArgb(45, 47, 49);
+protected override void OnLayout(LayoutEventArgs e)
+ {
+     base.OnLayout(e);
+     if (_splitter != null)
+         _splitter.UpdateBounds();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -292,11 +309,11 @@ public Color TextLight = Color.FromArgb(45, 47, 49);
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012A8.html">FormSkin Class</a><br />
+			<a href="topic_00000000000012AA.html">VitNX_DockRegion Class</a><br />
 
 
 
-<a href="topic_00000000000012A5.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
+<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
 
 
 			
@@ -318,3 +335,4 @@ public Color TextLight = Color.FromArgb(45, 47, 49);
     </div>
   </body>
 </html>
+

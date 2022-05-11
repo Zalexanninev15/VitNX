@@ -1,1 +1,1 @@
-search_result['771']=["topic_0000000000000255.html","ERROR_IS_SUBST_TARGET Field",""];
+search_result['771']=["topic_0000000000000252.html","ERROR_INVALID_LEVEL Field",""];

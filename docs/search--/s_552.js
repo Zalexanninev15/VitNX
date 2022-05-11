@@ -1,1 +1,1 @@
-search_result['552']=["topic_0000000000000193.html","Import.GetImmersiveColorFromColorSetEx Method",""];
+search_result['552']=["topic_0000000000000192.html","Import.GetConsoleWindow Method",""];

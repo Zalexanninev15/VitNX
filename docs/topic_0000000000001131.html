@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ComboBox.OnDrawItem Method</title>
+	<title>DISPLAYCONFIG_2DREGION Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ComboBox.OnDrawItem Method</h1>
+		<h1 class="title">DISPLAYCONFIG_2DREGION Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.combobox.drawitem">DrawItem</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnDrawItem(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.drawitemeventargs">DrawItemEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct DISPLAYCONFIG_2DREGION</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,23 +149,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.drawitemeventargs">DrawItemEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.drawitemeventargs">DrawItemEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -183,6 +165,95 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001132.html">cx</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001133.html">cy</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -241,31 +312,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnDrawItem(DrawItemEventArgs e)
+[StructLayout(LayoutKind.Sequential)]
+ public struct DISPLAYCONFIG_2DREGION
  {
-     var g = e.Graphics;
-     var rect = e.Bounds;
-     var textColor = Colors.LightText;
-     var fillColor = Colors.LightBackground;
-     if ((e.State &amp; DrawItemState.Selected) == DrawItemState.Selected || (e.State &amp; DrawItemState.Focus) == DrawItemState.Focus || (e.State &amp; DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect) { fillColor = Colors.BlueSelection; }
-     using (var b = new SolidBrush(fillColor)) { g.FillRectangle(b, rect); }
-     if (e.Index &gt;= 0 &amp;&amp; e.Index &lt; Items.Count)
-     {
-         var text = Items[e.Index].ToString();
-         using (var b = new SolidBrush(textColor))
-         {
-             var padding = 2;
-             var modRect = new Rectangle(rect.Left + padding, rect.Top + padding, rect.Width - (padding * 2), rect.Height - (padding * 2));
-             var stringFormat = new StringFormat
-             {
-                 LineAlignment = StringAlignment.Center,
-                 Alignment = StringAlignment.Near,
-                 FormatFlags = StringFormatFlags.NoWrap,
-                 Trimming = StringTrimming.EllipsisCharacter
-             };
-             g.DrawString(text, Font, b, modRect, stringFormat);
-         }
-     }
+     public uint cx;
+     public uint cy;
  }
 					</pre>			
 				</div>
@@ -322,6 +373,7 @@ protected override void OnDrawItem(DrawItemEventArgs e)
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -330,14 +382,10 @@ protected override void OnDrawItem(DrawItemEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001124.html">VitNX_ComboBox Class</a><br />
+	<a href="topic_0000000000001105.html">VitNX3.Functions.WinControllers Namespace</a><br />
 
 
-
-<a href="topic_0000000000001104.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					

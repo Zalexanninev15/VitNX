@@ -1,1 +1,1 @@
-search_result['2477']=["topic_00000000000008FF.html","ERROR_IPSEC_IKE_POLICY_MATCH Field",""];
+search_result['2477']=["topic_00000000000008FC.html","ERROR_IPSEC_IKE_INVALID_PAYLOAD Field",""];

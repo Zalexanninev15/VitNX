@@ -1,1 +1,1 @@
-search_result['4728']=["topic_00000000000011C7_attached_props--.html","VitNX_TreeView Attached Properties",""];
+search_result['4728']=["topic_0000000000001244.html","VitNX_StatusStrip.OnPaintBackground Method","Paints the background of the control."];

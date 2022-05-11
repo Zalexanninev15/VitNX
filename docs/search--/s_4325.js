@@ -1,1 +1,1 @@
-search_result['4325']=["topic_00000000000010D9.html","Window.WindowToLowerRightCorner Method","Sets the window to the lower right corner."];
+search_result['4325']=["topic_000000000000114E_vars--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Fields",""];

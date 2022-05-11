@@ -1,1 +1,1 @@
-search_result['1852']=["topic_000000000000068E.html","ERROR_DS_NCNAME_MUST_BE_NC Field",""];
+search_result['1852']=["topic_000000000000068B.html","ERROR_DS_CHILDREN_EXIST Field",""];
