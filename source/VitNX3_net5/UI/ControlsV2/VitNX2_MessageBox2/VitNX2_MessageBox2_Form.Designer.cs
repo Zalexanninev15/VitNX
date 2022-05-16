@@ -1,6 +1,6 @@
 ﻿namespace VitNX2.UI.ControlsV2
 {
-    partial class VitNX2_MessageBoxType2
+    partial class VitNX2_MessageBox2
     {
         /// <summary>
         /// Designer variable used to keep track of non-visual components.

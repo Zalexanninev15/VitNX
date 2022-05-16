@@ -5,11 +5,11 @@ using VitNX3.Functions.WindowAndControls;
 
 namespace VitNX2.UI.ControlsV2
 {
-    public partial class VitNX2_MessageBoxType2 : Form
+    public partial class VitNX2_MessageBox2 : Form
     {
         public static string MessageText { get; set; }
 
-        public VitNX2_MessageBoxType2()
+        public VitNX2_MessageBox2()
         {
             InitializeComponent();
             Window.SetWindowsTenAndHighStyleForWinFormTitleToDark(Handle);

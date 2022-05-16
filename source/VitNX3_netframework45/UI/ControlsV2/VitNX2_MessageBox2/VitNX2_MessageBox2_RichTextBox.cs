@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 using VitNX3.Functions.Win32;
 
-public class VitNX2_RichTextBox : RichTextBox
+public class VitNX2_MessageBox2_RichTextBox : RichTextBox
 {
-    public VitNX2_RichTextBox()
+    public VitNX2_MessageBox2_RichTextBox()
     {
         MouseDown += new MouseEventHandler(RichTextBox_Custom_Mouse);
         MouseUp += new MouseEventHandler(RichTextBox_Custom_Mouse);

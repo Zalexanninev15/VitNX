@@ -5,7 +5,7 @@ namespace VitNX3.UI.Console.ProgressBar
     /// <summary>
     /// Console ProgressBar type 2.
     /// </summary>
-    public static class Type2
+    public static class ConsoleProgressBar2
     {
         private const char progressChar = '-';
         private const int progressBarSpacing = 11;
