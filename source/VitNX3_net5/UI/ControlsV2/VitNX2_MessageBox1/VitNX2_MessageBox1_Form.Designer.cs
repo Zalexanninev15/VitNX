@@ -1,6 +1,6 @@
 ﻿namespace VitNX2.UI.ControlsV2
 {
-    partial class VitNX2_MessageBoxType1_Form
+    partial class VitNX2_MessageBox1_Form
     {
         /// <summary>
         /// Required designer variable.

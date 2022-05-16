@@ -7,7 +7,7 @@ namespace VitNX3.UI.Console.ProgressBar
     /// <summary>
     /// Console ProgressBar type 1.
     /// </summary>
-    public class Type1 : IDisposable, IProgress<double>
+    public class ConsoleProgressBar1 : IDisposable, IProgress<double>
     {
         private const int blockCount = 10;
         private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);
@@ -21,7 +21,7 @@ namespace VitNX3.UI.Console.ProgressBar
         private int animationIndex = 0;
         private ConsoleColor pb = new ConsoleColor();
 
-        public Type1()
+        public ConsoleProgressBar1()
         {
             timer = new Timer(TimerHandler);
             if (!System.Console.IsOutputRedirected)

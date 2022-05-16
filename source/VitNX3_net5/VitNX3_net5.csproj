@@ -12,9 +12,9 @@
     <PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
     <Copyright>Zalexanninev15</Copyright>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Version>3.3.2</Version>
-    <AssemblyVersion>3.3.2</AssemblyVersion>
-    <FileVersion>3.3.2</FileVersion>
+    <Version>3.4</Version>
+    <AssemblyVersion>3.4</AssemblyVersion>
+    <FileVersion>3.4</FileVersion>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5+</Description>
@@ -213,13 +213,13 @@
     <Compile Update="UI\ControlsV2\VitNX2_CheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.cs">
+    <Compile Update="UI\ControlsV2\VitNX2_MessageBox1\VitNX2_MessageBox1_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.cs">
+    <Compile Update="UI\ControlsV2\VitNX2_MessageBox2\VitNX2_MessageBox2_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_RichTextBox.cs">
+    <Compile Update="UI\ControlsV2\VitNX2_MessageBox2\VitNX2_MessageBox2_RichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="UI\ControlsV2\VitNX2_Panel.cs">

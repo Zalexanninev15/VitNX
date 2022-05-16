@@ -6,7 +6,7 @@ using VitNX3.Functions.Win32;
 
 namespace VitNX2.UI.ControlsV2
 {
-    public partial class VitNX2_MessageBoxType1_Form : Form
+    public partial class VitNX2_MessageBox1_Form : Form
     {
         private Color primaryColor = Color.FromArgb(21, 29, 38);
         private int borderSize = 2;
@@ -31,7 +31,7 @@ namespace VitNX2.UI.ControlsV2
             g.DrawRectangle(pen, rect);
         }
 
-        public VitNX2_MessageBoxType1_Form(string text)
+        public VitNX2_MessageBox1_Form(string text)
         {
             InitializeComponent();
             InitializeItems();
@@ -42,7 +42,7 @@ namespace VitNX2.UI.ControlsV2
             VitNX3.Functions.WindowAndControls.Window.SetWindowsElevenStyleForWinForm(Handle, Width, Height);
         }
 
-        public VitNX2_MessageBoxType1_Form(string text, string caption)
+        public VitNX2_MessageBox1_Form(string text, string caption)
         {
             InitializeComponent();
             InitializeItems();
@@ -53,7 +53,7 @@ namespace VitNX2.UI.ControlsV2
             SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);
         }
 
-        public VitNX2_MessageBoxType1_Form(string text,
+        public VitNX2_MessageBox1_Form(string text,
             string caption,
             MessageBoxButtons buttons)
         {
@@ -66,7 +66,7 @@ namespace VitNX2.UI.ControlsV2
             SetButtons(buttons, MessageBoxDefaultButton.Button1);
         }
 
-        public VitNX2_MessageBoxType1_Form(string text,
+        public VitNX2_MessageBox1_Form(string text,
             string caption,
             MessageBoxButtons buttons,
             MessageBoxIcon icon)
@@ -81,7 +81,7 @@ namespace VitNX2.UI.ControlsV2
             SetIcon(icon);
         }
 
-        public VitNX2_MessageBoxType1_Form(string text,
+        public VitNX2_MessageBox1_Form(string text,
             string caption,
             MessageBoxButtons buttons,
             MessageBoxIcon icon,
