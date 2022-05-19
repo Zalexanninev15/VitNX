@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using VitNX3.Functions.AppsAndProcesses;
-
 namespace Examples2
 {
     public partial class Main : Form
