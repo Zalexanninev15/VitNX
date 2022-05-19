@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
-using System.IO;
+﻿using System.IO;
 
 namespace Examples1
 {

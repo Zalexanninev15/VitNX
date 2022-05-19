@@ -73,11 +73,11 @@ namespace VitNX3.Functions.Win32
 
         [DllImport("user32.dll",
             EntryPoint = "GetWindowLong")]
-        static extern IntPtr GetWindowLong32(IntPtr hWnd,
+        private static extern IntPtr GetWindowLong32(IntPtr hWnd,
             int nIndex);
 
         [DllImport("user32.dll")]
-        static extern IntPtr GetWindowLongPtr(IntPtr hWnd,
+        private static extern IntPtr GetWindowLongPtr(IntPtr hWnd,
             int nIndex);
 
         [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
@@ -4763,10 +4763,11 @@ namespace VitNX3.Functions.Win32
         {
             public uint cbSize;
             public IntPtr hIcon;
-            int iSysImageIndex;
-            int iIcon;
+            private int iSysImageIndex;
+            private int iIcon;
+
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
-            string szPath;
+            private string szPath;
         }
 
         [Flags]

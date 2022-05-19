@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-using VitNX.UI.ControlsV1.Docking;
-using VitNX.UI.ControlsV1.Forms;
-using VitNX.UI.ControlsV1.Win32;
-
-using VitNX3.Functions.WinControllers;
-
-using static VitNX3.Functions.Win32.Enums;
-
 namespace Examples1
 {
     public partial class MainForm : VitNX_Form

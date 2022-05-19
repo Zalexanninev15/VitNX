@@ -1,7 +1,4 @@
-﻿using VitNX.UI.ControlsV1.Controls;
-using VitNX.UI.ControlsV1.Forms;
-
-namespace Examples1
+﻿namespace Examples1
 {
     public partial class DialogControls : VitNX_Dialog
     {

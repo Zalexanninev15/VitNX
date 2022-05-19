@@ -1,7 +1,5 @@
 ﻿using System.Windows.Forms;
 
-using VitNX.UI.ControlsV1.Forms;
-
 namespace Examples1
 {
     public partial class DialogAbout : VitNX_Dialog
