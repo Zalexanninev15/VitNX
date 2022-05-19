@@ -69,7 +69,7 @@
             this.titleExit.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.titleExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(185)))), ((int)(((byte)(191)))));
             this.titleExit.Location = new System.Drawing.Point(320, 0);
-            this.titleExit.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.titleExit.Margin = new System.Windows.Forms.Padding(3);
             this.titleExit.Name = "titleExit";
             this.titleExit.Size = new System.Drawing.Size(26, 30);
             this.titleExit.TabIndex = 3;

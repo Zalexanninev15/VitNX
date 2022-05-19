@@ -143,8 +143,6 @@ namespace VitNX3.Functions.Web
     /// </summary>
     public class SendDataToSites
     {
-#pragma warning disable CS1570
-
         /// <summary>
         /// Using POST request to send text data.
         ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");
@@ -152,8 +150,8 @@ namespace VitNX3.Functions.Web
         /// <param name="url">The url.</param>
         /// <param name="options">The options.</param>
         /// <returns>A string.</returns>
-        public static string Post(string url, string options)
-#pragma warning restore CS1570 // Комментарий XML содержит неправильно сформированный XML
+        public static string Post(string url,
+            string options)
         {
             try
             {
