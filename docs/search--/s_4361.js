@@ -1,1 +1,0 @@
-search_result['4361']=["topic_0000000000001163.html","Window.MaximizeAll Method","Maximizes the all windows."];

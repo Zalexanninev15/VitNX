@@ -1,1 +1,0 @@
-search_result['4899']=["topic_00000000000012AD.html","VitNX_DockRegion.OnCreateControl Method","Raises the CreateControl method."];

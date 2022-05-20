@@ -1,1 +1,0 @@
-search_result['3847']=["topic_0000000000000EAB.html","MINMAXINFO Structure",""];

@@ -18,7 +18,7 @@ using VitNX3.Functions.Win32;
 namespace VitNX3.Functions.Information
 {
     /// <summary>
-    /// Work with informations of Windows System.
+    /// Works with informations of Windows System.
     /// </summary>
     public class Windows
     {
@@ -144,7 +144,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of CPU.
+    /// Works with informations of CPU.
     /// </summary>
     public class Cpu
     {
@@ -228,7 +228,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of GPU(s).
+    /// Works with informations of GPU(s).
     /// </summary>
     public class Gpu
     {
@@ -266,7 +266,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Disk(s).
+    /// Works with informations of Disk(s).
     /// </summary>
     public class Disk
     {
@@ -344,7 +344,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Monitor(s).
+    /// Works with informations of Monitor(s).
     /// </summary>
     public class Monitor
     {
@@ -490,7 +490,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Motherboard.
+    /// Works with informations of Motherboard.
     /// </summary>
     public class Motherboard
     {
@@ -516,7 +516,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of COM port.
+    /// Works with informations of COM port.
     /// </summary>
     public class ComPort
     {
@@ -531,7 +531,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of RAM.
+    /// Works with informations of RAM.
     /// </summary>
     public class Ram
     {
@@ -578,7 +578,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Internet (PC).
+    /// Works with informations of Internet (PC).
     /// </summary>
     public class Internet
     {

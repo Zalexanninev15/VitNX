@@ -1,1 +1,0 @@
-search_result['4352']=["topic_000000000000115F.html","WorkWithSystem.GetIcon Method","Gets the icon (WinAPI)."];

@@ -1,1 +1,0 @@
-search_result['1737']=["topic_0000000000000618.html","ERROR_CTX_LICENSE_NOT_AVAILABLE Field",""];

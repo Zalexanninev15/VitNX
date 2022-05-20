@@ -12,7 +12,7 @@ using VitNX3.Functions.Win32;
 namespace VitNX3.Functions.AppsAndProcesses
 {
     /// <summary>
-    /// Work with processes.
+    /// Works with processes.
     /// </summary>
     public class Processes
     {
@@ -251,7 +251,7 @@ namespace VitNX3.Functions.AppsAndProcesses
     }
 
     /// <summary>
-    /// Work with installed applications.
+    /// Works with installed applications.
     /// </summary>
     public class Installed
     {

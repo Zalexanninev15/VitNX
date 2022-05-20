@@ -1,1 +1,0 @@
-search_result['77']=["topic_000000000000002F.html","Text.DateAsYear Method","Converts the date to year."];

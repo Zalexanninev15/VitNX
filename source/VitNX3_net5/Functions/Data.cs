@@ -9,7 +9,7 @@ using System.Text;
 namespace VitNX3.Functions.Data
 {
     /// <summary>
-    /// Work with text.
+    /// Works with text.
     /// </summary>
     public class Text
     {

@@ -1,1 +1,0 @@
-search_result['188']=["topic_000000000000007B.html","Windows.WindowsUseLightThemeForApps Method","Windows use light theme for apps from the Windows Registry, for Windows 10+."];

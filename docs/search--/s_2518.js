@@ -1,1 +1,0 @@
-search_result['2518']=["topic_0000000000000925.html","ResultCom Class",""];

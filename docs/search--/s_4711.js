@@ -1,1 +1,0 @@
-search_result['4711']=["topic_000000000000123D.html","VitNX_SectionPanel.OnPaintBackground Method","Paints the background of the control."];

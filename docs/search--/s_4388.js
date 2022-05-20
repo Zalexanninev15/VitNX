@@ -1,1 +1,0 @@
-search_result['4388']=["topic_0000000000001174.html","Type1.SetText Method","Sets the text."];

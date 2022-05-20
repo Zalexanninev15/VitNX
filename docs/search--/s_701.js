@@ -1,1 +1,0 @@
-search_result['701']=["topic_000000000000020C.html","ERROR_BAD_COMMAND Field",""];

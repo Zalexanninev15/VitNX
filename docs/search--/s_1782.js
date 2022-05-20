@@ -1,1 +1,0 @@
-search_result['1782']=["topic_0000000000000645.html","ERROR_NO_PROMOTION_ACTIVE Field",""];

@@ -1,1 +1,0 @@
-search_result['207']=["topic_0000000000000084.html","Disk Class","Work with informations of Disk(s)."];

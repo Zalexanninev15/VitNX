@@ -1,1 +1,0 @@
-search_result['1920']=["topic_00000000000006CF.html","ERROR_DS_BAD_ATT_SCHEMA_SYNTAX Field",""];

@@ -1,1 +1,0 @@
-search_result['1071']=["topic_000000000000037E.html","ERROR_SMARTCARD_SUBSYSTEM_FAILURE Field",""];

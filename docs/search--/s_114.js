@@ -1,1 +1,0 @@
-search_result['114']=["topic_000000000000004A.html","EncrypterAndDecrypter.Encrypt Method","Encrypts the text."];

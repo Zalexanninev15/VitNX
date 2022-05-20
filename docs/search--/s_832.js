@@ -1,1 +1,0 @@
-search_result['832']=["topic_000000000000028F.html","ERROR_RING2SEG_MUST_BE_MOVABLE Field",""];

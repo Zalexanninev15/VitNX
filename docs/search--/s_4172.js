@@ -1,1 +1,0 @@
-search_result['4172']=["topic_000000000000110F.html","GetClipboardText Class","Get clipboard text."];

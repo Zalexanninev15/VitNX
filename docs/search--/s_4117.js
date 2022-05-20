@@ -1,1 +1,0 @@
-search_result['4117']=["topic_0000000000000FC1.html","NET_RESOURCE Structure",""];

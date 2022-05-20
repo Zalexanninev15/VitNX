@@ -1,1 +1,0 @@
-search_result['175']=["topic_000000000000006E.html","Windows.GetComputerName Method","Gets the name of PC."];

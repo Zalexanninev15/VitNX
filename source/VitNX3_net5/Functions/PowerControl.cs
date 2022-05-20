@@ -7,7 +7,7 @@ using VitNX3.Functions.Win32;
 namespace VitNX3.Functions
 {
     /// <summary>
-    /// Work with the power control.
+    /// Works with the power control.
     /// </summary>
     public class PowerControl
     {

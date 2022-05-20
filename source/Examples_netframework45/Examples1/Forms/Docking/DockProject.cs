@@ -1,5 +1,9 @@
 ﻿using System;
 
+using VitNX.UI.ControlsV1.Forms;
+using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
+
 namespace Examples1
 {
     public partial class DockProject : VitNX_ToolWindow

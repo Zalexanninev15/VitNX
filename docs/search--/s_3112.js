@@ -1,1 +1,0 @@
-search_result['3112']=["topic_0000000000000B72.html","NTE_BAD_TYPE Field",""];

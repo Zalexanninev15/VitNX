@@ -1,1 +1,0 @@
-search_result['30']=["topic_0000000000000014.html","PerformanceCounter Class","The performance counter.\r\nUsage example: https://gist.github.com/Zalexanninev15/7f439beecb411f3e7b11d56acdb0bf21"];

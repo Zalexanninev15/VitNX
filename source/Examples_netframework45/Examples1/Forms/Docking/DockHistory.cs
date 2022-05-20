@@ -1,4 +1,7 @@
-﻿namespace Examples1
+﻿using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
+
+namespace Examples1
 {
     public partial class DockHistory : VitNX_ToolWindow
     {

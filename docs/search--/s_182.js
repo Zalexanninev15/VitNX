@@ -1,1 +1,0 @@
-search_result['182']=["topic_0000000000000075.html","Windows.GetWindowsCurrentBuildNumberFromREG Method","Gets the Windows current build number from the Windows Registry."];

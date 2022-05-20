@@ -1,1 +1,0 @@
-search_result['4369']=["topic_000000000000116B.html","Window.GetDpiForWindow Method","Gets the DPI for window."];

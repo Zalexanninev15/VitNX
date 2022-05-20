@@ -1,1 +1,0 @@
-search_result['3850']=["topic_0000000000000EAB_methods--.html","MINMAXINFO Methods",""];

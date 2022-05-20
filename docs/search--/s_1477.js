@@ -1,1 +1,0 @@
-search_result['1477']=["topic_0000000000000514.html","ERROR_PROFILE_NOT_ASSOCIATED_WITH_DEVICE Field",""];

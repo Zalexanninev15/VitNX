@@ -1,6 +1,10 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
+using VitNX.UI.ControlsV1.Forms;
+using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
+
 namespace Examples1
 {
     public partial class DockDocument : VitNX_Document

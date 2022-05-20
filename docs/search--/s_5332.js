@@ -1,1 +1,0 @@
-search_result['5332']=["topic_00000000000016C1.html","Manager.Alert (String, NotificationType) Method","Display a new standard type notification on the screen."];

@@ -1,1 +1,0 @@
-search_result['263']=["topic_000000000000009E.html","Internet.GetPublicIP Method","Gets the public IP of PC."];

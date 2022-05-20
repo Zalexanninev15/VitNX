@@ -1,1 +1,0 @@
-search_result['1088']=["topic_000000000000038F.html","ERROR_NOT_ALL_ASSIGNED Field",""];

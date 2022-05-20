@@ -1,1 +1,0 @@
-search_result['4113']=["topic_0000000000000F99.html","DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY Enumeration",""];
