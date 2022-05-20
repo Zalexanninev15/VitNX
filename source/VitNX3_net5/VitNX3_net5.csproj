@@ -10,11 +10,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/Zalexanninev15/VitNX</RepositoryUrl>
     <PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
-    <Copyright>Zalexanninev15</Copyright>
+    <Copyright>Copyright © 2021-2022, Zalexanninev15</Copyright>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <Version>3.4</Version>
-    <AssemblyVersion>3.4</AssemblyVersion>
-    <FileVersion>3.4</FileVersion>
+    <Version>3.4.1</Version>
+    <AssemblyVersion>3.4.1</AssemblyVersion>
+    <FileVersion>3.4.1</FileVersion>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5+</Description>
@@ -72,9 +72,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="crozone.SerialPorts.WindowsSerialPort" Version="2.0.2" />
     <PackageReference Include="DK.WshRuntime" Version="4.1.3.201115164" />
-    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="6.0.0" />
-    <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="6.0.1" />
     <PackageReference Include="System.Management" Version="6.0.0" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="6.0.0" />
   </ItemGroup>
