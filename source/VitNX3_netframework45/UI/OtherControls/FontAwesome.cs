@@ -74,7 +74,7 @@ namespace VitNX3.UI.OtherControls
         }
 
         /// <summary>
-        /// Work with font.
+        /// Works with font.
         /// Example:
         ///  settings.Image = FontAwesome4.Instance.GetImage(new FontAwesome4.Properties(FontAwesome4.Type.ArrowCircleODown)
         /// {

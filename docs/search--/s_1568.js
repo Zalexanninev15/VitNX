@@ -1,1 +1,0 @@
-search_result['1568']=["topic_000000000000056F.html","ERROR_INDIGENOUS_TYPE Field",""];

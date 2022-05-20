@@ -1,1 +1,0 @@
-search_result['1132']=["topic_00000000000003BB.html","ERROR_INVALID_GROUP_ATTRIBUTES Field",""];

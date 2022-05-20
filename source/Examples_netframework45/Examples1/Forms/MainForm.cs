@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
+using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV1.Win32;
+using VitNX.UI.ControlsV1.Forms;
+using VitNX3.Functions.WinControllers;
+using VitNX3.Functions.Win32;
+
 namespace Examples1
 {
     public partial class MainForm : VitNX_Form
@@ -170,27 +176,27 @@ namespace Examples1
                 {
                     case "Normal":
                         {
-                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Normal);
+                            TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Normal);
                             TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                             break;
                         }
                     case "Indeterminate":
-                        TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate);
+                        TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Indeterminate);
                         break;
 
                     case "NoProgress":
-                        TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress);
+                        TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.NoProgress);
                         break;
 
                     case "Error":
                         {
-                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);
+                            TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Error);
                             TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                             break;
                         }
                     case "Paused":
                         {
-                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Paused);
+                            TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Paused);
                             TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                             break;
                         }

@@ -1,1 +1,0 @@
-search_result['3424']=["topic_0000000000000CAA.html","CERT_E_PURPOSE Field",""];

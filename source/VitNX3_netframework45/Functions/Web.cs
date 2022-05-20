@@ -10,7 +10,7 @@ using System.Text;
 namespace VitNX3.Functions.Web
 {
     /// <summary>
-    /// Work with data from sites.
+    /// Works with data from sites.
     /// </summary>
     public class DataFromSites
     {

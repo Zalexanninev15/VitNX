@@ -1,1 +1,0 @@
-search_result['2947']=["topic_0000000000000ACD.html","TYPE_E_WRONGTYPEKIND Field",""];

@@ -1,1 +1,0 @@
-search_result['427']=["topic_0000000000000121.html","Import.DrawText Method",""];

@@ -1,1 +1,0 @@
-search_result['4368']=["topic_000000000000116A.html","Window.AddWindowBorders Method","Adds the borders for window."];

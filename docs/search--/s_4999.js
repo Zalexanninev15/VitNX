@@ -1,1 +1,0 @@
-search_result['4999']=["topic_00000000000012FB.html","VitNX_MenuRenderer.Initialize Method","When overridden in a derived class, provides for custom initialization of the given ToolStrip."];

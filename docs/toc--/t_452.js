@@ -1,1 +1,0 @@
-c['452']=[['453',"CheckedChangedEventHandler Delegate","topic_0000000000001331.html",0],['454',"_Options Enumeration","topic_0000000000001332.html",0],['455',"VitNX2_CheckBox Constructor","topic_000000000000132F.html",0],['456',"Methods","topic_0000000000001326_methods--.html",1],['465',"Events","topic_0000000000001326_events--.html",1]];

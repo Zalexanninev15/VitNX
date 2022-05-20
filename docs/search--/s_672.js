@@ -1,1 +1,0 @@
-search_result['672']=["topic_00000000000001F4.html","ResultWin32 Class",""];

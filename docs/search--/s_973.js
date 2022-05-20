@@ -1,1 +1,0 @@
-search_result['973']=["topic_000000000000031C.html","ERROR_SET_POWER_STATE_VETOED Field",""];

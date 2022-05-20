@@ -1,1 +1,0 @@
-search_result['972']=["topic_000000000000031B.html","ERROR_MAPPED_ALIGNMENT Field",""];

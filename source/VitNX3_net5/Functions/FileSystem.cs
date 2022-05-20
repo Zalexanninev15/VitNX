@@ -13,7 +13,7 @@ using Path = System.IO.Path;
 namespace VitNX3.Functions.FileSystem
 {
     /// <summary>
-    /// Work with the folders.
+    /// Works with the folders.
     /// </summary>
     public class Folder
     {
@@ -108,7 +108,7 @@ namespace VitNX3.Functions.FileSystem
     }
 
     /// <summary>
-    /// Work with the files.
+    /// Works with the files.
     /// </summary>
     public class File
     {

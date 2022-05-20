@@ -1,1 +1,0 @@
-search_result['4365']=["topic_0000000000001167.html","Window.WindowToLowerRightCorner Method","Sets the window to the lower right corner."];

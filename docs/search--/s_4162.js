@@ -1,1 +1,0 @@
-search_result['4162']=["topic_000000000000110C.html","NewFolderDialog Class","Work with the folder dialog, Windows Vista+."];

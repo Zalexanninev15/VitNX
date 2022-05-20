@@ -1,1 +1,0 @@
-c['368']=[['369',"VitNX_Dialog Constructor","topic_00000000000012D4.html",0],['370',"Methods","topic_00000000000012CA_methods--.html",1],['374',"Fields","topic_00000000000012CA_vars--.html",1]];

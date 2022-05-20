@@ -1,1 +1,0 @@
-search_result['85']=["topic_0000000000000037.html","Text.ListRemoveStringsFromList Method","Lists the remove strings from list."];

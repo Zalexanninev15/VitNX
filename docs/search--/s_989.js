@@ -1,1 +1,0 @@
-search_result['989']=["topic_000000000000032C.html","ERROR_MAGAZINE_NOT_PRESENT Field",""];

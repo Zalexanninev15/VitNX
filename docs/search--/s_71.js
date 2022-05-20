@@ -1,1 +1,0 @@
-search_result['71']=["topic_0000000000000029.html","Text.ConvertNumberToHexI Method","Converts the number to HEX (int32)."];

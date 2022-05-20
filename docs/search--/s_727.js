@@ -1,1 +1,0 @@
-search_result['727']=["topic_0000000000000226.html","ERROR_BAD_REM_ADAP Field",""];

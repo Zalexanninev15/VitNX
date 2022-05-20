@@ -1,1 +1,0 @@
-search_result['4345']=["topic_000000000000115D.html","WorkWithSystem Class","Work with system."];

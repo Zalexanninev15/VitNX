@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ServiceProcess;
 
 using VitNX3.Functions.AppsAndProcesses;
 using VitNX3.Functions.Win32;
@@ -16,7 +17,7 @@ using static VitNX3.Functions.Win32.Enums;
 namespace VitNX3.Functions.WinControllers
 {
     /// <summary>
-    /// Work with progressbar on taskbar.
+    /// Works with progressbar on taskbar.
     /// </summary>
     public static class TaskBarProgressBar
     {
@@ -321,7 +322,7 @@ namespace VitNX3.Functions.WinControllers
     }
 
     /// <summary>
-    /// Work with the folder dialog, Windows Vista+.
+    /// Works with the folder dialog, Windows Vista+.
     /// </summary>
     public class NewFolderDialog
     {
@@ -682,10 +683,8 @@ namespace VitNX3.Functions.WinControllers
         }
     }
 
-#pragma warning disable CS1591
-
     /// <summary>
-    /// Work with monitor.
+    /// Works with monitor.
     /// </summary>
     public static class Monitor
     {
@@ -832,8 +831,6 @@ namespace VitNX3.Functions.WinControllers
             public string monitorDevicePath;
         }
 
-#pragma warning restore CS1591
-
         /// <summary>
         /// Monitors the friendly name.
         /// </summary>
@@ -907,7 +904,7 @@ namespace VitNX3.Functions.WinControllers
     }
 
     /// <summary>
-    /// Work with system.
+    /// Works with system.
     /// </summary>
     public static class WorkWithSystem
     {
@@ -935,6 +932,106 @@ namespace VitNX3.Functions.WinControllers
                 flags,
                 ref info));
             return info.hIcon;
+        }
+    }
+
+    /// <summary>
+    /// Controls of Windows services .
+    /// </summary>
+    public static class ServicesControl
+    {
+        [Flags]
+        public enum ServiceStatus
+        {
+            NOT_RUNNING,
+            RUNNING,
+            ALREADY_RUNNING,
+            STOPPED,
+            ALREADY_STOPPED,
+            UNKNOWN_ERROR
+        }
+
+        /// <summary>
+        /// Starts the service.
+        /// </summary>
+        /// <param name="serviceName">The service name.</param>
+        /// <returns>A ServiceStatus.</returns>
+        public static ServiceStatus Start(string serviceName)
+        {
+            try
+            {
+                ServiceController service = new ServiceController(serviceName);
+                if (service.Status != ServiceControllerStatus.Running)
+                {
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running,
+                        TimeSpan.FromSeconds(6));
+                    return ServiceStatus.RUNNING;
+                }
+                else
+                    return ServiceStatus.ALREADY_RUNNING;
+            }
+            catch { return ServiceStatus.UNKNOWN_ERROR; }
+        }
+
+        /// <summary>
+        /// Stops the service.
+        /// </summary>
+        /// <param name="serviceName">The service name.</param>
+        /// <returns>A ServiceStatus.</returns>
+        public static ServiceStatus Stop(string serviceName)
+        {
+            try
+            {
+                ServiceController service = new ServiceController(serviceName);
+                if (service.Status != ServiceControllerStatus.Stopped)
+                {
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped,
+                        TimeSpan.FromSeconds(6));
+                    return ServiceStatus.STOPPED;
+                }
+                else
+                    return ServiceStatus.ALREADY_STOPPED;
+            }
+            catch { return ServiceStatus.UNKNOWN_ERROR; }
+        }
+
+        /// <summary>
+        /// Restarts the service.
+        /// </summary>
+        /// <param name="serviceName">The service name.</param>
+        /// <returns>A ServiceStatus.</returns>
+        public static ServiceStatus Restart(string serviceName)
+        {
+            int index = 0;
+            try
+            {
+                ServiceController service = new ServiceController(serviceName);
+                TimeSpan timeout = TimeSpan.FromMinutes(1);
+                if (service.Status != ServiceControllerStatus.Stopped)
+                {
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped,
+                        timeout);
+                    index = index + 1;
+                    return ServiceStatus.STOPPED;
+                }
+                else
+                    return ServiceStatus.ALREADY_STOPPED;
+                if ((service.Status != ServiceControllerStatus.Running)
+                    && (index > 0))
+                {
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running,
+                        timeout);
+                    index = index + 1;
+                    return ServiceStatus.RUNNING;
+                }
+                else
+                    return ServiceStatus.ALREADY_RUNNING;
+            }
+            catch { return ServiceStatus.UNKNOWN_ERROR; }
         }
     }
 }

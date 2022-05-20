@@ -1,1 +1,0 @@
-search_result['254']=["topic_000000000000009A.html","Internet Class","Work with informations of Internet (PC)."];

@@ -1,1 +1,0 @@
-search_result['50']=["topic_000000000000001E.html","Others.ConvertColorToConsoleColor Method","Converts the color to color for console."];

@@ -1,1 +1,0 @@
-search_result['4177']=["topic_000000000000110F_vars--.html","GetClipboardText Fields",""];

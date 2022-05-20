@@ -7,7 +7,7 @@ using VitNX3.Functions.Win32;
 namespace VitNX3.Functions.SettingsAndLog
 {
     /// <summary>
-    /// Work with INI config file, based on Windows System functions.
+    /// Works with INI config file, based on Windows System functions.
     /// </summary>
     public class Ini
     {

@@ -1,4 +1,7 @@
-﻿namespace Examples1
+﻿using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV1.Controls;
+
+namespace Examples1
 {
     public partial class DockLayers : VitNX_ToolWindow
     {

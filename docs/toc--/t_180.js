@@ -1,1 +1,0 @@
-c['180']=[['181',"VitNX_ScrollBase Constructor","topic_000000000000121F.html",0],['182',"Methods","topic_000000000000121A_methods--.html",1],['198',"Events","topic_000000000000121A_events--.html",1],['201',"Fields","topic_000000000000121A_vars--.html",1]];
