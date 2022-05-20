@@ -948,7 +948,9 @@ namespace VitNX3.Functions.WinControllers
             ALREADY_RUNNING,
             STOPPED,
             ALREADY_STOPPED,
-            UNKNOWN_ERROR
+            UNKNOWN_ERROR,
+            RESTARTED,
+            CONFLICT_RESTARTED
         }
 
         /// <summary>
@@ -1015,10 +1017,9 @@ namespace VitNX3.Functions.WinControllers
                     service.WaitForStatus(ServiceControllerStatus.Stopped,
                         timeout);
                     index = index + 1;
-                    return ServiceStatus.STOPPED;
                 }
                 else
-                    return ServiceStatus.ALREADY_STOPPED;
+                    return ServiceStatus.CONFLICT_RESTARTED;
                 if ((service.Status != ServiceControllerStatus.Running)
                     && (index > 0))
                 {
@@ -1026,10 +1027,10 @@ namespace VitNX3.Functions.WinControllers
                     service.WaitForStatus(ServiceControllerStatus.Running,
                         timeout);
                     index = index + 1;
-                    return ServiceStatus.RUNNING;
+                    return ServiceStatus.RESTARTED;
                 }
                 else
-                    return ServiceStatus.ALREADY_RUNNING;
+                    return ServiceStatus.CONFLICT_RESTARTED;
             }
             catch { return ServiceStatus.UNKNOWN_ERROR; }
         }
