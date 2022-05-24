@@ -63,21 +63,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Console\ProgressBar\ConsoleProgressBar2.cs" />
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBox1\VitNX2_MessageBox1.cs" />
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBox1\VitNX2_MessageBox1_Form.cs">
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBox1\VitNX2_MessageBox1_Form.Designer.cs">
-      <DependentUpon>VitNX2_MessageBox1_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBox2\VitNX2_MessageBox2_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBox2\VitNX2_MessageBox2_Form.Designer.cs">
-      <DependentUpon>VitNX2_MessageBox2_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBox2\VitNX2_MessageBox2_RichTextBox.cs">
-      <SubType>Component</SubType>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.Designer.cs">
+      <DependentUpon>VitNX2_MessageBox_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ControlsV2\VitNX2_RichTextBox.cs">
       <SubType>Component</SubType>
@@ -305,11 +296,8 @@
     <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_TranslucentForm.resx">
       <DependentUpon>VitNX_TranslucentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox1\VitNX2_MessageBox1_Form.resx">
-      <DependentUpon>VitNX2_MessageBox1_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox2\VitNX2_MessageBox2_Form.resx">
-      <DependentUpon>VitNX2_MessageBox2_Form.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.resx">
+      <DependentUpon>VitNX2_MessageBox_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_TextBox.resx" />
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar.resx">

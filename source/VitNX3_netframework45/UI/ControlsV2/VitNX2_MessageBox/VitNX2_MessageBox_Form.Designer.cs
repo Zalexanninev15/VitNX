@@ -1,6 +1,6 @@
 ﻿namespace VitNX2.UI.ControlsV2
 {
-    partial class VitNX2_MessageBox1_Form
+    partial class VitNX2_MessageBox_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -124,7 +124,7 @@
             this.pictureBoxIcon.TabIndex = 0;
             this.pictureBoxIcon.TabStop = false;
             // 
-            // VitNX2_MessageBox1_Form
+            // VitNX2_MessageBox_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.windowTitle);
             this.MinimumSize = new System.Drawing.Size(350, 149);
-            this.Name = "VitNX2_MessageBox1_Form";
+            this.Name = "VitNX2_MessageBox_Form";
             this.Opacity = 0.98D;
             this.Padding = new System.Windows.Forms.Padding(2);
             this.ShowIcon = false;

@@ -539,7 +539,7 @@ namespace VitNX3.Functions.Data
         /// <summary>
         /// Encrypts the text.
         /// </summary>
-        /// <param name="TextToBeEncrypted">The text to be encrypted.</param>
+        /// <param name="input">The text to be encrypted.</param>
         /// <returns>A string.</returns>
         public static string Encrypt(string input)
         {
@@ -629,7 +629,6 @@ namespace VitNX3.Functions.Data
     {
         /// <summary>
         /// Gets the bytes.
-        /// Example: Data.CompressAndDecompress.GetBytes(input)
         /// </summary>
         /// <param name="input">The string.</param>
         /// <returns>An array of byte.</returns>
