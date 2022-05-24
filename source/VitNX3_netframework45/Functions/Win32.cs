@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -18,6 +19,77 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Import
     {
+        public static byte[] GetDataFromResource(IntPtr module,
+            IntPtr type,
+            IntPtr name)
+        {
+            IntPtr resourceInfo = FindResource(module,
+                name,
+                type);
+            if (resourceInfo == IntPtr.Zero) throw new Win32Exception();
+            IntPtr resourceData = LoadResource(module,
+                resourceInfo);
+            if (resourceData == IntPtr.Zero) throw new Win32Exception();
+            IntPtr resourceLock = LockResource(resourceData);
+            if (resourceLock == IntPtr.Zero) throw new Win32Exception();
+            uint size = SizeofResource(module,
+                resourceInfo);
+            if (size == 0) throw new Win32Exception();
+            byte[] buffer = new byte[size];
+            Marshal.Copy(resourceLock,
+                buffer, 0,
+                buffer.Length);
+            return buffer;
+        }
+
+        [UnmanagedFunctionPointer(CallingConvention.Winapi,
+        SetLastError = true,
+        CharSet = CharSet.Unicode)]
+        public delegate bool EnumResourceNamesCallback(IntPtr module,
+        IntPtr lpszType,
+        IntPtr lpszName,
+        IntPtr lParam);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true,
+            CharSet = CharSet.Unicode)]
+        public static extern IntPtr LoadLibraryEx(string fileName,
+            IntPtr file,
+            uint flags);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern bool FreeLibrary(IntPtr module);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true,
+            CharSet = CharSet.Unicode)]
+        public static extern bool EnumResourceNames(IntPtr module,
+            IntPtr type,
+            EnumResourceNamesCallback callback,
+            IntPtr lParam);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true,
+            CharSet = CharSet.Unicode)]
+        public static extern IntPtr FindResource(IntPtr module,
+            IntPtr name,
+            IntPtr type);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern IntPtr LoadResource(IntPtr module,
+            IntPtr resourceInfo);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern IntPtr LockResource(IntPtr resourceData);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern uint SizeofResource(IntPtr module,
+            IntPtr resourceInfo);
+
         [DllImport("ntdll.dll")]
         public static extern uint RtlGetCompressionWorkSpaceSize(ushort compressionFormat,
             out uint workSpaceSize,

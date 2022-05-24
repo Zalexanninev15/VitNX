@@ -615,7 +615,6 @@ namespace VitNX3.Functions.Data
 
         /// <summary>
         /// Decompresses the bytes.
-        /// Example: Data.CompressAndDecompress.DecompressBytes(compressed)
         /// </summary>
         /// <param name="input">The bytes.</param>
         /// <returns>An array of byte.</returns>

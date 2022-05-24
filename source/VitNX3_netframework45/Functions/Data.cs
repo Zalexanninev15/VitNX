@@ -8,6 +8,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Data;
 
+using VitNX3.Functions.Win32;
+
 namespace VitNX3.Functions.Data
 {
     /// <summary>
@@ -665,7 +667,6 @@ namespace VitNX3.Functions.Data
 
         /// <summary>
         /// Decompresses the bytes.
-        /// Example: Data.CompressAndDecompress.DecompressBytes(compressed)
         /// </summary>
         /// <param name="input">The bytes.</param>
         /// <returns>An array of byte.</returns>

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -175,7 +177,92 @@ namespace VitNX3.Functions.FileSystem
         }
 
         /// <summary>
-        /// Files the name generator.
+        /// Retrieves an <see cref="Icon" /> from an ICO or EXE file.
+        /// </summary>
+        /// <param name="path">The path to an ICO or EXE file.</param>
+        /// <returns>
+        /// A new <see cref="Icon" /> object that was loaded from an ICO file or extracted from an EXE file.
+        /// If the icon could not be retrieved, <see langword="null" /> is returned.
+        /// </returns>
+        public static Icon ExtractIconFromFile(string path)
+        {
+            try
+            {
+                if (Path.GetExtension(path).Equals(".ico",
+                    StringComparison.OrdinalIgnoreCase))
+                    return new Icon(path);
+                else if (Path.GetExtension(path).Equals(".exe",
+                    StringComparison.OrdinalIgnoreCase))
+                    return ExtractIconFromExecutable(path);
+                else
+                    return null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Extracts the icon from executable (EXE).
+        /// </summary>
+        /// <param name="path">The path to an EXE file.</param>
+        /// <returns>
+        /// A new <see cref="Icon" /> object that was loaded from an ICO file or extracted from an EXE file.
+        /// If the icon could not be retrieved, <see langword="null" /> is returned.
+        /// </returns>
+        public static Icon ExtractIconFromExecutable(string path)
+        {
+            IntPtr module = IntPtr.Zero;
+            try
+            {
+                module = Import.LoadLibraryEx(path, IntPtr.Zero, 2);
+                if (module == IntPtr.Zero) throw new Win32Exception();
+                Icon result = null;
+                Import.EnumResourceNames(module, (IntPtr)14, (mod, type, name, lParam) =>
+                {
+                    byte[] groupIcon = Import.GetDataFromResource(module, (IntPtr)14, name);
+                    int count = BitConverter.ToUInt16(groupIcon, 4);
+                    int size = 6 + count * 16 + Enumerable.Range(0, count).Select(i => BitConverter.ToInt32(groupIcon, 6 + i * 14 + 8)).Sum();
+                    using (MemoryStream memoryStream = new MemoryStream(size))
+                    {
+                        using (BinaryWriter writer = new BinaryWriter(memoryStream))
+                        {
+                            writer.Write(groupIcon, 0, 6);
+                            for (int i = 0, offset = 6 + count * 16; i < count; ++i)
+                            {
+                                byte[] icon = Import.GetDataFromResource(module,
+                                    (IntPtr)3,
+                                    (IntPtr)BitConverter.ToUInt16(groupIcon, 6 + i * 14 + 12));
+                                writer.Seek(6 + i * 16, SeekOrigin.Begin);
+                                writer.Write(groupIcon, 6 + i * 14, 8);
+                                writer.Write(icon.Length);
+                                writer.Write(offset);
+                                writer.Seek(offset, SeekOrigin.Begin);
+                                writer.Write(icon, 0, icon.Length);
+                                offset += icon.Length;
+                            }
+                        }
+                        using (MemoryStream iconStream = new MemoryStream(memoryStream.ToArray()))
+                            result = new Icon(iconStream);
+                    }
+                    return false;
+                }, IntPtr.Zero);
+                return result;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                if (module != IntPtr.Zero)
+                    Import.FreeLibrary(module);
+            }
+        }
+
+        /// <summary>
+        /// Files name generator.
         /// </summary>
         /// <param name="tag">The tag.</param>
         /// <param name="fileExtension">The file extension.</param>
