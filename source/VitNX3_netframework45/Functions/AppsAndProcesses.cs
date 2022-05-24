@@ -153,10 +153,10 @@ namespace VitNX3.Functions.AppsAndProcesses
         }
 
         /// <summary>
-        /// Kills the process.
+        /// Kills the process (Windows native).
         /// </summary>
         /// <param name="processNameWithExe">The process name with .exe.</param>
-        public static void Kill(string processNameWithExe)
+        public static void KillNative(string processNameWithExe)
         {
             var start = new Process
             {
@@ -172,10 +172,10 @@ namespace VitNX3.Functions.AppsAndProcesses
         }
 
         /// <summary>
-        /// Kills the process (C# native).
+        /// Kills the process.
         /// </summary>
         /// <param name="processNameWithExe">The process name with .exe.</param>
-        public static void KillNative(string processNameWithExe)
+        public static void Kill(string processNameWithExe)
         {
             Process[] runningProcesses = Process.GetProcesses();
             foreach (Process process in runningProcesses)

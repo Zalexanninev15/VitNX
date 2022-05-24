@@ -18,6 +18,30 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Import
     {
+        [DllImport("ntdll.dll")]
+        public static extern uint RtlGetCompressionWorkSpaceSize(ushort compressionFormat,
+            out uint workSpaceSize,
+            out uint fragmentWorkSpaceSize);
+
+        [DllImport("ntdll.dll")]
+        public static extern uint RtlCompressBuffer(ushort compressionFormat,
+            byte[] buffer,
+            int bufferSize,
+            byte[] compressedBuffer,
+            int compressedBufferSize,
+            uint chunkSize,
+            out int finalCompressedSize,
+            IntPtr workSpace);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern IntPtr LocalAlloc(int flags,
+            IntPtr size);
+
+        [DllImport("kernel32.dll",
+            SetLastError = true)]
+        public static extern IntPtr LocalFree(IntPtr buffer);
+
         [DllImport("shell32.dll")]
         public static extern int SHGetStockIconInfo(SHSTOCKICONID siid,
             SHSTOCKICONFLAGS uFlags,

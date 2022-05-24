@@ -495,7 +495,7 @@ namespace VitNX3.Functions.Information
     public class Motherboard
     {
         /// <summary>
-        /// Gets the firmware type (Native). Are the UEFI mode (UEFI) or Legacy (BIOS).
+        /// Gets the firmware type (Windows native). Are the UEFI mode (UEFI) or Legacy (BIOS).
         /// </summary>
         /// <returns>A bool.</returns>
         public static bool IsUefiMode()
@@ -505,7 +505,7 @@ namespace VitNX3.Functions.Information
         }
 
         /// <summary>
-        /// Gets the firmware type (Cmd).
+        /// Gets the firmware type (Windows native).
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetFirmwareType()
