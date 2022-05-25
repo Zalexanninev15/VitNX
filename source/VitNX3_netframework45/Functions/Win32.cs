@@ -19,6 +19,10 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Import
     {
+        [DllImport("kernel32.dll",
+        SetLastError = true)]
+        public static extern IntPtr GetStdHandle(int nStdHandle);
+
         public static byte[] GetDataFromResource(IntPtr module,
             IntPtr type,
             IntPtr name)
