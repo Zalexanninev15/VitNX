@@ -89,7 +89,7 @@ namespace VitNX3.Functions.FileSystem
         }
 
         /// <summary>
-        /// Deletes the file forever.
+        /// Deletes the folder forever.
         /// </summary>
         /// <param name="targetFolder">The target folder.</param>
         public static void DeleteForever(string targetFolder)
@@ -98,7 +98,7 @@ namespace VitNX3.Functions.FileSystem
         }
 
         /// <summary>
-        /// Deletes the file to Recycle Bin.
+        /// Deletes the folder to Recycle Bin.
         /// </summary>
         /// <param name="targetFolder">The target folder.</param>
         public static void DeleteToRecycleBin(string targetFolder)
