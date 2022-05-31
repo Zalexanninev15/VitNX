@@ -7,7 +7,7 @@ using System.Text;
 
 using VitNX3.Functions.Win32;
 
-namespace VitNX3.Functions.WPK
+namespace VitNX3.Functions.Helpers.WPK
 {
     public class GWK
     {

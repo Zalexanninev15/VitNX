@@ -90,7 +90,7 @@ namespace VitNX3.Functions.Information
             "DisplayVersion", "");
 
         /// <summary>
-        /// Gets the windows release id from the Windows Registry.
+        /// Gets the windows release ID from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetWindowsReleaseIdFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
@@ -133,7 +133,7 @@ namespace VitNX3.Functions.Information
         /// Gets the Windows product key from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsProductKeyFromRegistry() => WPK.GWK.GetWindowsProductKeyFromRegistry();
+        public static string GetWindowsProductKeyFromRegistry() => Helpers.WPK.GWK.GetWindowsProductKeyFromRegistry();
 
         /// <summary>
         /// Gets the Windows product key from the UEFI.
@@ -142,7 +142,7 @@ namespace VitNX3.Functions.Information
         public static string GetWindowsProductKeyFromUefi()
         {
             byte[] buffer = null;
-            if (WPK.GWK.CheckMSDM(out buffer))
+            if (Helpers.WPK.GWK.CheckMSDM(out buffer))
             {
                 Encoding encoding = Encoding.GetEncoding(0x4e4);
                 string oemid = encoding.GetString(buffer, 10, 6);
@@ -406,7 +406,7 @@ namespace VitNX3.Functions.Information
         /// <summary>
         /// Captures the window to file.
         /// </summary>
-        /// <param name="handle">The handle.</param>
+        /// <param name="handle">Handle.</param>
         /// <param name="filename">The filename.</param>
         /// <param name="format">The format.</param>
         public static void CaptureWindowToFile(IntPtr handle,
@@ -430,9 +430,21 @@ namespace VitNX3.Functions.Information
         }
 
         /// <summary>
+        /// Gets the merged friendly names.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] GetMergedFriendlyNames() => Helpers.DISMON.GetMergedFriendlyNames();
+
+        /// <summary>
+        /// Gets the names by monitor IDs.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] GetNamesByMonitorIds() => Helpers.DISMON.GetNamesByMonitorIds();
+
+        /// <summary>
         /// Captures the window.
         /// </summary>
-        /// <param name="handle">The handle.</param>
+        /// <param name="handle">Handle.</param>
         /// <returns>An Image.</returns>
         public static Image CaptureWindow(IntPtr handle)
         {
@@ -464,7 +476,7 @@ namespace VitNX3.Functions.Information
         /// Gets the resolution (method 2).
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetResolution2()
+        public static string GetResolutionType2()
         {
             string size = string.Empty;
             Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);
@@ -479,7 +491,7 @@ namespace VitNX3.Functions.Information
         /// Gets the resolution (method 1).
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetResolution()
+        public static string GetResolutionType1()
         {
             uint width = 0;
             uint height = 0;
@@ -537,6 +549,24 @@ namespace VitNX3.Functions.Information
         {
             return AppsAndProcesses.Processes.Execute("cmd",
                 "/C echo %firmware_type%");
+        }
+
+        /// <summary>
+        /// Gets the Windows product key from the UEFI.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductKeyFromUefi()
+        {
+            byte[] buffer = null;
+            if (Helpers.WPK.GWK.CheckMSDM(out buffer))
+            {
+                Encoding encoding = Encoding.GetEncoding(0x4e4);
+                string oemid = encoding.GetString(buffer, 10, 6);
+                string dmkey = encoding.GetString(buffer, 56, 29);
+                return dmkey;
+            }
+            else
+                return "False";
         }
     }
 

@@ -7,7 +7,7 @@ using System.Text;
 
 using VitNX3.Functions.Win32;
 
-namespace VitNX3.Functions.WPK
+namespace VitNX3.Functions.Helpers
 {
     public class GWK
     {
@@ -95,7 +95,7 @@ namespace VitNX3.Functions.WPK
                     var digitMapIndex = 0;
                     for (var j = decodeStringLength - 1; j >= 0; j--)
                     {
-                        var byteValue = (digitMapIndex << 8) | (byte)hexPid[j];
+                        var byteValue = digitMapIndex << 8 | (byte)hexPid[j];
                         hexPid[j] = (byte)(byteValue / 24);
                         digitMapIndex = byteValue % 24;
                         decodedChars[i] = digits[digitMapIndex];
@@ -109,8 +109,8 @@ namespace VitNX3.Functions.WPK
         {
             var key = string.Empty;
             const int keyOffset = 52;
-            var isWin8 = (byte)((digitalProductId[66] / 6) & 1);
-            digitalProductId[66] = (byte)((digitalProductId[66] & 0xf7) | (isWin8 & 2) * 4);
+            var isWin8 = (byte)(digitalProductId[66] / 6 & 1);
+            digitalProductId[66] = (byte)(digitalProductId[66] & 0xf7 | (isWin8 & 2) * 4);
             const string digits = "BCDFGHJKMPQRTVWXY2346789";
             var last = 0; for (var i = 24; i >= 0; i--)
             {
