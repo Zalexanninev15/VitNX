@@ -340,7 +340,7 @@ namespace VitNX3.Functions.Win32
             EntryPoint = "GetSystemFirmwareTable",
             SetLastError = true,
             ThrowOnUnmappableChar = true)]
-        public static extern uint GetSystemFirmwareTable(FirmwareTableType FirmwareTableProviderSignature,
+        public static extern uint GetSystemFirmwareTable(FIRMWARE_TABLE_TYPE FirmwareTableProviderSignature,
         uint FirmwareTableID,
         IntPtr pFirmwareTableBuffer,
         uint BufferSize);
@@ -348,7 +348,7 @@ namespace VitNX3.Functions.Win32
         [DllImport("kernel32.dll",
             EntryPoint = "EnumSystemFirmwareTables",
             SetLastError = true)]
-        public static extern uint EnumSystemFirmwareTables(FirmwareTableType FirmwareTableProviderSignature,
+        public static extern uint EnumSystemFirmwareTables(Enums.FIRMWARE_TABLE_TYPE FirmwareTableProviderSignature,
         IntPtr pFirmwareTableEnuM_BUffer,
         uint BufferSize);
 
@@ -5735,7 +5735,7 @@ namespace VitNX3.Functions.Win32
         }
 
         [Flags]
-        public enum FirmwareTableType : uint
+        public enum FIRMWARE_TABLE_TYPE : uint
         {
             Acpi = 0x41435049,
             Firm = 0x4649524D,

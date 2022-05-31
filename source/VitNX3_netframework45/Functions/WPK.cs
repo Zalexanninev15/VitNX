@@ -2,6 +2,10 @@
 
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
+using System.Text;
+
+using VitNX3.Functions.Win32;
 
 namespace VitNX3.Functions.WPK
 {
@@ -20,6 +24,40 @@ namespace VitNX3.Functions.WPK
                 DecodeProductKeyWin8AndUp(digitalProductId) :
                 DecodeProductKey(digitalProductId);
             return productKey;
+        }
+
+        public static bool CheckMSDM(out byte[] buffer)
+        {
+            var firmwareTableProviderSignature = Enums.FIRMWARE_TABLE_TYPE.Acpi;
+            uint bufferSize = Import.EnumSystemFirmwareTables(firmwareTableProviderSignature,
+                IntPtr.Zero, 0);
+            IntPtr pFirmwareTableBuffer = Marshal.AllocHGlobal((int)bufferSize);
+            buffer = new byte[bufferSize];
+            Import.EnumSystemFirmwareTables(firmwareTableProviderSignature,
+                pFirmwareTableBuffer,
+                bufferSize);
+            Marshal.Copy(pFirmwareTableBuffer,
+                buffer, 0,
+                buffer.Length);
+            Marshal.FreeHGlobal(pFirmwareTableBuffer);
+            if (Encoding.ASCII.GetString(buffer).Contains("MSDM"))
+            {
+                uint firmwareTableID = 0x4d44534d;
+                bufferSize = Import.GetSystemFirmwareTable(firmwareTableProviderSignature,
+                    firmwareTableID,
+                    IntPtr.Zero, 0);
+                buffer = new byte[bufferSize];
+                pFirmwareTableBuffer = Marshal.AllocHGlobal((int)bufferSize);
+                Import.GetSystemFirmwareTable(firmwareTableProviderSignature,
+                    firmwareTableID,
+                    pFirmwareTableBuffer,
+                    bufferSize);
+                Marshal.Copy(pFirmwareTableBuffer,
+                    buffer, 0,
+                    buffer.Length);
+                Marshal.FreeHGlobal(pFirmwareTableBuffer); return true;
+            }
+            return false;
         }
 
         public static string GetWindowsProductKeyFromRegistry()
