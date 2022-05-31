@@ -58,6 +58,7 @@
     <Compile Include="Functions\PowerControl.cs" />
     <Compile Include="Functions\SettingsAndLog.cs" />
     <Compile Include="Functions\Data.cs" />
+    <Compile Include="Functions\WPK.cs" />
     <Compile Include="UI\Console\ProgressBar\ConsoleProgressBar3.cs" />
     <Compile Include="UI\ControlsV2\VitNX2_CheckBox.cs">
       <SubType>Component</SubType>

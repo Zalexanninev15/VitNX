@@ -128,8 +128,8 @@ namespace VitNX3.Functions.WindowAndControls
         {
             uint windowStyle = (uint)Import.GetWindowLong(hwnd, -16);
             uint windowStyleEx = (uint)Import.GetWindowLong(hwnd, -20);
-            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 1607 ||
-                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 16070)
+            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 1607 ||
+                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 16070)
                 && hwnd != IntPtr.Zero)
                 Import.AdjustWindowRectExForDpi(ref rc,
                     windowStyle,
@@ -149,8 +149,8 @@ namespace VitNX3.Functions.WindowAndControls
         /// <returns>An int.</returns>
         public static int GetDpiForWindow(IntPtr hwnd)
         {
-            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 1607 ||
-                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 16070) &&
+            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 1607 ||
+                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 16070) &&
                 hwnd != IntPtr.Zero)
                 return GetDpiForWindow(hwnd);
             else
