@@ -12,9 +12,9 @@
 		<PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
 		<Copyright>Copyright © 2021-2022, Zalexanninev15</Copyright>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<Version>3.4.3.1</Version>
-		<AssemblyVersion>3.4.3.1</AssemblyVersion>
-		<FileVersion>3.4.3.1</FileVersion>
+		<Version>3.4.4</Version>
+		<AssemblyVersion>3.4.4</AssemblyVersion>
+		<FileVersion>3.4.4</FileVersion>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Many indispensable functions and controls (WinForms) for fast and easy application development in C# programming language with .NET 5+</Description>

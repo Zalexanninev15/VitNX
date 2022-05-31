@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 using VitNX3.Functions.Win32;
@@ -133,6 +134,24 @@ namespace VitNX3.Functions.Information
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetWindowsProductKeyFromRegistry() => WPK.GWK.GetWindowsProductKeyFromRegistry();
+
+        /// <summary>
+        /// Gets the Windows product key from the UEFI.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductKeyFromUefi()
+        {
+            byte[] buffer = null;
+            if (WPK.GWK.CheckMSDM(out buffer))
+            {
+                Encoding encoding = Encoding.GetEncoding(0x4e4);
+                string oemid = encoding.GetString(buffer, 10, 6);
+                string dmkey = encoding.GetString(buffer, 56, 29);
+                return dmkey;
+            }
+            else
+                return "False";
+        }
 
         /// <summary>
         /// Gets the Windows accent color.
