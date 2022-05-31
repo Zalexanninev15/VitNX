@@ -56,7 +56,7 @@ namespace VitNX3.Functions.Information
         /// Gets the Windows version from the Windows Registry.
         /// </summary>
         /// <returns>A double.</returns>
-        public static double GetWindowsVersionFromREG() => double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static double GetWindowsVersionFromRegistry() => double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "CurrentVersion", ""),
             System.Globalization.CultureInfo.InvariantCulture);
 
@@ -64,35 +64,35 @@ namespace VitNX3.Functions.Information
         /// Gets the Windows edition from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsEditionIDFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsEditionIDFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "EditionID", "");
 
         /// <summary>
         /// Gets the Windows current build number from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsCurrentBuildNumberFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsCurrentBuildNumberFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "CurrentBuildNumber", "");
 
         /// <summary>
         /// Gets the Windows product name from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsProductNameFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsProductNameFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "ProductName", "");
 
         /// <summary>
         /// Gets the Windows displayed version from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsDisplayVersionFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsDisplayVersionFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "DisplayVersion", "");
 
         /// <summary>
         /// Gets the windows release id from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsReleaseIdFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsReleaseIdFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "ReleaseId", "");
 
         /// <summary>
@@ -127,6 +127,12 @@ namespace VitNX3.Functions.Information
                 return Convert.ToString(obj112["SerialNumber"]);
             return "S-E-R-I-A-L_K-E-Y";
         }
+
+        /// <summary>
+        /// Gets the Windows product key from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductKeyFromRegistry() => WPK.GWK.GetWindowsProductKeyFromRegistry();
 
         /// <summary>
         /// Gets the Windows accent color.
