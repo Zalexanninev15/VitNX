@@ -8,8 +8,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Data;
 
-using VitNX3.Functions.Win32;
-
 namespace VitNX3.Functions.Data
 {
     /// <summary>

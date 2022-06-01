@@ -75,7 +75,7 @@ namespace VitNX3.Functions.Helpers
             return GetWindowsProductKeyFromDigitalProductId(digitalProductId, isWin8OrUp ? DigitalProductIdVersion.Windows8AndUp : DigitalProductIdVersion.UpToWindows7);
         }
 
-        static string DecodeProductKey(byte[] digitalProductId)
+        private static string DecodeProductKey(byte[] digitalProductId)
         {
             const int keyStartIndex = 52;
             const int keyEndIndex = keyStartIndex + 15;
