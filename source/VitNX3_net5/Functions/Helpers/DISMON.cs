@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace VitNX3.Functions.Helpers
 {
@@ -85,6 +84,7 @@ namespace VitNX3.Functions.Helpers
                 case null:
                 case IReadOnlyList<ushort> decArray when decArray.Count == 0 || decArray[0] == 0:
                     return string.Empty;
+
                 case IReadOnlyList<ushort> decArray:
                     {
                         var sb = new StringBuilder();

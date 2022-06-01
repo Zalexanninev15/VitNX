@@ -118,8 +118,6 @@ namespace VitNX3.Functions.AppsAndProcesses
         public static string Execute(string targetFile,
             string arguments)
         {
-            var codepage = System.Globalization.CultureInfo.CurrentCulture.TextInfo.OEMCodePage;
-            var desiredEncoding = System.Text.Encoding.GetEncoding(codepage);
             var start = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -129,13 +127,14 @@ namespace VitNX3.Functions.AppsAndProcesses
                     CreateNoWindow = true,
                     UseShellExecute = false,
                     WindowStyle = ProcessWindowStyle.Hidden,
-                    RedirectStandardOutput = true,
-                    StandardOutputEncoding = desiredEncoding
+                    RedirectStandardOutput = true
                 }
             };
             start.Start();
+            var output = start.StandardOutput.ReadToEnd();
             start.WaitForExit();
-            return start.StandardOutput.ReadToEnd();
+            start.Dispose();
+            return output;
         }
 
         /// <summary>

@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-using VitNX.UI.ControlsV1.Forms;
 using VitNX.UI.ControlsV1.Controls;
 using VitNX.UI.ControlsV1.Docking;
+using VitNX.UI.ControlsV1.Forms;
 
 namespace Examples1
 {

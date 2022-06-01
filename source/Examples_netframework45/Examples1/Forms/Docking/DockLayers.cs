@@ -1,5 +1,5 @@
-﻿using VitNX.UI.ControlsV1.Docking;
-using VitNX.UI.ControlsV1.Controls;
+﻿using VitNX.UI.ControlsV1.Controls;
+using VitNX.UI.ControlsV1.Docking;
 
 namespace Examples1
 {
