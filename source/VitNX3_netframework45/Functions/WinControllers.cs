@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.ServiceProcess;
@@ -932,6 +933,18 @@ namespace VitNX3.Functions.WinControllers
                 flags,
                 ref info));
             return info.hIcon;
+        }
+
+        /// <summary>
+        /// Gets the WMI management object collection.
+        /// </summary>
+        /// <param name="wmiPath">The wmi path.</param>
+        /// <returns>A ManagementObjectCollection.</returns>
+        public static ManagementObjectCollection GetWmiManagementObjectCollection(WMI_CLASSES_LIST wmiPath)
+        {
+            ManagementClass mc = new ManagementClass(wmiPath.ToString());
+            ManagementObjectCollection moc = mc.GetInstances();
+            return moc;
         }
     }
 

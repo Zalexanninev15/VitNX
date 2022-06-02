@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Management;
 using System.Security.Principal;
 using System.Threading;
@@ -69,12 +70,14 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// </summary>
         /// <param name="targetFile">The target file.</param>
         /// <param name="arguments">The arguments.</param>
-        /// <param name="showWindow">Show window of this app</param>
-        /// <param name="waitMe">Wait this process/app</param>
+        /// <param name="showWindow">Show window of this app.</param>
+        /// <param name="waitMe">Wait this process/app.</param>
+        /// <param name="verb">Set the verb for launch process (only this).</param>
         public static void RunAW(string targetFile,
             string arguments = "",
             bool showWindow = true,
-            bool waitMe = true)
+            bool waitMe = true,
+            string verb = "")
         {
             ProcessWindowStyle app = ProcessWindowStyle.Normal;
             if (!showWindow)
@@ -87,6 +90,7 @@ namespace VitNX3.Functions.AppsAndProcesses
                     Arguments = arguments,
                     CreateNoWindow = !showWindow,
                     WindowStyle = app,
+                    Verb = verb
                 }
             };
             start.Start();
@@ -107,6 +111,36 @@ namespace VitNX3.Functions.AppsAndProcesses
                 return true;
             }
             catch { return false; }
+        }
+
+        /// <summary>
+        /// Gets the verbs by app id.
+        /// </summary>
+        /// <param name="appId">The app id.</param>
+        /// <returns>An array of string.</returns>
+        public static string[] GetVerbsByAppId(string appId)
+        {
+            var verbs = new List<string>();
+
+            if (!string.IsNullOrEmpty(appId))
+            {
+                using (var key = Registry.ClassesRoot.OpenSubKey($"{appId}\\shell"))
+                {
+                    if (key != null)
+                    {
+                        var names = key.GetSubKeyNames();
+                        verbs.AddRange(
+                            names.Where(
+                                name =>
+                                    string.Compare(
+                                        name,
+                                        "new",
+                                        StringComparison.OrdinalIgnoreCase)
+                                    != 0));
+                    }
+                }
+            }
+            return verbs.ToArray();
         }
 
         /// <summary>
@@ -216,7 +250,7 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// <param name="currentProcess">The current process.</param>
         /// <param name="currentExeAssemblyLocation">The current exe assembly location.</param>
         /// <returns>A Process.</returns>
-        public static Process OnlyOne(Process currentProcess, string currentExeAssemblyLocation)
+        public static Process OnlyOneProcess(Process currentProcess, string currentExeAssemblyLocation)
         {
             currentExeAssemblyLocation = currentExeAssemblyLocation.Replace("/", "\\");
             Process[] pr = Process.GetProcessesByName(currentProcess.ProcessName);

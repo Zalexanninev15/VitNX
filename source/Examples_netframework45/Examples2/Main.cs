@@ -33,5 +33,10 @@ namespace Examples2
             Processes.RunAW("dism", "/Online /enable-feature /FeatureName:\"DirectPlay\" /NoRestart");
             Processes.RunAW("dism", "/Online /enable-feature /FeatureName:\"DirectPlay\" /NoRestart /all");
         }
+
+        private void vitNX2_Button4_Click(object sender, EventArgs e)
+        {
+            VitNX2.UI.ControlsV2.VitNX2_MessageBox.Show("This is Message", "This is caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
