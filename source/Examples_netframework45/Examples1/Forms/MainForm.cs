@@ -38,14 +38,9 @@ namespace Examples1
             _toolWindows.Add(_dockConsole);
             _toolWindows.Add(_dockLayers);
             _toolWindows.Add(_dockHistory);
-            if (File.Exists("dockpanel.config"))
-                DeserializeDockPanel("dockpanel.config");
-            else
-            {
-                foreach (var toolWindow in _toolWindows)
-                    DockPanel.AddContent(toolWindow);
-                DockPanel.AddContent(_dockHistory, _dockLayers.DockGroup);
-            }
+            foreach (var toolWindow in _toolWindows)
+                DockPanel.AddContent(toolWindow);
+            DockPanel.AddContent(_dockHistory, _dockLayers.DockGroup);
             BuildWindowMenu();
             DockPanel.AddContent(new DockDocument("Document 1", Icons.document_16xLG));
             DockPanel.AddContent(new DockDocument("Document 2", Icons.document_16xLG));
@@ -54,7 +49,6 @@ namespace Examples1
 
         private void HookEvents()
         {
-            FormClosing += MainForm_FormClosing;
             DockPanel.ContentAdded += DockPanel_ContentAdded;
             DockPanel.ContentRemoved += DockPanel_ContentRemoved;
             mnuNewFile.Click += NewFile_Click;
@@ -84,11 +78,6 @@ namespace Examples1
             mnuConsole.Checked = DockPanel.ContainsContent(_dockConsole);
             mnuLayers.Checked = DockPanel.Contains(_dockLayers);
             mnuHistory.Checked = DockPanel.Contains(_dockHistory);
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SerializeDockPanel("dockpanel.config");
         }
 
         private void DockPanel_ContentAdded(object sender, DockContentEventArgs e)

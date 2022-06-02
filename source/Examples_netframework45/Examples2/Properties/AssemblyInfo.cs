@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Examples2")]
-[assembly: AssemblyDescription("An examples for the VitNX2 library")]
+[assembly: AssemblyDescription("An examples for the VitNX2 library (.NET Framework 4.5+)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zalexanninev15")]
 [assembly: AssemblyProduct("VitNX2 Examples")]
