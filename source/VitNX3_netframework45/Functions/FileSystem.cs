@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using VitNX3.Functions.AppsAndProcesses;
 using VitNX3.Functions.Win32;
 
 using Path = System.IO.Path;
@@ -19,6 +20,15 @@ namespace VitNX3.Functions.FileSystem
     /// </summary>
     public class Folder
     {
+        /// <summary>
+        /// Shows the folder in Windows Explorer.
+        /// </summary>
+        /// <param name="folderPath">The folder path.</param>
+        public static void ShowInExplorer(string folderPath)
+        {
+            Processes.Run("explorer", $"\"{folderPath}\"");
+        }
+
         /// <summary>
         /// Gets the items list in folder.
         /// </summary>
@@ -114,6 +124,15 @@ namespace VitNX3.Functions.FileSystem
     /// </summary>
     public class File
     {
+        /// <summary>
+        /// Shows the file in Windows Explorer.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        public static void ShowInExplorer(string filePath)
+        {
+            Processes.Run("explorer", $"/n, /select, \"{filePath}\"");
+        }
+
         /// <summary>
         /// Deletes the file forever.
         /// </summary>
@@ -467,6 +486,9 @@ namespace VitNX3.Functions.FileSystem
         }
     }
 
+    /// <summary>
+    /// Other functions.
+    /// </summary>
     public class Other
     {
         /// <summary>
