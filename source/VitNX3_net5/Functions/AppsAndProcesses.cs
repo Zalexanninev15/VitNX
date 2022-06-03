@@ -124,19 +124,12 @@ namespace VitNX3.Functions.AppsAndProcesses
 
             if (!string.IsNullOrEmpty(appId))
             {
-                using (var key = Registry.ClassesRoot.OpenSubKey(@$"{appId}\shell"))
+                using (var key = Registry.ClassesRoot.OpenSubKey($"{appId}\\shell"))
                 {
                     if (key != null)
                     {
                         var names = key.GetSubKeyNames();
-                        verbs.AddRange(
-                            names.Where(
-                                name =>
-                                    string.Compare(
-                                        name,
-                                        "new",
-                                        StringComparison.OrdinalIgnoreCase)
-                                    != 0));
+                        verbs.AddRange(names.Where(name => string.Compare(name, "new", StringComparison.OrdinalIgnoreCase) != 0));
                     }
                 }
             }
@@ -175,12 +168,14 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// Opens the file/link.
         /// </summary>
         /// <param name="targetFile">The target file.</param>
-        public static void Open(string targetFile)
+        /// <param name="verb">Set the verb for open file. </param>
+        public static void Open(string targetFile,
+            string verb = "open")
         {
             var ps = new ProcessStartInfo(targetFile)
             {
                 UseShellExecute = true,
-                Verb = "open"
+                Verb = verb
             };
             Process.Start(ps);
         }
