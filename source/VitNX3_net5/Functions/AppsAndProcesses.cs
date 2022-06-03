@@ -23,13 +23,14 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// <returns>A string.</returns>
         public static string GetListWithInformation()
         {
-            string procList = "All processes:";
+            string procList = "";
             foreach (Process process in Process.GetProcesses())
             {
-                procList += $"\n\nName: {process.ProcessName}.exe" +
-                        $"\nID: {process.Id}" +
-                        $"\nTitle: \"{process.MainWindowTitle}\"" +
-                        $"\nHandle: {process.MainWindowHandle}";
+                if (process.ProcessName != "svchost")
+                    procList += $"\n\nName: {process.ProcessName}.exe" +
+                            $"\nID: {process.Id}" +
+                            $"\nTitle: \"{process.MainWindowTitle}\"" +
+                            $"\nHandle: {process.MainWindowHandle}";
             }
             return procList;
         }
@@ -129,7 +130,9 @@ namespace VitNX3.Functions.AppsAndProcesses
                     if (key != null)
                     {
                         var names = key.GetSubKeyNames();
-                        verbs.AddRange(names.Where(name => string.Compare(name, "new", StringComparison.OrdinalIgnoreCase) != 0));
+                        verbs.AddRange(names.Where(name => string.Compare(name,
+                            "new",
+                            StringComparison.OrdinalIgnoreCase) != 0));
                     }
                 }
             }
@@ -289,7 +292,7 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// <returns>A string.</returns>
         public static string GetList()
         {
-            string toText = "Installed apps:";
+            string toText = "";
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Product");
             ManagementObjectCollection information = searcher.Get();
             foreach (ManagementObject app in information)
