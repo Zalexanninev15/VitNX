@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
+using System.Windows.Forms;
 
 using static VitNX3.Functions.Win32.Constants;
 using static VitNX3.Functions.Win32.Enums;
@@ -19,6 +20,12 @@ namespace VitNX3.Functions.Win32
     /// </summary>
     public class Import
     {
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd,
+            int id,
+            uint KEY,
+            Keys key);
+
         [DllImport("shlwapi.dll",
             CharSet = CharSet.Unicode,
             SetLastError = true)]
