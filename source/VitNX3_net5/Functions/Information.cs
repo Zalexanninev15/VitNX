@@ -73,7 +73,7 @@ namespace VitNX3.Functions.Information
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetWindowsCurrentBuildNumberFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
-            "CurrentBuildNumber", "");
+            "CurrentBuild", "");
 
         /// <summary>
         /// Gets the Windows product name from the Windows Registry.

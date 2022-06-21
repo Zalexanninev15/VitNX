@@ -56,7 +56,6 @@
   <ItemGroup>
     <Compile Include="Functions\CShap.cs" />
     <Compile Include="Functions\Helpers\DISMON.cs" />
-    <Compile Include="Functions\PowerControl.cs" />
     <Compile Include="Functions\SettingsAndLog.cs" />
     <Compile Include="Functions\Data.cs" />
     <Compile Include="Functions\Helpers\WPK.cs" />
