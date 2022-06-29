@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 using VitNX.UI.ControlsV1.Config;
 
+using VitNX3;
+
 namespace VitNX.UI.ControlsV1.Renderers
 {
     public class VitNX_MenuRenderer : ToolStripRenderer

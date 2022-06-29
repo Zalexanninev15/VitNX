@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
+using VitNX3;
+
 namespace VitNX.UI.ControlsV1.Forms
 {
     public partial class VitNX_MessageBox : VitNX_Dialog

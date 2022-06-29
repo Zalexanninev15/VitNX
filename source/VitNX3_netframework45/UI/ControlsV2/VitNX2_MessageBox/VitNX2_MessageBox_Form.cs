@@ -9,7 +9,7 @@ namespace VitNX2.UI.ControlsV2
     public partial class VitNX2_MessageBox_Form : Form
     {
         private Color primaryColor = Color.FromArgb(21, 29, 38);
-        private int borderSize = 2;
+        private int borderSize = 0;
 
         public Color PrimaryColor
         {
@@ -24,11 +24,13 @@ namespace VitNX2.UI.ControlsV2
 
         protected override void OnPaint(PaintEventArgs e)
         {
+
             base.OnPaint(e);
             Graphics g = e.Graphics;
             Rectangle rect = new Rectangle(new Point(0, 0), new Size(Width, Height));
             Pen pen = new Pen(Color.FromArgb(26, 32, 48));
             g.DrawRectangle(pen, rect);
+            VitNX3.Functions.WindowAndControls.Window.SetWindowsElevenStyleForWinForm(Handle, Width, Height);
         }
 
         public VitNX2_MessageBox_Form(string text)
@@ -39,7 +41,6 @@ namespace VitNX2.UI.ControlsV2
             labelMessage.Text = text;
             labelCaption.Text = "";
             SetFormSize();
-            VitNX3.Functions.WindowAndControls.Window.SetWindowsElevenStyleForWinForm(Handle, Width, Height);
         }
 
         public VitNX2_MessageBox_Form(string text, string caption)
@@ -53,9 +54,7 @@ namespace VitNX2.UI.ControlsV2
             SetButtons(MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);
         }
 
-        public VitNX2_MessageBox_Form(string text,
-            string caption,
-            MessageBoxButtons buttons)
+        public VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons)
         {
             InitializeComponent();
             InitializeItems();
@@ -66,10 +65,7 @@ namespace VitNX2.UI.ControlsV2
             SetButtons(buttons, MessageBoxDefaultButton.Button1);
         }
 
-        public VitNX2_MessageBox_Form(string text,
-            string caption,
-            MessageBoxButtons buttons,
-            MessageBoxIcon icon)
+        public VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             InitializeComponent();
             InitializeItems();
@@ -81,11 +77,7 @@ namespace VitNX2.UI.ControlsV2
             SetIcon(icon);
         }
 
-        public VitNX2_MessageBox_Form(string text,
-            string caption,
-            MessageBoxButtons buttons,
-            MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton)
+        public VitNX2_MessageBox_Form(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
         {
             InitializeComponent();
             InitializeItems();
@@ -115,8 +107,7 @@ namespace VitNX2.UI.ControlsV2
             Size = new Size(widht, height);
         }
 
-        private void SetButtons(MessageBoxButtons buttons,
-            MessageBoxDefaultButton defaultButton)
+        private void SetButtons(MessageBoxButtons buttons, MessageBoxDefaultButton defaultButton)
         {
             int xCenter = (panelButtons.Width - button1.Width) / 2;
             int yCenter = (panelButtons.Height - button1.Height) / 2;
@@ -141,7 +132,7 @@ namespace VitNX2.UI.ControlsV2
                         button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                         button2.Text = "Cancel";
                         button2.DialogResult = DialogResult.Cancel;
-                        button2.BackColor = Color.OrangeRed;
+                        button2.BackColor = Color.DimGray;
                         if (defaultButton != MessageBoxDefaultButton.Button3)
                             SetDefaultButton(defaultButton);
                         else
@@ -158,7 +149,7 @@ namespace VitNX2.UI.ControlsV2
                         button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                         button2.Text = "Cancel";
                         button2.DialogResult = DialogResult.Cancel;
-                        button2.BackColor = Color.OrangeRed;
+                        button2.BackColor = Color.DimGray;
                         if (defaultButton != MessageBoxDefaultButton.Button3)
                             SetDefaultButton(defaultButton);
                         else
@@ -197,7 +188,7 @@ namespace VitNX2.UI.ControlsV2
                         button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
                         button3.Text = "Cancel";
                         button3.DialogResult = DialogResult.Cancel;
-                        button3.BackColor = Color.OrangeRed;
+                        button3.BackColor = Color.DimGray;
                         SetDefaultButton(defaultButton);
                         break;
                     }

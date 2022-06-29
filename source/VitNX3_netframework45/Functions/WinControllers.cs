@@ -1080,14 +1080,14 @@ namespace VitNX3.Functions.WinControllers
                     }
                 case SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
                     {
-                        // Old code: Processes.Run("shutdown", "/s /t 0");
-                        Processes.Run("powershell", "Stop-Computer");
+                        // Processes.Run("powershell", "/C Stop-Computer");
+                        Processes.Run("shutdown", "/s /t 0");
                         break;
                     }
                 case SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
                     {
-                        // Old code: Processes.Run("shutdown", "/r /t 0");
-                        Processes.Run("powershell", "Restart-Computer -Force");
+                        // Processes.Run("powershell", "Restart-Computer -Force");
+                        Processes.Run("shutdown", "/r /t 0");
                         break;
                     }
                 case SYSTEM_POWER_CONTROL.SYSTEM_LOCK:

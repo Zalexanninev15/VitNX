@@ -41,10 +41,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="UI\ControlsV3\soon.txt" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<COMReference Include="IWshRuntimeLibrary">
 			<WrapperTool>tlbimp</WrapperTool>
 			<VersionMinor>0</VersionMinor>
@@ -54,10 +50,6 @@
 			<Isolated>false</Isolated>
 			<EmbedInteropTypes>true</EmbedInteropTypes>
 		</COMReference>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Content Include="UI\ControlsV3\soon.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
