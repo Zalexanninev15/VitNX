@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net5.0-windows</TargetFramework>
+		<TargetFramework>net5.0-windows7.0</TargetFramework>
 		<OutputType>Library</OutputType>
 		<UseWindowsForms>true</UseWindowsForms>
 		<DebugType>none</DebugType>
@@ -12,7 +12,7 @@
 		<PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
 		<Copyright>Copyright © 2021-2022, Zalexanninev15</Copyright>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<Version>3.4.9</Version>
+		<Version>3.4.10.2</Version>
 		<AssemblyVersion></AssemblyVersion>
 		<FileVersion></FileVersion>
 		<PackageIcon>logo.png</PackageIcon>
@@ -30,6 +30,7 @@
 		<IsPublishable>True</IsPublishable>
 		<AssemblyName>VitNX3</AssemblyName>
 		<RootNamespace>VitNX</RootNamespace>
+		<SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -207,7 +208,7 @@
 			<SubType>Component</SubType>
 		</Compile>
 		<Compile Update="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.cs">
-			<SubType>Form</SubType>
+		  <SubType>Form</SubType>
 		</Compile>
 		<Compile Update="UI\ControlsV2\VitNX2_Panel.cs">
 			<SubType>Component</SubType>

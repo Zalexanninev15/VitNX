@@ -24,7 +24,6 @@ namespace VitNX2.UI.ControlsV2
 
         protected override void OnPaint(PaintEventArgs e)
         {
-
             base.OnPaint(e);
             Graphics g = e.Graphics;
             Rectangle rect = new Rectangle(new Point(0, 0), new Size(Width, Height));
