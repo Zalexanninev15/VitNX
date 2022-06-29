@@ -524,12 +524,15 @@ namespace VitNX3.Functions.WinControllers
 
     /// <summary>
     /// Gets the clipboard text.
+    /// Example: 
+    /// GetClipboardText GetClipboard = new GetClipboardText();
+    /// string text = GetClipboard.GetText();
     /// </summary>
     public class GetClipboardText
     {
         private string _GetText;
 
-        private void _GetTexter(object format)
+        private void _thGetText(object format)
         {
             try
             {
@@ -539,14 +542,10 @@ namespace VitNX3.Functions.WinControllers
             catch { _GetText = string.Empty; }
         }
 
-        /// <summary>
-        /// Gets the text from clipboard.
-        /// </summary>
-        /// <returns>A string.</returns>
-        public static string GetText()
+        public string GetText()
         {
             GetClipboardText instance = new GetClipboardText();
-            Thread staThread = new Thread(instance._GetTexter);
+            Thread staThread = new Thread(instance._thGetText);
             staThread.SetApartmentState(ApartmentState.STA);
             staThread.Start();
             staThread.Join();
@@ -556,6 +555,7 @@ namespace VitNX3.Functions.WinControllers
 
     /// <summary>
     /// Sets the text to clipboard.
+    /// Example: await SetClipboardText.Run(() => System.Windows.Forms.Clipboard.SetText("text"));
     /// </summary>
     public static class SetClipboardText
     {
