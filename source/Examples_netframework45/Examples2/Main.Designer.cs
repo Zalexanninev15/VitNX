@@ -32,18 +32,17 @@
             this.vitNX2_Tab1 = new VitNX2.UI.ControlsV2.VitNX2_Tab();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.vitNX2_Button3 = new VitNX2.UI.ControlsV2.VitNX2_Button();
-            this.vitNX2_Button2 = new VitNX2.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_TextBox1 = new VitNX2.UI.ControlsV2.VitNX2_TextBox();
             this.vitNX2_PictureBox1 = new VitNX2.UI.ControlsV2.VitNX2_PictureBox();
             this.vitNX2_ToogleButton1 = new VitNX2.UI.ControlsV2.VitNX2_ToogleButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.vitNX2_Button4 = new VitNX2.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_Button1 = new VitNX2.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_Panel2 = new VitNX2.UI.ControlsV2.VitNX2_Panel();
             this.vitNX_ContextMenu1 = new VitNX.UI.ControlsV1.Controls.VitNX_ContextMenu();
             this.helloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.приветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.您好ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vitNX2_Button4 = new VitNX2.UI.ControlsV2.VitNX2_Button();
             this.vitNX2_Tab1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vitNX2_PictureBox1)).BeginInit();
@@ -65,7 +64,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.vitNX2_Button3);
-            this.tabPage1.Controls.Add(this.vitNX2_Button2);
             this.tabPage1.Controls.Add(this.vitNX2_TextBox1);
             this.tabPage1.Controls.Add(this.vitNX2_PictureBox1);
             this.tabPage1.Controls.Add(this.vitNX2_ToogleButton1);
@@ -95,26 +93,6 @@
             this.vitNX2_Button3.TextColor = System.Drawing.Color.Black;
             this.vitNX2_Button3.UseVisualStyleBackColor = false;
             this.vitNX2_Button3.Click += new System.EventHandler(this.vitNX2_Button3_Click);
-            // 
-            // vitNX2_Button2
-            // 
-            this.vitNX2_Button2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.vitNX2_Button2.BackgroundColor = System.Drawing.Color.CornflowerBlue;
-            this.vitNX2_Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vitNX2_Button2.BorderRadius = 3;
-            this.vitNX2_Button2.BorderSize = 1;
-            this.vitNX2_Button2.FlatAppearance.BorderSize = 0;
-            this.vitNX2_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vitNX2_Button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vitNX2_Button2.ForeColor = System.Drawing.Color.Black;
-            this.vitNX2_Button2.Location = new System.Drawing.Point(131, 144);
-            this.vitNX2_Button2.Name = "vitNX2_Button2";
-            this.vitNX2_Button2.Size = new System.Drawing.Size(139, 45);
-            this.vitNX2_Button2.TabIndex = 10;
-            this.vitNX2_Button2.Text = "Write users and CPU in Windows to file";
-            this.vitNX2_Button2.TextColor = System.Drawing.Color.Black;
-            this.vitNX2_Button2.UseVisualStyleBackColor = false;
-            this.vitNX2_Button2.Click += new System.EventHandler(this.vitNX2_Button2_Click);
             // 
             // vitNX2_TextBox1
             // 
@@ -183,6 +161,25 @@
             this.tabPage2.Size = new System.Drawing.Size(426, 205);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
+            // 
+            // vitNX2_Button4
+            // 
+            this.vitNX2_Button4.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vitNX2_Button4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vitNX2_Button4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vitNX2_Button4.BorderRadius = 0;
+            this.vitNX2_Button4.BorderSize = 0;
+            this.vitNX2_Button4.FlatAppearance.BorderSize = 0;
+            this.vitNX2_Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vitNX2_Button4.ForeColor = System.Drawing.Color.White;
+            this.vitNX2_Button4.Location = new System.Drawing.Point(24, 109);
+            this.vitNX2_Button4.Name = "vitNX2_Button4";
+            this.vitNX2_Button4.Size = new System.Drawing.Size(176, 40);
+            this.vitNX2_Button4.TabIndex = 9;
+            this.vitNX2_Button4.Text = "Show Message";
+            this.vitNX2_Button4.TextColor = System.Drawing.Color.White;
+            this.vitNX2_Button4.UseVisualStyleBackColor = false;
+            this.vitNX2_Button4.Click += new System.EventHandler(this.vitNX2_Button4_Click);
             // 
             // vitNX2_Button1
             // 
@@ -253,25 +250,6 @@
             this.您好ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.您好ToolStripMenuItem.Text = "您好";
             // 
-            // vitNX2_Button4
-            // 
-            this.vitNX2_Button4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vitNX2_Button4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vitNX2_Button4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vitNX2_Button4.BorderRadius = 0;
-            this.vitNX2_Button4.BorderSize = 0;
-            this.vitNX2_Button4.FlatAppearance.BorderSize = 0;
-            this.vitNX2_Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vitNX2_Button4.ForeColor = System.Drawing.Color.White;
-            this.vitNX2_Button4.Location = new System.Drawing.Point(24, 109);
-            this.vitNX2_Button4.Name = "vitNX2_Button4";
-            this.vitNX2_Button4.Size = new System.Drawing.Size(176, 40);
-            this.vitNX2_Button4.TabIndex = 9;
-            this.vitNX2_Button4.Text = "Show Message";
-            this.vitNX2_Button4.TextColor = System.Drawing.Color.White;
-            this.vitNX2_Button4.UseVisualStyleBackColor = false;
-            this.vitNX2_Button4.Click += new System.EventHandler(this.vitNX2_Button4_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +283,6 @@
         private VitNX2.UI.ControlsV2.VitNX2_ToogleButton vitNX2_ToogleButton1;
         private VitNX2.UI.ControlsV2.VitNX2_Button vitNX2_Button1;
         private VitNX2.UI.ControlsV2.VitNX2_Panel vitNX2_Panel2;
-        private VitNX2.UI.ControlsV2.VitNX2_Button vitNX2_Button2;
         private VitNX2.UI.ControlsV2.VitNX2_Button vitNX2_Button3;
         private VitNX2.UI.ControlsV2.VitNX2_Button vitNX2_Button4;
     }

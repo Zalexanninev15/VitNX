@@ -11,6 +11,8 @@ using VitNX.UI.ControlsV1.Config;
 using VitNX.UI.ControlsV1.Extensions;
 using VitNX.UI.ControlsV1.Forms;
 
+using VitNX3;
+
 namespace VitNX.UI.ControlsV1.Controls
 {
     public class VitNX_TreeView : VitNX_ScrollView

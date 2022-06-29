@@ -7,7 +7,7 @@
     <ProjectGuid>{F19472F5-8C44-4C51-A8A0-B9DE5F555255}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VitNX3</RootNamespace>
+    <RootNamespace>VitNX</RootNamespace>
     <AssemblyName>VitNX3</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -275,14 +275,6 @@
     <Compile Include="UI\ControlsV1\Win32\ControlScrollFilter.cs" />
     <Compile Include="UI\ControlsV1\Win32\DockResizeFilter.cs" />
     <Compile Include="UI\ControlsV1\Win32\DockContentDragFilter.cs" />
-    <Compile Include="UI\OtherControls\Notification\nManager.cs" />
-    <Compile Include="UI\OtherControls\Notification\NotificationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\OtherControls\Notification\NotificationForm.Designer.cs">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\OtherControls\Notification\NotifySettings.cs" />
     <Compile Include="UI\Console\ProgressBar\ConsoleProgressBar1.cs" />
     <Compile Include="UI\Console\Text.cs" />
   </ItemGroup>
@@ -339,9 +331,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
       <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\OtherControls\Notification\NotificationForm.resx">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -478,9 +467,7 @@
   <ItemGroup>
     <None Include="Resources\cancelN.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="UI\ControlsV3\soon.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
