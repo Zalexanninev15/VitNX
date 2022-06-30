@@ -733,4 +733,52 @@ namespace VitNX3.Functions.Information
             catch { return INTERNET_STATUS.UNKNOWN_PROBLEM; }
         }
     }
+
+    /// <summary>
+    /// Works with informations of USB devices.
+    /// </summary>
+    public class UsbDevices
+    {
+        /// <summary>
+        /// Gets the list of USB devices.
+        /// </summary>
+        /// <returns>A list of USBDeviceInfos.</returns>
+        public static List<USBDeviceInfo> GetUSBDevices()
+        {
+            List<USBDeviceInfo> devices = new List<USBDeviceInfo>();
+            ManagementObjectCollection collection;
+            using (var searcher = new ManagementObjectSearcher(@"SELECT * FROM Win32_PnPEntity where DeviceID Like ""USB%"""))
+                collection = searcher.Get();
+            foreach (var device in collection)
+                devices.Add(new USBDeviceInfo((string)device.GetPropertyValue("Caption"), (string)device.GetPropertyValue("DeviceID")));
+            collection.Dispose();
+            return devices;
+        }
+
+        /// <summary>
+        /// Gets the list of USB devices as string (basic information in the form of name and ID)
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string UsbToString()
+        {
+            var usbDevices = GetUSBDevices();
+            string returnString = "";
+            foreach (var usbDevice in usbDevices)
+                if (!usbDevice.DeviceID.StartsWith(@"USBSTOR\"))
+                    returnString += $"Device: {usbDevice.Caption}\nID: {usbDevice.DeviceID}\n\n";
+            return returnString;
+        }
+
+        public class USBDeviceInfo
+        {
+            public USBDeviceInfo(string Caption, string DeviceID)
+            {
+                this.Caption = Caption;
+                this.DeviceID = DeviceID;
+            }
+
+            public string Caption { get; private set; }
+            public string DeviceID { get; private set; }
+        }
+    }
 }

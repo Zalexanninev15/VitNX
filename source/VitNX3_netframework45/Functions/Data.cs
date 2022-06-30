@@ -357,12 +357,30 @@ namespace VitNX3.Functions.Data
     public class EncryptAndDecrypt
     {
         /// <summary>
+        /// Encrypt text by your hash type.
+        /// </summary>
+        /// <param name="hashAlgorithm">The hash algorithm.</param>
+        /// <param name="text">The text.</param>
+        /// <returns>A string.</returns>
+        public static string YourHashEncrypt(HashAlgorithm hashAlgorithm,
+            string text)
+        {
+            byte[] data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(text));
+            var sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+                sBuilder.Append(data[i].ToString("x2"));
+            return sBuilder.ToString();
+        }
+
+
+        /// <summary>
         /// XOR method (encrypt and decrypt).
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="key">The key.</param>
         /// <returns>A string.</returns>
-        public static string XOR_Both(string text, int key)
+        public static string XOR_Both(string text,
+            int key)
         {
             string newText = string.Empty;
             for (int i = 0; i < text.Length; i++)
@@ -412,7 +430,8 @@ namespace VitNX3.Functions.Data
         /// <param name="text">The text.</param>
         /// <param name="password">The password.</param>
         /// <returns>A string.</returns>
-        public static string SimpleEncrypt(string text, string password)
+        public static string SimpleEncrypt(string text,
+            string password)
         {
             byte[] input = Encoding.UTF8.GetBytes(text);
             byte[] output = SimpleEncryptAsByte(input, password);
@@ -425,7 +444,8 @@ namespace VitNX3.Functions.Data
         /// <param name="text">The text.</param>
         /// <param name="password">The password.</param>
         /// <returns>A string.</returns>
-        public static string SimpleDecrypt(string text, string password)
+        public static string SimpleDecrypt(string text,
+            string password)
         {
             byte[] input = Convert.FromBase64String(text);
             byte[] output = SimpleDecryptAsByte(input, password);
@@ -438,7 +458,8 @@ namespace VitNX3.Functions.Data
         /// <param name="input">The input.</param>
         /// <param name="password">The password.</param>
         /// <returns>An array of byte.</returns>
-        public static byte[] SimpleEncryptAsByte(byte[] input, string password)
+        public static byte[] SimpleEncryptAsByte(byte[] input,
+            string password)
         {
             try
             {
@@ -457,7 +478,8 @@ namespace VitNX3.Functions.Data
         /// <param name="input">The input.</param>
         /// <param name="password">The password.</param>
         /// <returns>An array of byte.</returns>
-        public static byte[] SimpleDecryptAsByte(byte[] input, string password)
+        public static byte[] SimpleDecryptAsByte(byte[] input,
+            string password)
         {
             try
             {
@@ -476,7 +498,8 @@ namespace VitNX3.Functions.Data
         /// <param name="input">The input.</param>
         /// <param name="CryptoTransform">The crypto transform.</param>
         /// <returns>An array of byte.</returns>
-        private static byte[] Transform(byte[] input, ICryptoTransform CryptoTransform)
+        private static byte[] Transform(byte[] input,
+            ICryptoTransform CryptoTransform)
         {
             MemoryStream memStream = new MemoryStream();
             CryptoStream cryptStream = new CryptoStream(memStream, CryptoTransform, CryptoStreamMode.Write);

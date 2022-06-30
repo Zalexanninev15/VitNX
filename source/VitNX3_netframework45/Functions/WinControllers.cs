@@ -524,9 +524,7 @@ namespace VitNX3.Functions.WinControllers
 
     /// <summary>
     /// Gets the clipboard text.
-    /// Example: 
-    /// GetClipboardText GetClipboard = new GetClipboardText();
-    /// string text = GetClipboard.GetText();
+    /// Example: https://gist.github.com/Zalexanninev15/721265d24d1f506a6e56ae6ea39144df
     /// </summary>
     public class GetClipboardText
     {
@@ -555,7 +553,7 @@ namespace VitNX3.Functions.WinControllers
 
     /// <summary>
     /// Sets the text to clipboard.
-    /// Example: await SetClipboardText.Run(() => System.Windows.Forms.Clipboard.SetText("text"));
+    /// Example: https://gist.github.com/Zalexanninev15/721265d24d1f506a6e56ae6ea39144df
     /// </summary>
     public static class SetClipboardText
     {
