@@ -77,7 +77,7 @@
     <Compile Include="UI\ControlsV2\VitNX2_ProgressBarRoundedType2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\OtherControls\FontAwesome.cs" />
+    <Compile Include="UI\OtherControls\FontAwesome4.cs" />
     <Compile Include="Functions\WindowAndControls.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
