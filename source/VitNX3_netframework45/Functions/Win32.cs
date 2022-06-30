@@ -36,7 +36,6 @@ namespace VitNX3.Functions.Win32
         [Out] StringBuilder pszOut,
         ref uint pcchOut);
 
-
         [DllImport("kernel32.dll",
             SetLastError = true)]
         public static extern IntPtr GetStdHandle(int nStdHandle);

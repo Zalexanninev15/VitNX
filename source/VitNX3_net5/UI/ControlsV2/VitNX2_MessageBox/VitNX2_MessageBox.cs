@@ -26,7 +26,7 @@ namespace VitNX2.UI.ControlsV2
             MessageBoxButtons buttons)
         {
             DialogResult result;
-            using (var msgForm = new VitNX2_MessageBox_Form(text, 
+            using (var msgForm = new VitNX2_MessageBox_Form(text,
                 caption,
                 buttons))
                 result = msgForm.ShowDialog();
@@ -41,7 +41,7 @@ namespace VitNX2.UI.ControlsV2
             DialogResult result;
             using (var msgForm = new VitNX2_MessageBox_Form(text,
                 caption,
-                buttons, 
+                buttons,
                 icon))
                 result = msgForm.ShowDialog();
             return result;

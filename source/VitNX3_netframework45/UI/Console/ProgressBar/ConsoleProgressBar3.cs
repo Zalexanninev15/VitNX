@@ -9,27 +9,7 @@ namespace VitNX3.UI.Console.ProgressBar
     /// <summary>
     /// A simple Console progress bar.
     /// </summary>
-    /// <example>
-    /// There are three modes can be used.
-    /// Mode 1: Percentage mode
-    /// <code>
-    ///     ProgressBar progressBar = new ProgressBar();
-    ///     progressBar.Show();
-    ///     progressBar.Update(0.01);
-    /// </code>
-    /// Mode 2: Item count mode
-    /// <code>
-    ///     ProgressBar progressBar = new ProgressBar(100);
-    ///     progressBar.Show();
-    ///     progressBar.Update(1);
-    /// </code>
-    /// Mode 3: Increase mode
-    /// <code>
-    ///     ProgressBar progressBar = new ProgressBar(100);
-    ///     progressBar.Show();
-    ///     progressBar.UpdateOnce();
-    /// </code>
-    /// </example>
+    /// Example: https://gist.github.com/Zalexanninev15/937a043a0656d39e953e0132e5648925
     public class ProgressBar
     {
         /// <summary>
