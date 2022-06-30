@@ -23,7 +23,7 @@ namespace VitNX3.UI.OtherControls
 
             private Properties()
             {
-                SetFontFileSaveLocation = "font_awesome.ttf";
+                SetFontFileSaveLocation = "FontAwesome4.ttf";
                 Size = 32;
                 Location = new Point(0, 0);
                 ForeColor = Color.Black;
@@ -75,16 +75,7 @@ namespace VitNX3.UI.OtherControls
 
         /// <summary>
         /// Works with font.
-        /// Example:
-        ///  settings.Image = FontAwesome4.Instance.GetImage(new FontAwesome4.Properties(FontAwesome4.Type.ArrowCircleODown)
-        /// {
-        ///     SetFontFileSaveLocation = "font.ttf",
-        ///     ForeColor = Color.FromArgb(255, 193, 7),
-        ///     Size = 30,
-        ///     BackColor = BackColor,
-        ///     BorderColor = Color.White,
-        ///     ShowBorder = false
-        ///  });
+        /// Example: https://gist.github.com/Zalexanninev15/91a956aa1dbfe6b14e91a45903d4b15f
         /// </summary>
         public static FontAwesome4 Instance
         {
@@ -96,7 +87,7 @@ namespace VitNX3.UI.OtherControls
             }
         }
 
-        private static string _downloadLink = "https://zalexanninev15.jimdofree.com/app/download/14468346478/font.png?t=1649743727";
+        private static string _downloadLink = "https://github.com/FortAwesome/Font-Awesome/raw/4.x/fonts/fontawesome-webfont.ttf";
 
         public static void SetDownloadLink(string link)
         {
