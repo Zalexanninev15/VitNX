@@ -274,7 +274,6 @@ namespace VitNX3.Functions.Web
         /// Activate all security protocols for all network functions to work (HTTPS).
         /// Example: https://gist.github.com/Zalexanninev15/bee89a178eff6f97902e06a8a9e543e1
         /// </summary>
-        ///
         public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;

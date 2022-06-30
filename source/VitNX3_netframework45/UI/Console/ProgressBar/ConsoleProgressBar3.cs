@@ -8,8 +8,8 @@ namespace VitNX3.UI.Console.ProgressBar
 
     /// <summary>
     /// A simple Console progress bar.
-    /// </summary>
     /// Example: https://gist.github.com/Zalexanninev15/937a043a0656d39e953e0132e5648925
+    /// </summary>
     public class ProgressBar
     {
         /// <summary>
