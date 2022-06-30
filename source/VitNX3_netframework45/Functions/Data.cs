@@ -372,7 +372,6 @@ namespace VitNX3.Functions.Data
             return sBuilder.ToString();
         }
 
-
         /// <summary>
         /// XOR method (encrypt and decrypt).
         /// </summary>

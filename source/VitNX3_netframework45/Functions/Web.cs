@@ -145,7 +145,7 @@ namespace VitNX3.Functions.Web
     {
         /// <summary>
         /// Using POST request to send text data.
-        ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");
+        /// Example: https://gist.github.com/Zalexanninev15/79b2c80f01f144961ad933d9eeb6b980
         /// </summary>
         /// <param name="url">The url.</param>
         /// <param name="options">The options.</param>
@@ -272,7 +272,7 @@ namespace VitNX3.Functions.Web
     {
         /// <summary>
         /// Activate all security protocols for all network functions to work (HTTPS).
-        /// Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();
+        /// Example: https://gist.github.com/Zalexanninev15/bee89a178eff6f97902e06a8a9e543e1
         /// </summary>
         ///
         public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
