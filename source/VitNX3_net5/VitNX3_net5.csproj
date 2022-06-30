@@ -12,7 +12,7 @@
 		<PackageProjectUrl>https://github.com/Zalexanninev15/VitNX</PackageProjectUrl>
 		<Copyright>Copyright © 2021-2022, Zalexanninev15</Copyright>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<Version>3.4.11.1</Version>
+		<Version>3.4.11.2</Version>
 		<AssemblyVersion></AssemblyVersion>
 		<FileVersion></FileVersion>
 		<PackageIcon>logo.png</PackageIcon>
