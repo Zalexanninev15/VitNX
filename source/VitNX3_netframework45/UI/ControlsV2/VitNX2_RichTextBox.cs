@@ -10,8 +10,8 @@ namespace VitNX2.UI.ControlsV2
     {
         public VitNX2_RichTextBox()
         {
-            MouseDown += new MouseEventHandler(this.RichTextBox_Custom_Mouse);
-            MouseUp += new MouseEventHandler(this.RichTextBox_Custom_Mouse);
+            MouseDown += new MouseEventHandler(RichTextBox_Custom_Mouse);
+            MouseUp += new MouseEventHandler(RichTextBox_Custom_Mouse);
             base.ReadOnly = true;
             base.TabStop = false;
             Import.HideCaret(Handle);
