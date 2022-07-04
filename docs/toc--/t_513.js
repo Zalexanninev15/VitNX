@@ -1,1 +1,1 @@
-c['513']=[['514',"WndProc Method","topic_0000000000001380_overloads--.html",1]];
+c['513']=[['514',"OnLoad Method","topic_0000000000001707.html",0],['515',"OnPaint Method","topic_0000000000001708.html",0],['516',"OnResize Method","topic_0000000000001706.html",0]];

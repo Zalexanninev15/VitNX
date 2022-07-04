@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.CoCreateInstance Method</title>
+	<title>Import.ShutdownBlockReasonDestroy Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.CoCreateInstance Method</h1>
+		<h1 class="title">Import.ShutdownBlockReasonDestroy Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,9 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Interface)]&nbsp;<br />[DllImport(&quot;ole32.dll&quot;,
-            ExactSpelling = true,
-            PreserveSig = false)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> CoCreateInstance(&nbsp;<br />   [In()]&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> <i>clsid</i>,&nbsp;<br />   [MarshalAs(UnmanagedType.Interface)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> <i>punkOuter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>context</i>,&nbsp;<br />   [In()]&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> <i>iid</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ShutdownBlockReasonDestroy(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,53 +152,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="clsid" class="parameterList">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			clsid
+			hWnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="punkOuter" class="parameterList">
-	<dt>
-		<span class="parameter">
-			punkOuter
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="context" class="parameterList">
-	<dt>
-		<span class="parameter">
-			context
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="iid" class="parameterList">
-	<dt>
-		<span class="parameter">
-			iid
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.guid">Guid</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -210,7 +170,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.object">object</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -285,14 +245,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[return: MarshalAs(UnmanagedType.Interface)]
- [DllImport(&quot;ole32.dll&quot;,
-     ExactSpelling = true,
-     PreserveSig = false)]
- public static extern object CoCreateInstance([In] ref Guid clsid,
-     [MarshalAs(UnmanagedType.Interface)] object punkOuter,
-     int context,
-     [In] ref Guid iid);
+[DllImport(&quot;user32.dll&quot;,
+     SetLastError = true)]
+ public static extern bool ShutdownBlockReasonDestroy(IntPtr hWnd);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -356,11 +311,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

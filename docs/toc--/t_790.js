@@ -1,1 +1,0 @@
-c['790']=[['791',"MENU_ITEM_INFO Class","topic_00000000000001DA.html",1],['805',"NOTIFY_ICON_DATA Class","topic_00000000000001E7.html",1],['819',"ResultCom Class","topic_0000000000000925.html",1],['1979',"ResultWin32 Class","topic_00000000000001F4.html",1],['3822',"Fields","topic_00000000000001C1_vars--.html",1]];

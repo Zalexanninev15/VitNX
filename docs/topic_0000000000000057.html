@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Folder.Copy Method</title>
+	<title>Folder.GetItemsList Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Folder.Copy Method</h1>
+		<h1 class="title">Folder.GetItemsList Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Copies the folder.</summary-info>
+        <summary-info>Gets the items list in folder.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Copy(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFolder</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; GetItemsList(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -165,22 +165,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	The source folder. 
 </p>
-<dl paramName="targetFolder" class="parameterList">
-	<dt>
-		<span class="parameter">
-			targetFolder
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The target folder. 
-</p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+		<p>
+		A list of string. 
+	</p>
+	
 
 
 
@@ -254,11 +248,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Copy(string sourceFolder,
-     string targetFolder)
+public static List&lt;string&gt; GetItemsList(string sourceFolder)
  {
-     Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(sourceFolder,
-         targetFolder);
+     List&lt;string&gt; ls = new List&lt;string&gt;();
+     try
+     {
+         string[] folders = Directory.GetDirectories(sourceFolder);
+         foreach (string folder in folders)
+             ls.Add(&quot;Folder: &quot; + folder);
+         string[] files = Directory.GetFiles(sourceFolder);
+         foreach (string filename in files)
+             ls.Add(&quot;File: &quot; + filename);
+     }
+     catch (Exception e) { ls.Add(e.Message.Trim('\n')); }
+     return ls;
  }
 					</pre>			
 				</div>
@@ -323,11 +326,11 @@ public static void Copy(string sourceFolder,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000053.html">Folder Class</a><br />
+			<a href="topic_0000000000000055.html">Folder Class</a><br />
 
 
 
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['236']=["topic_0000000000000093_props--.html","Motherboard Properties",""];
+search_result['236']=["topic_0000000000000099.html","Disk Class","Works with informations of Disk(s)."];

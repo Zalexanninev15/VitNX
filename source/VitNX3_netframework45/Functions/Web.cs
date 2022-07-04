@@ -10,7 +10,7 @@ using System.Text;
 namespace VitNX3.Functions.Web
 {
     /// <summary>
-    /// Work with data from sites.
+    /// Works with data from sites.
     /// </summary>
     public class DataFromSites
     {
@@ -143,17 +143,15 @@ namespace VitNX3.Functions.Web
     /// </summary>
     public class SendDataToSites
     {
-#pragma warning disable CS1570
-
         /// <summary>
         /// Using POST request to send text data.
-        ///  Example: string request = Post("https://site.com/auth", "client_id=43435&key=create");
+        /// Example: https://gist.github.com/Zalexanninev15/79b2c80f01f144961ad933d9eeb6b980
         /// </summary>
         /// <param name="url">The url.</param>
         /// <param name="options">The options.</param>
         /// <returns>A string.</returns>
-        public static string Post(string url, string options)
-#pragma warning restore CS1570 // Комментарий XML содержит неправильно сформированный XML
+        public static string Post(string url,
+            string options)
         {
             try
             {
@@ -274,9 +272,8 @@ namespace VitNX3.Functions.Web
     {
         /// <summary>
         /// Activate all security protocols for all network functions to work (HTTPS).
-        /// Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();
+        /// Example: https://gist.github.com/Zalexanninev15/bee89a178eff6f97902e06a8a9e543e1
         /// </summary>
-        ///
         public static SecurityProtocolType UseProtocols() => SecurityProtocolType.Tls12 |
         SecurityProtocolType.Tls11 |
         SecurityProtocolType.Tls;

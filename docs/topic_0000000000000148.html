@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetThemePartSize Method</title>
+	<title>Import.DrawThemeEdge Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetThemePartSize Method</h1>
+		<h1 class="title">Import.DrawThemeEdge Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,9 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;,
-            CharSet = CharSet.Unicode,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetThemePartSize(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hTheme</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iPartId</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iStateId</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000EFA.html" onclick="this.target='';return true;">RECT</a> <i>prc</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000F2F.html" onclick="this.target='';return true;">THEME_SIZE</a> <i>eSize</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000F0F.html" onclick="this.target='';return true;">SIZE</a> <i>psz</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DrawThemeEdge(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hTheme</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iPartId</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>iStateId</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000001266.html" onclick="this.target='';return true;">RECT</a> <i>pDestRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>uEdge</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>uFlags</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000001266.html" onclick="this.target='';return true;">RECT</a> <i>pContentRect</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -205,40 +203,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="prc" class="parameterList">
+<dl paramName="pDestRect" class="parameterList">
 	<dt>
 		<span class="parameter">
-			prc
+			pDestRect
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000EFA.html" onclick="this.target='';return true;">RECT</a> 
+		<a target="_top" href="topic_0000000000001266.html" onclick="this.target='';return true;">RECT</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="eSize" class="parameterList">
+<dl paramName="uEdge" class="parameterList">
 	<dt>
 		<span class="parameter">
-			eSize
+			uEdge
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000F2F.html" onclick="this.target='';return true;">THEME_SIZE</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="psz" class="parameterList">
+<dl paramName="uFlags" class="parameterList">
 	<dt>
 		<span class="parameter">
-			psz
+			uFlags
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000F0F.html" onclick="this.target='';return true;">SIZE</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pContentRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pContentRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000001266.html" onclick="this.target='';return true;">RECT</a> 
 	</dd>
 </dl>
 <p>
@@ -324,16 +335,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;,
-     CharSet = CharSet.Unicode,
-     SetLastError = true)]
- public static extern int GetThemePartSize(IntPtr hTheme,
+[DllImport(&quot;uxtheme.dll&quot;)]
+ public static extern int DrawThemeEdge(IntPtr hTheme,
      IntPtr hdc,
      int iPartId,
      int iStateId,
-     ref RECT prc,
-     THEME_SIZE eSize,
-     ref SIZE psz);
+     ref RECT
+     pDestRect,
+     int uEdge,
+     int uFlags,
+     ref RECT pContentRect);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -397,11 +408,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

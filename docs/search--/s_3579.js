@@ -1,1 +1,1 @@
-search_result['3579']=["topic_0000000000000D45.html","COMADMIN_E_BADREGISTRYPROGID Field",""];
+search_result['3579']=["topic_0000000000000D34.html","SCARD_E_NOT_TRANSACTED Field",""];

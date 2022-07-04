@@ -1,1 +1,1 @@
-search_result['59']=["topic_0000000000000022.html","NumericalTextConverter.ConvertBack Method","Converts back the value(s)."];
+search_result['59']=["topic_0000000000000022.html","NumericalTextConverter.Convert Method","Converts the value(s)."];

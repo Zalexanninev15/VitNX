@@ -1,1 +1,1 @@
-search_result['252']=["topic_0000000000000098_vars--.html","Ram Fields",""];
+search_result['252']=["topic_000000000000009F.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

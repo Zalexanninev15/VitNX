@@ -1,1 +1,1 @@
-search_result['502']=["topic_0000000000000166.html","Import.SelectObject Method",""];
+search_result['502']=["topic_0000000000000159.html","Import.GetForegroundWindow Method",""];

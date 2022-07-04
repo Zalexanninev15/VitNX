@@ -1,1 +1,1 @@
-search_result['262']=["topic_000000000000009D.html","Internet.GetLocalIPv4 Method","Gets the local IPv4 (obsolete, but work)."];
+search_result['262']=["topic_00000000000000A9.html","Monitor.GetAll Method","Gets the all."];

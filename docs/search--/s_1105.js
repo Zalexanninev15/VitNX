@@ -1,1 +1,1 @@
-search_result['1105']=["topic_00000000000003A0.html","ERROR_NO_SUCH_USER Field",""];
+search_result['1105']=["topic_000000000000038F.html","ERROR_NOT_LOGGED_ON Field",""];

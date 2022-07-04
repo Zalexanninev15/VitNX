@@ -1,1 +1,1 @@
-search_result['796']=["topic_000000000000026B.html","ERROR_IS_SUBST_TARGET Field",""];
+search_result['796']=["topic_000000000000025A.html","ERROR_OUT_OF_STRUCTURES Field",""];

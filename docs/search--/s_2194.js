@@ -1,1 +1,1 @@
-search_result['2194']=["topic_00000000000007E1.html","DNS_ERROR_SOA_DELETE_INVALID Field",""];
+search_result['2194']=["topic_00000000000007D0.html","DNS_ERROR_RCODE_NOT_IMPLEMENTED Field",""];

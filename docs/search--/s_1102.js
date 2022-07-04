@@ -1,1 +1,1 @@
-search_result['1102']=["topic_000000000000039D.html","ERROR_PRIVILEGE_NOT_HELD Field",""];
+search_result['1102']=["topic_000000000000038C.html","ERROR_ALREADY_REGISTERED Field",""];

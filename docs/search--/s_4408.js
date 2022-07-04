@@ -1,1 +1,1 @@
-search_result['4408']=["topic_000000000000117D_attached_props--.html","ObservableList\u0026lt;T\u0026gt; Attached Properties",""];
+search_result['4408']=["topic_00000000000014CB.html","WorkWithSystem.GetIcon Method","Gets the icon (WinAPI)."];

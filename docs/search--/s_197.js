@@ -1,1 +1,1 @@
-search_result['197']=["topic_000000000000007F.html","Cpu.Characteristics Method","Gets all characteristics."];
+search_result['197']=["topic_0000000000000080_attached_props--.html","Windows Attached Properties",""];

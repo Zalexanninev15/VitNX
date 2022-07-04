@@ -1,1 +1,1 @@
-search_result['500']=["topic_0000000000000164.html","Import.RedrawWindow Method",""];
+search_result['500']=["topic_0000000000000157.html","Import.GetDeviceCaps Method",""];

@@ -1,1 +1,1 @@
-search_result['254']=["topic_000000000000009A.html","Internet Class","Work with informations of Internet (PC)."];
+search_result['254']=["topic_00000000000000A1.html","Monitor.CaptureScreen Method","Captures the screen."];

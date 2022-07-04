@@ -1,1 +1,1 @@
-search_result['4494']=["topic_00000000000011AF.html","VitNX_CheckBox.OnGotFocus Method","Raises the GotFocus event."];
+search_result['4494']=["topic_0000000000001503_methods--.html","Text Methods",""];

@@ -1,1 +1,1 @@
-search_result['4571']=["topic_00000000000011E0_vars--.html","VitNX_Label Fields",""];
+search_result['4571']=["topic_000000000000152C.html","VitNX_Button.NotifyDefault Method","Notifies the Button whether it is the default button so that it can adjust its appearance accordingly."];

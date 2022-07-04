@@ -1,1 +1,1 @@
-search_result['19']=["topic_000000000000000E.html","Processes.CheckDebugger Method","Checks the debugger for your app."];
+search_result['19']=["topic_000000000000000E.html","Processes.OnlyOneProcess Method","You only have 1 copy of the application running."];

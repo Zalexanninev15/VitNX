@@ -1,1 +1,1 @@
-search_result['4515']=["topic_00000000000011BE.html","VitNX_ComboBox.OnInvalidated Method","Raises the Invalidated event."];
+search_result['4515']=["topic_000000000000150D_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Remove Method",""];

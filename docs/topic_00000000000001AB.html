@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetImmersiveUserColorSetPreference Method</title>
+	<title>Import.TextOut Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetImmersiveUserColorSetPreference Method</h1>
+		<h1 class="title">Import.TextOut Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetImmersiveUserColorSetPreference(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bForceCheckRegistry</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>bSkipCheckOnFail</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[return: MarshalAs(UnmanagedType.Bool)]&nbsp;<br />[DllImport(&quot;gdi32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> TextOut(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nXStart</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nYStart</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>lpString</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cbString</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,27 +151,66 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="bForceCheckRegistry" class="parameterList">
+	Parameters</h4><dl paramName="hdc" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bForceCheckRegistry
+			hdc
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="bSkipCheckOnFail" class="parameterList">
+<dl paramName="nXStart" class="parameterList">
 	<dt>
 		<span class="parameter">
-			bSkipCheckOnFail
+			nXStart
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nYStart" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nYStart
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="lpString" class="parameterList">
+	<dt>
+		<span class="parameter">
+			lpString
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="cbString" class="parameterList">
+	<dt>
+		<span class="parameter">
+			cbString
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -182,7 +221,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -257,9 +296,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;uxtheme.dll&quot;, EntryPoint = &quot;#98&quot;)]
- public static extern int GetImmersiveUserColorSetPreference(bool bForceCheckRegistry,
-     bool bSkipCheckOnFail);
+[return: MarshalAs(UnmanagedType.Bool)]
+ [DllImport(&quot;gdi32.dll&quot;)]
+ public static extern bool TextOut(IntPtr hdc,
+     int nXStart,
+     int nYStart,
+     string lpString,
+     int cbString);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -323,11 +366,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

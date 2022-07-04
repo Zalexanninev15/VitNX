@@ -1,1 +1,1 @@
-search_result['3551']=["topic_0000000000000D29.html","SCARD_E_COMM_DATA_LOST Field",""];
+search_result['3551']=["topic_0000000000000D18.html","SPAPI_E_INVALID_TARGET Field",""];

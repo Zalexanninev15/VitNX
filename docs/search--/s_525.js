@@ -1,1 +1,1 @@
-search_result['525']=["topic_000000000000017B.html","Import.SetWindowLong Method",""];
+search_result['525']=["topic_0000000000000170.html","Import.GetWindowLong Method",""];

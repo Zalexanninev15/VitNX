@@ -1,1 +1,1 @@
-search_result['4961']=["topic_00000000000012DF_props--.html","VitNX_Form Properties",""];
+search_result['4961']=["topic_0000000000001624.html","VitNX_DockGroup.OnPaintBackground Method","Paints the background of the control."];

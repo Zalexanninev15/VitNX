@@ -1,1 +1,1 @@
-search_result['4953']=["topic_00000000000012D4.html","VitNX_Dialog Constructor",""];
+search_result['4953']=["topic_000000000000161C.html","VitNX_DockGroup.SetVisibleContent Method",""];

@@ -1,1 +1,1 @@
-search_result['5272']=["topic_000000000000138C.html","Properties Class",""];
+search_result['5272']=["topic_00000000000016EF.html","VitNX2_PictureBox.OnResize Method","Raises the Resize event."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.WindowFromPoint (POINT) Method</title>
+	<title>Import.SetFocus Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.WindowFromPoint (POINT) Method</h1>
+		<h1 class="title">Import.SetFocus Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> WindowFromPoint(&nbsp;<br />   <a target="_top" href="topic_0000000000000EF7.html" onclick="this.target='';return true;">POINT</a> <i>Point</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> SetFocus(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,14 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="Point" class="parameterList">
+	Parameters</h4><dl paramName="hWnd" class="parameterList">
 	<dt>
 		<span class="parameter">
-			Point
+			hWnd
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000EF7.html" onclick="this.target='';return true;">POINT</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -245,9 +244,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern IntPtr WindowFromPoint(POINT Point);
+[DllImport(&quot;user32.dll&quot;)]
+ public static extern IntPtr SetFocus(IntPtr hWnd);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -311,11 +309,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

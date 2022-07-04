@@ -1,1 +1,1 @@
-c['4571']=[['4572',"Dispose Method","topic_0000000000001176.html",0],['4573',"NotUsed Method","topic_0000000000001175.html",0],['4574',"Report Method","topic_0000000000001172.html",0],['4575',"SetColor Method","topic_0000000000001173.html",0],['4576',"SetText Method","topic_0000000000001174.html",0]];
+c['4571']=[['4572',"Restart Method","topic_00000000000014D9.html",0],['4573',"Start Method","topic_00000000000014D7.html",0],['4574',"Stop Method","topic_00000000000014D8.html",0]];

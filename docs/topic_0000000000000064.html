@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>File.CreateBackup Method</title>
+	<title>File.ExtractIconFromExecutable Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">File.CreateBackup Method</h1>
+		<h1 class="title">File.ExtractIconFromExecutable Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Creates the file backup.</summary-info>
+        <summary-info>Extracts the icon from executable (EXE).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> CreateBackup(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>newFileExtension</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>saveOldFile</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.icon">Icon</a> ExtractIconFromExecutable(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>path</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="sourceFolder" class="parameterList">
+	Parameters</h4><dl paramName="path" class="parameterList">
 	<dt>
 		<span class="parameter">
-			sourceFolder
+			path
 		</span>
 	</dt>
 	<dd>
@@ -163,37 +163,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The source folder. 
-</p>
-<dl paramName="newFileExtension" class="parameterList">
-	<dt>
-		<span class="parameter">
-			newFileExtension
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The new file extension. 
-</p>
-<dl paramName="saveOldFile" class="parameterList">
-	<dt>
-		<span class="parameter">
-			saveOldFile
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	</dd>
-</dl>
-<p>
-	If true, save old file. 
+	The path to an EXE file. 
 </p>
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.icon">Icon</a> 
+		<p>
+		A new <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.icon">Icon</a> object that was loaded from an ICO file or extracted from an EXE file.
+If the icon could not be retrieved, null reference (<strong>Nothing</strong> in Visual Basic) is returned. 
+	</p>
+	
 
 
 
@@ -267,23 +249,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void CreateBackup(string sourceFolder
-     , string newFileExtension,
-     bool saveOldFile)
+public static Icon ExtractIconFromExecutable(string path)
  {
-     string bak_file = sourceFolder + &quot;.&quot; + newFileExtension.Replace(&quot;.&quot;, &quot;&quot;);
-     if (System.IO.File.Exists(bak_file))
+     IntPtr module = IntPtr.Zero;
+     try
      {
-         try { System.IO.File.Delete(bak_file); } catch { }
+         module = Import.LoadLibraryEx(path, IntPtr.Zero, 2);
+         if (module == IntPtr.Zero) throw new Win32Exception();
+         Icon result = null;
+         Import.EnumResourceNames(module, (IntPtr)14, (mod, type, name, lParam) =&gt;
+         {
+             byte[] groupIcon = Import.GetDataFromResource(module, (IntPtr)14, name);
+             int count = BitConverter.ToUInt16(groupIcon, 4);
+             int size = 6 + count * 16 + Enumerable.Range(0, count).Select(i =&gt; BitConverter.ToInt32(groupIcon, 6 + i * 14 + 8)).Sum();
+             using (MemoryStream memoryStream = new MemoryStream(size))
+             {
+                 using (BinaryWriter writer = new BinaryWriter(memoryStream))
+                 {
+                     writer.Write(groupIcon, 0, 6);
+                     for (int i = 0, offset = 6 + count * 16; i &lt; count; ++i)
+                     {
+                         byte[] icon = Import.GetDataFromResource(module,
+                             (IntPtr)3,
+                             (IntPtr)BitConverter.ToUInt16(groupIcon, 6 + i * 14 + 12));
+                         writer.Seek(6 + i * 16, SeekOrigin.Begin);
+                         writer.Write(groupIcon, 6 + i * 14, 8);
+                         writer.Write(icon.Length);
+                         writer.Write(offset);
+                         writer.Seek(offset, SeekOrigin.Begin);
+                         writer.Write(icon, 0, icon.Length);
+                         offset += icon.Length;
+                     }
+                 }
+                 using (MemoryStream iconStream = new MemoryStream(memoryStream.ToArray()))
+                     result = new Icon(iconStream);
+             }
+             return false;
+         }, IntPtr.Zero);
+         return result;
      }
-     if (saveOldFile == false)
+     catch
      {
-         try { System.IO.File.Move(sourceFolder, bak_file); } catch { }
+         return null;
      }
-     else
+     finally
      {
-         System.IO.File.Copy(sourceFolder, bak_file);
-         try { System.IO.File.Delete(sourceFolder); } catch { }
+         if (module != IntPtr.Zero)
+             Import.FreeLibrary(module);
      }
  }
 					</pre>			
@@ -349,11 +361,11 @@ public static void CreateBackup(string sourceFolder
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000005A.html">File Class</a><br />
+			<a href="topic_000000000000005D.html">File Class</a><br />
 
 
 
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

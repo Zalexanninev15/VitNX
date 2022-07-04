@@ -1,1 +1,1 @@
-search_result['4362']=["topic_0000000000001164.html","Window.HideConsoleWindow Method","Hides the console window."];
+search_result['4362']=["topic_00000000000014B3_methods--.html","DISPLAYCONFIG_MODE_INFO Methods",""];

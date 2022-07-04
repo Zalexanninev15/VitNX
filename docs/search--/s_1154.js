@@ -1,1 +1,1 @@
-search_result['1154']=["topic_00000000000003D1.html","ERROR_INVALID_LOGON_TYPE Field",""];
+search_result['1154']=["topic_00000000000003C0.html","ERROR_NO_SUCH_PRIVILEGE Field",""];

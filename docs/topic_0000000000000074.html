@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetWindowsEditionIDFromREG Method</title>
+	<title>DISMON.GetMergedFriendlyNames Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetWindowsEditionIDFromREG Method</h1>
+		<h1 class="title">DISMON.GetMergedFriendlyNames Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information</a>
+<a href="topic_0000000000000072.html">VitNX3.Functions.Helpers</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the Windows edition from the Windows Registry.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsEditionIDFromREG()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] GetMergedFriendlyNames()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -154,10 +153,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
 	
 
 
@@ -232,8 +228,16 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetWindowsEditionIDFromREG() =&gt; (string)Registry.GetValue(@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion&quot;,
-     &quot;EditionID&quot;, &quot;&quot;);
+public static string[] GetMergedFriendlyNames()
+ {
+     var namesByMonitorIds = GetNamesByMonitorIds();
+     var captions = GetCaptions();
+     if (namesByMonitorIds.Length == 0)
+         return captions;
+     if (captions.Length == 0 || namesByMonitorIds.Length != captions.Length)
+         return namesByMonitorIds;
+     return namesByMonitorIds.Select((nameByMonitorId, i) =&gt; captions[i] == UnknownMonitor ? nameByMonitorId : captions[i]).ToArray();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -297,11 +301,11 @@ public static string GetWindowsEditionIDFromREG() =&gt; (string)Registry.GetValu
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000006D.html">Windows Class</a><br />
+			<a href="topic_0000000000000073.html">DISMON Class</a><br />
 
 
 
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000072.html">VitNX3.Functions.Helpers Namespace</a><br />
 
 
 			

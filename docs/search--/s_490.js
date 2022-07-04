@@ -1,1 +1,1 @@
-search_result['490']=["topic_000000000000015B.html","Import.OffsetWindowOrgEx Method",""];
+search_result['490']=["topic_000000000000014E.html","Import.FindWindowEx (IntPtr, IntPtr, StringBuilder, StringBuilder) Method",""];

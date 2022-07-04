@@ -1,1 +1,1 @@
-search_result['3652']=["topic_0000000000000D8E.html","COMADMIN_E_OBJECT_DOES_NOT_EXIST Field",""];
+search_result['3652']=["topic_0000000000000D7D.html","COMADMIN_E_COMP_MOVE_LOCKED Field",""];

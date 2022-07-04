@@ -1,1 +1,1 @@
-search_result['16']=["topic_000000000000000B.html","Processes.IsAdministratorYourApp Method","Whether your application has administrator rights."];
+search_result['16']=["topic_000000000000000B.html","Processes.Kill Method","Kills the process."];

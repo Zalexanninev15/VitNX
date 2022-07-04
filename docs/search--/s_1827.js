@@ -1,1 +1,1 @@
-search_result['1827']=["topic_0000000000000672.html","ERROR_DS_NO_RDN_DEFINED_IN_SCHEMA Field",""];
+search_result['1827']=["topic_0000000000000661.html","ERROR_DS_CANT_ON_RDN Field",""];

@@ -1,1 +1,1 @@
-search_result['3720']=["topic_0000000000000DE8.html","szTip Field",""];
+search_result['3720']=["topic_0000000000000DC1.html","COMADMIN_E_LEGACYCOMPS_NOT_ALLOWED_IN_1_0_FORMAT Field",""];

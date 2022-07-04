@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetCurrentUsername Method</title>
+	<title>File.LoadCustomFont Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetCurrentUsername Method</h1>
+		<h1 class="title">File.LoadCustomFont Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information</a>
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the current user (name).</summary-info>
+        <summary-info>Loads the custom font from file.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetCurrentUsername()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> LoadCustomFont(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> <i>size</i> = 16,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> <i>fontStyle</i> = FontStyle.Regular&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,12 +151,54 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="sourceFile" class="parameterList">
+	<dt>
+		<span class="parameter">
+			sourceFile
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The target file. 
+</p>
+<dl paramName="size" class="parameterList">
+	<dt>
+		<span class="parameter">
+			size
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+	</dd>
+</dl>
+<p>
+	The size. 
+</p>
+<dl paramName="fontStyle" class="parameterList">
+	<dt>
+		<span class="parameter">
+			fontStyle
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.fontstyle">FontStyle</a> 
+	</dd>
+</dl>
+<p>
+	The font style. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.font">Font</a> 
 		<p>
-		A string. 
+		A Font. 
 	</p>
 	
 
@@ -232,7 +274,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetCurrentUsername() =&gt; Environment.UserName;
+public static Font LoadCustomFont(string sourceFile,
+     float size = 16,
+     FontStyle fontStyle = FontStyle.Regular)
+ {
+     PrivateFontCollection pfc = new PrivateFontCollection();
+     pfc.AddFontFile(sourceFile);
+     return new Font(pfc.Families[0], size, fontStyle);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -296,11 +345,11 @@ public static string GetCurrentUsername() =&gt; Environment.UserName;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000006D.html">Windows Class</a><br />
+			<a href="topic_000000000000005D.html">File Class</a><br />
 
 
 
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

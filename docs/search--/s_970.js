@@ -1,1 +1,1 @@
-search_result['970']=["topic_0000000000000319.html","ERROR_NOT_ENOUGH_SERVER_MEMORY Field",""];
+search_result['970']=["topic_0000000000000308.html","ERROR_SERVICE_NOT_ACTIVE Field",""];

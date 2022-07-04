@@ -1,1 +1,1 @@
-search_result['4691']=["topic_0000000000001232_attached_props--.html","VitNX_ScrollView Attached Properties",""];
+search_result['4691']=["topic_0000000000001579.html","VitNX_ListView.SelectItems (IEnumerable\u0026lt;Int32\u0026gt;) Method",""];

@@ -1,1 +1,1 @@
-search_result['4423']=["topic_0000000000001184_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Remove Method",""];
+search_result['4423']=["topic_00000000000014DA_methods--.html","PowerControl Methods",""];

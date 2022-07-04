@@ -22,16 +22,15 @@ namespace Examples2
             vitNX2_Tab1.SelectedIndex = 0;
         }
 
-        private void vitNX2_Button2_Click(object sender, EventArgs e)
-        {
-            System.IO.File.WriteAllLines(VitNX3.Functions.FileSystem.File.NameGenerator("CPU", "txt"),
-                VitNX3.Functions.Information.Cpu.Characteristics());
-        }
-
         private void vitNX2_Button3_Click(object sender, EventArgs e)
         {
             Processes.RunAW("dism", "/Online /enable-feature /FeatureName:\"DirectPlay\" /NoRestart");
             Processes.RunAW("dism", "/Online /enable-feature /FeatureName:\"DirectPlay\" /NoRestart /all");
+        }
+
+        private void vitNX2_Button4_Click(object sender, EventArgs e)
+        {
+            VitNX2.UI.ControlsV2.VitNX2_MessageBox.Show("World is very Big!", "Hello", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

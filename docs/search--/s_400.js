@@ -1,1 +1,1 @@
-search_result['400']=["topic_0000000000000106.html","WinEventDelegate Delegate",""];
+search_result['400']=["topic_00000000000000F8.html","Import.SetWindowLong32 Method",""];

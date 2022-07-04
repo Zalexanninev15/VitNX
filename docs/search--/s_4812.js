@@ -1,1 +1,1 @@
-search_result['4812']=["topic_0000000000001276.html","DockGroupState Class",""];
+search_result['4812']=["topic_00000000000015CA.html","VitNX_Separator.OnPaintBackground Method","Paints the background of the control."];

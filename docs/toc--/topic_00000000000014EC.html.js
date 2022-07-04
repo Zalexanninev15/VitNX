@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001A35.html"],['4592',"VitNX3.Functions.WindowAndControls Namespace","topic_00000000000014E2.html"],['4597',"Window Class","topic_00000000000014E3.html"],['4598',"Methods","topic_00000000000014E3_methods--.html"],['4599',"AddWindowBorders Method","topic_00000000000014EC.html"]];

@@ -1,1 +1,1 @@
-search_result['255']=["topic_000000000000009A_attached_props--.html","Internet Attached Properties",""];
+search_result['255']=["topic_00000000000000A2.html","Monitor.CaptureWindowToFile Method","Captures the window to file."];

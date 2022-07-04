@@ -1,1 +1,1 @@
-search_result['1262']=["topic_000000000000043D.html","ERROR_BAD_CONFIGURATION Field",""];
+search_result['1262']=["topic_000000000000042C.html","ERROR_INVALID_COMBOBOX_MESSAGE Field",""];

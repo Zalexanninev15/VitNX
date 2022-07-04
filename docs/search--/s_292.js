@@ -1,1 +1,1 @@
-search_result['292']=["topic_00000000000000B6_events--.html","Log Events",""];
+search_result['292']=["topic_00000000000000B3.html","Internet.GetHostName Method","Gets the host name (name of PC, Windows System)."];

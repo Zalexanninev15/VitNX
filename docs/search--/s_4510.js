@@ -1,1 +1,1 @@
-search_result['4510']=["topic_00000000000011B9.html","VitNX_ComboBox.OnGotFocus Method","Raises the GotFocus event."];
+search_result['4510']=["topic_000000000000150A_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];

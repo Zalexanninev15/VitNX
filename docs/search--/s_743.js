@@ -1,1 +1,1 @@
-search_result['743']=["topic_0000000000000236.html","ERROR_OUT_OF_STRUCTURES Field",""];
+search_result['743']=["topic_0000000000000225.html","ERROR_BAD_FORMAT Field",""];

@@ -1,1 +1,1 @@
-search_result['5002']=["topic_00000000000012FE.html","VitNX_MenuRenderer.OnRenderImageMargin Method","Draws the item background."];
+search_result['5002']=["topic_000000000000163C.html","VitNX_DockSplitter Constructor",""];

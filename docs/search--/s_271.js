@@ -1,1 +1,1 @@
-search_result['271']=["topic_00000000000000A6_methods--.html","PowerControl Methods",""];
+search_result['271']=["topic_00000000000000AD.html","Motherboard.GetWindowsProductKeyFromUefi Method","Gets the Windows product key from the UEFI."];

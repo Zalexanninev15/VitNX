@@ -1,1 +1,1 @@
-search_result['4463']=["topic_0000000000001197_attached_props--.html","VitNX_Button Attached Properties",""];
+search_result['4463']=["topic_00000000000014F5.html","ConsoleProgressBar1.SetColor Method","Sets the color."];

@@ -1,1 +1,1 @@
-search_result['3257']=["topic_0000000000000C03.html","CRYPT_E_SECURITY_SETTINGS Field",""];
+search_result['3257']=["topic_0000000000000BF2.html","SEC_E_SMARTCARD_CERT_REVOKED Field",""];

@@ -1,1 +1,1 @@
-search_result['1120']=["topic_00000000000003AF.html","ERROR_NONE_MAPPED Field",""];
+search_result['1120']=["topic_000000000000039E.html","ERROR_ACCESS_DISABLED_BY_POLICY Field",""];

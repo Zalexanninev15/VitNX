@@ -1,1 +1,1 @@
-search_result['3667']=["topic_0000000000000D9D.html","COMADMIN_E_LEGACYCOMPS_NOT_ALLOWED_IN_1_0_FORMAT Field",""];
+search_result['3667']=["topic_0000000000000D8C.html","COMADMIN_E_ROLE_DOES_NOT_EXIST Field",""];

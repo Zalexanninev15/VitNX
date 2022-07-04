@@ -1,1 +1,1 @@
-c['603']=[['604',"PerformanceCounter Constructor","topic_0000000000000017.html",0],['605',"Methods","topic_0000000000000014_methods--.html",1],['608',"Fields","topic_0000000000000014_vars--.html",1]];
+c['603']=[['604',"Methods","topic_0000000000000040_methods--.html",1]];

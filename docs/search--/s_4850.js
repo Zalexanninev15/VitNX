@@ -1,1 +1,1 @@
-search_result['4850']=["topic_000000000000128D.html","VitNX_DockGroup Class",""];
+search_result['4850']=["topic_00000000000015D7.html","ItemsRemoved Event",""];

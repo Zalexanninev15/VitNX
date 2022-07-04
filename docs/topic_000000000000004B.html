@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>EncrypterAndDecrypter.EncryptQryParam Method</title>
+	<title>EncrypterAndDecrypter.Decrypt Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">EncrypterAndDecrypter.EncryptQryParam Method</h1>
+		<h1 class="title">EncrypterAndDecrypter.Decrypt Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000001F.html">VitNX3.Functions.Data</a>
+<a href="topic_0000000000000020.html">VitNX3.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Encrypts the text with qry param.</summary-info>
+        <summary-info>Decrypts the text.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> EncryptQryParam(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> Decrypt(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>input</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -163,7 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The input. 
+	The text to be decrypted. 
 </p>
 
 <p />
@@ -248,25 +248,30 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string EncryptQryParam(string input)
+public static string Decrypt(string input)
  {
      RijndaelManaged RijndaelCipher = new RijndaelManaged();
-     byte[] PlainText = Encoding.Unicode.GetBytes(input);
-     byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
-     PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
-     ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32),
-         SecretKey.GetBytes(16));
-     MemoryStream memoryStream = new MemoryStream();
-     CryptoStream cryptoStream = new CryptoStream(memoryStream,
-         Encryptor,
-         CryptoStreamMode.Write);
-     cryptoStream.Write(PlainText, 0, PlainText.Length);
-     cryptoStream.FlushFinalBlock();
-     byte[] CipherBytes = memoryStream.ToArray();
-     memoryStream.Close();
-     cryptoStream.Close();
-     string EncryptedData = Convert.ToBase64String(CipherBytes);
-     return EncryptedData.Replace(&quot;+&quot;, &quot;~&quot;).Replace(&quot;/&quot;, &quot;^&quot;);
+     string DecryptedData = null;
+     try
+     {
+         byte[] EncryptedData = Convert.FromBase64String(input);
+         byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+         PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+         ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32),
+             SecretKey.GetBytes(16));
+         MemoryStream memoryStream = new MemoryStream(EncryptedData);
+         CryptoStream cryptoStream = new CryptoStream(memoryStream,
+             Decryptor,
+             CryptoStreamMode.Read);
+         byte[] PlainText = new byte[EncryptedData.Length];
+         int DecryptedCount = cryptoStream.Read(PlainText, 0,
+             PlainText.Length);
+         memoryStream.Close();
+         cryptoStream.Close();
+         DecryptedData = Encoding.Unicode.GetString(PlainText, 0, DecryptedCount);
+     }
+     catch { DecryptedData = input; }
+     return DecryptedData;
  }
 					</pre>			
 				</div>
@@ -331,11 +336,11 @@ public static string EncryptQryParam(string input)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000047.html">EncrypterAndDecrypter Class</a><br />
+			<a href="topic_0000000000000049.html">EncrypterAndDecrypter Class</a><br />
 
 
 
-<a href="topic_000000000000001F.html">VitNX3.Functions.Data Namespace</a><br />
+<a href="topic_0000000000000020.html">VitNX3.Functions.Data Namespace</a><br />
 
 
 			

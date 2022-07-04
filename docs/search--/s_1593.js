@@ -1,1 +1,1 @@
-search_result['1593']=["topic_0000000000000588.html","ERROR_GROUP_NOT_ONLINE Field",""];
+search_result['1593']=["topic_0000000000000577.html","ERROR_INVALID_CLEANER Field",""];

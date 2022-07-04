@@ -1,1 +1,1 @@
-search_result['3010']=["topic_0000000000000B0C.html","STG_S_CANNOTCONSOLIDATE Field",""];
+search_result['3010']=["topic_0000000000000AFB.html","TYPE_E_TYPEMISMATCH Field",""];

@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000016E1.html"],['668',"VitNX3.Functions.FileSystem Namespace","topic_0000000000000052.html"],['669',"File Class","topic_000000000000005A.html"],['670',"Methods","topic_000000000000005A_methods--.html"],['685',"WriteTextAsUTF8_ToTemp Method","topic_000000000000005D.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001A35.html"],['654',"VitNX3.Functions.FileSystem Namespace","topic_0000000000000054.html"],['655',"File Class","topic_000000000000005D.html"]];

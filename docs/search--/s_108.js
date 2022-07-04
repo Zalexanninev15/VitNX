@@ -1,1 +1,1 @@
-search_result['108']=["topic_0000000000000047_events--.html","EncrypterAndDecrypter Events",""];
+search_result['108']=["topic_0000000000000049.html","EncrypterAndDecrypter Class","Encrypter and decrypter for text."];

@@ -1,1 +1,1 @@
-search_result['2382']=["topic_000000000000089D.html","ERROR_SXS_XML_E_DUPLICATEATTRIBUTE Field",""];
+search_result['2382']=["topic_000000000000088C.html","ERROR_SXS_SECTION_NOT_FOUND Field",""];

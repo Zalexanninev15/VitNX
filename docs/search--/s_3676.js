@@ -1,1 +1,1 @@
-search_result['3676']=["topic_0000000000000DA6.html","COMADMIN_E_REGISTRY_ACCESSDENIED Field",""];
+search_result['3676']=["topic_0000000000000D95.html","COMADMIN_E_BASE_PARTITION_ONLY Field",""];

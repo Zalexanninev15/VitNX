@@ -1,1 +1,1 @@
-search_result['3240']=["topic_0000000000000BF2.html","CRYPT_E_UNEXPECTED_MSG_TYPE Field",""];
+search_result['3240']=["topic_0000000000000BE1.html","SEC_E_MUST_BE_KDC Field",""];

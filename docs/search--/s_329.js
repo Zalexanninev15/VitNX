@@ -1,1 +1,1 @@
-search_result['329']=["topic_00000000000000C7_events--.html","Import Events",""];
+search_result['329']=["topic_00000000000000CA_events--.html","Log Events",""];

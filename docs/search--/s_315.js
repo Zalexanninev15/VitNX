@@ -1,1 +1,1 @@
-search_result['315']=["topic_00000000000000C0_vars--.html","SendDataToSites Fields",""];
+search_result['315']=["topic_00000000000000C3.html","Ini Class","Works with INI config file, based on Windows System functions."];

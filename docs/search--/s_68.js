@@ -1,1 +1,1 @@
-search_result['68']=["topic_0000000000000026.html","Text.NumberAsPercentD Method","Gets the number as percent (double)."];
+search_result['68']=["topic_0000000000000026.html","Text.ContainsOnlyLatters Method","Contains the only latters."];

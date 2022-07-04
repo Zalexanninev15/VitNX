@@ -1,1 +1,1 @@
-search_result['4405']=["topic_000000000000117B.html","Text.Writeln Method","Writeln text with the colors."];
+search_result['4405']=["topic_00000000000014C9_props--.html","WorkWithSystem Properties",""];

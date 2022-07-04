@@ -1,1 +1,1 @@
-search_result['4744']=["topic_000000000000124A.html","VitNX_ToolStrip Class",""];
+search_result['4744']=["topic_0000000000001598.html","VitNX_ScrollBar.OnResize Method","Raises the Resize event."];

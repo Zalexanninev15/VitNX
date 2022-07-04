@@ -1,1 +1,1 @@
-search_result['138']=["topic_0000000000000058.html","Folder.DeleteForever Method","Deletes the file forever."];
+search_result['138']=["topic_0000000000000058.html","Folder.GetSize Method","Gets the folder size."];

@@ -1,1 +1,1 @@
-search_result['90']=["topic_000000000000003C.html","Text.FixDeEncoding Method","Fixes the de-encoding."];
+search_result['90']=["topic_000000000000003C.html","Text.ConvertListToString Method","Converts the list to string (space is used as separator)."];

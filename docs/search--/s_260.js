@@ -1,1 +1,1 @@
-search_result['260']=["topic_000000000000009B.html","Internet.GetHostName Method","Gets the host name (name of PC, Windows System)."];
+search_result['260']=["topic_00000000000000A7.html","Monitor.GetResolutionType2 Method","Gets the resolution (method 2)."];

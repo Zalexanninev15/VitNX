@@ -1,1 +1,1 @@
-search_result['2126']=["topic_000000000000079D.html","ERROR_DS_INSUFFICIENT_ATTR_TO_CREATE_OBJECT Field",""];
+search_result['2126']=["topic_000000000000078C.html","ERROR_DS_CANT_CREATE_IN_NONDOMAIN_NC Field",""];

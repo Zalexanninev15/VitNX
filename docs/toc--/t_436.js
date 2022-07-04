@@ -1,1 +1,1 @@
-c['436']=[['437',"DockResizeFilter Constructor","topic_0000000000001314.html",0],['438',"Methods","topic_0000000000001313_methods--.html",1]];
+c['436']=[['437',"VitNX2_ProgressBarDisplayMode Enumeration","topic_00000000000016A4.html",0],['438',"Methods","topic_00000000000016A0_methods--.html",1]];

@@ -1,1 +1,1 @@
-search_result['1524']=["topic_0000000000000543.html","ERROR_WMI_DP_FAILED Field",""];
+search_result['1524']=["topic_0000000000000532.html","ERROR_CLIPPING_NOT_SUPPORTED Field",""];

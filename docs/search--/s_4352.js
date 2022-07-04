@@ -1,1 +1,1 @@
-search_result['4352']=["topic_000000000000115F.html","WorkWithSystem.GetIcon Method","Gets the icon (WinAPI)."];
+search_result['4352']=["topic_00000000000014B0_attached_props--.html","DISPLAYCONFIG_MODE_INFO_UNION Attached Properties",""];

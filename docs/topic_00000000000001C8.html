@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>HWND_TOPMOST Field</title>
+	<title>Import.CreateRoundRectRgn Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">HWND_TOPMOST Field</h1>
+		<h1 class="title">Import.CreateRoundRectRgn Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">new public static readonly <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> HWND_TOPMOST</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;, EntryPoint = &quot;CreateRoundRectRgn&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> CreateRoundRectRgn(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nLeftRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nTopRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nRightRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nBottomRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nWidthEllipse</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nHeightEllipse</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,9 +150,90 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="nLeftRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nLeftRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nTopRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nTopRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nRightRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nRightRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nBottomRect" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nBottomRect
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nWidthEllipse" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nWidthEllipse
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="nHeightEllipse" class="parameterList">
+	<dt>
+		<span class="parameter">
+			nHeightEllipse
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
+		Return Value</h4>
 	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	
 
@@ -228,7 +309,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+[DllImport(&quot;gdi32.dll&quot;, EntryPoint = &quot;CreateRoundRectRgn&quot;)]
+ public static extern IntPtr CreateRoundRectRgn(int nLeftRect,
+     int nTopRect,
+     int nRightRect,
+     int nBottomRect,
+     int nWidthEllipse,
+     int nHeightEllipse);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -292,11 +379,11 @@ public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000001C1.html">Constants Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -318,3 +405,4 @@ public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
     </div>
   </body>
 </html>
+

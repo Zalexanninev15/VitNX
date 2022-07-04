@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.ShutdownBlockReasonCreate Method</title>
+	<title>Import.RtlCompressBuffer Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.ShutdownBlockReasonCreate Method</h1>
+		<h1 class="title">Import.RtlCompressBuffer Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,8 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ShutdownBlockReasonCreate(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   [MarshalAs(UnmanagedType.LPWStr)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>reason</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;ntdll.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> RtlCompressBuffer(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint16">UInt16</a> <i>compressionFormat</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>buffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>bufferSize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>compressedBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>compressedBufferSize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>chunkSize</i>,&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>finalCompressedSize</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>workSpace</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,27 +151,105 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWnd" class="parameterList">
+	Parameters</h4><dl paramName="compressionFormat" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWnd
+			compressionFormat
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint16">UInt16</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="reason" class="parameterList">
+<dl paramName="buffer" class="parameterList">
 	<dt>
 		<span class="parameter">
-			reason
+			buffer
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="bufferSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			bufferSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="compressedBuffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			compressedBuffer
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="compressedBufferSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			compressedBufferSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="chunkSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			chunkSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="finalCompressedSize" class="parameterList">
+	<dt>
+		<span class="parameter">
+			finalCompressedSize
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="workSpace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			workSpace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	</dd>
 </dl>
 <p>
@@ -183,7 +260,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	
 
 
@@ -258,11 +335,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;,
-     SetLastError = true)]
- public static extern bool ShutdownBlockReasonCreate(IntPtr hWnd,
-     [MarshalAs(UnmanagedType.LPWStr)]
- string reason);
+[DllImport(&quot;ntdll.dll&quot;)]
+ public static extern uint RtlCompressBuffer(ushort compressionFormat,
+     byte[] buffer,
+     int bufferSize,
+     byte[] compressedBuffer,
+     int compressedBufferSize,
+     uint chunkSize,
+     out int finalCompressedSize,
+     IntPtr workSpace);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -326,11 +407,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

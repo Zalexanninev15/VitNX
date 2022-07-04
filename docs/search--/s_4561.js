@@ -1,1 +1,1 @@
-search_result['4561']=["topic_00000000000011DD_methods--.html","VitNX_GroupBox Methods",""];
+search_result['4561']=["topic_0000000000001522.html","VitNX_Button.OnCreateControl Method","Raises the CreateControl method."];

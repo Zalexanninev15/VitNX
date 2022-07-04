@@ -1,1 +1,1 @@
-search_result['3673']=["topic_0000000000000DA3.html","COMADMIN_E_CANNOT_ALIAS_EVENTCLASS Field",""];
+search_result['3673']=["topic_0000000000000D92.html","COMADMIN_E_CANT_SUBSCRIBE_TO_COMPONENT Field",""];

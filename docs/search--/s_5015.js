@@ -1,1 +1,1 @@
-search_result['5015']=["topic_0000000000001306.html","VitNX_ToolStripRenderer.OnRenderToolStripBorder Method","Raises the RenderToolStripBorder event."];
+search_result['5015']=["topic_0000000000001644.html","VitNX_SplitterType Enumeration",""];

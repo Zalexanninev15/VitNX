@@ -1,1 +1,1 @@
-search_result['1186']=["topic_00000000000003F1.html","ERROR_CURRENT_DOMAIN_NOT_ALLOWED Field",""];
+search_result['1186']=["topic_00000000000003E0.html","ERROR_BAD_IMPERSONATION_LEVEL Field",""];

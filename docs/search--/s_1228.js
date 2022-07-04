@@ -1,1 +1,1 @@
-search_result['1228']=["topic_000000000000041B.html","ERROR_HWNDS_HAVE_DIFF_PARENT Field",""];
+search_result['1228']=["topic_000000000000040A.html","ERROR_INVALID_MEMBER Field",""];

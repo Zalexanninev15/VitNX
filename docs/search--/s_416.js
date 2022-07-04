@@ -1,1 +1,1 @@
-search_result['416']=["topic_0000000000000116.html","Import.CreateFontIndirect Method",""];
+search_result['416']=["topic_0000000000000108.html","Import.GetCursorPos Method",""];

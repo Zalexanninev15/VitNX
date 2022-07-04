@@ -1,1 +1,1 @@
-search_result['184']=["topic_0000000000000077.html","Windows.GetWindowsDisplayVersionFromREG Method","Gets the Windows displayed version from the Windows Registry."];
+search_result['184']=["topic_0000000000000077.html","GWK Class",""];

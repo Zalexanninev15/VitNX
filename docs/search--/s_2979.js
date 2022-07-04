@@ -1,1 +1,1 @@
-search_result['2979']=["topic_0000000000000AED.html","STG_E_FILEALREADYEXISTS Field",""];
+search_result['2979']=["topic_0000000000000ADC.html","DISP_E_BADVARTYPE Field",""];

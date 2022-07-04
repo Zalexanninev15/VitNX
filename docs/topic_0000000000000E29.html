@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>yHotspot Field</title>
+	<title>BLENDFUNCTION Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">yHotspot Field</h1>
+		<h1 class="title">BLENDFUNCTION Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> yHotspot</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential, Pack = 1)]&nbsp;<br />public struct BLENDFUNCTION</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,11 +150,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	
 
 
 
@@ -170,6 +165,133 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000E2D.html">AlphaFormat</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000E2B.html">BlendFlags</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000E2A.html">BlendOp</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000E2C.html">SourceConstantAlpha</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -228,7 +350,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public int yHotspot;
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+ public struct BLENDFUNCTION
+ {
+     public byte BlendOp;
+     public byte BlendFlags;
+     public byte SourceConstantAlpha;
+     public byte AlphaFormat;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -284,6 +413,7 @@ public int yHotspot;
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -292,14 +422,10 @@ public int yHotspot;
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000E26.html">ICONINFO Structure</a><br />
+	<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
-
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					
@@ -318,3 +444,4 @@ public int yHotspot;
     </div>
   </body>
 </html>
+

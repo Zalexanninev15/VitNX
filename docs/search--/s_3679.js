@@ -1,1 +1,1 @@
-search_result['3679']=["topic_0000000000000DA9.html","ResultCom.Succeeded Method",""];
+search_result['3679']=["topic_0000000000000D98.html","COMADMIN_E_CAT_INVALID_PARTITION_NAME Field",""];

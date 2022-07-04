@@ -1,1 +1,1 @@
-search_result['3550']=["topic_0000000000000D28.html","SCARD_E_NO_READERS_AVAILABLE Field",""];
+search_result['3550']=["topic_0000000000000D17.html","SPAPI_E_CANT_REMOVE_DEVINST Field",""];

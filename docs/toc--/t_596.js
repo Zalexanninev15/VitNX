@@ -1,1 +1,1 @@
-c['596']=[['597',"Others Class","topic_000000000000001A.html",1],['603',"PerformanceCounter Class","topic_0000000000000014.html",1]];
+c['596']=[['597',"CompressAndDecompress Class","topic_000000000000004F.html",1],['603',"EncryptAndDecrypt Class","topic_0000000000000040.html",1],['613',"EncrypterAndDecrypter Class","topic_0000000000000049.html",1],['620',"NumericalTextConverter Class","topic_0000000000000021.html",1],['624',"Text Class","topic_0000000000000024.html",1]];

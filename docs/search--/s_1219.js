@@ -1,1 +1,1 @@
-search_result['1219']=["topic_0000000000000412.html","ERROR_INVALID_LB_MESSAGE Field",""];
+search_result['1219']=["topic_0000000000000401.html","ERROR_ALIAS_EXISTS Field",""];

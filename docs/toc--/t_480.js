@@ -1,1 +1,1 @@
-c['480']=[['481',"VitNX2_Panel Constructor","topic_0000000000001368.html",0],['482',"Methods","topic_0000000000001367_methods--.html",1]];
+c['480']=[['481',"VitNX2_PictureBox Constructor","topic_00000000000016EE.html",0],['482',"Methods","topic_00000000000016ED_methods--.html",1]];

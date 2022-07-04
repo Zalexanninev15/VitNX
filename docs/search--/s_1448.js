@@ -1,1 +1,1 @@
-search_result['1448']=["topic_00000000000004F7.html","ERROR_NO_SITENAME Field",""];
+search_result['1448']=["topic_00000000000004E6.html","ERROR_INVALID_PRINTER_NAME Field",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.MediaInfo_Count_Get Method</title>
+	<title>Import.AssocQueryString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.MediaInfo_Count_Get Method</h1>
+		<h1 class="title">Import.AssocQueryString Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,8 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;MediaInfo.dll&quot;,
-            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> MediaInfo_Count_Get(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>handle</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000F6D.html" onclick="this.target='';return true;">MEDIAINFOSTREAMKIND</a> <i>streamKind</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>stream</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;shlwapi.dll&quot;,
+            CharSet = CharSet.Unicode,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> AssocQueryString(&nbsp;<br />   <a target="_top" href="topic_0000000000000E45.html" onclick="this.target='';return true;">ASSOC_F</a> <i>flags</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000E56.html" onclick="this.target='';return true;">ASSOC_STR</a> <i>str</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>pszAssoc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>pszExtra</i>,&nbsp;<br />   [Out()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> <i>pszOut</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>pcchOut</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,40 +153,79 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="handle" class="parameterList">
+	Parameters</h4><dl paramName="flags" class="parameterList">
 	<dt>
 		<span class="parameter">
-			handle
+			flags
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="topic_0000000000000E45.html" onclick="this.target='';return true;">ASSOC_F</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="streamKind" class="parameterList">
+<dl paramName="str" class="parameterList">
 	<dt>
 		<span class="parameter">
-			streamKind
+			str
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000F6D.html" onclick="this.target='';return true;">MEDIAINFOSTREAMKIND</a> 
+		<a target="_top" href="topic_0000000000000E56.html" onclick="this.target='';return true;">ASSOC_STR</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="stream" class="parameterList">
+<dl paramName="pszAssoc" class="parameterList">
 	<dt>
 		<span class="parameter">
-			stream
+			pszAssoc
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pszExtra" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pszExtra
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pszOut" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pszOut
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder">StringBuilder</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="pcchOut" class="parameterList">
+	<dt>
+		<span class="parameter">
+			pcchOut
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
@@ -196,7 +236,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	
 
 
@@ -271,11 +311,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;MediaInfo.dll&quot;,
-     CharSet = CharSet.Unicode)]
- public static extern int MediaInfo_Count_Get(IntPtr handle,
-     MEDIAINFOSTREAMKIND streamKind,
-     int stream);
+[DllImport(&quot;shlwapi.dll&quot;,
+     CharSet = CharSet.Unicode,
+     SetLastError = true)]
+ public static extern uint AssocQueryString(ASSOC_F flags,
+ ASSOC_STR str,
+ string pszAssoc,
+ string pszExtra,
+ [Out] StringBuilder pszOut,
+ ref uint pcchOut);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -339,11 +383,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

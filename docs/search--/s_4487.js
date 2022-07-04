@@ -1,1 +1,1 @@
-search_result['4487']=["topic_00000000000011A8_vars--.html","VitNX_CheckBox Fields",""];
+search_result['4487']=["topic_0000000000001500_overloads--.html","ProgressBar.Update Method","Update the progress bar by count."];

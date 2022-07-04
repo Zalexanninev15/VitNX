@@ -1,1 +1,1 @@
-search_result['885']=["topic_00000000000002C4.html","ERROR_INVALID_MESSAGE Field",""];
+search_result['885']=["topic_00000000000002B3.html","ERROR_RING2SEG_MUST_BE_MOVABLE Field",""];

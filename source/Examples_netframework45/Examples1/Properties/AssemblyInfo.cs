@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Examples1")]
-[assembly: AssemblyDescription("An examples for the VitNX library")]
+[assembly: AssemblyDescription("An examples for the VitNX library (.NET Framework 4.5+)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zalexanninev15")]
 [assembly: AssemblyProduct("VitNX Examples1")]
@@ -11,5 +11,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("fa334815-6d78-4e9a-9f4d-6c8a58222a57")]
-[assembly: AssemblyVersion("1.3.0.0")]
-[assembly: AssemblyFileVersion("1.3.0.0")] 
+[assembly: AssemblyVersion("1.4.1.0")]
+[assembly: AssemblyFileVersion("1.4.1.0")]

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
 
 using VitNX.UI.ControlsV1.Docking;
 using VitNX.UI.ControlsV1.Forms;
 using VitNX.UI.ControlsV1.Win32;
 
+using VitNX3.Functions.Win32;
 using VitNX3.Functions.WinControllers;
-
-using static VitNX3.Functions.Win32.Enums;
 
 namespace Examples1
 {
@@ -39,14 +37,9 @@ namespace Examples1
             _toolWindows.Add(_dockConsole);
             _toolWindows.Add(_dockLayers);
             _toolWindows.Add(_dockHistory);
-            if (File.Exists("dockpanel.config"))
-                DeserializeDockPanel("dockpanel.config");
-            else
-            {
-                foreach (var toolWindow in _toolWindows)
-                    DockPanel.AddContent(toolWindow);
-                DockPanel.AddContent(_dockHistory, _dockLayers.DockGroup);
-            }
+            foreach (var toolWindow in _toolWindows)
+                DockPanel.AddContent(toolWindow);
+            DockPanel.AddContent(_dockHistory, _dockLayers.DockGroup);
             BuildWindowMenu();
             DockPanel.AddContent(new DockDocument("Document 1", Icons.document_16xLG));
             DockPanel.AddContent(new DockDocument("Document 2", Icons.document_16xLG));
@@ -55,7 +48,6 @@ namespace Examples1
 
         private void HookEvents()
         {
-            FormClosing += MainForm_FormClosing;
             DockPanel.ContentAdded += DockPanel_ContentAdded;
             DockPanel.ContentRemoved += DockPanel_ContentRemoved;
             mnuNewFile.Click += NewFile_Click;
@@ -85,11 +77,6 @@ namespace Examples1
             mnuConsole.Checked = DockPanel.ContainsContent(_dockConsole);
             mnuLayers.Checked = DockPanel.Contains(_dockLayers);
             mnuHistory.Checked = DockPanel.Contains(_dockHistory);
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SerializeDockPanel("dockpanel.config");
         }
 
         private void DockPanel_ContentAdded(object sender, DockContentEventArgs e)
@@ -178,27 +165,27 @@ namespace Examples1
                 {
                     case "Normal":
                         {
-                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Normal);
+                            TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Normal);
                             TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                             break;
                         }
                     case "Indeterminate":
-                        TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Indeterminate);
+                        TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Indeterminate);
                         break;
 
                     case "NoProgress":
-                        TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.NoProgress);
+                        TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.NoProgress);
                         break;
 
                     case "Error":
                         {
-                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Error);
+                            TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Error);
                             TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                             break;
                         }
                     case "Paused":
                         {
-                            TaskBarProgressBar.SetState(Handle, TASKBAR_STATES.Paused);
+                            TaskBarProgressBar.SetState(Handle, Enums.TASKBAR_STATES.Paused);
                             TaskBarProgressBar.SetValue(Handle, Convert.ToInt32(toolStripTextBox1.Text), 100);
                             break;
                         }

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Colors Field</title>
+	<title>VitNX2_CheckBox Constructor</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Colors Field</h1>
+		<h1 class="title">VitNX2_CheckBox Constructor</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000138A.html">VitNX3.UI.OtherControls</a>
+<a href="topic_000000000000169F.html">VitNX2.UI.ControlsV2</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>The colors of the standard notification types.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">new public <a target="_top" href="topic_00000000000016CB.html" onclick="this.target='';return true;">Colors</a> Colors</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public VitNX2_CheckBox()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +151,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
-	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="topic_00000000000016CB.html" onclick="this.target='';return true;">Colors</a> 
-	
 
 
 
@@ -229,7 +224,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Colors Colors = new Colors();
+public VitNX2_CheckBox()
+ {
+     SetStyle(ControlStyles.UserPaint |
+         ControlStyles.ResizeRedraw |
+         ControlStyles.AllPaintingInWmPaint |
+         ControlStyles.OptimizedDoubleBuffer, true);
+     DoubleBuffered = true;
+     BackColor = Color.FromArgb(60, 70, 73);
+     Cursor = Cursors.Hand;
+     Font = new Font(&quot;Segoe UI&quot;, 10f);
+     Size = new Size(112, 22);
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -293,11 +299,11 @@ public Colors Colors = new Colors();
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000016B3.html">Manager Class</a><br />
+			<a href="topic_00000000000016AF.html">VitNX2_CheckBox Class</a><br />
 
 
 
-<a href="topic_000000000000138A.html">VitNX3.UI.OtherControls Namespace</a><br />
+<a href="topic_000000000000169F.html">VitNX2.UI.ControlsV2 Namespace</a><br />
 
 
 			
@@ -319,3 +325,4 @@ public Colors Colors = new Colors();
     </div>
   </body>
 </html>
+

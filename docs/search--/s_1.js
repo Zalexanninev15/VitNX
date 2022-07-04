@@ -1,1 +1,1 @@
-search_result['1']=["topic_0000000000000001.html","Processes Class","Work with processes."];
+search_result['1']=["topic_0000000000000001.html","Processes Class","Works with processes."];

@@ -1,1 +1,1 @@
-search_result['263']=["topic_000000000000009E.html","Internet.GetPublicIP Method","Gets the public IP of PC."];
+search_result['263']=["topic_00000000000000AA.html","Motherboard Class","Works with informations of Motherboard."];

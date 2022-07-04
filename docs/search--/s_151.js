@@ -1,1 +1,1 @@
-search_result['151']=["topic_0000000000000060.html","File.GetText Method","Gets the text from file."];
+search_result['151']=["topic_0000000000000060.html","File.DeleteToRecycleBin Method","Deletes the file to Recycle Bin."];

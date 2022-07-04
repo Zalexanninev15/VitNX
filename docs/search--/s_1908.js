@@ -1,1 +1,1 @@
-search_result['1908']=["topic_00000000000006C3.html","ERROR_DS_NONEXISTENT_MUST_HAVE Field",""];
+search_result['1908']=["topic_00000000000006B2.html","ERROR_DS_BAD_NAME_SYNTAX Field",""];

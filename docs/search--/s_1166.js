@@ -1,1 +1,1 @@
-search_result['1166']=["topic_00000000000003DD.html","ERROR_ALIAS_EXISTS Field",""];
+search_result['1166']=["topic_00000000000003CC.html","ERROR_PASSWORD_RESTRICTION Field",""];

@@ -1,1 +1,1 @@
-search_result['2067']=["topic_0000000000000762.html","ERROR_DS_GC_REQUIRED Field",""];
+search_result['2067']=["topic_0000000000000751.html","ERROR_DS_NC_MUST_HAVE_NC_PARENT Field",""];

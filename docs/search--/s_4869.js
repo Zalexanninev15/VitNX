@@ -1,1 +1,1 @@
-search_result['4869']=["topic_000000000000129B.html","VitNX_DockGroup.OnPaintBackground Method","Paints the background of the control."];
+search_result['4869']=["topic_00000000000015E3.html","AfterNodeCollapse Event",""];

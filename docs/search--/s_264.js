@@ -1,1 +1,1 @@
-search_result['264']=["topic_000000000000009F.html","Internet.GetMacAddress Method","Gets the MAC address."];
+search_result['264']=["topic_00000000000000AA_attached_props--.html","Motherboard Attached Properties",""];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Error Field</title>
+	<title>Helpers.GetColors Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Error Field</h1>
+		<h1 class="title">Helpers.GetColors Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000138A.html">VitNX3.UI.OtherControls</a>
+<a href="topic_00000000000016BE.html">VitNX2.UI.ControlsV2.UiKit</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> Error</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="topic_00000000000016BF.html" onclick="this.target='';return true;">FlatColors</a> GetColors(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> <i>control</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,10 +150,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="control" class="parameterList">
+	<dt>
+		<span class="parameter">
+			control
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
-		Field Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color">Color</a> 
+		Return Value</h4>
+	<a target="_top" href="topic_00000000000016BF.html" onclick="this.target='';return true;">FlatColors</a> 
 	
 
 
@@ -228,7 +244,21 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public Color Error = Color.FromArgb(255, 171, 37, 54);
+public static FlatColors GetColors(Control control)
+ {
+     if (control == null)
+         throw new ArgumentNullException();
+     FlatColors flatColors = new FlatColors();
+     while (control != null &amp;&amp; control.GetType() !=
+         typeof(FormSkin))
+         control = control.Parent;
+     if (control != null)
+     {
+         FormSkin formSkin = (FormSkin)control;
+         flatColors.Flat = formSkin.FlatColor;
+     }
+     return flatColors;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -292,11 +322,11 @@ public Color Error = Color.FromArgb(255, 171, 37, 54);
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000016CB.html">Colors Class</a><br />
+			<a href="topic_00000000000016C9.html">Helpers Class</a><br />
 
 
 
-<a href="topic_000000000000138A.html">VitNX3.UI.OtherControls Namespace</a><br />
+<a href="topic_00000000000016BE.html">VitNX2.UI.ControlsV2.UiKit Namespace</a><br />
 
 
 			
@@ -318,3 +348,4 @@ public Color Error = Color.FromArgb(255, 171, 37, 54);
     </div>
   </body>
 </html>
+

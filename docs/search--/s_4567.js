@@ -1,1 +1,1 @@
-search_result['4567']=["topic_00000000000011E0_attached_props--.html","VitNX_Label Attached Properties",""];
+search_result['4567']=["topic_0000000000001528.html","VitNX_Button.OnGotFocus Method","Raises the GotFocus event."];

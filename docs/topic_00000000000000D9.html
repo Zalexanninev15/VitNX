@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.MediaInfo_Inform Method</title>
+	<title>Config.DefaultGateway Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.MediaInfo_Inform Method</h1>
+		<h1 class="title">Config.DefaultGateway Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000CD.html">VitNX3.Functions.Web</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Activate DefaultGateway of NetworkInterface in IPAddress.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;MediaInfo.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> MediaInfo_Inform(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>handle</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>reserved</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a> DefaultGateway()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,39 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="handle" class="parameterList">
-	<dt>
-		<span class="parameter">
-			handle
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="reserved" class="parameterList">
-	<dt>
-		<span class="parameter">
-			reserved
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a> 
 	
 
 
@@ -257,9 +229,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;MediaInfo.dll&quot;)]
- public static extern IntPtr MediaInfo_Inform(IntPtr handle,
-     int reserved);
+public static IPAddress DefaultGateway() =&gt; NetworkInterface
+ .GetAllNetworkInterfaces()
+ .Where(n =&gt; n.OperationalStatus == OperationalStatus.Up)
+ .Where(n =&gt; n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+ .SelectMany(n =&gt; n.GetIPProperties()?.GatewayAddresses)
+ .Select(g =&gt; g?.Address).FirstOrDefault(a =&gt; a != null);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -323,11 +298,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000D7.html">Config Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000CD.html">VitNX3.Functions.Web Namespace</a><br />
 
 
 			

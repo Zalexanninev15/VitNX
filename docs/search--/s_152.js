@@ -1,1 +1,1 @@
-search_result['152']=["topic_0000000000000061.html","File.IsPeExe Method","Is this a PE file."];
+search_result['152']=["topic_0000000000000061.html","File.WriteTextAsUTF8_ToTemp Method","Writes the text to file as UTF-8 to temp folder."];

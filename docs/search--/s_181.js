@@ -1,1 +1,1 @@
-search_result['181']=["topic_0000000000000074.html","Windows.GetWindowsEditionIDFromREG Method","Gets the Windows edition from the Windows Registry."];
+search_result['181']=["topic_0000000000000074.html","DISMON.GetMergedFriendlyNames Method",""];

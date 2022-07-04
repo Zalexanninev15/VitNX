@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Config.UseProtocols Method</title>
+	<title>Ini.Initialize Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Config.UseProtocols Method</h1>
+		<h1 class="title">Ini.Initialize Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B9.html">VitNX3.Functions.Web</a>
+<a href="topic_00000000000000C2.html">VitNX3.Functions.SettingsAndLog</a>
 
 
 
@@ -89,8 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Activate all security protocols for all network functions to work (HTTPS).
-Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();</summary-info>
+        <summary-info>Initializing the configuration INI file.</summary-info>
 
 
 
@@ -138,7 +137,7 @@ Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseP
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.securityprotocoltype">SecurityProtocolType</a> UseProtocols()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Initialize(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>file</i> = null&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,11 +151,23 @@ Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseP
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="file" class="parameterList">
+	<dt>
+		<span class="parameter">
+			file
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The ini file. 
+</p>
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.securityprotocoltype">SecurityProtocolType</a> 
-	
+<p />
+
 
 
 
@@ -230,9 +241,10 @@ Example: ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseP
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static SecurityProtocolType UseProtocols() =&gt; SecurityProtocolType.Tls12 |
- SecurityProtocolType.Tls11 |
- SecurityProtocolType.Tls;
+public static void Initialize(string file = null)
+ {
+     path = new FileInfo(file ?? defValue + &quot;.ini&quot;).FullName;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -296,11 +308,11 @@ public static SecurityProtocolType UseProtocols() =&gt; SecurityProtocolType.Tls
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C3.html">Config Class</a><br />
+			<a href="topic_00000000000000C3.html">Ini Class</a><br />
 
 
 
-<a href="topic_00000000000000B9.html">VitNX3.Functions.Web Namespace</a><br />
+<a href="topic_00000000000000C2.html">VitNX3.Functions.SettingsAndLog Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['333']=["topic_00000000000000C8.html","Import.SHGetStockIconInfo Method",""];
+search_result['333']=["topic_00000000000000CB.html","Log Constructor","Initializes a new instance of the Log class."];

@@ -1,1 +1,1 @@
-search_result['29']=["topic_0000000000000013.html","VitNX3.Functions.CSharp Namespace",""];
+search_result['29']=["topic_0000000000000013.html","Installed.FindAppPath Method","Finds the application path."];

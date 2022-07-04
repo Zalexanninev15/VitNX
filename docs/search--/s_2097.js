@@ -1,1 +1,1 @@
-search_result['2097']=["topic_0000000000000780.html","ERROR_DS_LINK_ID_NOT_AVAILABLE Field",""];
+search_result['2097']=["topic_000000000000076F.html","ERROR_DS_DNS_LOOKUP_FAILURE Field",""];

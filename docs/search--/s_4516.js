@@ -1,1 +1,1 @@
-search_result['4516']=["topic_00000000000011BF.html","VitNX_ComboBox.OnResize Method","Raises the Resize event."];
+search_result['4516']=["topic_000000000000150E.html","ObservableList\u0026lt;T\u0026gt;.Clear Method",""];

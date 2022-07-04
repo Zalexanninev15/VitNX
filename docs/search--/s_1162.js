@@ -1,1 +1,1 @@
-search_result['1162']=["topic_00000000000003D9.html","ERROR_TOKEN_ALREADY_IN_USE Field",""];
+search_result['1162']=["topic_00000000000003C8.html","ERROR_MEMBER_NOT_IN_GROUP Field",""];

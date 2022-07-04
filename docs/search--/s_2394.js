@@ -1,1 +1,1 @@
-search_result['2394']=["topic_00000000000008A9.html","ERROR_SXS_XML_E_UNCLOSEDCDATA Field",""];
+search_result['2394']=["topic_0000000000000898.html","ERROR_SXS_UNKNOWN_ENCODING_GROUP Field",""];

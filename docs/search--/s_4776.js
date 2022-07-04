@@ -1,1 +1,1 @@
-search_result['4776']=["topic_0000000000001259.html","AfterNodeExpand Event",""];
+search_result['4776']=["topic_00000000000015B3.html","VitNX_ScrollBase.OnResize Method","Raises the Resize event."];

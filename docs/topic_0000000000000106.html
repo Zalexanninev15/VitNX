@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>WinEventDelegate Delegate</title>
+	<title>Import.DuplicateToken Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">WinEventDelegate Delegate</h1>
+		<h1 class="title">Import.DuplicateToken Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public delegate <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> WinEventDelegate(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWinEventHook</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>eventType</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>idObject</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>idChild</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwEventThread</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwmsEventTime</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;advapi32.dll&quot;,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DuplicateToken(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hToken</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>impersonationLevel</i>,&nbsp;<br />   ref <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hNewToken</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hWinEventHook" class="parameterList">
+	Parameters</h4><dl paramName="hToken" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWinEventHook
+			hToken
 		</span>
 	</dt>
 	<dd>
@@ -164,79 +165,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="eventType" class="parameterList">
+<dl paramName="impersonationLevel" class="parameterList">
 	<dt>
 		<span class="parameter">
-			eventType
+			impersonationLevel
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="hwnd" class="parameterList">
+<dl paramName="hNewToken" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hwnd
+			hNewToken
 		</span>
 	</dt>
 	<dd>
 		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="idObject" class="parameterList">
-	<dt>
-		<span class="parameter">
-			idObject
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="idChild" class="parameterList">
-	<dt>
-		<span class="parameter">
-			idChild
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwEventThread" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwEventThread
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="dwmsEventTime" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dwmsEventTime
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
@@ -245,6 +194,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -318,13 +271,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public delegate void WinEventDelegate(IntPtr hWinEventHook,
-     uint eventType,
-     IntPtr hwnd,
-     int idObject,
-     int idChild,
-     uint dwEventThread,
-     uint dwmsEventTime);
+[DllImport(&quot;advapi32.dll&quot;,
+     SetLastError = true)]
+ public static extern int DuplicateToken(IntPtr hToken,
+     int impersonationLevel,
+     ref IntPtr hNewToken);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -388,11 +339,11 @@ public delegate void WinEventDelegate(IntPtr hWinEventHook,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -414,3 +365,4 @@ public delegate void WinEventDelegate(IntPtr hWinEventHook,
     </div>
   </body>
 </html>
+

@@ -1,1 +1,1 @@
-search_result['4388']=["topic_0000000000001174.html","Type1.SetText Method","Sets the text."];
+search_result['4388']=["topic_00000000000014BF_events--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Events",""];

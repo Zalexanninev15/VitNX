@@ -1,1 +1,1 @@
-search_result['4202']=["topic_000000000000111A_props--.html","Monitor Properties",""];
+search_result['4202']=["topic_0000000000001472.html","TaskBarProgressBar Class","Works with progressbar on taskbar."];

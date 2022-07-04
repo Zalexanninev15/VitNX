@@ -1,1 +1,1 @@
-c['559']=[['560',"DrawArrow Method","topic_0000000000001343.html",0],['561',"GetColors Method","topic_0000000000001344.html",0],['562',"RoundRec Method","topic_0000000000001341.html",0],['563',"RoundRect Method","topic_0000000000001342.html",0]];
+c['559']=[['560',"Installed Class","topic_0000000000000010.html",1],['565',"Processes Class","topic_0000000000000001.html",1]];

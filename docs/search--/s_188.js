@@ -1,1 +1,1 @@
-search_result['188']=["topic_000000000000007B.html","Windows.WindowsUseLightThemeForApps Method","Windows use light theme for apps from the Windows Registry, for Windows 10+."];
+search_result['188']=["topic_0000000000000077_props--.html","GWK Properties",""];

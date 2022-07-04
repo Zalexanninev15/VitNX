@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.InstallHinfSection Method</title>
+	<title>Import.SetLayout Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.InstallHinfSection Method</h1>
+		<h1 class="title">Import.SetLayout Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,9 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;Setupapi.dll&quot;, EntryPoint = &quot;InstallHinfSection&quot;,
-            CallingConvention = CallingConvention.StdCall,
-            CharSet = CharSet.Unicode)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> InstallHinfSection(&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>,&nbsp;<br />   [In()]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>ModuleHandle</i>,&nbsp;<br />   [In()]&nbsp;<br />[MarshalAs(UnmanagedType.LPWStr)]&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>CmdLineBuffer</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>nCmdShow</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;gdi32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> SetLayout(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>dwLayout</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,10 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hwnd" class="parameterList">
+	Parameters</h4><dl paramName="hdc" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hwnd
+			hdc
 		</span>
 	</dt>
 	<dd>
@@ -166,40 +164,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="ModuleHandle" class="parameterList">
+<dl paramName="dwLayout" class="parameterList">
 	<dt>
 		<span class="parameter">
-			ModuleHandle
+			dwLayout
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="CmdLineBuffer" class="parameterList">
-	<dt>
-		<span class="parameter">
-			CmdLineBuffer
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="nCmdShow" class="parameterList">
-	<dt>
-		<span class="parameter">
-			nCmdShow
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
@@ -208,6 +180,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	
 
 
 
@@ -281,13 +257,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;Setupapi.dll&quot;, EntryPoint = &quot;InstallHinfSection&quot;,
-     CallingConvention = CallingConvention.StdCall,
-     CharSet = CharSet.Unicode)]
- public static extern void InstallHinfSection([In] IntPtr hwnd,
- [In] IntPtr ModuleHandle,
- [In, MarshalAs(UnmanagedType.LPWStr)] string CmdLineBuffer,
- int nCmdShow);
+[DllImport(&quot;gdi32.dll&quot;)]
+ public static extern uint SetLayout(IntPtr hdc,
+     uint dwLayout);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -351,11 +323,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

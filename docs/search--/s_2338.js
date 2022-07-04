@@ -1,1 +1,1 @@
-search_result['2338']=["topic_0000000000000871.html","ERROR_SXS_WRONG_SECTION_TYPE Field",""];
+search_result['2338']=["topic_0000000000000860.html","WSANOTINITIALISED Field",""];

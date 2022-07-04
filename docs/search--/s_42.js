@@ -1,1 +1,1 @@
-search_result['42']=["topic_000000000000001A_attached_props--.html","Others Attached Properties",""];
+search_result['42']=["topic_000000000000001B.html","Others Class","Works with C# (others functions)."];

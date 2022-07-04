@@ -1,1 +1,1 @@
-search_result['487']=["topic_0000000000000158.html","Import.ModifyWorldTransform Method",""];
+search_result['487']=["topic_000000000000014C.html","Import.ExcludeClipRect Method",""];

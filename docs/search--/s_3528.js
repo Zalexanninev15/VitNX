@@ -1,1 +1,1 @@
-search_result['3528']=["topic_0000000000000D12.html","SCARD_P_SHUTDOWN Field",""];
+search_result['3528']=["topic_0000000000000D01.html","SPAPI_E_DEVICE_INTERFACE_REMOVED Field",""];

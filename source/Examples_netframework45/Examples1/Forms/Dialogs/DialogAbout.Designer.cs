@@ -1,5 +1,6 @@
 ﻿using VitNX.UI.ControlsV1.Controls;
 
+
 namespace Examples1
 {
     partial class DialogAbout

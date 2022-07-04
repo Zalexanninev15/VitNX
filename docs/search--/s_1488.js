@@ -1,1 +1,1 @@
-search_result['1488']=["topic_000000000000051F.html","ERROR_NOT_CONNECTED Field",""];
+search_result['1488']=["topic_000000000000050E.html","ERROR_INVALID_PRINTER_STATE Field",""];

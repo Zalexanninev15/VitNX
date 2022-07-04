@@ -1,1 +1,1 @@
-c['11']=[['12',"Add Method","topic_0000000000001182_overloads--.html",1],['14',"AddRange Method","topic_0000000000001183.html",0],['15',"Clear Method","topic_0000000000001185.html",0],['16',"Dispose Method","topic_0000000000001180_overloads--.html",1],['19',"Remove Method","topic_0000000000001184_overloads--.html",1]];
+c['11']=[['12',"Dispose(bool) Method","topic_000000000000150A.html",0],['13',"Dispose() Method","topic_0000000000001509.html",0]];

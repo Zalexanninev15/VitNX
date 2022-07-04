@@ -1,1 +1,1 @@
-search_result['5107']=["topic_0000000000001340_events--.html","Helpers Events",""];
+search_result['5107']=["topic_000000000000168F.html","VitNX_ToolStripRenderer.OnRenderToolStripBorder Method","Raises the RenderToolStripBorder event."];

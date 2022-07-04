@@ -1,1 +1,1 @@
-search_result['760']=["topic_0000000000000247.html","ERROR_BUFFER_OVERFLOW Field",""];
+search_result['760']=["topic_0000000000000236.html","ERROR_OUT_OF_PAPER Field",""];

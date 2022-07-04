@@ -1,1 +1,1 @@
-search_result['3165']=["topic_0000000000000BA7.html","SEC_E_INCOMPLETE_MESSAGE Field",""];
+search_result['3165']=["topic_0000000000000B96.html","NTE_BAD_TYPE Field",""];

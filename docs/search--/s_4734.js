@@ -1,1 +1,1 @@
-search_result['4734']=["topic_0000000000001245_vars--.html","VitNX_TextBox Fields",""];
+search_result['4734']=["topic_0000000000001593.html","VitNX_RadioButton.OnLostFocus Method","Raises the OnLostFocus event."];

@@ -1,1 +1,1 @@
-search_result['1835']=["topic_000000000000067A.html","ERROR_DS_MASTERDSA_REQUIRED Field",""];
+search_result['1835']=["topic_0000000000000669.html","ERROR_NO_PROMOTION_ACTIVE Field",""];

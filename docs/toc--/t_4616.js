@@ -1,1 +1,1 @@
-c['4616']=[['4617',"Fields","topic_00000000000016D0_vars--.html",1]];
+c['4616']=[['4617',"Dispose Method","topic_00000000000014F8.html",0],['4618',"NotUsed Method","topic_00000000000014F7.html",0],['4619',"Report Method","topic_00000000000014F4.html",0],['4620',"SetColor Method","topic_00000000000014F5.html",0],['4621',"SetText Method","topic_00000000000014F6.html",0]];

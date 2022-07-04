@@ -1,1 +1,1 @@
-search_result['5004']=["topic_0000000000001300.html","VitNX_MenuRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];
+search_result['5004']=["topic_000000000000163E.html","VitNX_DockSplitter.HideOverlay Method",""];

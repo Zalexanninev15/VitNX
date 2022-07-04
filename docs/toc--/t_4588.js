@@ -1,1 +1,1 @@
-c['4588']=[['4589',"Properties Constructor","topic_000000000000138D.html",0],['4590',"Methods","topic_000000000000138C_methods--.html",1]];
+c['4588']=[['4589',"GetIcon Method","topic_00000000000014CB.html",0],['4590',"GetWmiManagementObjectCollection Method","topic_00000000000014CC.html",0],['4591',"InstallInfDriver Method","topic_00000000000014CA.html",0]];

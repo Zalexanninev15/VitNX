@@ -1,1 +1,1 @@
-search_result['4377']=["topic_000000000000116E.html","Controls.SetNativeThemeForControls Method","Sets the native Windows System theme for controls."];
+search_result['4377']=["topic_00000000000014BA_attached_props--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Attached Properties",""];

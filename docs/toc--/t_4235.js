@@ -1,1 +1,0 @@
-c['4235']=[['4236',"FindWindowEx(IntPtr, IntPtr, StringBuilder, StringBuilder) Method","topic_000000000000012A.html",0],['4237',"FindWindowEx(IntPtr, IntPtr, string, string) Method","topic_00000000000000CE.html",0]];

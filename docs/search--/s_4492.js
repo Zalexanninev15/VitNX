@@ -1,1 +1,1 @@
-search_result['4492']=["topic_00000000000011AD.html","VitNX_CheckBox.OnMouseLeave Method","Raises the OnMouseLeave event."];
+search_result['4492']=["topic_0000000000001503_attached_props--.html","Text Attached Properties",""];

@@ -1,1 +1,1 @@
-search_result['1100']=["topic_000000000000039B.html","ERROR_NO_SUCH_LOGON_SESSION Field",""];
+search_result['1100']=["topic_000000000000038A.html","ERROR_LOGIN_WKSTA_RESTRICTION Field",""];

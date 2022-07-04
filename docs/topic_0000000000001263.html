@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_TreeView.OnKeyDown Method</title>
+	<title>POINT Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_TreeView.OnKeyDown Method</h1>
+		<h1 class="title">POINT Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.keydown">KeyDown</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnKeyDown(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct POINT</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,23 +149,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.keyeventargs">KeyEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -183,6 +165,95 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001264.html">x</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001265.html">y</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -241,101 +312,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnKeyDown(KeyEventArgs e)
+[StructLayout(LayoutKind.Sequential)]
+ public struct POINT
  {
-     base.OnKeyDown(e);
- 
-     if (IsDragging)
-         return;
- 
-     if (Nodes.Count == 0)
-         return;
- 
-     if (e.KeyCode != Keys.Down &amp;&amp; e.KeyCode != Keys.Up &amp;&amp; e.KeyCode != Keys.Left &amp;&amp; e.KeyCode != Keys.Right)
-         return;
- 
-     if (_anchoredNodeEnd == null)
-     {
-         if (Nodes.Count &gt; 0)
-             SelectNode(Nodes[0]);
-         return;
-     }
- 
-     if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
-     {
-         if (MultiSelect &amp;&amp; ModifierKeys == Keys.Shift)
-         {
-             if (e.KeyCode == Keys.Up)
-             {
-                 if (_anchoredNodeEnd.PrevVisibleNode != null)
-                 {
-                     SelectAnchoredRange(_anchoredNodeEnd.PrevVisibleNode);
-                     EnsureVisible();
-                 }
-             }
-             else if (e.KeyCode == Keys.Down)
-             {
-                 if (_anchoredNodeEnd.NextVisibleNode != null)
-                 {
-                     SelectAnchoredRange(_anchoredNodeEnd.NextVisibleNode);
-                     EnsureVisible();
-                 }
-             }
-         }
-         else
-         {
-             if (e.KeyCode == Keys.Up)
-             {
-                 if (_anchoredNodeEnd.PrevVisibleNode != null)
-                 {
-                     SelectNode(_anchoredNodeEnd.PrevVisibleNode);
-                     EnsureVisible();
-                 }
-             }
-             else if (e.KeyCode == Keys.Down)
-             {
-                 if (_anchoredNodeEnd.NextVisibleNode != null)
-                 {
-                     SelectNode(_anchoredNodeEnd.NextVisibleNode);
-                     EnsureVisible();
-                 }
-             }
-         }
-     }
- 
-     if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
-     {
-         if (e.KeyCode == Keys.Left)
-         {
-             if (_anchoredNodeEnd.Expanded &amp;&amp; _anchoredNodeEnd.Nodes.Count &gt; 0)
-             {
-                 _anchoredNodeEnd.Expanded = false;
-             }
-             else
-             {
-                 if (_anchoredNodeEnd.ParentNode != null)
-                 {
-                     SelectNode(_anchoredNodeEnd.ParentNode);
-                     EnsureVisible();
-                 }
-             }
-         }
-         else if (e.KeyCode == Keys.Right)
-         {
-             if (!_anchoredNodeEnd.Expanded)
-             {
-                 _anchoredNodeEnd.Expanded = true;
-             }
-             else
-             {
-                 if (_anchoredNodeEnd.Nodes.Count &gt; 0)
-                 {
-                     SelectNode(_anchoredNodeEnd.Nodes[0]);
-                     EnsureVisible();
-                 }
-             }
-         }
-     }
+     public int x;
+     public int y;
  }
 					</pre>			
 				</div>
@@ -392,6 +373,7 @@ protected override void OnKeyDown(KeyEventArgs e)
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -400,14 +382,10 @@ protected override void OnKeyDown(KeyEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000001257.html">VitNX_TreeView Class</a><br />
+	<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
-
-<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					
