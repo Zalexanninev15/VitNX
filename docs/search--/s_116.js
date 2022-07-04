@@ -1,0 +1,1 @@
+search_result['116']=["topic_000000000000004C.html","EncrypterAndDecrypter.Encrypt Method","Encrypts the text."];

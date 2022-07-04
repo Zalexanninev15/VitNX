@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001A35.html"],['700',"VitNX3.Functions.Information Namespace","topic_000000000000007F.html"],['748',"UsbDevices Class","topic_00000000000000BD.html"],['751',"Methods","topic_00000000000000BD_methods--.html"],['752',"GetUSBDevices Method","topic_00000000000000BE.html"]];

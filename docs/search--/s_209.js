@@ -1,0 +1,1 @@
+search_result['209']=["topic_0000000000000088.html","Windows.GetWindowsCurrentBuildNumberFromRegistry Method","Gets the Windows current build number from the Windows Registry."];

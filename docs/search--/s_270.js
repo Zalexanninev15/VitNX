@@ -1,0 +1,1 @@
+search_result['270']=["topic_00000000000000AC.html","Motherboard.GetFirmwareType Method","Gets the firmware type (Windows native)."];

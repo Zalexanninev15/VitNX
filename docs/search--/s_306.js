@@ -1,0 +1,1 @@
+search_result['306']=["topic_00000000000000BF.html","UsbDevices.UsbToString Method","Gets the list of USB devices as string (basic information in the form of name and ID)"];

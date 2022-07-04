@@ -1,0 +1,1 @@
+search_result['4400']=["topic_00000000000014C8.html","Monitor.FriendlyName Method","Friendly name of monitor(s)."];

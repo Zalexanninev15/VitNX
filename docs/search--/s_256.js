@@ -1,0 +1,1 @@
+search_result['256']=["topic_00000000000000A3.html","Monitor.CaptureScreenToFile Method","Captures the screen to file."];

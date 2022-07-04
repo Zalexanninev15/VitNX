@@ -1,0 +1,1 @@
+search_result['228']=["topic_0000000000000096.html","Cpu.GetClockSpeed Method","Gets the clock speed."];

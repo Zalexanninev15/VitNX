@@ -1,0 +1,1 @@
+search_result['4428']=["topic_00000000000014E1.html","PowerControl.Monitor Method","The power of monitor."];

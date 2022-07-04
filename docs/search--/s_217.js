@@ -1,0 +1,1 @@
+search_result['217']=["topic_0000000000000090.html","Windows.GetWindowsProductKeyFromRegistry Method","Gets the Windows product key from the Windows Registry."];

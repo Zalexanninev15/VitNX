@@ -1,0 +1,1 @@
+search_result['315']=["topic_00000000000000C3.html","Ini Class","Works with INI config file, based on Windows System functions."];

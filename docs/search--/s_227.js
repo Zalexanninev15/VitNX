@@ -1,0 +1,1 @@
+search_result['227']=["topic_0000000000000095.html","Cpu.GetArchitecture Method","Gets the architecture."];
