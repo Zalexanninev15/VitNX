@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>PowerControl.Monitor Method</title>
+	<title>Motherboard.GetWindowsProductKeyFromUefi Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">PowerControl.Monitor Method</h1>
+		<h1 class="title">Motherboard.GetWindowsProductKeyFromUefi Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A5.html">VitNX3.Functions</a>
+<a href="topic_000000000000007F.html">VitNX3.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>The power of monitor.</summary-info>
+        <summary-info>Gets the Windows product key from the UEFI.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Monitor(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>worked</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsProductKeyFromUefi()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="worked" class="parameterList">
-	<dt>
-		<span class="parameter">
-			worked
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-	</dd>
-</dl>
-<p>
-	If true, worked. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -241,18 +232,18 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Monitor(bool worked)
+public static string GetWindowsProductKeyFromUefi()
  {
-     Form frm = new Form();
-     if (worked)
+     byte[] buffer = null;
+     if (Helpers.WPK.GWK.CheckMSDM(out buffer))
      {
-         Import.mouse_event(Constants.MOUSEEVENTF_MOVE, 0, 1, 0, UIntPtr.Zero);
-         frm.Close();
+         Encoding encoding = Encoding.GetEncoding(0x4e4);
+         string oemid = encoding.GetString(buffer, 10, 6);
+         string dmkey = encoding.GetString(buffer, 56, 29);
+         return dmkey;
      }
-     else Import.SendMessage(frm.Handle,
-         Constants.WM_SYSCOMMAND,
-         (IntPtr)Constants.SC_MONITORPOWER,
-         (IntPtr)2);
+     else
+         return &quot;False&quot;;
  }
 					</pre>			
 				</div>
@@ -317,11 +308,11 @@ public static void Monitor(bool worked)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A6.html">PowerControl Class</a><br />
+			<a href="topic_00000000000000AA.html">Motherboard Class</a><br />
 
 
 
-<a href="topic_00000000000000A5.html">VitNX3.Functions Namespace</a><br />
+<a href="topic_000000000000007F.html">VitNX3.Functions.Information Namespace</a><br />
 
 
 			

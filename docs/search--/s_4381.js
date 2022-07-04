@@ -1,1 +1,1 @@
-search_result['4381']=["topic_0000000000001170_events--.html","Type1 Events",""];
+search_result['4381']=["topic_00000000000014BA_vars--.html","DISPLAYCONFIG_DEVICE_INFO_HEADER Fields",""];

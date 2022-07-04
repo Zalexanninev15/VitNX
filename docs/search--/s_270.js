@@ -1,1 +1,1 @@
-search_result['270']=["topic_00000000000000A6_events--.html","PowerControl Events",""];
+search_result['270']=["topic_00000000000000AC.html","Motherboard.GetFirmwareType Method","Gets the firmware type (Windows native)."];

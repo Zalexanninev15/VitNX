@@ -1,1 +1,1 @@
-search_result['86']=["topic_0000000000000038.html","GenerateGuid Field","Generate the GUID."];
+search_result['86']=["topic_0000000000000038.html","Text.ListRemoveStringsFromList Method","Lists the remove strings from list."];

@@ -1,1 +1,1 @@
-search_result['5310']=["topic_00000000000016B1_overloads--.html","FontAwesomeExtensions.AsIcon Method",""];
+search_result['5310']=["topic_00000000000016FF.html","VitNX2_RichTextBox.OnGotFocus Method","Raises the GotFocus event."];

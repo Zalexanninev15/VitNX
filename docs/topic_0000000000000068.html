@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>File.Join Method</title>
+	<title>File.Unzip Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">File.Join Method</h1>
+		<h1 class="title">File.Unzip Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Joins the files as one.</summary-info>
+        <summary-info>Unzip the zip file.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Join(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>folderInputPath</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>fileOutputPath</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Unzip(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>zipFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFolder</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="folderInputPath" class="parameterList">
+	Parameters</h4><dl paramName="zipFile" class="parameterList">
 	<dt>
 		<span class="parameter">
-			folderInputPath
+			zipFile
 		</span>
 	</dt>
 	<dd>
@@ -163,12 +163,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The folder input path. 
+	The zip file. 
 </p>
-<dl paramName="fileOutputPath" class="parameterList">
+<dl paramName="targetFolder" class="parameterList">
 	<dt>
 		<span class="parameter">
-			fileOutputPath
+			targetFolder
 		</span>
 	</dt>
 	<dd>
@@ -176,7 +176,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The file output path. 
+	The target folder. 
 </p>
 
 <p />
@@ -254,16 +254,15 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Join(string folderInputPath, string fileOutputPath)
+public static void Unzip(string zipFile,
+     string targetFolder)
  {
-     DirectoryInfo diSource = new DirectoryInfo(folderInputPath);
-     FileStream fsSource = new FileStream(fileOutputPath, FileMode.Append);
-     foreach (FileInfo fiPart in diSource.GetFiles(@&quot;*.part&quot;))
-     {
-         byte[] bytePart = System.IO.File.ReadAllBytes(fiPart.FullName);
-         fsSource.Write(bytePart, 0, bytePart.Length);
-     }
-     fsSource.Close();
+     if (!Directory.Exists(targetFolder))
+         Directory.CreateDirectory(targetFolder);
+     dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID(&quot;Shell.Application&quot;));
+     dynamic compressedFolderContents = shellApplication.NameSpace(zipFile).Items;
+     dynamic destinationFolder = shellApplication.NameSpace(targetFolder);
+     destinationFolder.CopyHere(compressedFolderContents);
  }
 					</pre>			
 				</div>
@@ -328,11 +327,11 @@ public static void Join(string folderInputPath, string fileOutputPath)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000005A.html">File Class</a><br />
+			<a href="topic_000000000000005D.html">File Class</a><br />
 
 
 
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['4800']=["topic_000000000000126F.html","VitNX_TreeView.CanMoveNodes Method",""];
+search_result['4800']=["topic_00000000000015C3.html","VitNX_SectionPanel.OnLeave Method","Raises the Leave event."];

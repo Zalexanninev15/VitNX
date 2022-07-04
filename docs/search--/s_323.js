@@ -1,1 +1,1 @@
-search_result['323']=["topic_00000000000000C3_vars--.html","Config Fields",""];
+search_result['323']=["topic_00000000000000C6.html","Ini.Write Method","Writes the value to key in section."];

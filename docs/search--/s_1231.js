@@ -1,1 +1,1 @@
-search_result['1231']=["topic_000000000000041E.html","ERROR_INVALID_THREAD_ID Field",""];
+search_result['1231']=["topic_000000000000040D.html","ERROR_NO_INHERITANCE Field",""];

@@ -1,1 +1,1 @@
-search_result['21']=["topic_000000000000000F_attached_props--.html","Installed Attached Properties",""];
+search_result['21']=["topic_0000000000000010.html","Installed Class","Works with installed applications."];

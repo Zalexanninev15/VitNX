@@ -1,1 +1,1 @@
-search_result['1155']=["topic_00000000000003D2.html","ERROR_CANNOT_IMPERSONATE Field",""];
+search_result['1155']=["topic_00000000000003C1.html","ERROR_PRIVILEGE_NOT_HELD Field",""];

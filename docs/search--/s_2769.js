@@ -1,1 +1,1 @@
-search_result['2769']=["topic_0000000000000A1B.html","EVENT_E_CANT_MODIFY_OR_DELETE_UNCONFIGURED_OBJECT Field",""];
+search_result['2769']=["topic_0000000000000A0A.html","MK_E_CONNECTMANUALLY Field",""];

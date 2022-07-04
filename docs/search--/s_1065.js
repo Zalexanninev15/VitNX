@@ -1,1 +1,1 @@
-search_result['1065']=["topic_0000000000000378.html","ERROR_NON_DOMAIN_SID Field",""];
+search_result['1065']=["topic_0000000000000367.html","ERROR_CANNOT_OPEN_PROFILE Field",""];

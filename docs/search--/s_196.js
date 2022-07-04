@@ -1,1 +1,1 @@
-search_result['196']=["topic_000000000000007E_vars--.html","Cpu Fields",""];
+search_result['196']=["topic_0000000000000080.html","Windows Class","Works with informations of Windows System."];

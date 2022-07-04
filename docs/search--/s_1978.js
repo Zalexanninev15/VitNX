@@ -1,1 +1,1 @@
-search_result['1978']=["topic_0000000000000709.html","ERROR_DS_DRA_NAME_COLLISION Field",""];
+search_result['1978']=["topic_00000000000006F8.html","ERROR_DS_CANT_RETRIEVE_DN Field",""];

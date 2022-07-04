@@ -1,1 +1,1 @@
-search_result['1877']=["topic_00000000000006A4.html","ERROR_DS_NCNAME_MUST_BE_NC Field",""];
+search_result['1877']=["topic_0000000000000693.html","ERROR_DS_ATT_NOT_DEF_IN_SCHEMA Field",""];

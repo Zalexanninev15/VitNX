@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 using VitNX3.Functions.Win32;
@@ -18,7 +19,7 @@ using VitNX3.Functions.Win32;
 namespace VitNX3.Functions.Information
 {
     /// <summary>
-    /// Work with informations of Windows System.
+    /// Works with informations of Windows System.
     /// </summary>
     public class Windows
     {
@@ -56,7 +57,7 @@ namespace VitNX3.Functions.Information
         /// Gets the Windows version from the Windows Registry.
         /// </summary>
         /// <returns>A double.</returns>
-        public static double GetWindowsVersionFromREG() => double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static double GetWindowsVersionFromRegistry() => double.Parse((string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "CurrentVersion", ""),
             System.Globalization.CultureInfo.InvariantCulture);
 
@@ -64,35 +65,35 @@ namespace VitNX3.Functions.Information
         /// Gets the Windows edition from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsEditionIDFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsEditionIDFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "EditionID", "");
 
         /// <summary>
         /// Gets the Windows current build number from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsCurrentBuildNumberFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
-            "CurrentBuildNumber", "");
+        public static string GetWindowsCurrentBuildNumberFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+            "CurrentBuild", "");
 
         /// <summary>
         /// Gets the Windows product name from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsProductNameFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsProductNameFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "ProductName", "");
 
         /// <summary>
         /// Gets the Windows displayed version from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsDisplayVersionFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsDisplayVersionFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "DisplayVersion", "");
 
         /// <summary>
-        /// Gets the windows release id from the Windows Registry.
+        /// Gets the windows release ID from the Windows Registry.
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetWindowsReleaseIdFromREG() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
+        public static string GetWindowsReleaseIdFromRegistry() => (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion",
             "ReleaseId", "");
 
         /// <summary>
@@ -129,6 +130,30 @@ namespace VitNX3.Functions.Information
         }
 
         /// <summary>
+        /// Gets the Windows product key from the Windows Registry.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductKeyFromRegistry() => Helpers.WPK.GWK.GetWindowsProductKeyFromRegistry();
+
+        /// <summary>
+        /// Gets the Windows product key from the UEFI.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductKeyFromUefi()
+        {
+            byte[] buffer = null;
+            if (Helpers.WPK.GWK.CheckMSDM(out buffer))
+            {
+                Encoding encoding = Encoding.GetEncoding(0x4e4);
+                string oemid = encoding.GetString(buffer, 10, 6);
+                string dmkey = encoding.GetString(buffer, 56, 29);
+                return dmkey;
+            }
+            else
+                return "False";
+        }
+
+        /// <summary>
         /// Gets the Windows accent color.
         /// </summary>
         /// <returns>A Color.</returns>
@@ -144,7 +169,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of CPU.
+    /// Works with informations of CPU.
     /// </summary>
     public class Cpu
     {
@@ -228,7 +253,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of GPU(s).
+    /// Works with informations of GPU(s).
     /// </summary>
     public class Gpu
     {
@@ -266,7 +291,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Disk(s).
+    /// Works with informations of Disk(s).
     /// </summary>
     public class Disk
     {
@@ -344,7 +369,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Monitor(s).
+    /// Works with informations of Monitor(s).
     /// </summary>
     public class Monitor
     {
@@ -381,7 +406,7 @@ namespace VitNX3.Functions.Information
         /// <summary>
         /// Captures the window to file.
         /// </summary>
-        /// <param name="handle">The handle.</param>
+        /// <param name="handle">Handle.</param>
         /// <param name="filename">The filename.</param>
         /// <param name="format">The format.</param>
         public static void CaptureWindowToFile(IntPtr handle,
@@ -405,9 +430,21 @@ namespace VitNX3.Functions.Information
         }
 
         /// <summary>
+        /// Gets the merged friendly names.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] GetMergedFriendlyNames() => Helpers.DISMON.GetMergedFriendlyNames();
+
+        /// <summary>
+        /// Gets the names by monitor IDs.
+        /// </summary>
+        /// <returns>An array of string.</returns>
+        public static string[] GetNamesByMonitorIds() => Helpers.DISMON.GetNamesByMonitorIds();
+
+        /// <summary>
         /// Captures the window.
         /// </summary>
-        /// <param name="handle">The handle.</param>
+        /// <param name="handle">Handle.</param>
         /// <returns>An Image.</returns>
         public static Image CaptureWindow(IntPtr handle)
         {
@@ -439,7 +476,7 @@ namespace VitNX3.Functions.Information
         /// Gets the resolution (method 2).
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetResolution2()
+        public static string GetResolutionType2()
         {
             string size = string.Empty;
             Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);
@@ -454,7 +491,7 @@ namespace VitNX3.Functions.Information
         /// Gets the resolution (method 1).
         /// </summary>
         /// <returns>A string.</returns>
-        public static string GetResolution()
+        public static string GetResolutionType1()
         {
             uint width = 0;
             uint height = 0;
@@ -490,12 +527,12 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Motherboard.
+    /// Works with informations of Motherboard.
     /// </summary>
     public class Motherboard
     {
         /// <summary>
-        /// Gets the firmware type (Native). Are the UEFI mode (UEFI) or Legacy (BIOS).
+        /// Gets the firmware type (Windows native). Are the UEFI mode (UEFI) or Legacy (BIOS).
         /// </summary>
         /// <returns>A bool.</returns>
         public static bool IsUefiMode()
@@ -505,7 +542,7 @@ namespace VitNX3.Functions.Information
         }
 
         /// <summary>
-        /// Gets the firmware type (Cmd).
+        /// Gets the firmware type (Windows native).
         /// </summary>
         /// <returns>A string.</returns>
         public static string GetFirmwareType()
@@ -513,10 +550,28 @@ namespace VitNX3.Functions.Information
             return AppsAndProcesses.Processes.Execute("cmd",
                 "/C echo %firmware_type%");
         }
+
+        /// <summary>
+        /// Gets the Windows product key from the UEFI.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string GetWindowsProductKeyFromUefi()
+        {
+            byte[] buffer = null;
+            if (Helpers.WPK.GWK.CheckMSDM(out buffer))
+            {
+                Encoding encoding = Encoding.GetEncoding(0x4e4);
+                string oemid = encoding.GetString(buffer, 10, 6);
+                string dmkey = encoding.GetString(buffer, 56, 29);
+                return dmkey;
+            }
+            else
+                return "False";
+        }
     }
 
     /// <summary>
-    /// Work with informations of COM port.
+    /// Works with informations of COM port.
     /// </summary>
     public class ComPort
     {
@@ -531,7 +586,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of RAM.
+    /// Works with informations of RAM.
     /// </summary>
     public class Ram
     {
@@ -578,7 +633,7 @@ namespace VitNX3.Functions.Information
     }
 
     /// <summary>
-    /// Work with informations of Internet (PC).
+    /// Works with informations of Internet (PC).
     /// </summary>
     public class Internet
     {
@@ -676,6 +731,54 @@ namespace VitNX3.Functions.Information
                     return INTERNET_STATUS.UNCONNECTED;
             }
             catch { return INTERNET_STATUS.UNKNOWN_PROBLEM; }
+        }
+    }
+
+    /// <summary>
+    /// Works with informations of USB devices.
+    /// </summary>
+    public class UsbDevices
+    {
+        /// <summary>
+        /// Gets the list of USB devices (basic information in the form of name and ID)
+        /// </summary>
+        /// <returns>A list of USBDeviceInfos.</returns>
+        public static List<USBDeviceInfo> GetUSBDevices()
+        {
+            List<USBDeviceInfo> devices = new List<USBDeviceInfo>();
+            ManagementObjectCollection collection;
+            using (var searcher = new ManagementObjectSearcher(@"SELECT * FROM Win32_PnPEntity where DeviceID Like ""USB%"""))
+                collection = searcher.Get();
+            foreach (var device in collection)
+                devices.Add(new USBDeviceInfo((string)device.GetPropertyValue("Caption"), (string)device.GetPropertyValue("DeviceID")));
+            collection.Dispose();
+            return devices;
+        }
+
+        /// <summary>
+        /// Gets the list of USB devices as string (basic information in the form of name and ID)
+        /// </summary>
+        /// <returns>A string.</returns>
+        public static string UsbToString()
+        {
+            var usbDevices = GetUSBDevices();
+            string returnString = "";
+            foreach (var usbDevice in usbDevices)
+                if (!usbDevice.DeviceID.StartsWith(@"USBSTOR\"))
+                    returnString += $"Device: {usbDevice.Caption}\nID: {usbDevice.DeviceID}\n\n";
+            return returnString;
+        }
+
+        public class USBDeviceInfo
+        {
+            public USBDeviceInfo(string Caption, string DeviceID)
+            {
+                this.Caption = Caption;
+                this.DeviceID = DeviceID;
+            }
+
+            public string Caption { get; private set; }
+            public string DeviceID { get; private set; }
         }
     }
 }

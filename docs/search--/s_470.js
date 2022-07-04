@@ -1,1 +1,1 @@
-search_result['470']=["topic_000000000000014A.html","Import.GetUpdateRect Method",""];
+search_result['470']=["topic_000000000000013B.html","Import.CreatePatternBrush Method",""];

@@ -1,1 +1,1 @@
-search_result['4645']=["topic_000000000000120C_attached_props--.html","VitNX_ScrollBar Attached Properties",""];
+search_result['4645']=["topic_0000000000001561.html","VitNX_DropdownList.OnMouseCaptureChanged Method","Raises the MouseCaptureChanged event."];

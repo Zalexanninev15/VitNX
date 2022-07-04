@@ -1,1 +1,1 @@
-search_result['3000']=["topic_0000000000000B02.html","STG_E_DOCFILETOOLARGE Field",""];
+search_result['3000']=["topic_0000000000000AF1.html","TYPE_E_WRONGTYPEKIND Field",""];

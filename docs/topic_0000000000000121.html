@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.DrawText Method</title>
+	<title>Import.GetMenuItemInfo Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.DrawText Method</h1>
+		<h1 class="title">Import.GetMenuItemInfo Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -137,7 +137,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> DrawText(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hdc</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>lpString</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cbString</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000000EFA.html" onclick="this.target='';return true;">RECT</a> <i>lpRect</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>uFormat</i>&nbsp;<br />)</pre>			
+            CharSet = CharSet.Auto,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> GetMenuItemInfo(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hMenu</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> <i>uItem</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>fByPosition</i>,&nbsp;<br />   [In()]&nbsp;<br />[Out()]&nbsp;<br />   <a target="_top" href="topic_00000000000001FE.html" onclick="this.target='';return true;">MENU_ITEM_INFO</a> <i>lpmii</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +153,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hdc" class="parameterList">
+	Parameters</h4><dl paramName="hMenu" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hdc
+			hMenu
 		</span>
 	</dt>
 	<dd>
@@ -165,53 +166,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="lpString" class="parameterList">
+<dl paramName="uItem" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpString
+			uItem
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="cbString" class="parameterList">
+<dl paramName="fByPosition" class="parameterList">
 	<dt>
 		<span class="parameter">
-			cbString
+			fByPosition
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	</dd>
 </dl>
 <p>
 	 
 </p>
-<dl paramName="lpRect" class="parameterList">
+<dl paramName="lpmii" class="parameterList">
 	<dt>
 		<span class="parameter">
-			lpRect
+			lpmii
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_0000000000000EFA.html" onclick="this.target='';return true;">RECT</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="uFormat" class="parameterList">
-	<dt>
-		<span class="parameter">
-			uFormat
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+		<a target="_top" href="topic_00000000000001FE.html" onclick="this.target='';return true;">MENU_ITEM_INFO</a> 
 	</dd>
 </dl>
 <p>
@@ -222,7 +210,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -298,12 +286,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;user32.dll&quot;,
-     CharSet = CharSet.Auto)]
- public static extern int DrawText(IntPtr hdc,
-     string lpString,
-     int cbString,
-     ref RECT lpRect,
-     int uFormat);
+     CharSet = CharSet.Auto,
+     SetLastError = true)]
+ public static extern bool GetMenuItemInfo(IntPtr hMenu,
+     uint uItem,
+     bool fByPosition,
+     [In, Out] MENU_ITEM_INFO lpmii);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -367,11 +355,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

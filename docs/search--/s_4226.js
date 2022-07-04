@@ -1,1 +1,1 @@
-search_result['4226']=["topic_0000000000001124_methods--.html","DISPLAYCONFIG_PATH_TARGET_INFO Methods",""];
+search_result['4226']=["topic_000000000000147A.html","NewFolderDialog.Show (IntPtr) Method","Are shows the folder dialog."];

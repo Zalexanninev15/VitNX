@@ -1,1 +1,1 @@
-search_result['233']=["topic_0000000000000093_attached_props--.html","Motherboard Attached Properties",""];
+search_result['233']=["topic_0000000000000097_props--.html","Gpu Properties",""];

@@ -1,1 +1,1 @@
-search_result['4491']=["topic_00000000000011AC.html","VitNX_CheckBox.OnMouseUp Method",""];
+search_result['4491']=["topic_0000000000001503.html","Text Class","The tools for work with console UI."];

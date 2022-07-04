@@ -1,1 +1,1 @@
-search_result['4438']=["topic_0000000000001189_vars--.html","Colors Fields",""];
+search_result['4438']=["topic_00000000000014E6.html","Window.HideConsoleWindow Method","Hides the console window."];

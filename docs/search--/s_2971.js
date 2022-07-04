@@ -1,1 +1,1 @@
-search_result['2971']=["topic_0000000000000AE5.html","STG_E_INVALIDPOINTER Field",""];
+search_result['2971']=["topic_0000000000000AD4.html","CO_S_NOTALLINTERFACES Field",""];

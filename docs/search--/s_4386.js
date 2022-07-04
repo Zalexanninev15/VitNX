@@ -1,1 +1,1 @@
-search_result['4386']=["topic_0000000000001172.html","Type1.Report Method",""];
+search_result['4386']=["topic_00000000000014BF.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Structure",""];

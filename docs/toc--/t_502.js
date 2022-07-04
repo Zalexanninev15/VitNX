@@ -1,1 +1,1 @@
-c['502']=[['503',"VitNX2_ProgressBarRoundedType2 Constructor","topic_0000000000001378.html",0],['504',"Methods","topic_0000000000001377_methods--.html",1]];
+c['502']=[['503',"VitNX2_RichTextBox Constructor","topic_00000000000016FE.html",0],['504',"Methods","topic_00000000000016FD_methods--.html",1]];

@@ -1,1 +1,1 @@
-search_result['93']=["topic_000000000000003F.html","EncryptAndDecrypt Class","Encrypt and decrypt the text or byte[]."];
+search_result['93']=["topic_000000000000003F.html","Text.SizeSuffix Method","Gives a suffix to the file size for output."];

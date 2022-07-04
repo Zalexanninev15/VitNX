@@ -1,1 +1,1 @@
-search_result['1825']=["topic_0000000000000670.html","ERROR_DS_MAX_OBJ_SIZE_EXCEEDED Field",""];
+search_result['1825']=["topic_000000000000065F.html","ERROR_DS_OBJ_CLASS_VIOLATION Field",""];

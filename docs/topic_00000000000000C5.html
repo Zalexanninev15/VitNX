@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Config.DefaultGateway Method</title>
+	<title>Ini.Read Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Config.DefaultGateway Method</h1>
+		<h1 class="title">Ini.Read Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B9.html">VitNX3.Functions.Web</a>
+<a href="topic_00000000000000C2.html">VitNX3.Functions.SettingsAndLog</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Activate DefaultGateway of NetworkInterface in IPAddress.</summary-info>
+        <summary-info>Reads value of key from section.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a> DefaultGateway()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> Read(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>key</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>section</i> = null&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,10 +151,42 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="key" class="parameterList">
+	<dt>
+		<span class="parameter">
+			key
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The key. 
+</p>
+<dl paramName="section" class="parameterList">
+	<dt>
+		<span class="parameter">
+			section
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The section. 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.net.ipaddress">IPAddress</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
 	
 
 
@@ -229,12 +261,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static IPAddress DefaultGateway() =&gt; NetworkInterface
- .GetAllNetworkInterfaces()
- .Where(n =&gt; n.OperationalStatus == OperationalStatus.Up)
- .Where(n =&gt; n.NetworkInterfaceType != NetworkInterfaceType.Loopback)
- .SelectMany(n =&gt; n.GetIPProperties()?.GatewayAddresses)
- .Select(g =&gt; g?.Address).FirstOrDefault(a =&gt; a != null);
+public static string Read(string key,
+     string section = null)
+ {
+     var retVal = new StringBuilder(255);
+     Import.GetPrivateProfileString(section ?? defValue, key, &quot;&quot;, retVal, 255, path);
+     return retVal.ToString();
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -298,11 +331,11 @@ public static IPAddress DefaultGateway() =&gt; NetworkInterface
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C3.html">Config Class</a><br />
+			<a href="topic_00000000000000C3.html">Ini Class</a><br />
 
 
 
-<a href="topic_00000000000000B9.html">VitNX3.Functions.Web Namespace</a><br />
+<a href="topic_00000000000000C2.html">VitNX3.Functions.SettingsAndLog Namespace</a><br />
 
 
 			

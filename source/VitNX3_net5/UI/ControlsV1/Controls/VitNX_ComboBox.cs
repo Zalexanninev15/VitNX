@@ -5,8 +5,6 @@ using System.Windows.Forms;
 
 using VitNX.UI.ControlsV1.Config;
 
-using VitNX3;
-
 namespace VitNX.UI.ControlsV1.Controls
 {
     public class VitNX_ComboBox : ComboBox

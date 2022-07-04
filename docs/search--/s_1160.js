@@ -1,1 +1,1 @@
-search_result['1160']=["topic_00000000000003D7.html","ERROR_SPECIAL_USER Field",""];
+search_result['1160']=["topic_00000000000003C6.html","ERROR_NO_SUCH_GROUP Field",""];

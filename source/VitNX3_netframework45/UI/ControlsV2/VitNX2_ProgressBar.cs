@@ -117,7 +117,7 @@ namespace VitNX2.UI.ControlsV2
         {
             get
             {
-                return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %";
+                return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100} %";
             }
         }
 

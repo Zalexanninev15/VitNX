@@ -1,1 +1,1 @@
-search_result['4876']=["topic_000000000000129D.html","ActiveContentChanged Event",""];
+search_result['4876']=["topic_00000000000015EA.html","VitNX_TreeView.OnMouseDoubleClick Method","Raises the MouseDoubleClick event."];

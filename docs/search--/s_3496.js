@@ -1,1 +1,1 @@
-search_result['3496']=["topic_0000000000000CF2.html","SPAPI_E_NOT_DISABLEABLE Field",""];
+search_result['3496']=["topic_0000000000000CE1.html","SPAPI_E_WRONG_INF_STYLE Field",""];

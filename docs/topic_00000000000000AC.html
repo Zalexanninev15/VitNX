@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>PowerControl.Computer Method</title>
+	<title>Motherboard.GetFirmwareType Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">PowerControl.Computer Method</h1>
+		<h1 class="title">Motherboard.GetFirmwareType Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000A5.html">VitNX3.Functions</a>
+<a href="topic_000000000000007F.html">VitNX3.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>The power of computer.</summary-info>
+        <summary-info>Gets the firmware type (Windows native).</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Computer(&nbsp;<br />   <a target="_top" href="topic_00000000000000A7.html" onclick="this.target='';return true;">SYSTEM_POWER_CONTROL</a> <i>method</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetFirmwareType()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +151,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="method" class="parameterList">
-	<dt>
-		<span class="parameter">
-			method
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000000A7.html" onclick="this.target='';return true;">SYSTEM_POWER_CONTROL</a> 
-	</dd>
-</dl>
-<p>
-	The method. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Return Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+		<p>
+		A string. 
+	</p>
+	
 
 
 
@@ -241,33 +232,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Computer(SYSTEM_POWER_CONTROL method)
+public static string GetFirmwareType()
  {
-     switch (method)
-     {
-         case SYSTEM_POWER_CONTROL.SYSTEM_LOGOFF:
-             {
-                 Import.ExitWindowsEx(0, 0);
-                 break;
-             }
-         case SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
-             {
-                 // Old code: Processes.Run(&quot;shutdown&quot;, &quot;/s /t 0&quot;);
-                 Processes.Run(&quot;powershell&quot;, &quot;Stop-Computer&quot;);
-                 break;
-             }
-         case SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
-             {
-                 // Old code: Processes.Run(&quot;shutdown&quot;, &quot;/r /t 0&quot;);
-                 Processes.Run(&quot;powershell&quot;, &quot;Restart-Computer -Force&quot;);
-                 break;
-             }
-         case SYSTEM_POWER_CONTROL.SYSTEM_LOCK:
-             {
-                 Import.LockWorkStation();
-                 break;
-             }
-     }
+     return AppsAndProcesses.Processes.Execute(&quot;cmd&quot;,
+         &quot;/C echo %firmware_type%&quot;);
  }
 					</pre>			
 				</div>
@@ -332,11 +300,11 @@ public static void Computer(SYSTEM_POWER_CONTROL method)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000A6.html">PowerControl Class</a><br />
+			<a href="topic_00000000000000AA.html">Motherboard Class</a><br />
 
 
 
-<a href="topic_00000000000000A5.html">VitNX3.Functions Namespace</a><br />
+<a href="topic_000000000000007F.html">VitNX3.Functions.Information Namespace</a><br />
 
 
 			

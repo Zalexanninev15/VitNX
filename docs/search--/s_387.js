@@ -1,1 +1,1 @@
-search_result['387']=["topic_00000000000000F9.html","Import.SetFirmwareEnvironmentVariable Method",""];
+search_result['387']=["topic_00000000000000ED.html","Import.DestroyIcon Method",""];

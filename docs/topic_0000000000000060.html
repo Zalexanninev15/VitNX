@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>File.GetText Method</title>
+	<title>File.DeleteToRecycleBin Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">File.GetText Method</h1>
+		<h1 class="title">File.DeleteToRecycleBin Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets the text from file.</summary-info>
+        <summary-info>Deletes the file to Recycle Bin.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetText(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> DeleteToRecycleBin(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -168,13 +168,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 <p />
 
-	<h4 class="subHeading">
-		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
-	
 
 
 
@@ -248,12 +241,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetText(string targetFile)
+public static void DeleteToRecycleBin(string targetFile)
  {
-     string text = &quot;Text file not found&quot;;
-     using (StreamReader sr = System.IO.File.OpenText(targetFile))
-         text = sr.ReadToEnd();
-     return text;
+     System.IO.File.SetAttributes(targetFile, FileAttributes.Normal);
+     Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(targetFile,
+         Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs,
+         Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
  }
 					</pre>			
 				</div>
@@ -318,11 +311,11 @@ public static string GetText(string targetFile)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000005A.html">File Class</a><br />
+			<a href="topic_000000000000005D.html">File Class</a><br />
 
 
 
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

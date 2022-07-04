@@ -1,1 +1,1 @@
-search_result['257']=["topic_000000000000009A_methods--.html","Internet Methods",""];
+search_result['257']=["topic_00000000000000A4.html","Monitor.GetMergedFriendlyNames Method","Gets the merged friendly names."];

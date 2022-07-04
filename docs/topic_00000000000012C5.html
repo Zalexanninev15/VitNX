@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ToolWindow.OnMouseUp Method</title>
+	<title>HWND_NO_TOPMOST Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ToolWindow.OnMouseUp Method</h1>
+		<h1 class="title">HWND_NO_TOPMOST Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mouseup">MouseUp</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseUp(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">new public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> HWND_NO_TOPMOST</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,23 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	
 
 
 
@@ -241,16 +228,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseUp(MouseEventArgs e)
- {
-     base.OnMouseUp(e);
-     if (_closeButtonRect.Contains(e.Location) &amp;&amp; _closeButtonPressed)
-         Close();
-     _closeButtonPressed = false;
-     _closeButtonHot = false;
-     _shouldDrag = false;
-     Invalidate();
- }
+public static IntPtr
+ HWND_NO_TOPMOST = new IntPtr(-2),
+ HWND_TOPMOST = new IntPtr(-1),
+ HWND_TOP = new IntPtr(0),
+ HWND_BOTTOM = new IntPtr(1);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -314,11 +296,11 @@ protected override void OnMouseUp(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012C0.html">VitNX_ToolWindow Class</a><br />
+			<a href="topic_00000000000012C4.html">HWND Class</a><br />
 
 
 
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -340,4 +322,3 @@ protected override void OnMouseUp(MouseEventArgs e)
     </div>
   </body>
 </html>
-

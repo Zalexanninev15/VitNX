@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 using System.IO;
 
@@ -12,7 +11,7 @@ namespace Examples1
             using (var fs = File.CreateText(file))
             {
                 var serializer = new JsonSerializer();
-                serializer.Converters.Add(new StringEnumConverter());
+                serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
                 serializer.Formatting = Formatting.Indented;
                 serializer.Serialize(fs, obj);
             }
@@ -23,7 +22,7 @@ namespace Examples1
             using (var fs = File.OpenText(file))
             {
                 var serializer = new JsonSerializer();
-                serializer.Converters.Add(new StringEnumConverter());
+                serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
                 var result = serializer.Deserialize(fs, typeof(T));
                 return result as T;
             }

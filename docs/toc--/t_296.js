@@ -1,1 +1,1 @@
-c['296']=[['297',"VitNX_DockContent Constructor","topic_000000000000128A.html",0],['298',"Methods","topic_0000000000001288_methods--.html",1],['301',"Events","topic_0000000000001288_events--.html",1]];
+c['296']=[['297',"DockTextChanged Event","topic_0000000000001612.html",0]];

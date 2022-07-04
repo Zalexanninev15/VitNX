@@ -1,1 +1,0 @@
-c['769']=[['770',"Log Constructor","topic_00000000000000B7.html",0],['771',"Methods","topic_00000000000000B6_methods--.html",1]];

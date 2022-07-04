@@ -1,1 +1,1 @@
-search_result['15']=["topic_000000000000000A.html","Processes.KillNative Method","Kills the process (C# native)."];
+search_result['15']=["topic_000000000000000A.html","Processes.KillNative Method","Kills the process (Windows native)."];

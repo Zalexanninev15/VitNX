@@ -41,7 +41,7 @@ namespace VitNX3.Functions.CSharp
     }
 
     /// <summary>
-    /// Work with C# (others functions).
+    /// Works with C# (others functions).
     /// </summary>
     public class Others
     {

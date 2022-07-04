@@ -1,0 +1,1 @@
+c['804']=[['805',"MENU_ITEM_INFO Class","topic_00000000000001FE.html",1],['819',"NOTIFY_ICON_DATA Class","topic_000000000000020B.html",1],['833',"ResultCom Class","topic_0000000000000949.html",1],['1993',"ResultWin32 Class","topic_0000000000000218.html",1],['3836',"Fields","topic_00000000000001E5_vars--.html",1]];

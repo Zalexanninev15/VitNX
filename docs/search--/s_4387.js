@@ -1,1 +1,1 @@
-search_result['4387']=["topic_0000000000001173.html","Type1.SetColor Method","Sets the color."];
+search_result['4387']=["topic_00000000000014BF_attached_props--.html","DISPLAYCONFIG_TARGET_DEVICE_NAME Attached Properties",""];

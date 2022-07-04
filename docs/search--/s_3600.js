@@ -1,1 +1,1 @@
-search_result['3600']=["topic_0000000000000D5A.html","COMADMIN_E_COMP_MOVE_BAD_DEST Field",""];
+search_result['3600']=["topic_0000000000000D49.html","SCARD_E_UNKNOWN_RES_MNG Field",""];

@@ -1,1 +1,1 @@
-search_result['246']=["topic_0000000000000097.html","ComPort.GetAllDevices Method","Gets all COM ports (devices)."];
+search_result['246']=["topic_000000000000009E.html","Monitor Class","Works with informations of Monitor(s)."];

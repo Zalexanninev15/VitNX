@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DataFromSites.IsValidTelegramBotToken Method</title>
+	<title>UsbDevices.UsbToString Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DataFromSites.IsValidTelegramBotToken Method</h1>
+		<h1 class="title">UsbDevices.UsbToString Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000B9.html">VitNX3.Functions.Web</a>
+<a href="topic_000000000000007F.html">VitNX3.Functions.Information</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Are the valid telegram bot token.</summary-info>
+        <summary-info>Gets the list of USB devices as string (basic information in the form of name and ID)</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> IsValidTelegramBotToken(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>botToken</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> UsbToString()</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,28 +151,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="botToken" class="parameterList">
-	<dt>
-		<span class="parameter">
-			botToken
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The bot token. 
-</p>
-
-<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		A bool. 
+		A string. 
 	</p>
 	
 
@@ -248,14 +232,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool IsValidTelegramBotToken(string botToken)
+public static string UsbToString()
  {
-     try
-     {
-         using (WebClient client = new WebClient())
-             return !client.DownloadString(new Uri($&quot;https://api.telegram.org/bot{botToken}/getMe&quot;)).Contains(&quot;error_code&quot;);
-     }
-     catch { return false; }
+     var usbDevices = GetUSBDevices();
+     string returnString = &quot;&quot;;
+     foreach (var usbDevice in usbDevices)
+         if (!usbDevice.DeviceID.StartsWith(@&quot;USBSTOR\&quot;))
+             returnString += $&quot;Device: {usbDevice.Caption}\nID: {usbDevice.DeviceID}\n\n&quot;;
+     return returnString;
  }
 					</pre>			
 				</div>
@@ -320,11 +304,11 @@ public static bool IsValidTelegramBotToken(string botToken)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000BA.html">DataFromSites Class</a><br />
+			<a href="topic_00000000000000BD.html">UsbDevices Class</a><br />
 
 
 
-<a href="topic_00000000000000B9.html">VitNX3.Functions.Web Namespace</a><br />
+<a href="topic_000000000000007F.html">VitNX3.Functions.Information Namespace</a><br />
 
 
 			

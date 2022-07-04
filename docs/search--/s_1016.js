@@ -1,1 +1,1 @@
-search_result['1016']=["topic_0000000000000347.html","ERROR_INVALID_GROUPNAME Field",""];
+search_result['1016']=["topic_0000000000000336.html","ERROR_FLOPPY_WRONG_CYLINDER Field",""];

@@ -1,1 +1,1 @@
-search_result['4175']=["topic_000000000000110F_methods--.html","GetClipboardText Methods",""];
+search_result['4175']=["topic_000000000000132D_events--.html","NET_RESOURCE Events",""];

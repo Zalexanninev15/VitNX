@@ -1,1 +1,1 @@
-search_result['4955']=["topic_00000000000012D6.html","VitNX_Dialog.Dispose Method","Clean up any resources being used."];
+search_result['4955']=["topic_000000000000161E.html","VitNX_DockGroup.OnMouseMove Method","Raises the MouseMove event."];

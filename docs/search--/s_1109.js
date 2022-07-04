@@ -1,1 +1,1 @@
-search_result['1109']=["topic_00000000000003A4.html","ERROR_MEMBER_NOT_IN_GROUP Field",""];
+search_result['1109']=["topic_0000000000000393.html","ERROR_NO_SUCH_SITE Field",""];

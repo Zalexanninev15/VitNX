@@ -1,1 +1,1 @@
-search_result['4513']=["topic_00000000000011BC.html","VitNX_ComboBox.OnTextUpdate Method","Raises the TextUpdate event."];
+search_result['4513']=["topic_000000000000150C.html","ObservableList\u0026lt;T\u0026gt;.AddRange Method",""];

@@ -1,1 +1,1 @@
-search_result['1236']=["topic_0000000000000423.html","ERROR_INVALID_SHOWWIN_COMMAND Field",""];
+search_result['1236']=["topic_0000000000000412.html","ERROR_WRONG_TARGET_NAME Field",""];

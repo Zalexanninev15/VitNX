@@ -1,1 +1,1 @@
-search_result['1257']=["topic_0000000000000438.html","ERROR_UNKNOWN_PRODUCT Field",""];
+search_result['1257']=["topic_0000000000000427.html","ERROR_NO_WILDCARD_CHARACTERS Field",""];

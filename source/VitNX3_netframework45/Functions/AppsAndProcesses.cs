@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Management;
 using System.Security.Principal;
 using System.Threading;
@@ -12,7 +13,7 @@ using VitNX3.Functions.Win32;
 namespace VitNX3.Functions.AppsAndProcesses
 {
     /// <summary>
-    /// Work with processes.
+    /// Works with processes.
     /// </summary>
     public class Processes
     {
@@ -22,13 +23,14 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// <returns>A string.</returns>
         public static string GetListWithInformation()
         {
-            string procList = "All processes:";
+            string procList = "";
             foreach (Process process in Process.GetProcesses())
             {
-                procList += $"\n\nName: {process.ProcessName}.exe" +
-                        $"\nID: {process.Id}" +
-                        $"\nTitle: \"{process.MainWindowTitle}\"" +
-                        $"\nHandle: {process.MainWindowHandle}";
+                if (process.ProcessName != "svchost")
+                    procList += $"\n\nName: {process.ProcessName}.exe" +
+                            $"\nID: {process.Id}" +
+                            $"\nTitle: \"{process.MainWindowTitle}\"" +
+                            $"\nHandle: {process.MainWindowHandle}";
             }
             return procList;
         }
@@ -69,12 +71,14 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// </summary>
         /// <param name="targetFile">The target file.</param>
         /// <param name="arguments">The arguments.</param>
-        /// <param name="showWindow">Show window of this app</param>
-        /// <param name="waitMe">Wait this process/app</param>
+        /// <param name="showWindow">Show window of this app.</param>
+        /// <param name="waitMe">Wait this process/app.</param>
+        /// <param name="verb">Set the verb for launch process (only this).</param>
         public static void RunAW(string targetFile,
             string arguments = "",
             bool showWindow = true,
-            bool waitMe = true)
+            bool waitMe = true,
+            string verb = "")
         {
             ProcessWindowStyle app = ProcessWindowStyle.Normal;
             if (!showWindow)
@@ -87,6 +91,7 @@ namespace VitNX3.Functions.AppsAndProcesses
                     Arguments = arguments,
                     CreateNoWindow = !showWindow,
                     WindowStyle = app,
+                    Verb = verb
                 }
             };
             start.Start();
@@ -110,6 +115,31 @@ namespace VitNX3.Functions.AppsAndProcesses
         }
 
         /// <summary>
+        /// Gets the verbs by app id.
+        /// </summary>
+        /// <param name="appId">The app id.</param>
+        /// <returns>An array of string.</returns>
+        public static string[] GetVerbsByAppId(string appId)
+        {
+            var verbs = new List<string>();
+
+            if (!string.IsNullOrEmpty(appId))
+            {
+                using (var key = Registry.ClassesRoot.OpenSubKey($"{appId}\\shell"))
+                {
+                    if (key != null)
+                    {
+                        var names = key.GetSubKeyNames();
+                        verbs.AddRange(names.Where(name => string.Compare(name,
+                            "new",
+                            StringComparison.OrdinalIgnoreCase) != 0));
+                    }
+                }
+            }
+            return verbs.ToArray();
+        }
+
+        /// <summary>
         /// Execute a third-party applications with the result of that application (useful when running console applications).
         /// </summary>
         /// <param name="targetFile">The target file.</param>
@@ -118,8 +148,6 @@ namespace VitNX3.Functions.AppsAndProcesses
         public static string Execute(string targetFile,
             string arguments)
         {
-            var codepage = System.Globalization.CultureInfo.CurrentCulture.TextInfo.OEMCodePage;
-            var desiredEncoding = System.Text.Encoding.GetEncoding(codepage);
             var start = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -129,34 +157,37 @@ namespace VitNX3.Functions.AppsAndProcesses
                     CreateNoWindow = true,
                     UseShellExecute = false,
                     WindowStyle = ProcessWindowStyle.Hidden,
-                    RedirectStandardOutput = true,
-                    StandardOutputEncoding = desiredEncoding
+                    RedirectStandardOutput = true
                 }
             };
             start.Start();
+            var output = start.StandardOutput.ReadToEnd();
             start.WaitForExit();
-            return start.StandardOutput.ReadToEnd();
+            start.Dispose();
+            return output;
         }
 
         /// <summary>
         /// Opens the file/link.
         /// </summary>
         /// <param name="targetFile">The target file.</param>
-        public static void Open(string targetFile)
+        /// <param name="verb">Set the verb for open file. </param>
+        public static void Open(string targetFile,
+            string verb = "open")
         {
             var ps = new ProcessStartInfo(targetFile)
             {
                 UseShellExecute = true,
-                Verb = "open"
+                Verb = verb
             };
             Process.Start(ps);
         }
 
         /// <summary>
-        /// Kills the process.
+        /// Kills the process (Windows native).
         /// </summary>
         /// <param name="processNameWithExe">The process name with .exe.</param>
-        public static void Kill(string processNameWithExe)
+        public static void KillNative(string processNameWithExe)
         {
             var start = new Process
             {
@@ -172,10 +203,10 @@ namespace VitNX3.Functions.AppsAndProcesses
         }
 
         /// <summary>
-        /// Kills the process (C# native).
+        /// Kills the process.
         /// </summary>
         /// <param name="processNameWithExe">The process name with .exe.</param>
-        public static void KillNative(string processNameWithExe)
+        public static void Kill(string processNameWithExe)
         {
             Process[] runningProcesses = Process.GetProcesses();
             foreach (Process process in runningProcesses)
@@ -217,7 +248,7 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// <param name="currentProcess">The current process.</param>
         /// <param name="currentExeAssemblyLocation">The current exe assembly location.</param>
         /// <returns>A Process.</returns>
-        public static Process OnlyOne(Process currentProcess, string currentExeAssemblyLocation)
+        public static Process OnlyOneProcess(Process currentProcess, string currentExeAssemblyLocation)
         {
             currentExeAssemblyLocation = currentExeAssemblyLocation.Replace("/", "\\");
             Process[] pr = Process.GetProcessesByName(currentProcess.ProcessName);
@@ -251,7 +282,7 @@ namespace VitNX3.Functions.AppsAndProcesses
     }
 
     /// <summary>
-    /// Work with installed applications.
+    /// Works with installed applications.
     /// </summary>
     public class Installed
     {
@@ -261,7 +292,7 @@ namespace VitNX3.Functions.AppsAndProcesses
         /// <returns>A string.</returns>
         public static string GetList()
         {
-            string toText = "Installed apps:";
+            string toText = "";
             ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Product");
             ManagementObjectCollection information = searcher.Get();
             foreach (ManagementObject app in information)

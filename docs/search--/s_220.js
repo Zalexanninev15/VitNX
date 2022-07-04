@@ -1,1 +1,1 @@
-search_result['220']=["topic_0000000000000089_methods--.html","Monitor Methods",""];
+search_result['220']=["topic_0000000000000093.html","Cpu Class","Works with informations of CPU."];

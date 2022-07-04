@@ -1,1 +1,1 @@
-c['16']=[['17',"Dispose(bool) Method","topic_0000000000001181.html",0],['18',"Dispose() Method","topic_0000000000001180.html",0]];
+c['16']=[['17',"ObservableList.ItemsAdded Event","topic_0000000000001507.html",0],['18',"ObservableList.ItemsRemoved Event","topic_0000000000001508.html",0]];

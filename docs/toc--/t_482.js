@@ -1,1 +1,1 @@
-c['482']=[['483',"OnHandleCreated Method","topic_000000000000136A.html",0],['484',"OnPaint Method","topic_0000000000001369.html",0]];
+c['482']=[['483',"OnPaint Method","topic_00000000000016F0.html",0],['484',"OnResize Method","topic_00000000000016EF.html",0]];

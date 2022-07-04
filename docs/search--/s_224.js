@@ -1,1 +1,1 @@
-search_result['224']=["topic_000000000000008B.html","Monitor.CaptureScreenToMemoryStream Method","Captures the screen to memory stream."];
+search_result['224']=["topic_0000000000000093_props--.html","Cpu Properties",""];

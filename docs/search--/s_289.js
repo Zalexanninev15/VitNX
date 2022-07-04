@@ -1,1 +1,1 @@
-search_result['289']=["topic_00000000000000B5.html","Ini.KeyExists Method","Is key exist."];
+search_result['289']=["topic_00000000000000B2_methods--.html","Internet Methods",""];

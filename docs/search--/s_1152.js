@@ -1,1 +1,1 @@
-search_result['1152']=["topic_00000000000003CF.html","ERROR_BAD_LOGON_SESSION_STATE Field",""];
+search_result['1152']=["topic_00000000000003BE.html","ERROR_NO_LOGON_SERVERS Field",""];

@@ -1,1 +1,1 @@
-search_result['3678']=["topic_0000000000000DA8.html","NS_E_FILE_OPEN_FAILED Field",""];
+search_result['3678']=["topic_0000000000000D97.html","COMADMIN_E_CAT_DUPLICATE_PARTITION_NAME Field",""];

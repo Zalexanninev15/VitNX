@@ -1,1 +1,1 @@
-search_result['4996']=["topic_00000000000012FA_methods--.html","VitNX_MenuRenderer Methods",""];
+search_result['4996']=["topic_000000000000163B.html","VitNX_DockSplitter Class",""];

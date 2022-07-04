@@ -1,1 +1,1 @@
-c['4610']=[['4611',"AsImage(this Properties) Method","topic_00000000000016B0.html",0],['4612',"AsImage(this Type, Properties) Method","topic_00000000000016AF.html",0]];
+c['4610']=[['4611',"Methods","topic_0000000000001503_methods--.html",1]];

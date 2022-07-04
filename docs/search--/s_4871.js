@@ -1,1 +1,1 @@
-search_result['4871']=["topic_000000000000129C_attached_props--.html","VitNX_DockPanel Attached Properties",""];
+search_result['4871']=["topic_00000000000015E5.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];

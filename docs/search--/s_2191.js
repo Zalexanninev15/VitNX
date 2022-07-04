@@ -1,1 +1,1 @@
-search_result['2191']=["topic_00000000000007DE.html","DNS_ERROR_WINS_INIT_FAILED Field",""];
+search_result['2191']=["topic_00000000000007CD.html","DNS_ERROR_RCODE_FORMAT_ERROR Field",""];

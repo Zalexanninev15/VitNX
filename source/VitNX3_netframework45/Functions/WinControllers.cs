@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.ServiceProcess;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ using static VitNX3.Functions.Win32.Enums;
 namespace VitNX3.Functions.WinControllers
 {
     /// <summary>
-    /// Work with progressbar on taskbar.
+    /// Works with progressbar on taskbar.
     /// </summary>
     public static class TaskBarProgressBar
     {
@@ -321,7 +323,7 @@ namespace VitNX3.Functions.WinControllers
     }
 
     /// <summary>
-    /// Work with the folder dialog, Windows Vista+.
+    /// Works with the new folder dialog (not in the style of Windows XP).
     /// </summary>
     public class NewFolderDialog
     {
@@ -521,13 +523,14 @@ namespace VitNX3.Functions.WinControllers
     }
 
     /// <summary>
-    /// Get clipboard text.
+    /// Gets the clipboard text.
+    /// Example: https://gist.github.com/Zalexanninev15/721265d24d1f506a6e56ae6ea39144df
     /// </summary>
     public class GetClipboardText
     {
         private string _GetText;
 
-        private void _GetTexter(object format)
+        private void _thGetText(object format)
         {
             try
             {
@@ -537,14 +540,10 @@ namespace VitNX3.Functions.WinControllers
             catch { _GetText = string.Empty; }
         }
 
-        /// <summary>
-        /// Gets the text from clipboard.
-        /// </summary>
-        /// <returns>A string.</returns>
-        public static string GetText()
+        public string GetText()
         {
             GetClipboardText instance = new GetClipboardText();
-            Thread staThread = new Thread(instance._GetTexter);
+            Thread staThread = new Thread(instance._thGetText);
             staThread.SetApartmentState(ApartmentState.STA);
             staThread.Start();
             staThread.Join();
@@ -553,9 +552,10 @@ namespace VitNX3.Functions.WinControllers
     }
 
     /// <summary>
-    /// Sets text to clipboard.
+    /// Sets the text to clipboard.
+    /// Example: https://gist.github.com/Zalexanninev15/721265d24d1f506a6e56ae6ea39144df
     /// </summary>
-    public static class STATask
+    public static class SetClipboardText
     {
         public static Task<TResult> Run<TResult>(Func<TResult> function)
         {
@@ -682,10 +682,8 @@ namespace VitNX3.Functions.WinControllers
         }
     }
 
-#pragma warning disable CS1591
-
     /// <summary>
-    /// Work with monitor.
+    /// Works with monitor.
     /// </summary>
     public static class Monitor
     {
@@ -832,8 +830,6 @@ namespace VitNX3.Functions.WinControllers
             public string monitorDevicePath;
         }
 
-#pragma warning restore CS1591
-
         /// <summary>
         /// Monitors the friendly name.
         /// </summary>
@@ -907,7 +903,7 @@ namespace VitNX3.Functions.WinControllers
     }
 
     /// <summary>
-    /// Work with system.
+    /// Works with system.
     /// </summary>
     public static class WorkWithSystem
     {
@@ -935,6 +931,187 @@ namespace VitNX3.Functions.WinControllers
                 flags,
                 ref info));
             return info.hIcon;
+        }
+
+        /// <summary>
+        /// Gets the WMI management object collection.
+        /// </summary>
+        /// <param name="wmiPath">The wmi path.</param>
+        /// <returns>A ManagementObjectCollection.</returns>
+        public static ManagementObjectCollection GetWmiManagementObjectCollection(WMI_CLASSES_LIST wmiPath)
+        {
+            ManagementClass mc = new ManagementClass(wmiPath.ToString());
+            ManagementObjectCollection moc = mc.GetInstances();
+            return moc;
+        }
+    }
+
+    /// <summary>
+    /// Controls of Windows services .
+    /// </summary>
+    public static class ServicesControl
+    {
+        [Flags]
+        public enum ServiceStatus
+        {
+            NOT_RUNNING,
+            RUNNING,
+            ALREADY_RUNNING,
+            STOPPED,
+            ALREADY_STOPPED,
+            UNKNOWN_ERROR,
+            RESTARTED,
+            CONFLICT_RESTARTED
+        }
+
+        /// <summary>
+        /// Starts the service.
+        /// </summary>
+        /// <param name="serviceName">The service name.</param>
+        /// <returns>A ServiceStatus.</returns>
+        public static ServiceStatus Start(string serviceName)
+        {
+            try
+            {
+                ServiceController service = new ServiceController(serviceName);
+                if (service.Status != ServiceControllerStatus.Running)
+                {
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running,
+                        TimeSpan.FromSeconds(6));
+                    return ServiceStatus.RUNNING;
+                }
+                else
+                    return ServiceStatus.ALREADY_RUNNING;
+            }
+            catch { return ServiceStatus.UNKNOWN_ERROR; }
+        }
+
+        /// <summary>
+        /// Stops the service.
+        /// </summary>
+        /// <param name="serviceName">The service name.</param>
+        /// <returns>A ServiceStatus.</returns>
+        public static ServiceStatus Stop(string serviceName)
+        {
+            try
+            {
+                ServiceController service = new ServiceController(serviceName);
+                if (service.Status != ServiceControllerStatus.Stopped)
+                {
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped,
+                        TimeSpan.FromSeconds(6));
+                    return ServiceStatus.STOPPED;
+                }
+                else
+                    return ServiceStatus.ALREADY_STOPPED;
+            }
+            catch { return ServiceStatus.UNKNOWN_ERROR; }
+        }
+
+        /// <summary>
+        /// Restarts the service.
+        /// </summary>
+        /// <param name="serviceName">The service name.</param>
+        /// <returns>A ServiceStatus.</returns>
+        public static ServiceStatus Restart(string serviceName)
+        {
+            int index = 0;
+            try
+            {
+                ServiceController service = new ServiceController(serviceName);
+                TimeSpan timeout = TimeSpan.FromMinutes(1);
+                if (service.Status != ServiceControllerStatus.Stopped)
+                {
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped,
+                        timeout);
+                    index = index + 1;
+                }
+                else
+                    return ServiceStatus.CONFLICT_RESTARTED;
+                if ((service.Status != ServiceControllerStatus.Running)
+                    && (index > 0))
+                {
+                    service.Start();
+                    service.WaitForStatus(ServiceControllerStatus.Running,
+                        timeout);
+                    index = index + 1;
+                    return ServiceStatus.RESTARTED;
+                }
+                else
+                    return ServiceStatus.CONFLICT_RESTARTED;
+            }
+            catch { return ServiceStatus.UNKNOWN_ERROR; }
+        }
+    }
+
+    /// <summary>
+    /// Works with the power control.
+    /// </summary>
+    public class PowerControl
+    {
+        /// <summary>
+        /// Options for control the power of computer.
+        /// </summary>
+        public enum SYSTEM_POWER_CONTROL
+        {
+            SYSTEM_LOGOFF,
+            SYSTEM_SHUTDOWN,
+            SYSTEM_REBOOT,
+            SYSTEM_LOCK
+        }
+
+        /// <summary>
+        /// The power of computer.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        public static void Computer(SYSTEM_POWER_CONTROL method)
+        {
+            switch (method)
+            {
+                case SYSTEM_POWER_CONTROL.SYSTEM_LOGOFF:
+                    {
+                        Import.ExitWindowsEx(0, 0);
+                        break;
+                    }
+                case SYSTEM_POWER_CONTROL.SYSTEM_SHUTDOWN:
+                    {
+                        // Processes.Run("powershell", "/C Stop-Computer");
+                        Processes.Run("shutdown", "/s /t 0");
+                        break;
+                    }
+                case SYSTEM_POWER_CONTROL.SYSTEM_REBOOT:
+                    {
+                        // Processes.Run("powershell", "Restart-Computer -Force");
+                        Processes.Run("shutdown", "/r /t 0");
+                        break;
+                    }
+                case SYSTEM_POWER_CONTROL.SYSTEM_LOCK:
+                    {
+                        Import.LockWorkStation();
+                        break;
+                    }
+            }
+        }
+
+        /// <summary>
+        /// The power of monitor.
+        /// </summary>
+        /// <param name="worked">If true, worked.</param>
+        public static void Monitor(bool worked)
+        {
+            Form frm = new Form();
+            if (worked)
+            {
+                Import.mouse_event(Constants.MOUSEEVENTF_MOVE, 0, 1, 0, UIntPtr.Zero);
+                frm.Close();
+            }
+            else Import.SendMessage(frm.Handle,
+                Constants.WM_SYSCOMMAND,
+                (IntPtr)Constants.SC_MONITORPOWER,
+                (IntPtr)2);
         }
     }
 }

@@ -1,1 +1,1 @@
-search_result['345']=["topic_00000000000000D2.html","Import.AdjustWindowRect Method",""];
+search_result['345']=["topic_00000000000000D2.html","DataFromSites.GetGeo Method","Gets the geolocation of PC."];

@@ -1,1 +1,1 @@
-search_result['355']=["topic_00000000000000DC.html","Import.MediaInfo_Get Method",""];
+search_result['355']=["topic_00000000000000D7.html","Config Class","The configs for normal work with sites and Internet."];

@@ -1,1 +1,1 @@
-search_result['2550']=["topic_0000000000000940.html","CO_E_OLE1DDE_DISABLED Field",""];
+search_result['2550']=["topic_0000000000000934.html","ERROR_IPSEC_IKE_INVALID_SITUATION Field",""];

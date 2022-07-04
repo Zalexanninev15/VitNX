@@ -1,1 +1,1 @@
-c['4448']=[['4449',"Fields","topic_000000000000114E_vars--.html",1]];
+c['4448']=[['4449',"ValidateRect(IntPtr, IntPtr) Method","topic_00000000000001AF.html",0],['4450',"ValidateRect(IntPtr, ref RECT) Method","topic_00000000000001B0.html",0]];

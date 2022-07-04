@@ -1,1 +1,1 @@
-search_result['334']=["topic_00000000000000C9.html","Import.DestroyIcon Method",""];
+search_result['334']=["topic_00000000000000CC.html","Log.Write Method","Writes log to the log file."];

@@ -7,7 +7,7 @@
     <ProjectGuid>{F19472F5-8C44-4C51-A8A0-B9DE5F555255}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VitNX3</RootNamespace>
+    <RootNamespace>VitNX</RootNamespace>
     <AssemblyName>VitNX3</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -50,32 +50,26 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Functions\CShap.cs" />
-    <Compile Include="Functions\PowerControl.cs" />
+    <Compile Include="Functions\Helpers\DISMON.cs" />
     <Compile Include="Functions\SettingsAndLog.cs" />
     <Compile Include="Functions\Data.cs" />
+    <Compile Include="Functions\Helpers\WPK.cs" />
+    <Compile Include="UI\Console\ProgressBar\ConsoleProgressBar3.cs" />
     <Compile Include="UI\ControlsV2\VitNX2_CheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\Console\ProgressBar\Type2.cs" />
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1.cs" />
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.cs">
+    <Compile Include="UI\Console\ProgressBar\ConsoleProgressBar2.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox.cs" />
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.Designer.cs">
-      <DependentUpon>VitNX2_MessageBoxType1_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.Designer.cs">
-      <DependentUpon>VitNX2_MessageBoxType2_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_RichTextBox.cs">
-      <SubType>Component</SubType>
+    <Compile Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.Designer.cs">
+      <DependentUpon>VitNX2_MessageBox_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ControlsV2\VitNX2_RichTextBox.cs">
       <SubType>Component</SubType>
@@ -83,7 +77,7 @@
     <Compile Include="UI\ControlsV2\VitNX2_ProgressBarRoundedType2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\OtherControls\FontAwesome.cs" />
+    <Compile Include="UI\OtherControls\FontAwesome4.cs" />
     <Compile Include="Functions\WindowAndControls.cs" />
     <Compile Include="Icons\DockIcons.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -281,15 +275,7 @@
     <Compile Include="UI\ControlsV1\Win32\ControlScrollFilter.cs" />
     <Compile Include="UI\ControlsV1\Win32\DockResizeFilter.cs" />
     <Compile Include="UI\ControlsV1\Win32\DockContentDragFilter.cs" />
-    <Compile Include="UI\OtherControls\Notification\nManager.cs" />
-    <Compile Include="UI\OtherControls\Notification\NotificationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\OtherControls\Notification\NotificationForm.Designer.cs">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\OtherControls\Notification\NotifySettings.cs" />
-    <Compile Include="UI\Console\ProgressBar\Type1.cs" />
+    <Compile Include="UI\Console\ProgressBar\ConsoleProgressBar1.cs" />
     <Compile Include="UI\Console\Text.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,11 +289,9 @@
     <EmbeddedResource Include="UI\ControlsV1\Forms\VitNX_TranslucentForm.resx">
       <DependentUpon>VitNX_TranslucentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType1\VitNX2_MessageBoxType1_Form.resx">
-      <DependentUpon>VitNX2_MessageBoxType1_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBoxType2\VitNX2_MessageBoxType2_Form.resx">
-      <DependentUpon>VitNX2_MessageBoxType2_Form.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ControlsV2\VitNX2_MessageBox\VitNX2_MessageBox_Form.resx">
+      <DependentUpon>VitNX2_MessageBox_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_TextBox.resx" />
     <EmbeddedResource Include="UI\ControlsV2\VitNX2_ProgressBar.resx">
@@ -348,9 +332,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <CustomToolNamespace>VitNX</CustomToolNamespace>
       <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\OtherControls\Notification\NotificationForm.resx">
-      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -487,9 +468,7 @@
   <ItemGroup>
     <None Include="Resources\cancelN.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="UI\ControlsV3\soon.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,1 +1,1 @@
-search_result['4604']=["topic_00000000000011F3.html","VitNX_ListView.EnsureVisible Method",""];
+search_result['4604']=["topic_0000000000001544.html","VitNX_ComboBox.OnTextChanged Method","Raises the TextChanged event."];

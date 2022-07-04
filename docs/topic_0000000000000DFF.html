@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>DWM_SBT Enumeration</title>
+	<title>ACCENT_STATE Enumeration</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">DWM_SBT Enumeration</h1>
+		<h1 class="title">ACCENT_STATE Enumeration</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -135,7 +135,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DWMSBT_AUTO
+	    ACCENT_DISABLED
 	  </td>
 	  <td>
 	    0
@@ -147,31 +147,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DWMSBT_DISABLE
-	  </td>
-	  <td>
-	    1
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    DWMSBT_MAINWINDOW
-	  </td>
-	  <td>
-	    2
-	  </td>
-	  <td>
-		 
-	  </td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td>
-	    DWMSBT_TABBEDWINDOW
+	    ACCENT_ENABLE_ACRYLICBLURBEHIND
 	  </td>
 	  <td>
 	    4
@@ -183,10 +159,46 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	<tr>
 	  <td></td>
 	  <td>
-	    DWMSBT_TRANSIENTWINDOW
+	    ACCENT_ENABLE_BLURBEHIND
 	  </td>
 	  <td>
 	    3
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    ACCENT_ENABLE_GRADIENT
+	  </td>
+	  <td>
+	    1
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    ACCENT_ENABLE_TRANSPARENTGRADIENT
+	  </td>
+	  <td>
+	    2
+	  </td>
+	  <td>
+		 
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td>
+	    ACCENT_INVALID_STATE
+	  </td>
+	  <td>
+	    5
 	  </td>
 	  <td>
 		 
@@ -269,13 +281,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [Flags]
- public enum DWM_SBT : uint
+ public enum ACCENT_STATE
  {
-     DWMSBT_AUTO = 0,
-     DWMSBT_DISABLE = 1,
-     DWMSBT_MAINWINDOW = 2,
-     DWMSBT_TRANSIENTWINDOW = 3,
-     DWMSBT_TABBEDWINDOW = 4
+     ACCENT_DISABLED = 0,
+     ACCENT_ENABLE_GRADIENT = 1,
+     ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
+     ACCENT_ENABLE_BLURBEHIND = 3,
+     ACCENT_ENABLE_ACRYLICBLURBEHIND = 4,
+     ACCENT_INVALID_STATE = 5
  }
 					</pre>			
 				</div>
@@ -298,11 +311,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000DAB.html">Enums Class</a><br />
+			<a href="topic_0000000000000DCF.html">Enums Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

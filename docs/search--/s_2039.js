@@ -1,1 +1,1 @@
-search_result['2039']=["topic_0000000000000746.html","ERROR_DS_GLOBAL_CANT_HAVE_CROSSDOMAIN_MEMBER Field",""];
+search_result['2039']=["topic_0000000000000735.html","ERROR_DS_DRA_EXTN_CONNECTION_FAILED Field",""];

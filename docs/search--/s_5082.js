@@ -1,1 +1,1 @@
-search_result['5082']=["topic_0000000000001331.html","CheckedChangedEventHandler Delegate",""];
+search_result['5082']=["topic_0000000000001679.html","VitNX_MessageBox.Dispose Method","Clean up any resources being used."];

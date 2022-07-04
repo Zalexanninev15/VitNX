@@ -1,1 +1,1 @@
-search_result['1161']=["topic_00000000000003D8.html","ERROR_MEMBERS_PRIMARY_GROUP Field",""];
+search_result['1161']=["topic_00000000000003C7.html","ERROR_MEMBER_IN_GROUP Field",""];

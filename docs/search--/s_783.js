@@ -1,1 +1,1 @@
-search_result['783']=["topic_000000000000025E.html","ERROR_NOT_JOINED Field",""];
+search_result['783']=["topic_000000000000024D.html","ERROR_PRINT_CANCELLED Field",""];

@@ -1,1 +1,1 @@
-search_result['1945']=["topic_00000000000006E8.html","ERROR_DS_BAD_HIERARCHY_FILE Field",""];
+search_result['1945']=["topic_00000000000006D7.html","ERROR_DS_OBJ_CLASS_NOT_SUBCLASS Field",""];

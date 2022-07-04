@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Processes.CheckDebugger Method</title>
+	<title>Processes.OnlyOneProcess Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,7 +74,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Processes.CheckDebugger Method</h1>
+		<h1 class="title">Processes.OnlyOneProcess Method</h1>
         
 		<div class="metadata">
         Namespace:
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Checks the debugger for your app.</summary-info>
+        <summary-info>You only have 1 copy of the application running.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CheckDebugger(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> <i>currentProcess</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> OnlyOneProcess(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> <i>currentProcess</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>currentExeAssemblyLocation</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -165,14 +165,27 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	The current process. 
 </p>
+<dl paramName="currentExeAssemblyLocation" class="parameterList">
+	<dt>
+		<span class="parameter">
+			currentExeAssemblyLocation
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The current exe assembly location. 
+</p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process">Process</a> 
 		<p>
-		A bool. 
+		A Process. 
 	</p>
 	
 
@@ -248,16 +261,19 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool CheckDebugger(Process currentProcess)
+public static Process OnlyOneProcess(Process currentProcess, string currentExeAssemblyLocation)
  {
-     bool isDebuggerPresent = false;
-     try
+     currentExeAssemblyLocation = currentExeAssemblyLocation.Replace(&quot;/&quot;, &quot;\\&quot;);
+     Process[] pr = Process.GetProcessesByName(currentProcess.ProcessName);
+     foreach (Process i in pr)
      {
-         Import.CheckRemoteDebuggerPresent(currentProcess.Handle, ref
-             isDebuggerPresent);
-         return isDebuggerPresent;
+         if (i.Id != currentProcess.Id)
+         {
+             if (currentExeAssemblyLocation == currentProcess.MainModule.FileName)
+                 return i;
+         }
      }
-     catch { return isDebuggerPresent; }
+     return null;
  }
 					</pre>			
 				</div>

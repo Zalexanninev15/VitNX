@@ -1,1 +1,1 @@
-search_result['3703']=["topic_0000000000000DB2.html","Attribute Field",""];
+search_result['3703']=["topic_0000000000000DB0.html","MSDTC_E_DUPLICATE_RESOURCE Field",""];

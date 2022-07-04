@@ -1,1 +1,1 @@
-search_result['4173']=["topic_000000000000110F_attached_props--.html","GetClipboardText Attached Properties",""];
+search_result['4173']=["topic_000000000000132D.html","NET_RESOURCE Structure",""];

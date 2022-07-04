@@ -1,1 +1,1 @@
-search_result['4509']=["topic_00000000000011B8.html","VitNX_ComboBox.OnTabIndexChanged Method","Raises the TabIndexChanged event."];
+search_result['4509']=["topic_000000000000150A.html","ObservableList\u0026lt;T\u0026gt;.Dispose (Boolean) Method",""];

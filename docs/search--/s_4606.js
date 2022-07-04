@@ -1,1 +1,1 @@
-search_result['4606']=["topic_00000000000011F5.html","VitNX_MenuStrip Class",""];
+search_result['4606']=["topic_0000000000001546.html","VitNX_ComboBox.OnSelectedValueChanged Method","Raises the SelectedValueChanged event."];

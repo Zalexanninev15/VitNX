@@ -1,1 +1,1 @@
-search_result['1028']=["topic_0000000000000353.html","ERROR_DUP_DOMAINNAME Field",""];
+search_result['1028']=["topic_0000000000000342.html","ERROR_TOO_MANY_LINKS Field",""];

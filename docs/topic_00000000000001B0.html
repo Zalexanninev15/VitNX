@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetWindowPos (IntPtr, IntPtr, Int32, Int32, Int32, Int32, SET_WINDOW_POS_FLAGS) Method</title>
+	<title>Import.ValidateRect (IntPtr, ref RECT) Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetWindowPos (IntPtr, IntPtr, Int32, Int32, Int32, Int32, SET_WINDOW_POS_FLAGS) Method</h1>
+		<h1 class="title">Import.ValidateRect (IntPtr, ref RECT) Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> SetWindowPos(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWndInsertAfter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>x</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>y</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cx</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>cy</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000F5D.html" onclick="this.target='';return true;">SET_WINDOW_POS_FLAGS</a> <i>uFlags</i>&nbsp;<br />)</pre>			
+            CharSet = CharSet.Auto)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ValidateRect(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hWnd</i>,&nbsp;<br />   ref <a target="_top" href="topic_0000000000001266.html" onclick="this.target='';return true;">RECT</a> <i>lpRect</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -165,79 +165,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	 
 </p>
-<dl paramName="hWndInsertAfter" class="parameterList">
+<dl paramName="lpRect" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hWndInsertAfter
+			lpRect
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="x" class="parameterList">
-	<dt>
-		<span class="parameter">
-			x
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="y" class="parameterList">
-	<dt>
-		<span class="parameter">
-			y
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="cx" class="parameterList">
-	<dt>
-		<span class="parameter">
-			cx
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="cy" class="parameterList">
-	<dt>
-		<span class="parameter">
-			cy
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="uFlags" class="parameterList">
-	<dt>
-		<span class="parameter">
-			uFlags
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000000F5D.html" onclick="this.target='';return true;">SET_WINDOW_POS_FLAGS</a> 
+		<a target="_top" href="topic_0000000000001266.html" onclick="this.target='';return true;">RECT</a> 
 	</dd>
 </dl>
 <p>
@@ -324,14 +259,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
 [DllImport(&quot;user32.dll&quot;,
-     SetLastError = true)]
- public static extern bool SetWindowPos(IntPtr hWnd,
-     IntPtr hWndInsertAfter,
-     int x,
-     int y,
-     int cx,
-     int cy,
-     SET_WINDOW_POS_FLAGS uFlags);
+     CharSet = CharSet.Auto)]
+ public static extern bool ValidateRect(IntPtr hWnd,
+     ref RECT lpRect);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -395,11 +325,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['4482']=["topic_00000000000011A8.html","VitNX_CheckBox Class",""];
+search_result['4482']=["topic_00000000000014FD.html","ProgressBar(Int32) Constructor","Create a progress bar with specified total number."];

@@ -1,1 +1,1 @@
-search_result['5171']=["topic_0000000000001362.html","VitNX2_MessageBoxType2.Dispose Method","Disposes resources used by the form."];
+search_result['5171']=["topic_00000000000016B7.html","VitNX2_CheckBox.OnMouseLeave Method","Raises the MouseLeave event."];

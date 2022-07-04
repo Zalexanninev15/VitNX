@@ -1,1 +1,1 @@
-search_result['4707']=["topic_0000000000001239.html","VitNX_SectionPanel.OnEnter Method","Raises the Enter event."];
+search_result['4707']=["topic_0000000000001580_events--.html","VitNX_NumericUpDown Events",""];

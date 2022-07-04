@@ -1,1 +1,1 @@
-search_result['364']=["topic_00000000000000E5.html","Import.SetWindowCompositionAttribute Method",""];
+search_result['364']=["topic_00000000000000DB.html","Import Class","Import the Windows System functions from native DLL.\r\nAbout functions: https://www.pinvoke.net"];

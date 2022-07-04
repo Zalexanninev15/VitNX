@@ -1,1 +1,1 @@
-search_result['5019']=["topic_000000000000130A.html","VitNX_ToolStripRenderer.OnRenderSeparator Method","Raises the RenderSeparator event."];
+search_result['5019']=["topic_0000000000001649_methods--.html","VitNX_ToolWindow Methods",""];

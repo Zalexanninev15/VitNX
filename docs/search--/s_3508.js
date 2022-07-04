@@ -1,1 +1,1 @@
-search_result['3508']=["topic_0000000000000CFE.html","SCARD_E_INVALID_PARAMETER Field",""];
+search_result['3508']=["topic_0000000000000CED.html","SPAPI_E_DEVINFO_NOT_REGISTERED Field",""];

@@ -1,1 +1,1 @@
-search_result['5137']=["topic_0000000000001354.html","VitNX2_MessageBoxType1.Show (IWin32Window, String, String) Method",""];
+search_result['5137']=["topic_000000000000169E.html","DockResizeFilter.PreFilterMessage Method","Filters out a message before it is dispatched."];

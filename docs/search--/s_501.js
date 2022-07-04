@@ -1,1 +1,1 @@
-search_result['501']=["topic_0000000000000165.html","Import.SelectClipRgn Method",""];
+search_result['501']=["topic_0000000000000158.html","Import.GetFocus Method",""];

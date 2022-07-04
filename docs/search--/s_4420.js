@@ -1,1 +1,1 @@
-search_result['4420']=["topic_0000000000001182_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Add Method",""];
+search_result['4420']=["topic_00000000000014DA.html","PowerControl Class","Works with the power control."];

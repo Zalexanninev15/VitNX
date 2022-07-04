@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Folder.Zip Method</title>
+	<title>Folder.ShowInExplorer Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Folder.Zip Method</h1>
+		<h1 class="title">Folder.ShowInExplorer Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem</a>
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Zips the folder.</summary-info>
+        <summary-info>Shows the folder in Windows Explorer.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> Zip(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>sourceFolder</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>zipFile</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> ShowInExplorer(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>folderPath</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -152,10 +152,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="sourceFolder" class="parameterList">
+	Parameters</h4><dl paramName="folderPath" class="parameterList">
 	<dt>
 		<span class="parameter">
-			sourceFolder
+			folderPath
 		</span>
 	</dt>
 	<dd>
@@ -163,20 +163,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	The source folder. 
-</p>
-<dl paramName="zipFile" class="parameterList">
-	<dt>
-		<span class="parameter">
-			zipFile
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-	</dd>
-</dl>
-<p>
-	The zip file. 
+	The folder path. 
 </p>
 
 <p />
@@ -254,18 +241,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static void Zip(string sourceFolder,
-     string zipFile)
+public static void ShowInExplorer(string folderPath)
  {
-     if (!Directory.Exists(sourceFolder))
-         throw new ArgumentException(&quot;sourceDirectory&quot;);
-     byte[] zipHeader = new byte[] { 80, 75, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-     using (FileStream fs = System.IO.File.Create(zipFile))
-         fs.Write(zipHeader, 0, zipHeader.Length);
-     dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID(&quot;Shell.Application&quot;));
-     dynamic source = shellApplication.NameSpace(sourceFolder);
-     dynamic destination = shellApplication.NameSpace(zipFile);
-     destination.CopyHere(source.Items(), 20);
+     Processes.Run(&quot;explorer&quot;, $&quot;\&quot;{folderPath}\&quot;&quot;);
  }
 					</pre>			
 				</div>
@@ -330,11 +308,11 @@ public static void Zip(string sourceFolder,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000053.html">Folder Class</a><br />
+			<a href="topic_0000000000000055.html">Folder Class</a><br />
 
 
 
-<a href="topic_0000000000000052.html">VitNX3.Functions.FileSystem Namespace</a><br />
+<a href="topic_0000000000000054.html">VitNX3.Functions.FileSystem Namespace</a><br />
 
 
 			

@@ -1,1 +1,1 @@
-search_result['3452']=["topic_0000000000000CC6.html","SPAPI_E_INVALID_DEVINST_NAME Field",""];
+search_result['3452']=["topic_0000000000000CB5.html","MSSIPOTF_E_NOT_OPENTYPE Field",""];

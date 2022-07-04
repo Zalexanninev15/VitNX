@@ -1,1 +1,1 @@
-c['4564']=[['4565',"Text Class","topic_000000000000117A.html",1]];
+c['4564']=[['4565',"SYSTEM_POWER_CONTROL Enumeration","topic_00000000000014DB.html",0],['4566',"Methods","topic_00000000000014DA_methods--.html",1]];

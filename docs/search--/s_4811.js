@@ -1,1 +1,1 @@
-search_result['4811']=["topic_0000000000001275.html","DockContentEventArgs Constructor",""];
+search_result['4811']=["topic_00000000000015C9.html","VitNX_Separator.OnPaint Method","Raises the Paint event."];

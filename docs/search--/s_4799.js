@@ -1,1 +1,1 @@
-search_result['4799']=["topic_000000000000126E.html","VitNX_TreeView.ForceDropToParent Method",""];
+search_result['4799']=["topic_00000000000015C2.html","VitNX_SectionPanel.OnEnter Method","Raises the Enter event."];

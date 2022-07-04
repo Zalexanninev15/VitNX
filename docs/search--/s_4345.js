@@ -1,1 +1,1 @@
-search_result['4345']=["topic_000000000000115D.html","WorkWithSystem Class","Work with system."];
+search_result['4345']=["topic_00000000000014AB_props--.html","DISPLAYCONFIG_SOURCE_MODE Properties",""];

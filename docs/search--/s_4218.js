@@ -1,1 +1,1 @@
-search_result['4218']=["topic_000000000000111F_vars--.html","DISPLAYCONFIG_PATH_SOURCE_INFO Fields",""];
+search_result['4218']=["topic_0000000000001478.html","NewFolderDialog Class","Works with the new folder dialog (not in the style of Windows XP)."];

@@ -1,1 +1,1 @@
-c['598']=[['599',"CleanMemory Method","topic_000000000000001B.html",0],['600',"ConvertColorToConsoleColor Method","topic_000000000000001E.html",0],['601',"ConvertDWordColorToRGB Method","topic_000000000000001D.html",0],['602',"PlaySound Method","topic_000000000000001C.html",0]];
+c['598']=[['599',"BytesToString Method","topic_0000000000000051.html",0],['600',"CompressBytes Method","topic_0000000000000052.html",0],['601',"DecompressBytes Method","topic_0000000000000053.html",0],['602',"GetBytes Method","topic_0000000000000050.html",0]];

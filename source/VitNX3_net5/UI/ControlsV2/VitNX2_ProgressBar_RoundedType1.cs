@@ -123,7 +123,7 @@ namespace VitNX2.UI.ControlsV2
 
         private string _percentageStr
         {
-            get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100 } %"; }
+            get { return $"{(int)((float)Value - Minimum) / ((float)Maximum - Minimum) * 100} %"; }
         }
 
         protected override void OnPaint(PaintEventArgs e)

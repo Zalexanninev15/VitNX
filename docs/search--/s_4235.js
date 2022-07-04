@@ -1,1 +1,1 @@
-search_result['4235']=["topic_000000000000112A_attached_props--.html","DISPLAYCONFIG_RATIONAL Attached Properties",""];
+search_result['4235']=["topic_000000000000147D.html","SetClipboardText Class","Sets the text to clipboard.\r\nExample: https://gist.github.com/Zalexanninev15/721265d24d1f506a6e56ae6ea39144df"];

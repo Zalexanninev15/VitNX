@@ -1,1 +1,1 @@
-search_result['3633']=["topic_0000000000000D7B.html","COMADMIN_E_REGDB_NOTOPEN Field",""];
+search_result['3633']=["topic_0000000000000D6A.html","COMADMIN_E_AUTHENTICATIONLEVEL Field",""];

@@ -1,1 +1,1 @@
-search_result['1881']=["topic_00000000000006A8.html","ERROR_DS_OBJ_GUID_EXISTS Field",""];
+search_result['1881']=["topic_0000000000000697.html","ERROR_DS_RDN_DOESNT_MATCH_SCHEMA Field",""];

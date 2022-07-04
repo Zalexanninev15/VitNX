@@ -1,1 +1,1 @@
-search_result['5166']=["topic_0000000000001360_events--.html","VitNX2_MessageBoxType2 Events",""];
+search_result['5166']=["topic_00000000000016B2.html","VitNX2_CheckBox.OnClick Method","Raises the Click event."];

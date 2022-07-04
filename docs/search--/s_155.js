@@ -1,1 +1,1 @@
-search_result['155']=["topic_0000000000000064.html","File.CreateBackup Method","Creates the file backup."];
+search_result['155']=["topic_0000000000000064.html","File.ExtractIconFromExecutable Method","Extracts the icon from executable (EXE)."];

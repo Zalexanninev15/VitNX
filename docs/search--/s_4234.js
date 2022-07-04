@@ -1,1 +1,1 @@
-search_result['4234']=["topic_000000000000112A.html","DISPLAYCONFIG_RATIONAL Structure",""];
+search_result['4234']=["topic_000000000000147C.html","GetClipboardText.GetText Method",""];

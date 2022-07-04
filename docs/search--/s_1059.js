@@ -1,1 +1,1 @@
-search_result['1059']=["topic_0000000000000372.html","ERROR_OVERRIDE_NOCHANGES Field",""];
+search_result['1059']=["topic_0000000000000361.html","ERROR_JOURNAL_ENTRY_DELETED Field",""];

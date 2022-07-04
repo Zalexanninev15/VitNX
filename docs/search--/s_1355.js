@@ -1,1 +1,1 @@
-search_result['1355']=["topic_000000000000049A.html","RPC_S_ENTRY_ALREADY_EXISTS Field",""];
+search_result['1355']=["topic_0000000000000489.html","RPC_S_INVALID_RPC_PROTSEQ Field",""];

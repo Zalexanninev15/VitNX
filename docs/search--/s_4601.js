@@ -1,1 +1,1 @@
-search_result['4601']=["topic_00000000000011F1.html","VitNX_ListView.ToggleItem Method",""];
+search_result['4601']=["topic_0000000000001541.html","VitNX_ComboBox.OnTabIndexChanged Method","Raises the TabIndexChanged event."];

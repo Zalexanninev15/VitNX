@@ -1,1 +1,1 @@
-search_result['2495']=["topic_000000000000090E.html","ERROR_IPSEC_IKE_INVALID_POLICY Field",""];
+search_result['2495']=["topic_00000000000008FD.html","ERROR_IPSEC_IKE_NO_CERT Field",""];

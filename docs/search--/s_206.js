@@ -1,1 +1,1 @@
-search_result['206']=["topic_0000000000000083.html","Gpu.Characteristics Method","Gets all characteristics."];
+search_result['206']=["topic_0000000000000085.html","Windows.GetWindowsVersion Method","Gets the Windows version."];

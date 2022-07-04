@@ -1,1 +1,1 @@
-search_result['279']=["topic_00000000000000AF_attached_props--.html","Ini Attached Properties",""];
+search_result['279']=["topic_00000000000000B0.html","Ram Class","Works with informations of RAM."];

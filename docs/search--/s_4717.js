@@ -1,1 +1,1 @@
-search_result['4717']=["topic_000000000000123E_vars--.html","VitNX_Separator Fields",""];
+search_result['4717']=["topic_0000000000001587.html","VitNX_NumericUpDown.OnGotFocus Method","Raises the GotFocus event."];

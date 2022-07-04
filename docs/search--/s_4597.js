@@ -1,1 +1,1 @@
-search_result['4597']=["topic_00000000000011EE.html","VitNX_ListView.GetItemIndex Method",""];
+search_result['4597']=["topic_000000000000153E.html","VitNX_ComboBox Constructor",""];

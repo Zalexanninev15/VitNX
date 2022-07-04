@@ -1,1 +1,1 @@
-search_result['802']=["topic_0000000000000271.html","ERROR_TOO_MANY_TCBS Field",""];
+search_result['802']=["topic_0000000000000260.html","ERROR_TOO_MANY_SEMAPHORES Field",""];

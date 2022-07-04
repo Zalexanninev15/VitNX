@@ -1,1 +1,1 @@
-search_result['228']=["topic_000000000000008F.html","Monitor.CaptureWindow Method","Captures the window."];
+search_result['228']=["topic_0000000000000096.html","Cpu.GetClockSpeed Method","Gets the clock speed."];

@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockPanel.RemoveContent Method</title>
+	<title>cbSize Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockPanel.RemoveContent Method</h1>
+		<h1 class="title">cbSize Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RemoveContent(&nbsp;<br />   <a target="_top" href="topic_0000000000001288.html" onclick="this.target='';return true;">VitNX_DockContent</a> <i>dockContent</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> cbSize</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,23 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="dockContent" class="parameterList">
-	<dt>
-		<span class="parameter">
-			dockContent
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_0000000000001288.html" onclick="this.target='';return true;">VitNX_DockContent</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a> 
+	
 
 
 
@@ -240,17 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void RemoveContent(VitNX_DockContent dockContent)
- {
-     if (!_contents.Contains(dockContent))
-         return;
-     dockContent.DockPanel = null;
-     _contents.Remove(dockContent);
-     var region = _regions[dockContent.DockArea];
-     region.RemoveContent(dockContent);
-     if (ContentRemoved != null)
-         ContentRemoved(this, new DockContentEventArgs(dockContent));
- }
+public uint cbSize;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -314,11 +292,11 @@ public void RemoveContent(VitNX_DockContent dockContent)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000129C.html">VitNX_DockPanel Class</a><br />
+			<a href="topic_00000000000012A3.html">TRACKMOUSEEVENT Structure</a><br />
 
 
 
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -340,4 +318,3 @@ public void RemoveContent(VitNX_DockContent dockContent)
     </div>
   </body>
 </html>
-

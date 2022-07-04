@@ -1,1 +1,1 @@
-var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_00000000000016E1.html"],['611',"VitNX3.Functions.Data Namespace","topic_000000000000001F.html"],['638',"Text Class","topic_0000000000000023.html"],['665',"Fields","topic_0000000000000023_vars--.html"],['667',"SizeSuffixes Field","topic_0000000000000024.html"]];
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001A35.html"],['596',"VitNX3.Functions.Data Namespace","topic_0000000000000020.html"],['624',"Text Class","topic_0000000000000024.html"]];

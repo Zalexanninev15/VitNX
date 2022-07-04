@@ -1,1 +1,1 @@
-search_result['1177']=["topic_00000000000003E8.html","ERROR_LM_CROSS_ENCRYPTION_REQUIRED Field",""];
+search_result['1177']=["topic_00000000000003D7.html","ERROR_INVALID_ACL Field",""];

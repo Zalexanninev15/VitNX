@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.GetWindowsSerialKey Method</title>
+	<title>GWK.CheckMSDM Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.GetWindowsSerialKey Method</h1>
+		<h1 class="title">GWK.CheckMSDM Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information</a>
+<a href="topic_0000000000000076.html">VitNX3.Functions.Helpers.WPK</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Gets Windows the serial key.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsSerialKey()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> CheckMSDM(&nbsp;<br />   out <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>buffer</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,13 +150,26 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="buffer" class="parameterList">
+	<dt>
+		<span class="parameter">
+			buffer
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
-		<p>
-		A string. 
-	</p>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
 	
 
 
@@ -232,13 +244,38 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static string GetWindowsSerialKey()
+public static bool CheckMSDM(out byte[] buffer)
  {
-     ManagementObjectSearcher searcher112 = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_OperatingSystem&quot;);
-     ManagementObjectCollection information112 = searcher112.Get();
-     foreach (ManagementObject obj112 in information112)
-         return Convert.ToString(obj112[&quot;SerialNumber&quot;]);
-     return &quot;S-E-R-I-A-L_K-E-Y&quot;;
+     var firmwareTableProviderSignature = Enums.FIRMWARE_TABLE_TYPE.Acpi;
+     uint bufferSize = Import.EnumSystemFirmwareTables(firmwareTableProviderSignature,
+         IntPtr.Zero, 0);
+     IntPtr pFirmwareTableBuffer = Marshal.AllocHGlobal((int)bufferSize);
+     buffer = new byte[bufferSize];
+     Import.EnumSystemFirmwareTables(firmwareTableProviderSignature,
+         pFirmwareTableBuffer,
+         bufferSize);
+     Marshal.Copy(pFirmwareTableBuffer,
+         buffer, 0,
+         buffer.Length);
+     Marshal.FreeHGlobal(pFirmwareTableBuffer);
+     if (Encoding.ASCII.GetString(buffer).Contains(&quot;MSDM&quot;))
+     {
+         uint firmwareTableID = 0x4d44534d;
+         bufferSize = Import.GetSystemFirmwareTable(firmwareTableProviderSignature,
+             firmwareTableID,
+             IntPtr.Zero, 0);
+         buffer = new byte[bufferSize];
+         pFirmwareTableBuffer = Marshal.AllocHGlobal((int)bufferSize);
+         Import.GetSystemFirmwareTable(firmwareTableProviderSignature,
+             firmwareTableID,
+             pFirmwareTableBuffer,
+             bufferSize);
+         Marshal.Copy(pFirmwareTableBuffer,
+             buffer, 0,
+             buffer.Length);
+         Marshal.FreeHGlobal(pFirmwareTableBuffer); return true;
+     }
+     return false;
  }
 					</pre>			
 				</div>
@@ -303,11 +340,11 @@ public static string GetWindowsSerialKey()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000006D.html">Windows Class</a><br />
+			<a href="topic_0000000000000077.html">GWK Class</a><br />
 
 
 
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000076.html">VitNX3.Functions.Helpers.WPK Namespace</a><br />
 
 
 			

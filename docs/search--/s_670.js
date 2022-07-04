@@ -1,1 +1,1 @@
-search_result['670']=["topic_00000000000001F2.html","szInfoTitle Field",""];
+search_result['670']=["topic_00000000000001EB.html","SC_MONITORPOWER Field",""];

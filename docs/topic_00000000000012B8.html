@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter.UpdateBounds Method</title>
+	<title>eM11 Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter.UpdateBounds Method</h1>
+		<h1 class="title">eM11 Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> UpdateBounds()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> eM11</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,6 +151,10 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.single">float</a> 
+	
 
 
 
@@ -224,40 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public void UpdateBounds()
- {
-     var bounds = _parentControl.RectangleToScreen(_control.Bounds);
-     switch (_splitterType)
-     {
-         case VitNX_SplitterType.Left:
-             Bounds = new Rectangle(bounds.Left - 2,
-                 bounds.Top, 5,
-                 bounds.Height);
-             _maximum = bounds.Right - 2 - _control.MinimumSize.Width;
-             break;
- 
-         case VitNX_SplitterType.Right:
-             Bounds = new Rectangle(bounds.Right - 2,
-                 bounds.Top, 5,
-                 bounds.Height);
-             _minimum = bounds.Left - 2 + _control.MinimumSize.Width;
-             break;
- 
-         case VitNX_SplitterType.Top:
-             Bounds = new Rectangle(bounds.Left,
-                 bounds.Top - 2,
-                 bounds.Width, 5);
-             _maximum = bounds.Bottom - 2 - _control.MinimumSize.Height;
-             break;
- 
-         case VitNX_SplitterType.Bottom:
-             Bounds = new Rectangle(bounds.Left,
-                 bounds.Bottom - 2,
-                 bounds.Width, 5);
-             _minimum = bounds.Top - 2 + _control.MinimumSize.Height;
-             break;
-     }
- }
+public float eM11;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -321,11 +292,11 @@ public void UpdateBounds()
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012B2.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_00000000000012B7.html">XFORM Structure</a><br />
 
 
 
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -347,4 +318,3 @@ public void UpdateBounds()
     </div>
   </body>
 </html>
-

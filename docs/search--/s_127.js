@@ -1,1 +1,1 @@
-search_result['127']=["topic_0000000000000052.html","VitNX3.Functions.FileSystem Namespace",""];
+search_result['127']=["topic_0000000000000052.html","CompressAndDecompress.CompressBytes Method","Compresses the bytes.\r\nExample: string output = Encoding.UTF8.GetString(Data.CompressAndDecompress.CompressBytes(Data.CompressAndDecompress.GetBytes(input)));"];

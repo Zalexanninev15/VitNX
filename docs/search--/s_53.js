@@ -1,1 +1,1 @@
-search_result['53']=["topic_0000000000000020_attached_props--.html","NumericalTextConverter Attached Properties",""];
+search_result['53']=["topic_0000000000000021.html","NumericalTextConverter Class","The numerical text converter."];

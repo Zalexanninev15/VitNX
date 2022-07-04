@@ -1,1 +1,1 @@
-search_result['4409']=["topic_000000000000117D_events--.html","ObservableList\u0026lt;T\u0026gt; Events",""];
+search_result['4409']=["topic_00000000000014CC.html","WorkWithSystem.GetWmiManagementObjectCollection Method","Gets the WMI management object collection."];

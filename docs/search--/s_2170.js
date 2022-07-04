@@ -1,1 +1,1 @@
-search_result['2170']=["topic_00000000000007C9.html","DNS_ERROR_INVALID_NAME_CHAR Field",""];
+search_result['2170']=["topic_00000000000007B8.html","ERROR_DS_DUP_MSDS_INTID Field",""];

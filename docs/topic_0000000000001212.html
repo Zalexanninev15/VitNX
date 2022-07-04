@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_ScrollBar.OnMouseMove Method</title>
+	<title>MARGINS Structure</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_ScrollBar.OnMouseMove Method</h1>
+		<h1 class="title">MARGINS Structure</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Raises the <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.mousemove">MouseMove</a> event.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">protected override <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> OnMouseMove(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> <i>e</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[StructLayout(LayoutKind.Sequential)]&nbsp;<br />public struct MARGINS</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,23 +149,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 		
 	</div>
 
-
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="e" class="parameterList">
-	<dt>
-		<span class="parameter">
-			e
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> 
-	</dd>
-</dl>
-<p>
-	A <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.mouseeventargs">MouseEventArgs</a> that contains the event data. 
-</p>
-
-<p />
 
 
 
@@ -183,6 +165,133 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 </div>
 
 
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div>&nbsp;</div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001213.html">cxLeftWidth</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001214.html">cxRightWidth</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001216.html">cyBottomHeight</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+	<tr class="
+	
+	
+	">
+	  <td>
+		    <img alt="Public field" title="Public field" src="msdn2019/pubfield.png"></img>
+	
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000001215.html">cyTopHeight</a>
+	  </td>
+	  <td>
+	
+	
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
 
 
 
@@ -241,55 +350,13 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-protected override void OnMouseMove(MouseEventArgs e)
+[StructLayout(LayoutKind.Sequential)]
+ public struct MARGINS
  {
-     base.OnMouseMove(e);
-     if (!_isScrolling)
-     {
-         var thumbHot = _thumbArea.Contains(e.Location);
-         if (_thumbHot != thumbHot)
-         {
-             _thumbHot = thumbHot;
-             Invalidate();
-         }
-         var upArrowHot = _upArrowArea.Contains(e.Location);
-         if (_upArrowHot != upArrowHot)
-         {
-             _upArrowHot = upArrowHot;
-             Invalidate();
-         }
-         var downArrowHot = _downArrowArea.Contains(e.Location);
-         if (_downArrowHot != downArrowHot)
-         {
-             _downArrowHot = downArrowHot;
-             Invalidate();
-         }
-     }
-     if (_isScrolling)
-     {
-         if (e.Button != MouseButtons.Left)
-         {
-             OnMouseUp(null);
-             return;
-         }
-         var difference = new Point(e.Location.X - _initialContact.X, e.Location.Y - _initialContact.Y);
-         if (_scrollOrientation == VitNX_ScrollOrientation.Vertical)
-         {
-             var thumbPos = (_initialValue - _trackArea.Top);
-             var newPosition = thumbPos + difference.Y;
-             ScrollToPhysical(newPosition);
-         }
-         else
-         {
-             if (_scrollOrientation == VitNX_ScrollOrientation.Horizontal)
-             {
-                 var thumbPos = (_initialValue - _trackArea.Left);
-                 var newPosition = thumbPos + difference.X;
-                 ScrollToPhysical(newPosition);
-             }
-         }
-         UpdateScrollBar();
-     }
+     public int cxLeftWidth;
+     public int cxRightWidth;
+     public int cyTopHeight;
+     public int cyBottomHeight;
  }
 					</pre>			
 				</div>
@@ -346,6 +413,7 @@ protected override void OnMouseMove(MouseEventArgs e)
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -354,14 +422,10 @@ protected override void OnMouseMove(MouseEventArgs e)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000120C.html">VitNX_ScrollBar Class</a><br />
+	<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
-
-<a href="topic_0000000000001194.html">VitNX.UI.ControlsV1.Controls Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					

@@ -1,1 +1,1 @@
-search_result['606']=["topic_00000000000001C1.html","Constants Class","The constants for imported functions."];
+search_result['606']=["topic_00000000000001B7.html","Import.RegisterDeviceNotification Method",""];

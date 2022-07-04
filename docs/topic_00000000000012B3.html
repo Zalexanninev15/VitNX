@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>VitNX_DockSplitter Constructor</title>
+	<title>y Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">VitNX_DockSplitter Constructor</h1>
+		<h1 class="title">y Field</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public VitNX_DockSplitter(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> <i>parentControl</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> <i>control</i>,&nbsp;<br />   <a target="_top" href="topic_00000000000012BB.html" onclick="this.target='';return true;">VitNX_SplitterType</a> <i>splitterType</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> y</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -150,49 +150,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="parentControl" class="parameterList">
-	<dt>
-		<span class="parameter">
-			parentControl
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="control" class="parameterList">
-	<dt>
-		<span class="parameter">
-			control
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control">Control</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
-<dl paramName="splitterType" class="parameterList">
-	<dt>
-		<span class="parameter">
-			splitterType
-		</span>
-	</dt>
-	<dd>
-		<a target="_top" href="topic_00000000000012BB.html" onclick="this.target='';return true;">VitNX_SplitterType</a> 
-	</dd>
-</dl>
-<p>
-	 
-</p>
 
-<p />
-
+	<h4 class="subHeading">
+		Field Value</h4>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	
 
 
 
@@ -266,26 +228,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public VitNX_DockSplitter(Control parentControl,
-     Control control,
-     VitNX_SplitterType splitterType)
- {
-     _parentControl = parentControl;
-     _control = control;
-     _splitterType = splitterType;
-     switch (_splitterType)
-     {
-         case VitNX_SplitterType.Left:
-         case VitNX_SplitterType.Right:
-             ResizeCursor = Cursors.SizeWE;
-             break;
- 
-         case VitNX_SplitterType.Top:
-         case VitNX_SplitterType.Bottom:
-             ResizeCursor = Cursors.SizeNS;
-             break;
-     }
- }
+public int y;
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -349,11 +292,11 @@ public VitNX_DockSplitter(Control parentControl,
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000012B2.html">VitNX_DockSplitter Class</a><br />
+			<a href="topic_00000000000012AF.html">WINDOWPOS Structure</a><br />
 
 
 
-<a href="topic_0000000000001273.html">VitNX.UI.ControlsV1.Docking Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			
@@ -375,4 +318,3 @@ public VitNX_DockSplitter(Control parentControl,
     </div>
   </body>
 </html>
-

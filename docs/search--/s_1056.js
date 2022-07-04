@@ -1,1 +1,1 @@
-search_result['1056']=["topic_000000000000036F.html","ERROR_NO_SUCH_SITE Field",""];
+search_result['1056']=["topic_000000000000035E.html","ERROR_JOURNAL_DELETE_IN_PROGRESS Field",""];

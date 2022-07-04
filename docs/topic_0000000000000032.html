@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Text.ContainsOnlyNumbers Method</title>
+	<title>Text.ReplacerMonster Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Text.ContainsOnlyNumbers Method</h1>
+		<h1 class="title">Text.ReplacerMonster Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000001F.html">VitNX3.Functions.Data</a>
+<a href="topic_0000000000000020.html">VitNX3.Functions.Data</a>
 
 
 
@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Contains the only numbers.</summary-info>
+        <summary-info>Replacers the monster.</summary-info>
 
 
 
@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> ContainsOnlyNumbers(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> ReplacerMonster(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>text</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; <i>forReplace</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; <i>toReplace</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>countOfSpacesWith_forReplace</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -165,14 +165,53 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 <p>
 	The text. 
 </p>
+<dl paramName="forReplace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			forReplace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+	</dd>
+</dl>
+<p>
+	The for replace. 
+</p>
+<dl paramName="toReplace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			toReplace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>&gt; 
+	</dd>
+</dl>
+<p>
+	The to replace. 
+</p>
+<dl paramName="countOfSpacesWith_forReplace" class="parameterList">
+	<dt>
+		<span class="parameter">
+			countOfSpacesWith_forReplace
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	</dd>
+</dl>
+<p>
+	The count of spaces with forReplace. From 0 to 2. 
+</p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 		<p>
-		A bool. 
+		A string. 
 	</p>
 	
 
@@ -248,7 +287,34 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool ContainsOnlyNumbers(string text) =&gt; text.All(char.IsDigit);
+public static string ReplacerMonster(string text, List&lt;string&gt; forReplace, List&lt;string&gt; toReplace, int countOfSpacesWith_forReplace)
+ {
+     for (int i = 0; i &lt; forReplace.Count; i++)
+     {
+         switch (countOfSpacesWith_forReplace)
+         {
+             case 0:
+                 {
+                     if (text.Contains($&quot;{forReplace[i]}&quot;))
+                         text = text.Replace(forReplace[i], toReplace[i]);
+                     break;
+                 }
+             case 1:
+                 {
+                     if (text.Contains($&quot; {forReplace[i]}&quot;))
+                         text = text.Replace(forReplace[i], toReplace[i]);
+                     break;
+                 }
+             case 2:
+                 {
+                     if (text.Contains($&quot; {forReplace[i]} &quot;))
+                         text = text.Replace(forReplace[i], toReplace[i]);
+                     break;
+                 }
+         }
+     }
+     return text;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -312,11 +378,11 @@ public static bool ContainsOnlyNumbers(string text) =&gt; text.All(char.IsDigit)
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000023.html">Text Class</a><br />
+			<a href="topic_0000000000000024.html">Text Class</a><br />
 
 
 
-<a href="topic_000000000000001F.html">VitNX3.Functions.Data Namespace</a><br />
+<a href="topic_0000000000000020.html">VitNX3.Functions.Data Namespace</a><br />
 
 
 			

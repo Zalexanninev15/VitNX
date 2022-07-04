@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.GetDpiForWindow Method</title>
+	<title>DataFromSites.GetHeaderAndContent Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.GetDpiForWindow Method</h1>
+		<h1 class="title">DataFromSites.GetHeaderAndContent Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000CD.html">VitNX3.Functions.Web</a>
 
 
 
@@ -89,6 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
+        <summary-info>Gets the status header and content of site.</summary-info>
 
 
 
@@ -136,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> GetDpiForWindow(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>hwnd</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] GetHeaderAndContent(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>url</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>userAgent</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,25 +152,41 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="hwnd" class="parameterList">
+	Parameters</h4><dl paramName="url" class="parameterList">
 	<dt>
 		<span class="parameter">
-			hwnd
+			url
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	</dd>
 </dl>
 <p>
-	 
+	The url. 
+</p>
+<dl paramName="userAgent" class="parameterList">
+	<dt>
+		<span class="parameter">
+			userAgent
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	The UserAgent. 
 </p>
 
 <p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a>[] 
+		<p>
+		An array of string (Header, Content). 
+	</p>
 	
 
 
@@ -244,8 +261,30 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;user32.dll&quot;)]
- public static extern int GetDpiForWindow(IntPtr hwnd);
+public static string[] GetHeaderAndContent(string url, string userAgent)
+ {
+     string[] data = { &quot;Header&quot;, &quot;Content&quot; };
+     HttpWebRequest wReq;
+     HttpWebResponse wResp;
+     Stream rStream;
+     wReq = (HttpWebRequest)WebRequest.Create(url);
+     wReq.KeepAlive = false;
+     wReq.Referer = url;
+     wReq.UserAgent = userAgent;
+     wResp = (HttpWebResponse)wReq.GetResponse();
+     data[0] = wResp.Headers.ToString();
+     rStream = wResp.GetResponseStream();
+     int bufCount = 0;
+     byte[] byteBuf = new byte[1024];
+     do
+     {
+         bufCount = rStream.Read(byteBuf, 0, byteBuf.Length);
+         if (bufCount != 0)
+             data[1] += Encoding.ASCII.GetString(byteBuf, 0, bufCount);
+     }
+     while (bufCount &gt; 0);
+     return data;
+ }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -309,11 +348,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000CE.html">DataFromSites Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000CD.html">VitNX3.Functions.Web Namespace</a><br />
 
 
 			

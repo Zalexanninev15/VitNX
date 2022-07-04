@@ -1,1 +1,1 @@
-search_result['4418']=["topic_0000000000001181_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method",""];
+search_result['4418']=["topic_00000000000014D8.html","ServicesControl.Stop Method","Stops the service."];

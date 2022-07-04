@@ -1,1 +1,1 @@
-search_result['1044']=["topic_0000000000000363.html","ERROR_RETRY Field",""];
+search_result['1044']=["topic_0000000000000352.html","ERROR_DEVICE_REQUIRES_CLEANING Field",""];

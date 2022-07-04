@@ -1,1 +1,1 @@
-search_result['4428']=["topic_0000000000001186_methods--.html","ObservableListModified\u0026lt;T\u0026gt; Methods",""];
+search_result['4428']=["topic_00000000000014E1.html","PowerControl.Monitor Method","The power of monitor."];

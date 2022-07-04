@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Windows.WindowsUseLightThemeForApps Method</title>
+	<title>GWK.GetWindowsProductKeyFromDigitalProductId Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Windows.WindowsUseLightThemeForApps Method</h1>
+		<h1 class="title">GWK.GetWindowsProductKeyFromDigitalProductId Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information</a>
+<a href="topic_0000000000000076.html">VitNX3.Functions.Helpers.WPK</a>
 
 
 
@@ -89,7 +89,6 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Windows use light theme for apps from the Windows Registry, for Windows 10+.</summary-info>
 
 
 
@@ -137,7 +136,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> WindowsUseLightThemeForApps()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> GetWindowsProductKeyFromDigitalProductId(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] <i>digitalProductId</i>,&nbsp;<br />   <a target="_top" href="topic_0000000000000078.html" onclick="this.target='';return true;">DigitalProductIdVersion</a> <i>digitalProductIdVersion</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -151,13 +150,39 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="digitalProductId" class="parameterList">
+	<dt>
+		<span class="parameter">
+			digitalProductId
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.byte">byte</a>[] 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="digitalProductIdVersion" class="parameterList">
+	<dt>
+		<span class="parameter">
+			digitalProductIdVersion
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="topic_0000000000000078.html" onclick="this.target='';return true;">DigitalProductIdVersion</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> 
-		<p>
-		A bool. 
-	</p>
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
 	
 
 
@@ -232,8 +257,14 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-public static bool WindowsUseLightThemeForApps() =&gt; (int)Registry.GetValue(@&quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize&quot;,
-     &quot;AppsUseLightTheme&quot;, &quot;1&quot;) == 1 ? true : false;
+ public static string GetWindowsProductKeyFromDigitalProductId(byte[] digitalProductId,
+ DigitalProductIdVersion digitalProductIdVersion)
+  {
+      var productKey = digitalProductIdVersion == DigitalProductIdVersion.Windows8AndUp ?
+          DecodeProductKeyWin8AndUp(digitalProductId) :
+          DecodeProductKey(digitalProductId);
+      return productKey;
+  }
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -297,11 +328,11 @@ public static bool WindowsUseLightThemeForApps() =&gt; (int)Registry.GetValue(@&
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000006D.html">Windows Class</a><br />
+			<a href="topic_0000000000000077.html">GWK Class</a><br />
 
 
 
-<a href="topic_000000000000006C.html">VitNX3.Functions.Information Namespace</a><br />
+<a href="topic_0000000000000076.html">VitNX3.Functions.Helpers.WPK Namespace</a><br />
 
 
 			

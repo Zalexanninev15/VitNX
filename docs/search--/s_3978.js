@@ -1,1 +1,1 @@
-search_result['3978']=["topic_0000000000000F07_methods--.html","SCROLLINFO Methods",""];
+search_result['3978']=["topic_0000000000001252.html","PAINTSTRUCT Structure",""];

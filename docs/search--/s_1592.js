@@ -1,1 +1,1 @@
-search_result['1592']=["topic_0000000000000587.html","ERROR_GROUP_NOT_FOUND Field",""];
+search_result['1592']=["topic_0000000000000576.html","ERROR_RESOURCE_DISABLED Field",""];

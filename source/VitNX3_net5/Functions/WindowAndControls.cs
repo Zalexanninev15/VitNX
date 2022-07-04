@@ -55,10 +55,10 @@ namespace VitNX3.Functions.WindowAndControls
         /// <summary>
         /// Shows the window as TopMost.
         /// </summary>
-        /// <param name="Handler">The handler.</param>
-        public static void ShowAsTopMost(IntPtr Handler)
+        /// <param name="Handle">Handle.</param>
+        public static void ShowAsTopMost(IntPtr Handle)
         {
-            Import.SetWindowPos(Handler,
+            Import.SetWindowPos(Handle,
                new IntPtr((int)HWND.HWND_TOPMOST),
                0, 0, 0, 0,
                (int)SET_WINDOW_POS_FLAGS.SWP_IGNORE_MOVE |
@@ -68,14 +68,14 @@ namespace VitNX3.Functions.WindowAndControls
         /// <summary>
         /// Sets the window to the lower right corner.
         /// </summary>
-        /// <param name="Handler">The handler.</param>
-        public static void WindowToLowerRightCorner(IntPtr Handler)
+        /// <param name="Handle">Handle.</param>
+        public static void WindowToLowerRightCorner(IntPtr Handle)
         {
-            Import.GetWindowRect(Handler, out RECT rct);
-            Rectangle screen = Screen.FromHandle(Handler).Bounds;
+            Import.GetWindowRect(Handle, out RECT rct);
+            Rectangle screen = Screen.FromHandle(Handle).Bounds;
             Point pt = new Point(screen.Left + screen.Width / 2 - (rct.Right - rct.Left) / 2,
                 screen.Top + screen.Height / 2 - (rct.Bottom - rct.Top) / 2);
-            Import.SetWindowPos(Handler, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
+            Import.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_NOTOPMOST,
                 pt.X, pt.Y, 0, 0,
                 SET_WINDOW_POS_FLAGS.SWP_NO_ZORDER |
                 SET_WINDOW_POS_FLAGS.SWP_IGNORE_RESIZE |
@@ -85,13 +85,13 @@ namespace VitNX3.Functions.WindowAndControls
         /// <summary>
         /// Applying a native dark window title for the application if it runs on Windows 10 or higher..
         /// </summary>
-        /// <param name="Handler">The handler.</param>
-        public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handler)
+        /// <param name="Handle">Handle.</param>
+        public static void SetWindowsTenAndHighStyleForWinFormTitleToDark(IntPtr Handle)
         {
-            if (Import.DwmSetWindowAttribute(Handler,
+            if (Import.DwmSetWindowAttribute(Handle,
                 DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
                 new[] { 1 }, 4) != 0)
-                Import.DwmSetWindowAttribute(Handler,
+                Import.DwmSetWindowAttribute(Handle,
                     DWM_GET_WINDOW_ATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE_NOT,
                     new[] { 1 }, 4);
         }
@@ -99,14 +99,14 @@ namespace VitNX3.Functions.WindowAndControls
         /// <summary>
         /// Applying Windows 11 roundings to a window(s).
         /// </summary>
-        /// <param name="Handler">The handler.</param>
+        /// <param name="Handle">Handle.</param>
         /// <param name="windowWidth">The width of window</param>
         /// <param name="windowHeight">The height of window</param>
-        public static Region SetWindowsElevenStyleForWinForm(IntPtr Handler,
+        public static Region SetWindowsElevenStyleForWinForm(IntPtr Handle,
             int windowWidth,
             int windowHeight)
         {
-            Import.DwmSetWindowAttribute(Handler,
+            Import.DwmSetWindowAttribute(Handle,
                 DWM_GET_WINDOW_ATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE,
                 new[] { Convert.ToInt32(DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND) },
                 sizeof(uint));
@@ -128,8 +128,8 @@ namespace VitNX3.Functions.WindowAndControls
         {
             uint windowStyle = (uint)Import.GetWindowLong(hwnd, -16);
             uint windowStyleEx = (uint)Import.GetWindowLong(hwnd, -20);
-            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 1607 ||
-                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 16070)
+            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 1607 ||
+                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 16070)
                 && hwnd != IntPtr.Zero)
                 Import.AdjustWindowRectExForDpi(ref rc,
                     windowStyle,
@@ -149,8 +149,8 @@ namespace VitNX3.Functions.WindowAndControls
         /// <returns>An int.</returns>
         public static int GetDpiForWindow(IntPtr hwnd)
         {
-            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 1607 ||
-                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromREG()) >= 16070) &&
+            if ((Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 1607 ||
+                Convert.ToInt64(Information.Windows.GetWindowsCurrentBuildNumberFromRegistry()) >= 16070) &&
                 hwnd != IntPtr.Zero)
                 return GetDpiForWindow(hwnd);
             else

@@ -89,7 +89,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
        
        
-        <summary-info>Kills the process (C# native).</summary-info>
+        <summary-info>Kills the process (Windows native).</summary-info>
 
 
 
@@ -243,15 +243,17 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 					<pre xml:space="preserve" class="brush: csharp">
 public static void KillNative(string processNameWithExe)
  {
-     Process[] runningProcesses = Process.GetProcesses();
-     foreach (Process process in runningProcesses)
+     var start = new Process
      {
-         foreach (ProcessModule module in process.Modules)
+         StartInfo = new ProcessStartInfo
          {
-             if (module.FileName.Equals(processNameWithExe))
-                 process.Kill();
+             FileName = &quot;taskkill&quot;,
+             Arguments = $&quot;/IM \&quot;{processNameWithExe}\&quot; /F /T&quot;,
+             CreateNoWindow = true,
+             WindowStyle = ProcessWindowStyle.Hidden,
          }
-     }
+     };
+     start.Start();
  }
 					</pre>			
 				</div>

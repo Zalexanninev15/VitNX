@@ -1,1 +1,1 @@
-search_result['4709']=["topic_000000000000123B.html","VitNX_SectionPanel.OnMouseDown Method","Raises the MouseDown event."];
+search_result['4709']=["topic_0000000000001580_props--.html","VitNX_NumericUpDown Properties",""];

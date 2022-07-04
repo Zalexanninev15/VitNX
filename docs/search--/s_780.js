@@ -1,1 +1,1 @@
-search_result['780']=["topic_000000000000025B.html","ERROR_IS_JOIN_TARGET Field",""];
+search_result['780']=["topic_000000000000024A.html","ERROR_BAD_REM_ADAP Field",""];

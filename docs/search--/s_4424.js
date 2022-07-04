@@ -1,1 +1,1 @@
-search_result['4424']=["topic_0000000000001185.html","ObservableList\u0026lt;T\u0026gt;.Clear Method",""];
+search_result['4424']=["topic_00000000000014DA_props--.html","PowerControl Properties",""];

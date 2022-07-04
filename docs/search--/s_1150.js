@@ -1,1 +1,1 @@
-search_result['1150']=["topic_00000000000003CD.html","ERROR_LOGON_SESSION_EXISTS Field",""];
+search_result['1150']=["topic_00000000000003BC.html","ERROR_NO_IMPERSONATION_TOKEN Field",""];

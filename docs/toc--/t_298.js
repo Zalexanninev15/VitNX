@@ -1,1 +1,1 @@
-c['298']=[['299',"Close Method","topic_000000000000128B.html",0],['300',"OnEnter Method","topic_000000000000128C.html",0]];
+c['298']=[['299',"VitNX_DockGroup Constructor","topic_0000000000001617.html",0],['300',"Methods","topic_0000000000001616_methods--.html",1]];

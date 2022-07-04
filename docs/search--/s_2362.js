@@ -1,1 +1,1 @@
-search_result['2362']=["topic_0000000000000889.html","ERROR_SXS_XML_E_BADNAMECHAR Field",""];
+search_result['2362']=["topic_0000000000000878.html","WSA_QOS_BAD_STYLE Field",""];

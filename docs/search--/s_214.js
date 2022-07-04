@@ -1,1 +1,1 @@
-search_result['214']=["topic_0000000000000086.html","Disk.GetAll Method","Gets the all (logical)."];
+search_result['214']=["topic_000000000000008D.html","Windows.WindowsUseLightThemeInSystem Method","Windows use light theme in system from the Windows Registry, for Windows 10+."];

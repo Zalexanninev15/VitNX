@@ -1,1 +1,1 @@
-search_result['1230']=["topic_000000000000041D.html","ERROR_INVALID_GW_COMMAND Field",""];
+search_result['1230']=["topic_000000000000040C.html","ERROR_LM_CROSS_ENCRYPTION_REQUIRED Field",""];

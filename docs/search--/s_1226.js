@@ -1,1 +1,1 @@
-search_result['1226']=["topic_0000000000000419.html","ERROR_INVALID_SPI_VALUE Field",""];
+search_result['1226']=["topic_0000000000000408.html","ERROR_NT_CROSS_ENCRYPTION_REQUIRED Field",""];

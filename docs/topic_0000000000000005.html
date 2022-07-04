@@ -137,7 +137,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RunAW(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>arguments</i> = &quot;&quot;,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>showWindow</i> = true,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>waitMe</i> = true&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public static <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.void">void</a> RunAW(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>targetFile</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>arguments</i> = &quot;&quot;,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>showWindow</i> = true,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> <i>waitMe</i> = true,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> <i>verb</i> = &quot;&quot;&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -189,7 +189,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	Show window of this app 
+	Show window of this app. 
 </p>
 <dl paramName="waitMe" class="parameterList">
 	<dt>
@@ -202,7 +202,20 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 	</dd>
 </dl>
 <p>
-	Wait this process/app 
+	Wait this process/app. 
+</p>
+<dl paramName="verb" class="parameterList">
+	<dt>
+		<span class="parameter">
+			verb
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> 
+	</dd>
+</dl>
+<p>
+	Set the verb for launch process (only this). 
 </p>
 
 <p />
@@ -283,7 +296,8 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 public static void RunAW(string targetFile,
      string arguments = &quot;&quot;,
      bool showWindow = true,
-     bool waitMe = true)
+     bool waitMe = true,
+     string verb = &quot;&quot;)
  {
      ProcessWindowStyle app = ProcessWindowStyle.Normal;
      if (!showWindow)
@@ -296,6 +310,7 @@ public static void RunAW(string targetFile,
              Arguments = arguments,
              CreateNoWindow = !showWindow,
              WindowStyle = app,
+             Verb = verb
          }
      };
      start.Start();

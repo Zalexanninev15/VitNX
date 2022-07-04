@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; https://www.helixoft.com" />
 	<link rel="icon" href="favicon.ico">
-	<title>Import.SetThreadExecutionState Method</title>
+	<title>Import.RegisterDeviceNotification Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2019/toc.css" />
 	<script src="msdn2019/toc.js"></script>
@@ -74,11 +74,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
   </div>
 
 <div id="mainBody">
-		<h1 class="title">Import.SetThreadExecutionState Method</h1>
+		<h1 class="title">Import.RegisterDeviceNotification Method</h1>
         
 		<div class="metadata">
         Namespace:
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32</a>
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32</a>
 
 
 
@@ -136,9 +136,9 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;kernel32.dll&quot;,
-            CharSet = CharSet.Auto,
-            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="topic_00000000000010D7.html" onclick="this.target='';return true;">EXECUTION_STATE</a> SetThreadExecutionState(&nbsp;<br />   <a target="_top" href="topic_00000000000010D7.html" onclick="this.target='';return true;">EXECUTION_STATE</a> <i>esFlags</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">[DllImport(&quot;user32.dll&quot;,
+            CharSet = CharSet.Ansi,
+            SetLastError = true)]&nbsp;<br />public static extern <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> RegisterDeviceNotification(&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>recipient</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> <i>notificationFilter</i>,&nbsp;<br />   <a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> <i>flags</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -153,14 +153,40 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="esFlags" class="parameterList">
+	Parameters</h4><dl paramName="recipient" class="parameterList">
 	<dt>
 		<span class="parameter">
-			esFlags
+			recipient
 		</span>
 	</dt>
 	<dd>
-		<a target="_top" href="topic_00000000000010D7.html" onclick="this.target='';return true;">EXECUTION_STATE</a> 
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="notificationFilter" class="parameterList">
+	<dt>
+		<span class="parameter">
+			notificationFilter
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
+	</dd>
+</dl>
+<p>
+	 
+</p>
+<dl paramName="flags" class="parameterList">
+	<dt>
+		<span class="parameter">
+			flags
+		</span>
+	</dt>
+	<dd>
+		<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.int32">int</a> 
 	</dd>
 </dl>
 <p>
@@ -171,7 +197,7 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	<a target="_top" href="topic_00000000000010D7.html" onclick="this.target='';return true;">EXECUTION_STATE</a> 
+	<a target="_top" href="https://docs.microsoft.com/en-us/dotnet/api/system.intptr">IntPtr</a> 
 	
 
 
@@ -246,10 +272,12 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 				
 				<div class="codeSnippetCode codeCsharp">
 					<pre xml:space="preserve" class="brush: csharp">
-[DllImport(&quot;kernel32.dll&quot;,
-     CharSet = CharSet.Auto,
+[DllImport(&quot;user32.dll&quot;,
+     CharSet = CharSet.Ansi,
      SetLastError = true)]
- public static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
+ public static extern IntPtr RegisterDeviceNotification(IntPtr recipient,
+     IntPtr notificationFilter,
+     int flags);
 					</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
@@ -313,11 +341,11 @@ document.write(getCssCustomProperty('--headerTopCustomLineHtml'));
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_00000000000000C7.html">Import Class</a><br />
+			<a href="topic_00000000000000DB.html">Import Class</a><br />
 
 
 
-<a href="topic_00000000000000C6.html">VitNX3.Functions.Win32 Namespace</a><br />
+<a href="topic_00000000000000DA.html">VitNX3.Functions.Win32 Namespace</a><br />
 
 
 			

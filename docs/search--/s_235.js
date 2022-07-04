@@ -1,1 +1,1 @@
-search_result['235']=["topic_0000000000000093_methods--.html","Motherboard Methods",""];
+search_result['235']=["topic_0000000000000098.html","Gpu.Characteristics Method","Gets all characteristics."];

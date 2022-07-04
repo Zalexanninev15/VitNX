@@ -1,1 +1,1 @@
-search_result['4779']=["topic_000000000000125C.html","VitNX_TreeView.Dispose Method","Releases the unmanaged resources used by the Control and its child controls and optionally releases the managed resources."];
+search_result['4779']=["topic_00000000000015B6.html","VitNX_ScrollBase.OnMouseWheel Method","Raises the MouseWheel event."];

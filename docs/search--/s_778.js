@@ -1,1 +1,1 @@
-search_result['778']=["topic_0000000000000259.html","ERROR_NEGATIVE_SEEK Field",""];
+search_result['778']=["topic_0000000000000248.html","ERROR_BAD_NET_RESP Field",""];

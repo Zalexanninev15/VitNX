@@ -1,1 +1,1 @@
-search_result['4982']=["topic_00000000000012E9_overloads--.html","VitNX_MessageBox Constructor",""];
+search_result['4982']=["topic_0000000000001632.html","VitNX_DockPanel.RestoreDockPanelState Method",""];

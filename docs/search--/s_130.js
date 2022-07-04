@@ -1,1 +1,1 @@
-search_result['130']=["topic_0000000000000053_events--.html","Folder Events",""];
+search_result['130']=["topic_0000000000000055.html","Folder Class","Works with the folders."];

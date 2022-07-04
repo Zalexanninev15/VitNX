@@ -1,1 +1,1 @@
-search_result['4508']=["topic_00000000000011B7.html","VitNX_ComboBox.OnTabStopChanged Method","Raises the TabStopChanged event."];
+search_result['4508']=["topic_0000000000001509_overloads--.html","ObservableList\u0026lt;T\u0026gt;.Dispose Method","Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources."];

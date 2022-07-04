@@ -1,1 +1,1 @@
-search_result['286']=["topic_00000000000000B2.html","Ini.Write Method","Writes the value to key in section."];
+search_result['286']=["topic_00000000000000B2.html","Internet Class","Works with informations of Internet (PC)."];

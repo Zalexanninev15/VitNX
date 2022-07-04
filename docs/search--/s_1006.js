@@ -1,1 +1,1 @@
-search_result['1006']=["topic_000000000000033D.html","ERROR_JOURNAL_ENTRY_DELETED Field",""];
+search_result['1006']=["topic_000000000000032C.html","ERROR_NO_UNICODE_TRANSLATION Field",""];

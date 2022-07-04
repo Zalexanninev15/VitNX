@@ -19,6 +19,7 @@ namespace VitNX2.UI.ControlsV2
         private static string placeholderText = "";
         private static bool isPlaceholder = false;
         private static bool isPasswordChar = false;
+        private static bool readOnly = false;
 
         public event EventHandler _TextChanged;
 
@@ -176,6 +177,17 @@ namespace VitNX2.UI.ControlsV2
                 placeholderText = value;
                 textBox1.Text = "";
                 SetPlaceholder();
+            }
+        }
+
+        [Category("Editable")]
+        public bool ReadOnly
+        {
+            get { return readOnly; }
+            set
+            {
+                readOnly = value;
+                textBox1.ReadOnly = value;
             }
         }
 

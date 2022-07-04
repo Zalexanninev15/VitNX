@@ -1,1 +1,1 @@
-c['119']=[['120',"VitNX_ListItem() Constructor","topic_00000000000011E7.html",0],['121',"VitNX_ListItem(string) Constructor","topic_00000000000011E8.html",0]];
+c['119']=[['120',"VitNX_ListView Constructor","topic_0000000000001574.html",0],['121',"Methods","topic_0000000000001572_methods--.html",1],['132',"Events","topic_0000000000001572_events--.html",1]];

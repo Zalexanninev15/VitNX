@@ -1,1 +1,1 @@
-search_result['94']=["topic_000000000000003F_attached_props--.html","EncryptAndDecrypt Attached Properties",""];
+search_result['94']=["topic_0000000000000040.html","EncryptAndDecrypt Class","Encrypt and decrypt the text or byte[]."];

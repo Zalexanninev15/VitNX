@@ -1,1 +1,1 @@
-c['775']=[['776',"DefaultGateway Method","topic_00000000000000C5.html",0],['777',"UseProtocols Method","topic_00000000000000C4.html",0]];
+c['775']=[['776',"Methods","topic_00000000000000C3_methods--.html",1]];

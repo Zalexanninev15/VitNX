@@ -1,1 +1,1 @@
-search_result['2087']=["topic_0000000000000776.html","ERROR_DS_INCOMPATIBLE_VERSION Field",""];
+search_result['2087']=["topic_0000000000000765.html","ERROR_DS_NO_NEST_GLOBALGROUP_IN_MIXEDDOMAIN Field",""];

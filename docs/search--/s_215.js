@@ -1,1 +1,1 @@
-search_result['215']=["topic_0000000000000087.html","Disk.GetTotalFreeSpace Method","Gets the total free space."];
+search_result['215']=["topic_000000000000008E.html","Windows.WindowsUseLightThemeForApps Method","Windows use light theme for apps from the Windows Registry, for Windows 10+."];
