@@ -1,0 +1,1 @@
+search_result['4436']=["topic_00000000000014E4.html","Window.MinimizeAll Method","Minimizes the all windows."];

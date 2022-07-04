@@ -1,0 +1,1 @@
+search_result['286']=["topic_00000000000000B2.html","Internet Class","Works with informations of Internet (PC)."];

@@ -1,0 +1,1 @@
+search_result['4497']=["topic_0000000000001504.html","Text.Writeln Method","Writeln text with the colors."];

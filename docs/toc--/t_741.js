@@ -1,0 +1,1 @@
+c['741']=[['742',"GetFirmwareType Method","topic_00000000000000AC.html",0],['743',"GetWindowsProductKeyFromUefi Method","topic_00000000000000AD.html",0],['744',"IsUefiMode Method","topic_00000000000000AB.html",0]];

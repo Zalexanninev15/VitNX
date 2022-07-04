@@ -1,0 +1,1 @@
+search_result['51']=["topic_000000000000001F.html","Others.ConvertColorToConsoleColor Method","Converts the color to color for console."];

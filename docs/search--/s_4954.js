@@ -1,0 +1,1 @@
+search_result['4954']=["topic_000000000000161D.html","VitNX_DockGroup.OnResize Method","Fires the event indicating that the panel has been resized. Inheriting controls should use this in favor of actually listening to the event, but should still call base.onResize to ensure that the even..."];

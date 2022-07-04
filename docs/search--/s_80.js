@@ -1,0 +1,1 @@
+search_result['80']=["topic_0000000000000032.html","Text.ReplacerMonster Method","Replacers the monster."];

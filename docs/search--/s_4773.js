@@ -1,0 +1,1 @@
+search_result['4773']=["topic_00000000000015B0.html","VitNX_ScrollBase.OnCreateControl Method","Raises the CreateControl method."];

@@ -1,0 +1,1 @@
+search_result['297']=["topic_00000000000000B8.html","INTERNET_STATUS Enumeration","Internet status (int32) for IsHaveInternet function"];

@@ -1,0 +1,1 @@
+search_result['361']=["topic_00000000000000D8.html","Config.UseProtocols Method","Activate all security protocols for all network functions to work (HTTPS).\r\nExample: https://gist.github.com/Zalexanninev15/bee89a178eff6f97902e06a8a9e543e1"];

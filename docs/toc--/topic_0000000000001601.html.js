@@ -1,0 +1,1 @@
+var breadcrumbs=[['-1',"",""],['2',"VitNX3 Documentation","topic_0000000000001A35.html"],['279',"VitNX.UI.ControlsV1.Docking Namespace","topic_00000000000015FC.html"],['359',"DockInsertType Enumeration","topic_0000000000001601.html"]];

@@ -1,0 +1,1 @@
+search_result['162']=["topic_000000000000006B.html","File.CreateShortcut Method","Creates the shortcut."];

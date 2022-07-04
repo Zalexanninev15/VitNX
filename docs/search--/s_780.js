@@ -1,0 +1,1 @@
+search_result['780']=["topic_000000000000024A.html","ERROR_BAD_REM_ADAP Field",""];

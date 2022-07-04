@@ -1,0 +1,1 @@
+search_result['336']=["topic_00000000000000CE.html","DataFromSites Class","Works with data from sites."];

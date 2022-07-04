@@ -1,0 +1,1 @@
+search_result['72']=["topic_000000000000002A.html","Text.ConvertNumberToHexI Method","Converts the number to HEX (int32)."];

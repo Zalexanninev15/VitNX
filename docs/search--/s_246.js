@@ -1,0 +1,1 @@
+search_result['246']=["topic_000000000000009E.html","Monitor Class","Works with informations of Monitor(s)."];

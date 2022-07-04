@@ -1,0 +1,1 @@
+c['783']=[['784',"Log Constructor","topic_00000000000000CB.html",0],['785',"Methods","topic_00000000000000CA_methods--.html",1]];

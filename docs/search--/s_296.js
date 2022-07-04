@@ -1,0 +1,1 @@
+search_result['296']=["topic_00000000000000B7.html","Internet.GetMacAddress Method","Gets the MAC address."];

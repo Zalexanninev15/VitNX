@@ -1,0 +1,1 @@
+search_result['252']=["topic_000000000000009F.html","Monitor.WorkingArea Method","Gets the working area of monitor in Windows."];

@@ -1,0 +1,1 @@
+search_result['119']=["topic_000000000000004F.html","CompressAndDecompress Class","Compress and decompress the text or byte[].\r\nExamples: https://gist.github.com/Zalexanninev15/cbd4dde903095ca7a5e53c1fc6c42807"];

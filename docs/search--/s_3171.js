@@ -1,0 +1,1 @@
+search_result['3171']=["topic_0000000000000B9C.html","NTE_PERM Field",""];

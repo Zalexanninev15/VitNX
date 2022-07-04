@@ -1,0 +1,1 @@
+search_result['269']=["topic_00000000000000AB.html","Motherboard.IsUefiMode Method","Gets the firmware type (Windows native). Are the UEFI mode (UEFI) or Legacy (BIOS)."];
