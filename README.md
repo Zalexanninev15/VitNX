@@ -31,7 +31,7 @@ A full description of all classes, functions and other object can be found in th
 
 ## Used in
 
-* [Shark Remote (RU)](https://t.me/wit_releases/36) (Latest version of VitNX for .NET 5+)
+* [Shark Remote (RU)](https://sharkremote.neocities.org/) (Latest version of VitNX for .NET 5+)
 * [Jetpack Downgrader](https://github.com/Zalexanninev15/Jetpack-Downgrader) (VitNX Version 1.1.3-PreFinalBeta)
 
 ## Build
